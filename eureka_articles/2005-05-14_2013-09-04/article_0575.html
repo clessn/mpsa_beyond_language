@@ -1,0 +1,495 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CAHIER SP&#201;CIAL,         mercredi 28 mai 2008 513 mots, p. d2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Octas 2008&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Revenu Qu&#233;bec a de quoi f&#234;ter            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;La SAQ voit double et Gilles Brassard est nomm&#233; personnalit&#233; de l&#39;ann&#233;e&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Le, Devoir&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Samedi soir dernier, au Centre des congr&#232;s de Qu&#233;bec, la F&#233;d&#233;ration de l&#39;informatique du Qu&#233;bec a d&#233;voil&#233; les noms des laur&#233;ats de la cuv&#233;e 2008 des Octas. Revenu Qu&#233;bec et la SAQ se sont vus doublement r&#233;compens&#233;s. &lt;/p&gt; &lt;p&gt; Avec Gestion du projet Refonte TPS &#224; Revenu Qu&#233;bec et Indices de richesse, et pour ce dernier projet l&#39;Octas de l&#39;excellence en prime, Revenu Qu&#233;bec est devenu un double laur&#233;at lors de la derni&#232;re soir&#233;e des Octas. La Soci&#233;t&#233; des alcools du Qu&#233;bec (SAQ) n&#39;a pas &#233;t&#233; pas en reste, elle qui a &#233;t&#233; double r&#233;cipiendaire pour Service Conseil, au bout des doigts.&lt;/p&gt;
+
+
+&lt;p&gt;Au Centre des congr&#232;s, Gilles Brassard a &#233;t&#233; nomm&#233; Personnalit&#233; de l&#39;ann&#233;e du monde informatique. Des mentions sp&#233;ciales, d&#233;sign&#233;es par les jurys, ont aussi &#233;t&#233; attribu&#233;es &#224; Philom&#232;ne Longpr&#233; et aux &#233;tudiants du C&#233;gep de Saint-J&#233;r&#244;me. &lt;/p&gt; &lt;p&gt; La Chambre immobili&#232;re du Grand Montr&#233;al et le minist&#232;re de l&#39;Agriculture, des P&#234;cheries et de l&#39;Alimentation du Qu&#233;bec ont re&#231;u chacun une mention d&#39;excellence. &lt;/p&gt; &lt;p&gt; - Affaires &#233;lectroniques grand public - B2C &lt;/p&gt; &lt;p&gt; Le Directeur de l&#39;&#233;tat civil, Services Qu&#233;bec, minist&#232;re de la Justice, pour le projet Le service en ligne D&#201;Clic &lt;/p&gt; &lt;p&gt; - Affaires &#233;lectroniques interentreprises B2B &lt;/p&gt; &lt;p&gt; Chambre immobili&#232;re du Grand Montr&#233;al, pour le projet Syst&#232;me MLS&#174; Centris&#170; &lt;/p&gt; &lt;p&gt; - Apprentissage en ligne et gestion des connaissances &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; des alcools du Qu&#233;bec, pour le projet Service Conseil, au bout des doigts &lt;/p&gt; &lt;p&gt; - Gestion de projet en TI &lt;/p&gt; &lt;p&gt; Revenu Qu&#233;bec, pour le projet Gestion du projet Refonte TPS &#224; Revenu Qu&#233;bec &lt;/p&gt; &lt;p&gt; - Innovation technologique - 25 employ&#233;s et moins &lt;/p&gt; &lt;p&gt; AudiSoft Technologies, pour le projet Frontline Gateway, une vid&#233;o communication op&#233;rationnelle &#224; multiples usagers &lt;/p&gt; &lt;p&gt; - Innovation technologique - 26 &#224; 250 employ&#233;s &lt;/p&gt; &lt;p&gt; Organix IT, pour le projet Smart Video Monitoring System (SVMS) &lt;/p&gt; &lt;p&gt; - Innovation technologique - 1000 employ&#233;s et plus &lt;/p&gt; &lt;p&gt; Revenu Qu&#233;bec, pour le projet Indices de richesse &lt;/p&gt; &lt;p&gt; - Jeux et animation &lt;/p&gt; &lt;p&gt; Kutoka Interactive, pour le projet Mia Lecture: Alerte aux Bestigroux! &lt;/p&gt; &lt;p&gt; - Le fran&#231;ais dans les technologies de l&#39;information &lt;/p&gt; &lt;p&gt; Le Centre int&#233;gr&#233; de m&#233;canique industrielle de la Chaudi&#232;re et la Commission scolaire de la Beauce-Etchemin, pour le projet Programme de dessin industriel en ligne &lt;/p&gt; &lt;p&gt; - Les technologies au service de la collectivit&#233; - 100 employ&#233;s et moins &lt;/p&gt; &lt;p&gt; Zone Acc&#232;s Public Sherbrooke, pour le projet ZAP Sherbrooke, un r&#233;seau Internet sans fil gratuit &lt;/p&gt; &lt;p&gt; - Les technologies au service de la collectivit&#233; - 101 employ&#233;s et plus &lt;/p&gt; &lt;p&gt; SOGIQUE, la Soci&#233;t&#233; de gestion en informatique Bell et Sant&#233; et Services sociaux Qu&#233;bec, pour le projet Refonte Info-Sant&#233; et Info-Social, un programme d&#39;acc&#232;s privil&#233;gi&#233; &#224; l&#39;information pour tous les Qu&#233;b&#233;cois, et ce, &#224; toute heure et tous les jours &lt;/p&gt; &lt;p&gt; - Les TI dans les secteurs culturel, &#233;ducatif ou m&#233;diatique &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; des arts technologiques (SAT), pour le projet Station de t&#233;l&#233;pr&#233;sence 2.0 &lt;/p&gt; &lt;p&gt; - Rel&#232;ve &#233;tudiante - niveau coll&#233;gial &lt;/p&gt; &lt;p&gt; Du C&#233;gep de Sainte-Foy, S&#233;bastien Bourgoing, Francis Perron, Simon Pouliot, Philippe Troie, pour le projet Jeu vid&#233;o 3D Racing Nunavut &lt;/p&gt; &lt;p&gt; - Rel&#232;ve &#233;tudiante - niveau universitaire &lt;/p&gt; &lt;p&gt; De l&#39;Universit&#233; de Sherbrooke, Nathaniel Audet, Vincent Chartrand, Francis Gauthier-Fredette, Maxime Gr&#233;goire, Francis Lapierre, David Mailhot, Fr&#233;d&#233;rick Martel-Lupien, Simon Poissant, David Therriault, pour le projet Vsmash &lt;/p&gt; &lt;p&gt; - R&#233;ussite commerciale &lt;/p&gt; &lt;p&gt; LMSOFT, pour le projet WEB CREATOR &lt;/p&gt; &lt;p&gt; - Services publics en ligne &lt;/p&gt; &lt;p&gt; Le Directeur de l&#39;&#233;tat civil, Services Qu&#233;bec, minist&#232;re de la Justice, pour le projet Le service en ligne D&#201;Clic &lt;/p&gt; &lt;p&gt; - Solution d&#39;affaires - D&#233;veloppement &#224; l&#39;interne - 100 employ&#233;s et moins &lt;/p&gt; &lt;p&gt; Chambre immobili&#232;re du Grand Montr&#233;al, pour le projet Syst&#232;me MLS&#174; Centris&#170; &lt;/p&gt; &lt;p&gt; - Solution d&#39;affaires - D&#233;veloppement &#224; l&#39;interne - 101 employ&#233;s et plus &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; des alcools du Qu&#233;bec, pour le projet Service Conseil, au bout des doigts &lt;/p&gt; &lt;p&gt; - Solution d&#39;affaires - &lt;mark&gt;Logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &lt;/p&gt; &lt;p&gt; Universit&#233; de Sherbrooke, pour le projet monPortail, le campus virtuel de l&#39;Universit&#233; de Sherbrooke &lt;/p&gt; &lt;p&gt; - Solution d&#39;affaires - Progiciels &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; en commandite Prolam, Le Groupe Cr&#233;atech, une soci&#233;t&#233; de Bell Canada, pour le projet Dynamics&#170; NAV, un outil strat&#233;gique pour Prolam &lt;/p&gt; &lt;p&gt; - Transformation des processus organisationnels - 1500 employ&#233;s et moins &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; de gestion informatique SOGIQUE, minist&#232;re de la Sant&#233; et des Services sociaux (MSSS), pour le projet Syst&#232;me d&#39;information sur les m&#233;canismes d&#39;acc&#232;s aux services sp&#233;cialis&#233;s &lt;/p&gt; &lt;p&gt; (SIMASS) &lt;/p&gt; &lt;p&gt; - Transformation des processus organisationnels - 1501 employ&#233;s et plus &lt;/p&gt; &lt;p&gt; Minist&#232;re de l&#39;Agriculture, des P&#234;cheries et de l&#39;Alimentation du Qu&#233;bec, pour le projet FLORA-TAXES, fonci&#232;rement plus simple!&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2008 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20080528&amp;#183;LE&amp;#183;191584&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">revenu québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">société des alcools</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">alcools du québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bout des doigts</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">service de la collectivité</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Revenu Québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">TI</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Saint-Jérôme</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Les Bestigroux</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720080528%c2%b7LE%c2%b7191584" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720080528%c2%b7LE%c2%b7191584">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CAHIER SPÉCIAL,         mercredi 28 mai 2008 513 mots, p. d2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Octas 2008</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Revenu Québec a de quoi fêter            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">La SAQ voit double et Gilles Brassard est nommé personnalité de l'année</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Le, Devoir</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Samedi soir dernier, au Centre des congrès de Québec, la Fédération de l'informatique du Québec a dévoilé les noms des lauréats de la cuvée 2008 des Octas. Revenu Québec et la SAQ se sont vus doublement récompensés. </p> <p> Avec Gestion du projet Refonte TPS à Revenu Québec et Indices de richesse, et pour ce dernier projet l'Octas de l'excellence en prime, Revenu Québec est devenu un double lauréat lors de la dernière soirée des Octas. La Société des alcools du Québec (SAQ) n'a pas été pas en reste, elle qui a été double récipiendaire pour Service Conseil, au bout des doigts.</p>
+
+
+<p>Au Centre des congrès, Gilles Brassard a été nommé Personnalité de l'année du monde informatique. Des mentions spéciales, désignées par les jurys, ont aussi été attribuées à Philomène Longpré et aux étudiants du Cégep de Saint-Jérôme. </p> <p> La Chambre immobilière du Grand Montréal et le ministère de l'Agriculture, des Pêcheries et de l'Alimentation du Québec ont reçu chacun une mention d'excellence. </p> <p> - Affaires électroniques grand public - B2C </p> <p> Le Directeur de l'état civil, Services Québec, ministère de la Justice, pour le projet Le service en ligne DÉClic </p> <p> - Affaires électroniques interentreprises B2B </p> <p> Chambre immobilière du Grand Montréal, pour le projet Système MLS® Centrisª </p> <p> - Apprentissage en ligne et gestion des connaissances </p> <p> Société des alcools du Québec, pour le projet Service Conseil, au bout des doigts </p> <p> - Gestion de projet en TI </p> <p> Revenu Québec, pour le projet Gestion du projet Refonte TPS à Revenu Québec </p> <p> - Innovation technologique - 25 employés et moins </p> <p> AudiSoft Technologies, pour le projet Frontline Gateway, une vidéo communication opérationnelle à multiples usagers </p> <p> - Innovation technologique - 26 à 250 employés </p> <p> Organix IT, pour le projet Smart Video Monitoring System (SVMS) </p> <p> - Innovation technologique - 1000 employés et plus </p> <p> Revenu Québec, pour le projet Indices de richesse </p> <p> - Jeux et animation </p> <p> Kutoka Interactive, pour le projet Mia Lecture: Alerte aux Bestigroux! </p> <p> - Le français dans les technologies de l'information </p> <p> Le Centre intégré de mécanique industrielle de la Chaudière et la Commission scolaire de la Beauce-Etchemin, pour le projet Programme de dessin industriel en ligne </p> <p> - Les technologies au service de la collectivité - 100 employés et moins </p> <p> Zone Accès Public Sherbrooke, pour le projet ZAP Sherbrooke, un réseau Internet sans fil gratuit </p> <p> - Les technologies au service de la collectivité - 101 employés et plus </p> <p> SOGIQUE, la Société de gestion en informatique Bell et Santé et Services sociaux Québec, pour le projet Refonte Info-Santé et Info-Social, un programme d'accès privilégié à l'information pour tous les Québécois, et ce, à toute heure et tous les jours </p> <p> - Les TI dans les secteurs culturel, éducatif ou médiatique </p> <p> Société des arts technologiques (SAT), pour le projet Station de téléprésence 2.0 </p> <p> - Relève étudiante - niveau collégial </p> <p> Du Cégep de Sainte-Foy, Sébastien Bourgoing, Francis Perron, Simon Pouliot, Philippe Troie, pour le projet Jeu vidéo 3D Racing Nunavut </p> <p> - Relève étudiante - niveau universitaire </p> <p> De l'Université de Sherbrooke, Nathaniel Audet, Vincent Chartrand, Francis Gauthier-Fredette, Maxime Grégoire, Francis Lapierre, David Mailhot, Frédérick Martel-Lupien, Simon Poissant, David Therriault, pour le projet Vsmash </p> <p> - Réussite commerciale </p> <p> LMSOFT, pour le projet WEB CREATOR </p> <p> - Services publics en ligne </p> <p> Le Directeur de l'état civil, Services Québec, ministère de la Justice, pour le projet Le service en ligne DÉClic </p> <p> - Solution d'affaires - Développement à l'interne - 100 employés et moins </p> <p> Chambre immobilière du Grand Montréal, pour le projet Système MLS® Centrisª </p> <p> - Solution d'affaires - Développement à l'interne - 101 employés et plus </p> <p> Société des alcools du Québec, pour le projet Service Conseil, au bout des doigts </p> <p> - Solution d'affaires - <mark>Logiciels</mark> <mark>libres</mark> </p> <p> Université de Sherbrooke, pour le projet monPortail, le campus virtuel de l'Université de Sherbrooke </p> <p> - Solution d'affaires - Progiciels </p> <p> Société en commandite Prolam, Le Groupe Créatech, une société de Bell Canada, pour le projet Dynamicsª NAV, un outil stratégique pour Prolam </p> <p> - Transformation des processus organisationnels - 1500 employés et moins </p> <p> Société de gestion informatique SOGIQUE, ministère de la Santé et des Services sociaux (MSSS), pour le projet Système d'information sur les mécanismes d'accès aux services spécialisés </p> <p> (SIMASS) </p> <p> - Transformation des processus organisationnels - 1501 employés et plus </p> <p> Ministère de l'Agriculture, des Pêcheries et de l'Alimentation du Québec, pour le projet FLORA-TAXES, foncièrement plus simple!</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2008 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20080528·LE·191584</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20080528·LE·191584";
+    var _docIndex = 574;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20080528·LE·191584';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720080528%C2%B7LE%C2%B7191584&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720080528%C2%B7LE%C2%B7191584&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720080528%C2%B7LE%C2%B7191584&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720080528%C2%B7LE%C2%B7191584&docIndex=574&FullScreen=1";
+                
+	var _keyDoc = 'news·20080528·LE·191584';
+</script>
+</div></body></html>

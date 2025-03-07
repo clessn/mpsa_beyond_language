@@ -1,0 +1,491 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 8984                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Ecrans,         jeudi 1 avril 2010 489 mots, p. 27&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171;Les internautes veulent aider les cr&#233;ateurs&#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Peter Sunde, cr&#233;ateur du syst&#232;me de r&#233;mun&#233;ration Flattr :&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Recueilli par Erwan Cario&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Face au concept de Flattr, deux types de r&#233;actions. L&#39;incr&#233;dulit&#233; forc&#233;ment, car un syst&#232;me qui permet aux internautes de payer sans aucune contrepartie semble vou&#233; &#224; l&#39;&#233;chec tant il est &#233;loign&#233; du mod&#232;le marchand classique. Ou l&#39;optimisme, parce que c&#39;est in&#233;dit et on ne peut pas savoir avant d&#39;essayer. Qui aurait pari&#233;, en 2001, sur le succ&#232;s d&#39;une encyclop&#233;die aliment&#233;e par les internautes et librement modifiable ? &lt;/p&gt; &lt;p&gt; Flattr permettra de payer une somme fixe mensuelle. En surfant, l&#39;internaute pourra appuyer sur un bouton &#171;Flattr&#187; sur les blogs, les sites d&#39;artistes, ou sur toute autre plateforme de cr&#233;ation. Sa contribution sera r&#233;partie ensuite entre tous les projets qu&#39;il a d&#233;cid&#233; de soutenir. Aux commandes, le su&#233;dois Peter Sunde, alias Brokep, par ailleurs cofondateur du site de partage the Pirate Bay.&lt;/p&gt;
+
+
+&lt;p&gt;Comment vous est venue l&#39;id&#233;e de cr&#233;er Flattr ? &lt;/p&gt; &lt;p&gt; Il y a environ deux ans, le d&#233;bat en Su&#232;de concernant le financement sur Internet &#233;tait tr&#232;s virulent, et personne n&#39;essayait une approche diff&#233;rente : utiliser comme base de r&#233;flexion la philosophie m&#234;me d&#39;Internet. Je voulais que les gens ne soient pas oblig&#233;s de payer. Les gens essaient, testent, et ne donnent une valeur aux choses qu&#39;une fois qu&#39;ils savent ce que c&#39;est. Personne ne paie pour Internet en tant que tel, on paie pour avoir acc&#232;s &#224; toute l&#39;information. Je voulais faire quelque chose qui soit bas&#233; sur les m&#234;mes principes. &lt;/p&gt; &lt;p&gt; Y a-t-il un lien entre The Pirate Bay (TPB) et Flattr ? &lt;/p&gt; &lt;p&gt; Oui, c&#39;est &#224; peu pr&#232;s la m&#234;me chose. Le but de TPB &#233;tait de combattre la position dominante des grosses corporations m&#233;diatiques. Flattr est aussi un moyen de le faire, en supprimant les obstacles qui emp&#234;chent d&#39;avoir un syst&#232;me de paiement simple et efficace. Il s&#39;agit de reprendre la main et de continuer &#224; r&#233;mun&#233;rer les cr&#233;ateurs, mais pas les interm&#233;diaires. &lt;/p&gt; &lt;p&gt; Quel est le mod&#232;le &#233;conomique de Flattr ? &lt;/p&gt; &lt;p&gt; Pour l&#39;instant, nous pr&#233;levons 10% de la somme vers&#233;e. Ce chiffre est assez haut, mais notre espoir est d&#39;arriver &#224; une situation o&#249; nous pourrons le diminuer tout en &#233;tant rentable. Si nous ne le sommes pas, nous ne pouvons pas survivre. Mais diminuer notre pr&#233;l&#232;vement permettra &#224; terme d&#39;attirer plus de personnes, ce qui sera b&#233;n&#233;fique &#224; tous. &lt;/p&gt; &lt;p&gt; Ce n&#39;est pas un peu utopique, de penser que les gens payeront sans y &#234;tre contraints ? &lt;/p&gt; &lt;p&gt; Non, pas vraiment. Ils veulent r&#233;ellement aider quand ils savent que l&#39;argent arrive aux bonnes personnes, sans trop de pr&#233;l&#232;vements. En m&#234;me temps, la notion de prix d&#39;une chose dispara&#238;t avec Flattr. Il s&#39;agit moins de savoir combien co&#251;te ce qu&#39;on veut que de se demander combien de personnes on peut aider. Nous pensons que &#231;a peut marcher, parce que les gens ont toujours voulu aider les cr&#233;ateurs. &lt;/p&gt; &lt;p&gt; Ca se rapproche du m&#233;c&#233;nat global, d&#233;fendu par &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;, le gourou du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;... &lt;/p&gt; &lt;p&gt; Eh bien, Flattr peut &#234;tre consid&#233;r&#233; comme un syst&#232;me de m&#233;c&#233;nat, d&#39;un certain point de vue. &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt; a toujours &#233;t&#233; int&#233;ress&#233; par le fait de mettre en place un syst&#232;me similaire. &lt;/p&gt; &lt;p&gt; Comment allez-vous promouvoir Flattr sur le Net ? &lt;/p&gt; &lt;p&gt; Nous allons commencer au niveau local et nous avons invit&#233; des Su&#233;dois &#224; nous rejoindre. Et nous esp&#233;rons nous ouvrir &#224; l&#39;international d&#39;ici quelques mois. Les internautes conna&#238;tront notre existence par les blogueurs, les artistes et les sites qu&#39;ils aiment. C&#39;est avec eux que nous tenterons de nouer des partenariats. &lt;/p&gt; &lt;p&gt; Y aura-t-il un espace &#171;freemium&#187; (o&#249; l&#39;utilisateur acc&#232;de &#224; du contenu exclusif) ? &lt;/p&gt; &lt;p&gt; Non, nous ne sommes pas int&#233;ress&#233;s par le fait de bloquer un contenu. C&#39;est politique. Nous ne voulons pas que notre syst&#232;me serve pour des choses comme &#231;a qui alt&#232;rent Internet d&#39;une mauvaise mani&#232;re. &lt;/p&gt; &lt;p&gt; Une date ? &lt;/p&gt; &lt;p&gt; On vise fin avril. Mais les deadlines sont faites pour &#234;tre d&#233;pass&#233;es.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2010 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20100401&amp;#183;LI&amp;#183;0li5180166e-3cfa-11df-894b-4527b531c667&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">plateforme de création</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système de rémunération</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sites d'artistes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèle économique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèle marchand</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Inflation et rémunération</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">The Pirate Bay</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Suède</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100401%c2%b7LI%c2%b70li5180166e-3cfa-11df-894b-4527b531c667" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100401%c2%b7LI%c2%b70li5180166e-3cfa-11df-894b-4527b531c667">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 8984                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Ecrans,         jeudi 1 avril 2010 489 mots, p. 27</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+«Les internautes veulent aider les créateurs»            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Peter Sunde, créateur du système de rémunération Flattr :</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Recueilli par Erwan Cario</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Face au concept de Flattr, deux types de réactions. L'incrédulité forcément, car un système qui permet aux internautes de payer sans aucune contrepartie semble voué à l'échec tant il est éloigné du modèle marchand classique. Ou l'optimisme, parce que c'est inédit et on ne peut pas savoir avant d'essayer. Qui aurait parié, en 2001, sur le succès d'une encyclopédie alimentée par les internautes et librement modifiable ? </p> <p> Flattr permettra de payer une somme fixe mensuelle. En surfant, l'internaute pourra appuyer sur un bouton «Flattr» sur les blogs, les sites d'artistes, ou sur toute autre plateforme de création. Sa contribution sera répartie ensuite entre tous les projets qu'il a décidé de soutenir. Aux commandes, le suédois Peter Sunde, alias Brokep, par ailleurs cofondateur du site de partage the Pirate Bay.</p>
+
+
+<p>Comment vous est venue l'idée de créer Flattr ? </p> <p> Il y a environ deux ans, le débat en Suède concernant le financement sur Internet était très virulent, et personne n'essayait une approche différente : utiliser comme base de réflexion la philosophie même d'Internet. Je voulais que les gens ne soient pas obligés de payer. Les gens essaient, testent, et ne donnent une valeur aux choses qu'une fois qu'ils savent ce que c'est. Personne ne paie pour Internet en tant que tel, on paie pour avoir accès à toute l'information. Je voulais faire quelque chose qui soit basé sur les mêmes principes. </p> <p> Y a-t-il un lien entre The Pirate Bay (TPB) et Flattr ? </p> <p> Oui, c'est à peu près la même chose. Le but de TPB était de combattre la position dominante des grosses corporations médiatiques. Flattr est aussi un moyen de le faire, en supprimant les obstacles qui empêchent d'avoir un système de paiement simple et efficace. Il s'agit de reprendre la main et de continuer à rémunérer les créateurs, mais pas les intermédiaires. </p> <p> Quel est le modèle économique de Flattr ? </p> <p> Pour l'instant, nous prélevons 10% de la somme versée. Ce chiffre est assez haut, mais notre espoir est d'arriver à une situation où nous pourrons le diminuer tout en étant rentable. Si nous ne le sommes pas, nous ne pouvons pas survivre. Mais diminuer notre prélèvement permettra à terme d'attirer plus de personnes, ce qui sera bénéfique à tous. </p> <p> Ce n'est pas un peu utopique, de penser que les gens payeront sans y être contraints ? </p> <p> Non, pas vraiment. Ils veulent réellement aider quand ils savent que l'argent arrive aux bonnes personnes, sans trop de prélèvements. En même temps, la notion de prix d'une chose disparaît avec Flattr. Il s'agit moins de savoir combien coûte ce qu'on veut que de se demander combien de personnes on peut aider. Nous pensons que ça peut marcher, parce que les gens ont toujours voulu aider les créateurs. </p> <p> Ca se rapproche du mécénat global, défendu par <mark>Richard</mark> <mark>Stallman</mark>, le gourou du <mark>logiciel</mark> <mark>libre</mark>... </p> <p> Eh bien, Flattr peut être considéré comme un système de mécénat, d'un certain point de vue. <mark>Richard</mark> <mark>Stallman</mark> a toujours été intéressé par le fait de mettre en place un système similaire. </p> <p> Comment allez-vous promouvoir Flattr sur le Net ? </p> <p> Nous allons commencer au niveau local et nous avons invité des Suédois à nous rejoindre. Et nous espérons nous ouvrir à l'international d'ici quelques mois. Les internautes connaîtront notre existence par les blogueurs, les artistes et les sites qu'ils aiment. C'est avec eux que nous tenterons de nouer des partenariats. </p> <p> Y aura-t-il un espace «freemium» (où l'utilisateur accède à du contenu exclusif) ? </p> <p> Non, nous ne sommes pas intéressés par le fait de bloquer un contenu. C'est politique. Nous ne voulons pas que notre système serve pour des choses comme ça qui altèrent Internet d'une mauvaise manière. </p> <p> Une date ? </p> <p> On vise fin avril. Mais les deadlines sont faites pour être dépassées.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2010 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20100401·LI·0li5180166e-3cfa-11df-894b-4527b531c667</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20100401·LI·0li5180166e-3cfa-11df-894b-4527b531c667";
+    var _docIndex = 409;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20100401·LI·0li5180166e-3cfa-11df-894b-4527b531c667';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720100401%C2%B7LI%C2%B70li5180166e-3cfa-11df-894b-4527b531c667&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720100401%C2%B7LI%C2%B70li5180166e-3cfa-11df-894b-4527b531c667&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720100401%C2%B7LI%C2%B70li5180166e-3cfa-11df-894b-4527b531c667&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720100401%C2%B7LI%C2%B70li5180166e-3cfa-11df-894b-4527b531c667&docIndex=409&FullScreen=1";
+                
+	var _keyDoc = 'news·20100401·LI·0li5180166e-3cfa-11df-894b-4527b531c667';
+</script>
+</div></body></html>

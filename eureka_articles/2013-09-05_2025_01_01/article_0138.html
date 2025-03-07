@@ -1,0 +1,545 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24539                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         vendredi 14 juillet 2023 513 mots, p. 24&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+&#201;conomie         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Rival inattendu, l&#39; &#171; &lt;mark&gt; open&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt; &#187; s&#39;invite dans la course            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Vergara, Ingrid&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt; &#171; &lt;em style=&quot;font-style:italic;&quot;&gt; La d&#233;sagr&#233;able v&#233;rit&#233; est que nous ne sommes pas en position de gagner cette course aux armements, pas plus qu&#39;OpenAI. Pendant que nous nous chamaillions, une troisi&#232;me faction a tranquillement mang&#233; notre d&#233;jeuner. Je parle, bien s&#251;r, de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;/em&gt;. &#187; D&#232;s le mois d&#39;avril, dans un document interne divulgu&#233; depuis sur Discord, Luke Sernau, un ing&#233;nieur de Google, mettait en garde sa direction sur l&#39;&#233;mergence tr&#232;s rapide de pl&#233;thore de mod&#232;les d&#39;intelligence artificielle performants, accessibles en ligne, d&#233;velopp&#233;s en toute transparence et &#224; des co&#251;ts moindres par des communaut&#233;s de chercheurs et de d&#233;veloppeurs. &lt;/p&gt; &lt;p&gt; Comment avaient-ils fait ? Avec le coup de pouce d&#39;un autre g&#233;ant, tr&#232;s actif dans l&#39;intelligence artificielle et pas compl&#232;tement d&#233;sint&#233;ress&#233; &#224; l&#39;affaire... Le 24 f&#233;vrier, Meta, la maison m&#232;re de Facebook, pr&#233;sentait LLaMA, son propre grand mod&#232;le de langage (LLM), initialement destin&#233; &#224; une poign&#233;e de chercheurs et sous conditions. Quelque temps apr&#232;s, le code source de LlaMA fuitait discr&#232;tement sur internet. D&#39;un seul coup, les ingr&#233;dients, leur dosage et la recette pour fabriquer un tr&#232;s bon LLM &#233;taient &#224; la port&#233;e de tous. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;La communaut&#233; a imm&#233;diatement compris la signification de ce qui lui avait &#233;t&#233; donn&#233;&lt;/em&gt; &#187; , explique un expert de l&#39;IA. Chercheurs et d&#233;veloppeurs unissent leurs forces collaboratives pour d&#233;passer certains probl&#232;mes auxquels se heurtaient les meilleurs experts de Google et d&#39;Open AI. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;L&#39;acc&#232;s &#224; un mod&#232;le de qualit&#233; suffisamment &#233;lev&#233;e a donn&#233; lieu &#224; une vague d&#39;id&#233;es et d&#39;it&#233;rations de la part d&#39;individus et d&#39;institutions du monde entier&lt;/em&gt; &#187; , d&#233;crit Luke Sernau. &lt;/p&gt;
+
+
+&lt;p&gt;Les progr&#232;s sont rapides. Des mod&#232;les entra&#238;n&#233;s avec beaucoup moins de param&#232;tres - et donc pour bien moins chers - que ceux qui sous-tendent ChatGPT et Bard affichent des performances s&#39;en rapprochant. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;En tr&#232;s peu de temps, l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; est en train de rattraper les grands mod&#232;les commerciaux &lt;/em&gt; &#187; , explique St&#233;phane Roder, pr&#233;sident fondateur du cabinet de conseil AI Builders. &lt;/p&gt; &lt;p&gt; Le paysage va changer &lt;/p&gt; &lt;p&gt; Pour 100 dollars de co&#251;ts d&#39;entra&#238;nement, l&#39;universit&#233; de Berkeley a, par exemple, mis au point Koala, un mod&#232;le linguistique entra&#238;n&#233; sur une base de donn&#233;es enti&#232;rement libre, avec une qualit&#233; de r&#233;ponse proche de celle de ChatGPT. &lt;/p&gt; &lt;p&gt; Les grands mod&#232;les linguistiques propos&#233;s par Open AI et Bard produisent encore des r&#233;ponses de meilleure qualit&#233; et l&#39;exp&#233;rience utilisateur y est bien plus peaufin&#233;e. Mais pour des usages plus sp&#233;cifiques, l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; permet d&#233;j&#224; d&#39;affiner de plus petits mod&#232;les de langage qui marchent tr&#232;s bien sur un nombre restreint de donn&#233;es. De quoi s&#233;duire nombre d&#39;entreprises &#224; la recherche du meilleur ratio qualit&#233;-s&#233;curit&#233;-co&#251;t. &lt;/p&gt; &lt;p&gt; &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Le paysage concurrentiel de l&#39;intelligence artificielle va compl&#232;tement changer dans les prochains mois, peut &#234;tre m&#234;me dans les prochaines semaines, quand il y aura des plateformes &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; qui seront aussi bonnes que les plateformes propri&#233;taires &lt;/em&gt; &#187; , expliquait Yann Le Cun, directeur scientifique pour l&#39;intelligence artificielle chez Meta, aux Rencontres &#233;conomiques d&#39;Aix-en-Provence samedi dernier. &lt;/p&gt; &lt;p&gt; D&#39;autant qu&#39;esp&#233;rer garder pour soi les secrets de fabrication des mod&#232;les propri&#233;taires devient illusoire, plaidait Luke Sernau. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Nous partageons d&#233;j&#224; tout avec eux&lt;/em&gt;(Open AI) &lt;em style=&quot;font-style:italic;&quot;&gt;au travers d&#39;un flux constant de chercheurs seniors d&#233;bauch&#233;s&lt;/em&gt;... &#187; I. V.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:ivergara@lefigaro.fr&quot;&gt;ivergara@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;14 juillet 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230714&amp;#183;LF&amp;#183;1062&amp;#215;20&amp;#215;22056172197&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">secrets de fabrication</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">paysage concurrentiel de l'intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">flux constant de chercheurs seniors</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">communautés de chercheurs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Rencontres économiques d'Aix-en-Provence</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">source de LlaMA</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230714%c2%b7LF%c2%b71062%c3%9720%c3%9722056172197" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230714%c2%b7LF%c2%b71062%c3%9720%c3%9722056172197">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24539                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         vendredi 14 juillet 2023 513 mots, p. 24</span>
+</div>
+
+    <div>
+        <p>
+Économie         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Rival inattendu, l' « <mark> open</mark> <mark> source</mark> » s'invite dans la course            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Vergara, Ingrid</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p> « <em style="font-style:italic;"> La désagréable vérité est que nous ne sommes pas en position de gagner cette course aux armements, pas plus qu'OpenAI. Pendant que nous nous chamaillions, une troisième faction a tranquillement mangé notre déjeuner. Je parle, bien sûr, de l'<mark>open</mark> <mark>source</mark> </em>. » Dès le mois d'avril, dans un document interne divulgué depuis sur Discord, Luke Sernau, un ingénieur de Google, mettait en garde sa direction sur l'émergence très rapide de pléthore de modèles d'intelligence artificielle performants, accessibles en ligne, développés en toute transparence et à des coûts moindres par des communautés de chercheurs et de développeurs. </p> <p> Comment avaient-ils fait ? Avec le coup de pouce d'un autre géant, très actif dans l'intelligence artificielle et pas complètement désintéressé à l'affaire... Le 24 février, Meta, la maison mère de Facebook, présentait LLaMA, son propre grand modèle de langage (LLM), initialement destiné à une poignée de chercheurs et sous conditions. Quelque temps après, le code source de LlaMA fuitait discrètement sur internet. D'un seul coup, les ingrédients, leur dosage et la recette pour fabriquer un très bon LLM étaient à la portée de tous. « <em style="font-style:italic;">La communauté a immédiatement compris la signification de ce qui lui avait été donné</em> » , explique un expert de l'IA. Chercheurs et développeurs unissent leurs forces collaboratives pour dépasser certains problèmes auxquels se heurtaient les meilleurs experts de Google et d'Open AI. « <em style="font-style:italic;">L'accès à un modèle de qualité suffisamment élevée a donné lieu à une vague d'idées et d'itérations de la part d'individus et d'institutions du monde entier</em> » , décrit Luke Sernau. </p>
+
+
+<p>Les progrès sont rapides. Des modèles entraînés avec beaucoup moins de paramètres - et donc pour bien moins chers - que ceux qui sous-tendent ChatGPT et Bard affichent des performances s'en rapprochant. « <em style="font-style:italic;">En très peu de temps, l'<mark>open</mark> <mark>source</mark> est en train de rattraper les grands modèles commerciaux </em> » , explique Stéphane Roder, président fondateur du cabinet de conseil AI Builders. </p> <p> Le paysage va changer </p> <p> Pour 100 dollars de coûts d'entraînement, l'université de Berkeley a, par exemple, mis au point Koala, un modèle linguistique entraîné sur une base de données entièrement libre, avec une qualité de réponse proche de celle de ChatGPT. </p> <p> Les grands modèles linguistiques proposés par Open AI et Bard produisent encore des réponses de meilleure qualité et l'expérience utilisateur y est bien plus peaufinée. Mais pour des usages plus spécifiques, l'<mark>open</mark> <mark>source</mark> permet déjà d'affiner de plus petits modèles de langage qui marchent très bien sur un nombre restreint de données. De quoi séduire nombre d'entreprises à la recherche du meilleur ratio qualité-sécurité-coût. </p> <p> « <em style="font-style:italic;">Le paysage concurrentiel de l'intelligence artificielle va complètement changer dans les prochains mois, peut être même dans les prochaines semaines, quand il y aura des plateformes <mark>open</mark> <mark>source</mark> qui seront aussi bonnes que les plateformes propriétaires </em> » , expliquait Yann Le Cun, directeur scientifique pour l'intelligence artificielle chez Meta, aux Rencontres économiques d'Aix-en-Provence samedi dernier. </p> <p> D'autant qu'espérer garder pour soi les secrets de fabrication des modèles propriétaires devient illusoire, plaidait Luke Sernau. « <em style="font-style:italic;">Nous partageons déjà tout avec eux</em>(Open AI) <em style="font-style:italic;">au travers d'un flux constant de chercheurs seniors débauchés</em>... » I. V.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:ivergara@lefigaro.fr">ivergara@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">14 juillet 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230714·LF·1062×20×22056172197</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230714·LF·1062×20×22056172197";
+    var _docIndex = 137;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230714·LF·1062×20×22056172197';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230714%C2%B7LF%C2%B71062%C3%9720%C3%9722056172197&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230714%C2%B7LF%C2%B71062%C3%9720%C3%9722056172197&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230714%C2%B7LF%C2%B71062%C3%9720%C3%9722056172197&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230714%C2%B7LF%C2%B71062%C3%9720%C3%9722056172197&docIndex=137&FullScreen=1";
+                
+	var _keyDoc = 'news·20230714·LF·1062×20×22056172197';
+</script>
+</div></body></html>

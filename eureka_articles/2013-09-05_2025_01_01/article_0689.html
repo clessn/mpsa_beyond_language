@@ -1,0 +1,695 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Futurs,         mardi 22 d&amp;#233;cembre 2015 1298 mots, p. 18&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;D&#233;cryptage&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Espion es-tu l&#224; ?            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le fabricant d&#39;&#233;quipements r&#233;seau Juniper a d&#233;tect&#233; du &#171;code non autoris&#233;&#187; dans un de ses syst&#232;mes d&#39;exploitation. Des failles inqui&#233;tantes pour les clients. Explications.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Amaelle Guiton&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;C&#39;est une tr&#232;s mauvaise nouvelle sur le front de la s&#233;curit&#233; informatique. Jeudi soir, l&#39;Am&#233;ricain Juniper Networks, principal concurrent de son compatriote &lt;span class=&quot;stubs&quot;&gt;Cisco&lt;/span&gt; sur le march&#233; des routeurs et des solutions de s&#233;curit&#233; des r&#233;seaux, a annonc&#233; deux failles majeures affectant des &#233;quipements utilis&#233;s par de tr&#232;s nombreuses entreprises dans le monde, mais aussi par des services gouvernementaux. Des failles dues &#224; la pr&#233;sence de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;code non autoris&#233;&#187;&lt;/em&gt; dans le syst&#232;me d&#39;exploitation install&#233; sur les &#233;quipements concern&#233;s : la formule utilis&#233;e par l&#39;entreprise laisse assez peu de doutes sur le caract&#232;re intentionnel de l&#39;op&#233;ration. Selon toute probabilit&#233;, il s&#39;agit de &#171;portes d&#233;rob&#233;es&#187;, des &lt;em style=&quot;font-style:italic;&quot;&gt;backdoors&lt;/em&gt; , inconnues des usagers mais susceptibles d&#39;avoir &#233;t&#233; utilis&#233;es par un cyberattaquant.&lt;/p&gt;
+
+
+&lt;p&gt;A lire aussi Tech-mots : &#171;Backdoor&#187;, &#171;VPN&#187;, &#171;patch&#187;, &#171;pare-feu&#187; et &#171;log&#187; &lt;/p&gt; &lt;p&gt; Que s&#39;est-il pass&#233; ? &lt;/p&gt; &lt;p&gt; Avant les avertissements de s&#233;curit&#233; publi&#233;s par Juniper, &lt;span class=&quot;stubs&quot;&gt;Gilles Massen&lt;/span&gt;, ing&#233;nieur s&#233;curit&#233; &#224; la fondation &lt;span class=&quot;stubs&quot;&gt;Restena au Luxembourg&lt;/span&gt;, avait signal&#233; un probl&#232;me. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Vers la mi-novembre, nous avons fait une mise &#224; jour de routine, suite &#224; laquelle nous ne pouvions plus nous connecter &#224; nos pare-feu Juniper,&lt;/em&gt; explique-t-il &#224; &lt;em style=&quot;font-style:italic;&quot;&gt;Lib&#233;ration&lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;A part quelques allers-retours, il n&#39;y a rien eu de concret. La port&#233;e r&#233;elle nous est apparue seulement avec les deux avertissements.&#187;&lt;/em&gt; Est-ce suite &#224; ce signalement que l&#39;entreprise am&#233;ricaine a men&#233; la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;revue de code interne&#187;&lt;/em&gt; qui a conduit &#224; la d&#233;tection des failles ? &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Si nos coll&#232;gues luxembourgeois ont raison, cela veut dire qu&#39;elles ont &#233;t&#233; d&#233;couvertes par accident&#187;&lt;/em&gt;, souligne l&#39;ing&#233;nieur r&#233;seaux fran&#231;ais &lt;span class=&quot;stubs&quot;&gt;St&#233;phane Bortzmeyer&lt;/span&gt;. Les failles affectent ScreenOS, le syst&#232;me d&#39;exploitation qui &#233;quipe les routeurs pare-feu des gammes NetScreen, ISG et SSG. La premi&#232;re permet de se connecter &#224; distance, en &#171;mode administrateur&#187; (c&#39;est-&#224;-dire en disposant du maximum d&#39;autorisations), &#224; un pare-feu sous ScreenOS, ce qui peut entra&#238;ner la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;compromission compl&#232;te&#187;&lt;/em&gt; du r&#233;seau qu&#39;il est cens&#233; prot&#233;ger, a averti Juniper. La seconde concerne la fonctionnalit&#233; VPN - une technologie qui permet la communication s&#233;curis&#233;e &#224; distance &lt;em style=&quot;font-style:italic;&quot;&gt;(lire lexique, ci-contre)&lt;/em&gt; - des routeurs : un attaquant en capacit&#233; de surveiller le trafic VPN pourrait &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;d&#233;chiffrer ce trafic&#187;&lt;/em&gt;. D&#39;apr&#232;s les dates de publication des documentations techniques concernant les versions affect&#233;es de ScreenOS, la faille permettant de d&#233;chiffrer le trafic VPN remonterait &#224; ao&#251;t 2012. Celle permettant l&#39;acc&#232;s au pare-feu daterait d&#39;avril 2014. &lt;/p&gt; &lt;p&gt; Qui pourrait avoir introduit des &#171;portes d&#233;rob&#233;es&#187; ? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Jusqu&#39;ici, il n&#39;y a pas de preuve d&#39;intention malveillante,&lt;/em&gt; temp&#232;re un haut fonctionnaire fran&#231;ais responsable de la cybers&#233;curit&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;A ce stade, c&#39;est seulement une faille.&#187;&lt;/em&gt; Mais pour beaucoup d&#39;experts, ce &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;code non autoris&#233;&#187;&lt;/em&gt; ressemble &#224; tout sauf &#224; un bug. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Pour moi, &#231;a sent le &quot;nobus&quot;, &quot;nobody but us&quot; [personne d&#39;autre que nous], une strat&#233;gie cl&#233; de la NSA et d&#39;autres attaquants du m&#234;me ordre,&lt;/em&gt; &#233;crit sur son blog le chercheur am&#233;ricain &lt;span class=&quot;stubs&quot;&gt;Adam Caudill&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Des attaques qui n&#233;cessitent de conna&#238;tre un secret qu&#39;on ne peut pas d&#233;couvrir facilement, pour en tirer un avantage en minimisant les risques que d&#39;autres l&#39;exploitent.&#187;&lt;/em&gt; Dans les heures qui ont suivi l&#39;annonce, Twitter a bruiss&#233; de r&#233;f&#233;rences &#224; l&#39;un des documents r&#233;v&#233;l&#233;s par &lt;span class=&quot;stubs&quot;&gt;Edward Snowden&lt;/span&gt;, publi&#233; en d&#233;cembre 2013 par le &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;span class=&quot;stubs&quot;&gt;Spiegel&lt;/span&gt; &lt;/em&gt;. Lequel portait sur un &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;outil&#187;&lt;/em&gt; baptis&#233; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Feedtrough&#187;&lt;/em&gt;, d&#233;crit par l&#39;agence am&#233;ricaine comme une technique d&#39;implantation de logiciel espion - utilis&#233;e contre &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;de nombreuses plateformes&#187;&lt;/em&gt;, dont les pare-feu NetScreen de Juniper... &lt;/p&gt; &lt;p&gt; Reste que, depuis l&#39;annonce de l&#39;entreprise, les autorit&#233;s am&#233;ricaines sont manifestement aux cent coups. CNN a r&#233;v&#233;l&#233; que le FBI enqu&#234;tait sur l&#39;affaire, et cit&#233; des &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;responsables&#187;&lt;/em&gt; anonymes, selon lesquels les &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;hackers sophistiqu&#233;s&#187;&lt;/em&gt; qui ont compromis les &#233;quipements auraient pu s&#39;introduire dans les r&#233;seaux de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;n&#39;importe quelle entreprise ou agence gouvernementale qui [les] utilise&#187;&lt;/em&gt;. La NSA, il est vrai, n&#39;a pas l&#39;apanage des &lt;em style=&quot;font-style:italic;&quot;&gt;backdoors&lt;/em&gt; ni des logiciels malveillants. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Pour &#234;tre clairs, nous ne travaillons pas avec des gouvernements ou avec qui que ce soit d&#39;autre pour introduire des vuln&#233;rabilit&#233;s dans nos produits&#187;&lt;/em&gt;, a assur&#233;, de son c&#244;t&#233;, Juniper &#224; &lt;em style=&quot;font-style:italic;&quot;&gt;Forbes&lt;/em&gt;. Et rien ne dit, par ailleurs, que les deux failles proviennent de la m&#234;me source. Mais les experts s&#39;accordent sur un point : la faille qui permet de d&#233;chiffrer des communications int&#233;resserait surtout un attaquant capable de surveiller le trafic VPN. Les soup&#231;ons se portent d&#39;abord sur les Etats. &lt;/p&gt; &lt;p&gt; Est-ce grave ? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;C&#39;est critique pour toutes les organisations qui utilisent du mat&#233;riel Juniper&#187;&lt;/em&gt;, juge &lt;span class=&quot;stubs&quot;&gt;Rapha&#235;l Vinot&lt;/span&gt;, chercheur en s&#233;curit&#233; au CIRCL (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;span class=&quot;stubs&quot;&gt;Computer Incident Response Center Luxembourg&lt;/span&gt;, &lt;/em&gt; le centre d&#39;alerte et de r&#233;action aux attaques informatiques luxembourgeois). Or l&#39;entreprise est &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;le num&#233;ro 2 mondial apr&#232;s &lt;span class=&quot;stubs&quot;&gt;Cisco&lt;/span&gt;&#187; &lt;/em&gt;, rappelle &lt;span class=&quot;stubs&quot;&gt;St&#233;phane Bortzmeyer&lt;/span&gt;. Elle compte parmi ses clients des acteurs priv&#233;s majeurs - entreprises de t&#233;l&#233;communications, fournisseurs d&#39;acc&#232;s &#224; Internet, h&#233;bergeurs, banques, entreprises de l&#39;&#233;nergie... - et des structures gouvernementales. Dont, aux Etats-Unis, les d&#233;partements de la Justice, de la D&#233;fense, du &lt;span class=&quot;stubs&quot;&gt;Tr&#233;sor&lt;/span&gt;, et le FBI. &lt;/p&gt; &lt;p&gt; En France aussi, Juniper compte de nombreux utilisateurs. Y compris, reconna&#238;t le haut fonctionnaire fran&#231;ais, des &#171;op&#233;rateurs d&#39;importance vitale&#187; (OIV), des entreprises jug&#233;es strat&#233;giques (dans l&#39;&#233;nergie, les transports, etc.). Et des minist&#232;res. En septembre 2015, une annonce de march&#233; public pour les minist&#232;res de l&#39;Ecologie et du Logement portait sur la maintenance de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;pare-feu Juniper et ISG2000&#187;&lt;/em&gt;. Plus critique : une autre annonce, &#233;mise en novembre 2013 par la Direction interarm&#233;es des r&#233;seaux d&#39;infrastructure et des syst&#232;mes d&#39;information de la d&#233;fense (Dirisi), portait, elle, sur la fourniture de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;prestations de formation&#187;&lt;/em&gt;, notamment pour la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;supervision/administration des coupe-feu Juniper ISG1000&#187;&lt;/em&gt;. On trouve aussi trace de mat&#233;riel NetScreen au &lt;span class=&quot;stubs&quot;&gt;minist&#232;re du Travail&lt;/span&gt; en 2010. Pour le haut fonctionnaire fran&#231;ais, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;c&#39;est d&#39;autant moins pardonnable que des alternatives fran&#231;aises, labellis&#233;es, existent&#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Pour l&#39;heure, l&#39;Etat-major des arm&#233;es n&#39;a pas encore r&#233;pondu &#224; nos questions. Du c&#244;t&#233; de l&#39;&lt;span class=&quot;stubs&quot;&gt;Agence nationale de s&#233;curit&#233; des syst&#232;mes d&#39;information&lt;/span&gt; (Anssi), qui supervise la s&#233;curit&#233; des r&#233;seaux de l&#39;Etat et celle des OIV, on indique avoir, d&#232;s le vendredi, mis en ligne un bulletin d&#39;alerte, mais &#233;galement l&#39;avoir &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;envoy&#233; pour application &#224; tous les minist&#232;res&#187;&lt;/em&gt;, compte tenu de l&#39;importance du sujet. Et l&#39;agence se tient &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;pr&#234;te &#224; mettre &#224; jour l&#39;alerte en fonction des &#233;volutions&#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; D&#39;apr&#232;s les &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;responsables&#187;&lt;/em&gt; am&#233;ricains interrog&#233;s par CNN, les &#233;quipements Juniper sont &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;si largement utilis&#233;s, qu&#39;&#233;valuer les dommages caus&#233;s pourrait prendre du temps&#187;&lt;/em&gt;. Encore faut-il que ce soit possible. Le d&#233;chiffrement du trafic VPN ne laisse aucune trace. Et l&#39;acc&#232;s &#224; distance &#224; un pare-feu est, en th&#233;orie, enregistr&#233; dans un fichier, un &#171;journal de connexion&#187;... sauf si l&#39;attaquant prend soin d&#39;effacer ses traces, ce qu&#39;un pirate chevronn&#233; n&#39;aurait pas manqu&#233; de faire. Ainsi, quand le directeur des syst&#232;mes d&#39;information de Juniper annonce n&#39;avoir re&#231;u &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;aucun rapport indiquant que ces vuln&#233;rabilit&#233;s ont &#233;t&#233; exploit&#233;es&#187;&lt;/em&gt;, cela ne signifie pas, loin s&#39;en faut, qu&#39;elles ne l&#39;ont pas &#233;t&#233;. &lt;/p&gt; &lt;p&gt; Et maintenant ? &lt;/p&gt; &lt;p&gt; En m&#234;me temps que les avertissements de s&#233;curit&#233;, Juniper a publi&#233; des correctifs. Il est d&#39;autant plus urgent de les appliquer que les pare-feu vuln&#233;rables sont d&#233;sormais &#224; la merci d&#39;attaquants beaucoup moins chevronn&#233;s que ceux qui auraient pu agir jusqu&#39;ici. Comme l&#39;a indiqu&#233; sur Twitter son directeur, &lt;span class=&quot;stubs&quot;&gt;Ronald Prins&lt;/span&gt;, il n&#39;a fallu que six heures au consultant n&#233;erlandais en s&#233;curit&#233; informatique Fox-IT pour, d&#232;s vendredi, d&#233;duire du correctif le mot de passe qui permet l&#39;acc&#232;s malveillant aux &#233;quipements. Et qui circule depuis dimanche soir sur le r&#233;seau social. Or, d&#39;apr&#232;s les recherches effectu&#233;es sur Shodan, un moteur de recherche sp&#233;cialis&#233;, par un chercheur am&#233;ricain, 26 000 pare-feu NetScreen sont accessibles sur Internet. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;La plupart des entreprises ne prot&#232;gent pas assez leur code et ne le lisent pas assez,&lt;/em&gt;soupire &lt;span class=&quot;stubs&quot;&gt;St&#233;phane Bortzmeyer&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Or, comme il n&#39;est pas public, il ne peut pas &#234;tre audit&#233; par des chercheurs ind&#233;pendants.&#187;&lt;/em&gt; Dans cette affaire, les partisans des logiciels en &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;&lt;/em&gt; (ceux dont le code est en libre acc&#232;s) ont de quoi trouver un nouvel argument. Et une raison suppl&#233;mentaire de se m&#233;fier des &#171;bo&#238;tes noires&#187; commercialis&#233;es par les grands constructeurs.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;2 juillet 1991&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;1 f&amp;#233;vrier 2004&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;23 mars 2004&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;16 juin 2005&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;5 d&amp;#233;cembre 2007&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;9 janvier 2008&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;30 janvier 2008&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;10 juillet 2009&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;16 septembre 2011&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;12 juin 2012&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;17 septembre 2012&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;24 janvier 2013&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;22 ao&amp;#251;t 2013&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;29 janvier 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;6 f&amp;#233;vrier 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;1 mars 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;14 juillet 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;7 d&amp;#233;cembre 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;25 janvier 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;1 mars 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;13 octobre 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2015 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20151222&amp;#183;LI&amp;#183;975f9bc6-a812-11e5-9730-4f8e8d8185e7&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">systèmes d'information</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fonctionnaire français</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">avertissements de sécurité</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sécurité des réseaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Cisco</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Stéphane Bortzmeyer</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Edward Snowden</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Gilles Massen</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Ronald Prins</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">Spiegel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Twitter Inc.</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Cable News Network</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Computer Incident Response Center Luxembourg</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Trésor</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Forbes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720151222%c2%b7LI%c2%b7975f9bc6-a812-11e5-9730-4f8e8d8185e7" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720151222%c2%b7LI%c2%b7975f9bc6-a812-11e5-9730-4f8e8d8185e7">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Futurs,         mardi 22 décembre 2015 1298 mots, p. 18</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Décryptage</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Espion es-tu là ?            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le fabricant d'équipements réseau Juniper a détecté du «code non autorisé» dans un de ses systèmes d'exploitation. Des failles inquiétantes pour les clients. Explications.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Amaelle Guiton</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>C'est une très mauvaise nouvelle sur le front de la sécurité informatique. Jeudi soir, l'Américain Juniper Networks, principal concurrent de son compatriote <span class="stubs">Cisco</span> sur le marché des routeurs et des solutions de sécurité des réseaux, a annoncé deux failles majeures affectant des équipements utilisés par de très nombreuses entreprises dans le monde, mais aussi par des services gouvernementaux. Des failles dues à la présence de <em style="font-style:italic;">«code non autorisé»</em> dans le système d'exploitation installé sur les équipements concernés : la formule utilisée par l'entreprise laisse assez peu de doutes sur le caractère intentionnel de l'opération. Selon toute probabilité, il s'agit de «portes dérobées», des <em style="font-style:italic;">backdoors</em> , inconnues des usagers mais susceptibles d'avoir été utilisées par un cyberattaquant.</p>
+
+
+<p>A lire aussi Tech-mots : «Backdoor», «VPN», «patch», «pare-feu» et «log» </p> <p> Que s'est-il passé ? </p> <p> Avant les avertissements de sécurité publiés par Juniper, <span class="stubs">Gilles Massen</span>, ingénieur sécurité à la fondation <span class="stubs">Restena au Luxembourg</span>, avait signalé un problème. <em style="font-style:italic;">«Vers la mi-novembre, nous avons fait une mise à jour de routine, suite à laquelle nous ne pouvions plus nous connecter à nos pare-feu Juniper,</em> explique-t-il à <em style="font-style:italic;">Libération</em>. <em style="font-style:italic;">A part quelques allers-retours, il n'y a rien eu de concret. La portée réelle nous est apparue seulement avec les deux avertissements.»</em> Est-ce suite à ce signalement que l'entreprise américaine a mené la <em style="font-style:italic;">«revue de code interne»</em> qui a conduit à la détection des failles ? <em style="font-style:italic;">«Si nos collègues luxembourgeois ont raison, cela veut dire qu'elles ont été découvertes par accident»</em>, souligne l'ingénieur réseaux français <span class="stubs">Stéphane Bortzmeyer</span>. Les failles affectent ScreenOS, le système d'exploitation qui équipe les routeurs pare-feu des gammes NetScreen, ISG et SSG. La première permet de se connecter à distance, en «mode administrateur» (c'est-à-dire en disposant du maximum d'autorisations), à un pare-feu sous ScreenOS, ce qui peut entraîner la <em style="font-style:italic;">«compromission complète»</em> du réseau qu'il est censé protéger, a averti Juniper. La seconde concerne la fonctionnalité VPN - une technologie qui permet la communication sécurisée à distance <em style="font-style:italic;">(lire lexique, ci-contre)</em> - des routeurs : un attaquant en capacité de surveiller le trafic VPN pourrait <em style="font-style:italic;">«déchiffrer ce trafic»</em>. D'après les dates de publication des documentations techniques concernant les versions affectées de ScreenOS, la faille permettant de déchiffrer le trafic VPN remonterait à août 2012. Celle permettant l'accès au pare-feu daterait d'avril 2014. </p> <p> Qui pourrait avoir introduit des «portes dérobées» ? </p> <p><em style="font-style:italic;">«Jusqu'ici, il n'y a pas de preuve d'intention malveillante,</em> tempère un haut fonctionnaire français responsable de la cybersécurité. <em style="font-style:italic;">A ce stade, c'est seulement une faille.»</em> Mais pour beaucoup d'experts, ce <em style="font-style:italic;">«code non autorisé»</em> ressemble à tout sauf à un bug. <em style="font-style:italic;">«Pour moi, ça sent le "nobus", "nobody but us" [personne d'autre que nous], une stratégie clé de la NSA et d'autres attaquants du même ordre,</em> écrit sur son blog le chercheur américain <span class="stubs">Adam Caudill</span>. <em style="font-style:italic;">Des attaques qui nécessitent de connaître un secret qu'on ne peut pas découvrir facilement, pour en tirer un avantage en minimisant les risques que d'autres l'exploitent.»</em> Dans les heures qui ont suivi l'annonce, Twitter a bruissé de références à l'un des documents révélés par <span class="stubs">Edward Snowden</span>, publié en décembre 2013 par le <em style="font-style:italic;"><span class="stubs">Spiegel</span> </em>. Lequel portait sur un <em style="font-style:italic;">«outil»</em> baptisé <em style="font-style:italic;">«Feedtrough»</em>, décrit par l'agence américaine comme une technique d'implantation de logiciel espion - utilisée contre <em style="font-style:italic;">«de nombreuses plateformes»</em>, dont les pare-feu NetScreen de Juniper... </p> <p> Reste que, depuis l'annonce de l'entreprise, les autorités américaines sont manifestement aux cent coups. CNN a révélé que le FBI enquêtait sur l'affaire, et cité des <em style="font-style:italic;">«responsables»</em> anonymes, selon lesquels les <em style="font-style:italic;">«hackers sophistiqués»</em> qui ont compromis les équipements auraient pu s'introduire dans les réseaux de <em style="font-style:italic;">«n'importe quelle entreprise ou agence gouvernementale qui [les] utilise»</em>. La NSA, il est vrai, n'a pas l'apanage des <em style="font-style:italic;">backdoors</em> ni des logiciels malveillants. <em style="font-style:italic;">«Pour être clairs, nous ne travaillons pas avec des gouvernements ou avec qui que ce soit d'autre pour introduire des vulnérabilités dans nos produits»</em>, a assuré, de son côté, Juniper à <em style="font-style:italic;">Forbes</em>. Et rien ne dit, par ailleurs, que les deux failles proviennent de la même source. Mais les experts s'accordent sur un point : la faille qui permet de déchiffrer des communications intéresserait surtout un attaquant capable de surveiller le trafic VPN. Les soupçons se portent d'abord sur les Etats. </p> <p> Est-ce grave ? </p> <p><em style="font-style:italic;">«C'est critique pour toutes les organisations qui utilisent du matériel Juniper»</em>, juge <span class="stubs">Raphaël Vinot</span>, chercheur en sécurité au CIRCL (<em style="font-style:italic;"><span class="stubs">Computer Incident Response Center Luxembourg</span>, </em> le centre d'alerte et de réaction aux attaques informatiques luxembourgeois). Or l'entreprise est <em style="font-style:italic;">«le numéro 2 mondial après <span class="stubs">Cisco</span>» </em>, rappelle <span class="stubs">Stéphane Bortzmeyer</span>. Elle compte parmi ses clients des acteurs privés majeurs - entreprises de télécommunications, fournisseurs d'accès à Internet, hébergeurs, banques, entreprises de l'énergie... - et des structures gouvernementales. Dont, aux Etats-Unis, les départements de la Justice, de la Défense, du <span class="stubs">Trésor</span>, et le FBI. </p> <p> En France aussi, Juniper compte de nombreux utilisateurs. Y compris, reconnaît le haut fonctionnaire français, des «opérateurs d'importance vitale» (OIV), des entreprises jugées stratégiques (dans l'énergie, les transports, etc.). Et des ministères. En septembre 2015, une annonce de marché public pour les ministères de l'Ecologie et du Logement portait sur la maintenance de <em style="font-style:italic;">«pare-feu Juniper et ISG2000»</em>. Plus critique : une autre annonce, émise en novembre 2013 par la Direction interarmées des réseaux d'infrastructure et des systèmes d'information de la défense (Dirisi), portait, elle, sur la fourniture de <em style="font-style:italic;">«prestations de formation»</em>, notamment pour la <em style="font-style:italic;">«supervision/administration des coupe-feu Juniper ISG1000»</em>. On trouve aussi trace de matériel NetScreen au <span class="stubs">ministère du Travail</span> en 2010. Pour le haut fonctionnaire français, <em style="font-style:italic;">«c'est d'autant moins pardonnable que des alternatives françaises, labellisées, existent»</em>. </p> <p> Pour l'heure, l'Etat-major des armées n'a pas encore répondu à nos questions. Du côté de l'<span class="stubs">Agence nationale de sécurité des systèmes d'information</span> (Anssi), qui supervise la sécurité des réseaux de l'Etat et celle des OIV, on indique avoir, dès le vendredi, mis en ligne un bulletin d'alerte, mais également l'avoir <em style="font-style:italic;">«envoyé pour application à tous les ministères»</em>, compte tenu de l'importance du sujet. Et l'agence se tient <em style="font-style:italic;">«prête à mettre à jour l'alerte en fonction des évolutions»</em>. </p> <p> D'après les <em style="font-style:italic;">«responsables»</em> américains interrogés par CNN, les équipements Juniper sont <em style="font-style:italic;">«si largement utilisés, qu'évaluer les dommages causés pourrait prendre du temps»</em>. Encore faut-il que ce soit possible. Le déchiffrement du trafic VPN ne laisse aucune trace. Et l'accès à distance à un pare-feu est, en théorie, enregistré dans un fichier, un «journal de connexion»... sauf si l'attaquant prend soin d'effacer ses traces, ce qu'un pirate chevronné n'aurait pas manqué de faire. Ainsi, quand le directeur des systèmes d'information de Juniper annonce n'avoir reçu <em style="font-style:italic;">«aucun rapport indiquant que ces vulnérabilités ont été exploitées»</em>, cela ne signifie pas, loin s'en faut, qu'elles ne l'ont pas été. </p> <p> Et maintenant ? </p> <p> En même temps que les avertissements de sécurité, Juniper a publié des correctifs. Il est d'autant plus urgent de les appliquer que les pare-feu vulnérables sont désormais à la merci d'attaquants beaucoup moins chevronnés que ceux qui auraient pu agir jusqu'ici. Comme l'a indiqué sur Twitter son directeur, <span class="stubs">Ronald Prins</span>, il n'a fallu que six heures au consultant néerlandais en sécurité informatique Fox-IT pour, dès vendredi, déduire du correctif le mot de passe qui permet l'accès malveillant aux équipements. Et qui circule depuis dimanche soir sur le réseau social. Or, d'après les recherches effectuées sur Shodan, un moteur de recherche spécialisé, par un chercheur américain, 26 000 pare-feu NetScreen sont accessibles sur Internet. </p> <p><em style="font-style:italic;">«La plupart des entreprises ne protègent pas assez leur code et ne le lisent pas assez,</em>soupire <span class="stubs">Stéphane Bortzmeyer</span>. <em style="font-style:italic;">Or, comme il n'est pas public, il ne peut pas être audité par des chercheurs indépendants.»</em> Dans cette affaire, les partisans des logiciels en <em style="font-style:italic;"><mark>open</mark> <mark>source</mark></em> (ceux dont le code est en libre accès) ont de quoi trouver un nouvel argument. Et une raison supplémentaire de se méfier des «boîtes noires» commercialisées par les grands constructeurs.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">2 juillet 1991</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">1 février 2004</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">23 mars 2004</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">16 juin 2005</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">5 décembre 2007</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">9 janvier 2008</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">30 janvier 2008</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">10 juillet 2009</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">16 septembre 2011</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">12 juin 2012</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">17 septembre 2012</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">24 janvier 2013</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">22 août 2013</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">29 janvier 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">6 février 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">1 mars 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">14 juillet 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">7 décembre 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">25 janvier 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">1 mars 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">13 octobre 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2015 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20151222·LI·975f9bc6-a812-11e5-9730-4f8e8d8185e7</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20151222·LI·975f9bc6-a812-11e5-9730-4f8e8d8185e7";
+    var _docIndex = 688;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"edward snowden":"91936"};
+		var _orgDic = {"agence nationale de sécurité des systèmes d'information":"95993"};
+		var _docName = 'news·20151222·LI·975f9bc6-a812-11e5-9730-4f8e8d8185e7';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720151222%C2%B7LI%C2%B7975f9bc6-a812-11e5-9730-4f8e8d8185e7&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720151222%C2%B7LI%C2%B7975f9bc6-a812-11e5-9730-4f8e8d8185e7&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720151222%C2%B7LI%C2%B7975f9bc6-a812-11e5-9730-4f8e8d8185e7&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720151222%C2%B7LI%C2%B7975f9bc6-a812-11e5-9730-4f8e8d8185e7&docIndex=688&FullScreen=1";
+                
+	var _keyDoc = 'news·20151222·LI·975f9bc6-a812-11e5-9730-4f8e8d8185e7';
+</script>
+</div></body></html>

@@ -1,0 +1,577 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24526                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         jeudi 29 juin 2023 932 mots, p. 24&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Entreprises         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171; L&#39;IA va bient&#244;t cr&#233;er 80 % du code informatique &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Pour Thomas Dohmke, patron de GitHub, l&#39;IA r&#233;volutionne d&#233;j&#224; le travail des d&#233;veloppeurs.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Woitier, Chlo&#233;, Vergara, Ingrid&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;IA&lt;/em&gt; Pour avoir un avant-go&#251;t de l&#39;impact de l&#39;intelligence artificielle g&#233;n&#233;rative sur le travail, il suffit d&#39;ouvrir la porte des services informatiques. Voil&#224; bient&#244;t deux ans que les d&#233;veloppeurs ont acc&#232;s &#224; Copilot, une intelligence artificielle qui les aide &#224; &#233;crire, compl&#233;ter ou corriger du code informatique. Cr&#233;&#233; &#224; partir du mod&#232;le de langage GPT de OpenAI, celui-l&#224; m&#234;me qui nourrit le c&#233;l&#232;bre chatbot ChatGPT, Copilot est com- mercialis&#233; par GitHub &#224; destination des d&#233;veloppeurs informatiques, qu&#39;ils soient particuliers ou professionnels. &lt;/p&gt; &lt;p&gt; Rachet&#233; en 2018 par Microsoft pour 7,5 milliards de dollars, GitHub est une plateforme &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; de partage de code informatique utilis&#233;e par 4 millions d&#39;entreprises, dont 90 des plus grands groupes am&#233;ricains. Son chiffre d&#39;affaires annuel d&#233;passe le milliard de dollars, et Copilot s&#39;appr&#234;te &#224; en repr&#233;senter une part substantielle. &#171; Plus de 1 million de d&#233;veloppeurs utilisent Copilot, et nous en avons d&#39;ailleurs plus en Europe qu&#39;aux &#201;tats-Unis ! Je peux &#233;galement annoncer que nous avons d&#233;sormais 20 000 entreprises clientes de Copilot for Business, telles que Coca Cola, General Motors ou Airbnb &#187; , indique au &lt;em style=&quot;font-style:italic;&quot;&gt;Figaro&lt;/em&gt; le directeur g&#233;n&#233;ral de GitHub, Thomas Dohmke.&lt;/p&gt;
+
+
+&lt;p&gt;Comme son nom l&#39;indique, Copilot assiste le d&#233;veloppeur, mais ne fait pas tout le travail &#224; sa place. Le professionnel a le dernier mot et choisi d&#39;accepter, rejeter ou corriger les bouts de code que l&#39;IA lui sugg&#232;re. Et les performances de cette derni&#232;re ne font qu&#39;augmenter avec le temps. &#171; &#192; ce jour, 46 % du code &#233;crit par les d&#233;veloppeurs utilisant Copilot ont &#233;t&#233; sugg&#233;r&#233;s par l&#39;IA, contre 27 % en juin 2022. J&#39;avais dit l&#39;an pass&#233; que nous franchirons le seuil de 80 % du code informatique g&#233;n&#233;r&#233; par des IA d&#39;ici cinq ans, mais je pense d&#233;sormais que cela ira bien plus vite ! Plus vous maniez cette IA, plus vous apprenez &#224; l&#39;utiliser de mani&#232;re efficace &#187; , souligne le dirigeant allemand. Pour GitHub, l&#39;IA permet aux d&#233;veloppeurs de gagner un temps pr&#233;cieux sur les t&#226;ches r&#233;barbatives, et de le r&#233;investir dans la cr&#233;ativit&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Si vous &#234;tes frustr&#233; par votre travail au quotidien, vous n&#39;allez pas &#234;tre innovant. Il faut &#234;tre heureux pour &#234;tre cr&#233;atif &#187;&lt;/em&gt;, estime Thomas Dohmke. &lt;/p&gt; &lt;p&gt; Augmenter le nombre de d&#233;veloppeurs &lt;/p&gt; &lt;p&gt; Bient&#244;t, le d&#233;veloppeur pourra dialoguer dans sa langue natale avec Copilot pour lui poser des questions, lui demander de reformuler un code ou de lui expliquer pourquoi il y a un bug, ou pour chercher une information dans la documentation technique de la soci&#233;t&#233;. &#171; Bien des salari&#233;s fra&#238;chement embauch&#233;s n&#39;osent pas poser des questions sur des savoirs internes &#224; l&#39;entreprise, de peur de passer pour des incomp&#233;tents aux yeux de leurs nouveaux coll&#232;gues, et ils perdent du temps &#224; essayer de trouver eux-m&#234;mes la r&#233;ponse. Ils pourront se tourner vers Copilot &#187; , poursuit le dirigeant. &#192; ses yeux, cela pr&#233;figure les futurs assistants virtuels qui peupleront les r&#233;seaux des entreprises. &#171; Vous n&#39;aurez plus des &#233;quipes qui travaillent en silo et qui ignorent ce que font les autres. L&#39;IA le leur dira car cette connaissance sera partag&#233;e &#224; tous les &#233;chelons. Selon moi, l&#39;IA va encourager la collabora- tion. D&#39;ailleurs, je pr&#233;f&#232;re que l&#39;on parle d&#39;assistants que d&#39;intelligence artificielle. &#187; &lt;/p&gt; &lt;p&gt; Ce dialogue avec l&#39;IA en langage humain &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; devrait aussi nous permettre d&#39;avoir plus de 1 milliard de d&#233;veloppeurs dans le monde. Aujourd&#39;hui, il faut ma&#238;triser l&#39;anglais pour se former aux diff&#233;rents langages informatiques. Demain, vous pourrez parler avec Copilot dans votre langue &#187;&lt;/em&gt;, poursuit Thomas Dohmke. Dans une &#233;tude publi&#233;e mardi par l&#39;entreprise, GitHub estime que ce mouvement va permettre de d&#233;mocratiser l&#39;acc&#232;s aux m&#233;tiers du d&#233;veloppement logiciel &#224; des personnes qui n&#39;ont pas ou peu de connaissances techniques pouss&#233;es. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Un groupe industriel allemand a d&#233;cid&#233; d&#39;utiliser Copilot pour former ses ouvriers au d&#233;veloppement informatique &#187;&lt;/em&gt;, indique le dirigeant. &lt;/p&gt; &lt;p&gt; Plus globalement, GitHub constate que son IA b&#233;n&#233;ficie le plus aux d&#233;veloppeurs les moins exp&#233;riment&#233;s qui peuvent ainsi apprendre plus efficacement qu&#39;en lisant de la documentation. Cet effet se ressentirait aussi sur la fiabilit&#233; du code produit. &#171; En moyenne, les utilisateurs de Copilot &#233;crivent du code plus s&#251;r d&#39;un point de vue cybers&#233;curit&#233;. Bien s&#251;r, les tr&#232;s bons d&#233;veloppeurs ne sont pas concern&#233;s par ce probl&#232;me. Mais il est important de relever le niveau g&#233;n&#233;ral et de faire en sorte que chacun s&#39;am&#233;liore petit &#224; petit. &#187; &lt;/p&gt; &lt;p&gt; Mais Copilot suscite aussi la m&#233;fiance de certaines entreprises. Selon le &lt;em style=&quot;font-style:italic;&quot;&gt;Wall Street Journal&lt;/em&gt;, Apple a ainsi interdit &#224; ses salari&#233;s d&#39;utiliser cet outil par crainte que cette IA n&#39;enregistre et ne &#171; recrache &#187; des donn&#233;es confidentielles et du code propri&#233;taire. &#171; Cela ne serait absolument pas dans notre int&#233;r&#234;t &#187; , r&#233;pond Thomas Dohmke. &#171; Le droit d&#39;auteur existe et nous ne voulons pas avoir du code prot&#233;g&#233; dans Copilot. Si cela arrivait par accident, cela signifie que nous serions oblig&#233;s de demander &#224; OpenAI d&#39;entra&#238;ner &#224; nouveau son mod&#232;le de langage, ce qui prend du temps et est extr&#234;mement co&#251;teux. Plus largement, Microsoft a aussi une r&#233;putation &#224; prot&#233;ger. C&#39;est parce que les entreprises font confiance &#224; Microsoft qu&#39;elles y h&#233;bergent leurs donn&#233;es et leurs e-mails. Nous partageons ce m&#234;me &#233;tat d&#39;esprit chez GitHub et les donn&#233;es de nos clients sont s&#233;curis&#233;es &#187; , promet-il. &lt;/p&gt; &lt;p&gt; GitHub, Microsoft et OpenAI sont toutefois poursuivis en justice aux &#201;tats-Unis pour violation de la propri&#233;t&#233; intellectuelle. L&#39;IA a en effet &#233;t&#233; entra&#238;n&#233;e sur des milliards de lignes de code en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, mais elle ne cr&#233;dite pas leurs auteurs. Ouverte fin 2022, la &#171; class action &#187; suit son cours. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&#171; Plus vous maniez cette IA, plus vous apprenez &#224; l&#39;utiliser de mani&#232;re efficace &#187; , souligne Thomas Dohmke, directeur g&#233;n&#233;ral de GitHub. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;GitHub &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:cwoitier@lefigaro.fr&quot;&gt;cwoitier@lefigaro.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;a href=&quot;mailto:ivergara@lefigaro.fr&quot;&gt; ivergara@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;28 juin 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230629&amp;#183;LF&amp;#183;1062&amp;#215;20&amp;#215;2695720020&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèle de langage</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">directeur général</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">code informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">violation de la propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Services aux entreprises</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Automobiles</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230629%c2%b7LF%c2%b71062%c3%9720%c3%972695720020" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230629%c2%b7LF%c2%b71062%c3%9720%c3%972695720020">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24526                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         jeudi 29 juin 2023 932 mots, p. 24</span>
+</div>
+
+    <div>
+        <p>
+Entreprises         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+« L'IA va bientôt créer 80 % du code informatique »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Pour Thomas Dohmke, patron de GitHub, l'IA révolutionne déjà le travail des développeurs.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Woitier, Chloé, Vergara, Ingrid</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">IA</em> Pour avoir un avant-goût de l'impact de l'intelligence artificielle générative sur le travail, il suffit d'ouvrir la porte des services informatiques. Voilà bientôt deux ans que les développeurs ont accès à Copilot, une intelligence artificielle qui les aide à écrire, compléter ou corriger du code informatique. Créé à partir du modèle de langage GPT de OpenAI, celui-là même qui nourrit le célèbre chatbot ChatGPT, Copilot est com- mercialisé par GitHub à destination des développeurs informatiques, qu'ils soient particuliers ou professionnels. </p> <p> Racheté en 2018 par Microsoft pour 7,5 milliards de dollars, GitHub est une plateforme <mark>open</mark> <mark>source</mark> de partage de code informatique utilisée par 4 millions d'entreprises, dont 90 des plus grands groupes américains. Son chiffre d'affaires annuel dépasse le milliard de dollars, et Copilot s'apprête à en représenter une part substantielle. « Plus de 1 million de développeurs utilisent Copilot, et nous en avons d'ailleurs plus en Europe qu'aux États-Unis ! Je peux également annoncer que nous avons désormais 20 000 entreprises clientes de Copilot for Business, telles que Coca Cola, General Motors ou Airbnb » , indique au <em style="font-style:italic;">Figaro</em> le directeur général de GitHub, Thomas Dohmke.</p>
+
+
+<p>Comme son nom l'indique, Copilot assiste le développeur, mais ne fait pas tout le travail à sa place. Le professionnel a le dernier mot et choisi d'accepter, rejeter ou corriger les bouts de code que l'IA lui suggère. Et les performances de cette dernière ne font qu'augmenter avec le temps. « À ce jour, 46 % du code écrit par les développeurs utilisant Copilot ont été suggérés par l'IA, contre 27 % en juin 2022. J'avais dit l'an passé que nous franchirons le seuil de 80 % du code informatique généré par des IA d'ici cinq ans, mais je pense désormais que cela ira bien plus vite ! Plus vous maniez cette IA, plus vous apprenez à l'utiliser de manière efficace » , souligne le dirigeant allemand. Pour GitHub, l'IA permet aux développeurs de gagner un temps précieux sur les tâches rébarbatives, et de le réinvestir dans la créativité. <em style="font-style:italic;">« Si vous êtes frustré par votre travail au quotidien, vous n'allez pas être innovant. Il faut être heureux pour être créatif »</em>, estime Thomas Dohmke. </p> <p> Augmenter le nombre de développeurs </p> <p> Bientôt, le développeur pourra dialoguer dans sa langue natale avec Copilot pour lui poser des questions, lui demander de reformuler un code ou de lui expliquer pourquoi il y a un bug, ou pour chercher une information dans la documentation technique de la société. « Bien des salariés fraîchement embauchés n'osent pas poser des questions sur des savoirs internes à l'entreprise, de peur de passer pour des incompétents aux yeux de leurs nouveaux collègues, et ils perdent du temps à essayer de trouver eux-mêmes la réponse. Ils pourront se tourner vers Copilot » , poursuit le dirigeant. À ses yeux, cela préfigure les futurs assistants virtuels qui peupleront les réseaux des entreprises. « Vous n'aurez plus des équipes qui travaillent en silo et qui ignorent ce que font les autres. L'IA le leur dira car cette connaissance sera partagée à tous les échelons. Selon moi, l'IA va encourager la collabora- tion. D'ailleurs, je préfère que l'on parle d'assistants que d'intelligence artificielle. » </p> <p> Ce dialogue avec l'IA en langage humain <em style="font-style:italic;">« devrait aussi nous permettre d'avoir plus de 1 milliard de développeurs dans le monde. Aujourd'hui, il faut maîtriser l'anglais pour se former aux différents langages informatiques. Demain, vous pourrez parler avec Copilot dans votre langue »</em>, poursuit Thomas Dohmke. Dans une étude publiée mardi par l'entreprise, GitHub estime que ce mouvement va permettre de démocratiser l'accès aux métiers du développement logiciel à des personnes qui n'ont pas ou peu de connaissances techniques poussées. <em style="font-style:italic;">« Un groupe industriel allemand a décidé d'utiliser Copilot pour former ses ouvriers au développement informatique »</em>, indique le dirigeant. </p> <p> Plus globalement, GitHub constate que son IA bénéficie le plus aux développeurs les moins expérimentés qui peuvent ainsi apprendre plus efficacement qu'en lisant de la documentation. Cet effet se ressentirait aussi sur la fiabilité du code produit. « En moyenne, les utilisateurs de Copilot écrivent du code plus sûr d'un point de vue cybersécurité. Bien sûr, les très bons développeurs ne sont pas concernés par ce problème. Mais il est important de relever le niveau général et de faire en sorte que chacun s'améliore petit à petit. » </p> <p> Mais Copilot suscite aussi la méfiance de certaines entreprises. Selon le <em style="font-style:italic;">Wall Street Journal</em>, Apple a ainsi interdit à ses salariés d'utiliser cet outil par crainte que cette IA n'enregistre et ne « recrache » des données confidentielles et du code propriétaire. « Cela ne serait absolument pas dans notre intérêt » , répond Thomas Dohmke. « Le droit d'auteur existe et nous ne voulons pas avoir du code protégé dans Copilot. Si cela arrivait par accident, cela signifie que nous serions obligés de demander à OpenAI d'entraîner à nouveau son modèle de langage, ce qui prend du temps et est extrêmement coûteux. Plus largement, Microsoft a aussi une réputation à protéger. C'est parce que les entreprises font confiance à Microsoft qu'elles y hébergent leurs données et leurs e-mails. Nous partageons ce même état d'esprit chez GitHub et les données de nos clients sont sécurisées » , promet-il. </p> <p> GitHub, Microsoft et OpenAI sont toutefois poursuivis en justice aux États-Unis pour violation de la propriété intellectuelle. L'IA a en effet été entraînée sur des milliards de lignes de code en <mark>open</mark> <mark>source</mark>, mais elle ne crédite pas leurs auteurs. Ouverte fin 2022, la « class action » suit son cours. </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">« Plus vous maniez cette IA, plus vous apprenez à l'utiliser de manière efficace » , souligne Thomas Dohmke, directeur général de GitHub. </div>.
+
+                <div class="ImageAttachFont">GitHub </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:cwoitier@lefigaro.fr">cwoitier@lefigaro.fr</a> </p> <p><a href="mailto:ivergara@lefigaro.fr"> ivergara@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">28 juin 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230629·LF·1062×20×2695720020</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230629·LF·1062×20×2695720020";
+    var _docIndex = 140;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230629·LF·1062×20×2695720020';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230629%C2%B7LF%C2%B71062%C3%9720%C3%972695720020&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230629%C2%B7LF%C2%B71062%C3%9720%C3%972695720020&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230629%C2%B7LF%C2%B71062%C3%9720%C3%972695720020&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230629%C2%B7LF%C2%B71062%C3%9720%C3%972695720020&docIndex=140&FullScreen=1";
+                
+	var _keyDoc = 'news·20230629·LF·1062×20×2695720020';
+</script>
+</div></body></html>

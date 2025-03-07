@@ -1,0 +1,513 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Monde des livres,         vendredi 1 f&amp;#233;vrier 2008 482 mots, p. LIV9&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde des livres         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;SCIENCE-FICTION / ACTUALITES&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Internet            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Pr&#232;s de 1 500 &#233;diteurs, libraires, biblioth&#233;caires et sp&#233;cialistes du livre ont d&#233;j&#224; sign&#233; l&#39;appel pour le livre de Lekti-ecriture.com, en r&#233;action &#224; la p&#233;tition lanc&#233;e par Jeff Bezos, PDG d&#39;Amazon, &#224; l&#39;adresse de ses clients fran&#231;ais, afin de d&#233;fendre la livraison gratuite des livres en France. Si &#171; Internet est une chance formidable pour le livre, la mise en place d&#39;un vaste monopole sur la vente en ligne de livres sur l&#39;Internet, avec Amazon.fr, menace de mani&#232;re profonde la diversit&#233; culturelle &#187;, estiment les responsables de l&#39;appel. Parmi les signataires figurent notamment l&#39;&#233;diteur Fran&#231;ois Maspero, mais aussi &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;, consid&#233;r&#233; comme le p&#232;re des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; aux Etats-Unis. L&#39;appel est en cours de traduction en anglais pour &#234;tre sign&#233; outre-Atlantique. &lt;/p&gt; &lt;p&gt; Editis &lt;/p&gt; &lt;p&gt; Les &#233;ditions Perrin et les Presses de la Renaissance, toutes deux filiales d&#39;Editis, ont d&#233;cid&#233; de se rapprocher. A compter du 1er f&#233;vrier, Xavier de Bartillat, PDG de Perrin, pr&#233;sidera les deux maisons. Alain No&#235;l, PDG des presses de la Renaissance, en devient le directeur litt&#233;raire. &#171; Chaque maison conservera son identit&#233;, mais je souhaite d&#233;velopper des projets personnels et fonder un monast&#232;re &#187;, explique Alain No&#235;l. La nouvelle entit&#233; aura 12 millions d&#39;euros de chiffre d&#39;affaires et emploiera une vingtaine de personnes.&lt;/p&gt;
+
+
+&lt;p&gt;Angoul&#234;me &lt;/p&gt; &lt;p&gt; La fr&#233;quentation du trente-cinqui&#232;me Festival international de BD d&#39;Angoul&#234;me a enregistr&#233; un record avec pr&#232;s de 220 000 entr&#233;es, selon le d&#233;l&#233;gu&#233; g&#233;n&#233;ral Franck Bondoux. Un chiffre qui s&#39;explique aussi par le beau temps et le retour des exposants en centre-ville. &lt;/p&gt; &lt;p&gt; Librairie &lt;/p&gt; &lt;p&gt; Un dispositif d&#39;aide aux &#171; librairies ind&#233;pendantes d&#39;excellence &#187; se met en place en r&#233;gion Poitou-Charentes. Les premi&#232;res chartes du dispositif con&#231;u par le conseil r&#233;gional, pr&#233;sid&#233; par S&#233;gol&#232;ne Royal, ont &#233;t&#233; sign&#233;es, lundi 28 janvier, par douze librairies. Le dispositif pr&#233;voit des aides allant de 15 000 &#224; 40 000 &lt;symbol value=&quot;euro&quot;&gt;&lt;/symbol&gt;. La r&#233;gion pr&#233;voit aussi une aide pour les &#233;diteurs au projet &#233;ditorial de 10 000 &lt;symbol value=&quot;euro&quot;&gt;&lt;/symbol&gt; et &#224; la promotion de 5 000 &lt;symbol value=&quot;euro&quot;&gt;&lt;/symbol&gt; par an. &lt;/p&gt; &lt;p&gt; T&#233;l&#233;vision &lt;/p&gt; &lt;p&gt; Le comit&#233; strat&#233;gique du Syndicat national de l&#39;&#233;dition (SNE) a &#233;tudi&#233;, mercredi 30 janvier, les deux rapports command&#233;s sur la place du livre &#224; la t&#233;l&#233;vision. Celui de Pascal Jos&#232;phe, de la soci&#233;t&#233; IMCA, indique que le nombre d&#39;&#233;missions consacr&#233;es aux livres &#224; la t&#233;l&#233;vision fran&#231;aise a cr&#251; de 1999 &#224; 2007, mais que les taux d&#39;audience sur la m&#234;me p&#233;riode ont fortement chut&#233;. Quant au rapport de Ronald Blunden (Hachette) sur le succ&#232;s de certaines &#233;missions &#224; l&#39;&#233;tranger, il montre que les &#233;missions d&#39;Oprah Winfrey aux Etats-Unis et &#171; &lt;mark&gt;Richard&lt;/mark&gt; &amp;amp; July &#187; en Grande-Bretagne sont suivies par un public populaire et souligne que le succ&#232;s de ces &#233;missions est confort&#233; par les clubs de lecture qui se cr&#233;ent autour. &lt;/p&gt; &lt;p&gt; Proc&#232;s &lt;/p&gt; &lt;p&gt; La premi&#232;re audience du proc&#232;s intent&#233; au moteur de recherche am&#233;ricain Google pour contrefa&#231;on, par le groupe La Martini&#232;re, rejoint par le SNE et la SGDL, est fix&#233; au 5 juin, devant la 3e chambre du tribunal de grande instance de Paris. &lt;/p&gt; &lt;p&gt; Prix &lt;/p&gt; &lt;p&gt; Prix des Deux-Magots : Dominique Barb&#233;ris, Quelque chose &#224; cacher (Gallimard); prix du Guardian, dot&#233; de 10 000 livres : Dinaw Mengestu, Les belles choses que porte le ciel; (Albin Michel); prix des libraires britanniques : Ir&#232;ne N&#233;mirovsky, Suite fran&#231;aise (Deno&#235;l); prix de la Biographie du &#171; Point &#187; : Patrick Lienhardt et Olivier Philipponnat, La Vie d&#39;Ir&#232;ne N&#233;mirovsky (Grasset-Deno&#235;l); prix Alberto-Benveniste pour la litt&#233;rature : Jean-Pierre Gatt&#233;gno, Avec vue sur le royaume (Actes Sud); pour la recherche, B&#233;atrice Perez, Inquisition, pouvoir, soci&#233;t&#233; (Champion); prix litt&#233;raire du Gouverneur g&#233;n&#233;ral : Sylvain Trudel, La Mer de la tranquillit&#233; (Les Allusifs); prix RFI T&#233;moin du Monde : Jean-Yves Loude, Coup de th&#233;&#226;tre &#224; S&#227;o Tom&#233; (Actes Sud); prix du Livre incorrect : Jean Clair, Malaise dans les mus&#233;es (Flammarion); prix Version Femina : Metin Arditi, La Fille des Louganis (Actes Sud); prix Saint-Valentin : Dominique Mainard, Je voudrais tant que tu te souviennes (Ed. Jo&#235;lle Losfeld); Didier Eribon est le laur&#233;at du James-Robert-Brudner Memorial Prize de l&#39;universit&#233; de Yale.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2008 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20080201&amp;#183;LM&amp;#183;0liv0508_1645217&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">presses de la renaissance</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">alain noël</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">lauréat du james-robert-brudner memorial prize</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">festival international de bd d'angoulême</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">librairies indépendantes d'excellence</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Arts et culture</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Commerce électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Les Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Angoulême</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bartillat</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Poitou-Charentes</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720080201%c2%b7LM%c2%b70liv0508_1645217" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720080201%c2%b7LM%c2%b70liv0508_1645217">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Monde des livres,         vendredi 1 février 2008 482 mots, p. LIV9</span>
+</div>
+
+    <div>
+        <p>
+Le Monde des livres         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">SCIENCE-FICTION / ACTUALITES</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Internet            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Près de 1 500 éditeurs, libraires, bibliothécaires et spécialistes du livre ont déjà signé l'appel pour le livre de Lekti-ecriture.com, en réaction à la pétition lancée par Jeff Bezos, PDG d'Amazon, à l'adresse de ses clients français, afin de défendre la livraison gratuite des livres en France. Si « Internet est une chance formidable pour le livre, la mise en place d'un vaste monopole sur la vente en ligne de livres sur l'Internet, avec Amazon.fr, menace de manière profonde la diversité culturelle », estiment les responsables de l'appel. Parmi les signataires figurent notamment l'éditeur François Maspero, mais aussi <mark>Richard</mark> <mark>Stallman</mark>, considéré comme le père des <mark>logiciels</mark> <mark>libres</mark> aux Etats-Unis. L'appel est en cours de traduction en anglais pour être signé outre-Atlantique. </p> <p> Editis </p> <p> Les éditions Perrin et les Presses de la Renaissance, toutes deux filiales d'Editis, ont décidé de se rapprocher. A compter du 1er février, Xavier de Bartillat, PDG de Perrin, présidera les deux maisons. Alain Noël, PDG des presses de la Renaissance, en devient le directeur littéraire. « Chaque maison conservera son identité, mais je souhaite développer des projets personnels et fonder un monastère », explique Alain Noël. La nouvelle entité aura 12 millions d'euros de chiffre d'affaires et emploiera une vingtaine de personnes.</p>
+
+
+<p>Angoulême </p> <p> La fréquentation du trente-cinquième Festival international de BD d'Angoulême a enregistré un record avec près de 220 000 entrées, selon le délégué général Franck Bondoux. Un chiffre qui s'explique aussi par le beau temps et le retour des exposants en centre-ville. </p> <p> Librairie </p> <p> Un dispositif d'aide aux « librairies indépendantes d'excellence » se met en place en région Poitou-Charentes. Les premières chartes du dispositif conçu par le conseil régional, présidé par Ségolène Royal, ont été signées, lundi 28 janvier, par douze librairies. Le dispositif prévoit des aides allant de 15 000 à 40 000 <symbol value="euro"></symbol>. La région prévoit aussi une aide pour les éditeurs au projet éditorial de 10 000 <symbol value="euro"></symbol> et à la promotion de 5 000 <symbol value="euro"></symbol> par an. </p> <p> Télévision </p> <p> Le comité stratégique du Syndicat national de l'édition (SNE) a étudié, mercredi 30 janvier, les deux rapports commandés sur la place du livre à la télévision. Celui de Pascal Josèphe, de la société IMCA, indique que le nombre d'émissions consacrées aux livres à la télévision française a crû de 1999 à 2007, mais que les taux d'audience sur la même période ont fortement chuté. Quant au rapport de Ronald Blunden (Hachette) sur le succès de certaines émissions à l'étranger, il montre que les émissions d'Oprah Winfrey aux Etats-Unis et « <mark>Richard</mark> &amp; July » en Grande-Bretagne sont suivies par un public populaire et souligne que le succès de ces émissions est conforté par les clubs de lecture qui se créent autour. </p> <p> Procès </p> <p> La première audience du procès intenté au moteur de recherche américain Google pour contrefaçon, par le groupe La Martinière, rejoint par le SNE et la SGDL, est fixé au 5 juin, devant la 3e chambre du tribunal de grande instance de Paris. </p> <p> Prix </p> <p> Prix des Deux-Magots : Dominique Barbéris, Quelque chose à cacher (Gallimard); prix du Guardian, doté de 10 000 livres : Dinaw Mengestu, Les belles choses que porte le ciel; (Albin Michel); prix des libraires britanniques : Irène Némirovsky, Suite française (Denoël); prix de la Biographie du « Point » : Patrick Lienhardt et Olivier Philipponnat, La Vie d'Irène Némirovsky (Grasset-Denoël); prix Alberto-Benveniste pour la littérature : Jean-Pierre Gattégno, Avec vue sur le royaume (Actes Sud); pour la recherche, Béatrice Perez, Inquisition, pouvoir, société (Champion); prix littéraire du Gouverneur général : Sylvain Trudel, La Mer de la tranquillité (Les Allusifs); prix RFI Témoin du Monde : Jean-Yves Loude, Coup de théâtre à São Tomé (Actes Sud); prix du Livre incorrect : Jean Clair, Malaise dans les musées (Flammarion); prix Version Femina : Metin Arditi, La Fille des Louganis (Actes Sud); prix Saint-Valentin : Dominique Mainard, Je voudrais tant que tu te souviennes (Ed. Joëlle Losfeld); Didier Eribon est le lauréat du James-Robert-Brudner Memorial Prize de l'université de Yale.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2008 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20080201·LM·0liv0508_1645217</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20080201·LM·0liv0508_1645217";
+    var _docIndex = 610;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20080201·LM·0liv0508_1645217';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720080201%C2%B7LM%C2%B70liv0508_1645217&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720080201%C2%B7LM%C2%B70liv0508_1645217&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720080201%C2%B7LM%C2%B70liv0508_1645217&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720080201%C2%B7LM%C2%B70liv0508_1645217&docIndex=610&FullScreen=1";
+                
+	var _keyDoc = 'news·20080201·LM·0liv0508_1645217';
+</script>
+</div></body></html>

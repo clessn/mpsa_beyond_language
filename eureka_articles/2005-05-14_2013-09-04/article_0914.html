@@ -1,0 +1,541 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+        &lt;img id=&quot;scrollToImg&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/interface/result/ico_IMAGE_jointe.gif&#39; align=&quot;right&quot;&gt;
+        &amp;nbsp;
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Economie,         mardi 22 novembre 2005 647 mots, p. MDE3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde ECONOMIE         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;DOSSIER Internet : les g&#233;ants de l&#39;industrie culturelle contre-attaquent Le droit d&#39;auteur affronte le choc du num&#233;rique&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La loi pourrait g&#233;n&#233;raliser le contr&#244;le de l&#39;usage des fichiers informatiques            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le caract&#232;re occulte de certains syst&#232;mes de protection fait d&#233;bat&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;St&#233;phane Foucart&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Pour mettre un terme &#224; la grande volatilit&#233; des fichiers prot&#233;g&#233;s par le droit d&#39;auteur qui circulent sur Internet, les producteurs de contenus num&#233;riques et les industriels du logiciel cherchent &#224; g&#233;n&#233;raliser les syst&#232;mes de DRM (Digital Rights Management, en fran&#231;ais Mesures techniques de protection - MTP). Ces dispositifs techniques permettent de limiter le nombre de copies et d&#39;encadrer &#233;troitement l&#39;usage fait des fichiers acquis depuis les plates-formes de t&#233;l&#233;chargement. &lt;/p&gt; &lt;p&gt; Certains acteurs du monde industriel ne cachent pas leur volont&#233; de voir de tels dispositifs int&#233;gr&#233;s &#224; tous les logiciels communiquants. Plusieurs semaines avant que le projet de loi sur le droit d&#39;auteur dans la soci&#233;t&#233; de l&#39;information ne soit examin&#233; par le Parlement, circule un projet d&#39;amendement au texte &#171; selon lequel tout &#233;diteur de programmes n&#39;ayant pas pris les mesures pour, en l&#39;&#233;tat de la technique, pr&#233;server les oeuvres et les objets contre un usage non autoris&#233; &#187; pourrait se voir poursuivi... pour contrefa&#231;on. &#171; Le grand acquis de la directive europ&#233;enne sur le droit d&#39;auteur [que la loi se propose de transposer dans le droit fran&#231;ais] est la protection juridique des mesures techniques anticopie &#187;, reconna&#238;t-on d&#39;ailleurs &#224; la Commission de Bruxelles.&lt;/p&gt;
+
+
+&lt;p&gt;Pour les ayants droit, l&#39;int&#233;r&#234;t est de r&#233;fr&#233;ner le piratage des oeuvres culturelles, op&#233;r&#233; gr&#226;ce aux r&#233;seaux d&#39;&#233;change peer-to-peer (P2P, ou pair-&#224;-pair) : si le fichier d&#39;origine est prot&#233;g&#233; par DRM, ses utilisations successives pourront &#234;tre suivies &#224; la trace. Mais pour les g&#233;ants du logiciel, l&#39;int&#233;r&#234;t est tout autre. Il s&#39;agit, pour Microsoft ou Apple, d&#39;accro&#238;tre leur contr&#244;le sur les formats des fichiers informatiques et les outils logiciels de lecture. Et, &#233;galement, d&#39;exclure les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ou non commerciaux du champ de la concurrence. &lt;/p&gt; &lt;p&gt; Actuellement, les dispositifs de DRM ne reposent que sur des programmes informatiques attach&#233;s aux fichiers nomades. Mais ils pourront, &#224; court terme, &#234;tre directement int&#233;gr&#233;s aux puces qui &#233;quipent les ordinateurs individuels. Le principe est simple. Lorsqu&#39;il est vendu ou &#233;chang&#233; sur une plate-forme de t&#233;l&#233;chargement, le fichier musical ou vid&#233;o est encrypt&#233;. Un second fichier - dit fichier de licence - est stock&#233; localement, sur le disque dur de l&#39;utilisateur. Lorsqu&#39;un logiciel de lecture tente d&#39;acc&#233;der au fichier musical, il appelle automatiquement le fichier de licence qui contient la cl&#233; cryptographique ad hoc, n&#233;cessaire pour lire l&#39;oeuvre. C&#39;est, notamment, le fichier de licence qui d&#233;termine le nombre de copies qu&#39;un utilisateur est autoris&#233; &#224; faire du fichier qu&#39;il a acquis. &lt;/p&gt; &lt;p&gt; &#171; C&#39;est une inversion de la logique des &#233;changes cryptographiques, met en garde Christophe Espern, un des animateurs de la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt; (FSF), association oppos&#233;e &#224; la g&#233;n&#233;ralisation des DRM. Dans un &#233;change cryptographique classique, les cl&#233;s sont mises &#224; la disposition de l&#39;utilisateur. Dans le cas des DRM, les cl&#233;s sont cach&#233;es sur le disque dur et seul le logiciel de lecture peut y acc&#233;der. &#187; Une particularit&#233; qui sous-entend que seuls des &#171; logiciels de confiance &#187; peuvent acc&#233;der &#224; certains contenus prot&#233;g&#233;s par des dispositifs de DRM. Ce d&#233;tail a son importance. &#171; Cela exclut de facto les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;open&lt;/mark&gt;-&lt;mark&gt;source&lt;/mark&gt; [libres] de la concurrence, puisque leur principe fondamental est d&#39;&#234;tre d&#233;velopp&#233;s en toute transparence, dit M. Espern. Aucun &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; ne peut lire les contenus prot&#233;g&#233;s par DRM. &#187; &lt;/p&gt; &lt;p&gt; Le caract&#232;re parfois occulte des syst&#232;mes de DRM est au centre de pol&#233;miques dans le monde des sp&#233;cialistes de s&#233;curit&#233; informatique. Fin octobre, des &#233;diteurs de logiciels antivirus ont ainsi d&#233;tect&#233; la pr&#233;sence d&#39;un petit programme sur les CD &#233;dit&#233;s par Sony-BMG, s&#39;installant &#224; l&#39;insu de l&#39;utilisateur sur le disque dur de son PC. Plusieurs &#233;diteurs de logiciels antivirus ont d&#233;cid&#233; de classer ce petit programme, baptis&#233; rootkit, dans la cat&#233;gorie des logiciels espions, ou spywares... &lt;/p&gt; &lt;p&gt; Les nouvelles g&#233;n&#233;rations de mat&#233;riels, dans la foul&#233;e du futur syst&#232;me d&#39;exploitation de Microsoft - Windows Vista, pr&#233;vu pour &#234;tre commercialis&#233; courant 2006 - int&#233;greront des syst&#232;mes qui permettront de renforcer les protections anticopie existantes. Le futur Windows comprendra en effet un module qui n&#39;autorisera l&#39;acc&#232;s de certaines zones de la m&#233;moire de l&#39;ordinateur qu&#39;&#224; des logiciels - y compris des pilotes de p&#233;riph&#233;riques - &#171; sign&#233;s &#187;, c&#39;est-&#224;-dire reconnus comme &#171; dignes de confiance &#187; par une autorit&#233; de certification telle, par exemple, la soci&#233;t&#233; am&#233;ricaine Verisign. Les logiciels devront donc en passer par un serveur distant pour obtenir l&#39;autorisation d&#39;acc&#233;der &#224; ces zones prot&#233;g&#233;es o&#249; pourraient &#234;tre stock&#233;s, par exemple, des fichiers prot&#233;g&#233;s par le droit d&#39;auteur. La possibilit&#233; de contourner le DRM serait alors quasi nulle. &lt;/p&gt; &lt;p&gt; L&#39;une des derni&#232;res failles &#224; tout syst&#232;me de protection des contenus num&#233;riques, appel&#233;e par les sp&#233;cialistes le &#171; trou analogique &#187;, pourrait aussi &#234;tre en passe d&#39;&#234;tre combl&#233;e. Il est en effet encore possible de r&#233;enregistrer et d&#39;encoder au format num&#233;rique la musique qui sort des haut-parleurs d&#39;un ordinateur personnel. Mais &#171; aux Etats-Unis, pr&#233;cise M. Espern, on teste d&#233;j&#224; des syst&#232;mes rendant impossible la conversion de flux analogiques en fichiers num&#233;riques &#187;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;div&gt;
+                    &lt;a href=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/WebPages/media.aspx?Type=image&amp;DocName=20051122LM006.jpg&amp;Logo=lm_small.gif&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;40&quot; height=&quot;40&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20051122LM006.jpg&quot; /&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;En 2006, le nouveau syst&#232;me d&#39;exploitation de Microsoft int&#233;grera une protection anticopie renforc&#233;e. PHOTO : AP, MICROSOFT/ERIK S. LESSER&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20051122&amp;#183;LM&amp;#183;0mde4705_1180818&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">droit d'auteur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fichier de licence</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">exploitation de microsoft</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">éditeurs de logiciels</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720051122%c2%b7LM%c2%b70mde4705_1180818" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720051122%c2%b7LM%c2%b70mde4705_1180818">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+        <img id="scrollToImg" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/interface/result/ico_IMAGE_jointe.gif" align="right">
+        &nbsp;
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Economie,         mardi 22 novembre 2005 647 mots, p. MDE3</span>
+</div>
+
+    <div>
+        <p>
+Le Monde ECONOMIE         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">DOSSIER Internet : les géants de l'industrie culturelle contre-attaquent Le droit d'auteur affronte le choc du numérique</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La loi pourrait généraliser le contrôle de l'usage des fichiers informatiques            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le caractère occulte de certains systèmes de protection fait débat</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Stéphane Foucart</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Pour mettre un terme à la grande volatilité des fichiers protégés par le droit d'auteur qui circulent sur Internet, les producteurs de contenus numériques et les industriels du logiciel cherchent à généraliser les systèmes de DRM (Digital Rights Management, en français Mesures techniques de protection - MTP). Ces dispositifs techniques permettent de limiter le nombre de copies et d'encadrer étroitement l'usage fait des fichiers acquis depuis les plates-formes de téléchargement. </p> <p> Certains acteurs du monde industriel ne cachent pas leur volonté de voir de tels dispositifs intégrés à tous les logiciels communiquants. Plusieurs semaines avant que le projet de loi sur le droit d'auteur dans la société de l'information ne soit examiné par le Parlement, circule un projet d'amendement au texte « selon lequel tout éditeur de programmes n'ayant pas pris les mesures pour, en l'état de la technique, préserver les oeuvres et les objets contre un usage non autorisé » pourrait se voir poursuivi... pour contrefaçon. « Le grand acquis de la directive européenne sur le droit d'auteur [que la loi se propose de transposer dans le droit français] est la protection juridique des mesures techniques anticopie », reconnaît-on d'ailleurs à la Commission de Bruxelles.</p>
+
+
+<p>Pour les ayants droit, l'intérêt est de réfréner le piratage des oeuvres culturelles, opéré grâce aux réseaux d'échange peer-to-peer (P2P, ou pair-à-pair) : si le fichier d'origine est protégé par DRM, ses utilisations successives pourront être suivies à la trace. Mais pour les géants du logiciel, l'intérêt est tout autre. Il s'agit, pour Microsoft ou Apple, d'accroître leur contrôle sur les formats des fichiers informatiques et les outils logiciels de lecture. Et, également, d'exclure les <mark>logiciels</mark> <mark>libres</mark> ou non commerciaux du champ de la concurrence. </p> <p> Actuellement, les dispositifs de DRM ne reposent que sur des programmes informatiques attachés aux fichiers nomades. Mais ils pourront, à court terme, être directement intégrés aux puces qui équipent les ordinateurs individuels. Le principe est simple. Lorsqu'il est vendu ou échangé sur une plate-forme de téléchargement, le fichier musical ou vidéo est encrypté. Un second fichier - dit fichier de licence - est stocké localement, sur le disque dur de l'utilisateur. Lorsqu'un logiciel de lecture tente d'accéder au fichier musical, il appelle automatiquement le fichier de licence qui contient la clé cryptographique ad hoc, nécessaire pour lire l'oeuvre. C'est, notamment, le fichier de licence qui détermine le nombre de copies qu'un utilisateur est autorisé à faire du fichier qu'il a acquis. </p> <p> « C'est une inversion de la logique des échanges cryptographiques, met en garde Christophe Espern, un des animateurs de la <mark>Free</mark> <mark>Software</mark> <mark>Foundation</mark> (FSF), association opposée à la généralisation des DRM. Dans un échange cryptographique classique, les clés sont mises à la disposition de l'utilisateur. Dans le cas des DRM, les clés sont cachées sur le disque dur et seul le logiciel de lecture peut y accéder. » Une particularité qui sous-entend que seuls des « logiciels de confiance » peuvent accéder à certains contenus protégés par des dispositifs de DRM. Ce détail a son importance. « Cela exclut de facto les <mark>logiciels</mark> <mark>open</mark>-<mark>source</mark> [libres] de la concurrence, puisque leur principe fondamental est d'être développés en toute transparence, dit M. Espern. Aucun <mark>logiciel</mark> <mark>libre</mark> ne peut lire les contenus protégés par DRM. » </p> <p> Le caractère parfois occulte des systèmes de DRM est au centre de polémiques dans le monde des spécialistes de sécurité informatique. Fin octobre, des éditeurs de logiciels antivirus ont ainsi détecté la présence d'un petit programme sur les CD édités par Sony-BMG, s'installant à l'insu de l'utilisateur sur le disque dur de son PC. Plusieurs éditeurs de logiciels antivirus ont décidé de classer ce petit programme, baptisé rootkit, dans la catégorie des logiciels espions, ou spywares... </p> <p> Les nouvelles générations de matériels, dans la foulée du futur système d'exploitation de Microsoft - Windows Vista, prévu pour être commercialisé courant 2006 - intégreront des systèmes qui permettront de renforcer les protections anticopie existantes. Le futur Windows comprendra en effet un module qui n'autorisera l'accès de certaines zones de la mémoire de l'ordinateur qu'à des logiciels - y compris des pilotes de périphériques - « signés », c'est-à-dire reconnus comme « dignes de confiance » par une autorité de certification telle, par exemple, la société américaine Verisign. Les logiciels devront donc en passer par un serveur distant pour obtenir l'autorisation d'accéder à ces zones protégées où pourraient être stockés, par exemple, des fichiers protégés par le droit d'auteur. La possibilité de contourner le DRM serait alors quasi nulle. </p> <p> L'une des dernières failles à tout système de protection des contenus numériques, appelée par les spécialistes le « trou analogique », pourrait aussi être en passe d'être comblée. Il est en effet encore possible de réenregistrer et d'encoder au format numérique la musique qui sort des haut-parleurs d'un ordinateur personnel. Mais « aux Etats-Unis, précise M. Espern, on teste déjà des systèmes rendant impossible la conversion de flux analogiques en fichiers numériques ».</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            </p><div>
+                    <a href="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/WebPages/media.aspx?Type=image&amp;DocName=20051122LM006.jpg&amp;Logo=lm_small.gif" target="_blank"><img width="40" height="40" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20051122LM006.jpg"></a>
+            </div>
+            
+                            <div class="ImageAttach"><p>En 2006, le nouveau système d'exploitation de Microsoft intégrera une protection anticopie renforcée. PHOTO : AP, MICROSOFT/ERIK S. LESSER</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20051122·LM·0mde4705_1180818</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20051122·LM·0mde4705_1180818";
+    var _docIndex = 913;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20051122·LM·0mde4705_1180818';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720051122%C2%B7LM%C2%B70mde4705_1180818&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720051122%C2%B7LM%C2%B70mde4705_1180818&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720051122%C2%B7LM%C2%B70mde4705_1180818&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720051122%C2%B7LM%C2%B70mde4705_1180818&docIndex=913&FullScreen=1";
+                
+	var _keyDoc = 'news·20051122·LM·0mde4705_1180818';
+</script>
+</div></body></html>

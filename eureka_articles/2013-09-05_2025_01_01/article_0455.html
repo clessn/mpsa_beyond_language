@@ -1,0 +1,559 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 23035                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         mardi 4 septembre 2018 650 mots, p. 21&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+&#201;conomie         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Pourquoi l&#39;Europe n&#39;a pas fait &#233;merger un concurrent            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Ronfaut, Lucie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt; Vous rappelez-vous de Quaero ? Lanc&#233; en 2005, ce programme europ&#233;en de recherche et d&#39;innovation franco-allemand avait pour but de d&#233;velopper un outil d&#39;indexation de contenus en ligne, &#224; destination des entreprises, des scientifiques et du grand public. Autrement dit : faire concurrence &#224; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;. Le projet aura co&#251;t&#233; au total 198 millions d&#39;euros, dont une large part de subventions publiques fran&#231;aises. Il s&#39;est achev&#233; en 2013, laissant derri&#232;re lui de nombreux brevets, de v&#233;ritables innovations b&#233;n&#233;ficiant &#224; la recherche, des entreprises (comme Exalead)... mais pas de moteur de recherche capable de rivaliser avec les grands noms am&#233;ricains. &lt;/p&gt; &lt;p&gt; Pourquoi l&#39;Europe n&#39;a-t-elle pas construit son propre &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; ? Le moteur am&#233;ricain occupe aujourd&#39;hui 90 % des parts de march&#233; de la recherche en ligne dans le monde, d&#39;apr&#232;s les estimations du site statcounter. L&#39;Europe est au-dessus de la moyenne avec 92 %. La situation est diff&#233;rente dans d&#39;autres pays. Aux &#201;tats-Unis, cette part est plus basse (84 %), car Bing (moteur d&#233;velopp&#233; par &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt;, 7 % de parts de march&#233;) et Yahoo! (6%) continuent de se battre. En Russie, c&#39;est le concurrent local Yandex qui domine le secteur (53 %). En Chine, o&#249; le g&#233;ant am&#233;ricain a disparu du Web en 2010, les sites Baidu (67 %) et Shenma (d&#233;velopp&#233; par &lt;span class=&quot;stubs&quot;&gt;Alibaba&lt;/span&gt;, 18 %) se partagent le haut du podium. &lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Des g&#233;ants inqui&#233;tants&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Depuis l&#39;&#233;chec de Quaero, il existe toujours quelques alternatives europ&#233;ennes au g&#233;ant am&#233;ricain. Qwant, fond&#233; en France, se veut &#234;tre un moteur de recherche plus respectueux de la vie priv&#233;e et des donn&#233;es personnelles. Framabee soutient l&#39;&lt;mark&gt;open&lt;/mark&gt;-&lt;mark&gt;source&lt;/mark&gt;, Lilo finance des initiatives sociales et l&#39;allemand Ecosa reverse une partie de ses b&#233;n&#233;fices &#224; un programme de reforestation. La majorit&#233; de ces projets sont en fait des &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;m&#233;tamoteurs&lt;/em&gt; &#187; , des sites qui envoient les requ&#234;tes de leurs utilisateurs &#224; d&#39;autres moteurs de recherche et qui en affichent ensuite les r&#233;sultats. Ils proposent une offre de niche, pour s&#233;duire les d&#233;&#231;us de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, plut&#244;t que d&#39;esp&#233;rer le concurrencer vraiment. &lt;/p&gt; &lt;p&gt; Le probl&#232;me d&#233;passe celui du seul secteur de la recherche. Historiquement, l&#39;industrie du Web a d&#39;abord prosp&#233;r&#233; aux &#201;tats-Unis, gr&#226;ce au soutien financier de son gouvernement et de son arm&#233;e. On compte aujourd&#39;hui dans le monde 158 start-up de nouvelles technologies, non cot&#233;es en Bourse, qui sont valoris&#233;es &#224; plus d&#39;un milliard de dollars. 60 % sont am&#233;ricaines. Viennent ensuite les soci&#233;t&#233;s asiatiques (25 %), notamment chinoises, puis l&#39;Europe (10 %). Apr&#232;s un retard au d&#233;marrage, l&#39;Europe b&#233;n&#233;ficie aujourd&#39;hui d&#39;un &#233;cosyst&#232;me num&#233;rique de qualit&#233;, avec quelques belles r&#233;ussites &#224; son actif. Mais est-il d&#233;j&#224; trop tard ? En vingt ans, &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; a tiss&#233; sa toile et s&#39;est rendu indispensable dans notre quotidien en ligne. Le groupe recrute les meilleurs ing&#233;nieurs et investit dans tous les secteurs en ligne pour y proposer ses services en priorit&#233;. &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; est d&#233;sormais un v&#233;ritable &#233;cosyst&#232;me. Son syst&#232;me d&#39;exploitation mobile Android &#233;quipe 85 % des smartphones dans le monde, et 60 % des internautes utilisent son navigateur Web &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Chrome. Sa marque est devenue synonyme d&#39;aller sur Internet. On ne cherche pas quelque chose en ligne, on le &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;span class=&quot;stubs&quot;&gt;google&lt;/span&gt; &lt;/em&gt; &#187;. &lt;/p&gt; &lt;p&gt; &#192; d&#233;faut de lui opposer un concurrent, l&#39;Europe se d&#233;fend contre l&#39;ultra-domination d&#39;une entreprise si puissante qu&#39;elle est capable de mettre &#224; terre d&#39;autres soci&#233;t&#233;s en un changement d&#39;algorithme. Comparer le Vieux Continent &#224; la situation d&#39;autres pays, o&#249; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; est moins pr&#233;sent, est compliqu&#233;. La Russie et la Chine sont des autocraties : l&#39;Internet y est &#233;troitement contr&#244;l&#233; par l&#39;&#201;tat. L&#39;Europe n&#39;a jamais interdit l&#39;utilisation de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;. Elle se bat donc sur un autre territoire. Elle cherche &#224; inspirer l&#39;industrie des nouvelles technologies, en poussant sa vision d&#39;un Internet plus juste et respectueux de notre vie priv&#233;e, dans ses fronti&#232;res et en dehors. Le R&#232;glement g&#233;n&#233;ral sur la protection des donn&#233;es (RGPD) fait des &#233;mules jusque chez les politiciens am&#233;ricains, inquiets des d&#233;rives de leurs champions nationaux. M&#234;me aux &#201;tats-Unis, l&#39;heure est &#224; la m&#233;fiance face aux g&#233;ants du Web. Cette r&#233;volution-l&#224; est europ&#233;enne.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:lronfaut@lefigaro.fr&quot;&gt;lronfaut@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;3 septembre 2018&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2018 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20180904&amp;#183;LF&amp;#183;662&amp;#215;20&amp;#215;2397155603&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">moteur de recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">géant américain</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">vie privée</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">programme de reforestation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">outil d'indexation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">MICROSOFT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">YAHOO!</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">ALIBABA</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Russie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Chine</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720180904%c2%b7LF%c2%b7662%c3%9720%c3%972397155603" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720180904%c2%b7LF%c2%b7662%c3%9720%c3%972397155603">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 23035                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         mardi 4 septembre 2018 650 mots, p. 21</span>
+</div>
+
+    <div>
+        <p>
+Économie         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Pourquoi l'Europe n'a pas fait émerger un concurrent            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Ronfaut, Lucie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p> Vous rappelez-vous de Quaero ? Lancé en 2005, ce programme européen de recherche et d'innovation franco-allemand avait pour but de développer un outil d'indexation de contenus en ligne, à destination des entreprises, des scientifiques et du grand public. Autrement dit : faire concurrence à <span class="stubs">Google</span>. Le projet aura coûté au total 198 millions d'euros, dont une large part de subventions publiques françaises. Il s'est achevé en 2013, laissant derrière lui de nombreux brevets, de véritables innovations bénéficiant à la recherche, des entreprises (comme Exalead)... mais pas de moteur de recherche capable de rivaliser avec les grands noms américains. </p> <p> Pourquoi l'Europe n'a-t-elle pas construit son propre <span class="stubs">Google</span> ? Le moteur américain occupe aujourd'hui 90 % des parts de marché de la recherche en ligne dans le monde, d'après les estimations du site statcounter. L'Europe est au-dessus de la moyenne avec 92 %. La situation est différente dans d'autres pays. Aux États-Unis, cette part est plus basse (84 %), car Bing (moteur développé par <span class="stubs">Microsoft</span>, 7 % de parts de marché) et Yahoo! (6%) continuent de se battre. En Russie, c'est le concurrent local Yandex qui domine le secteur (53 %). En Chine, où le géant américain a disparu du Web en 2010, les sites Baidu (67 %) et Shenma (développé par <span class="stubs">Alibaba</span>, 18 %) se partagent le haut du podium. </p>
+
+
+<p><em style="font-weight:bold;">Des géants inquiétants</em></p><p>Depuis l'échec de Quaero, il existe toujours quelques alternatives européennes au géant américain. Qwant, fondé en France, se veut être un moteur de recherche plus respectueux de la vie privée et des données personnelles. Framabee soutient l'<mark>open</mark>-<mark>source</mark>, Lilo finance des initiatives sociales et l'allemand Ecosa reverse une partie de ses bénéfices à un programme de reforestation. La majorité de ces projets sont en fait des « <em style="font-style:italic;">métamoteurs</em> » , des sites qui envoient les requêtes de leurs utilisateurs à d'autres moteurs de recherche et qui en affichent ensuite les résultats. Ils proposent une offre de niche, pour séduire les déçus de <span class="stubs">Google</span>, plutôt que d'espérer le concurrencer vraiment. </p> <p> Le problème dépasse celui du seul secteur de la recherche. Historiquement, l'industrie du Web a d'abord prospéré aux États-Unis, grâce au soutien financier de son gouvernement et de son armée. On compte aujourd'hui dans le monde 158 start-up de nouvelles technologies, non cotées en Bourse, qui sont valorisées à plus d'un milliard de dollars. 60 % sont américaines. Viennent ensuite les sociétés asiatiques (25 %), notamment chinoises, puis l'Europe (10 %). Après un retard au démarrage, l'Europe bénéficie aujourd'hui d'un écosystème numérique de qualité, avec quelques belles réussites à son actif. Mais est-il déjà trop tard ? En vingt ans, <span class="stubs">Google</span> a tissé sa toile et s'est rendu indispensable dans notre quotidien en ligne. Le groupe recrute les meilleurs ingénieurs et investit dans tous les secteurs en ligne pour y proposer ses services en priorité. <span class="stubs">Google</span> est désormais un véritable écosystème. Son système d'exploitation mobile Android équipe 85 % des smartphones dans le monde, et 60 % des internautes utilisent son navigateur Web <span class="stubs">Google</span> Chrome. Sa marque est devenue synonyme d'aller sur Internet. On ne cherche pas quelque chose en ligne, on le « <em style="font-style:italic;"><span class="stubs">google</span> </em> ». </p> <p> À défaut de lui opposer un concurrent, l'Europe se défend contre l'ultra-domination d'une entreprise si puissante qu'elle est capable de mettre à terre d'autres sociétés en un changement d'algorithme. Comparer le Vieux Continent à la situation d'autres pays, où <span class="stubs">Google</span> est moins présent, est compliqué. La Russie et la Chine sont des autocraties : l'Internet y est étroitement contrôlé par l'État. L'Europe n'a jamais interdit l'utilisation de <span class="stubs">Google</span>. Elle se bat donc sur un autre territoire. Elle cherche à inspirer l'industrie des nouvelles technologies, en poussant sa vision d'un Internet plus juste et respectueux de notre vie privée, dans ses frontières et en dehors. Le Règlement général sur la protection des données (RGPD) fait des émules jusque chez les politiciens américains, inquiets des dérives de leurs champions nationaux. Même aux États-Unis, l'heure est à la méfiance face aux géants du Web. Cette révolution-là est européenne.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:lronfaut@lefigaro.fr">lronfaut@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">3 septembre 2018</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2018 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20180904·LF·662×20×2397155603</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20180904·LF·662×20×2397155603";
+    var _docIndex = 454;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"microsoft":"93647","yahoo!":"93949","alibaba":"94667","google":"92575"};
+		var _docName = 'news·20180904·LF·662×20×2397155603';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720180904%C2%B7LF%C2%B7662%C3%9720%C3%972397155603&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720180904%C2%B7LF%C2%B7662%C3%9720%C3%972397155603&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720180904%C2%B7LF%C2%B7662%C3%9720%C3%972397155603&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720180904%C2%B7LF%C2%B7662%C3%9720%C3%972397155603&docIndex=454&FullScreen=1";
+                
+	var _keyDoc = 'news·20180904·LF·662×20×2397155603';
+</script>
+</div></body></html>

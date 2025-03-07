@@ -1,0 +1,439 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CAHIER SPECIAL,         samedi 3 mars 2001 725 mots, p. 11&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Activistes            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Militants pour un Web citoyen, la libert&#233; d&#185;expression ou des &lt;mark&gt; logiciels&lt;/mark&gt; &lt;mark&gt; libres&lt;/mark&gt;, le Net est le tremplin de leurs revendications.&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;MICHEL BRIAND 49 ans. Maire adjoint &#224; Brest &lt;/p&gt; &lt;p&gt; Elu charg&#233; de la citoyennet&#233;, de la d&#233;mocratie locale et des nouvelles technologies, ce quadra membre des Verts met toute son &#233;nergie &#224; l&#185;int&#233;gration des nouvelles technologies dans la ville. Il participe au d&#233;veloppement des Papi, points d&#185;acc&#232;s publics &#224; l&#185;Internet &#224; Brest, et plaide pour que les collectivit&#233;s locales se saisissent des r&#233;seaux informatiques elles-m&#234;mes. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mairie-brest.fr&quot;&gt; www.mairie-brest.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; DOMINIQUE BURGER 50 ans. Pr&#233;sident de l&#185;association BrailleNet&lt;/p&gt;
+
+
+&lt;p&gt;D&#232;s 1982, Dominique Burger, ing&#233;nieur de recherche &#224; l&#185;Inserm, travaille sur l&#185;acc&#232;s des d&#233;ficients visuels aux nouvelles technologies. Il se bat pour que les aveugles et malvoyants b&#233;n&#233;ficient du formidable potentiel de l&#185;Internet et cr&#233;e BrailleNet &#224; l&#185;universit&#233; Pierre-et-Marie-Curie (Paris-VI). Les statuts de l&#185;association sont d&#233;pos&#233;s en septembre 1997. Apr&#232;s le braille invent&#233; au XIXe si&#232;cle, la r&#233;volution Internet permet d&#185;offrir un acc&#232;s plus facile &#224; la connaissance. BrailleNet enrichit une biblioth&#232;que virtuelle et participe &#224; un nouveau portail, VoirPlus. &lt;/p&gt; &lt;p&gt; www.braillenet.jussieu. fr &lt;/p&gt; &lt;p&gt; SEBASTIEN CANEVET 46 ans. Universitaire &lt;/p&gt; &lt;p&gt; Ma&#238;tre de conf&#233;rences &#224; l&#185;universit&#233; de Poitiers, sp&#233;cialiste du droit de l&#185;Internet, S&#233;bastien Canevet a cr&#233;&#233; un site d&#185;information juridique, &#171;Le ch&#234;ne et le gland&#187;. Le chercheur y inspecte &#224; la loupe les d&#233;cisions de justice qui encadrent le r&#233;seau. Expert aupr&#232;s du minist&#232;re des Affaires &#233;trang&#232;res, il participe &#224; des missions de d&#233;veloppement de l&#185;Internet en Afrique qui ont notamment permis d&#185;ouvrir &#224; Dakar un service d&#185;h&#233;bergement gratuit de sites web. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.canevet.com&quot;&gt; www.canevet.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; FREDERIC COUCHET 31 ans. Militant du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; &lt;/p&gt; &lt;p&gt; C&#185;est &#224; la fac que Fr&#233;d&#233;ric Couchet a d&#233;couvert les logiciels dits &#171;libres&#187; parce que leur &#171;code-source&#187; n&#185;est pas un secret de fabrication mais se trouve en acc&#232;s libre. Le jeune ing&#233;nieur oppose depuis le &#171;monde propri&#233;taire&#187; (celui des brevets industriels) au &#171;monde libre&#187;. Dans ce dernier, les logiciels sont am&#233;lior&#233;s et corrig&#233;s en permanence par des milliers d&#185;informaticiens b&#233;n&#233;voles. Pour d&#233;fendre cette vision de l&#185;informatique, Fr&#233;d&#233;ric Couchet a cr&#233;&#233; April (Association pour la promotion et la recherche en informatique libre), branche fran&#231;aise de la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.april.org&quot;&gt; www.april.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; LAURENT JESOVER 35 ans. Webmestre du site d&#185;Attac &lt;/p&gt; &lt;p&gt; Lors des grandes manifs antimondialisation lib&#233;rale comme Seattle, Prague ou Nice, il est sur le terrain avec son ordinateur portable, pour continuer &#224; alimenter le site web d&#185;Attac en temps r&#233;el. Le reste du temps, Laurent Jesover, depuis 1998, assure la coordination du travail entre les quelque 80 webmestres des sections locales de l&#185;association, dans le monde entier. Pour lui, le Net est un outil &#171;id&#233;al&#187;, meilleur moyen de d&#233;velopper les &#171;coop&#233;rations&#187; et d&#185;impliquer au maximum les groupes locaux. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.attac.org&quot;&gt; www.attac.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Bernard Lang 55 ans. Chercheur &#224; l&#185;Institut national de recherche en informatique et automatique (Inria) &lt;/p&gt; &lt;p&gt; Quand on le rencontre, il dit d&#185;embl&#233;e du mal de Windows : le logiciel vedette de Microsoft plante tout le temps et la firme de Bill Gates ne r&#234;ve que de monopole. Puis il se met imm&#233;diatement &#224; parler avec &#233;motion de Linux, le concurrent de Windows, libre, d&#233;velopp&#233; par des milliers de b&#233;n&#233;voles dans le monde. Copiable et modifiable &#224; l&#185;envi. Ce chercheur &#224; Rocquencourt en est l&#185;un des plus z&#233;l&#233;s militants en France, &#224; la t&#234;te de l&#185;Association fran&#231;aise des utilisateurs de Linux (Aful) : aupr&#232;s des administrations, o&#249; il plaide l&#185;&#171;ind&#233;pendance technologique&#187;, des &#233;coles pour &#171;lib&#233;rer les &#233;coles de Microsoft&#187;, ou de la Commission europ&#233;enne pour leur expliquer que les brevets sont n&#233;fastes. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.aful.org&quot;&gt; www.aful.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; MARC KNOBEL 40 ans. Vice-pr&#233;sident de la Licra &lt;/p&gt; &lt;p&gt; Il veut cr&#233;er une association&#173; &#171;J&#185;accuse&#187; &#173; afin de porter devant les tribunaux &#171;toutes les exactions racistes&#187; sur le Net. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.licra.com&quot;&gt; www.licra.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; VALENTIN LACAMBRE 35 ans. D&#233;fenseur de l&#185;Internet non marchand &lt;/p&gt; &lt;p&gt; Il a une id&#233;e fixe : l&#185;ind&#233;pendance du r&#233;seau. L&#185;ex-cr&#233;ateur d&#185;Altern.org (service d&#185;h&#233;ber- gement gratuit de sites web ferm&#233; en juin dernier pour cause de proc&#232;s &#224; r&#233;p&#233;tition) vient de mettre sur pied &#171;Gitoyen&#187;, un Gie (groupement d&#185;int&#233;r&#234;t &#233;conomique) entre associations pour promouvoir l&#185;acc&#232;s &#224; l&#185;Internet, l&#185;h&#233;bergement de sites web et des liaisons Adsl (haut d&#233;bit) &#224; moindre co&#251;t. Il a pris cette initiative avec Laurent Chemla, autre militant de l&#185;Internet non marchand. L&#185;an pass&#233;, les deux comp&#232;res avaient d&#233;j&#224; cr&#233;&#233; Gandi, une soci&#233;t&#233; qui propose l&#185;achat de noms de domaine &#224; 80 francs par an. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.gandi.net&quot;&gt; www.gandi.net&lt;/a&gt; &lt;/p&gt; &lt;p&gt; MERYEM MARZOUKI 39 ans. Pr&#233;sidente de l&#185;association Iris &lt;/p&gt; &lt;p&gt; Chercheuse en &#233;lectronique, pr&#233;sidente et fondatrice d&#185;Iris (Imaginons un r&#233;seau Internet solidaire), tient &#224; bout de bras la plus influente des associations d&#185;utilisateurs du Net. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.iris.sgdg.org&quot;&gt; www.iris.sgdg.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; PIERRE LAZULY 27 ans. Auteur des &#171;Chroniques du menteur&#187; &lt;/p&gt; &lt;p&gt; Il aime cogner sur la publicit&#233;, le marketing et toutes les embrouilles de la communication trompe-couillon. Mais sans se montrer : le jour, l&#185;auteur des Chroniques du menteur bosse dans une bo&#238;te high-tech dans l&#185;ouest de la France. Au c&#166;ur du syst&#232;me qu&#185;il d&#233;nonce. Et la nuit, sous le pseudo de Pierre Lazuly, il se venge des tartufferies et des concepts creux de la nouvelle &#233;conomie en exp&#233;diant ses billets ac&#233;r&#233;s gratuitement par e-mail &#224; plus de 6 000 abonn&#233;s. Il a aussi ouvert un &#171;portail en bois&#187;, loin du clinquant des gros, pour recenser le meilleur de la presse alternative et des webzines. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.menteur.com&quot;&gt; www.menteur.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.rezo.net&quot;&gt; www.rezo.net&lt;/a&gt; &lt;/p&gt; &lt;p&gt; ARNAUD MARTIN 30 ans. Webmestre du Scarab&#233;e &lt;/p&gt; &lt;p&gt; Arnaud Martin, alias ARNO*, est l&#185;une des figures les plus remuantes des &#171;webzinards&#187;, militants de la libert&#233; d&#185;expression pour tous sur le Web. Pas un jour sans qu&#185;il ne s&#185;offusque des discours policiers ou juridiques de ceux qui voudraient mettre le Web au pas, en faisant croire qu&#185;il est un repaire de &#171;p&#233;donazis&#187; ou le lieu de toutes les d&#233;rives verbables impunies. Il met en pratique ses id&#233;es avec son propre webzine, le Scarabee, o&#249; il &#233;ditorialise tous azimuts. Et est l&#185;un des plus actifs membres du Minirezo, regroupement de webmestres ind&#233;pendants qui ont ouvert un site pour accueillir les textes de ceux qui veulent s&#185;exprimer. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.scarabee.com&quot;&gt; www.scarabee.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.minirezo.net&quot;&gt; www.minirezo.net&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010303&amp;#183;LI&amp;#183;0035&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010303%c2%b7LI%c2%b70035" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010303%c2%b7LI%c2%b70035">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CAHIER SPECIAL,         samedi 3 mars 2001 725 mots, p. 11</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Activistes            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Militants pour un Web citoyen, la liberté d¹expression ou des <mark> logiciels</mark> <mark> libres</mark>, le Net est le tremplin de leurs revendications.</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>MICHEL BRIAND 49 ans. Maire adjoint à Brest </p> <p> Elu chargé de la citoyenneté, de la démocratie locale et des nouvelles technologies, ce quadra membre des Verts met toute son énergie à l¹intégration des nouvelles technologies dans la ville. Il participe au développement des Papi, points d¹accès publics à l¹Internet à Brest, et plaide pour que les collectivités locales se saisissent des réseaux informatiques elles-mêmes. </p> <p><a target="_blank" href="https://www.mairie-brest.fr"> www.mairie-brest.fr</a> </p> <p> DOMINIQUE BURGER 50 ans. Président de l¹association BrailleNet</p>
+
+
+<p>Dès 1982, Dominique Burger, ingénieur de recherche à l¹Inserm, travaille sur l¹accès des déficients visuels aux nouvelles technologies. Il se bat pour que les aveugles et malvoyants bénéficient du formidable potentiel de l¹Internet et crée BrailleNet à l¹université Pierre-et-Marie-Curie (Paris-VI). Les statuts de l¹association sont déposés en septembre 1997. Après le braille inventé au XIXe siècle, la révolution Internet permet d¹offrir un accès plus facile à la connaissance. BrailleNet enrichit une bibliothèque virtuelle et participe à un nouveau portail, VoirPlus. </p> <p> www.braillenet.jussieu. fr </p> <p> SEBASTIEN CANEVET 46 ans. Universitaire </p> <p> Maître de conférences à l¹université de Poitiers, spécialiste du droit de l¹Internet, Sébastien Canevet a créé un site d¹information juridique, «Le chêne et le gland». Le chercheur y inspecte à la loupe les décisions de justice qui encadrent le réseau. Expert auprès du ministère des Affaires étrangères, il participe à des missions de développement de l¹Internet en Afrique qui ont notamment permis d¹ouvrir à Dakar un service d¹hébergement gratuit de sites web. </p> <p><a target="_blank" href="https://www.canevet.com"> www.canevet.com</a> </p> <p> FREDERIC COUCHET 31 ans. Militant du <mark>logiciel</mark> <mark>libre</mark> </p> <p> C¹est à la fac que Frédéric Couchet a découvert les logiciels dits «libres» parce que leur «code-source» n¹est pas un secret de fabrication mais se trouve en accès libre. Le jeune ingénieur oppose depuis le «monde propriétaire» (celui des brevets industriels) au «monde libre». Dans ce dernier, les logiciels sont améliorés et corrigés en permanence par des milliers d¹informaticiens bénévoles. Pour défendre cette vision de l¹informatique, Frédéric Couchet a créé April (Association pour la promotion et la recherche en informatique libre), branche française de la <mark>Free</mark> <mark>Software</mark> <mark>Foundation</mark>. </p> <p><a target="_blank" href="https://www.april.org"> www.april.org</a> </p> <p> LAURENT JESOVER 35 ans. Webmestre du site d¹Attac </p> <p> Lors des grandes manifs antimondialisation libérale comme Seattle, Prague ou Nice, il est sur le terrain avec son ordinateur portable, pour continuer à alimenter le site web d¹Attac en temps réel. Le reste du temps, Laurent Jesover, depuis 1998, assure la coordination du travail entre les quelque 80 webmestres des sections locales de l¹association, dans le monde entier. Pour lui, le Net est un outil «idéal», meilleur moyen de développer les «coopérations» et d¹impliquer au maximum les groupes locaux. </p> <p><a target="_blank" href="https://www.attac.org"> www.attac.org</a> </p> <p> Bernard Lang 55 ans. Chercheur à l¹Institut national de recherche en informatique et automatique (Inria) </p> <p> Quand on le rencontre, il dit d¹emblée du mal de Windows : le logiciel vedette de Microsoft plante tout le temps et la firme de Bill Gates ne rêve que de monopole. Puis il se met immédiatement à parler avec émotion de Linux, le concurrent de Windows, libre, développé par des milliers de bénévoles dans le monde. Copiable et modifiable à l¹envi. Ce chercheur à Rocquencourt en est l¹un des plus zélés militants en France, à la tête de l¹Association française des utilisateurs de Linux (Aful) : auprès des administrations, où il plaide l¹«indépendance technologique», des écoles pour «libérer les écoles de Microsoft», ou de la Commission européenne pour leur expliquer que les brevets sont néfastes. </p> <p><a target="_blank" href="https://www.aful.org"> www.aful.org</a> </p> <p> MARC KNOBEL 40 ans. Vice-président de la Licra </p> <p> Il veut créer une association­ «J¹accuse» ­ afin de porter devant les tribunaux «toutes les exactions racistes» sur le Net. </p> <p><a target="_blank" href="https://www.licra.com"> www.licra.com</a> </p> <p> VALENTIN LACAMBRE 35 ans. Défenseur de l¹Internet non marchand </p> <p> Il a une idée fixe : l¹indépendance du réseau. L¹ex-créateur d¹Altern.org (service d¹héber- gement gratuit de sites web fermé en juin dernier pour cause de procès à répétition) vient de mettre sur pied «Gitoyen», un Gie (groupement d¹intérêt économique) entre associations pour promouvoir l¹accès à l¹Internet, l¹hébergement de sites web et des liaisons Adsl (haut débit) à moindre coût. Il a pris cette initiative avec Laurent Chemla, autre militant de l¹Internet non marchand. L¹an passé, les deux compères avaient déjà créé Gandi, une société qui propose l¹achat de noms de domaine à 80 francs par an. </p> <p><a target="_blank" href="https://www.gandi.net"> www.gandi.net</a> </p> <p> MERYEM MARZOUKI 39 ans. Présidente de l¹association Iris </p> <p> Chercheuse en électronique, présidente et fondatrice d¹Iris (Imaginons un réseau Internet solidaire), tient à bout de bras la plus influente des associations d¹utilisateurs du Net. </p> <p><a target="_blank" href="https://www.iris.sgdg.org"> www.iris.sgdg.org</a> </p> <p> PIERRE LAZULY 27 ans. Auteur des «Chroniques du menteur» </p> <p> Il aime cogner sur la publicité, le marketing et toutes les embrouilles de la communication trompe-couillon. Mais sans se montrer : le jour, l¹auteur des Chroniques du menteur bosse dans une boîte high-tech dans l¹ouest de la France. Au c¦ur du système qu¹il dénonce. Et la nuit, sous le pseudo de Pierre Lazuly, il se venge des tartufferies et des concepts creux de la nouvelle économie en expédiant ses billets acérés gratuitement par e-mail à plus de 6 000 abonnés. Il a aussi ouvert un «portail en bois», loin du clinquant des gros, pour recenser le meilleur de la presse alternative et des webzines. </p> <p><a target="_blank" href="https://www.menteur.com"> www.menteur.com</a> </p> <p><a target="_blank" href="https://www.rezo.net"> www.rezo.net</a> </p> <p> ARNAUD MARTIN 30 ans. Webmestre du Scarabée </p> <p> Arnaud Martin, alias ARNO*, est l¹une des figures les plus remuantes des «webzinards», militants de la liberté d¹expression pour tous sur le Web. Pas un jour sans qu¹il ne s¹offusque des discours policiers ou juridiques de ceux qui voudraient mettre le Web au pas, en faisant croire qu¹il est un repaire de «pédonazis» ou le lieu de toutes les dérives verbables impunies. Il met en pratique ses idées avec son propre webzine, le Scarabee, où il éditorialise tous azimuts. Et est l¹un des plus actifs membres du Minirezo, regroupement de webmestres indépendants qui ont ouvert un site pour accueillir les textes de ceux qui veulent s¹exprimer. </p> <p><a target="_blank" href="https://www.scarabee.com"> www.scarabee.com</a> </p> <p><a target="_blank" href="https://www.minirezo.net"> www.minirezo.net</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010303·LI·0035</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010303·LI·0035";
+    var _docIndex = 488;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010303·LI·0035';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010303%C2%B7LI%C2%B70035&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010303%C2%B7LI%C2%B70035&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010303%C2%B7LI%C2%B70035&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010303%C2%B7LI%C2%B70035&docIndex=488&FullScreen=1";
+                
+	var _keyDoc = 'news·20010303·LI·0035';
+</script>
+</div></body></html>

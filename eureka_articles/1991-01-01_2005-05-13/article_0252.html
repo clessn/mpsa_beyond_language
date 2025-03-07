@@ -1,0 +1,471 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+        &lt;img id=&quot;scrollToImg&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/interface/result/ico_IMAGE_jointe.gif&#39; align=&quot;right&quot;&gt;
+        &amp;nbsp;
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+EVENEMENT,         mercredi 12 novembre 2003 1126 mots, p. 2, 4&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Forum social europ&#233;en&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+De A &#224; Z, Mode d&#39;emploi pour un autre monde            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Les altermondialistes se retrouvent &#224; partir d&#39;aujourd&#39;hui en r&#233;gion parisienne pour trois jours. Justice sociale, &#233;ducation ou zapatisme.. s&#233;lection de d&#233;bats.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;DE FILIPPIS Vittorio, LOSSON Christian, QUINIO Paul&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Difficile de choisir entre les 55 conf&#233;rences pl&#233;ni&#232;res, les 270 s&#233;minaires, les centaines d&#39;ateliers, les 200 spectacles ou &#171;actions&#187; qui vont se tenir &#224; partir d&#39;aujourd&#39;hui et jusqu&#39;&#224; samedi &#224; Paris, Saint-Denis, Bobigny et Ivry-sur-Seine, les quatre villes qui accueillent le second Forum social europ&#233;en. De l&#39;AGCS aux zones d&#39;autonomie temporaire en passant par la brevetabilit&#233; ou les No vox, parlez-vous l&#39;&#171;alter&#187; ? Lib&#233;ration, &#224; travers un ab&#233;c&#233;daire, a s&#233;lectionn&#233; subjectivement 26 mots, th&#233;matiques, revendications ou enjeux embl&#233;matiques de la plan&#232;te altermondialiste. En renvoyant &#224; chaque fois &#224; un d&#233;bat ou un lieu. Petite plong&#233;e d&#39;avant-apn&#233;e. &lt;/p&gt; &lt;p&gt; AGCSAccord g&#233;n&#233;ral sur le commerce des services, en cours de n&#233;gociation &#224; l&#39;OMC. Il est v&#233;cu comme le bras arm&#233; de la privatisation des services publics (eau, sant&#233;, &#233;ducation). En France, une centaine de collectivit&#233;s locales se sont d&#233;clar&#233;es &#171;zone non AGCS&#187;. Et demandent un moratoire.Pl&#233;ni&#232;re, Saint-Denis, Stade de France, vendredi, 9 h.&lt;/p&gt;
+
+
+&lt;p&gt;Brevetabilit&#233; (du vivant)M&#233;dicaments, savoirs, semences agricoles : la multiplication des droits de propri&#233;t&#233; intellectuels est l&#39;embl&#232;me de la marchandisation du monde. Objectif des alters : pr&#233;server ces domaines de l&#39;unique logique des profits. S&#233;minaire, Saint-Denis, L&#233;gion d&#39;honneur, demain, 18 h. &lt;/p&gt; &lt;p&gt; Commerce (&#233;quitable) Comment garantir un &#171;juste&#187; prix aux producteurs des pays pauvres (caf&#233;, banane) ou des conditions de travail d&#233;centes &#224; leurs salari&#233;s : de Max Havelaar &#224; Artisans du monde, les r&#233;seaux &#233;thiques font leur trou. Un concept parfois r&#233;cup&#233;r&#233; par les entreprises, que r&#233;cuse toute une frange des alters.S&#233;minaire, Bobigny, Parc de la Berg&#232;re, vendredi, 9 h. &lt;/p&gt; &lt;p&gt; D&#233;sob&#233;issance civile Th&#233;oris&#233;e par Henry David Thoreau en 1849, appliqu&#233;e par le mouvement des droits civiques sous Luther King dans les ann&#233;es 60, cette forme de lutte a &#233;t&#233; relanc&#233;e par le sous-commandant Marcos en 1994 (Chiapas, Mexique). R&#233;sistance jug&#233;e l&#233;gitime, m&#234;me si elle est ill&#233;gale.. comme le d&#233;montage d&#39;un McDo ou la destruction d&#39;un champ d&#39;OGM. Atelier, Bobigny, Magic Cin&#233;ma, vendredi, 17 h. &lt;/p&gt; &lt;p&gt; Education (populaire)Remise au go&#251;t du jour des principes associatifs du d&#233;but du si&#232;cle. Elle irrigue les ateliers, les comit&#233;s locaux et les assembl&#233;es g&#233;n&#233;rales. Et le FSE. Mais aussi les m&#233;dias communautaires. Objectif : informer, &#233;duquer, expliciter les enjeux de la mondialisation n&#233;olib&#233;rale. Et former des contre-experts.S&#233;minaire, Saint-Denis, acad&#233;mie Fratellini, vendredi, 18 h. &lt;/p&gt; &lt;p&gt; F&#233;minismeLes femmes sont une des composantes minor&#233;es du mou vement. Qui se souvient qu&#39;une marche mondiale au Qu&#233;bec, en 1995, a r&#233;uni plus de 32 000 femmes ? Pour elles, la mondialisation a accentu&#233; la domination du genre masculin. Pl&#233;ni&#232;re, Bobigny, gymnase Wallon, vendredi, 9 h. &lt;/p&gt; &lt;p&gt; Glocal (global-local) Partir du global pour comprendre le local. Ou inversement. Fa&#231;on de montrer qu&#39;un autre monde est possible par une attitude citoyenne. Du comit&#233; de quartier &#224; la refonte de l&#39;architecture financi&#232;re plan&#233;taire, en passant par de nouvelles r&#232;gles du jeu nationales ou r&#233;gionales.Saint-Denis, l&#39;Usine, vendredi, 18 h.Hacktivisme &lt;/p&gt; &lt;p&gt; Contraction de hacker (pirate du Net) et d&#39;activisme. Principaux faits d&#39;armes : faux site Internet (de l&#39;OMC, par les Yes-men), mail-bombing (inondation de messages &#224; la Banque mondiale) ou sit-in &#233;lectronique, connexion massive et simultan&#233;e pour planter un serveur (Lufthansa, qui expulsait des sans-papiers).Paris 11e, Maison des m&#233;tallos, permanent. &lt;/p&gt; &lt;p&gt; Intergalactique Mouvement lanc&#233; en 1996 dans le Chiapas (Mexique) et r&#233;activ&#233; au Forum social mondial de Porto Alegre (Br&#233;sil) en 2002. R&#233;seau horizontal, sans porte-parole ni repr&#233;sentant. De jeunes n&#233;omilitants qui, entre happening et modes d&#39;action cr&#233;atifs, veulent d&#233;poussi&#233;rer l&#39;altermondialisme &#171;officiel&#187;.Paris-La Villette, gymnase Ladoum&#232;gue, permanent. &lt;/p&gt; &lt;p&gt; JusticeUn des liens f&#233;d&#233;rateurs entre les diff&#233;rentes composantes syndicales et associatives de la galaxie alter qui militent pour plus de justice fiscale, sociale, &#233;conomique, &#233;cologique, culturelle, etc. S&#233;minaire, Bobigny, gymnase Henri-Barbusse, vendredi, 18 h. &lt;/p&gt; &lt;p&gt; Kyoto (protocole de) A l&#39;origine tr&#232;s ax&#233;s sur la vision sociale et &#233;conomique de la mondialisation, les forums sociaux font d&#233;sormais une large place &#224; l&#39;environnement. M&#234;me insuffisant, le protocole de Kyoto (sur la r&#233;duction des gaz &#224; effet de serre), toujours pas ratifi&#233; par les Etats-Unis, est un symbole. De l&#39;unilat&#233;ralisme.S&#233;minaire, Ivry-sur-Seine, cin&#233;ma quai d&#39;Ivry, vendredi, 14 h. &lt;/p&gt; &lt;p&gt; Legal (team) Embryonnaires lors de la plus grande manifestation radicale alter (&#224; Prague, en 2001, contre les r&#233;unions du FMI et de la Banque mondiale), les patrouilles juridiques se sont syst&#233;matis&#233;es. L&#39;id&#233;e : informer les manifestants sur leurs droits en cas d&#39;arrestation, surveiller le d&#233;roulement des manifestations pour relever les violences &#233;ventuelles.Paris-La Villette, Atelier permanent de r&#233;sistance civile, Glad, gymnase Ladoum&#232;gue. &lt;/p&gt; &lt;p&gt; Microfinance Un des chantiers de l&#39;&#233;conomie solidaire. Syst&#232;me d&#39;&#233;pargne alternatif aux banques qui s&#39;est d&#39;abord d&#233;velopp&#233; dans les pays du Sud, ensuite dans les pays riches. Il touche 23 millions de personnes ; 100 millions attendues dans deux ans.Atelier, Ivry-sur-Seine, cin&#233;ma quai d&#39;Ivry, vendredi, 18 h.No Vox &lt;/p&gt; &lt;p&gt; Mouvement des &#171;sans-voix&#187;. Sans toit, sans emploi, sans couverture sociale, sans papiers.. Comme les femmes, ils ont multipli&#233; les marches europ&#233;ennes d&#232;s 1997. Un temps confin&#233;s en marge des grandes messes alters, ils sont d&#233;sormais (un peu) mieux int&#233;gr&#233;s dans les d&#233;bats. M&#234;me s&#39;ils organisent leurs propres rencontres en marge du forum.Pl&#233;ni&#232;re, Bobigny, Parc de la Berg&#232;re, demain, 9 h. &lt;/p&gt; &lt;p&gt;&lt;mark&gt; Open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; Type de protection alternatif aux brevets sur les logiciels et les contenus. L&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; permet leur libre circulation sur l&#39;Internet. Mais aussi la mise &#224; disposition des secrets de fabrication dans le cas des logiciels. Ce qui permet de les adapter &#224; sa guise. Cela &#233;vite de se placer sous la domination (et les factures) de Microsoft.Paris XIe, Maison des m&#233;tallos, Medialab permanent. &lt;/p&gt; &lt;p&gt; Paix La guerre en Irak a marqu&#233; l&#39;entr&#233;e des mouvements pacifistes dans l&#39;altermondialisme. 600 000 personnes ont battu le pav&#233; au premier FSE de Florence l&#39;an pass&#233;. Pour les alters, la guerre est la continuation par d&#39;autres moyens de la mondialisation..Pl&#233;ni&#232;re, Saint-Denis, Stade de France, demain, 9 h. &lt;/p&gt; &lt;p&gt; Quote-part Illustration d&#39;une gouvernance mondiale bancale. Les alters d&#233;noncent, par exemple, les positions h&#233;g&#233;moniques des grandes puissances &#233;conomiques au sein du FMI. Ils plaident pour une r&#233;forme du syst&#232;me de vote du conseil d&#39;administration du Fonds : les Etats-Unis d&#233;tiennent 17,16 % des votes, contre 1,16 % pour les 23 pays africains. Pl&#233;ni&#232;re, Paris-La Villette, samedi, 9 h. &lt;/p&gt; &lt;p&gt; R&#233;gulation A la toute-puissance des lois du march&#233;, les alters opposent un retour en force des politiques &#233;conomiques volontaristes. Et une plus grande coh&#233;rence des missions des grands organismes internationaux. Taxes internationales, normes sociales ou environnementales figurent parmi les outils de lutte contre la d&#233;r&#233;glementation &#233;conomique.Pl&#233;ni&#232;re, Paris-La Villette, Cit&#233; des sciences, demain, 9 h. &lt;/p&gt; &lt;p&gt; Soutenable (D&#233;croissance)La croissance &#233;conomique ne fait pas le bonheur. Pire, elle mettrait &#224; terme en p&#233;ril l&#39;avenir de la plan&#232;te. Elle g&#233;n&#232;re des in&#233;galit&#233;s sociales. En 1992, au Sommet de la Terre de Rio, la r&#232;gle des six &#171;r&#187; avait &#233;t&#233; d&#233;finie pour enclencher le cercle vertueux de la d&#233;croissance : r&#233;&#233;valuer, restructurer, redistribuer, r&#233;duire, r&#233;utiliser, recycler.Pl&#233;ni&#232;re, Saint-Denis, stade Mandela, demain, 9 h. &lt;/p&gt; &lt;p&gt; Transnationales (Soci&#233;t&#233;s) Elles symbolisent la d&#233;possession du politique et du r&#244;le des Etats. Elles pilleraient les ressources naturelles des pays du Sud. Surferaient sur le faible co&#251;t du travail pour multiplier les d&#233;localisations. S&#39;infiltreraient dans toutes les organisations internationales.S&#233;minaire, Ivry-sur-Seine, la Halle Venise, vendredi, 14 h. &lt;/p&gt; &lt;p&gt; Utopies (concr&#232;tes) L&#39;annulation de la dette des pays du tiers-monde ? Une utopie. La mise en branle d&#39;un imp&#244;t mondial ? Une utopie. Mais il en existe de plus &#171;r&#233;alistes&#187;.Atelier, Ivry-sur-Seine, M&#233;diath&#232;que, vendredi, 9 h. &lt;/p&gt; &lt;p&gt; Vie (participative)Du comit&#233; de quartier qui met en place une rue pi&#233;tonne &#224; la d&#233;mocratie participative &#224; l&#39;&#233;chelle communale (avec le vote d&#39;une partie du budget), en passant par les partis politiques qui tentent de surfer sur l&#39;id&#233;e.. Saint-Denis, cirque Fratellini, demain, 9 h. &lt;/p&gt; &lt;p&gt; WikiC&#39;est la forme la plus ouverte possible d&#39;un site web, la plus d&#233;mocratique jusqu&#39;au foutoir (parfois) : un wiki est un espace sur le Net o&#249; tout visiteur peut modifier les informations &#224; loisir, publier ce qu&#39;il veut, quand il veut, d&#39;o&#249; il veut. Objectif : casser la logique hi&#233;rarchique &#233;metteur/r&#233;cepteurs des m&#233;dias classiques.Paris XIe, Maisons des m&#233;tallos, Metallos MediaLab, samedi, 20 h &#224; 22 h. &lt;/p&gt; &lt;p&gt; X&#233;nophobie Au d&#233;part, socle commun, &#233;vident. Mouvance inclusive, horizontale, les alters agr&#232;gent tous les d&#233;fenseurs de minorit&#233;s. Quitte &#224; prendre (et pour l&#39;instant assumer) le risque d&#39;accueillir des tenants d&#39;un communautarisme z&#233;l&#233;.S&#233;minaire, Saint-Denis, l&#39;Humanit&#233;, demain, 9 h. &lt;/p&gt; &lt;p&gt; Ya basta (zapatisme) Ou &#171;&#231;a suffit&#187;. Au d&#233;part, collectif de soutien au mouvement zapatiste du sous-commandant Marcos. Puis t&#234;te de gondole de petits mouvements qui, d&#39;Italie &#224; l&#39;Espagne en passant par la France, revendiquent une &#171;lib&#233;ration&#187; par la &#171;r&#233;sistance active.&#187;Paris, Porte de Pantin, Glad, stade Jules-Ladoum&#232;gue, permanent. &lt;/p&gt; &lt;p&gt; Zone (d&#39;autonomie temporaire) Ou TAZ. Forme d&#39;insurrection libertaire et festive dont l&#39;objectif est d&#39;investir temporairement un espace public. Th&#233;oris&#233;e par l&#39;Am&#233;ricain Hakim Bey, exp&#233;riment&#233;e par des n&#233;oradicaux britanniques tel Reclaim the Street, mise en pratique &#224; Seattle en bloquant des rues..Paris, Porte de Pantin, Glad, stade Jules-Ladoum&#232;gue, permanent.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+
+        &lt;p&gt;
+            &lt;div&gt;
+                    &lt;a href=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/WebPages/media.aspx?Type=image&amp;DocName=20031112LI001.jpg&amp;Logo=li_small.gif&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;40&quot; height=&quot;40&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20031112LI001.jpg&quot; /&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2003 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20031112&amp;#183;LI&amp;#183;0li20031112125&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720031112%c2%b7LI%c2%b70li20031112125" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720031112%c2%b7LI%c2%b70li20031112125">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+        <img id="scrollToImg" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/interface/result/ico_IMAGE_jointe.gif" align="right">
+        &nbsp;
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+EVENEMENT,         mercredi 12 novembre 2003 1126 mots, p. 2, 4</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Forum social européen</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+De A à Z, Mode d'emploi pour un autre monde            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Les altermondialistes se retrouvent à partir d'aujourd'hui en région parisienne pour trois jours. Justice sociale, éducation ou zapatisme.. sélection de débats.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">DE FILIPPIS Vittorio, LOSSON Christian, QUINIO Paul</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Difficile de choisir entre les 55 conférences plénières, les 270 séminaires, les centaines d'ateliers, les 200 spectacles ou «actions» qui vont se tenir à partir d'aujourd'hui et jusqu'à samedi à Paris, Saint-Denis, Bobigny et Ivry-sur-Seine, les quatre villes qui accueillent le second Forum social européen. De l'AGCS aux zones d'autonomie temporaire en passant par la brevetabilité ou les No vox, parlez-vous l'«alter» ? Libération, à travers un abécédaire, a sélectionné subjectivement 26 mots, thématiques, revendications ou enjeux emblématiques de la planète altermondialiste. En renvoyant à chaque fois à un débat ou un lieu. Petite plongée d'avant-apnée. </p> <p> AGCSAccord général sur le commerce des services, en cours de négociation à l'OMC. Il est vécu comme le bras armé de la privatisation des services publics (eau, santé, éducation). En France, une centaine de collectivités locales se sont déclarées «zone non AGCS». Et demandent un moratoire.Plénière, Saint-Denis, Stade de France, vendredi, 9 h.</p>
+
+
+<p>Brevetabilité (du vivant)Médicaments, savoirs, semences agricoles : la multiplication des droits de propriété intellectuels est l'emblème de la marchandisation du monde. Objectif des alters : préserver ces domaines de l'unique logique des profits. Séminaire, Saint-Denis, Légion d'honneur, demain, 18 h. </p> <p> Commerce (équitable) Comment garantir un «juste» prix aux producteurs des pays pauvres (café, banane) ou des conditions de travail décentes à leurs salariés : de Max Havelaar à Artisans du monde, les réseaux éthiques font leur trou. Un concept parfois récupéré par les entreprises, que récuse toute une frange des alters.Séminaire, Bobigny, Parc de la Bergère, vendredi, 9 h. </p> <p> Désobéissance civile Théorisée par Henry David Thoreau en 1849, appliquée par le mouvement des droits civiques sous Luther King dans les années 60, cette forme de lutte a été relancée par le sous-commandant Marcos en 1994 (Chiapas, Mexique). Résistance jugée légitime, même si elle est illégale.. comme le démontage d'un McDo ou la destruction d'un champ d'OGM. Atelier, Bobigny, Magic Cinéma, vendredi, 17 h. </p> <p> Education (populaire)Remise au goût du jour des principes associatifs du début du siècle. Elle irrigue les ateliers, les comités locaux et les assemblées générales. Et le FSE. Mais aussi les médias communautaires. Objectif : informer, éduquer, expliciter les enjeux de la mondialisation néolibérale. Et former des contre-experts.Séminaire, Saint-Denis, académie Fratellini, vendredi, 18 h. </p> <p> FéminismeLes femmes sont une des composantes minorées du mou vement. Qui se souvient qu'une marche mondiale au Québec, en 1995, a réuni plus de 32 000 femmes ? Pour elles, la mondialisation a accentué la domination du genre masculin. Plénière, Bobigny, gymnase Wallon, vendredi, 9 h. </p> <p> Glocal (global-local) Partir du global pour comprendre le local. Ou inversement. Façon de montrer qu'un autre monde est possible par une attitude citoyenne. Du comité de quartier à la refonte de l'architecture financière planétaire, en passant par de nouvelles règles du jeu nationales ou régionales.Saint-Denis, l'Usine, vendredi, 18 h.Hacktivisme </p> <p> Contraction de hacker (pirate du Net) et d'activisme. Principaux faits d'armes : faux site Internet (de l'OMC, par les Yes-men), mail-bombing (inondation de messages à la Banque mondiale) ou sit-in électronique, connexion massive et simultanée pour planter un serveur (Lufthansa, qui expulsait des sans-papiers).Paris 11e, Maison des métallos, permanent. </p> <p> Intergalactique Mouvement lancé en 1996 dans le Chiapas (Mexique) et réactivé au Forum social mondial de Porto Alegre (Brésil) en 2002. Réseau horizontal, sans porte-parole ni représentant. De jeunes néomilitants qui, entre happening et modes d'action créatifs, veulent dépoussiérer l'altermondialisme «officiel».Paris-La Villette, gymnase Ladoumègue, permanent. </p> <p> JusticeUn des liens fédérateurs entre les différentes composantes syndicales et associatives de la galaxie alter qui militent pour plus de justice fiscale, sociale, économique, écologique, culturelle, etc. Séminaire, Bobigny, gymnase Henri-Barbusse, vendredi, 18 h. </p> <p> Kyoto (protocole de) A l'origine très axés sur la vision sociale et économique de la mondialisation, les forums sociaux font désormais une large place à l'environnement. Même insuffisant, le protocole de Kyoto (sur la réduction des gaz à effet de serre), toujours pas ratifié par les Etats-Unis, est un symbole. De l'unilatéralisme.Séminaire, Ivry-sur-Seine, cinéma quai d'Ivry, vendredi, 14 h. </p> <p> Legal (team) Embryonnaires lors de la plus grande manifestation radicale alter (à Prague, en 2001, contre les réunions du FMI et de la Banque mondiale), les patrouilles juridiques se sont systématisées. L'idée : informer les manifestants sur leurs droits en cas d'arrestation, surveiller le déroulement des manifestations pour relever les violences éventuelles.Paris-La Villette, Atelier permanent de résistance civile, Glad, gymnase Ladoumègue. </p> <p> Microfinance Un des chantiers de l'économie solidaire. Système d'épargne alternatif aux banques qui s'est d'abord développé dans les pays du Sud, ensuite dans les pays riches. Il touche 23 millions de personnes ; 100 millions attendues dans deux ans.Atelier, Ivry-sur-Seine, cinéma quai d'Ivry, vendredi, 18 h.No Vox </p> <p> Mouvement des «sans-voix». Sans toit, sans emploi, sans couverture sociale, sans papiers.. Comme les femmes, ils ont multiplié les marches européennes dès 1997. Un temps confinés en marge des grandes messes alters, ils sont désormais (un peu) mieux intégrés dans les débats. Même s'ils organisent leurs propres rencontres en marge du forum.Plénière, Bobigny, Parc de la Bergère, demain, 9 h. </p> <p><mark> Open</mark> <mark>source</mark> Type de protection alternatif aux brevets sur les logiciels et les contenus. L'<mark>open</mark> <mark>source</mark> permet leur libre circulation sur l'Internet. Mais aussi la mise à disposition des secrets de fabrication dans le cas des logiciels. Ce qui permet de les adapter à sa guise. Cela évite de se placer sous la domination (et les factures) de Microsoft.Paris XIe, Maison des métallos, Medialab permanent. </p> <p> Paix La guerre en Irak a marqué l'entrée des mouvements pacifistes dans l'altermondialisme. 600 000 personnes ont battu le pavé au premier FSE de Florence l'an passé. Pour les alters, la guerre est la continuation par d'autres moyens de la mondialisation..Plénière, Saint-Denis, Stade de France, demain, 9 h. </p> <p> Quote-part Illustration d'une gouvernance mondiale bancale. Les alters dénoncent, par exemple, les positions hégémoniques des grandes puissances économiques au sein du FMI. Ils plaident pour une réforme du système de vote du conseil d'administration du Fonds : les Etats-Unis détiennent 17,16 % des votes, contre 1,16 % pour les 23 pays africains. Plénière, Paris-La Villette, samedi, 9 h. </p> <p> Régulation A la toute-puissance des lois du marché, les alters opposent un retour en force des politiques économiques volontaristes. Et une plus grande cohérence des missions des grands organismes internationaux. Taxes internationales, normes sociales ou environnementales figurent parmi les outils de lutte contre la déréglementation économique.Plénière, Paris-La Villette, Cité des sciences, demain, 9 h. </p> <p> Soutenable (Décroissance)La croissance économique ne fait pas le bonheur. Pire, elle mettrait à terme en péril l'avenir de la planète. Elle génère des inégalités sociales. En 1992, au Sommet de la Terre de Rio, la règle des six «r» avait été définie pour enclencher le cercle vertueux de la décroissance : réévaluer, restructurer, redistribuer, réduire, réutiliser, recycler.Plénière, Saint-Denis, stade Mandela, demain, 9 h. </p> <p> Transnationales (Sociétés) Elles symbolisent la dépossession du politique et du rôle des Etats. Elles pilleraient les ressources naturelles des pays du Sud. Surferaient sur le faible coût du travail pour multiplier les délocalisations. S'infiltreraient dans toutes les organisations internationales.Séminaire, Ivry-sur-Seine, la Halle Venise, vendredi, 14 h. </p> <p> Utopies (concrètes) L'annulation de la dette des pays du tiers-monde ? Une utopie. La mise en branle d'un impôt mondial ? Une utopie. Mais il en existe de plus «réalistes».Atelier, Ivry-sur-Seine, Médiathèque, vendredi, 9 h. </p> <p> Vie (participative)Du comité de quartier qui met en place une rue piétonne à la démocratie participative à l'échelle communale (avec le vote d'une partie du budget), en passant par les partis politiques qui tentent de surfer sur l'idée.. Saint-Denis, cirque Fratellini, demain, 9 h. </p> <p> WikiC'est la forme la plus ouverte possible d'un site web, la plus démocratique jusqu'au foutoir (parfois) : un wiki est un espace sur le Net où tout visiteur peut modifier les informations à loisir, publier ce qu'il veut, quand il veut, d'où il veut. Objectif : casser la logique hiérarchique émetteur/récepteurs des médias classiques.Paris XIe, Maisons des métallos, Metallos MediaLab, samedi, 20 h à 22 h. </p> <p> Xénophobie Au départ, socle commun, évident. Mouvance inclusive, horizontale, les alters agrègent tous les défenseurs de minorités. Quitte à prendre (et pour l'instant assumer) le risque d'accueillir des tenants d'un communautarisme zélé.Séminaire, Saint-Denis, l'Humanité, demain, 9 h. </p> <p> Ya basta (zapatisme) Ou «ça suffit». Au départ, collectif de soutien au mouvement zapatiste du sous-commandant Marcos. Puis tête de gondole de petits mouvements qui, d'Italie à l'Espagne en passant par la France, revendiquent une «libération» par la «résistance active.»Paris, Porte de Pantin, Glad, stade Jules-Ladoumègue, permanent. </p> <p> Zone (d'autonomie temporaire) Ou TAZ. Forme d'insurrection libertaire et festive dont l'objectif est d'investir temporairement un espace public. Théorisée par l'Américain Hakim Bey, expérimentée par des néoradicaux britanniques tel Reclaim the Street, mise en pratique à Seattle en bloquant des rues..Paris, Porte de Pantin, Glad, stade Jules-Ladoumègue, permanent.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+
+        <p>
+            </p><div>
+                    <a href="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/WebPages/media.aspx?Type=image&amp;DocName=20031112LI001.jpg&amp;Logo=li_small.gif" target="_blank"><img width="40" height="40" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20031112LI001.jpg"></a>
+            </div>
+            
+            
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2003 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20031112·LI·0li20031112125</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20031112·LI·0li20031112125";
+    var _docIndex = 251;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20031112·LI·0li20031112125';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720031112%C2%B7LI%C2%B70li20031112125&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720031112%C2%B7LI%C2%B70li20031112125&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720031112%C2%B7LI%C2%B70li20031112125&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720031112%C2%B7LI%C2%B70li20031112125&docIndex=251&FullScreen=1";
+                
+	var _keyDoc = 'news·20031112·LI·0li20031112125';
+</script>
+</div></body></html>

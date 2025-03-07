@@ -1,0 +1,503 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 7533                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CAHIER SPECIAL,         vendredi 29 juillet 2005 341 mots, p. 7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Et&#233;. Quiz. Web&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Que veut dire TKC en langage tchat&#233; ?            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;BLECHER Ludovic&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;1. G&#233;n&#233;rer 112 millions d&#39;euros sans bouger de son fauteuil en six mois, c&#39;est possible en... &lt;/p&gt; &lt;p&gt; a. Cr&#233;ant un casino en ligne. &lt;/p&gt; &lt;p&gt; b. Vendant des chaussettes sur l&#39;Internet. &lt;/p&gt; &lt;p&gt; c. Laissant les abonn&#233;s poireauter avec la hotline des services clients.&lt;/p&gt;
+
+
+&lt;p&gt;2. Que signifie le happy slapping ? &lt;/p&gt; &lt;p&gt; a. Litt&#233;ralement &#171;un coup heureux&#187;, l&#39;expression s&#39;applique &#224; une personne avec laquelle la rencontre sexuelle a &#233;t&#233; de grande qualit&#233;. &lt;/p&gt; &lt;p&gt; b. Une expression qui d&#233;signe des enfants qui jouent &#224; se gifler. &lt;/p&gt; &lt;p&gt; c. Un jeu (anglais) qui consiste &#224; tabasser quelqu&#39;un au hasard, filmer l&#39;agression et balancer la sc&#232;ne sur le Net. &lt;/p&gt; &lt;p&gt; 3. Monsieur Chouard est plus connu pour... &lt;/p&gt; &lt;p&gt; a. La qualit&#233; de son enseignement de droit et d&#39;informatique. &lt;/p&gt; &lt;p&gt; b. Le succ&#232;s de sa contribution personnelle au r&#233;f&#233;rendum sur la Constitution europ&#233;enne mise en ligne sur blog. &lt;/p&gt; &lt;p&gt; c. Avoir annonc&#233; la victoire du non avant tout le monde. &lt;/p&gt; &lt;p&gt; d. Une dr&#244;le d&#39;id&#233;e consistant &#224; tirer au sort parmi les citoyens les responsables du pays. &lt;/p&gt; &lt;p&gt; 4. Adele, c&#39;est... &lt;/p&gt; &lt;p&gt; a. Le pseudo de la strip-teaseuse la plus courtis&#233;e du Web. &lt;/p&gt; &lt;p&gt; b. Une nouvelle marque d&#39;ordinateur. &lt;/p&gt; &lt;p&gt; c. Le nom du programme gouvernemental pour l&#39;administration &#233;lectronique. &lt;/p&gt; &lt;p&gt; 5. Voyages-sncf.com l&#39;assurait dans une publicit&#233; diffus&#233;e au mois de mai sur le Net : &#171;Paris-New York en huit heures, sous la mer et en train, ce sera bient&#244;t possible ?&#187; Il s&#39;agissait : &lt;/p&gt; &lt;p&gt; a. D&#39;une campagne de marketing viral. &lt;/p&gt; &lt;p&gt; b. D&#39;une op&#233;ration d&#39;intox. &lt;/p&gt; &lt;p&gt; c. D&#39;un projet d&#39;avenir. &lt;/p&gt; &lt;p&gt; 6. La b&#234;te noire des guichetiers de la SNCF s&#39;appelle : &lt;/p&gt; &lt;p&gt; a. Louis Gallois. &lt;/p&gt; &lt;p&gt; b. Service minimum. &lt;/p&gt; &lt;p&gt; c. iDTGV. &lt;/p&gt; &lt;p&gt; 7. Le site Laskard.com propose : &lt;/p&gt; &lt;p&gt; a. D&#39;explorer &#171;tes plaisirs au tarif zen de 0,15 euro la minute&#187;. &lt;/p&gt; &lt;p&gt; b. Une cat&#233;gorie &#171;nokpote&#187; pour ceux qui veulent briser le tabou des rapports non prot&#233;g&#233;s. &lt;/p&gt; &lt;p&gt; c. Des annonces de reclassement professionnel pour les voyous. &lt;/p&gt; &lt;p&gt; 8. En langage tchat&#233;, TKC veut dire ? &lt;/p&gt; &lt;p&gt; a. T&#39;es givr&#233;. &lt;/p&gt; &lt;p&gt; b. T&#39;as fum&#233; un p&#233;tard. &lt;/p&gt; &lt;p&gt; c. T&#39;es foutu. &lt;/p&gt; &lt;p&gt; 9. Les initiales RSS d&#233;signent ? &lt;/p&gt; &lt;p&gt; a. Un r&#233;seau sous surveillance. &lt;/p&gt; &lt;p&gt; b. Le groupe de pirates, les Rats sur sc&#232;ne. &lt;/p&gt; &lt;p&gt; c. Des fils d&#39;infos. &lt;/p&gt; &lt;p&gt; 10. Firefox est le nom ? &lt;/p&gt; &lt;p&gt; a. D&#39;un navigateur. &lt;/p&gt; &lt;p&gt; b. D&#39;un pilote de chasse. &lt;/p&gt; &lt;p&gt; c. D&#39;un antivirus. &lt;/p&gt; &lt;p&gt; 11. Il y a dix ans, Jacques Chirac... &lt;/p&gt; &lt;p&gt; a. Ne savait toujours pas se servir d&#39;un mulot. &lt;/p&gt; &lt;p&gt; b. A enfin pu lire Lib&#233;ration sur le Web. &lt;/p&gt; &lt;p&gt; c. N&#39;&#233;tait d&#233;j&#224; pas tr&#232;s au Net. &lt;/p&gt; &lt;p&gt; Solutions &lt;/p&gt; &lt;p&gt; 1c. Les hotlines. &lt;/p&gt; &lt;p&gt; 2c. Des agressions gratuites diffus&#233;es sur l&#39;Internet. &lt;/p&gt; &lt;p&gt; 3b. Son blog du non a connu un incroyable succ&#232;s. d. Mais il n&#39;est pas le seul &#224; avoir lanc&#233; cette id&#233;e. &lt;/p&gt; &lt;p&gt; 4c. Ce programme compte 140 mesures. &lt;/p&gt; &lt;p&gt; 5a. Une campagne qui vise &#224; faire du bruit autour d&#39;une marque quitte &#224; fabuler. &lt;/p&gt; &lt;p&gt; 6c. Du nom du billet de TGV low-cost vendu uniquement en ligne (r&#233;ponse non exclusive). &lt;/p&gt; &lt;p&gt; 7b. Ce jeu dangereux est bien &#171;nokapote&#187;. &lt;/p&gt; &lt;p&gt; 8b. Du fran&#231;ais &#171;Tu es cass&#233;&#187;. &lt;/p&gt; &lt;p&gt; 9c. Acronyme de Really Simple Syndication, le RSS est un format utilis&#233; pour la diffusion d&#39;actualit&#233;s. &lt;/p&gt; &lt;p&gt; 10a. Ce navigateur est un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; 11a, b, c.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20050729&amp;#183;LI&amp;#183;0li20050729003&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">nom du programme gouvernemental</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">campagne de marketing viral</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">administration électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">pseudo de la strip-teaseuse</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">reclassement professionnel</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sports et loisirs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">New York</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Simple</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050729%c2%b7LI%c2%b70li20050729003" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050729%c2%b7LI%c2%b70li20050729003">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 7533                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CAHIER SPECIAL,         vendredi 29 juillet 2005 341 mots, p. 7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Eté. Quiz. Web</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Que veut dire TKC en langage tchaté ?            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">BLECHER Ludovic</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>1. Générer 112 millions d'euros sans bouger de son fauteuil en six mois, c'est possible en... </p> <p> a. Créant un casino en ligne. </p> <p> b. Vendant des chaussettes sur l'Internet. </p> <p> c. Laissant les abonnés poireauter avec la hotline des services clients.</p>
+
+
+<p>2. Que signifie le happy slapping ? </p> <p> a. Littéralement «un coup heureux», l'expression s'applique à une personne avec laquelle la rencontre sexuelle a été de grande qualité. </p> <p> b. Une expression qui désigne des enfants qui jouent à se gifler. </p> <p> c. Un jeu (anglais) qui consiste à tabasser quelqu'un au hasard, filmer l'agression et balancer la scène sur le Net. </p> <p> 3. Monsieur Chouard est plus connu pour... </p> <p> a. La qualité de son enseignement de droit et d'informatique. </p> <p> b. Le succès de sa contribution personnelle au référendum sur la Constitution européenne mise en ligne sur blog. </p> <p> c. Avoir annoncé la victoire du non avant tout le monde. </p> <p> d. Une drôle d'idée consistant à tirer au sort parmi les citoyens les responsables du pays. </p> <p> 4. Adele, c'est... </p> <p> a. Le pseudo de la strip-teaseuse la plus courtisée du Web. </p> <p> b. Une nouvelle marque d'ordinateur. </p> <p> c. Le nom du programme gouvernemental pour l'administration électronique. </p> <p> 5. Voyages-sncf.com l'assurait dans une publicité diffusée au mois de mai sur le Net : «Paris-New York en huit heures, sous la mer et en train, ce sera bientôt possible ?» Il s'agissait : </p> <p> a. D'une campagne de marketing viral. </p> <p> b. D'une opération d'intox. </p> <p> c. D'un projet d'avenir. </p> <p> 6. La bête noire des guichetiers de la SNCF s'appelle : </p> <p> a. Louis Gallois. </p> <p> b. Service minimum. </p> <p> c. iDTGV. </p> <p> 7. Le site Laskard.com propose : </p> <p> a. D'explorer «tes plaisirs au tarif zen de 0,15 euro la minute». </p> <p> b. Une catégorie «nokpote» pour ceux qui veulent briser le tabou des rapports non protégés. </p> <p> c. Des annonces de reclassement professionnel pour les voyous. </p> <p> 8. En langage tchaté, TKC veut dire ? </p> <p> a. T'es givré. </p> <p> b. T'as fumé un pétard. </p> <p> c. T'es foutu. </p> <p> 9. Les initiales RSS désignent ? </p> <p> a. Un réseau sous surveillance. </p> <p> b. Le groupe de pirates, les Rats sur scène. </p> <p> c. Des fils d'infos. </p> <p> 10. Firefox est le nom ? </p> <p> a. D'un navigateur. </p> <p> b. D'un pilote de chasse. </p> <p> c. D'un antivirus. </p> <p> 11. Il y a dix ans, Jacques Chirac... </p> <p> a. Ne savait toujours pas se servir d'un mulot. </p> <p> b. A enfin pu lire Libération sur le Web. </p> <p> c. N'était déjà pas très au Net. </p> <p> Solutions </p> <p> 1c. Les hotlines. </p> <p> 2c. Des agressions gratuites diffusées sur l'Internet. </p> <p> 3b. Son blog du non a connu un incroyable succès. d. Mais il n'est pas le seul à avoir lancé cette idée. </p> <p> 4c. Ce programme compte 140 mesures. </p> <p> 5a. Une campagne qui vise à faire du bruit autour d'une marque quitte à fabuler. </p> <p> 6c. Du nom du billet de TGV low-cost vendu uniquement en ligne (réponse non exclusive). </p> <p> 7b. Ce jeu dangereux est bien «nokapote». </p> <p> 8b. Du français «Tu es cassé». </p> <p> 9c. Acronyme de Really Simple Syndication, le RSS est un format utilisé pour la diffusion d'actualités. </p> <p> 10a. Ce navigateur est un <mark>logiciel</mark> <mark>libre</mark>. </p> <p> 11a, b, c.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20050729·LI·0li20050729003</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20050729·LI·0li20050729003";
+    var _docIndex = 950;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20050729·LI·0li20050729003';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720050729%C2%B7LI%C2%B70li20050729003&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720050729%C2%B7LI%C2%B70li20050729003&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720050729%C2%B7LI%C2%B70li20050729003&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720050729%C2%B7LI%C2%B70li20050729003&docIndex=950&FullScreen=1";
+                
+	var _keyDoc = 'news·20050729·LI·0li20050729003';
+</script>
+</div></body></html>

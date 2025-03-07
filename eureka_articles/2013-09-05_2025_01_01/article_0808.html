@@ -1,0 +1,539 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;coFutur,         lundi 10 novembre 2014 1093 mots, p. SUP1&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Biohackers&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Biohackers, l&#39;internationale des Savants fous            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Amateurs, &#233;tudiants ou chercheurs unissent leurs efforts dans une cinquantaine de labos de &#171;biohacking&#187; pour inventer une pile verte ou &#233;tudier des neurones de mouche.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Lucile Morin&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Un vent de piraterie souffle sur les bo&#238;tes de P&#233;tri, pipettes et autres tubes &#224; essai. N&#233; aux Etats-Unis en 2008, avec l&#39;&#233;mergence de communaut&#233;s ouvertes et collaboratives qui &#233;rigent le &lt;em style=&quot;font-style:italic;&quot;&gt;do it yourself&lt;/em&gt;et &lt;em style=&quot;font-style:italic;&quot;&gt;l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;/em&gt;en manifeste pour la libert&#233;, et favoris&#233; par la baisse du co&#251;t du s&#233;quen&#231;age g&#233;n&#233;tique et du mat&#233;riel, le mouvement des &#171;biohackers&#187; s&#39;&#233;tend en Europe et sur tous les continents. Une cinquantaine de laboratoires alternatifs ont &#233;t&#233; cr&#233;&#233;s par des ing&#233;nieurs biologistes bidouilleurs et leur nombre ne cesse d&#39;augmenter. Sans compter les clubs qui bricolent dans les garages. Ce sont de v&#233;ritables bouillons de culture scientifique, o&#249; les curieux de tous horizons, simples amateurs, chercheurs, inventeurs, &#233;tudiants, artistes et entrepreneurs exp&#233;rimentent la biologie avec du mat&#233;riel de r&#233;cup&#233;ration. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Le hack, c&#39;est le d&#233;tournement, on d&#233;monte les portes pour faire des tables ! Ici, on construit un espace de libert&#233; pour que chacun puisse se r&#233;approprier les connaissances, ouvrir des opportunit&#233;s, travailler sur d&#39;autres mod&#232;les, plus ouverts&#187;,&lt;/em&gt; explique &lt;span class=&quot;stubs&quot;&gt;Marc Fournier&lt;/span&gt;, cofondateur de la Paillasse, le premier bio hackerspace de France, qui squattait &#224; Vitry-sur-Seine avant d&#39;emm&#233;nager plus l&#233;galement au coeur de Paris, en septembre. Lorsqu&#39;&lt;span class=&quot;stubs&quot;&gt;Ellen Jorgensen&lt;/span&gt;, chercheur en biologie mol&#233;culaire a cr&#233;&#233; Genspace, le tout premier labo autonome, &#224; Brooklyn (New York), &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;le but &#233;tait de montrer de mani&#232;re transparente que la g&#233;n&#233;tique n&#39;est pas forc&#233;ment dangereuse ni compliqu&#233;e, de d&#233;mocratiser l&#39;acc&#232;s &#224; la biotechnologie et aussi de favoriser l&#39;innovation&#187;.&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Biologie exp&#233;rimentale.&lt;/em&gt;Encadr&#233;s par des b&#233;n&#233;voles, souvent dipl&#244;m&#233;s des meilleures universit&#233;s, les hacklabs sont un lieu de vulgarisation scientifique o&#249; les n&#233;ophytes sont accueillis pour apprendre &#224; s&#233;quencer l&#39;ADN des plantes du jardin et chercher si un intrus se cache dans les lasagnes ou le ma&#239;s. Mais les labos de biologie participative sont avant tout un carrefour d&#39;id&#233;es et de comp&#233;tences pour faire de la biologie exp&#233;rimentale aux antipodes des recherches acad&#233;miques. Autog&#233;r&#233;s, financ&#233;s par les abonnements des membres, ces espaces de recherche ind&#233;pendants lib&#232;rent l&#39;&#233;nergie cr&#233;atrice et les projets se multiplient, avec pour ambition l&#39;innovation au service du citoyen, de l&#39;humanitaire et de l&#39;&#233;cologie : encre biologique, piles vertes, microprot&#233;ines, &#233;lectronique biod&#233;gradable, tests de grossesse low-cost, r&#233;v&#233;lateur de pathologie ou de polluant dans l&#39;eau... Les biohackers commercialisent des kits d&#39;analyse ADN, fabriquent eux-m&#234;mes outils comme des centrifugeuses &#224; bas-co&#251;t ou, comme chez Biocurious &#224; San Francisco, transforment une imprimante &#224; jet d&#39;encre en imprimante 3D pour la culture de cellules vivantes. &lt;/p&gt; &lt;p&gt; Les activit&#233;s pratiqu&#233;es sont class&#233;es par niveau de bios&#233;curit&#233;. Et, en cas de doute, des sp&#233;cialistes de la pr&#233;vention des risques biotechnologiques professionnels r&#233;pondent gratuitement aux questions des biologistes de garage sur le site diybio.org. &lt;/p&gt; &lt;p&gt; En Europe, la modification g&#233;n&#233;tique des organismes est soumise &#224; autorisation pr&#233;alable du Haut Conseil des biotechnologies ou r&#233;serv&#233;e aux laboratoires acad&#233;miques. Mais dans les hacklabs am&#233;ricains, il est possible de faire de la biologie synth&#233;tique, cette science &#233;mergente qui permet de cr&#233;er du vivant de mani&#232;re artificielle ou de manipuler l&#39;ADN d&#39;un organisme et l&#39;introduire dans le syst&#232;me biologique d&#39;une cellule afin de lui attribuer de nouvelles propri&#233;t&#233;s. Elle inspire de nombreuses recherches, utilisant par exemple le g&#232;ne producteur de bioluminescence naturelle de la m&#233;duse pour &#233;tudier les neurones de mouches ou pour faire briller des v&#233;g&#233;taux dans le noir, po&#233;tique &#233;clairage public cher aux bio artistes. Ainsi donc dans les hacklabs, chacun est invit&#233; &#224; &#171;lib&#233;rer son potentiel de... savant fou&#187;. &lt;/p&gt; &lt;p&gt; Savant fou ? Inqui&#233;tant m&#233;lange ! Mais alors, un virus mutant pourrait-il s&#39;&#233;chapper des incubateurs ? Quelle cr&#233;ature malfaisante cette recherche d&#233;brid&#233;e risque-t-elle d&#39;engendrer ? &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;La science amateur s&#39;inscrit dans une longue histoire&#187;,&lt;/em&gt;souligne &lt;span class=&quot;stubs&quot;&gt;Morgan Meyer&lt;/span&gt;, chercheur en sociologie des sciences. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;La biologie devient accessible aujourd&#39;hui parce qu&#39;elle est moins ch&#232;re, la communaut&#233; fabrique des outils miniaturis&#233;s, publie de la documentation. 4 000 amateurs &#233;changent sur un groupe Google. Seulement quatre biologistes ind&#233;pendants sont autoris&#233;s &#224; manipuler des OGM dans leur labo personnel, mais il est difficile d&#39;&#233;valuer le nombre d&#39;individus qui bricolent chez eux.&#187;&lt;/em&gt; En outre, on trouve sur Internet certains r&#233;actifs interdits &#224; la vente. Les risques de d&#233;rives possibles posent des questions de bio-s&#251;ret&#233; et certains observateurs inquiets r&#233;clament une r&#233;glementation. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171;fins pacifiques&#187;.&lt;/em&gt;Un rapport parlementaire sur les &#171;Enjeux de la biologie de synth&#232;se&#187; r&#233;alis&#233; en 2012 et remis au gouvernement en examine les risques : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Les inqui&#233;tudes suscit&#233;es par ces activit&#233;s r&#233;sultent des facilit&#233;s accrues &#224; faire de la biologie synth&#233;tique&#187;&lt;/em&gt; mais &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;des obstacles de nature scientifique et financi&#232;re emp&#234;chent les biologistes de garage de proc&#233;der &#224; des travaux qui auraient des finalit&#233;s malveillantes&#187;.&lt;/em&gt; Pour ne pas entraver l&#39;innovation, il a donc &#233;t&#233; d&#233;cid&#233; d&#39;accompagner l&#39;&#233;mergence du ph&#233;nom&#232;ne avec vigilance. Autoriser les laboratoires alternatifs est finalement un bon moyen de parvenir &#224; encadrer les savants bricoleurs. &lt;span class=&quot;stubs&quot;&gt;Ellen Jorgensen&lt;/span&gt; ironise lorsqu&#39;on lui parle du bioterrorisme : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Les terroristes ne viennent pas se former dans les biohackerspaces. Ils vont plut&#244;t dans les universit&#233;s am&#233;ricaines !&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Aux Etats-Unis, la Commission pr&#233;sidentielle am&#233;ricaine de bio&#233;thique a charg&#233; le FBI de d&#233;velopper une culture de responsabilit&#233; en partenariat avec les acteurs mondiaux de la biologie participative. Le collectif international DIYBio.org a r&#233;dig&#233; une charte en 2011, pour affirmer clairement que &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;la biotechnologie doit &#234;tre utilis&#233;e uniquement &#224; des fins pacifiques, dans le respect des r&#232;gles de transparence, de s&#233;curit&#233;, de respect du vivant et de responsabilit&#233;, pour promouvoir la science citoyenne&#187;.&lt;/em&gt; C&#39;est dans cet &#233;tat d&#39;esprit et pour stimuler l&#39;innovation dans la biologie synth&#233;tique que le prestigieux Massachusetts Institute of Technology (MIT) a lanc&#233; il y a neuf ans le concours international d&#39;ing&#233;nierie g&#233;n&#233;tique (IGem) destin&#233; aux &#233;tudiants de toutes fili&#232;res et ouvert aux hacklabs depuis cette ann&#233;e. Des &#233;quipes pluridisciplinaires unissent leurs comp&#233;tences durant six mois pour concevoir un projet d&#39;int&#233;r&#234;t public. Le challenge : &#224; partir d&#39;une s&#233;rie de s&#233;quences ADN (les &lt;em style=&quot;font-style:italic;&quot;&gt;biobricks,&lt;/em&gt; introduites dans des bact&#233;ries comme l&#39;Escherichia coli) parvenir &#224; cr&#233;er de nouveaux organismes vivants comme des biodiesels, des bact&#233;ries photovolta&#239;ques, des probiotiques contre l&#39;ath&#233;roscl&#233;rose ou des levures-ciment capables r&#233;parer un mur ou d&#39;absorber la pollution de l&#39;air. L&#39;&#233;tude sur la synchronisation des cycles cellulaires faite par l&#39;&#233;quipe de l&#39;universit&#233; d&#39;Aix-Marseille, r&#233;compens&#233;e par une m&#233;daille d&#39;or le 3 novembre, pourrait ainsi aider un jour la recherche contre le cancer. Pour postuler au concours, les &#233;tudiants doivent seulement apporter la d&#233;monstration de faisabilit&#233; de leur projet. Et l&#39;id&#233;e devient parfois r&#233;alit&#233;. &lt;/p&gt; &lt;p&gt; En 2013, l&#39;&#233;quipe de &lt;span class=&quot;stubs&quot;&gt;Paris Bettencourt&lt;/span&gt;, h&#233;berg&#233;e par le Centre de recherches interdisciplinaires (CRI) de l&#39;universit&#233; Paris-Descartes, a &#233;t&#233; sacr&#233;e championne du monde pour son projet destin&#233; &#224; lutter contre la tuberculose : une bact&#233;rie g&#233;n&#233;tiquement modifi&#233;e pour tuer le pathog&#232;ne et un virus de bact&#233;rie pour inactiver les r&#233;sistances aux antibiotiques. En outre, elle a d&#233;couvert de nouvelles mol&#233;cules qui pourraient s&#39;av&#233;rer efficaces contre cette maladie, qui touche encore pr&#232;s de 10 millions de personnes chaque ann&#233;e. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Si le projet obtient les financements qu&#39;il esp&#232;re de l&#39;Agence nationale de la recherche et du Conseil europ&#233;en de la recherche, plus une collaboration avec l&#39;&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; Drug Discovery charg&#233; d&#39;acc&#233;l&#233;rer le d&#233;veloppement des m&#233;dicaments contre les maladies tropicales, un nouvel antibiotique pourrait &#234;tre disponible d&#39;ici cinq &#224; dix ans&#187;, &lt;/em&gt;esp&#232;re &lt;span class=&quot;stubs&quot;&gt;Ariel Lindner&lt;/span&gt;, cofondateur du CRI et directeur de recherches &#224; l&#39;Inserm. Les d&#233;couvertes du concours IGem restent dans le domaine public, le meilleur moyen de favoriser le partage des comp&#233;tences. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171;Incubateur de start-up&#187;.&lt;/em&gt;Et c&#39;est bien cette qu&#234;te d&#39;un nouveau paradigme scientifique &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; qui motive les hacktivistes dans les labos de biologie participative. Il s&#39;agit aussi d&#39;une r&#233;ponse pro-active &#224; une recherche en crise et contre le syst&#232;me des brevets, consid&#233;r&#233;s comme un frein &#224; l&#39;innovation. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Pas de monopole pour les grandes id&#233;es ! Nous sommes un lieu d&#39;exp&#233;rimentation et de d&#233;bat sur la science citoyenne, mais nous voulons &#233;galement &#234;tre un incubateur de start-up en r&#233;sidence et un appui pour r&#233;aliser des lev&#233;es de fonds&#187;,&lt;/em&gt;affirme &lt;span class=&quot;stubs&quot;&gt;Thomas Landrain&lt;/span&gt;, cofondateur et pr&#233;sident de la Paillasse. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Les professionnels nous regardent avec bienveillance faire des exp&#233;riences dans des domaines o&#249; personne ne veut engager d&#39;argent sans garantie de r&#233;sultat. Ils sont curieux de voir ce qui &#233;merge...&#187;&lt;/em&gt;confie Jorgensen. &lt;/p&gt; &lt;p&gt; De fait, les laboratoires font don de mat&#233;riel aux labos DIY, sponsorisent les candidats d&#39;IGem, soutiennent les start-up. De son c&#244;t&#233;, la Paillasse &#233;tablit des partenariats avec Roche contre le cancer du sein, avec Suez pour travailler sur la biorem&#233;diation et avec Pierre Fabre pour un projet d&#39;&#233;chographe low-cost connect&#233; sur un smartphone. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Ce sera int&#233;ressant d&#39;observer la rencontre entre l&#39;&#233;thique du libre-partage DIY et la logique mercantile&#187;,&lt;/em&gt; note &lt;span class=&quot;stubs&quot;&gt;Morgan Meyer&lt;/span&gt;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Photos &lt;span class=&quot;stubs&quot;&gt;Christophe Maout&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20141110&amp;#183;LI&amp;#183;591c9a72-6825-11e4-b264-ca6d8e634124&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">biologie participative</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">biologie synthétique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">labos de biologie participative</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">laboratoires alternatifs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">biologie expérimentale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Ellen Jorgensen</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Morgan Meyer</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Paris Bettencourt</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Ariel Lindner</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Thomas Landrain</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Santé et services sociaux</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Pharmaceutique et biotechnologies</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Brooklyn</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141110%c2%b7LI%c2%b7591c9a72-6825-11e4-b264-ca6d8e634124" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141110%c2%b7LI%c2%b7591c9a72-6825-11e4-b264-ca6d8e634124">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+ÉcoFutur,         lundi 10 novembre 2014 1093 mots, p. SUP1</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Biohackers</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Biohackers, l'internationale des Savants fous            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Amateurs, étudiants ou chercheurs unissent leurs efforts dans une cinquantaine de labos de «biohacking» pour inventer une pile verte ou étudier des neurones de mouche.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Lucile Morin</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Un vent de piraterie souffle sur les boîtes de Pétri, pipettes et autres tubes à essai. Né aux Etats-Unis en 2008, avec l'émergence de communautés ouvertes et collaboratives qui érigent le <em style="font-style:italic;">do it yourself</em>et <em style="font-style:italic;">l'<mark>open</mark> <mark>source</mark> </em>en manifeste pour la liberté, et favorisé par la baisse du coût du séquençage génétique et du matériel, le mouvement des «biohackers» s'étend en Europe et sur tous les continents. Une cinquantaine de laboratoires alternatifs ont été créés par des ingénieurs biologistes bidouilleurs et leur nombre ne cesse d'augmenter. Sans compter les clubs qui bricolent dans les garages. Ce sont de véritables bouillons de culture scientifique, où les curieux de tous horizons, simples amateurs, chercheurs, inventeurs, étudiants, artistes et entrepreneurs expérimentent la biologie avec du matériel de récupération. </p> <p><em style="font-style:italic;">«Le hack, c'est le détournement, on démonte les portes pour faire des tables ! Ici, on construit un espace de liberté pour que chacun puisse se réapproprier les connaissances, ouvrir des opportunités, travailler sur d'autres modèles, plus ouverts»,</em> explique <span class="stubs">Marc Fournier</span>, cofondateur de la Paillasse, le premier bio hackerspace de France, qui squattait à Vitry-sur-Seine avant d'emménager plus légalement au coeur de Paris, en septembre. Lorsqu'<span class="stubs">Ellen Jorgensen</span>, chercheur en biologie moléculaire a créé Genspace, le tout premier labo autonome, à Brooklyn (New York), <em style="font-style:italic;">«le but était de montrer de manière transparente que la génétique n'est pas forcément dangereuse ni compliquée, de démocratiser l'accès à la biotechnologie et aussi de favoriser l'innovation».</em></p>
+
+
+<p><em style="font-weight:bold;">Biologie expérimentale.</em>Encadrés par des bénévoles, souvent diplômés des meilleures universités, les hacklabs sont un lieu de vulgarisation scientifique où les néophytes sont accueillis pour apprendre à séquencer l'ADN des plantes du jardin et chercher si un intrus se cache dans les lasagnes ou le maïs. Mais les labos de biologie participative sont avant tout un carrefour d'idées et de compétences pour faire de la biologie expérimentale aux antipodes des recherches académiques. Autogérés, financés par les abonnements des membres, ces espaces de recherche indépendants libèrent l'énergie créatrice et les projets se multiplient, avec pour ambition l'innovation au service du citoyen, de l'humanitaire et de l'écologie : encre biologique, piles vertes, microprotéines, électronique biodégradable, tests de grossesse low-cost, révélateur de pathologie ou de polluant dans l'eau... Les biohackers commercialisent des kits d'analyse ADN, fabriquent eux-mêmes outils comme des centrifugeuses à bas-coût ou, comme chez Biocurious à San Francisco, transforment une imprimante à jet d'encre en imprimante 3D pour la culture de cellules vivantes. </p> <p> Les activités pratiquées sont classées par niveau de biosécurité. Et, en cas de doute, des spécialistes de la prévention des risques biotechnologiques professionnels répondent gratuitement aux questions des biologistes de garage sur le site diybio.org. </p> <p> En Europe, la modification génétique des organismes est soumise à autorisation préalable du Haut Conseil des biotechnologies ou réservée aux laboratoires académiques. Mais dans les hacklabs américains, il est possible de faire de la biologie synthétique, cette science émergente qui permet de créer du vivant de manière artificielle ou de manipuler l'ADN d'un organisme et l'introduire dans le système biologique d'une cellule afin de lui attribuer de nouvelles propriétés. Elle inspire de nombreuses recherches, utilisant par exemple le gène producteur de bioluminescence naturelle de la méduse pour étudier les neurones de mouches ou pour faire briller des végétaux dans le noir, poétique éclairage public cher aux bio artistes. Ainsi donc dans les hacklabs, chacun est invité à «libérer son potentiel de... savant fou». </p> <p> Savant fou ? Inquiétant mélange ! Mais alors, un virus mutant pourrait-il s'échapper des incubateurs ? Quelle créature malfaisante cette recherche débridée risque-t-elle d'engendrer ? <em style="font-style:italic;">«La science amateur s'inscrit dans une longue histoire»,</em>souligne <span class="stubs">Morgan Meyer</span>, chercheur en sociologie des sciences. <em style="font-style:italic;">«La biologie devient accessible aujourd'hui parce qu'elle est moins chère, la communauté fabrique des outils miniaturisés, publie de la documentation. 4 000 amateurs échangent sur un groupe Google. Seulement quatre biologistes indépendants sont autorisés à manipuler des OGM dans leur labo personnel, mais il est difficile d'évaluer le nombre d'individus qui bricolent chez eux.»</em> En outre, on trouve sur Internet certains réactifs interdits à la vente. Les risques de dérives possibles posent des questions de bio-sûreté et certains observateurs inquiets réclament une réglementation. </p> <p><em style="font-weight:bold;">«fins pacifiques».</em>Un rapport parlementaire sur les «Enjeux de la biologie de synthèse» réalisé en 2012 et remis au gouvernement en examine les risques : <em style="font-style:italic;">«Les inquiétudes suscitées par ces activités résultent des facilités accrues à faire de la biologie synthétique»</em> mais <em style="font-style:italic;">«des obstacles de nature scientifique et financière empêchent les biologistes de garage de procéder à des travaux qui auraient des finalités malveillantes».</em> Pour ne pas entraver l'innovation, il a donc été décidé d'accompagner l'émergence du phénomène avec vigilance. Autoriser les laboratoires alternatifs est finalement un bon moyen de parvenir à encadrer les savants bricoleurs. <span class="stubs">Ellen Jorgensen</span> ironise lorsqu'on lui parle du bioterrorisme : <em style="font-style:italic;">«Les terroristes ne viennent pas se former dans les biohackerspaces. Ils vont plutôt dans les universités américaines !»</em></p><p>Aux Etats-Unis, la Commission présidentielle américaine de bioéthique a chargé le FBI de développer une culture de responsabilité en partenariat avec les acteurs mondiaux de la biologie participative. Le collectif international DIYBio.org a rédigé une charte en 2011, pour affirmer clairement que <em style="font-style:italic;">«la biotechnologie doit être utilisée uniquement à des fins pacifiques, dans le respect des règles de transparence, de sécurité, de respect du vivant et de responsabilité, pour promouvoir la science citoyenne».</em> C'est dans cet état d'esprit et pour stimuler l'innovation dans la biologie synthétique que le prestigieux Massachusetts Institute of Technology (MIT) a lancé il y a neuf ans le concours international d'ingénierie génétique (IGem) destiné aux étudiants de toutes filières et ouvert aux hacklabs depuis cette année. Des équipes pluridisciplinaires unissent leurs compétences durant six mois pour concevoir un projet d'intérêt public. Le challenge : à partir d'une série de séquences ADN (les <em style="font-style:italic;">biobricks,</em> introduites dans des bactéries comme l'Escherichia coli) parvenir à créer de nouveaux organismes vivants comme des biodiesels, des bactéries photovoltaïques, des probiotiques contre l'athérosclérose ou des levures-ciment capables réparer un mur ou d'absorber la pollution de l'air. L'étude sur la synchronisation des cycles cellulaires faite par l'équipe de l'université d'Aix-Marseille, récompensée par une médaille d'or le 3 novembre, pourrait ainsi aider un jour la recherche contre le cancer. Pour postuler au concours, les étudiants doivent seulement apporter la démonstration de faisabilité de leur projet. Et l'idée devient parfois réalité. </p> <p> En 2013, l'équipe de <span class="stubs">Paris Bettencourt</span>, hébergée par le Centre de recherches interdisciplinaires (CRI) de l'université Paris-Descartes, a été sacrée championne du monde pour son projet destiné à lutter contre la tuberculose : une bactérie génétiquement modifiée pour tuer le pathogène et un virus de bactérie pour inactiver les résistances aux antibiotiques. En outre, elle a découvert de nouvelles molécules qui pourraient s'avérer efficaces contre cette maladie, qui touche encore près de 10 millions de personnes chaque année. <em style="font-style:italic;">«Si le projet obtient les financements qu'il espère de l'Agence nationale de la recherche et du Conseil européen de la recherche, plus une collaboration avec l'<mark>Open</mark> <mark>Source</mark> Drug Discovery chargé d'accélérer le développement des médicaments contre les maladies tropicales, un nouvel antibiotique pourrait être disponible d'ici cinq à dix ans», </em>espère <span class="stubs">Ariel Lindner</span>, cofondateur du CRI et directeur de recherches à l'Inserm. Les découvertes du concours IGem restent dans le domaine public, le meilleur moyen de favoriser le partage des compétences. </p> <p><em style="font-weight:bold;">«Incubateur de start-up».</em>Et c'est bien cette quête d'un nouveau paradigme scientifique <mark>open</mark> <mark>source</mark> qui motive les hacktivistes dans les labos de biologie participative. Il s'agit aussi d'une réponse pro-active à une recherche en crise et contre le système des brevets, considérés comme un frein à l'innovation. <em style="font-style:italic;">«Pas de monopole pour les grandes idées ! Nous sommes un lieu d'expérimentation et de débat sur la science citoyenne, mais nous voulons également être un incubateur de start-up en résidence et un appui pour réaliser des levées de fonds»,</em>affirme <span class="stubs">Thomas Landrain</span>, cofondateur et président de la Paillasse. <em style="font-style:italic;">«Les professionnels nous regardent avec bienveillance faire des expériences dans des domaines où personne ne veut engager d'argent sans garantie de résultat. Ils sont curieux de voir ce qui émerge...»</em>confie Jorgensen. </p> <p> De fait, les laboratoires font don de matériel aux labos DIY, sponsorisent les candidats d'IGem, soutiennent les start-up. De son côté, la Paillasse établit des partenariats avec Roche contre le cancer du sein, avec Suez pour travailler sur la bioremédiation et avec Pierre Fabre pour un projet d'échographe low-cost connecté sur un smartphone. <em style="font-style:italic;">«Ce sera intéressant d'observer la rencontre entre l'éthique du libre-partage DIY et la logique mercantile»,</em> note <span class="stubs">Morgan Meyer</span>. </p> <p><em style="font-weight:bold;"> Photos <span class="stubs">Christophe Maout</span></em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20141110·LI·591c9a72-6825-11e4-b264-ca6d8e634124</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20141110·LI·591c9a72-6825-11e4-b264-ca6d8e634124";
+    var _docIndex = 807;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"marc fournier":"12039"};
+		var _orgDic = null;
+		var _docName = 'news·20141110·LI·591c9a72-6825-11e4-b264-ca6d8e634124';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720141110%C2%B7LI%C2%B7591c9a72-6825-11e4-b264-ca6d8e634124&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720141110%C2%B7LI%C2%B7591c9a72-6825-11e4-b264-ca6d8e634124&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720141110%C2%B7LI%C2%B7591c9a72-6825-11e4-b264-ca6d8e634124&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720141110%C2%B7LI%C2%B7591c9a72-6825-11e4-b264-ca6d8e634124&docIndex=807&FullScreen=1";
+                
+	var _keyDoc = 'news·20141110·LI·591c9a72-6825-11e4-b264-ca6d8e634124';
+</script>
+</div></body></html>

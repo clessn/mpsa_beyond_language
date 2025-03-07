@@ -1,0 +1,543 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Dialogues,         mardi 13 f&amp;#233;vrier 2007 1845 mots, p. 21&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+D&#201;CRYPTAGES DOCUMENT         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les &#171; 100 propositions &#187; de Mme Royal            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;La candidate socialiste a rendu public, dimanche 11 f&#233;vrier, son pacte pr&#233;sidentiel, qui s&#39;appuie, entre autres, sur les d&#233;bats participatifs organis&#233;s sur tout le territoire et qui rassemble les principales propositions de son projet&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Ce que vous m&#39;avez dit, je l&#39;ai entendu. Ce que je savais, vous l&#39;avez confirm&#233;. Aujourd&#39;hui, je vous propose le pacte pr&#233;sidentiel : 100 propositions pour que la France retrouve une ambition partag&#233;e, la fiert&#233;, et la fraternit&#233; (...). Ce pacte pr&#233;sidentiel, c&#39;est ensemble que nous le mettrons en oeuvre (...). &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DE LA CONFIANCE RETROUV&#201;E &lt;/p&gt; &lt;p&gt; 1. - Augmentation pendant le quinquennat du budget de la recherche et des cr&#233;dits publics pour l&#39;innovation de 10 % par an (...). &lt;/p&gt; &lt;p&gt; 2. - Mettre en place une politique industrielle capable de pr&#233;parer l&#39;avenir et de r&#233;duire les risques de d&#233;localisations avec la cr&#233;ation d&#39;une Agence nationale de r&#233;industrialisation.&lt;/p&gt;
+
+
+&lt;p&gt;3. - Soutenir les PME [petites et moyennes entreprises] avec la cr&#233;ation de fonds publics r&#233;gionaux de participation et en leur r&#233;servant une part dans les march&#233;s publics. &lt;/p&gt; &lt;p&gt; 4. - Donner la priorit&#233; &#224; l&#39;investissement des entreprises avec un taux d&#39;imp&#244;t sur les soci&#233;t&#233;s plus bas si le b&#233;n&#233;fice est r&#233;investi et plus haut s&#39;il est distribu&#233; aux actionnaires. &lt;/p&gt; &lt;p&gt; 5. - S&#233;curiser le parcours des jeunes cr&#233;ateurs en soutenant la cr&#233;ation d&#39;entreprises, en g&#233;n&#233;ralisant les ateliers de la cr&#233;ation dans toutes les r&#233;gions, en am&#233;liorant la protection sociale des entrepreneurs et en mettant en place un m&#233;canisme de cautionnement mutuel (...). &lt;/p&gt; &lt;p&gt; 6. - R&#233;former l&#39;Etat. Une d&#233;centralisation aboutie. Des services publics de qualit&#233; pr&#233;sents sur tout le territoire et accessibles par Internet. G&#233;n&#233;ralisation des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; dans l&#39;administration. &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DU POUVOIR D&#39;ACHAT GARANTI &lt;/p&gt; &lt;p&gt; 7. - Le smic sera port&#233; &#224; 1 500 euros le plus t&#244;t possible dans la l&#233;gislature (...) Une conf&#233;rence nationale sur les salaires, les revenus et la croissance r&#233;unissant les partenaires sociaux sera organis&#233;e d&#232;s juin 2007 (...). &lt;/p&gt; &lt;p&gt; 8. - Revaloriser imm&#233;diatement les petites retraites : elles seront augment&#233;es de 5 %. Le minimum vieillesse sera vers&#233; mensuellement. Le paiement des retraites de la S&#233;curit&#233; sociale sera r&#233;tabli au premier jour de chaque mois. &lt;/p&gt; &lt;p&gt; 9. - Revaloriser imm&#233;diatement de 5 % les allocations aux personnes en situation de handicap. &lt;/p&gt; &lt;p&gt; 10. - Doubler l&#39;allocation de rentr&#233;e scolaire, qui sera vers&#233;e aux familles en deux fois. &lt;/p&gt; &lt;p&gt; 11. - Les tarifs bancaires seront r&#233;glement&#233;s par l&#39;Etat. Les agios et p&#233;nalit&#233;s li&#233;es aux incidents de paiement seront plafonn&#233;s (...). &lt;/p&gt; &lt;p&gt; 12. - Augmenter les allocations logement de mani&#232;re &#224; limiter &#224; 25 % le montant des d&#233;penses de logement pour les m&#233;nages modestes. Construire 120 000 logements sociaux par an gr&#226;ce &#224; une incitation au livret A. L&#39;Etat pourra se substituer aux maires qui n&#39;appliquent pas la loi SRU [solidarit&#233; et renouvellement urbain, qui oblige les communes de plus de 3 500 habitants &#224; respecter un quota des 20 % de logements sociaux]. Cr&#233;er un service public de la caution (...). En contrepartie, les proc&#233;dures d&#39;expulsion des locataires de mauvaise foi seront simplifi&#233;es. Conditionner avantages fiscaux et aides publiques &#224; une mod&#233;ration des loyers. Remettre &#224; la location les logements vacants sp&#233;culatifs (...). Dans le logement social, les locataires qui ont pay&#233; pendant quinze ans leur loyer pourront acc&#233;der &#224; la propri&#233;t&#233;. Sanctionner financi&#232;rement les communes qui ne respectent pas le ratio moyen (...) pour les h&#233;bergements d&#39;urgence. &lt;/p&gt; &lt;p&gt; 13. - Mettre en place plusieurs indices des prix refl&#233;tant la d&#233;pense des m&#233;nages (...). &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DU TRAVAIL POUR TOUS &lt;/p&gt; &lt;p&gt; 14. - Conditionner les aides publiques aux entreprises &#224; l&#39;engagement de ne pas licencier quand l&#39;entreprise d&#233;gage des profits substantiels et obtenir le remboursement en cas de d&#233;localisation. &lt;/p&gt; &lt;p&gt; 15. - Moduler les aides aux entreprises et les exon&#233;rations de cotisations sociales en fonction de la nature des contrats de travail et supprimer le CNE [contrat nouvelles embauches] pour faire du CDI [contrat &#224; dur&#233;e ind&#233;termin&#233;e] la r&#232;gle. &lt;/p&gt; &lt;p&gt; 16. - D&#233;velopper la n&#233;gociation collective &#224; tous les niveaux et sur tous les th&#232;mes (...). Sur les 35 heures : ouvrir les n&#233;gociations pour d&#233;terminer comment on peut consolider cet acquis et r&#233;duire ses effets n&#233;gatifs pour les ouvriers et les employ&#233;s. &lt;/p&gt; &lt;p&gt; 17. - Cr&#233;er le droit au premier emploi des jeunes, pour qu&#39;aucun jeune ne reste au ch&#244;mage au-del&#224; de six mois sans avoir un acc&#232;s &#224; une formation, un emploi aid&#233; ou un tutorat r&#233;mun&#233;r&#233;s. Ouvrir 500 000 emplois tremplins aux jeunes (...). &lt;/p&gt; &lt;p&gt; 18. - Instaurer un plan &#224; taux z&#233;ro de 10 000 euros en faveur de chaque jeune pour l&#39;aider &#224; construire un projet. &lt;/p&gt; &lt;p&gt; 19. - Mettre en place un revenu de solidarit&#233; active (RSA) permettant l&#39;am&#233;lioration d&#39;un tiers de ses ressources &#224; tout b&#233;n&#233;ficiaire de minima sociaux reprenant le travail. &lt;/p&gt; &lt;p&gt; 20. - Mettre en oeuvre syst&#233;matiquement une d&#233;marche de validation des acquis de l&#39;exp&#233;rience professionnelle et reconna&#238;tre &#224; chacun un droit &#224; la formation et &#224; la reconversion inversement proportionnel &#224; la dur&#233;e des &#233;tudes. &lt;/p&gt; &lt;p&gt; 21. - Mettre en place une S&#233;curit&#233; sociale professionnelle garantie par l&#39;Etat permettant &#224; chaque personne priv&#233;e d&#39;emploi de se voir proposer (...) : une r&#233;mun&#233;ration pendant un an, &#233;gale &#224; 90 % du dernier salaire net per&#231;u; une formation qualifiante; une aide personnalis&#233;e &#224; la recherche d&#39;emploi. Cette prestation sera assur&#233;e par le service public de l&#39;emploi. &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DE LA R&#201;USSITE &#201;DUCATIVE ET CULTURELLE &lt;/p&gt; &lt;p&gt; 22. - Organiser des Etats g&#233;n&#233;raux des enseignants sur le mode participatif (...). &lt;/p&gt; &lt;p&gt; 23. - Mettre en place un service public de la petite enfance et la scolarisation obligatoire d&#232;s 3 ans (...). &lt;/p&gt; &lt;p&gt; 24. - Organiser le soutien scolaire gratuit pour tous les &#233;l&#232;ves gr&#226;ce &#224; des r&#233;p&#233;titeurs. &lt;/p&gt; &lt;p&gt; 25. - Limiter &#224; 17 le nombre d&#39;&#233;l&#232;ves par classe en CP et en CE1 dans les ZEP [zones d&#39;&#233;ducation prioritaire] et fixer la dotation aux &#233;tablissements par &#233;l&#232;ve en difficult&#233; &#224; 25 % de plus que la dotation ordinaire. &lt;/p&gt; &lt;p&gt; 26. - R&#233;viser la carte scolaire pour supprimer les ghettos scolaires, assurer la mixit&#233; sociale et constituer des r&#233;seaux d&#39;&#233;ducation prioritaire. &lt;/p&gt; &lt;p&gt; 27. - Renforcer la pr&#233;sence adulte dans les &#233;tablissements (...). &lt;/p&gt; &lt;p&gt; 28. - Implanter des classes pr&#233;paratoires aux grandes &#233;coles dans les quartiers qui en sont d&#233;pourvus (...). &lt;/p&gt; &lt;p&gt; 29. - Cr&#233;er des emplois-parents, g&#233;n&#233;ralisation d&#39;&#233;coles des parents et des consultations de m&#233;diation familiale (...). &lt;/p&gt; &lt;p&gt; 30. - [Universit&#233;s] Adopter une loi de programmation. En cinq ans, la d&#233;pense par &#233;tudiant sera port&#233;e au m&#234;me niveau que la moyenne des pays de l&#39;OCDE. Renforcer l&#39;autonomie des universit&#233;s dans le cadre national. Associer les r&#233;gions (...). &lt;/p&gt; &lt;p&gt; 31. - Cr&#233;er un service public d&#39;orientation (...). &lt;/p&gt; &lt;p&gt; 32. - Allocation autonomie pour les jeunes, sous condition de ressources (...). &lt;/p&gt; &lt;p&gt; 33. - Engager le chantier national propos&#233; par le Conseil de l&#39;emploi, des revenus et de la coh&#233;sion sociale [pour les 190 000 jeunes laiss&#233;s pour compte par le syst&#232;me d&#39;enseignement]. &lt;/p&gt; &lt;p&gt; 34. - Soutenir la cr&#233;ation et l&#39;emploi culturels. &lt;/p&gt; &lt;p&gt; 35. - Inscrire l&#39;&#233;ducation et la pratique artistique &#224; tous les niveaux de la maternelle &#224; l&#39;universit&#233; (...). &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DE LA S&#201;CURIT&#201; SOCIALE &lt;/p&gt; &lt;p&gt; 36. - Mettre en oeuvre un grand plan de pr&#233;vention et de recherche des maladies graves (...). &lt;/p&gt; &lt;p&gt; 37. - Assurer de fa&#231;on p&#233;renne le financement de l&#39;h&#244;pital public, (...) en veillant &#224; l&#39;&#233;galit&#233; territoriale d&#39;acc&#232;s aux soins. &lt;/p&gt; &lt;p&gt; 38. - Cr&#233;er des dispensaires, notamment dans les zones rurales. &lt;/p&gt; &lt;p&gt; 39. - Mettre en oeuvre une carte sant&#233; jeune 16/25 ans ouvrant droit &#224; la gratuit&#233; d&#39;une consultation par semestre. Contraception gratuite pour les jeunes femmes de moins de 25 ans. &lt;/p&gt; &lt;p&gt; 40. - Renforcer les moyens de la m&#233;decine scolaire et universitaire, et de la m&#233;decine du travail. &lt;/p&gt; &lt;p&gt; 41. - R&#233;affirmer le droit &#224; la CMU [couverture maladie universelle] et sanctionner les refus de soins. &lt;/p&gt; &lt;p&gt; 42. - Adapter les conditions d&#39;attribution de l&#39;allocation adultes handicap&#233;s (AAH) aux maladies &#233;volutives &#224; diagnostic incertain. &lt;/p&gt; &lt;p&gt; 43. - Mettre en oeuvre une politique de lutte contre l&#39;ob&#233;sit&#233; (...). &lt;/p&gt; &lt;p&gt; 44. - R&#233;tablir les moyens supprim&#233;s par la droite pour les soins aux &#233;trangers en situation irr&#233;guli&#232;re (...). &lt;/p&gt; &lt;p&gt; 45. - N&#233;gocier avec les partenaires sociaux le renforcement de l&#39;ind&#233;pendance de la m&#233;decine du travail. &lt;/p&gt; &lt;p&gt; 46. - D&#233;fendre l&#39;acc&#232;s aux soins des malades dans les pays en d&#233;veloppement (...). &lt;/p&gt; &lt;p&gt; 47. - Ouvrir avec les partenaires sociaux une large n&#233;gociation notamment sur la fixation d&#39;un minimum de pension garantie, la prise en compte du travail p&#233;nible, l&#39;emploi des seniors, le mode de financement des r&#233;gimes sp&#233;ciaux, la remise &#224; niveau du fonds de r&#233;serve des retraites. &lt;/p&gt; &lt;p&gt; 48. - D&#233;velopper le maintien &#224; domicile des personnes &#226;g&#233;es. &lt;/p&gt; &lt;p&gt; 49. - Augmenter le nombre de places dans les structures d&#39;accueil (...). &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DE LA LUTTE CONTRE TOUTES LES FORMES DE VIOLENCE &lt;/p&gt; &lt;p&gt; 50. - Programmes d&#39;&#233;ducation pour apprendre aux enfants &#224; g&#233;rer les conflits par la parole (...). Garantir &#224; chacun de voyager sans crainte dans les transports en commun (...). Mettre en place des gardiens dans tous les immeubles sociaux. &lt;/p&gt; &lt;p&gt; 51. - Lutter contre les violences scolaires (...). Recruter des surveillants des coll&#232;ges, doter chaque &#233;tablissement d&#39;une infirmi&#232;re scolaire et d&#39;une assistante sociale &#224; temps plein. &lt;/p&gt; &lt;p&gt; 52. - Mettre en place une politique de pr&#233;vention pr&#233;coce de la violence (...); d&#233;velopper les brigades des mineurs dans chaque commissariat des grandes zones urbaines. (...) Plan d&#39;urgence pour la justice des mineurs. Suppression des peines de prison pour les mineurs en dehors des cas d&#39;atteintes graves aux personnes; d&#233;veloppement des centres &#233;ducatifs renforc&#233;s, si besoin avec un encadrement militaire. &lt;/p&gt; &lt;p&gt; 53. - Faire adopter une loi cadre sur les violences conjugales (...). &lt;/p&gt; &lt;p&gt; 54. - Cr&#233;er une nouvelle police de quartier (...). Affecter des policiers exp&#233;riment&#233;s, b&#233;n&#233;ficiant d&#39;une r&#233;elle diff&#233;renciation de r&#233;mun&#233;ration, dans les secteurs plus difficiles (...). &lt;/p&gt; &lt;p&gt; 55. - Faciliter et moderniser le d&#233;p&#244;t de plainte (...). Mettre un avocat &#224; la disposition des victimes de violences graves dans l&#39;heure suivant le d&#233;p&#244;t de plainte. &lt;/p&gt; &lt;p&gt; 56. - Doubler le budget de la justice pour la rendre plus rapide et respectueuse des droits. &lt;/p&gt; &lt;p&gt; 57. - Renforcer l&#39;aide juridictionnelle. Renforcer les maisons de la justice et du droit. Service public d&#39;aide au recouvrement des dommages et int&#233;r&#234;ts allou&#233;s aux victimes. &lt;/p&gt; &lt;p&gt; 58. - Assurer la pr&#233;sence d&#39;un avocat d&#232;s la premi&#232;re heure de garde &#224; vue. Encadrer strictement le recours &#224; la d&#233;tention provisoire (...). Assurer dans les prisons des conditions qui permettent la r&#233;insertion du d&#233;tenu. Cr&#233;er un organe ind&#233;pendant de contr&#244;le des prisons. &lt;/p&gt; &lt;p&gt; 59- Modifier la composition du Conseil sup&#233;rieur de la magistrature pour garantir son pluralisme et l&#39;&#233;quilibre entre magistrats et non magistrats. Recomposer l&#39;organisation judiciaire (...). R&#233;former la justice du travail apr&#232;s consultation (...). Mettre en place la possibilit&#233; de conduire des &#171; actions de groupe &#187;. &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE DE L&#39;EXCELLENCE ENVIRONNEMENTALE &lt;/p&gt; &lt;p&gt; 60. - Anticiper l&#39;&#233;puisement du p&#233;trole en soutenant massivement les &#233;nergies renouvelables pour atteindre 20 % de la consommation en 2020 (...). Cr&#233;er un p&#244;le public de l&#39;&#233;nergie entre EDF et GDF. &lt;/p&gt; &lt;p&gt; 61. - G&#233;n&#233;raliser l&#39;isolation et les &#233;conomies d&#39;&#233;nergie dans le logement. (...) D&#233;velopper les transports collectifs gr&#226;ce &#224; un pr&#233;l&#232;vement exceptionnel sur les superprofits des soci&#233;t&#233;s p&#233;troli&#232;res. Appliquer le principe pollueur-payeur (...). Instaurer la v&#233;rit&#233; des co&#251;ts du transport de marchandises par la route en n&#233;gociant une &#233;coredevance (...). &lt;/p&gt; &lt;p&gt; 62. - Conditionner les nouveaux permis de construire &#224; l&#39;adoption d&#39;objectifsHaute qualit&#233; environnementale dans la totalit&#233; du parc immobilier public. Encourager les &#233;co-industries par une TVA tendant vers z&#233;ro. &lt;/p&gt; &lt;p&gt; 63. - Cr&#233;er un poste de vice-premier ministre charg&#233; du d&#233;veloppement durable. La comp&#233;tence du vice-premier ministre sera &#233;largie &#224; l&#39;am&#233;nagement du territoire. Transformer le Conseil &#233;conomique et social en Conseil &#233;conomique, social et environnemental (CESE). &lt;/p&gt; &lt;p&gt; 64. - Promouvoir la cr&#233;ation d&#39;une Organisation mondiale de l&#39;environnement. &lt;/p&gt; &lt;p&gt; 65. - Promouvoir la r&#233;orientation de la PAC politique agricole commune europ&#233;enne vers les aides agroenvironnementales et assurer la transparence et une meilleure r&#233;partition des aides. Transf&#233;rer aux r&#233;gions la gestion des aides directes. Encourager les contributions des agriculteurs &#224; la fourniture d&#39;&#233;nergie (biomasse, agrocarburants, biogaz, fermes &#233;oliennes). &lt;/p&gt; &lt;p&gt; 66. - Arr&#234;ter les essais des OGM en plein champ, dans l&#39;attente des r&#233;sultats d&#39;un grand d&#233;bat public (...). &lt;/p&gt; &lt;p&gt; 67. - Encourager, par des incitations fiscales, les industries qui s&#39;engageront &#224; &#233;liminer les compos&#233;s toxiques au-del&#224; des contraintes impos&#233;es par le r&#232;glement europ&#233;en Reach. Mettre en oeuvre un programme national de r&#233;duction des pesticides. Atteindre l&#39;objectif z&#233;ro d&#233;chet industriel d&#39;ici 2012. &lt;/p&gt; &lt;p&gt; 68. - Promouvoir l&#39;id&#233;e d&#39;une &#171; PAC mondiale &#187; (...). &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE D&#39;UNE R&#201;PUBLIQUE NOUVELLE &lt;/p&gt; &lt;p&gt; 69. - Instaurer le non cumul des mandats pour les parlementaires. &lt;/p&gt; &lt;p&gt; 70. - Introduire une part de proportionnelle pour l&#39;&#233;lection des d&#233;put&#233;s et modifier le mode de scrutin pour l&#39;&#233;lection des s&#233;nateurs. &lt;/p&gt; &lt;p&gt; 71. - Le premier ministre sollicitera d&#232;s sa nomination la confiance du Parlement, le vote bloqu&#233; et le 49-3 seront supprim&#233;s pour les lois ordinaires. La pr&#233;sidence de la commission des finances sera confi&#233;e &#224; un membre de l&#39;opposition. &lt;/p&gt; &lt;p&gt; 72. - Supprimer le droit de veto du S&#233;nat en mati&#232;re constitutionnelle. &lt;/p&gt; &lt;p&gt; 73. - Introduire la d&#233;mocratie participative dans toutes les collectivit&#233;s publiques (...). Des citoyens ayant recueilli un million de signatures pourront demander au Parlement l&#39;examen d&#39;une proposition de loi. &lt;/p&gt; &lt;p&gt; 74. - Refuser toute remise en cause de la loi de 1905 sur la s&#233;paration des Eglises et de l&#39;Etat et int&#233;grer &#224; la Constitution une charte de la la&#239;cit&#233;. &lt;/p&gt; &lt;p&gt; 75. - Donner le droit de vote pour les &#233;lections locales aux &#233;trangers s&#233;journant r&#233;guli&#232;rement en France depuis plus de cinq ans. &lt;/p&gt; &lt;p&gt; 76. - Organiser syst&#233;matiquement la concertation et la n&#233;gociation pr&#233;alablement &#224; toute r&#233;forme en mati&#232;re sociale, en fondant la repr&#233;sentativit&#233; des organisations sur l&#39;&#233;lection et en g&#233;n&#233;ralisant le principe de l&#39;accord majoritaire. (...) &lt;/p&gt; &lt;p&gt; 77. - Promouvoir un syndicalisme de masse par un financement public transparent et en instituant une information syst&#233;matique sur le droit syndical (...). &lt;/p&gt; &lt;p&gt; 78. - Instaurer un service civique pour les jeunes. &lt;/p&gt; &lt;p&gt; 79. - Etablir une Haute autorit&#233; du pluralisme. (...) &lt;/p&gt; &lt;p&gt; 80. - Renforcer les mesures anticoncentration. &lt;/p&gt; &lt;p&gt; 81. - Taxer les recettes publicitaires des cha&#238;nes priv&#233;es en faveur de l&#39;audiovisuel public. &lt;/p&gt; &lt;p&gt; 82. - Garantir la continuit&#233; territoriale en imposant aux compagnies a&#233;riennes des obligations renforc&#233;es de service public. &lt;/p&gt; &lt;p&gt; 83. - Introduire un enseignement sur l&#39;outre-mer dans les programmes, notamment sur l&#39;histoire de l&#39;esclavage. &lt;/p&gt; &lt;p&gt; 84. - Appliquer &#224; l&#39;outre-mer les principes de l&#39;excellence environnementale (...). &lt;/p&gt; &lt;p&gt; 85. - Faire respecter l&#39;&#233;galit&#233; homme-femme, notamment au travail (...). &lt;/p&gt; &lt;p&gt; 86. - Renforcer les moyens de la Haute autorit&#233; de lutte contre les discriminations. &lt;/p&gt; &lt;p&gt; 87. - Garantir l&#39;&#233;galit&#233; des droits pour les couples de m&#234;me sexe. &lt;/p&gt; &lt;p&gt; LA PR&#201;SIDENTE D&#39;UNE FRANCE FORTE EN EUROPE ET ACTIVE POUR LA PAIX DANS LE MONDE &lt;/p&gt; &lt;p&gt; 88. - Construire une Europe plus protectrice et plus en phase avec les besoins de ses citoyens. Mettre en place rapidement des politiques communes ambitieuses sur les enjeux majeurs (recherche/innovation, &#233;nergie, environnement); pr&#233;server, par une directive-cadre le d&#233;veloppement de services publics de qualit&#233;. &lt;/p&gt; &lt;p&gt; 89. - Inscrire dans les statuts de la Banque centrale europ&#233;enne l&#39;objectif de croissance-emploi; cr&#233;er un gouvernement de la zone euro. &lt;/p&gt; &lt;p&gt; 90. - Tirer vers le haut le niveau de vie et la protection sociale dans tous les pays europ&#233;ens gr&#226;ce &#224; un protocole social. &lt;/p&gt; &lt;p&gt; 91. - N&#233;gocier un trait&#233; institutionnel soumis &#224; r&#233;f&#233;rendum pour que l&#39;Europe fonctionne de mani&#232;re plus d&#233;mocratique et plus efficace. &lt;/p&gt; &lt;p&gt; 92. - Lancer avec nos partenaires europ&#233;ens une initiative pour une Conf&#233;rence internationale de paix et de s&#233;curit&#233; au Proche-Orient. &lt;/p&gt; &lt;p&gt; 93. - Doter notre d&#233;fense nationale de moyens &#224; la hauteur des risques nouveaux. Notre capacit&#233; de dissuasion nucl&#233;aire doit &#234;tre pr&#233;serv&#233;e. &lt;/p&gt; &lt;p&gt; 94. - Inscrire notre effort de d&#233;fense dans une politique europ&#233;enne de s&#233;curit&#233;. (...) L&#39;objectif est &#224; la fois de renforcer notre s&#233;curit&#233; et de rationaliser nos d&#233;penses. &lt;/p&gt; &lt;p&gt; 95. - Introduire &#224; l&#39;OMC une hi&#233;rarchie des normes qui &#233;quilibre les mesures de nature commerciale par le respect des normes sociales et environnementales. R&#233;former profond&#233;ment le FMI et la Banque mondiale (...); taxe sur les flux financiers de type Tobin. &lt;/p&gt; &lt;p&gt; 96. - Passer &#224; un v&#233;ritable cod&#233;veloppement en favorisant les projets concrets associant directement les b&#233;n&#233;ficiaires. &lt;/p&gt; &lt;p&gt; 97. - Relancer la coop&#233;ration eurom&#233;diterran&#233;enne. &lt;/p&gt; &lt;p&gt; 98. - Instituer un visa permettant des allers-retours multiples sur plusieurs ann&#233;es, afin que les migrations s&#39;adaptent aux besoins r&#233;els du march&#233; du travail. &lt;/p&gt; &lt;p&gt; 99. - R&#233;tablir la r&#232;gle des dix ans comme crit&#232;re de r&#233;gularisation. &lt;/p&gt; &lt;p&gt; 100. - R&#233;gulariser les sans-papiers &#224; partir de crit&#232;res fond&#233;s sur la dur&#233;e de pr&#233;sence en France, la scolarisation des enfants et la possession ou la promesse d&#39;un contrat de travail.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;S&#233;gol&#232;ne Royal candidate PS &#224; l&#39;&#233;lection pr&#233;sidentielle 2007 (PHOTO : JACQUES BRINON/AP)&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;candidate PS &#224; l&#39;&#233;lection pr&#233;sidentielle&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2007 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20070213&amp;#183;LM&amp;#183;0q1302_1445293&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">service public</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">pacte présidentiel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sécurité sociale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">services publics de qualité</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">excellence environnementale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Lois et règlements</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Politique et gouvernement</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Relations internationales</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Construction et immobilier</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Énergie</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">FRANCE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">CP</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">EUROPE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720070213%c2%b7LM%c2%b70q1302_1445293" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720070213%c2%b7LM%c2%b70q1302_1445293">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Dialogues,         mardi 13 février 2007 1845 mots, p. 21</span>
+</div>
+
+    <div>
+        <p>
+DÉCRYPTAGES DOCUMENT         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les « 100 propositions » de Mme Royal            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">La candidate socialiste a rendu public, dimanche 11 février, son pacte présidentiel, qui s'appuie, entre autres, sur les débats participatifs organisés sur tout le territoire et qui rassemble les principales propositions de son projet</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Ce que vous m'avez dit, je l'ai entendu. Ce que je savais, vous l'avez confirmé. Aujourd'hui, je vous propose le pacte présidentiel : 100 propositions pour que la France retrouve une ambition partagée, la fierté, et la fraternité (...). Ce pacte présidentiel, c'est ensemble que nous le mettrons en oeuvre (...). </p> <p> LA PRÉSIDENTE DE LA CONFIANCE RETROUVÉE </p> <p> 1. - Augmentation pendant le quinquennat du budget de la recherche et des crédits publics pour l'innovation de 10 % par an (...). </p> <p> 2. - Mettre en place une politique industrielle capable de préparer l'avenir et de réduire les risques de délocalisations avec la création d'une Agence nationale de réindustrialisation.</p>
+
+
+<p>3. - Soutenir les PME [petites et moyennes entreprises] avec la création de fonds publics régionaux de participation et en leur réservant une part dans les marchés publics. </p> <p> 4. - Donner la priorité à l'investissement des entreprises avec un taux d'impôt sur les sociétés plus bas si le bénéfice est réinvesti et plus haut s'il est distribué aux actionnaires. </p> <p> 5. - Sécuriser le parcours des jeunes créateurs en soutenant la création d'entreprises, en généralisant les ateliers de la création dans toutes les régions, en améliorant la protection sociale des entrepreneurs et en mettant en place un mécanisme de cautionnement mutuel (...). </p> <p> 6. - Réformer l'Etat. Une décentralisation aboutie. Des services publics de qualité présents sur tout le territoire et accessibles par Internet. Généralisation des <mark>logiciels</mark> <mark>libres</mark> dans l'administration. </p> <p> LA PRÉSIDENTE DU POUVOIR D'ACHAT GARANTI </p> <p> 7. - Le smic sera porté à 1 500 euros le plus tôt possible dans la législature (...) Une conférence nationale sur les salaires, les revenus et la croissance réunissant les partenaires sociaux sera organisée dès juin 2007 (...). </p> <p> 8. - Revaloriser immédiatement les petites retraites : elles seront augmentées de 5 %. Le minimum vieillesse sera versé mensuellement. Le paiement des retraites de la Sécurité sociale sera rétabli au premier jour de chaque mois. </p> <p> 9. - Revaloriser immédiatement de 5 % les allocations aux personnes en situation de handicap. </p> <p> 10. - Doubler l'allocation de rentrée scolaire, qui sera versée aux familles en deux fois. </p> <p> 11. - Les tarifs bancaires seront réglementés par l'Etat. Les agios et pénalités liées aux incidents de paiement seront plafonnés (...). </p> <p> 12. - Augmenter les allocations logement de manière à limiter à 25 % le montant des dépenses de logement pour les ménages modestes. Construire 120 000 logements sociaux par an grâce à une incitation au livret A. L'Etat pourra se substituer aux maires qui n'appliquent pas la loi SRU [solidarité et renouvellement urbain, qui oblige les communes de plus de 3 500 habitants à respecter un quota des 20 % de logements sociaux]. Créer un service public de la caution (...). En contrepartie, les procédures d'expulsion des locataires de mauvaise foi seront simplifiées. Conditionner avantages fiscaux et aides publiques à une modération des loyers. Remettre à la location les logements vacants spéculatifs (...). Dans le logement social, les locataires qui ont payé pendant quinze ans leur loyer pourront accéder à la propriété. Sanctionner financièrement les communes qui ne respectent pas le ratio moyen (...) pour les hébergements d'urgence. </p> <p> 13. - Mettre en place plusieurs indices des prix reflétant la dépense des ménages (...). </p> <p> LA PRÉSIDENTE DU TRAVAIL POUR TOUS </p> <p> 14. - Conditionner les aides publiques aux entreprises à l'engagement de ne pas licencier quand l'entreprise dégage des profits substantiels et obtenir le remboursement en cas de délocalisation. </p> <p> 15. - Moduler les aides aux entreprises et les exonérations de cotisations sociales en fonction de la nature des contrats de travail et supprimer le CNE [contrat nouvelles embauches] pour faire du CDI [contrat à durée indéterminée] la règle. </p> <p> 16. - Développer la négociation collective à tous les niveaux et sur tous les thèmes (...). Sur les 35 heures : ouvrir les négociations pour déterminer comment on peut consolider cet acquis et réduire ses effets négatifs pour les ouvriers et les employés. </p> <p> 17. - Créer le droit au premier emploi des jeunes, pour qu'aucun jeune ne reste au chômage au-delà de six mois sans avoir un accès à une formation, un emploi aidé ou un tutorat rémunérés. Ouvrir 500 000 emplois tremplins aux jeunes (...). </p> <p> 18. - Instaurer un plan à taux zéro de 10 000 euros en faveur de chaque jeune pour l'aider à construire un projet. </p> <p> 19. - Mettre en place un revenu de solidarité active (RSA) permettant l'amélioration d'un tiers de ses ressources à tout bénéficiaire de minima sociaux reprenant le travail. </p> <p> 20. - Mettre en oeuvre systématiquement une démarche de validation des acquis de l'expérience professionnelle et reconnaître à chacun un droit à la formation et à la reconversion inversement proportionnel à la durée des études. </p> <p> 21. - Mettre en place une Sécurité sociale professionnelle garantie par l'Etat permettant à chaque personne privée d'emploi de se voir proposer (...) : une rémunération pendant un an, égale à 90 % du dernier salaire net perçu; une formation qualifiante; une aide personnalisée à la recherche d'emploi. Cette prestation sera assurée par le service public de l'emploi. </p> <p> LA PRÉSIDENTE DE LA RÉUSSITE ÉDUCATIVE ET CULTURELLE </p> <p> 22. - Organiser des Etats généraux des enseignants sur le mode participatif (...). </p> <p> 23. - Mettre en place un service public de la petite enfance et la scolarisation obligatoire dès 3 ans (...). </p> <p> 24. - Organiser le soutien scolaire gratuit pour tous les élèves grâce à des répétiteurs. </p> <p> 25. - Limiter à 17 le nombre d'élèves par classe en CP et en CE1 dans les ZEP [zones d'éducation prioritaire] et fixer la dotation aux établissements par élève en difficulté à 25 % de plus que la dotation ordinaire. </p> <p> 26. - Réviser la carte scolaire pour supprimer les ghettos scolaires, assurer la mixité sociale et constituer des réseaux d'éducation prioritaire. </p> <p> 27. - Renforcer la présence adulte dans les établissements (...). </p> <p> 28. - Implanter des classes préparatoires aux grandes écoles dans les quartiers qui en sont dépourvus (...). </p> <p> 29. - Créer des emplois-parents, généralisation d'écoles des parents et des consultations de médiation familiale (...). </p> <p> 30. - [Universités] Adopter une loi de programmation. En cinq ans, la dépense par étudiant sera portée au même niveau que la moyenne des pays de l'OCDE. Renforcer l'autonomie des universités dans le cadre national. Associer les régions (...). </p> <p> 31. - Créer un service public d'orientation (...). </p> <p> 32. - Allocation autonomie pour les jeunes, sous condition de ressources (...). </p> <p> 33. - Engager le chantier national proposé par le Conseil de l'emploi, des revenus et de la cohésion sociale [pour les 190 000 jeunes laissés pour compte par le système d'enseignement]. </p> <p> 34. - Soutenir la création et l'emploi culturels. </p> <p> 35. - Inscrire l'éducation et la pratique artistique à tous les niveaux de la maternelle à l'université (...). </p> <p> LA PRÉSIDENTE DE LA SÉCURITÉ SOCIALE </p> <p> 36. - Mettre en oeuvre un grand plan de prévention et de recherche des maladies graves (...). </p> <p> 37. - Assurer de façon pérenne le financement de l'hôpital public, (...) en veillant à l'égalité territoriale d'accès aux soins. </p> <p> 38. - Créer des dispensaires, notamment dans les zones rurales. </p> <p> 39. - Mettre en oeuvre une carte santé jeune 16/25 ans ouvrant droit à la gratuité d'une consultation par semestre. Contraception gratuite pour les jeunes femmes de moins de 25 ans. </p> <p> 40. - Renforcer les moyens de la médecine scolaire et universitaire, et de la médecine du travail. </p> <p> 41. - Réaffirmer le droit à la CMU [couverture maladie universelle] et sanctionner les refus de soins. </p> <p> 42. - Adapter les conditions d'attribution de l'allocation adultes handicapés (AAH) aux maladies évolutives à diagnostic incertain. </p> <p> 43. - Mettre en oeuvre une politique de lutte contre l'obésité (...). </p> <p> 44. - Rétablir les moyens supprimés par la droite pour les soins aux étrangers en situation irrégulière (...). </p> <p> 45. - Négocier avec les partenaires sociaux le renforcement de l'indépendance de la médecine du travail. </p> <p> 46. - Défendre l'accès aux soins des malades dans les pays en développement (...). </p> <p> 47. - Ouvrir avec les partenaires sociaux une large négociation notamment sur la fixation d'un minimum de pension garantie, la prise en compte du travail pénible, l'emploi des seniors, le mode de financement des régimes spéciaux, la remise à niveau du fonds de réserve des retraites. </p> <p> 48. - Développer le maintien à domicile des personnes âgées. </p> <p> 49. - Augmenter le nombre de places dans les structures d'accueil (...). </p> <p> LA PRÉSIDENTE DE LA LUTTE CONTRE TOUTES LES FORMES DE VIOLENCE </p> <p> 50. - Programmes d'éducation pour apprendre aux enfants à gérer les conflits par la parole (...). Garantir à chacun de voyager sans crainte dans les transports en commun (...). Mettre en place des gardiens dans tous les immeubles sociaux. </p> <p> 51. - Lutter contre les violences scolaires (...). Recruter des surveillants des collèges, doter chaque établissement d'une infirmière scolaire et d'une assistante sociale à temps plein. </p> <p> 52. - Mettre en place une politique de prévention précoce de la violence (...); développer les brigades des mineurs dans chaque commissariat des grandes zones urbaines. (...) Plan d'urgence pour la justice des mineurs. Suppression des peines de prison pour les mineurs en dehors des cas d'atteintes graves aux personnes; développement des centres éducatifs renforcés, si besoin avec un encadrement militaire. </p> <p> 53. - Faire adopter une loi cadre sur les violences conjugales (...). </p> <p> 54. - Créer une nouvelle police de quartier (...). Affecter des policiers expérimentés, bénéficiant d'une réelle différenciation de rémunération, dans les secteurs plus difficiles (...). </p> <p> 55. - Faciliter et moderniser le dépôt de plainte (...). Mettre un avocat à la disposition des victimes de violences graves dans l'heure suivant le dépôt de plainte. </p> <p> 56. - Doubler le budget de la justice pour la rendre plus rapide et respectueuse des droits. </p> <p> 57. - Renforcer l'aide juridictionnelle. Renforcer les maisons de la justice et du droit. Service public d'aide au recouvrement des dommages et intérêts alloués aux victimes. </p> <p> 58. - Assurer la présence d'un avocat dès la première heure de garde à vue. Encadrer strictement le recours à la détention provisoire (...). Assurer dans les prisons des conditions qui permettent la réinsertion du détenu. Créer un organe indépendant de contrôle des prisons. </p> <p> 59- Modifier la composition du Conseil supérieur de la magistrature pour garantir son pluralisme et l'équilibre entre magistrats et non magistrats. Recomposer l'organisation judiciaire (...). Réformer la justice du travail après consultation (...). Mettre en place la possibilité de conduire des « actions de groupe ». </p> <p> LA PRÉSIDENTE DE L'EXCELLENCE ENVIRONNEMENTALE </p> <p> 60. - Anticiper l'épuisement du pétrole en soutenant massivement les énergies renouvelables pour atteindre 20 % de la consommation en 2020 (...). Créer un pôle public de l'énergie entre EDF et GDF. </p> <p> 61. - Généraliser l'isolation et les économies d'énergie dans le logement. (...) Développer les transports collectifs grâce à un prélèvement exceptionnel sur les superprofits des sociétés pétrolières. Appliquer le principe pollueur-payeur (...). Instaurer la vérité des coûts du transport de marchandises par la route en négociant une écoredevance (...). </p> <p> 62. - Conditionner les nouveaux permis de construire à l'adoption d'objectifsHaute qualité environnementale dans la totalité du parc immobilier public. Encourager les éco-industries par une TVA tendant vers zéro. </p> <p> 63. - Créer un poste de vice-premier ministre chargé du développement durable. La compétence du vice-premier ministre sera élargie à l'aménagement du territoire. Transformer le Conseil économique et social en Conseil économique, social et environnemental (CESE). </p> <p> 64. - Promouvoir la création d'une Organisation mondiale de l'environnement. </p> <p> 65. - Promouvoir la réorientation de la PAC politique agricole commune européenne vers les aides agroenvironnementales et assurer la transparence et une meilleure répartition des aides. Transférer aux régions la gestion des aides directes. Encourager les contributions des agriculteurs à la fourniture d'énergie (biomasse, agrocarburants, biogaz, fermes éoliennes). </p> <p> 66. - Arrêter les essais des OGM en plein champ, dans l'attente des résultats d'un grand débat public (...). </p> <p> 67. - Encourager, par des incitations fiscales, les industries qui s'engageront à éliminer les composés toxiques au-delà des contraintes imposées par le règlement européen Reach. Mettre en oeuvre un programme national de réduction des pesticides. Atteindre l'objectif zéro déchet industriel d'ici 2012. </p> <p> 68. - Promouvoir l'idée d'une « PAC mondiale » (...). </p> <p> LA PRÉSIDENTE D'UNE RÉPUBLIQUE NOUVELLE </p> <p> 69. - Instaurer le non cumul des mandats pour les parlementaires. </p> <p> 70. - Introduire une part de proportionnelle pour l'élection des députés et modifier le mode de scrutin pour l'élection des sénateurs. </p> <p> 71. - Le premier ministre sollicitera dès sa nomination la confiance du Parlement, le vote bloqué et le 49-3 seront supprimés pour les lois ordinaires. La présidence de la commission des finances sera confiée à un membre de l'opposition. </p> <p> 72. - Supprimer le droit de veto du Sénat en matière constitutionnelle. </p> <p> 73. - Introduire la démocratie participative dans toutes les collectivités publiques (...). Des citoyens ayant recueilli un million de signatures pourront demander au Parlement l'examen d'une proposition de loi. </p> <p> 74. - Refuser toute remise en cause de la loi de 1905 sur la séparation des Eglises et de l'Etat et intégrer à la Constitution une charte de la laïcité. </p> <p> 75. - Donner le droit de vote pour les élections locales aux étrangers séjournant régulièrement en France depuis plus de cinq ans. </p> <p> 76. - Organiser systématiquement la concertation et la négociation préalablement à toute réforme en matière sociale, en fondant la représentativité des organisations sur l'élection et en généralisant le principe de l'accord majoritaire. (...) </p> <p> 77. - Promouvoir un syndicalisme de masse par un financement public transparent et en instituant une information systématique sur le droit syndical (...). </p> <p> 78. - Instaurer un service civique pour les jeunes. </p> <p> 79. - Etablir une Haute autorité du pluralisme. (...) </p> <p> 80. - Renforcer les mesures anticoncentration. </p> <p> 81. - Taxer les recettes publicitaires des chaînes privées en faveur de l'audiovisuel public. </p> <p> 82. - Garantir la continuité territoriale en imposant aux compagnies aériennes des obligations renforcées de service public. </p> <p> 83. - Introduire un enseignement sur l'outre-mer dans les programmes, notamment sur l'histoire de l'esclavage. </p> <p> 84. - Appliquer à l'outre-mer les principes de l'excellence environnementale (...). </p> <p> 85. - Faire respecter l'égalité homme-femme, notamment au travail (...). </p> <p> 86. - Renforcer les moyens de la Haute autorité de lutte contre les discriminations. </p> <p> 87. - Garantir l'égalité des droits pour les couples de même sexe. </p> <p> LA PRÉSIDENTE D'UNE FRANCE FORTE EN EUROPE ET ACTIVE POUR LA PAIX DANS LE MONDE </p> <p> 88. - Construire une Europe plus protectrice et plus en phase avec les besoins de ses citoyens. Mettre en place rapidement des politiques communes ambitieuses sur les enjeux majeurs (recherche/innovation, énergie, environnement); préserver, par une directive-cadre le développement de services publics de qualité. </p> <p> 89. - Inscrire dans les statuts de la Banque centrale européenne l'objectif de croissance-emploi; créer un gouvernement de la zone euro. </p> <p> 90. - Tirer vers le haut le niveau de vie et la protection sociale dans tous les pays européens grâce à un protocole social. </p> <p> 91. - Négocier un traité institutionnel soumis à référendum pour que l'Europe fonctionne de manière plus démocratique et plus efficace. </p> <p> 92. - Lancer avec nos partenaires européens une initiative pour une Conférence internationale de paix et de sécurité au Proche-Orient. </p> <p> 93. - Doter notre défense nationale de moyens à la hauteur des risques nouveaux. Notre capacité de dissuasion nucléaire doit être préservée. </p> <p> 94. - Inscrire notre effort de défense dans une politique européenne de sécurité. (...) L'objectif est à la fois de renforcer notre sécurité et de rationaliser nos dépenses. </p> <p> 95. - Introduire à l'OMC une hiérarchie des normes qui équilibre les mesures de nature commerciale par le respect des normes sociales et environnementales. Réformer profondément le FMI et la Banque mondiale (...); taxe sur les flux financiers de type Tobin. </p> <p> 96. - Passer à un véritable codéveloppement en favorisant les projets concrets associant directement les bénéficiaires. </p> <p> 97. - Relancer la coopération euroméditerranéenne. </p> <p> 98. - Instituer un visa permettant des allers-retours multiples sur plusieurs années, afin que les migrations s'adaptent aux besoins réels du marché du travail. </p> <p> 99. - Rétablir la règle des dix ans comme critère de régularisation. </p> <p> 100. - Régulariser les sans-papiers à partir de critères fondés sur la durée de présence en France, la scolarisation des enfants et la possession ou la promesse d'un contrat de travail.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Ségolène Royal candidate PS à l'élection présidentielle 2007 (PHOTO : JACQUES BRINON/AP)</p> </div>.
+
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p>candidate PS à l'élection présidentielle</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2007 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20070213·LM·0q1302_1445293</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20070213·LM·0q1302_1445293";
+    var _docIndex = 719;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20070213·LM·0q1302_1445293';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720070213%C2%B7LM%C2%B70q1302_1445293&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720070213%C2%B7LM%C2%B70q1302_1445293&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720070213%C2%B7LM%C2%B70q1302_1445293&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720070213%C2%B7LM%C2%B70q1302_1445293&docIndex=719&FullScreen=1";
+                
+	var _keyDoc = 'news·20070213·LM·0q1302_1445293';
+</script>
+</div></body></html>

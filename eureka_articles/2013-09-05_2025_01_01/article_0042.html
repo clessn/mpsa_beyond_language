@@ -1,0 +1,519 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Monde Science et m&#233;decine,         mercredi 10 juillet 2024 1065 mots, p. SCH2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Actualit&#233;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Dans les secrets de fabrication de l’IA g&#233;n&#233;rative            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Informatique La start-up Hugging Face a rendu public le corpus de textes le plus performant pour d&#233;velopper des mod&#232;les de langue&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;C’est le secret le mieux gard&#233; du secteur de l’intelligence artificielle (IA) dite &#171; g&#233;n&#233;rative &#187;, celle des ChatGPT, Gemini, Copilot… Il ne se niche pas dans la puissance de calcul, ni dans la taille colossale (des centaines de milliards de param&#232;tres) de ces logiciels, ni dans des codes informatiques astucieux. Ces aspects comptent bien s&#251;r dans le succ&#232;s, mais ils sont d&#233;sormais plus ou moins publics. &lt;/p&gt; &lt;p&gt; Non, ce que les leaders du domaine, OpenAI, Anthropic, Mistral, Microsoft… n’ont encore jamais r&#233;v&#233;l&#233;, c’est leur recette pour confectionner la collection de textes qui servent &#224; l’entra&#238;nement de leurs mod&#232;les. Ce dernier sert &#224; ajuster les param&#232;tres afin de pr&#233;dire le mieux possible quel est le meilleur mot pour compl&#233;ter une phrase. Cette ingurgitation de milliards de textes identifie des corr&#233;lations statistiques qui permettent de g&#233;n&#233;rer de nouveaux textes cens&#233;s r&#233;pondre aux questions de l’utilisateur.&lt;/p&gt;
+
+
+&lt;p&gt;L’origine de ces textes est connue, des livres dans le domaine public, des articles de recherche, Wikip&#233;dia, mais surtout des tonnes de pages Web. Cette derni&#232;re source est majoritaire et c’est la mani&#232;re dont elle est trait&#233;e qui fait la diff&#233;rence. &#171; C’est le nerf de la guerre &#187;, r&#233;sume Julien Launay, cr&#233;ateur de l’entreprise Adaptive ML et coau teur d’un corpus d’entra&#238;nement de donn&#233;es issues du Web, RefinedWeb, lorsqu’il travaillait chez LightOn. Il se souvient de la surprise caus&#233;e par son expos&#233; &#224; La Nouvelle-Orl&#233;ans en d&#233;cembre&#160;2022 &#224; la conf&#233;rence phare du domaine, NeurIPS. Le soin mis dans la pr&#233;paration de ces donn&#233;es avait permis &#224; une IA d’&#233;galer la concurrence nourrie avec des donn&#233;es d’origine plus vari&#233;e. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;80 000&#160;heures de calculs&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Thomas Wolf, cofondateur de Hugging Face, une plate-forme franco-am&#233;ricaine de mise &#224; disposition de mod&#232;les et corpus en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, pr&#233;sent &#224; cette conf&#233;rence, propose &#224; l’&#233;quipe de Julien Launay de rejoindre son entreprise. L’un de ses membres, Guilherme Penedo, accepte, motiv&#233; par l’id&#233;e de mettre &#224; disposition un corpus plus gros encore que RefinedWeb. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On pensait y arriver en dix jours &#187;&lt;/em&gt;, se souvient Thomas Wolf. Il en faudra quinze fois plus. Le 21&#160;avril est sorti FineWeb, monstre pesant 40 t&#233;raoctets (To), riche de 15 000&#160;milliards de &lt;em style=&quot;font-style:italic;&quot;&gt;tokens&lt;/em&gt;, des jetons de 3-4&#160;lettres, sorte de syllabes. Librement t&#233;l&#233;chargeable, il permet de cr&#233;er de meilleurs mod&#232;les qu’avecn’importe quel autre corpus public. &lt;/p&gt; &lt;p&gt; Fabriquer un tel objet est ardu : 80 000&#160;heures de calculs avec les cartes graphiques H100 de Nvidia ont &#233;t&#233; n&#233;cessaires, ce qui est comparable &#224; ce qu’il faut pour entra&#238;ner un mod&#232;le d’IA de bonne facture. &lt;/p&gt; &lt;p&gt; D’abord, il faut r&#233;cup&#233;rer les donn&#233;es. Depuis 2007, une fondation met &#224; disposition Common Crawl, une collecte, &#224; intervalle r&#233;gulier, de milliards de pages Web. Mais pour &#234;tre utile aux mod&#232;les de langues, il faut extraire seulement le texte de cette masse d’information. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; &#199;a a &#233;t&#233; l’une des &#233;tapes les plus longues du processus, peut-&#234;tre 80&#160;% du temps de calcul, que nous avons commenc&#233; en novembre 2023 &#187;&lt;/em&gt;, indique Guilherme Penedo. Quatre-vingt-seize paquets collect&#233;s sur une quinzaine d’ann&#233;es dans Common Crawl ont &#233;t&#233; utilis&#233;s pour un volume d’environ 5 354 To. Ensuite, un premier toilettage enl&#232;ve les pages des sites pornographiques, puis ne retient que les pages en anglais. Environ 50&#160;% des documents sont &#233;limin&#233;s. Restent 36 000&#160;milliards de &lt;em style=&quot;font-style:italic;&quot;&gt;tokens&lt;/em&gt;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Changement de tactique&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Puis vient la question d&#233;licate. Comment savoir qu’un corpus est &#171; bon &#187; ? Pas question de demander &#224; un humain. Alors on demande aux machines. Un mod&#232;le d’IA est entra&#238;n&#233; sur ce corpus. Si les performances aux tests de r&#233;f&#233;rence sont bonnes, alors le corpus est bon… Comme cela demande beaucoup de calculs, l’&#233;quipe a travaill&#233; avec des &#171; petits &#187; mod&#232;les, &#224; 1,2&#160;milliard de param&#232;tres (le moteur de ChatGPT d&#233;passait les 170&#160;milliards de param&#232;tres). &lt;/p&gt; &lt;p&gt; Place ensuite au grand m&#233;nage avec la suppression des doublons, car lire deux fois le m&#234;me texte n’apporte rien. C’est la &#171; d&#233;duplication &#187;. L’&#233;quipe l’applique sur tout son corpus. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; J’&#233;tais persuad&#233; que le r&#233;sultat serait aussi bon que RefinedWeb &#187;&lt;/em&gt;, se souvient Guilherme Penedo. D&#233;ception ! L’&#233;quipe change alors de tactique et d&#233;cide de d&#233;dupliquer ind&#233;pendamment chaque paquet de Common Crawl et pas globalement. Gagn&#233;, les performances augmentent de 2&#160;points de pourcentage : FineWeb est aussi bon que son pr&#233;d&#233;cesseur. Il lui reste 20 000&#160;milliards de &lt;em style=&quot;font-style:italic;&quot;&gt;tokens&lt;/em&gt;, 40&#160;% de &#171; perte &#187;. &lt;/p&gt; &lt;p&gt; Pour faire mieux, un ultime d&#233;crassage &#233;limine des textes sans queue ni t&#234;te dont le Web regorge pour attirer les moteurs de recherche ou produire du spam. Des dizaines de statistiques d&#233;crivent un texte : taille moyenne d’une phrase, pourcentage de caract&#232;res sp&#233;ciaux dans un texte, nombre de lignes se terminant par un point… A partir de quelle valeur consid&#233;rer que ces valeurs sont &#171; anormales &#187; ? L’&#233;quipe a retenu une douzaine de ces m&#233;triques et a test&#233; diff&#233;rents seuils. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce n’&#233;tait pas l’&#233;tape la plus fun ! &#187;&lt;/em&gt;, confesse Hynek Kydlicek, de Hugging Face. Mais &#231;a a pay&#233;. Trois conditions statistiques enl&#232;vent un certain nombre de documents mais pas trop, tout en augmentant les performances : 5 000&#160;milliards de &lt;em style=&quot;font-style:italic;&quot;&gt;tokens&lt;/em&gt; de plus s’&#233;vaporent mais FineWeb surpasse Refinedweb d’environ 1&#160;%, ainsi que d’autres comme Dolma, The Pile, C4… &lt;/p&gt; &lt;p&gt; Euphorique, l’&#233;quipe a lanc&#233; une derni&#232;re &#233;tape : ne s&#233;lectionner que des documents &#171; &#233;ducatifs &#187; pour construire un corpus id&#233;al pour les t&#226;ches de connaissances. FineWeb-Edu &#233;tait n&#233;, avec seulement 1 300&#160;milliards de &lt;em style=&quot;font-style:italic;&quot;&gt;tokens&lt;/em&gt;, et surpasse FineWeb de presque 4&#160;%. La s&#233;lection des &#171; bons &#187; textes s’est faite en demandant &#224; une IA g&#233;n&#233;rative de noter de 1 &#224; 5 tous les documents de FineWeb, pour ne garder que les mieux &#233;valu&#233;s. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En d&#233;taillant nos &#233;tapes, nous aidons &#224; mieux comprendre le succ&#232;s des grands mod&#232;les de langues. En mettant ce corpus &#224; disposition, des acteurs pourront d&#233;velopper leur mod&#232;le en s’affranchissant des &#233;tapes fastidieuses et co&#251;teuses en calcul de l’&#233;laboration des donn&#233;es d’entra&#238;nement &#187;&lt;/em&gt;, r&#233;sume Thomas Wolf. &lt;/p&gt; &lt;p&gt; L’&#233;quipe travaille d&#233;j&#224; &#224; des versions meilleures pour l’anglais ou pour d’autres langues. Elle a aussi mis &#224; disposition un outil, datatrove, pour refaire toutes leurs &#233;tapes. Cinq mois de travail r&#233;sum&#233; en 176 lignes de code.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;9 juillet 2024&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20240710&amp;#183;LM&amp;#183;202407102&amp;#215;20&amp;#215;22145626601&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">modèles de langues</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">IA générative</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">secrets de fabrication</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">calcul de l’élaboration</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">masse d’information</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">La Nouvelle-Orléans (Louisianne)</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240710%c2%b7LM%c2%b7202407102%c3%9720%c3%9722145626601" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240710%c2%b7LM%c2%b7202407102%c3%9720%c3%9722145626601">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Monde Science et médecine,         mercredi 10 juillet 2024 1065 mots, p. SCH2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Actualité</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Dans les secrets de fabrication de l’IA générative            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Informatique La start-up Hugging Face a rendu public le corpus de textes le plus performant pour développer des modèles de langue</p>
+</div>
+
+        <p class="sm-margin-bottomNews">David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>C’est le secret le mieux gardé du secteur de l’intelligence artificielle (IA) dite « générative », celle des ChatGPT, Gemini, Copilot… Il ne se niche pas dans la puissance de calcul, ni dans la taille colossale (des centaines de milliards de paramètres) de ces logiciels, ni dans des codes informatiques astucieux. Ces aspects comptent bien sûr dans le succès, mais ils sont désormais plus ou moins publics. </p> <p> Non, ce que les leaders du domaine, OpenAI, Anthropic, Mistral, Microsoft… n’ont encore jamais révélé, c’est leur recette pour confectionner la collection de textes qui servent à l’entraînement de leurs modèles. Ce dernier sert à ajuster les paramètres afin de prédire le mieux possible quel est le meilleur mot pour compléter une phrase. Cette ingurgitation de milliards de textes identifie des corrélations statistiques qui permettent de générer de nouveaux textes censés répondre aux questions de l’utilisateur.</p>
+
+
+<p>L’origine de ces textes est connue, des livres dans le domaine public, des articles de recherche, Wikipédia, mais surtout des tonnes de pages Web. Cette dernière source est majoritaire et c’est la manière dont elle est traitée qui fait la différence. « C’est le nerf de la guerre », résume Julien Launay, créateur de l’entreprise Adaptive ML et coau teur d’un corpus d’entraînement de données issues du Web, RefinedWeb, lorsqu’il travaillait chez LightOn. Il se souvient de la surprise causée par son exposé à La Nouvelle-Orléans en décembre&nbsp;2022 à la conférence phare du domaine, NeurIPS. Le soin mis dans la préparation de ces données avait permis à une IA d’égaler la concurrence nourrie avec des données d’origine plus variée. </p> <p><em style="font-weight:bold;">80 000&nbsp;heures de calculs</em></p><p>Thomas Wolf, cofondateur de Hugging Face, une plate-forme franco-américaine de mise à disposition de modèles et corpus en <mark>open</mark> <mark>source</mark>, présent à cette conférence, propose à l’équipe de Julien Launay de rejoindre son entreprise. L’un de ses membres, Guilherme Penedo, accepte, motivé par l’idée de mettre à disposition un corpus plus gros encore que RefinedWeb. <em style="font-style:italic;">« On pensait y arriver en dix jours »</em>, se souvient Thomas Wolf. Il en faudra quinze fois plus. Le 21&nbsp;avril est sorti FineWeb, monstre pesant 40 téraoctets (To), riche de 15 000&nbsp;milliards de <em style="font-style:italic;">tokens</em>, des jetons de 3-4&nbsp;lettres, sorte de syllabes. Librement téléchargeable, il permet de créer de meilleurs modèles qu’avecn’importe quel autre corpus public. </p> <p> Fabriquer un tel objet est ardu : 80 000&nbsp;heures de calculs avec les cartes graphiques H100 de Nvidia ont été nécessaires, ce qui est comparable à ce qu’il faut pour entraîner un modèle d’IA de bonne facture. </p> <p> D’abord, il faut récupérer les données. Depuis 2007, une fondation met à disposition Common Crawl, une collecte, à intervalle régulier, de milliards de pages Web. Mais pour être utile aux modèles de langues, il faut extraire seulement le texte de cette masse d’information. <em style="font-style:italic;">« Ça a été l’une des étapes les plus longues du processus, peut-être 80&nbsp;% du temps de calcul, que nous avons commencé en novembre 2023 »</em>, indique Guilherme Penedo. Quatre-vingt-seize paquets collectés sur une quinzaine d’années dans Common Crawl ont été utilisés pour un volume d’environ 5 354 To. Ensuite, un premier toilettage enlève les pages des sites pornographiques, puis ne retient que les pages en anglais. Environ 50&nbsp;% des documents sont éliminés. Restent 36 000&nbsp;milliards de <em style="font-style:italic;">tokens</em>. </p> <p><em style="font-weight:bold;">Changement de tactique</em></p><p>Puis vient la question délicate. Comment savoir qu’un corpus est « bon » ? Pas question de demander à un humain. Alors on demande aux machines. Un modèle d’IA est entraîné sur ce corpus. Si les performances aux tests de référence sont bonnes, alors le corpus est bon… Comme cela demande beaucoup de calculs, l’équipe a travaillé avec des « petits » modèles, à 1,2&nbsp;milliard de paramètres (le moteur de ChatGPT dépassait les 170&nbsp;milliards de paramètres). </p> <p> Place ensuite au grand ménage avec la suppression des doublons, car lire deux fois le même texte n’apporte rien. C’est la « déduplication ». L’équipe l’applique sur tout son corpus. <em style="font-style:italic;">« J’étais persuadé que le résultat serait aussi bon que RefinedWeb »</em>, se souvient Guilherme Penedo. Déception ! L’équipe change alors de tactique et décide de dédupliquer indépendamment chaque paquet de Common Crawl et pas globalement. Gagné, les performances augmentent de 2&nbsp;points de pourcentage : FineWeb est aussi bon que son prédécesseur. Il lui reste 20 000&nbsp;milliards de <em style="font-style:italic;">tokens</em>, 40&nbsp;% de « perte ». </p> <p> Pour faire mieux, un ultime décrassage élimine des textes sans queue ni tête dont le Web regorge pour attirer les moteurs de recherche ou produire du spam. Des dizaines de statistiques décrivent un texte : taille moyenne d’une phrase, pourcentage de caractères spéciaux dans un texte, nombre de lignes se terminant par un point… A partir de quelle valeur considérer que ces valeurs sont « anormales » ? L’équipe a retenu une douzaine de ces métriques et a testé différents seuils. <em style="font-style:italic;">« Ce n’était pas l’étape la plus fun ! »</em>, confesse Hynek Kydlicek, de Hugging Face. Mais ça a payé. Trois conditions statistiques enlèvent un certain nombre de documents mais pas trop, tout en augmentant les performances : 5 000&nbsp;milliards de <em style="font-style:italic;">tokens</em> de plus s’évaporent mais FineWeb surpasse Refinedweb d’environ 1&nbsp;%, ainsi que d’autres comme Dolma, The Pile, C4… </p> <p> Euphorique, l’équipe a lancé une dernière étape : ne sélectionner que des documents « éducatifs » pour construire un corpus idéal pour les tâches de connaissances. FineWeb-Edu était né, avec seulement 1 300&nbsp;milliards de <em style="font-style:italic;">tokens</em>, et surpasse FineWeb de presque 4&nbsp;%. La sélection des « bons » textes s’est faite en demandant à une IA générative de noter de 1 à 5 tous les documents de FineWeb, pour ne garder que les mieux évalués. </p> <p><em style="font-style:italic;">« En détaillant nos étapes, nous aidons à mieux comprendre le succès des grands modèles de langues. En mettant ce corpus à disposition, des acteurs pourront développer leur modèle en s’affranchissant des étapes fastidieuses et coûteuses en calcul de l’élaboration des données d’entraînement »</em>, résume Thomas Wolf. </p> <p> L’équipe travaille déjà à des versions meilleures pour l’anglais ou pour d’autres langues. Elle a aussi mis à disposition un outil, datatrove, pour refaire toutes leurs étapes. Cinq mois de travail résumé en 176 lignes de code.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">9 juillet 2024</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20240710·LM·202407102×20×22145626601</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20240710·LM·202407102×20×22145626601";
+    var _docIndex = 41;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20240710·LM·202407102×20×22145626601';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720240710%C2%B7LM%C2%B7202407102%C3%9720%C3%9722145626601&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720240710%C2%B7LM%C2%B7202407102%C3%9720%C3%9722145626601&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720240710%C2%B7LM%C2%B7202407102%C3%9720%C3%9722145626601&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720240710%C2%B7LM%C2%B7202407102%C3%9720%C3%9722145626601&docIndex=41&FullScreen=1";
+                
+	var _keyDoc = 'news·20240710·LM·202407102×20×22145626601';
+</script>
+</div></body></html>

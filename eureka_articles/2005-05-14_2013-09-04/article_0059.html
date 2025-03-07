@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Id&#233;es,         mardi 19 mars 2013 766 mots, p. A7&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Opinion         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Des Id&#233;es en revues - Vers un effondrement de l&#39;industrie de la culture?            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Au fond, l&#39;immoralit&#233; du &quot;piratage&quot; est secondaire au regard de cette formidable &quot;collectivisation&quot; des oeuvres&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Mathieu Arsenault&lt;/p&gt;
+
+
+    &lt;b&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Je crois &#224; la libre circulation des textes et de la culture en g&#233;n&#233;ral. Je crois que l&#39;int&#233;r&#234;t public devrait avoir priorit&#233; sur l&#39;int&#233;r&#234;t des individus et que, pour cette raison, tout le monde devrait avoir acc&#232;s aux oeuvres. Ce principe est derri&#232;re la grande id&#233;e du domaine public, qui s&#39;applique aux oeuvres anciennes, rendues au patrimoine de l&#39;humanit&#233; une fois pass&#233;e une p&#233;riode de temps suivant la mort de leur cr&#233;ateur.&lt;/em&gt;&lt;/p&gt;&lt;/b&gt;
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Mais je crois aussi que notre &#233;poque est en passe de faire op&#233;rer &#224; cette notion de domaine public un saut qualitatif. Il n&#39;est d&#39;ailleurs plus aujourd&#39;hui question de croire ou non &#224; la libre circulation. Le mod&#232;le de la culture comme industrie, qui a organis&#233; et donn&#233; leur forme aux arts et aux lettres depuis les cinquante derni&#232;res ann&#233;es, entre pr&#233;sentement dans l&#39;&#233;poque de son irr&#233;m&#233;diable d&#233;clin, supplant&#233; par un nouveau mod&#232;le qu&#39;on pourrait appeler &quot; collectivisation de la culture &quot;, c&#39;est-&#224;-dire la mise en commun pr&#233;cipit&#233;e, volontaire ou non, des oeuvres d&#39;art pour tous, sans que l&#39;industrie arrive &#224; fermer les vannes qui se sont ouvertes.&lt;/p&gt;
+
+
+&lt;p&gt;La collectivisation prend plusieurs formes. Pour la d&#233;nigrer, on s&#39;en tient au piratage de la musique, des films, des s&#233;ries t&#233;l&#233;. Le piratage, assure-t-on, est un vol qui prive les artistes des revenus auxquels ils ont droit. Mais du point de vue de la collectivisation, la question de la moralit&#233; du piratage est secondaire en regard de ce formidable d&#233;placement qu&#39;une horde anonyme fait op&#233;rer aux produits de la culture de masse, les entra&#238;nant dans le champ du collectif o&#249; chacun peut les consulter &#224; sa guise, hors de l&#39;appareil industriel dans lequel ils ont &#233;t&#233; cr&#233;&#233;s. Mais la question du piratage ne saurait r&#233;sumer &#224; elle seule le ph&#233;nom&#232;ne de la collectivisation. Le mouvement de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, la licence Creative Commons, cette volont&#233; in&#233;puisable de partager gratuitement ses propres vid&#233;os et ses images, de m&#234;me que le d&#233;sir de critiquer et remixer la culture, sont moins probl&#233;matiques juridiquement, car ils s&#39;ancrent dans notre inali&#233;nable libert&#233; d&#39;expression. Comment une critique litt&#233;raire cach&#233;e derri&#232;re le paywall d&#39;un grand quotidien peut-elle mieux faire conna&#238;tre une oeuvre qu&#39;une critique gratuite d&#233;pos&#233;e sur un blogue ? Qu&#39;on le veuille ou non, la collectivisation est l&#39;horizon de notre &#233;poque. &lt;/p&gt; &lt;p&gt; D&#233;capiter le pouvoir litt&#233;raire &lt;/p&gt; &lt;p&gt; En ce qui concerne la cr&#233;ation litt&#233;raire, on dirait que l&#39;apocalypse &#233;conomique (l&#39;&#233;conopocalypse !) que l&#39;industrie culturelle a connue depuis quinze ans de collectivisation s&#39;engage diff&#233;remment. Car la catastrophe &#233;conomique (l&#39;&#233;conostrophe !) occasionn&#233;e par la collectivisation rapide de la musique semble jusqu&#39;ici se limiter aux best-sellers, c&#39;est-&#224;-dire &#224; la frange de la production litt&#233;raire la plus int&#233;gr&#233;e et la plus centrale &#224; l&#39;industrie du livre. Si Aquin, Blanchot et Guyotat sont encore &#224; peu pr&#232;s impossibles &#224; d&#233;nicher, en revanche les romans complets de Fr&#233;d&#233;ric Beigbeder, Michel Houellebecq, Bernard Werber et Paulo Coelho se trouvent et se t&#233;l&#233;chargent en seulement dix minutes (c&#39;est la coelhopocalypse !). Que cela peut-il bien signifier ? Peut-&#234;tre qu&#39;au final, il y a de quoi se r&#233;jouir de la collectivisation en mati&#232;re de litt&#233;rature. &lt;/p&gt; &lt;p&gt; Tout le monde sait depuis des ann&#233;es &#224; quel point la dynamique commerciale &#224; laquelle est contrainte l&#39;industrie du livre est devenue un cancer pour la chose litt&#233;raire, sans qu&#39;on ait trouv&#233; jusqu&#39;&#224; maintenant quoi faire pour lui couper les ailes et favoriser l&#39;&#233;mergence d&#39;un &#233;cosyst&#232;me plus sain pour l&#39;avenir de notre litt&#233;rature. Le roman, comme forme, est exsangue. Il semble avoir d&#233;finitivement perdu la vitalit&#233; dont il a d&#233;j&#224; fait preuve. Mais il continue pourtant de repr&#233;senter pour le r&#233;seau commercial du livre la seule forme s&#233;rieuse (entendre profitable). Le roman a fort heureusement encore ses adeptes, si nombreux qu&#39;ils seront pr&#234;ts &#224; collectiviser sans rel&#226;che les succ&#232;s m&#233;diatiques, jusqu&#39;&#224; l&#39;effondrement des structures commerciales. C&#39;est pour &#231;a que nous, les affreux conspirateurs hautains du texte highbrow compliqu&#233; et du formalisme pop, nous les adorons : le lectorat, ce public harnach&#233; &#224; l&#39;industrie du livre, aime trop fort, et il continuera de s&#39;enthousiasmer des best-sellers jusqu&#39;&#224; l&#39;&#233;touffement de l&#39;id&#233;e de best-seller. Ces hordes de lecteurs sont les agents involontaires et inconscients d&#39;une r&#233;volution qui cherche &#224; d&#233;capiter le pouvoir &#233;conomique qui donne &#224; cette litt&#233;rature commerciale son pouvoir et sa visibilit&#233; et qui, paradoxalement, sont en train de laisser &#224; peu pr&#232;s intacts &#224; la fois le canon des oeuvres modernes plus difficiles et l&#39;ensemble de cette petite production actuelle qui passe sous le radar commercial. &lt;/p&gt; &lt;p&gt; Apr&#232;s l&#39;effondrement &lt;/p&gt; &lt;p&gt; Mais que restera-t-il apr&#232;s que se sera effondr&#233;e la culture comme industrie ? Il est encore t&#244;t pour le dire, mais je vois d&#233;j&#224; ressurgir un int&#233;r&#234;t pour les formes mineures, qui r&#233;apparaissent d&#39;ailleurs r&#233;guli&#232;rement dans l&#39;histoire litt&#233;raire. La r&#233;surgence de pratiques analogues au mot d&#39;esprit, &#224; l&#39;aphorisme, au conte all&#233;gorique ou &#224; la chronique synth&#233;tise au mieux, selon moi, notre &#233;poque, car c&#39;est ce type de contenu qui fait grimper le nombre des visites sur les blogues et des interventions proprement litt&#233;raires sur les r&#233;seaux sociaux. Je peux passer plusieurs heures par semaine &#224; lire ce genre de contenu apparemment l&#233;ger, mais souvent porteur d&#39;un sens plus pertinent pour poser les questions propres &#224; notre &#233;poque que celui de la plupart des romans que je scanne avec un r&#233;el ennui en librairie. Et, voil&#224; le plus beau, ces textes sont r&#233;solument le produit de ce mouvement de collectivisation : ils sont imm&#233;diatement accessibles et con&#231;us pour &#234;tre partag&#233;s, &#233;chang&#233;s, comment&#233;s. &lt;/p&gt; &lt;p&gt; Mais, mais, mais... Si la collectivisation d&#233;truit l&#39;appareil commercial du livre, si elle fait s&#39;effondrer les structures financi&#232;res du litt&#233;raire, comment les auteurs pourront-ils gagner leur vie ? O&#249; trouveront-ils l&#39;argent et surtout le temps pour continuer d&#39;&#233;crire ? La question demeure ouverte et le restera sans doute des ann&#233;es encore avant qu&#39;&#233;merge une nouvelle figure de l&#39;auteur comme acteur de la vie &#233;conomique, si cela se produit un jour. De toute mani&#232;re, l&#39;industrie du best-seller a depuis longtemps fait de la plupart des auteurs des marginaux du syst&#232;me capitaliste, et nous vivotons de subventions et de bourses sans savoir combien de temps cela durera encore. Pour ma part, je fais des t-shirts, et la boutique est ouverte. Mathieu Arsenault&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20130319&amp;#183;LE&amp;#183;2013-03-19_373540&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">industrie du livre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">industrie de la culture</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">effondrement de l'industrie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">phénomène de la collectivisation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">mouvement de collectivisation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éditorial et opinions</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Industries culturelles</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130319%c2%b7LE%c2%b72013-03-19_373540" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130319%c2%b7LE%c2%b72013-03-19_373540">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Idées,         mardi 19 mars 2013 766 mots, p. A7</span>
+</div>
+
+    <div>
+        <p>
+Opinion         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Des Idées en revues - Vers un effondrement de l'industrie de la culture?            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Au fond, l'immoralité du "piratage" est secondaire au regard de cette formidable "collectivisation" des oeuvres</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Mathieu Arsenault</p>
+
+
+    <b><p><em style="font-weight:bold;">Je crois à la libre circulation des textes et de la culture en général. Je crois que l'intérêt public devrait avoir priorité sur l'intérêt des individus et que, pour cette raison, tout le monde devrait avoir accès aux oeuvres. Ce principe est derrière la grande idée du domaine public, qui s'applique aux oeuvres anciennes, rendues au patrimoine de l'humanité une fois passée une période de temps suivant la mort de leur créateur.</em></p></b>
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Mais je crois aussi que notre époque est en passe de faire opérer à cette notion de domaine public un saut qualitatif. Il n'est d'ailleurs plus aujourd'hui question de croire ou non à la libre circulation. Le modèle de la culture comme industrie, qui a organisé et donné leur forme aux arts et aux lettres depuis les cinquante dernières années, entre présentement dans l'époque de son irrémédiable déclin, supplanté par un nouveau modèle qu'on pourrait appeler " collectivisation de la culture ", c'est-à-dire la mise en commun précipitée, volontaire ou non, des oeuvres d'art pour tous, sans que l'industrie arrive à fermer les vannes qui se sont ouvertes.</p>
+
+
+<p>La collectivisation prend plusieurs formes. Pour la dénigrer, on s'en tient au piratage de la musique, des films, des séries télé. Le piratage, assure-t-on, est un vol qui prive les artistes des revenus auxquels ils ont droit. Mais du point de vue de la collectivisation, la question de la moralité du piratage est secondaire en regard de ce formidable déplacement qu'une horde anonyme fait opérer aux produits de la culture de masse, les entraînant dans le champ du collectif où chacun peut les consulter à sa guise, hors de l'appareil industriel dans lequel ils ont été créés. Mais la question du piratage ne saurait résumer à elle seule le phénomène de la collectivisation. Le mouvement de l'<mark>open</mark> <mark>source</mark>, la licence Creative Commons, cette volonté inépuisable de partager gratuitement ses propres vidéos et ses images, de même que le désir de critiquer et remixer la culture, sont moins problématiques juridiquement, car ils s'ancrent dans notre inaliénable liberté d'expression. Comment une critique littéraire cachée derrière le paywall d'un grand quotidien peut-elle mieux faire connaître une oeuvre qu'une critique gratuite déposée sur un blogue ? Qu'on le veuille ou non, la collectivisation est l'horizon de notre époque. </p> <p> Décapiter le pouvoir littéraire </p> <p> En ce qui concerne la création littéraire, on dirait que l'apocalypse économique (l'éconopocalypse !) que l'industrie culturelle a connue depuis quinze ans de collectivisation s'engage différemment. Car la catastrophe économique (l'éconostrophe !) occasionnée par la collectivisation rapide de la musique semble jusqu'ici se limiter aux best-sellers, c'est-à-dire à la frange de la production littéraire la plus intégrée et la plus centrale à l'industrie du livre. Si Aquin, Blanchot et Guyotat sont encore à peu près impossibles à dénicher, en revanche les romans complets de Frédéric Beigbeder, Michel Houellebecq, Bernard Werber et Paulo Coelho se trouvent et se téléchargent en seulement dix minutes (c'est la coelhopocalypse !). Que cela peut-il bien signifier ? Peut-être qu'au final, il y a de quoi se réjouir de la collectivisation en matière de littérature. </p> <p> Tout le monde sait depuis des années à quel point la dynamique commerciale à laquelle est contrainte l'industrie du livre est devenue un cancer pour la chose littéraire, sans qu'on ait trouvé jusqu'à maintenant quoi faire pour lui couper les ailes et favoriser l'émergence d'un écosystème plus sain pour l'avenir de notre littérature. Le roman, comme forme, est exsangue. Il semble avoir définitivement perdu la vitalité dont il a déjà fait preuve. Mais il continue pourtant de représenter pour le réseau commercial du livre la seule forme sérieuse (entendre profitable). Le roman a fort heureusement encore ses adeptes, si nombreux qu'ils seront prêts à collectiviser sans relâche les succès médiatiques, jusqu'à l'effondrement des structures commerciales. C'est pour ça que nous, les affreux conspirateurs hautains du texte highbrow compliqué et du formalisme pop, nous les adorons : le lectorat, ce public harnaché à l'industrie du livre, aime trop fort, et il continuera de s'enthousiasmer des best-sellers jusqu'à l'étouffement de l'idée de best-seller. Ces hordes de lecteurs sont les agents involontaires et inconscients d'une révolution qui cherche à décapiter le pouvoir économique qui donne à cette littérature commerciale son pouvoir et sa visibilité et qui, paradoxalement, sont en train de laisser à peu près intacts à la fois le canon des oeuvres modernes plus difficiles et l'ensemble de cette petite production actuelle qui passe sous le radar commercial. </p> <p> Après l'effondrement </p> <p> Mais que restera-t-il après que se sera effondrée la culture comme industrie ? Il est encore tôt pour le dire, mais je vois déjà ressurgir un intérêt pour les formes mineures, qui réapparaissent d'ailleurs régulièrement dans l'histoire littéraire. La résurgence de pratiques analogues au mot d'esprit, à l'aphorisme, au conte allégorique ou à la chronique synthétise au mieux, selon moi, notre époque, car c'est ce type de contenu qui fait grimper le nombre des visites sur les blogues et des interventions proprement littéraires sur les réseaux sociaux. Je peux passer plusieurs heures par semaine à lire ce genre de contenu apparemment léger, mais souvent porteur d'un sens plus pertinent pour poser les questions propres à notre époque que celui de la plupart des romans que je scanne avec un réel ennui en librairie. Et, voilà le plus beau, ces textes sont résolument le produit de ce mouvement de collectivisation : ils sont immédiatement accessibles et conçus pour être partagés, échangés, commentés. </p> <p> Mais, mais, mais... Si la collectivisation détruit l'appareil commercial du livre, si elle fait s'effondrer les structures financières du littéraire, comment les auteurs pourront-ils gagner leur vie ? Où trouveront-ils l'argent et surtout le temps pour continuer d'écrire ? La question demeure ouverte et le restera sans doute des années encore avant qu'émerge une nouvelle figure de l'auteur comme acteur de la vie économique, si cela se produit un jour. De toute manière, l'industrie du best-seller a depuis longtemps fait de la plupart des auteurs des marginaux du système capitaliste, et nous vivotons de subventions et de bourses sans savoir combien de temps cela durera encore. Pour ma part, je fais des t-shirts, et la boutique est ouverte. Mathieu Arsenault</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20130319·LE·2013-03-19_373540</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20130319·LE·2013-03-19_373540";
+    var _docIndex = 58;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20130319·LE·2013-03-19_373540';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720130319%C2%B7LE%C2%B72013-03-19_373540&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720130319%C2%B7LE%C2%B72013-03-19_373540&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720130319%C2%B7LE%C2%B72013-03-19_373540&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720130319%C2%B7LE%C2%B72013-03-19_373540&docIndex=58&FullScreen=1";
+                
+	var _keyDoc = 'news·20130319·LE·2013-03-19_373540';
+</script>
+</div></body></html>

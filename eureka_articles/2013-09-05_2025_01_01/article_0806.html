@@ -1,0 +1,525 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;crans,         vendredi 14 novembre 2014 752 mots, p. 26&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Firefox, dix ans de libres services            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le navigateur de Mozilla vient de sortir sa version 33.1 et entend am&#233;liorer la confidentialit&#233; des donn&#233;es des utilisateurs.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Camille G&#233;vaudan&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Les pandas roux mangent-ils du chocolat, ou a-t-il fallu concocter un g&#226;teau d&#39;anniversaire au bambou ? Car le navigateur Firefox, dont la bestiole est l&#39;embl&#232;me (1), f&#234;te ses 10 ans. Dix ans, d&#233;j&#224;, qu&#39;il existe dans le paysage du Web un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, ouvert et &#224; but non lucratif. Le 9 novembre 2004, c&#39;&#233;tait un mardi. &lt;span class=&quot;stubs&quot;&gt;Tristan Nitot&lt;/span&gt; ne risque pas de l&#39;oublier, raconte-t-il &#224; &lt;em style=&quot;font-style:italic;&quot;&gt;Lib&#233;ration&lt;/em&gt;: &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;On lan&#231;ait Firefox 1.0 depuis mon salon, avec le wi-fi de la voisine parce que ma box m&#39;avait l&#226;ch&#233;.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Un an plus t&#244;t, &lt;span class=&quot;stubs&quot;&gt;Tristan Nitot&lt;/span&gt; a fond&#233; la branche europ&#233;enne de la fondation Mozilla, consacr&#233;e &#224; promouvoir les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; pour &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;pr&#233;server le choix et l&#39;innovation sur Internet&#187;&lt;/em&gt; &#224; une &#233;poque o&#249; Microsoft domine totalement le march&#233; avec son navigateur &lt;span class=&quot;stubs&quot;&gt;Internet Explorer&lt;/span&gt;. Une position facile &#224; acqu&#233;rir : il &#233;tait install&#233; d&#39;office sur tous les ordinateurs neufs vendus avec Windows 95... &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Entre 90 et 95% des utilisateurs &#233;taient sous &lt;span class=&quot;stubs&quot;&gt;Internet Explorer&lt;/span&gt;, &lt;/em&gt; rappelle &lt;span class=&quot;stubs&quot;&gt;Tristan Nitot&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Et &lt;span class=&quot;stubs&quot;&gt;Internet Explorer&lt;/span&gt; n&#39;&#233;tait litt&#233;ralement plus maintenu : Microsoft avait d&#233;mantel&#233; son &#233;quipe de d&#233;veloppement pour l&#39;assigner &#224; des t&#226;ches plus importantes, des trucs qui rapportaient des sous &lt;/em&gt;.&#187; C&#39;est sur un logiciel truff&#233; de failles de s&#233;curit&#233; que surfait l&#39;immense majorit&#233; des internautes des ann&#233;es 2000 : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&#199;a devenait dangereux d&#39;aller sur le Web ! Sans compter les probl&#232;mes de pop-up envahissantes... Le Web, &#224; cause de &#231;a, &#233;tait en train de devenir une d&#233;charge &#224; ciel ouvert parce que Microsoft n&#39;avait pas l&#39;&#233;nergie de porter un navigateur de bonne qualit&#233;.&#187;&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Forcing.&lt;/em&gt; Si le grand public ne se rend alors pas forc&#233;ment compte de la d&#233;cr&#233;pitude d&#39;&lt;span class=&quot;stubs&quot;&gt;Internet Explorer&lt;/span&gt;, les d&#233;veloppeurs de sites et les connaisseurs de l&#39;informatique, eux, s&#39;arrachent les cheveux. C&#39;est de cette situation d&#233;sesp&#233;r&#233;e que na&#238;t l&#39;impulsion de proposer une alternative; l&#39;affaire prendra dix-huit mois &#224; temps plein, et sans salaire. &lt;/p&gt; &lt;p&gt; Sur un navigateur n&#39;en faisant qu&#39;&#224; sa t&#234;te, comme &lt;span class=&quot;stubs&quot;&gt;Internet Explorer&lt;/span&gt;, il est &#224; l&#39;&#233;poque tr&#232;s difficile de pr&#233;voir comment un site web va s&#39;afficher, et les webmasters doivent bidouiller pour que leurs pages fonctionnent comme attendu chez les internautes. Firefox, lui, fonctionne toujours comme attendu parce que Mozilla a choisi d&#39;embl&#233;e de respecter les standards techniques du Web &#233;tablis par le World Wide Web Consortium (W3C). Et surtout - bonheur absolu - il bloque d&#39;office les fen&#234;tres pop-up qui poussent comme des champignons sur le Web de l&#39;&#233;poque, pour nous vendre des logiciels v&#233;reux ou nous faire croire qu&#39;on avait gagn&#233; &#224; la grande loterie &lt;span class=&quot;stubs&quot;&gt;Bill Gates&lt;/span&gt;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Il y avait beaucoup d&#39;attente autour de Firefox, et &#231;a a &#233;t&#233; un succ&#232;s imm&#233;diat,&lt;/em&gt; continue Nitot. &lt;em style=&quot;font-style:italic;&quot;&gt;D&#232;s la version 0.8, on a vu la courbe d&#39;adoption d&#233;coller. A la sortie de la 1.0, tous les geeks se sont fait passer le message : &quot;&#199;a y est, c&#39;est une version stable, tu peux l&#39;installer sans risque &#224; papa et maman, l&#39;oncle, la vieille tante et les cousins.&quot;&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;C&#39;est de mani&#232;re plut&#244;t exotique que les premiers financements sont arriv&#233;s : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Firefox est devenu une marque super cool, et le premier business model de Mozilla a &#233;t&#233; la vente de tee-shirts en ligne.&#187;&lt;/em&gt; Quand les plus branch&#233;s ont tous eu leur tee-shirt &#224; panda roux, il s&#39;est agi de consolider les rentr&#233;es d&#39;argent, et un syst&#232;me d&#39;affiliation avec les moteurs de recherche est rapidement invent&#233;. Le principe est simple : en haut &#224; droite d&#39;une fen&#234;tre, Firefox s&#39;affiche un petit champ de recherche. Chaque mot-cl&#233; entr&#233; ici lance une requ&#234;te dans le moteur de recherche s&#233;lectionn&#233; - par d&#233;faut, c&#39;est Google - et si l&#39;on clique sur une pub en arrivant sur la page des r&#233;sultats de recherche, une part est revers&#233;e &#224; Mozilla. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Une toute petite partie,&lt;/em&gt; pr&#233;cise Nitot, &lt;em style=&quot;font-style:italic;&quot;&gt;mais multipli&#233;e par des centaines de milliers d&#39;utilisateurs, elle a permis de d&#233;velopper Firefox, puis Firefox OS, notre syst&#232;me d&#39;exploitation mobile, de payer les 1 200 employ&#233;s de la fondation et de financer les activit&#233;s de milliers de b&#233;n&#233;voles.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les parts de march&#233; de Firefox ont r&#233;guli&#232;rement grimp&#233; jusqu&#39;en 2010 environ. Puis sa progression, qui semblait in&#233;branlable, a pris un coup, rattrap&#233;e par le d&#233;veloppement de Chrome, le navigateur de Google lanc&#233; en 2008 et boost&#233; &#224; grand renfort de publicit&#233;s et de forcing (on ne compte plus le nombre de services Google ne fonctionnant correctement que sur son propre navigateur). &lt;span class=&quot;stubs&quot;&gt;Internet Explorer&lt;/span&gt;, lui, a continu&#233; &#224; chuter. Firefox le devance depuis 2011 en Europe. Mais il ne s&#39;agit pas d&#39;une comp&#233;tition interlogiciels. Pour &lt;span class=&quot;stubs&quot;&gt;Tristan Nitot&lt;/span&gt;, la mission est accomplie : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Notre vocation &#233;tait d&#39;abattre le monopole. Mais pas pour installer un duopole &#224; la place - on voulait la libert&#233; de choix pour les utilisateurs, et c&#39;est un succ&#232;s.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Bouton.&lt;/em&gt;Il reste aujourd&#39;hui une diff&#233;rence de taille entre Firefox et les autres : le traitement de la vie priv&#233;e. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Mozilla est la seule organisation qui fait un navigateur &#224; but non lucratif,&lt;/em&gt;rappelle Nitot, &lt;em style=&quot;font-style:italic;&quot;&gt;face &#224; tous ceux qui sont l&#224; pour faire le plus d&#39;argent possible. Chez Apple, ils vendent des appareils; d&#39;autres &#233;changent la gratuit&#233; du navigateur contre le profilage des internautes. Nous, non.&#187;&lt;/em&gt; Par une s&#233;rie de nouveaut&#233;s dans la derni&#232;re version de Firefox, Mozilla veut r&#233;affirmer et renforcer son ind&#233;pendance sur ce point : Firefox 33.1, sorti cette semaine sur ordinateurs et appareils Android, int&#232;gre un assistant de vie priv&#233;e pour montrer &#224; l&#39;internaute toutes les options qu&#39;il peut activer pour mieux se prot&#233;ger. Un nouveau bouton &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Effacer mes donn&#233;es&#187;&lt;/em&gt; l&#39;accompagne, pour vider en un clic l&#39;historique de navigation des cinq derni&#232;res minutes, des deux derni&#232;res heures ou d&#39;un jour entier. &lt;/p&gt; &lt;p&gt; Dans le m&#234;me esprit post-affaire Snowden, Firefox int&#232;gre d&#233;sormais le moteur de recherche DuckDuckGo, champion de la vie priv&#233;e qui promet de ne pas pister ses utilisateurs et leurs recherches. Par ailleurs, Mozilla lance le projet Polaris, en collaboration avec Tor, technologie permettant de surfer anonymement, et le Center for Democracy and Technology, et ce, indique Nitot, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;pour voir comment travailler ensemble pour mieux prot&#233;ger la vie priv&#233;e, la libert&#233; de parole, &#233;viter la censure, le flicage et la surveillance de masse&#187;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;(1) Car non, ce n&#39;est pas un renard.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20141114&amp;#183;LI&amp;#183;ebc1b9d0-6b5d-11e4-babb-4621459af28f&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">moteur de recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">vie privée</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">branche européenne de la fondation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">employés de la fondation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">historique de navigation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Tristan Nitot</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Internet Explorer</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Bill Gates</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141114%c2%b7LI%c2%b7ebc1b9d0-6b5d-11e4-babb-4621459af28f" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141114%c2%b7LI%c2%b7ebc1b9d0-6b5d-11e4-babb-4621459af28f">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Écrans,         vendredi 14 novembre 2014 752 mots, p. 26</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Firefox, dix ans de libres services            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le navigateur de Mozilla vient de sortir sa version 33.1 et entend améliorer la confidentialité des données des utilisateurs.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Camille Gévaudan</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Les pandas roux mangent-ils du chocolat, ou a-t-il fallu concocter un gâteau d'anniversaire au bambou ? Car le navigateur Firefox, dont la bestiole est l'emblème (1), fête ses 10 ans. Dix ans, déjà, qu'il existe dans le paysage du Web un <mark>logiciel</mark> <mark>libre</mark>, ouvert et à but non lucratif. Le 9 novembre 2004, c'était un mardi. <span class="stubs">Tristan Nitot</span> ne risque pas de l'oublier, raconte-t-il à <em style="font-style:italic;">Libération</em>: <em style="font-style:italic;">«On lançait Firefox 1.0 depuis mon salon, avec le wi-fi de la voisine parce que ma box m'avait lâché.»</em></p><p>Un an plus tôt, <span class="stubs">Tristan Nitot</span> a fondé la branche européenne de la fondation Mozilla, consacrée à promouvoir les <mark>logiciels</mark> <mark>libres</mark> pour <em style="font-style:italic;">«préserver le choix et l'innovation sur Internet»</em> à une époque où Microsoft domine totalement le marché avec son navigateur <span class="stubs">Internet Explorer</span>. Une position facile à acquérir : il était installé d'office sur tous les ordinateurs neufs vendus avec Windows 95... <em style="font-style:italic;">«Entre 90 et 95% des utilisateurs étaient sous <span class="stubs">Internet Explorer</span>, </em> rappelle <span class="stubs">Tristan Nitot</span>. <em style="font-style:italic;">Et <span class="stubs">Internet Explorer</span> n'était littéralement plus maintenu : Microsoft avait démantelé son équipe de développement pour l'assigner à des tâches plus importantes, des trucs qui rapportaient des sous </em>.» C'est sur un logiciel truffé de failles de sécurité que surfait l'immense majorité des internautes des années 2000 : <em style="font-style:italic;">«Ça devenait dangereux d'aller sur le Web ! Sans compter les problèmes de pop-up envahissantes... Le Web, à cause de ça, était en train de devenir une décharge à ciel ouvert parce que Microsoft n'avait pas l'énergie de porter un navigateur de bonne qualité.»</em></p>
+
+
+<p><em style="font-weight:bold;">Forcing.</em> Si le grand public ne se rend alors pas forcément compte de la décrépitude d'<span class="stubs">Internet Explorer</span>, les développeurs de sites et les connaisseurs de l'informatique, eux, s'arrachent les cheveux. C'est de cette situation désespérée que naît l'impulsion de proposer une alternative; l'affaire prendra dix-huit mois à temps plein, et sans salaire. </p> <p> Sur un navigateur n'en faisant qu'à sa tête, comme <span class="stubs">Internet Explorer</span>, il est à l'époque très difficile de prévoir comment un site web va s'afficher, et les webmasters doivent bidouiller pour que leurs pages fonctionnent comme attendu chez les internautes. Firefox, lui, fonctionne toujours comme attendu parce que Mozilla a choisi d'emblée de respecter les standards techniques du Web établis par le World Wide Web Consortium (W3C). Et surtout - bonheur absolu - il bloque d'office les fenêtres pop-up qui poussent comme des champignons sur le Web de l'époque, pour nous vendre des logiciels véreux ou nous faire croire qu'on avait gagné à la grande loterie <span class="stubs">Bill Gates</span>. </p> <p><em style="font-style:italic;">«Il y avait beaucoup d'attente autour de Firefox, et ça a été un succès immédiat,</em> continue Nitot. <em style="font-style:italic;">Dès la version 0.8, on a vu la courbe d'adoption décoller. A la sortie de la 1.0, tous les geeks se sont fait passer le message : "Ça y est, c'est une version stable, tu peux l'installer sans risque à papa et maman, l'oncle, la vieille tante et les cousins."»</em></p><p>C'est de manière plutôt exotique que les premiers financements sont arrivés : <em style="font-style:italic;">«Firefox est devenu une marque super cool, et le premier business model de Mozilla a été la vente de tee-shirts en ligne.»</em> Quand les plus branchés ont tous eu leur tee-shirt à panda roux, il s'est agi de consolider les rentrées d'argent, et un système d'affiliation avec les moteurs de recherche est rapidement inventé. Le principe est simple : en haut à droite d'une fenêtre, Firefox s'affiche un petit champ de recherche. Chaque mot-clé entré ici lance une requête dans le moteur de recherche sélectionné - par défaut, c'est Google - et si l'on clique sur une pub en arrivant sur la page des résultats de recherche, une part est reversée à Mozilla. <em style="font-style:italic;">«Une toute petite partie,</em> précise Nitot, <em style="font-style:italic;">mais multipliée par des centaines de milliers d'utilisateurs, elle a permis de développer Firefox, puis Firefox OS, notre système d'exploitation mobile, de payer les 1 200 employés de la fondation et de financer les activités de milliers de bénévoles.»</em></p><p>Les parts de marché de Firefox ont régulièrement grimpé jusqu'en 2010 environ. Puis sa progression, qui semblait inébranlable, a pris un coup, rattrapée par le développement de Chrome, le navigateur de Google lancé en 2008 et boosté à grand renfort de publicités et de forcing (on ne compte plus le nombre de services Google ne fonctionnant correctement que sur son propre navigateur). <span class="stubs">Internet Explorer</span>, lui, a continué à chuter. Firefox le devance depuis 2011 en Europe. Mais il ne s'agit pas d'une compétition interlogiciels. Pour <span class="stubs">Tristan Nitot</span>, la mission est accomplie : <em style="font-style:italic;">«Notre vocation était d'abattre le monopole. Mais pas pour installer un duopole à la place - on voulait la liberté de choix pour les utilisateurs, et c'est un succès.»</em></p><p><em style="font-weight:bold;">Bouton.</em>Il reste aujourd'hui une différence de taille entre Firefox et les autres : le traitement de la vie privée. <em style="font-style:italic;">«Mozilla est la seule organisation qui fait un navigateur à but non lucratif,</em>rappelle Nitot, <em style="font-style:italic;">face à tous ceux qui sont là pour faire le plus d'argent possible. Chez Apple, ils vendent des appareils; d'autres échangent la gratuité du navigateur contre le profilage des internautes. Nous, non.»</em> Par une série de nouveautés dans la dernière version de Firefox, Mozilla veut réaffirmer et renforcer son indépendance sur ce point : Firefox 33.1, sorti cette semaine sur ordinateurs et appareils Android, intègre un assistant de vie privée pour montrer à l'internaute toutes les options qu'il peut activer pour mieux se protéger. Un nouveau bouton <em style="font-style:italic;">«Effacer mes données»</em> l'accompagne, pour vider en un clic l'historique de navigation des cinq dernières minutes, des deux dernières heures ou d'un jour entier. </p> <p> Dans le même esprit post-affaire Snowden, Firefox intègre désormais le moteur de recherche DuckDuckGo, champion de la vie privée qui promet de ne pas pister ses utilisateurs et leurs recherches. Par ailleurs, Mozilla lance le projet Polaris, en collaboration avec Tor, technologie permettant de surfer anonymement, et le Center for Democracy and Technology, et ce, indique Nitot, <em style="font-style:italic;">«pour voir comment travailler ensemble pour mieux protéger la vie privée, la liberté de parole, éviter la censure, le flicage et la surveillance de masse».</em></p><p>(1) Car non, ce n'est pas un renard.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20141114·LI·ebc1b9d0-6b5d-11e4-babb-4621459af28f</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20141114·LI·ebc1b9d0-6b5d-11e4-babb-4621459af28f";
+    var _docIndex = 805;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"bill gates":"1961"};
+		var _orgDic = null;
+		var _docName = 'news·20141114·LI·ebc1b9d0-6b5d-11e4-babb-4621459af28f';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720141114%C2%B7LI%C2%B7ebc1b9d0-6b5d-11e4-babb-4621459af28f&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720141114%C2%B7LI%C2%B7ebc1b9d0-6b5d-11e4-babb-4621459af28f&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720141114%C2%B7LI%C2%B7ebc1b9d0-6b5d-11e4-babb-4621459af28f&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720141114%C2%B7LI%C2%B7ebc1b9d0-6b5d-11e4-babb-4621459af28f&docIndex=805&FullScreen=1";
+                
+	var _keyDoc = 'news·20141114·LI·ebc1b9d0-6b5d-11e4-babb-4621459af28f';
+</script>
+</div></body></html>

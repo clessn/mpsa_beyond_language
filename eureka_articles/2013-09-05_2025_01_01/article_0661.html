@@ -1,0 +1,567 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;conomie,         mercredi 23 mars 2016 1015 mots, p. B1,B2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Cryptomonnaie - Le bictcoin victime de son succ&#232;s            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Deux camps s&#39;affrontent quant aux solutions &#224; mettre en oeuvre pour assurer le d&#233;veloppement de la monnaie virtuelle&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Yves Eudes&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Victime de son succ&#232;s, le bitcoin est confront&#233; &#224; une crise de croissance, qui se double d&#39;une crise de gouvernance. Pour les professionnels et les militants de la monnaie anonyme, l&#39;augmentation continue de la masse mon&#233;taire et du nombre de transactions est plut&#244;t une bonne nouvelle -- la preuve que la cryptomonnaie s&#39;installe dans le paysage financier mondial. En mars 2016, les 15,5 millions de bitcoins en circulation valaient plus de 6 milliards de dollars. &lt;/p&gt; &lt;p&gt; Cependant, dans sa configuration actuelle, le r&#233;seau du bitcoin va bient&#244;t saturer, ce qui risque de provoquer des embouteillages et une d&#233;gradation du service.&lt;/p&gt;
+
+
+&lt;p&gt;Pour tous les acteurs, la solution est &#233;vidente : il faut introduire des innovations techniques qui permettront au r&#233;seau d&#39;absorber plus de trafic. Mais comment s&#39;y prendre ? Sur la m&#233;thode &#224; adopter, les avis divergent. Depuis quelques mois, on a vu appara&#238;tre deux camps oppos&#233;s, qui s&#39;affrontent ouvertement. &lt;/p&gt; &lt;p&gt; Les partisans d&#39;une solution rapide et facile veulent augmenter la taille des &quot; blocs &quot;, ces fichiers contenant les transactions, qui viennent s&#39;ajouter &#224; la blockchain (cha&#238;ne de blocs), le r&#233;pertoire unique de toutes les transactions. Aujourd&#39;hui, la taille maximale d&#39;un bloc est de 1 m&#233;gaoctet, ce qui peut repr&#233;senter jusqu&#39;&#224; 3000 transactions. En th&#233;orie, il suffit de faire passer la taille des blocs &#224; 2 Mo, pour r&#233;soudre le probl&#232;me, au moins temporairement. &lt;/p&gt; &lt;p&gt; R&#233;cemment, les partisans de cette &quot; m&#233;thode facile &quot; ont cr&#233;&#233; un groupe informel, baptis&#233; Bitcoin Classic. Il r&#233;unit notamment des d&#233;veloppeurs historiques du bitcoin et une trentaine de soci&#233;t&#233;s commerciales : des &quot; mineurs &quot;, qui int&#232;grent les nouvelles transactions &#224; la blockchain en r&#233;solvant des &#233;quations math&#233;matiques et gagnent des bitcoins pour chaque nouveau bloc, ainsi que des gestionnaires de portefeuille, des sites de change, des prestataires techniques... &lt;/p&gt; &lt;p&gt; En face, un autre groupe, compos&#233; en grande partie des codeurs de l&#39;&#233;quipe originelle, Bitcoin Core (noyau dur), pr&#233;conise une approche plus graduelle et plus &quot; &#233;l&#233;gante &quot;. Selon eux, au lieu d&#39;augmenter la taille des blocs, il est plus judicieux de diminuer la taille de chaque transaction. &lt;/p&gt; &lt;p&gt; Les Core ne sont pas oppos&#233;s par principe &#224; l&#39;augmentation de la taille des blocs, mais ils veulent d&#39;abord effectuer les tests n&#233;cessaires pour s&#39;assurer que cette modification ne provoquera pas de perturbations impr&#233;vues. Ils craignent notamment qu&#39;elle affecte la fluidit&#233; du trafic : dans ce cas, les gros prestataires disposant de connexions &#224; haut d&#233;bit seraient avantag&#233;s par rapport &#224; leurs petits concurrents moins bien &#233;quip&#233;s. &lt;/p&gt; &lt;p&gt; En outre, pour accro&#238;tre durablement les capacit&#233;s du r&#233;seau, les Core souhaitent cr&#233;er des sidechains, des &quot; cha&#238;nes lat&#233;rales &quot; rattach&#233;es &#224; la blockchain originelle, qui g&#233;reraient les microtransactions. Dans ce syst&#232;me &#224; deux couches, la blockchain originelle servirait surtout &#224; effectuer les grosses transactions et les op&#233;rations de compensation. De leur c&#244;t&#233;, les Classic pr&#233;f&#232;rent conserver le syst&#232;me de la blockchain unique. Le d&#233;saccord est donc complet. &lt;/p&gt; &lt;p&gt; Le combat est &#226;pre, car le d&#233;bat technique cache des enjeux &#233;conomiques. &#201;ric Larchev&#234;que, directeur de la soci&#233;t&#233; de s&#233;curit&#233; Ledger et responsable de la Maison du Bitcoin &#224; Paris, qui est partisan des Core, r&#233;sume sa vision des choses : &quot; La &lt;span class=&quot;stubs&quot;&gt;raison d&#39;&#234;tre&lt;/span&gt; du bitcoin est de fournir un syst&#232;me mon&#233;taire &#233;galitaire et d&#233;centralis&#233;, en peer-to-peer, ce qui le rend tr&#232;s r&#233;sistant aux attaques et aux tentatives de censure par des gouvernements autoritaires -- par exemple, en ce moment, la Russie. Les Core sont rest&#233;s fid&#232;les &#224; cet id&#233;al originel -- celui des militants du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; et des crypto-anarchistes. &quot; &lt;/p&gt; &lt;p&gt; En revanche, selon lui, les Classic ont d&#39;autres priorit&#233;s : &quot; Il y a parmi eux des hommes d&#39;affaires qui voudraient transformer le bitcoin en un syst&#232;me de paiement banalis&#233; et centralis&#233; -- comme s&#39;ils voulaient concurrencer &lt;span class=&quot;stubs&quot;&gt;Visa&lt;/span&gt;. &quot; &lt;/p&gt; &lt;p&gt; Les partisans du Classic affirment au contraire que leur solution va pr&#233;server la libre concurrence. Un d&#233;veloppeur historique du bitcoin, Gavin Andresen, explique sur son blogue que si on laisse le r&#233;seau arriver au point de saturation, cela provoquera un mouvement de concentration : &quot; On verra appara&#238;tre des accords tr&#232;s centralis&#233;s entre les bureaux de change, les mineurs et les marchands, ou m&#234;me une fusion des mineurs et des cr&#233;ateurs de transactions. &quot; &lt;/p&gt; &lt;p&gt; Sortir de l&#39;impasse &lt;/p&gt; &lt;p&gt; De m&#234;me, Brian Armstrong, patron de la soci&#233;t&#233; de gestion de portefeuilles Coinbase, qui compte une centaine d&#39;employ&#233;s, accuse les Core d&#39;&#234;tre des puristes irr&#233;alistes : &quot; Ils veulent des solutions &quot; parfaites &quot; plut&#244;t que des solutions &quot; correctes &quot;. Et s&#39;il n&#39;y a pas de solution parfaite, ils pr&#233;f&#232;rent l&#39;inaction, m&#234;me si cela met le bitcoin en danger. &quot; &lt;/p&gt; &lt;p&gt; En outre, selon lui, la solution consistant &#224; r&#233;duire la taille des transactions est tr&#232;s complexe, et sa mise en place prendra trop de temps pour emp&#234;cher la saturation du r&#233;seau. Tr&#232;s offensif, il va jusqu&#39;&#224; envisager la cr&#233;ation d&#39;une nouvelle &#233;quipe de codeurs pour remplacer les Core. &lt;/p&gt; &lt;p&gt; Malgr&#233; plusieurs r&#233;unions de conciliation, les Classic et les Core n&#39;ont pas r&#233;ussi &#224; se mettre d&#39;accord. &#201;ric Larchev&#234;que constate que la communaut&#233; du Bitcoin est d&#233;pourvue de m&#233;canismes de d&#233;cision efficace : &quot; Nous n&#39;avons pas de syst&#232;me de vote majoritaire ni de processus de r&#233;solution des conflits. La r&#232;gle du consensus informel est paralysante. &quot; &lt;/p&gt; &lt;p&gt; Pour sortir de l&#39;impasse, chaque camp est pass&#233; &#224; l&#39;action de fa&#231;on unilat&#233;rale. En f&#233;vrier, les Classic ont publi&#233; un logiciel qui accro&#238;t la taille des blocs &#224; 2 Mo. S&#39;il est adopt&#233; par 75 % des parties prenantes, il s&#39;imposera de facto comme le nouveau standard, et le r&#233;seau basculera. &lt;/p&gt; &lt;p&gt; De leur c&#244;t&#233;, en avril, les Core vont publier leur propre programme, qui r&#233;duira la taille de chaque transaction. Par ailleurs, certains membres du Core travaillent pour la soci&#233;t&#233; canadienne Blockstream, chef de file de la technologie de la sidechain. Blockstream vient de r&#233;ussir une lev&#233;e de fonds de 55 millions de dollars, qui a permis au groupe fran&#231;ais Axa d&#39;entrer au capital. &lt;/p&gt; &lt;p&gt; Face &#224; ce conflit in&#233;dit, &#201;ric Larchev&#234;que est inquiet : &quot; L&#39;un des deux camps va peut-&#234;tre l&#39;emporter rapidement, mais on peut aussi imaginer un sc&#233;nario o&#249; chaque syst&#232;me serait adopt&#233; par 50 % des acteurs. Ce serait le chaos, la cassure du r&#233;seau en deux sous-ensembles, avec des cons&#233;quences incontr&#244;lables. &quot;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;22 mars 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;23 mars 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2016 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20160323&amp;#183;LE&amp;#183;2016-03-23_466225&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">taille des blocs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réunions de conciliation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">mouvement de concentration</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">opérations de compensation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">trentaine de sociétés commerciales</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">RAISON D'ÊTRE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">VISA</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Bourse et marché des changes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Banques et institutions financières</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Russie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160323%c2%b7LE%c2%b72016-03-23_466225" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160323%c2%b7LE%c2%b72016-03-23_466225">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Économie,         mercredi 23 mars 2016 1015 mots, p. B1,B2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Cryptomonnaie - Le bictcoin victime de son succès            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Deux camps s'affrontent quant aux solutions à mettre en oeuvre pour assurer le développement de la monnaie virtuelle</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Yves Eudes</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Victime de son succès, le bitcoin est confronté à une crise de croissance, qui se double d'une crise de gouvernance. Pour les professionnels et les militants de la monnaie anonyme, l'augmentation continue de la masse monétaire et du nombre de transactions est plutôt une bonne nouvelle -- la preuve que la cryptomonnaie s'installe dans le paysage financier mondial. En mars 2016, les 15,5 millions de bitcoins en circulation valaient plus de 6 milliards de dollars. </p> <p> Cependant, dans sa configuration actuelle, le réseau du bitcoin va bientôt saturer, ce qui risque de provoquer des embouteillages et une dégradation du service.</p>
+
+
+<p>Pour tous les acteurs, la solution est évidente : il faut introduire des innovations techniques qui permettront au réseau d'absorber plus de trafic. Mais comment s'y prendre ? Sur la méthode à adopter, les avis divergent. Depuis quelques mois, on a vu apparaître deux camps opposés, qui s'affrontent ouvertement. </p> <p> Les partisans d'une solution rapide et facile veulent augmenter la taille des " blocs ", ces fichiers contenant les transactions, qui viennent s'ajouter à la blockchain (chaîne de blocs), le répertoire unique de toutes les transactions. Aujourd'hui, la taille maximale d'un bloc est de 1 mégaoctet, ce qui peut représenter jusqu'à 3000 transactions. En théorie, il suffit de faire passer la taille des blocs à 2 Mo, pour résoudre le problème, au moins temporairement. </p> <p> Récemment, les partisans de cette " méthode facile " ont créé un groupe informel, baptisé Bitcoin Classic. Il réunit notamment des développeurs historiques du bitcoin et une trentaine de sociétés commerciales : des " mineurs ", qui intègrent les nouvelles transactions à la blockchain en résolvant des équations mathématiques et gagnent des bitcoins pour chaque nouveau bloc, ainsi que des gestionnaires de portefeuille, des sites de change, des prestataires techniques... </p> <p> En face, un autre groupe, composé en grande partie des codeurs de l'équipe originelle, Bitcoin Core (noyau dur), préconise une approche plus graduelle et plus " élégante ". Selon eux, au lieu d'augmenter la taille des blocs, il est plus judicieux de diminuer la taille de chaque transaction. </p> <p> Les Core ne sont pas opposés par principe à l'augmentation de la taille des blocs, mais ils veulent d'abord effectuer les tests nécessaires pour s'assurer que cette modification ne provoquera pas de perturbations imprévues. Ils craignent notamment qu'elle affecte la fluidité du trafic : dans ce cas, les gros prestataires disposant de connexions à haut débit seraient avantagés par rapport à leurs petits concurrents moins bien équipés. </p> <p> En outre, pour accroître durablement les capacités du réseau, les Core souhaitent créer des sidechains, des " chaînes latérales " rattachées à la blockchain originelle, qui géreraient les microtransactions. Dans ce système à deux couches, la blockchain originelle servirait surtout à effectuer les grosses transactions et les opérations de compensation. De leur côté, les Classic préfèrent conserver le système de la blockchain unique. Le désaccord est donc complet. </p> <p> Le combat est âpre, car le débat technique cache des enjeux économiques. Éric Larchevêque, directeur de la société de sécurité Ledger et responsable de la Maison du Bitcoin à Paris, qui est partisan des Core, résume sa vision des choses : " La <span class="stubs">raison d'être</span> du bitcoin est de fournir un système monétaire égalitaire et décentralisé, en peer-to-peer, ce qui le rend très résistant aux attaques et aux tentatives de censure par des gouvernements autoritaires -- par exemple, en ce moment, la Russie. Les Core sont restés fidèles à cet idéal originel -- celui des militants du <mark>logiciel</mark> <mark>libre</mark> et des crypto-anarchistes. " </p> <p> En revanche, selon lui, les Classic ont d'autres priorités : " Il y a parmi eux des hommes d'affaires qui voudraient transformer le bitcoin en un système de paiement banalisé et centralisé -- comme s'ils voulaient concurrencer <span class="stubs">Visa</span>. " </p> <p> Les partisans du Classic affirment au contraire que leur solution va préserver la libre concurrence. Un développeur historique du bitcoin, Gavin Andresen, explique sur son blogue que si on laisse le réseau arriver au point de saturation, cela provoquera un mouvement de concentration : " On verra apparaître des accords très centralisés entre les bureaux de change, les mineurs et les marchands, ou même une fusion des mineurs et des créateurs de transactions. " </p> <p> Sortir de l'impasse </p> <p> De même, Brian Armstrong, patron de la société de gestion de portefeuilles Coinbase, qui compte une centaine d'employés, accuse les Core d'être des puristes irréalistes : " Ils veulent des solutions " parfaites " plutôt que des solutions " correctes ". Et s'il n'y a pas de solution parfaite, ils préfèrent l'inaction, même si cela met le bitcoin en danger. " </p> <p> En outre, selon lui, la solution consistant à réduire la taille des transactions est très complexe, et sa mise en place prendra trop de temps pour empêcher la saturation du réseau. Très offensif, il va jusqu'à envisager la création d'une nouvelle équipe de codeurs pour remplacer les Core. </p> <p> Malgré plusieurs réunions de conciliation, les Classic et les Core n'ont pas réussi à se mettre d'accord. Éric Larchevêque constate que la communauté du Bitcoin est dépourvue de mécanismes de décision efficace : " Nous n'avons pas de système de vote majoritaire ni de processus de résolution des conflits. La règle du consensus informel est paralysante. " </p> <p> Pour sortir de l'impasse, chaque camp est passé à l'action de façon unilatérale. En février, les Classic ont publié un logiciel qui accroît la taille des blocs à 2 Mo. S'il est adopté par 75 % des parties prenantes, il s'imposera de facto comme le nouveau standard, et le réseau basculera. </p> <p> De leur côté, en avril, les Core vont publier leur propre programme, qui réduira la taille de chaque transaction. Par ailleurs, certains membres du Core travaillent pour la société canadienne Blockstream, chef de file de la technologie de la sidechain. Blockstream vient de réussir une levée de fonds de 55 millions de dollars, qui a permis au groupe français Axa d'entrer au capital. </p> <p> Face à ce conflit inédit, Éric Larchevêque est inquiet : " L'un des deux camps va peut-être l'emporter rapidement, mais on peut aussi imaginer un scénario où chaque système serait adopté par 50 % des acteurs. Ce serait le chaos, la cassure du réseau en deux sous-ensembles, avec des conséquences incontrôlables. "</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">22 mars 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">23 mars 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2016 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20160323·LE·2016-03-23_466225</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20160323·LE·2016-03-23_466225";
+    var _docIndex = 660;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"raison d'être":"73946"};
+		var _orgDic = {"visa":"78277"};
+		var _docName = 'news·20160323·LE·2016-03-23_466225';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720160323%C2%B7LE%C2%B72016-03-23_466225&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720160323%C2%B7LE%C2%B72016-03-23_466225&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720160323%C2%B7LE%C2%B72016-03-23_466225&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720160323%C2%B7LE%C2%B72016-03-23_466225&docIndex=660&FullScreen=1";
+                
+	var _keyDoc = 'news·20160323·LE·2016-03-23_466225';
+</script>
+</div></body></html>

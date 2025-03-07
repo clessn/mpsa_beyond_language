@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Food,         samedi 14 mai 2016 1745 mots, p. 46,47&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Food&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La Montreuilloise, les malts aim&#233;s            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Ces deux quarantenaires reconvertis ont cr&#233;&#233;, en 2014, une microbrasserie en Seine-Saint-Denis o&#249; ils produisent et vendent des bi&#232;res bios dont ils enseignent la fabrication.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Jacky Durand&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&#199;a vous dirait une bonne bi&#232;re ? Qui plus est brass&#233;e par vous-m&#234;me ? Alors, prenez le chemin de la Montreuilloise (1), une microbrasserie nich&#233;e sur les hauteurs de Montreuil, en Seine-Saint-Denis. Tous les samedis, moyennant 135 euros la demi-journ&#233;e, Fran&#231;ois Cariou et J&#233;r&#244;me Martinez y enseignent une recette vieille comme le monde, celle de la bi&#232;re : il faut du malt (surtout de l&#39;orge), c&#39;est-&#224;-dire une c&#233;r&#233;ale germ&#233;e qui est cuite pour qu&#39;elle d&#233;gage tous ses ar&#244;mes, de l&#39;eau, de la levure et du houblon. La suite, en apparence, para&#238;t aussi simple que l&#39;&#233;laboration de la p&#226;te &#224; cr&#234;pe ch&#232;re &#224; Fran&#231;ois Cariou : on m&#233;lange et on chauffe le tout avant que la levure ne transforme le sucre du malt en alcool et en gaz carbonique lors de la fermentation et, surtout, on oublie cette bibine le temps qu&#39;elle devienne une des 40 sortes de bi&#232;res d&#233;crites par la Montreuilloise dans sa bible &lt;em style=&quot;font-style:italic;&quot;&gt;Faire sa bi&#232;re &#224; la maison&lt;/em&gt; (2) : rousse fum&#233;e, blanche aux fruits rouges, extra strong bitter, triple belge, la liste est longue et belle comme un apr&#232;s-midi &#224; siroter des mousses sur la moleskine de ce temple zythophile qu&#39;est la Mort subite &#224; Bruxelles (3). Quelques semaines plus tard, les stagiaires repartent avec leur troph&#233;e, soit 20 litres de leur bi&#232;re &#224; d&#233;guster entre aminches.&lt;/p&gt;
+
+
+&lt;p&gt;Dit comme &#231;a, fabriquer sa bi&#232;re blonde, brune ou rousse para&#238;t presque plus facile que de d&#233;capsuler une canette avec les dents. Mais, &#224; y regarder de plus pr&#232;s, on se rend compte que le premier brassin dans une vie, c&#39;est un peu comme un premier rendez-vous : une porte ouverte vers une histoire qui raconte beaucoup plus que la cuisine du malt et du houblon. Longtemps, on a cru que la bi&#232;re c&#39;&#233;tait un bock sur le zinc aliment&#233; par des multinationales qui la fabriquaient dans des combinats aussi complexes et secrets qu&#39;une usine d&#39;armement nord-cor&#233;enne. Au mieux, on s&#39;en d&#233;salt&#233;rait dans la canicule d&#39;ao&#251;t, on en abusait lors des troisi&#232;mes mi-temps et tout cela se terminait dans des mictions r&#233;p&#233;titives. Et puis est arriv&#233;e doucement la petite musique des microbrasseries en provenance des Etats-Unis et de Grande-Bretagne. Dans leur cave, leur garage, leur grange, une poign&#233;e de Mohicans houblonn&#233;s ont mis au point des bi&#232;res po&#233;tiques comme un inventaire &#224; la Pr&#233;vert : Bi&#232;re du pintadier, la Gueule noire, la Brasserie des babouins jurassiens, la Gironnette. De la l&#233;g&#232;re &#233;cume des d&#233;buts qui faisait mousser les f&#234;tes de quartier et les concerts de chef-lieu de canton, la bi&#232;re artisanale est devenue un bruit de fond avec pr&#232;s de 800 microbrasseries qui viennent de se constituer en Syndicat national des brasseurs ind&#233;pendants. Certes, ce n&#39;est pas encore le Grand Soir face &#224; l&#39;industrie lourde que sont Heineken ou Carlsberg. Mais la microbrasserie a ouvert un chemin buissonnier qui est d&#233;sormais un sillon impr&#233;gn&#233; par l&#39;id&#233;e de boire du bon, du local, fabriqu&#233; en toute transparence, et de militer pour d&#39;autres formes de consommation que les packs de canettes de la grande distribution. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;&#171;Agriculturelles&#187;.&lt;/em&gt;Pour s&#39;en convaincre, il faut quitter le m&#233;tro au terminus de la Mairie de Montreuil. Remonter dans un fringant matin de printemps vers le quartier historique des murs &#224; p&#234;ches (4), vieil h&#233;ritage montreuillois o&#249; d&#39;&#233;pais ma&#231;onnages de pl&#226;tre accumulant la chaleur du soleil favorisaient la croissance des fruits. Dans ce d&#233;dale de vergers, de jardins et de friches, la Montreuilloise a investi une ancienne blanchisserie construite &#224; la fin du XIXe si&#232;cle. Le houblon court en lianes conqu&#233;rantes au milieu de cette lande fleurie de soucis, de pissenlits, de tulipes, d&#233;di&#233;e aussi &#224; de multiples activit&#233;s &#171;agriculturelles&#187; : apiculture, th&#233;&#226;tre, musique, permaculture militent pour d&#39;autres modes de vie alors que bruisse l&#39;autoroute toute proche. &lt;/p&gt; &lt;p&gt; La Montreuilloise fabrique 2000 litres de bi&#232;re par mois. Photo Fred Kihn &lt;/p&gt; &lt;p&gt; Comme souvent chez les microbrasseurs, la Montreuilloise s&#39;est construite au tournant de deux destins quand la quarantaine vous rappelle que l&#39;heure du choix ne sonnera pas forc&#233;ment deux fois. Dans une autre vie, J&#233;r&#244;me Martinez, 45 ans, s&#39;est occup&#233; des sans-papiers jusqu&#39;&#224; devenir secr&#233;taire g&#233;n&#233;ral de la Cimade : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;C&#39;&#233;tait bien, mais au bout de vingt ans, j&#39;&#233;tais &#233;puis&#233;.&#187;&lt;/em&gt;Il s&#39;offre une ann&#233;e sabbatique, voyage et &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;reprend go&#251;t au monde associatif&#187;&lt;/em&gt;avec le Sens de l&#39;humus qui d&#233;veloppe l&#39;agro&#233;cologie sur les terres des murs &#224; p&#234;ches. Il pousse la porte de Zymotik, une des premi&#232;res microbrasseries en Ile-de-France, fond&#233;e en 2010 &#224; Montreuil par Fran&#231;ois Deneubourg, un professeur de sciences naturelles qui s&#39;est frott&#233; au malt et au houblon &#224; New York. De la bi&#232;re, J&#233;r&#244;me Martinez ne conna&#238;t &#224; l&#39;&#233;poque rien d&#39;autre que la lavasse ti&#232;de qu&#39;il biberonnait dans les concerts de m&#233;tal o&#249; il chantait. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;J&#39;ai fait un premier atelier &#224; Zymotik et, de fil en aiguille, je m&#39;y suis form&#233; durant un an. J&#39;&#233;tais petite main, j&#39;ai beaucoup fait la vaisselle.&#187;&lt;/em&gt;Quand Zymotik et son propri&#233;taire d&#233;m&#233;nagent &#224; Cahors, J&#233;r&#244;me Martinez rach&#232;te une partie de son mat&#233;riel et fonde la Montreuilloise, au printemps 2014, avec l&#39;id&#233;e &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;de cr&#233;er autre chose qu&#39;une fabrique lambda de bi&#232;re. Je voulais faire quelque chose qui ait du sens. Je suis attach&#233; aux questions environnementale, sociale, locale. Cette brasserie est impliqu&#233;e dans le tissu d&#39;une ville que j&#39;adore, o&#249; certes tout n&#39;est pas rose, mais o&#249; des gens tr&#232;s diff&#233;rents se parlent&#187;&lt;/em&gt;. Fran&#231;ois Cariou rejoint la Montreuilloise au printemps 2015 apr&#232;s avoir travaill&#233; vingt ans aupr&#232;s des sans-abri. Comme J&#233;r&#244;me Martinez, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;il a bu tout et n&#39;importe quoi avant de d&#233;couvrir la culture de la bi&#232;re au Pays de Galles et en Irlande&#187;,&lt;/em&gt;et de brasser au fil du vent avec des d&#233;fenseurs du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; et des inconditionnels comme lui d&#39;Iron Maiden, dont il arbore un tee-shirt - le chanteur Bruce Dickinson avait d&#39;ailleurs &#233;labor&#233; une recette de bi&#232;re, The Trooper, en r&#233;f&#233;rence &#224; leur c&#233;l&#232;bre chanson. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Thermom&#232;tre.&lt;/em&gt;A l&#39;heure du caf&#233; du matin, J&#233;r&#244;me Martinez et Fran&#231;ois Cariou se penchent d&#233;j&#224; sur une ancienne citerne &#224; lait reconverti en cuve d&#39;emp&#226;tage o&#249; 100 kilos de malt concass&#233; sont m&#233;lang&#233;s &#224; 300 litres d&#39;eau chaude afin de transformer l&#39;amidon de l&#39;orge en sucre. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;J&#39;aime travailler la mati&#232;re qu&#39;est le malt,&lt;/em&gt;explique Fran&#231;ois Cariou. &lt;em style=&quot;font-style:italic;&quot;&gt;Il y a aussi une part de r&#233;flexion, d&#39;intuition que je vais affiner. Le brasseur peut jouer sur de multiples param&#232;tres : le degr&#233; d&#39;alcool, la couleur, la texture, l&#39;amertume, les saveurs.&#187;&lt;/em&gt;Au contact de l&#39;eau, le malt devient une sorte de gros g&#226;teau de semoule aux ar&#244;mes biscuit&#233;s, appel&#233; la &#171;maische&#187; (de l&#39;allemand &lt;em style=&quot;font-style:italic;&quot;&gt;maischen,&lt;/em&gt;m&#233;langer). &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;C&#39;est la temp&#233;rature de la maische qui va d&#233;terminer la rondeur de la bi&#232;re. Ici on vise autour de 65 degr&#233;s,&lt;/em&gt;commente Fran&#231;ois Cariou, riv&#233; sur la sonde de son thermom&#232;tre. &lt;em style=&quot;font-style:italic;&quot;&gt;Ce qui est contre-intuitif dans la bi&#232;re, c&#39;est qu&#39;il faut beaucoup d&#39;eau chaude pour faire une boisson fra&#238;che.&#187;&lt;/em&gt;Mine de rien, on comprend tr&#232;s vite que faire un brassin est un peu plus compliqu&#233; qu&#39;une p&#226;te &#224; cr&#234;pe. Entre les lavages incessants pour &#233;liminer la moindre bact&#233;rie pouvant transformer la recette du jour (une pale ale anglaise, bi&#232;re de fermentation haute, traditionnelle des pubs), les pesages au gramme pr&#232;s des houblons, la bi&#232;re ne supporte pas l&#39;&#224;-peu-pr&#232;s m&#234;me si chaque brasseur revendique haut et fort sa subjectivit&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Je pr&#233;f&#232;re la cuisine faite empiriquement &#224; celle, mol&#233;culaire d&#39;El Bulli&#187;,&lt;/em&gt;s&#39;amuse J&#233;r&#244;me Martinez. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Mettez vingt brasseurs &#224; discuter dans une m&#234;me pi&#232;ce, au bout d&#39;une heure, ils se foutent sur la gueule&#187;,&lt;/em&gt;ajoute Fran&#231;ois Cariou en maniant le &#171;fourquet&#187;, une pelle en bois perc&#233;e pour m&#233;langer le malt et l&#39;eau. Sur le manche, trois mots grav&#233;s : &#171;Action, passion, &#233;motion.&#187; En fin de matin&#233;e, un jus couleur d&#39;or est pr&#233;lev&#233; : c&#39;est le mo&#251;t, sucr&#233; et prometteur. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Nous, on fait le mo&#251;t et la levure fait la bi&#232;re&#187;,&lt;/em&gt;sourit Fran&#231;ois Cariou. Du gros g&#226;teau de la maische, il reste maintenant les &#171;dr&#232;ches&#187;, r&#233;sidus d&#39;orge que la Montreuilloise composte pr&#232;s d&#39;un champ d&#39;orties mais qui peuvent aussi parfumer le pain, nourrir le b&#233;tail. &lt;/p&gt; &lt;p&gt; La Montreuilloise fabrique 2000 litres de bi&#232;re par mois. Photo Fred Kihn &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;&#171;La vie&#187;.&lt;/em&gt;Au casse-cro&#251;te, en plein air sur une table de bois clair, J&#233;r&#244;me Martinez compare la microbrasserie &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&#224; un mouvement de fond qui se r&#233;approprie un produit qui avait &#233;t&#233; maltrait&#233;&#187;&lt;/em&gt;. La Montreuilloise (2 000 litres de bi&#232;res par mois) a rejoint la f&#233;d&#233;ration Nature &amp;amp; Progr&#232;s qui milite depuis cinquante ans pour l&#39;agriculture biologique. Pour limiter l&#39;impact en &#233;missions de gaz carbonique, elle se fournit en malt et en houblon, en France, en Allemagne et en Grande-Bretagne. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&#199;a n&#39;aurait pas grand sens d&#39;acheter du houblon bio au Japon&#187;,&lt;/em&gt;justifie Fran&#231;ois Cariou. L&#39;eau potable de Montreuil est riche en calcaire, un exhausteur naturel du go&#251;t. &lt;/p&gt; &lt;p&gt; Le mo&#251;t en &#233;bullition dans trois cuves offre une surface cr&#233;meuse qu&#39;il faut &#233;cumer doucement &#224; la mani&#232;re d&#39;un pot-au-feu. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;On va &#234;tre sur une bi&#232;re avec une couleur cuivr&#233;e&#187;,&lt;/em&gt;promet J&#233;r&#244;me Martinez qui ajoute un premier houblon pour apporter &#224; la bi&#232;re son amertume tout en la stabilisant. Une mousse verte appara&#238;t &#224; la surface de la cuve. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;C&#39;est la vie&#187;,&lt;/em&gt;disent en choeur les brasseurs. Un autre houblon sera ajout&#233; pour ses ar&#244;mes qui peuvent &#234;tre floraux, herbac&#233;s, &#233;pic&#233;s, poivr&#233;s, avec des notes d&#39;agrumes. En milieu d&#39;apr&#232;s-midi, le mo&#251;t rejoint cette savante cuve qu&#39;est le fermeteur &#224; une temp&#233;rature pr&#233;cise comme un abaque des chemins de fer : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;22, 23 degr&#233;s, c&#39;est la temp&#233;rature id&#233;ale pour que d&#233;marre la fermentation.&#187;&lt;/em&gt;Fran&#231;ois Cariou ajoute la levure r&#233;cup&#233;r&#233;e dans le fond du brassin d&#39;un stagiaire. C&#39;est un liquide &#233;pais, couleur sauce moutarde. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;A la cro&#251;te les levures, il faut becqueter les sucres du mo&#251;t&#187;,&lt;/em&gt;sourit J&#233;r&#244;me Martinez. Dans un mois, le brassin du jour pourra &#234;tre d&#233;gust&#233; en compagnie de quelques autres &#233;crits &#224; la craie sur un tableau noir : Smoked Porter (6 euros les 75 cl), Rousse aux raisins (5 euros les 75 cl). Dimanche 15 mai, &#224; partir de 14 heures, la Montreuilloise ouvre ses portes pour f&#234;ter en musique et en gorgeons ses deux ans. D&#39;ici l&#224;, Fran&#231;ois Cariou songera encore et toujours &#224; la bi&#232;re qu&#39;il aimerait brasser en hommage &#224; Ronnie James Dio, feu le chanteur de Black Sabbath. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Je l&#39;appellerai Dio, comme&lt;/em&gt;Do It Ourselves.&#187; &lt;/p&gt; &lt;p&gt; (1) 97, rue Pierre de Montreuil, 93100 Montreuil. Rens. : 06 81 22 65 87.(2) &lt;em style=&quot;font-style:italic;&quot;&gt;Faire sa bi&#232;re &#224; la maison,&lt;/em&gt; Tana &#233;ditions, 16,95 €.(3) Rue Montagne aux herbes potag&#232;res 7, 1000 Bruxelles.(4) Federationmursapeches.org&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2016 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20160514&amp;#183;LI&amp;#183;03399941&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">eau chaude</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">gaz carbonique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bière de fermentation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">concerts de métal</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">professeur de sciences naturelles</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Cuisine et restaurants</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Environnement et pollution</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Grand Soir</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montreuil (Pas-de-Calais)</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Cahors (Lot)</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">rue Pierre de Montreuil</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">porte de Zymotik</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160514%c2%b7LI%c2%b703399941" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160514%c2%b7LI%c2%b703399941">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Food,         samedi 14 mai 2016 1745 mots, p. 46,47</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Food</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La Montreuilloise, les malts aimés            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Ces deux quarantenaires reconvertis ont créé, en 2014, une microbrasserie en Seine-Saint-Denis où ils produisent et vendent des bières bios dont ils enseignent la fabrication.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Jacky Durand</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Ça vous dirait une bonne bière ? Qui plus est brassée par vous-même ? Alors, prenez le chemin de la Montreuilloise (1), une microbrasserie nichée sur les hauteurs de Montreuil, en Seine-Saint-Denis. Tous les samedis, moyennant 135 euros la demi-journée, François Cariou et Jérôme Martinez y enseignent une recette vieille comme le monde, celle de la bière : il faut du malt (surtout de l'orge), c'est-à-dire une céréale germée qui est cuite pour qu'elle dégage tous ses arômes, de l'eau, de la levure et du houblon. La suite, en apparence, paraît aussi simple que l'élaboration de la pâte à crêpe chère à François Cariou : on mélange et on chauffe le tout avant que la levure ne transforme le sucre du malt en alcool et en gaz carbonique lors de la fermentation et, surtout, on oublie cette bibine le temps qu'elle devienne une des 40 sortes de bières décrites par la Montreuilloise dans sa bible <em style="font-style:italic;">Faire sa bière à la maison</em> (2) : rousse fumée, blanche aux fruits rouges, extra strong bitter, triple belge, la liste est longue et belle comme un après-midi à siroter des mousses sur la moleskine de ce temple zythophile qu'est la Mort subite à Bruxelles (3). Quelques semaines plus tard, les stagiaires repartent avec leur trophée, soit 20 litres de leur bière à déguster entre aminches.</p>
+
+
+<p>Dit comme ça, fabriquer sa bière blonde, brune ou rousse paraît presque plus facile que de décapsuler une canette avec les dents. Mais, à y regarder de plus près, on se rend compte que le premier brassin dans une vie, c'est un peu comme un premier rendez-vous : une porte ouverte vers une histoire qui raconte beaucoup plus que la cuisine du malt et du houblon. Longtemps, on a cru que la bière c'était un bock sur le zinc alimenté par des multinationales qui la fabriquaient dans des combinats aussi complexes et secrets qu'une usine d'armement nord-coréenne. Au mieux, on s'en désaltérait dans la canicule d'août, on en abusait lors des troisièmes mi-temps et tout cela se terminait dans des mictions répétitives. Et puis est arrivée doucement la petite musique des microbrasseries en provenance des Etats-Unis et de Grande-Bretagne. Dans leur cave, leur garage, leur grange, une poignée de Mohicans houblonnés ont mis au point des bières poétiques comme un inventaire à la Prévert : Bière du pintadier, la Gueule noire, la Brasserie des babouins jurassiens, la Gironnette. De la légère écume des débuts qui faisait mousser les fêtes de quartier et les concerts de chef-lieu de canton, la bière artisanale est devenue un bruit de fond avec près de 800 microbrasseries qui viennent de se constituer en Syndicat national des brasseurs indépendants. Certes, ce n'est pas encore le Grand Soir face à l'industrie lourde que sont Heineken ou Carlsberg. Mais la microbrasserie a ouvert un chemin buissonnier qui est désormais un sillon imprégné par l'idée de boire du bon, du local, fabriqué en toute transparence, et de militer pour d'autres formes de consommation que les packs de canettes de la grande distribution. </p> <p><em style="font-style:bold;">«Agriculturelles».</em>Pour s'en convaincre, il faut quitter le métro au terminus de la Mairie de Montreuil. Remonter dans un fringant matin de printemps vers le quartier historique des murs à pêches (4), vieil héritage montreuillois où d'épais maçonnages de plâtre accumulant la chaleur du soleil favorisaient la croissance des fruits. Dans ce dédale de vergers, de jardins et de friches, la Montreuilloise a investi une ancienne blanchisserie construite à la fin du XIXe siècle. Le houblon court en lianes conquérantes au milieu de cette lande fleurie de soucis, de pissenlits, de tulipes, dédiée aussi à de multiples activités «agriculturelles» : apiculture, théâtre, musique, permaculture militent pour d'autres modes de vie alors que bruisse l'autoroute toute proche. </p> <p> La Montreuilloise fabrique 2000 litres de bière par mois. Photo Fred Kihn </p> <p> Comme souvent chez les microbrasseurs, la Montreuilloise s'est construite au tournant de deux destins quand la quarantaine vous rappelle que l'heure du choix ne sonnera pas forcément deux fois. Dans une autre vie, Jérôme Martinez, 45 ans, s'est occupé des sans-papiers jusqu'à devenir secrétaire général de la Cimade : <em style="font-style:italic;">«C'était bien, mais au bout de vingt ans, j'étais épuisé.»</em>Il s'offre une année sabbatique, voyage et <em style="font-style:italic;">«reprend goût au monde associatif»</em>avec le Sens de l'humus qui développe l'agroécologie sur les terres des murs à pêches. Il pousse la porte de Zymotik, une des premières microbrasseries en Ile-de-France, fondée en 2010 à Montreuil par François Deneubourg, un professeur de sciences naturelles qui s'est frotté au malt et au houblon à New York. De la bière, Jérôme Martinez ne connaît à l'époque rien d'autre que la lavasse tiède qu'il biberonnait dans les concerts de métal où il chantait. <em style="font-style:italic;">«J'ai fait un premier atelier à Zymotik et, de fil en aiguille, je m'y suis formé durant un an. J'étais petite main, j'ai beaucoup fait la vaisselle.»</em>Quand Zymotik et son propriétaire déménagent à Cahors, Jérôme Martinez rachète une partie de son matériel et fonde la Montreuilloise, au printemps 2014, avec l'idée <em style="font-style:italic;">«de créer autre chose qu'une fabrique lambda de bière. Je voulais faire quelque chose qui ait du sens. Je suis attaché aux questions environnementale, sociale, locale. Cette brasserie est impliquée dans le tissu d'une ville que j'adore, où certes tout n'est pas rose, mais où des gens très différents se parlent»</em>. François Cariou rejoint la Montreuilloise au printemps 2015 après avoir travaillé vingt ans auprès des sans-abri. Comme Jérôme Martinez, <em style="font-style:italic;">«il a bu tout et n'importe quoi avant de découvrir la culture de la bière au Pays de Galles et en Irlande»,</em>et de brasser au fil du vent avec des défenseurs du <mark>logiciel</mark> <mark>libre</mark> et des inconditionnels comme lui d'Iron Maiden, dont il arbore un tee-shirt - le chanteur Bruce Dickinson avait d'ailleurs élaboré une recette de bière, The Trooper, en référence à leur célèbre chanson. </p> <p><em style="font-style:bold;">Thermomètre.</em>A l'heure du café du matin, Jérôme Martinez et François Cariou se penchent déjà sur une ancienne citerne à lait reconverti en cuve d'empâtage où 100 kilos de malt concassé sont mélangés à 300 litres d'eau chaude afin de transformer l'amidon de l'orge en sucre. <em style="font-style:italic;">«J'aime travailler la matière qu'est le malt,</em>explique François Cariou. <em style="font-style:italic;">Il y a aussi une part de réflexion, d'intuition que je vais affiner. Le brasseur peut jouer sur de multiples paramètres : le degré d'alcool, la couleur, la texture, l'amertume, les saveurs.»</em>Au contact de l'eau, le malt devient une sorte de gros gâteau de semoule aux arômes biscuités, appelé la «maische» (de l'allemand <em style="font-style:italic;">maischen,</em>mélanger). <em style="font-style:italic;">«C'est la température de la maische qui va déterminer la rondeur de la bière. Ici on vise autour de 65 degrés,</em>commente François Cariou, rivé sur la sonde de son thermomètre. <em style="font-style:italic;">Ce qui est contre-intuitif dans la bière, c'est qu'il faut beaucoup d'eau chaude pour faire une boisson fraîche.»</em>Mine de rien, on comprend très vite que faire un brassin est un peu plus compliqué qu'une pâte à crêpe. Entre les lavages incessants pour éliminer la moindre bactérie pouvant transformer la recette du jour (une pale ale anglaise, bière de fermentation haute, traditionnelle des pubs), les pesages au gramme près des houblons, la bière ne supporte pas l'à-peu-près même si chaque brasseur revendique haut et fort sa subjectivité. <em style="font-style:italic;">«Je préfère la cuisine faite empiriquement à celle, moléculaire d'El Bulli»,</em>s'amuse Jérôme Martinez. <em style="font-style:italic;">«Mettez vingt brasseurs à discuter dans une même pièce, au bout d'une heure, ils se foutent sur la gueule»,</em>ajoute François Cariou en maniant le «fourquet», une pelle en bois percée pour mélanger le malt et l'eau. Sur le manche, trois mots gravés : «Action, passion, émotion.» En fin de matinée, un jus couleur d'or est prélevé : c'est le moût, sucré et prometteur. <em style="font-style:italic;">«Nous, on fait le moût et la levure fait la bière»,</em>sourit François Cariou. Du gros gâteau de la maische, il reste maintenant les «drèches», résidus d'orge que la Montreuilloise composte près d'un champ d'orties mais qui peuvent aussi parfumer le pain, nourrir le bétail. </p> <p> La Montreuilloise fabrique 2000 litres de bière par mois. Photo Fred Kihn </p> <p><em style="font-style:bold;">«La vie».</em>Au casse-croûte, en plein air sur une table de bois clair, Jérôme Martinez compare la microbrasserie <em style="font-style:italic;">«à un mouvement de fond qui se réapproprie un produit qui avait été maltraité»</em>. La Montreuilloise (2 000 litres de bières par mois) a rejoint la fédération Nature &amp; Progrès qui milite depuis cinquante ans pour l'agriculture biologique. Pour limiter l'impact en émissions de gaz carbonique, elle se fournit en malt et en houblon, en France, en Allemagne et en Grande-Bretagne. <em style="font-style:italic;">«Ça n'aurait pas grand sens d'acheter du houblon bio au Japon»,</em>justifie François Cariou. L'eau potable de Montreuil est riche en calcaire, un exhausteur naturel du goût. </p> <p> Le moût en ébullition dans trois cuves offre une surface crémeuse qu'il faut écumer doucement à la manière d'un pot-au-feu. <em style="font-style:italic;">«On va être sur une bière avec une couleur cuivrée»,</em>promet Jérôme Martinez qui ajoute un premier houblon pour apporter à la bière son amertume tout en la stabilisant. Une mousse verte apparaît à la surface de la cuve. <em style="font-style:italic;">«C'est la vie»,</em>disent en choeur les brasseurs. Un autre houblon sera ajouté pour ses arômes qui peuvent être floraux, herbacés, épicés, poivrés, avec des notes d'agrumes. En milieu d'après-midi, le moût rejoint cette savante cuve qu'est le fermeteur à une température précise comme un abaque des chemins de fer : <em style="font-style:italic;">«22, 23 degrés, c'est la température idéale pour que démarre la fermentation.»</em>François Cariou ajoute la levure récupérée dans le fond du brassin d'un stagiaire. C'est un liquide épais, couleur sauce moutarde. <em style="font-style:italic;">«A la croûte les levures, il faut becqueter les sucres du moût»,</em>sourit Jérôme Martinez. Dans un mois, le brassin du jour pourra être dégusté en compagnie de quelques autres écrits à la craie sur un tableau noir : Smoked Porter (6 euros les 75 cl), Rousse aux raisins (5 euros les 75 cl). Dimanche 15 mai, à partir de 14 heures, la Montreuilloise ouvre ses portes pour fêter en musique et en gorgeons ses deux ans. D'ici là, François Cariou songera encore et toujours à la bière qu'il aimerait brasser en hommage à Ronnie James Dio, feu le chanteur de Black Sabbath. « <em style="font-style:italic;">Je l'appellerai Dio, comme</em>Do It Ourselves.» </p> <p> (1) 97, rue Pierre de Montreuil, 93100 Montreuil. Rens. : 06 81 22 65 87.(2) <em style="font-style:italic;">Faire sa bière à la maison,</em> Tana éditions, 16,95 €.(3) Rue Montagne aux herbes potagères 7, 1000 Bruxelles.(4) Federationmursapeches.org</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2016 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20160514·LI·03399941</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20160514·LI·03399941";
+    var _docIndex = 643;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20160514·LI·03399941';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720160514%C2%B7LI%C2%B703399941&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720160514%C2%B7LI%C2%B703399941&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720160514%C2%B7LI%C2%B703399941&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720160514%C2%B7LI%C2%B703399941&docIndex=643&FullScreen=1";
+                
+	var _keyDoc = 'news·20160514·LI·03399941';
+</script>
+</div></body></html>

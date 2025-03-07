@@ -1,0 +1,507 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;coFutur,         lundi 1 juillet 2013 1138 mots, p. SUP1&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;D&#233;cryptage&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Fab Labs: la grande bidouille            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Pas besoin d&#39;&#234;tre ing&#233;nieur pour r&#233;parer son ordi ou fabriquer son v&#233;lo. Plans et machines sont mis &#224; la disposition de tous sur le Web et dans des ateliers m&#233;canico-num&#233;riques qui commencent &#224; essaimer en France.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Sabine Blanc&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&#171;Do it yourself, do it with others&#187; (&#171;faites-le vous-m&#234;me, faites-le avec les autres&#187;) : telle est la devise des Fab Labs, ou Fabrication Laboratories. Vous n&#39;en avez jamais entendu parler ? Normal, le mouvement est encore underground. Cr&#233;&#233;s il y a une dizaine d&#39;ann&#233;es au Massachusetts Institute of Technology (MIT) par Neil Gershenfeld, un professeur de physique qui proposait un cours de prototypage rapide intitul&#233; &#171;comment fabriquer (&#224; peu pr&#232;s) n&#39;importe quoi&#187;, les Fab Labs sont les ateliers de fabrication communautaires de l&#39;&#232;re num&#233;rique. Leur objectif ? Donner &#224; ceux qui ne sont ni ing&#233;nieurs, ni designers, ni m&#234;me geeks les moyens de fabriquer toutes sortes d&#39;objets manufactur&#233;s comme &#224; l&#39;usine. Et ce, en mettant gratuitement &#224; leur disposition le savoir, les proc&#233;d&#233;s et la technologie n&#233;cessaires. &lt;/p&gt; &lt;p&gt; Des plans en &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;,&lt;/em&gt; quelques machines-outils &#224; commande num&#233;rique, un peu d&#39;apprentissage collectif, beaucoup de patience et d&#39;ing&#233;niosit&#233;... et voil&#224; un meuble sur mesure, une pi&#232;ce pour r&#233;parer sa machine &#224; laver ou carr&#233;ment le prototype d&#39;un v&#233;lo &#233;lectrique !&lt;/p&gt;
+
+
+&lt;p&gt;Les Fab Labs se sont mis en t&#234;te de transposer au vieux monde industriel la philosophie ouverte et collaborative du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Chris Anderson, ancien r&#233;dacteur en chef de &lt;em style=&quot;font-style:italic;&quot;&gt;Wired,&lt;/em&gt; la bible des technofans am&#233;ricains, voit en eux &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;la prochaine r&#233;volution industrielle&#187;,&lt;/em&gt; celle du XXIe si&#232;cle &lt;em style=&quot;font-style:italic;&quot;&gt;(lire ci-contre).&lt;/em&gt; Plus de probl&#232;mes de brevets d&#232;s lors que les plans et les sp&#233;cifications d&#39;un fauteuil design ou d&#39;un ampli hi-fi sont mis gratuitement &#224; disposition de tous. N&#39;importe quel bricolo-bidouilleur peut transformer son garage en atelier pour fabriquer l&#39;objet dont il a besoin. &lt;/p&gt; &lt;p&gt; Mais les Fab Labs sont avant tout une exp&#233;rience collective bas&#233;e sur le partage de connaissances &#224; l&#39;&#233;chelle locale ou plan&#233;taire : un objet peut &#234;tre con&#231;u dans un Fab Lab, fabriqu&#233; dans un autre... et am&#233;lior&#233; dans un troisi&#232;me. Pour obtenir le label &#171;Fab Lab&#187;, il faut adh&#233;rer &#224; la charte du Center for Bits and Atoms, cr&#233;&#233; en 2001 au MIT, et surtout poss&#233;der les machines-outils ad&#233;quates : fraiseuse de pr&#233;cision, perceuse &#224; colonne, d&#233;coupeuse laser... Les imprimantes 3D nourrissent bien des fantasmes &lt;em style=&quot;font-style:italic;&quot;&gt;(&lt;/em&gt;EcoFutur &lt;em style=&quot;font-style:italic;&quot;&gt;du 1er octobre)&lt;/em&gt; mais ne sont gu&#232;re pris&#233;es dans les Fab Labs en raison de leurs capacit&#233;s limit&#233;es : l&#39;impression est lente et elles sont cantonn&#233;es au plastique. &lt;/p&gt; &lt;p&gt; Marginal en France, le mouvement commence &#224; essaimer : il existe d&#233;j&#224; cinq Fab Labs dans l&#39;Hexagone, et vingt-quatre autres se revendiquent comme tels sans avoir forc&#233;ment re&#231;u l&#39;agr&#233;ment du MIT ou l&#39;avoir demand&#233;. Du coup, le sujet int&#233;resse le gouvernement en qu&#234;te de solutions h&#233;t&#233;rodoxes pour relancer l&#39;innovation et l&#39;emploi en France. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Nous voulons polliniser le territoire avec des Fab Labs et lancer un grand mouvement d&#39;alphab&#233;tisation num&#233;rique&#187;&lt;/em&gt;: mardi &#224; Bercy, Fleur Pellerin, la ministre d&#233;l&#233;gu&#233;e &#224; l&#39;Economie num&#233;rique, a annonc&#233; avec enthousiasme le lancement d&#39;un appel &#224; projets pour la cr&#233;ation d&#39;une dizaine de ces ateliers de fabrication num&#233;rique. La s&#233;lection devrait intervenir d&#39;ici &#224; mi-octobre. Reste &#224; savoir &#224; quoi serviront ces Fab Labs. Entre geekerie, projets de G&#233;o Trouvetou, et applications concr&#232;tes sur le terrain, &lt;em style=&quot;font-style:italic;&quot;&gt;EcoFutur&lt;/em&gt;a pass&#233; en revue les usages potentiels. &lt;/p&gt; &lt;p&gt; Apprendre ensemble &lt;/p&gt; &lt;p&gt; La dimension &#233;ducative est grav&#233;e dans le marbre de la charte des Fab Labs : apprendre, mais surtout le faire ensemble. Vous ne devez pas d&#233;l&#233;guer la r&#233;alisation de votre projet &#224; un utilisateur plus aguerri, mais acqu&#233;rir les comp&#233;tences gr&#226;ce aux membres de la communaut&#233;. Le r&#244;le des Fab Labs manager n&#39;est pas seulement de jouer aux profs couteaux-suisses mais aussi de vous aiguiller vers les personnes-ressources. Des ateliers de d&#233;coupe laser sont par exemple organis&#233;s. &lt;/p&gt; &lt;p&gt; Les Fab Labs valorisent l&#39;apprentissage par la pratique, alors que notre syst&#232;me scolaire a tendance &#224; favoriser les savoirs th&#233;oriques. Des programmes comme FabLab@School introduisent cette vision de l&#39;apprentissage au sein des &#233;coles. On peut s&#39;en servir aussi pour faire de la m&#233;diation scientifique, comme au centre de sciences de Grenoble. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;En collaboration avec le service m&#233;diation, nous organisons des ateliers pour le grand public : comment faire des haut-parleurs ou des st&#233;nop&#233;s, un syst&#232;me pour prendre des photos,&lt;/em&gt; t&#233;moignent Jean-Michel Molenaar, Fab Lab manager, et Catherine Demarcq, responsable animation. &lt;em style=&quot;font-style:italic;&quot;&gt;Nous sensibilisons aussi les professeurs pour qu&#39;ils montent des projets interdisciplinaires. Certains ont fait des man&#232;ges avec des petits, des jeux math&#233;matiques, une&lt;/em&gt;camera obscura &lt;em style=&quot;font-style:italic;&quot;&gt;ou une maquette d&#39;escalier au coll&#232;ge.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les Fab Labs commencent aussi &#224; arriver dans les biblioth&#232;ques, comme une &#233;volution logique de leurs missions. Derni&#232;re en date, et premi&#232;re dans une grande ville, la biblioth&#232;que publique de Chicago, dans l&#39;Illinois, s&#39;appr&#234;te &#224; ouvrir le sien. &lt;/p&gt; &lt;p&gt; Faire son prototype &lt;/p&gt; &lt;p&gt; Gr&#226;ce aux machines en partage, il est possible de r&#233;aliser un prototype de projet. Cette &lt;em style=&quot;font-style:italic;&quot;&gt;proof of concept&lt;/em&gt; constitue une &#233;tape incontournable pour v&#233;rifier si une id&#233;e est viable. A Artilect, un Fab Lab pionnier install&#233; &#224; Toulouse, de jeunes ing&#233;nieurs ont d&#233;velopp&#233; une premi&#232;re version d&#39;un robot mara&#238;cher baptis&#233; Na&#239;o. Puis, ils ont fait une premi&#232;re lev&#233;e de fonds via une collecte pour en poursuivre le d&#233;veloppement. Car il est possible d&#39;initier des activit&#233;s commerciales dans un Fab Lab. Mais, comme le souligne la charte, dans certaines limites : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Elles ne doivent pas faire obstacle &#224; l&#39;acc&#232;s ouvert. Elles doivent se d&#233;velopper au-del&#224; du Lab plut&#244;t qu&#39;en son sein et b&#233;n&#233;ficier &#224; leur tour aux inventeurs, aux Labs et aux r&#233;seaux qui ont contribu&#233; &#224; leur succ&#232;s.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;A Clermont-Ferrand, le projet de Fab Lab est pouss&#233; par une jeune habitante de la ville qui d&#233;plore que P&#244;le Emploi ne lui offre pas les m&#234;mes possibilit&#233;s pour d&#233;velopper un projet. Les Fab Labs pour recr&#233;er du tissu &#233;conomique et de l&#39;emploi ? Les Etats-Unis y croient. Un membre du Congr&#232;s am&#233;ricain vient de proposer un &#171;National Fab Lab Network Act&#187; pour d&#233;velopper un r&#233;seau en partenariat public-priv&#233; et, entre autres, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;augmenter l&#39;invention et l&#39;innovation et cr&#233;er des entreprises et des emplois&#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; R&#233;parer plut&#244;t qu&#39;acheter &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Il s&#39;agit de cr&#233;er plut&#244;t que de consommer&#187;, dit souvent&lt;/em&gt; Neil Gershenfeld. De fait, si les Fab Labs offrent la possibilit&#233; de cr&#233;er des choses, ils permettent aussi de r&#233;parer des objets cass&#233;s ou de les am&#233;liorer : recoudre un v&#234;tement, fabriquer une pi&#232;ce cass&#233;e qui n&#39;est plus disponible en service apr&#232;s-vente, etc. Cette dimension int&#233;resse le gouvernement fran&#231;ais qui a affirm&#233; vouloir pousser le consommateur &#224; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;conna&#238;tre les proc&#233;dures de r&#233;paration des outils num&#233;riques (dont les &#233;lectrom&#233;nagers) pour r&#233;pondre aux besoins des populations en difficult&#233;&#187;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;R&#233;pondre aux besoins &#171;non rentables&#187; &lt;/p&gt; &lt;p&gt; Dans son livre &lt;em style=&quot;font-style:italic;&quot;&gt;Fab,&lt;/em&gt; Neil Gershenfeld raconte comment Haakon, un berger norv&#233;gien, a d&#233;velopp&#233; un syst&#232;me autrement plus efficace que la cloche pour suivre ses b&#234;tes : celles-ci portent un collier &#233;mettant un signal radio qu&#39;il re&#231;oit dans sa ferme. Mais les p&#226;turages proches du cercle polaire sont d&#233;laiss&#233;s par les op&#233;rateurs, alors &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Haakon a d&#251; construire les infrastructures de t&#233;l&#233;communication dont il avait besoin&#187;.&lt;/em&gt; Les industriels ne s&#39;int&#233;ressent &#224; un march&#233; que s&#39;ils y trouvent un int&#233;r&#234;t &#233;conomique, ce qui exclut les zones pauvres ou peu peupl&#233;es. Les Fab Labs sont une bonne piste pour r&#233;pondre aux besoins jug&#233;s &#171;non rentables&#187;, en relocalisant au passage une (micro) production. &lt;/p&gt; &lt;p&gt; Cr&#233;er du lien social &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;On ne parle que de machines, mais c&#39;est un pr&#233;texte !&#187;&lt;/em&gt; : Pascal Minguet, cocr&#233;ateur du premier Fab Lab rural en France, &#224; Biarne, dans le Jura, ne plaisante qu&#39;&#224; moiti&#233;. Les Fab Labs sont des lieux de rencontre, d&#39;&#233;change, de (r&#233;)insertion, un nouvel avatar des maisons de quartier. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Nous sommes install&#233;s dans un village de 350 habitants qui n&#39;a plus de caf&#233;. Les gens viennent pour discuter, c&#39;est l&#39;occasion de faire des bouffes. Un mod&#233;liste ferroviaire travaille maintenant avec son voisin, ils ignoraient qu&#39;ils avaient une passion commune. Ils font des ateliers et aident les autres. On organise du covoiturage lorsque nous montons des Fab Labs temporaires. Des gens viennent faire leur CV, on s&#39;appuie sur une association dont le but est de former au num&#233;rique&#187;&lt;/em&gt;, t&#233;moigne Pascal. &lt;/p&gt; &lt;p&gt; Le constat vaut aussi dans les villes. Un ch&#244;meur ou un retrait&#233; peut proposer des ateliers et mettre en valeur ses connaissances et comp&#233;tences. Une fa&#231;on aussi de retrouver une place dans la soci&#233;t&#233;. Au Fac Lab, le Fab Lab de l&#39;universit&#233; de Cergy-Pontoise (Val-d&#39;Oise), Josiane, la cinquantaine et des doigts de f&#233;e, donne des cours de couture et accompagne qui veut sur des projets : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Je suis dans une communaut&#233; o&#249; je peux donner un coup de main, pour le plaisir de partager et de transmettre. C&#39;est le lieu qui me convient.&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Il n&#39;y a pas de jugement de valeurs et moins de tensions que dans le secteur associatif.&#187;&lt;/em&gt; En retour, elle a appris &#224; se servir de la d&#233;coupe laser pour faire une petite s&#233;rie de pochettes en cuir sur lesquelles Fleur Pellerin a flash&#233; lors de sa visite. &lt;/p&gt; &lt;p&gt; Pour en savoir plus : &lt;a target=&quot;_blank&quot; href=&quot;http://fablabo.net/wiki/Fablab_F_aire&quot;&gt;http://fablabo.net/wiki/Fablab_F_aire&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://wiki.fablab.is/wiki/Portal&quot;&gt;http://wiki.fablab.is/wiki/Portal&lt;/a&gt;:Labs&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20130701&amp;#183;LI&amp;#183;27566046-e184-11e2-9984-3ec9141ca05a&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">ateliers de fabrication</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">découpe laser</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">do it</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">infrastructures de télécommunication</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">procédures de réparation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Web</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bercy</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Grenoble</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Chicago</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130701%c2%b7LI%c2%b727566046-e184-11e2-9984-3ec9141ca05a" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130701%c2%b7LI%c2%b727566046-e184-11e2-9984-3ec9141ca05a">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+ÉcoFutur,         lundi 1 juillet 2013 1138 mots, p. SUP1</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Décryptage</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Fab Labs: la grande bidouille            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Pas besoin d'être ingénieur pour réparer son ordi ou fabriquer son vélo. Plans et machines sont mis à la disposition de tous sur le Web et dans des ateliers mécanico-numériques qui commencent à essaimer en France.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Sabine Blanc</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>«Do it yourself, do it with others» («faites-le vous-même, faites-le avec les autres») : telle est la devise des Fab Labs, ou Fabrication Laboratories. Vous n'en avez jamais entendu parler ? Normal, le mouvement est encore underground. Créés il y a une dizaine d'années au Massachusetts Institute of Technology (MIT) par Neil Gershenfeld, un professeur de physique qui proposait un cours de prototypage rapide intitulé «comment fabriquer (à peu près) n'importe quoi», les Fab Labs sont les ateliers de fabrication communautaires de l'ère numérique. Leur objectif ? Donner à ceux qui ne sont ni ingénieurs, ni designers, ni même geeks les moyens de fabriquer toutes sortes d'objets manufacturés comme à l'usine. Et ce, en mettant gratuitement à leur disposition le savoir, les procédés et la technologie nécessaires. </p> <p> Des plans en <em style="font-style:italic;"><mark>open</mark> <mark>source</mark>,</em> quelques machines-outils à commande numérique, un peu d'apprentissage collectif, beaucoup de patience et d'ingéniosité... et voilà un meuble sur mesure, une pièce pour réparer sa machine à laver ou carrément le prototype d'un vélo électrique !</p>
+
+
+<p>Les Fab Labs se sont mis en tête de transposer au vieux monde industriel la philosophie ouverte et collaborative du <mark>logiciel</mark> <mark>libre</mark>. Chris Anderson, ancien rédacteur en chef de <em style="font-style:italic;">Wired,</em> la bible des technofans américains, voit en eux <em style="font-style:italic;">«la prochaine révolution industrielle»,</em> celle du XXIe siècle <em style="font-style:italic;">(lire ci-contre).</em> Plus de problèmes de brevets dès lors que les plans et les spécifications d'un fauteuil design ou d'un ampli hi-fi sont mis gratuitement à disposition de tous. N'importe quel bricolo-bidouilleur peut transformer son garage en atelier pour fabriquer l'objet dont il a besoin. </p> <p> Mais les Fab Labs sont avant tout une expérience collective basée sur le partage de connaissances à l'échelle locale ou planétaire : un objet peut être conçu dans un Fab Lab, fabriqué dans un autre... et amélioré dans un troisième. Pour obtenir le label «Fab Lab», il faut adhérer à la charte du Center for Bits and Atoms, créé en 2001 au MIT, et surtout posséder les machines-outils adéquates : fraiseuse de précision, perceuse à colonne, découpeuse laser... Les imprimantes 3D nourrissent bien des fantasmes <em style="font-style:italic;">(</em>EcoFutur <em style="font-style:italic;">du 1er octobre)</em> mais ne sont guère prisées dans les Fab Labs en raison de leurs capacités limitées : l'impression est lente et elles sont cantonnées au plastique. </p> <p> Marginal en France, le mouvement commence à essaimer : il existe déjà cinq Fab Labs dans l'Hexagone, et vingt-quatre autres se revendiquent comme tels sans avoir forcément reçu l'agrément du MIT ou l'avoir demandé. Du coup, le sujet intéresse le gouvernement en quête de solutions hétérodoxes pour relancer l'innovation et l'emploi en France. <em style="font-style:italic;">«Nous voulons polliniser le territoire avec des Fab Labs et lancer un grand mouvement d'alphabétisation numérique»</em>: mardi à Bercy, Fleur Pellerin, la ministre déléguée à l'Economie numérique, a annoncé avec enthousiasme le lancement d'un appel à projets pour la création d'une dizaine de ces ateliers de fabrication numérique. La sélection devrait intervenir d'ici à mi-octobre. Reste à savoir à quoi serviront ces Fab Labs. Entre geekerie, projets de Géo Trouvetou, et applications concrètes sur le terrain, <em style="font-style:italic;">EcoFutur</em>a passé en revue les usages potentiels. </p> <p> Apprendre ensemble </p> <p> La dimension éducative est gravée dans le marbre de la charte des Fab Labs : apprendre, mais surtout le faire ensemble. Vous ne devez pas déléguer la réalisation de votre projet à un utilisateur plus aguerri, mais acquérir les compétences grâce aux membres de la communauté. Le rôle des Fab Labs manager n'est pas seulement de jouer aux profs couteaux-suisses mais aussi de vous aiguiller vers les personnes-ressources. Des ateliers de découpe laser sont par exemple organisés. </p> <p> Les Fab Labs valorisent l'apprentissage par la pratique, alors que notre système scolaire a tendance à favoriser les savoirs théoriques. Des programmes comme FabLab@School introduisent cette vision de l'apprentissage au sein des écoles. On peut s'en servir aussi pour faire de la médiation scientifique, comme au centre de sciences de Grenoble. <em style="font-style:italic;">«En collaboration avec le service médiation, nous organisons des ateliers pour le grand public : comment faire des haut-parleurs ou des sténopés, un système pour prendre des photos,</em> témoignent Jean-Michel Molenaar, Fab Lab manager, et Catherine Demarcq, responsable animation. <em style="font-style:italic;">Nous sensibilisons aussi les professeurs pour qu'ils montent des projets interdisciplinaires. Certains ont fait des manèges avec des petits, des jeux mathématiques, une</em>camera obscura <em style="font-style:italic;">ou une maquette d'escalier au collège.»</em></p><p>Les Fab Labs commencent aussi à arriver dans les bibliothèques, comme une évolution logique de leurs missions. Dernière en date, et première dans une grande ville, la bibliothèque publique de Chicago, dans l'Illinois, s'apprête à ouvrir le sien. </p> <p> Faire son prototype </p> <p> Grâce aux machines en partage, il est possible de réaliser un prototype de projet. Cette <em style="font-style:italic;">proof of concept</em> constitue une étape incontournable pour vérifier si une idée est viable. A Artilect, un Fab Lab pionnier installé à Toulouse, de jeunes ingénieurs ont développé une première version d'un robot maraîcher baptisé Naïo. Puis, ils ont fait une première levée de fonds via une collecte pour en poursuivre le développement. Car il est possible d'initier des activités commerciales dans un Fab Lab. Mais, comme le souligne la charte, dans certaines limites : <em style="font-style:italic;">«Elles ne doivent pas faire obstacle à l'accès ouvert. Elles doivent se développer au-delà du Lab plutôt qu'en son sein et bénéficier à leur tour aux inventeurs, aux Labs et aux réseaux qui ont contribué à leur succès.»</em></p><p>A Clermont-Ferrand, le projet de Fab Lab est poussé par une jeune habitante de la ville qui déplore que Pôle Emploi ne lui offre pas les mêmes possibilités pour développer un projet. Les Fab Labs pour recréer du tissu économique et de l'emploi ? Les Etats-Unis y croient. Un membre du Congrès américain vient de proposer un «National Fab Lab Network Act» pour développer un réseau en partenariat public-privé et, entre autres, <em style="font-style:italic;">«augmenter l'invention et l'innovation et créer des entreprises et des emplois»</em>. </p> <p> Réparer plutôt qu'acheter </p> <p><em style="font-style:italic;">«Il s'agit de créer plutôt que de consommer», dit souvent</em> Neil Gershenfeld. De fait, si les Fab Labs offrent la possibilité de créer des choses, ils permettent aussi de réparer des objets cassés ou de les améliorer : recoudre un vêtement, fabriquer une pièce cassée qui n'est plus disponible en service après-vente, etc. Cette dimension intéresse le gouvernement français qui a affirmé vouloir pousser le consommateur à <em style="font-style:italic;">«connaître les procédures de réparation des outils numériques (dont les électroménagers) pour répondre aux besoins des populations en difficulté».</em></p><p>Répondre aux besoins «non rentables» </p> <p> Dans son livre <em style="font-style:italic;">Fab,</em> Neil Gershenfeld raconte comment Haakon, un berger norvégien, a développé un système autrement plus efficace que la cloche pour suivre ses bêtes : celles-ci portent un collier émettant un signal radio qu'il reçoit dans sa ferme. Mais les pâturages proches du cercle polaire sont délaissés par les opérateurs, alors <em style="font-style:italic;">«Haakon a dû construire les infrastructures de télécommunication dont il avait besoin».</em> Les industriels ne s'intéressent à un marché que s'ils y trouvent un intérêt économique, ce qui exclut les zones pauvres ou peu peuplées. Les Fab Labs sont une bonne piste pour répondre aux besoins jugés «non rentables», en relocalisant au passage une (micro) production. </p> <p> Créer du lien social </p> <p><em style="font-style:italic;">«On ne parle que de machines, mais c'est un prétexte !»</em> : Pascal Minguet, cocréateur du premier Fab Lab rural en France, à Biarne, dans le Jura, ne plaisante qu'à moitié. Les Fab Labs sont des lieux de rencontre, d'échange, de (ré)insertion, un nouvel avatar des maisons de quartier. <em style="font-style:italic;">«Nous sommes installés dans un village de 350 habitants qui n'a plus de café. Les gens viennent pour discuter, c'est l'occasion de faire des bouffes. Un modéliste ferroviaire travaille maintenant avec son voisin, ils ignoraient qu'ils avaient une passion commune. Ils font des ateliers et aident les autres. On organise du covoiturage lorsque nous montons des Fab Labs temporaires. Des gens viennent faire leur CV, on s'appuie sur une association dont le but est de former au numérique»</em>, témoigne Pascal. </p> <p> Le constat vaut aussi dans les villes. Un chômeur ou un retraité peut proposer des ateliers et mettre en valeur ses connaissances et compétences. Une façon aussi de retrouver une place dans la société. Au Fac Lab, le Fab Lab de l'université de Cergy-Pontoise (Val-d'Oise), Josiane, la cinquantaine et des doigts de fée, donne des cours de couture et accompagne qui veut sur des projets : <em style="font-style:italic;">«Je suis dans une communauté où je peux donner un coup de main, pour le plaisir de partager et de transmettre. C'est le lieu qui me convient.</em><em style="font-style:italic;">Il n'y a pas de jugement de valeurs et moins de tensions que dans le secteur associatif.»</em> En retour, elle a appris à se servir de la découpe laser pour faire une petite série de pochettes en cuir sur lesquelles Fleur Pellerin a flashé lors de sa visite. </p> <p> Pour en savoir plus : <a target="_blank" href="http://fablabo.net/wiki/Fablab_F_aire">http://fablabo.net/wiki/Fablab_F_aire</a> <a target="_blank" href="http://wiki.fablab.is/wiki/Portal">http://wiki.fablab.is/wiki/Portal</a>:Labs</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20130701·LI·27566046-e184-11e2-9984-3ec9141ca05a</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20130701·LI·27566046-e184-11e2-9984-3ec9141ca05a";
+    var _docIndex = 19;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20130701·LI·27566046-e184-11e2-9984-3ec9141ca05a';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720130701%C2%B7LI%C2%B727566046-e184-11e2-9984-3ec9141ca05a&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720130701%C2%B7LI%C2%B727566046-e184-11e2-9984-3ec9141ca05a&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720130701%C2%B7LI%C2%B727566046-e184-11e2-9984-3ec9141ca05a&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720130701%C2%B7LI%C2%B727566046-e184-11e2-9984-3ec9141ca05a&docIndex=19&FullScreen=1";
+                
+	var _keyDoc = 'news·20130701·LI·27566046-e184-11e2-9984-3ec9141ca05a';
+</script>
+</div></body></html>

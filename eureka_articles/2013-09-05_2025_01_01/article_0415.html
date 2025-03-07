@@ -1,0 +1,589 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 23212                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         lundi 1 avril 2019 523 mots, p. 24&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+&#201;conomie         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Budget 2020 : les d&#233;put&#233;s pourront s&#39;appuyer sur un outil de simulation            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Ce dispositif remplace le projet d&#39;agence d&#39;&#233;valuation que les parlementaires voulaient cr&#233;er.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;de Guign&#233;, Anne&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;POLITIQUE &#201;CONOMIQUE&lt;/em&gt; Ils ont donc revu leurs ambitions &#224; la baisse. Il y a un an, les d&#233;put&#233;s de la commission des finances bataillaient pour obtenir la cr&#233;ation d&#39;une agence d&#39;&#233;valuation budg&#233;taire ind&#233;pendante, &#224; l&#39;image du Congress Budget Office am&#233;ricain. L&#39;agence de leurs r&#234;ves aurait d&#251; &#234;tre dot&#233;e &#224; terme d&#39;un budget de 4 millions d&#39;euros par an et d&#39;une quarantaine de collaborateurs. &lt;/p&gt; &lt;p&gt; Las, Richard Ferrand, le pr&#233;sident de l&#39;Assembl&#233;e depuis septembre 2018, n&#39;a gu&#232;re soutenu l&#39;initiative des parlementaires de tous bords pouss&#233;s, sur ce sujet, notamment par la d&#233;put&#233;e LREM Am&#233;lie de Montchalin (Essonne). L&#39;ex-ministre m&#233;t&#233;oritique de la Coh&#233;sion des territoires au d&#233;but du quinquennat Macron n&#39;a pas pour autant enterr&#233; la demande, mais d&#233;cid&#233; d&#39;y r&#233;pondre autrement, de mani&#232;re moins on&#233;reuse, via le lancement d&#39;un outil de simulation fiscale.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Pour l&#39;&#233;valuation ex-ante des lois, Richard Ferrand a propos&#233; que deux administrateurs de la commission des finances soient associ&#233;s &#224; des collaborateurs d&#39;Etalab&lt;/em&gt;(les services de l&#39;&#201;tat, en charge des donn&#233;es, NDLR) &lt;em style=&quot;font-style:italic;&quot;&gt;pour la conception d&#39;un outil de simulation fiscale &#224; la disposition des d&#233;put&#233;s. Il devrait &#234;tre pr&#234;t pour la loi de finances 2020&lt;/em&gt; &#187; , confirme au &lt;em style=&quot;font-style:italic;&quot;&gt;Figaro&lt;/em&gt;l&#39;&#233;conomiste &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;Jean-No&#235;l Barrot, d&#233;put&#233; des Yvelines et secr&#233;taire g&#233;n&#233;ral du MoDem. &lt;/p&gt; &lt;p&gt; D&#233;nomm&#233; &#171; LexImpact &#187; , l&#39;outil est en train d&#39;&#234;tre finalis&#233;. Des rendez-vous sont en cours entre les administrateurs, les sp&#233;cialistes d&#39;Etalab et les d&#233;put&#233;s de la commission pour conna&#238;tre leurs besoins. L&#39;id&#233;e est qu&#39;ils puissent &#233;valuer par eux-m&#234;mes l&#39;impact de leurs amendements sur les finances publiques, conna&#238;tre les effets redistributifs, &#233;ventuellement g&#233;ographiques... &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Le logiciel &#171; Chorus &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt; &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;L&#39;acc&#232;s aux donn&#233;es reste une question. L&#39;outil s&#39;appuiera sur Openfisca, un simulateur qui mod&#233;lise le syst&#232;me fiscal fran&#231;ais en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Il devrait &#234;tre aliment&#233; par des donn&#233;es anonymis&#233;es mises &#224; disposition par l&#39;Insee &#187; , &lt;/em&gt;pr&#233;cise Jean-No&#235;l Barrot. &lt;/p&gt; &lt;p&gt; Dans un courrier envoy&#233; d&#233;but mars aux d&#233;put&#233;s, o&#249; il d&#233;veloppait ses propositions pour &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; r&#233;nover la vie parlementaire &#187;&lt;/em&gt;, Richard Ferrand indiquait aussi que le minist&#232;re des Comptes publics allait mettre &#224; disposition de la commission des finances le logiciel &#171; Chorus &#187; qui &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;retrace automatiquement et en temps r&#233;el la comptabilit&#233; budg&#233;taire, la comptabilit&#233; g&#233;n&#233;rale et la comptabilit&#233; d&#39;analyse des co&#251;ts de l&#39;&#201;tat&lt;/em&gt; &#187;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; &#192; terme, si &#231;a fonctionne bien, tout parlementaire voulant chiffrer un amendement pourra lui-m&#234;me s&#39;en charger gr&#226;ce aux logiciels,&lt;/em&gt;se r&#233;jouit &lt;span class=&quot;stubs&quot;&gt;&#201;ric Woerth&lt;/span&gt;, d&#233;put&#233; LR de l&#39;Oise et pr&#233;sident de la commission des finances. &lt;em style=&quot;font-style:italic;&quot;&gt;Apr&#232;s on verra la r&#233;alit&#233;, est-ce que l&#39;Assembl&#233;e arrivera &#224; sortir les bons logiciels ? Est-ce que les d&#233;put&#233;s s&#39;en empareront ?&lt;/em&gt; &#187; Les parlementaires ne devraient pas renouveler l&#39;exp&#233;rience du PLF 2019 o&#249; ils avaient command&#233; plusieurs &#233;tudes &#224; des organismes ind&#233;pendants. L&#39;&lt;span class=&quot;stubs&quot;&gt;Institut des politiques publiques&lt;/span&gt; (IPP) avait notamment planch&#233; sur l&#39;impact du budget sur les m&#233;nages et les entreprises. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Les &#233;tudes &#233;taient arriv&#233;es un peu tard. Elles avaient nourri le d&#233;bat sur le pouvoir d&#39;achat mais nous n&#39;avions pas eu le temps de nous en emparer pour nos amendements&lt;/em&gt; &#187; , justifie &lt;span class=&quot;stubs&quot;&gt;&#201;ric Woerth&lt;/span&gt;. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Le pr&#233;sident de l&#39;&lt;span class=&quot;stubs&quot;&gt;Assembl&#233;e nationale&lt;/span&gt;, Richard Ferrand, a tranch&#233; en faveur d&#39;un logiciel de simulation permettant de mesurer l&#39;impact d&#39;un amendement. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Jean-Christophe MARMARA/Le Figaro &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:adeguigne@lefigaro.fr&quot;&gt;adeguigne@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;31 mars 2019&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2019 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20190401&amp;#183;LF&amp;#183;722&amp;#215;20&amp;#215;2975053344&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">commission des finances</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">outil de simulation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">outil de simulation fiscale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">députés de la commission</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">agence d'évaluation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">ERIC WOERTH</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">INSTITUT DES POLITIQUES PUBLIQUES</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">ASSEMBLÉE NATIONALE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Partis politiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Politique et gouvernement</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Essonne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Yvelines</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720190401%c2%b7LF%c2%b7722%c3%9720%c3%972975053344" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720190401%c2%b7LF%c2%b7722%c3%9720%c3%972975053344">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 23212                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         lundi 1 avril 2019 523 mots, p. 24</span>
+</div>
+
+    <div>
+        <p>
+Économie         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Budget 2020 : les députés pourront s'appuyer sur un outil de simulation            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Ce dispositif remplace le projet d'agence d'évaluation que les parlementaires voulaient créer.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">de Guigné, Anne</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">POLITIQUE ÉCONOMIQUE</em> Ils ont donc revu leurs ambitions à la baisse. Il y a un an, les députés de la commission des finances bataillaient pour obtenir la création d'une agence d'évaluation budgétaire indépendante, à l'image du Congress Budget Office américain. L'agence de leurs rêves aurait dû être dotée à terme d'un budget de 4 millions d'euros par an et d'une quarantaine de collaborateurs. </p> <p> Las, Richard Ferrand, le président de l'Assemblée depuis septembre 2018, n'a guère soutenu l'initiative des parlementaires de tous bords poussés, sur ce sujet, notamment par la députée LREM Amélie de Montchalin (Essonne). L'ex-ministre météoritique de la Cohésion des territoires au début du quinquennat Macron n'a pas pour autant enterré la demande, mais décidé d'y répondre autrement, de manière moins onéreuse, via le lancement d'un outil de simulation fiscale.</p>
+
+
+<p><em style="font-style:italic;">« Pour l'évaluation ex-ante des lois, Richard Ferrand a proposé que deux administrateurs de la commission des finances soient associés à des collaborateurs d'Etalab</em>(les services de l'État, en charge des données, NDLR) <em style="font-style:italic;">pour la conception d'un outil de simulation fiscale à la disposition des députés. Il devrait être prêt pour la loi de finances 2020</em> » , confirme au <em style="font-style:italic;">Figaro</em>l'économiste <em style="font-style:italic;"></em>Jean-Noël Barrot, député des Yvelines et secrétaire général du MoDem. </p> <p> Dénommé « LexImpact » , l'outil est en train d'être finalisé. Des rendez-vous sont en cours entre les administrateurs, les spécialistes d'Etalab et les députés de la commission pour connaître leurs besoins. L'idée est qu'ils puissent évaluer par eux-mêmes l'impact de leurs amendements sur les finances publiques, connaître les effets redistributifs, éventuellement géographiques... </p> <p><em style="font-weight:bold;">Le logiciel « Chorus »</em></p><p> « <em style="font-style:italic;">L'accès aux données reste une question. L'outil s'appuiera sur Openfisca, un simulateur qui modélise le système fiscal français en <mark>open</mark> <mark>source</mark>. Il devrait être alimenté par des données anonymisées mises à disposition par l'Insee » , </em>précise Jean-Noël Barrot. </p> <p> Dans un courrier envoyé début mars aux députés, où il développait ses propositions pour <em style="font-style:italic;">« rénover la vie parlementaire »</em>, Richard Ferrand indiquait aussi que le ministère des Comptes publics allait mettre à disposition de la commission des finances le logiciel « Chorus » qui « <em style="font-style:italic;">retrace automatiquement et en temps réel la comptabilité budgétaire, la comptabilité générale et la comptabilité d'analyse des coûts de l'État</em> ». </p> <p><em style="font-style:italic;">« À terme, si ça fonctionne bien, tout parlementaire voulant chiffrer un amendement pourra lui-même s'en charger grâce aux logiciels,</em>se réjouit <span class="stubs">Éric Woerth</span>, député LR de l'Oise et président de la commission des finances. <em style="font-style:italic;">Après on verra la réalité, est-ce que l'Assemblée arrivera à sortir les bons logiciels ? Est-ce que les députés s'en empareront ?</em> » Les parlementaires ne devraient pas renouveler l'expérience du PLF 2019 où ils avaient commandé plusieurs études à des organismes indépendants. L'<span class="stubs">Institut des politiques publiques</span> (IPP) avait notamment planché sur l'impact du budget sur les ménages et les entreprises. « <em style="font-style:italic;">Les études étaient arrivées un peu tard. Elles avaient nourri le débat sur le pouvoir d'achat mais nous n'avions pas eu le temps de nous en emparer pour nos amendements</em> » , justifie <span class="stubs">Éric Woerth</span>. </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Le président de l'<span class="stubs">Assemblée nationale</span>, Richard Ferrand, a tranché en faveur d'un logiciel de simulation permettant de mesurer l'impact d'un amendement. </div>.
+
+                <div class="ImageAttachFont">Jean-Christophe MARMARA/Le Figaro </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:adeguigne@lefigaro.fr">adeguigne@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">31 mars 2019</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2019 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20190401·LF·722×20×2975053344</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20190401·LF·722×20×2975053344";
+    var _docIndex = 414;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"eric woerth":"91634","éric woerth":"91634"};
+		var _orgDic = {"institut des politiques publiques":"94629","assemblée nationale":"92774"};
+		var _docName = 'news·20190401·LF·722×20×2975053344';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720190401%C2%B7LF%C2%B7722%C3%9720%C3%972975053344&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720190401%C2%B7LF%C2%B7722%C3%9720%C3%972975053344&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720190401%C2%B7LF%C2%B7722%C3%9720%C3%972975053344&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720190401%C2%B7LF%C2%B7722%C3%9720%C3%972975053344&docIndex=414&FullScreen=1";
+                
+	var _keyDoc = 'news·20190401·LF·722×20×2975053344';
+</script>
+</div></body></html>

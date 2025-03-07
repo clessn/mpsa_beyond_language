@@ -1,0 +1,483 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Plan&#232;te,         lundi 17 avril 2000 640 mots, p. B2&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Technologie         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Retour sur terre            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;O&#249; le chroniqueur redescend sur Terre apr&#232;s avoir pass&#233; une semaine excitante &#224; l&#39;Expo Linux et discute de tout et de rien avec ses lecteurs. Une chronique de paresseux? Oui, et apr&#232;s? &lt;/p&gt; &lt;p&gt; Un mot: Ouf! Quelle semaine excitante que votre pas tr&#232;s humble chroniqueur vient de vivre. Toute une semaine &#224; fr&#233;quenter des &quot;linuxiens&quot; de tout acabit, &#224; discuter de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; et &#224; rencontrer des types comme Bob Young, Dirk Hondel de SUSE ou Jean-Paul Smet de l&#39;Association francophone des utilisateurs Linux (AFUL), encore une fois, chapeau &#224; l&#39;organisation. Redisons-le, les organisateurs du Comdex, qui &#233;taient sur place, auraient vraiment tout int&#233;r&#234;t &#224; prendre des notes sur l&#39;organisation et la planification d&#39;une foire commerciale excitante, autant pour les visiteurs que les exposants. Mais n&#39;ayez crainte, &#212; lecteurs qui communiez &#224; l&#39;&#201;glise de la Sainte-Pomme ou &#224; celle de l&#39;Oncle Bill, nous ne parlerons pas de logiciel libres cette semaine (enfin, si peu).&lt;/p&gt;
+
+
+&lt;p&gt;Parlant de la Sainte-Pomme, j&#39;ai eu la chance d&#39;essayer le nouvel iMac DVD qu&#39;un copain s&#39;est procur&#233; r&#233;cemment. Au centre de cet ordinateur, bat une puce G3 cadenc&#233;e &#224; 400 MHz des plus v&#233;loces, assist&#233;e de 64 m&#233;gaoctets de m&#233;moire vive. Superbe engin, encore une fois, Apple r&#233;ussit &#224; m&#39;&#233;pater. Surtout avec une carte de tarifs qui n&#39;a rien &#224; voir avec les anciens prix pratiqu&#233;s par la firme &#224; la pomme multicolore. Un peu moins de 2500 avec une imprimante couleurs de belle facture, le copain et sa petite famille sont heureux. M&#234;me si, selon moi, l&#39;ordinateur familial id&#233;al dans le monde PC demeure le petit grille-pain Compaq dont je vous ai entretenu il y a quelques semaines, il n&#39;en demeure pas moins que l&#39;ordinateur familial id&#233;al, toutes cat&#233;gories et toutes plates-formes confondues, est le iMac. Un bijou que je n&#39;h&#233;site pas &#224; vous recommander. &lt;/p&gt; &lt;p&gt; Parlant du Mac, &#234;tes-vous de ceux, qui, comme mon coll&#232;gue Garneau, le beau Brummel de ces dames et animateur de l&#39;&#233;mission radio &lt;em style=&quot;font-style:italic;&quot;&gt;Clair et Net&lt;/em&gt;, poss&#233;dez encore un vieux Mac de puissance somme toute modeste, compar&#233; aux gu&#233;pards virtuels d&#39;aujourd&#39;hui? Le bon vieux et fid&#232;le &lt;em style=&quot;font-style:italic;&quot;&gt;Word 5.1&lt;/em&gt;, continue &#224; y tourner sans aucun probl&#232;me, mais pour ce qui est des fureteurs, alors l&#224;, difficile de suivre le rythme des derni&#232;res incarnations des &lt;em style=&quot;font-style:italic;&quot;&gt;Netscape&lt;/em&gt; et &lt;em style=&quot;font-style:italic;&quot;&gt;MS Explorer&lt;/em&gt;. M&#234;me dans sa nouvelle livr&#233;e 6.0, ces deux fureteurs continuent de r&#233;clamer des puces de plus en plus puissantes, et des masses de m&#233;moire vive. Comment suivre alors? C&#39;est d&#39;ailleurs ce qui m&#39;arrive alors que mon vieux et fid&#232;le Powerbook, avec ses modestes 24 m&#233;gaoctets de m&#233;moire vive. M&#234;me avec Ram Doubler, d&#233;marrer &lt;em style=&quot;font-style:italic;&quot;&gt;Word 98&lt;/em&gt; tient de l&#39;exploit. Et naviguer sur Internet avec la derni&#232;re version de &lt;em style=&quot;font-style:italic;&quot;&gt;Netscape&lt;/em&gt; et &lt;em style=&quot;font-style:italic;&quot;&gt;MS Explorer&lt;/em&gt; est tout &#224; fait impossible. &lt;/p&gt; &lt;p&gt; Alors, que faire? Utiliser d&#39;anciennes versions ou trouver une solution de rechange? Heureusement, il existe justement un autre fureteur qui est compatible avec les normes HTML actuelles et qui demande tr&#232;s peu de m&#233;moire vive pour fonctionner. Cette application, &lt;em style=&quot;font-style:italic;&quot;&gt;iCab&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.icab.de&quot;&gt;www.icab.de&lt;/a&gt; &lt;/em&gt;) nous provient du pays de la bi&#232;re et de la saucisse et je vous la recommande grandement. Pouvant fonctionner avec &#224; peine quatre m&#233;gas de m&#233;moire vive, un Mac &#224; base de puce 68020 ou 68030 (une version optimis&#233;e pour la puce Power PC &#233;tant aussi disponible) et l&#39;ant&#233;diluvien syst&#232;me 7.5, &lt;em style=&quot;font-style:italic;&quot;&gt;iCab&lt;/em&gt; est un fureteur supportant les toutes derni&#232;res normes HTML 4.0 ainsi que Javascript et Java. Avec un client courriel comme &lt;em style=&quot;font-style:italic;&quot;&gt;Eudora Light&lt;/em&gt; ou l&#39;ancien &lt;em style=&quot;font-style:italic;&quot;&gt;Claris Emailer&lt;/em&gt;, c&#39;est tout ce qu&#39;il faut pour que vous puissiez continuer &#224; surfer sur Internet. Hautement recommand&#233;. &lt;/p&gt; &lt;p&gt; Puisque nous en sommes &#224; causer de logiciels aux demandes modestes, je me rends compte que je ne vous ai jamais entretenus d&#39;une des mes suites bureautiques favorites: &lt;em style=&quot;font-style:italic;&quot;&gt;AppleWorks&lt;/em&gt;. J&#39;avoue que je ne comprends pas encore cette tendance qu&#39;ont la plupart des utilisateurs &#224; se procurer une Ferrari, comme la suite &lt;em style=&quot;font-style:italic;&quot;&gt;MS Office&lt;/em&gt;, alors que la tr&#232;s grande majorit&#233; de leurs besoins pourrait &#234;tre satisfaite avec &lt;em style=&quot;font-style:italic;&quot;&gt;AppleWorks&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Comprenant un texteur, un tableur, une base de donn&#233;e, un logiciel de pr&#233;sentatique, une application de dessin vectoriel et une autre de dessin point &#224; point, &lt;em style=&quot;font-style:italic;&quot;&gt;AppleWorks&lt;/em&gt; est un logiciel offert &#224; petit prix, et qui pourra &#224; peu pr&#232;s tout faire. Le logiciel id&#233;al pour une famille. Et que ceux qui utilisent les grandes suites du march&#233; se rassurent: &lt;em style=&quot;font-style:italic;&quot;&gt;AppleWorks&lt;/em&gt; peut lire et &#233;crire, gr&#226;ce &#224; des filtres, la tr&#232;s grande majorit&#233; des fichiers g&#233;n&#233;r&#233;s par d&#39;autres applications. De tr&#232;s nombreuses institutions scolaires utilisent &lt;em style=&quot;font-style:italic;&quot;&gt;AppleWorks&lt;/em&gt; et en sont totalement satisfaites. Et pour ce qui est de la compatibilit&#233; Mac- &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt;, sachez que la derni&#232;re version, nomm&#233;e 6.0, est aujourd&#39;hui disponible pour le Mac et tr&#232;s bient&#244;t pour &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt;. Quand &#224; l&#39;interface utilisateur, c&#39;est un v&#233;ritable d&#233;lice. Je d&#233;fie n&#39;importe qui de pas s&#39;y retrouver apr&#232;s quelques minutes d&#39;apprentissage. Seul oubli de taille dans le traitement de texte, un compteur de mots. Zut! Malgr&#233; tout, si vous poss&#233;dez un ordinateur de puissance modeste, je n&#39;h&#233;site pas 30 secondes &#224; vous sugg&#233;rer d&#39;adopter &lt;em style=&quot;font-style:italic;&quot;&gt;AppleWorks&lt;/em&gt;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Attach&#233; &#224; votre vieux Mac? Il existe des logiciels qui vous permettraient de naviguer plus efficacement sur Internet.&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000417&amp;#183;LE&amp;#183;0041&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Internet, technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000417%c2%b7LE%c2%b70041" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000417%c2%b7LE%c2%b70041">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Planète,         lundi 17 avril 2000 640 mots, p. B2</span>
+</div>
+
+    <div>
+        <p>
+Technologie         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Retour sur terre            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Où le chroniqueur redescend sur Terre après avoir passé une semaine excitante à l'Expo Linux et discute de tout et de rien avec ses lecteurs. Une chronique de paresseux? Oui, et après? </p> <p> Un mot: Ouf! Quelle semaine excitante que votre pas très humble chroniqueur vient de vivre. Toute une semaine à fréquenter des "linuxiens" de tout acabit, à discuter de <mark>logiciels</mark> <mark>libres</mark> et à rencontrer des types comme Bob Young, Dirk Hondel de SUSE ou Jean-Paul Smet de l'Association francophone des utilisateurs Linux (AFUL), encore une fois, chapeau à l'organisation. Redisons-le, les organisateurs du Comdex, qui étaient sur place, auraient vraiment tout intérêt à prendre des notes sur l'organisation et la planification d'une foire commerciale excitante, autant pour les visiteurs que les exposants. Mais n'ayez crainte, Ô lecteurs qui communiez à l'Église de la Sainte-Pomme ou à celle de l'Oncle Bill, nous ne parlerons pas de logiciel libres cette semaine (enfin, si peu).</p>
+
+
+<p>Parlant de la Sainte-Pomme, j'ai eu la chance d'essayer le nouvel iMac DVD qu'un copain s'est procuré récemment. Au centre de cet ordinateur, bat une puce G3 cadencée à 400 MHz des plus véloces, assistée de 64 mégaoctets de mémoire vive. Superbe engin, encore une fois, Apple réussit à m'épater. Surtout avec une carte de tarifs qui n'a rien à voir avec les anciens prix pratiqués par la firme à la pomme multicolore. Un peu moins de 2500 avec une imprimante couleurs de belle facture, le copain et sa petite famille sont heureux. Même si, selon moi, l'ordinateur familial idéal dans le monde PC demeure le petit grille-pain Compaq dont je vous ai entretenu il y a quelques semaines, il n'en demeure pas moins que l'ordinateur familial idéal, toutes catégories et toutes plates-formes confondues, est le iMac. Un bijou que je n'hésite pas à vous recommander. </p> <p> Parlant du Mac, êtes-vous de ceux, qui, comme mon collègue Garneau, le beau Brummel de ces dames et animateur de l'émission radio <em style="font-style:italic;">Clair et Net</em>, possédez encore un vieux Mac de puissance somme toute modeste, comparé aux guépards virtuels d'aujourd'hui? Le bon vieux et fidèle <em style="font-style:italic;">Word 5.1</em>, continue à y tourner sans aucun problème, mais pour ce qui est des fureteurs, alors là, difficile de suivre le rythme des dernières incarnations des <em style="font-style:italic;">Netscape</em> et <em style="font-style:italic;">MS Explorer</em>. Même dans sa nouvelle livrée 6.0, ces deux fureteurs continuent de réclamer des puces de plus en plus puissantes, et des masses de mémoire vive. Comment suivre alors? C'est d'ailleurs ce qui m'arrive alors que mon vieux et fidèle Powerbook, avec ses modestes 24 mégaoctets de mémoire vive. Même avec Ram Doubler, démarrer <em style="font-style:italic;">Word 98</em> tient de l'exploit. Et naviguer sur Internet avec la dernière version de <em style="font-style:italic;">Netscape</em> et <em style="font-style:italic;">MS Explorer</em> est tout à fait impossible. </p> <p> Alors, que faire? Utiliser d'anciennes versions ou trouver une solution de rechange? Heureusement, il existe justement un autre fureteur qui est compatible avec les normes HTML actuelles et qui demande très peu de mémoire vive pour fonctionner. Cette application, <em style="font-style:italic;">iCab</em> (<em style="font-style:italic;"><a target="_blank" href="https://www.icab.de">www.icab.de</a> </em>) nous provient du pays de la bière et de la saucisse et je vous la recommande grandement. Pouvant fonctionner avec à peine quatre mégas de mémoire vive, un Mac à base de puce 68020 ou 68030 (une version optimisée pour la puce Power PC étant aussi disponible) et l'antédiluvien système 7.5, <em style="font-style:italic;">iCab</em> est un fureteur supportant les toutes dernières normes HTML 4.0 ainsi que Javascript et Java. Avec un client courriel comme <em style="font-style:italic;">Eudora Light</em> ou l'ancien <em style="font-style:italic;">Claris Emailer</em>, c'est tout ce qu'il faut pour que vous puissiez continuer à surfer sur Internet. Hautement recommandé. </p> <p> Puisque nous en sommes à causer de logiciels aux demandes modestes, je me rends compte que je ne vous ai jamais entretenus d'une des mes suites bureautiques favorites: <em style="font-style:italic;">AppleWorks</em>. J'avoue que je ne comprends pas encore cette tendance qu'ont la plupart des utilisateurs à se procurer une Ferrari, comme la suite <em style="font-style:italic;">MS Office</em>, alors que la très grande majorité de leurs besoins pourrait être satisfaite avec <em style="font-style:italic;">AppleWorks</em>. </p> <p> Comprenant un texteur, un tableur, une base de donnée, un logiciel de présentatique, une application de dessin vectoriel et une autre de dessin point à point, <em style="font-style:italic;">AppleWorks</em> est un logiciel offert à petit prix, et qui pourra à peu près tout faire. Le logiciel idéal pour une famille. Et que ceux qui utilisent les grandes suites du marché se rassurent: <em style="font-style:italic;">AppleWorks</em> peut lire et écrire, grâce à des filtres, la très grande majorité des fichiers générés par d'autres applications. De très nombreuses institutions scolaires utilisent <em style="font-style:italic;">AppleWorks</em> et en sont totalement satisfaites. Et pour ce qui est de la compatibilité Mac- <em style="font-style:italic;">Windows</em>, sachez que la dernière version, nommée 6.0, est aujourd'hui disponible pour le Mac et très bientôt pour <em style="font-style:italic;">Windows</em>. Quand à l'interface utilisateur, c'est un véritable délice. Je défie n'importe qui de pas s'y retrouver après quelques minutes d'apprentissage. Seul oubli de taille dans le traitement de texte, un compteur de mots. Zut! Malgré tout, si vous possédez un ordinateur de puissance modeste, je n'hésite pas 30 secondes à vous suggérer d'adopter <em style="font-style:italic;">AppleWorks</em>.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Attaché à votre vieux Mac? Il existe des logiciels qui vous permettraient de naviguer plus efficacement sur Internet.</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000417·LE·0041</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000417·LE·0041";
+    var _docIndex = 580;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000417·LE·0041';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000417%C2%B7LE%C2%B70041&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000417%C2%B7LE%C2%B70041&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000417%C2%B7LE%C2%B70041&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000417%C2%B7LE%C2%B70041&docIndex=580&FullScreen=1";
+                
+	var _keyDoc = 'news·20000417·LE·0041';
+</script>
+</div></body></html>

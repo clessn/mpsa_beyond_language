@@ -1,0 +1,507 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=ls4_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LS&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Soleil                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         vendredi 5 juin 2009 408 mots, p. 6&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Christa McAuliffe            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;(Janvier 1986) &lt;/p&gt; &lt;p&gt; Cette enseignante devait &#234;tre la premi&#232;re civile &#224; aller dans l&#39;espace, aux frais de la NASA, mais sans faire partie du programme d&#39;astronautes. Elle a malheureusement &#233;t&#233; tu&#233;e avec tous ses compagnons par l&#39;explosion de la navette Challenger peu apr&#232;s le lancement. &lt;/p&gt; &lt;p&gt; Toyohiro Akiyama etHelen Sharman &lt;/p&gt; &lt;p&gt; (D&#233;cembre 1990, 8 jours, Station Mir)&lt;/p&gt;
+
+
+&lt;p&gt;Un journaliste japonais et une chimiste britannique sont donc les premiers civils &#224; atteindre l&#39;espace. Ils n&#39;ont cependant pas pay&#233; eux-m&#234;mes leur billet. Ils avaient &#233;t&#233; choisis dans le cadre de programmes financ&#233;s par l&#39;agence russe et diverses com-pagnies. &lt;/p&gt; &lt;p&gt; Dennis Anthony Tito &lt;/p&gt; &lt;p&gt; (Avril 2001, 8 jours, Station spatiale internationale [SSI]) &lt;/p&gt; &lt;p&gt; Le premier v&#233;ritable touriste spatial, ayant lui-m&#234;me pay&#233; son billet, aux environs de 20 millions $. Apr&#232;s avoir &#233;t&#233; au service du Jet Propulsion Laboratory (JPL, NASA), il a fait fortune en appliquant ses connaissances &#224; la gestion de portefeuilles boursiers. Il a fait l&#39;objet de critiques aux &#201;tats-Unis &#224; cause de son association avec le programme russe; des astronautes am&#233;ricains avaient refus&#233; de s&#39;entra&#238;ner &#224; ses c&#244;t&#233;s, et l&#39;accueil &#224; la SSI fut glacial. &lt;/p&gt; &lt;p&gt; Mark Richard Shuttleworth &lt;/p&gt; &lt;p&gt; (Avril 2002, 10 jours, SSI) &lt;/p&gt; &lt;p&gt; Cet entrepreneur britannique d&#39;origine sud-africaine est d&#39;abord connu pour son travail dans le domaine de l&#39;informatique et du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Il a vendu sa premi&#232;re compagnie, Thawte, pour 575 millions $ en 1999. il a par la suite utilis&#233; son capital pour d&#233;velopper des produits Linux comme le syst&#232;me Debian et plus tard Ubuntu. &lt;/p&gt; &lt;p&gt; Gregory Hammond &quot;Greg&quot; Olsen &lt;/p&gt; &lt;p&gt; (Octobre 2005, 10 jours, SSI) &lt;/p&gt; &lt;p&gt; &#192; la fois scientifique et entrepreneur, Greg Olsen a cr&#233;&#233; une entreprise dans le domaine de l&#39;opto&#233;lectronique. Il a aussi investi dans la production de vin, poss&#232;de un ranch au Montana et enseigne la physique &#224; l&#39;Universit&#233; Rider. &lt;/p&gt; &lt;p&gt; Des civils dans l&#39;espace 7 &lt;/p&gt; &lt;p&gt; Anousheh Ansari &lt;/p&gt; &lt;p&gt; (Septembre 2006, 11 jours, SSI) &lt;/p&gt; &lt;p&gt; Premi&#232;re femme &#224; s&#39;envoler comme touriste dans l&#39;espace, et aussi premi&#232;re musulmane dans l&#39;espace, Anousheh Ansari est une Irano-Am&#233;ricaine, cofondatrice des compagnies Prodea Systems et Telecom Technologies. Son nom de famille est bien connu puisque les Ansari &#233;taient les principaux commanditaires du X-Prize, accord&#233; &#224; la premi&#232;re entreprise priv&#233;e &#224; lancer un v&#233;hicule r&#233;utilisable dans l&#39;espace. &lt;/p&gt; &lt;p&gt; Charles Simonyi &lt;/p&gt; &lt;p&gt; (Avril 2007, 12 jours; mars 2009, 13 jours, SSI) &lt;/p&gt; &lt;p&gt; Cet homme d&#39;affaires s&#39;est surtout fait conna&#238;tre pour son travail chez Microsoft, o&#249; il a con&#231;u les premi&#232;res versions des logiciels Word et Excel, qui ont plus tard form&#233; la suite Office. Il poss&#232;de aujourd&#39;hui sa propre compagnie, Intentional software. Il a effectu&#233; deux vols &#224; la station spatiale. Apr&#232;s avoir fr&#233;quent&#233; Martha Stewart pendant 15 ans, il a mari&#233; une riche su&#233;doise, 32 ans plus jeune que lui. &lt;/p&gt; &lt;p&gt; Guy Lalibert&#233; c&#233;l&#233;brera ses 50 ans en orbite sur la Station spatiale internationale, o&#249; il se rendra le 30 septembre &#224; bord d&#39;une capsule Soyouz. - photo AFP &lt;/p&gt; &lt;p&gt; Richard Allen Garriott &lt;/p&gt; &lt;p&gt; (Octobre 2008, 12 jours, SSI) &lt;/p&gt; &lt;p&gt; Un concepteur de jeux informatiques, auteur des s&#233;ries Ultima, il a fond&#233; la compagnie Origin avec d&#39;autres membres de sa famille. Cette entreprise est reconnue comme une des plus influentes dans le monde du jeu vid&#233;o. Son p&#232;re, Owen Garriott, a lui-m&#234;me &#233;t&#233; astronaute pour la NASA, o&#249; il a effectu&#233; deux missions dans l&#39;espace.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Recherche Pierre Asselin&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2009 Le Soleil. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20090605&amp;#183;LS&amp;#183;0010&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">station spatiale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">touriste spatial</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">gestion de portefeuilles boursiers</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">domaine de l'optoélectronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">versions des logiciels</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Astronomie et exploration spatiale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montana</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720090605%c2%b7LS%c2%b70010" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720090605%c2%b7LS%c2%b70010">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=ls4_small.gif"><span class="icon-Information" sourcecode="LS"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Soleil                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         vendredi 5 juin 2009 408 mots, p. 6</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Christa McAuliffe            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>(Janvier 1986) </p> <p> Cette enseignante devait être la première civile à aller dans l'espace, aux frais de la NASA, mais sans faire partie du programme d'astronautes. Elle a malheureusement été tuée avec tous ses compagnons par l'explosion de la navette Challenger peu après le lancement. </p> <p> Toyohiro Akiyama etHelen Sharman </p> <p> (Décembre 1990, 8 jours, Station Mir)</p>
+
+
+<p>Un journaliste japonais et une chimiste britannique sont donc les premiers civils à atteindre l'espace. Ils n'ont cependant pas payé eux-mêmes leur billet. Ils avaient été choisis dans le cadre de programmes financés par l'agence russe et diverses com-pagnies. </p> <p> Dennis Anthony Tito </p> <p> (Avril 2001, 8 jours, Station spatiale internationale [SSI]) </p> <p> Le premier véritable touriste spatial, ayant lui-même payé son billet, aux environs de 20 millions $. Après avoir été au service du Jet Propulsion Laboratory (JPL, NASA), il a fait fortune en appliquant ses connaissances à la gestion de portefeuilles boursiers. Il a fait l'objet de critiques aux États-Unis à cause de son association avec le programme russe; des astronautes américains avaient refusé de s'entraîner à ses côtés, et l'accueil à la SSI fut glacial. </p> <p> Mark Richard Shuttleworth </p> <p> (Avril 2002, 10 jours, SSI) </p> <p> Cet entrepreneur britannique d'origine sud-africaine est d'abord connu pour son travail dans le domaine de l'informatique et du <mark>logiciel</mark> <mark>libre</mark>. Il a vendu sa première compagnie, Thawte, pour 575 millions $ en 1999. il a par la suite utilisé son capital pour développer des produits Linux comme le système Debian et plus tard Ubuntu. </p> <p> Gregory Hammond "Greg" Olsen </p> <p> (Octobre 2005, 10 jours, SSI) </p> <p> À la fois scientifique et entrepreneur, Greg Olsen a créé une entreprise dans le domaine de l'optoélectronique. Il a aussi investi dans la production de vin, possède un ranch au Montana et enseigne la physique à l'Université Rider. </p> <p> Des civils dans l'espace 7 </p> <p> Anousheh Ansari </p> <p> (Septembre 2006, 11 jours, SSI) </p> <p> Première femme à s'envoler comme touriste dans l'espace, et aussi première musulmane dans l'espace, Anousheh Ansari est une Irano-Américaine, cofondatrice des compagnies Prodea Systems et Telecom Technologies. Son nom de famille est bien connu puisque les Ansari étaient les principaux commanditaires du X-Prize, accordé à la première entreprise privée à lancer un véhicule réutilisable dans l'espace. </p> <p> Charles Simonyi </p> <p> (Avril 2007, 12 jours; mars 2009, 13 jours, SSI) </p> <p> Cet homme d'affaires s'est surtout fait connaître pour son travail chez Microsoft, où il a conçu les premières versions des logiciels Word et Excel, qui ont plus tard formé la suite Office. Il possède aujourd'hui sa propre compagnie, Intentional software. Il a effectué deux vols à la station spatiale. Après avoir fréquenté Martha Stewart pendant 15 ans, il a marié une riche suédoise, 32 ans plus jeune que lui. </p> <p> Guy Laliberté célébrera ses 50 ans en orbite sur la Station spatiale internationale, où il se rendra le 30 septembre à bord d'une capsule Soyouz. - photo AFP </p> <p> Richard Allen Garriott </p> <p> (Octobre 2008, 12 jours, SSI) </p> <p> Un concepteur de jeux informatiques, auteur des séries Ultima, il a fondé la compagnie Origin avec d'autres membres de sa famille. Cette entreprise est reconnue comme une des plus influentes dans le monde du jeu vidéo. Son père, Owen Garriott, a lui-même été astronaute pour la NASA, où il a effectué deux missions dans l'espace.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Recherche Pierre Asselin</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2009 Le Soleil. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20090605·LS·0010</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20090605·LS·0010";
+    var _docIndex = 506;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20090605·LS·0010';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720090605%C2%B7LS%C2%B70010&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720090605%C2%B7LS%C2%B70010&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720090605%C2%B7LS%C2%B70010&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720090605%C2%B7LS%C2%B70010&docIndex=506&FullScreen=1";
+                
+	var _keyDoc = 'news·20090605·LS·0010';
+</script>
+</div></body></html>

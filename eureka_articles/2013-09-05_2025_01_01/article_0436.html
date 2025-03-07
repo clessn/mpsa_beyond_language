@@ -1,0 +1,525 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;co &amp; Entreprise,         mardi 13 novembre 2018 587 mots, p. SCQ7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les limites du mod&#232;le du b&#233;n&#233;volat            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Avril 2014 : un vent de panique s&#39;empare de centaines de milliers de d&#233;veloppeurs dans le monde entier. Une faille de s&#233;curit&#233;, baptis&#233;e &quot; Heartbleed &quot;, vient d&#39;&#234;tre rendue publique; elle touche OpenSSL, un logiciel de chiffrement permettant d&#39;assurer une connexion s&#233;curis&#233;e. La faille est s&#233;v&#232;re et OpenSSL est utilis&#233; par des millions de sites et de services : banques, messageries en ligne... Les jours suivants, alors que les d&#233;veloppeurs corrigent en catastrophe le probl&#232;me, le directeur de la fondation OpenSSL, qui soutient le d&#233;veloppement de cette brique logicielle cruciale, publie un long mea culpa dans lequel il explique que, faute de moyens, le projet n&#39;&#233;tait suivi que par... un seul d&#233;veloppeur &#224; temps plein.&lt;/p&gt;
+
+
+&lt;p&gt;Et ils sont nombreux, les projets libres d&#233;velopp&#233;s par des &#233;quipes b&#233;n&#233;voles ou quasi b&#233;n&#233;voles sur lesquels s&#39;appuient des millions de sites et services. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; L&#39;outil dont j&#39;ai assur&#233; la maintenance activement est utilis&#233; par plusieurs dizaines de milliers de personnes au quotidien &quot;&lt;/em&gt;, note Bastien Guerry, responsable de la maintenance d&#39;Org-mode, un module important de l&#39;&#233;diteur de texte libre GNU Emacs. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Quand j&#39;&#233;tais tr&#232;s actif, j&#39;y passais trois heures par jour, j&#39;envoyais 5 000 e-mails chaque ann&#233;e. Parfois, on tombe sur des utilisateurs de grandes entreprises qui ont des exigences tr&#232;s pr&#233;cises et d&#39;autres qui peuvent les formuler de fa&#231;on d&#233;sagr&#233;able. Psycho-logiquement, c&#39;est difficile d&#39;assurer un service de qualit&#233; professionnelle ou de faire fi du facteur humain quand on est compl&#232;tement b&#233;n&#233;vole. &quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Modes de financement participatifsCertains projets appliquent un mod&#232;le similaire &#224; celui du g&#233;ant du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; Red Hat, en proposant des services payants. Mais le succ&#232;s &#233;conomique n&#39;est pas toujours au rendez-vous : c&#39;&#233;tait le cas, par exemple, de la fondation OpenSSL, qui a depuis b&#233;n&#233;fici&#233; d&#39;un coup de pouce de la Fondation Linux. D&#39;autres d&#233;veloppeurs se tournent vers les modes de financement participatifs, avec des fortunes diverses. Des cr&#233;ateurs de plusieurs grandes biblioth&#232;ques de code (&lt;em style=&quot;font-style:italic;&quot;&gt;frameworks)&lt;/em&gt; JavaScript, des briques logicielles tr&#232;s utilis&#233;es par des sites et des services Web, ont ainsi recours &#224; Patreon, un site con&#231;u pour soutenir les artistes. Evan You, le cr&#233;ateur de Vue.js, touche ainsi plus de 16 000 dollars chaque mois (14 000 euros), vers&#233;s par 233 soutiens. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Un essai qui a bien fonctionn&#233; &quot;&lt;/em&gt;, explique-t-il au &lt;em style=&quot;font-style:italic;&quot;&gt;Monde&lt;/em&gt;, et qui lui offre d&#233;sormais &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; une ind&#233;pendance totale lui permettant de choisir o&#249; concentrer son &#233;nergie &quot;&lt;/em&gt;. Depuis peu, une alternative libre &#224; Patreon, Liberapay, a &#233;galement vu le jour. &lt;/p&gt; &lt;p&gt; La question du mod&#232;le &#233;conomique, loin d&#39;&#234;tre taboue, est au coeur des r&#233;flexions des communaut&#233;s du libre. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Pour &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt; &lt;/em&gt; informaticien et th&#233;oricien fondateur du mouvement &lt;em style=&quot;font-style:italic;&quot;&gt;, cela n&#39;a jamais &#233;t&#233; un probl&#232;me qu&#39;une entreprise arrive &#224; faire de l&#39;argent avec du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; &lt;/em&gt;, rappelle le sociologue S&#233;bastien Broca. &lt;em style=&quot;font-style:italic;&quot;&gt;Ce n&#39;est pas contraire &#224; la philosophie du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Mais ces questions &#233;conomiques ne se posaient pas il y a dix ou quinze ans, parce que les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; n&#39;avaient pas une telle importance pour les grandes entreprises. &quot; &lt;/em&gt; Le mod&#232;le des fondations, qui offre de nombreux avantages, &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; n&#39;est pas la solution pour tous les projets &quot;&lt;/em&gt;, estime M. Guerry. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; La Fondation Mozilla&lt;/em&gt; qui &#233;dite le navigateur Firefox &lt;em style=&quot;font-style:italic;&quot;&gt;a &#233;t&#233; autrefois financi&#232;rement d&#233;pendante de Google, et cela cr&#233;ait des incertitudes sur son avenir. &quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La question se pose avec d&#39;autant plus d&#39;acuit&#233; que le monde de l&#39;informatique a engag&#233; une importante r&#233;flexion sur les questions de diversit&#233;, note M. Guerry. Le b&#233;n&#233;volat plus ou moins contraint de certains projets contribuerait aussi, selon lui, &#224; renforcer le fait que les hommes, notamment, sont ultramajoritaires dans ce secteur. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;C. LE. et Da. L.&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;11 novembre 2018&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2018 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20181113&amp;#183;LM&amp;#183;9544572&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">limites du modèle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèle du bénévolat</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèle des fondations</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">directeur de la fondation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Postes et messageries</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Red Hat</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720181113%c2%b7LM%c2%b79544572" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720181113%c2%b7LM%c2%b79544572">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Éco &amp; Entreprise,         mardi 13 novembre 2018 587 mots, p. SCQ7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les limites du modèle du bénévolat            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Avril 2014 : un vent de panique s'empare de centaines de milliers de développeurs dans le monde entier. Une faille de sécurité, baptisée " Heartbleed ", vient d'être rendue publique; elle touche OpenSSL, un logiciel de chiffrement permettant d'assurer une connexion sécurisée. La faille est sévère et OpenSSL est utilisé par des millions de sites et de services : banques, messageries en ligne... Les jours suivants, alors que les développeurs corrigent en catastrophe le problème, le directeur de la fondation OpenSSL, qui soutient le développement de cette brique logicielle cruciale, publie un long mea culpa dans lequel il explique que, faute de moyens, le projet n'était suivi que par... un seul développeur à temps plein.</p>
+
+
+<p>Et ils sont nombreux, les projets libres développés par des équipes bénévoles ou quasi bénévoles sur lesquels s'appuient des millions de sites et services. <em style="font-style:italic;">" L'outil dont j'ai assuré la maintenance activement est utilisé par plusieurs dizaines de milliers de personnes au quotidien "</em>, note Bastien Guerry, responsable de la maintenance d'Org-mode, un module important de l'éditeur de texte libre GNU Emacs. <em style="font-style:italic;">" Quand j'étais très actif, j'y passais trois heures par jour, j'envoyais 5 000 e-mails chaque année. Parfois, on tombe sur des utilisateurs de grandes entreprises qui ont des exigences très précises et d'autres qui peuvent les formuler de façon désagréable. Psycho-logiquement, c'est difficile d'assurer un service de qualité professionnelle ou de faire fi du facteur humain quand on est complètement bénévole. "</em></p><p>Modes de financement participatifsCertains projets appliquent un modèle similaire à celui du géant du <mark>logiciel</mark> <mark>libre</mark> Red Hat, en proposant des services payants. Mais le succès économique n'est pas toujours au rendez-vous : c'était le cas, par exemple, de la fondation OpenSSL, qui a depuis bénéficié d'un coup de pouce de la Fondation Linux. D'autres développeurs se tournent vers les modes de financement participatifs, avec des fortunes diverses. Des créateurs de plusieurs grandes bibliothèques de code (<em style="font-style:italic;">frameworks)</em> JavaScript, des briques logicielles très utilisées par des sites et des services Web, ont ainsi recours à Patreon, un site conçu pour soutenir les artistes. Evan You, le créateur de Vue.js, touche ainsi plus de 16 000 dollars chaque mois (14 000 euros), versés par 233 soutiens. <em style="font-style:italic;">" Un essai qui a bien fonctionné "</em>, explique-t-il au <em style="font-style:italic;">Monde</em>, et qui lui offre désormais <em style="font-style:italic;">" une indépendance totale lui permettant de choisir où concentrer son énergie "</em>. Depuis peu, une alternative libre à Patreon, Liberapay, a également vu le jour. </p> <p> La question du modèle économique, loin d'être taboue, est au coeur des réflexions des communautés du libre. <em style="font-style:italic;">" Pour <mark>Richard</mark> <mark>Stallman</mark> </em> informaticien et théoricien fondateur du mouvement <em style="font-style:italic;">, cela n'a jamais été un problème qu'une entreprise arrive à faire de l'argent avec du <mark>logiciel</mark> <mark>libre</mark> </em>, rappelle le sociologue Sébastien Broca. <em style="font-style:italic;">Ce n'est pas contraire à la philosophie du <mark>logiciel</mark> <mark>libre</mark>. Mais ces questions économiques ne se posaient pas il y a dix ou quinze ans, parce que les <mark>logiciels</mark> <mark>libres</mark> n'avaient pas une telle importance pour les grandes entreprises. " </em> Le modèle des fondations, qui offre de nombreux avantages, <em style="font-style:italic;">" n'est pas la solution pour tous les projets "</em>, estime M. Guerry. <em style="font-style:italic;">" La Fondation Mozilla</em> qui édite le navigateur Firefox <em style="font-style:italic;">a été autrefois financièrement dépendante de Google, et cela créait des incertitudes sur son avenir. "</em></p><p>La question se pose avec d'autant plus d'acuité que le monde de l'informatique a engagé une importante réflexion sur les questions de diversité, note M. Guerry. Le bénévolat plus ou moins contraint de certains projets contribuerait aussi, selon lui, à renforcer le fait que les hommes, notamment, sont ultramajoritaires dans ce secteur. </p> <p><em style="font-weight:bold;">C. LE. et Da. L.</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">11 novembre 2018</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2018 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20181113·LM·9544572</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20181113·LM·9544572";
+    var _docIndex = 435;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20181113·LM·9544572';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720181113%C2%B7LM%C2%B79544572&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720181113%C2%B7LM%C2%B79544572&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720181113%C2%B7LM%C2%B79544572&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720181113%C2%B7LM%C2%B79544572&docIndex=435&FullScreen=1";
+                
+	var _keyDoc = 'news·20181113·LM·9544572';
+</script>
+</div></body></html>

@@ -1,0 +1,473 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        jeudi 12 mai 2005 327 mots&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Micha&#235;l Ughetti, cr&#233;ateur d&#39;un logiciel de traitement d&#39;images&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Chercheur en herbe            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;M. D.&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Et vous, que faisiez-vous lorsque vous aviez 19 ans ? Micha&#235;l Ughetti, lui, ne ch&#244;me pas. El&#232;ve en deuxi&#232;me ann&#233;e du cycle pr&#233;paratoire &#224; l&#39;Ecole centrale d&#39;&#233;lectronique (ECE), il a d&#233;velopp&#233; Image-In, un logiciel destin&#233; aux chercheurs en traitement et analyse d&#39;images. &lt;/p&gt; &lt;p&gt; Tr&#232;s utile pour la surveillance vid&#233;o, il s&#39;applique aussi au domaine m&#233;dical. L&#39;aventure commence en 2004, lorsque Fr&#233;d&#233;ric Ravaut, responsable des enseignements d&#39;informatique &#224; l&#39;ECE, initie ses &#233;tudiants &#224; ses travaux de recherche men&#233;s au sein du LACSC, le laboratoire d&#39;analyse et de contr&#244;le des syst&#232;mes complexes de l&#39;&#233;cole d&#39;&#233;lectronique. Objectif : cr&#233;er une plate-forme qui puisse analyser le visage d&#39;une personne &#233;pileptique (dilatation des yeux, crispation de la bouche et du visage...) pour apporter aux sp&#233;cialistes de nouvelles donn&#233;es utiles au diagnostic et &#224; la d&#233;termination du traitement adapt&#233;.&lt;/p&gt;
+
+
+&lt;p&gt;Tr&#232;s vite, Micha&#235;l distance ses camarades. Voil&#224; trois ans qu&#39;il s&#39;int&#233;resse de tr&#232;s pr&#232;s &#224; la programmation. Il avance vite et, surtout, cerne parfaitement les enjeux de ce qu&#39;il recherche. &lt;/p&gt; &lt;p&gt; &#171;Je me suis lanc&#233; dans cette aventure car les d&#233;fis de la programmation me passionnent, explique-t-il. Il faut &#234;tre le plus g&#233;n&#233;rique possible, il y a &#233;norm&#233;ment de contraintes. C&#39;est difficile mais aussi tr&#232;s stimulant.&#187; Michael fait &#233;voluer les travaux de fa&#231;on significative lorsqu&#39;il cr&#233;e une plate-forme permettant de fusionner les algorithmes (suite finie, s&#233;quentielle de r&#232;gles que l&#39;on applique &#224; un nombre fini de donn&#233;es, permettant de r&#233;soudre des classes de probl&#232;mes semblables) d&#233;velopp&#233;s par les autres &#233;l&#232;ves. &lt;/p&gt; &lt;p&gt; Lorsqu&#39;au d&#233;but de l&#39;&#233;t&#233; on lui propose un stage au sein du laboratoire CRIP5-SIP de l&#39;universit&#233; Paris-V, il n&#39;h&#233;site pas une seconde, conscient de la chance qui s&#39;offre &#224; lui. &#171;La recherche est &#224; la base de tout, on a souvent tendance &#224; l&#39;oublier&#187;, commente Micha&#235;l. Il confronte alors son travail aux besoins des chercheurs en traitement d&#39;images afin d&#39;y r&#233;pondre au mieux. &lt;/p&gt; &lt;p&gt; &#171;Apr&#232;s le stage, j&#39;ai continu&#233; &#224; d&#233;velopper tr&#232;s activement le logiciel. Aujourd&#39;hui, il n&#39;est pas termin&#233; mais il est stable et, le plus important, utilisable.&#187; Image-In poss&#232;de deux fonctions principales : l&#39;acquisition d&#39;images multisources (photos jpg, vid&#233;o analogique ou num&#233;rique...) et le traitement de l&#39;image par des algorithmes de base de traitement d&#39;images. Il permet &#233;galement de d&#233;finir et de mettre en parall&#232;le des cha&#238;nes de traitements pour comparer leur temps d&#39;ex&#233;cution et leur efficacit&#233;. &lt;/p&gt; &lt;p&gt; Micha&#235;l a r&#233;cemment mis le logiciel en distribution &lt;mark&gt;open&lt;/mark&gt;-&lt;mark&gt;source&lt;/mark&gt; sur le site &lt;a target=&quot;_blank&quot; href=&quot;https://www.sourceforge.net.&quot;&gt;www.sourceforge.net.&lt;/a&gt; Ainsi, chacun peut avoir acc&#232;s aux codes du programme et l&#39;utiliser gratuitement. Il attend maintenant les r&#233;actions des utilisateurs pour pouvoir am&#233;liorer son logiciel. &lt;/p&gt; &lt;p&gt; En attendant, ce passionn&#233; d&#39;astronomie observe les &#233;toiles d&#232;s qu&#39;il en a le loisir. &lt;a target=&quot;_blank&quot; href=&quot;https://www.ece.fr&quot;&gt;www.ece.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; M. D.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20050512&amp;#183;LF&amp;#183;20050512&amp;#215;2fig0329&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">traitement d'images</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">acquisition d'images multisources</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">contrôle des systèmes complexes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">systèmes complexes de l'école</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">enseignements d'informatique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050512%c2%b7LF%c2%b720050512%c3%972fig0329" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050512%c2%b7LF%c2%b720050512%c3%972fig0329">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        jeudi 12 mai 2005 327 mots</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Michaël Ughetti, créateur d'un logiciel de traitement d'images</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Chercheur en herbe            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">M. D.</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Et vous, que faisiez-vous lorsque vous aviez 19 ans ? Michaël Ughetti, lui, ne chôme pas. Elève en deuxième année du cycle préparatoire à l'Ecole centrale d'électronique (ECE), il a développé Image-In, un logiciel destiné aux chercheurs en traitement et analyse d'images. </p> <p> Très utile pour la surveillance vidéo, il s'applique aussi au domaine médical. L'aventure commence en 2004, lorsque Frédéric Ravaut, responsable des enseignements d'informatique à l'ECE, initie ses étudiants à ses travaux de recherche menés au sein du LACSC, le laboratoire d'analyse et de contrôle des systèmes complexes de l'école d'électronique. Objectif : créer une plate-forme qui puisse analyser le visage d'une personne épileptique (dilatation des yeux, crispation de la bouche et du visage...) pour apporter aux spécialistes de nouvelles données utiles au diagnostic et à la détermination du traitement adapté.</p>
+
+
+<p>Très vite, Michaël distance ses camarades. Voilà trois ans qu'il s'intéresse de très près à la programmation. Il avance vite et, surtout, cerne parfaitement les enjeux de ce qu'il recherche. </p> <p> «Je me suis lancé dans cette aventure car les défis de la programmation me passionnent, explique-t-il. Il faut être le plus générique possible, il y a énormément de contraintes. C'est difficile mais aussi très stimulant.» Michael fait évoluer les travaux de façon significative lorsqu'il crée une plate-forme permettant de fusionner les algorithmes (suite finie, séquentielle de règles que l'on applique à un nombre fini de données, permettant de résoudre des classes de problèmes semblables) développés par les autres élèves. </p> <p> Lorsqu'au début de l'été on lui propose un stage au sein du laboratoire CRIP5-SIP de l'université Paris-V, il n'hésite pas une seconde, conscient de la chance qui s'offre à lui. «La recherche est à la base de tout, on a souvent tendance à l'oublier», commente Michaël. Il confronte alors son travail aux besoins des chercheurs en traitement d'images afin d'y répondre au mieux. </p> <p> «Après le stage, j'ai continué à développer très activement le logiciel. Aujourd'hui, il n'est pas terminé mais il est stable et, le plus important, utilisable.» Image-In possède deux fonctions principales : l'acquisition d'images multisources (photos jpg, vidéo analogique ou numérique...) et le traitement de l'image par des algorithmes de base de traitement d'images. Il permet également de définir et de mettre en parallèle des chaînes de traitements pour comparer leur temps d'exécution et leur efficacité. </p> <p> Michaël a récemment mis le logiciel en distribution <mark>open</mark>-<mark>source</mark> sur le site <a target="_blank" href="https://www.sourceforge.net.">www.sourceforge.net.</a> Ainsi, chacun peut avoir accès aux codes du programme et l'utiliser gratuitement. Il attend maintenant les réactions des utilisateurs pour pouvoir améliorer son logiciel. </p> <p> En attendant, ce passionné d'astronomie observe les étoiles dès qu'il en a le loisir. <a target="_blank" href="https://www.ece.fr">www.ece.fr</a> </p> <p> M. D.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20050512·LF·20050512×2fig0329</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20050512·LF·20050512×2fig0329";
+    var _docIndex = 0;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20050512·LF·20050512×2fig0329';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720050512%C2%B7LF%C2%B720050512%C3%972fig0329&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720050512%C2%B7LF%C2%B720050512%C3%972fig0329&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720050512%C2%B7LF%C2%B720050512%C3%972fig0329&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720050512%C2%B7LF%C2%B720050512%C3%972fig0329&docIndex=0&FullScreen=1";
+                
+	var _keyDoc = 'news·20050512·LF·20050512×2fig0329';
+</script>
+</div></body></html>

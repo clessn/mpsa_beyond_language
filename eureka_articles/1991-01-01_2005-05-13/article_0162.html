@@ -1,0 +1,503 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Entreprises,         mardi 22 juin 2004 448 mots, p. 23&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+L&#39;Etat veut diminuer ses d&#233;penses informatiques gr&#226;ce aux &lt;mark&gt; logiciels&lt;/mark&gt; &lt;mark&gt; libres&lt;/mark&gt;.            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Nathalie Brafman et St&#233;phane Foucart&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;LE GOUVERNEMENT veut faire des &#233;conomies et diviser par deux le co&#251;t des programmes informatiques utilis&#233;s par l&#39;Etat en ayant recours aux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. C&#39;est ce qu&#39;a d&#233;clar&#233; le ministre de la fonction publique, Renaud Dutreil, dans un entretien accord&#233; &#224; l&#39;agence de presse Reuters, publi&#233; vendredi 18 juin. Linux, le leader des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, et les autres (Open Office, Mozilla, Apache...) seront d&#233;sormais en concurrence avec Microsoft, qui redeviendra un fournisseur parmi d&#39;autres. &lt;/p&gt; &lt;p&gt; &#171; Dans les trois ann&#233;es &#224; venir, une grande partie des licences logiciels des 900 000 postes informatiques de l&#39;Etat devront &#234;tre renouvel&#233;es. Sur les seuls produits de bureautique (traitement de texte, tableur...), l&#39;enjeu financier est sup&#233;rieur &#224; 300 millions d&#39;euros &#187;, affirme M. Dutreil, qui souhaite que les minist&#232;res &#233;tudient tr&#232;s s&#233;rieusement &#171; toutes les solutions pour diminuer cette facture &#187;. Cette volont&#233; va au-del&#224; des logiciels de bureautique et concerne aussi les syst&#232;mes d&#39;exploitation, les outils de navigation Internet et le courrier &#233;lectronique.&lt;/p&gt;
+
+
+&lt;p&gt;Selon M. Dutreil, les acteurs des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &#171; constituent aujourd&#39;hui une solution tr&#232;s cr&#233;dible, en particulier en termes de s&#233;curit&#233;, (mais aussi) en termes de prix et de fonctionnalit&#233;s &#187;. &lt;/p&gt; &lt;p&gt; En Europe, plusieurs administrations publiques ont r&#233;cemment bascul&#233; une part de leur syst&#232;me d&#39;information vers les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, notamment en Allemagne et au Royaume-Uni. La France n&#39;est pas en reste, puisque les minist&#232;res de l&#39;agriculture, de la d&#233;fense, de la culture et de l&#39;&#233;quipement ont d&#233;j&#224; sign&#233; des contrats pour r&#233;aliser la m&#234;me mutation. &lt;/p&gt; &lt;p&gt; &#171; Nous nous r&#233;jouissons que la France montre ainsi l&#39;exemple, affirme Jacques Le Marois, cofondateur de l&#39;&#233;diteur de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; MandrakeSoft. Cela va pousser d&#39;autres pays ainsi que des grands comptes &#224; adopter Linux et les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. &#187; Pour M. Le Marois, &#171; les principaux avantages offerts par les solutions libres sont l&#39;ind&#233;pendance vis-&#224;-vis de l&#39;&#233;diteur, les co&#251;ts &#233;cras&#233;s, mais &#233;galement l&#39;insensibilit&#233; &#224; la plupart des virus informatiques en circulation &#187;. &lt;/p&gt; &lt;p&gt; Microsoft, de son c&#244;t&#233;, se dit pr&#234;t &#224; contribuer &#224; la baisse du co&#251;t global des d&#233;penses informatiques de l&#39;Etat. &#171; Les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; peuvent &#234;tre une fausse bonne id&#233;e, car le co&#251;t de leurs services associ&#233;s peut &#234;tre explosif, pr&#233;vient Christophe Aulnette, directeur g&#233;n&#233;ral de Microsoft France. Le d&#233;bat d&#233;passe le co&#251;t des logiciels, qui sont relatifs, par rapport aux co&#251;ts globaux des d&#233;penses informatiques. En moyenne, les logiciels ne repr&#233;sentent en effet que 3 % &#224; 5 % du co&#251;t global informatique, rarement plus de 10 %. &#187; &lt;/p&gt; &lt;p&gt; Jusque-l&#224;, dans les administrations, le recours aux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; n&#39;&#233;tait envisag&#233; que pour les serveurs, o&#249; la perte de march&#233;s ne repr&#233;sente pas un danger pour Microsoft. D&#233;sormais, les administrations r&#233;fl&#233;chissent &#224; remplacer une part de leurs programmes de bureautique. &#171; Les premiers tests avec Mozilla (un programme de navigation sur Internet et de messagerie) et OpenOffice (une suite bureautique) ont &#233;t&#233; concluants &#187;, affirme M. Le Marois. &lt;/p&gt; &lt;p&gt; Parall&#232;lement, M. Dutreil veut aussi faire baisser la facture t&#233;l&#233;phonique de l&#39;Etat, en lui faisant b&#233;n&#233;ficier des baisses de co&#251;ts permises par les nouvelles technologiques, et notamment par la voix sur Internet (voix sur IP). &#171; La facture t&#233;l&#233;phonique de l&#39;Etat est de 260 millions d&#39;euros par an, explique M. Dutreil. Je pense que nous pourrons la diminuer tr&#232;s rapidement d&#39;un quart en utilisant la technologique de voix sur IP pour toutes les communications entre les administrations. Il existe (sur le march&#233; des t&#233;l&#233;communications) diff&#233;rents concurrents de France T&#233;l&#233;com qui sauraient tout aussi bien que l&#39;op&#233;rateur historique r&#233;pondre &#224; cette attente. Nous s&#233;lectionnerons &#233;videmment le mieux-disant. &#187;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040622&amp;#183;LM&amp;#183;0q2206_865098&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">M. Dutreil</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">facture téléphonique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Le Marois</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">ministre de la fonction publique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Allemagne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">La France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040622%c2%b7LM%c2%b70q2206_865098" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040622%c2%b7LM%c2%b70q2206_865098">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Entreprises,         mardi 22 juin 2004 448 mots, p. 23</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+L'Etat veut diminuer ses dépenses informatiques grâce aux <mark> logiciels</mark> <mark> libres</mark>.            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Nathalie Brafman et Stéphane Foucart</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>LE GOUVERNEMENT veut faire des économies et diviser par deux le coût des programmes informatiques utilisés par l'Etat en ayant recours aux <mark>logiciels</mark> <mark>libres</mark>. C'est ce qu'a déclaré le ministre de la fonction publique, Renaud Dutreil, dans un entretien accordé à l'agence de presse Reuters, publié vendredi 18 juin. Linux, le leader des <mark>logiciels</mark> <mark>libres</mark>, et les autres (Open Office, Mozilla, Apache...) seront désormais en concurrence avec Microsoft, qui redeviendra un fournisseur parmi d'autres. </p> <p> « Dans les trois années à venir, une grande partie des licences logiciels des 900 000 postes informatiques de l'Etat devront être renouvelées. Sur les seuls produits de bureautique (traitement de texte, tableur...), l'enjeu financier est supérieur à 300 millions d'euros », affirme M. Dutreil, qui souhaite que les ministères étudient très sérieusement « toutes les solutions pour diminuer cette facture ». Cette volonté va au-delà des logiciels de bureautique et concerne aussi les systèmes d'exploitation, les outils de navigation Internet et le courrier électronique.</p>
+
+
+<p>Selon M. Dutreil, les acteurs des <mark>logiciels</mark> <mark>libres</mark> « constituent aujourd'hui une solution très crédible, en particulier en termes de sécurité, (mais aussi) en termes de prix et de fonctionnalités ». </p> <p> En Europe, plusieurs administrations publiques ont récemment basculé une part de leur système d'information vers les <mark>logiciels</mark> <mark>libres</mark>, notamment en Allemagne et au Royaume-Uni. La France n'est pas en reste, puisque les ministères de l'agriculture, de la défense, de la culture et de l'équipement ont déjà signé des contrats pour réaliser la même mutation. </p> <p> « Nous nous réjouissons que la France montre ainsi l'exemple, affirme Jacques Le Marois, cofondateur de l'éditeur de <mark>logiciels</mark> <mark>libres</mark> MandrakeSoft. Cela va pousser d'autres pays ainsi que des grands comptes à adopter Linux et les <mark>logiciels</mark> <mark>libres</mark>. » Pour M. Le Marois, « les principaux avantages offerts par les solutions libres sont l'indépendance vis-à-vis de l'éditeur, les coûts écrasés, mais également l'insensibilité à la plupart des virus informatiques en circulation ». </p> <p> Microsoft, de son côté, se dit prêt à contribuer à la baisse du coût global des dépenses informatiques de l'Etat. « Les <mark>logiciels</mark> <mark>libres</mark> peuvent être une fausse bonne idée, car le coût de leurs services associés peut être explosif, prévient Christophe Aulnette, directeur général de Microsoft France. Le débat dépasse le coût des logiciels, qui sont relatifs, par rapport aux coûts globaux des dépenses informatiques. En moyenne, les logiciels ne représentent en effet que 3 % à 5 % du coût global informatique, rarement plus de 10 %. » </p> <p> Jusque-là, dans les administrations, le recours aux <mark>logiciels</mark> <mark>libres</mark> n'était envisagé que pour les serveurs, où la perte de marchés ne représente pas un danger pour Microsoft. Désormais, les administrations réfléchissent à remplacer une part de leurs programmes de bureautique. « Les premiers tests avec Mozilla (un programme de navigation sur Internet et de messagerie) et OpenOffice (une suite bureautique) ont été concluants », affirme M. Le Marois. </p> <p> Parallèlement, M. Dutreil veut aussi faire baisser la facture téléphonique de l'Etat, en lui faisant bénéficier des baisses de coûts permises par les nouvelles technologiques, et notamment par la voix sur Internet (voix sur IP). « La facture téléphonique de l'Etat est de 260 millions d'euros par an, explique M. Dutreil. Je pense que nous pourrons la diminuer très rapidement d'un quart en utilisant la technologique de voix sur IP pour toutes les communications entre les administrations. Il existe (sur le marché des télécommunications) différents concurrents de France Télécom qui sauraient tout aussi bien que l'opérateur historique répondre à cette attente. Nous sélectionnerons évidemment le mieux-disant. »</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040622·LM·0q2206_865098</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040622·LM·0q2206_865098";
+    var _docIndex = 161;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040622·LM·0q2206_865098';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040622%C2%B7LM%C2%B70q2206_865098&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040622%C2%B7LM%C2%B70q2206_865098&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040622%C2%B7LM%C2%B70q2206_865098&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040622%C2%B7LM%C2%B70q2206_865098&docIndex=161&FullScreen=1";
+                
+	var _keyDoc = 'news·20040622·LM·0q2206_865098';
+</script>
+</div></body></html>

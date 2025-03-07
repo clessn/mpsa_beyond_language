@@ -1,0 +1,559 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Economie &amp; Entreprise,         vendredi 26 mai 2023 1115 mots, p. 13&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Le d&#233;fi de d&#233;tecter les contenus issus des IA            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Des entreprises et des r&#233;gulateurs veulent marquer les images et les textes cr&#233;&#233;s par l’intelligence artificielle&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Alexandre Piquard&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Faut-il se r&#233;soudre &#224; un monde o&#249; il est impossible de discerner les contenus g&#233;n&#233;r&#233;s par des intelligences artificielles (IA) de ceux produits par des humains ? La question est chaque jour plus br&#251;lante : les textes bluffants prolif&#232;rent depuis le lancement, en novembre&#160;2022, du robot conversationnel ChatGPT, et les photos trompeuses comme celle du pape en doudoune blanche sont appel&#233;es &#224; se multiplier avec l’essor de logiciels comme Midjourney. &lt;/p&gt; &lt;p&gt; En r&#233;action, certains cherchent des moyens de rendre d&#233;tectables ces contenus synth&#233;tiques. Le d&#233;fi est complexe, mais d’actualit&#233; : mardi 23&#160;mai, le g&#233;ant du logiciel &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; a annonc&#233; des solutions dans ce sens et le ministre de l’&#233;conomie fran&#231;ais, Bruno Le Maire, a &#233;voqu&#233; la question &#224; Paris avec Sam Altman, le PDG d’OpenAI, le cr&#233;ateur de ChatGPT.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;[Rendre d&#233;tectables les contenus cr&#233;&#233;s avec l’IA] &lt;em style=&quot;font-style:italic;&quot;&gt;aiderait &#224; lutter contre la triche &#224; l’universit&#233;, ou contre la g&#233;n&#233;ration massive de propagande et de d&#233;sinformation dans le but, par exemple, d’inonder des blogs de commentaires favorables &#224; l’invasion de l’Ukraine &#187;,&lt;/em&gt;a argument&#233;, dans une conf&#233;rence, en novembre&#160;2022, Scott Aaronson, le chercheur charg&#233; de travailler sur cette question chez OpenAI. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le maintien des distinctions est un imp&#233;ratif &#233;thique pour des raisons li&#233;es aux usages de l’IA, dans l’&#233;ducation, la sant&#233; ou le droit, mais aussi, au niveau philosophique, pour d&#233;limiter ce qui est du ressort humain et ce qui est fait par les machines &#187;,&lt;/em&gt;ajoute Alexei Grinbaum, membre du Comit&#233; national pilote d’&#233;thique du num&#233;rique et auteur de &lt;em style=&quot;font-style:italic;&quot;&gt;Parole de machines&lt;/em&gt; (Humensciences, 192&#160;p., 17,90&#160;euros) &lt;em style=&quot;font-style:italic;&quot;&gt;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Outils int&#233;gr&#233;s ou externes&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Dans cet esprit, &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; a annonc&#233; l’int&#233;gration d’un &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; filigrane cryptographique invisible &#187;&lt;/em&gt; (ou &lt;em style=&quot;font-style:italic;&quot;&gt;watermark&lt;/em&gt;) dans les images cr&#233;&#233;es par ses logiciels Designer et Bing Image Creator : en consultant les m&#233;tadonn&#233;es d’une photo ou vid&#233;o, c’est-&#224;-dire les informations attach&#233;es &#224; ce fichier, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; l’utilisateur pourra voir qu’elle a &#233;t&#233; cr&#233;&#233;e avec une IA &#187;,&lt;/em&gt; dit le groupe. &lt;/p&gt; &lt;p&gt; Disponible &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; dans les prochains mois &#187;,&lt;/em&gt; cette indication de la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; provenance &#187;&lt;/em&gt;d’un contenu repose sur un standard appel&#233; C2PA. Celui-ci a &#233;t&#233; aussi int&#233;gr&#233; par Adobe dans l’outil de retouche d’image gr&#226;ce &#224; l’IA disponible dans son c&#233;l&#232;bre logiciel Photoshop. OpenAI &#233;tudie aussi les techniques de filigrane pour Dall&#160;E&#160;2, son logiciel de g&#233;n&#233;ration d’image &#224; partir d’une description texte. Et son concurrent Midjourney a adopt&#233; un syst&#232;me de m&#233;tadonn&#233;es cr&#233;&#233; par l’IPTC, un organisme de standardisation de l’industrie des m&#233;dias. &lt;/p&gt; &lt;p&gt; La tendance se g&#233;n&#233;ralise : le 10&#160;mai, &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; a assur&#233; travailler &#224; cr&#233;er &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; des outils qui permettent d’identifier les contenus g&#233;n&#233;r&#233;s de fa&#231;on synth&#233;tique&#160;quand vous en rencontrez &#187;.&lt;/em&gt;Ces &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; m&#233;tadonn&#233;es et filigranes &#187;&lt;/em&gt; devraient &#234;tre inclus dans ses logiciels d’IA d’ici la fin de l’ann&#233;e. Ces informations permettront aussi de signaler, dans son moteur de recherche, les contenus synth&#233;tiques utilisant le m&#234;me standard. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Google&lt;/span&gt; pr&#233;cise vouloir prendre ce genre de mesures pour ses mod&#232;les de g&#233;n&#233;ration de son. Tout comme OpenAI. Et ces efforts s’&#233;tendent aussi au texte. Celui-ci pose un d&#233;fi particulier, car les phrases ne sont pas comme les images cantonn&#233;es &#224; un fichier, mais peuvent &#234;tre copi&#233;es et coll&#233;es. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le watermark doit donc &#234;tre un code cach&#233; dans le texte lui-m&#234;me &#187;,&lt;/em&gt;explique M.&#160;Grinbaum. &lt;/p&gt; &lt;p&gt; Une version &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; ultrasimpliste &#187;&lt;/em&gt; serait de placer la lettre &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; e &#187;&lt;/em&gt; tous les 256&#160;caract&#232;res. Mais ce syst&#232;me pourrait facilement &#234;tre rendu inefficace en changeant quelques mots du texte… Depuis ao&#251;t, plusieurs chercheurs, notamment de l’&lt;span class=&quot;stubs&quot;&gt;universit&#233; du Maryland&lt;/span&gt;, aux Etats-Unis, cherchent des m&#233;thodes plus robustes : elles aussi inspir&#233;es du chiffrement, celles-ci introduisent un &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; petit biais math&#233;matique dans l’algorithme qui g&#233;n&#232;re les mots &#187;,&lt;/em&gt; dit M.&#160;Grinbaum. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Vers des r&#233;glementations&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En gros, nous voulons qu’&#224; chaque fois que nos mod&#232;les comme ChatGPT cr&#233;ent un long texte, celui-ci contienne un signal secret dans le choix des mots qui puisse ensuite &#234;tre utilis&#233; pour prouver que celui-ci a &#233;t&#233; cr&#233;&#233; avec un de nos logiciels &#187;,&lt;/em&gt;a expliqu&#233; M.&#160;Aaronson. Ce syst&#232;me n&#233;cessite de conna&#238;tre le biais introduit par le fabricant de l’IA. D’autres syst&#232;mes – comme GPTZero, DetectGPT ou Turnitin – tentent d’identifier les textes synth&#233;tiques de l’ext&#233;rieur, mais leur taux de r&#233;ussite est limit&#233; : celui propos&#233; par OpenAI &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; identifie 26&#160;% des textes g&#233;n&#233;r&#233;s par IA et classifie &#224; tort 9&#160;% des textes &#233;crits par des humains &#187;,&lt;/em&gt; explique l’entreprise. &lt;/p&gt; &lt;p&gt; M.&#160;Grinbaum et tous les sp&#233;cialistes en conviennent : les syst&#232;mes de d&#233;tection ne sont pas infaillibles &lt;em style=&quot;font-style:italic;&quot;&gt;.&lt;/em&gt;Le filigrane d’un texte restera pr&#233;sent si quelques mots sont chang&#233;s et des phrases reformul&#233;es, mais il ne r&#233;sistera pas si l’on utilise un autre logiciel d’AI pour &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; paraphraser &#187;&lt;/em&gt; le texte, explique ainsi un article universitaire paru en&#160;mars. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Une personne d&#233;termin&#233;e pourra le contourner &#187;,&lt;/em&gt;a pr&#233;venu M.&#160;Altman dans un entretien en&#160;janvier. &lt;/p&gt; &lt;p&gt; Autre d&#233;fi de taille : certains logiciels de g&#233;n&#233;ration de texte ou d’images, par exemple en acc&#232;s libre en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, pourraient ne mettre en place aucun filigrane. Et faire perdurer les contenus ind&#233;tectables. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il est imp&#233;ratif de prendre des d&#233;cisions r&#233;glementaires pour imposer le principe de maintien des distinctions &#187;,&lt;/em&gt; en conclut Alexei Grinbaum. Le CNPEN pourrait &#233;voquer ce point dans l’avis sur l’IA qu’il doit rendre au gouvernement fin&#160;juin. &lt;/p&gt; &lt;p&gt; Il faudrait aussi, selon M.&#160;Grinbaum, imposer un &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; standard &#187;&lt;/em&gt;simple &lt;em style=&quot;font-style:italic;&quot;&gt;,&lt;/em&gt; afin d’&#233;viter d’avoir &#224; utiliser plusieurs logiciels de diff&#233;rents fabricants pour d&#233;tecter l’origine d’un contenu. La tra&#231;abilit&#233; des contenus synth&#233;tiques est &#233;galement pr&#244;n&#233;e dans la lettre demandant une &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; pause &#187;&lt;/em&gt;des recherches en IA, sign&#233;e, mardi 28&#160;mars, par des milliers de personnalit&#233;s, dont le dirigeant de Tesla, &lt;span class=&quot;stubs&quot;&gt;Elon Musk&lt;/span&gt;. La mise en place de filigranes est aussi d&#233;fendue par l’ONG DAIR. &lt;/p&gt; &lt;p&gt; Une telle obligation n’est pas int&#233;gr&#233;e dans l’AI Act, le r&#232;glement europ&#233;en en cours de discussion &#224; Bruxelles. Mais Bruno Le Maire a plaid&#233; mardi pour des &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; signalements syst&#233;matiques &#187;&lt;/em&gt; des images g&#233;n&#233;r&#233;es par une IA, voire pour des &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; bandeaux &#187;&lt;/em&gt; barrant les textes. Patrick Kuban, cofondateur de l’association de com&#233;diens Les Voix, esp&#232;re aussi que l’utilisateur sera &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; pr&#233;venu &#187;&lt;/em&gt;s’il &#233;coute une voix synth&#233;tique dans un livre audio ou un film doubl&#233; &lt;em style=&quot;font-style:italic;&quot;&gt;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Tout ce qui sera g&#233;n&#233;r&#233; par l’IA devra obligatoirement &#234;tre signal&#233; &#187;&lt;/em&gt;, avait plaid&#233; le commissaire europ&#233;en &lt;span class=&quot;stubs&quot;&gt;Thierry Breton&lt;/span&gt;, le 3&#160;avril, sur Franceinfo. Les discussions sur l’AI&#160;Act promettent toutefois d’&#234;tre longues. M.&#160;Breton esp&#232;re les voir aboutir d’ici &#224; la fin de l’ann&#233;e, a-t-il dit lors d’une entrevue, mercredi, avec le PDG de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, Sundar Pichai.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;25 mai 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;26 mai 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230526&amp;#183;LM&amp;#183;202305262&amp;#215;20&amp;#215;21050616621&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">contenus synthétiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">maintien des distinctions</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">contenus générés</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèles de génération</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels de génération</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">THIERRY BRETON</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">ELON MUSK</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">MICROSOFT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">UNIVERSITÉ DU MARYLAND</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ukraine</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bruxelles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230526%c2%b7LM%c2%b7202305262%c3%9720%c3%9721050616621" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230526%c2%b7LM%c2%b7202305262%c3%9720%c3%9721050616621">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Economie &amp; Entreprise,         vendredi 26 mai 2023 1115 mots, p. 13</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Le défi de détecter les contenus issus des IA            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Des entreprises et des régulateurs veulent marquer les images et les textes créés par l’intelligence artificielle</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Alexandre Piquard</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Faut-il se résoudre à un monde où il est impossible de discerner les contenus générés par des intelligences artificielles (IA) de ceux produits par des humains ? La question est chaque jour plus brûlante : les textes bluffants prolifèrent depuis le lancement, en novembre&nbsp;2022, du robot conversationnel ChatGPT, et les photos trompeuses comme celle du pape en doudoune blanche sont appelées à se multiplier avec l’essor de logiciels comme Midjourney. </p> <p> En réaction, certains cherchent des moyens de rendre détectables ces contenus synthétiques. Le défi est complexe, mais d’actualité : mardi 23&nbsp;mai, le géant du logiciel <span class="stubs">Microsoft</span> a annoncé des solutions dans ce sens et le ministre de l’économie français, Bruno Le Maire, a évoqué la question à Paris avec Sam Altman, le PDG d’OpenAI, le créateur de ChatGPT.</p>
+
+
+<p><em style="font-style:italic;">«</em>[Rendre détectables les contenus créés avec l’IA] <em style="font-style:italic;">aiderait à lutter contre la triche à l’université, ou contre la génération massive de propagande et de désinformation dans le but, par exemple, d’inonder des blogs de commentaires favorables à l’invasion de l’Ukraine »,</em>a argumenté, dans une conférence, en novembre&nbsp;2022, Scott Aaronson, le chercheur chargé de travailler sur cette question chez OpenAI. <em style="font-style:italic;">« Le maintien des distinctions est un impératif éthique pour des raisons liées aux usages de l’IA, dans l’éducation, la santé ou le droit, mais aussi, au niveau philosophique, pour délimiter ce qui est du ressort humain et ce qui est fait par les machines »,</em>ajoute Alexei Grinbaum, membre du Comité national pilote d’éthique du numérique et auteur de <em style="font-style:italic;">Parole de machines</em> (Humensciences, 192&nbsp;p., 17,90&nbsp;euros) <em style="font-style:italic;">.</em></p><p><em style="font-weight:bold;">Outils intégrés ou externes</em></p><p>Dans cet esprit, <span class="stubs">Microsoft</span> a annoncé l’intégration d’un <em style="font-style:italic;">« filigrane cryptographique invisible »</em> (ou <em style="font-style:italic;">watermark</em>) dans les images créées par ses logiciels Designer et Bing Image Creator : en consultant les métadonnées d’une photo ou vidéo, c’est-à-dire les informations attachées à ce fichier, <em style="font-style:italic;">« l’utilisateur pourra voir qu’elle a été créée avec une IA »,</em> dit le groupe. </p> <p> Disponible <em style="font-style:italic;">« dans les prochains mois »,</em> cette indication de la <em style="font-style:italic;">« provenance »</em>d’un contenu repose sur un standard appelé C2PA. Celui-ci a été aussi intégré par Adobe dans l’outil de retouche d’image grâce à l’IA disponible dans son célèbre logiciel Photoshop. OpenAI étudie aussi les techniques de filigrane pour Dall&nbsp;E&nbsp;2, son logiciel de génération d’image à partir d’une description texte. Et son concurrent Midjourney a adopté un système de métadonnées créé par l’IPTC, un organisme de standardisation de l’industrie des médias. </p> <p> La tendance se généralise : le 10&nbsp;mai, <span class="stubs">Google</span> a assuré travailler à créer <em style="font-style:italic;">« des outils qui permettent d’identifier les contenus générés de façon synthétique&nbsp;quand vous en rencontrez ».</em>Ces <em style="font-style:italic;">« métadonnées et filigranes »</em> devraient être inclus dans ses logiciels d’IA d’ici la fin de l’année. Ces informations permettront aussi de signaler, dans son moteur de recherche, les contenus synthétiques utilisant le même standard. </p> <p><span class="stubs"> Google</span> précise vouloir prendre ce genre de mesures pour ses modèles de génération de son. Tout comme OpenAI. Et ces efforts s’étendent aussi au texte. Celui-ci pose un défi particulier, car les phrases ne sont pas comme les images cantonnées à un fichier, mais peuvent être copiées et collées. <em style="font-style:italic;">« Le watermark doit donc être un code caché dans le texte lui-même »,</em>explique M.&nbsp;Grinbaum. </p> <p> Une version <em style="font-style:italic;">« ultrasimpliste »</em> serait de placer la lettre <em style="font-style:italic;">« e »</em> tous les 256&nbsp;caractères. Mais ce système pourrait facilement être rendu inefficace en changeant quelques mots du texte… Depuis août, plusieurs chercheurs, notamment de l’<span class="stubs">université du Maryland</span>, aux Etats-Unis, cherchent des méthodes plus robustes : elles aussi inspirées du chiffrement, celles-ci introduisent un <em style="font-style:italic;">« petit biais mathématique dans l’algorithme qui génère les mots »,</em> dit M.&nbsp;Grinbaum. </p> <p><em style="font-weight:bold;">Vers des réglementations</em></p><p><em style="font-style:italic;">« En gros, nous voulons qu’à chaque fois que nos modèles comme ChatGPT créent un long texte, celui-ci contienne un signal secret dans le choix des mots qui puisse ensuite être utilisé pour prouver que celui-ci a été créé avec un de nos logiciels »,</em>a expliqué M.&nbsp;Aaronson. Ce système nécessite de connaître le biais introduit par le fabricant de l’IA. D’autres systèmes – comme GPTZero, DetectGPT ou Turnitin – tentent d’identifier les textes synthétiques de l’extérieur, mais leur taux de réussite est limité : celui proposé par OpenAI <em style="font-style:italic;">« identifie 26&nbsp;% des textes générés par IA et classifie à tort 9&nbsp;% des textes écrits par des humains »,</em> explique l’entreprise. </p> <p> M.&nbsp;Grinbaum et tous les spécialistes en conviennent : les systèmes de détection ne sont pas infaillibles <em style="font-style:italic;">.</em>Le filigrane d’un texte restera présent si quelques mots sont changés et des phrases reformulées, mais il ne résistera pas si l’on utilise un autre logiciel d’AI pour <em style="font-style:italic;">« paraphraser »</em> le texte, explique ainsi un article universitaire paru en&nbsp;mars. <em style="font-style:italic;">« Une personne déterminée pourra le contourner »,</em>a prévenu M.&nbsp;Altman dans un entretien en&nbsp;janvier. </p> <p> Autre défi de taille : certains logiciels de génération de texte ou d’images, par exemple en accès libre en <mark>open</mark> <mark>source</mark>, pourraient ne mettre en place aucun filigrane. Et faire perdurer les contenus indétectables. <em style="font-style:italic;">« Il est impératif de prendre des décisions réglementaires pour imposer le principe de maintien des distinctions »,</em> en conclut Alexei Grinbaum. Le CNPEN pourrait évoquer ce point dans l’avis sur l’IA qu’il doit rendre au gouvernement fin&nbsp;juin. </p> <p> Il faudrait aussi, selon M.&nbsp;Grinbaum, imposer un <em style="font-style:italic;">« standard »</em>simple <em style="font-style:italic;">,</em> afin d’éviter d’avoir à utiliser plusieurs logiciels de différents fabricants pour détecter l’origine d’un contenu. La traçabilité des contenus synthétiques est également prônée dans la lettre demandant une <em style="font-style:italic;">« pause »</em>des recherches en IA, signée, mardi 28&nbsp;mars, par des milliers de personnalités, dont le dirigeant de Tesla, <span class="stubs">Elon Musk</span>. La mise en place de filigranes est aussi défendue par l’ONG DAIR. </p> <p> Une telle obligation n’est pas intégrée dans l’AI Act, le règlement européen en cours de discussion à Bruxelles. Mais Bruno Le Maire a plaidé mardi pour des <em style="font-style:italic;">« signalements systématiques »</em> des images générées par une IA, voire pour des <em style="font-style:italic;">« bandeaux »</em> barrant les textes. Patrick Kuban, cofondateur de l’association de comédiens Les Voix, espère aussi que l’utilisateur sera <em style="font-style:italic;">« prévenu »</em>s’il écoute une voix synthétique dans un livre audio ou un film doublé <em style="font-style:italic;">.</em></p><p>« <em style="font-style:italic;">Tout ce qui sera généré par l’IA devra obligatoirement être signalé »</em>, avait plaidé le commissaire européen <span class="stubs">Thierry Breton</span>, le 3&nbsp;avril, sur Franceinfo. Les discussions sur l’AI&nbsp;Act promettent toutefois d’être longues. M.&nbsp;Breton espère les voir aboutir d’ici à la fin de l’année, a-t-il dit lors d’une entrevue, mercredi, avec le PDG de <span class="stubs">Google</span>, Sundar Pichai.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">25 mai 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">26 mai 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230526·LM·202305262×20×21050616621</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230526·LM·202305262×20×21050616621";
+    var _docIndex = 149;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"thierry breton":"90331","elon musk":"91759"};
+		var _orgDic = {"microsoft":"93647","université du maryland":"95997","google":"92575"};
+		var _docName = 'news·20230526·LM·202305262×20×21050616621';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230526%C2%B7LM%C2%B7202305262%C3%9720%C3%9721050616621&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230526%C2%B7LM%C2%B7202305262%C3%9720%C3%9721050616621&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230526%C2%B7LM%C2%B7202305262%C3%9720%C3%9721050616621&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230526%C2%B7LM%C2%B7202305262%C3%9720%C3%9721050616621&docIndex=149&FullScreen=1";
+                
+	var _keyDoc = 'news·20230526·LM·202305262×20×21050616621';
+</script>
+</div></body></html>

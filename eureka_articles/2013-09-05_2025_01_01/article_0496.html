@@ -1,0 +1,533 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; M&#233;decine,         mercredi 21 f&amp;#233;vrier 2018 487 mots, p. SCH6&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et m&#233;decine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Le Livre&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Menaces sur Internet            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Les infrastructures du r&#233;seau des r&#233;seaux sont trop d&#233;pendantes de quelques informaticiens b&#233;n&#233;voles&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Gare, Internet va mourir! Encore?, soupireront &#224; raison les lecteurs. Mille fois une telle pr&#233;diction a en effet &#233;t&#233; formul&#233;e et d&#233;mentie, que ce soit &#224; la suite de l&#39;augmentation du trafic, de failles de s&#233;curit&#233;, d&#39;attaques malveillantes, de lois restrictives... Il en sera s&#251;rement de m&#234;me pour le nouveau risque point&#233; dans ce livre, traduction d&#39;un rapport datant de 2016 de la fondation am&#233;ricaine Ford pour la &#171; promotion de la coop&#233;ration internationale et du progr&#232;s de l&#39;Homme. &lt;/p&gt; &lt;p&gt; Son int&#233;r&#234;t n&#39;est pas de faire inutilement peur, mais d&#39;obliger &#224; s&#39;interroger sur la &#173;mani&#232;re m&#234;me dont cette infrastructure de communication essentielle fonctionne. Le &#173;livre nous fait d&#233;couvrir ainsi des facettes m&#233;connues non seulement techniques mais aussi sociologiques du r&#233;seau des r&#233;seaux.&lt;/p&gt;
+
+
+&lt;p&gt;Car le maillon faible en question est, comme souvent, humain. Il est incarn&#233; par des petites mains, souvent invisibles ou peu connues, qui font tourner la machine en &#233;crivant, corrigeant, am&#233;liorant, ligne &#224; &#173;ligne, les programmes, les langages, les protocoles d&#39;Internet. &lt;/p&gt; &lt;p&gt; Or, nous apprend Nadia Eghbal,employ&#233;e chez Github, une plate-forme de d&#233;veloppement des logiciels en coop&#233;ration, ces cerveaux sont moins nombreux que l&#39;importance de leur oeuvre et de leur travail le laisserait penser. Pire, ils sont m&#234;me parfois solitaires. Comme si l&#39;on d&#233;couvrait que la s&#233;curit&#233; d&#39;un r&#233;seau &#233;lectrique d&#39;une ville ou d&#39;un pays ne reposait que sur une personne... &lt;/p&gt; &lt;p&gt; Fadaises? En 2014, la d&#233;couverte d&#39;une faille dans un logiciel de s&#233;curisation des communications, OpenSSL, avait cr&#233;&#233; la panique dans le cybermonde. Mais le &#171; pire &#187; &#233;tait qu&#39;une personne seulement s&#39;occupait de la maintenance de ce logiciel critique utilis&#233; quotidiennement par des banques, des agences &#233;tatiques, des entreprises! D&#39;autres exemples sont cit&#233;s dans le livre. Des pans entiers de langages primordiaux pour le d&#233;veloppement de sites Web comme Python, Ruby ou JavaScript reposent sur quelques t&#234;tes. Idem pour des briques essentielles de l&#39;informatique comme OpenSSH, BASH, NTP... &lt;/p&gt; &lt;p&gt; L&#39;ironie de l&#39;histoire est que ce qui a fait le succ&#232;s d&#39;Internet est aussi ce qui le menace : les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Ces programmes ouverts, &#233;changeables et modifiables &#224; volont&#233;, ont facilit&#233; le d&#233;veloppement des sites Web, la gestion des bases de donn&#233;es, la s&#233;curit&#233;... sans recourir &#224; de co&#251;teuses et liberticides &#173;licences. Ils sont &#233;crits et entretenus par une communaut&#233; de passionn&#233;s oeuvrant pour le bien commun, mais qui devient victime du syndrome du passager clandestin. Les utilisateurs ne contribuent plus en donnant de leur temps pour am&#233;liorer ces programmes, les corriger, les expliquer... L&#39;&#233;cosyst&#232;me, que Nadia Eghbal compare &#224; un &#171; r&#233;cif corallien &#187;, s&#39;affaiblit. Pour le pr&#233;server, elle liste diff&#233;rentes voies de financement, par des fondations, des entreprises, des dons, des Institutions... &lt;/p&gt; &lt;p&gt; Mais la premi&#232;re &#233;tape est, selon elle, que chacun prenne conscience de la fragilit&#233; de ces oeuvres communes. Son livre y contribue parfaitement.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Sur quoi reposent nos infrastructures num&#233;riques?, de Nadia Eghbal (Framabook et OpenEdition Press, 165 p., 15 €).&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;22 f&amp;#233;vrier 2018&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2018 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20180221&amp;#183;LM&amp;#183;1180416&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">réseau des réseaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sécurisation des communications</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel de sécurisation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">infrastructure de communication essentielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">promotion de la coopération internationale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Commerce électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720180221%c2%b7LM%c2%b71180416" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720180221%c2%b7LM%c2%b71180416">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; Médecine,         mercredi 21 février 2018 487 mots, p. SCH6</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et médecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Le Livre</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Menaces sur Internet            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Les infrastructures du réseau des réseaux sont trop dépendantes de quelques informaticiens bénévoles</p>
+</div>
+
+        <p class="sm-margin-bottomNews">David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Gare, Internet va mourir! Encore?, soupireront à raison les lecteurs. Mille fois une telle prédiction a en effet été formulée et démentie, que ce soit à la suite de l'augmentation du trafic, de failles de sécurité, d'attaques malveillantes, de lois restrictives... Il en sera sûrement de même pour le nouveau risque pointé dans ce livre, traduction d'un rapport datant de 2016 de la fondation américaine Ford pour la « promotion de la coopération internationale et du progrès de l'Homme. </p> <p> Son intérêt n'est pas de faire inutilement peur, mais d'obliger à s'interroger sur la ­manière même dont cette infrastructure de communication essentielle fonctionne. Le ­livre nous fait découvrir ainsi des facettes méconnues non seulement techniques mais aussi sociologiques du réseau des réseaux.</p>
+
+
+<p>Car le maillon faible en question est, comme souvent, humain. Il est incarné par des petites mains, souvent invisibles ou peu connues, qui font tourner la machine en écrivant, corrigeant, améliorant, ligne à ­ligne, les programmes, les langages, les protocoles d'Internet. </p> <p> Or, nous apprend Nadia Eghbal,employée chez Github, une plate-forme de développement des logiciels en coopération, ces cerveaux sont moins nombreux que l'importance de leur oeuvre et de leur travail le laisserait penser. Pire, ils sont même parfois solitaires. Comme si l'on découvrait que la sécurité d'un réseau électrique d'une ville ou d'un pays ne reposait que sur une personne... </p> <p> Fadaises? En 2014, la découverte d'une faille dans un logiciel de sécurisation des communications, OpenSSL, avait créé la panique dans le cybermonde. Mais le « pire » était qu'une personne seulement s'occupait de la maintenance de ce logiciel critique utilisé quotidiennement par des banques, des agences étatiques, des entreprises! D'autres exemples sont cités dans le livre. Des pans entiers de langages primordiaux pour le développement de sites Web comme Python, Ruby ou JavaScript reposent sur quelques têtes. Idem pour des briques essentielles de l'informatique comme OpenSSH, BASH, NTP... </p> <p> L'ironie de l'histoire est que ce qui a fait le succès d'Internet est aussi ce qui le menace : les <mark>logiciels</mark> <mark>libres</mark>. Ces programmes ouverts, échangeables et modifiables à volonté, ont facilité le développement des sites Web, la gestion des bases de données, la sécurité... sans recourir à de coûteuses et liberticides ­licences. Ils sont écrits et entretenus par une communauté de passionnés oeuvrant pour le bien commun, mais qui devient victime du syndrome du passager clandestin. Les utilisateurs ne contribuent plus en donnant de leur temps pour améliorer ces programmes, les corriger, les expliquer... L'écosystème, que Nadia Eghbal compare à un « récif corallien », s'affaiblit. Pour le préserver, elle liste différentes voies de financement, par des fondations, des entreprises, des dons, des Institutions... </p> <p> Mais la première étape est, selon elle, que chacun prenne conscience de la fragilité de ces oeuvres communes. Son livre y contribue parfaitement.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p>Sur quoi reposent nos infrastructures numériques?, de Nadia Eghbal (Framabook et OpenEdition Press, 165 p., 15 €).</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">22 février 2018</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2018 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20180221·LM·1180416</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20180221·LM·1180416";
+    var _docIndex = 495;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20180221·LM·1180416';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720180221%C2%B7LM%C2%B71180416&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720180221%C2%B7LM%C2%B71180416&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720180221%C2%B7LM%C2%B71180416&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720180221%C2%B7LM%C2%B71180416&docIndex=495&FullScreen=1";
+                
+	var _keyDoc = 'news·20180221·LM·1180416';
+</script>
+</div></body></html>

@@ -1,0 +1,553 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+24 heures dans le monde,         mercredi 8 ao&amp;#251;t 2012 836 mots, p. 2&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Page Deux         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171; ILS CHANGENT LEUR MONDE &#187; - 2/6 Diagnostiquer Parkinson bient&#244;t simple comme un coup de fil            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le math&#233;maticien Max Little veut cr&#233;er une application pour aider au d&#233;pistage et au suivi d&#39;une maladie qui touche 6,3 millions de personnes&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Flore Vasseur&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;La maladie de Parkinson est d&#233;g&#233;n&#233;rative et ravageuse. Les traitements s&#39;attaquent aux sympt&#244;mes, retardent l&#39;&#233;ch&#233;ance in&#233;luctable pour ses 6,3 millions de victimes dans le monde. L&#39;augmentation de l&#39;esp&#233;rance de vie laisse pr&#233;sager une flamb&#233;e de cette pathologie. M&#233;decins et laboratoires t&#226;tonnent. Les patients sombrent. Aucun traitement n&#39;a raison du mal. Pour mieux comprendre la maladie, il faudrait pouvoir tester les soins de fa&#231;on plus rapide, et pour cela b&#233;n&#233;ficier de larges &#233;chantillons de malades. Un r&#234;ve dans cette p&#233;riode de crise pour les Etats et les groupes pharmaceutiques. &lt;/p&gt; &lt;p&gt; Un projet en bonne et due forme pour Max Little, chercheur au MIT (Institut de technologie du Massachusetts) en math&#233;matiques appliqu&#233;es. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Aujourd&#39;hui, on ne sait pas comment aider les malades de Parkinson, notamment parce que l&#39;on ne sait pas lire l&#39;&#233;volution des sympt&#244;mes. Nous n&#39;avons pas les moyens accessibles et faciles pour suivre cela de fa&#231;on objective. &#187;&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Max Little a inaugur&#233; la conf&#233;rence avec une promesse comme on n&#39;en entend qu&#39;&#224; TED : bient&#244;t diagnostiquer la maladie de Parkinson et suivre son &#233;volution sera, litt&#233;ralement, simple comme un coup de fil. Et quasiment gratuit. Il fait partie des &#171; TED Fellows &#187;, ces hauts potentiels aux id&#233;es plus grandes qu&#39;un oc&#233;an, rep&#233;r&#233;s et invit&#233;s par l&#39;organisation. La petite quarantaine, Max Little pense comme un &#233;norme processeur. Il raconte ses travaux, l&#39;application des math&#233;matiques aux troubles de la parole, avec une patience rare. P&#233;dagogique, jovial, il n&#39;a rien d&#39;un th&#233;oricien r&#233;fugi&#233; dans sa tour d&#39;&#233;quations. Son humilit&#233; et son pragmatisme &#233;patent. &lt;/p&gt; &lt;p&gt; Ses recherches d&#233;marrent en 2003 lors de son PhD (doctorat de recherche) &#224; Oxford. Il pense que les math&#233;matiques peuvent aider &#224; mieux comprendre la voix. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Je cherchais un terrain d&#39;application. Je me suis int&#233;ress&#233; aux dysfonctionnements. Par exemple, comment un chirurgien qui intervient sur des cordes vocales - apr&#232;s un cancer notamment - peut-il savoir, objectivement, qu&#39;il a r&#233;ussi ? &#187;&lt;/em&gt; Max Little se lance dans l&#39;analyse clinique, travaille avec des m&#233;decins, publie, cr&#233;e des mod&#232;les algorithmiques. &lt;/p&gt; &lt;p&gt; En 2006 &#224; Toulouse, lors de la conf&#233;rence International Conference on Acoustics, Speech and Signal Processing (Icassp) sur l&#39;&#233;lectronique, l&#39;acoustique, la parole, il est abord&#233; dans les couloirs par un chercheur d&#39;Intel. La firme travaille sur des outils pour suivre l&#39;&#233;volution de la maladie de Parkinson. L&#39;un de ses fondateurs investit une bonne partie de sa fortune depuis qu&#39;il se sait atteint. Pr&#233;cis&#233;ment, les chercheurs d&#39;Intel ont enregistr&#233; la voix de cinquante patients, une fois par semaine, pendant six mois. Mais ils ne savent pas quoi faire des donn&#233;es. Du pain b&#233;nit pour Max. Intel le met au d&#233;fi, organise un test &#224; l&#39;aveugle. Avec l&#39;aide de son syst&#232;me, il doit identifier les malades. Il r&#233;pond avec 86 % de fiabilit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La voix est le r&#233;sultat d&#39;une coordination du larynx, du diaphragme, des cordes vocales, de la langue et des l&#232;vres. Chez un malade de Parkinson, cette coordination est alt&#233;r&#233;e. La voix a des rigidit&#233;s, des faiblesses et des tremblements. Elle est un bon marqueur de la maladie. Il est possible qu&#39;elle soit m&#234;me l&#39;une des premi&#232;res fonctionnalit&#233;s affect&#233;es. Je n&#39;en suis pas encore s&#251;r, mais, en tous cas, Parkinson se d&#233;tecte par la voix, m&#234;me &#224; un stade tr&#232;s pr&#233;coce. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Max Little travaille &#224; partir d&#39;enregistrements. Il y applique une batterie d&#39;algorithmes (300 !) pour transformer un signal sonore en nombre. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On cherche une dizaine de donn&#233;es qui caract&#233;risent votre voix, comme la r&#233;gularit&#233; de la vibration de vos cordes vocales, l&#39;amplitude de mouvement de vos l&#232;vres. Et ensuite on utilise le &#171;machine learning&#187; (l&#39;apprentissage autonome des machines) pour mettre en lien ces donn&#233;es avec des informations concr&#232;tes, comme la pr&#233;sence ou non de la maladie, sa s&#233;v&#233;rit&#233;. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le champ des questions s&#39;ouvre : quelles sont les causes de cette pathologie ? Les populations &#224; risque ? Comment optimiser les traitements ? Pour y r&#233;pondre, la recherche a besoin d&#39;un &#233;chantillon cons&#233;quent : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les m&#233;thodes utilis&#233;es pour diagnostiquer et suivre les maladies sont bien trop on&#233;reuses. Pour Parkinson, il faut aller voir un neurologue. Le test dure vingt minutes, mais il co&#251;te 300 dollars [aux Etats-Unis]. Pour confirmer la maladie, il faut que le m&#233;decin essaie un traitement. A peu de chose pr&#232;s, un mois apr&#232;s, si les sympt&#244;mes empirent, il dira que vous avez Parkinson. C&#39;est long et compliqu&#233; &#224; diagnostiquer, quant &#224; savoir &#224; quel stade de la maladie vous &#234;tes, oubliez ! On a besoin d&#39;un outil simple, &#224; bas co&#251;ts, &#224; diffuser de fa&#231;on la plus large possible pour une r&#233;ponse objective et rapide. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Et, selon Max Little, cet outil est le t&#233;l&#233;phone, utilis&#233; par cinq milliards d&#39;individus. A terme, il veut cr&#233;er une application qui permettra &#224; quiconque de r&#233;aliser de chez lui un test de diagnostic ou de suivre l&#39;&#233;volution des sympt&#244;mes. Il a lanc&#233; &#224; TED un appel &#224; dons particulier : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On a besoin de r&#233;cup&#233;rer 10 000 voix pour construire notre &#233;chantillon. L&#39;id&#233;e, c&#39;est de recenser les probl&#232;mes qui pourraient conduire &#224; une mauvaise interpr&#233;tation (interf&#233;rence sur la ligne de t&#233;l&#233;phone) et d&#233;finir le test optimal (dur&#233;e, fr&#233;quence). Et puis on veut &#234;tre s&#251;r de regarder les bons crit&#232;res. &#187;&lt;/em&gt; La Parkinson&#39;s Voice Initiative a d&#233;j&#224; r&#233;cup&#233;r&#233; 6 200 contributeurs en un mois. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Mais j&#39;ai vraiment besoin que vos lecteurs nous t&#233;l&#233;phonent &#187;,&lt;/em&gt; conclut-il dans un sourire. Pour pouvoir participer, il suffit d&#39;appeler le 02-49-88-05-76, que vous ayez la maladie ou pas, et de r&#233;pondre aux questions. Le test est anonyme et gratuit. &lt;/p&gt; &lt;p&gt; Pour Max Little, la fortune serait-elle &#224; port&#233;e de main ? Ce n&#39;est pas l&#39;objectif. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L&#39;id&#233;e est de rendre cette technologie accessible &#224; tous, individus comme laboratoires. On r&#233;fl&#233;chit &#224; la meilleure fa&#231;on de le faire : faut-il ou non nous associer avec le mouvement des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; pour &#233;tablir une application gratuite sur iPhone ? Se rapprocher des compagnies pharmaceutiques pour qu&#39;elles l&#39;utilisent et baissent leurs co&#251;ts de recherche ? Notre but, c&#39;est d&#39;acc&#233;l&#233;rer la d&#233;couverte d&#39;un traitement. Aujourd&#39;hui, ce n&#39;est plus seulement un probl&#232;me d&#39;argent, mais d&#39;acc&#232;s aux donn&#233;es. &#187; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Ce math&#233;maticien veut r&#233;volutionner le diagnostic et acc&#233;l&#233;rer le traitement des maladies neuronales. Des sommes astronomiques sont en jeu. Il travaille sur la voix. La sienne est claire, son raisonnement limpide. Il est s&#251;r de r&#233;ussir. On a envie de le croire. Sur parole.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Max Little travaille sur les maths appliqu&#233;es aux troubles de la parole. Il enregistre la voix de malades et analyse les donn&#233;es recueillies &#224; l&#39;aide d&#39;algorithmes pour mod&#233;liser des m&#233;thodes de d&#233;pistage et de traitement. Photo : FLORE VASSEUR &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Sur Lemonde.fr &lt;/p&gt; &lt;p&gt; Retrouvez notre blog sur : &lt;/p&gt; &lt;p&gt; Tedglobal.blog.lemonde.fr&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2012 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20120808&amp;#183;LM&amp;#183;0q0808_616365&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">cordes vocales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">troubles de la parole</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">évolution des symptômes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">coup de fil</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">régularité de la vibration</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Médecine</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Pharmaceutique et biotechnologies</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">TED</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Massachusetts</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Oxford</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Toulouse</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120808%c2%b7LM%c2%b70q0808_616365" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120808%c2%b7LM%c2%b70q0808_616365">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+24 heures dans le monde,         mercredi 8 août 2012 836 mots, p. 2</span>
+</div>
+
+    <div>
+        <p>
+Page Deux         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+« ILS CHANGENT LEUR MONDE » - 2/6 Diagnostiquer Parkinson bientôt simple comme un coup de fil            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le mathématicien Max Little veut créer une application pour aider au dépistage et au suivi d'une maladie qui touche 6,3 millions de personnes</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Flore Vasseur</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>La maladie de Parkinson est dégénérative et ravageuse. Les traitements s'attaquent aux symptômes, retardent l'échéance inéluctable pour ses 6,3 millions de victimes dans le monde. L'augmentation de l'espérance de vie laisse présager une flambée de cette pathologie. Médecins et laboratoires tâtonnent. Les patients sombrent. Aucun traitement n'a raison du mal. Pour mieux comprendre la maladie, il faudrait pouvoir tester les soins de façon plus rapide, et pour cela bénéficier de larges échantillons de malades. Un rêve dans cette période de crise pour les Etats et les groupes pharmaceutiques. </p> <p> Un projet en bonne et due forme pour Max Little, chercheur au MIT (Institut de technologie du Massachusetts) en mathématiques appliquées. <em style="font-style:italic;">« Aujourd'hui, on ne sait pas comment aider les malades de Parkinson, notamment parce que l'on ne sait pas lire l'évolution des symptômes. Nous n'avons pas les moyens accessibles et faciles pour suivre cela de façon objective. »</em></p>
+
+
+<p>Max Little a inauguré la conférence avec une promesse comme on n'en entend qu'à TED : bientôt diagnostiquer la maladie de Parkinson et suivre son évolution sera, littéralement, simple comme un coup de fil. Et quasiment gratuit. Il fait partie des « TED Fellows », ces hauts potentiels aux idées plus grandes qu'un océan, repérés et invités par l'organisation. La petite quarantaine, Max Little pense comme un énorme processeur. Il raconte ses travaux, l'application des mathématiques aux troubles de la parole, avec une patience rare. Pédagogique, jovial, il n'a rien d'un théoricien réfugié dans sa tour d'équations. Son humilité et son pragmatisme épatent. </p> <p> Ses recherches démarrent en 2003 lors de son PhD (doctorat de recherche) à Oxford. Il pense que les mathématiques peuvent aider à mieux comprendre la voix. <em style="font-style:italic;">« Je cherchais un terrain d'application. Je me suis intéressé aux dysfonctionnements. Par exemple, comment un chirurgien qui intervient sur des cordes vocales - après un cancer notamment - peut-il savoir, objectivement, qu'il a réussi ? »</em> Max Little se lance dans l'analyse clinique, travaille avec des médecins, publie, crée des modèles algorithmiques. </p> <p> En 2006 à Toulouse, lors de la conférence International Conference on Acoustics, Speech and Signal Processing (Icassp) sur l'électronique, l'acoustique, la parole, il est abordé dans les couloirs par un chercheur d'Intel. La firme travaille sur des outils pour suivre l'évolution de la maladie de Parkinson. L'un de ses fondateurs investit une bonne partie de sa fortune depuis qu'il se sait atteint. Précisément, les chercheurs d'Intel ont enregistré la voix de cinquante patients, une fois par semaine, pendant six mois. Mais ils ne savent pas quoi faire des données. Du pain bénit pour Max. Intel le met au défi, organise un test à l'aveugle. Avec l'aide de son système, il doit identifier les malades. Il répond avec 86 % de fiabilité. </p> <p><em style="font-style:italic;">« La voix est le résultat d'une coordination du larynx, du diaphragme, des cordes vocales, de la langue et des lèvres. Chez un malade de Parkinson, cette coordination est altérée. La voix a des rigidités, des faiblesses et des tremblements. Elle est un bon marqueur de la maladie. Il est possible qu'elle soit même l'une des premières fonctionnalités affectées. Je n'en suis pas encore sûr, mais, en tous cas, Parkinson se détecte par la voix, même à un stade très précoce. »</em></p><p>Max Little travaille à partir d'enregistrements. Il y applique une batterie d'algorithmes (300 !) pour transformer un signal sonore en nombre. <em style="font-style:italic;">« On cherche une dizaine de données qui caractérisent votre voix, comme la régularité de la vibration de vos cordes vocales, l'amplitude de mouvement de vos lèvres. Et ensuite on utilise le «machine learning» (l'apprentissage autonome des machines) pour mettre en lien ces données avec des informations concrètes, comme la présence ou non de la maladie, sa sévérité. »</em></p><p>Le champ des questions s'ouvre : quelles sont les causes de cette pathologie ? Les populations à risque ? Comment optimiser les traitements ? Pour y répondre, la recherche a besoin d'un échantillon conséquent : <em style="font-style:italic;">« Les méthodes utilisées pour diagnostiquer et suivre les maladies sont bien trop onéreuses. Pour Parkinson, il faut aller voir un neurologue. Le test dure vingt minutes, mais il coûte 300 dollars [aux Etats-Unis]. Pour confirmer la maladie, il faut que le médecin essaie un traitement. A peu de chose près, un mois après, si les symptômes empirent, il dira que vous avez Parkinson. C'est long et compliqué à diagnostiquer, quant à savoir à quel stade de la maladie vous êtes, oubliez ! On a besoin d'un outil simple, à bas coûts, à diffuser de façon la plus large possible pour une réponse objective et rapide. »</em></p><p>Et, selon Max Little, cet outil est le téléphone, utilisé par cinq milliards d'individus. A terme, il veut créer une application qui permettra à quiconque de réaliser de chez lui un test de diagnostic ou de suivre l'évolution des symptômes. Il a lancé à TED un appel à dons particulier : <em style="font-style:italic;">« On a besoin de récupérer 10 000 voix pour construire notre échantillon. L'idée, c'est de recenser les problèmes qui pourraient conduire à une mauvaise interprétation (interférence sur la ligne de téléphone) et définir le test optimal (durée, fréquence). Et puis on veut être sûr de regarder les bons critères. »</em> La Parkinson's Voice Initiative a déjà récupéré 6 200 contributeurs en un mois. <em style="font-style:italic;">« Mais j'ai vraiment besoin que vos lecteurs nous téléphonent »,</em> conclut-il dans un sourire. Pour pouvoir participer, il suffit d'appeler le 02-49-88-05-76, que vous ayez la maladie ou pas, et de répondre aux questions. Le test est anonyme et gratuit. </p> <p> Pour Max Little, la fortune serait-elle à portée de main ? Ce n'est pas l'objectif. <em style="font-style:italic;">« L'idée est de rendre cette technologie accessible à tous, individus comme laboratoires. On réfléchit à la meilleure façon de le faire : faut-il ou non nous associer avec le mouvement des <mark>logiciels</mark> <mark>libres</mark> pour établir une application gratuite sur iPhone ? Se rapprocher des compagnies pharmaceutiques pour qu'elles l'utilisent et baissent leurs coûts de recherche ? Notre but, c'est d'accélérer la découverte d'un traitement. Aujourd'hui, ce n'est plus seulement un problème d'argent, mais d'accès aux données. » </em></p><p>Ce mathématicien veut révolutionner le diagnostic et accélérer le traitement des maladies neuronales. Des sommes astronomiques sont en jeu. Il travaille sur la voix. La sienne est claire, son raisonnement limpide. Il est sûr de réussir. On a envie de le croire. Sur parole.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Max Little travaille sur les maths appliquées aux troubles de la parole. Il enregistre la voix de malades et analyse les données recueillies à l'aide d'algorithmes pour modéliser des méthodes de dépistage et de traitement. Photo : FLORE VASSEUR </div>.
+
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p>Sur Lemonde.fr </p> <p> Retrouvez notre blog sur : </p> <p> Tedglobal.blog.lemonde.fr</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2012 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20120808·LM·0q0808_616365</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20120808·LM·0q0808_616365";
+    var _docIndex = 141;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20120808·LM·0q0808_616365';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720120808%C2%B7LM%C2%B70q0808_616365&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720120808%C2%B7LM%C2%B70q0808_616365&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720120808%C2%B7LM%C2%B70q0808_616365&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720120808%C2%B7LM%C2%B70q0808_616365&docIndex=141&FullScreen=1";
+                
+	var _keyDoc = 'news·20120808·LM·0q0808_616365';
+</script>
+</div></body></html>

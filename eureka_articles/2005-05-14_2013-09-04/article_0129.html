@@ -1,0 +1,543 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Economie,         mardi 9 octobre 2012 390 mots, p. MDE2&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Eco et entreprise         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Actu&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Agenda            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Mardi 9 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Trait&#233; Vote du texte sur le trait&#233; budg&#233;taire europ&#233;en limitant le d&#233;ficit public structurel &#224; 0,5 % du PIB et cr&#233;ant la structure charg&#233;e du contr&#244;le de cette limitation. &lt;/p&gt; &lt;p&gt; Union europ&#233;enne Conseil des ministres des finances (Ecofin) &#224; Luxembourg. &lt;/p&gt; &lt;p&gt; FMI Sommet annuel du Fonds mon&#233;taire international (FMI) et de la Banque mondiale &#224; Tokyo (jusqu&#39;au 14).&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Mercredi 10 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Surcouf Examen par le tribunal de commerce de Lille des offres de reprise du groupe. &lt;/p&gt; &lt;p&gt; Femmes Women&#39;s Forum, &#224; Deauville (jusqu&#39;au 12). &lt;/p&gt; &lt;p&gt; SNCF Forum de recrutement pour l&#39;Ile-de-France organis&#233; &#224; Paris par la SNCF. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Jeudi 11 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Expatriation Forum du commerce international sur l&#39;expatriation et la mobilit&#233; internationale, &#224; la D&#233;fense. R&#233;serv&#233; aux professionnels. &lt;/p&gt; &lt;p&gt; Sanofi Comit&#233;s centraux d&#39;entreprise (CCE) pour au moins quatre branches du groupe Sanofi, dont la recherche. Un projet de r&#233;organisation menace plus de 900 emplois d&#39;ici &#224; 2015. &lt;/p&gt; &lt;p&gt; PSA Le cabinet d&#39;experts Secafi, mandat&#233; par le comit&#233; central d&#39;entreprise (CCE) de PSA Peugeot Citro&#235;n pour enqu&#234;ter sur la sant&#233; financi&#232;re du groupe et sa strat&#233;gie, doit remettre ses premi&#232;res conclusions. &lt;/p&gt; &lt;p&gt; Design Cl&#244;ture des inscriptions au concours &#233;tudiant de dessin en Aquitaine, organis&#233; dans le cadre des Escales du design 2012. Le concours s&#39;adresse aux &#233;tudiants dont l&#39;organisme de formation se situe en France et dans les pays francophones. &lt;/p&gt; &lt;p&gt; Patrimoine Forum de l&#39;investissement. Paris, Palais des congr&#232;s de la porte Maillot. 150 exposants, 60 conf&#233;rences (jusqu&#39;au 13). &lt;/p&gt; &lt;p&gt; Innovation INP Innov&#39;, organis&#233; par l&#39;INP Toulouse sur son campus, &#233;v&#233;nement consacr&#233; &#224; la recherche, &#224; l&#39;innovation et aux partenariats industriels. &lt;/p&gt; &lt;p&gt; Textiles CETI International Forum, organis&#233; par le Centre europ&#233;en des textiles innovants dans le cadre de son inauguration (sur inscription). Lille M&#233;tropole. &lt;/p&gt; &lt;p&gt; Num&#233;rique Open World Forum 2012 (jusqu&#39;au 13), &#224; Paris, premier forum mondial rassemblant les partisans, les pionniers et les entrepreneurs du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Technicolor Le tribunal doit se prononcer sur la liquidation de l&#39;usine de Thomson Angers, filiale de Technicolor. &lt;/p&gt; &lt;p&gt; Apiculture Congr&#232;s europ&#233;en de l&#39;apiculture &#224; Agen (jusqu&#39;au 14). &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Vendredi 12 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Salon du mariage Paris, Espace Champerret (jusqu&#39;au 14). &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Samedi 13 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Philat&#233;lie Les associations sp&#233;cialis&#233;es se mobilisent pour la F&#234;te du timbre dans 118 villes de France. Parution en avant-premi&#232;re de plusieurs timbres sp&#233;ciaux sur le th&#232;me du feu, animations grand public. Entr&#233;es gratuites (jusqu&#39;au 14). &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Lundi 15 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Nobel Annonce &#224; Stockholm du prix Nobel d&#39;&#233;conomie. &lt;/p&gt; &lt;p&gt; Transport Entr&#233;e en service &#224; Nantes du paiement des titres de transport par t&#233;l&#233;phone mobile. &lt;/p&gt; &lt;p&gt; Roms Pr&#233;sentation au S&#233;nat du projet de r&#233;solution pour demander la lev&#233;e des mesures transitoires qui bloquent l&#39;acc&#232;s des Roms au march&#233; du travail. &lt;/p&gt; &lt;p&gt; FAO Session &#224; Rome du Comit&#233; de la s&#233;curit&#233; alimentaire mondiale de la FAO (jusqu&#39;au 20). &lt;/p&gt; &lt;p&gt; Le 16, Journ&#233;e mondiale de l&#39;alimentation. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Mardi 16 octobre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Petroplus Audience du tribunal de commerce de Rouen sur l&#39;avenir de la raffinerie de Petit-Couronne (Seine-Maritime) en redressement judiciaire. &lt;/p&gt; &lt;p&gt; Internet Broadband World Forum 2012 &#224; Amsterdam (jusqu&#39;au 18). &lt;/p&gt; &lt;p&gt; OCDE Forum mondial sur les &#171; Statistiques, connaissances et politiques &#187;, organis&#233; &#224; New Delhi, en Inde (jusqu&#39;au 19). &lt;/p&gt; &lt;p&gt; Loi de finances D&#233;but de l&#39;examen du projet de loi de finances (PLF) pour 2013 et du projet de loi de financement de la S&#233;curit&#233; sociale (PLFSS) pour 2013. &lt;/p&gt; &lt;p&gt; M&#233;diterran&#233;e Semaine &#233;conomique de la M&#233;diterran&#233;e organis&#233;e &#224; Marseille (jusqu&#39;au 21).&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Surcouf - PHOTO : MARION BERARD/AFP &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Petroplus - PHOTO : MICHAEL BUHOLZER/REUTERS &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2012 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20121009&amp;#183;LM&amp;#183;0mde4112_652206&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">loi de finances</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">tribunal de commerce</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">projet de loi</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">forum mondial</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">organisme de formation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie mondiale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Luxembourg</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Tokyo</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Lille</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720121009%c2%b7LM%c2%b70mde4112_652206" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720121009%c2%b7LM%c2%b70mde4112_652206">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Economie,         mardi 9 octobre 2012 390 mots, p. MDE2</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Eco et entreprise         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Actu</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Agenda            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">Mardi 9 octobre</em></p><p>Traité Vote du texte sur le traité budgétaire européen limitant le déficit public structurel à 0,5 % du PIB et créant la structure chargée du contrôle de cette limitation. </p> <p> Union européenne Conseil des ministres des finances (Ecofin) à Luxembourg. </p> <p> FMI Sommet annuel du Fonds monétaire international (FMI) et de la Banque mondiale à Tokyo (jusqu'au 14).</p>
+
+
+<p><em style="font-weight:bold;">Mercredi 10 octobre</em></p><p>Surcouf Examen par le tribunal de commerce de Lille des offres de reprise du groupe. </p> <p> Femmes Women's Forum, à Deauville (jusqu'au 12). </p> <p> SNCF Forum de recrutement pour l'Ile-de-France organisé à Paris par la SNCF. </p> <p><em style="font-weight:bold;">Jeudi 11 octobre</em></p><p>Expatriation Forum du commerce international sur l'expatriation et la mobilité internationale, à la Défense. Réservé aux professionnels. </p> <p> Sanofi Comités centraux d'entreprise (CCE) pour au moins quatre branches du groupe Sanofi, dont la recherche. Un projet de réorganisation menace plus de 900 emplois d'ici à 2015. </p> <p> PSA Le cabinet d'experts Secafi, mandaté par le comité central d'entreprise (CCE) de PSA Peugeot Citroën pour enquêter sur la santé financière du groupe et sa stratégie, doit remettre ses premières conclusions. </p> <p> Design Clôture des inscriptions au concours étudiant de dessin en Aquitaine, organisé dans le cadre des Escales du design 2012. Le concours s'adresse aux étudiants dont l'organisme de formation se situe en France et dans les pays francophones. </p> <p> Patrimoine Forum de l'investissement. Paris, Palais des congrès de la porte Maillot. 150 exposants, 60 conférences (jusqu'au 13). </p> <p> Innovation INP Innov', organisé par l'INP Toulouse sur son campus, événement consacré à la recherche, à l'innovation et aux partenariats industriels. </p> <p> Textiles CETI International Forum, organisé par le Centre européen des textiles innovants dans le cadre de son inauguration (sur inscription). Lille Métropole. </p> <p> Numérique Open World Forum 2012 (jusqu'au 13), à Paris, premier forum mondial rassemblant les partisans, les pionniers et les entrepreneurs du <mark>logiciel</mark> <mark>libre</mark>. </p> <p> Technicolor Le tribunal doit se prononcer sur la liquidation de l'usine de Thomson Angers, filiale de Technicolor. </p> <p> Apiculture Congrès européen de l'apiculture à Agen (jusqu'au 14). </p> <p><em style="font-weight:bold;">Vendredi 12 octobre</em></p><p>Salon du mariage Paris, Espace Champerret (jusqu'au 14). </p> <p><em style="font-weight:bold;">Samedi 13 octobre</em></p><p>Philatélie Les associations spécialisées se mobilisent pour la Fête du timbre dans 118 villes de France. Parution en avant-première de plusieurs timbres spéciaux sur le thème du feu, animations grand public. Entrées gratuites (jusqu'au 14). </p> <p><em style="font-weight:bold;">Lundi 15 octobre</em></p><p>Nobel Annonce à Stockholm du prix Nobel d'économie. </p> <p> Transport Entrée en service à Nantes du paiement des titres de transport par téléphone mobile. </p> <p> Roms Présentation au Sénat du projet de résolution pour demander la levée des mesures transitoires qui bloquent l'accès des Roms au marché du travail. </p> <p> FAO Session à Rome du Comité de la sécurité alimentaire mondiale de la FAO (jusqu'au 20). </p> <p> Le 16, Journée mondiale de l'alimentation. </p> <p><em style="font-weight:bold;">Mardi 16 octobre</em></p><p>Petroplus Audience du tribunal de commerce de Rouen sur l'avenir de la raffinerie de Petit-Couronne (Seine-Maritime) en redressement judiciaire. </p> <p> Internet Broadband World Forum 2012 à Amsterdam (jusqu'au 18). </p> <p> OCDE Forum mondial sur les « Statistiques, connaissances et politiques », organisé à New Delhi, en Inde (jusqu'au 19). </p> <p> Loi de finances Début de l'examen du projet de loi de finances (PLF) pour 2013 et du projet de loi de financement de la Sécurité sociale (PLFSS) pour 2013. </p> <p> Méditerranée Semaine économique de la Méditerranée organisée à Marseille (jusqu'au 21).</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Surcouf - PHOTO : MARION BERARD/AFP </div>.
+
+        <p></p>
+        <p>
+            
+            
+                </p><div class="ImageAttachFont">Petroplus - PHOTO : MICHAEL BUHOLZER/REUTERS </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2012 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20121009·LM·0mde4112_652206</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20121009·LM·0mde4112_652206";
+    var _docIndex = 128;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20121009·LM·0mde4112_652206';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720121009%C2%B7LM%C2%B70mde4112_652206&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720121009%C2%B7LM%C2%B70mde4112_652206&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720121009%C2%B7LM%C2%B70mde4112_652206&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720121009%C2%B7LM%C2%B70mde4112_652206&docIndex=128&FullScreen=1";
+                
+	var _keyDoc = 'news·20121009·LM·0mde4112_652206';
+</script>
+</div></body></html>

@@ -1,0 +1,437 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Carnet,         jeudi 19 d&amp;#233;cembre 2002 256 mots, p. 22&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+A LIRE EN LIGNE            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Retrouvez sur le site Internet du&lt;/em&gt; Monde (&lt;a target=&quot;_blank&quot; href=&quot;https://www-lemonde-fr.acces.bibl.ulaval.ca/carnet&quot;&gt;www.lemonde.fr/carnet&lt;/a&gt;) le d&#233;tail des nominations, l&#39;essentiel des lois, d&#233;crets et d&#233;corations parus au Journal officiel &lt;em style=&quot;font-style:italic;&quot;&gt;, ainsi que les adresses des sites publiant des documents significatifs.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Au &lt;em style=&quot;font-style:italic;&quot;&gt;Journal officiel&lt;/em&gt; dat&#233; lundi 16- mardi 17 d&#233;cembre sont publi&#233;s : &lt;/p&gt; &lt;p&gt; Mutuelles : deux d&#233;crets modifiant le code de la mutualit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Dominique Girard&lt;/em&gt; a &#233;t&#233; nomm&#233; ambassadeur en Inde, par d&#233;cret paru au &lt;em style=&quot;font-style:italic;&quot;&gt;Journal officiel&lt;/em&gt; du 14 d&#233;cembre. Il remplace Bernard de Montferrand, nomm&#233; ambassadeur au Japon.&lt;/p&gt;
+
+
+&lt;p&gt;L&#39;Assembl&#233;e nationale publie le projet de loi portant diverses dispositions relatives &#224; l&#39;urbanisme, &#224; l&#39;habitat et &#224; la construction. &lt;/p&gt; &lt;p&gt; La Documentation fran&#231;aise a mis en ligne le rapport du Haut Comit&#233; pour le logement des personnes d&#233;favoris&#233;es. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-assemblee-nationale-fr.acces.bibl.ulaval.ca&quot;&gt; www.assemblee-nationale.fr&lt;/a&gt; /12/projets/pl0402.asp L&#39;Assembl&#233;e nationale publie une proposition de loi relative &#224; la circulation et au stationnement des nomades. &lt;a target=&quot;_blank&quot; href=&quot;https://www-assemblee-nationale-fr.acces.bibl.ulaval.ca&quot;&gt;www.assemblee-nationale.fr&lt;/a&gt; /12/propositions.pionO208.asp Le S&#233;nat publie une proposition de loi tendant &#224; g&#233;n&#233;raliser dans l&#39;administration l&#39;usage d&#39;Internet et de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. &lt;a target=&quot;_blank&quot; href=&quot;https://www.senat.fr/dossierleg&quot;&gt;www.senat.fr/dossierleg&lt;/a&gt; /ppl02-032.html Le S&#233;nat publie une proposition de loi portant modification de la loi relative &#224; la solidarit&#233; et au renouvellement urbains. &lt;a target=&quot;_blank&quot; href=&quot;https://www.senat.fr/dossierleg&quot;&gt;www.senat.fr/dossierleg&lt;/a&gt; /ppl02-037.html Le S&#233;nat publie la proposition de r&#233;solution sur la proposition de directive sur la responsabilit&#233; environnementale en vue de la pr&#233;vention et de la r&#233;paration des dommages environnementaux. &lt;a target=&quot;_blank&quot; href=&quot;https://www.senat.fr/dossierleg&quot;&gt;www.senat.fr/dossierleg&lt;/a&gt; /ppr02-056.html Le S&#233;nat publie les actes des colloques organis&#233;s sous le haut patronage de Christian Poncelet, pr&#233;sident du S&#233;nat, et du Centre japonais des collectivit&#233;s locales, avec le soutien du groupe parlementaire d&#39;amiti&#233; France-Japon et de l&#39;ambassade du Japon &#224; Paris, du 17 f&#233;vrier 2000 au 15 f&#233;vrier 2002. &lt;a target=&quot;_blank&quot; href=&quot;https://www.senat.fr/colloques/france-japon/france-japon.html&quot;&gt;www.senat.fr/colloques/france-japon/france-japon.html&lt;/a&gt; Le S&#233;nat publie une proposition de loi tendant &#224; rendre d&#233;ductible la TVA pay&#233;e par les entreprises pour l&#39;achat de v&#233;hicules &#233;lectriques ou de moins de 3 m&#232;tres. &lt;a target=&quot;_blank&quot; href=&quot;https://www.senat.fr/dossierleg&quot;&gt;www.senat.fr/dossierleg&lt;/a&gt; /ppl02-022.html &lt;a target=&quot;_blank&quot; href=&quot;https://www-ladocumentationfrancaise-fr.acces.bibl.ulaval.ca/brp/notices/024000619.shtml&quot;&gt;www.ladocumentationfrancaise.fr/brp/notices/024000619.shtml&lt;/a&gt; La Documentation fran&#231;aise publie le rapport du Centre national de la cin&#233;matographie intitul&#233; &quot;Les industries techniques du cin&#233;ma et de l&#39;audiovisuel : situation du secteur et recommandations pour l&#39;avenir&quot;. &lt;a target=&quot;_blank&quot; href=&quot;https://www-ladocumentationfrancaise-fr.acces.bibl.ulaval.ca&quot;&gt;www.ladocumentationfrancaise.fr&lt;/a&gt; /brp/notices /024000578.shtml&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2002 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20021219&amp;#183;LM&amp;#183;0302659&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720021219%c2%b7LM%c2%b70302659" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720021219%c2%b7LM%c2%b70302659">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Carnet,         jeudi 19 décembre 2002 256 mots, p. 22</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+A LIRE EN LIGNE            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-style:italic;">Retrouvez sur le site Internet du</em> Monde (<a target="_blank" href="https://www-lemonde-fr.acces.bibl.ulaval.ca/carnet">www.lemonde.fr/carnet</a>) le détail des nominations, l'essentiel des lois, décrets et décorations parus au Journal officiel <em style="font-style:italic;">, ainsi que les adresses des sites publiant des documents significatifs.</em></p><p>Au <em style="font-style:italic;">Journal officiel</em> daté lundi 16- mardi 17 décembre sont publiés : </p> <p> Mutuelles : deux décrets modifiant le code de la mutualité. </p> <p><em style="font-weight:bold;">Dominique Girard</em> a été nommé ambassadeur en Inde, par décret paru au <em style="font-style:italic;">Journal officiel</em> du 14 décembre. Il remplace Bernard de Montferrand, nommé ambassadeur au Japon.</p>
+
+
+<p>L'Assemblée nationale publie le projet de loi portant diverses dispositions relatives à l'urbanisme, à l'habitat et à la construction. </p> <p> La Documentation française a mis en ligne le rapport du Haut Comité pour le logement des personnes défavorisées. </p> <p><a target="_blank" href="https://www-assemblee-nationale-fr.acces.bibl.ulaval.ca"> www.assemblee-nationale.fr</a> /12/projets/pl0402.asp L'Assemblée nationale publie une proposition de loi relative à la circulation et au stationnement des nomades. <a target="_blank" href="https://www-assemblee-nationale-fr.acces.bibl.ulaval.ca">www.assemblee-nationale.fr</a> /12/propositions.pionO208.asp Le Sénat publie une proposition de loi tendant à généraliser dans l'administration l'usage d'Internet et de <mark>logiciels</mark> <mark>libres</mark>. <a target="_blank" href="https://www.senat.fr/dossierleg">www.senat.fr/dossierleg</a> /ppl02-032.html Le Sénat publie une proposition de loi portant modification de la loi relative à la solidarité et au renouvellement urbains. <a target="_blank" href="https://www.senat.fr/dossierleg">www.senat.fr/dossierleg</a> /ppl02-037.html Le Sénat publie la proposition de résolution sur la proposition de directive sur la responsabilité environnementale en vue de la prévention et de la réparation des dommages environnementaux. <a target="_blank" href="https://www.senat.fr/dossierleg">www.senat.fr/dossierleg</a> /ppr02-056.html Le Sénat publie les actes des colloques organisés sous le haut patronage de Christian Poncelet, président du Sénat, et du Centre japonais des collectivités locales, avec le soutien du groupe parlementaire d'amitié France-Japon et de l'ambassade du Japon à Paris, du 17 février 2000 au 15 février 2002. <a target="_blank" href="https://www.senat.fr/colloques/france-japon/france-japon.html">www.senat.fr/colloques/france-japon/france-japon.html</a> Le Sénat publie une proposition de loi tendant à rendre déductible la TVA payée par les entreprises pour l'achat de véhicules électriques ou de moins de 3 mètres. <a target="_blank" href="https://www.senat.fr/dossierleg">www.senat.fr/dossierleg</a> /ppl02-022.html <a target="_blank" href="https://www-ladocumentationfrancaise-fr.acces.bibl.ulaval.ca/brp/notices/024000619.shtml">www.ladocumentationfrancaise.fr/brp/notices/024000619.shtml</a> La Documentation française publie le rapport du Centre national de la cinématographie intitulé "Les industries techniques du cinéma et de l'audiovisuel : situation du secteur et recommandations pour l'avenir". <a target="_blank" href="https://www-ladocumentationfrancaise-fr.acces.bibl.ulaval.ca">www.ladocumentationfrancaise.fr</a> /brp/notices /024000578.shtml</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2002 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20021219·LM·0302659</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20021219·LM·0302659";
+    var _docIndex = 332;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20021219·LM·0302659';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720021219%C2%B7LM%C2%B70302659&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720021219%C2%B7LM%C2%B70302659&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720021219%C2%B7LM%C2%B70302659&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720021219%C2%B7LM%C2%B70302659&docIndex=332&FullScreen=1";
+                
+	var _keyDoc = 'news·20021219·LM·0302659';
+</script>
+</div></body></html>

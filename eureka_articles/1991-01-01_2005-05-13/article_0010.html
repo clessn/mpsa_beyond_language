@@ -1,0 +1,491 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CONVERGENCE,         lundi 25 avril 2005 1329 mots, p. B6&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Technologie&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Cachez ce rapport que je ne saurais voir            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le projet MILLE offre une solution all&#233;chante pour le monde de l&#39;&#233;ducation&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Apr&#232;s une (trop) longue attente, les responsables du projet MILLE ont enfin rendu publique l&#39;&#233;tude du professeur Micheal Wybo, professeur invit&#233; aux HEC, sur l&#39;&#233;valuation du bureau virtuel du projet MILLE, une solution enti&#232;rement libre destin&#233;e au monde de l&#39;&#233;ducation. La question qui tue et que peu de personnes osent poser ouvertement: &#224; terme, comment la soci&#233;t&#233; GRICS pourra-t-elle justifier le d&#233;veloppement de ses offres de service en logiciel propri&#233;taire, d&#233;veloppement pay&#233; &#224; m&#234;me les fonds publics, devant les conclusions d&#39;une telle &#233;tude? &lt;/p&gt; &lt;p&gt; Difficile de convaincre les grands bonzes du milieu de l&#39;&#233;ducation des avantages du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Cr&#233;dibilit&#233; du projet, co&#251;ts d&#39;acquisition et d&#39;op&#233;ration, et surtout, quasi-mainmise de la soci&#233;t&#233; GRICS et de son offre de services logicielle propri&#233;taire dans les commissions scolaires sont autant de raisons qui emp&#234;chent les pros&#233;lytes du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; d&#39;&#234;tre pris au s&#233;rieux par les d&#233;cideurs.&lt;/p&gt;
+
+
+&lt;p&gt;Totalement libre &lt;/p&gt; &lt;p&gt; Conscients de ces probl&#232;mes, les responsables du projet MILLE ont confi&#233; &#224; un professeur des HEC, Micheal Wybo, le soin d&#39;&#233;valuer le bureau virtuel du projet MILLE, un portail 100 % libre, par rapport &#224; un &#171;sc&#233;nario propri&#233;taire&#187;, &#224; savoir le portail &#201;du-Groupe de la soci&#233;t&#233; GRICS et son architecture propri&#233;taire Microsoft/MailSite. &lt;/p&gt; &lt;p&gt; Bref, d&#39;un c&#244;t&#233;, une v&#233;ritable solution logicielle &lt;/p&gt; &lt;p&gt; 100 % libre, adapt&#233;e &#224; la r&#233;alit&#233; qu&#233;b&#233;coise, et de l&#39;autre, une combinaison d&#39;outils propri&#233;taires, tout aussi coll&#233;s sur les besoins des maisons d&#39;enseignement. L&#39;&#233;tude quant &#224; elle, porte sur les points d&#39;&#233;valuation suivants: co&#251;ts d&#39;acquisition, co&#251;ts de fonctionnement, impacts sur le personnel technique et approche de d&#233;veloppement suivant le mod&#232;le du libre. &lt;/p&gt; &lt;p&gt; Le but: comparer les v&#233;ritables co&#251;ts pour des solutions similaires. Que du s&#233;rieux quoi! En plein ce &#224; quoi nos gestionnaires, et par ricochet, le ministre de l&#39;&#201;ducation, Jean-Marc Fournier, s&#39;attendent. &lt;/p&gt; &lt;p&gt; Deux sc&#233;narios &lt;/p&gt; &lt;p&gt; Afin de bien juger les forces en pr&#233;sence et d&#39;en faire une analyse rigoureuse, les responsables de l&#39;&#233;tude se sont entendus afin d&#39;&#233;tablir des caract&#233;ristiques communes aux deux sc&#233;narios: - serveur Web et serveur d&#39;application chacun sur son propre ordinateur; - serveur base de donn&#233;es, serveur de courrier &#233;lectronique et serveur d&#39;authentification chacun sur son propre ordinateur; - serveur de base de donn&#233;es &#224; deux processeurs; - co&#251;t par jour d&#39;un consultant fixe &#224; 500 $; - co&#251;t par jour d&#39;un employ&#233; de commission scolaire fix&#233; &#224; 280 $; - les frais de formation des utilisateurs enseignants pour les portails &#201;du-groupe et MILLE et les frais de fonctionnement des serveurs Microsoft et Linux sont consid&#233;r&#233;s &#233;quivalents et ne sont pas inclus dans les analyses; - infrastructure de d&#233;part 100 % Microsoft. &lt;/p&gt; &lt;p&gt; Co&#251;ts d&#39;acquisition &lt;/p&gt; &lt;p&gt; Nombreux sont ceux qui croient, &#224; tort, que les co&#251;ts d&#39;acquisition ne comprennent que le co&#251;t des licences. Or, il n&#39;en est rien. Comme l&#39;affirme le professeur Wybo dans son &#233;tude, les co&#251;ts d&#39;acquisition comprennent non seulement les montants vers&#233;s pour les licences, mais aussi les co&#251;ts de migration du syst&#232;me et des donn&#233;es. &lt;/p&gt; &lt;p&gt; Selon l&#39;&#233;tude, &#171;ces co&#251;ts ne sont pas associ&#233;s &#224; une technologie particuli&#232;re, mais viennent du fait que l&#39;on se d&#233;place vers une technologie pour laquelle l&#39;organisation n&#39;a pas d&#39;exp&#233;rience. Les co&#251;ts de migration sont fonction de l&#39;infrastructure de d&#233;part. Une organisation qui veut remplacer son infrastructure UNIX par une infrastructure Microsoft aura des co&#251;ts de migration comparables &#224; une organisation qui d&#233;sire migrer son infrastructure Microsoft vers une infrastructure libre&#187;. &lt;/p&gt; &lt;p&gt; C&#39;est pourquoi, avec les budgets serr&#233;s dont disposent les commissions scolaires, les co&#251;ts d&#39;acquisition peuvent repr&#233;senter une barri&#232;re importante &#224; l&#39;implantation de technologies novatrices dans les &#233;tablissements d&#39;enseignement. &lt;/p&gt; &lt;p&gt; Selon les auteurs de l&#39;&#233;tude, &#171;une solution libre, avec des co&#251;ts d&#39;acquisition de moins que la moiti&#233; des co&#251;ts d&#39;acquisition de la solution propri&#233;taire, rend la technologie des portails scolaires plus accessible aux commissions scolaires et leurs client&#232;les&#187;. &lt;/p&gt; &lt;p&gt; Plus de la moiti&#233;? En effet, dans sa conclusion, le professeur Wybo estime que &#171;les co&#251;ts d&#39;acquisition de la solution MILLE repr&#233;sentent des &#233;conomies de 59 % &#224; 75 % par rapport aux co&#251;ts d&#39;acquisition d&#39;une solution propri&#233;taire similaire&#187;. &lt;/p&gt; &lt;p&gt; Cela veut donc dire que les barri&#232;res &#224; l&#39;entr&#233;e sont beaucoup plus basses pour la solution MILLE et les fonctionnalit&#233;s de portail offertes par le Bureau Virtuel sont plus faciles &#224; acqu&#233;rir pour les commissions scolaires. &lt;/p&gt; &lt;p&gt; Co&#251;ts de fonctionnement &lt;/p&gt; &lt;p&gt; Dans son &#233;tude, le professeur Wybo y va de cette &#233;quation afin d&#39;estimer le co&#251;t de fonctionnement de chacune de solutions propos&#233;es: ces co&#251;ts totaux repr&#233;sentent la somme des co&#251;ts annuels de la maintenance de l&#39;infrastructure plus celle des co&#251;ts annuels de la maintenance de l&#39;application. &lt;/p&gt; &lt;p&gt; Heureusement, le professeur Wybo &#233;vite de tomber dans le pi&#232;ge que certains ap&#244;tres du libre pr&#233;sentent comme parole d&#39;&#233;vangile, &#224; savoir que les co&#251;ts de fonctionnement des solutions libres sont quasi inexistants. Cela est totalement faux, et toute organisation responsable se doit de prendre en consid&#233;ration les co&#251;ts relatifs &#224; la r&#233;solution des bogues et la distribution des corrections. Pour Wybo, &#171;il est aussi n&#233;cessaire de faire &#233;voluer le produit et de d&#233;finir, tester et sortir les nouvelles versions&#187; et donc, de prendre ces co&#251;ts en cons&#233;quence. &lt;/p&gt; &lt;p&gt; &#201;videmment, on ne saurait n&#233;gliger l&#39;apport qu&#39;une communaut&#233; apporte au d&#233;veloppement d&#39;un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; ainsi qu&#39;&#224; la r&#233;solution des bogues. &lt;/p&gt; &lt;p&gt; Bref, pour une commission scolaire comptant environ 10 000 &#233;l&#232;ves, l&#39;adoption d&#39;une solution faisant appel aux technologies libres g&#233;n&#232;re une &#233;conomie estim&#233;e &#224; 58 % des co&#251;ts totaux par rapport &#224; la solution propri&#233;taire. &lt;/p&gt; &lt;p&gt; Quant aux commissions scolaires de 30 000 &#233;l&#232;ves et plus, qui comptent investir 12 jours-employ&#233;s sur une p&#233;riode de cinq ann&#233;es, les &#233;conomies peuvent atteindre le nombre impressionnant de 78 % des co&#251;ts totaux. &#171;Si cette m&#234;me commission scolaire investissait 25 jours-employ&#233;s dans les ann&#233;es 2 &#224; 5, les &#233;conomies estim&#233;es seraient de l&#39;ordre de 62 % pour les co&#251;ts totaux.&#187; &lt;/p&gt; &lt;p&gt; On comprendra que, pour les commissions scolaires, adopter une solution en libre aura comme avantage de rendre disponible &#224; moindre co&#251;t aux professionnels de l&#39;&#233;ducation un outil pour leur permettre de mieux servir les &#233;tudiants et les enseignants. &lt;/p&gt; &lt;p&gt; Mais attendez, il y a plus... &lt;/p&gt; &lt;p&gt; &#192; lire les conclusions du rapport du professeur Wybo, qui font &#233;tat d&#39;&#233;conomies r&#233;elles dans l&#39;appropriation du libre par rapport au logiciel propri&#233;taire, on serait donc port&#233; &#224; croire que les responsables du milieu de l&#39;&#233;ducation n&#39;auront d&#39;autre choix que de consid&#233;rer les solutions en libre lors de futurs appels d&#39;offres. Ignorer le libre serait &#224; mon avis, totalement irresponsable, sachant que les fonds publics ne peuvent r&#233;pondre aux besoins de milieu de l&#39;&#233;ducation. J&#39;oserais m&#234;me dire qu&#39;il y a d&#233;j&#224; 103 millions de bonnes raisons de consid&#233;rer favorablement le libre. &lt;/p&gt; &lt;p&gt; D&#39;autant plus que le bureau virtuel du projet MILLE a re&#231;u sa caution morale de la part du plus important &#233;diteur de logiciels propri&#233;taires au monde, j&#39;ai nomm&#233; Microsoft. En effet, au congr&#232;s annuel de l&#39;ADIGECS (Association des directeurs g&#233;n&#233;raux des commissions scolaires) qui se tiendra du 18 au 21 mai prochain, la soci&#233;t&#233; fond&#233;e par Bill Gates entend faire une conf&#233;rence dont le titre est: Microsoft et le projet Mille. &lt;/p&gt; &lt;p&gt; Selon le programme de l&#39;&#233;v&#233;nement, cette conf&#233;rence vise &#224; informer les directeurs g&#233;n&#233;raux des diff&#233;rentes initiatives de Microsoft dans le r&#233;seau des commissions scolaires ainsi que sa position &#224; l&#39;&#233;gard du projet Mille ainsi qu&#39;au &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Toutefois, on peut d&#233;j&#224; vous faire un r&#233;sum&#233; succinct: Tonton Bill d&#233;teste le libre &#224; s&#39;en confesser. Mais le simple fait que Microsoft fasse une conf&#233;rence donc l&#39;unique sujet est le bureau virtuel du projet MILLE en dit long sur cette menace potentielle non? Cette conf&#233;rence ne peut que donner une aura de cr&#233;dibilit&#233; au projet MILLE. &lt;/p&gt; &lt;p&gt; Mais attendez, car il y encore plus. Pire oserais-je dire. &lt;/p&gt; &lt;p&gt; Imaginez donc que les responsables du projet MILLE ont d&#251; se battre afin de pouvoir pr&#233;senter aux directeurs g&#233;n&#233;raux le bureau virtuel lors du congr&#232;s de l&#39;ADIGECS, et ce, au m&#234;me titre que la GRICS et Microsoft. Peine perdue, et apr&#232;s moult pressions, la seule plage horaire qui leur fut accord&#233;e fut durant un d&#233;jeuner. &lt;/p&gt; &lt;p&gt; Path&#233;tique non? &lt;/p&gt; &lt;p&gt; Et les impacts soci&#233;taux? &lt;/p&gt; &lt;p&gt; Vous la savez, cette chronique examine toujours les ph&#233;nom&#232;nes li&#233;s aux technologies sous trois p&#244;les: &#233;conomique, technologique, mais aussi soci&#233;tal. Dans leur conclusion, les auteurs de l&#39;&#233;tude r&#233;servent un paragraphe entier &#224; l&#39;impact soci&#233;tal qu&#39;aura l&#39;adoption du projet MILLE par nos commissions scolaires. &lt;/p&gt; &lt;p&gt; De dire le professeur Wybo, &#171;outre les aspects financiers, une solution en &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; a aussi le b&#233;n&#233;fice de faciliter l&#39;&#233;change d&#39;id&#233;es parmi une tr&#232;s grande communaut&#233; d&#39;utilisateurs, ce qui repr&#233;sente une diversit&#233; et une richesse d&#39;id&#233;es, de points de vue et d&#39;exp&#233;riences sur l&#39;utilisation d&#39;une application portail dans l&#39;&#233;ducation primaire et secondaire. Compar&#233; &#224; un d&#233;veloppement bas&#233; sur l&#39;exp&#233;rience d&#39;un groupe restreint d&#39;utilisateurs, dont les investissements dans les innovations sont aussi restreint par les revenus g&#233;n&#233;r&#233;s par ce groupe, il est fort probable que des fonctionnalit&#233;s plus innovatrices et plus align&#233;es avec les besoins des professionnels de l&#39;&#233;ducation apparaissent plus facilement dans la solution &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&#187;. &lt;/p&gt; &lt;p&gt; Bref, &#224; lire les conclusions du rapport, on se demande que dire de plus pour convaincre nos d&#233;cideurs des avantages du libre. &lt;/p&gt; &lt;p&gt; Les solutions propos&#233;es par le projet MILLE sont moins ch&#232;res &#224; l&#39;acquisition et &#224; l&#39;exploitation. Les solutions technologiques d&#233;velopp&#233;es par l&#39;&#233;quipe du projet MILLE sont tout aussi performantes que les logiciels propri&#233;taires. Les solutions que le projet MILLE met &#224; la disposition du monde de l&#39;&#233;ducation sont innovatrices et r&#233;pondent aux besoins des &#233;l&#232;ves et des enseignants. &lt;/p&gt; &lt;p&gt; Messieurs, mesdames les ministres Fournier, Audet et J&#233;r&#244;me-Forget, voici une occasion de &#171;briller parmi les meilleurs&#187; avec une technologie innovatrice, d&#233;velopp&#233;e faut-il le encore le pr&#233;ciser, avec des fonds publics. Voici une solution qui r&#233;pond directement au probl&#232;me de sous-financement du r&#233;seau scolaire. &lt;/p&gt; &lt;p&gt; Que peut-on vous dire de plus pour vous convaincre? On se demande m&#234;me s&#39;il y a quelque coh&#233;rence dans vos actions. &lt;/p&gt; &lt;p&gt; D&#39;un c&#244;t&#233;, nous avons une solution en libre, financ&#233;e &#224; m&#234;me les fonds publics, et qui r&#233;pond enti&#232;rement aux besoins du monde de l&#39;&#233;ducation. De l&#39;autre, nous avons des solutions propri&#233;taires, celles de la GRICS, financ&#233;es elles aussi avec des fonds publics, mais qui reviennent beaucoup plus cher &#224; l&#39;&#201;tat qu&#233;b&#233;cois. &lt;/p&gt; &lt;p&gt; Et on repose la question: &#224; terme, comment la soci&#233;t&#233; GRICS peut-elle justifier le d&#233;veloppement de ses offres de service en logiciel propri&#233;taire, financ&#233;es &#224; m&#234;me les fonds publics, devant les conclusions du rapport Wybo? &lt;/p&gt; &lt;p&gt;&lt;a href=&quot;mailto:mdumais@ledevoir.com&quot;&gt; mdumais@ledevoir.com&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20050425&amp;#183;LE&amp;#183;80176&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">coûts d'acquisition</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">commissions scolaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bureau virtuel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fonds publics</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sciences humaines et sociales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éducation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">HEC</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050425%c2%b7LE%c2%b780176" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050425%c2%b7LE%c2%b780176">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CONVERGENCE,         lundi 25 avril 2005 1329 mots, p. B6</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Technologie</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Cachez ce rapport que je ne saurais voir            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le projet MILLE offre une solution alléchante pour le monde de l'éducation</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Après une (trop) longue attente, les responsables du projet MILLE ont enfin rendu publique l'étude du professeur Micheal Wybo, professeur invité aux HEC, sur l'évaluation du bureau virtuel du projet MILLE, une solution entièrement libre destinée au monde de l'éducation. La question qui tue et que peu de personnes osent poser ouvertement: à terme, comment la société GRICS pourra-t-elle justifier le développement de ses offres de service en logiciel propriétaire, développement payé à même les fonds publics, devant les conclusions d'une telle étude? </p> <p> Difficile de convaincre les grands bonzes du milieu de l'éducation des avantages du <mark>logiciel</mark> <mark>libre</mark>. Crédibilité du projet, coûts d'acquisition et d'opération, et surtout, quasi-mainmise de la société GRICS et de son offre de services logicielle propriétaire dans les commissions scolaires sont autant de raisons qui empêchent les prosélytes du <mark>logiciel</mark> <mark>libre</mark> d'être pris au sérieux par les décideurs.</p>
+
+
+<p>Totalement libre </p> <p> Conscients de ces problèmes, les responsables du projet MILLE ont confié à un professeur des HEC, Micheal Wybo, le soin d'évaluer le bureau virtuel du projet MILLE, un portail 100 % libre, par rapport à un «scénario propriétaire», à savoir le portail Édu-Groupe de la société GRICS et son architecture propriétaire Microsoft/MailSite. </p> <p> Bref, d'un côté, une véritable solution logicielle </p> <p> 100 % libre, adaptée à la réalité québécoise, et de l'autre, une combinaison d'outils propriétaires, tout aussi collés sur les besoins des maisons d'enseignement. L'étude quant à elle, porte sur les points d'évaluation suivants: coûts d'acquisition, coûts de fonctionnement, impacts sur le personnel technique et approche de développement suivant le modèle du libre. </p> <p> Le but: comparer les véritables coûts pour des solutions similaires. Que du sérieux quoi! En plein ce à quoi nos gestionnaires, et par ricochet, le ministre de l'Éducation, Jean-Marc Fournier, s'attendent. </p> <p> Deux scénarios </p> <p> Afin de bien juger les forces en présence et d'en faire une analyse rigoureuse, les responsables de l'étude se sont entendus afin d'établir des caractéristiques communes aux deux scénarios: - serveur Web et serveur d'application chacun sur son propre ordinateur; - serveur base de données, serveur de courrier électronique et serveur d'authentification chacun sur son propre ordinateur; - serveur de base de données à deux processeurs; - coût par jour d'un consultant fixe à 500 $; - coût par jour d'un employé de commission scolaire fixé à 280 $; - les frais de formation des utilisateurs enseignants pour les portails Édu-groupe et MILLE et les frais de fonctionnement des serveurs Microsoft et Linux sont considérés équivalents et ne sont pas inclus dans les analyses; - infrastructure de départ 100 % Microsoft. </p> <p> Coûts d'acquisition </p> <p> Nombreux sont ceux qui croient, à tort, que les coûts d'acquisition ne comprennent que le coût des licences. Or, il n'en est rien. Comme l'affirme le professeur Wybo dans son étude, les coûts d'acquisition comprennent non seulement les montants versés pour les licences, mais aussi les coûts de migration du système et des données. </p> <p> Selon l'étude, «ces coûts ne sont pas associés à une technologie particulière, mais viennent du fait que l'on se déplace vers une technologie pour laquelle l'organisation n'a pas d'expérience. Les coûts de migration sont fonction de l'infrastructure de départ. Une organisation qui veut remplacer son infrastructure UNIX par une infrastructure Microsoft aura des coûts de migration comparables à une organisation qui désire migrer son infrastructure Microsoft vers une infrastructure libre». </p> <p> C'est pourquoi, avec les budgets serrés dont disposent les commissions scolaires, les coûts d'acquisition peuvent représenter une barrière importante à l'implantation de technologies novatrices dans les établissements d'enseignement. </p> <p> Selon les auteurs de l'étude, «une solution libre, avec des coûts d'acquisition de moins que la moitié des coûts d'acquisition de la solution propriétaire, rend la technologie des portails scolaires plus accessible aux commissions scolaires et leurs clientèles». </p> <p> Plus de la moitié? En effet, dans sa conclusion, le professeur Wybo estime que «les coûts d'acquisition de la solution MILLE représentent des économies de 59 % à 75 % par rapport aux coûts d'acquisition d'une solution propriétaire similaire». </p> <p> Cela veut donc dire que les barrières à l'entrée sont beaucoup plus basses pour la solution MILLE et les fonctionnalités de portail offertes par le Bureau Virtuel sont plus faciles à acquérir pour les commissions scolaires. </p> <p> Coûts de fonctionnement </p> <p> Dans son étude, le professeur Wybo y va de cette équation afin d'estimer le coût de fonctionnement de chacune de solutions proposées: ces coûts totaux représentent la somme des coûts annuels de la maintenance de l'infrastructure plus celle des coûts annuels de la maintenance de l'application. </p> <p> Heureusement, le professeur Wybo évite de tomber dans le piège que certains apôtres du libre présentent comme parole d'évangile, à savoir que les coûts de fonctionnement des solutions libres sont quasi inexistants. Cela est totalement faux, et toute organisation responsable se doit de prendre en considération les coûts relatifs à la résolution des bogues et la distribution des corrections. Pour Wybo, «il est aussi nécessaire de faire évoluer le produit et de définir, tester et sortir les nouvelles versions» et donc, de prendre ces coûts en conséquence. </p> <p> Évidemment, on ne saurait négliger l'apport qu'une communauté apporte au développement d'un <mark>logiciel</mark> <mark>libre</mark> ainsi qu'à la résolution des bogues. </p> <p> Bref, pour une commission scolaire comptant environ 10 000 élèves, l'adoption d'une solution faisant appel aux technologies libres génère une économie estimée à 58 % des coûts totaux par rapport à la solution propriétaire. </p> <p> Quant aux commissions scolaires de 30 000 élèves et plus, qui comptent investir 12 jours-employés sur une période de cinq années, les économies peuvent atteindre le nombre impressionnant de 78 % des coûts totaux. «Si cette même commission scolaire investissait 25 jours-employés dans les années 2 à 5, les économies estimées seraient de l'ordre de 62 % pour les coûts totaux.» </p> <p> On comprendra que, pour les commissions scolaires, adopter une solution en libre aura comme avantage de rendre disponible à moindre coût aux professionnels de l'éducation un outil pour leur permettre de mieux servir les étudiants et les enseignants. </p> <p> Mais attendez, il y a plus... </p> <p> À lire les conclusions du rapport du professeur Wybo, qui font état d'économies réelles dans l'appropriation du libre par rapport au logiciel propriétaire, on serait donc porté à croire que les responsables du milieu de l'éducation n'auront d'autre choix que de considérer les solutions en libre lors de futurs appels d'offres. Ignorer le libre serait à mon avis, totalement irresponsable, sachant que les fonds publics ne peuvent répondre aux besoins de milieu de l'éducation. J'oserais même dire qu'il y a déjà 103 millions de bonnes raisons de considérer favorablement le libre. </p> <p> D'autant plus que le bureau virtuel du projet MILLE a reçu sa caution morale de la part du plus important éditeur de logiciels propriétaires au monde, j'ai nommé Microsoft. En effet, au congrès annuel de l'ADIGECS (Association des directeurs généraux des commissions scolaires) qui se tiendra du 18 au 21 mai prochain, la société fondée par Bill Gates entend faire une conférence dont le titre est: Microsoft et le projet Mille. </p> <p> Selon le programme de l'événement, cette conférence vise à informer les directeurs généraux des différentes initiatives de Microsoft dans le réseau des commissions scolaires ainsi que sa position à l'égard du projet Mille ainsi qu'au <mark>logiciel</mark> <mark>libre</mark>. Toutefois, on peut déjà vous faire un résumé succinct: Tonton Bill déteste le libre à s'en confesser. Mais le simple fait que Microsoft fasse une conférence donc l'unique sujet est le bureau virtuel du projet MILLE en dit long sur cette menace potentielle non? Cette conférence ne peut que donner une aura de crédibilité au projet MILLE. </p> <p> Mais attendez, car il y encore plus. Pire oserais-je dire. </p> <p> Imaginez donc que les responsables du projet MILLE ont dû se battre afin de pouvoir présenter aux directeurs généraux le bureau virtuel lors du congrès de l'ADIGECS, et ce, au même titre que la GRICS et Microsoft. Peine perdue, et après moult pressions, la seule plage horaire qui leur fut accordée fut durant un déjeuner. </p> <p> Pathétique non? </p> <p> Et les impacts sociétaux? </p> <p> Vous la savez, cette chronique examine toujours les phénomènes liés aux technologies sous trois pôles: économique, technologique, mais aussi sociétal. Dans leur conclusion, les auteurs de l'étude réservent un paragraphe entier à l'impact sociétal qu'aura l'adoption du projet MILLE par nos commissions scolaires. </p> <p> De dire le professeur Wybo, «outre les aspects financiers, une solution en <mark>logiciel</mark> <mark>libre</mark> a aussi le bénéfice de faciliter l'échange d'idées parmi une très grande communauté d'utilisateurs, ce qui représente une diversité et une richesse d'idées, de points de vue et d'expériences sur l'utilisation d'une application portail dans l'éducation primaire et secondaire. Comparé à un développement basé sur l'expérience d'un groupe restreint d'utilisateurs, dont les investissements dans les innovations sont aussi restreint par les revenus générés par ce groupe, il est fort probable que des fonctionnalités plus innovatrices et plus alignées avec les besoins des professionnels de l'éducation apparaissent plus facilement dans la solution <mark>logiciel</mark> <mark>libre</mark>». </p> <p> Bref, à lire les conclusions du rapport, on se demande que dire de plus pour convaincre nos décideurs des avantages du libre. </p> <p> Les solutions proposées par le projet MILLE sont moins chères à l'acquisition et à l'exploitation. Les solutions technologiques développées par l'équipe du projet MILLE sont tout aussi performantes que les logiciels propriétaires. Les solutions que le projet MILLE met à la disposition du monde de l'éducation sont innovatrices et répondent aux besoins des élèves et des enseignants. </p> <p> Messieurs, mesdames les ministres Fournier, Audet et Jérôme-Forget, voici une occasion de «briller parmi les meilleurs» avec une technologie innovatrice, développée faut-il le encore le préciser, avec des fonds publics. Voici une solution qui répond directement au problème de sous-financement du réseau scolaire. </p> <p> Que peut-on vous dire de plus pour vous convaincre? On se demande même s'il y a quelque cohérence dans vos actions. </p> <p> D'un côté, nous avons une solution en libre, financée à même les fonds publics, et qui répond entièrement aux besoins du monde de l'éducation. De l'autre, nous avons des solutions propriétaires, celles de la GRICS, financées elles aussi avec des fonds publics, mais qui reviennent beaucoup plus cher à l'État québécois. </p> <p> Et on repose la question: à terme, comment la société GRICS peut-elle justifier le développement de ses offres de service en logiciel propriétaire, financées à même les fonds publics, devant les conclusions du rapport Wybo? </p> <p><a href="mailto:mdumais@ledevoir.com"> mdumais@ledevoir.com</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20050425·LE·80176</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20050425·LE·80176";
+    var _docIndex = 9;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20050425·LE·80176';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720050425%C2%B7LE%C2%B780176&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720050425%C2%B7LE%C2%B780176&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720050425%C2%B7LE%C2%B780176&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720050425%C2%B7LE%C2%B780176&docIndex=9&FullScreen=1";
+                
+	var _keyDoc = 'news·20050425·LE·80176';
+</script>
+</div></body></html>

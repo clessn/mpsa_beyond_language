@@ -1,0 +1,549 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 23210                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         vendredi 29 mars 2019 482 mots, p. 24&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+M&#233;dias         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; coupe le robinet aux applications tierces            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le g&#233;ant du num&#233;rique tire les le&#231;ons du scandale Cambridge Analytica.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Braun, Elisa&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;INTERNET&lt;/em&gt; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; ferme la porte qu&#39;il avait laiss&#233;e grande ouverte. Apr&#232;s avoir permis &#224; de nombreuses entreprises d&#39;acc&#233;der aux donn&#233;es de ses utilisateurs pour qu&#39;elles construisent des applications et des services, le g&#233;ant a d&#233;cid&#233; de changer les conditions d&#39;acc&#232;s de sa plateforme d&#39;API (un logiciel qui fait office de pont entre deux plateformes ou applications). Annonc&#233;e en octobre dernier, cette mesure oblige les d&#233;veloppeurs et start-up &#224; payer un audit externe d&#39;au moins 15 000 dollars pour prouver &#224; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; qu&#39;ils respectent les nouvelles r&#232;gles de s&#233;curit&#233; des donn&#233;es de ses utilisateurs. &lt;/p&gt; &lt;p&gt; Officiellement, le g&#233;ant a mis &#224; jour sa politique d&#39;utilisation pour renforcer la s&#233;curit&#233; face aux &#171; applications tierces &#187; douteuses. La mesure est d&#39;importance : c&#39;est par le biais d&#39;une application tierce de Cambridge Analytica que &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; s&#39;est retrouv&#233; plong&#233; dans un scandale, o&#249; les donn&#233;es de millions d&#39;utilisateurs ont &#233;t&#233; usurp&#233;es &#224; des fins de manipulation politique.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Consolider sa puissance&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La mesure que lance &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; met bien fin aux activit&#233;s opaques de certaines start-up comme Clearbit, qui scannait les mails des utilisateurs pour collecter toutes les coordonn&#233;es laiss&#233;es en signature et les revendre sous forme d&#39;annuaires. L&#39;entreprise, qui venait fi&#232;rement d&#39;annoncer une lev&#233;e de fonds de 15 millions de dollars, n&#39;a plus acc&#232;s &#224; Gmail. &lt;/p&gt; &lt;p&gt; Mais d&#39;autres services se voient forc&#233;s de renoncer &#224; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; pour des raisons qui n&#39;ont rien &#224; voir avec la confidentialit&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt; &#171; Nous sommes une start-up avec si peu de tr&#233;sorerie que nous n&#39;avons pas les moyens d&#39;investir dans l&#39;audit que requiert &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, et nous devons mettre la cl&#233; sous la porte &#187; , &lt;/em&gt;explique l&#39;un d&#39;eux. &lt;em style=&quot;font-style:italic;&quot;&gt; &#171; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; va pouvoir renforcer ses partenariats avec les entreprises qui ont les moyens, mais les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; vont avoir moins d&#39;opportunit&#233;s &#187; , &lt;/em&gt;regrette un autre. Le fran&#231;ais GMVault, &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; de sauvegarde des mails, compte parmi les p&#233;nalis&#233;s. L&#39;application IFTTT, qui compte 14 millions d&#39;utilisateurs, se voit, elle aussi, priv&#233;e des acc&#232;s qui permettaient autrefois &#224; ses utilisateurs d&#39;automatiser certaines t&#226;ches avec Gmail. Selon IFTTT, les modifications demand&#233;es par &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; imposaient une refonte en profondeur de leur service qui demandait beaucoup de ressources. &lt;/p&gt; &lt;p&gt; Ces barri&#232;res juridiques et financi&#232;res aux donn&#233;es sont aussi vues par certains d&#233;veloppeurs comme un moyen de consolider la puissance de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;. Il n&#39;est pas rare que les g&#233;ants du Web utilisent l&#39;argument de la vie priv&#233;e pour changer les r&#232;gles du jeu &#224; leur avantage. &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; avait ainsi fini par couper l&#39;acc&#232;s de son API &#224; son rival, l&#39;application de vid&#233;o Vine. &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; op&#232;re actuellement un imposant virage strat&#233;gique en se recentrant sur l&#39;am&#233;lioration de l&#39;interface de Gmail, &#224; laquelle il a d&#233;j&#224; apport&#233; des modifications substantielles. Certaines, comme celle qui permet d&#39;ajouter automatiquement les vols &#224; son agenda, reprennent d&#39;ailleurs des id&#233;es d&#39;IFTTT... Quand les partenaires deviennent concurrents, une plateforme ouverte finit toujours par se refermer.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:ebraun@lefigaro.fr&quot;&gt;ebraun@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;28 mars 2019&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2019 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20190329&amp;#183;LF&amp;#183;722&amp;#215;20&amp;#215;2997215933&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">applications tierces</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">politique d'utilisation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modifications substantielles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">application de vidéo</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">audit externe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">FACEBOOK</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720190329%c2%b7LF%c2%b7722%c3%9720%c3%972997215933" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720190329%c2%b7LF%c2%b7722%c3%9720%c3%972997215933">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 23210                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         vendredi 29 mars 2019 482 mots, p. 24</span>
+</div>
+
+    <div>
+        <p>
+Médias         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+<span class="stubs">Google</span> coupe le robinet aux applications tierces            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le géant du numérique tire les leçons du scandale Cambridge Analytica.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Braun, Elisa</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">INTERNET</em> <span class="stubs">Google</span> ferme la porte qu'il avait laissée grande ouverte. Après avoir permis à de nombreuses entreprises d'accéder aux données de ses utilisateurs pour qu'elles construisent des applications et des services, le géant a décidé de changer les conditions d'accès de sa plateforme d'API (un logiciel qui fait office de pont entre deux plateformes ou applications). Annoncée en octobre dernier, cette mesure oblige les développeurs et start-up à payer un audit externe d'au moins 15 000 dollars pour prouver à <span class="stubs">Google</span> qu'ils respectent les nouvelles règles de sécurité des données de ses utilisateurs. </p> <p> Officiellement, le géant a mis à jour sa politique d'utilisation pour renforcer la sécurité face aux « applications tierces » douteuses. La mesure est d'importance : c'est par le biais d'une application tierce de Cambridge Analytica que <span class="stubs">Facebook</span> s'est retrouvé plongé dans un scandale, où les données de millions d'utilisateurs ont été usurpées à des fins de manipulation politique.</p>
+
+
+<p><em style="font-weight:bold;">Consolider sa puissance</em></p><p>La mesure que lance <span class="stubs">Google</span> met bien fin aux activités opaques de certaines start-up comme Clearbit, qui scannait les mails des utilisateurs pour collecter toutes les coordonnées laissées en signature et les revendre sous forme d'annuaires. L'entreprise, qui venait fièrement d'annoncer une levée de fonds de 15 millions de dollars, n'a plus accès à Gmail. </p> <p> Mais d'autres services se voient forcés de renoncer à <span class="stubs">Google</span> pour des raisons qui n'ont rien à voir avec la confidentialité. <em style="font-style:italic;"> « Nous sommes une start-up avec si peu de trésorerie que nous n'avons pas les moyens d'investir dans l'audit que requiert <span class="stubs">Google</span>, et nous devons mettre la clé sous la porte » , </em>explique l'un d'eux. <em style="font-style:italic;"> « <span class="stubs">Google</span> va pouvoir renforcer ses partenariats avec les entreprises qui ont les moyens, mais les <mark>logiciels</mark> <mark>libres</mark> vont avoir moins d'opportunités » , </em>regrette un autre. Le français GMVault, <mark>logiciel</mark> <mark>libre</mark> de sauvegarde des mails, compte parmi les pénalisés. L'application IFTTT, qui compte 14 millions d'utilisateurs, se voit, elle aussi, privée des accès qui permettaient autrefois à ses utilisateurs d'automatiser certaines tâches avec Gmail. Selon IFTTT, les modifications demandées par <span class="stubs">Google</span> imposaient une refonte en profondeur de leur service qui demandait beaucoup de ressources. </p> <p> Ces barrières juridiques et financières aux données sont aussi vues par certains développeurs comme un moyen de consolider la puissance de <span class="stubs">Google</span>. Il n'est pas rare que les géants du Web utilisent l'argument de la vie privée pour changer les règles du jeu à leur avantage. <span class="stubs">Facebook</span> avait ainsi fini par couper l'accès de son API à son rival, l'application de vidéo Vine. <span class="stubs">Google</span> opère actuellement un imposant virage stratégique en se recentrant sur l'amélioration de l'interface de Gmail, à laquelle il a déjà apporté des modifications substantielles. Certaines, comme celle qui permet d'ajouter automatiquement les vols à son agenda, reprennent d'ailleurs des idées d'IFTTT... Quand les partenaires deviennent concurrents, une plateforme ouverte finit toujours par se refermer.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:ebraun@lefigaro.fr">ebraun@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">28 mars 2019</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2019 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20190329·LF·722×20×2997215933</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20190329·LF·722×20×2997215933";
+    var _docIndex = 415;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"facebook":"94511","google":"92575"};
+		var _docName = 'news·20190329·LF·722×20×2997215933';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720190329%C2%B7LF%C2%B7722%C3%9720%C3%972997215933&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720190329%C2%B7LF%C2%B7722%C3%9720%C3%972997215933&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720190329%C2%B7LF%C2%B7722%C3%9720%C3%972997215933&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720190329%C2%B7LF%C2%B7722%C3%9720%C3%972997215933&docIndex=415&FullScreen=1";
+                
+	var _keyDoc = 'news·20190329·LF·722×20×2997215933';
+</script>
+</div></body></html>

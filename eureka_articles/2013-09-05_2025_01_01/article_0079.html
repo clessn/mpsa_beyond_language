@@ -1,0 +1,517 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Monde Science et m&#233;decine,         mercredi 14 f&amp;#233;vrier 2024 656 mots, p. SCH4&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;&#201;v&#233;nement&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les chatbots, cibles des cybercriminels            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;D. L.&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;DarkGPT, WormGPT, WolfGPT, EvilGPT, DarkBARD, BadGPT, FreedomGPT, EscapeGPT… ces noms ne vous disent sans doute rien, mais leurs suffixes peuvent vous mettre sur la voie. Ce sont des chatbots, comme ChatGPT ou Bard, mais d&#233;velopp&#233;s par l’industrie du crime organis&#233;, capable de coder des virus informatiques, d’&#233;crire des e-mails d’hame&#231;onnage, de b&#226;tir un faux site Web, de scanner les vuln&#233;rabilit&#233;s informatiques d’un site pour l’attaquer… &lt;/p&gt; &lt;p&gt; Le 6&#160;janvier, une &#233;quipe de l’universit&#233; de l’Indiana &#224; Bloomington a r&#233;alis&#233; la premi&#232;re plong&#233;e du c&#244;t&#233; obscur de l’intelligence artificielle (IA). L’une des autrices, Xiaojing Liao, a baptis&#233; &#171; Malla &#187; pour &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; malicious LLM applications &#187;&lt;/em&gt; (ou applications malveillantes des grands mod&#232;les de langues) tous ces programmes et services. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous en avons identifi&#233; 212 entre f&#233;vrier et septembre&#160;2023, mais nous voyons que cela continue de cro&#238;tre &#187;&lt;/em&gt; , indique-t-elle.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous avons l’habitude de ce genre de “jeu”&lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Le terrain a simplement chang&#233;. Avant c’&#233;tait le Web puis les mobiles, puis le Cloud…,&lt;/em&gt; pr&#233;cise XiaoFeng Wang, autre coauteur. &lt;em style=&quot;font-style:italic;&quot;&gt;Notre &#233;tude montre qu’on n’a plus besoin d’&#234;tre un grand programmeur pour faire mal, par des virus, du phishing… On a juste &#224; utiliser ces services. &#187;&lt;/em&gt; Ces derniers sont, en outre, selon les chercheurs, moins chers (entre 5 et 199&#160;dollars, soit de 4,60 &#224; 184 euros environ) que ceux existant avant l’IA, 399&#160;dollars en moyenne. Tout en restant lucratifs. L’analyse des &#233;changes de bitcoins pour la plate-forme WormGPT, sp&#233;cialis&#233;e dans les virus et les e-mails d’hame&#231;onnage (ferm&#233;e d&#233;sormais), a r&#233;v&#233;l&#233; un revenu de 28 000&#160;dollars en trois mois d’activit&#233;. &lt;/p&gt; &lt;p&gt; Poussant le professionnalisme tr&#232;s loin, l’&#233;quipes’est &#233;galement pench&#233;e sur la fiabilit&#233; de ces programmes et les r&#233;sultats ne sont pas si mauvais : les virus, les e-mails et les sites propos&#233;s obtiennent detr&#232;s bons scores &#224; des tests d’&#171; efficacit&#233; &#187;, m&#234;me si la qualit&#233; est variable entre tous ces services. &lt;/p&gt; &lt;p&gt; L’article montre aussi les diverses m&#233;thodes utilis&#233;es par les cybercriminels. Soit ils font appel &#224; des mod&#232;les de langues &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; (aux param&#232;tres accessibles), qu’ils peaufinent afin de les sp&#233;cialiser pour les t&#226;ches malveillantes. Soit ils contournent les protections des services commerciaux. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Mauvaise surprise&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Dans le premier cas, l’avantage est que ces programmes n’ont pas de filtres et d’interdits, et qu’ils peuvent &#234;tre entra&#238;n&#233;s avec n’importe quel contenu. Ainsi Pygmallion-13B, bas&#233; sur Llama-13b de Meta, a &#233;t&#233; entra&#238;n&#233; pour g&#233;n&#233;rer du contenu offensant et violent. Davinci-002 et Davinci-003 d’OpenAI, pr&#233;curseurs des mod&#232;les &#224; la base de ChatGPT, ont aussi servi&#160;pour des virus et du phishing. &lt;/p&gt; &lt;p&gt; Une mauvaise surprise a &#233;t&#233; de d&#233;couvrir que ces mod&#232;les ad hoc &#233;taient ensuite souvent disponibles sur des plates-formes ayant pignon sur rue comme Poe ou FlowGPT, qui permettent de tester des dizaines d’agents conversationnels, y compris malveillants et m&#234;me si cela enfreint les r&#232;gles de ces sites. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Certains acteurs n’ont pas int&#233;r&#234;t &#224; r&#233;agir tant que leur business n’est pas touch&#233;. La s&#233;curit&#233; ne les int&#233;resse pas tant qu’on ne prouve pas que &#231;a peut faire des d&#233;g&#226;ts &#187;&lt;/em&gt;, regrette XiaoFeng Wang. &lt;/p&gt; &lt;p&gt; Dans le second cas, la technique consiste &#224; &#171; d&#233;bloquer &#187; (&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; jailbreak &#187;&lt;/em&gt; dans le jargon) les agents conversationnels payants pour leur faire faire ce que leurs concepteurs refusent &#224; l’origine. Les chercheurs ont ainsi identifi&#233; 182 consignes &#233;labor&#233;es dans ce but et efficaces pour d&#233;tourner les services commerciaux d’OpenAI (GPT-3.5 et 4) ou Anthropic (Claude). Pour cela, ils ont utilis&#233; eux-m&#234;mes des &#171; prompts &#187; for&#231;ant les services d&#233;tourn&#233;s &#224; r&#233;v&#233;ler quelles consignes ils utilisent… &lt;/p&gt; &lt;p&gt; En conclusion, les sp&#233;cialistes appellent &#224; cr&#233;er un observatoire de ces &#171; Malla &#187; pour &#234;tre capables de rep&#233;rer les nouveaut&#233;s. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il faudrait aussi augmenter les filtres et les restrictions des mod&#232;les existants de chatbot pour qu’il soit plus compliqu&#233; de les contourner. Tout en respectant l’&#233;quilibre entre utilisation et protection &#187;&lt;/em&gt; , r&#233;sume XiaoFeng Wang.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;13 f&amp;#233;vrier 2024&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20240214&amp;#183;LM&amp;#183;202402142&amp;#215;20&amp;#215;21563814306&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">modèles de langues</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">services commerciaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">agents conversationnels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">dizaines d’agents conversationnels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">ChatGPT</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240214%c2%b7LM%c2%b7202402142%c3%9720%c3%9721563814306" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240214%c2%b7LM%c2%b7202402142%c3%9720%c3%9721563814306">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Monde Science et médecine,         mercredi 14 février 2024 656 mots, p. SCH4</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Événement</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les chatbots, cibles des cybercriminels            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">D. L.</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>DarkGPT, WormGPT, WolfGPT, EvilGPT, DarkBARD, BadGPT, FreedomGPT, EscapeGPT… ces noms ne vous disent sans doute rien, mais leurs suffixes peuvent vous mettre sur la voie. Ce sont des chatbots, comme ChatGPT ou Bard, mais développés par l’industrie du crime organisé, capable de coder des virus informatiques, d’écrire des e-mails d’hameçonnage, de bâtir un faux site Web, de scanner les vulnérabilités informatiques d’un site pour l’attaquer… </p> <p> Le 6&nbsp;janvier, une équipe de l’université de l’Indiana à Bloomington a réalisé la première plongée du côté obscur de l’intelligence artificielle (IA). L’une des autrices, Xiaojing Liao, a baptisé « Malla » pour <em style="font-style:italic;">« malicious LLM applications »</em> (ou applications malveillantes des grands modèles de langues) tous ces programmes et services. <em style="font-style:italic;">« Nous en avons identifié 212 entre février et septembre&nbsp;2023, mais nous voyons que cela continue de croître »</em> , indique-t-elle.</p>
+
+
+<p><em style="font-style:italic;">« Nous avons l’habitude de ce genre de “jeu”</em>. <em style="font-style:italic;">Le terrain a simplement changé. Avant c’était le Web puis les mobiles, puis le Cloud…,</em> précise XiaoFeng Wang, autre coauteur. <em style="font-style:italic;">Notre étude montre qu’on n’a plus besoin d’être un grand programmeur pour faire mal, par des virus, du phishing… On a juste à utiliser ces services. »</em> Ces derniers sont, en outre, selon les chercheurs, moins chers (entre 5 et 199&nbsp;dollars, soit de 4,60 à 184 euros environ) que ceux existant avant l’IA, 399&nbsp;dollars en moyenne. Tout en restant lucratifs. L’analyse des échanges de bitcoins pour la plate-forme WormGPT, spécialisée dans les virus et les e-mails d’hameçonnage (fermée désormais), a révélé un revenu de 28 000&nbsp;dollars en trois mois d’activité. </p> <p> Poussant le professionnalisme très loin, l’équipes’est également penchée sur la fiabilité de ces programmes et les résultats ne sont pas si mauvais : les virus, les e-mails et les sites proposés obtiennent detrès bons scores à des tests d’« efficacité », même si la qualité est variable entre tous ces services. </p> <p> L’article montre aussi les diverses méthodes utilisées par les cybercriminels. Soit ils font appel à des modèles de langues <mark>open</mark> <mark>source</mark> (aux paramètres accessibles), qu’ils peaufinent afin de les spécialiser pour les tâches malveillantes. Soit ils contournent les protections des services commerciaux. </p> <p><em style="font-weight:bold;">Mauvaise surprise</em></p><p>Dans le premier cas, l’avantage est que ces programmes n’ont pas de filtres et d’interdits, et qu’ils peuvent être entraînés avec n’importe quel contenu. Ainsi Pygmallion-13B, basé sur Llama-13b de Meta, a été entraîné pour générer du contenu offensant et violent. Davinci-002 et Davinci-003 d’OpenAI, précurseurs des modèles à la base de ChatGPT, ont aussi servi&nbsp;pour des virus et du phishing. </p> <p> Une mauvaise surprise a été de découvrir que ces modèles ad hoc étaient ensuite souvent disponibles sur des plates-formes ayant pignon sur rue comme Poe ou FlowGPT, qui permettent de tester des dizaines d’agents conversationnels, y compris malveillants et même si cela enfreint les règles de ces sites. <em style="font-style:italic;">« Certains acteurs n’ont pas intérêt à réagir tant que leur business n’est pas touché. La sécurité ne les intéresse pas tant qu’on ne prouve pas que ça peut faire des dégâts »</em>, regrette XiaoFeng Wang. </p> <p> Dans le second cas, la technique consiste à « débloquer » (<em style="font-style:italic;">« jailbreak »</em> dans le jargon) les agents conversationnels payants pour leur faire faire ce que leurs concepteurs refusent à l’origine. Les chercheurs ont ainsi identifié 182 consignes élaborées dans ce but et efficaces pour détourner les services commerciaux d’OpenAI (GPT-3.5 et 4) ou Anthropic (Claude). Pour cela, ils ont utilisé eux-mêmes des « prompts » forçant les services détournés à révéler quelles consignes ils utilisent… </p> <p> En conclusion, les spécialistes appellent à créer un observatoire de ces « Malla » pour être capables de repérer les nouveautés. <em style="font-style:italic;">« Il faudrait aussi augmenter les filtres et les restrictions des modèles existants de chatbot pour qu’il soit plus compliqué de les contourner. Tout en respectant l’équilibre entre utilisation et protection »</em> , résume XiaoFeng Wang.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">13 février 2024</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20240214·LM·202402142×20×21563814306</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20240214·LM·202402142×20×21563814306";
+    var _docIndex = 78;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20240214·LM·202402142×20×21563814306';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563814306&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563814306&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563814306&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563814306&docIndex=78&FullScreen=1";
+                
+	var _keyDoc = 'news·20240214·LM·202402142×20×21563814306';
+</script>
+</div></body></html>

@@ -1,0 +1,479 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Plan&#232;te,         lundi 10 avril 2000 1457 mots, p. B2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Jean-Claude Gu&#233;don persiste et signe            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Une conversation avec Jean-Claude Gu&#233;don, professeur en litt&#233;rature compar&#233;e &#224; l&#39;Universit&#233; de Montr&#233;al et auteur du livre &lt;em style=&quot;font-style:italic;&quot;&gt;La Plan&#232;te Cyber&lt;/em&gt;, r&#233;&#233;dit&#233; cette semaine, n&#39;est jamais d&#233;nu&#233;e d&#39;int&#233;r&#234;t. Nous avons profit&#233; de la foire commerciale Linux Expo Am&#233;riques, ou Gu&#233;don est membre du comit&#233; conf&#233;rences et animateur de la conf&#233;rence sur Linux et l&#39;&#233;ducation pour lui poser quelques questions. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-style:italic;&quot;&gt;Jean-Claude Gu&#233;don, vous &#234;tes devenu au fil des ann&#233;es, un des porte-parole de Linux et du mouvement des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Pourquoi?&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Autant que je m&#39;en souvienne, le tout est parti d&#39;un sentiment de frustration devant l&#39;alliance wintel (&lt;em style=&quot;font-style:italic;&quot;&gt;Windows-Intel&lt;/em&gt;). En effet, celle-ci conduisait &#224; la multiplication des ob&#233;siciels pour relancer la course aux puces ultra-rapides, fa&#231;on comme une autre de forcer la consommation par obsolescence soigneusement planifi&#233;e. En d&#233;couvrant &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;, je d&#233;couvris en fait et surtout le ph&#233;nom&#232;ne du logiciel &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, et je red&#233;couvris toute la force d&#39;intelligence distribu&#233;e que rec&#232;le le monde des scientifiques depuis la fin de la Renaissance. Par l&#224;, je veux dire que l&#39;attitude qui consiste &#224; publier les r&#233;sultats de ses recherches pour les exposer aux critiques de ses pairs, et ce, dans l&#39;exercice de ses fonctions de chercheur, me paraissait parfaitement analogue &#224; celle qui consiste &#224; publier du code pour permettre &#224; d&#39;autres de le corriger, le critiquer ou l&#39;am&#233;liorer. Il me semblait voir l&#224; une forme de rationalit&#233; sociale, une sorte de sens commun qui m&#39;ont rapidement s&#233;duit: chaque personne, dans ce syst&#232;me, se distingue des autres (donc pas de collectivisme), mais, ce faisant, contribue malgr&#233; tout &#224; faire &#233;voluer des id&#233;es, des &#233;l&#233;ments de code, etc. &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; est donc devenu, au fil du temps, une sorte d&#39;incarnation embl&#233;matique de ce ph&#233;nom&#232;ne que j&#39;aime appeler l&#39;intelligence distribu&#233;e (par distinction plus ou moins accentu&#233;e avec les notions d&#39;intelligence collective [Pierre L&#233;vy] ou d&#39;intelligence connective [Derrick de Kerckhove]). J&#39;y vois donc autant une solution technique int&#233;ressante qu&#39;un v&#233;ritable projet de soci&#233;t&#233;. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-style:italic;&quot;&gt;Dans la revue&lt;/em&gt; Qu&#233;bec Science &lt;em style=&quot;font-style:italic;&quot;&gt;du mois d&#39;octobre 1998, vous interpelliez la ministre de l&#39;&#201;ducation du temps, Mme Marois, pour que&lt;/em&gt; Linux &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;devienne&quot; le syst&#232;me d&#39;exploitation utilis&#233; dans les &#233;coles du Qu&#233;bec. Pourtant, la norme actuelle du march&#233; du travail n&#39;est-elle pas&lt;/em&gt; Microsoft Windows &lt;em style=&quot;font-style:italic;&quot;&gt;ou, dans une moindre mesure,&lt;/em&gt; MacOS &lt;em style=&quot;font-style:italic;&quot;&gt;? De quelle fa&#231;on justifiez-vous ce choix?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Premier &#233;l&#233;ment de r&#233;ponse, la formation &#224; l&#39;&#233;cole ne recoupe pas pr&#233;cis&#233;ment les &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;normes du march&#233;&quot;&lt;/em&gt;. L&#39;&#233;ducation, du moins on l&#39;esp&#232;re, cherche &#224; surplomber le march&#233; du moment pour former des &#233;tudiants susceptibles de s&#39;adapter &#224; l&#39;&#233;volution des march&#233;s et ceci est d&#39;autant plus important qu&#39;une bonne partie de l&#39;effort de la mise en march&#233; consiste justement &#224; produire constamment du changement, du nouveau, justifi&#233; ou non. Former des &#233;l&#232;ves &#224; telle version de &lt;em style=&quot;font-style:italic;&quot;&gt;MS-Word&lt;/em&gt; sur telle version de &lt;em style=&quot;font-style:italic;&quot;&gt;Window&lt;/em&gt; revient non pas &#224; donner une canne &#224; p&#234;che &#224; l&#39;&#233;l&#232;ve, mais bien un poisson, et un poisson qui pourrit assez vite... Je remettais donc aussi en cause une formation &#224; l&#39;ordinateur qui visait des savoir-faire trop &#233;troitement d&#233;finis, par exemple la ma&#238;trise de telle version de tel logiciel sur tel ou tel type de mat&#233;riel. Cette sur-sp&#233;cialisation se pr&#234;te mal aux &#233;volutions n&#233;cessaires, surtout dans un monde en flux technique aussi intense que l&#39;est notre monde. &lt;/p&gt; &lt;p&gt; Je r&#233;clamais aussi une formation plus g&#233;n&#233;rique, plus proche de ce que j&#39;aime appeler la formation &#224; la nouvelle &#233;criture. Un &#233;tudiant, d&#232;s la fin du primaire, devrait savoir cr&#233;er une page pour la Toile, tout comme il sait actuellement cr&#233;er un document propre &#224; partir d&#39;une page blanche. Son &#233;ducation devrait se centrer sur ce style d&#39;&#233;criture num&#233;ris&#233;e. Par exemple, l&#39;enfant du primaire qui apprend &#224; distinguer substantifs et adjectifs ou adverbes en soulignant chaque type de mot d&#39;une couleur diff&#233;rente, pourrait fort bien effectuer ce m&#234;me exercice en utilisant les balises propres &#224; HTML ou XML qui commandent les couleurs des caract&#232;res, si bien que, en regardant ensuite son texte avec un fureteur, il d&#233;couvrirait les mots d&#233;j&#224; color&#233;s et pourrait ainsi comparer son travail avec le mod&#232;le donn&#233; par le professeur. &lt;/p&gt; &lt;p&gt; Passant ensuite &#224; un cours d&#39;&#233;criture num&#233;rique ou nouvelle &#233;criture, il se dirait: mais je connais d&#233;j&#224; un peu &#231;a; j&#39;ai d&#233;j&#224; travaill&#233; comme &#231;a dans mon cours de fran&#231;ais. &lt;/p&gt; &lt;p&gt; Deuxi&#232;me &#233;l&#233;ment de r&#233;ponse: les co&#251;ts de l&#39;informatisation des &#233;coles. Toujours &#224; cause des &#233;volutions de type wintel, les &#233;coles se retrouvent avec des parcs consid&#233;rables d&#39;appareils inutilisables (sans parler de l&#39;h&#233;t&#233;rog&#233;n&#233;it&#233; engendr&#233;e par la division du march&#233; entre Macs et machines sous &lt;em style=&quot;font-style:italic;&quot;&gt;DOS&lt;/em&gt; ou &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt;). Une adaptation, souvent peu co&#251;teuse, des appareils existants permet d&#39;utiliser bon nombre de ces vieux appareils en leur faisant jouer le r&#244;le de terminal (terminal X pour utiliser le jargon ad&#233;quat). Quelques appareils neufs, un peu muscl&#233;s, trait&#233;s en serveurs, permettent donc de redonner une nouvelle vie &#224; ces vieux appareils et, de ce fait, permettent d&#39;&#233;quiper au moindre co&#251;t nos &#233;coles. Le Qu&#233;bec termine actuellement un projet d&#39;informatisation des &#233;coles de cinq ans et de 300 millions de dollars au total. Or, en prenant des appareils Wintel ou Mac avec leurs logiciels courants, on s&#39;est assur&#233; que ces appareils ne seront plus tr&#232;s utiles en trois ans. Cela veut dire que, actuellement, une partie des 300 millions de dollars est employ&#233;e &#224; remplacer des appareils achet&#233;s la premi&#232;re ann&#233;e du programme et, dans trois ou quatre ans, tout sera &#224; recommencer... Une telle strat&#233;gie qui, de plus, n&#233;glige la formation des professeurs et se concentre sur la quincaillerie, me paraissait et me para&#238;t encore irrationnelle. Mieux valait, me semblait-il, mettre de l&#39;argent dans la mise &#224; jour du vieux mat&#233;riel en utilisant &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;, et de mettre ensuite le paquet dans la formation la plus pouss&#233;e possible du corps professoral. Ainsi, l&#39;argent aurait-il servi &#224; am&#233;liorer les comp&#233;tences humaines, et donc l&#39;enseignement. Cet argent serait rest&#233; sur place plut&#244;t que d&#39;aller nourrir quelques grandes compagnies aux USA ou au Japon et ses effets auraient ainsi &#233;t&#233; beaucoup plus durables. Le gouvernement a pr&#233;f&#233;r&#233; se comporter comme un vulgaire consommateur, passif et pas tr&#232;s &#233;clair&#233;, qui jette de l&#39;argent un peu n&#39;importe comment pour tenter de r&#233;soudre des probl&#232;mes complexes. Tout cela permet de mettre en sc&#232;ne de belles conf&#233;rences de presse et donne de la visibilit&#233; aux ministres, mais c&#39;est payer bien cher et bien mal le d&#233;sir de se faire r&#233;&#233;lire. &lt;/p&gt; &lt;p&gt; Troisi&#232;me &#233;l&#233;ment de r&#233;ponse: la transparence des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; permet de construire un apprentissage en informatique qui peut aller de la simple ma&#238;trise de quelques types g&#233;n&#233;riques de logiciels &#224; une formation pouss&#233;e dans les syst&#232;mes d&#39;exploitation, les r&#233;seaux et la programmation. Donner &#224; nos jeunes cette possibilit&#233; de piocher aussi loin qu&#39;ils le d&#233;sirent dans les outils informatiques engendrerait, &#224; mon avis, une telle explosion de la comp&#233;tence informatique g&#233;n&#233;rale que les entreprises ne manqueraient pas de s&#39;en apercevoir. Du m&#234;me coup, elles trouveraient un argument de poids suppl&#233;mentaire pour s&#39;installer au Qu&#233;bec plut&#244;t qu&#39;ailleurs, avec les cons&#233;quences favorables &#224; l&#39;emploi qui en r&#233;sulteraient. &lt;/p&gt; &lt;p&gt; H&#233;las, jusqu&#39;ici, l&#39;inertie et m&#234;me les r&#233;sistances ont &#233;t&#233; plus nombreuses que les initiatives. Saluons pourtant l&#39;&#201;cole Garneau qui se lance &#224; fond dans cette voie. Cet exemple, qui commence &#224; &#234;tre suivi par d&#39;autres institutions, devrait jouer un r&#244;le moteur important dans l&#39;adoption des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, et de &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; en particulier, dans les &#233;coles. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-style:italic;&quot;&gt;Quels sont les avantages de Linux?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;J&#39;en ai d&#233;j&#224; un peu parl&#233;, mais disons que le mode de d&#233;veloppement de tout &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, du style &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; garantit une meilleure qualit&#233; que ce que l&#39;on obtient dans les &#233;quipes de l&#39;industrie traditionnelle. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;With enough eyeballs, all bugs are shallow&quot;&lt;/em&gt; dit Torvalds, et il a raison. Voici un exemple racont&#233; en fait dans le &lt;em style=&quot;font-style:italic;&quot;&gt;New York Times&lt;/em&gt;, il y a quelques mois. Le dernier noyau stable de &lt;em style=&quot;font-style:italic;&quot;&gt;Linux, 2.2&lt;/em&gt;, venait de sortir quand un utilisateur allemand se heurta &#224; un bogue. Tous les logiciels ont des bogues, mais la suite de l&#39;histoire est &#233;difiante. Imm&#233;diatement, notre Allemand envoie &#224; un ami en Hongrie, qui participe au d&#233;veloppement de ce noyau, un fichier permettant d&#39;analyser la nature de ce bogue. En 24 heures, une correction (un &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;patch&quot;&lt;/em&gt; dans le jargon des informaticiens) est transmise en Californie au cr&#233;ateur (et coordonnateur) de &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;, Linus Torvalds. Dans les deux ou trois jours qui ont suivi, plusieurs autres solutions possibles au m&#234;me bogue lui parviennent &#233;galement. Notons en passant que, d&#232;s le premier jour, on peut d&#233;j&#224; se d&#233;barrasser du bogue en question. Torvalds et un groupe de collaborateurs choisissent l&#39;un de ces &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;patchs&quot;&lt;/em&gt; et le publient comme correction officielle. Imm&#233;diatement, et c&#39;est l&#224; que la situation devient vraiment int&#233;ressante, une discussion s&#39;&#233;l&#232;ve, contestant en fait la d&#233;cision de Torvalds et de ses collaborateurs les plus proches. Et Torvalds se rend aux arguments et choisit un autre &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;patch&quot;&lt;/em&gt;. Le tout &#233;tait d&#233;finitivement et bien r&#233;gl&#233; en moins de quatre jours, et au terme d&#39;un d&#233;bat d&#233;mocratique. Comparez cela aux comportements des programmeurs dans les &#233;quipes hi&#233;rarchiques de l&#39;industrie traditionnelle... &lt;/p&gt; &lt;p&gt; La s&#233;curit&#233; aussi est meilleure. Dans les logiciels traditionnels, la s&#233;curit&#233; repose en grande partie sur le secret du code puisqu&#39;il n&#39;est pas publi&#233;. Pourtant ce secret n&#39;emp&#234;che pas de d&#233;couvrir des trous de s&#233;curit&#233; par hasard ou au terme d&#39;explorations un peu syst&#233;matique. Le probl&#232;me, c&#39;est que la personne attaqu&#233;e peut parfois savoir qu&#39;elle a &#233;t&#233; attaqu&#233;e, mais elle ne peut savoir ais&#233;ment comment. Elle ne peut donc pas renseigner les autres utilisateurs et seule la compagnie peut tenter d&#39;effectuer la correction n&#233;cessaire. En revanche, avec les logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, on d&#233;couvre vite o&#249; le trou se situe et la correction est non seulement apport&#233;e rapidement par quelqu&#39;un, mais elle est imm&#233;diatement post&#233;e pour que tous puissent l&#39;incorporer dans leur syst&#232;me. R&#233;sultat, un syst&#232;me comme &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; est souvent corrig&#233; en moins de 24 heures, tandis qu&#39;un syst&#232;me comme &lt;em style=&quot;font-style:italic;&quot;&gt;Windows NT&lt;/em&gt; peut attendre des semaines avant d&#39;&#234;tre colmat&#233;. &lt;/p&gt; &lt;p&gt; Je pourrais continuer longtemps &#224; aligner les divers avantages des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, mais je me contenterai d&#39;en ajouter un, int&#233;ressant pour le Qu&#233;bec: l&#39;adaptation linguistique du logiciel au milieu local, ici le fran&#231;ais. Gr&#226;ce &#224; l&#39;acc&#232;s au code source, les informaticiens n&#39;ont aucune difficult&#233; &#224; substituer la langue de leur choix &#224; celle du programmeur. C&#39;est ainsi que des versions en breton et en catalan existent pour divers &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; (par exemple le &lt;em style=&quot;font-style:italic;&quot;&gt;GUI KDE&lt;/em&gt;). Peut-on imaginer Microsoft en train de produire une version en breton de ses logicels? &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-style:italic;&quot;&gt;Croyez-vous r&#233;ellement &#224; l&#39;avenir des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Non seulement j&#39;y crois, mais je pense qu&#39;ils vont devenir la tendance dominante tr&#232;s bient&#244;t. En effet, les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ont tendance &#224; envahir progressivement tous les secteurs du logiciel. On voit d&#233;sormais poindre des suites bureautiques et toutes sortes de logiciels sp&#233;cialis&#233;s sous forme libre. &lt;/p&gt; &lt;p&gt; Pourquoi acheter des licences &lt;em style=&quot;font-style:italic;&quot;&gt;Photoshop&lt;/em&gt; quand &lt;em style=&quot;font-style:italic;&quot;&gt;Gimp&lt;/em&gt; vous donne essentiellement les m&#234;mes fonctionnalit&#233;s gratuitement et avec une stabilit&#233; de granit? En fait, le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, tout comme la bande passante, r&#233;v&#232;lent progressivement leur vraie nature qui se rapproche beaucoup plus d&#39;une infrastructure publique que d&#39;une marchandise traditionnelle. Le mode de financement de ces infrastructures ne passe pas par les structures classiques de march&#233;; en revanche, ces m&#234;mes entit&#233;s infrastructurelles d&#39;un nouveau genre laissent promettre la cr&#233;ation de nouveaux types de march&#233;s, de march&#233;s de services en particulier. Prenons un exemple: les routes ne sont pas d&#233;velopp&#233;es selon les r&#232;gles du march&#233;, mais bien financ&#233;es sous forme d&#39;investissement publics. Une fois d&#233;ploy&#233;es, cependant, elles ouvrent la possibilit&#233; de nouveaux types de march&#233;s, par exemple de diverses cat&#233;gories de v&#233;hicules, r&#233;cr&#233;atifs ou non. La m&#234;me chose va probablement se passer avec les logiciels et la bande passante.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Jean-Claude Gu&#233;don est un farouche partisan du syst&#232;me Linux.&lt;/p&gt; &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;&lt;p&gt;Gu&#233;don, Jean-Claude&lt;/p&gt; &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000410&amp;#183;LE&amp;#183;0046&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Enseignants et personnel non enseignant</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Outils pédagogiques et matériel scolaire</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000410%c2%b7LE%c2%b70046" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000410%c2%b7LE%c2%b70046">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Planète,         lundi 10 avril 2000 1457 mots, p. B2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Jean-Claude Guédon persiste et signe            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Une conversation avec Jean-Claude Guédon, professeur en littérature comparée à l'Université de Montréal et auteur du livre <em style="font-style:italic;">La Planète Cyber</em>, réédité cette semaine, n'est jamais dénuée d'intérêt. Nous avons profité de la foire commerciale Linux Expo Amériques, ou Guédon est membre du comité conférences et animateur de la conférence sur Linux et l'éducation pour lui poser quelques questions. </p> <p> - <em style="font-style:italic;">Jean-Claude Guédon, vous êtes devenu au fil des années, un des porte-parole de Linux et du mouvement des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark>. Pourquoi?</em></p>
+
+
+<p>Autant que je m'en souvienne, le tout est parti d'un sentiment de frustration devant l'alliance wintel (<em style="font-style:italic;">Windows-Intel</em>). En effet, celle-ci conduisait à la multiplication des obésiciels pour relancer la course aux puces ultra-rapides, façon comme une autre de forcer la consommation par obsolescence soigneusement planifiée. En découvrant <em style="font-style:italic;">Linux</em>, je découvris en fait et surtout le phénomène du logiciel à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, et je redécouvris toute la force d'intelligence distribuée que recèle le monde des scientifiques depuis la fin de la Renaissance. Par là, je veux dire que l'attitude qui consiste à publier les résultats de ses recherches pour les exposer aux critiques de ses pairs, et ce, dans l'exercice de ses fonctions de chercheur, me paraissait parfaitement analogue à celle qui consiste à publier du code pour permettre à d'autres de le corriger, le critiquer ou l'améliorer. Il me semblait voir là une forme de rationalité sociale, une sorte de sens commun qui m'ont rapidement séduit: chaque personne, dans ce système, se distingue des autres (donc pas de collectivisme), mais, ce faisant, contribue malgré tout à faire évoluer des idées, des éléments de code, etc. <em style="font-style:italic;">Linux</em> est donc devenu, au fil du temps, une sorte d'incarnation emblématique de ce phénomène que j'aime appeler l'intelligence distribuée (par distinction plus ou moins accentuée avec les notions d'intelligence collective [Pierre Lévy] ou d'intelligence connective [Derrick de Kerckhove]). J'y vois donc autant une solution technique intéressante qu'un véritable projet de société. </p> <p> - <em style="font-style:italic;">Dans la revue</em> Québec Science <em style="font-style:italic;">du mois d'octobre 1998, vous interpelliez la ministre de l'Éducation du temps, Mme Marois, pour que</em> Linux <em style="font-style:italic;">"devienne" le système d'exploitation utilisé dans les écoles du Québec. Pourtant, la norme actuelle du marché du travail n'est-elle pas</em> Microsoft Windows <em style="font-style:italic;">ou, dans une moindre mesure,</em> MacOS <em style="font-style:italic;">? De quelle façon justifiez-vous ce choix?</em></p><p>Premier élément de réponse, la formation à l'école ne recoupe pas précisément les <em style="font-style:italic;">"normes du marché"</em>. L'éducation, du moins on l'espère, cherche à surplomber le marché du moment pour former des étudiants susceptibles de s'adapter à l'évolution des marchés et ceci est d'autant plus important qu'une bonne partie de l'effort de la mise en marché consiste justement à produire constamment du changement, du nouveau, justifié ou non. Former des élèves à telle version de <em style="font-style:italic;">MS-Word</em> sur telle version de <em style="font-style:italic;">Window</em> revient non pas à donner une canne à pêche à l'élève, mais bien un poisson, et un poisson qui pourrit assez vite... Je remettais donc aussi en cause une formation à l'ordinateur qui visait des savoir-faire trop étroitement définis, par exemple la maîtrise de telle version de tel logiciel sur tel ou tel type de matériel. Cette sur-spécialisation se prête mal aux évolutions nécessaires, surtout dans un monde en flux technique aussi intense que l'est notre monde. </p> <p> Je réclamais aussi une formation plus générique, plus proche de ce que j'aime appeler la formation à la nouvelle écriture. Un étudiant, dès la fin du primaire, devrait savoir créer une page pour la Toile, tout comme il sait actuellement créer un document propre à partir d'une page blanche. Son éducation devrait se centrer sur ce style d'écriture numérisée. Par exemple, l'enfant du primaire qui apprend à distinguer substantifs et adjectifs ou adverbes en soulignant chaque type de mot d'une couleur différente, pourrait fort bien effectuer ce même exercice en utilisant les balises propres à HTML ou XML qui commandent les couleurs des caractères, si bien que, en regardant ensuite son texte avec un fureteur, il découvrirait les mots déjà colorés et pourrait ainsi comparer son travail avec le modèle donné par le professeur. </p> <p> Passant ensuite à un cours d'écriture numérique ou nouvelle écriture, il se dirait: mais je connais déjà un peu ça; j'ai déjà travaillé comme ça dans mon cours de français. </p> <p> Deuxième élément de réponse: les coûts de l'informatisation des écoles. Toujours à cause des évolutions de type wintel, les écoles se retrouvent avec des parcs considérables d'appareils inutilisables (sans parler de l'hétérogénéité engendrée par la division du marché entre Macs et machines sous <em style="font-style:italic;">DOS</em> ou <em style="font-style:italic;">Windows</em>). Une adaptation, souvent peu coûteuse, des appareils existants permet d'utiliser bon nombre de ces vieux appareils en leur faisant jouer le rôle de terminal (terminal X pour utiliser le jargon adéquat). Quelques appareils neufs, un peu musclés, traités en serveurs, permettent donc de redonner une nouvelle vie à ces vieux appareils et, de ce fait, permettent d'équiper au moindre coût nos écoles. Le Québec termine actuellement un projet d'informatisation des écoles de cinq ans et de 300 millions de dollars au total. Or, en prenant des appareils Wintel ou Mac avec leurs logiciels courants, on s'est assuré que ces appareils ne seront plus très utiles en trois ans. Cela veut dire que, actuellement, une partie des 300 millions de dollars est employée à remplacer des appareils achetés la première année du programme et, dans trois ou quatre ans, tout sera à recommencer... Une telle stratégie qui, de plus, néglige la formation des professeurs et se concentre sur la quincaillerie, me paraissait et me paraît encore irrationnelle. Mieux valait, me semblait-il, mettre de l'argent dans la mise à jour du vieux matériel en utilisant <em style="font-style:italic;">Linux</em>, et de mettre ensuite le paquet dans la formation la plus poussée possible du corps professoral. Ainsi, l'argent aurait-il servi à améliorer les compétences humaines, et donc l'enseignement. Cet argent serait resté sur place plutôt que d'aller nourrir quelques grandes compagnies aux USA ou au Japon et ses effets auraient ainsi été beaucoup plus durables. Le gouvernement a préféré se comporter comme un vulgaire consommateur, passif et pas très éclairé, qui jette de l'argent un peu n'importe comment pour tenter de résoudre des problèmes complexes. Tout cela permet de mettre en scène de belles conférences de presse et donne de la visibilité aux ministres, mais c'est payer bien cher et bien mal le désir de se faire réélire. </p> <p> Troisième élément de réponse: la transparence des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark> permet de construire un apprentissage en informatique qui peut aller de la simple maîtrise de quelques types génériques de logiciels à une formation poussée dans les systèmes d'exploitation, les réseaux et la programmation. Donner à nos jeunes cette possibilité de piocher aussi loin qu'ils le désirent dans les outils informatiques engendrerait, à mon avis, une telle explosion de la compétence informatique générale que les entreprises ne manqueraient pas de s'en apercevoir. Du même coup, elles trouveraient un argument de poids supplémentaire pour s'installer au Québec plutôt qu'ailleurs, avec les conséquences favorables à l'emploi qui en résulteraient. </p> <p> Hélas, jusqu'ici, l'inertie et même les résistances ont été plus nombreuses que les initiatives. Saluons pourtant l'École Garneau qui se lance à fond dans cette voie. Cet exemple, qui commence à être suivi par d'autres institutions, devrait jouer un rôle moteur important dans l'adoption des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, et de <em style="font-style:italic;">Linux</em> en particulier, dans les écoles. </p> <p> - <em style="font-style:italic;">Quels sont les avantages de Linux?</em></p><p>J'en ai déjà un peu parlé, mais disons que le mode de développement de tout <mark>logiciel</mark> <mark>libre</mark>, du style <em style="font-style:italic;">Linux</em> garantit une meilleure qualité que ce que l'on obtient dans les équipes de l'industrie traditionnelle. <em style="font-style:italic;">"With enough eyeballs, all bugs are shallow"</em> dit Torvalds, et il a raison. Voici un exemple raconté en fait dans le <em style="font-style:italic;">New York Times</em>, il y a quelques mois. Le dernier noyau stable de <em style="font-style:italic;">Linux, 2.2</em>, venait de sortir quand un utilisateur allemand se heurta à un bogue. Tous les logiciels ont des bogues, mais la suite de l'histoire est édifiante. Immédiatement, notre Allemand envoie à un ami en Hongrie, qui participe au développement de ce noyau, un fichier permettant d'analyser la nature de ce bogue. En 24 heures, une correction (un <em style="font-style:italic;">"patch"</em> dans le jargon des informaticiens) est transmise en Californie au créateur (et coordonnateur) de <em style="font-style:italic;">Linux</em>, Linus Torvalds. Dans les deux ou trois jours qui ont suivi, plusieurs autres solutions possibles au même bogue lui parviennent également. Notons en passant que, dès le premier jour, on peut déjà se débarrasser du bogue en question. Torvalds et un groupe de collaborateurs choisissent l'un de ces <em style="font-style:italic;">"patchs"</em> et le publient comme correction officielle. Immédiatement, et c'est là que la situation devient vraiment intéressante, une discussion s'élève, contestant en fait la décision de Torvalds et de ses collaborateurs les plus proches. Et Torvalds se rend aux arguments et choisit un autre <em style="font-style:italic;">"patch"</em>. Le tout était définitivement et bien réglé en moins de quatre jours, et au terme d'un débat démocratique. Comparez cela aux comportements des programmeurs dans les équipes hiérarchiques de l'industrie traditionnelle... </p> <p> La sécurité aussi est meilleure. Dans les logiciels traditionnels, la sécurité repose en grande partie sur le secret du code puisqu'il n'est pas publié. Pourtant ce secret n'empêche pas de découvrir des trous de sécurité par hasard ou au terme d'explorations un peu systématique. Le problème, c'est que la personne attaquée peut parfois savoir qu'elle a été attaquée, mais elle ne peut savoir aisément comment. Elle ne peut donc pas renseigner les autres utilisateurs et seule la compagnie peut tenter d'effectuer la correction nécessaire. En revanche, avec les logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, on découvre vite où le trou se situe et la correction est non seulement apportée rapidement par quelqu'un, mais elle est immédiatement postée pour que tous puissent l'incorporer dans leur système. Résultat, un système comme <em style="font-style:italic;">Linux</em> est souvent corrigé en moins de 24 heures, tandis qu'un système comme <em style="font-style:italic;">Windows NT</em> peut attendre des semaines avant d'être colmaté. </p> <p> Je pourrais continuer longtemps à aligner les divers avantages des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, mais je me contenterai d'en ajouter un, intéressant pour le Québec: l'adaptation linguistique du logiciel au milieu local, ici le français. Grâce à l'accès au code source, les informaticiens n'ont aucune difficulté à substituer la langue de leur choix à celle du programmeur. C'est ainsi que des versions en breton et en catalan existent pour divers <mark>logiciels</mark> <mark>libres</mark> (par exemple le <em style="font-style:italic;">GUI KDE</em>). Peut-on imaginer Microsoft en train de produire une version en breton de ses logicels? </p> <p> - <em style="font-style:italic;">Croyez-vous réellement à l'avenir des <mark>logiciels</mark> <mark>libres</mark>? </em></p><p>Non seulement j'y crois, mais je pense qu'ils vont devenir la tendance dominante très bientôt. En effet, les <mark>logiciels</mark> <mark>libres</mark> ont tendance à envahir progressivement tous les secteurs du logiciel. On voit désormais poindre des suites bureautiques et toutes sortes de logiciels spécialisés sous forme libre. </p> <p> Pourquoi acheter des licences <em style="font-style:italic;">Photoshop</em> quand <em style="font-style:italic;">Gimp</em> vous donne essentiellement les mêmes fonctionnalités gratuitement et avec une stabilité de granit? En fait, le <mark>logiciel</mark> <mark>libre</mark>, tout comme la bande passante, révèlent progressivement leur vraie nature qui se rapproche beaucoup plus d'une infrastructure publique que d'une marchandise traditionnelle. Le mode de financement de ces infrastructures ne passe pas par les structures classiques de marché; en revanche, ces mêmes entités infrastructurelles d'un nouveau genre laissent promettre la création de nouveaux types de marchés, de marchés de services en particulier. Prenons un exemple: les routes ne sont pas développées selon les règles du marché, mais bien financées sous forme d'investissement publics. Une fois déployées, cependant, elles ouvrent la possibilité de nouveaux types de marchés, par exemple de diverses catégories de véhicules, récréatifs ou non. La même chose va probablement se passer avec les logiciels et la bande passante.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Jean-Claude Guédon est un farouche partisan du système Linux.</p> </div>.
+
+                <div class="ImageAttachFont"><p>Guédon, Jean-Claude</p> </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000410·LE·0046</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000410·LE·0046";
+    var _docIndex = 588;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000410·LE·0046';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000410%C2%B7LE%C2%B70046&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000410%C2%B7LE%C2%B70046&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000410%C2%B7LE%C2%B70046&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000410%C2%B7LE%C2%B70046&docIndex=588&FullScreen=1";
+                
+	var _keyDoc = 'news·20000410·LE·0046';
+</script>
+</div></body></html>

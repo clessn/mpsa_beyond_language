@@ -1,0 +1,651 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;conomie et Entreprise,         lundi 9 juin 2014 492 mots, p. SCQ4&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Eco et Entreprise Technos et m&#233;dias         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Apr&#232;s Heartbleed, une nouvelle faille de s&#233;curit&#233; menace les &#233;changes Internet            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Une erreur a &#233;t&#233; d&#233;cel&#233;e dans la biblioth&#232;que d&#39;outils OpenSSL, libre d&#39;acc&#232;s et tr&#232;s souvent utilis&#233;e pour s&#233;curiser les conversations&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Audrey Fournier&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Apr&#232;s la faille Heartbleed, d&#233;tect&#233;e en avril dans la biblioth&#232;que OpenSSL, un code &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; (c&#39;est-&#224;-dire gratuit et participatif) de protection des donn&#233;es sur Internet utilis&#233; par un grand nombre de sites dans le monde, six nouvelles vuln&#233;rabilit&#233;s ont &#233;t&#233; mises au jour en avril et mai par un chercheur japonais, et rendues publiques jeudi 5 juin par l&#39;OpenSSL Foundation. &lt;/p&gt; &lt;p&gt; Selon l&#39;organisme, le bug est de type &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; man in the middle &#187;&lt;/em&gt; , c&#39;est-&#224;-dire qu&#39;il fragilise une connexion entre deux dispositifs (un ordinateur et un serveur) crypt&#233;e gr&#226;ce &#224; un outil OpenSSL et peut permettre &#224; une personne malveillante d&#39;intercepter un &#233;change entre les deux.&lt;/p&gt;
+
+
+&lt;p&gt;Typiquement, la configuration &#171; &#224; risque &#187; est celle d&#39;un individu se connectant &#224; un point Internet public, par exemple sur le Wi-Fi d&#39;un a&#233;roport. Pour que la conversation entre les deux dispositifs soit &#171; lisible &#187; , il faut n&#233;anmoins que les deux bouts de la cha&#238;ne soient vuln&#233;rables, la configuration requise est donc tr&#232;s sp&#233;cifique. &lt;/p&gt; &lt;p&gt; Cette faille devrait &#234;tre beaucoup moins dangereuse pour les internautes que Heartbleed, qui a s&#233;vi silencieusement, durant plus de deux ans dans la biblioth&#232;que OpenSSL. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; A l&#39;heure actuelle, aucun code d&#39;exploitation n&#39;a &#233;t&#233; rendu public, ce qui limite les risques,&lt;/em&gt; explique Paul-Henri Huckel, responsable veille et r&#233;ponse &#224; incident chez Lexsi, &lt;em style=&quot;font-style:italic;&quot;&gt;tout le monde n&#39;a pas la main sur la faille&lt;/em&gt;. &#187; &lt;/p&gt; &lt;p&gt; La solution aux deux failles est la m&#234;me : les entreprises utilisatrices de la biblioth&#232;que doivent corriger le code sur leurs serveurs, puis demander aux utilisateurs de faire une mise &#224; jour syst&#232;me. &lt;/p&gt; &lt;p&gt; Au-del&#224; du fait que la personne qui a fait l&#39;erreur de codage &#224; l&#39;origine de cette faille pourrait aussi &#234;tre l&#39;auteur du bug Heartbleed, le plus &#233;tonnant est que cette vuln&#233;rabilit&#233; soit rest&#233;e aussi longtemps ind&#233;tect&#233;e : elle serait en effet pr&#233;sente depuis le lancement d&#39;OpenSSL... &#224; la fin des ann&#233;es 1990. &lt;/p&gt; &lt;p&gt; Le protocole OpenSSL, collaboratif et typique de l&#39;Internet ouvert, ne pr&#233;sente pas plus de failles que les outils informatiques &#171; propri&#233;taires &#187;. &lt;/p&gt; &lt;p&gt; Au contraire, estiment ses d&#233;fenseurs, le fait que n&#39;importe quel ing&#233;nieur puisse entrer dans la plate-forme et travailler dessus permet une v&#233;rification permanente de l&#39;efficacit&#233; et de la s&#233;curit&#233; des outils propos&#233;s. Et la certification des solutions informatiques ne d&#233;pend pas, au final, du fait qu&#39;ils aient &#233;t&#233; con&#231;us comme un outil ouvert ou comme un logiciel propri&#233;taire. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Si la faille est exploitable, cela ne veut pas dire qu&#39;elle sera exploit&#233;e &#187;&lt;/em&gt; , souligne, par ailleurs, Paul-Henri Huckel. &lt;/p&gt; &lt;p&gt; Et la multiplication des d&#233;couvertes de ce type n&#39;est pas significative d&#39;une d&#233;gradation de la qualit&#233; de la biblioth&#232;que OpenSSL. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Au contraire,&lt;/em&gt; r&#233;plique Paul-Henri Huckel, &lt;em style=&quot;font-style:italic;&quot;&gt;on risque d&#39;en d&#233;couvrir d&#39;autres, car Heartbleed a encourag&#233; les informaticiens &#224; chercher d&#39;autres fragilit&#233;s dans la biblioth&#232;que &#187;&lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C&#39;est une bonne chose,&lt;/em&gt; ajoute-t-il, &lt;em style=&quot;font-style:italic;&quot;&gt;la d&#233;couverte de petites erreurs repr&#233;sente une garantie de transparence et de fiabilit&#233; pour les codes &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. &#187; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Ceux-ci sont largement utilis&#233;s &#224; l&#39;&#233;chelle mondiale, y compris par de tr&#232;s grandes entreprises, et pourtant le budget de l&#39;OpenSSL Foundation est ridicule : quelques milliers de dollars sous forme de dons chaque ann&#233;e, et seulement une poign&#233;e de volontaires. &lt;/p&gt; &lt;p&gt; Dans la foul&#233;e du &#171; scandale &#187; Heartbleed, de grands groupes utilisateurs d&#39;OpenSSL se sont engag&#233;s &#224; verser de l&#39;argent &#224; un fonds de soutien lanc&#233; par la fondation Linux, pionnier du logiciel gratuit. Objectif de ce fonds : donner aux acteurs du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; les moyens de r&#233;pondre &#224; &#224; la hausse du trafic et des donn&#233;es sur l&#39;Internet. &lt;/p&gt; &lt;p&gt; L&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; n&#39;est pas subordonn&#233; &#224; un r&#233;gulateur ext&#233;rieur, et compte sur la masse de ses contributeurs volontaires pour exercer une forme d&#39;autor&#233;gulation. Des normes &#224; caract&#232;re commercial s&#39;appliquent n&#233;anmoins lorsqu&#39;une entreprise utilise la biblioth&#232;que OpenSSL : elle s&#39;engage notamment &#224; laisser le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; et ouvert, et &#224; ne pas se l&#39;approprier.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;29 novembre 2000&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;29 juillet 2005&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;3 juillet 2006&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;1 octobre 2008&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;9 f&amp;#233;vrier 2010&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;21 mars 2011&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;9 avril 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;10 avril 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;11 avril 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;14 avril 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;16 avril 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;17 avril 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;27 mai 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;13 juin 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;24 juin 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;3 septembre 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;8 d&amp;#233;cembre 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;21 janvier 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;19 d&amp;#233;cembre 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;16 juin 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;20 septembre 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;22 septembre 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;29 septembre 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;12 octobre 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20140609&amp;#183;LM&amp;#183;0s0806_980076&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">faille de sécurité</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">code d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">caractère commercial</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">échelle mondiale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140609%c2%b7LM%c2%b70s0806_980076" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140609%c2%b7LM%c2%b70s0806_980076">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Économie et Entreprise,         lundi 9 juin 2014 492 mots, p. SCQ4</span>
+</div>
+
+    <div>
+        <p>
+Eco et Entreprise Technos et médias         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Après Heartbleed, une nouvelle faille de sécurité menace les échanges Internet            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Une erreur a été décelée dans la bibliothèque d'outils OpenSSL, libre d'accès et très souvent utilisée pour sécuriser les conversations</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Audrey Fournier</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Après la faille Heartbleed, détectée en avril dans la bibliothèque OpenSSL, un code <mark>open</mark> <mark>source</mark> (c'est-à-dire gratuit et participatif) de protection des données sur Internet utilisé par un grand nombre de sites dans le monde, six nouvelles vulnérabilités ont été mises au jour en avril et mai par un chercheur japonais, et rendues publiques jeudi 5 juin par l'OpenSSL Foundation. </p> <p> Selon l'organisme, le bug est de type <em style="font-style:italic;">« man in the middle »</em> , c'est-à-dire qu'il fragilise une connexion entre deux dispositifs (un ordinateur et un serveur) cryptée grâce à un outil OpenSSL et peut permettre à une personne malveillante d'intercepter un échange entre les deux.</p>
+
+
+<p>Typiquement, la configuration « à risque » est celle d'un individu se connectant à un point Internet public, par exemple sur le Wi-Fi d'un aéroport. Pour que la conversation entre les deux dispositifs soit « lisible » , il faut néanmoins que les deux bouts de la chaîne soient vulnérables, la configuration requise est donc très spécifique. </p> <p> Cette faille devrait être beaucoup moins dangereuse pour les internautes que Heartbleed, qui a sévi silencieusement, durant plus de deux ans dans la bibliothèque OpenSSL. <em style="font-style:italic;">« A l'heure actuelle, aucun code d'exploitation n'a été rendu public, ce qui limite les risques,</em> explique Paul-Henri Huckel, responsable veille et réponse à incident chez Lexsi, <em style="font-style:italic;">tout le monde n'a pas la main sur la faille</em>. » </p> <p> La solution aux deux failles est la même : les entreprises utilisatrices de la bibliothèque doivent corriger le code sur leurs serveurs, puis demander aux utilisateurs de faire une mise à jour système. </p> <p> Au-delà du fait que la personne qui a fait l'erreur de codage à l'origine de cette faille pourrait aussi être l'auteur du bug Heartbleed, le plus étonnant est que cette vulnérabilité soit restée aussi longtemps indétectée : elle serait en effet présente depuis le lancement d'OpenSSL... à la fin des années 1990. </p> <p> Le protocole OpenSSL, collaboratif et typique de l'Internet ouvert, ne présente pas plus de failles que les outils informatiques « propriétaires ». </p> <p> Au contraire, estiment ses défenseurs, le fait que n'importe quel ingénieur puisse entrer dans la plate-forme et travailler dessus permet une vérification permanente de l'efficacité et de la sécurité des outils proposés. Et la certification des solutions informatiques ne dépend pas, au final, du fait qu'ils aient été conçus comme un outil ouvert ou comme un logiciel propriétaire. </p> <p><em style="font-style:italic;">« Si la faille est exploitable, cela ne veut pas dire qu'elle sera exploitée »</em> , souligne, par ailleurs, Paul-Henri Huckel. </p> <p> Et la multiplication des découvertes de ce type n'est pas significative d'une dégradation de la qualité de la bibliothèque OpenSSL. <em style="font-style:italic;">« Au contraire,</em> réplique Paul-Henri Huckel, <em style="font-style:italic;">on risque d'en découvrir d'autres, car Heartbleed a encouragé les informaticiens à chercher d'autres fragilités dans la bibliothèque »</em>. <em style="font-style:italic;">« C'est une bonne chose,</em> ajoute-t-il, <em style="font-style:italic;">la découverte de petites erreurs représente une garantie de transparence et de fiabilité pour les codes <mark>open</mark> <mark>source</mark>. » </em></p><p>Ceux-ci sont largement utilisés à l'échelle mondiale, y compris par de très grandes entreprises, et pourtant le budget de l'OpenSSL Foundation est ridicule : quelques milliers de dollars sous forme de dons chaque année, et seulement une poignée de volontaires. </p> <p> Dans la foulée du « scandale » Heartbleed, de grands groupes utilisateurs d'OpenSSL se sont engagés à verser de l'argent à un fonds de soutien lancé par la fondation Linux, pionnier du logiciel gratuit. Objectif de ce fonds : donner aux acteurs du <mark>logiciel</mark> <mark>libre</mark> les moyens de répondre à à la hausse du trafic et des données sur l'Internet. </p> <p> L'<mark>open</mark> <mark>source</mark> n'est pas subordonné à un régulateur extérieur, et compte sur la masse de ses contributeurs volontaires pour exercer une forme d'autorégulation. Des normes à caractère commercial s'appliquent néanmoins lorsqu'une entreprise utilise la bibliothèque OpenSSL : elle s'engage notamment à laisser le <mark>logiciel</mark> <mark>libre</mark> et ouvert, et à ne pas se l'approprier.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">29 novembre 2000</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">29 juillet 2005</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">3 juillet 2006</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">1 octobre 2008</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">9 février 2010</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">21 mars 2011</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">9 avril 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">10 avril 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">11 avril 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">14 avril 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">16 avril 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">17 avril 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">27 mai 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">13 juin 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">24 juin 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">3 septembre 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">8 décembre 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">21 janvier 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">19 décembre 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">16 juin 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">20 septembre 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">22 septembre 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">29 septembre 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">12 octobre 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20140609·LM·0s0806_980076</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20140609·LM·0s0806_980076";
+    var _docIndex = 862;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20140609·LM·0s0806_980076';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720140609%C2%B7LM%C2%B70s0806_980076&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720140609%C2%B7LM%C2%B70s0806_980076&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720140609%C2%B7LM%C2%B70s0806_980076&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720140609%C2%B7LM%C2%B70s0806_980076&docIndex=862&FullScreen=1";
+                
+	var _keyDoc = 'news·20140609·LM·0s0806_980076';
+</script>
+</div></body></html>

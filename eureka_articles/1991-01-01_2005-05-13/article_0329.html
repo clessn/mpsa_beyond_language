@@ -1,0 +1,437 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Sciences,         vendredi 17 janvier 2003 921 mots, p. 23&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Avec Palladium, Microsoft lance une informatique s&#233;curitaire            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Tr&#232;s contest&#233;e, la nouvelle technologie de la firme de Bill Gates devrait &#234;tre en partie d&#233;voil&#233;e au premier semestre. Imagin&#233;e pour lutter contre la prolif&#233;ration des virus informatiques et pour pr&#233;server les donn&#233;es sensibles, elle inqui&#232;te toutefois de nombreux chercheurs&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Microsoft devrait rendre publiques, vers la fin du premier trimestre, les premi&#232;res donn&#233;es techniques d&#39;un projet tr&#232;s controvers&#233; de &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;s&#233;curisation&quot;&lt;/em&gt; de l&#39;informatique. S&#39;il voit le jour, Palladium, nom de code de cette technologie, bouleversera les relations entre les utilisateurs et leur ordinateur. Il s&#39;agira bien, pr&#233;vient Claude Kirchner, directeur de recherche &#224; l&#39;Institut national de recherche en informatique et en automatique (Inria), d&#39;une &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;r&#233;volution&quot;&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Les d&#233;tails de ce bouleversement annonc&#233; restent confidentiels, mais ses grandes orientations sont connues. A l&#39;occasion de plusieurs conf&#233;rences, tenues outre-Atlantique ces derniers mois, Palladium a en effet &#233;t&#233; pr&#233;sent&#233; &#224; la communaut&#233; des professionnels de la s&#233;curit&#233; informatique. Il est, depuis, diversement et passionn&#233;ment comment&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Palladium n&#39;est pas encore un produit en tant que tel&lt;/em&gt;, pr&#233;cise Bernard Ourghanlian, directeur technique de Microsoft France. &lt;em style=&quot;font-style:italic;&quot;&gt;Il correspond &#224; des projets de modifications logicielles et mat&#233;rielles qui devraient intervenir dans un futur proche, aux alentours de fin 2004, d&#233;but 2005.&quot;&lt;/em&gt; Ces modifications r&#233;sideront dans l&#39;ajout, sur chaque ordinateur, d&#39;une puce contenant des cl&#233;s de chiffrement num&#233;riques et des donn&#233;es permettant d&#39;identifier la machine. Un module logiciel - int&#233;gr&#233; aux futures versions de Windows - permettra, quant &#224; lui, de cr&#233;er une &quot;zone de confiance&quot; dans la m&#233;moire de l&#39;ordinateur. Les fichiers qui y seront stock&#233;s ne pourront &#234;tre ouverts que par des programmes dont la signature num&#233;rique sera conforme &#224; Palladium. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Typiquement&lt;/em&gt;, illustre M. Ourghanlian, &lt;em style=&quot;font-style:italic;&quot;&gt;les logiciels antivirus fonctionnant dans la zone Palladium ne pourront pas &#234;tre d&#233;truits par des virus puisque ceux-ci, faute des bons certificats, ne pourront pas p&#233;n&#233;trer dans ce sanctuaire.&quot;&lt;/em&gt; De la m&#234;me fa&#231;on, des documents stock&#233;s dans ce mode s&#233;curis&#233; ne pourraient &#234;tre d&#233;truits ou alt&#233;r&#233;s par des programmes malicieux. Et les informations personnelles et confidentielles (coordonn&#233;es bancaires, informations m&#233;dicales, etc.), entrepos&#233;es dans le cadre de Palladium, seraient en outre plus difficilement &quot;piratables&quot; puisqu&#39;accessibles aux seuls logiciels certifi&#233;s et &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;dignes de confiance&quot;&lt;/em&gt;, selon le terme de Microsoft. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;FIN DU CONTR&#212;LE PAR L&#39;USAGER&lt;/em&gt;Toutefois, les potentialit&#233;s de telles dispositions techniques inqui&#232;tent. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;On pourrait, par exemple, s&#39;assurer que, sur une machine donn&#233;e, l&#39;acc&#232;s &#224; certaines informations est autoris&#233;&lt;/em&gt;, pr&#233;cise Claude Kirchner. &lt;em style=&quot;font-style:italic;&quot;&gt;Cela revient &#224; ce qu&#39;en mode s&#233;curis&#233;, &#224; chaque fois qu&#39;une commande est pass&#233;e sur l&#39;ordinateur, elle est soumise &#224; un serveur d&#39;autorisation situ&#233; &#224; l&#39;ext&#233;rieur&lt;/em&gt;.&quot; En d&#233;finitive, dans le contexte de Palladium, l&#39;utilisateur n&#39;aurait plus un contr&#244;le total sur les donn&#233;es stock&#233;es sur son propre disque dur. &lt;/p&gt; &lt;p&gt; La premi&#232;re application grand public &#224; tirer parti de cette fonctionnalit&#233; sera la gestion des droits num&#233;riques. Par exemple, des fichiers musicaux d&#39;un nouveau type ne pourraient &#234;tre lus que si un serveur tiers s&#39;&#233;tait auparavant assur&#233; de leur conformit&#233; et de l&#39;acquittement par l&#39;utilisateur des droits d&#39;utilisation. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Il y a &#233;galement des implications de souverainet&#233; nationale&lt;/em&gt;, explique M. Kirchner. &lt;em style=&quot;font-style:italic;&quot;&gt;Un tel syst&#232;me pourrait faire en sorte que les ordinateurs Windows situ&#233;s dans un pays ne re&#231;oivent plus d&#39;un serveur tiers le jeton les autorisant &#224; red&#233;marrer.&quot;&lt;/em&gt; D&#39;autant, poursuit le chercheur, que &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;la question de savoir qui va contr&#244;ler les contr&#244;leurs n&#39;a pas &#233;t&#233; pos&#233;e&quot;&lt;/em&gt;. Chez Microsoft, on qualifie ces interpr&#233;tations de &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;fantasmagories&quot;&lt;/em&gt; &#224; mettre au compte de la &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;parano&#239;a&quot;&lt;/em&gt; qui entoure le projet. En outre, rappelle M. Ourghanlian, &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;l&#39;utilisateur restera libre, s&#39;il le souhaite, de d&#233;sactiver les fonctions Palladium&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Consciente de sa r&#233;putation d&#233;plorable et des difficult&#233;s qu&#39;elle aura &#224; faire accepter un tel dispositif, l&#39;entreprise de Bill Gates a d&#233;cid&#233; de s&#39;attirer les conseils de chercheurs ext&#233;rieurs &#224; ses laboratoires, dans le cadre de s&#233;minaires ou en faisant intervenir des universitaires comme consultants sur le projet. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Des contacts commencent &#224; s&#39;&#233;tablir avec les grands chercheurs en chiffrement et en s&#233;curit&#233; informatique&lt;/em&gt;, pr&#233;cise M. Ourghanlian. &lt;em style=&quot;font-style:italic;&quot;&gt;L&#39;objet de notre interaction avec l&#39;ensemble de cette communaut&#233; est d&#39;&#233;changer avec eux le plus ouvertement possible pour que nous puissions nous am&#233;liorer si un certain nombre de choses, pour des raisons relatives &#224; la vie priv&#233;e, par exemple, ne vont pas.&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;A l&#39;automne 2002, Ross Anderson, sp&#233;cialiste de s&#233;curit&#233; des syst&#232;mes d&#39;information et directeur de recherche au laboratoire d&#39;informatique de l&#39;universit&#233; de Cambridge (Royaume-Uni), est ainsi contact&#233; par Microsoft. Apr&#232;s examen du dossier, il renonce &#224; toute forme de collaboration. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Je me suis rendu compte que leurs motivations n&#39;&#233;taient pas tant la s&#233;curit&#233; que le fait de pouvoir rendre les gens captifs de certains produits&quot;&lt;/em&gt;, raconte-t-il. Selon lui, Palladium est, en outre, tr&#232;s controvers&#233; au sein m&#234;me de Microsoft, o&#249; certains d&#233;partements s&#39;opposeraient frontalement au projet, annon&#231;ant un &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;d&#233;sastre&quot;&lt;/em&gt; &#224; venir. &lt;/p&gt; &lt;p&gt; La communaut&#233; scientifique est, elle aussi, partag&#233;e. David Farber, chercheur de l&#39;universit&#233; de Pennsylvanie sollicit&#233; par Microsoft sur ce projet mais connu pour son ind&#233;pendance d&#39;esprit - il a t&#233;moign&#233; contre Microsoft au cours du proc&#232;s antitrust -, estime, pour sa part, que les inqui&#233;tudes suscit&#233;es par Palladium tiennent surtout &#224; ce que la firme de Redmond a trop mauvaise presse. En tout cas, juge-t-il, &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;ce syst&#232;me ne permettra pas &#224; Microsoft d&#39;accro&#238;tre son contr&#244;le des plates-formes&quot;&lt;/em&gt;. En d&#39;autres termes, les motivations de la firme de Bill Gates ne sont pas, selon M. Farber, de conforter sa position dominante. &lt;/p&gt; &lt;p&gt; Mais, l&#224; encore, les avis divergent. Certains sp&#233;cialistes pensent que Microsoft sera tent&#233; d&#39;imposer certaines conditions &#224; la mise en conformit&#233; des logiciels concurrents avec Palladium. Si cette technologie devient un standard largement adopt&#233; par les &#233;diteurs de contenus num&#233;riques, Microsoft en finirait ainsi avec la menace de Linux et des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. La firme de Redmond d&#233;ment, assurant que la technologie Palladium sera &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;la plus ouverte possible&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;St&#233;phane Foucart&lt;/em&gt;&lt;p&gt;Une nomination aux &quot;Big Brother Awards&quot; &lt;/p&gt; &lt;/p&gt; &lt;p&gt; Sur un mode ironique et dans le cadre des &quot;Big Brother Awards&quot;, l&#39;organisation non gouvernementale Privacy International va d&#233;cerner &#224; Paris, lundi 20 janvier, une s&#233;rie de prix stigmatisant les projets, les technologies ou les personnes ayant le plus s&#233;rieusement attent&#233; au respect de la vie priv&#233;e des citoyens. Le syst&#232;me Palladium est cette ann&#233;e s&#233;lectionn&#233; dans la cat&#233;gorie &quot;technologies, produits et syst&#232;mes&quot;. Le jury sera pr&#233;sid&#233; par le sociologue Lo&#239;c Wacquant, disciple de Pierre Bourdieu et professeur &#224; l&#39;universit&#233; de Berkeley (Californie). Aux Etats-Unis, l&#39;une des plus c&#233;l&#232;bres associations de lutte pour le respect des libert&#233;s dans le cyberespace, l&#39;Electronic Frontier Foundation (EFF), compos&#233;e pour l&#39;essentiel d&#39;universitaires et de chercheurs, r&#233;serve toujours sa position sur Palladium. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Vers un mat&#233;riel &quot;digne de confiance&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La plupart des industriels de l&#39;informatique (dont Intel, IBM, HP, Compaq, etc.) sont regroup&#233;s depuis 1999 au sein du consortium TCPA (&lt;em style=&quot;font-style:italic;&quot;&gt;Trusted Computing Platform Alliance&lt;/em&gt; ou Alliance pour une informatique de confiance). Les objectifs de ce regroupement sont la mise en place de nouvelles normes mat&#233;rielles garantissant une informatique &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;digne de confiance&quot;&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;respectant la confidentialit&#233; des communications &#233;lectroniques&quot;&lt;/em&gt;tout en &#233;tant &#224; m&#234;me de &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;favoriser le commerce &#233;lectronique&quot;&lt;/em&gt;. L&#39;initiative fait suite &#224; la tentative d&#39;Intel, en 1998, de tatouer ses processeurs Pentium III pour authentifier les transactions &#233;lectroniques. Devant le toll&#233;, le leader mondial du microprocesseur avait d&#251; renoncer. Officiellement, TCPA et Palladium sont distincts et &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;sans lien explicite&quot;&lt;/em&gt;, comme l&#39;explique Microsoft France. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Mais il est tr&#232;s probable que les sp&#233;cifications de TCPA vont &#233;voluer pour que Palladium puisse y &#234;tre h&#233;berg&#233;.&quot;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2003 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20030117&amp;#183;LM&amp;#183;0305691&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030117%c2%b7LM%c2%b70305691" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030117%c2%b7LM%c2%b70305691">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Sciences,         vendredi 17 janvier 2003 921 mots, p. 23</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Avec Palladium, Microsoft lance une informatique sécuritaire            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">Très contestée, la nouvelle technologie de la firme de Bill Gates devrait être en partie dévoilée au premier semestre. Imaginée pour lutter contre la prolifération des virus informatiques et pour préserver les données sensibles, elle inquiète toutefois de nombreux chercheurs</em></p><p>Microsoft devrait rendre publiques, vers la fin du premier trimestre, les premières données techniques d'un projet très controversé de <em style="font-style:italic;">"sécurisation"</em> de l'informatique. S'il voit le jour, Palladium, nom de code de cette technologie, bouleversera les relations entre les utilisateurs et leur ordinateur. Il s'agira bien, prévient Claude Kirchner, directeur de recherche à l'Institut national de recherche en informatique et en automatique (Inria), d'une <em style="font-style:italic;">"révolution"</em></p>
+
+
+<p>Les détails de ce bouleversement annoncé restent confidentiels, mais ses grandes orientations sont connues. A l'occasion de plusieurs conférences, tenues outre-Atlantique ces derniers mois, Palladium a en effet été présenté à la communauté des professionnels de la sécurité informatique. Il est, depuis, diversement et passionnément commenté. </p> <p><em style="font-style:italic;">"Palladium n'est pas encore un produit en tant que tel</em>, précise Bernard Ourghanlian, directeur technique de Microsoft France. <em style="font-style:italic;">Il correspond à des projets de modifications logicielles et matérielles qui devraient intervenir dans un futur proche, aux alentours de fin 2004, début 2005."</em> Ces modifications résideront dans l'ajout, sur chaque ordinateur, d'une puce contenant des clés de chiffrement numériques et des données permettant d'identifier la machine. Un module logiciel - intégré aux futures versions de Windows - permettra, quant à lui, de créer une "zone de confiance" dans la mémoire de l'ordinateur. Les fichiers qui y seront stockés ne pourront être ouverts que par des programmes dont la signature numérique sera conforme à Palladium. <em style="font-style:italic;">"Typiquement</em>, illustre M. Ourghanlian, <em style="font-style:italic;">les logiciels antivirus fonctionnant dans la zone Palladium ne pourront pas être détruits par des virus puisque ceux-ci, faute des bons certificats, ne pourront pas pénétrer dans ce sanctuaire."</em> De la même façon, des documents stockés dans ce mode sécurisé ne pourraient être détruits ou altérés par des programmes malicieux. Et les informations personnelles et confidentielles (coordonnées bancaires, informations médicales, etc.), entreposées dans le cadre de Palladium, seraient en outre plus difficilement "piratables" puisqu'accessibles aux seuls logiciels certifiés et <em style="font-style:italic;">"dignes de confiance"</em>, selon le terme de Microsoft. </p> <p><em style="font-weight:bold;">FIN DU CONTRÔLE PAR L'USAGER</em>Toutefois, les potentialités de telles dispositions techniques inquiètent. <em style="font-style:italic;">"On pourrait, par exemple, s'assurer que, sur une machine donnée, l'accès à certaines informations est autorisé</em>, précise Claude Kirchner. <em style="font-style:italic;">Cela revient à ce qu'en mode sécurisé, à chaque fois qu'une commande est passée sur l'ordinateur, elle est soumise à un serveur d'autorisation situé à l'extérieur</em>." En définitive, dans le contexte de Palladium, l'utilisateur n'aurait plus un contrôle total sur les données stockées sur son propre disque dur. </p> <p> La première application grand public à tirer parti de cette fonctionnalité sera la gestion des droits numériques. Par exemple, des fichiers musicaux d'un nouveau type ne pourraient être lus que si un serveur tiers s'était auparavant assuré de leur conformité et de l'acquittement par l'utilisateur des droits d'utilisation. </p> <p><em style="font-style:italic;">"Il y a également des implications de souveraineté nationale</em>, explique M. Kirchner. <em style="font-style:italic;">Un tel système pourrait faire en sorte que les ordinateurs Windows situés dans un pays ne reçoivent plus d'un serveur tiers le jeton les autorisant à redémarrer."</em> D'autant, poursuit le chercheur, que <em style="font-style:italic;">"la question de savoir qui va contrôler les contrôleurs n'a pas été posée"</em>. Chez Microsoft, on qualifie ces interprétations de <em style="font-style:italic;">"fantasmagories"</em> à mettre au compte de la <em style="font-style:italic;">"paranoïa"</em> qui entoure le projet. En outre, rappelle M. Ourghanlian, <em style="font-style:italic;">"l'utilisateur restera libre, s'il le souhaite, de désactiver les fonctions Palladium"</em></p><p>Consciente de sa réputation déplorable et des difficultés qu'elle aura à faire accepter un tel dispositif, l'entreprise de Bill Gates a décidé de s'attirer les conseils de chercheurs extérieurs à ses laboratoires, dans le cadre de séminaires ou en faisant intervenir des universitaires comme consultants sur le projet. <em style="font-style:italic;">"Des contacts commencent à s'établir avec les grands chercheurs en chiffrement et en sécurité informatique</em>, précise M. Ourghanlian. <em style="font-style:italic;">L'objet de notre interaction avec l'ensemble de cette communauté est d'échanger avec eux le plus ouvertement possible pour que nous puissions nous améliorer si un certain nombre de choses, pour des raisons relatives à la vie privée, par exemple, ne vont pas."</em></p><p>A l'automne 2002, Ross Anderson, spécialiste de sécurité des systèmes d'information et directeur de recherche au laboratoire d'informatique de l'université de Cambridge (Royaume-Uni), est ainsi contacté par Microsoft. Après examen du dossier, il renonce à toute forme de collaboration. <em style="font-style:italic;">"Je me suis rendu compte que leurs motivations n'étaient pas tant la sécurité que le fait de pouvoir rendre les gens captifs de certains produits"</em>, raconte-t-il. Selon lui, Palladium est, en outre, très controversé au sein même de Microsoft, où certains départements s'opposeraient frontalement au projet, annonçant un <em style="font-style:italic;">"désastre"</em> à venir. </p> <p> La communauté scientifique est, elle aussi, partagée. David Farber, chercheur de l'université de Pennsylvanie sollicité par Microsoft sur ce projet mais connu pour son indépendance d'esprit - il a témoigné contre Microsoft au cours du procès antitrust -, estime, pour sa part, que les inquiétudes suscitées par Palladium tiennent surtout à ce que la firme de Redmond a trop mauvaise presse. En tout cas, juge-t-il, <em style="font-style:italic;">"ce système ne permettra pas à Microsoft d'accroître son contrôle des plates-formes"</em>. En d'autres termes, les motivations de la firme de Bill Gates ne sont pas, selon M. Farber, de conforter sa position dominante. </p> <p> Mais, là encore, les avis divergent. Certains spécialistes pensent que Microsoft sera tenté d'imposer certaines conditions à la mise en conformité des logiciels concurrents avec Palladium. Si cette technologie devient un standard largement adopté par les éditeurs de contenus numériques, Microsoft en finirait ainsi avec la menace de Linux et des <mark>logiciels</mark> <mark>libres</mark>. La firme de Redmond dément, assurant que la technologie Palladium sera <em style="font-style:italic;">"la plus ouverte possible"</em></p><p><em style="font-weight:bold;">Stéphane Foucart</em></p><p>Une nomination aux "Big Brother Awards" </p> <p></p> <p> Sur un mode ironique et dans le cadre des "Big Brother Awards", l'organisation non gouvernementale Privacy International va décerner à Paris, lundi 20 janvier, une série de prix stigmatisant les projets, les technologies ou les personnes ayant le plus sérieusement attenté au respect de la vie privée des citoyens. Le système Palladium est cette année sélectionné dans la catégorie "technologies, produits et systèmes". Le jury sera présidé par le sociologue Loïc Wacquant, disciple de Pierre Bourdieu et professeur à l'université de Berkeley (Californie). Aux Etats-Unis, l'une des plus célèbres associations de lutte pour le respect des libertés dans le cyberespace, l'Electronic Frontier Foundation (EFF), composée pour l'essentiel d'universitaires et de chercheurs, réserve toujours sa position sur Palladium. </p> <p><em style="font-weight:bold;">Vers un matériel "digne de confiance"</em></p><p>La plupart des industriels de l'informatique (dont Intel, IBM, HP, Compaq, etc.) sont regroupés depuis 1999 au sein du consortium TCPA (<em style="font-style:italic;">Trusted Computing Platform Alliance</em> ou Alliance pour une informatique de confiance). Les objectifs de ce regroupement sont la mise en place de nouvelles normes matérielles garantissant une informatique <em style="font-style:italic;">"digne de confiance"</em>, <em style="font-style:italic;">"respectant la confidentialité des communications électroniques"</em>tout en étant à même de <em style="font-style:italic;">"favoriser le commerce électronique"</em>. L'initiative fait suite à la tentative d'Intel, en 1998, de tatouer ses processeurs Pentium III pour authentifier les transactions électroniques. Devant le tollé, le leader mondial du microprocesseur avait dû renoncer. Officiellement, TCPA et Palladium sont distincts et <em style="font-style:italic;">"sans lien explicite"</em>, comme l'explique Microsoft France. <em style="font-style:italic;">"Mais il est très probable que les spécifications de TCPA vont évoluer pour que Palladium puisse y être hébergé."</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2003 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20030117·LM·0305691</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20030117·LM·0305691";
+    var _docIndex = 328;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20030117·LM·0305691';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720030117%C2%B7LM%C2%B70305691&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720030117%C2%B7LM%C2%B70305691&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720030117%C2%B7LM%C2%B70305691&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720030117%C2%B7LM%C2%B70305691&docIndex=328&FullScreen=1";
+                
+	var _keyDoc = 'news·20030117·LM·0305691';
+</script>
+</div></body></html>

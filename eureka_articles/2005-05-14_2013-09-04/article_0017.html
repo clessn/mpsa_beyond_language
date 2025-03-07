@@ -1,0 +1,485 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; techno,         mercredi 17 juillet 2013 856 mots, p. SCH8&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et medecine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Pour une recherche reproductible, publiez vos codes et donn&#233;es            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;| tribune | Selon Antoine Blanchard et Elifsu Sabuncu, fondateurs du Deuxi&#232;me Labo, et Yvan Stroppa, ing&#233;nieur CNRS, la lutte contre la fraude scientifique passe par une meilleure transparence des r&#233;sultats des chercheurs&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;En avril, un pav&#233; a &#233;t&#233; jet&#233; dans la mare de la recherche en &#233;conomie : l&#39;un des articles &#233;conomiques les plus cit&#233;s ces derni&#232;res ann&#233;es par les partisans de l&#39;aust&#233;rit&#233;, selon lequel le taux de croissance d&#39;un pays devient n&#233;gatif quand sa dette d&#233;passe 90 % du produit int&#233;rieur brut (PIB), serait entach&#233; d&#39;erreurs de calcul et de manipulations de donn&#233;es. Ce sont trois &#233;conomistes de l&#39;universit&#233; du Massachusetts qui ont d&#233;couvert la fraude apr&#232;s avoir obtenu l&#39;acc&#232;s &#224; la feuille de calcul Excel que les chercheurs de Harvard Carmen Reinhart et Kenneth Rogoff avaient utilis&#233;e pour b&#226;tir leur d&#233;monstration. En cause : des erreurs de formules Excel, une exclusion arbitraire de certaines donn&#233;es et une pond&#233;ration non conventionnelle - sans lesquelles le r&#233;sultat ne serait plus du tout probant et ne plaiderait pas en faveur d&#39;un maintien de la dette en de&#231;&#224; de 90 % du PIB.&lt;/p&gt;
+
+
+&lt;p&gt;Quand l&#39;affaire a &#233;clat&#233;, la majorit&#233; des chercheurs en &#233;conomie, et plus largement en sciences humaines et sociales, se sont sans doute sentis prot&#233;g&#233;s par leur honn&#234;tet&#233; intellectuelle et des pratiques de travail per&#231;ues comme meilleures (par exemple utiliser un langage de programmation plus tra&#231;able qu&#39;Excel, comme Matlab ou R). Mais est-ce suffisant? Pour r&#233;pondre non, il suffit de constater que les erreurs de code arrivent tr&#232;s vite (conduisant parfois au retrait d&#39;un article erron&#233; apr&#232;s sa publication) et que la majorit&#233; des chercheurs qui codent n&#39;ont pas une bonne compr&#233;hension des tests logiciels. A l&#39;inverse, une bonne pratique consistant &#224; partager votre code r&#233;dig&#233; dans un langage &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; augmente les chances d&#39;en d&#233;celer les erreurs. &lt;/p&gt; &lt;p&gt; Les sciences bas&#233;es sur l&#39;informatique ont cet avantage sur les sciences exp&#233;rimentales qu&#39;elles sont facilement reproductibles : donnez &#224; quiconque votre code source et vos donn&#233;es, et il retombera sur les m&#234;mes r&#233;sultats que vous. Faites-le saisir ses propres donn&#233;es, et tout le monde pourra s&#39;approprier votre travail : votre code devient un outil. C&#39;est le pari qu&#39;a fait, en 2011, RunMyCode (&lt;a target=&quot;_blank&quot; href=&quot;https://www.runmycode.org&quot;&gt;www.runmycode.org&lt;/a&gt;), projet acad&#233;mique international &#224; but non lucratif, initialement port&#233; par une &#233;quipe fran&#231;aise d&#39;ing&#233;nieurs et de chercheurs du CNRS, de HEC Paris et de l&#39;universit&#233; d&#39;Orl&#233;ans. Il permet d&#39;accompagner sa publication scientifique traditionnelle d&#39;un &#171; site compagnon &#187; interactif, pour en faire une &#171; publication ex&#233;cutable &#187; au sens informatique du terme. &lt;/p&gt; &lt;p&gt; D&#39;abord concentr&#233; sur des probl&#233;matiques de calculs statistiques li&#233;s &#224; l&#39;&#233;conom&#233;trie, RunMyCode s&#39;ouvre sur les autres disciplines scientifiques. Les 80 sites compagnons d&#233;j&#224; cr&#233;&#233;s permettent, d&#39;une part, de partager un savoir-faire de haut niveau et, d&#39;autre part, de le rendre interactif gr&#226;ce &#224; une interface d&#39;ex&#233;cution du code et de saisie des donn&#233;es. RunMyCode apporte &#233;galement une tra&#231;abilit&#233; de toutes les conditions de version et d&#39;ex&#233;cution qui ont permis d&#39;obtenir les r&#233;sultats d&#233;crits, pour en favoriser la reproduction. &lt;/p&gt; &lt;p&gt; RunMyCode b&#233;n&#233;ficie du soutien technologique du CNRS avec la grande infrastructure de recherche Huma-Num, de l&#39;Agence nationale de la recherche (ANR), de la Fondation HEC et de la Fondation Alfred P. Sloan (New York). Il b&#233;n&#233;ficie &#233;galement, depuis 2012, du soutien et de la collaboration d&#39;une &#233;quipe de chercheurs de l&#39;EFREI, &#233;cole d&#39;ing&#233;nieurs en informatique. &lt;/p&gt; &lt;p&gt; Un site compagnon permettant de reproduire vos r&#233;sultats n&#39;&#233;quivaut pas &#224; la validation ultime que serait une r&#233;plication ind&#233;pendante de vos travaux, mais celle-ci n&#39;est pas toujours possible (par exemple quand les donn&#233;es sont colossales ou co&#251;teuses &#224; rassembler, comme dans les &#233;tudes de cohorte en &#233;pid&#233;miologie ou dans les observations astronomiques). &lt;/p&gt; &lt;p&gt; La recherche reproductible est un &#171; minimum atteignable &#187; pour &#233;valuer la validit&#233; d&#39;un r&#233;sultat scientifique et ne pas se contenter d&#39;une situation o&#249; un r&#233;sultat est soit r&#233;pliqu&#233; (donc valid&#233; ind&#233;pendamment par la communaut&#233;), soit non r&#233;pliqu&#233; (donc sujet &#224; caution). Et m&#234;me avec cette contrainte minimale, on s&#39;aper&#231;oit que les chercheurs utilisent souvent des logiciels qui ne permettent pas de retracer l&#39;ensemble des analyses de donn&#233;es effectu&#233;es. Et quand ils codent (par exemple avec Matlab ou R), ils font souvent appel &#224; diff&#233;rents processus et routines dont le lien entre eux n&#39;est pas sauvegard&#233;. &lt;/p&gt; &lt;p&gt; Une enqu&#234;te r&#233;cente a montr&#233; que les chercheurs interrog&#233;s choisissent en grande majorit&#233; leurs logiciels non pas en fonction de crit&#232;res strictement scientifiques, mais parce qu&#39;ils leur ont &#233;t&#233; recommand&#233;s ou parce qu&#39;ils les ont vus utilis&#233;s dans des publications scientifiques - quand bien m&#234;me ces publications ne fournissent pas la preuve que le logiciel est fiable. Ce sont donc des d&#233;cennies de pratique informatique qu&#39;il faut refonder, en impliquant l&#39;ensemble des d&#233;veloppeurs de logiciels scientifiques, de leurs utilisateurs et des &#233;diteurs de revues scientifiques, pour b&#226;tir une &#171; culture de la reproductibilit&#233; &#187; &#224; tous les &#233;chelons de la recherche. &lt;/p&gt; &lt;p&gt; Le 13 f&#233;vrier, Daniele Fanelli, chercheur &#224; l&#39;universit&#233; d&#39;Edimbourg sp&#233;cialiste de l&#39;int&#233;grit&#233; scientifique, proposait dans la revue &lt;em style=&quot;font-style:italic;&quot;&gt;Nature&lt;/em&gt; d&#39;&#233;largir la d&#233;finition de la fraude scientifique &#224; toute omission ou d&#233;formation de l&#39;information n&#233;cessaire et suffisante pour &#233;valuer la validit&#233; et l&#39;importance d&#39;une recherche. Jusqu&#39;ici, la fraude a surtout &#233;t&#233; combattue en essayant de rendre les scientifiques plus objectifs et honn&#234;tes que le commun des mortels, ce qui a fait perdre de vue que ce ne sont pas les qualit&#233;s intrins&#232;ques des chercheurs qui rendent les connaissances scientifiques robustes, mais bien l&#39;exercice du jugement des pairs. &lt;/p&gt; &lt;p&gt; Donc si l&#39;on veut faire progresser la bonne science, quoi de mieux que de renforcer sa capacit&#233; &#224; l&#39;autocorrection? M. Fanelli propose, par exemple, que les revues scientifiques se dotent de chartes dictant l&#39;ensemble des informations n&#233;cessaires et suffisantes &#224; une &#171; bonne &#187; publication. Cette franchise ne ferait pas dispara&#238;tre l&#39;autonomie du chercheur : libre &#224; lui de &#171; p&#234;cher &#187; le r&#233;sultat statistiquement significatif dans ses donn&#233;es, &#224; condition d&#39;indiquer l&#39;ensemble des tests statistiques r&#233;alis&#233;s afin que ses pairs puissent d&#233;cider des risques de faux positifs. Ainsi, la lutte contre la fraude scientifique se jouerait plus sur le terrain de la communication des r&#233;sultats que sur celui du comportement des chercheurs. La culture de la reproductibilit&#233; est une alli&#233;e de l&#39;int&#233;grit&#233; scientifique. &lt;/p&gt; &lt;p&gt; Anatole France &#233;crivait, en 1889, dans sa nouvelle &lt;em style=&quot;font-style:italic;&quot;&gt;Balthasar&lt;/em&gt;, que &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la science est infaillible; mais les savants se trompent toujours &#187;&lt;/em&gt;. Nous engageons les chercheurs &#224; reconna&#238;tre leurs limites et &#224; favoriser le dialogue constructif au sein de la communaut&#233; par plus de transparence. Une voie consiste &#224; accompagner les publications scientifiques des jeux de donn&#233;es et codes sources qui permettront &#224; leurs coll&#232;gues de reproduire leurs r&#233;sultats. Et qui sait si en chemin ils n&#39;y trouveront pas d&#39;autres b&#233;n&#233;fices, en diffusant mieux leurs r&#233;sultats et en permettant &#224; un public large de &#171; jouer &#187; avec le code et les donn&#233;es?&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Antoine Blanchard et Elifsu Sabuncu sont fondateurs du Deuxi&#232;me Labo; Yvan Stroppa est ing&#233;nieur CNRS, cofondateur et &#171; chief computing officer &#187; de RunMyCode.&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20130717&amp;#183;LM&amp;#183;0sch2913_805611&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">fraude scientifique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">publications scientifiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">revues scientifiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intégrité scientifique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">majorité des chercheurs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130717%c2%b7LM%c2%b70sch2913_805611" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130717%c2%b7LM%c2%b70sch2913_805611">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; techno,         mercredi 17 juillet 2013 856 mots, p. SCH8</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et medecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Pour une recherche reproductible, publiez vos codes et données            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">| tribune | Selon Antoine Blanchard et Elifsu Sabuncu, fondateurs du Deuxième Labo, et Yvan Stroppa, ingénieur CNRS, la lutte contre la fraude scientifique passe par une meilleure transparence des résultats des chercheurs</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>En avril, un pavé a été jeté dans la mare de la recherche en économie : l'un des articles économiques les plus cités ces dernières années par les partisans de l'austérité, selon lequel le taux de croissance d'un pays devient négatif quand sa dette dépasse 90 % du produit intérieur brut (PIB), serait entaché d'erreurs de calcul et de manipulations de données. Ce sont trois économistes de l'université du Massachusetts qui ont découvert la fraude après avoir obtenu l'accès à la feuille de calcul Excel que les chercheurs de Harvard Carmen Reinhart et Kenneth Rogoff avaient utilisée pour bâtir leur démonstration. En cause : des erreurs de formules Excel, une exclusion arbitraire de certaines données et une pondération non conventionnelle - sans lesquelles le résultat ne serait plus du tout probant et ne plaiderait pas en faveur d'un maintien de la dette en deçà de 90 % du PIB.</p>
+
+
+<p>Quand l'affaire a éclaté, la majorité des chercheurs en économie, et plus largement en sciences humaines et sociales, se sont sans doute sentis protégés par leur honnêteté intellectuelle et des pratiques de travail perçues comme meilleures (par exemple utiliser un langage de programmation plus traçable qu'Excel, comme Matlab ou R). Mais est-ce suffisant? Pour répondre non, il suffit de constater que les erreurs de code arrivent très vite (conduisant parfois au retrait d'un article erroné après sa publication) et que la majorité des chercheurs qui codent n'ont pas une bonne compréhension des tests logiciels. A l'inverse, une bonne pratique consistant à partager votre code rédigé dans un langage <mark>open</mark> <mark>source</mark> augmente les chances d'en déceler les erreurs. </p> <p> Les sciences basées sur l'informatique ont cet avantage sur les sciences expérimentales qu'elles sont facilement reproductibles : donnez à quiconque votre code source et vos données, et il retombera sur les mêmes résultats que vous. Faites-le saisir ses propres données, et tout le monde pourra s'approprier votre travail : votre code devient un outil. C'est le pari qu'a fait, en 2011, RunMyCode (<a target="_blank" href="https://www.runmycode.org">www.runmycode.org</a>), projet académique international à but non lucratif, initialement porté par une équipe française d'ingénieurs et de chercheurs du CNRS, de HEC Paris et de l'université d'Orléans. Il permet d'accompagner sa publication scientifique traditionnelle d'un « site compagnon » interactif, pour en faire une « publication exécutable » au sens informatique du terme. </p> <p> D'abord concentré sur des problématiques de calculs statistiques liés à l'économétrie, RunMyCode s'ouvre sur les autres disciplines scientifiques. Les 80 sites compagnons déjà créés permettent, d'une part, de partager un savoir-faire de haut niveau et, d'autre part, de le rendre interactif grâce à une interface d'exécution du code et de saisie des données. RunMyCode apporte également une traçabilité de toutes les conditions de version et d'exécution qui ont permis d'obtenir les résultats décrits, pour en favoriser la reproduction. </p> <p> RunMyCode bénéficie du soutien technologique du CNRS avec la grande infrastructure de recherche Huma-Num, de l'Agence nationale de la recherche (ANR), de la Fondation HEC et de la Fondation Alfred P. Sloan (New York). Il bénéficie également, depuis 2012, du soutien et de la collaboration d'une équipe de chercheurs de l'EFREI, école d'ingénieurs en informatique. </p> <p> Un site compagnon permettant de reproduire vos résultats n'équivaut pas à la validation ultime que serait une réplication indépendante de vos travaux, mais celle-ci n'est pas toujours possible (par exemple quand les données sont colossales ou coûteuses à rassembler, comme dans les études de cohorte en épidémiologie ou dans les observations astronomiques). </p> <p> La recherche reproductible est un « minimum atteignable » pour évaluer la validité d'un résultat scientifique et ne pas se contenter d'une situation où un résultat est soit répliqué (donc validé indépendamment par la communauté), soit non répliqué (donc sujet à caution). Et même avec cette contrainte minimale, on s'aperçoit que les chercheurs utilisent souvent des logiciels qui ne permettent pas de retracer l'ensemble des analyses de données effectuées. Et quand ils codent (par exemple avec Matlab ou R), ils font souvent appel à différents processus et routines dont le lien entre eux n'est pas sauvegardé. </p> <p> Une enquête récente a montré que les chercheurs interrogés choisissent en grande majorité leurs logiciels non pas en fonction de critères strictement scientifiques, mais parce qu'ils leur ont été recommandés ou parce qu'ils les ont vus utilisés dans des publications scientifiques - quand bien même ces publications ne fournissent pas la preuve que le logiciel est fiable. Ce sont donc des décennies de pratique informatique qu'il faut refonder, en impliquant l'ensemble des développeurs de logiciels scientifiques, de leurs utilisateurs et des éditeurs de revues scientifiques, pour bâtir une « culture de la reproductibilité » à tous les échelons de la recherche. </p> <p> Le 13 février, Daniele Fanelli, chercheur à l'université d'Edimbourg spécialiste de l'intégrité scientifique, proposait dans la revue <em style="font-style:italic;">Nature</em> d'élargir la définition de la fraude scientifique à toute omission ou déformation de l'information nécessaire et suffisante pour évaluer la validité et l'importance d'une recherche. Jusqu'ici, la fraude a surtout été combattue en essayant de rendre les scientifiques plus objectifs et honnêtes que le commun des mortels, ce qui a fait perdre de vue que ce ne sont pas les qualités intrinsèques des chercheurs qui rendent les connaissances scientifiques robustes, mais bien l'exercice du jugement des pairs. </p> <p> Donc si l'on veut faire progresser la bonne science, quoi de mieux que de renforcer sa capacité à l'autocorrection? M. Fanelli propose, par exemple, que les revues scientifiques se dotent de chartes dictant l'ensemble des informations nécessaires et suffisantes à une « bonne » publication. Cette franchise ne ferait pas disparaître l'autonomie du chercheur : libre à lui de « pêcher » le résultat statistiquement significatif dans ses données, à condition d'indiquer l'ensemble des tests statistiques réalisés afin que ses pairs puissent décider des risques de faux positifs. Ainsi, la lutte contre la fraude scientifique se jouerait plus sur le terrain de la communication des résultats que sur celui du comportement des chercheurs. La culture de la reproductibilité est une alliée de l'intégrité scientifique. </p> <p> Anatole France écrivait, en 1889, dans sa nouvelle <em style="font-style:italic;">Balthasar</em>, que <em style="font-style:italic;">« la science est infaillible; mais les savants se trompent toujours »</em>. Nous engageons les chercheurs à reconnaître leurs limites et à favoriser le dialogue constructif au sein de la communauté par plus de transparence. Une voie consiste à accompagner les publications scientifiques des jeux de données et codes sources qui permettront à leurs collègues de reproduire leurs résultats. Et qui sait si en chemin ils n'y trouveront pas d'autres bénéfices, en diffusant mieux leurs résultats et en permettant à un public large de « jouer » avec le code et les données?</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p>Antoine Blanchard et Elifsu Sabuncu sont fondateurs du Deuxième Labo; Yvan Stroppa est ingénieur CNRS, cofondateur et « chief computing officer » de RunMyCode.</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20130717·LM·0sch2913_805611</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20130717·LM·0sch2913_805611";
+    var _docIndex = 16;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20130717·LM·0sch2913_805611';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720130717%C2%B7LM%C2%B70sch2913_805611&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720130717%C2%B7LM%C2%B70sch2913_805611&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720130717%C2%B7LM%C2%B70sch2913_805611&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720130717%C2%B7LM%C2%B70sch2913_805611&docIndex=16&FullScreen=1";
+                
+	var _keyDoc = 'news·20130717·LM·0sch2913_805611';
+</script>
+</div></body></html>

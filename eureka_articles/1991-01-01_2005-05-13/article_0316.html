@@ -1,0 +1,439 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CAHIER SPECIAL,         mardi 18 mars 2003 273 mots, p. 12&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Pr&#232;s de 1 200 initiatives sont pr&#233;vues jusqu&#39;au 23 mars &#224; travers la France. Cette sixi&#232;me &#233;dition de la f&#234;te de l&#39;Internet s&#39;adressera en particulier aux exclus du Web en multipliant les d&#233;bats sur la d&#233;mocratisation du Net. Programme complet sur : &lt;a target=&quot;_blank&quot; href=&quot;https://www.fete-internet.fr&quot;&gt; www.fete-internet.fr&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Sud            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;GrenobleQuai des Clics :Du 17 au 23 mars,l&#39;artiste Fred Forest collecte vos oeuvres sur le th&#232;me &#171;Pourquoi pas moi sur le Net&#187;. Dessin, collage, po&#232;me, mot, le tout sur une feuille A4 &#224; envoyer ou &#224; apporter. Le r&#233;sultat sera une mosa&#239;que de cr&#233;ations mise en ligne.Quai des Clics, place Saint-Laurent, 38000 Grenoble. internetenfete @free. frLyonAuberge de jeunesse du Vieux-Lyon :Du 17 au 23 mars, elle organise des initiations autour de la nouvelle technologie Wi-Fi.Auberge de jeunesse, 41-45, mont&#233;e du Chemin-Neuf, 69005 Lyon. &lt;a target=&quot;_blank&quot; href=&quot;https://www.fuaj.orgSalon-de-ProvencePortail&quot;&gt;www.fuaj.orgSalon-de-ProvencePortail&lt;/a&gt; Coucou :Le 22 mars de midi &#224; minuit, visioconf&#233;rence g&#233;ante avec le S&#233;n&#233;gal, le Cameroun et de nombreux lieux en France.Portail Coucou, 160, bd Lamartine, 13 300 Salon-de-Provence. &lt;a target=&quot;_blank&quot; href=&quot;https://www.portail-coucou.comToulonCentre&quot;&gt;www.portail-coucou.comToulonCentre&lt;/a&gt; commercial La Rode et biblioth&#232;que :Les 21 et 22 mars, passez une nuit blanche en ligne ou bien initiez-vous au jeu en ligne tout le week-end.www.cybertoulon.com.PerpignanBenja.com Party :Du 18 au 21 mars, de 17 h &#224; 20 h et le 22 mars de 14 h &#224; minuit, participez au plus grand jeu communautaire en ligne cr&#233;&#233; par des Fran&#231;ais. Initiation &#224; la cr&#233;ation de pages web pour devenir un acteur de la Toile.Avenue du G&#233;n&#233;ral-Leclerc, 66000 Perpignan.Avignon@venir84 :Du 17 au 22 mars, de 9 h &#224; 20 h, formation compl&#232;te au Web pour finir en beaut&#233; avec un &#233;change (forum de discussions, visioconf&#233;rence) avec des partenaires alg&#233;riens.@venir84, 27 bis, rue de la Trillade, 84000 Avignon. &lt;a target=&quot;_blank&quot; href=&quot;https://www.avenir84.orgMarseille&quot;&gt;www.avenir84.orgMarseille&lt;/a&gt; Inforoots :Le 21 mars, l&#39;association organise des s&#233;ances d&#39;initiation &#224; l&#39;Internet sur le march&#233; des Capucins et invite &#224; une visioconf&#233;rence g&#233;ante avec l&#39;association Alliance Nord-Sud au Cameroun. La journ&#233;e se terminera en cyberparty.&lt;a target=&quot;_blank&quot; href=&quot;https://www.inforoots.orgMontpellierDiago&quot;&gt;www.inforoots.orgMontpellierDiago&lt;/a&gt; Kawenga :Manifestations &#224; l&#39;espace culture et multim&#233;dia autour de Linux et du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;.Le 21 mars &#224; partir de 21 h, soir&#233;e interactive &#171;Visual Fantasy&#187; autour de la cr&#233;ation collective de paysages d&#39;un monde virtuel anim&#233;e par l&#39;artiste multim&#233;dia Laurent Rodriguez.Espace Kawenga, 34000 Montpellier. &lt;a target=&quot;_blank&quot; href=&quot;https://www.diagokawenga.com/rencontres&quot;&gt;www.diagokawenga.com/rencontres&lt;/a&gt; /internet3.htmToulouse Sicoval :A partir du 17 mars, les enfants des 36 communes de la communaut&#233; d&#39;agglo participent &#224; un concours d&#39;&#233;criture d&#39;un e-livre.&lt;a target=&quot;_blank&quot; href=&quot;http://www.lecteur&quot;&gt;http://www.lecteur&lt;/a&gt; duval. org&lt;/p&gt;
+
+
+
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2003 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20030318&amp;#183;LI&amp;#183;0li20030318050&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030318%c2%b7LI%c2%b70li20030318050" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030318%c2%b7LI%c2%b70li20030318050">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CAHIER SPECIAL,         mardi 18 mars 2003 273 mots, p. 12</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Près de 1 200 initiatives sont prévues jusqu'au 23 mars à travers la France. Cette sixième édition de la fête de l'Internet s'adressera en particulier aux exclus du Web en multipliant les débats sur la démocratisation du Net. Programme complet sur : <a target="_blank" href="https://www.fete-internet.fr"> www.fete-internet.fr</a></p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Sud            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>GrenobleQuai des Clics :Du 17 au 23 mars,l'artiste Fred Forest collecte vos oeuvres sur le thème «Pourquoi pas moi sur le Net». Dessin, collage, poème, mot, le tout sur une feuille A4 à envoyer ou à apporter. Le résultat sera une mosaïque de créations mise en ligne.Quai des Clics, place Saint-Laurent, 38000 Grenoble. internetenfete @free. frLyonAuberge de jeunesse du Vieux-Lyon :Du 17 au 23 mars, elle organise des initiations autour de la nouvelle technologie Wi-Fi.Auberge de jeunesse, 41-45, montée du Chemin-Neuf, 69005 Lyon. <a target="_blank" href="https://www.fuaj.orgSalon-de-ProvencePortail">www.fuaj.orgSalon-de-ProvencePortail</a> Coucou :Le 22 mars de midi à minuit, visioconférence géante avec le Sénégal, le Cameroun et de nombreux lieux en France.Portail Coucou, 160, bd Lamartine, 13 300 Salon-de-Provence. <a target="_blank" href="https://www.portail-coucou.comToulonCentre">www.portail-coucou.comToulonCentre</a> commercial La Rode et bibliothèque :Les 21 et 22 mars, passez une nuit blanche en ligne ou bien initiez-vous au jeu en ligne tout le week-end.www.cybertoulon.com.PerpignanBenja.com Party :Du 18 au 21 mars, de 17 h à 20 h et le 22 mars de 14 h à minuit, participez au plus grand jeu communautaire en ligne créé par des Français. Initiation à la création de pages web pour devenir un acteur de la Toile.Avenue du Général-Leclerc, 66000 Perpignan.Avignon@venir84 :Du 17 au 22 mars, de 9 h à 20 h, formation complète au Web pour finir en beauté avec un échange (forum de discussions, visioconférence) avec des partenaires algériens.@venir84, 27 bis, rue de la Trillade, 84000 Avignon. <a target="_blank" href="https://www.avenir84.orgMarseille">www.avenir84.orgMarseille</a> Inforoots :Le 21 mars, l'association organise des séances d'initiation à l'Internet sur le marché des Capucins et invite à une visioconférence géante avec l'association Alliance Nord-Sud au Cameroun. La journée se terminera en cyberparty.<a target="_blank" href="https://www.inforoots.orgMontpellierDiago">www.inforoots.orgMontpellierDiago</a> Kawenga :Manifestations à l'espace culture et multimédia autour de Linux et du <mark>logiciel</mark> <mark>libre</mark>.Le 21 mars à partir de 21 h, soirée interactive «Visual Fantasy» autour de la création collective de paysages d'un monde virtuel animée par l'artiste multimédia Laurent Rodriguez.Espace Kawenga, 34000 Montpellier. <a target="_blank" href="https://www.diagokawenga.com/rencontres">www.diagokawenga.com/rencontres</a> /internet3.htmToulouse Sicoval :A partir du 17 mars, les enfants des 36 communes de la communauté d'agglo participent à un concours d'écriture d'un e-livre.<a target="_blank" href="http://www.lecteur">http://www.lecteur</a> duval. org</p>
+
+
+
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2003 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20030318·LI·0li20030318050</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20030318·LI·0li20030318050";
+    var _docIndex = 315;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20030318·LI·0li20030318050';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720030318%C2%B7LI%C2%B70li20030318050&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720030318%C2%B7LI%C2%B70li20030318050&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720030318%C2%B7LI%C2%B70li20030318050&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720030318%C2%B7LI%C2%B70li20030318050&docIndex=315&FullScreen=1";
+                
+	var _keyDoc = 'news·20030318·LI·0li20030318050';
+</script>
+</div></body></html>

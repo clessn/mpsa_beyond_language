@@ -1,0 +1,459 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Plan&#232;te,         lundi 21 f&amp;#233;vrier 2000 1217 mots, p. B3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le coin du pingouin         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+VMWare: l&#39;hydre &#224; cinq t&#234;tes            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Que diriez-vous de rouler simultan&#233;ment Windows 2000, Windows 98, Linux et un ou deux autres syst&#232;mes d&#39;exploitation? Avec VMWare, c&#39;est possible, mais attention: le prix &#224; payer en ressources mat&#233;rielles sera imposant. &lt;/p&gt; &lt;p&gt; Au moment o&#249; j&#39;&#233;cris cette chronique, dans une fen&#234;tre, tourne le syst&#232;me d&#39;exploitation Linux avec une interface KDE, tandis que dans une autre, turbine Windows 98 SE, et le syst&#232;me de base est Windows 2000. Miracle? Non, simplement un ing&#233;nieux petit logiciel nomm&#233; VMWare qui permet de r&#233;aliser ce miracle. Nullement un &#233;mulateur, VMWare (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.vmware.com&quot;&gt;www.vmware.com&lt;/a&gt;&lt;/em&gt;) permet v&#233;ritablement de &quot;cr&#233;er&quot; des machines virtuelles accueillant chacune, un syst&#232;me d&#39;exploitation diff&#233;rent.&lt;/p&gt;
+
+
+&lt;p&gt;J&#39;avoue que j&#39;&#233;tais fort sceptique en voyant les promesses que devait remplir ce logiciel. C&#39;est en visitant le dernier Comdex &#224; Montr&#233;al que j&#39;ai eu, gr&#226;ce aux dirigeants de Savoir Faire Linux, une d&#233;monstration fort convaincante de ce logiciel. Non seulement plusieurs syst&#232;mes d&#39;exploitation cohabitaient ensemble, mais il &#233;tait m&#234;me possible de faire du copier-coller d&#39;une fen&#234;tre &#224; une autre. Par exemple, il &#233;tait possible de copier du texte dans une fen&#234;tre Word qui tourne sous Windows 2000, vers une fen&#234;tre Linux et le texteur de la suite bureautique StarOffice, et par la suite, faire la m&#234;me op&#233;ration dans une fen&#234;tre Windows 98 et Wordpad. &lt;/p&gt; &lt;p&gt; Cependant, VMWare n&#39;est pas pour tout le monde, loin de l&#224;. Premi&#232;rement, je n&#39;ai jamais vu un logiciel aussi goinfre en ressources mat&#233;rielles. Selon VMWare, un Pentium II-266 et 96 m&#233;gaoctets de m&#233;moire vive sont amplement suffisants pour faire tourner deux syst&#232;mes d&#39;exploitation en m&#234;me temps. N&#39;en croyez rien. Pour que le tout soit vraiment &#224; l&#39;avenant, un Pentium-450 et 256 m&#233;gas ne seront pas trop pour que le tout soit &quot;confortable &quot;et performe &#224; une vitesse raisonnable. &lt;/p&gt; &lt;p&gt; Secondo, les joueurs qui r&#234;vent de travailler sous un environnement stable comme Windows 2000 peut l&#39;offrir, et ouvrir &#224; l&#39;occasion une fen&#234;tre Windows 98, un syst&#232;me d&#39;exploitation mieux adapt&#233; pour l&#39;environnement jeux, seront d&#233;&#231;us eux aussi. Non pas que les jeux ne fonctionnent pas, bien au contraire. Mais les tous nouveaux jeux sont tr&#232;s exigeants et demandent des cartes vid&#233;os 3D acc&#233;l&#233;r&#233;es, qui ne sont, malheureusement pas support&#233;es, dans les versions actuelles de VMWare. &lt;/p&gt; &lt;p&gt; Non, VMWare s&#39;adresse surtout &#224; la personne qui doit absolument passer rapidement d&#39;un syst&#232;me d&#39;exploitation &#224; un autre, par exemple, quelqu&#39;un au service technique, ou encore, un programmeur HTML qui doit tester son site avec diff&#233;rents fureteurs, sous diff&#233;rentes plate-formes. &lt;/p&gt; &lt;p&gt; Il existe en ce moment deux versions de VMWare, une pour Windows NT et 2000, qui permet de faire tourner Linux, Windows 95 et 98, ou FreeBSD, et une autre, pour Linux, qui permet de faire tourner &#224; l&#39;occasion des sessions Windows 2000 ou 98. Et d&#233;pechez-vous, car la version 2.0 beta est actuellement disponible gratuitement pour t&#233;l&#233;chargement sur le site de VMWare. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Courrier de la rotule&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Tiens, &#231;a faisait une &#233;ternit&#233; que je n&#39;avais pas r&#233;pondu &#224; des questions. Honte &#224; moi, perdrais-je le contact avec les lecteurs? Pourquoi ne pas r&#233;parer cette grave erreur imm&#233;diatement? Allez hop! Questions! &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;GoLive ou Fusion?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Puis-je me permettre de vous poser cette question (Mais si, mais si. Osez!) Quel est, &#224; votre avis, le meilleur logiciel de cr&#233;ation de pages web dans le contexte o&#249; le site sera con&#231;u, soutenu et mis &#224; jour par une &#233;quipe de graphistes &#233;quip&#233;e en MacIntosh et un analyste pro Windows, bref! On me dit que GoLive d&#39;Adobe permet cela, c&#39;est-&#224;-dire que les deux &#233;quipes peuvent travailler aux corrections et aux mises &#224; jour usuelles &#224; partir de leur environnement r&#233;ciproque. &lt;/p&gt; &lt;p&gt; Nous n&#39;avons pas beaucoup d&#39;exp&#233;rience dans ce domaine, et surtout pas d&#39;argent pour engager des consultants de l&#39;ext&#233;rieur! C&#39;est pourquoi, je me permets de vous demander ce que vous en penser. Dans une de vos chroniques, vous recommandez Fusion de NetObject. Ailleurs, on me recommande GoLive. Que dois-je en penser? &lt;/p&gt; &lt;p&gt; Claudine Parent, CHUQ &lt;/p&gt; &lt;p&gt; Dans le contexte tel que vous me le d&#233;crivez, je vous recommande GoLive sans h&#233;sitation aucune. GoLive et Fusion de NetObjects sont deux outils extr&#234;mement performants, permettant de &quot;contruire &quot;et &#233;diter un site Web dans un environnement quasi-WYSIWYG. Personnellement, je pr&#233;f&#232;re Fusion &#224; cause de possibilit&#233;s offertes par son ouverture, c&#39;est &#224; dire qu&#39;on peut greffer &#224; ce progiciel des composantes suppl&#233;mentaires, un peu comme les modules d&#39;extensions &#224; la Photoshop. GoLive poss&#232;de aussi cette fonctionnalit&#233;, mais Fusion est plus mature et les composantes offertes, plus nombreuses. Vous pouvez avoir une id&#233;e de la puissance des composantes offertes pour Fusion en allant consulter le site du Club Coolmaps (&lt;a target=&quot;_blank&quot; href=&quot;http://club.coolmaps.com&quot;&gt;http://club.coolmaps.com&lt;/a&gt;). Mais comme vous devrez composer avec des personnes qui auront &#224; travailler sur le site &#224; partir de plate-formes diff&#233;rentes, GoLive, qui est offert en version Macintosh et Windows, demeure un excellent choix. Petite suggestion en passant: si vous pensez travailler avec des tonnes d&#39;informations provenant d&#39;une base de donn&#233;es, puis-je vous recommander de jeter un regard vers Filemaker 5.0 (&lt;a target=&quot;_blank&quot; href=&quot;https://www.filemaker.com&quot;&gt;www.filemaker.com&lt;/a&gt;) qui vous permettra tr&#232;s facilement de vous mitonner un des ces petits sites enti&#232;rement automatis&#233; et dynamique. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Linux pour le Mac&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Cher &quot;B-52&quot; (je subodore une question d&#39;un vieux pote) &lt;/p&gt; &lt;p&gt; Encore bravo pour ta chronique, j&#39;appr&#233;cie toujours autant tes interventions (comme je suis t&#233;teux, j&#39;accepte les honneurs). Juste pour toi aujourd&#39;hui. j&#39;ai une petite question toute simple. &lt;/p&gt; &lt;p&gt; Je suis maintenant un disciple de la Sainte-Pomme, tendance G3. Comme tu le sais s&#251;rement, je puis lire directement la plupart des fichiers DOS ou Windows sans probl&#232;me et faire tourner des logiciels du monde de l&#39;Oncle Bill avec un outil d&#39;&#233;mulation appropri&#233;, Virtual PC, pour ne pas le nommer. &lt;/p&gt; &lt;p&gt; Je puis donc facilement formater un disque dur pour cette plate-forme (en totalit&#233; ou en partie). &lt;/p&gt; &lt;p&gt; Or ma&#238;tre Linux est maintenant sorti de la for&#234;t et je me demandais s&#39;il est possible d&#39;installer ce nouvel animal sur un Mac, et ainsi lui d&#233;dier une partie ou la totalit&#233; d&#39;un de mes disques durs. &lt;/p&gt; &lt;p&gt; Si oui, pourrais-tu me conseiller quand &#224; la meilleure fa&#231;on de proc&#233;der?? &lt;/p&gt; &lt;p&gt; Merci encore et toutes mes plus amicales salutations &#224; ta compagne (si tu en as une) et &#224; &quot;mademoiselle B&#233;b&#233;&quot;. &lt;/p&gt; &lt;p&gt; Ton vieil ami et ex-voisin d&#39;il y a vingt d&#233;j&#224; &lt;/p&gt; &lt;p&gt; Gilbert Lachapelle. Maniwaki. &lt;/p&gt; &lt;p&gt; Cher vieux comp&#232;re compagnon, permet-moi de te saluer aussi et de t&#39;offrir quelques conseils, qui j&#39;esp&#232;re, sauront t&#39;&#233;clairer. Sache que tu poss&#232;des d&#233;j&#224; les germes de la solution. Par exemple, le savais-tu, Connectix, l&#39;&#233;diteur de l&#39;&#233;mulateur Virtual PC, et Red Hat, une des distributions les plus populaires sur le march&#233;, viennent de conclure une entente strat&#233;gique. Selon les termes de cette entente, Connectix vendra une version sp&#233;ciale de Virtual PC avec la distro de Red Hat. Un peu tordu selon, car apr&#232;s tout, tu as maintenant la possibilit&#233; d&#39;acqu&#233;rir une version optimis&#233;e pour le Mac de l&#39;environnement GNU/Linux. Et comme une tr&#232;s grande majorit&#233; des logiciels sont disponibles avec le code source, tu pourras donc ainsi recompiler le code pour ton Mac. Mais ne te prive pas d&#39;essayer les deux solutions. Parlant de distributions pour le Mac, pointe donc ton fureteur vers les sites suivants: celui de LinuxPPC (&lt;a target=&quot;_blank&quot; href=&quot;https://www.linuxppc.com&quot;&gt;www.linuxppc.com&lt;/a&gt;) ou celui de YellowDog (&lt;a target=&quot;_blank&quot; href=&quot;http://www.yellowdoglinux.com&quot;&gt;http://www.yellowdoglinux.com&lt;/a&gt;), tu y verras deux distributions pleines de potentiel. Allez, une bise, cher vieux pote, et salue donc les Collerette, Morin et compagnie pour moi. Et j&#39;embrasse mademoiselle B&#233;b&#233; (qui n&#39;en ait plus un) de ta part. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;LE COIN DU PINGOUIN&lt;/em&gt;&lt;p&gt;Linux Expo Am&#233;riques &lt;/p&gt; &lt;/p&gt; &lt;p&gt; Apr&#232;s le succ&#232;s sans pr&#233;c&#233;dent des r&#233;centes conventions Linux-Expo de Paris et New York, Montr&#233;al aura aussi son foire Linux. Les 10-11-12 avril, au Palais des Congr&#232;s, se tiendra Linux Expo Am&#233;riques (&lt;a target=&quot;_blank&quot; href=&quot;http://www.linuxexpocanada.com&quot;&gt;http://www.linuxexpocanada.com&lt;/a&gt;), organis&#233; par Sky Events. Des conf&#233;rences de Michael Cowpland, de Corel, Bob Young de Red Hat, Eric Raymond, l&#39;auteur de &quot;The Cathedral and the bazaar &quot;et plusieurs autres. Pendant trois jours, tous les acteurs et intervenants du monde Linux seront sur place. &#201;videmment, comme dans toute bonne foire commerciale, vous pourrez vous promener sur le plancher d&#39;exposition pour y voir les r&#233;alisations plus de 150 exposants. C&#39;est un rendez-vous. Nous y serons, c&#39;est promis. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Linux partout&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La folie du Pingouin se r&#233;pand un peu partout au Qu&#233;bec, et il en va de m&#234;me des clubs d&#39;utilisateurs. Un club d&#39;utilisateurs, c&#39;est l&#39;endroit id&#233;al pour prendre go&#251;t au Pingouin, et surtout, lorsque l&#39;on est un simple n&#233;ophyte, se faire expliquer par des passionn&#233;s ce qu&#39;est le syst&#232;me d&#39;exploitation GNU/Linux. Voici une liste de clubs d&#39;utilisateurs Linux au Qu&#233;bec. &lt;/p&gt; &lt;p&gt; - Outaouais &lt;/p&gt; &lt;p&gt; Linux Outaouais &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.linux-outaouais.org&quot;&gt; www.linux-outaouais.org&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;- Qu&#233;bec &lt;/p&gt; &lt;p&gt; Le club Linux de l&#39;universit&#233; Laval &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-bacc-ift-ulaval-ca.acces.bibl.ulaval.ca/&quot;&gt; www.bacc.ift.ulaval.ca/&lt;/a&gt;~acmlaval/clublinux.htm &lt;/em&gt;&lt;/p&gt;&lt;p&gt;- Sherbrooke &lt;/p&gt; &lt;p&gt; Le Gulus ou groupe d&#39;usagers Linux de l&#39;universit&#233; de Sherbrooke &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://gulus.netrevolution.com/&quot;&gt; http://gulus.netrevolution.com/&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;- Lac St-jean &lt;/p&gt; &lt;p&gt; Le regroupement r&#233;gional des usagers Linux du Lac St-Jean &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://linux.lacstjean.qc.ca&quot;&gt; http://linux.lacstjean.qc.ca&lt;/a&gt; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;- Trois-Rivi&#232;res &lt;/p&gt; &lt;p&gt; CULT ou Club des usagers Linux de Trois-Rivi&#232;res &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.lecult.org&quot;&gt; www.lecult.org&lt;/a&gt; &lt;/em&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Zope&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les outils pour &#233;diter et cr&#233;er des sites webs dynamiquement ne sont pas donn&#233;s. Il y a de quoi avoir une crise d&#39;apoplexie lorsque l&#39;on demande pour la premi&#232;re fois une estimation d&#39;un outil comme Vignette (&lt;a target=&quot;_blank&quot; href=&quot;https://www.vignette.com&quot;&gt;www.vignette.com&lt;/a&gt;). Cependant, il existe un outil, un logiciel &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, gratuit, et disponible pour Linux, Solaris et Windows NT, qui permet de cr&#233;er des sites automatis&#233;s et dynamiques. Son nom? Zope (&lt;a target=&quot;_blank&quot; href=&quot;https://www.zope.org&quot;&gt;www.zope.org&lt;/a&gt;). D&#39;ailleurs, pour tous ceux qui sont curieux d&#39;en savoir plus, une conf&#233;rence sur Zope aura lieu le 12 avril, lors d&#39;une rencontre mensuelle de Linux-Qu&#233;bec. Le 8 mars, Benoit de Mulder pr&#233;sentera le projet Beowulf (&lt;a target=&quot;_blank&quot; href=&quot;https://www.beowulf.org&quot;&gt;www.beowulf.org&lt;/a&gt;). On trouve toutes les informations sur le site de Linux-Qu&#233;bec (&lt;a target=&quot;_blank&quot; href=&quot;https://www.linux-quebec.org&quot;&gt;www.linux-quebec.org&lt;/a&gt;).&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000221&amp;#183;LE&amp;#183;0039&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Informatique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000221%c2%b7LE%c2%b70039" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000221%c2%b7LE%c2%b70039">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Planète,         lundi 21 février 2000 1217 mots, p. B3</span>
+</div>
+
+    <div>
+        <p>
+Le coin du pingouin         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+VMWare: l'hydre à cinq têtes            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Que diriez-vous de rouler simultanément Windows 2000, Windows 98, Linux et un ou deux autres systèmes d'exploitation? Avec VMWare, c'est possible, mais attention: le prix à payer en ressources matérielles sera imposant. </p> <p> Au moment où j'écris cette chronique, dans une fenêtre, tourne le système d'exploitation Linux avec une interface KDE, tandis que dans une autre, turbine Windows 98 SE, et le système de base est Windows 2000. Miracle? Non, simplement un ingénieux petit logiciel nommé VMWare qui permet de réaliser ce miracle. Nullement un émulateur, VMWare (<em style="font-style:italic;"><a target="_blank" href="https://www.vmware.com">www.vmware.com</a></em>) permet véritablement de "créer" des machines virtuelles accueillant chacune, un système d'exploitation différent.</p>
+
+
+<p>J'avoue que j'étais fort sceptique en voyant les promesses que devait remplir ce logiciel. C'est en visitant le dernier Comdex à Montréal que j'ai eu, grâce aux dirigeants de Savoir Faire Linux, une démonstration fort convaincante de ce logiciel. Non seulement plusieurs systèmes d'exploitation cohabitaient ensemble, mais il était même possible de faire du copier-coller d'une fenêtre à une autre. Par exemple, il était possible de copier du texte dans une fenêtre Word qui tourne sous Windows 2000, vers une fenêtre Linux et le texteur de la suite bureautique StarOffice, et par la suite, faire la même opération dans une fenêtre Windows 98 et Wordpad. </p> <p> Cependant, VMWare n'est pas pour tout le monde, loin de là. Premièrement, je n'ai jamais vu un logiciel aussi goinfre en ressources matérielles. Selon VMWare, un Pentium II-266 et 96 mégaoctets de mémoire vive sont amplement suffisants pour faire tourner deux systèmes d'exploitation en même temps. N'en croyez rien. Pour que le tout soit vraiment à l'avenant, un Pentium-450 et 256 mégas ne seront pas trop pour que le tout soit "confortable "et performe à une vitesse raisonnable. </p> <p> Secondo, les joueurs qui rêvent de travailler sous un environnement stable comme Windows 2000 peut l'offrir, et ouvrir à l'occasion une fenêtre Windows 98, un système d'exploitation mieux adapté pour l'environnement jeux, seront déçus eux aussi. Non pas que les jeux ne fonctionnent pas, bien au contraire. Mais les tous nouveaux jeux sont très exigeants et demandent des cartes vidéos 3D accélérées, qui ne sont, malheureusement pas supportées, dans les versions actuelles de VMWare. </p> <p> Non, VMWare s'adresse surtout à la personne qui doit absolument passer rapidement d'un système d'exploitation à un autre, par exemple, quelqu'un au service technique, ou encore, un programmeur HTML qui doit tester son site avec différents fureteurs, sous différentes plate-formes. </p> <p> Il existe en ce moment deux versions de VMWare, une pour Windows NT et 2000, qui permet de faire tourner Linux, Windows 95 et 98, ou FreeBSD, et une autre, pour Linux, qui permet de faire tourner à l'occasion des sessions Windows 2000 ou 98. Et dépechez-vous, car la version 2.0 beta est actuellement disponible gratuitement pour téléchargement sur le site de VMWare. </p> <p><em style="font-weight:bold;">Courrier de la rotule</em></p><p>Tiens, ça faisait une éternité que je n'avais pas répondu à des questions. Honte à moi, perdrais-je le contact avec les lecteurs? Pourquoi ne pas réparer cette grave erreur immédiatement? Allez hop! Questions! </p> <p><em style="font-weight:bold;">GoLive ou Fusion?</em></p><p>Puis-je me permettre de vous poser cette question (Mais si, mais si. Osez!) Quel est, à votre avis, le meilleur logiciel de création de pages web dans le contexte où le site sera conçu, soutenu et mis à jour par une équipe de graphistes équipée en MacIntosh et un analyste pro Windows, bref! On me dit que GoLive d'Adobe permet cela, c'est-à-dire que les deux équipes peuvent travailler aux corrections et aux mises à jour usuelles à partir de leur environnement réciproque. </p> <p> Nous n'avons pas beaucoup d'expérience dans ce domaine, et surtout pas d'argent pour engager des consultants de l'extérieur! C'est pourquoi, je me permets de vous demander ce que vous en penser. Dans une de vos chroniques, vous recommandez Fusion de NetObject. Ailleurs, on me recommande GoLive. Que dois-je en penser? </p> <p> Claudine Parent, CHUQ </p> <p> Dans le contexte tel que vous me le décrivez, je vous recommande GoLive sans hésitation aucune. GoLive et Fusion de NetObjects sont deux outils extrêmement performants, permettant de "contruire "et éditer un site Web dans un environnement quasi-WYSIWYG. Personnellement, je préfère Fusion à cause de possibilités offertes par son ouverture, c'est à dire qu'on peut greffer à ce progiciel des composantes supplémentaires, un peu comme les modules d'extensions à la Photoshop. GoLive possède aussi cette fonctionnalité, mais Fusion est plus mature et les composantes offertes, plus nombreuses. Vous pouvez avoir une idée de la puissance des composantes offertes pour Fusion en allant consulter le site du Club Coolmaps (<a target="_blank" href="http://club.coolmaps.com">http://club.coolmaps.com</a>). Mais comme vous devrez composer avec des personnes qui auront à travailler sur le site à partir de plate-formes différentes, GoLive, qui est offert en version Macintosh et Windows, demeure un excellent choix. Petite suggestion en passant: si vous pensez travailler avec des tonnes d'informations provenant d'une base de données, puis-je vous recommander de jeter un regard vers Filemaker 5.0 (<a target="_blank" href="https://www.filemaker.com">www.filemaker.com</a>) qui vous permettra très facilement de vous mitonner un des ces petits sites entièrement automatisé et dynamique. </p> <p><em style="font-weight:bold;">Linux pour le Mac</em></p><p>Cher "B-52" (je subodore une question d'un vieux pote) </p> <p> Encore bravo pour ta chronique, j'apprécie toujours autant tes interventions (comme je suis téteux, j'accepte les honneurs). Juste pour toi aujourd'hui. j'ai une petite question toute simple. </p> <p> Je suis maintenant un disciple de la Sainte-Pomme, tendance G3. Comme tu le sais sûrement, je puis lire directement la plupart des fichiers DOS ou Windows sans problème et faire tourner des logiciels du monde de l'Oncle Bill avec un outil d'émulation approprié, Virtual PC, pour ne pas le nommer. </p> <p> Je puis donc facilement formater un disque dur pour cette plate-forme (en totalité ou en partie). </p> <p> Or maître Linux est maintenant sorti de la forêt et je me demandais s'il est possible d'installer ce nouvel animal sur un Mac, et ainsi lui dédier une partie ou la totalité d'un de mes disques durs. </p> <p> Si oui, pourrais-tu me conseiller quand à la meilleure façon de procéder?? </p> <p> Merci encore et toutes mes plus amicales salutations à ta compagne (si tu en as une) et à "mademoiselle Bébé". </p> <p> Ton vieil ami et ex-voisin d'il y a vingt déjà </p> <p> Gilbert Lachapelle. Maniwaki. </p> <p> Cher vieux compère compagnon, permet-moi de te saluer aussi et de t'offrir quelques conseils, qui j'espère, sauront t'éclairer. Sache que tu possèdes déjà les germes de la solution. Par exemple, le savais-tu, Connectix, l'éditeur de l'émulateur Virtual PC, et Red Hat, une des distributions les plus populaires sur le marché, viennent de conclure une entente stratégique. Selon les termes de cette entente, Connectix vendra une version spéciale de Virtual PC avec la distro de Red Hat. Un peu tordu selon, car après tout, tu as maintenant la possibilité d'acquérir une version optimisée pour le Mac de l'environnement GNU/Linux. Et comme une très grande majorité des logiciels sont disponibles avec le code source, tu pourras donc ainsi recompiler le code pour ton Mac. Mais ne te prive pas d'essayer les deux solutions. Parlant de distributions pour le Mac, pointe donc ton fureteur vers les sites suivants: celui de LinuxPPC (<a target="_blank" href="https://www.linuxppc.com">www.linuxppc.com</a>) ou celui de YellowDog (<a target="_blank" href="http://www.yellowdoglinux.com">http://www.yellowdoglinux.com</a>), tu y verras deux distributions pleines de potentiel. Allez, une bise, cher vieux pote, et salue donc les Collerette, Morin et compagnie pour moi. Et j'embrasse mademoiselle Bébé (qui n'en ait plus un) de ta part. </p> <p><em style="font-weight:bold;">LE COIN DU PINGOUIN</em></p><p>Linux Expo Amériques </p> <p></p> <p> Après le succès sans précédent des récentes conventions Linux-Expo de Paris et New York, Montréal aura aussi son foire Linux. Les 10-11-12 avril, au Palais des Congrès, se tiendra Linux Expo Amériques (<a target="_blank" href="http://www.linuxexpocanada.com">http://www.linuxexpocanada.com</a>), organisé par Sky Events. Des conférences de Michael Cowpland, de Corel, Bob Young de Red Hat, Eric Raymond, l'auteur de "The Cathedral and the bazaar "et plusieurs autres. Pendant trois jours, tous les acteurs et intervenants du monde Linux seront sur place. Évidemment, comme dans toute bonne foire commerciale, vous pourrez vous promener sur le plancher d'exposition pour y voir les réalisations plus de 150 exposants. C'est un rendez-vous. Nous y serons, c'est promis. </p> <p><em style="font-weight:bold;">Linux partout</em></p><p>La folie du Pingouin se répand un peu partout au Québec, et il en va de même des clubs d'utilisateurs. Un club d'utilisateurs, c'est l'endroit idéal pour prendre goût au Pingouin, et surtout, lorsque l'on est un simple néophyte, se faire expliquer par des passionnés ce qu'est le système d'exploitation GNU/Linux. Voici une liste de clubs d'utilisateurs Linux au Québec. </p> <p> - Outaouais </p> <p> Linux Outaouais </p> <p><em style="font-style:italic;"><a target="_blank" href="https://www.linux-outaouais.org"> www.linux-outaouais.org</a> </em></p><p>- Québec </p> <p> Le club Linux de l'université Laval </p> <p><em style="font-style:italic;"><a target="_blank" href="https://www-bacc-ift-ulaval-ca.acces.bibl.ulaval.ca/"> www.bacc.ift.ulaval.ca/</a>~acmlaval/clublinux.htm </em></p><p>- Sherbrooke </p> <p> Le Gulus ou groupe d'usagers Linux de l'université de Sherbrooke </p> <p><em style="font-style:italic;"><a target="_blank" href="http://gulus.netrevolution.com/"> http://gulus.netrevolution.com/</a> </em></p><p>- Lac St-jean </p> <p> Le regroupement régional des usagers Linux du Lac St-Jean </p> <p><em style="font-style:italic;"><a target="_blank" href="http://linux.lacstjean.qc.ca"> http://linux.lacstjean.qc.ca</a> </em></p><p>- Trois-Rivières </p> <p> CULT ou Club des usagers Linux de Trois-Rivières </p> <p><em style="font-style:italic;"><a target="_blank" href="https://www.lecult.org"> www.lecult.org</a> </em><em style="font-weight:bold;">Zope</em></p><p>Les outils pour éditer et créer des sites webs dynamiquement ne sont pas donnés. Il y a de quoi avoir une crise d'apoplexie lorsque l'on demande pour la première fois une estimation d'un outil comme Vignette (<a target="_blank" href="https://www.vignette.com">www.vignette.com</a>). Cependant, il existe un outil, un logiciel à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, gratuit, et disponible pour Linux, Solaris et Windows NT, qui permet de créer des sites automatisés et dynamiques. Son nom? Zope (<a target="_blank" href="https://www.zope.org">www.zope.org</a>). D'ailleurs, pour tous ceux qui sont curieux d'en savoir plus, une conférence sur Zope aura lieu le 12 avril, lors d'une rencontre mensuelle de Linux-Québec. Le 8 mars, Benoit de Mulder présentera le projet Beowulf (<a target="_blank" href="https://www.beowulf.org">www.beowulf.org</a>). On trouve toutes les informations sur le site de Linux-Québec (<a target="_blank" href="https://www.linux-quebec.org">www.linux-quebec.org</a>).</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000221·LE·0039</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000221·LE·0039";
+    var _docIndex = 605;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000221·LE·0039';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000221%C2%B7LE%C2%B70039&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000221%C2%B7LE%C2%B70039&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000221%C2%B7LE%C2%B70039&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000221%C2%B7LE%C2%B70039&docIndex=605&FullScreen=1";
+                
+	var _keyDoc = 'news·20000221·LE·0039';
+</script>
+</div></body></html>

@@ -1,0 +1,561 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 23764                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         vendredi 15 janvier 2021 1073 mots, p. 25&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Tech         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+En 20 ans, Wikip&#233;dia a r&#233;volutionn&#233; la diffusion du savoir            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;D&#233;cri&#233;e &#224; ses d&#233;buts, l&#39;encyclop&#233;die en ligne a su imposer son mod&#232;le collaboratif, sans cesser de susciter de nouveaux d&#233;bats.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Vergara, Ingrid&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;INTERNET&lt;/em&gt; Lorsqu&#39;ils lancent leur projet &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;d&#39;encyclop&#233;die libre que chacun peut am&#233;liorer&lt;/em&gt; &#187; le 15 janvier 2001, Jimmy Wales et Larry Sanger, les deux cofondateurs de Wikip&#233;dia, ne s&#39;attendaient pas &#224; un succ&#232;s d&#39;une telle ampleur. Vingt ans apr&#232;s, le site est l&#39;un des plus consult&#233;s au monde, avec 500 millions de visiteurs uniques mensuels, des d&#233;clinaisons locales dans 303 langues, et une base de plus de 55 millions d&#39;articles qui s&#39;enrichit en continu. &lt;/p&gt; &lt;p&gt; Le pari initial paraissait un peu fou : bousculer la production et la diffusion des connaissances en permettant &#224; tout un chacun d&#39;&#233;crire et de modifier des articles. C&#39;&#233;tait battre en br&#232;che le mod&#232;le vertical dominant propos&#233; jusque-l&#224; par les grandes encyclop&#233;dies centenaires. Technologiquement, ce pari est rendu possible par un logiciel en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; baptis&#233; wiki, dont Larry Sanger d&#233;couvre un peu par hasard l&#39;existence &#224; la faveur d&#39;une discussion avec une connaissance. &#192; l&#39;&#233;poque, son complice Jimmy Wales peine &#224; faire d&#233;coller un premier projet d&#39;encyclop&#233;die baptis&#233; Nupedia, qui veut inciter des universitaires &#224; apporter leurs contributions en ligne. Le logiciel informatique wiki permet &#224; chaque internaute de modifier le contenu d&#39;un article &#233;crit par un autre, en gardant la trace de chaque modification au sein de la m&#234;me base de donn&#233;es.&lt;/p&gt;
+
+
+&lt;p&gt;Les attentats du 11 Septembre, quelques mois apr&#232;s la mise en ligne de Wikip&#233;dia, valident le mod&#232;le et ancre &#224; jamais son lien tr&#232;s &#233;troit avec l&#39;actualit&#233;. En quelques heures, toute une communaut&#233; d&#39;internautes se mobilise, collecte des donn&#233;es et met en ligne des dizaines d&#39;articles en d&#233;clinant les angles sur le sujet. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Je me suis dit que &#231;a comblait un vide dans le traitement des informations, en marge des nouvelles du jour. On est dans une d&#233;marche r&#233;flexive qui s&#39;inscrit sur un temps long &#187; ,&lt;/em&gt; se souvient Jimmy Wales dans le documentaire &lt;em style=&quot;font-style:italic;&quot;&gt;Il &#233;tait une fois Wikip&#233;dia&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; La masse de contenus produits, leur qualit&#233; tr&#232;s in&#233;gale, la pr&#233;sence d&#39;erreurs, l&#39;intervention d&#39;auteurs mal intentionn&#233;s, le pseudonymat de la plupart des contributeurs, ainsi que la sensibilit&#233; de certains sujets pose tr&#232;s vite la question de la fiabilit&#233; des informations et des sources propos&#233;es par le site. &lt;/p&gt; &lt;p&gt; Dans ses premi&#232;res ann&#233;es, cette &#171; encyclop&#233;die &#187; pr&#233;tendant &#224; l&#39;universalisation du savoir en ligne est vou&#233;e aux g&#233;monies par toute une communaut&#233; de sachants qui ne lui donne aucun cr&#233;dit. L&#39;absence de toute v&#233;rification contr&#244;l&#233;e par des &#171; tiers de confiance &#187; universitaires fait l&#39;objet d&#39;intenses d&#233;bats jusqu&#39;en interne, qui provoqueront le d&#233;part de Larry Sanger. Jimmy Wales reste confiant dans l&#39;id&#233;e que chaque contributeur doit pouvoir modifier le contenu d&#39;un autre et qu&#39;une autor&#233;gulation par une large communaut&#233; de &#171; wikip&#233;diens &#187; , r&#233;dacteurs b&#233;n&#233;voles s&#233;rieux et impliqu&#233;s, qui se corrigent et se surveillent sans cesse, est le meilleur antidote aux failles du syst&#232;me. &lt;/p&gt; &lt;p&gt; Pour affronter les probl&#232;mes soulev&#233;s et monter en gamme sur la cr&#233;dibilit&#233;, le site renforce les r&#232;gles et principes communs impos&#233;s aux contributeurs. Parmi ses principes fondateurs, la v&#233;rifiabilit&#233; : donner ses sources, qui peuvent provenir d&#39;articles journalistiques sous certaines conditions ou d&#39;ouvrages scientifiques et pas d&#39;opinions. En 2002, elle introduit aussi le statut d&#39; &#171; admin &#187; , accord&#233; &#224; certains contributeurs. Ces &#171; sentinelles &#187; b&#233;n&#233;voles - le site en compte aujourd&#39;hui 3 900 -, essayent de r&#233;gler des conflits et ont le pouvoir de supprimer des articles en dernier recours, si les intenses d&#233;bats de la communaut&#233; n&#39;ont pu aboutir. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;La qualit&#233; des articles de l&#39;encyclop&#233;die et les dispositifs pour l&#39;augmenter ont beaucoup &#233;volu&#233; depuis 2001. Wikip&#233;dia fait le pari de la transparence en mettant des bandeaux d&#39;avertissement sur de nombreux articles qu&#39;elle juge insuffisants ou sur lesquels il y aurait des controverses de neutralit&#233; &#187; ,&lt;/em&gt; ajoute Marie-No&#235;lle Doutreix, autrice du livre &lt;em style=&quot;font-style:italic;&quot;&gt;Wikip&#233;dia et l&#39;actualit&#233;&lt;/em&gt; (Presses Sorbonne Nouvelle). Wikip&#233;dia d&#233;veloppe aussi des outils semi-automatis&#233;s pour d&#233;tecter les infractions &#224; ses r&#232;gles, les actes de vandalismes et mieux faire la chasse aux &#171; trolls &#187;. En 2021, Wikip&#233;dia mettra aussi en oeuvre un code de conduite uniforme avec sanctions &#224; la cl&#233; contre les insultes et le harc&#232;lement, qui gangr&#232;nent toujours la plateforme. &lt;/p&gt; &lt;p&gt; En deux d&#233;cennies, Wikip&#233;dia est parvenu &#224; changer son image et &#224; s&#39;imposer sur de nombreux sujets comme une source d&#39;information premi&#232;re pour beaucoup d&#39;internautes. Ses articles remontent bien souvent en premi&#232;re place lors d&#39;une recherche sur un grand moteur. La place pr&#233;pond&#233;rante donn&#233;e &#224; l&#39;actualit&#233; dans les articles et la tr&#232;s grande r&#233;activit&#233; de sa communaut&#233; de contributeurs renforcent &#233;galement sa popularit&#233;. Qui n&#39;a jamais &#233;t&#233; &#233;tonn&#233; de voir la page Wikip&#233;dia d&#39;une personnalit&#233; d&#233;c&#233;d&#233;e mise &#224; jour dans les secondes de l&#39;annonce ? &lt;/p&gt; &lt;p&gt; Parall&#232;lement, pendant que Wikip&#233;dia travaillait &#224; l&#39;am&#233;lioration de ses process, la mont&#233;e de la d&#233;sinformation fait des ravages partout ailleurs sur internet. &#192; tel point que l&#39;observatoire Conspiracy Watch le qualifie d&#39; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#238;lot de rationalit&#233; dans un oc&#233;an de rumeurs&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Wikip&#233;dia aurait-il donc, apr&#232;s 20 ans, atteint le but revendiqu&#233; sur sa page d&#39;accueil &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;d&#39;offrir un contenu objectif et v&#233;rifiable que chacun peut modifier et am&#233;liorer &#187;&lt;/em&gt; ? De nombreuses controverses hantent toujours la plateforme. La structure m&#234;me des contributeurs produisant le contenu, ultra majoritairement masculins, nord-am&#233;ricains et europ&#233;ens, cr&#233;e un prisme d&#233;formant &#224; l&#39;utopie de Jimmy Wales &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; d&#39;un monde dans lequel chaque habitant de la plan&#232;te a un libre acc&#232;s &#224; la somme de toutes les connaissances humaines&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;.&lt;/em&gt; Sur Wikip&#233;dia, 80 % des contributeurs sont des hommes et seules 18 % des biographies en anglais concernent des femmes, reconna&#238;t Katherine Maher, la directrice g&#233;n&#233;rale de la fondation Wikimedia depuis 2016. Garante du mod&#232;le, la communaut&#233; des &#171; wikip&#233;diens &#187; peut aussi se montrer arbitraire dans ses crit&#232;res d&#39;admissibilit&#233; et tr&#232;s exclusive. &lt;/p&gt; &lt;p&gt; Wikip&#233;dia doit aussi lutter sans cesse contre des soci&#233;t&#233;s, des agences de communication, des politiques qui ma&#238;trisent les r&#232;gles pour mieux les contourner et remanier des pages. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Nous savons que Wikip&#233;dia n&#39;est pas parfait. Nous avons encore beaucoup de travail &#224; faire&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187; ,&lt;/em&gt; r&#233;p&#232;te Jimmy Wales dans ses interviews. &#201;conomiquement, l&#39;encyclop&#233;die en ligne repose sur un mod&#232;le fragile mais qui fonctionne depuis des ann&#233;es. G&#233;r&#233;e par une organisation &#224; but non lucratif depuis 2003, la fondation Wikimedia, elle vit majoritairement de ses appels aux dons &#233;manant de particuliers et d&#39;entreprises (129,2 millions pour l&#39;exercice clos le 30 juin 2020), provenant &#224; 70 % d&#39;Am&#233;rique du Nord. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Chez Wikimedia, nous nous consid&#233;rons comme un service public&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187; ,&lt;/em&gt; aime &#224; r&#233;sumer Katherine Maher. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Avec 500 millions de visiteurs uniques mensuels, le site Wikip&#233;dia est l&#39;un des plus consult&#233;s au monde. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;F. BOUCHON/Le Figaro &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:ivergara@lefigaro.fr&quot;&gt;ivergara@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;14 janvier 2021&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2021 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20210115&amp;#183;LF&amp;#183;842&amp;#215;21&amp;#215;22609699461&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">visiteurs uniques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">visiteurs uniques mensuels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">encyclopédie en ligne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">diffusion du savoir</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">directrice générale de la fondation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">observatoire Conspiracy Watch</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Amérique du Nord</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720210115%c2%b7LF%c2%b7842%c3%9721%c3%9722609699461" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720210115%c2%b7LF%c2%b7842%c3%9721%c3%9722609699461">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 23764                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         vendredi 15 janvier 2021 1073 mots, p. 25</span>
+</div>
+
+    <div>
+        <p>
+Tech         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+En 20 ans, Wikipédia a révolutionné la diffusion du savoir            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Décriée à ses débuts, l'encyclopédie en ligne a su imposer son modèle collaboratif, sans cesser de susciter de nouveaux débats.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Vergara, Ingrid</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">INTERNET</em> Lorsqu'ils lancent leur projet « <em style="font-style:italic;">d'encyclopédie libre que chacun peut améliorer</em> » le 15 janvier 2001, Jimmy Wales et Larry Sanger, les deux cofondateurs de Wikipédia, ne s'attendaient pas à un succès d'une telle ampleur. Vingt ans après, le site est l'un des plus consultés au monde, avec 500 millions de visiteurs uniques mensuels, des déclinaisons locales dans 303 langues, et une base de plus de 55 millions d'articles qui s'enrichit en continu. </p> <p> Le pari initial paraissait un peu fou : bousculer la production et la diffusion des connaissances en permettant à tout un chacun d'écrire et de modifier des articles. C'était battre en brèche le modèle vertical dominant proposé jusque-là par les grandes encyclopédies centenaires. Technologiquement, ce pari est rendu possible par un logiciel en <mark>open</mark> <mark>source</mark> baptisé wiki, dont Larry Sanger découvre un peu par hasard l'existence à la faveur d'une discussion avec une connaissance. À l'époque, son complice Jimmy Wales peine à faire décoller un premier projet d'encyclopédie baptisé Nupedia, qui veut inciter des universitaires à apporter leurs contributions en ligne. Le logiciel informatique wiki permet à chaque internaute de modifier le contenu d'un article écrit par un autre, en gardant la trace de chaque modification au sein de la même base de données.</p>
+
+
+<p>Les attentats du 11 Septembre, quelques mois après la mise en ligne de Wikipédia, valident le modèle et ancre à jamais son lien très étroit avec l'actualité. En quelques heures, toute une communauté d'internautes se mobilise, collecte des données et met en ligne des dizaines d'articles en déclinant les angles sur le sujet. <em style="font-style:italic;">«</em><em style="font-style:italic;">Je me suis dit que ça comblait un vide dans le traitement des informations, en marge des nouvelles du jour. On est dans une démarche réflexive qui s'inscrit sur un temps long » ,</em> se souvient Jimmy Wales dans le documentaire <em style="font-style:italic;">Il était une fois Wikipédia</em>. </p> <p> La masse de contenus produits, leur qualité très inégale, la présence d'erreurs, l'intervention d'auteurs mal intentionnés, le pseudonymat de la plupart des contributeurs, ainsi que la sensibilité de certains sujets pose très vite la question de la fiabilité des informations et des sources proposées par le site. </p> <p> Dans ses premières années, cette « encyclopédie » prétendant à l'universalisation du savoir en ligne est vouée aux gémonies par toute une communauté de sachants qui ne lui donne aucun crédit. L'absence de toute vérification contrôlée par des « tiers de confiance » universitaires fait l'objet d'intenses débats jusqu'en interne, qui provoqueront le départ de Larry Sanger. Jimmy Wales reste confiant dans l'idée que chaque contributeur doit pouvoir modifier le contenu d'un autre et qu'une autorégulation par une large communauté de « wikipédiens » , rédacteurs bénévoles sérieux et impliqués, qui se corrigent et se surveillent sans cesse, est le meilleur antidote aux failles du système. </p> <p> Pour affronter les problèmes soulevés et monter en gamme sur la crédibilité, le site renforce les règles et principes communs imposés aux contributeurs. Parmi ses principes fondateurs, la vérifiabilité : donner ses sources, qui peuvent provenir d'articles journalistiques sous certaines conditions ou d'ouvrages scientifiques et pas d'opinions. En 2002, elle introduit aussi le statut d' « admin » , accordé à certains contributeurs. Ces « sentinelles » bénévoles - le site en compte aujourd'hui 3 900 -, essayent de régler des conflits et ont le pouvoir de supprimer des articles en dernier recours, si les intenses débats de la communauté n'ont pu aboutir. <em style="font-style:italic;">«</em><em style="font-style:italic;">La qualité des articles de l'encyclopédie et les dispositifs pour l'augmenter ont beaucoup évolué depuis 2001. Wikipédia fait le pari de la transparence en mettant des bandeaux d'avertissement sur de nombreux articles qu'elle juge insuffisants ou sur lesquels il y aurait des controverses de neutralité » ,</em> ajoute Marie-Noëlle Doutreix, autrice du livre <em style="font-style:italic;">Wikipédia et l'actualité</em> (Presses Sorbonne Nouvelle). Wikipédia développe aussi des outils semi-automatisés pour détecter les infractions à ses règles, les actes de vandalismes et mieux faire la chasse aux « trolls ». En 2021, Wikipédia mettra aussi en oeuvre un code de conduite uniforme avec sanctions à la clé contre les insultes et le harcèlement, qui gangrènent toujours la plateforme. </p> <p> En deux décennies, Wikipédia est parvenu à changer son image et à s'imposer sur de nombreux sujets comme une source d'information première pour beaucoup d'internautes. Ses articles remontent bien souvent en première place lors d'une recherche sur un grand moteur. La place prépondérante donnée à l'actualité dans les articles et la très grande réactivité de sa communauté de contributeurs renforcent également sa popularité. Qui n'a jamais été étonné de voir la page Wikipédia d'une personnalité décédée mise à jour dans les secondes de l'annonce ? </p> <p> Parallèlement, pendant que Wikipédia travaillait à l'amélioration de ses process, la montée de la désinformation fait des ravages partout ailleurs sur internet. À tel point que l'observatoire Conspiracy Watch le qualifie d' <em style="font-style:italic;">«</em><em style="font-style:italic;">îlot de rationalité dans un océan de rumeurs</em><em style="font-style:italic;">».</em></p><p>Wikipédia aurait-il donc, après 20 ans, atteint le but revendiqué sur sa page d'accueil <em style="font-style:italic;">«</em><em style="font-style:italic;">d'offrir un contenu objectif et vérifiable que chacun peut modifier et améliorer »</em> ? De nombreuses controverses hantent toujours la plateforme. La structure même des contributeurs produisant le contenu, ultra majoritairement masculins, nord-américains et européens, crée un prisme déformant à l'utopie de Jimmy Wales <em style="font-style:italic;">« d'un monde dans lequel chaque habitant de la planète a un libre accès à la somme de toutes les connaissances humaines</em><em style="font-style:italic;">».</em> Sur Wikipédia, 80 % des contributeurs sont des hommes et seules 18 % des biographies en anglais concernent des femmes, reconnaît Katherine Maher, la directrice générale de la fondation Wikimedia depuis 2016. Garante du modèle, la communauté des « wikipédiens » peut aussi se montrer arbitraire dans ses critères d'admissibilité et très exclusive. </p> <p> Wikipédia doit aussi lutter sans cesse contre des sociétés, des agences de communication, des politiques qui maîtrisent les règles pour mieux les contourner et remanier des pages. « <em style="font-style:italic;">Nous savons que Wikipédia n'est pas parfait. Nous avons encore beaucoup de travail à faire</em><em style="font-style:italic;">» ,</em> répète Jimmy Wales dans ses interviews. Économiquement, l'encyclopédie en ligne repose sur un modèle fragile mais qui fonctionne depuis des années. Gérée par une organisation à but non lucratif depuis 2003, la fondation Wikimedia, elle vit majoritairement de ses appels aux dons émanant de particuliers et d'entreprises (129,2 millions pour l'exercice clos le 30 juin 2020), provenant à 70 % d'Amérique du Nord. <em style="font-style:italic;">«</em><em style="font-style:italic;">Chez Wikimedia, nous nous considérons comme un service public</em><em style="font-style:italic;">» ,</em> aime à résumer Katherine Maher. </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Avec 500 millions de visiteurs uniques mensuels, le site Wikipédia est l'un des plus consultés au monde. </div>.
+
+                <div class="ImageAttachFont">F. BOUCHON/Le Figaro </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:ivergara@lefigaro.fr">ivergara@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">14 janvier 2021</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2021 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20210115·LF·842×21×22609699461</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20210115·LF·842×21×22609699461";
+    var _docIndex = 304;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20210115·LF·842×21×22609699461';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720210115%C2%B7LF%C2%B7842%C3%9721%C3%9722609699461&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720210115%C2%B7LF%C2%B7842%C3%9721%C3%9722609699461&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720210115%C2%B7LF%C2%B7842%C3%9721%C3%9722609699461&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720210115%C2%B7LF%C2%B7842%C3%9721%C3%9722609699461&docIndex=304&FullScreen=1";
+                
+	var _keyDoc = 'news·20210115·LF·842×21×22609699461';
+</script>
+</div></body></html>

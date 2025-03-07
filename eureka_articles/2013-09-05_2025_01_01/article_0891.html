@@ -1,0 +1,497 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         samedi 12 avril 2014 587 mots, p. A7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+S&#233;curit&#233;: Ottawa forc&#233; de fermer plusieurs de ses sites Internet            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fabien Deglise&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Apr&#232;s le site transactionnel de l&#39;Agence de revenu Canada (ARC) plus t&#244;t cette semaine, le gouvernement f&#233;d&#233;ral a confirm&#233; en matin&#233;e vendredi avoir ferm&#233; plusieurs autres de ses sites Internet afin de r&#233;soudre un probl&#232;me de s&#233;curit&#233; important dans ses r&#233;seaux num&#233;riques qui exposerait &#224; d&#39;&#233;ventuels pirates informatiques des milliers d&#39;informations personnelles de citoyens. Connue sous le nom de Heartbleed (coeur qui saigne), cette faille qui existerait depuis pr&#232;s de deux ans s&#232;me l&#39;&#233;moi depuis quelques jours dans les r&#233;seaux informatiques publics et priv&#233;s &#224; travers le monde. &lt;/p&gt; &lt;p&gt; Sur recommandation de la dirigeante principale de l&#39;information du gouvernement, Corinne Charette, plusieurs organismes et minist&#232;res f&#233;d&#233;raux ont &#233;t&#233; invit&#233;s jeudi en d&#233;but de soir&#233;e &#224; suspendre leurs activit&#233;s num&#233;riques sur la Toile en attendant qu&#39;une solution &#224; ce probl&#232;me soit trouv&#233;e. La liste compl&#232;te des sites vis&#233;s n&#39;a pas &#233;t&#233; d&#233;voil&#233;e. La dur&#233;e de la suspension n&#39;a pas non plus &#233;t&#233; pr&#233;cis&#233;e.&lt;/p&gt;
+
+
+&lt;p&gt;&quot; Ce geste est pos&#233; de mani&#232;re pr&#233;ventive jusqu&#39;&#224; ce qu&#39;un rem&#232;de ad&#233;quat et test&#233; ait &#233;t&#233; mis en place, a indiqu&#233; vendredi Tony Clement, le pr&#233;sident du Conseil du Tr&#233;sor. La cons&#233;quence, c&#39;est que les Canadiens ne vont plus pouvoir acc&#233;der &#224; des sites du gouvernement, et ce, durant toute la dur&#233;e d&#39;application de cette mesure. &quot; &lt;/p&gt; &lt;p&gt; D&#233;lais &lt;/p&gt; &lt;p&gt; Mercredi, l&#39;Agence de revenu du Canada (ARC) a ouvert ce bal de la fermeture en bloquant l&#39;acc&#232;s &#224; son espace transactionnel, en pleine p&#233;riode de d&#233;claration d&#39;imp&#244;t, et ce, en attirant les regards sur cette faille informatique baptis&#233;e Heartbleed. Situ&#233;e dans le protocole de communication entre les serveurs OpenSSL, elle permet l&#39;acc&#232;s &#224; des informations que l&#39;on croyait pourtant crypt&#233;es. Les mots de passe, les noms d&#39;usager, les donn&#233;es personnelles peuvent ainsi &#234;tre lues en clair par un regard mal intentionn&#233;. &lt;/p&gt; &lt;p&gt; Vendredi, l&#39;opposition s&#39;est &#233;tonn&#233;e que le gouvernement ait attendu deux jours pour appliquer &#224; d&#39;autres sites la mesure adopt&#233;e par l&#39;ARC. &quot; C&#39;est inqui&#233;tant, a r&#233;agi le d&#233;put&#233; n&#233;od&#233;mocrate Mathieu Ravignat. Le piratage, c&#39;est une profession rapide, si je peux m&#39;exprimer ainsi. Alors on peut parler de secondes et de minutes, et des renseignements importants peuvent &#234;tre perdus. [La fermeture de tous les sites f&#233;d&#233;raux] aurait d&#251; &#234;tre effectu&#233;e plus rapidement. &quot; &lt;/p&gt; &lt;p&gt; Dans une mise &#224; jour mise en ligne sur son site Internet, l&#39;ARC a indiqu&#233; vendredi apr&#232;s-midi avoir &quot; fait de bons progr&#232;s &quot;. Ses services en ligne devraient reprendre durant la fin de semaine, a-t-elle estim&#233;. &lt;/p&gt; &lt;p&gt; Un mal r&#233;pandu &lt;/p&gt; &lt;p&gt; Le protocole OpenSSL est utilis&#233; massivement par des organismes priv&#233;s et publics pour crypter l&#39;information transmise par un tiers -- un citoyen, un client -- sur les serveurs d&#39;une entreprise ou d&#39;un organisme public. Il trouve sa place dans des r&#233;seaux de plus en plus complexes, qui, paradoxalement, deviennent plus vuln&#233;rables aux attaques et aux intrusions. Pr&#232;s de 500 000 sites seraient touch&#233;s &#224; travers le monde. &lt;/p&gt; &lt;p&gt; Vendredi, le g&#233;ant de l&#39;informatique Cisco a indiqu&#233; que les cons&#233;quences de cette faille &#233;taient sans doute plus importantes qu&#39;on le pensait, et s&#39;activait &#224; revoir la s&#233;curit&#233; de plusieurs de ses applications et services affect&#233;s par cette porte d&#39;acc&#232;s non sollicit&#233; dans un protocole de cryptage. Porte, par ailleurs, dans laquelle un pirate peut s&#39;engouffrer sans &#234;tre d&#233;tect&#233;. Logiciels, routeurs informatiques, mais &#233;galement syst&#232;mes de t&#233;l&#233;conf&#233;rence de Cisco auraient &#233;t&#233; touch&#233;s par Heartbleed, a r&#233;sum&#233; l&#39;entreprise par voie de communiqu&#233;, en appelant sa client&#232;le &#224; la prudence. &lt;/p&gt; &lt;p&gt; Ce probl&#232;me de s&#233;curit&#233; est une faille informatique de plus qui vient secouer les univers num&#233;riques, et ce, depuis le fameux bogue de l&#39;an 2000 qui aura toutefois plus mis en lumi&#232;re la cr&#233;dulit&#233; des citoyens num&#233;riques que la s&#233;curit&#233; pr&#233;caire des r&#233;seaux. Cela n&#39;a toutefois pas &#233;t&#233; le cas des virus informatiques comme Melissa, ILOVEYOU, Nimda ou Code Red qui ont exploit&#233;, tout en la surlignant, la fragilit&#233; des r&#233;seaux informatiques et celle d&#39;un &#233;cosyst&#232;me num&#233;rique toujours plus complexe o&#249; l&#39;interconnexion entre les serveurs ne facilite pas seulement le partage et l&#39;acc&#232;s &#224; l&#39;information, mais &#233;galement, par lien de cause &#224; effet, les intrusions. &lt;/p&gt; &lt;p&gt; Cette fragilit&#233; n&#39;est d&#39;ailleurs pas seulement exploit&#233;e par des pirates, mais &#233;galement par les services secrets am&#233;ricains, comme la r&#233;v&#233;l&#233; l&#39;ex-analyste de la NSA Edward Snowden, qui a mis au grand jour les modules et protocoles d&#233;velopp&#233;s par ces services de renseignement pour intercepter en ligne des donn&#233;es personnelles dont la s&#233;curit&#233; est asssur&#233;e, en th&#233;orie du moins, par le cryptage. &lt;/p&gt; &lt;p&gt; Paradoxalement, OpenSSL est un syst&#232;me dit &#224; &quot; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt; &quot;, et participe &#224; la construction d&#39;environnement num&#233;rique fond&#233; sur le principe des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Environnement que l&#39;on dit pourtant plus s&#233;curitaire. &lt;/p&gt; &lt;p&gt; Avec Marie Vastel&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20140412&amp;#183;LE&amp;#183;2014-04-12_405392&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">Agence de revenu</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseaux informatiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">faille informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sites Internet</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sécurité précaire des réseaux</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Canada</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ottawa</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140412%c2%b7LE%c2%b72014-04-12_405392" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140412%c2%b7LE%c2%b72014-04-12_405392">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         samedi 12 avril 2014 587 mots, p. A7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Sécurité: Ottawa forcé de fermer plusieurs de ses sites Internet            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Fabien Deglise</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Après le site transactionnel de l'Agence de revenu Canada (ARC) plus tôt cette semaine, le gouvernement fédéral a confirmé en matinée vendredi avoir fermé plusieurs autres de ses sites Internet afin de résoudre un problème de sécurité important dans ses réseaux numériques qui exposerait à d'éventuels pirates informatiques des milliers d'informations personnelles de citoyens. Connue sous le nom de Heartbleed (coeur qui saigne), cette faille qui existerait depuis près de deux ans sème l'émoi depuis quelques jours dans les réseaux informatiques publics et privés à travers le monde. </p> <p> Sur recommandation de la dirigeante principale de l'information du gouvernement, Corinne Charette, plusieurs organismes et ministères fédéraux ont été invités jeudi en début de soirée à suspendre leurs activités numériques sur la Toile en attendant qu'une solution à ce problème soit trouvée. La liste complète des sites visés n'a pas été dévoilée. La durée de la suspension n'a pas non plus été précisée.</p>
+
+
+<p>" Ce geste est posé de manière préventive jusqu'à ce qu'un remède adéquat et testé ait été mis en place, a indiqué vendredi Tony Clement, le président du Conseil du Trésor. La conséquence, c'est que les Canadiens ne vont plus pouvoir accéder à des sites du gouvernement, et ce, durant toute la durée d'application de cette mesure. " </p> <p> Délais </p> <p> Mercredi, l'Agence de revenu du Canada (ARC) a ouvert ce bal de la fermeture en bloquant l'accès à son espace transactionnel, en pleine période de déclaration d'impôt, et ce, en attirant les regards sur cette faille informatique baptisée Heartbleed. Située dans le protocole de communication entre les serveurs OpenSSL, elle permet l'accès à des informations que l'on croyait pourtant cryptées. Les mots de passe, les noms d'usager, les données personnelles peuvent ainsi être lues en clair par un regard mal intentionné. </p> <p> Vendredi, l'opposition s'est étonnée que le gouvernement ait attendu deux jours pour appliquer à d'autres sites la mesure adoptée par l'ARC. " C'est inquiétant, a réagi le député néodémocrate Mathieu Ravignat. Le piratage, c'est une profession rapide, si je peux m'exprimer ainsi. Alors on peut parler de secondes et de minutes, et des renseignements importants peuvent être perdus. [La fermeture de tous les sites fédéraux] aurait dû être effectuée plus rapidement. " </p> <p> Dans une mise à jour mise en ligne sur son site Internet, l'ARC a indiqué vendredi après-midi avoir " fait de bons progrès ". Ses services en ligne devraient reprendre durant la fin de semaine, a-t-elle estimé. </p> <p> Un mal répandu </p> <p> Le protocole OpenSSL est utilisé massivement par des organismes privés et publics pour crypter l'information transmise par un tiers -- un citoyen, un client -- sur les serveurs d'une entreprise ou d'un organisme public. Il trouve sa place dans des réseaux de plus en plus complexes, qui, paradoxalement, deviennent plus vulnérables aux attaques et aux intrusions. Près de 500 000 sites seraient touchés à travers le monde. </p> <p> Vendredi, le géant de l'informatique Cisco a indiqué que les conséquences de cette faille étaient sans doute plus importantes qu'on le pensait, et s'activait à revoir la sécurité de plusieurs de ses applications et services affectés par cette porte d'accès non sollicité dans un protocole de cryptage. Porte, par ailleurs, dans laquelle un pirate peut s'engouffrer sans être détecté. Logiciels, routeurs informatiques, mais également systèmes de téléconférence de Cisco auraient été touchés par Heartbleed, a résumé l'entreprise par voie de communiqué, en appelant sa clientèle à la prudence. </p> <p> Ce problème de sécurité est une faille informatique de plus qui vient secouer les univers numériques, et ce, depuis le fameux bogue de l'an 2000 qui aura toutefois plus mis en lumière la crédulité des citoyens numériques que la sécurité précaire des réseaux. Cela n'a toutefois pas été le cas des virus informatiques comme Melissa, ILOVEYOU, Nimda ou Code Red qui ont exploité, tout en la surlignant, la fragilité des réseaux informatiques et celle d'un écosystème numérique toujours plus complexe où l'interconnexion entre les serveurs ne facilite pas seulement le partage et l'accès à l'information, mais également, par lien de cause à effet, les intrusions. </p> <p> Cette fragilité n'est d'ailleurs pas seulement exploitée par des pirates, mais également par les services secrets américains, comme la révélé l'ex-analyste de la NSA Edward Snowden, qui a mis au grand jour les modules et protocoles développés par ces services de renseignement pour intercepter en ligne des données personnelles dont la sécurité est asssurée, en théorie du moins, par le cryptage. </p> <p> Paradoxalement, OpenSSL est un système dit à " <mark>code</mark> <mark>source</mark> <mark>ouvert</mark> ", et participe à la construction d'environnement numérique fondé sur le principe des <mark>logiciels</mark> <mark>libres</mark>. Environnement que l'on dit pourtant plus sécuritaire. </p> <p> Avec Marie Vastel</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20140412·LE·2014-04-12_405392</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20140412·LE·2014-04-12_405392";
+    var _docIndex = 890;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20140412·LE·2014-04-12_405392';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720140412%C2%B7LE%C2%B72014-04-12_405392&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720140412%C2%B7LE%C2%B72014-04-12_405392&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720140412%C2%B7LE%C2%B72014-04-12_405392&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720140412%C2%B7LE%C2%B72014-04-12_405392&docIndex=890&FullScreen=1";
+                
+	var _keyDoc = 'news·20140412·LE·2014-04-12_405392';
+</script>
+</div></body></html>

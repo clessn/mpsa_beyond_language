@@ -1,0 +1,465 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=ls2_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LS&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Soleil                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Extra,         mardi 17 avril 2001 538 mots, p. E10&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Internet         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les petits caract&#232;res            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Ma m&#232;re, sage femme s&#39;il en est une, m&#39;a depuis toujours recommand&#233; de lire les petits caract&#232;res en bas d&#39;un contrat. &#201;videmment, t&#234;te de noix comme je suis, il m&#39;arrive &#224; l&#39;occasion...d&#39;accord, souvent, d&#39;oublier ces conseils pourtant, bien avis&#233;s. Je suis s&#251;r que si elle avait eu un compte Hotmail, elle m&#39;aurait soulign&#233; &#224; grands traits jaunes les conditions quelque peu farfelues du contrat. &lt;/p&gt; &lt;p&gt; C&#39;est le quotidien &#233;lectronique anglais &lt;em style=&quot;font-style:italic;&quot;&gt;The Register&lt;/em&gt; (&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.theregister.co.uk&quot;&gt;www.theregister.co.uk&lt;/a&gt; &lt;/em&gt;) qui a r&#233;v&#233;l&#233; toute l&#39;affaire il y a quelques jours. Lisez attentivement le texte qui suit (traduction libre du site &lt;em style=&quot;font-weight:bold;&quot;&gt;Linuxfr.org&lt;/em&gt;), qui explicite une des conditions du contrat entre un internaute et Microsoft (&lt;em style=&quot;font-weight:bold;&quot;&gt;Hotmail/Passport&lt;/em&gt;) lorsque que celui-ci s&#39;abonne au service de messagerie Hotmail par l&#39;interm&#233;diaire du service d&#39;enregistrement Passport:&lt;/p&gt;
+
+
+&lt;p&gt;&quot;En postant des messages, en t&#233;l&#233;chargeant des fichiers vers un serveur, en saisissant des donn&#233;es, en fournissant des retours d&#39;informations ou des suggestions ou en vous engageant dans toute autre forme de communication avec ou par l&#39;interm&#233;diaire du site Web Passport, vous d&#233;clarez et garantissez que vous avez le droit de le faire et vous autorisez par les pr&#233;sentes Microsoft et ses soci&#233;t&#233;s affili&#233;es &#224;: utiliser, modifier, copier, distribuer, transmettre, diffuser publiquement, repr&#233;senter, reproduire, publier, conc&#233;der en sous-licence, transf&#233;rer ou vendre cette communication ou &#224; cr&#233;er des oeuvres d&#233;riv&#233;es de celle-ci. &lt;/p&gt; &lt;p&gt; &quot;Conc&#233;der en sous-licence &#224; des tiers le droit illimit&#233; d&#39;exercer l&#39;un quelconque des droits pr&#233;cit&#233;s qui sont conc&#233;d&#233;s. Publier votre nom dans le cadre de cette communication. Les droits pr&#233;cit&#233;s incluent le droit d&#39;exploiter, dans tout pays, tout droit de propri&#233;t&#233; sur cette communication, y compris notamment les droits relevant du droit d&#39;auteur, du droit des marques ou du droit des brevets. Aucune somme ne vous sera pay&#233;e au titre de l&#39;utilisation par Microsoft des &#233;l&#233;ments contenus dans la communication. Microsoft n&#39;est pas tenue de poster ou d&#39;utiliser les &#233;l&#233;ments que vous fournissez et peut choisir de supprimer ces &#233;l&#233;ments &#224; tout moment.&quot; &lt;/p&gt; &lt;p&gt; Que faut-il lire derri&#232;re ce jargon juridique? Tout b&#234;tement qu&#39;en envoyant un document, un logiciel que vous aurez &#233;crit, une th&#232;se, Microsoft se donne le droit de s&#39;approprier le contenu de cedit envoi et de se l&#39;utiliser comme bon lui semble. Sans vous verser aucune redevance. &lt;/p&gt; &lt;p&gt; &#201;videmment, il semble que Microsoft n&#39;a jamais eu l&#39;intention de s&#39;emparer du fruit de votre labeur. Mais, un fait demeure, m&#234;me si la firme de tonton Bill ne verse pas dans le piratage de donn&#233;es, l&#233;galement, elle aurait pu s&#39;emparer de celles-ci. &lt;/p&gt; &lt;p&gt; Depuis que la nouvelle est sortie, les z&#39;amis de Redmond, o&#249; se trouve le si&#232;ge social de Microsoft, ont r&#233;agi et une nouvelle politique plus souple et moins permissive remplacera prochainement l&#39;ancienne. &lt;/p&gt; &lt;p&gt; Pourtant, Microsoft voulait se faire le champion de la vie priv&#233;e, en lan&#231;ant plus tard cette ann&#233;e son fureteur Internet Explorer 6.0 qui se voulait plus respectueux des usagers, en accomplissant entre autre sune gestion plus rigoureuse des &quot;cookies&quot;, cette p&#226;tisserie virtuelle quelquefois trop bavarde. &lt;/p&gt; &lt;p&gt; Quoi qu&#39;il en soit, comme bien des internautes, je n&#39;aurais pas le choix de pr&#234;ter beaucoup plus d&#39;attention aux &quot;conditions particuli&#232;res&quot; des compagnies voulant me faire utiliser leur service, gratuit ou non. Je ferai donc ce que ma bonne vieille m&#232;re m&#39;a toujours dit de faire: lire les petits caract&#232;res avant de signer. Promis mouman. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;En direct du Massachusetts&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Quelle extraordinaire nouvelle en provenance du Massachusetts Institute of Technology (MIT)! Dans un geste qui a pris tout le monde par surprise, cette maison du haut savoir rendra disponible dans Internet d&#39;ici deux ann&#233;es, tout le contenu de plus de 500 cours donn&#233;s &#224; ce noble &#233;tablissement. &lt;/p&gt; &lt;p&gt; Ce contenu, qui comprendra non seulement les notes de professeurs, mais aussi celles des &#233;tudiants, sera offert &#224; toutes les maisons d&#39;enseignement du monde entier pour que celles-ci puissent profiter de la somme de connaissance amass&#233;e par le MIT. Bas&#233;e sur le mod&#232;le &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; &lt;/em&gt;, cette initiative se nommera &lt;em style=&quot;font-style:italic;&quot;&gt;OpenCourseWare&lt;/em&gt; et nul doute qu&#39;elle fera des petits tout autour de la plan&#232;te. Esp&#233;rons que nos propres institutions profiteront de cette occasion pour r&#233;pandre leurs connaissances et que celles-ci puissent profiter &#224; des pays en voie de d&#233;veloppement par exemple. (&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://web.mit.edu.acces.bibl.ulaval.ca/newsoffi&quot;&gt;http://web.mit.edu.acces.bibl.ulaval.ca/newsoffi&lt;/a&gt; ce/nr/2001/ocw.html &lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a href=&quot;mailto:dumais@Mlink.NET&quot;&gt;dumais@Mlink.NET&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 Le Soleil. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010417&amp;#183;LS&amp;#183;0119&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Accès à l'information et renseignements personnels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Enseignement supérieur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Industries de l'informatique et de l'électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Internet, technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010417%c2%b7LS%c2%b70119" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010417%c2%b7LS%c2%b70119">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=ls2_small.gif"><span class="icon-Information" sourcecode="LS"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Soleil                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Extra,         mardi 17 avril 2001 538 mots, p. E10</span>
+</div>
+
+    <div>
+        <p>
+Internet         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les petits caractères            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Ma mère, sage femme s'il en est une, m'a depuis toujours recommandé de lire les petits caractères en bas d'un contrat. Évidemment, tête de noix comme je suis, il m'arrive à l'occasion...d'accord, souvent, d'oublier ces conseils pourtant, bien avisés. Je suis sûr que si elle avait eu un compte Hotmail, elle m'aurait souligné à grands traits jaunes les conditions quelque peu farfelues du contrat. </p> <p> C'est le quotidien électronique anglais <em style="font-style:italic;">The Register</em> (<em style="font-weight:bold;"><a target="_blank" href="https://www.theregister.co.uk">www.theregister.co.uk</a> </em>) qui a révélé toute l'affaire il y a quelques jours. Lisez attentivement le texte qui suit (traduction libre du site <em style="font-weight:bold;">Linuxfr.org</em>), qui explicite une des conditions du contrat entre un internaute et Microsoft (<em style="font-weight:bold;">Hotmail/Passport</em>) lorsque que celui-ci s'abonne au service de messagerie Hotmail par l'intermédiaire du service d'enregistrement Passport:</p>
+
+
+<p>"En postant des messages, en téléchargeant des fichiers vers un serveur, en saisissant des données, en fournissant des retours d'informations ou des suggestions ou en vous engageant dans toute autre forme de communication avec ou par l'intermédiaire du site Web Passport, vous déclarez et garantissez que vous avez le droit de le faire et vous autorisez par les présentes Microsoft et ses sociétés affiliées à: utiliser, modifier, copier, distribuer, transmettre, diffuser publiquement, représenter, reproduire, publier, concéder en sous-licence, transférer ou vendre cette communication ou à créer des oeuvres dérivées de celle-ci. </p> <p> "Concéder en sous-licence à des tiers le droit illimité d'exercer l'un quelconque des droits précités qui sont concédés. Publier votre nom dans le cadre de cette communication. Les droits précités incluent le droit d'exploiter, dans tout pays, tout droit de propriété sur cette communication, y compris notamment les droits relevant du droit d'auteur, du droit des marques ou du droit des brevets. Aucune somme ne vous sera payée au titre de l'utilisation par Microsoft des éléments contenus dans la communication. Microsoft n'est pas tenue de poster ou d'utiliser les éléments que vous fournissez et peut choisir de supprimer ces éléments à tout moment." </p> <p> Que faut-il lire derrière ce jargon juridique? Tout bêtement qu'en envoyant un document, un logiciel que vous aurez écrit, une thèse, Microsoft se donne le droit de s'approprier le contenu de cedit envoi et de se l'utiliser comme bon lui semble. Sans vous verser aucune redevance. </p> <p> Évidemment, il semble que Microsoft n'a jamais eu l'intention de s'emparer du fruit de votre labeur. Mais, un fait demeure, même si la firme de tonton Bill ne verse pas dans le piratage de données, légalement, elle aurait pu s'emparer de celles-ci. </p> <p> Depuis que la nouvelle est sortie, les z'amis de Redmond, où se trouve le siège social de Microsoft, ont réagi et une nouvelle politique plus souple et moins permissive remplacera prochainement l'ancienne. </p> <p> Pourtant, Microsoft voulait se faire le champion de la vie privée, en lançant plus tard cette année son fureteur Internet Explorer 6.0 qui se voulait plus respectueux des usagers, en accomplissant entre autre sune gestion plus rigoureuse des "cookies", cette pâtisserie virtuelle quelquefois trop bavarde. </p> <p> Quoi qu'il en soit, comme bien des internautes, je n'aurais pas le choix de prêter beaucoup plus d'attention aux "conditions particulières" des compagnies voulant me faire utiliser leur service, gratuit ou non. Je ferai donc ce que ma bonne vieille mère m'a toujours dit de faire: lire les petits caractères avant de signer. Promis mouman. </p> <p><em style="font-weight:bold;">En direct du Massachusetts</em></p><p>Quelle extraordinaire nouvelle en provenance du Massachusetts Institute of Technology (MIT)! Dans un geste qui a pris tout le monde par surprise, cette maison du haut savoir rendra disponible dans Internet d'ici deux années, tout le contenu de plus de 500 cours donnés à ce noble établissement. </p> <p> Ce contenu, qui comprendra non seulement les notes de professeurs, mais aussi celles des étudiants, sera offert à toutes les maisons d'enseignement du monde entier pour que celles-ci puissent profiter de la somme de connaissance amassée par le MIT. Basée sur le modèle <em style="font-style:italic;"><mark>Open</mark> <mark>Source</mark> </em>, cette initiative se nommera <em style="font-style:italic;">OpenCourseWare</em> et nul doute qu'elle fera des petits tout autour de la planète. Espérons que nos propres institutions profiteront de cette occasion pour répandre leurs connaissances et que celles-ci puissent profiter à des pays en voie de développement par exemple. (<em style="font-weight:bold;"><a target="_blank" href="http://web.mit.edu.acces.bibl.ulaval.ca/newsoffi">http://web.mit.edu.acces.bibl.ulaval.ca/newsoffi</a> ce/nr/2001/ocw.html </em></p><p><em style="font-style:italic;"><a href="mailto:dumais@Mlink.NET">dumais@Mlink.NET</a></em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 Le Soleil. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010417·LS·0119</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010417·LS·0119";
+    var _docIndex = 480;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010417·LS·0119';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010417%C2%B7LS%C2%B70119&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010417%C2%B7LS%C2%B70119&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010417%C2%B7LS%C2%B70119&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010417%C2%B7LS%C2%B70119&docIndex=480&FullScreen=1";
+                
+	var _keyDoc = 'news·20010417·LS·0119';
+</script>
+</div></body></html>

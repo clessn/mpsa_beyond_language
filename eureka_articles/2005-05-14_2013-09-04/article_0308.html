@@ -1,0 +1,553 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LA&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        La Presse                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         jeudi 17 f&amp;#233;vrier 2011 658 mots, p. A12&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Watson, ma&#238;tre de Jeopardy            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L&#39;ordinateur IBM en partie con&#231;u &#224; Bromont l&#39;emporte sur ses concurrents humains&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Leduc, Louise; Audet, Isabelle; Cameron, Daphn&#233;&lt;/p&gt;
+
+    &lt;div&gt;
+Time Magazine ; The Toronto Star     &lt;/div&gt;
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Bromont - La machine a triomph&#233; de l&#39;homme, hier, au mythique quiz am&#233;ricain Jeopardy. &lt;/p&gt; &lt;p&gt; Depuis lundi, Watson, un ordinateur IBM con&#231;u en grande partie dans une usine de Bromont, &#233;tait confront&#233; &#224; deux des plus grands joueurs de l&#39;histoire de Jeopardy, Ken Jennings et Brad Rutter. &lt;/p&gt; &lt;p&gt; Dans la t&#234;te de Watson: 200 millions de pages d&#39;encyclop&#233;dies, de dictionnaires, de livres, d&#39;articles de journaux, de sc&#233;narios de films et tutti quanti.&lt;/p&gt;
+
+
+&lt;p&gt;Lundi, mardi et hier soir, 200 employ&#233;s d&#39;IBM, &#224; Bromont, sont rest&#233;s apr&#232;s leur journ&#233;e de travail pour une petite soir&#233;e pop-corn et, surtout, pour suivre &#224; la t&#233;l&#233;vision la performance de leur prot&#233;g&#233; Watson. &lt;/p&gt; &lt;p&gt; &quot;On suit &#231;a comme un match de hockey, dit Raymond Leduc, directeur en chef de l&#39;usine IBM de Bromont. Pour nous, ce n&#39;est pas tout &#224; fait une machine: c&#39;est le fruit de notre travail.&quot; &lt;/p&gt; &lt;p&gt; Et ce match, ils le prenaient tr&#232;s au s&#233;rieux. Pendant les 30 minutes de l&#39;&#233;mission d&#39;hier, outre quelques murmures lors des r&#233;ponses erron&#233;es de Watson et quelques applaudissements &#224; ses bons coups, on aurait entendu une mouche voler. &lt;/p&gt; &lt;p&gt; Cela fait quatre ans que l&#39;usine travaille &#224; mettre au point Watson, un ordinateur fait de 90 serveurs IBM Power 750, qui, ensemble, font 9 m&#232;tres carr&#233;s. Quelque 2000 composantes de l&#39;ordinateur ont &#233;t&#233; con&#231;ues &#224; Bromont, notamment tous ses microprocesseurs. &lt;/p&gt; &lt;p&gt; Watson n&#39;est &#233;videmment pas reli&#233; &#224; l&#39;internet. Comme un grand, il est capable d&#39;appuyer sur un bouton et de r&#233;pondre d&#39;une voix presque humaine. Mieux, Watson a un coeur: ses gains - un million, hier soir - ont &#233;t&#233; vers&#233;s &#224; un organisme caritatif. &lt;/p&gt; &lt;p&gt; Le plus stress&#233; de tous, hier? Probablement &#201;ric Paradis, informaticien en chef. &quot;J&#39;&#233;tais tr&#232;s, tr&#232;s, tr&#232;s nerveux! a-t-il avou&#233;. J&#39;avais tout de m&#234;me confiance qu&#39;il allait tirer son &#233;pingle du jeu.&quot; &lt;/p&gt; &lt;p&gt; Lundi soir, la confrontation s&#39;est conclue par un match nul. Mardi, l&#39;ordinateur a battu facilement ses concurrents bip&#232;des. Et hier soir, il &#233;tait encore tout feu tout flamme: il connaissait les Simpson, le surnom donn&#233; au Dakota-du-Sud (l&#39;&#201;tat du coyote) et les m&#233;moires de Laura Bush. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Erreur de taille&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Quand Watson a correctement r&#233;pondu &#224; l&#39;ultime question, les employ&#233;s se sont lev&#233;s d&#39;un bond. &lt;/p&gt; &lt;p&gt; Ce qui a cependant fait le tour de l&#39;internet hier - et du Canada anglais, notamment! -, c&#39;est la petite erreur g&#233;ographique de Watson, qui a dit que Toronto &#233;tait une ville am&#233;ricaine. &lt;/p&gt; &lt;p&gt; &quot;Les Am&#233;ricains m&#39;ont taquin&#233; l&#224;-dessus, et m&#39;ont demand&#233; si nous avions fait expr&#232;s!&quot; a racont&#233; Raymond Leduc. &lt;/p&gt; &lt;p&gt; &quot;Watson apprend de ses erreurs, et jamais plus il ne refera celle-l&#224;.&quot; &lt;/p&gt; &lt;p&gt; On demandait en fait d&#39;identifier une ville - dans la cat&#233;gorie &quot;ville am&#233;ricaine&quot; - dont les deux principaux a&#233;roports portent respectivement le nom d&#39;un h&#233;ros et d&#39;une bataille de la Seconde Guerre mondiale. La r&#233;ponse &#233;tait Chicago. &lt;/p&gt; &lt;p&gt; Selon David Ferrucci, g&#233;rant du projet Watson chez IBM, l&#39;erreur viendrait en partie du fait que les cat&#233;gories, &#224; Jeopardy, peuvent parfois chercher &#224; induire les participants en erreur. Aussi l&#39;ordinateur a-t-il appris &#224; minimiser l&#39;importance de ces cat&#233;gories. Autres raisons possibles de l&#39;erreur: plusieurs villes am&#233;ricaines se nomment Toronto, et les Blue Jays jouent dans la Ligue am&#233;ricaine de baseball. Ce mauvais alignement des astres a pu faire tr&#233;bucher Watson. &lt;/p&gt; &lt;p&gt; En participant &#224; Jeopardy, IBM a r&#233;ussi un bon coup de marketing, mais l&#39;id&#233;e de fond, dit Raymond Leduc, &quot;c&#39;est que des g&#233;n&#233;rations futures de Watson aident ultimement des m&#233;decins &#224; poser des diagnostics difficiles, ou viennent en aide &#224; des villes dans la difficile gestion de la circulation routi&#232;re&quot;. &lt;/p&gt; &lt;p&gt; Lundi, plus de 14 millions de personnes auraient regard&#233; Jeopardy. Mardi, l&#39;&#233;mission aurait atteint les plus grosses cotes d&#39;&#233;coute des six derni&#232;res saisons. &lt;/p&gt; &lt;p&gt; La vid&#233;o de l&#39;&#233;v&#233;nement peut &#234;tre visionn&#233;e sur cyberpresse.ca/watson&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+    &lt;div class=&quot;rdp__newsdoc&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Encadr&amp;#233;(s) : &lt;/b&gt;&lt;/p&gt;
+            &lt;div&gt;&lt;b&gt;L&#39;homme contre la machine: un combat sans merci &lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;Garry Kasparov contre Deep Blue, 1996 &lt;/p&gt; &lt;p&gt; Le champion du monde aux &#233;checs affronte Deep Blue, un ordinateur &#233;galement cr&#233;&#233; par IBM. &#192; la surprise g&#233;n&#233;rale, le processeur gagne la premi&#232;re partie, mais Kasparov sauve toutefois les honneurs en remportant le tournoi. Quelques mois plus tard, le joueur d&#39;&#233;checs russe perd le match de revanche, qui comptait six parties. Au cours de sa carri&#232;re, Kasparov s&#39;est mesur&#233; &#224; de nombreux autres ordinateurs. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; David Boys contre Quackle, 2006 &lt;/em&gt;&lt;/p&gt;&lt;p&gt;David Boys, natif de Montr&#233;al et ancien champion du monde de Scrabble, perd le match final du Scrabble Open &#224; Toronto contre Quackle, un programme &quot;&lt;mark&gt;open&lt;/mark&gt;-&lt;mark&gt;source&lt;/mark&gt;&quot;. Un brin amer apr&#232;s sa d&#233;faite, Boys avait alors d&#233;clar&#233;: &quot;Je crois qu&#39;il est toujours mieux d&#39;&#234;tre un humain plut&#244;t qu&#39;une machine.&quot; &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Marion Tinsley contre Chinook, 1994 &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Imbattable depuis pr&#232;s de quatre d&#233;cennies, la championne du monde au jeu de dames, Marion Tinsley, affronte un programme informatique nomm&#233; Chinook et d&#233;velopp&#233; &#224; l&#39;Universit&#233; de l&#39;Alberta. Tinsley parvient &#224; conserver son titre en faisant mordre la poussi&#232;re &#224; Chinook. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Chris Barnes contre EARL, 2010 &lt;/em&gt;&lt;/p&gt;&lt;p&gt;D&#233;cid&#233;ment, tous les pr&#233;textes semblent bons pour lancer un duel homme contre machine. L&#39;&#233;t&#233; dernier, la vedette am&#233;ricaine du bowling, Chris Barnes, a essuy&#233; une d&#233;faite cuisante contre un robot &#224; un bras nomm&#233; EARL (Enhanced Automated Robotic Launcher). Le score final: 259 &#224; 209.&lt;/p&gt; &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;div&gt;
+                    &lt;a href=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/WebPages/media.aspx?Type=image&amp;DocName=20110217LA20110217-002916-pro-87366166.jpg&amp;Logo=la4_small.gif&quot; target=&quot;_blank&quot;&gt;&lt;img width=&quot;40&quot; height=&quot;40&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20110217LA20110217-002916-pro-87366166.jpg&quot; /&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Les employ&#233;s de l&#39;usine IBM, &#224; Bromont, ont suivi la partie de Jeopardy comme on le ferait pour un match de hockey.&lt;/p&gt; &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;photo bernard brault, la presse &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2011 La Presse. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20110217&amp;#183;LA&amp;#183;0020&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">ville américaine</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">match de hockey</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">gestion de la circulation routière</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">composantes de l'ordinateur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">concurrents bipèdes</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sports et loisirs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Jeopardy</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bromont</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Toronto</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Simpson</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Canada</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110217%c2%b7LA%c2%b70020" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110217%c2%b7LA%c2%b70020">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif"><span class="icon-Information" sourcecode="LA"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        La Presse                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         jeudi 17 février 2011 658 mots, p. A12</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Watson, maître de Jeopardy            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L'ordinateur IBM en partie conçu à Bromont l'emporte sur ses concurrents humains</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Leduc, Louise; Audet, Isabelle; Cameron, Daphné</p>
+
+    <div>
+Time Magazine ; The Toronto Star     </div>
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Bromont - La machine a triomphé de l'homme, hier, au mythique quiz américain Jeopardy. </p> <p> Depuis lundi, Watson, un ordinateur IBM conçu en grande partie dans une usine de Bromont, était confronté à deux des plus grands joueurs de l'histoire de Jeopardy, Ken Jennings et Brad Rutter. </p> <p> Dans la tête de Watson: 200 millions de pages d'encyclopédies, de dictionnaires, de livres, d'articles de journaux, de scénarios de films et tutti quanti.</p>
+
+
+<p>Lundi, mardi et hier soir, 200 employés d'IBM, à Bromont, sont restés après leur journée de travail pour une petite soirée pop-corn et, surtout, pour suivre à la télévision la performance de leur protégé Watson. </p> <p> "On suit ça comme un match de hockey, dit Raymond Leduc, directeur en chef de l'usine IBM de Bromont. Pour nous, ce n'est pas tout à fait une machine: c'est le fruit de notre travail." </p> <p> Et ce match, ils le prenaient très au sérieux. Pendant les 30 minutes de l'émission d'hier, outre quelques murmures lors des réponses erronées de Watson et quelques applaudissements à ses bons coups, on aurait entendu une mouche voler. </p> <p> Cela fait quatre ans que l'usine travaille à mettre au point Watson, un ordinateur fait de 90 serveurs IBM Power 750, qui, ensemble, font 9 mètres carrés. Quelque 2000 composantes de l'ordinateur ont été conçues à Bromont, notamment tous ses microprocesseurs. </p> <p> Watson n'est évidemment pas relié à l'internet. Comme un grand, il est capable d'appuyer sur un bouton et de répondre d'une voix presque humaine. Mieux, Watson a un coeur: ses gains - un million, hier soir - ont été versés à un organisme caritatif. </p> <p> Le plus stressé de tous, hier? Probablement Éric Paradis, informaticien en chef. "J'étais très, très, très nerveux! a-t-il avoué. J'avais tout de même confiance qu'il allait tirer son épingle du jeu." </p> <p> Lundi soir, la confrontation s'est conclue par un match nul. Mardi, l'ordinateur a battu facilement ses concurrents bipèdes. Et hier soir, il était encore tout feu tout flamme: il connaissait les Simpson, le surnom donné au Dakota-du-Sud (l'État du coyote) et les mémoires de Laura Bush. </p> <p><em style="font-weight:bold;">Erreur de taille</em></p><p>Quand Watson a correctement répondu à l'ultime question, les employés se sont levés d'un bond. </p> <p> Ce qui a cependant fait le tour de l'internet hier - et du Canada anglais, notamment! -, c'est la petite erreur géographique de Watson, qui a dit que Toronto était une ville américaine. </p> <p> "Les Américains m'ont taquiné là-dessus, et m'ont demandé si nous avions fait exprès!" a raconté Raymond Leduc. </p> <p> "Watson apprend de ses erreurs, et jamais plus il ne refera celle-là." </p> <p> On demandait en fait d'identifier une ville - dans la catégorie "ville américaine" - dont les deux principaux aéroports portent respectivement le nom d'un héros et d'une bataille de la Seconde Guerre mondiale. La réponse était Chicago. </p> <p> Selon David Ferrucci, gérant du projet Watson chez IBM, l'erreur viendrait en partie du fait que les catégories, à Jeopardy, peuvent parfois chercher à induire les participants en erreur. Aussi l'ordinateur a-t-il appris à minimiser l'importance de ces catégories. Autres raisons possibles de l'erreur: plusieurs villes américaines se nomment Toronto, et les Blue Jays jouent dans la Ligue américaine de baseball. Ce mauvais alignement des astres a pu faire trébucher Watson. </p> <p> En participant à Jeopardy, IBM a réussi un bon coup de marketing, mais l'idée de fond, dit Raymond Leduc, "c'est que des générations futures de Watson aident ultimement des médecins à poser des diagnostics difficiles, ou viennent en aide à des villes dans la difficile gestion de la circulation routière". </p> <p> Lundi, plus de 14 millions de personnes auraient regardé Jeopardy. Mardi, l'émission aurait atteint les plus grosses cotes d'écoute des six dernières saisons. </p> <p> La vidéo de l'événement peut être visionnée sur cyberpresse.ca/watson</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+    <div class="rdp__newsdoc">
+        <p><b>Encadré(s) : </b></p>
+            <div><b>L'homme contre la machine: un combat sans merci </b></div>
+            <div></div>
+            <div><p>Garry Kasparov contre Deep Blue, 1996 </p> <p> Le champion du monde aux échecs affronte Deep Blue, un ordinateur également créé par IBM. À la surprise générale, le processeur gagne la première partie, mais Kasparov sauve toutefois les honneurs en remportant le tournoi. Quelques mois plus tard, le joueur d'échecs russe perd le match de revanche, qui comptait six parties. Au cours de sa carrière, Kasparov s'est mesuré à de nombreux autres ordinateurs. </p> <p><em style="font-weight:bold;"> David Boys contre Quackle, 2006 </em></p><p>David Boys, natif de Montréal et ancien champion du monde de Scrabble, perd le match final du Scrabble Open à Toronto contre Quackle, un programme "<mark>open</mark>-<mark>source</mark>". Un brin amer après sa défaite, Boys avait alors déclaré: "Je crois qu'il est toujours mieux d'être un humain plutôt qu'une machine." </p> <p><em style="font-weight:bold;"> Marion Tinsley contre Chinook, 1994 </em></p><p>Imbattable depuis près de quatre décennies, la championne du monde au jeu de dames, Marion Tinsley, affronte un programme informatique nommé Chinook et développé à l'Université de l'Alberta. Tinsley parvient à conserver son titre en faisant mordre la poussière à Chinook. </p> <p><em style="font-weight:bold;"> Chris Barnes contre EARL, 2010 </em></p><p>Décidément, tous les prétextes semblent bons pour lancer un duel homme contre machine. L'été dernier, la vedette américaine du bowling, Chris Barnes, a essuyé une défaite cuisante contre un robot à un bras nommé EARL (Enhanced Automated Robotic Launcher). Le score final: 259 à 209.</p> </div>
+    </div>
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            </p><div>
+                    <a href="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/WebPages/media.aspx?Type=image&amp;DocName=20110217LA20110217-002916-pro-87366166.jpg&amp;Logo=la4_small.gif" target="_blank"><img width="40" height="40" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20110217LA20110217-002916-pro-87366166.jpg"></a>
+            </div>
+            
+                            <div class="ImageAttach"><p>Les employés de l'usine IBM, à Bromont, ont suivi la partie de Jeopardy comme on le ferait pour un match de hockey.</p> </div>.
+
+                <div class="ImageAttachFont">photo bernard brault, la presse </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2011 La Presse. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20110217·LA·0020</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20110217·LA·0020";
+    var _docIndex = 307;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20110217·LA·0020';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720110217%C2%B7LA%C2%B70020&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720110217%C2%B7LA%C2%B70020&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720110217%C2%B7LA%C2%B70020&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720110217%C2%B7LA%C2%B70020&docIndex=307&FullScreen=1";
+                
+	var _keyDoc = 'news·20110217·LA·0020';
+</script>
+</div></body></html>

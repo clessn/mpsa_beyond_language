@@ -1,0 +1,567 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24434                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         lundi 13 mars 2023 1257 mots, p. 30&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+M&#233;dias ; Publicit&#233;         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Hugging Face, ces Fran&#231;ais qui dessinent un autre futur de l&#39;intelligence artificielle            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Valoris&#233;e 2 milliards de dollars, cette plateforme &lt;mark&gt; open&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt; prend le contrepied du mod&#232;le ferm&#233; de ChatGPT.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Woitier, Chlo&#233;&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;INNOVATION&lt;/em&gt; En mettant en ligne ChatGPT en novembre dernier, l&#39;entreprise am&#233;ricaine OpenAI a provoqu&#233; un petit s&#233;isme. Cet outil capable de converser avec l&#39;internaute et de g&#233;n&#233;rer n&#39;importe quel type de texte &#224; la demande a fait prendre conscience au grand public des avanc&#233;es galopantes de l&#39;intelligence artificielle. Mais comment ChatGPT fonctionne-t-il vraiment ? Gr&#226;ce &#224; quelles donn&#233;es cette IA a-t-elle appris &#224; parler et &#224; &#233;crire ? Lui a-t-on insuffl&#233; des valeurs, et si oui, lesquelles ? Face &#224; ces questions, la communaut&#233; scientifique se heurte &#224; un mur : OpenAI, financ&#233; &#224; hauteur de 10 milliards de dollars par Microsoft, refuse d&#39;ouvrir son capot. ChatGPT est une bo&#238;te noire.&lt;/p&gt;
+
+
+&lt;p&gt;La privatisation des avanc&#233;es en intelligence artificielle, voil&#224; un risque que Hugging Face veut combattre. Cette soci&#233;t&#233;, fond&#233;e par trois Fran&#231;ais et valoris&#233;e 2 milliards de dollars, est inconnue du grand public, mais incontournable dans la communaut&#233; de l&#39;IA. Plus de 10 000 entreprises, dont Pfizer, Renault ou Roche, se bousculent pour utiliser sa biblioth&#232;que d&#39;outils d&#39;intelligence artificielle en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; pour concevoir ensuite leurs propres services. Un peu comme un chef cuisinier qui va se tourner vers un mara&#238;cher plut&#244;t que de planter et cultiver lui-m&#234;me son potager. &lt;/p&gt; &lt;p&gt; &#171; Je crois au fait que l&#39;intelligence artificielle doit &#234;tre un bien commun et que la recherche sur le sujet doit &#234;tre partag&#233;e &#187; , explique au &lt;em style=&quot;font-style:italic;&quot;&gt;Figaro,&lt;/em&gt; Thomas Wolf, directeur scientifique de Hugging Face - le nom anglais de cet &#233;moji qui tend les bras pour faire un c&#226;lin. C&#39;est cette philosophie qui a conduit la start-up &#224; mener en parall&#232;le le projet Bloom, le plus grand mod&#232;le de language multilingue totalement ouvert et transparent. Il a &#233;t&#233; construit avec l&#39;appui du CNRS et d&#39;un consortium international de 1 000 chercheurs. &#171; Tout est public : le code, le jeu de donn&#233;es et m&#234;me les r&#233;unions de travail. C&#39;est un fantastique objet d&#39;&#233;tude &#187; , s&#39;enthousiasme Fran&#231;ois Yvon, directeur de recherche au CNRS et sp&#233;cialiste du traitement automatique des langues. Entra&#238;n&#233; durant cent dix-sept jours sur le supercalculateur public fran&#231;ais, Jean Zay, et d&#233;j&#224; t&#233;l&#233;charg&#233; gratuitement par plus de 65 000 professionnels, Bloom pourrait &#234;tre la matrice d&#39;un futur ChatGPT europ&#233;en. &lt;/p&gt; &lt;p&gt; Les d&#233;buts de Hugging Face remontent au milieu des ann&#233;es 2010. Cl&#233;ment Delangue, futur directeur g&#233;n&#233;ral, et Julien Chaumond, futur directeur de la technologie, cr&#233;ent Talking Dog, un robot conversationnel pour adolescents. L&#39;application fait un four, mais les deux associ&#233;s ont l&#39;id&#233;e de partager en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; le mod&#232;le de langage derri&#232;re ce compagnon virtuel. Le destin de Hugging Face se met en branle en 2017, lorsque les chercheurs de Google publient un article de recherche majeur sur Transformer, une architecture de r&#233;seau neuronal qui r&#233;volutionne le champ de l&#39;intelligence artificielle d&#233;di&#233;e au traitement du langage. C&#39;est cet article qui conduira, cinq ans et des milliards de dollars plus tard, &#224; la conception de ChatGPT chez OpenAI. &lt;/p&gt; &lt;p&gt; Ing&#233;nieurs de pointe &lt;/p&gt; &lt;p&gt; Mais pour une entreprise lambda, passer de cet article th&#233;orique aux outils concrets requiert de lourdes ressources, notamment en capacit&#233;s de calcul. &#171; Nous avons donc d&#233;cid&#233; de rendre facile d&#39;utilisation ces mod&#232;les de langage en cr&#233;ant la librairie &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; Transformers &#187; , explique Julien Chaumond. Chercheurs, d&#233;veloppeurs et entreprises peuvent piocher gratuitement dans cette biblioth&#232;que de mod&#232;les de langage d&#233;j&#224; pr&#233;-entra&#238;n&#233;s. &lt;/p&gt; &lt;p&gt; Hugging Face a ensuite &#233;volu&#233; en plateforme de partage sp&#233;cialis&#233;e en apprentissage automatis&#233; (machine learning). La communaut&#233; d&#39;ing&#233;nieurs y d&#233;pose, comme une bo&#238;te &#224; livres, des briques fondamentales, des jeux de donn&#233;es, ou bien des mod&#232;les pr&#233;-entra&#238;n&#233;s, le tout en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Chacun peut se servir (1 million de t&#233;l&#233;chargements par jour), mais aussi modifier, am&#233;liorer, faire des remarques... &#171; Les discussions sont tr&#232;s actives, notamment autour de l&#39;&#233;thique &#187; , note Thomas Wolf. Hugging Face emploie d&#39;ailleurs une petite &#233;quipe de chercheurs sp&#233;cialistes de ces th&#233;matiques, dont Margaret Mitchell (ex-Google), connue pour ses travaux sur les biais algorithmiques, ou la philosophe Giada Pistilli. Ce groupe a notamment conseill&#233; les concepteurs de Stable Diffusion, un mod&#232;le &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; de g&#233;n&#233;ration automatis&#233;e d&#39;images &#224; partir d&#39;un texte. Stable Diffusion est distribu&#233; sur Hugging Face. &lt;/p&gt; &lt;p&gt; L&#39;entreprise continue de remplir elle-m&#234;me sa biblioth&#232;que partag&#233;e gr&#226;ce au travail de ses ing&#233;nieurs et scientifiques. &#171; Nous n&#39;aurions pas pu construire une plateforme de machine learning cr&#233;dible sans avoir une &#233;quipe de chercheurs au niveau d&#39;OpenAI et des Gafam &#187; , souligne Julien Chaumond. Les 160 salari&#233;s de l&#39;entreprise, r&#233;partis entre Paris et New York, sont de 30 nationalit&#233;s diff&#233;rentes. &#171; Le recrutement a longtemps &#233;t&#233; difficile, mais nous avons gagn&#233; en visibilit&#233; ces derni&#232;res ann&#233;es et nous attirons des ing&#233;nieurs qui adh&#232;rent &#224; notre vision. Le visa French Tech &lt;em style=&quot;font-style:italic;&quot;&gt;(&lt;/em&gt;une proc&#233;dure simplifi&#233;e pour attirer des talents &#233;trangers en France, NDLR) nous a d&#39;ailleurs permis de faire venir tr&#232;s facilement de Mongolie ou de Turquie des personnes brillantes qui travaillent sur le futur de l&#39;IA. &#187; Cette attractivit&#233; s&#39;est renforc&#233;e avec les vagues de licenciements dans les grands groupes tech. &#171; On re&#231;oit beaucoup de candidatures, confie le directeur technique, mais nous contr&#244;lons notre croissance. &#187; &lt;/p&gt; &lt;p&gt; Pour se financer, Hugging Face a du proc&#233;der &#224; plusieurs lev&#233;es de fonds, dont une derni&#232;re de 100 millions de dollars sign&#233;e &#224; l&#39;&#233;t&#233; 2022. Toutes ont eu lieu aupr&#232;s d&#39;investisseurs am&#233;ricains, dont Sequoia Capital, Coatue Management et Lux Capital. &#171; En 2016, il &#233;tait impossible de lever des fonds en France sur des sujets exploratoires. C&#39;est pour cela que le si&#232;ge de l&#39;entreprise est &#224; New York &#187; , explique Thomas Wolf. &lt;/p&gt; &lt;p&gt; Partenariat avec Amazon &lt;/p&gt; &lt;p&gt; &#171; Les fonds fran&#231;ais ont une aversion au risque. C&#39;est pourtant un enjeu si nous souhaitons b&#226;tir un &#233;cosyst&#232;me souverain sur l&#39;IA &#187; , estime Nicolas Gaudemet, partner dans le cabinet de conseil Onepoint. &#171; C&#39;est aussi un enjeu de prosp&#233;rit&#233; : la valeur sera capt&#233;e par ces briques fondamentales. &#187; Hugging Face a gagn&#233; l&#39;an pass&#233; 15 millions d&#39;euros gr&#226;ce &#224; la vente de divers services premium pour les entreprises, un chiffre amen&#233; &#224; grossir. &#171; La communaut&#233; du machine learning va &#234;tre multipli&#233;e par 50 d&#39;ici 2030 car les d&#233;veloppeurs de logiciels vont s&#39;y mettre. Nous allons leur offrir les outils les plus accessibles au possible &#187; , promet Julien Chaumond. &lt;/p&gt; &lt;p&gt; Hugging Face passe par les principaux fournisseurs de cloud du march&#233; pour louer la puissance de calcul n&#233;cessaire &#224; l&#39;entra&#238;nement de ses mod&#232;les. Il a toutefois un partenariat privil&#233;gi&#233; avec Amazon depuis 2021. Avec le projet Bloom, Hugging Face a n&#233;anmoins voulu prouver &#171; qu&#39;il est possible d&#39;entra&#238;ner sur le sol europ&#233;en, et hors des infrastructures des Gafam, un vaste mod&#232;le de langue &#187; , explique Thomas Wolf. &lt;/p&gt; &lt;p&gt; La France a accept&#233; de soutenir l&#39;initiative en allouant durant pr&#232;s de quatre mois la puissance du supercalculateur Jean Zay, &#171; une demande exceptionnelle &#187; , souligne Fran&#231;ois Yvon du CNRS. Bloom a &#233;t&#233; entra&#238;n&#233; sur un corpus de 46 langues, dont l&#39;anglais (30 %), le fran&#231;ais (13 %), le chinois (16 %), l&#39;espagnol (11 %), le portugais (5 %) et l&#39;arabe (4,5 %), mais aussi le vietnamien, le catalan, le tamoul, le wolof... Un contrepied &#224; ChatGPT, entra&#238;n&#233; sur internet o&#249; la langue anglaise domine. &lt;/p&gt; &lt;p&gt; &#171; Il y a un enjeu de souverainet&#233; linguistique autour de ces mod&#232;les de langue &#187; , rappelle Fran&#231;ois Yvon. &#171; Est-on s&#251;r qu&#39;ils parlent aussi bien anglais que fran&#231;ais ? Qu&#39;ils ont assimil&#233; nos r&#232;gles de grammaire ? &#187; Le chercheur se penche d&#233;j&#224; sur ce que Bloom pourrait apporter aux outils de traduction automatique. Les r&#233;sultats entre le fran&#231;ais et le chinois et le fran&#231;ais et le vietnamien seraient d&#233;j&#224; prometteurs. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Plus de 10 000 entreprises se bousculent pour utiliser la biblioth&#232;que d&#39;outils d&#39;IA en &lt;mark&gt; open&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt; de Hugging Face dans le but de concevoir ensuite leurs propres services. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Hugging Face, maciek905/ stock adobe &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:cwoitier@lefigaro.fr&quot;&gt;cwoitier@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;12 mars 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230313&amp;#183;LF&amp;#183;1042&amp;#215;20&amp;#215;2171014843&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">machine learning</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèles de langage</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">équipe de chercheurs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">briques fondamentales</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Langue et questions linguistiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">source de Hugging Face</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">source Transformers</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Turquie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Mongolie</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230313%c2%b7LF%c2%b71042%c3%9720%c3%972171014843" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230313%c2%b7LF%c2%b71042%c3%9720%c3%972171014843">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24434                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         lundi 13 mars 2023 1257 mots, p. 30</span>
+</div>
+
+    <div>
+        <p>
+Médias ; Publicité         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Hugging Face, ces Français qui dessinent un autre futur de l'intelligence artificielle            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Valorisée 2 milliards de dollars, cette plateforme <mark> open</mark> <mark> source</mark> prend le contrepied du modèle fermé de ChatGPT.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Woitier, Chloé</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">INNOVATION</em> En mettant en ligne ChatGPT en novembre dernier, l'entreprise américaine OpenAI a provoqué un petit séisme. Cet outil capable de converser avec l'internaute et de générer n'importe quel type de texte à la demande a fait prendre conscience au grand public des avancées galopantes de l'intelligence artificielle. Mais comment ChatGPT fonctionne-t-il vraiment ? Grâce à quelles données cette IA a-t-elle appris à parler et à écrire ? Lui a-t-on insufflé des valeurs, et si oui, lesquelles ? Face à ces questions, la communauté scientifique se heurte à un mur : OpenAI, financé à hauteur de 10 milliards de dollars par Microsoft, refuse d'ouvrir son capot. ChatGPT est une boîte noire.</p>
+
+
+<p>La privatisation des avancées en intelligence artificielle, voilà un risque que Hugging Face veut combattre. Cette société, fondée par trois Français et valorisée 2 milliards de dollars, est inconnue du grand public, mais incontournable dans la communauté de l'IA. Plus de 10 000 entreprises, dont Pfizer, Renault ou Roche, se bousculent pour utiliser sa bibliothèque d'outils d'intelligence artificielle en <mark>open</mark> <mark>source</mark> pour concevoir ensuite leurs propres services. Un peu comme un chef cuisinier qui va se tourner vers un maraîcher plutôt que de planter et cultiver lui-même son potager. </p> <p> « Je crois au fait que l'intelligence artificielle doit être un bien commun et que la recherche sur le sujet doit être partagée » , explique au <em style="font-style:italic;">Figaro,</em> Thomas Wolf, directeur scientifique de Hugging Face - le nom anglais de cet émoji qui tend les bras pour faire un câlin. C'est cette philosophie qui a conduit la start-up à mener en parallèle le projet Bloom, le plus grand modèle de language multilingue totalement ouvert et transparent. Il a été construit avec l'appui du CNRS et d'un consortium international de 1 000 chercheurs. « Tout est public : le code, le jeu de données et même les réunions de travail. C'est un fantastique objet d'étude » , s'enthousiasme François Yvon, directeur de recherche au CNRS et spécialiste du traitement automatique des langues. Entraîné durant cent dix-sept jours sur le supercalculateur public français, Jean Zay, et déjà téléchargé gratuitement par plus de 65 000 professionnels, Bloom pourrait être la matrice d'un futur ChatGPT européen. </p> <p> Les débuts de Hugging Face remontent au milieu des années 2010. Clément Delangue, futur directeur général, et Julien Chaumond, futur directeur de la technologie, créent Talking Dog, un robot conversationnel pour adolescents. L'application fait un four, mais les deux associés ont l'idée de partager en <mark>open</mark> <mark>source</mark> le modèle de langage derrière ce compagnon virtuel. Le destin de Hugging Face se met en branle en 2017, lorsque les chercheurs de Google publient un article de recherche majeur sur Transformer, une architecture de réseau neuronal qui révolutionne le champ de l'intelligence artificielle dédiée au traitement du langage. C'est cet article qui conduira, cinq ans et des milliards de dollars plus tard, à la conception de ChatGPT chez OpenAI. </p> <p> Ingénieurs de pointe </p> <p> Mais pour une entreprise lambda, passer de cet article théorique aux outils concrets requiert de lourdes ressources, notamment en capacités de calcul. « Nous avons donc décidé de rendre facile d'utilisation ces modèles de langage en créant la librairie <mark>open</mark> <mark>source</mark> Transformers » , explique Julien Chaumond. Chercheurs, développeurs et entreprises peuvent piocher gratuitement dans cette bibliothèque de modèles de langage déjà pré-entraînés. </p> <p> Hugging Face a ensuite évolué en plateforme de partage spécialisée en apprentissage automatisé (machine learning). La communauté d'ingénieurs y dépose, comme une boîte à livres, des briques fondamentales, des jeux de données, ou bien des modèles pré-entraînés, le tout en <mark>open</mark> <mark>source</mark>. Chacun peut se servir (1 million de téléchargements par jour), mais aussi modifier, améliorer, faire des remarques... « Les discussions sont très actives, notamment autour de l'éthique » , note Thomas Wolf. Hugging Face emploie d'ailleurs une petite équipe de chercheurs spécialistes de ces thématiques, dont Margaret Mitchell (ex-Google), connue pour ses travaux sur les biais algorithmiques, ou la philosophe Giada Pistilli. Ce groupe a notamment conseillé les concepteurs de Stable Diffusion, un modèle <mark>open</mark> <mark>source</mark> de génération automatisée d'images à partir d'un texte. Stable Diffusion est distribué sur Hugging Face. </p> <p> L'entreprise continue de remplir elle-même sa bibliothèque partagée grâce au travail de ses ingénieurs et scientifiques. « Nous n'aurions pas pu construire une plateforme de machine learning crédible sans avoir une équipe de chercheurs au niveau d'OpenAI et des Gafam » , souligne Julien Chaumond. Les 160 salariés de l'entreprise, répartis entre Paris et New York, sont de 30 nationalités différentes. « Le recrutement a longtemps été difficile, mais nous avons gagné en visibilité ces dernières années et nous attirons des ingénieurs qui adhèrent à notre vision. Le visa French Tech <em style="font-style:italic;">(</em>une procédure simplifiée pour attirer des talents étrangers en France, NDLR) nous a d'ailleurs permis de faire venir très facilement de Mongolie ou de Turquie des personnes brillantes qui travaillent sur le futur de l'IA. » Cette attractivité s'est renforcée avec les vagues de licenciements dans les grands groupes tech. « On reçoit beaucoup de candidatures, confie le directeur technique, mais nous contrôlons notre croissance. » </p> <p> Pour se financer, Hugging Face a du procéder à plusieurs levées de fonds, dont une dernière de 100 millions de dollars signée à l'été 2022. Toutes ont eu lieu auprès d'investisseurs américains, dont Sequoia Capital, Coatue Management et Lux Capital. « En 2016, il était impossible de lever des fonds en France sur des sujets exploratoires. C'est pour cela que le siège de l'entreprise est à New York » , explique Thomas Wolf. </p> <p> Partenariat avec Amazon </p> <p> « Les fonds français ont une aversion au risque. C'est pourtant un enjeu si nous souhaitons bâtir un écosystème souverain sur l'IA » , estime Nicolas Gaudemet, partner dans le cabinet de conseil Onepoint. « C'est aussi un enjeu de prospérité : la valeur sera captée par ces briques fondamentales. » Hugging Face a gagné l'an passé 15 millions d'euros grâce à la vente de divers services premium pour les entreprises, un chiffre amené à grossir. « La communauté du machine learning va être multipliée par 50 d'ici 2030 car les développeurs de logiciels vont s'y mettre. Nous allons leur offrir les outils les plus accessibles au possible » , promet Julien Chaumond. </p> <p> Hugging Face passe par les principaux fournisseurs de cloud du marché pour louer la puissance de calcul nécessaire à l'entraînement de ses modèles. Il a toutefois un partenariat privilégié avec Amazon depuis 2021. Avec le projet Bloom, Hugging Face a néanmoins voulu prouver « qu'il est possible d'entraîner sur le sol européen, et hors des infrastructures des Gafam, un vaste modèle de langue » , explique Thomas Wolf. </p> <p> La France a accepté de soutenir l'initiative en allouant durant près de quatre mois la puissance du supercalculateur Jean Zay, « une demande exceptionnelle » , souligne François Yvon du CNRS. Bloom a été entraîné sur un corpus de 46 langues, dont l'anglais (30 %), le français (13 %), le chinois (16 %), l'espagnol (11 %), le portugais (5 %) et l'arabe (4,5 %), mais aussi le vietnamien, le catalan, le tamoul, le wolof... Un contrepied à ChatGPT, entraîné sur internet où la langue anglaise domine. </p> <p> « Il y a un enjeu de souveraineté linguistique autour de ces modèles de langue » , rappelle François Yvon. « Est-on sûr qu'ils parlent aussi bien anglais que français ? Qu'ils ont assimilé nos règles de grammaire ? » Le chercheur se penche déjà sur ce que Bloom pourrait apporter aux outils de traduction automatique. Les résultats entre le français et le chinois et le français et le vietnamien seraient déjà prometteurs. </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Plus de 10 000 entreprises se bousculent pour utiliser la bibliothèque d'outils d'IA en <mark> open</mark> <mark> source</mark> de Hugging Face dans le but de concevoir ensuite leurs propres services. </div>.
+
+                <div class="ImageAttachFont">Hugging Face, maciek905/ stock adobe </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:cwoitier@lefigaro.fr">cwoitier@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">12 mars 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230313·LF·1042×20×2171014843</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230313·LF·1042×20×2171014843";
+    var _docIndex = 167;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230313·LF·1042×20×2171014843';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230313%C2%B7LF%C2%B71042%C3%9720%C3%972171014843&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230313%C2%B7LF%C2%B71042%C3%9720%C3%972171014843&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230313%C2%B7LF%C2%B71042%C3%9720%C3%972171014843&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230313%C2%B7LF%C2%B71042%C3%9720%C3%972171014843&docIndex=167&FullScreen=1";
+                
+	var _keyDoc = 'news·20230313·LF·1042×20×2171014843';
+</script>
+</div></body></html>

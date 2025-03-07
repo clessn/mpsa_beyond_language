@@ -1,0 +1,461 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Id&#233;es,         vendredi 18 octobre 2024 669 mots, p. 26&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Chronique | par Alexandre Piquard&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les &#171; agents &#187;, nouveau Graal de l’IA            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;par Alexandre Piquard&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Et si ChatGPT ne faisait pas que r&#233;pondre &#224; des questions et &#224; des instructions, mais pouvait aussi agir ? Ce type de logiciels, baptis&#233;s &#171; agents &#187;, &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;est le nouvel horizon r&#234;v&#233; de tout le secteur de l’intelligence artificielle (IA). &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous y arriverons dans un futur pas trop distant &#187;&lt;/em&gt;, a assur&#233;, d&#233;but octobre, Sam Altman, le fondateur d’OpenAI, qui a cr&#233;&#233; ChatGPT. Selon lui, les agents sont le niveau&#160;3 de l’&#233;chelle maison d’&#233;valuation de l’intelligence artificielle, apr&#232;s les robots conversationnels et les syst&#232;mes capables de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; raisonner &#187;&lt;/em&gt; et avant les hypoth&#233;tiques futures&#160;IA capables d’ &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; innover &#187;&lt;/em&gt; ou de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; faire le travail d’une organisation &#187;&lt;/em&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;Les agents, esp&#232;rent les fabricants d’IA, se veulent la version am&#233;lior&#233;e des actuels assistants d’IA comme Copilot (Microsoft), Gemini (Google), Claude (Anthropic) ou Apple Intelligence. Ils ravivent aussi le r&#234;ve d&#233;&#231;u des premiers assistants vocaux comme Alexa (Amazon) ou Siri (Apple). Leur particularit&#233; est que, pour agir, ils seraient connect&#233;s &#224; d’autres logiciels ou applications : le Web, un logiciel d’e-mail, un site d’e-commerce, une plateforme d’entreprise… Combin&#233;s aux nouvelles capacit&#233;s des IA de comprendre et de g&#233;n&#233;rer du son ou des images, ils pourraient ouvrir de larges possibilit&#233;s. &lt;/p&gt; &lt;p&gt; Pour les particuliers, ils pourraient en th&#233;orie servir &#224; mettre &#224; jour un calendrier en fonction d’e-mails re&#231;us, planifier un voyage… Pour les entreprises, ils pourraient prendre des notes d’une r&#233;union, puis mener des recherches compl&#233;mentaires en ligne, envoyer des factures, se connecter &#224; des sources internes et &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; envoyer des e-mails, mettre &#224; jour des fichiers ou cr&#233;er des tickets de support client &#187;&lt;/em&gt;, selon la description des&#160;agents Copilot, une premi&#232;re s&#233;rie d’IA &#171; agentiques &#187; lanc&#233;es en septembre par Microsoft. &lt;/p&gt; &lt;p&gt; Presque tous les acteurs de l’IA disent travailler sur ces agents. Des start-up fran&#231;aises comme H ou Dust &#224; des projets &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; comme AutoGPT, en passant par des g&#233;ants comme Salesforce ou Amazon, qui vient d’embaucher l’&#233;quipe de la start-up Adept&#160;AI. Ce sont des &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; syst&#232;mes intelligents&#160;capables de raisonner, planifier et m&#233;moriser, “penser” plusieurs &#233;tapes &#224; l’avance et travailler dans plusieurs logiciels ou environnements, tout cela pour accomplir une t&#226;che &#224; votre place &#187;&lt;/em&gt;, a th&#233;oris&#233; le PDG de Google, Sundar Pichai, au printemps. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Nombreuses questions&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le patron d’Anthropic, Dario Amodei, esp&#232;re cr&#233;er des IA capables de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; mener des t&#226;ches de fa&#231;on autonome, comme un employ&#233; intelligent le ferait, en demandant des clarifications si n&#233;cessaires &#187;&lt;/em&gt;. Yann Le&#160;Cun, de Meta, imagine un futur o&#249; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; toutes nos interactions avec le monde num&#233;rique passeraient par ce genre d’assistants IA &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Ce Graal de l’industrie soul&#232;ve, bien s&#251;r, de nombreuses questions. D’abord, ce discours prometteur peut appara&#238;tre comme une fa&#231;on de maintenir l’int&#233;r&#234;t des investisseurs et des grandes entreprises clientes, &#224; un moment o&#249; certains parlent de bulle financi&#232;re dans le secteur. Plusieurs briques manquent &#224; ce stade pour atteindre les capacit&#233;s imagin&#233;es. Si le sujet fait d&#233;bat, les grands mod&#232;les de langage actuels n’ont pas de capacit&#233;s de raisonnement ou des capacit&#233;s limit&#233;es et m&#234;me le dernier mod&#232;le d’OpenAI, o1, commet des erreurs. La m&#233;morisation est aussi un domaine de recherche qui pose des d&#233;fis. &lt;/p&gt; &lt;p&gt; Par ailleurs, l’id&#233;e de d&#233;ployer des agents capables d’agir est mise en avant comme un risque suppl&#233;mentaire par la communaut&#233; des organisations non gouvernementales (ONG) et des chercheurs soucieux de la &#171; s&#233;curit&#233; &#187; de l’IA. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Plus un syst&#232;me est agentique, plus il pr&#233;sente de danger de perte de contr&#244;le ou de mauvais usages par des acteurs mal intentionn&#233;s &#187;&lt;/em&gt;, a expliqu&#233; le professeur sp&#233;cialiste de l’IA Yoshua Bengio en octobre dans une conf&#233;rence organis&#233;e par l’ONG Future of Life Institute. Par exemple, ces agents pourraient se r&#233;pliquer ou mener des cyberattaques… &lt;/p&gt; &lt;p&gt; Plus simplement, pointe Jo&#235;lle Pineau, de Meta, il faut anticiper les probl&#232;mes possibles. Si un agent peut utiliser votre carte bancaire ou si deux agents se retrouvent en interaction par e-mail… &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il reste beaucoup de travail &#187;&lt;/em&gt; , r&#233;sume-t-elle.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;17 octobre 2024&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20241018&amp;#183;LM&amp;#183;202410182&amp;#215;20&amp;#215;22353927630&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720241018%c2%b7LM%c2%b7202410182%c3%9720%c3%9722353927630" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720241018%c2%b7LM%c2%b7202410182%c3%9720%c3%9722353927630">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Idées,         vendredi 18 octobre 2024 669 mots, p. 26</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Chronique | par Alexandre Piquard</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les « agents », nouveau Graal de l’IA            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">par Alexandre Piquard</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Et si ChatGPT ne faisait pas que répondre à des questions et à des instructions, mais pouvait aussi agir ? Ce type de logiciels, baptisés « agents », <em style="font-style:italic;"></em>est le nouvel horizon rêvé de tout le secteur de l’intelligence artificielle (IA). <em style="font-style:italic;">« Nous y arriverons dans un futur pas trop distant »</em>, a assuré, début octobre, Sam Altman, le fondateur d’OpenAI, qui a créé ChatGPT. Selon lui, les agents sont le niveau&nbsp;3 de l’échelle maison d’évaluation de l’intelligence artificielle, après les robots conversationnels et les systèmes capables de <em style="font-style:italic;">« raisonner »</em> et avant les hypothétiques futures&nbsp;IA capables d’ <em style="font-style:italic;">« innover »</em> ou de <em style="font-style:italic;">« faire le travail d’une organisation »</em>.</p>
+
+
+<p>Les agents, espèrent les fabricants d’IA, se veulent la version améliorée des actuels assistants d’IA comme Copilot (Microsoft), Gemini (Google), Claude (Anthropic) ou Apple Intelligence. Ils ravivent aussi le rêve déçu des premiers assistants vocaux comme Alexa (Amazon) ou Siri (Apple). Leur particularité est que, pour agir, ils seraient connectés à d’autres logiciels ou applications : le Web, un logiciel d’e-mail, un site d’e-commerce, une plateforme d’entreprise… Combinés aux nouvelles capacités des IA de comprendre et de générer du son ou des images, ils pourraient ouvrir de larges possibilités. </p> <p> Pour les particuliers, ils pourraient en théorie servir à mettre à jour un calendrier en fonction d’e-mails reçus, planifier un voyage… Pour les entreprises, ils pourraient prendre des notes d’une réunion, puis mener des recherches complémentaires en ligne, envoyer des factures, se connecter à des sources internes et <em style="font-style:italic;">« envoyer des e-mails, mettre à jour des fichiers ou créer des tickets de support client »</em>, selon la description des&nbsp;agents Copilot, une première série d’IA « agentiques » lancées en septembre par Microsoft. </p> <p> Presque tous les acteurs de l’IA disent travailler sur ces agents. Des start-up françaises comme H ou Dust à des projets <mark>open</mark> <mark>source</mark> comme AutoGPT, en passant par des géants comme Salesforce ou Amazon, qui vient d’embaucher l’équipe de la start-up Adept&nbsp;AI. Ce sont des <em style="font-style:italic;">« systèmes intelligents&nbsp;capables de raisonner, planifier et mémoriser, “penser” plusieurs étapes à l’avance et travailler dans plusieurs logiciels ou environnements, tout cela pour accomplir une tâche à votre place »</em>, a théorisé le PDG de Google, Sundar Pichai, au printemps. </p> <p><em style="font-weight:bold;">Nombreuses questions</em></p><p>Le patron d’Anthropic, Dario Amodei, espère créer des IA capables de <em style="font-style:italic;">« mener des tâches de façon autonome, comme un employé intelligent le ferait, en demandant des clarifications si nécessaires »</em>. Yann Le&nbsp;Cun, de Meta, imagine un futur où <em style="font-style:italic;">« toutes nos interactions avec le monde numérique passeraient par ce genre d’assistants IA »</em>. </p> <p> Ce Graal de l’industrie soulève, bien sûr, de nombreuses questions. D’abord, ce discours prometteur peut apparaître comme une façon de maintenir l’intérêt des investisseurs et des grandes entreprises clientes, à un moment où certains parlent de bulle financière dans le secteur. Plusieurs briques manquent à ce stade pour atteindre les capacités imaginées. Si le sujet fait débat, les grands modèles de langage actuels n’ont pas de capacités de raisonnement ou des capacités limitées et même le dernier modèle d’OpenAI, o1, commet des erreurs. La mémorisation est aussi un domaine de recherche qui pose des défis. </p> <p> Par ailleurs, l’idée de déployer des agents capables d’agir est mise en avant comme un risque supplémentaire par la communauté des organisations non gouvernementales (ONG) et des chercheurs soucieux de la « sécurité » de l’IA. <em style="font-style:italic;">« Plus un système est agentique, plus il présente de danger de perte de contrôle ou de mauvais usages par des acteurs mal intentionnés »</em>, a expliqué le professeur spécialiste de l’IA Yoshua Bengio en octobre dans une conférence organisée par l’ONG Future of Life Institute. Par exemple, ces agents pourraient se répliquer ou mener des cyberattaques… </p> <p> Plus simplement, pointe Joëlle Pineau, de Meta, il faut anticiper les problèmes possibles. Si un agent peut utiliser votre carte bancaire ou si deux agents se retrouvent en interaction par e-mail… <em style="font-style:italic;">« Il reste beaucoup de travail »</em> , résume-t-elle.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">17 octobre 2024</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20241018·LM·202410182×20×22353927630</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20241018·LM·202410182×20×22353927630";
+    var _docIndex = 18;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20241018·LM·202410182×20×22353927630';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720241018%C2%B7LM%C2%B7202410182%C3%9720%C3%9722353927630&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720241018%C2%B7LM%C2%B7202410182%C3%9720%C3%9722353927630&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720241018%C2%B7LM%C2%B7202410182%C3%9720%C3%9722353927630&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720241018%C2%B7LM%C2%B7202410182%C3%9720%C3%9722353927630&docIndex=18&FullScreen=1";
+                
+	var _keyDoc = 'news·20241018·LM·202410182×20×22353927630';
+</script>
+</div></body></html>

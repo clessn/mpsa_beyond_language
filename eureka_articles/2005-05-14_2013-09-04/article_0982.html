@@ -1,0 +1,491 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mercredi 1 juin 2005 309 mots&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+[CONCOURS.]            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;CONCOURS. Les organisateurs du 6 e festival de cin&#233;ma Du grain &#224; d&#233;moudre (du 7 au 15 octobre &#224; Gonfreville-l&#39;Orcher, Seine-Maritime) mettent en place, jusqu&#39;au 15 juin, un concours d&#39;&#233;criture de sc&#233;nario sur le th&#232;me de l&#39;absurde, pour les moins de 25 ans. Les sc&#233;narios devront faire de trois &#224; cinq pages. &lt;/p&gt; &lt;p&gt; Les gagnants seront jur&#233;s au festival (transport, h&#233;bergement et activit&#233;s d&#233;fray&#233;s) et leurs sc&#233;narios seront lus par des com&#233;diens puis mis en ligne. Rens. : &lt;a target=&quot;_blank&quot; href=&quot;https://www.dugrainademoudre.net&quot;&gt;www.dugrainademoudre.net&lt;/a&gt; CONF&#201;RENCE.&lt;/p&gt;
+
+
+&lt;p&gt;L&#39;ISG Finance, l&#39;association financi&#232;re de l&#39;Institut sup&#233;rieur de gestion, organise une table ronde sur le th&#232;me : &#171;Le Poids des actionnaires sur les d&#233;cisions d&#39;entreprise&#187;, le 6 juin &#224; 18 heures dans les locaux de l&#39;ISG. Cette conf&#233;rence sera anim&#233;e par Michel Guithaux (consultant en entreprise et professeur &#224; l&#39;universit&#233; Paris-XII) en pr&#233;sence de Pierre Bilger (ex-PDG d&#39;Alstom), de Michel Aglietta (professeur &#224; Paris-X, conseiller au CEPII), de Joseph Gouranton (pr&#233;sident de l&#39;Adacte) et d&#39;Emmanuel Paquette (journaliste &#233;conomique). Entr&#233;e libre. &lt;/p&gt; &lt;p&gt; Rendez-vous au 8, rue de Lota, Paris XVI e. Rens. : 06.61.63.02.32 ou &lt;a href=&quot;mailto:hadrien.gausseres@gmail.com&quot;&gt;hadrien.gausseres@gmail.com&lt;/a&gt; CONF&#201;RENCE-D&#201;BAT. &lt;/p&gt; &lt;p&gt; L&#39;&#201;cole nationale d&#39;assurances et son pr&#233;sident, Fran&#231;ois Ewald, re&#231;oivent le math&#233;maticien Beno&#238;t Mandelbrot qui parlera des impacts de la th&#233;orie des fractales sur l&#39;assurance. La manifestation aura lieu mercredi 1 er juin &#224; 18 heures &#224; l&#39;Enass, 8, rue Chaptal 75009 Paris, M&#176; Saint-Georges. Rens. &lt;/p&gt; &lt;p&gt; : Laure Tequi : 01.44.63.58.05. SPORT. Du 5 au 10 juillet, au stade de la Grenouill&#232;re au parc de Sceaux, aura lieu le 20 e BNP Paribas-Open de France. &lt;/p&gt; &lt;p&gt; Ce tournoi handisport de tennis r&#233;unira 120 joueurs. Entr&#233;e gratuite. Stade de la Grenouill&#232;re, parc de Sceaux, Antony (92). &lt;/p&gt; &lt;p&gt; Rens. : &lt;a target=&quot;_blank&quot; href=&quot;https://www.tennishandisport.com&quot;&gt;www.tennishandisport.com&lt;/a&gt; INFORMATIQUE. L&#39;ESGI (&#201;cole sup&#233;rieure de g&#233;nie informatique), &#233;cole sp&#233;cialis&#233;e en ing&#233;nierie du d&#233;veloppement, des syst&#232;mes et des r&#233;seaux, organise en partenariat avec l&#39;association Slyunix, une journ&#233;e &#171;Linux et &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;&#187;, le samedi 4 juin, de 10 &#224; 18 heures. &lt;/p&gt; &lt;p&gt; Au programme : des pr&#233;sentations multim&#233;dias, des d&#233;monstrations en libre-service, des rencontres avec les utilisateurs, l&#39;installation de votre machine et une distribution de CD Linux et &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. De nombreuses conf&#233;rences sont &#233;galement pr&#233;vues. Acc&#232;s libre et gratuit. &lt;/p&gt; &lt;p&gt; Rendez-vous le samedi 4 juin de 10 &#224; 18 heures &#224; l&#39;ESGI, 28, rue du Plateau, Paris XIX e. Rens. : 01.42.41.24.24 ou &lt;a target=&quot;_blank&quot; href=&quot;https://www.esgi.fr&quot;&gt;www.esgi.fr&lt;/a&gt; CONCERT. &lt;/p&gt; &lt;p&gt; L&#39;association Musique en Sorbonne pr&#233;sente un concert du Choeur et orchestre de Paris-Sorbonne, sous la direction de Jacques Grimbert, le vendredi 24 juin &#224; l&#39;&#233;glise de la Trinit&#233;. Avec Virginie Besson, soprano, Blandine Staskiewicz, mezzo, Mathias Vidal, t&#233;nor, et Jean-Vincent Blot, baryton. Ils interpr&#233;teront Stabat Mater de Rossini. &lt;/p&gt; &lt;p&gt; Tarifs : 20 &lt;symbol value=&quot;euro&quot;&gt;&lt;/symbol&gt; ; moins de 25 ans, 10 &lt;symbol value=&quot;euro&quot;&gt;&lt;/symbol&gt;. A 20 h 30 &#224; l&#39;&#233;glise de la Trinit&#233;, place Estienne-d&#39;Orves, Paris IX e. Rens. &lt;/p&gt; &lt;p&gt; Musique en Sorbonne, 2, rue Francis-de-Croisset, Paris XVIII e ou 01.42.62.71.71.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20050601&amp;#183;LF&amp;#183;20050601&amp;#215;2fig0389&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">stade de la grenouillère</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">église de la trinité</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">parc de sceaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">association financière de l'institut</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">école nationale d'assurances</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Musique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Gonfreville-l'Orcher</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Seine-Maritime</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Sorbonne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris-X</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050601%c2%b7LF%c2%b720050601%c3%972fig0389" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050601%c2%b7LF%c2%b720050601%c3%972fig0389">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mercredi 1 juin 2005 309 mots</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+[CONCOURS.]            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>CONCOURS. Les organisateurs du 6 e festival de cinéma Du grain à démoudre (du 7 au 15 octobre à Gonfreville-l'Orcher, Seine-Maritime) mettent en place, jusqu'au 15 juin, un concours d'écriture de scénario sur le thème de l'absurde, pour les moins de 25 ans. Les scénarios devront faire de trois à cinq pages. </p> <p> Les gagnants seront jurés au festival (transport, hébergement et activités défrayés) et leurs scénarios seront lus par des comédiens puis mis en ligne. Rens. : <a target="_blank" href="https://www.dugrainademoudre.net">www.dugrainademoudre.net</a> CONFÉRENCE.</p>
+
+
+<p>L'ISG Finance, l'association financière de l'Institut supérieur de gestion, organise une table ronde sur le thème : «Le Poids des actionnaires sur les décisions d'entreprise», le 6 juin à 18 heures dans les locaux de l'ISG. Cette conférence sera animée par Michel Guithaux (consultant en entreprise et professeur à l'université Paris-XII) en présence de Pierre Bilger (ex-PDG d'Alstom), de Michel Aglietta (professeur à Paris-X, conseiller au CEPII), de Joseph Gouranton (président de l'Adacte) et d'Emmanuel Paquette (journaliste économique). Entrée libre. </p> <p> Rendez-vous au 8, rue de Lota, Paris XVI e. Rens. : 06.61.63.02.32 ou <a href="mailto:hadrien.gausseres@gmail.com">hadrien.gausseres@gmail.com</a> CONFÉRENCE-DÉBAT. </p> <p> L'École nationale d'assurances et son président, François Ewald, reçoivent le mathématicien Benoît Mandelbrot qui parlera des impacts de la théorie des fractales sur l'assurance. La manifestation aura lieu mercredi 1 er juin à 18 heures à l'Enass, 8, rue Chaptal 75009 Paris, M° Saint-Georges. Rens. </p> <p> : Laure Tequi : 01.44.63.58.05. SPORT. Du 5 au 10 juillet, au stade de la Grenouillère au parc de Sceaux, aura lieu le 20 e BNP Paribas-Open de France. </p> <p> Ce tournoi handisport de tennis réunira 120 joueurs. Entrée gratuite. Stade de la Grenouillère, parc de Sceaux, Antony (92). </p> <p> Rens. : <a target="_blank" href="https://www.tennishandisport.com">www.tennishandisport.com</a> INFORMATIQUE. L'ESGI (École supérieure de génie informatique), école spécialisée en ingénierie du développement, des systèmes et des réseaux, organise en partenariat avec l'association Slyunix, une journée «Linux et <mark>logiciels</mark> <mark>libres</mark>», le samedi 4 juin, de 10 à 18 heures. </p> <p> Au programme : des présentations multimédias, des démonstrations en libre-service, des rencontres avec les utilisateurs, l'installation de votre machine et une distribution de CD Linux et <mark>logiciels</mark> <mark>libres</mark>. De nombreuses conférences sont également prévues. Accès libre et gratuit. </p> <p> Rendez-vous le samedi 4 juin de 10 à 18 heures à l'ESGI, 28, rue du Plateau, Paris XIX e. Rens. : 01.42.41.24.24 ou <a target="_blank" href="https://www.esgi.fr">www.esgi.fr</a> CONCERT. </p> <p> L'association Musique en Sorbonne présente un concert du Choeur et orchestre de Paris-Sorbonne, sous la direction de Jacques Grimbert, le vendredi 24 juin à l'église de la Trinité. Avec Virginie Besson, soprano, Blandine Staskiewicz, mezzo, Mathias Vidal, ténor, et Jean-Vincent Blot, baryton. Ils interpréteront Stabat Mater de Rossini. </p> <p> Tarifs : 20 <symbol value="euro"></symbol> ; moins de 25 ans, 10 <symbol value="euro"></symbol>. A 20 h 30 à l'église de la Trinité, place Estienne-d'Orves, Paris IX e. Rens. </p> <p> Musique en Sorbonne, 2, rue Francis-de-Croisset, Paris XVIII e ou 01.42.62.71.71.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20050601·LF·20050601×2fig0389</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20050601·LF·20050601×2fig0389";
+    var _docIndex = 981;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20050601·LF·20050601×2fig0389';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720050601%C2%B7LF%C2%B720050601%C3%972fig0389&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720050601%C2%B7LF%C2%B720050601%C3%972fig0389&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720050601%C2%B7LF%C2%B720050601%C3%972fig0389&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720050601%C2%B7LF%C2%B720050601%C3%972fig0389&docIndex=981&FullScreen=1";
+                
+	var _keyDoc = 'news·20050601·LF·20050601×2fig0389';
+</script>
+</div></body></html>

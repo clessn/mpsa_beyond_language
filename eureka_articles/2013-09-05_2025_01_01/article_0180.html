@@ -1,0 +1,517 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24365                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro,         jeudi 22 d&amp;#233;cembre 2022 767 mots, p. 15&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Opinions         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+L&#39;IA va bouleverser l&#39;enseignement            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Ferry, Luc&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Au cas o&#249; vous l&#39;ignoreriez encore, &#171; GPT &#187; (Generative Pre-Trained Transformer) est un logiciel d&#39;intelligence artificielle (IA) disponible en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. M&#234;me si vous n&#39;&#234;tes pas geek, faites l&#39;effort d&#39;aller tchatter avec lui, c&#39;est tout simplement bluffant. Allez, via Google, sur le site openAI, &#171; renseignez &#187; (pardon pour ce mauvais fran&#231;ais) votre adresse mail, votre nom et votre num&#233;ro de t&#233;l&#233;phone et vous pourrez en trois clics demander &#224; GPT de vous r&#233;diger un texte en prose ou en po&#233;sie sur n&#39;importe quel sujet. En moins de dix secondes, il vous pondra une trentaine de lignes sur ce que vous voulez, les &lt;em style=&quot;font-style:italic;&quot;&gt;Illusions perdues&lt;/em&gt; de Balzac, la th&#233;orie des id&#233;es chez Platon, la Coupe du monde de football, la structure de l&#39;ADN, le fonctionnement des vaccins ARN, un po&#232;me pour votre fianc&#233;e ou n&#39;importe quel autre sujet, le tout dans la langue de votre choix ! Un professeur am&#233;ricain vient de publier un article d&#233;sesp&#233;r&#233; sur le fait que ses &#233;tudiants &#233;crivent leurs dissertations &#224; partir de GPT et il est constern&#233; qu&#39;elles soient la plupart du temps sup&#233;rieures &#224; celles qu&#39;ils auraient r&#233;dig&#233;es par eux-m&#234;mes. Pour vous donner un exemple r&#233;el, je viens &#224; l&#39;instant m&#234;me, pour illustrer cette chronique, de demander &#224; GPT d&#39;&#233;crire quelques lignes en fran&#231;ais (ce qui n&#39;est pas sa langue pr&#233;f&#233;r&#233;e, il est plus &#224; l&#39;aise en anglais...) sur une fable de La Fontaine, &lt;em style=&quot;font-style:italic;&quot;&gt;La Cigale et la Fourmi.&lt;/em&gt;Sa r&#233;ponse est tomb&#233;e en moins de cinq secondes ! La voici (je la cite int&#233;gralement) : &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;La fable&lt;/em&gt;La Cigale et la Fourmi &lt;em style=&quot;font-style:italic;&quot;&gt;de Jean de La Fontaine est une histoire courte mais puissante qui met en sc&#232;ne deux personnages embl&#233;matiques de la nature : la cigale et la fourmi. La cigale est un oiseau chanteur qui passe son temps &#224; s&#39;amuser, tandis que la fourmi est une cr&#233;ature travailleuse qui s&#39;efforce de stocker de la nourriture pour l&#39;hiver. Au d&#233;but de la fable, la cigale se retrouve sans nourriture en plein l&#39;hiver, alors que la fourmi a suffisamment de r&#233;serves pour tenir jusqu&#39;au printemps. La cigale demande alors de l&#39;aide &#224; la fourmi qui refuse de la lui donner en lui rappelant que pendant les beaux jours la cigale n&#39;a pas pris la peine de travailler et de stocker de la nourriture pour les mauvais jours. La morale de cette fable est claire : il est important de travailler dur et de pr&#233;voir l&#39;avenir, car on ne sait jamais ce qui peut arriver. Si la cigale avait pris la peine de travailler et de stocker de la nourriture pendant les beaux jours, elle n&#39;aurait pas eu &#224; supplier la fourmi de l&#39;aider en hiver. Cette histoire rappelle &#233;galement l&#39;importance de la responsabilit&#233; et de l&#39;autonomie, et montre que chacun doit assumer les cons&#233;quences de ses propres choix. &#187;&lt;/em&gt; Bon, un humain pourrait faire mieux et la cigale n&#39;est pas un oiseau, mais pour une machine et en cinq secondes ? Sid&#233;rant ! N&#39;importe quel &#233;l&#232;ve de coll&#232;ge un tant soit peu malin pourra en tirer la base d&#39;une dissertation tout &#224; fait convenable, sans doute sup&#233;rieure &#224; celles de ses camarades, et si le professeur ignore l&#39;existence de ce logiciel, la supercherie lui &#233;chappera. Grande discussion avec mon ami Laurent Alexandre qui m&#39;explique en substance que l&#39;intelligence artificielle se rapproche &#224; grands pas de ce qu&#39;on appelle une &#171; IA forte &#187; , une pens&#233;e consciente semblable &#224; celle d&#39;un humain. N&#39;&#233;tant pas mat&#233;rialiste, je n&#39;en crois rien. Il me semble qu&#39;il y a une diff&#233;rence entre singer la pens&#233;e et penser vraiment. Mais Laurent a des arguments forts et la v&#233;rit&#233; est que dans ce d&#233;bat, aucun test concluant ne peut nous d&#233;partager. Un mat&#233;rialiste est quelqu&#39;un qui pense que nous sommes d&#233;j&#224; des machines et qu&#39;en cons&#233;quence, il n&#39;y a aucune raison pour qu&#39;une machine non humaine ne puisse pas un jour parvenir elle aussi &#224; penser. Je suis au contraire persuad&#233; que le mat&#233;rialisme est une th&#232;se &#171; infalsifiable &#187; , donc m&#233;taphysique, non scientifique, et qu&#39;une machine ne peut avoir ni conscience, ni sentiment. Elle peut battre le champion du monde d&#39;&#233;checs, s&#233;quencer un g&#233;nome, r&#233;soudre des probl&#232;mes math&#233;matiques redoutables, &#233;crire un article, mais elle n&#39;en reste pas moins une &#171; chose &#187; sans conscience qui ne pense pas sa propre pens&#233;e. Si je la cogne et qu&#39;elle crie &#171; a&#239;e &#187; , &#231;a ne prouve pas qu&#39;elle a mal ! Le d&#233;bat est ouvert, mais ce qui est certain c&#39;est que l&#39;intelligence artificielle progresse &#224; pas de g&#233;ant, qu&#39;elle imite la pens&#233;e humaine de mani&#232;re hallucinante et que le ministre de l&#39;&#201;ducation serait bien avis&#233; de r&#233;fl&#233;chir aux probl&#232;mes inou&#239;s que cela va poser en termes de contenus d&#39;enseignement et d&#39;orientation des &#233;l&#232;ves. &lt;/p&gt;
+
+
+
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;21 d&amp;#233;cembre 2022&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2022 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20221222&amp;#183;LF&amp;#183;1012&amp;#215;20&amp;#215;22689350907&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">ministre de l'Éducation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel d'intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">exemple réel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">pensée consciente</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éducation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Médecine</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éditorial et opinions</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720221222%c2%b7LF%c2%b71012%c3%9720%c3%9722689350907" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720221222%c2%b7LF%c2%b71012%c3%9720%c3%9722689350907">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24365                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro,         jeudi 22 décembre 2022 767 mots, p. 15</span>
+</div>
+
+    <div>
+        <p>
+Opinions         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+L'IA va bouleverser l'enseignement            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Ferry, Luc</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Au cas où vous l'ignoreriez encore, « GPT » (Generative Pre-Trained Transformer) est un logiciel d'intelligence artificielle (IA) disponible en <mark>open</mark> <mark>source</mark>. Même si vous n'êtes pas geek, faites l'effort d'aller tchatter avec lui, c'est tout simplement bluffant. Allez, via Google, sur le site openAI, « renseignez » (pardon pour ce mauvais français) votre adresse mail, votre nom et votre numéro de téléphone et vous pourrez en trois clics demander à GPT de vous rédiger un texte en prose ou en poésie sur n'importe quel sujet. En moins de dix secondes, il vous pondra une trentaine de lignes sur ce que vous voulez, les <em style="font-style:italic;">Illusions perdues</em> de Balzac, la théorie des idées chez Platon, la Coupe du monde de football, la structure de l'ADN, le fonctionnement des vaccins ARN, un poème pour votre fiancée ou n'importe quel autre sujet, le tout dans la langue de votre choix ! Un professeur américain vient de publier un article désespéré sur le fait que ses étudiants écrivent leurs dissertations à partir de GPT et il est consterné qu'elles soient la plupart du temps supérieures à celles qu'ils auraient rédigées par eux-mêmes. Pour vous donner un exemple réel, je viens à l'instant même, pour illustrer cette chronique, de demander à GPT d'écrire quelques lignes en français (ce qui n'est pas sa langue préférée, il est plus à l'aise en anglais...) sur une fable de La Fontaine, <em style="font-style:italic;">La Cigale et la Fourmi.</em>Sa réponse est tombée en moins de cinq secondes ! La voici (je la cite intégralement) : « <em style="font-style:italic;">La fable</em>La Cigale et la Fourmi <em style="font-style:italic;">de Jean de La Fontaine est une histoire courte mais puissante qui met en scène deux personnages emblématiques de la nature : la cigale et la fourmi. La cigale est un oiseau chanteur qui passe son temps à s'amuser, tandis que la fourmi est une créature travailleuse qui s'efforce de stocker de la nourriture pour l'hiver. Au début de la fable, la cigale se retrouve sans nourriture en plein l'hiver, alors que la fourmi a suffisamment de réserves pour tenir jusqu'au printemps. La cigale demande alors de l'aide à la fourmi qui refuse de la lui donner en lui rappelant que pendant les beaux jours la cigale n'a pas pris la peine de travailler et de stocker de la nourriture pour les mauvais jours. La morale de cette fable est claire : il est important de travailler dur et de prévoir l'avenir, car on ne sait jamais ce qui peut arriver. Si la cigale avait pris la peine de travailler et de stocker de la nourriture pendant les beaux jours, elle n'aurait pas eu à supplier la fourmi de l'aider en hiver. Cette histoire rappelle également l'importance de la responsabilité et de l'autonomie, et montre que chacun doit assumer les conséquences de ses propres choix. »</em> Bon, un humain pourrait faire mieux et la cigale n'est pas un oiseau, mais pour une machine et en cinq secondes ? Sidérant ! N'importe quel élève de collège un tant soit peu malin pourra en tirer la base d'une dissertation tout à fait convenable, sans doute supérieure à celles de ses camarades, et si le professeur ignore l'existence de ce logiciel, la supercherie lui échappera. Grande discussion avec mon ami Laurent Alexandre qui m'explique en substance que l'intelligence artificielle se rapproche à grands pas de ce qu'on appelle une « IA forte » , une pensée consciente semblable à celle d'un humain. N'étant pas matérialiste, je n'en crois rien. Il me semble qu'il y a une différence entre singer la pensée et penser vraiment. Mais Laurent a des arguments forts et la vérité est que dans ce débat, aucun test concluant ne peut nous départager. Un matérialiste est quelqu'un qui pense que nous sommes déjà des machines et qu'en conséquence, il n'y a aucune raison pour qu'une machine non humaine ne puisse pas un jour parvenir elle aussi à penser. Je suis au contraire persuadé que le matérialisme est une thèse « infalsifiable » , donc métaphysique, non scientifique, et qu'une machine ne peut avoir ni conscience, ni sentiment. Elle peut battre le champion du monde d'échecs, séquencer un génome, résoudre des problèmes mathématiques redoutables, écrire un article, mais elle n'en reste pas moins une « chose » sans conscience qui ne pense pas sa propre pensée. Si je la cogne et qu'elle crie « aïe » , ça ne prouve pas qu'elle a mal ! Le débat est ouvert, mais ce qui est certain c'est que l'intelligence artificielle progresse à pas de géant, qu'elle imite la pensée humaine de manière hallucinante et que le ministre de l'Éducation serait bien avisé de réfléchir aux problèmes inouïs que cela va poser en termes de contenus d'enseignement et d'orientation des élèves. </p>
+
+
+
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">21 décembre 2022</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2022 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20221222·LF·1012×20×22689350907</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20221222·LF·1012×20×22689350907";
+    var _docIndex = 179;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20221222·LF·1012×20×22689350907';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720221222%C2%B7LF%C2%B71012%C3%9720%C3%9722689350907&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720221222%C2%B7LF%C2%B71012%C3%9720%C3%9722689350907&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720221222%C2%B7LF%C2%B71012%C3%9720%C3%9722689350907&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720221222%C2%B7LF%C2%B71012%C3%9720%C3%9722689350907&docIndex=179&FullScreen=1";
+                
+	var _keyDoc = 'news·20221222·LF·1012×20×22689350907';
+</script>
+</div></body></html>

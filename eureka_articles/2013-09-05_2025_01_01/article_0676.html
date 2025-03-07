@@ -1,0 +1,551 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Id&#233;es,         vendredi 29 janvier 2016 485 mots, p. A9&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Opinion         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Id&#233;es - Le &lt;mark&gt; logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt;, rem&#232;de &#224; l&#39;opacit&#233; des algorithmes            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Mathieu Gauthier-Pilote - Pr&#233;sident de FACIL&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Dans un texte publi&#233; dans &lt;span class=&quot;stubs&quot;&gt;Le Devoir&lt;/span&gt; du 12 janvier (&quot; Uber et le n&#233;cessaire contr&#244;le social des algorithmes &quot;), le chercheur &lt;span class=&quot;stubs&quot;&gt;Yves Gingras&lt;/span&gt; soulevait la question fort pertinente de l&#39;opacit&#233; des algorithmes utilis&#233;s par les services num&#233;riques auxquels nous sommes de plus en plus habitu&#233;s dans notre soci&#233;t&#233; (par exemple Uber). Le sujet &#233;tait &#224; nouveau discut&#233; &#224; l&#39;&#233;mission de radio M&#233;dium large le 14 janvier. Cet enjeu nous interpelle en tant que citoyens et militants de l&#39;informatique libre. &lt;/p&gt; &lt;p&gt; La philosophie du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, croyons-nous, jette une lumi&#232;re essentielle sur les enjeux du num&#233;rique et, esp&#233;rons-le, aidera le public qu&#233;b&#233;cois &#224; s&#39;y retrouver un peu mieux.&lt;/p&gt;
+
+
+&lt;p&gt;M. Gingras nous invite &#224; exercer un &quot; contr&#244;le social &quot; sur les algorithmes de d&#233;cision, v&#233;ritables &quot; bo&#238;tes noires &quot; dont on ignore tout. Nous sommes d&#39;accord. La soci&#233;t&#233; a besoin de &quot; programmes [informatiques] que les gens peuvent lire, r&#233;parer, adapter, am&#233;liorer &quot; en lieu et place des &quot; bo&#238;tes noires &quot; que nous offrent les principaux joueurs de l&#39;industrie, nous disait &lt;mark&gt;&lt;span class=&quot;stubs&quot;&gt;Richard &lt;mark&gt;Stallman&lt;/mark&gt;&lt;/span&gt;&lt;/mark&gt;, le fondateur du mouvement pour le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, dans un essai de 1994. &lt;/p&gt; &lt;p&gt; En effet, si nous d&#233;sirons exercer un contr&#244;le social ad&#233;quat sur les algorithmes, il nous faudra consid&#233;rer non seulement les lois, les r&#232;glements et les institutions, mais aussi le code source des logiciels au moyen desquels les algorithmes sont mis en oeuvre. Malheureusement, le code source des logiciels est g&#233;n&#233;ralement cach&#233; de la vue des utilisateurs par une exploitation abusive du droit d&#39;auteur de la part des d&#233;veloppeurs, typiquement les entreprises qui en sont propri&#233;taires. Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; fait exactement le contraire, en exploitant le droit d&#39;auteur de fa&#231;on &#224; prot&#233;ger les libert&#233;s des utilisateurs contre les abus potentiels des d&#233;veloppeurs. &lt;/p&gt; &lt;p&gt; Sc&#233;narios possibles &lt;/p&gt; &lt;p&gt; Hypoth&#233;tiquement, on peut tr&#232;s bien imaginer la communaut&#233; des utilisateurs d&#39;Uber (le service en ligne) &#233;voluant ind&#233;pendamment de l&#39;entreprise Uber, de son mod&#232;le d&#39;affaires, de ses pratiques, de son choix d&#39;algorithmes. Que ferait la communaut&#233; Uber (les usagers, les transporteurs, les d&#233;veloppeurs et les op&#233;rateurs techniques) si le service en ligne n&#39;avait pas de propri&#233;taire, qu&#39;il &#233;tait la chose commune de tous ? Bien des sc&#233;narios sont possibles. Parmi ces sc&#233;narios, plusieurs qui sont &#233;thiques, l&#233;gaux et tr&#232;s avantageux autant pour les utilisateurs du service que pour la soci&#233;t&#233; en g&#233;n&#233;ral. C&#39;est le manque de libert&#233; qui emp&#234;che la mat&#233;rialisation des meilleurs sc&#233;narios que nous pourrions concevoir. &lt;/p&gt; &lt;p&gt; L&#39;opacit&#233; des logiciels, il est facile de s&#39;en rendre compte, a occasionn&#233;, occasionne et continuera d&#39;occasionner des abus de toutes sortes. Depuis l&#39;affaire &lt;span class=&quot;stubs&quot;&gt;Snowden&lt;/span&gt;, ce sont les abus relatifs au droit &#224; la vie priv&#233;e (surveillance de masse) et au droit &#224; la libert&#233; d&#39;expression (censure) qui attirent le plus l&#39;attention du public. Cependant, il faut bien comprendre que la liste des abus possibles au moyen d&#39;un logiciel gard&#233; secret est tr&#232;s longue. Elle ira en s&#39;allongeant au cours des prochaines ann&#233;es, en cette &#233;poque o&#249; &quot; le logiciel avale monde &quot;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;29 janvier 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2016 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20160129&amp;#183;LE&amp;#183;2016-01-29_461474&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">contrôle social</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">source des logiciels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droit d'auteur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">boîtes noires</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Snowden</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Richard Stallman</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Yves Gingras</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">Le Devoir</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éditorial et opinions</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160129%c2%b7LE%c2%b72016-01-29_461474" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160129%c2%b7LE%c2%b72016-01-29_461474">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Idées,         vendredi 29 janvier 2016 485 mots, p. A9</span>
+</div>
+
+    <div>
+        <p>
+Opinion         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Idées - Le <mark> logiciel</mark> <mark> libre</mark>, remède à l'opacité des algorithmes            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Mathieu Gauthier-Pilote - Président de FACIL</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Dans un texte publié dans <span class="stubs">Le Devoir</span> du 12 janvier (" Uber et le nécessaire contrôle social des algorithmes "), le chercheur <span class="stubs">Yves Gingras</span> soulevait la question fort pertinente de l'opacité des algorithmes utilisés par les services numériques auxquels nous sommes de plus en plus habitués dans notre société (par exemple Uber). Le sujet était à nouveau discuté à l'émission de radio Médium large le 14 janvier. Cet enjeu nous interpelle en tant que citoyens et militants de l'informatique libre. </p> <p> La philosophie du <mark>logiciel</mark> <mark>libre</mark>, croyons-nous, jette une lumière essentielle sur les enjeux du numérique et, espérons-le, aidera le public québécois à s'y retrouver un peu mieux.</p>
+
+
+<p>M. Gingras nous invite à exercer un " contrôle social " sur les algorithmes de décision, véritables " boîtes noires " dont on ignore tout. Nous sommes d'accord. La société a besoin de " programmes [informatiques] que les gens peuvent lire, réparer, adapter, améliorer " en lieu et place des " boîtes noires " que nous offrent les principaux joueurs de l'industrie, nous disait <mark><span class="stubs">Richard <mark>Stallman</mark></span></mark>, le fondateur du mouvement pour le <mark>logiciel</mark> <mark>libre</mark>, dans un essai de 1994. </p> <p> En effet, si nous désirons exercer un contrôle social adéquat sur les algorithmes, il nous faudra considérer non seulement les lois, les règlements et les institutions, mais aussi le code source des logiciels au moyen desquels les algorithmes sont mis en oeuvre. Malheureusement, le code source des logiciels est généralement caché de la vue des utilisateurs par une exploitation abusive du droit d'auteur de la part des développeurs, typiquement les entreprises qui en sont propriétaires. Le <mark>logiciel</mark> <mark>libre</mark> fait exactement le contraire, en exploitant le droit d'auteur de façon à protéger les libertés des utilisateurs contre les abus potentiels des développeurs. </p> <p> Scénarios possibles </p> <p> Hypothétiquement, on peut très bien imaginer la communauté des utilisateurs d'Uber (le service en ligne) évoluant indépendamment de l'entreprise Uber, de son modèle d'affaires, de ses pratiques, de son choix d'algorithmes. Que ferait la communauté Uber (les usagers, les transporteurs, les développeurs et les opérateurs techniques) si le service en ligne n'avait pas de propriétaire, qu'il était la chose commune de tous ? Bien des scénarios sont possibles. Parmi ces scénarios, plusieurs qui sont éthiques, légaux et très avantageux autant pour les utilisateurs du service que pour la société en général. C'est le manque de liberté qui empêche la matérialisation des meilleurs scénarios que nous pourrions concevoir. </p> <p> L'opacité des logiciels, il est facile de s'en rendre compte, a occasionné, occasionne et continuera d'occasionner des abus de toutes sortes. Depuis l'affaire <span class="stubs">Snowden</span>, ce sont les abus relatifs au droit à la vie privée (surveillance de masse) et au droit à la liberté d'expression (censure) qui attirent le plus l'attention du public. Cependant, il faut bien comprendre que la liste des abus possibles au moyen d'un logiciel gardé secret est très longue. Elle ira en s'allongeant au cours des prochaines années, en cette époque où " le logiciel avale monde ".</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">29 janvier 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2016 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20160129·LE·2016-01-29_461474</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20160129·LE·2016-01-29_461474";
+    var _docIndex = 675;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"le devoir":"75171"};
+		var _docName = 'news·20160129·LE·2016-01-29_461474';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720160129%C2%B7LE%C2%B72016-01-29_461474&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720160129%C2%B7LE%C2%B72016-01-29_461474&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720160129%C2%B7LE%C2%B72016-01-29_461474&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720160129%C2%B7LE%C2%B72016-01-29_461474&docIndex=675&FullScreen=1";
+                
+	var _keyDoc = 'news·20160129·LE·2016-01-29_461474';
+</script>
+</div></body></html>

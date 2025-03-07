@@ -1,0 +1,557 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; M&#233;decine,         mercredi 16 mars 2022 798 mots, p. SCH3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et m&#233;decine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Actualit&#233;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+L&#39;intelligence artificielle s&#39;initie au grec ancien            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;&#233;pigraphie L&#39;algorithme Ithaca aide les sp&#233;cialistes &#224; reconstituer, dater et situer l&#39;origine de textes antiques grav&#233;s dans la pierre. Une innovation qui laisse sceptiques une partie des historiens&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Cl&#233;mentine Laurens&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Que lire sur cette st&#232;le antique &#224; la date et &#224; l&#39;origine incertaines ? Le texte manquant en grec ancien fait-il &#233;tat d&#39;une &#171; alliance &#187;, d&#39;une &#171; assembl&#233;e &#187;, d&#39;un &#171; trait&#233; entre Etats &#187; ? La morsure du temps a effac&#233; une partie des caract&#232;res. Mais un algorithme, Ithaca, avance ces trois propositions pour compl&#233;ter la lecture. Aux experts humains de finaliser le choix. Cette forme de collaboration homme-machine est propos&#233;e dans une &#233;tude publi&#233;e le 9 mars dans la revue &lt;em style=&quot;font-style:italic;&quot;&gt;Nature&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; D&#233;j&#224; scrut&#233;e pour son potentiel d&#39;assistance aux humains dans d&#39;innombrables secteurs, y compris l&#39;arch&#233;ologie, l&#39;intelligence artificielle (IA) part donc aussi &#224; l&#39;assaut du grec ancien. Ithaca est un algorithme d&#233;velopp&#233; par l&#39;entreprise DeepMind, propri&#233;t&#233; de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, en collaboration avec les d&#233;partements de sciences humaines des universit&#233;s Ca&#39;Foscari de Venise (Italie) et d&#39;Oxford (Angleterre), ainsi que celui d&#39;informatique de l&#39;Universit&#233; &#233;conomique d&#39;Ath&#232;nes (Gr&#232;ce). Nomm&#233;e d&#39;apr&#232;s l&#39;&#238;le d&#39;origine du h&#233;ros grec Ulysse, Ithaca est une IA destin&#233;e aux &#233;pigraphistes, des historiens qui &#233;tudient les textes inscrits sur des supports durables - souvent du marbre.&lt;/p&gt;
+
+
+&lt;p&gt;Dans l&#39;article de la revue &lt;em style=&quot;font-style:italic;&quot;&gt;Nature&lt;/em&gt;, les auteurs d&#233;montrent que, quand des &#233;pigraphistes collaborent avec Ithaca, ils peuvent dans certaines situations b&#233;n&#233;ficier d&#39;un important gain de temps et aussi de pr&#233;cisions dans les r&#233;sultats. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les pierres grav&#233;es sont des documents exceptionnels pour les historiens, car ce sont des sources primaires,&lt;/em&gt; explique Mich&#232;le Brunet, professeure de litt&#233;rature et &#233;pigraphie grecques &#224; l&#39;universit&#233; Lumi&#232;re-Lyon-II. &lt;em style=&quot;font-style:italic;&quot;&gt;A l&#39;inverse, si vous lisez des textes litt&#233;raires historiques vous lisez en fait une copie de copie de copie... de l&#39;original. &#187;&lt;/em&gt; Probl&#232;me : les pierres grav&#233;es traversent rarement les si&#232;cles sans d&#233;g&#226;ts. Souvent cass&#233;es, &#233;rod&#233;es, parfois transport&#233;es loin de leur emplacement originel, elles offrent la plupart du temps des textes fragmentaires, dont les dates et lieu de cr&#233;ation informations essentielles pour les historiens sont incertains. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;R&#233;seau de neurones&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le travail des &#233;pigraphistes consiste &#224; &#171; deviner &#187; le texte manquant, dater les textes et localiser leur provenance :des t&#226;ches respectivement appel&#233;es &#171; restitution &#187;, &#171; attribution chronologique &#187; et &#171; attribution g&#233;ographique. Pour ce faire, ils &#233;tablissent des parall&#232;les entre les objets qu&#39;ils &#233;tudient et d&#39;autres inscriptions comparables de m&#234;me nature par exemple (d&#233;crets, &#233;pitaphes...) ou retrouv&#233;es au m&#234;me endroit pour inf&#233;rer les informations manquantes. &lt;/p&gt; &lt;p&gt; Mais ce travail est chronophage, et requiert une culture faramineuse. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La qualit&#233; d&#39;une restitution d&#233;pend du nombre de textes que l&#39;&#233;pigraphiste a lus au cours de sa carri&#232;re &#187;&lt;/em&gt; , affirme John Blodel, professeur de lettres classiques &#224; l&#39;universit&#233; de Brown (&lt;span class=&quot;stubs&quot;&gt;Etats-Unis&lt;/span&gt;), qui a effectu&#233; la relecture par les pairs de l&#39;article de &lt;em style=&quot;font-style:italic;&quot;&gt;Nature&lt;/em&gt;. L&#39;outil d&#233;velopp&#233; par les auteurs de l&#39;article pourrait aider les historiens dans ces t&#226;ches difficiles. &lt;/p&gt; &lt;p&gt; Ithaca est un r&#233;seau de neurones, c&#39;est-&#224;-dire un algorithme &#224; qui on a &#171; enseign&#233; &#187; le travail d&#39;&#233;pigraphiste pendant une phase d&#39;apprentissage. Ses cr&#233;ateurs lui ont pr&#233;sent&#233; une tr&#232;s grosse base de donn&#233;es, constitu&#233;e de textes en grec ancien incomplets retrouv&#233;s sur des pierres grav&#233;es. Ils ont alors demand&#233; &#224; Ithaca de deviner le texte manquant, ainsi que la date et le lieu d&#39;inscription de la pierre. &lt;/p&gt; &lt;p&gt; En comparant les pr&#233;dictions de l&#39;intelligence artificielle avec le consensus atteint par les sp&#233;cialistes d&#39;&#233;pigraphie sur les textes de la base de donn&#233;es, les auteurs ont pu indiquer &#224; l&#39;algorithme o&#249; &#233;taient ses erreurs, afin qu&#39;il ajuste ses param&#232;tres de mani&#232;re &#224; ne pas les reproduire. Ils ont r&#233;p&#233;t&#233; ce processus, jusqu&#39;&#224; ce qu&#39;Ithaca soit bien optimis&#233; pour ces t&#226;ches de restitution et d&#39;attributions chronologique et g&#233;ographique. &lt;/p&gt; &lt;p&gt; Une fois cet apprentissage effectu&#233;, Ithaca peut &#234;tre confront&#233; &#224; des textes inconnus. L&#39;algorithme sugg&#232;re alors plusieurs restitutions possibles du texte manquant, ainsi qu&#39;un certain nombre de dates et de lieux d&#39;origine qu&#39;il estime cr&#233;dibles. Il affecte &#224; chacun des choix propos&#233;s un niveau de probabilit&#233;. Il reste ensuite &#224; un &#233;pigraphiste humain de trancher. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Le choix final &#224; l&#39;humain&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Favorables ou non &#224; l&#39;irruption de telles technologies dans leur champ de recherche, les historiens s&#39;accordent sur une chose : le choix final doit revenir &#224; l&#39;humain. Anne Jacquemin, professeure &#233;m&#233;rite d&#39;histoire grecque &#224; l&#39;&lt;span class=&quot;stubs&quot;&gt;universit&#233; de Strasbourg&lt;/span&gt;, qui se dit &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; amus&#233;e mais sceptique &#187;&lt;/em&gt; quant &#224; l&#39;utilit&#233; d&#39;Ithaca, soutient : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le producteur des inscriptions est un humain, donc il faudra toujours une expertise humaine pour les d&#233;coder. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Laure Soulier, ma&#238;tresse de conf&#233;rences en intelligence artificielle &#224; Sorbonne Universit&#233;, souligne pour sa part que l&#39;aspect collaboratif homme-machine est essentiel pour l&#39;acceptabilit&#233; de tels outils et la confiance des utilisateurs dans les algorithmes. &lt;/p&gt; &lt;p&gt; Dans un communiqu&#233; de presse, les auteurs disent travailler sur des versions d&#39;Ithaca entra&#238;n&#233;es sur d&#39;autres langues anciennes. Ils ont &#233;galement publi&#233; en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; leurs donn&#233;es et mod&#232;le, une d&#233;marche que Laure Soulier juge essentielle pour &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la confiance dans les mod&#232;les &#187;&lt;/em&gt; et &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la reproductibilit&#233; de la recherche &#187;&lt;/em&gt;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;15 mars 2022&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2022 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20220316&amp;#183;LM&amp;#183;186566&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">copie de copie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseau de neurones</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">pierres gravées</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">lieu de création</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">UNIVERSITÉ DE STRASBOURG</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">ETATS-UNIS</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Cité d'Oxford</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Angleterre</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220316%c2%b7LM%c2%b7186566" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220316%c2%b7LM%c2%b7186566">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; Médecine,         mercredi 16 mars 2022 798 mots, p. SCH3</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et médecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Actualité</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+L'intelligence artificielle s'initie au grec ancien            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">épigraphie L'algorithme Ithaca aide les spécialistes à reconstituer, dater et situer l'origine de textes antiques gravés dans la pierre. Une innovation qui laisse sceptiques une partie des historiens</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Clémentine Laurens</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Que lire sur cette stèle antique à la date et à l'origine incertaines ? Le texte manquant en grec ancien fait-il état d'une « alliance », d'une « assemblée », d'un « traité entre Etats » ? La morsure du temps a effacé une partie des caractères. Mais un algorithme, Ithaca, avance ces trois propositions pour compléter la lecture. Aux experts humains de finaliser le choix. Cette forme de collaboration homme-machine est proposée dans une étude publiée le 9 mars dans la revue <em style="font-style:italic;">Nature</em>. </p> <p> Déjà scrutée pour son potentiel d'assistance aux humains dans d'innombrables secteurs, y compris l'archéologie, l'intelligence artificielle (IA) part donc aussi à l'assaut du grec ancien. Ithaca est un algorithme développé par l'entreprise DeepMind, propriété de <span class="stubs">Google</span>, en collaboration avec les départements de sciences humaines des universités Ca'Foscari de Venise (Italie) et d'Oxford (Angleterre), ainsi que celui d'informatique de l'Université économique d'Athènes (Grèce). Nommée d'après l'île d'origine du héros grec Ulysse, Ithaca est une IA destinée aux épigraphistes, des historiens qui étudient les textes inscrits sur des supports durables - souvent du marbre.</p>
+
+
+<p>Dans l'article de la revue <em style="font-style:italic;">Nature</em>, les auteurs démontrent que, quand des épigraphistes collaborent avec Ithaca, ils peuvent dans certaines situations bénéficier d'un important gain de temps et aussi de précisions dans les résultats. </p> <p><em style="font-style:italic;">« Les pierres gravées sont des documents exceptionnels pour les historiens, car ce sont des sources primaires,</em> explique Michèle Brunet, professeure de littérature et épigraphie grecques à l'université Lumière-Lyon-II. <em style="font-style:italic;">A l'inverse, si vous lisez des textes littéraires historiques vous lisez en fait une copie de copie de copie... de l'original. »</em> Problème : les pierres gravées traversent rarement les siècles sans dégâts. Souvent cassées, érodées, parfois transportées loin de leur emplacement originel, elles offrent la plupart du temps des textes fragmentaires, dont les dates et lieu de création informations essentielles pour les historiens sont incertains. </p> <p><em style="font-weight:bold;">Réseau de neurones</em></p><p>Le travail des épigraphistes consiste à « deviner » le texte manquant, dater les textes et localiser leur provenance :des tâches respectivement appelées « restitution », « attribution chronologique » et « attribution géographique. Pour ce faire, ils établissent des parallèles entre les objets qu'ils étudient et d'autres inscriptions comparables de même nature par exemple (décrets, épitaphes...) ou retrouvées au même endroit pour inférer les informations manquantes. </p> <p> Mais ce travail est chronophage, et requiert une culture faramineuse. <em style="font-style:italic;">« La qualité d'une restitution dépend du nombre de textes que l'épigraphiste a lus au cours de sa carrière »</em> , affirme John Blodel, professeur de lettres classiques à l'université de Brown (<span class="stubs">Etats-Unis</span>), qui a effectué la relecture par les pairs de l'article de <em style="font-style:italic;">Nature</em>. L'outil développé par les auteurs de l'article pourrait aider les historiens dans ces tâches difficiles. </p> <p> Ithaca est un réseau de neurones, c'est-à-dire un algorithme à qui on a « enseigné » le travail d'épigraphiste pendant une phase d'apprentissage. Ses créateurs lui ont présenté une très grosse base de données, constituée de textes en grec ancien incomplets retrouvés sur des pierres gravées. Ils ont alors demandé à Ithaca de deviner le texte manquant, ainsi que la date et le lieu d'inscription de la pierre. </p> <p> En comparant les prédictions de l'intelligence artificielle avec le consensus atteint par les spécialistes d'épigraphie sur les textes de la base de données, les auteurs ont pu indiquer à l'algorithme où étaient ses erreurs, afin qu'il ajuste ses paramètres de manière à ne pas les reproduire. Ils ont répété ce processus, jusqu'à ce qu'Ithaca soit bien optimisé pour ces tâches de restitution et d'attributions chronologique et géographique. </p> <p> Une fois cet apprentissage effectué, Ithaca peut être confronté à des textes inconnus. L'algorithme suggère alors plusieurs restitutions possibles du texte manquant, ainsi qu'un certain nombre de dates et de lieux d'origine qu'il estime crédibles. Il affecte à chacun des choix proposés un niveau de probabilité. Il reste ensuite à un épigraphiste humain de trancher. </p> <p><em style="font-weight:bold;">Le choix final à l'humain</em></p><p>Favorables ou non à l'irruption de telles technologies dans leur champ de recherche, les historiens s'accordent sur une chose : le choix final doit revenir à l'humain. Anne Jacquemin, professeure émérite d'histoire grecque à l'<span class="stubs">université de Strasbourg</span>, qui se dit <em style="font-style:italic;">« amusée mais sceptique »</em> quant à l'utilité d'Ithaca, soutient : <em style="font-style:italic;">« Le producteur des inscriptions est un humain, donc il faudra toujours une expertise humaine pour les décoder. »</em></p><p>Laure Soulier, maîtresse de conférences en intelligence artificielle à Sorbonne Université, souligne pour sa part que l'aspect collaboratif homme-machine est essentiel pour l'acceptabilité de tels outils et la confiance des utilisateurs dans les algorithmes. </p> <p> Dans un communiqué de presse, les auteurs disent travailler sur des versions d'Ithaca entraînées sur d'autres langues anciennes. Ils ont également publié en <mark>open</mark> <mark>source</mark> leurs données et modèle, une démarche que Laure Soulier juge essentielle pour <em style="font-style:italic;">« la confiance dans les modèles »</em> et <em style="font-style:italic;">« la reproductibilité de la recherche »</em>.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">15 mars 2022</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2022 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20220316·LM·186566</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20220316·LM·186566";
+    var _docIndex = 224;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"université de strasbourg":"94369","etats-unis":"94364","google":"92575"};
+		var _docName = 'news·20220316·LM·186566';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720220316%C2%B7LM%C2%B7186566&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720220316%C2%B7LM%C2%B7186566&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720220316%C2%B7LM%C2%B7186566&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720220316%C2%B7LM%C2%B7186566&docIndex=224&FullScreen=1";
+                
+	var _keyDoc = 'news·20220316·LM·186566';
+</script>
+</div></body></html>

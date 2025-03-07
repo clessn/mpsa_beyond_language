@@ -1,0 +1,567 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 22886                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro et vous,         lundi 12 mars 2018 1006 mots, p. 33&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+high-tech         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Des traductions en ligne plus intelligentes            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;INNOVATION Les r&#233;seaux de neurones artificiels promettent de rendre plus performants les outils linguistiques sur Internet.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Sanz, Didier&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Lorsqu&#39;on travaille sur ordinateur ou avec un smartphone, il faut bien avouer que les applications et les sites Web de traduction nous facilitent la vie quand on doit r&#233;pondre &#224; un correspondant allemand, comprendre une documentation en japonais, remplir un formulaire en espagnol ou r&#233;diger un courrier &#224; un commer&#231;ant chinois... Ces services ont &#233;volu&#233; de fa&#231;on spectaculaire. &lt;/p&gt; &lt;p&gt; On se souvient encore des premiers traducteurs automatiques, qui se contentaient de remplacer les mots d&#39;une phrase par leur &#233;quivalent dans la langue souhait&#233;e. Une traduction mot &#224; mot qui donnait souvent des r&#233;sultats comiques, comme &#171; How tall are you ? &#187; traduit en &#171; Combien grand es-tu ? &#187;. Les techniques bas&#233;es sur des approches statistiques ont am&#233;lior&#233; les r&#233;sultats. Elles comparent la phrase &#224; traduire avec une multitude de phrases stock&#233;es dans un registre et fournissent la traduction qui correspond le mieux. La base de donn&#233;es est, en g&#233;n&#233;ral, construite &#224; partir de documents officiels de l&#39;&lt;span class=&quot;stubs&quot;&gt;ONU&lt;/span&gt; ou du &lt;span class=&quot;stubs&quot;&gt;Parlement europ&#233;en&lt;/span&gt; dont les textes sont publi&#233;s en plusieurs langues. Seulement, cette approche, qui demande beaucoup de ressources et de temps, atteint vite ses limites dans le cas de tournures inusuelles ou si l&#39;une des langues ne figure pas dans la base de donn&#233;es, auquel cas le syst&#232;me doit passer par une langue interm&#233;diaire, ce qui alt&#232;re forc&#233;ment le sens de la phrase.&lt;/p&gt;
+
+
+&lt;p&gt;Pour r&#233;soudre ces probl&#232;mes, les m&#233;thodes les plus r&#233;centes, elles, s&#39;appuient sur l&#39;intelligence artificielle. Le principe : on entra&#238;ne un r&#233;seau de neurones artificiels &#224; coder des millions de phrases de mani&#232;re &#224; produire pour chacune une s&#233;quence num&#233;rique unique. D&#232;s qu&#39;un utilisateur soumet une phrase au syst&#232;me de traduction, celui-ci va alors r&#233;cup&#233;rer la s&#233;quence num&#233;rique correspondante et fournir instantan&#233;ment la traduction dans la langue souhait&#233;e. D&#39;autres astuces compl&#232;tent le traitement, parmi lesquelles des processus de pr&#233;diction, de m&#233;morisation et de d&#233;duction. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; De cette fa&#231;on, le r&#233;seau de neurones aborde le probl&#232;me de la traduction selon une approche traditionnelle bas&#233;e sur les phrases,&lt;/em&gt; expliquent des chercheurs de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Il peut comprendre des d&#233;pendances inh&#233;rentes aux langues, par exemple les accords de genre, les structures syntaxiques, etc. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le principe est tellement prometteur qu&#39;il est d&#233;sormais adopt&#233; par plusieurs syst&#232;mes de traduction informatis&#233;e. Outre &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Traduction, on le retrouve notamment dans le projet Open NMT, un outil de traduction neuronale en &lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt;, lanc&#233; fin 2016 par Systran et des chercheurs de Harvard. Principalement utilis&#233; dans les secteurs de l&#39;enseignement et de l&#39;entreprise, il peut &#234;tre entra&#238;n&#233; pour s&#39;adapter au vocabulaire juridique, m&#233;dical, financier ou autre. De son c&#244;t&#233;, DeepL, cr&#233;&#233; par l&#39;&#233;quipe europ&#233;enne qui a lanc&#233; le service de traduction Linguee, est davantage con&#231;u pour le grand public et se pr&#233;sente comme le concurrent direct de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Traduction. &lt;/p&gt; &lt;p&gt; Pour &#233;valuer l&#39;efficacit&#233; des deux principaux acteurs en pr&#233;sence, nous leur avons soumis un extrait de texte litt&#233;raire et des phrases courantes en anglais et en espagnol, puis nous avons invers&#233; le sens de traduction et demand&#233; &#224; l&#39;un de traduire la r&#233;ponse de l&#39;autre. Bilan : on mesure assur&#233;ment les progr&#232;s r&#233;alis&#233;s par ces outils. Non seulement la traduction s&#39;effectue &#224; grande vitesse, mais le r&#233;sultat est parfois impressionnant. Certes, le style n&#39;est pas toujours tr&#232;s &#233;l&#233;gant, mais on peut clairement saisir le sens original. Aussi bien &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Traduction que DeepL ont remarquablement restitu&#233; un passage du &lt;em style=&quot;font-style:italic;&quot;&gt;Parfum de la dame en noir&lt;/em&gt;, de Gaston Leroux, qu&#39;ils ont d&#39;abord traduit vers l&#39;anglais puis retraduit en fran&#231;ais. &#192; quelques d&#233;tails pr&#232;s (&#171; terrible &#187; ou &#171; affreux &#187; &#224; la place d&#39; &#171; effroyable &#187; , par exemple), on retrouve pratiquement toutes les expressions de l&#39;auteur. En ce qui concerne les phrases courantes, les r&#233;sultats sont plus mitig&#233;s. Confront&#233; &#224; &#171; He swims across the river &#187; , &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; traduit par &#171; Il nage &#224; travers la rivi&#232;re &#187; , alors que DeepL propose plus convenablement &#171; Il traverse la rivi&#232;re &#224; la nage &#187;. Ce dernier marque aussi des points en traduisant &#171; This is not a good time for us to talk &#187; par &#171; Ce n&#39;est pas le bon moment pour parler &#187; quand &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; s&#39;embrouille avec &#171; Ce n&#39;est pas un bon moment pour nous de parler &#187;. Et DeepL l&#39;emporte encore en traduisant &#171; I am heading to tennis practice &#187; par &#171; Je vais &#224; l&#39;entra&#238;nement de tennis &#187; , alors que &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; se satisfait de &#171; Je vais &#224; la pratique du tennis &#187;. &lt;/p&gt; &lt;p&gt; En espagnol, les deux traducteurs ont quelques difficult&#233;s avec des phrases courantes. Quand on leur soumet &#171; Son las cuatro menos cinco &#187; (&#171; Il est quatre heures moins cinq &#187;), &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; propose &#171; Il est quatre &#224; cinq &#187; , tandis que DeepL pr&#233;f&#232;re &#171; C&#39;est cinq contre quatre &#187;... Une phrase un peu &#233;pineuse de Jorge Luis Borges ne les d&#233;partage pas plus : &#171; Uno no es lo que es por lo que escribe, sino por lo que ha leido &#187; , qu&#39;on peut traduire par &#171; On n&#39;est pas ce qu&#39;on est par ce qu&#39;on &#233;crit, mais par ce qu&#39;on a lu &#187; , devient, avec &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, &#171; L&#39;un n&#39;est pas ce qu&#39;il est par ce qu&#39;il &#233;crit, mais par ce qu&#39;il a lu &#187; et, avec DeepL, &#171; L&#39;un n&#39;est pas ce qu&#39;il &#233;crit, mais ce qu&#39;il a lu &#187;. Enfin, DeepL montre encore sa sup&#233;riorit&#233; dans le test litt&#233;raire, restituant correctement le passage de Gaston Leroux apr&#232;s traduction en espagnol, tandis que &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; peine sur la structure des phrases et confond certains mots avec d&#39;autres, ce qui complique la lecture. &lt;/p&gt; &lt;p&gt; Pour l&#39;instant, DeepL se limite &#224; une demi-douzaine de langues (fran&#231;ais, anglais, allemand, espagnol, italien, n&#233;erlandais, polonais), alors que &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; en propose une bonne centaine, de l&#39;afrikaan au zoulou, en passant par le bengali, le cr&#233;ole ha&#239;tien, le hongrois et le tamoul. &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Traduction peut &#233;galement &#233;noncer le texte dans la langue souhait&#233;e, ce que ne propose par DeepL. Du fait de leur conception, les deux services vont in&#233;vitablement &#233;voluer et devraient s&#39;approcher de plus en plus des traductions humaines. La barri&#232;re de la langue ne sera bient&#244;t plus un obstacle. &lt;/p&gt; &lt;p&gt; Pour l&#39;instant, DeepL se limite &#224; une demi-douzaine de langues, alors que &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; en propose une bonne centaine&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;DeepL se pr&#233;sente comme le concurrent direct de &lt;span class=&quot;stubs&quot;&gt; Google&lt;/span&gt; Traduction. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;rod5150 - stock.adobe.com/ DeepL &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:dsanz@lefigaro.fr&quot;&gt;dsanz@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2018 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20180312&amp;#183;LF&amp;#183;612&amp;#215;20&amp;#215;2492622404&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">phrases courantes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseau de neurones</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">demi-douzaine de langues</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">séquence numérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">neurones artificiels</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">ONU</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">PARLEMENT EUROPÉEN</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Langue et questions linguistiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Commerce électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">passage de Gaston Leroux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">passage du Parfum</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720180312%c2%b7LF%c2%b7612%c3%9720%c3%972492622404" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720180312%c2%b7LF%c2%b7612%c3%9720%c3%972492622404">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 22886                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro et vous,         lundi 12 mars 2018 1006 mots, p. 33</span>
+</div>
+
+    <div>
+        <p>
+high-tech         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Des traductions en ligne plus intelligentes            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">INNOVATION Les réseaux de neurones artificiels promettent de rendre plus performants les outils linguistiques sur Internet.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Sanz, Didier</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Lorsqu'on travaille sur ordinateur ou avec un smartphone, il faut bien avouer que les applications et les sites Web de traduction nous facilitent la vie quand on doit répondre à un correspondant allemand, comprendre une documentation en japonais, remplir un formulaire en espagnol ou rédiger un courrier à un commerçant chinois... Ces services ont évolué de façon spectaculaire. </p> <p> On se souvient encore des premiers traducteurs automatiques, qui se contentaient de remplacer les mots d'une phrase par leur équivalent dans la langue souhaitée. Une traduction mot à mot qui donnait souvent des résultats comiques, comme « How tall are you ? » traduit en « Combien grand es-tu ? ». Les techniques basées sur des approches statistiques ont amélioré les résultats. Elles comparent la phrase à traduire avec une multitude de phrases stockées dans un registre et fournissent la traduction qui correspond le mieux. La base de données est, en général, construite à partir de documents officiels de l'<span class="stubs">ONU</span> ou du <span class="stubs">Parlement européen</span> dont les textes sont publiés en plusieurs langues. Seulement, cette approche, qui demande beaucoup de ressources et de temps, atteint vite ses limites dans le cas de tournures inusuelles ou si l'une des langues ne figure pas dans la base de données, auquel cas le système doit passer par une langue intermédiaire, ce qui altère forcément le sens de la phrase.</p>
+
+
+<p>Pour résoudre ces problèmes, les méthodes les plus récentes, elles, s'appuient sur l'intelligence artificielle. Le principe : on entraîne un réseau de neurones artificiels à coder des millions de phrases de manière à produire pour chacune une séquence numérique unique. Dès qu'un utilisateur soumet une phrase au système de traduction, celui-ci va alors récupérer la séquence numérique correspondante et fournir instantanément la traduction dans la langue souhaitée. D'autres astuces complètent le traitement, parmi lesquelles des processus de prédiction, de mémorisation et de déduction. <em style="font-style:italic;">« De cette façon, le réseau de neurones aborde le problème de la traduction selon une approche traditionnelle basée sur les phrases,</em> expliquent des chercheurs de <span class="stubs">Google</span>. <em style="font-style:italic;">Il peut comprendre des dépendances inhérentes aux langues, par exemple les accords de genre, les structures syntaxiques, etc. »</em></p><p>Le principe est tellement prometteur qu'il est désormais adopté par plusieurs systèmes de traduction informatisée. Outre <span class="stubs">Google</span> Traduction, on le retrouve notamment dans le projet Open NMT, un outil de traduction neuronale en <mark>Open</mark> <mark>Source</mark>, lancé fin 2016 par Systran et des chercheurs de Harvard. Principalement utilisé dans les secteurs de l'enseignement et de l'entreprise, il peut être entraîné pour s'adapter au vocabulaire juridique, médical, financier ou autre. De son côté, DeepL, créé par l'équipe européenne qui a lancé le service de traduction Linguee, est davantage conçu pour le grand public et se présente comme le concurrent direct de <span class="stubs">Google</span> Traduction. </p> <p> Pour évaluer l'efficacité des deux principaux acteurs en présence, nous leur avons soumis un extrait de texte littéraire et des phrases courantes en anglais et en espagnol, puis nous avons inversé le sens de traduction et demandé à l'un de traduire la réponse de l'autre. Bilan : on mesure assurément les progrès réalisés par ces outils. Non seulement la traduction s'effectue à grande vitesse, mais le résultat est parfois impressionnant. Certes, le style n'est pas toujours très élégant, mais on peut clairement saisir le sens original. Aussi bien <span class="stubs">Google</span> Traduction que DeepL ont remarquablement restitué un passage du <em style="font-style:italic;">Parfum de la dame en noir</em>, de Gaston Leroux, qu'ils ont d'abord traduit vers l'anglais puis retraduit en français. À quelques détails près (« terrible » ou « affreux » à la place d' « effroyable » , par exemple), on retrouve pratiquement toutes les expressions de l'auteur. En ce qui concerne les phrases courantes, les résultats sont plus mitigés. Confronté à « He swims across the river » , <span class="stubs">Google</span> traduit par « Il nage à travers la rivière » , alors que DeepL propose plus convenablement « Il traverse la rivière à la nage ». Ce dernier marque aussi des points en traduisant « This is not a good time for us to talk » par « Ce n'est pas le bon moment pour parler » quand <span class="stubs">Google</span> s'embrouille avec « Ce n'est pas un bon moment pour nous de parler ». Et DeepL l'emporte encore en traduisant « I am heading to tennis practice » par « Je vais à l'entraînement de tennis » , alors que <span class="stubs">Google</span> se satisfait de « Je vais à la pratique du tennis ». </p> <p> En espagnol, les deux traducteurs ont quelques difficultés avec des phrases courantes. Quand on leur soumet « Son las cuatro menos cinco » (« Il est quatre heures moins cinq »), <span class="stubs">Google</span> propose « Il est quatre à cinq » , tandis que DeepL préfère « C'est cinq contre quatre »... Une phrase un peu épineuse de Jorge Luis Borges ne les départage pas plus : « Uno no es lo que es por lo que escribe, sino por lo que ha leido » , qu'on peut traduire par « On n'est pas ce qu'on est par ce qu'on écrit, mais par ce qu'on a lu » , devient, avec <span class="stubs">Google</span>, « L'un n'est pas ce qu'il est par ce qu'il écrit, mais par ce qu'il a lu » et, avec DeepL, « L'un n'est pas ce qu'il écrit, mais ce qu'il a lu ». Enfin, DeepL montre encore sa supériorité dans le test littéraire, restituant correctement le passage de Gaston Leroux après traduction en espagnol, tandis que <span class="stubs">Google</span> peine sur la structure des phrases et confond certains mots avec d'autres, ce qui complique la lecture. </p> <p> Pour l'instant, DeepL se limite à une demi-douzaine de langues (français, anglais, allemand, espagnol, italien, néerlandais, polonais), alors que <span class="stubs">Google</span> en propose une bonne centaine, de l'afrikaan au zoulou, en passant par le bengali, le créole haïtien, le hongrois et le tamoul. <span class="stubs">Google</span> Traduction peut également énoncer le texte dans la langue souhaitée, ce que ne propose par DeepL. Du fait de leur conception, les deux services vont inévitablement évoluer et devraient s'approcher de plus en plus des traductions humaines. La barrière de la langue ne sera bientôt plus un obstacle. </p> <p> Pour l'instant, DeepL se limite à une demi-douzaine de langues, alors que <span class="stubs">Google</span> en propose une bonne centaine</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">DeepL se présente comme le concurrent direct de <span class="stubs"> Google</span> Traduction. </div>.
+
+                <div class="ImageAttachFont">rod5150 - stock.adobe.com/ DeepL </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:dsanz@lefigaro.fr">dsanz@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2018 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20180312·LF·612×20×2492622404</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20180312·LF·612×20×2492622404";
+    var _docIndex = 489;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"onu":"93169","parlement européen":"93180","google":"92575"};
+		var _docName = 'news·20180312·LF·612×20×2492622404';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720180312%C2%B7LF%C2%B7612%C3%9720%C3%972492622404&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720180312%C2%B7LF%C2%B7612%C3%9720%C3%972492622404&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720180312%C2%B7LF%C2%B7612%C3%9720%C3%972492622404&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720180312%C2%B7LF%C2%B7612%C3%9720%C3%972492622404&docIndex=489&FullScreen=1";
+                
+	var _keyDoc = 'news·20180312·LF·612×20×2492622404';
+</script>
+</div></body></html>

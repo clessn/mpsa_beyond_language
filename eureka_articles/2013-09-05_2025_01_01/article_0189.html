@@ -1,0 +1,567 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24342                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro,         vendredi 25 novembre 2022 1782 mots, p. 22&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#201;nergie : &#171; L&#39;Allemagne s&#39;est oppos&#233;e &#224; tout ce que proposait la France &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;La hausse des prix de l&#39;&#233;nergie pourrait entra&#238;ner de nouvelles d&#233;localisations, alerte l&#39;ancien patron d&#39;Airbus. Le copr&#233;sident du think-tank La Fabrique de l&#39;industrie* explique le long processus de d&#233;sindustrialisation dont souffre la France, li&#233; aux erreurs strat&#233;giques des gouvernements successifs. Le nucl&#233;aire en est un exemple spectaculaire. Face &#224; une situation qui s&#39;annonce critique &#224; tr&#232;s court terme, l&#39;ancien haut fonctionnaire se dit favorable, malgr&#233; l&#39;opposition de l&#39;Allemagne, au plafonnement du prix du gaz en Europe ainsi qu&#39;&#224; un changement du m&#233;canisme de fixation des prix.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Devecchio, Alexandre&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;LE FIGARO. - La crise de l&#39;&#233;nergie a r&#233;v&#233;l&#233; la situation d&#233;grad&#233;e de notre parc nucl&#233;aire, qui aurait d&#251; nous fournir un avantage comp&#233;titif en Europe. Cette situation d&#233;grad&#233;e s&#39;inscrit-elle dans un long processus de d&#233;sindustrialisation de la France ? Comment en sommes-nous arriv&#233;s l&#224; ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Louis GALLOIS. -&lt;/em&gt; Le 18 novembre, 24 r&#233;acteurs sur 57 &#233;taient &#224; l&#39;arr&#234;t, soit pour traiter des probl&#232;mes de corrosion (7 r&#233;acteurs), soit pour assurer des op&#233;rations de maintenance, retard&#233;es par la crise du Covid. EDF se trouve ainsi face &#224; une charge de travail consid&#233;rable qu&#39;elle peine &#224; r&#233;aliser dans les d&#233;lais car elle manque de comp&#233;tences. En effet, comme l&#39;a expliqu&#233; son ancien pr&#233;sident, Jean-Bernard L&#233;vy, EDF a d&#251; adapter ses capacit&#233;s &#224; la perspective de la fermeture de 14 r&#233;acteurs pr&#233;vue par la Programmation pluriannuelle de l&#39;&#233;nergie de 2020 devenue obsol&#232;te depuis le discours de relance du pr&#233;sident de la R&#233;publique &#224; Belfort, en f&#233;vrier dernier.&lt;/p&gt;
+
+
+&lt;p&gt;Vous &#233;voquez la d&#233;sindustrialisation ; elle a &#233;t&#233; de fait provoqu&#233;e, dans ce secteur essentiel, par l&#39;absence de nouveaux programmes depuis Flamanville, par la sous-estimation des besoins et par le choix arbitraire de r&#233;duire la part du nucl&#233;aire dans la production d&#39;&#233;lectricit&#233;. On en voit les cons&#233;quences : la France qui &#233;tait exportatrice importe d&#233;sormais au prix fort de l&#39;&#233;lectricit&#233; produite &#224; l&#39;&#233;tranger par des centrales &#224; gaz, voire &#224; charbon. Elle devra, en outre, reconstituer ses comp&#233;tences pour mener &#224; bien le programme de nouveaux r&#233;acteurs annonc&#233; &#224; Belfort. La r&#233;industrialisation du pays ne sera possible que si nous disposons d&#39;une &#233;lectricit&#233; pr&#233;visible, d&#233;carbon&#233;e, comp&#233;titive et souveraine ; seul le nucl&#233;aire, avec l&#39;hydraulique, r&#233;unit ces caract&#233;ristiques ; il devra donc en fournir la plus large part. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;La crise du Covid a &#233;galement r&#233;v&#233;l&#233; notre d&#233;pendance. La France est-elle encore souveraine ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Un pays n&#39;est pas souverain quand sa balance commerciale est d&#233;ficitaire de 150 milliards d&#39;euros. Une part de ce d&#233;ficit est due &#224; la hausse du co&#251;t de l&#39;&#233;nergie et des mati&#232;res premi&#232;res, mais une partie essentielle r&#233;sulte du d&#233;ficit des produits manufactur&#233;s. C&#39;est la cons&#233;quence directe de la d&#233;sindustrialisation de notre pays. L&#39;objectif de r&#233;industrialisation est un objectif d&#39;emploi, de croissance, de r&#233;duction des fractures territoriales. Mais c&#39;est d&#39;abord un objectif de souverainet&#233;. Les juges de paix ici, ce sont la r&#233;duction des d&#233;pendances critiques et l&#39;&#233;quilibre ext&#233;rieur global. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Peut-on parler d&#39;erreur strat&#233;gique d&#39;une partie des &#171; &#233;lites &#187; fran&#231;aises qui ont ax&#233; notre &#233;conomie sur les services ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Probablement. Beaucoup ont cru que l&#39;industrie &#233;tait d&#233;sormais l&#39;affaire des pays &#224; bas co&#251;ts et que la France devait se sp&#233;cialiser dans les bureaux d&#39;&#233;tudes et les services ; la comp&#233;titivit&#233; de notre industrie n&#39;&#233;tait plus un objectif. Le r&#233;sultat est celui que j&#39;&#233;voquais il y a un instant : ch&#244;mage de masse, drames r&#233;gionaux, d&#233;s&#233;quilibres &#233;conomiques. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#192; court terme, quelles seront les cons&#233;quences de la crise de l&#39;&#233;nergie et de l&#39;inflation sur les entreprises fran&#231;aises ? Cela va-t-il encore acc&#233;l&#233;rer la d&#233;sindustrialisation ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Depuis une dizaine d&#39;ann&#233;es, une politique de comp&#233;titivit&#233; a &#233;t&#233; engag&#233;e : baisse des charges sociales, r&#233;duction des imp&#244;ts de production, r&#233;forme du droit du travail, Plan France 2030... Elle a produit &#224; partir de 2015 ses premiers effets : la part de l&#39;industrie dans le produit int&#233;rieur a cess&#233; de se d&#233;grader, l&#39;investissement productif a repris, le nombre d&#39;usines nouvelles a d&#233;pass&#233; celui des fermetures. La d&#233;gringolade a &#233;t&#233; stopp&#233;e. Le moral des chefs d&#39;entreprise s&#39;est redress&#233; et la France est redevenue un pays attractif pour les investissements &#233;trangers. &lt;/p&gt; &lt;p&gt; Ces progr&#232;s vont-ils &#234;tre remis en cause par la hausse du co&#251;t de l&#39;&#233;nergie ? Allons-nous retomber comme le rocher de Sisyphe ? C&#39;est une question lourde et urgente. &lt;/p&gt; &lt;p&gt; Aux &#201;tats-Unis, l&#39;&#233;nergie co&#251;te d&#233;sormais cinq &#224; dix fois moins cher qu&#39;en Europe. Il y a un vrai risque de d&#233;localisation. Pour prot&#233;ger son industrie, l&#39;Allemagne a pr&#233;vu de mettre en place pour les entreprises un bouclier tarifaire, soumis actuellement &#224; l&#39;accord de la Commission. Il se situe &#224; 130 euros le MWh pour 70 % de l&#39;&#233;lectricit&#233; consomm&#233;e. En France, le m&#234;me bouclier est &#224; 325 euros le MWh. Notre industrie risque d&#39;&#234;tre plac&#233;e dans une situation critique et les &#233;ch&#233;ances sont &#224; tr&#232;s court terme. La France propose &#224; juste titre de plafonner le prix du gaz en Europe et d&#39;amender le m&#233;canisme europ&#233;en de fixation des prix. Celui-ci lie, en effet, le prix de l&#39;&#233;lectricit&#233; au prix du gaz qui a explos&#233; depuis la guerre en Ukraine. Il faut, en fait, d&#39;urgence soit changer ce m&#233;canisme soit s&#39;en abstraire comme l&#39;ont fait les Espagnols et les Portugais. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Vous avez r&#233;cemment d&#233;clar&#233; : &#171; On ne peut pas &#233;viter &#224; un moment ou &#224; un autre d&#39;affronter les Allemands, qui ne nous font pas particuli&#232;rement de cadeaux. &#187; Qu&#39;entendez-vous par l&#224; ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;L&#39;insuffisance de la production nucl&#233;aire fran&#231;aise a certes jou&#233; un r&#244;le dans la hausse vertigineuse du prix de l&#39;&#233;nergie en Europe. Mais l&#39;essentiel de cette hausse r&#233;sulte du fait que l&#39;Allemagne, &#233;troitement d&#233;pendante du gaz russe, a d&#251; en h&#226;te se retourner vers le march&#233; mondial et acheter au prix fort les quantit&#233;s dont elle avait un besoin pressant. Cela s&#39;est transmis dans le prix de l&#39;&#233;lectricit&#233; par le m&#233;canisme que j&#39;&#233;voquais. Or l&#39;Allemagne s&#39;est oppos&#233; &#224; la fixation d&#39;un plafond de prix pour le gaz achet&#233; par l&#39;Europe, n&#39;acceptant &#224; la fin qu&#39;un plafond tellement &#233;lev&#233; qu&#39;il a peu de chances d&#39;&#234;tre atteint (350 euros/MWh, le march&#233; se situant aujourd&#39;hui autour de 100 euros). &lt;/p&gt; &lt;p&gt; Elle refuse &#233;galement que la France et d&#39;autres pays suive la voie de l&#39;Espagne et du Portugal en d&#233;connectant le prix de l&#39;&#233;lectricit&#233; de celui du gaz. Bref, l&#39;Allemagne s&#39;est oppos&#233;e &#224; tout ce que proposait la France alors m&#234;me que, par une politique incons&#233;quente de d&#233;pendance vis-&#224;-vis de la Russie, elle est largement &#224; l&#39;origine des difficult&#233;s actuelles. Cela m&#233;rite pour le moins une clarification des relations franco-allemandes qui ne peuvent pas &#234;tre &#224; sens unique. C&#39;est peut-&#234;tre la raison du report du sommet entre les deux pays d&#233;cid&#233; il y a quelques semaines. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;La Commission europ&#233;enne travaille actuellement sur le plan REPowerEU, dont l&#39;objectif est de sortir de la d&#233;pendance aux &#233;nergies russes. &#192; ce titre, le Parlement europ&#233;en a vot&#233; l&#39;amendement d&#233;pos&#233; par Fran&#231;ois-Xavier Bellamy permettant d&#39;allouer les fonds europ&#233;ens du plan aux &#233;nergies bas carbone (intermittentes et pilotables). Est-ce une bonne nouvelle pour la France ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Je crois que oui. Il n&#39;y avait aucune raison de faire une distinction entre les sources d&#39;&#233;nergie d&#233;carbon&#233;e. Le nucl&#233;aire fran&#231;ais aura besoin de financements tr&#232;s importants. Je rappelle que le nucl&#233;aire est derri&#232;re l&#39;hydraulique la source d&#39;&#233;nergie la plus d&#233;carbon&#233;e ; elle est sur ce point, meilleure que l&#39;&#233;olien et le solaire. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#192; long terme, la nouvelle situation g&#233;opolitique, l&#39;isolement de la Russie, mais aussi de la Chine, peut-elle &#234;tre une chance et nous conduire &#224; relocaliser certaines industries ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les grands blocs am&#233;ricains et chinois cherchent &#224; s&#39;autonomiser l&#39;un par rapport &#224; l&#39;autre. La Chine veut conqu&#233;rir son ind&#233;pendance technologique par rapport aux &#201;tats-Unis et fait un &#233;norme effort pour cela ; les &#201;tats-Unis veulent desserrer leur d&#233;pendance vis-&#224;-vis de la Chine pour les biens de consommation. Si l&#39;Europe ne fait rien, elle deviendra le terrain de jeu de la comp&#233;tition entre Chinois et Am&#233;ricains. &lt;/p&gt; &lt;p&gt; Il faut mettre en oeuvre une politique industrielle de reconqu&#234;te de notre autonomie, au niveau fran&#231;ais et au niveau europ&#233;en. Cela passe aussi par un d&#233;bat &#171; serr&#233; &#187; avec la Chine sur le respect des r&#232;gles de march&#233; fix&#233;es par l&#39;Organisation mondiale du commerce et avec les &#201;tats-Unis sur le prix du gaz qu&#39;ils vendent &#224; l&#39;Europe. Les propos du commissaire Thierry Breton et de Bruno Le Maire vont dans ce sens. Ceux du chancelier Scholz vis-&#224;-vis de la Chine me paraissent plus ambigus ! &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Comment conjuguer l&#39;imp&#233;ratif de r&#233;industrialisation avec l&#39;imp&#233;ratif &#233;cologique ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La croissance verte est possible gr&#226;ce &#224; l&#39;industrie ; elle est en tout point pr&#233;f&#233;rable &#224; la d&#233;croissance, porteuse de baisse du niveau de vie et surtout d&#39;in&#233;galit&#233;s. Cela doit, bien s&#251;r, s&#39;accompagner d&#39;un effort d&#233;cisif pour r&#233;duire l&#39;empreinte carbone de la production industrielle et pour cela &#233;conomiser l&#39;&#233;nergie et passer des &#233;nergies fossiles &#224; l&#39;&#233;lectrique. L&#39;industrie est engag&#233;e dans cet effort, beaucoup plus qu&#39;on ne le croit. &lt;/p&gt; &lt;p&gt; Les investissements massifs qui seront n&#233;cessaires devront &#234;tre financ&#233;s ; ils se traduiront par des hausses de prix qui p&#232;seront sur la comp&#233;titivit&#233; de produits europ&#233;ens par rapport &#224; des pays non europ&#233;ens qui n&#39;auraient pas accompli les m&#234;mes efforts de d&#233;carbonation. Pour amortir le choc, un syst&#232;me d&#39;ajustement aux fronti&#232;res est en cours de discussion au niveau europ&#233;en. Je ne suis pas s&#251;r qu&#39;il soit suffisant ; des soutiens publics pour limiter la charge pour les entreprises seront sans doute n&#233;cessaires. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Les Am&#233;ricaines mettent en place une politique protectionniste face &#224; la Chine. Pour r&#233;industrialiser, l&#39;Europe doit-elle revoir en profondeur son &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;-&#233;changiste ? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;L&#39;int&#233;r&#234;t de l&#39;Europe, &#233;conomie exportatrice, est de rester une zone ouverte au commerce avec les pays qui respectent les m&#234;mes r&#232;gles qu&#39;elle. Cela veut dire a contrario qu&#39;elle doit &#234;tre pr&#234;te &#224; faire jouer le principe de r&#233;ciprocit&#233;. Si un pays taxe les exportations europ&#233;ennes, subventionne abusivement ses productions ou refuse d&#39;ouvrir ses march&#233;s publics, l&#39;Europe doit pouvoir limiter son acc&#232;s au march&#233; europ&#233;en. Il est par exemple anormal qu&#39;un armateur chinois puisse acheter une partie du port de Hambourg alors qu&#39;une telle op&#233;ration est impossible en Chine pour un armateur europ&#233;en. &lt;/p&gt; &lt;p&gt; Le principe de r&#233;ciprocit&#233; est admis par la Commission mais elle l&#39;applique souvent tardivement et avec une tr&#232;s grande prudence parce que les int&#233;r&#234;ts des pays europ&#233;ens divergent. Une application plus ferme et plus syst&#233;matique du principe de r&#233;ciprocit&#233; aiderait grandement la r&#233;industrialisation. &lt;/p&gt; &lt;p&gt; *La Fabrique de l&#39;industrie est un laboratoire d&#39;id&#233;es ind&#233;pendant, consacr&#233; aux r&#233;flexions des perspectives industrielles en France, cr&#233;&#233; en 2011 par Louis Gallois et Pierre-Andr&#233; de Chalendar. &lt;/p&gt; &lt;p&gt; &#171; Un pays n&#39;est pas souverain quand sa balance commerciale est d&#233;ficitaire de 150 milliards d&#39;euros. Une part de ce d&#233;ficit est due &#224; la hausse du co&#251;t de l&#39;&#233;nergie et des mati&#232;res premi&#232;res mais une partie essentielle r&#233;sulte du d&#233;ficit des produits manufactur&#233;s &lt;/p&gt; &lt;p&gt; &#171; L&#39;Europe doit &#234;tre pr&#234;te &#224; faire jouer le principe de r&#233;ciprocit&#233;. Il est anormal qu&#39;un armateur chinois puisse acheter une partie du port de Hambourg alors qu&#39;une telle op&#233;ration est impossible en Chine pour un armateur europ&#233;en&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Dessin fabien Clairefond &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:adevecchio@lefigaro.fr&quot;&gt;adevecchio@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;24 novembre 2022&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2022 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20221125&amp;#183;LF&amp;#183;1012&amp;#215;20&amp;#215;290904444&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">principe de réciprocité</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">prix de l'électricité</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">coût de l'énergie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">hausse du coût</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">prix du gaz</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Inflation et rémunération</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Énergie</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Flamanville</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Russie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Portugal</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">port de Hambourg</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Territoire de Belfort</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720221125%c2%b7LF%c2%b71012%c3%9720%c3%97290904444" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720221125%c2%b7LF%c2%b71012%c3%9720%c3%97290904444">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24342                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro,         vendredi 25 novembre 2022 1782 mots, p. 22</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Énergie : « L'Allemagne s'est opposée à tout ce que proposait la France »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">La hausse des prix de l'énergie pourrait entraîner de nouvelles délocalisations, alerte l'ancien patron d'Airbus. Le coprésident du think-tank La Fabrique de l'industrie* explique le long processus de désindustrialisation dont souffre la France, lié aux erreurs stratégiques des gouvernements successifs. Le nucléaire en est un exemple spectaculaire. Face à une situation qui s'annonce critique à très court terme, l'ancien haut fonctionnaire se dit favorable, malgré l'opposition de l'Allemagne, au plafonnement du prix du gaz en Europe ainsi qu'à un changement du mécanisme de fixation des prix.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Devecchio, Alexandre</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">LE FIGARO. - La crise de l'énergie a révélé la situation dégradée de notre parc nucléaire, qui aurait dû nous fournir un avantage compétitif en Europe. Cette situation dégradée s'inscrit-elle dans un long processus de désindustrialisation de la France ? Comment en sommes-nous arrivés là ?</em></p><p><em style="font-weight:bold;">Louis GALLOIS. -</em> Le 18 novembre, 24 réacteurs sur 57 étaient à l'arrêt, soit pour traiter des problèmes de corrosion (7 réacteurs), soit pour assurer des opérations de maintenance, retardées par la crise du Covid. EDF se trouve ainsi face à une charge de travail considérable qu'elle peine à réaliser dans les délais car elle manque de compétences. En effet, comme l'a expliqué son ancien président, Jean-Bernard Lévy, EDF a dû adapter ses capacités à la perspective de la fermeture de 14 réacteurs prévue par la Programmation pluriannuelle de l'énergie de 2020 devenue obsolète depuis le discours de relance du président de la République à Belfort, en février dernier.</p>
+
+
+<p>Vous évoquez la désindustrialisation ; elle a été de fait provoquée, dans ce secteur essentiel, par l'absence de nouveaux programmes depuis Flamanville, par la sous-estimation des besoins et par le choix arbitraire de réduire la part du nucléaire dans la production d'électricité. On en voit les conséquences : la France qui était exportatrice importe désormais au prix fort de l'électricité produite à l'étranger par des centrales à gaz, voire à charbon. Elle devra, en outre, reconstituer ses compétences pour mener à bien le programme de nouveaux réacteurs annoncé à Belfort. La réindustrialisation du pays ne sera possible que si nous disposons d'une électricité prévisible, décarbonée, compétitive et souveraine ; seul le nucléaire, avec l'hydraulique, réunit ces caractéristiques ; il devra donc en fournir la plus large part. </p> <p><em style="font-weight:bold;">La crise du Covid a également révélé notre dépendance. La France est-elle encore souveraine ?</em></p><p>Un pays n'est pas souverain quand sa balance commerciale est déficitaire de 150 milliards d'euros. Une part de ce déficit est due à la hausse du coût de l'énergie et des matières premières, mais une partie essentielle résulte du déficit des produits manufacturés. C'est la conséquence directe de la désindustrialisation de notre pays. L'objectif de réindustrialisation est un objectif d'emploi, de croissance, de réduction des fractures territoriales. Mais c'est d'abord un objectif de souveraineté. Les juges de paix ici, ce sont la réduction des dépendances critiques et l'équilibre extérieur global. </p> <p><em style="font-weight:bold;">Peut-on parler d'erreur stratégique d'une partie des « élites » françaises qui ont axé notre économie sur les services ?</em></p><p>Probablement. Beaucoup ont cru que l'industrie était désormais l'affaire des pays à bas coûts et que la France devait se spécialiser dans les bureaux d'études et les services ; la compétitivité de notre industrie n'était plus un objectif. Le résultat est celui que j'évoquais il y a un instant : chômage de masse, drames régionaux, déséquilibres économiques. </p> <p><em style="font-weight:bold;">À court terme, quelles seront les conséquences de la crise de l'énergie et de l'inflation sur les entreprises françaises ? Cela va-t-il encore accélérer la désindustrialisation ?</em></p><p>Depuis une dizaine d'années, une politique de compétitivité a été engagée : baisse des charges sociales, réduction des impôts de production, réforme du droit du travail, Plan France 2030... Elle a produit à partir de 2015 ses premiers effets : la part de l'industrie dans le produit intérieur a cessé de se dégrader, l'investissement productif a repris, le nombre d'usines nouvelles a dépassé celui des fermetures. La dégringolade a été stoppée. Le moral des chefs d'entreprise s'est redressé et la France est redevenue un pays attractif pour les investissements étrangers. </p> <p> Ces progrès vont-ils être remis en cause par la hausse du coût de l'énergie ? Allons-nous retomber comme le rocher de Sisyphe ? C'est une question lourde et urgente. </p> <p> Aux États-Unis, l'énergie coûte désormais cinq à dix fois moins cher qu'en Europe. Il y a un vrai risque de délocalisation. Pour protéger son industrie, l'Allemagne a prévu de mettre en place pour les entreprises un bouclier tarifaire, soumis actuellement à l'accord de la Commission. Il se situe à 130 euros le MWh pour 70 % de l'électricité consommée. En France, le même bouclier est à 325 euros le MWh. Notre industrie risque d'être placée dans une situation critique et les échéances sont à très court terme. La France propose à juste titre de plafonner le prix du gaz en Europe et d'amender le mécanisme européen de fixation des prix. Celui-ci lie, en effet, le prix de l'électricité au prix du gaz qui a explosé depuis la guerre en Ukraine. Il faut, en fait, d'urgence soit changer ce mécanisme soit s'en abstraire comme l'ont fait les Espagnols et les Portugais. </p> <p><em style="font-weight:bold;">Vous avez récemment déclaré : « On ne peut pas éviter à un moment ou à un autre d'affronter les Allemands, qui ne nous font pas particulièrement de cadeaux. » Qu'entendez-vous par là ?</em></p><p>L'insuffisance de la production nucléaire française a certes joué un rôle dans la hausse vertigineuse du prix de l'énergie en Europe. Mais l'essentiel de cette hausse résulte du fait que l'Allemagne, étroitement dépendante du gaz russe, a dû en hâte se retourner vers le marché mondial et acheter au prix fort les quantités dont elle avait un besoin pressant. Cela s'est transmis dans le prix de l'électricité par le mécanisme que j'évoquais. Or l'Allemagne s'est opposé à la fixation d'un plafond de prix pour le gaz acheté par l'Europe, n'acceptant à la fin qu'un plafond tellement élevé qu'il a peu de chances d'être atteint (350 euros/MWh, le marché se situant aujourd'hui autour de 100 euros). </p> <p> Elle refuse également que la France et d'autres pays suive la voie de l'Espagne et du Portugal en déconnectant le prix de l'électricité de celui du gaz. Bref, l'Allemagne s'est opposée à tout ce que proposait la France alors même que, par une politique inconséquente de dépendance vis-à-vis de la Russie, elle est largement à l'origine des difficultés actuelles. Cela mérite pour le moins une clarification des relations franco-allemandes qui ne peuvent pas être à sens unique. C'est peut-être la raison du report du sommet entre les deux pays décidé il y a quelques semaines. </p> <p><em style="font-weight:bold;">La Commission européenne travaille actuellement sur le plan REPowerEU, dont l'objectif est de sortir de la dépendance aux énergies russes. À ce titre, le Parlement européen a voté l'amendement déposé par François-Xavier Bellamy permettant d'allouer les fonds européens du plan aux énergies bas carbone (intermittentes et pilotables). Est-ce une bonne nouvelle pour la France ?</em></p><p>Je crois que oui. Il n'y avait aucune raison de faire une distinction entre les sources d'énergie décarbonée. Le nucléaire français aura besoin de financements très importants. Je rappelle que le nucléaire est derrière l'hydraulique la source d'énergie la plus décarbonée ; elle est sur ce point, meilleure que l'éolien et le solaire. </p> <p><em style="font-weight:bold;">À long terme, la nouvelle situation géopolitique, l'isolement de la Russie, mais aussi de la Chine, peut-elle être une chance et nous conduire à relocaliser certaines industries ?</em></p><p>Les grands blocs américains et chinois cherchent à s'autonomiser l'un par rapport à l'autre. La Chine veut conquérir son indépendance technologique par rapport aux États-Unis et fait un énorme effort pour cela ; les États-Unis veulent desserrer leur dépendance vis-à-vis de la Chine pour les biens de consommation. Si l'Europe ne fait rien, elle deviendra le terrain de jeu de la compétition entre Chinois et Américains. </p> <p> Il faut mettre en oeuvre une politique industrielle de reconquête de notre autonomie, au niveau français et au niveau européen. Cela passe aussi par un débat « serré » avec la Chine sur le respect des règles de marché fixées par l'Organisation mondiale du commerce et avec les États-Unis sur le prix du gaz qu'ils vendent à l'Europe. Les propos du commissaire Thierry Breton et de Bruno Le Maire vont dans ce sens. Ceux du chancelier Scholz vis-à-vis de la Chine me paraissent plus ambigus ! </p> <p><em style="font-weight:bold;">Comment conjuguer l'impératif de réindustrialisation avec l'impératif écologique ?</em></p><p>La croissance verte est possible grâce à l'industrie ; elle est en tout point préférable à la décroissance, porteuse de baisse du niveau de vie et surtout d'inégalités. Cela doit, bien sûr, s'accompagner d'un effort décisif pour réduire l'empreinte carbone de la production industrielle et pour cela économiser l'énergie et passer des énergies fossiles à l'électrique. L'industrie est engagée dans cet effort, beaucoup plus qu'on ne le croit. </p> <p> Les investissements massifs qui seront nécessaires devront être financés ; ils se traduiront par des hausses de prix qui pèseront sur la compétitivité de produits européens par rapport à des pays non européens qui n'auraient pas accompli les mêmes efforts de décarbonation. Pour amortir le choc, un système d'ajustement aux frontières est en cours de discussion au niveau européen. Je ne suis pas sûr qu'il soit suffisant ; des soutiens publics pour limiter la charge pour les entreprises seront sans doute nécessaires. </p> <p><em style="font-weight:bold;"> Les Américaines mettent en place une politique protectionniste face à la Chine. Pour réindustrialiser, l'Europe doit-elle revoir en profondeur son <mark>logiciel</mark> <mark>libre</mark>-échangiste ? </em></p><p>L'intérêt de l'Europe, économie exportatrice, est de rester une zone ouverte au commerce avec les pays qui respectent les mêmes règles qu'elle. Cela veut dire a contrario qu'elle doit être prête à faire jouer le principe de réciprocité. Si un pays taxe les exportations européennes, subventionne abusivement ses productions ou refuse d'ouvrir ses marchés publics, l'Europe doit pouvoir limiter son accès au marché européen. Il est par exemple anormal qu'un armateur chinois puisse acheter une partie du port de Hambourg alors qu'une telle opération est impossible en Chine pour un armateur européen. </p> <p> Le principe de réciprocité est admis par la Commission mais elle l'applique souvent tardivement et avec une très grande prudence parce que les intérêts des pays européens divergent. Une application plus ferme et plus systématique du principe de réciprocité aiderait grandement la réindustrialisation. </p> <p> *La Fabrique de l'industrie est un laboratoire d'idées indépendant, consacré aux réflexions des perspectives industrielles en France, créé en 2011 par Louis Gallois et Pierre-André de Chalendar. </p> <p> « Un pays n'est pas souverain quand sa balance commerciale est déficitaire de 150 milliards d'euros. Une part de ce déficit est due à la hausse du coût de l'énergie et des matières premières mais une partie essentielle résulte du déficit des produits manufacturés </p> <p> « L'Europe doit être prête à faire jouer le principe de réciprocité. Il est anormal qu'un armateur chinois puisse acheter une partie du port de Hambourg alors qu'une telle opération est impossible en Chine pour un armateur européen</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+            
+                </p><div class="ImageAttachFont">Dessin fabien Clairefond </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:adevecchio@lefigaro.fr">adevecchio@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">24 novembre 2022</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2022 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20221125·LF·1012×20×290904444</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20221125·LF·1012×20×290904444";
+    var _docIndex = 188;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20221125·LF·1012×20×290904444';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720221125%C2%B7LF%C2%B71012%C3%9720%C3%97290904444&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720221125%C2%B7LF%C2%B71012%C3%9720%C3%97290904444&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720221125%C2%B7LF%C2%B71012%C3%9720%C3%97290904444&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720221125%C2%B7LF%C2%B71012%C3%9720%C3%97290904444&docIndex=188&FullScreen=1";
+                
+	var _keyDoc = 'news·20221125·LF·1012×20×290904444';
+</script>
+</div></body></html>

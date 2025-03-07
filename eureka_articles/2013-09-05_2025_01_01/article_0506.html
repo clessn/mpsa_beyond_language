@@ -1,0 +1,557 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Une br&#232;ve his,         mercredi 20 d&amp;#233;cembre 2017 3345 mots, p. 10,0011,0012,0013,0014,0015&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Voyage au pays de l&#39;Intelligence artificielle            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Erwan Cario&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Les techniques d&#39;intelligence artificielle ont fait en cinq ans des progr&#232;s fulgurants, devenant incontournables dans tous les secteurs de la recherche, de l&#39;&#233;conomie ou de la soci&#233;t&#233;. O&#249; en est-on vraiment ? Quels sont les projets et les r&#233;alisations en cours ? De Paris &#224; Z&#252;rich, en passant par la &lt;span class=&quot;stubs&quot;&gt;Silicon Valley&lt;/span&gt;, enqu&#234;te sur le monde de l&#39;IA. &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les experts en futurologie du num&#233;rique l&#39;affirment : l&#39;intelligence artificielle va tout chambouler. Si on les laisse faire, ils sont m&#234;me capables de parler de &#171; disruption &#187;... L&#39;IA, elle sait reconna&#238;tre un chat dans une image, elle va accorder des pr&#234;ts immobiliers; elle &#233;crase ses adversaires au go, elle va conduire toutes les voitures; elle peut traduire du polonais en mandarin, elle va automatiser tant de t&#226;ches que les m&#233;tiers d&#39;aujourd&#39;hui n&#39;existeront plus demain. L&#39;intelligence artificielle est magique. Pas dans les faits, bien s&#251;r, mais dans ce rapport &#233;trange que nous avons avec cette technologie dont nous acceptons les prouesses sans en comprendre les m&#233;canismes. Mais c&#39;est quoi au juste, cette intelligence artificielle ? Le chercheur Yann LeCun - &#224; qui on doit en grande partie le bouleversement actuel dans la discipline par ses travaux, dans les ann&#233;es 90, sur l&#39;apprentissage profond, et aujourd&#39;hui responsable de FAIR, le laboratoire de recherche fondamentale chez &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; - d&#233;finit l&#39;IA d&#39;une mani&#232;re on ne peut plus simple : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Faire faire aux machines des activit&#233;s qu&#39;on attribue g&#233;n&#233;ralement aux animaux et aux humains. &#187;&lt;/em&gt;Mais cette simplicit&#233; ne saurait contrebalancer l&#39;&#233;tendue des attentes d&#233;mesur&#233;es qui accompagnent l&#39;IA depuis que ce terme a &#233;t&#233; consacr&#233; en tant que domaine de recherche, en 1956. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C&#39;est un terme anthropomorphique et on y projette des choses qui n&#39;ont aucun sens,&lt;/em&gt;s&#39;agace Rapha&#235;l F&#233;raud, chercheur au sein d&#39;Orange Labs. &lt;em style=&quot;font-style:italic;&quot;&gt;Dans l&#39;id&#233;al, on devrait parler d&#39;agents autonomes ou adaptatifs. &#187;&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Cette &#171; intelligence &#187; pourtant est omnipr&#233;sente dans les pens&#233;es de ceux qui travaillent sur la question. S&#39;ils savent tous que ce n&#39;est aujourd&#39;hui qu&#39;un mirage et parlent plut&#244;t d&#39;apprentissage pour qualifier leurs travaux, l&#39;intelligence, celle qui permet de comprendre le monde qui nous entoure, de s&#39;adapter aux changements, d&#39;anticiper et de pr&#233;voir, est l&#39;objectif &#224; atteindre. Au d&#233;tour d&#39;une phrase, lors d&#39;une visite dans les locaux de &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt;, Antoine Bordes, responsable de FAIR Paris, &#233;voque, lui, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; le grand plan de l&#39;IA &#187;&lt;/em&gt;. Quand on lui demande d&#39;expliciter, il s&#39;amuse : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce &quot;grand plan&quot;, c&#39;est simplement essayer d&#39;aller vers l&#39;intelligence artificielle, vers des machines qui raisonnent. Mais on suppose aujourd&#39;hui qu&#39;elle sera compos&#233;e de nombreuses briques, et nous avons pour l&#39;instant seulement quelques &#233;l&#233;ments dont nous pensons qu&#39;ils pourraient fonctionner. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;D&#39;autres sont plus directs, comme &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; DeepMind et son slogan officiel : &#171; R&#233;soudre l&#39;intelligence. &#187; C&#39;est sans doute ce qui rend le sujet si complexe. Un m&#234;me terme, &#171; intelligence artificielle &#187;, d&#233;signe &#224; la fois une discipline qui conna&#238;t des progr&#232;s fulgurants, un objectif qui, sans &#234;tre irr&#233;aliste, semble encore lointain, et une chim&#232;re, qui prosp&#232;re dans un inconscient collectif nourri &#224; la science-fiction. &lt;/p&gt; &lt;p&gt; Potentiel. L&#39;intelligence artificielle est avant tout un sec-teur en effervescence permanente depuis 2012 et l&#39;impressionnante victoire d&#39;un r&#233;seau de neurones lors du concours annuel de reconnaissance d&#39;images ImageNet challenge. Jusqu&#39;alors, diff&#233;rentes m&#233;thodes s&#39;affrontaient chaque ann&#233;e avec, pour les meilleurs, un taux d&#39;erreurs de 25 %. En 2012, le programme de l&#39;&lt;span class=&quot;stubs&quot;&gt;universit&#233; de Toronto&lt;/span&gt; s&#39;en sort avec seulement 16 %. Cette performance remet sur le devant de la sc&#232;ne une technique d&#39;apprentissage profond (&lt;em style=&quot;font-style:italic;&quot;&gt;deep learning&lt;/em&gt;en VO) qui avait commenc&#233; &#224; faire ses preuves dans les ann&#233;es 90 avant d&#39;&#234;tre un peu oubli&#233;e. La puissance de calcul des cartes graphiques (GPU) coupl&#233;e &#224; la mise &#224; disposition de grandes bases de donn&#233;es &#233;tiquet&#233;es (une image d&#39;un chat sur une voiture en train de jouer du piano est accompagn&#233;e des labels &#171; chat &#187;, &#171; voiture &#187; et &#171; piano &#187;, par exemple), permet &#224; ces programmes tr&#232;s gourmands d&#39;enfin faire leur preuve &#224; grande &#233;chelle. Tr&#232;s vite, la communaut&#233; scientifique comprend l&#39;immense potentiel de ce qui vient de se passer : en &#233;tant entra&#238;n&#233; sur une base de donn&#233;es pertinente, un programme informatique est capable d&#39;&#233;tablir lui-m&#234;me des r&#232;gles qui vont permettre d&#39;interpr&#233;ter d&#39;autres donn&#233;es qui &#233;taient jusqu&#39;ici tr&#232;s (ou trop) complexes &#224; traiter. &lt;/p&gt; &lt;p&gt; D&#232;s l&#39;ann&#233;e suivante, il n&#39;y a plus que des r&#233;seaux de neurones en lice pour le concours ImageNet challenge et les taux d&#39;erreurs chutent &#224; quelques pour cent. L&#39;apprentissage devient incontournable. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; &#192; cette p&#233;riode, j&#39;ai vu des tas d&#39;&#233;quipes qui n&#39;en faisaient pas se mettre &#224; l&#39;apprentissage &#187;&lt;/em&gt;, se souvient Bertrand Braunschweig, directeur du centre de recherche Inria Saclay-&#206;le-de-France et coordinateur du livre blanc de l&#39;Institut sur l&#39;IA. Mais, &#233;videmment, c&#39;est le secteur m&#234;me de la recherche qui s&#39;en trouve boulevers&#233;. En premier lieu par l&#39;arriv&#233;e tonitruante des grands acteurs de l&#39;&#233;conomie num&#233;riques qui voient dans l&#39;intelligence artificielle l&#39;avenir m&#234;me de leur noyau technologique. En 2013, &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; recrute ainsi Geoffrey Hinton pour son projet Brain, et &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; demande &#224; Yann LeCun de mettre en place le laboratoire FAIR. Ce sont deux des scientifiques les plus reconnus dans le domaine et leurs d&#233;couvertes sont &#224; l&#39;origine du maelstr&#246;m actuel. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Dans la mythologie grecque, g&#233;ants de bronze,&lt;/em&gt;&lt;/p&gt;&lt;p&gt;servantes d&#39;or et autres objets anim&#233;s c&#244;toient couramment les mortels et les divinit&#233;s. &lt;/p&gt; &lt;p&gt; La plupart sont les oeuvres du dieu du feu H&#233;pha&#239;stos qui forgea, entre autres, Talos, cr&#233;ature charg&#233;e de faire le tour de la Cr&#234;te trois fois par jour pour repousser les intrus. &lt;/p&gt; &lt;p&gt; Au XVIII &lt;em style=&quot;font-style:italic;&quot;&gt;e&lt;/em&gt;si&#232;cle. &lt;/p&gt; &lt;p&gt; Evidemment pas d&#39;IA, mais nombre d&#39;automates, plus ou moins &#233;labor&#233;s, dont un joueur de fl&#251;te, un &#171; canard dig&#233;rateur &#187;, capable de restituer ce qu&#39;il mange et de nager de fa&#231;on tr&#232;s r&#233;aliste, un &#171; Turc m&#233;canique &#187;, ing&#233;nieux canular cens&#233; jouer aux &#233;checs... &lt;/p&gt; &lt;p&gt; 1914. Leonardo Torres &lt;/p&gt; &lt;p&gt; Quevedo invente le premier v&#233;ritable automate joueur d&#39;&#233;checs. Il est capable de finir une partie lors d&#39;une confrontation roi et tour contre roi. Et de l&#39;emporter &#224; tous les coups. Leonardo Torres Quevedo sera le premier &#224; utiliser des relais &#233;lectrom&#233;caniques dans une machine &#224; calculer. &lt;/p&gt; &lt;p&gt; 1950. &#202;tre ou ne pas &#234;tre... Le math&#233;maticien et cryptologue britannique &lt;span class=&quot;stubs&quot;&gt;Alan Turing&lt;/span&gt;, p&#232;re de l&#39;informatique moderne, r&#233;dige un article dans lequel il propose un test d&#233;terminant si une machine poss&#232;de ou non une conscience. &lt;/p&gt; &lt;p&gt; 1956. Le math&#233;maticien &lt;/p&gt; &lt;p&gt; John McCarthy organise au &lt;span class=&quot;stubs&quot;&gt;Dartmouth College&lt;/span&gt;, aux Etats-Unis, un s&#233;minaire au cours duquel est invent&#233; le terme d&#39;intelligence artificielle. &lt;/p&gt; &lt;p&gt; Un nouveau champ d&#39;&#233;tude scientifique est n&#233;. &lt;/p&gt; &lt;p&gt; 1968. Sortie de 2001, l&#39;Odyss&#233;e de l&#39;espace. En plein vide sid&#233;ral, &lt;span class=&quot;stubs&quot;&gt;Stanley Kubrick&lt;/span&gt; met en sc&#232;ne le duel de l&#39;homme et d&#39;une intelligence artificielle en r&#233;bellion, HAL 9000. Une confrontation avec le premier ordinateur conscient de lui-m&#234;me de l&#39;histoire du cin&#233;ma. D&#39;autant plus gla&#231;ante que la machine a une voix humaine. &lt;/p&gt; &lt;p&gt; 1984. Ernst Dickmanns, de l&#39;universit&#233; de la Bundeswehr &#224; Munich, et Mercedes-Benz testent une camionnette automatique &#233;quip&#233;e de cam&#233;ras. &lt;/p&gt; &lt;p&gt; Le v&#233;hicule atteint 100 km/h sur un r&#233;seau routier sans trafic. La voiture sans conducteur est aujourd&#39;hui presque op&#233;rationnelle. &lt;/p&gt; &lt;p&gt; D&#233;but des ann&#233;es 90. Apparition du Web, un ensemble de pages m&#234;lant textes, liens et images sur le r&#233;seau Internet. Des centaines de milliards de donn&#233;es (les datas) vont d&#233;sormais pouvoir circuler et s&#39;&#233;changer sans entrave. &lt;/p&gt; &lt;p&gt; 1996. Naissance du premier Tamagotchi, gadget japonais qui permet de nourrir et soigner un animal virtuel. &lt;/p&gt; &lt;p&gt; Recherche ouverte. Quand on veut essayer de comprendre o&#249; va l&#39;intelligence artificielle en cette fin 2017, le premier r&#233;flexe est donc de regarder dans cette direction-l&#224;, celle de l&#39;&#233;tape d&#39;apr&#232;s, celle de la recherche fondamentale. La premi&#232;re constatation, c&#39;est que le partage des connaissances est une r&#233;alit&#233; au niveau mondial, que les chercheurs travaillent dans le priv&#233; ou le secteur public. C&#39;&#233;tait une exigence de Yann LeCun quand il a rejoint &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La seule mani&#232;re de faire de la recherche de qualit&#233;, c&#39;est de faire de la recherche ouverte. C&#39;est quelque chose que j&#39;ai &#233;tabli de mani&#232;re tr&#232;s claire avec &lt;span class=&quot;stubs&quot;&gt;Mark Zuckerberg&lt;/span&gt;. Premi&#232;rement, &#231;a permet aux chercheurs de publier, et donc les standards sont de plus haut niveau, deuxi&#232;mement, c&#39;est la seule mani&#232;re d&#39;attirer les meilleurs. La monnaie d&#39;&#233;change avec les chercheurs, c&#39;est leur impact intellectuel. &#187; &lt;/em&gt;Et cet impact, il se joue principalement lors des grandes conf&#233;rences annuelles sur le sujet, les deux principales &#233;tant ICML (International Conference on Machine Learning) en d&#233;but d&#39;&#233;t&#233; et NIPS (Neural Information Processing Systems) en fin d&#39;ann&#233;e. Mais y publier rel&#232;ve aujourd&#39;hui de l&#39;exploit, le secteur &#233;tant devenu hypercomp&#233;titif. &lt;/p&gt; &lt;p&gt; Ce qui impose parfois de raccourcir les cycles de recherche. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous publions tout ce que nous produisons, mais nous essayons de nous concentrer sur des projets entre trois et six mois, histoire de ne pas se faire griller par d&#39;autres &#233;quipes &#187;&lt;/em&gt;, explique Antoine Bordes. Ce qui ne manque pas d&#39;arriver, de toute fa&#231;on. &#192; l&#39;Inria, pourtant, on continue de pr&#233;f&#233;rer le temps long : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Dans notre plan strat&#233;gique et scientifique, on d&#233;termine les grands domaines d&#39;&#233;volution du num&#233;rique et les grands d&#233;fis auxquels on veut s&#39;attaquer pour les cinq prochaines ann&#233;es,&lt;/em&gt;explique Bertrand Braunschweig. &lt;em style=&quot;font-style:italic;&quot;&gt;Ce qu&#39;on a dans nos tiroirs, c&#39;est ce qui sera utilis&#233; par les industriels dans plusieurs ann&#233;es. Le temps de la recherche est diff&#233;rent de celui de l&#39;&#233;conomie, du march&#233;. &#187;&lt;/em&gt;Ce qui n&#39;emp&#234;che pas l&#39;Institut de rester tr&#232;s comp&#233;titif sur le sujet. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce que font les acteurs priv&#233;s, c&#39;est qu&#39;ils viennent travailler avec nous,&lt;/em&gt;continue Bertrand Braunschweig. &lt;em style=&quot;font-style:italic;&quot;&gt;Ils font des choses par eux-m&#234;mes, &#233;videmment, mais on travaille avec eux. On a encore des choses &#224; dire, on a des chercheurs parmi les meilleurs du monde. &#187;&lt;/em&gt;C&#39;est d&#39;ailleurs un chercheur de l&#39;Inria, Francis Bach, qui pr&#233;side le comit&#233; d&#39;organisation de l&#39;&#233;dition 2018 de la conf&#233;rence ICML. &lt;/p&gt; &lt;p&gt; &#171; R&#233;soudre l&#39;intelligence &#187; Mais dans les faits, elle en est o&#249;, la recherche fondamentale qui va permettre aux machines de raisonner ? Pour ainsi dire, nulle part. Attention, on ne dit pas que &#231;a patine, mais que les chercheurs en sont encore &#224; d&#233;broussailler en esp&#233;rant trouver les traces d&#39;un sentier qui m&#232;nera peut-&#234;tre vers le Graal. Et personne n&#39;est d&#39;accord sur la direction o&#249; chercher. Demis Hassabis, le boss de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; DeepMind, par exemple, ne semble jurer, pour &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; r&#233;soudre l&#39;intelligence &#187;&lt;/em&gt;, que sur l&#39;apprentissage par renforcement. Cette m&#233;thode, plus souple que l&#39;apprentissage supervis&#233;, est au coeur d&#39;AlphaGo, le programme qui a d&#233;fait plusieurs champions de go lors de rencontres tr&#232;s m&#233;diatis&#233;es. Mais c&#39;est aussi une m&#233;thode co&#251;teuse en ressources et qui est pour l&#39;instant limit&#233;e &#224; un certain type d&#39;apprentissage. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;1996. D&#233;ploiement mondial&lt;/em&gt;&lt;/p&gt;&lt;p&gt;dans des distributeurs bancaires (en France, c&#39;est le Cr&#233;dit Mutuel de Bretagne) d&#39;un logiciel de lecture de ch&#232;ques bas&#233; sur un r&#233;seau de neurone convolutif invent&#233; par le Fran&#231;ais Yann LeCun. &lt;/p&gt; &lt;p&gt; La technologie sera un peu oubli&#233;e jusqu&#39;&#224; sa r&#233;apparition fracassante en 2012. Yann LeCun est aujourd&#39;hui &#224; la t&#234;te de FAIR, le laboratoire d&#39;intelligence artificielle de &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt;. &lt;/p&gt; &lt;p&gt; 19 97. Deep blue, le supercalculateur d&#39;&lt;span class=&quot;stubs&quot;&gt;IBM&lt;/span&gt;, bat aux &#233;checs le champion du monde &lt;span class=&quot;stubs&quot;&gt;Garry Kasparov&lt;/span&gt;. &lt;/p&gt; &lt;p&gt; 20 07. Apple commercialise l&#39;iPhone, t&#233;l&#233;phone ordinateur dot&#233; d&#39;un &#233;cran tactile. Le d&#233;but du r&#232;gne des tablettes et des smartphones. &lt;/p&gt; &lt;p&gt; 2011. Les applications utilisant le langage naturel pour communiquer et conseiller les utilisateurs se multiplient. &lt;/p&gt; &lt;p&gt; 2012. Pour la premi&#232;re fois, un r&#233;seau de neurones profond gagne le challenge ImageNet, un concours de reconnaissance d&#39;images. &lt;/p&gt; &lt;p&gt; Avec un taux d&#39;erreurs de 16,4 %, il distance tr&#232;s largement le second programme (26,2 %). Cette victoire, qui remet la technologie sur le devant de la sc&#232;ne, est adopt&#233;e massivement par tous les acteurs de l&#39;intelligence artificielle. &lt;/p&gt; &lt;p&gt; 2013. Tous les participants du challenge ImageNet utilisent des r&#233;seaux de neurones profonds. &lt;/p&gt; &lt;p&gt; 2014. L&#39;astrophysicien Stephen Hawking affirme dans une interview &#224; la &lt;span class=&quot;stubs&quot;&gt;BBC&lt;/span&gt; que le &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;d&#233;veloppement d&#39;une intelligence artificielle compl&#232;te pourrait provoquer la fin de l&#39;humanit&#233;&lt;/em&gt;&#187;. Ils sont plusieurs depuis (Elon Musk, &lt;span class=&quot;stubs&quot;&gt;Bill Gates&lt;/span&gt;, etc.) &#224; entretenir une psychose apocalyptique autour de l&#39;av&#232;nement d&#39;une machine toute puissante. &lt;/p&gt; &lt;p&gt; 2015. &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; publie la premi&#232;re version de TensorFlow, son logiciel d&#39;apprentissage machine en deep learning. &lt;/p&gt; &lt;p&gt; Disponible en &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, il est utilis&#233; massivement &#224; travers le monde &#224; des fins industrielles et de recherche. &lt;/p&gt; &lt;p&gt; 2016. AlphaGo bat un ma&#238;tre cor&#233;en. Vingt ans apr&#232;s les joueurs d&#39;&#233;checs, les champions de go puis de poker s&#39;inclinent &#224; leur tour devant des programmes d&#39;intelligence artificielle. &lt;/p&gt; &lt;p&gt; 2199. Les machines r&#232;gnent en ma&#238;tres sur l&#39;esp&#232;ce humaine, m&#234;me s&#39;il reste quelques bugs dans la matrice... &#171; Les humains sont une maladie contagieuse. Vous &#234;tes la peste, nous sommes l&#39;antidote. &#187; (Agent cybern&#233;tique Smith dans &lt;em style=&quot;font-style:italic;&quot;&gt;Matrix&lt;/em&gt;). &lt;/p&gt; &lt;p&gt; Yann LeCun et d&#39;autres chercheurs renomm&#233;s, comme Jean Ponce de l&#39;&lt;span class=&quot;stubs&quot;&gt;Ecole normale sup&#233;rieure&lt;/span&gt; de Paris, s&#39;int&#233;ressent plut&#244;t &#224; l&#39;apprentissage faiblement ou non supervis&#233;. Il s&#39;agit de permettre aux machines d&#39;apprendre avant tout par l&#39;observation, sans leur fournir au pr&#233;alable des donn&#233;es pr&#233;m&#226;ch&#233;es. &#199;a n&#39;a rien d&#39;&#233;vident et les v&#233;ritables progr&#232;s dans le domaine sont rares. De son c&#244;t&#233;, Geoffrey Hinton en est plut&#244;t &#224; faire du pass&#233; table rase. Lui veut repartir sur de nouvelles bases. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Je pense que la fa&#231;on dont nous concevons la vision par ordinateur est fausse,&lt;/em&gt;explique-t-il au magazine &lt;em style=&quot;font-style:italic;&quot;&gt;Wired&lt;/em&gt;. &#199; &lt;em style=&quot;font-style:italic;&quot;&gt;a marche mieux que toutes les autres solutions actuelles, mais &#231;a ne veut pas dire que c&#39;est juste. &#187;&lt;/em&gt;En cause, la somme astronomique de donn&#233;es n&#233;cessaires pour un apprentissage qui est beaucoup plus rapide chez l&#39;humain. Il travaille sur une m&#233;thode alternative, les &#171; r&#233;seaux &#224; capsules &#187;. Il a publi&#233;, fin octobre, deux articles qui pr&#233;sentent des r&#233;sultats prometteurs. Ce ne sont que quelques exemples parmi toutes les pistes explor&#233;es qui vont jusqu&#39;au biomim&#233;tisme et &#224; la cartographie pr&#233;cise de petits bouts de cerveaux humains pour esp&#233;rer d&#233;cortiquer cet &#171; algorithme biologique &#187; qui fonctionne si bien. &lt;/p&gt; &lt;p&gt; Si la recherche fondamentale avance &#224; son rythme, il n&#39;en va pas de m&#234;me pour la recherche appliqu&#233;e. Celle-ci se charge finalement d&#39;optimiser, de rendre concr&#232;tes et de diffuser les possibilit&#233;s de l&#39;apprentissage profond dans tous les domaines imaginables. C&#39;est ce qui a permis la popularisation finalement assez discr&#232;te de l&#39;intelligence artificielle, notamment dans les t&#233;l&#233;phones portables. Rien que le fait, par exemple, de b&#233;n&#233;ficier aujourd&#39;hui de moteurs de recherche capables de faire remonter les images contenant des bateaux, des anniversaires ou des sapins de No&#235;l est une performance technologique. Cette diff&#233;rence singuli&#232;re entre une recherche fondamentale, th&#233;orique et prospective, et une autre qui cherche &#224; faire &#233;voluer les applications du quotidien se retrouve dans l&#39;organisation m&#234;me de la recherche au sein des grands groupes. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C&#39;est une histoire de longueur de piste de d&#233;collage&lt;/em&gt;, d&#233;crit Emmanuel Mogenet, responsable du centre de recherche europ&#233;en de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; &#224; Z&#252;rich. &lt;em style=&quot;font-style:italic;&quot;&gt;La longueur qu&#39;on a donn&#233;e &#224; DeepMind est tr&#232;s, tr&#232;s importante, de l&#39;ordre de dix ou quinze ans. DeepMind veut produire une vraie intelligence artificielle. Et Demis Hassabis le r&#233;p&#232;te souvent : tout ce qui ne les propulse pas vers ce but ultime est une distraction. Ici, on a une piste plus courte, deux ou trois ans, avec des objectifs plus tangibles. &#199;a a par exemple &#233;t&#233; le cas pour le moteur de recherche de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Photos ou la traduction. &#187; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Alors, forc&#233;ment, on se pose la question des deux ou trois ans &#224; venir, avec, en t&#234;te, l&#39;impression que beaucoup a d&#233;j&#224; &#233;t&#233; fait &#224; partir de la th&#233;orie existante et que les &#233;volutions technologiques risquent forc&#233;ment de ralentir. Emmanuel Mogenet est persuad&#233; du contraire et nous parle, par exemple, de l&#39;apprentissage horizontal, le fait d&#39;entra&#238;ner un r&#233;seau de neurones &#224; diff&#233;rentes t&#226;ches assez proches alors qu&#39;ils sont pour l&#39;instant ultra-sp&#233;cialis&#233;s. Et puis, il y a d&#39;autres pistes, plus vertigineuses : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On est en train d&#39;appliquer le&lt;/em&gt;machine learning &lt;em style=&quot;font-style:italic;&quot;&gt;&#224; lui-m&#234;me. On a toujours un probl&#232;me de conception d&#39;un r&#233;seau de neurones. Est-ce qu&#39;il doit &#234;tre profond ? Quelle doit &#234;tre sa taille ? Combien de neurones ? Quelles sont les connexions ? Il y a des recettes qu&#39;on applique, mais il n&#39;y a pas de sciences sur le sujet. On est en train de d&#39;entra&#238;ner des machines pour apprendre &#224; concevoir des r&#233;seaux de neurones. On commence &#224; avoir des r&#233;sultats, et &#231;a va potentiellement &#234;tre extraordinaire. &#187;&lt;/em&gt;Des IA qui cr&#233;ent d&#39;autres IA, &#231;a ne manquera pas, aussi, d&#39;alimenter quelques fantasmes... &lt;/p&gt; &lt;p&gt; Projet Handle &#224; l&#39;Institut des syst&#232;mes intelligents et de robotique &#224; Paris. &lt;/p&gt; &lt;p&gt; A la recherche du &#171; biais &#187;. Mais la recherche appliqu&#233;e est aussi pr&#233;sente de mani&#232;re transversale dans tous les secteurs qui disposent de donn&#233;es nombreuses et compliqu&#233;es &#224; interpr&#233;ter pour les humains. Chez Orange Labs, par exemple, on veut l&#39;appliquer aux campagnes marketing. C&#39;est le projet sur lequel travaille Rapha&#235;l F&#233;raud : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il s&#39;agit d&#39;optimisation par renforcement. En fonction du contexte, de ce qu&#39;on sait du client, et de l&#39;action du conseiller, on va &#233;tablir un syst&#232;me de r&#233;compense en fonction de la satisfaction finale. &#187;&lt;/em&gt;Op&#233;rateurs t&#233;l&#233;coms, banques, assuran-ces, services en tout genre et pourquoi pas service public, autant dire que l&#39;int&#233;gration de l&#39;intelligence artificielle dans tous les rouages de la soci&#233;t&#233; ne fait que commencer. D&#39;o&#249;, sans doute, l&#39;offensive m&#233;diatique impressionnante de ces derniers mois d&#39;acteurs comme &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; ou &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; qui n&#39;h&#233;sitent pas &#224; surjouer la transparence de leurs unit&#233;s de recherche. Il faut rassurer, expliquer. &lt;/p&gt; &lt;p&gt; Mais surtout ne pas chercher &#224; minimiser des probl&#232;mes bien r&#233;els. &lt;/p&gt; &lt;p&gt; Quand on l&#39;interroge sur le sujet, Blaise Ag&#252;era y Arcas, une des t&#234;tes pensantes de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; Brain, parle d&#39;abord de l&#39;emploi : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les t&#226;ches pour lesquelles on construit des IA sont pour la plupart confi&#233;es aujourd&#39;hui &#224; des humains, et au fur et &#224; mesure qu&#39;on automatise ces t&#226;ches, tout un pan du travail humain devient superflu. &#199;a devrait &#234;tre une bonne nouvelle pour l&#39;humanit&#233; - nous ne le ferions pas sinon -, mais si ce n&#39;est pas mis en place avec une redistribution des b&#233;n&#233;fices, &#231;a conduira &#224; un ch&#244;mage de masse. &#187;&lt;/em&gt;Mais il tient aussi &#224; aborder le sujet qui a pris une ampleur inattendue en 2017 : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L&#39;autre probl&#232;me, c&#39;est le fait d&#39;int&#233;grer les biais et les pr&#233;jug&#233;s humains dans l&#39;intelligence artificielle. L&#39;IA, c&#39;est avant tout l&#39;apprentissage des processus humain, et ces processus embarquent avec eux des cat&#233;gorisations, des st&#233;r&#233;otypes. Nous avons aujourd&#39;hui les preuves que tous les syst&#232;mes que nous avons entra&#238;n&#233;s pour ex&#233;cuter une t&#226;che humaine int&#232;grent des biais humains. Finalement, c&#39;est l&#39;outil ultime d&#39;introspection, pour faire ressortir nos propres croyances. Mais maintenant que nous le savons, nous ne pouvons pas d&#233;l&#233;guer nos pr&#233;jug&#233;s aux algorithmes. &#187;&lt;/em&gt;Le petit monde de l&#39;intelligence artificielle n&#39;a eu que ce mot-l&#224; &#224; la bouche ces derniers mois : les &#171; biais &#187;. C&#39;est que, pass&#233;e l&#39;euphorie de l&#39;av&#232;nement d&#39;une technologie r&#233;volutionnaire, il a fallu se rendre &#224; l&#39;&#233;vidence : les masses de donn&#233;es utilis&#233;es pour entra&#238;ner des r&#233;seaux de neurones ne sont pas neutres. Et c&#39;est le coeur m&#234;me du d&#233;veloppement qui s&#39;en retrouve boulevers&#233;. La validit&#233; d&#39;un outil informatique ne vient plus de la qualit&#233; de la programmation logicielle, mais de la justesse des donn&#233;es d&#39;apprentissage. Ce qui am&#232;ne Fernanda Vi&#233;gas, chercheuse chez &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; au sein de la cellule PAIR (People+AI Research Initiative) &#224; lancer cet appel aux ing&#233;nieurs de son entreprise : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; D&#233;buggez vos donn&#233;es avant de d&#233;bugger vos mod&#232;les ! &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;L&#39;&#233;quit&#233; et la transparence des syst&#232;mes autonomes sont donc un des enjeux majeurs des prochaines ann&#233;es. Il faut r&#233;ussir &#224; traiter les biais, soit en amont, dans les donn&#233;es utilis&#233;es, soit dans le processus de traitement qui peut devenir capable de les d&#233;tecter et de les neutraliser. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Une des situations o&#249; l&#39;on veut forc&#233;ment enlever les biais d&#39;un jeu de donn&#233;es, c&#39;est par exemple dans l&#39;&#233;ducation,&lt;/em&gt;explique Fernanda Vi&#233;gas. &lt;em style=&quot;font-style:italic;&quot;&gt;Quand mes enfants vont apprendre tous les m&#233;tiers qu&#39;ils peuvent faire, ce serait catastrophique que le syst&#232;me r&#233;ponde en fonction de leur sexe. A contrario, on peut vouloir un syst&#232;me qui va r&#233;v&#233;ler les biais, pour pouvoir travailler dessus, pour changer la soci&#233;t&#233;. Pour traiter les biais, il faut avoir un but. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;S&#39;il est difficile de se pr&#233;parer aux progr&#232;s &#224; venir de l&#39;intelligence artificielle, on sait d&#233;j&#224; que la question de son impact sur la soci&#233;t&#233; sera au centre des pr&#233;occupations pour les prochaines ann&#233;es. Les lieux de r&#233;flexion se multiplient, avec des initiatives comme &#171; Partnership on AI &#187; qui regroupe acteurs priv&#233;s (&lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;Amazon&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;IBM&lt;/span&gt;, etc.), ONG (&lt;span class=&quot;stubs&quot;&gt;Amnesty International&lt;/span&gt;, Unicef, etc.), associations de d&#233;fense des libert&#233;s (EFF, &lt;span class=&quot;stubs&quot;&gt;ACLU&lt;/span&gt;, etc.) et universit&#233;s. La d&#233;claration d&#39;intention est forc&#233;ment un poil grandiloquente : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous avons con&#231;u ce partenariat pour que nous puissions consacrer plus d&#39;efforts et d&#39;attention &#224; r&#233;soudre les probl&#232;mes les plus complexes de l&#39;humanit&#233;, notamment en mati&#232;re de sant&#233; et de bien-&#234;tre, de transport, d&#39;&#233;ducation et de sciences... &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Sans douter qu&#39;ils r&#233;ussiront &#224; travailler en bonne intelligence, on peut quand m&#234;me s&#39;interroger : vouloir r&#233;soudre &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; les probl&#232;mes de l&#39;humanit&#233; &#187;&lt;/em&gt;gr&#226;ce &#224; la technologie, n&#39;est-ce pas, l&#224; aussi, un biais ? &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2017 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20171220&amp;#183;LI&amp;#183;0008&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">recherche fondamentale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseau de neurones</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseaux de neurones</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">taux d'erreurs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">ALAN TURING</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">MARK ZUCKERBERG</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">BILL GATES</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">GARRY KASPAROV</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">STANLEY KUBRICK</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">SILICON VALLEY</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">ECOLE NORMALE SUPÉRIEURE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">IBM</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">BBC</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">DARTMOUTH COLLEGE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Construction et immobilier</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Zürich</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">laboratoire FAIR</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720171220%c2%b7LI%c2%b70008" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720171220%c2%b7LI%c2%b70008">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Une brève his,         mercredi 20 décembre 2017 3345 mots, p. 10,0011,0012,0013,0014,0015</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Voyage au pays de l'Intelligence artificielle            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Erwan Cario</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-style:bold;">Les techniques d'intelligence artificielle ont fait en cinq ans des progrès fulgurants, devenant incontournables dans tous les secteurs de la recherche, de l'économie ou de la société. Où en est-on vraiment ? Quels sont les projets et les réalisations en cours ? De Paris à Zürich, en passant par la <span class="stubs">Silicon Valley</span>, enquête sur le monde de l'IA. </em></p><p>Les experts en futurologie du numérique l'affirment : l'intelligence artificielle va tout chambouler. Si on les laisse faire, ils sont même capables de parler de « disruption »... L'IA, elle sait reconnaître un chat dans une image, elle va accorder des prêts immobiliers; elle écrase ses adversaires au go, elle va conduire toutes les voitures; elle peut traduire du polonais en mandarin, elle va automatiser tant de tâches que les métiers d'aujourd'hui n'existeront plus demain. L'intelligence artificielle est magique. Pas dans les faits, bien sûr, mais dans ce rapport étrange que nous avons avec cette technologie dont nous acceptons les prouesses sans en comprendre les mécanismes. Mais c'est quoi au juste, cette intelligence artificielle ? Le chercheur Yann LeCun - à qui on doit en grande partie le bouleversement actuel dans la discipline par ses travaux, dans les années 90, sur l'apprentissage profond, et aujourd'hui responsable de FAIR, le laboratoire de recherche fondamentale chez <span class="stubs">Facebook</span> - définit l'IA d'une manière on ne peut plus simple : <em style="font-style:italic;">« Faire faire aux machines des activités qu'on attribue généralement aux animaux et aux humains. »</em>Mais cette simplicité ne saurait contrebalancer l'étendue des attentes démesurées qui accompagnent l'IA depuis que ce terme a été consacré en tant que domaine de recherche, en 1956. <em style="font-style:italic;">« C'est un terme anthropomorphique et on y projette des choses qui n'ont aucun sens,</em>s'agace Raphaël Féraud, chercheur au sein d'Orange Labs. <em style="font-style:italic;">Dans l'idéal, on devrait parler d'agents autonomes ou adaptatifs. »</em></p>
+
+
+<p>Cette « intelligence » pourtant est omniprésente dans les pensées de ceux qui travaillent sur la question. S'ils savent tous que ce n'est aujourd'hui qu'un mirage et parlent plutôt d'apprentissage pour qualifier leurs travaux, l'intelligence, celle qui permet de comprendre le monde qui nous entoure, de s'adapter aux changements, d'anticiper et de prévoir, est l'objectif à atteindre. Au détour d'une phrase, lors d'une visite dans les locaux de <span class="stubs">Facebook</span>, Antoine Bordes, responsable de FAIR Paris, évoque, lui, <em style="font-style:italic;">« le grand plan de l'IA »</em>. Quand on lui demande d'expliciter, il s'amuse : <em style="font-style:italic;">« Ce "grand plan", c'est simplement essayer d'aller vers l'intelligence artificielle, vers des machines qui raisonnent. Mais on suppose aujourd'hui qu'elle sera composée de nombreuses briques, et nous avons pour l'instant seulement quelques éléments dont nous pensons qu'ils pourraient fonctionner. »</em></p><p>D'autres sont plus directs, comme <span class="stubs">Google</span> DeepMind et son slogan officiel : « Résoudre l'intelligence. » C'est sans doute ce qui rend le sujet si complexe. Un même terme, « intelligence artificielle », désigne à la fois une discipline qui connaît des progrès fulgurants, un objectif qui, sans être irréaliste, semble encore lointain, et une chimère, qui prospère dans un inconscient collectif nourri à la science-fiction. </p> <p> Potentiel. L'intelligence artificielle est avant tout un sec-teur en effervescence permanente depuis 2012 et l'impressionnante victoire d'un réseau de neurones lors du concours annuel de reconnaissance d'images ImageNet challenge. Jusqu'alors, différentes méthodes s'affrontaient chaque année avec, pour les meilleurs, un taux d'erreurs de 25 %. En 2012, le programme de l'<span class="stubs">université de Toronto</span> s'en sort avec seulement 16 %. Cette performance remet sur le devant de la scène une technique d'apprentissage profond (<em style="font-style:italic;">deep learning</em>en VO) qui avait commencé à faire ses preuves dans les années 90 avant d'être un peu oubliée. La puissance de calcul des cartes graphiques (GPU) couplée à la mise à disposition de grandes bases de données étiquetées (une image d'un chat sur une voiture en train de jouer du piano est accompagnée des labels « chat », « voiture » et « piano », par exemple), permet à ces programmes très gourmands d'enfin faire leur preuve à grande échelle. Très vite, la communauté scientifique comprend l'immense potentiel de ce qui vient de se passer : en étant entraîné sur une base de données pertinente, un programme informatique est capable d'établir lui-même des règles qui vont permettre d'interpréter d'autres données qui étaient jusqu'ici très (ou trop) complexes à traiter. </p> <p> Dès l'année suivante, il n'y a plus que des réseaux de neurones en lice pour le concours ImageNet challenge et les taux d'erreurs chutent à quelques pour cent. L'apprentissage devient incontournable. <em style="font-style:italic;">« À cette période, j'ai vu des tas d'équipes qui n'en faisaient pas se mettre à l'apprentissage »</em>, se souvient Bertrand Braunschweig, directeur du centre de recherche Inria Saclay-Île-de-France et coordinateur du livre blanc de l'Institut sur l'IA. Mais, évidemment, c'est le secteur même de la recherche qui s'en trouve bouleversé. En premier lieu par l'arrivée tonitruante des grands acteurs de l'économie numériques qui voient dans l'intelligence artificielle l'avenir même de leur noyau technologique. En 2013, <span class="stubs">Google</span> recrute ainsi Geoffrey Hinton pour son projet Brain, et <span class="stubs">Facebook</span> demande à Yann LeCun de mettre en place le laboratoire FAIR. Ce sont deux des scientifiques les plus reconnus dans le domaine et leurs découvertes sont à l'origine du maelström actuel. </p> <p><em style="font-weight:bold;">Dans la mythologie grecque, géants de bronze,</em></p><p>servantes d'or et autres objets animés côtoient couramment les mortels et les divinités. </p> <p> La plupart sont les oeuvres du dieu du feu Héphaïstos qui forgea, entre autres, Talos, créature chargée de faire le tour de la Crête trois fois par jour pour repousser les intrus. </p> <p> Au XVIII <em style="font-style:italic;">e</em>siècle. </p> <p> Evidemment pas d'IA, mais nombre d'automates, plus ou moins élaborés, dont un joueur de flûte, un « canard digérateur », capable de restituer ce qu'il mange et de nager de façon très réaliste, un « Turc mécanique », ingénieux canular censé jouer aux échecs... </p> <p> 1914. Leonardo Torres </p> <p> Quevedo invente le premier véritable automate joueur d'échecs. Il est capable de finir une partie lors d'une confrontation roi et tour contre roi. Et de l'emporter à tous les coups. Leonardo Torres Quevedo sera le premier à utiliser des relais électromécaniques dans une machine à calculer. </p> <p> 1950. Être ou ne pas être... Le mathématicien et cryptologue britannique <span class="stubs">Alan Turing</span>, père de l'informatique moderne, rédige un article dans lequel il propose un test déterminant si une machine possède ou non une conscience. </p> <p> 1956. Le mathématicien </p> <p> John McCarthy organise au <span class="stubs">Dartmouth College</span>, aux Etats-Unis, un séminaire au cours duquel est inventé le terme d'intelligence artificielle. </p> <p> Un nouveau champ d'étude scientifique est né. </p> <p> 1968. Sortie de 2001, l'Odyssée de l'espace. En plein vide sidéral, <span class="stubs">Stanley Kubrick</span> met en scène le duel de l'homme et d'une intelligence artificielle en rébellion, HAL 9000. Une confrontation avec le premier ordinateur conscient de lui-même de l'histoire du cinéma. D'autant plus glaçante que la machine a une voix humaine. </p> <p> 1984. Ernst Dickmanns, de l'université de la Bundeswehr à Munich, et Mercedes-Benz testent une camionnette automatique équipée de caméras. </p> <p> Le véhicule atteint 100 km/h sur un réseau routier sans trafic. La voiture sans conducteur est aujourd'hui presque opérationnelle. </p> <p> Début des années 90. Apparition du Web, un ensemble de pages mêlant textes, liens et images sur le réseau Internet. Des centaines de milliards de données (les datas) vont désormais pouvoir circuler et s'échanger sans entrave. </p> <p> 1996. Naissance du premier Tamagotchi, gadget japonais qui permet de nourrir et soigner un animal virtuel. </p> <p> Recherche ouverte. Quand on veut essayer de comprendre où va l'intelligence artificielle en cette fin 2017, le premier réflexe est donc de regarder dans cette direction-là, celle de l'étape d'après, celle de la recherche fondamentale. La première constatation, c'est que le partage des connaissances est une réalité au niveau mondial, que les chercheurs travaillent dans le privé ou le secteur public. C'était une exigence de Yann LeCun quand il a rejoint <span class="stubs">Facebook</span> : <em style="font-style:italic;">« La seule manière de faire de la recherche de qualité, c'est de faire de la recherche ouverte. C'est quelque chose que j'ai établi de manière très claire avec <span class="stubs">Mark Zuckerberg</span>. Premièrement, ça permet aux chercheurs de publier, et donc les standards sont de plus haut niveau, deuxièmement, c'est la seule manière d'attirer les meilleurs. La monnaie d'échange avec les chercheurs, c'est leur impact intellectuel. » </em>Et cet impact, il se joue principalement lors des grandes conférences annuelles sur le sujet, les deux principales étant ICML (International Conference on Machine Learning) en début d'été et NIPS (Neural Information Processing Systems) en fin d'année. Mais y publier relève aujourd'hui de l'exploit, le secteur étant devenu hypercompétitif. </p> <p> Ce qui impose parfois de raccourcir les cycles de recherche. <em style="font-style:italic;">« Nous publions tout ce que nous produisons, mais nous essayons de nous concentrer sur des projets entre trois et six mois, histoire de ne pas se faire griller par d'autres équipes »</em>, explique Antoine Bordes. Ce qui ne manque pas d'arriver, de toute façon. À l'Inria, pourtant, on continue de préférer le temps long : <em style="font-style:italic;">« Dans notre plan stratégique et scientifique, on détermine les grands domaines d'évolution du numérique et les grands défis auxquels on veut s'attaquer pour les cinq prochaines années,</em>explique Bertrand Braunschweig. <em style="font-style:italic;">Ce qu'on a dans nos tiroirs, c'est ce qui sera utilisé par les industriels dans plusieurs années. Le temps de la recherche est différent de celui de l'économie, du marché. »</em>Ce qui n'empêche pas l'Institut de rester très compétitif sur le sujet. <em style="font-style:italic;">« Ce que font les acteurs privés, c'est qu'ils viennent travailler avec nous,</em>continue Bertrand Braunschweig. <em style="font-style:italic;">Ils font des choses par eux-mêmes, évidemment, mais on travaille avec eux. On a encore des choses à dire, on a des chercheurs parmi les meilleurs du monde. »</em>C'est d'ailleurs un chercheur de l'Inria, Francis Bach, qui préside le comité d'organisation de l'édition 2018 de la conférence ICML. </p> <p> « Résoudre l'intelligence » Mais dans les faits, elle en est où, la recherche fondamentale qui va permettre aux machines de raisonner ? Pour ainsi dire, nulle part. Attention, on ne dit pas que ça patine, mais que les chercheurs en sont encore à débroussailler en espérant trouver les traces d'un sentier qui mènera peut-être vers le Graal. Et personne n'est d'accord sur la direction où chercher. Demis Hassabis, le boss de <span class="stubs">Google</span> DeepMind, par exemple, ne semble jurer, pour <em style="font-style:italic;">« résoudre l'intelligence »</em>, que sur l'apprentissage par renforcement. Cette méthode, plus souple que l'apprentissage supervisé, est au coeur d'AlphaGo, le programme qui a défait plusieurs champions de go lors de rencontres très médiatisées. Mais c'est aussi une méthode coûteuse en ressources et qui est pour l'instant limitée à un certain type d'apprentissage. </p> <p><em style="font-weight:bold;">1996. Déploiement mondial</em></p><p>dans des distributeurs bancaires (en France, c'est le Crédit Mutuel de Bretagne) d'un logiciel de lecture de chèques basé sur un réseau de neurone convolutif inventé par le Français Yann LeCun. </p> <p> La technologie sera un peu oubliée jusqu'à sa réapparition fracassante en 2012. Yann LeCun est aujourd'hui à la tête de FAIR, le laboratoire d'intelligence artificielle de <span class="stubs">Facebook</span>. </p> <p> 19 97. Deep blue, le supercalculateur d'<span class="stubs">IBM</span>, bat aux échecs le champion du monde <span class="stubs">Garry Kasparov</span>. </p> <p> 20 07. Apple commercialise l'iPhone, téléphone ordinateur doté d'un écran tactile. Le début du règne des tablettes et des smartphones. </p> <p> 2011. Les applications utilisant le langage naturel pour communiquer et conseiller les utilisateurs se multiplient. </p> <p> 2012. Pour la première fois, un réseau de neurones profond gagne le challenge ImageNet, un concours de reconnaissance d'images. </p> <p> Avec un taux d'erreurs de 16,4 %, il distance très largement le second programme (26,2 %). Cette victoire, qui remet la technologie sur le devant de la scène, est adoptée massivement par tous les acteurs de l'intelligence artificielle. </p> <p> 2013. Tous les participants du challenge ImageNet utilisent des réseaux de neurones profonds. </p> <p> 2014. L'astrophysicien Stephen Hawking affirme dans une interview à la <span class="stubs">BBC</span> que le « <em style="font-style:italic;">développement d'une intelligence artificielle complète pourrait provoquer la fin de l'humanité</em>». Ils sont plusieurs depuis (Elon Musk, <span class="stubs">Bill Gates</span>, etc.) à entretenir une psychose apocalyptique autour de l'avènement d'une machine toute puissante. </p> <p> 2015. <span class="stubs">Google</span> publie la première version de TensorFlow, son logiciel d'apprentissage machine en deep learning. </p> <p> Disponible en <mark>logiciel</mark> <mark>libre</mark>, il est utilisé massivement à travers le monde à des fins industrielles et de recherche. </p> <p> 2016. AlphaGo bat un maître coréen. Vingt ans après les joueurs d'échecs, les champions de go puis de poker s'inclinent à leur tour devant des programmes d'intelligence artificielle. </p> <p> 2199. Les machines règnent en maîtres sur l'espèce humaine, même s'il reste quelques bugs dans la matrice... « Les humains sont une maladie contagieuse. Vous êtes la peste, nous sommes l'antidote. » (Agent cybernétique Smith dans <em style="font-style:italic;">Matrix</em>). </p> <p> Yann LeCun et d'autres chercheurs renommés, comme Jean Ponce de l'<span class="stubs">Ecole normale supérieure</span> de Paris, s'intéressent plutôt à l'apprentissage faiblement ou non supervisé. Il s'agit de permettre aux machines d'apprendre avant tout par l'observation, sans leur fournir au préalable des données prémâchées. Ça n'a rien d'évident et les véritables progrès dans le domaine sont rares. De son côté, Geoffrey Hinton en est plutôt à faire du passé table rase. Lui veut repartir sur de nouvelles bases. <em style="font-style:italic;">« Je pense que la façon dont nous concevons la vision par ordinateur est fausse,</em>explique-t-il au magazine <em style="font-style:italic;">Wired</em>. Ç <em style="font-style:italic;">a marche mieux que toutes les autres solutions actuelles, mais ça ne veut pas dire que c'est juste. »</em>En cause, la somme astronomique de données nécessaires pour un apprentissage qui est beaucoup plus rapide chez l'humain. Il travaille sur une méthode alternative, les « réseaux à capsules ». Il a publié, fin octobre, deux articles qui présentent des résultats prometteurs. Ce ne sont que quelques exemples parmi toutes les pistes explorées qui vont jusqu'au biomimétisme et à la cartographie précise de petits bouts de cerveaux humains pour espérer décortiquer cet « algorithme biologique » qui fonctionne si bien. </p> <p> Si la recherche fondamentale avance à son rythme, il n'en va pas de même pour la recherche appliquée. Celle-ci se charge finalement d'optimiser, de rendre concrètes et de diffuser les possibilités de l'apprentissage profond dans tous les domaines imaginables. C'est ce qui a permis la popularisation finalement assez discrète de l'intelligence artificielle, notamment dans les téléphones portables. Rien que le fait, par exemple, de bénéficier aujourd'hui de moteurs de recherche capables de faire remonter les images contenant des bateaux, des anniversaires ou des sapins de Noël est une performance technologique. Cette différence singulière entre une recherche fondamentale, théorique et prospective, et une autre qui cherche à faire évoluer les applications du quotidien se retrouve dans l'organisation même de la recherche au sein des grands groupes. <em style="font-style:italic;">« C'est une histoire de longueur de piste de décollage</em>, décrit Emmanuel Mogenet, responsable du centre de recherche européen de <span class="stubs">Google</span> à Zürich. <em style="font-style:italic;">La longueur qu'on a donnée à DeepMind est très, très importante, de l'ordre de dix ou quinze ans. DeepMind veut produire une vraie intelligence artificielle. Et Demis Hassabis le répète souvent : tout ce qui ne les propulse pas vers ce but ultime est une distraction. Ici, on a une piste plus courte, deux ou trois ans, avec des objectifs plus tangibles. Ça a par exemple été le cas pour le moteur de recherche de <span class="stubs">Google</span> Photos ou la traduction. » </em></p><p>Alors, forcément, on se pose la question des deux ou trois ans à venir, avec, en tête, l'impression que beaucoup a déjà été fait à partir de la théorie existante et que les évolutions technologiques risquent forcément de ralentir. Emmanuel Mogenet est persuadé du contraire et nous parle, par exemple, de l'apprentissage horizontal, le fait d'entraîner un réseau de neurones à différentes tâches assez proches alors qu'ils sont pour l'instant ultra-spécialisés. Et puis, il y a d'autres pistes, plus vertigineuses : <em style="font-style:italic;">« On est en train d'appliquer le</em>machine learning <em style="font-style:italic;">à lui-même. On a toujours un problème de conception d'un réseau de neurones. Est-ce qu'il doit être profond ? Quelle doit être sa taille ? Combien de neurones ? Quelles sont les connexions ? Il y a des recettes qu'on applique, mais il n'y a pas de sciences sur le sujet. On est en train de d'entraîner des machines pour apprendre à concevoir des réseaux de neurones. On commence à avoir des résultats, et ça va potentiellement être extraordinaire. »</em>Des IA qui créent d'autres IA, ça ne manquera pas, aussi, d'alimenter quelques fantasmes... </p> <p> Projet Handle à l'Institut des systèmes intelligents et de robotique à Paris. </p> <p> A la recherche du « biais ». Mais la recherche appliquée est aussi présente de manière transversale dans tous les secteurs qui disposent de données nombreuses et compliquées à interpréter pour les humains. Chez Orange Labs, par exemple, on veut l'appliquer aux campagnes marketing. C'est le projet sur lequel travaille Raphaël Féraud : <em style="font-style:italic;">« Il s'agit d'optimisation par renforcement. En fonction du contexte, de ce qu'on sait du client, et de l'action du conseiller, on va établir un système de récompense en fonction de la satisfaction finale. »</em>Opérateurs télécoms, banques, assuran-ces, services en tout genre et pourquoi pas service public, autant dire que l'intégration de l'intelligence artificielle dans tous les rouages de la société ne fait que commencer. D'où, sans doute, l'offensive médiatique impressionnante de ces derniers mois d'acteurs comme <span class="stubs">Google</span>, <span class="stubs">Facebook</span> ou <span class="stubs">Microsoft</span> qui n'hésitent pas à surjouer la transparence de leurs unités de recherche. Il faut rassurer, expliquer. </p> <p> Mais surtout ne pas chercher à minimiser des problèmes bien réels. </p> <p> Quand on l'interroge sur le sujet, Blaise Agüera y Arcas, une des têtes pensantes de <span class="stubs">Google</span> Brain, parle d'abord de l'emploi : <em style="font-style:italic;">« Les tâches pour lesquelles on construit des IA sont pour la plupart confiées aujourd'hui à des humains, et au fur et à mesure qu'on automatise ces tâches, tout un pan du travail humain devient superflu. Ça devrait être une bonne nouvelle pour l'humanité - nous ne le ferions pas sinon -, mais si ce n'est pas mis en place avec une redistribution des bénéfices, ça conduira à un chômage de masse. »</em>Mais il tient aussi à aborder le sujet qui a pris une ampleur inattendue en 2017 : <em style="font-style:italic;">« L'autre problème, c'est le fait d'intégrer les biais et les préjugés humains dans l'intelligence artificielle. L'IA, c'est avant tout l'apprentissage des processus humain, et ces processus embarquent avec eux des catégorisations, des stéréotypes. Nous avons aujourd'hui les preuves que tous les systèmes que nous avons entraînés pour exécuter une tâche humaine intègrent des biais humains. Finalement, c'est l'outil ultime d'introspection, pour faire ressortir nos propres croyances. Mais maintenant que nous le savons, nous ne pouvons pas déléguer nos préjugés aux algorithmes. »</em>Le petit monde de l'intelligence artificielle n'a eu que ce mot-là à la bouche ces derniers mois : les « biais ». C'est que, passée l'euphorie de l'avènement d'une technologie révolutionnaire, il a fallu se rendre à l'évidence : les masses de données utilisées pour entraîner des réseaux de neurones ne sont pas neutres. Et c'est le coeur même du développement qui s'en retrouve bouleversé. La validité d'un outil informatique ne vient plus de la qualité de la programmation logicielle, mais de la justesse des données d'apprentissage. Ce qui amène Fernanda Viégas, chercheuse chez <span class="stubs">Google</span> au sein de la cellule PAIR (People+AI Research Initiative) à lancer cet appel aux ingénieurs de son entreprise : <em style="font-style:italic;">« Débuggez vos données avant de débugger vos modèles ! »</em></p><p>L'équité et la transparence des systèmes autonomes sont donc un des enjeux majeurs des prochaines années. Il faut réussir à traiter les biais, soit en amont, dans les données utilisées, soit dans le processus de traitement qui peut devenir capable de les détecter et de les neutraliser. <em style="font-style:italic;">« Une des situations où l'on veut forcément enlever les biais d'un jeu de données, c'est par exemple dans l'éducation,</em>explique Fernanda Viégas. <em style="font-style:italic;">Quand mes enfants vont apprendre tous les métiers qu'ils peuvent faire, ce serait catastrophique que le système réponde en fonction de leur sexe. A contrario, on peut vouloir un système qui va révéler les biais, pour pouvoir travailler dessus, pour changer la société. Pour traiter les biais, il faut avoir un but. »</em></p><p>S'il est difficile de se préparer aux progrès à venir de l'intelligence artificielle, on sait déjà que la question de son impact sur la société sera au centre des préoccupations pour les prochaines années. Les lieux de réflexion se multiplient, avec des initiatives comme « Partnership on AI » qui regroupe acteurs privés (<span class="stubs">Facebook</span>, <span class="stubs">Google</span>, <span class="stubs">Amazon</span>, <span class="stubs">IBM</span>, etc.), ONG (<span class="stubs">Amnesty International</span>, Unicef, etc.), associations de défense des libertés (EFF, <span class="stubs">ACLU</span>, etc.) et universités. La déclaration d'intention est forcément un poil grandiloquente : <em style="font-style:italic;">« Nous avons conçu ce partenariat pour que nous puissions consacrer plus d'efforts et d'attention à résoudre les problèmes les plus complexes de l'humanité, notamment en matière de santé et de bien-être, de transport, d'éducation et de sciences... »</em></p><p>Sans douter qu'ils réussiront à travailler en bonne intelligence, on peut quand même s'interroger : vouloir résoudre <em style="font-style:italic;">« les problèmes de l'humanité »</em>grâce à la technologie, n'est-ce pas, là aussi, un biais ? </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2017 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20171220·LI·0008</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20171220·LI·0008";
+    var _docIndex = 505;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"alan turing":"92096","mark zuckerberg":"90036","bill gates":"92043","garry kasparov":"92092","stanley kubrick":"91229"};
+		var _orgDic = {"silicon valley":"93355","ecole normale supérieure":"94757","ecole normale supérieure de paris":"94757","ibm":"94152","bbc":"93354","dartmouth college":"95915","amnesty international":"92972","facebook":"94511","amazon":"93749","microsoft":"93647","american civil liberties union":"96665","aclu":"96665","université de toronto":"93915","google":"92575"};
+		var _docName = 'news·20171220·LI·0008';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720171220%C2%B7LI%C2%B70008&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720171220%C2%B7LI%C2%B70008&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720171220%C2%B7LI%C2%B70008&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720171220%C2%B7LI%C2%B70008&docIndex=505&FullScreen=1";
+                
+	var _keyDoc = 'news·20171220·LI·0008';
+</script>
+</div></body></html>

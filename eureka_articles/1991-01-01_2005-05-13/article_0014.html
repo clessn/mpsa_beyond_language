@@ -1,0 +1,499 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CONVERGENCE,         lundi 11 avril 2005 1122 mots, p. B6&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Technologie&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&lt;mark&gt;Logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt;, un &#233;cho favorable &#224; une prise de responsabilit&#233;            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Il semble que la chronique de la semaine derni&#232;re sur le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; vous ait particuli&#232;rement interpell&#233;s, si j&#39;en crois le nombre de commentaires re&#231;us. Vous avez &#233;t&#233; nombreux &#224; r&#233;agir &#224; cette question: &#171;Vous sentez-vous une responsabilit&#233; morale &#224; soutenir d&#39;une quelconque fa&#231;on le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;?&#187; &lt;/p&gt; &lt;p&gt; Exceptionnellement, vu la tr&#232;s grande qualit&#233; de vos interventions, cette chronique fera une tr&#232;s large place &#224; vos commentaires et reviendra &#224; sa programmation habituelle la semaine prochaine.&lt;/p&gt;
+
+
+&lt;p&gt;Sans trop de surprises, la grande majorit&#233; des commentaires provenaient de personnes utilisant d&#233;j&#224; le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Si la plupart des r&#233;pondants ne sont que de simples utilisateurs, d&#39;autres proviennent du milieu des affaires, comme le consultant Fabian Rodriguez qui d&#233;clare soutenir avec force et passion le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; dans le cadre de son travail. &lt;/p&gt; &lt;p&gt; &#171;Depuis quelques mois, en tant que consultant &#224; temps plein proposant des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; pour la plupart de mes mandats, j&#39;ai adopt&#233; quelques habitudes &#224; ce sujet. Pour ma part, mes derniers apports ont &#233;t&#233;: - Mozilla Foundation (achat pour environ 300 US$ de mat&#233;riel promotionnel ainsi que des dons de 50 $ par journ&#233;e de consultation consacr&#233;e &#224; leurs produits); - SourceForge.net (donateur niveau 1); &lt;/p&gt; &lt;p&gt; PDFCreator - environ 100 $ pour encourager la r&#233;solution certains bogues, et 50 $ pour chaque client qui me l&#39;a demand&#233; - Wordpress - 50 $ &#224; la suite de suite cet article (merci Michel). J&#39;ai d&#39;ailleurs constat&#233; que seulement 179 dons avaient &#233;t&#233; enregistr&#233;s par Paypal (le mode de paiement choisi par Wordpress); - Ubuntu.com / Debian.org - 50 $ par semaine de consultation consacr&#233;e &#224; l&#39;une ou l&#39;autre de ces distributions Linux &lt;/p&gt; &lt;p&gt; Pour l&#39;instant, Mozilla est le principal b&#233;n&#233;ficiaire de mes dons, car c&#39;est le logiciel qui me fait travailler le plus. Par ailleurs, j&#39;encourage mes clients &#224; faire des dons et &#224; devenir membres de FACIL (&lt;a target=&quot;_blank&quot; href=&quot;https://www.facil.qc.ca&quot;&gt;www.facil.qc.ca&lt;/a&gt;). &#199;a c&#39;est moins facile. C&#39;est un peu comme manger biologique/organique/&#233;quitable/v&#233;g&#233;tarien... c&#39;est une bonne habitude.&#187; &lt;/p&gt; &lt;p&gt; Donner du temps &lt;/p&gt; &lt;p&gt; De son c&#244;t&#233;, Erwan, un utilisateur peu fortun&#233; si on en croit ses dires, compense en donnant du temps &#224; la communaut&#233; du libre. &lt;/p&gt; &lt;p&gt; &#171;J&#39;utilise de nombreux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Le plus utilis&#233;, pour ma part, est Firefox et son compagnon Thunderbird. Je n&#39;ai pas vraiment beaucoup d&#39;argent, donc je donne de mon temps sur le forum d&#39;aide francophone et je traduis des extensions (pour le fureteur Firefox) quand mon temps me le permet. &lt;/p&gt; &lt;p&gt; Votre billet, et plus sp&#233;cialement le titre et la derni&#232;re partie est le reflet exact de ce que je pense: un don pour les fortun&#233;s, et un peu de temps pour les autres; tout le monde a une exp&#233;rience et peut la faire partager. Le libre n&#39;a pas d&#39;avenir sans communaut&#233;.&#187; &lt;/p&gt; &lt;p&gt; Le fureteur Firefox semble d&#39;ailleurs &#234;tre un point commun &#224; nombre de r&#233;flexions sur le sujet du libre. La popularit&#233; sans cesse montante de ce concurrent d&#39;Internet Explorer a incit&#233; plusieurs utilisateurs, tel Richard Gagn&#233;, &#224; prendre conscience que le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; pouvait &#234;tre une solution de rechange valable au logiciel propri&#233;taire. &lt;/p&gt; &lt;p&gt; &#171;J&#39;ai commenc&#233; &#224; utiliser Firefox en d&#233;cembre 2004. Je cherchais alors une fa&#231;on de me d&#233;barrasser des fameux pop-ups de publicit&#233; non sollicit&#233;e. Je peux vous dire que je n&#39;ai pas &#233;t&#233; d&#233;&#231;u et que je n&#39;utilise plus Internet Explorer que pour les sites qui l&#39;exigent. Je me demandais si je devais contribuer financi&#232;rement au d&#233;veloppement de ces applications tellement sup&#233;rieures aux produits de Microsoft. C&#39;est donc avec plaisir que j&#39;ai pris connaissance de votre article dans Le Devoir, article que j&#39;ai trouv&#233; particuli&#232;rement &#233;clairant sur toute cette question. Comme contribution, j&#39;ai donc d&#233;cid&#233; de me procurer plusieurs articles de la boutique Mozilla.&#187; &lt;/p&gt; &lt;p&gt; Un frein &lt;/p&gt; &lt;p&gt; Certains, comme Pierre Lesage, voudraient contribuer financi&#232;rement &#224; encourager des communaut&#233;s du libre. Toutefois, le paiement en ligne semble &#234;tre un frein &#224; cet encouragement. &lt;/p&gt; &lt;p&gt; &#171;Je me suis questionn&#233; comme vous &#224; plusieurs reprises, mais je dois avouer que, jusqu&#39;&#224; maintenant, je suis h&#233;sitant &#224; transmettre des contributions. Je vous soumets quelques &#233;l&#233;ments qui alimentent encore ma r&#233;flexion comme de la difficult&#233; &#224; payer en dollars canadiens dans de nombreux cas. M&#234;me sur des sites d&#39;excellente r&#233;putation comme Mozilla o&#249; l&#39;on semble dispos&#233; &#224; accepter cartes de cr&#233;dit ou Paypal, la proc&#233;dure n&#39;est pas claire. &lt;/p&gt; &lt;p&gt; On semble achemin&#233; vers Paypal que je ne d&#233;sire pas utiliser. J&#39;&#233;prouve un inconfort &#224; m&#39;avancer dans une proc&#233;dure dont j&#39;ai de la difficult&#233; &#224; m&#39;imaginer d&#39;avance o&#249; elle va m&#39;amener et comment elle va le faire; &lt;/p&gt; &lt;p&gt; Bref, je suis plus enclin &#224; l&#39;id&#233;e de contribuer au d&#233;veloppement dans le cas du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; (OpenOffice, Mozilla) que dans le cas de certains logiciels gratuits o&#249; j&#39;ai eu souvent le sentiment que le montant de la contribution sugg&#233;r&#233;e &#233;tait &#233;lev&#233;.&#187; &lt;/p&gt; &lt;p&gt; &#192; ceci, je me permettrais de r&#233;pondre &#224; M. Lesage que rien ne vous oblige &#224; donner un montant important. Ce qu&#39;il y a de bien avec le libre, c&#39;est que chacun est libre d&#39;estimer la valeur qu&#39;il accorde &#224; un produit. Si selon vous, la valeur que vous donnez &#224; une suite bureautique libre comme OpenOffice est de 50 $, et que moi j&#39;estime plut&#244;t que sa valeur est de 20 $, nous avons tous les deux raison. &lt;/p&gt; &lt;p&gt; &#201;duquer &lt;/p&gt; &lt;p&gt; J&#39;ai particuli&#232;rement aim&#233; le commentaire de Martin Boisjoly qui, en plus de contribuer financi&#232;rement &#224; certains projets en &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; comme Firefox et &#201;dulinux, estime qu&#39;en &#233;duquant ses proches au libre, son apport aura plus d&#39;impact &#224; long terme. &lt;/p&gt; &lt;p&gt; &#171;&#201;tant un ancien &quot;installateur-configurateur de PC&quot; (lire MS Windows), j&#39;ai offert &#224; ma soeur pour No&#235;l, un PC d&#39;occasion (PII-400) tout frais configur&#233; avec Edulinux 2004, Firefox, les petits haut-parleurs, l&#39;acc&#232;s &#224; Internet, etc. Elle n&#39;y a vu que du feu et elle me rappelle, &#224; l&#39;occasion, combien elle est aux anges depuis qu&#39;elle utilise cette machine!. J&#39;en pr&#233;pare d&#233;j&#224; un autre pour un de mes beaux-fr&#232;res, avec Ubuntu (Debian).&#187; &lt;/p&gt; &lt;p&gt; Certains internautes, comme Pierre Lachance, ont choisi de r&#233;agir sur leur carnet Web, et non pas par courriel ou par un commentaire sur mon blogue. M. Lachance s&#39;interroge sur la notion m&#234;me de responsabilit&#233; que j&#39;ai soulev&#233;e dans ma chronique. &lt;/p&gt; &lt;p&gt; &#171;Le mot responsabilit&#233; me semble lourd, car je n&#39;ai jamais eu une pouss&#233;e de fi&#232;vre &#224; faire un don &#224; un scientifique qui a eu l&#39;amabilit&#233; de livrer ses d&#233;couvertes &#224; l&#39;humanit&#233;. Je caricature, mais &#224; peine car le monde du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; n&#39;est pas seulement le produit final qu&#39;est le logiciel (comme Firefox ou autre), mais de la documentation libre, disponible, utilisable, modifiable et redistribuable, une communaut&#233; qui aide dans des forums/liste de diffusions/site Web et une philosophie bien diff&#233;rente de celle v&#233;hicul&#233;e par le logiciel propri&#233;taire. &lt;/p&gt; &lt;p&gt; &#171;Libert&#233;, voil&#224; ce que je respecte. La libert&#233; de contribuer en documentant (ce que je fais gr&#226;ce, entre autres, Linux&#201;duQu&#233;bec). La libert&#233; d&#39;aider les utilisateurs par le courriel/liste/forum. La libert&#233; de modifier/redistribuer une application comme WikiNiMST. La libert&#233; de m&#39;inscrire au MandrakeClub ou de faire un don &#224; Wikipedia. Mais je ne consid&#232;re pas ces gestes comme une responsabilit&#233;, car je n&#39;y suis pas oblig&#233;, c&#39;est l&#224; la diff&#233;rence avec le monde du logiciel propri&#233;taire. &lt;/p&gt; &lt;p&gt; &#171;Oui, pour moi un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est plus qu&#39;un ex&#233;cutable (outil) sur mon poste. C&#39;est de la connaissance. Et pour moi la connaissance appartient &#224; tous. Oui, je contribue de diff&#233;rentes fa&#231;ons au &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Oui, j&#39;utilise les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Et non ce n&#39;est pas parce qu&#39;ils sont gratuits.&#187; &lt;/p&gt; &lt;p&gt; Le point de vue du d&#233;veloppeur &lt;/p&gt; &lt;p&gt; En conclusion, je m&#39;en voudrais de passer sous silence la r&#233;flexion de Berth&#233;l&#233;my Dagenais, &#233;tudiant en informatique et g&#233;nie logiciel &#224; l&#39;UQAM, lui-m&#234;me concepteur de &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, qui ne peut s&#39;emp&#234;cher de r&#233;fl&#233;chir &#224; ces questions sous l&#39;angle du d&#233;veloppeur. Selon M. Dagenais, il appara&#238;t &#233;vident que l&#39;on assiste &#224; une remise en question de la profession de d&#233;veloppeur logiciel: &#171;Si on ne peut plus gagner sa vie ainsi parce que l&#39;on ne peut plus obtenir une r&#233;tribution juste pour le travail qu&#39;on a accompli, le m&#233;tier devient alors rapidement l&#39;apanage des plus riches ou de ceux travaillant pour les grandes entreprises. La communaut&#233; des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; aura bient&#244;t &#224; se poser certaines questions sinon elle contribuera elle-m&#234;me &#224; son d&#233;clin.&#187; &lt;/p&gt; &lt;p&gt; Toujours selon M. Dagenais, il existe plusieurs fa&#231;ons de diminuer ses go&#251;ts et d&#39;augmenter ses revenus avec un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &#171;Des sites comme SourceForge.net offrent une multitude de services gratuits (h&#233;bergement Web, ferme de compilation, contr&#244;le des sources) pour les projets de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. De plus, il est toujours possible comme il est mentionn&#233; dans l&#39;article de souscrire &#224; un programme de dons ou de vendre une documentation plus d&#233;taill&#233;e ou une version commerciale du produit. La publicit&#233; reste d&#39;apr&#232;s mon exp&#233;rience le moyen le plus r&#233;pandu d&#39;obtenir un revenu faible, mais durable pour un projet de &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;.&#187; &lt;/p&gt; &lt;p&gt; On peut r&#233;pondre qu&#39;il restera toujours un march&#233; pour des applications (propri&#233;taires) sp&#233;cialis&#233;es ou plus complexes, mais si le mouvement des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; a r&#233;ussi &#224; accoucher d&#39;un syst&#232;me d&#39;exploitation (Linux), il semble alors que ce mouvement soit capable de tout, ce qui est tout de m&#234;me extraordinaire en soi. (...) J&#39;utilise chaque jour des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ou des composants libres que j&#39;incorpore &#224; mes propres logiciels et je me trouve chanceux de vivre &#224; une telle &#233;poque. &lt;/p&gt; &lt;p&gt;&lt;a href=&quot;mailto:mdumais@ledevoir.com&quot;&gt; mdumais@ledevoir.com&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20050411&amp;#183;LE&amp;#183;79056&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">m. dagenais</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">manger biologique/organique/équitable/végétarien</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">profession de développeur logiciel</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sciences humaines et sociales</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">FACIL</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Wikipedia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050411%c2%b7LE%c2%b779056" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050411%c2%b7LE%c2%b779056">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CONVERGENCE,         lundi 11 avril 2005 1122 mots, p. B6</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Technologie</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+<mark>Logiciel</mark> <mark> libre</mark>, un écho favorable à une prise de responsabilité            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Il semble que la chronique de la semaine dernière sur le <mark>logiciel</mark> <mark>libre</mark> vous ait particulièrement interpellés, si j'en crois le nombre de commentaires reçus. Vous avez été nombreux à réagir à cette question: «Vous sentez-vous une responsabilité morale à soutenir d'une quelconque façon le <mark>logiciel</mark> <mark>libre</mark>?» </p> <p> Exceptionnellement, vu la très grande qualité de vos interventions, cette chronique fera une très large place à vos commentaires et reviendra à sa programmation habituelle la semaine prochaine.</p>
+
+
+<p>Sans trop de surprises, la grande majorité des commentaires provenaient de personnes utilisant déjà le <mark>logiciel</mark> <mark>libre</mark>. Si la plupart des répondants ne sont que de simples utilisateurs, d'autres proviennent du milieu des affaires, comme le consultant Fabian Rodriguez qui déclare soutenir avec force et passion le <mark>logiciel</mark> <mark>libre</mark> dans le cadre de son travail. </p> <p> «Depuis quelques mois, en tant que consultant à temps plein proposant des <mark>logiciels</mark> <mark>libres</mark> pour la plupart de mes mandats, j'ai adopté quelques habitudes à ce sujet. Pour ma part, mes derniers apports ont été: - Mozilla Foundation (achat pour environ 300 US$ de matériel promotionnel ainsi que des dons de 50 $ par journée de consultation consacrée à leurs produits); - SourceForge.net (donateur niveau 1); </p> <p> PDFCreator - environ 100 $ pour encourager la résolution certains bogues, et 50 $ pour chaque client qui me l'a demandé - Wordpress - 50 $ à la suite de suite cet article (merci Michel). J'ai d'ailleurs constaté que seulement 179 dons avaient été enregistrés par Paypal (le mode de paiement choisi par Wordpress); - Ubuntu.com / Debian.org - 50 $ par semaine de consultation consacrée à l'une ou l'autre de ces distributions Linux </p> <p> Pour l'instant, Mozilla est le principal bénéficiaire de mes dons, car c'est le logiciel qui me fait travailler le plus. Par ailleurs, j'encourage mes clients à faire des dons et à devenir membres de FACIL (<a target="_blank" href="https://www.facil.qc.ca">www.facil.qc.ca</a>). Ça c'est moins facile. C'est un peu comme manger biologique/organique/équitable/végétarien... c'est une bonne habitude.» </p> <p> Donner du temps </p> <p> De son côté, Erwan, un utilisateur peu fortuné si on en croit ses dires, compense en donnant du temps à la communauté du libre. </p> <p> «J'utilise de nombreux <mark>logiciels</mark> <mark>libres</mark>. Le plus utilisé, pour ma part, est Firefox et son compagnon Thunderbird. Je n'ai pas vraiment beaucoup d'argent, donc je donne de mon temps sur le forum d'aide francophone et je traduis des extensions (pour le fureteur Firefox) quand mon temps me le permet. </p> <p> Votre billet, et plus spécialement le titre et la dernière partie est le reflet exact de ce que je pense: un don pour les fortunés, et un peu de temps pour les autres; tout le monde a une expérience et peut la faire partager. Le libre n'a pas d'avenir sans communauté.» </p> <p> Le fureteur Firefox semble d'ailleurs être un point commun à nombre de réflexions sur le sujet du libre. La popularité sans cesse montante de ce concurrent d'Internet Explorer a incité plusieurs utilisateurs, tel Richard Gagné, à prendre conscience que le <mark>logiciel</mark> <mark>libre</mark> pouvait être une solution de rechange valable au logiciel propriétaire. </p> <p> «J'ai commencé à utiliser Firefox en décembre 2004. Je cherchais alors une façon de me débarrasser des fameux pop-ups de publicité non sollicitée. Je peux vous dire que je n'ai pas été déçu et que je n'utilise plus Internet Explorer que pour les sites qui l'exigent. Je me demandais si je devais contribuer financièrement au développement de ces applications tellement supérieures aux produits de Microsoft. C'est donc avec plaisir que j'ai pris connaissance de votre article dans Le Devoir, article que j'ai trouvé particulièrement éclairant sur toute cette question. Comme contribution, j'ai donc décidé de me procurer plusieurs articles de la boutique Mozilla.» </p> <p> Un frein </p> <p> Certains, comme Pierre Lesage, voudraient contribuer financièrement à encourager des communautés du libre. Toutefois, le paiement en ligne semble être un frein à cet encouragement. </p> <p> «Je me suis questionné comme vous à plusieurs reprises, mais je dois avouer que, jusqu'à maintenant, je suis hésitant à transmettre des contributions. Je vous soumets quelques éléments qui alimentent encore ma réflexion comme de la difficulté à payer en dollars canadiens dans de nombreux cas. Même sur des sites d'excellente réputation comme Mozilla où l'on semble disposé à accepter cartes de crédit ou Paypal, la procédure n'est pas claire. </p> <p> On semble acheminé vers Paypal que je ne désire pas utiliser. J'éprouve un inconfort à m'avancer dans une procédure dont j'ai de la difficulté à m'imaginer d'avance où elle va m'amener et comment elle va le faire; </p> <p> Bref, je suis plus enclin à l'idée de contribuer au développement dans le cas du <mark>logiciel</mark> <mark>libre</mark> (OpenOffice, Mozilla) que dans le cas de certains logiciels gratuits où j'ai eu souvent le sentiment que le montant de la contribution suggérée était élevé.» </p> <p> À ceci, je me permettrais de répondre à M. Lesage que rien ne vous oblige à donner un montant important. Ce qu'il y a de bien avec le libre, c'est que chacun est libre d'estimer la valeur qu'il accorde à un produit. Si selon vous, la valeur que vous donnez à une suite bureautique libre comme OpenOffice est de 50 $, et que moi j'estime plutôt que sa valeur est de 20 $, nous avons tous les deux raison. </p> <p> Éduquer </p> <p> J'ai particulièrement aimé le commentaire de Martin Boisjoly qui, en plus de contribuer financièrement à certains projets en <mark>code</mark> <mark>source</mark> <mark>libre</mark> comme Firefox et Édulinux, estime qu'en éduquant ses proches au libre, son apport aura plus d'impact à long terme. </p> <p> «Étant un ancien "installateur-configurateur de PC" (lire MS Windows), j'ai offert à ma soeur pour Noël, un PC d'occasion (PII-400) tout frais configuré avec Edulinux 2004, Firefox, les petits haut-parleurs, l'accès à Internet, etc. Elle n'y a vu que du feu et elle me rappelle, à l'occasion, combien elle est aux anges depuis qu'elle utilise cette machine!. J'en prépare déjà un autre pour un de mes beaux-frères, avec Ubuntu (Debian).» </p> <p> Certains internautes, comme Pierre Lachance, ont choisi de réagir sur leur carnet Web, et non pas par courriel ou par un commentaire sur mon blogue. M. Lachance s'interroge sur la notion même de responsabilité que j'ai soulevée dans ma chronique. </p> <p> «Le mot responsabilité me semble lourd, car je n'ai jamais eu une poussée de fièvre à faire un don à un scientifique qui a eu l'amabilité de livrer ses découvertes à l'humanité. Je caricature, mais à peine car le monde du <mark>logiciel</mark> <mark>libre</mark> n'est pas seulement le produit final qu'est le logiciel (comme Firefox ou autre), mais de la documentation libre, disponible, utilisable, modifiable et redistribuable, une communauté qui aide dans des forums/liste de diffusions/site Web et une philosophie bien différente de celle véhiculée par le logiciel propriétaire. </p> <p> «Liberté, voilà ce que je respecte. La liberté de contribuer en documentant (ce que je fais grâce, entre autres, LinuxÉduQuébec). La liberté d'aider les utilisateurs par le courriel/liste/forum. La liberté de modifier/redistribuer une application comme WikiNiMST. La liberté de m'inscrire au MandrakeClub ou de faire un don à Wikipedia. Mais je ne considère pas ces gestes comme une responsabilité, car je n'y suis pas obligé, c'est là la différence avec le monde du logiciel propriétaire. </p> <p> «Oui, pour moi un <mark>logiciel</mark> <mark>libre</mark> est plus qu'un exécutable (outil) sur mon poste. C'est de la connaissance. Et pour moi la connaissance appartient à tous. Oui, je contribue de différentes façons au <mark>logiciel</mark> <mark>libre</mark>. Oui, j'utilise les <mark>logiciels</mark> <mark>libres</mark>. Et non ce n'est pas parce qu'ils sont gratuits.» </p> <p> Le point de vue du développeur </p> <p> En conclusion, je m'en voudrais de passer sous silence la réflexion de Berthélémy Dagenais, étudiant en informatique et génie logiciel à l'UQAM, lui-même concepteur de <mark>logiciel</mark> <mark>libre</mark>, qui ne peut s'empêcher de réfléchir à ces questions sous l'angle du développeur. Selon M. Dagenais, il apparaît évident que l'on assiste à une remise en question de la profession de développeur logiciel: «Si on ne peut plus gagner sa vie ainsi parce que l'on ne peut plus obtenir une rétribution juste pour le travail qu'on a accompli, le métier devient alors rapidement l'apanage des plus riches ou de ceux travaillant pour les grandes entreprises. La communauté des <mark>logiciels</mark> <mark>libres</mark> aura bientôt à se poser certaines questions sinon elle contribuera elle-même à son déclin.» </p> <p> Toujours selon M. Dagenais, il existe plusieurs façons de diminuer ses goûts et d'augmenter ses revenus avec un <mark>logiciel</mark> <mark>libre</mark>. «Des sites comme SourceForge.net offrent une multitude de services gratuits (hébergement Web, ferme de compilation, contrôle des sources) pour les projets de <mark>logiciels</mark> <mark>libres</mark>. De plus, il est toujours possible comme il est mentionné dans l'article de souscrire à un programme de dons ou de vendre une documentation plus détaillée ou une version commerciale du produit. La publicité reste d'après mon expérience le moyen le plus répandu d'obtenir un revenu faible, mais durable pour un projet de <mark>logiciel</mark> <mark>libre</mark>.» </p> <p> On peut répondre qu'il restera toujours un marché pour des applications (propriétaires) spécialisées ou plus complexes, mais si le mouvement des <mark>logiciels</mark> <mark>libres</mark> a réussi à accoucher d'un système d'exploitation (Linux), il semble alors que ce mouvement soit capable de tout, ce qui est tout de même extraordinaire en soi. (...) J'utilise chaque jour des <mark>logiciels</mark> <mark>libres</mark> ou des composants libres que j'incorpore à mes propres logiciels et je me trouve chanceux de vivre à une telle époque. </p> <p><a href="mailto:mdumais@ledevoir.com"> mdumais@ledevoir.com</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20050411·LE·79056</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20050411·LE·79056";
+    var _docIndex = 13;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20050411·LE·79056';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720050411%C2%B7LE%C2%B779056&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720050411%C2%B7LE%C2%B779056&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720050411%C2%B7LE%C2%B779056&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720050411%C2%B7LE%C2%B779056&docIndex=13&FullScreen=1";
+                
+	var _keyDoc = 'news·20050411·LE·79056';
+</script>
+</div></body></html>

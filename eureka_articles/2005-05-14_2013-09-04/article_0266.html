@@ -1,0 +1,513 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Communication,         lundi 8 ao&amp;#251;t 2011 421 mots, p. 2&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+EN LIGNE         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;R&#233;seaux &amp; m&#233;dias&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Microsoft lance un concours pour contrer les hackers            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le g&#233;ant de l&#39;informatique am&#233;ricain offre 200 000 dollars pour un syst&#232;me antipiratage&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Laurent Checola et Daniel Psenny&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Avis aux chasseurs de primes ! Lors du Salon annuel sur la s&#233;curit&#233; informatique Black Hat, qui a r&#233;uni du samedi 30 juillet au jeudi 4 ao&#251;t &#224; Las Vegas (Nevada) les experts des agences gouvernementales am&#233;ricaines et des industries ainsi que les hackers les plus pointus du monde, Microsoft a annonc&#233; le lancement du Microsoft Blue Hat Prize Contest. Ce nouveau prix offrira 200000 dollars (140 000 euros) &#224; la personne qui mettra au point un logiciel anti-piratage capable de r&#233;sister aux attaques informatiques. &lt;/p&gt; &lt;p&gt; Avec une part de march&#233; mondial estim&#233;e &#224; 87,66 %, le g&#233;ant am&#233;ricain de l&#39;informatique - et son syst&#232;me Windows - r&#232;gne sans partage sur la plan&#232;te informatique. Il est ainsi le plus expos&#233; aux attaques des pirates, qui en ont fait leur cible principale.&lt;/p&gt;
+
+
+&lt;p&gt;La comp&#233;tition est ouverte aux chercheurs, professionnels de la s&#233;curit&#233; informatique et m&#234;me aux jeunes geeks, &#224; condition qu&#39;ils aient au moins 14 ans. Leurs propositions devront &#234;tre envoy&#233;es &#224; Microsoft avant avril 2012. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce prix est con&#231;u pour imaginer de nouvelles id&#233;es pour des approches d&#233;fensives en mati&#232;re de s&#233;curit&#233; informatique&lt;/em&gt;, explique Microsoft sur son site Web. &lt;em style=&quot;font-style:italic;&quot;&gt;Dans le cadre de notre engagement pour une exp&#233;rience informatique plus s&#251;re, nous esp&#233;rons inspirer les chercheurs en s&#233;curit&#233;, afin de d&#233;velopper des solutions innovantes destin&#233;es &#224; r&#233;pondre aux graves menaces de s&#233;curit&#233;. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Apr&#232;s r&#233;ception et &#233;tude des dossiers, qui devront fournir un prototype fonctionnant sur Windows et qui sera d&#233;velopp&#233; &#224; l&#39;aide du Windows SDK, un groupe d&#39;experts de Microsoft attribuera les prix lors du Salon Black Hat 2012. Outre le premier prix, la firme de Ridmond en attribuera un second de 50 000 dollars et offrira un abonnement &#224; des services de Microsoft d&#39;une valeur de 10000 dollars &#224; celui arriv&#233; &#224; la troisi&#232;me place. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La valeur de ce prix va bien au-del&#224; de l&#39;argent&lt;/em&gt;, a d&#233;clar&#233; Katie Moussouris, responsable de la strat&#233;gie de s&#233;curit&#233; du groupe dans un entretien &#224; l&#39;AFP. &lt;em style=&quot;font-style:italic;&quot;&gt;Nous voulons rendre plus difficile et plus co&#251;teuse l&#39;exploitation des vuln&#233;rabilit&#233;s par les criminels, en invitant les chercheurs &#224; concentrer leur expertise sur les technologies d&#233;fensives de s&#233;curit&#233;. &#187;&lt;/em&gt; Mme Moussouris souligne que les gagnants du concours conserveront la propri&#233;t&#233; intellectuelle de leur invention, mais qu&#39;ils devront en c&#233;der la licence &#224; Microsoft sans en toucher les royalties. Le groupe se donne aussi le droit de l&#39;utiliser dans ses produits, ses conf&#233;rences ou sa communication. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;D&#233;celer la faille&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Ce n&#39;est pas la premi&#232;re fois que des entreprises de nouvelles technologies proposent de l&#39;argent en &#233;change de la d&#233;tection de failles dans un de leurs logiciels. Depuis d&#233;but ao&#251;t, le r&#233;seau social Facebook, qui revendique d&#233;sormais 750 millions d&#39;inscrits, propose 500 dollars aux internautes qui seront capables de d&#233;celer toute faille dans sa s&#233;curit&#233;. La somme peut &#234;tre augment&#233;e de mani&#232;re significative, si ce point faible est jug&#233; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; critique &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Les &#233;diteurs de navigateurs Internet n&#39;h&#233;sitent pas non plus &#224; instaurer de telles mesures &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; incitatives &#187;&lt;/em&gt;. Mozilla propose d&#233;sormais jusqu&#39;&#224; 3000 dollars pour la d&#233;couverte de failles dans la s&#233;curit&#233; de son moteur de recherche Firefox. De son c&#244;t&#233;, depuis 2010, Google octroie une prime d&#39;un minimum de 500 dollars pour d&#233;tecter les bugs dans &#171; Chromium &#187;, le projet de navigateur Web &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; du groupe.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2011 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20110808&amp;#183;LM&amp;#183;0q0708_402233&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">sécurité informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">marché mondial</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseau social</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">experts des agences gouvernementales américaines</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sciences humaines et sociales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Las Vegas</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Nevada</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ridmond</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110808%c2%b7LM%c2%b70q0708_402233" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110808%c2%b7LM%c2%b70q0708_402233">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Communication,         lundi 8 août 2011 421 mots, p. 2</span>
+</div>
+
+    <div>
+        <p>
+EN LIGNE         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Réseaux &amp; médias</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Microsoft lance un concours pour contrer les hackers            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le géant de l'informatique américain offre 200 000 dollars pour un système antipiratage</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Laurent Checola et Daniel Psenny</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Avis aux chasseurs de primes ! Lors du Salon annuel sur la sécurité informatique Black Hat, qui a réuni du samedi 30 juillet au jeudi 4 août à Las Vegas (Nevada) les experts des agences gouvernementales américaines et des industries ainsi que les hackers les plus pointus du monde, Microsoft a annoncé le lancement du Microsoft Blue Hat Prize Contest. Ce nouveau prix offrira 200000 dollars (140 000 euros) à la personne qui mettra au point un logiciel anti-piratage capable de résister aux attaques informatiques. </p> <p> Avec une part de marché mondial estimée à 87,66 %, le géant américain de l'informatique - et son système Windows - règne sans partage sur la planète informatique. Il est ainsi le plus exposé aux attaques des pirates, qui en ont fait leur cible principale.</p>
+
+
+<p>La compétition est ouverte aux chercheurs, professionnels de la sécurité informatique et même aux jeunes geeks, à condition qu'ils aient au moins 14 ans. Leurs propositions devront être envoyées à Microsoft avant avril 2012. <em style="font-style:italic;">« Ce prix est conçu pour imaginer de nouvelles idées pour des approches défensives en matière de sécurité informatique</em>, explique Microsoft sur son site Web. <em style="font-style:italic;">Dans le cadre de notre engagement pour une expérience informatique plus sûre, nous espérons inspirer les chercheurs en sécurité, afin de développer des solutions innovantes destinées à répondre aux graves menaces de sécurité. »</em></p><p>Après réception et étude des dossiers, qui devront fournir un prototype fonctionnant sur Windows et qui sera développé à l'aide du Windows SDK, un groupe d'experts de Microsoft attribuera les prix lors du Salon Black Hat 2012. Outre le premier prix, la firme de Ridmond en attribuera un second de 50 000 dollars et offrira un abonnement à des services de Microsoft d'une valeur de 10000 dollars à celui arrivé à la troisième place. </p> <p><em style="font-style:italic;">« La valeur de ce prix va bien au-delà de l'argent</em>, a déclaré Katie Moussouris, responsable de la stratégie de sécurité du groupe dans un entretien à l'AFP. <em style="font-style:italic;">Nous voulons rendre plus difficile et plus coûteuse l'exploitation des vulnérabilités par les criminels, en invitant les chercheurs à concentrer leur expertise sur les technologies défensives de sécurité. »</em> Mme Moussouris souligne que les gagnants du concours conserveront la propriété intellectuelle de leur invention, mais qu'ils devront en céder la licence à Microsoft sans en toucher les royalties. Le groupe se donne aussi le droit de l'utiliser dans ses produits, ses conférences ou sa communication. </p> <p><em style="font-weight:bold;">Déceler la faille</em></p><p>Ce n'est pas la première fois que des entreprises de nouvelles technologies proposent de l'argent en échange de la détection de failles dans un de leurs logiciels. Depuis début août, le réseau social Facebook, qui revendique désormais 750 millions d'inscrits, propose 500 dollars aux internautes qui seront capables de déceler toute faille dans sa sécurité. La somme peut être augmentée de manière significative, si ce point faible est jugé <em style="font-style:italic;">« critique »</em>. </p> <p> Les éditeurs de navigateurs Internet n'hésitent pas non plus à instaurer de telles mesures <em style="font-style:italic;">« incitatives »</em>. Mozilla propose désormais jusqu'à 3000 dollars pour la découverte de failles dans la sécurité de son moteur de recherche Firefox. De son côté, depuis 2010, Google octroie une prime d'un minimum de 500 dollars pour détecter les bugs dans « Chromium », le projet de navigateur Web <mark>open</mark> <mark>source</mark> du groupe.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2011 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20110808·LM·0q0708_402233</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20110808·LM·0q0708_402233";
+    var _docIndex = 265;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20110808·LM·0q0708_402233';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720110808%C2%B7LM%C2%B70q0708_402233&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720110808%C2%B7LM%C2%B70q0708_402233&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720110808%C2%B7LM%C2%B70q0708_402233&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720110808%C2%B7LM%C2%B70q0708_402233&docIndex=265&FullScreen=1";
+                
+	var _keyDoc = 'news·20110808·LM·0q0708_402233';
+</script>
+</div></body></html>

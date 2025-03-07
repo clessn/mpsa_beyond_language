@@ -1,0 +1,499 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         mardi 16 mars 2010 352 mots, p. A4&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Qu&#233;bec facture 107 000$ aux d&#233;fenseurs du &lt;mark&gt; logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Des honoraires d&#39;avocat per&#231;us comme du harc&#232;lement&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fabien Deglise&lt;/p&gt;
+
+
+    &lt;b&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Intimidation ou simple perception? Un groupe de citoyens qui cherchent &#224; faire la promotion du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; dans les institutions &#233;tatiques d&#233;nonce la &#171;grossi&#232;re intimidation&#187; du gouvernement qui, dans les derniers jours, lui a fait parvenir une facture de 107 000 $. Motif? Le remboursement des honoraires d&#39;avocat d&#233;coulant d&#39;une poursuite intent&#233;e par le groupe contre le Centre de services partag&#233;s du Qu&#233;bec (CSPQ) et rejet&#233;e par un tribunal en d&#233;cembre 2008. La pression financi&#232;re ainsi exerc&#233;e sur l&#39;association &#224; but non lucratif pourrait la conduire directement &#224; la faillite.&lt;/em&gt;&lt;/p&gt;&lt;/b&gt;
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&#171;On ne comprend pas pourquoi cette demande de remboursement arrive aujourd&#39;hui, a indiqu&#233; hier au Devoir Cyrille B&#233;raud, du regroupement pour l&#39;Appropriation collective de l&#39;informatique libre (FACIL). C&#39;est un coup dur pour notre association, mais c&#39;est aussi une offensive en r&#232;gle du gouvernement contre le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&#187;, ce logiciel dont l&#39;acc&#232;s et l&#39;utilisation ne sont pas r&#233;gis par de co&#251;teuses licences d&#39;exploitation.&lt;/p&gt;
+
+
+&lt;p&gt;Hasard ou co&#239;ncidence, la semaine derni&#232;re, M. B&#233;raud s&#39;est une fois de plus pr&#233;sent&#233; devant les tribunaux afin de d&#233;noncer l&#39;octroi d&#39;un contrat de 722 848 $ &#224; la multinationale Microsoft par la R&#233;gie des rentes du Qu&#233;bec. La cause a &#233;t&#233; entendue apr&#232;s deux ans d&#39;attente et surtout le d&#233;p&#244;t par les avocats du gouvernement de 25 requ&#234;tes en annulation. &lt;/p&gt; &lt;p&gt; En substance, M. B&#233;raud, &#224; titre cette fois de pr&#233;sident de Savoir-faire Linux, une entreprise de services informatiques sp&#233;cialis&#233;e dans les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, remet en question le processus d&#39;attribution par Qu&#233;bec de ces contrats, sans appel d&#39;offres, au g&#233;ant am&#233;ricain de l&#39;informatique. Selon lui, le libell&#233; des avis d&#39;intention ne tiendrait jamais compte de l&#39;existence dans l&#39;environnement informatique du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; qui pourtant pourrait concurrencer les produits de l&#39;empire de Bill Gates &#224; un co&#251;t moindre pour les contribuables. &lt;/p&gt; &lt;p&gt; &#171;Il y a un blocage au Qu&#233;bec face au &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&#187;, dit M. B&#233;raud qui, il y a deux ans, par l&#39;entremise du FACIL, avait men&#233; un combat similaire. C&#39;&#233;tait contre le CSPQ et l&#39;octroi de sept contrats &#224; Microsoft d&#39;un montant de 10,7 millions sans appel d&#39;offres. La cause a &#233;t&#233; rejet&#233;e, le tribunal ayant jug&#233; que le groupe ne pouvait pas contester une transaction dans laquelle il n&#39;&#233;tait pas partie prenante. &#171;&#192; une &#233;poque o&#249; l&#39;on cherche &#224; r&#233;duire les d&#233;penses de l&#39;&#201;tat, le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est certainement &#224; prendre en consid&#233;ration&#187;, poursuit-il. &lt;/p&gt; &lt;p&gt; Malgr&#233; nos appels, il n&#39;a pas &#233;t&#233; possible de parler hier &#224; un repr&#233;sentant du CSPQ. Pour sa part, le groupe FACIL, qui fonctionne avec un budget annuel de 5000 $, dit d&#233;sormais envisager s&#233;rieusement la fermeture de ses portes. &#171;Si des huissiers devaient venir, ils ne trouveraient que 400 $ dans notre compte, dit M. B&#233;raud. Et personne ne va &#234;tre plus avanc&#233;.&#187; &lt;/p&gt; &lt;p&gt; ***** &lt;/p&gt; &lt;p&gt; Une version plus longue de ce texte est disponible sur notre site &lt;a target=&quot;_blank&quot; href=&quot;https://www.ledevoir.com.&quot;&gt;www.ledevoir.com.&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2010 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20100316&amp;#183;LE&amp;#183;20100316_a4_facture&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">appel d'offres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">défenseurs du logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">licences d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">budget annuel</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100316%c2%b7LE%c2%b720100316_a4_facture" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100316%c2%b7LE%c2%b720100316_a4_facture">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         mardi 16 mars 2010 352 mots, p. A4</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Québec facture 107 000$ aux défenseurs du <mark> logiciel</mark> <mark> libre</mark>            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Des honoraires d'avocat perçus comme du harcèlement</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Fabien Deglise</p>
+
+
+    <b><p><em style="font-weight:bold;">Intimidation ou simple perception? Un groupe de citoyens qui cherchent à faire la promotion du <mark>logiciel</mark> <mark>libre</mark> dans les institutions étatiques dénonce la «grossière intimidation» du gouvernement qui, dans les derniers jours, lui a fait parvenir une facture de 107 000 $. Motif? Le remboursement des honoraires d'avocat découlant d'une poursuite intentée par le groupe contre le Centre de services partagés du Québec (CSPQ) et rejetée par un tribunal en décembre 2008. La pression financière ainsi exercée sur l'association à but non lucratif pourrait la conduire directement à la faillite.</em></p></b>
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>«On ne comprend pas pourquoi cette demande de remboursement arrive aujourd'hui, a indiqué hier au Devoir Cyrille Béraud, du regroupement pour l'Appropriation collective de l'informatique libre (FACIL). C'est un coup dur pour notre association, mais c'est aussi une offensive en règle du gouvernement contre le <mark>logiciel</mark> <mark>libre</mark>», ce logiciel dont l'accès et l'utilisation ne sont pas régis par de coûteuses licences d'exploitation.</p>
+
+
+<p>Hasard ou coïncidence, la semaine dernière, M. Béraud s'est une fois de plus présenté devant les tribunaux afin de dénoncer l'octroi d'un contrat de 722 848 $ à la multinationale Microsoft par la Régie des rentes du Québec. La cause a été entendue après deux ans d'attente et surtout le dépôt par les avocats du gouvernement de 25 requêtes en annulation. </p> <p> En substance, M. Béraud, à titre cette fois de président de Savoir-faire Linux, une entreprise de services informatiques spécialisée dans les <mark>logiciels</mark> <mark>libres</mark>, remet en question le processus d'attribution par Québec de ces contrats, sans appel d'offres, au géant américain de l'informatique. Selon lui, le libellé des avis d'intention ne tiendrait jamais compte de l'existence dans l'environnement informatique du <mark>logiciel</mark> <mark>libre</mark> qui pourtant pourrait concurrencer les produits de l'empire de Bill Gates à un coût moindre pour les contribuables. </p> <p> «Il y a un blocage au Québec face au <mark>logiciel</mark> <mark>libre</mark>», dit M. Béraud qui, il y a deux ans, par l'entremise du FACIL, avait mené un combat similaire. C'était contre le CSPQ et l'octroi de sept contrats à Microsoft d'un montant de 10,7 millions sans appel d'offres. La cause a été rejetée, le tribunal ayant jugé que le groupe ne pouvait pas contester une transaction dans laquelle il n'était pas partie prenante. «À une époque où l'on cherche à réduire les dépenses de l'État, le <mark>logiciel</mark> <mark>libre</mark> est certainement à prendre en considération», poursuit-il. </p> <p> Malgré nos appels, il n'a pas été possible de parler hier à un représentant du CSPQ. Pour sa part, le groupe FACIL, qui fonctionne avec un budget annuel de 5000 $, dit désormais envisager sérieusement la fermeture de ses portes. «Si des huissiers devaient venir, ils ne trouveraient que 400 $ dans notre compte, dit M. Béraud. Et personne ne va être plus avancé.» </p> <p> ***** </p> <p> Une version plus longue de ce texte est disponible sur notre site <a target="_blank" href="https://www.ledevoir.com.">www.ledevoir.com.</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2010 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20100316·LE·20100316_a4_facture</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20100316·LE·20100316_a4_facture";
+    var _docIndex = 419;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20100316·LE·20100316_a4_facture';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720100316%C2%B7LE%C2%B720100316_a4_facture&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720100316%C2%B7LE%C2%B720100316_a4_facture&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720100316%C2%B7LE%C2%B720100316_a4_facture&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720100316%C2%B7LE%C2%B720100316_a4_facture&docIndex=419&FullScreen=1";
+                
+	var _keyDoc = 'news·20100316·LE·20100316_a4_facture';
+</script>
+</div></body></html>

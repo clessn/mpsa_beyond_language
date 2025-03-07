@@ -1,0 +1,481 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 7126                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+SCIENCES,         vendredi 9 avril 2004 436 mots, p. 19&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Informatique. Succ&#232;s du programme europ&#233;en d&#39;un r&#233;seau de calcul scientifique.&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les petits PC font un gros calculateur            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;HUET Sylvestre&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&#171;Une sorte de supercalculateur virtuel.&#187; Fabio Hernandez, informaticien au centre de calcul du CNRS de Lyon, r&#233;sume ainsi la r&#233;ussite du programme europ&#233;en DataGrid, qui vient tout juste de s&#39;achever. Lanc&#233; en 2000, il vient de d&#233;montrer que la mise en r&#233;seau de centaines de petits ordinateurs pouvait faire la pige aux superordinateurs pour mouliner de gros calculs scientifiques. Et &#224; co&#251;ts riquiqui. &lt;/p&gt; &lt;p&gt; L&#39;id&#233;e est n&#233;e dans les laboratoires de physique des particules. On y pr&#233;pare la mise en service du Large Hadron Collider (LHC), en cours d&#39;installation au Centre europ&#233;en de recherches nucl&#233;aires (Cern), pr&#232;s de Gen&#232;ve. Il sera en 2007 le plus puissant acc&#233;l&#233;rateur de particules du monde et permettra de sonder la mati&#232;re avec une pr&#233;cision in&#233;dite gr&#226;ce &#224; un niveau d&#39;&#233;nergie sup&#233;rieur. A condition de savoir analyser les milliards d&#39;informations qui surgiront des violentes collisions entre particules. C&#39;est l&#224; qu&#39;interviendra le &#171;supercalculateur virtuel&#187; de Hernandez. Des milliers de processeurs &#173; 10 000 au moins &#173; seront mis en r&#233;seau dans toute l&#39;Europe pour analyser des jeux de donn&#233;es d&#39;une dimension encore jamais atteinte, compt&#233;s en p&#233;taoctets (des nombres comportant 15 chiffres avant la virgule).&lt;/p&gt;
+
+
+&lt;p&gt;Clopinettes. Ce besoin des physiciens des particules s&#39;est transform&#233; en aubaine pour les autres chercheurs. Pourquoi ne pas ouvrir cet ordinateur virtuel g&#233;ant &#224; tous ceux &#173; bio-informaticiens, g&#233;ophysiciens, astronomes... &#173; qui n&#39;ont pas toujours les moyens et les comp&#233;tences pour utiliser les supercalculateurs traditionnels ? Surtout que ces m&#234;mes scientifiques pourraient apporter une part de la solution : dans leurs labos, des milliers d&#39;ordinateurs personnels &#171;dorment&#187; une bonne partie des 24 heures de chaque journ&#233;e. Le projet &#173; European DataGrid &#173; &#233;tait n&#233;. Dirig&#233; par les informaticiens du Cern, o&#249; fut invent&#233; le Web, financ&#233; (10 millions d&#39;euros) par l&#39;UE, mettant en commun les ressources de 21 instituts de 8 pays, il a d&#233;montr&#233; que l&#39;id&#233;e &#233;tait bonne. Et permet d&#39;envisager une nouvelle infrastructure de recherche : une fabuleuse puissance de calcul offerte 24 heures sur 24 &#224; tout chercheur, facile d&#39;acc&#232;s et presque pour des clopinettes. &lt;/p&gt; &lt;p&gt; Lors des tests r&#233;ussis, raconte Fabio Hernandez, la &#171;grille&#187; europ&#233;enne a montr&#233; l&#39;&#233;tendue de ses possibilit&#233;s. Comparer une s&#233;quence ADN avec toutes les s&#233;quences contenues dans les banques de donn&#233;es ? Le biologiste se contente de soumettre sa s&#233;quence, d&#39;indiquer le nom des banques, et &#171;tout le reste est pris en charge par le logiciel&#187;. Rapidement, le biologiste re&#231;oit les r&#233;sultats, sans m&#234;me savoir o&#249; et par quels ordinateurs ils ont &#233;t&#233; calcul&#233;s. A chaque calcul, le r&#233;seau se r&#233;organise, fait appel aux ordinateurs disponibles &#173; parfois jusqu&#39;en Russie et Taiwan &#173; tandis que d&#39;autres sont utilis&#233;s par leurs propri&#233;taires. M&#234;me facilit&#233; pour la comparaison de radios des poumons d&#39;un patient avec des milliers d&#39;autres afin de faciliter un diagnostic. Ou le recours &#224; l&#39;&#233;norme puissance du r&#233;seau pour calculer de mani&#232;re tr&#232;s pr&#233;cise comment irradier une tumeur au cerveau sans attaquer les cellules voisines saines, ce qui met en jeu des mod&#232;les physiques pr&#233;cis et lourds. En sciences de la Terre, c&#39;est l&#39;Institut Pierre-Simon-Laplace (Paris) qui a mis &#224; profit DataGrid pour reconstituer en trois dimensions la couche d&#39;ozone stratosph&#233;rique au-dessus de l&#39;Antarctique &#224; partir des donn&#233;es satellitaires. &lt;/p&gt; &lt;p&gt; Tuyaux. La suite de l&#39;op&#233;ration est d&#233;j&#224; dans les tuyaux. Le logiciel DataGrid est approuv&#233; par l&#39;&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; Initiative Corporation, il est donc libre. Et va constituer le point de d&#233;part de la grille de calcul permanente que la Commission europ&#233;enne a d&#233;cid&#233; de construire au vu du succ&#232;s de l&#39;op&#233;ration.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040409&amp;#183;LI&amp;#183;0li20040409058&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">supercalculateur virtuel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Fabio Hernandez</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Centre européen de recherches nucléaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">supercalculateurs traditionnels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">couche d'ozone stratosphérique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Genève</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Taiwan</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Antarctique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040409%c2%b7LI%c2%b70li20040409058" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040409%c2%b7LI%c2%b70li20040409058">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 7126                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+SCIENCES,         vendredi 9 avril 2004 436 mots, p. 19</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Informatique. Succès du programme européen d'un réseau de calcul scientifique.</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les petits PC font un gros calculateur            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">HUET Sylvestre</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>«Une sorte de supercalculateur virtuel.» Fabio Hernandez, informaticien au centre de calcul du CNRS de Lyon, résume ainsi la réussite du programme européen DataGrid, qui vient tout juste de s'achever. Lancé en 2000, il vient de démontrer que la mise en réseau de centaines de petits ordinateurs pouvait faire la pige aux superordinateurs pour mouliner de gros calculs scientifiques. Et à coûts riquiqui. </p> <p> L'idée est née dans les laboratoires de physique des particules. On y prépare la mise en service du Large Hadron Collider (LHC), en cours d'installation au Centre européen de recherches nucléaires (Cern), près de Genève. Il sera en 2007 le plus puissant accélérateur de particules du monde et permettra de sonder la matière avec une précision inédite grâce à un niveau d'énergie supérieur. A condition de savoir analyser les milliards d'informations qui surgiront des violentes collisions entre particules. C'est là qu'interviendra le «supercalculateur virtuel» de Hernandez. Des milliers de processeurs ­ 10 000 au moins ­ seront mis en réseau dans toute l'Europe pour analyser des jeux de données d'une dimension encore jamais atteinte, comptés en pétaoctets (des nombres comportant 15 chiffres avant la virgule).</p>
+
+
+<p>Clopinettes. Ce besoin des physiciens des particules s'est transformé en aubaine pour les autres chercheurs. Pourquoi ne pas ouvrir cet ordinateur virtuel géant à tous ceux ­ bio-informaticiens, géophysiciens, astronomes... ­ qui n'ont pas toujours les moyens et les compétences pour utiliser les supercalculateurs traditionnels ? Surtout que ces mêmes scientifiques pourraient apporter une part de la solution : dans leurs labos, des milliers d'ordinateurs personnels «dorment» une bonne partie des 24 heures de chaque journée. Le projet ­ European DataGrid ­ était né. Dirigé par les informaticiens du Cern, où fut inventé le Web, financé (10 millions d'euros) par l'UE, mettant en commun les ressources de 21 instituts de 8 pays, il a démontré que l'idée était bonne. Et permet d'envisager une nouvelle infrastructure de recherche : une fabuleuse puissance de calcul offerte 24 heures sur 24 à tout chercheur, facile d'accès et presque pour des clopinettes. </p> <p> Lors des tests réussis, raconte Fabio Hernandez, la «grille» européenne a montré l'étendue de ses possibilités. Comparer une séquence ADN avec toutes les séquences contenues dans les banques de données ? Le biologiste se contente de soumettre sa séquence, d'indiquer le nom des banques, et «tout le reste est pris en charge par le logiciel». Rapidement, le biologiste reçoit les résultats, sans même savoir où et par quels ordinateurs ils ont été calculés. A chaque calcul, le réseau se réorganise, fait appel aux ordinateurs disponibles ­ parfois jusqu'en Russie et Taiwan ­ tandis que d'autres sont utilisés par leurs propriétaires. Même facilité pour la comparaison de radios des poumons d'un patient avec des milliers d'autres afin de faciliter un diagnostic. Ou le recours à l'énorme puissance du réseau pour calculer de manière très précise comment irradier une tumeur au cerveau sans attaquer les cellules voisines saines, ce qui met en jeu des modèles physiques précis et lourds. En sciences de la Terre, c'est l'Institut Pierre-Simon-Laplace (Paris) qui a mis à profit DataGrid pour reconstituer en trois dimensions la couche d'ozone stratosphérique au-dessus de l'Antarctique à partir des données satellitaires. </p> <p> Tuyaux. La suite de l'opération est déjà dans les tuyaux. Le logiciel DataGrid est approuvé par l'<mark>Open</mark> <mark>Source</mark> Initiative Corporation, il est donc libre. Et va constituer le point de départ de la grille de calcul permanente que la Commission européenne a décidé de construire au vu du succès de l'opération.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040409·LI·0li20040409058</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040409·LI·0li20040409058";
+    var _docIndex = 190;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040409·LI·0li20040409058';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040409%C2%B7LI%C2%B70li20040409058&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040409%C2%B7LI%C2%B70li20040409058&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040409%C2%B7LI%C2%B70li20040409058&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040409%C2%B7LI%C2%B70li20040409058&docIndex=190&FullScreen=1";
+                
+	var _keyDoc = 'news·20040409·LI·0li20040409058';
+</script>
+</div></body></html>

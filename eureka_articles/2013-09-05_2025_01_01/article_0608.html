@@ -1,0 +1,499 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Id&#233;es,         lundi 12 septembre 2016 858 mots, p. 23&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Vive la rentr&#233;e du &#171;code&#187; &#224; l&#39;&#233;cole !            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L&#39;enseignement des langages de programmation soul&#232;ve questions et peurs. Essayons, face aux clich&#233;s, de regarder l&#39;introduction de cet enseignement en primaire de mani&#232;re positive.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fr&#233;d&#233;ric Bardeau; Claude Terosier; Colin de la Higuera; Nadia Bellaoui; J&#233;r&#233;my Lachal; Deborah Elalouf; Beno&#238;t Prady&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Il para&#238;t que nous avions &#171;du retard&#187;, mais que maintenant, c&#39;est fini : r&#233;jouissons-nous car &#171;le code&#187; fait cette ann&#233;e sa rentr&#233;e d&#232;s l&#39;&#233;cole &#233;l&#233;mentaire, et c&#39;est une tr&#232;s bonne nouvelle ! &lt;/p&gt; &lt;p&gt; Avec l&#39;an I du code &#224; l&#39;&#233;cole, c&#39;est l&#39;arriv&#233;e d&#39;un compl&#233;ment essentiel, qui manquait au B2i (Brevet informatique et Internet) qui, depuis 2006, permet d&#39;accompagner l&#39;&#233;mergence de citoyens cr&#233;atifs, critiques et responsables de leurs pratiques num&#233;riques. Maintenant, il s&#39;agit d&#39;apprendre &#224; programmer les machines pour ne pas &#234;tre programm&#233; par elles !&lt;/p&gt;
+
+
+&lt;p&gt;Pourtant, il est &#224; parier que les commentaires d&#233;sagr&#233;ables vont fuser de toutes parts, donc faisons ici le tour des critiques r&#233;currentes et des clich&#233;s. Voyons les choses de mani&#232;re positive. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Coder n&#39;est pas lire&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&#171;On va coder au lieu de lire, d&#39;&#233;crire et de compter.&#187; Pas d&#39;inqui&#233;tude : programmer, c&#39;est lire, &#233;crire et compter, et &#231;a ne se fera pas en substitution de l&#39;orthographe, du latin ou du grec ! Coder est une pratique qui suppose l&#39;absence compl&#232;te d&#39;erreurs de frappe ou de logique. Les succ&#232;s y sont vite rep&#233;r&#233;s et r&#233;compens&#233;s. Quand le programme, ou des morceaux de programme, fonctionne, &#231;a se voit tout de suite. Exigeant et valorisant : g&#233;nial, non ? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Le geek solitaire&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Coder, ce n&#39;est pas non plus jouer. C&#39;est parfois cr&#233;er des jeux (et plein d&#39;autres choses encore) mais cela se fait souvent collectivement : pour avancer, on partage, et on a le droit de &#171;copier sur son voisin&#187;. On est tr&#232;s loin des clich&#233;s du geek solitaire ou du &#171;no life&#187; immerg&#233; dans les jeux vid&#233;o, coup&#233; de toute vie sociale. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Made in english&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le code est le cheval de Troie de l&#39;anglais et de son cort&#232;ge de technologies propri&#233;taires et d&#39;entreprises am&#233;ricaines. Mauvaise pioche ! Les langages de programmation utilisent l&#39;anglais mais pas uniquement, et ces langages sont pour la plupart libres au sens des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Les ressources pour les apprendre existent en fran&#231;ais, certaines sont libres et gratuites. Beaucoup de ces outils ont &#233;t&#233; financ&#233;s par le Programme investissements d&#39;avenir (PIA) du gouvernement fran&#231;ais, ou sont le fruit de l&#39;&#233;conomie fran&#231;aise ou europ&#233;enne. Il ne s&#39;agit pas d&#39;enfermer le consommateur dans l&#39;usage de tel ou tel produit commercial, mais de respecter ses donn&#233;es individuelles. Il n&#39;appartient qu&#39;aux acteurs &#233;ducatifs de les porter et de les accompagner. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Ecole professionnelle&lt;/em&gt;&lt;/p&gt;&lt;p&gt;L&#39;&#233;cole n&#39;est pas l&#224; pour former des professionnels mais des citoyens. Savoir comment &#171;pensent&#187; et &#171;agissent&#187; les ordinateurs, tablettes et autres t&#233;l&#233;phones, ce n&#39;est pas devenir d&#233;veloppeur ! Par cette initiation, l&#39;&#233;cole ne s&#39;ouvre pas &#224; des m&#233;tiers mais &#224; une citoyennet&#233; qui prend en compte le num&#233;rique et sa place grandissante dans nos vies et nos soci&#233;t&#233;s. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Encore des sciences&lt;/em&gt;&lt;/p&gt;&lt;p&gt;On valorise une fois de plus les mati&#232;res scientifiques au d&#233;triment des mati&#232;res litt&#233;raires. Erreur ! la logique math&#233;matique est au coeur de la pens&#233;e informatique, mais les langages de programmation sont &#233;galement des langues qui peuvent &#234;tre enseign&#233;es comme telles, avec leur syntaxe et leur grammaire. Les productions num&#233;riques constituent autant d&#39;espaces de valorisation de la cr&#233;ativit&#233; et des capacit&#233;s d&#39;expression de chacun. La programmation constitue donc bien au contraire un outil au service du d&#233;veloppement des enseignements pratiques interdisciplinaires ! &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;On n&#39;est pas pr&#234;t&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il n&#39;y a pas assez de professeurs form&#233;s donc ce ne sera pas pour tous et pas partout en France ! Dr&#244;le de raisonnement. Avant, c&#39;&#233;tait l&#39;in&#233;galit&#233; absolue puisqu&#39;il fallait avoir des parents issus du m&#233;tier ou ayant les moyens de payer cette initiation. Sinon, il fallait avoir la chance d&#39;&#234;tre proche d&#39;un lieu offrant des formations p&#233;ri ou extrascolaires, se trouver pr&#232;s d&#39;un Espace public num&#233;rique (EPN), ou d&#39;un lieu associatif proposant des ateliers de code. Bonne nouvelle donc, tout le monde va y avoir acc&#232;s et notamment les filles et les jeunes femmes qui restent trop rares dans les &#233;coles d&#39;ing&#233;nieurs et les &#233;coles sp&#233;cialis&#233;es. C&#39;est vrai que &#231;a va prendre du temps pour se r&#233;pandre partout mais, maintenant, c&#39;est dans les programmes, les enseignants sont en cours de formation donc tout le monde va y avoir droit. &lt;/p&gt; &lt;p&gt; Cinq millions d&#39;euros issus du Programme investissements d&#39;avenir ont &#233;t&#233; r&#233;serv&#233;s &#224; la promotion de la &#171;culture du code&#187; et des consortiums puissants se sont constitu&#233;s pour former les professeurs, les animateurs, les citoyens engag&#233;s et volontaires en mission de service civique. Leur objectif est donc le n&#244;tre : mettre le paquet sur l&#39;&#233;ducation prioritaire et utiliser &#224; plein les leviers du num&#233;rique cr&#233;atif pour lutter contre le d&#233;crochage scolaire, former les acteurs &#233;ducatifs au plus pr&#232;s des territoires et proposer &#224; tous de nouvelles dynamiques d&#39;engagement num&#233;rique (D-Clics num&#233;riques), cr&#233;er de nouveaux parcours de formation &#224; distance, compl&#233;t&#233;s par des temps de rencontre pour les professionnels de l&#39;&#233;ducation qui veulent se lancer (Class&#39;Code), d&#233;velopper des services et des outils cl&#233; en main (Code-d&#233;code) pour accompagner les acteurs scolaires et p&#233;riscolaires (Ecole du code), initier les &#233;l&#232;ves de fa&#231;on ludique &#224; la programmation et &#224; la cr&#233;ation num&#233;rique et outiller les enseignants pour l&#39;accompagnement (Declick). Alors oui : l&#39;arriv&#233;e du code &#224; l&#39;&#233;cole est une bonne nouvelle et il faut s&#39;en r&#233;jouir !&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2016 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20160912&amp;#183;LI&amp;#183;03407531&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">langages de programmation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">investissements d'avenir</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">acteurs éducatifs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">professionnels de l'éducation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">espaces de valorisation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éducation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160912%c2%b7LI%c2%b703407531" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160912%c2%b7LI%c2%b703407531">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Idées,         lundi 12 septembre 2016 858 mots, p. 23</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Vive la rentrée du «code» à l'école !            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L'enseignement des langages de programmation soulève questions et peurs. Essayons, face aux clichés, de regarder l'introduction de cet enseignement en primaire de manière positive.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Frédéric Bardeau; Claude Terosier; Colin de la Higuera; Nadia Bellaoui; Jérémy Lachal; Deborah Elalouf; Benoît Prady</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Il paraît que nous avions «du retard», mais que maintenant, c'est fini : réjouissons-nous car «le code» fait cette année sa rentrée dès l'école élémentaire, et c'est une très bonne nouvelle ! </p> <p> Avec l'an I du code à l'école, c'est l'arrivée d'un complément essentiel, qui manquait au B2i (Brevet informatique et Internet) qui, depuis 2006, permet d'accompagner l'émergence de citoyens créatifs, critiques et responsables de leurs pratiques numériques. Maintenant, il s'agit d'apprendre à programmer les machines pour ne pas être programmé par elles !</p>
+
+
+<p>Pourtant, il est à parier que les commentaires désagréables vont fuser de toutes parts, donc faisons ici le tour des critiques récurrentes et des clichés. Voyons les choses de manière positive. </p> <p><em style="font-style:bold;">Coder n'est pas lire</em></p><p>«On va coder au lieu de lire, d'écrire et de compter.» Pas d'inquiétude : programmer, c'est lire, écrire et compter, et ça ne se fera pas en substitution de l'orthographe, du latin ou du grec ! Coder est une pratique qui suppose l'absence complète d'erreurs de frappe ou de logique. Les succès y sont vite repérés et récompensés. Quand le programme, ou des morceaux de programme, fonctionne, ça se voit tout de suite. Exigeant et valorisant : génial, non ? </p> <p><em style="font-style:bold;">Le geek solitaire</em></p><p>Coder, ce n'est pas non plus jouer. C'est parfois créer des jeux (et plein d'autres choses encore) mais cela se fait souvent collectivement : pour avancer, on partage, et on a le droit de «copier sur son voisin». On est très loin des clichés du geek solitaire ou du «no life» immergé dans les jeux vidéo, coupé de toute vie sociale. </p> <p><em style="font-style:bold;">Made in english</em></p><p>Le code est le cheval de Troie de l'anglais et de son cortège de technologies propriétaires et d'entreprises américaines. Mauvaise pioche ! Les langages de programmation utilisent l'anglais mais pas uniquement, et ces langages sont pour la plupart libres au sens des <mark>logiciels</mark> <mark>libres</mark>. Les ressources pour les apprendre existent en français, certaines sont libres et gratuites. Beaucoup de ces outils ont été financés par le Programme investissements d'avenir (PIA) du gouvernement français, ou sont le fruit de l'économie française ou européenne. Il ne s'agit pas d'enfermer le consommateur dans l'usage de tel ou tel produit commercial, mais de respecter ses données individuelles. Il n'appartient qu'aux acteurs éducatifs de les porter et de les accompagner. </p> <p><em style="font-style:bold;">Ecole professionnelle</em></p><p>L'école n'est pas là pour former des professionnels mais des citoyens. Savoir comment «pensent» et «agissent» les ordinateurs, tablettes et autres téléphones, ce n'est pas devenir développeur ! Par cette initiation, l'école ne s'ouvre pas à des métiers mais à une citoyenneté qui prend en compte le numérique et sa place grandissante dans nos vies et nos sociétés. </p> <p><em style="font-style:bold;">Encore des sciences</em></p><p>On valorise une fois de plus les matières scientifiques au détriment des matières littéraires. Erreur ! la logique mathématique est au coeur de la pensée informatique, mais les langages de programmation sont également des langues qui peuvent être enseignées comme telles, avec leur syntaxe et leur grammaire. Les productions numériques constituent autant d'espaces de valorisation de la créativité et des capacités d'expression de chacun. La programmation constitue donc bien au contraire un outil au service du développement des enseignements pratiques interdisciplinaires ! </p> <p><em style="font-style:bold;">On n'est pas prêt</em></p><p>Il n'y a pas assez de professeurs formés donc ce ne sera pas pour tous et pas partout en France ! Drôle de raisonnement. Avant, c'était l'inégalité absolue puisqu'il fallait avoir des parents issus du métier ou ayant les moyens de payer cette initiation. Sinon, il fallait avoir la chance d'être proche d'un lieu offrant des formations péri ou extrascolaires, se trouver près d'un Espace public numérique (EPN), ou d'un lieu associatif proposant des ateliers de code. Bonne nouvelle donc, tout le monde va y avoir accès et notamment les filles et les jeunes femmes qui restent trop rares dans les écoles d'ingénieurs et les écoles spécialisées. C'est vrai que ça va prendre du temps pour se répandre partout mais, maintenant, c'est dans les programmes, les enseignants sont en cours de formation donc tout le monde va y avoir droit. </p> <p> Cinq millions d'euros issus du Programme investissements d'avenir ont été réservés à la promotion de la «culture du code» et des consortiums puissants se sont constitués pour former les professeurs, les animateurs, les citoyens engagés et volontaires en mission de service civique. Leur objectif est donc le nôtre : mettre le paquet sur l'éducation prioritaire et utiliser à plein les leviers du numérique créatif pour lutter contre le décrochage scolaire, former les acteurs éducatifs au plus près des territoires et proposer à tous de nouvelles dynamiques d'engagement numérique (D-Clics numériques), créer de nouveaux parcours de formation à distance, complétés par des temps de rencontre pour les professionnels de l'éducation qui veulent se lancer (Class'Code), développer des services et des outils clé en main (Code-décode) pour accompagner les acteurs scolaires et périscolaires (Ecole du code), initier les élèves de façon ludique à la programmation et à la création numérique et outiller les enseignants pour l'accompagnement (Declick). Alors oui : l'arrivée du code à l'école est une bonne nouvelle et il faut s'en réjouir !</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2016 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20160912·LI·03407531</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20160912·LI·03407531";
+    var _docIndex = 607;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20160912·LI·03407531';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720160912%C2%B7LI%C2%B703407531&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720160912%C2%B7LI%C2%B703407531&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720160912%C2%B7LI%C2%B703407531&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720160912%C2%B7LI%C2%B703407531&docIndex=607&FullScreen=1";
+                
+	var _keyDoc = 'news·20160912·LI·03407531';
+</script>
+</div></body></html>

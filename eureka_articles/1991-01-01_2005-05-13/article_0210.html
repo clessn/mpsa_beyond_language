@@ -1,0 +1,521 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 18516                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro,         mardi 17 f&amp;#233;vrier 2004 654 mots, p. 25&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+MULTIMEDIA         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;SAVOIR&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Le Gutenberg de l&#39;&#232;re num&#233;rique            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Isabelle BOUCQ&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Depuis 1971, Michael Hart s&#39;est attel&#233; &#224; une t&#226;che immense : num&#233;riser et mettre en ligne les &#233;crits tomb&#233;s dans le domaine public pour les rendre accessibles gratuitement au plus grand nombre. Portrait d&#39;un id&#233;aliste illumin&#233;. &lt;/p&gt; &lt;p&gt; &#171; Il y a dix ans, Projet Gutenberg comptait 100 livres. Aujourd&#39;hui, il y en a 11 320 et le dernier mis en ligne est Eug&#233;nie Grandet de Balzac. Dans 10 ans, j&#39;esp&#232;re qu&#39;il y en aura un million &#187;, annonce en pr&#233;ambule et en fran&#231;ais Michael Hart &#224; un auditoire r&#233;uni &#224; l&#39;Unesco pour &#233;couter cet Am&#233;ricain de 58 ans, venu pour la premi&#232;re fois en France, qui a d&#233;di&#233; sa vie &#224; son projet de biblioth&#232;que &#233;lectronique universelle.&lt;/p&gt;
+
+
+&lt;p&gt;Le Projet Gutenberg est parti d&#39;un concours de circonstances. Etudiant &#224; l&#39;Universit&#233; de l&#39;Illinois, Michael Hart cherche une fa&#231;on utile d&#39;employer le temps qui lui a &#233;t&#233; allou&#233; sur un super-ordinateur. Se disant que tout ce qui est entr&#233; dans l&#39;ordinateur peut ensuite circuler facilement, il tape la D&#233;claration d&#39;ind&#233;pendance am&#233;ricaine et l&#39;exp&#233;die &#224; la poign&#233;e de personnes alors reli&#233;es au r&#233;seau. Suivront la Constitution am&#233;ricaine, la Bible, les oeuvres de Shakespeare (une &#233;vidence pour le fils d&#39;un universitaire sp&#233;cialiste du Barde). Pour les premi&#232;res centaines d&#39;oeuvres, Michael Hart travaille seul pour convertir les textes au format informatique le plus basique, le format ASCI, car il compte bien que sa biblioth&#232;que survive aux standards qui se d&#233;modent. &lt;/p&gt; &lt;p&gt; &#171; Mes amis disaient que j&#39;&#233;tais timbr&#233;, dit-il aujourd&#39;hui. Mais d&#232;s que j&#39;ai vu le r&#233;seau, alors que nous n&#39;&#233;tions qu&#39;une centaine de personnes connect&#233;es, j&#39;ai compris comment on l&#39;utiliserait dans l&#39;avenir &#187;, affirme sans fausse modestie cet homme corpulent qui tient son auditoire sous le charme pendant des heures avec ses anecdotes, ses diatribes contre les &#233;diteurs et son franc-parler. &lt;/p&gt; &lt;p&gt; Au fil du temps, un r&#233;seau de b&#233;n&#233;voles &#233;parpill&#233;s dans le monde rejoint le Projet Gutenberg. Un millier de personnes y participent de pr&#232;s ou de loin : certains envoient des livres &#224; Las Vegas o&#249; un collaborateur utilise un scanner et des logiciels de reconnaissance de caract&#232;res perfectionn&#233;s pour acc&#233;l&#233;rer le travail, d&#39;autres scannent eux-m&#234;mes les textes. Chaque texte est relu par deux distributed proofreaders. Enfin une quinzaine de b&#233;n&#233;voles a la responsabilit&#233; de s&#39;assurer une derni&#232;re fois que l&#39;&#233;crit est bien libre de droits d&#39;auteur avant de le mettre en ligne. &lt;/p&gt; &lt;p&gt; Le succ&#232;s du Projet Gutenberg se mesure certainement &#224; l&#39;&#233;tendue de cette mobilisation d&#233;sint&#233;ress&#233;e entre de parfaits inconnus. &#171; Si tout le monde scanne une page, vous vous rendez compte combien de millions de gens pourront alors avoir acc&#232;s &#224; cette oeuvre &#187;, exhorte sans rel&#226;che cet &#233;vang&#233;lisateur. Car Michael Hart est convaincu d&#39;offrir une deuxi&#232;me vie &#224; ces oeuvres. &#171; J&#39;&#233;tais un jour au t&#233;l&#233;phone avec une amie et il y a eu chez elle un grand bruit. C&#39;&#233;tait les copains de son fils qui &#233;taient agglutin&#233;s sur un vieux fauteuil devant l&#39;ordinateur en train de lire Alice au pays des merveilles sur Gutenberg. Ces enfants d&#39;une dizaine d&#39;ann&#233;es venaient depuis plusieurs jours continuer l&#39;histoire. Le fauteuil s&#39;&#233;tait bris&#233; &#187;, raconte fi&#232;rement Michael Hart. &#171; Apr&#232;s Johannes Gutenberg, le taux d&#39;alphab&#233;tisation a fait un bond &#233;norme. Si &#224; ma mort, je peux me dire que j&#39;ai moi aussi aid&#233;, je serais heureux. &#187; &lt;/p&gt; &lt;p&gt; Mais la vie n&#39;est pas de tout repos pour celui qui se dit en guerre avec les &#233;diteurs. &#171; Pendant tout le XXe si&#232;cle, la dur&#233;e des droits d&#39;auteur n&#39;a fait que s&#39;allonger aux Etats-Unis. Cela prend de plus en plus longtemps pour qu&#39;un livre tombe dans le domaine public &#187;, peste Michael Hart. &#171; Les &#233;diteurs veulent tirer un maximum de profits des droits. Mais j&#39;annonce la nouvelle r&#233;volution industrielle. Le paradigme n&#39;est plus que &#171; Si j&#39;ai quelque chose, tu ne peux pas l&#39;avoir aussi &#187;. Dans cette nouvelle &#232;re, tout le monde peut l&#39;avoir sans limite et &#224; co&#251;t tr&#232;s bas. &#187; &lt;/p&gt; &lt;p&gt; Ce n&#39;est pas un hasard si la visite de Michael Hart en France s&#39;est faite avec l&#39;aide de deux associations militant pour le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, l&#39;April (Association pour la promotion et la recherche en informatique libre) et l&#39;Aful (Association francophone des utilisateurs de Linux et des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;). Electron libre, Michael Hart n&#39;est pas officiellement affili&#233; au mouvement du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; m&#234;me si &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;, son porte-parole le plus connu, est une vieille connaissance. &#171; Je suis anti-politique &#187;, affirme Michael Hart, qui a pourtant rencontr&#233; un groupe de d&#233;put&#233;s fran&#231;ais pendant son s&#233;jour &#224; Paris. &lt;/p&gt; &lt;p&gt; Le visionnaire a aussi un rapport inhabituel avec l&#39;argent. &#171; Je ne m&#39;int&#233;resse pas &#224; l&#39;argent. J&#39;ai des go&#251;ts simples. Quand nous recevons des dons, nous pr&#233;f&#233;rons acheter des scanners &#187;, explique Michael Hart, qui raconte par ailleurs qu&#39;un ancien ami devenu milliardaire lui a pay&#233; un salaire pendant 18 mois. Ou encore qu&#39;une association de biblioth&#233;caires qu&#39;il avait aid&#233;e lui pr&#234;te gracieusement un appartement &#224; Hawa&#239; pour qu&#39;il fuie deux mois de l&#39;ann&#233;e le froid de l&#39;Illinois o&#249; il r&#233;side habituellement. &#171; Mon profit dans cette histoire, assure-t-il, c&#39;est que le Projet Gutenberg profite aux autres, que nous construisions un monde meilleur. &#187;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;En 1971, alors qu&#39;il est &#233;tudiant &#224; l&#39;Universit&#233; de l&#39;Illinois, Michael Hart a trouv&#233; un passe-temps : il tape la D&#233;claration d&#39;ind&#233;pendance am&#233;ricaine puis la Constitution am&#233;ricaine, la Bible et les oeuvres de Shakespeare.&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;&lt;p&gt;(Photo I.Boucq.)&lt;/p&gt; &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040217&amp;#183;LF&amp;#183;20040217&amp;#215;2fig0139&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">Michael Hart</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Projet Gutenberg</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droits d'auteur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">domaine public</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Las Vegas</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Hawaï</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Illinois</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040217%c2%b7LF%c2%b720040217%c3%972fig0139" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040217%c2%b7LF%c2%b720040217%c3%972fig0139">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 18516                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro,         mardi 17 février 2004 654 mots, p. 25</span>
+</div>
+
+    <div>
+        <p>
+MULTIMEDIA         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">SAVOIR</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Le Gutenberg de l'ère numérique            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Isabelle BOUCQ</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Depuis 1971, Michael Hart s'est attelé à une tâche immense : numériser et mettre en ligne les écrits tombés dans le domaine public pour les rendre accessibles gratuitement au plus grand nombre. Portrait d'un idéaliste illuminé. </p> <p> « Il y a dix ans, Projet Gutenberg comptait 100 livres. Aujourd'hui, il y en a 11 320 et le dernier mis en ligne est Eugénie Grandet de Balzac. Dans 10 ans, j'espère qu'il y en aura un million », annonce en préambule et en français Michael Hart à un auditoire réuni à l'Unesco pour écouter cet Américain de 58 ans, venu pour la première fois en France, qui a dédié sa vie à son projet de bibliothèque électronique universelle.</p>
+
+
+<p>Le Projet Gutenberg est parti d'un concours de circonstances. Etudiant à l'Université de l'Illinois, Michael Hart cherche une façon utile d'employer le temps qui lui a été alloué sur un super-ordinateur. Se disant que tout ce qui est entré dans l'ordinateur peut ensuite circuler facilement, il tape la Déclaration d'indépendance américaine et l'expédie à la poignée de personnes alors reliées au réseau. Suivront la Constitution américaine, la Bible, les oeuvres de Shakespeare (une évidence pour le fils d'un universitaire spécialiste du Barde). Pour les premières centaines d'oeuvres, Michael Hart travaille seul pour convertir les textes au format informatique le plus basique, le format ASCI, car il compte bien que sa bibliothèque survive aux standards qui se démodent. </p> <p> « Mes amis disaient que j'étais timbré, dit-il aujourd'hui. Mais dès que j'ai vu le réseau, alors que nous n'étions qu'une centaine de personnes connectées, j'ai compris comment on l'utiliserait dans l'avenir », affirme sans fausse modestie cet homme corpulent qui tient son auditoire sous le charme pendant des heures avec ses anecdotes, ses diatribes contre les éditeurs et son franc-parler. </p> <p> Au fil du temps, un réseau de bénévoles éparpillés dans le monde rejoint le Projet Gutenberg. Un millier de personnes y participent de près ou de loin : certains envoient des livres à Las Vegas où un collaborateur utilise un scanner et des logiciels de reconnaissance de caractères perfectionnés pour accélérer le travail, d'autres scannent eux-mêmes les textes. Chaque texte est relu par deux distributed proofreaders. Enfin une quinzaine de bénévoles a la responsabilité de s'assurer une dernière fois que l'écrit est bien libre de droits d'auteur avant de le mettre en ligne. </p> <p> Le succès du Projet Gutenberg se mesure certainement à l'étendue de cette mobilisation désintéressée entre de parfaits inconnus. « Si tout le monde scanne une page, vous vous rendez compte combien de millions de gens pourront alors avoir accès à cette oeuvre », exhorte sans relâche cet évangélisateur. Car Michael Hart est convaincu d'offrir une deuxième vie à ces oeuvres. « J'étais un jour au téléphone avec une amie et il y a eu chez elle un grand bruit. C'était les copains de son fils qui étaient agglutinés sur un vieux fauteuil devant l'ordinateur en train de lire Alice au pays des merveilles sur Gutenberg. Ces enfants d'une dizaine d'années venaient depuis plusieurs jours continuer l'histoire. Le fauteuil s'était brisé », raconte fièrement Michael Hart. « Après Johannes Gutenberg, le taux d'alphabétisation a fait un bond énorme. Si à ma mort, je peux me dire que j'ai moi aussi aidé, je serais heureux. » </p> <p> Mais la vie n'est pas de tout repos pour celui qui se dit en guerre avec les éditeurs. « Pendant tout le XXe siècle, la durée des droits d'auteur n'a fait que s'allonger aux Etats-Unis. Cela prend de plus en plus longtemps pour qu'un livre tombe dans le domaine public », peste Michael Hart. « Les éditeurs veulent tirer un maximum de profits des droits. Mais j'annonce la nouvelle révolution industrielle. Le paradigme n'est plus que « Si j'ai quelque chose, tu ne peux pas l'avoir aussi ». Dans cette nouvelle ère, tout le monde peut l'avoir sans limite et à coût très bas. » </p> <p> Ce n'est pas un hasard si la visite de Michael Hart en France s'est faite avec l'aide de deux associations militant pour le <mark>logiciel</mark> <mark>libre</mark>, l'April (Association pour la promotion et la recherche en informatique libre) et l'Aful (Association francophone des utilisateurs de Linux et des <mark>logiciels</mark> <mark>libres</mark>). Electron libre, Michael Hart n'est pas officiellement affilié au mouvement du <mark>logiciel</mark> <mark>libre</mark> même si <mark>Richard</mark> <mark>Stallman</mark>, son porte-parole le plus connu, est une vieille connaissance. « Je suis anti-politique », affirme Michael Hart, qui a pourtant rencontré un groupe de députés français pendant son séjour à Paris. </p> <p> Le visionnaire a aussi un rapport inhabituel avec l'argent. « Je ne m'intéresse pas à l'argent. J'ai des goûts simples. Quand nous recevons des dons, nous préférons acheter des scanners », explique Michael Hart, qui raconte par ailleurs qu'un ancien ami devenu milliardaire lui a payé un salaire pendant 18 mois. Ou encore qu'une association de bibliothécaires qu'il avait aidée lui prête gracieusement un appartement à Hawaï pour qu'il fuie deux mois de l'année le froid de l'Illinois où il réside habituellement. « Mon profit dans cette histoire, assure-t-il, c'est que le Projet Gutenberg profite aux autres, que nous construisions un monde meilleur. »</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>En 1971, alors qu'il est étudiant à l'Université de l'Illinois, Michael Hart a trouvé un passe-temps : il tape la Déclaration d'indépendance américaine puis la Constitution américaine, la Bible et les oeuvres de Shakespeare.</p> </div>.
+
+        <p></p>
+        <p>
+            
+            
+                </p><div class="ImageAttachFont"><p>(Photo I.Boucq.)</p> </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040217·LF·20040217×2fig0139</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040217·LF·20040217×2fig0139";
+    var _docIndex = 209;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040217·LF·20040217×2fig0139';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040217%C2%B7LF%C2%B720040217%C3%972fig0139&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040217%C2%B7LF%C2%B720040217%C3%972fig0139&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040217%C2%B7LF%C2%B720040217%C3%972fig0139&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040217%C2%B7LF%C2%B720040217%C3%972fig0139&docIndex=209&FullScreen=1";
+                
+	var _keyDoc = 'news·20040217·LF·20040217×2fig0139';
+</script>
+</div></body></html>

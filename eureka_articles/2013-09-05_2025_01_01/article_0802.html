@@ -1,0 +1,515 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;conomie et Entreprise,         jeudi 20 novembre 2014 550 mots, p. SCQ8&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; se met au cryptage des messages            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L&#39;application, rachet&#233;e par Facebook, va progressivement d&#233;ployer un syst&#232;me de chiffrement des donn&#233;es &#233;chang&#233;es par ses 600 millions d&#39;utilisateurs&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Apr&#232;s l&#39;annonce de son rachat par Facebook, en f&#233;vrier, &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; avait &#233;t&#233; vertement critiqu&#233; sur le terrain de la vie priv&#233;e. Neuf mois plus tard, la principale application de messagerie sur portable dans le monde vient d&#39;annoncer un renforcement consid&#233;rable - et surprenant - de sa confidentialit&#233;. &lt;/p&gt; &lt;p&gt; Dans sa version pour Android, le syst&#232;me d&#39;exploitation de Google, &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; appliquera d&#233;sormais par d&#233;faut le chiffrement des messages, ce qui signifie que les &#233;changes entre utilisateurs ne seront lisibles que par eux, m&#234;me en cas d&#39;interception (par une autorit&#233; publique, une agence de renseignement ou un pirate informatique).&lt;/p&gt;
+
+
+&lt;p&gt;Plus surprenant encore : pour cette innovation, &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; a travaill&#233; avec Whisper Systems, une organisation &#224; but non lucratif connue pour d&#233;velopper TextSecure. Cette application, similaire &#224; &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt;, est consid&#233;r&#233;e par les experts en cryptographie comme une des applications de messagerie les plus s&#233;curis&#233;es du march&#233;. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Edward Snowden&lt;/span&gt;, l&#39;ancien sous-traitant du renseignement am&#233;ricain &#224; l&#39;origine des r&#233;v&#233;lations sur la NSA, avait recommand&#233; l&#39;utilisation des applications d&#233;velopp&#233;es par Whisper Systems. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Ce sont des programmes gratuits qui sont en fait meilleurs que ceux qui sont int&#233;gr&#233;s &#224; votre t&#233;l&#233;phone, et plus s&#251;rs &quot;,&lt;/em&gt; avait-il expliqu&#233; dans le cadre du festival du &lt;em style=&quot;font-style:italic;&quot;&gt;New Yorker&lt;/em&gt;, le 11 octobre. &lt;/p&gt; &lt;p&gt; C&#39;est justement une version modifi&#233;e du code informatique de TextSecure, publi&#233; sous licence &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; et donc r&#233;utilisable, qui sera utilis&#233;e pour ce nouveau chiffrement. Ce dernier sera m&#234;me dit &quot; de bout en bout &quot;, ce qui signifie que m&#234;me &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; ne disposera pas de la cl&#233; permettant de d&#233;chiffrer les messages des utilisateurs. &lt;/p&gt; &lt;p&gt; Passage &quot; en douceur &quot; &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Les utilisateurs lambda ne verront pas la diff&#233;rence, cela se fera en douceur &quot;,&lt;/em&gt; s&#39;est f&#233;licit&#233; le cr&#233;ateur de Whisper Systems, Moxie Marlinspike, dans les colonnes du magazine &lt;em style=&quot;font-style:italic;&quot;&gt;Wired&lt;/em&gt;. Pour le moment, cette nouveaut&#233; n&#39;est disponible que sur les t&#233;l&#233;phones Android et dans les discussions entre deux utilisateurs. Les diff&#233;rentes pi&#232;ces jointes (photos, sons, vid&#233;os, etc.) ne sont pas encore concern&#233;es. L&#39;extension du chiffrement vers d&#39;autres plates-formes (iOS, Windows Phone), pour les discussions de groupe et les pi&#232;ces jointes suivront, sans qu&#39;une date pr&#233;cise n&#39;ait &#233;t&#233; annonc&#233;e. &lt;/p&gt; &lt;p&gt; Le syst&#232;me de messagerie d&#39;Apple, iMessage, comporte d&#233;j&#224; une forme de chiffrement de &quot; bout en bout &quot;. Mais les experts alertent depuis longtemps sur les fragilit&#233;s li&#233;es &#224; l&#39;impl&#233;mentation de ces protections chez le g&#233;ant &#224; la pomme. Avec ce nouveau dispositif, &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; se rapproche davantage d&#39;applications comme celles de l&#39;entreprise am&#233;ricaine Silent Circle ou de celles d&#233;j&#224; d&#233;velopp&#233;es par Whisper Systems. Mais aucune d&#39;entre elles ne compte autant d&#39;utilisateurs que &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt;, qui revendique depuis peu plus de 600 millions d&#39;utilisateurs actifs par mois. &lt;/p&gt; &lt;p&gt; Cette masse d&#39;utilisateurs, dont tous les messages seront &#224; terme prot&#233;g&#233;s par le m&#233;canisme de chiffrement, fera de &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; le plus vaste outil de communications chiffr&#233;es de la plan&#232;te. &lt;/p&gt; &lt;p&gt; Ce m&#233;canisme de protection, d&#233;velopp&#233; depuis les semaines qui ont suivi le rachat par Facebook, pourrait trouver ses racines dans la vision du fondateur de l&#39;entreprise, &lt;span class=&quot;stubs&quot;&gt;Jan Koum&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Le respect de la vie priv&#233;e est cod&#233; dans notre ADN &quot;,&lt;/em&gt; se d&#233;fendait-il au moment de son rachat par Facebook et des critiques qui l&#39;ont accompagn&#233;es. Originaire de l&#39;ex-URSS, il avait &#233;voqu&#233; dans un billet de blog un des &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; souvenirs les plus marquants de son enfance &quot;&lt;/em&gt;, lorsque sa m&#232;re, au t&#233;l&#233;phone, disait : &lt;em style=&quot;font-style:italic;&quot;&gt;&quot; Ce n&#39;est pas une conversation &#224; avoir au t&#233;l&#233;phone, je te le dirai en personne. &quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&quot; J&#39;ai grandi dans une soci&#233;t&#233; o&#249; tout ce que nous faisions &#233;tait surveill&#233;, enregistr&#233;, &#233;pi&#233;. Personne ne devrait avoir le droit d&#39;espionner, ou cela devient un Etat totalitaire, le genre d&#39;Etat que j&#39;ai fui, enfant, pour venir dans ce pays, o&#249; vous b&#233;n&#233;ficiez de la d&#233;mocratie et de la libert&#233; d&#39;expression &quot;,&lt;/em&gt; avait-il poursuivi dans une interview &#224; &lt;em style=&quot;font-style:italic;&quot;&gt;Wired&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Cette nouveaut&#233; - qui a de quoi inqui&#233;ter les autorit&#233;s des pays o&#249; est utilis&#233; &lt;span class=&quot;stubs&quot;&gt;WhatsApp&lt;/span&gt; - vient s&#39;ajouter aux diverses initiatives prises par plusieurs grandes entreprises de la Silicon Valley pour davantage prot&#233;ger les communications de leurs utilisateurs. Apple et Google ont r&#233;cemment annonc&#233; le chiffrement des donn&#233;es contenues sur les t&#233;l&#233;phones &#233;quip&#233;s de leurs logiciels, au grand dam des autorit&#233;s, am&#233;ricaines notamment. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;span class=&quot;stubs&quot;&gt; Martin Untersinger&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20141120&amp;#183;LM&amp;#183;0scq4714_326797927&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">pièces jointes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">vie privée</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">cryptage des messages</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">utilisation des applications</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">origine des révélations</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">WhatsApp</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Edward Snowden</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Jan Koum</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Martin Untersinger</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Fusions, acquisitions et offres publiques d'achat</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141120%c2%b7LM%c2%b70scq4714_326797927" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141120%c2%b7LM%c2%b70scq4714_326797927">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Économie et Entreprise,         jeudi 20 novembre 2014 550 mots, p. SCQ8</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+<span class="stubs">WhatsApp</span> se met au cryptage des messages            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L'application, rachetée par Facebook, va progressivement déployer un système de chiffrement des données échangées par ses 600 millions d'utilisateurs</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Après l'annonce de son rachat par Facebook, en février, <span class="stubs">WhatsApp</span> avait été vertement critiqué sur le terrain de la vie privée. Neuf mois plus tard, la principale application de messagerie sur portable dans le monde vient d'annoncer un renforcement considérable - et surprenant - de sa confidentialité. </p> <p> Dans sa version pour Android, le système d'exploitation de Google, <span class="stubs">WhatsApp</span> appliquera désormais par défaut le chiffrement des messages, ce qui signifie que les échanges entre utilisateurs ne seront lisibles que par eux, même en cas d'interception (par une autorité publique, une agence de renseignement ou un pirate informatique).</p>
+
+
+<p>Plus surprenant encore : pour cette innovation, <span class="stubs">WhatsApp</span> a travaillé avec Whisper Systems, une organisation à but non lucratif connue pour développer TextSecure. Cette application, similaire à <span class="stubs">WhatsApp</span>, est considérée par les experts en cryptographie comme une des applications de messagerie les plus sécurisées du marché. </p> <p><span class="stubs"> Edward Snowden</span>, l'ancien sous-traitant du renseignement américain à l'origine des révélations sur la NSA, avait recommandé l'utilisation des applications développées par Whisper Systems. <em style="font-style:italic;">" Ce sont des programmes gratuits qui sont en fait meilleurs que ceux qui sont intégrés à votre téléphone, et plus sûrs ",</em> avait-il expliqué dans le cadre du festival du <em style="font-style:italic;">New Yorker</em>, le 11 octobre. </p> <p> C'est justement une version modifiée du code informatique de TextSecure, publié sous licence <mark>open</mark> <mark>source</mark> et donc réutilisable, qui sera utilisée pour ce nouveau chiffrement. Ce dernier sera même dit " de bout en bout ", ce qui signifie que même <span class="stubs">WhatsApp</span> ne disposera pas de la clé permettant de déchiffrer les messages des utilisateurs. </p> <p> Passage " en douceur " <em style="font-style:italic;">" Les utilisateurs lambda ne verront pas la différence, cela se fera en douceur ",</em> s'est félicité le créateur de Whisper Systems, Moxie Marlinspike, dans les colonnes du magazine <em style="font-style:italic;">Wired</em>. Pour le moment, cette nouveauté n'est disponible que sur les téléphones Android et dans les discussions entre deux utilisateurs. Les différentes pièces jointes (photos, sons, vidéos, etc.) ne sont pas encore concernées. L'extension du chiffrement vers d'autres plates-formes (iOS, Windows Phone), pour les discussions de groupe et les pièces jointes suivront, sans qu'une date précise n'ait été annoncée. </p> <p> Le système de messagerie d'Apple, iMessage, comporte déjà une forme de chiffrement de " bout en bout ". Mais les experts alertent depuis longtemps sur les fragilités liées à l'implémentation de ces protections chez le géant à la pomme. Avec ce nouveau dispositif, <span class="stubs">WhatsApp</span> se rapproche davantage d'applications comme celles de l'entreprise américaine Silent Circle ou de celles déjà développées par Whisper Systems. Mais aucune d'entre elles ne compte autant d'utilisateurs que <span class="stubs">WhatsApp</span>, qui revendique depuis peu plus de 600 millions d'utilisateurs actifs par mois. </p> <p> Cette masse d'utilisateurs, dont tous les messages seront à terme protégés par le mécanisme de chiffrement, fera de <span class="stubs">WhatsApp</span> le plus vaste outil de communications chiffrées de la planète. </p> <p> Ce mécanisme de protection, développé depuis les semaines qui ont suivi le rachat par Facebook, pourrait trouver ses racines dans la vision du fondateur de l'entreprise, <span class="stubs">Jan Koum</span>. <em style="font-style:italic;">" Le respect de la vie privée est codé dans notre ADN ",</em> se défendait-il au moment de son rachat par Facebook et des critiques qui l'ont accompagnées. Originaire de l'ex-URSS, il avait évoqué dans un billet de blog un des <em style="font-style:italic;">" souvenirs les plus marquants de son enfance "</em>, lorsque sa mère, au téléphone, disait : <em style="font-style:italic;">" Ce n'est pas une conversation à avoir au téléphone, je te le dirai en personne. "</em></p><p><em style="font-style:italic;">" J'ai grandi dans une société où tout ce que nous faisions était surveillé, enregistré, épié. Personne ne devrait avoir le droit d'espionner, ou cela devient un Etat totalitaire, le genre d'Etat que j'ai fui, enfant, pour venir dans ce pays, où vous bénéficiez de la démocratie et de la liberté d'expression ",</em> avait-il poursuivi dans une interview à <em style="font-style:italic;">Wired</em>. </p> <p> Cette nouveauté - qui a de quoi inquiéter les autorités des pays où est utilisé <span class="stubs">WhatsApp</span> - vient s'ajouter aux diverses initiatives prises par plusieurs grandes entreprises de la Silicon Valley pour davantage protéger les communications de leurs utilisateurs. Apple et Google ont récemment annoncé le chiffrement des données contenues sur les téléphones équipés de leurs logiciels, au grand dam des autorités, américaines notamment. </p> <p><em style="font-weight:bold;"><span class="stubs"> Martin Untersinger</span></em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20141120·LM·0scq4714_326797927</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20141120·LM·0scq4714_326797927";
+    var _docIndex = 801;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20141120·LM·0scq4714_326797927';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720141120%C2%B7LM%C2%B70scq4714_326797927&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720141120%C2%B7LM%C2%B70scq4714_326797927&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720141120%C2%B7LM%C2%B70scq4714_326797927&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720141120%C2%B7LM%C2%B70scq4714_326797927&docIndex=801&FullScreen=1";
+                
+	var _keyDoc = 'news·20141120·LM·0scq4714_326797927';
+</script>
+</div></body></html>

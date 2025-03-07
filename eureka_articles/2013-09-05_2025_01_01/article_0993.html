@@ -1,0 +1,489 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Sp&#233;cial,         mardi 24 septembre 2013 366 mots, p. SPA3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+LH Forum         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les mots de l&#39;&#233;conomie positive            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;CONFIANCE&lt;/em&gt; A l&#39;origine de tout dynamisme &#233;conomique : la confiance, mot-cl&#233; du management entrepreneurial. Il s&#39;agit, gr&#226;ce &#224; la transparence, de trouver le juste milieu entre le lien social (faire confiance &#224; autrui) et la libert&#233; d&#39;initiative individuelle (la confiance en soi). &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;COOP&#201;TITION&lt;/em&gt; Contraction de &#171; coop&#233;ration &#187; et &#171; comp&#233;tition &#187;. Il vaut mieux coop&#233;rer que perdre du temps &#224; se m&#233;fier et &#234;tre en comp&#233;tition. D&#39;o&#249; le terme de &#171; coop&#233;tition &#187;, pour d&#233;finir la collaboration opportuniste entre des concurrents.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;CRADLE TO CRADLE&lt;/em&gt; Concept-cl&#233; de l&#39;&#233;co-conception et label, parfois abr&#233;g&#233; en C2C (litt&#233;ralement, &#171; du berceau au berceau &#187;). Quatre piliers sous-tendent cette d&#233;marche : la transformation des d&#233;chets en mati&#232;re r&#233;utilisable, l&#39;utilisation des &#233;nergies renouvelables, la pr&#233;f&#233;rence faite &#224; la diversit&#233;, et la recherche syst&#233;matique du &#171; faire bien &#187; plut&#244;t que du &#171; faire moins mal &#187;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;CROWDSOURCING&lt;/em&gt; Mot &#224; mot, &#171; approvisionnement par la foule &#187;. Il suffit de compter sur les comp&#233;tences des citoyens-experts, n&#39;importe o&#249; sur la Toile, pour trouver des contenus in&#233;dits et r&#233;soudre des probl&#232;mes complexes. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;ECONOMIE COLLABORATIVE&lt;/em&gt; Mod&#232;le &#233;conomique reposant sur le partage (de biens, de services, d&#39;informations), le troc. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;ECONOMIE LAT&#201;RALE&lt;/em&gt; Elle d&#233;finit la r&#233;volution industrielle d&#233;centralis&#233;e, d&#233;crite par l&#39;&#233;conomiste Jeremy Rifkin dans &lt;em style=&quot;font-style:italic;&quot;&gt;La Troisi&#232;me R&#233;volution industrielle&lt;/em&gt; (Les liens qui lib&#232;rent, 2012). Selon lui, si les gens collaborent, c&#39;est surtout par pur pragmatisme, afin de r&#233;aliser des actions de mani&#232;re &#224; la fois plus rapide et moins co&#251;teuse. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;ETHIQUE&lt;/em&gt; Dans le cadre des principes du d&#233;veloppement durable, les codes ou chartes &#233;thiques repr&#233;sentent de nouveaux devoirs que le corps social de l&#39;entreprise s&#39;assigne &#224; lui-m&#234;me, au-del&#224; de ses obligations strictement l&#233;gales ou &#233;conomiques. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;FAB LABS&lt;/em&gt; Contraction de l&#39;anglais &lt;em style=&quot;font-style:italic;&quot;&gt;fabrication laboratory&lt;/em&gt;, &#171; laboratoire de fabrication &#187;. Ces plates-formes de prototypage d&#39;objets, sortes de photocopieuses en 3D, repr&#233;sentent le nec plus ultra de l&#39;industrie collaborative &#224; l&#39;&#232;re num&#233;rique. N&#39;importe quel amateur peut y concevoir, fabriquer ou r&#233;parer un objet unique : lampe, haut-parleur, moule &#224; g&#226;teau, etc &lt;/p&gt; &lt;p&gt;. &lt;em style=&quot;font-weight:bold;&quot;&gt;FINANCE SOLIDAIRE&lt;/em&gt; Activit&#233; men&#233;e par des organismes de financement &#224; statuts sp&#233;cifiques qui fournissent des pr&#234;ts ou des participations en capital &#224; d&#39;autres structures de l&#39;&#233;conomie solidaire (associations, coop&#233;ratives, etc.), ou &#224; des personnes exclues des circuits bancaires et financiers classiques. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;MOBILIT&#233; DURABLE&lt;/em&gt; A mesure que l&#39;urbanisation s&#39;&#233;tend, les d&#233;placements s&#39;intensifient. Cela n&#39;est pas sans cons&#233;quences. La mobilit&#233; durable consiste &#224; promouvoir des d&#233;placements moins consommateurs d&#39;&#233;nergie, moins polluants, et permettant d&#39;&#233;viter la congestion urbaine. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;OPEN DATA&lt;/em&gt; Le &#171; carburant du XXIe si&#232;cle &#187;. C&#39;est ainsi que les pionniers du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; qualifient l&#39;ouverture libre des donn&#233;es. Qui dit plus d&#39;acc&#232;s aux informations pr&#233;cises (tarifs, budgets, contacts, r&#233;seaux, etc.) dit plus de nouveaux services, donc plus d&#39;innovation et de contribution &#224; la croissance. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;PEER-TO-PEER&lt;/em&gt; (en fran&#231;ais &#171; pair &#224; pair &#187;). Technologie informatique qui permet aux internautes entrepreneurs de communiquer en r&#233;seau, d&#39;&#234;tre &#224; la fois serveurs et clients et de partager des contenus multim&#233;dias. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;VENTURE PHILANTHROPY&lt;/em&gt; Investissement dans des entreprises &#224; fort potentiel de croissance, en vue d&#39;optimiser le service social ou caritatif rendu, et non le profit.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20130924&amp;#183;LM&amp;#183;0spa3913_841226&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">mots de l'économie positive</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">laboratoire de fabrication</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">collaboration opportuniste</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">révolution industrielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">lien social</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130924%c2%b7LM%c2%b70spa3913_841226" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130924%c2%b7LM%c2%b70spa3913_841226">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Spécial,         mardi 24 septembre 2013 366 mots, p. SPA3</span>
+</div>
+
+    <div>
+        <p>
+LH Forum         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les mots de l'économie positive            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">CONFIANCE</em> A l'origine de tout dynamisme économique : la confiance, mot-clé du management entrepreneurial. Il s'agit, grâce à la transparence, de trouver le juste milieu entre le lien social (faire confiance à autrui) et la liberté d'initiative individuelle (la confiance en soi). </p> <p><em style="font-weight:bold;">COOPÉTITION</em> Contraction de « coopération » et « compétition ». Il vaut mieux coopérer que perdre du temps à se méfier et être en compétition. D'où le terme de « coopétition », pour définir la collaboration opportuniste entre des concurrents.</p>
+
+
+<p><em style="font-weight:bold;">CRADLE TO CRADLE</em> Concept-clé de l'éco-conception et label, parfois abrégé en C2C (littéralement, « du berceau au berceau »). Quatre piliers sous-tendent cette démarche : la transformation des déchets en matière réutilisable, l'utilisation des énergies renouvelables, la préférence faite à la diversité, et la recherche systématique du « faire bien » plutôt que du « faire moins mal ». </p> <p><em style="font-weight:bold;">CROWDSOURCING</em> Mot à mot, « approvisionnement par la foule ». Il suffit de compter sur les compétences des citoyens-experts, n'importe où sur la Toile, pour trouver des contenus inédits et résoudre des problèmes complexes. </p> <p><em style="font-weight:bold;">ECONOMIE COLLABORATIVE</em> Modèle économique reposant sur le partage (de biens, de services, d'informations), le troc. </p> <p><em style="font-weight:bold;">ECONOMIE LATÉRALE</em> Elle définit la révolution industrielle décentralisée, décrite par l'économiste Jeremy Rifkin dans <em style="font-style:italic;">La Troisième Révolution industrielle</em> (Les liens qui libèrent, 2012). Selon lui, si les gens collaborent, c'est surtout par pur pragmatisme, afin de réaliser des actions de manière à la fois plus rapide et moins coûteuse. </p> <p><em style="font-weight:bold;">ETHIQUE</em> Dans le cadre des principes du développement durable, les codes ou chartes éthiques représentent de nouveaux devoirs que le corps social de l'entreprise s'assigne à lui-même, au-delà de ses obligations strictement légales ou économiques. </p> <p><em style="font-weight:bold;">FAB LABS</em> Contraction de l'anglais <em style="font-style:italic;">fabrication laboratory</em>, « laboratoire de fabrication ». Ces plates-formes de prototypage d'objets, sortes de photocopieuses en 3D, représentent le nec plus ultra de l'industrie collaborative à l'ère numérique. N'importe quel amateur peut y concevoir, fabriquer ou réparer un objet unique : lampe, haut-parleur, moule à gâteau, etc </p> <p>. <em style="font-weight:bold;">FINANCE SOLIDAIRE</em> Activité menée par des organismes de financement à statuts spécifiques qui fournissent des prêts ou des participations en capital à d'autres structures de l'économie solidaire (associations, coopératives, etc.), ou à des personnes exclues des circuits bancaires et financiers classiques. </p> <p><em style="font-weight:bold;">MOBILITé DURABLE</em> A mesure que l'urbanisation s'étend, les déplacements s'intensifient. Cela n'est pas sans conséquences. La mobilité durable consiste à promouvoir des déplacements moins consommateurs d'énergie, moins polluants, et permettant d'éviter la congestion urbaine. </p> <p><em style="font-weight:bold;">OPEN DATA</em> Le « carburant du XXIe siècle ». C'est ainsi que les pionniers du <mark>logiciel</mark> <mark>libre</mark> qualifient l'ouverture libre des données. Qui dit plus d'accès aux informations précises (tarifs, budgets, contacts, réseaux, etc.) dit plus de nouveaux services, donc plus d'innovation et de contribution à la croissance. </p> <p><em style="font-weight:bold;">PEER-TO-PEER</em> (en français « pair à pair »). Technologie informatique qui permet aux internautes entrepreneurs de communiquer en réseau, d'être à la fois serveurs et clients et de partager des contenus multimédias. </p> <p><em style="font-weight:bold;">VENTURE PHILANTHROPY</em> Investissement dans des entreprises à fort potentiel de croissance, en vue d'optimiser le service social ou caritatif rendu, et non le profit.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20130924·LM·0spa3913_841226</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20130924·LM·0spa3913_841226";
+    var _docIndex = 992;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20130924·LM·0spa3913_841226';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720130924%C2%B7LM%C2%B70spa3913_841226&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720130924%C2%B7LM%C2%B70spa3913_841226&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720130924%C2%B7LM%C2%B70spa3913_841226&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720130924%C2%B7LM%C2%B70spa3913_841226&docIndex=992&FullScreen=1";
+                
+	var _keyDoc = 'news·20130924·LM·0spa3913_841226';
+</script>
+</div></body></html>

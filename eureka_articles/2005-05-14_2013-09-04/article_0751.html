@@ -1,0 +1,527 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Rendez-vous,         jeudi 14 d&amp;#233;cembre 2006 617 mots, p. 27&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+RENDEZ-VOUS         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Modes de vie&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Coll&#232;ges et lyc&#233;es font leur r&#233;volution num&#233;rique            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;De plus en plus d&#39;&#233;tablissements proposent aux parents d&#39;acc&#233;der en ligne aux notes des &#233;l&#232;ves ou d&#39;&#234;tre alert&#233;s de leurs absences&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Martine Laronche&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Depuis la rentr&#233;e 2003, les parents des enfants scolaris&#233;s au coll&#232;ge Pil&#226;tre-de-Rozier, &#224; Ars-sur-Moselle (Moselle), peuvent consulter les notes de leurs enfants sur Internet, leur emploi du temps, la liste des devoirs qu&#39;ils ont &#224; faire... Il leur suffit pour cela de se connecter &#224; un portail Web s&#233;curis&#233; et personnalis&#233;, gr&#226;ce &#224; un identifiant et &#224; un mot de passe. &#171; C&#39;est tr&#232;s pratique pour nous, familles, qui sommes &#224; l&#39;ext&#233;rieur de l&#39;&#233;tablissement, explique Eric Marion, responsable de la F&#233;d&#233;ration des conseils de parents d&#39;&#233;l&#232;ves (FCPE) pour le coll&#232;ge. On peut suivre la scolarit&#233; de nos enfants sans attendre les bulletins scolaires, v&#233;rifier qu&#39;un professeur est bien absent, prendre connaissance en temps r&#233;el des remarques des enseignants. &#187; &lt;/p&gt; &lt;p&gt; Passionn&#233; par les nouvelles technologies, Olivier Pallez, principal du coll&#232;ge de 2000 &#224; 2006, est &#224; l&#39;origine de la mise en place de ce qu&#39;on appelle un environnement num&#233;rique de travail (ENT). &#171; L&#39;objectif de d&#233;part visait &#224; responsabiliser les &#233;l&#232;ves et leurs parents sur les r&#233;sultats scolaires &#187;, explique-t-il. Pour monter son projet, il a sollicit&#233; les financements des communes de recrutement du coll&#232;ge et du d&#233;partement de la Moselle.&lt;/p&gt;
+
+
+&lt;p&gt;Cette petite r&#233;volution technologique a gagn&#233; l&#39;&#233;ducation nationale ces derni&#232;res ann&#233;es. D&#233;j&#224; plus de 9 % des coll&#232;ges, 17 % des lyc&#233;es d&#39;enseignement g&#233;n&#233;ral et technologique, 12 % des lyc&#233;es professionnels ont rendu accessibles sur la Toile les r&#233;sultats scolaires, de m&#234;me que d&#39;autres informations comme les emplois du temps ou l&#39;absence des &#233;l&#232;ves - annonc&#233;e syst&#233;matiquement par SMS. &lt;/p&gt; &lt;p&gt; Confront&#233; &#224; l&#39;&#233;mergence d&#39;initiatives disparates et plus ou moins &#233;toff&#233;es, le minist&#232;re de l&#39;&#233;ducation nationale a lanc&#233;, en 2003, avec la Caisse des d&#233;p&#244;ts, un appel &#224; projets aupr&#232;s des d&#233;partements, r&#233;gions et acad&#233;mies pour d&#233;velopper les environnements num&#233;riques de travail. Objectif : harmoniser les diff&#233;rents syst&#232;mes, offrir l&#39;acc&#232;s &#224; une panoplie de services &#224; partir d&#39;un m&#234;me portail et donner une forte impulsion au d&#233;veloppement du Net &#224; l&#39;&#233;cole. &#171; Nous avons &#233;labor&#233; une s&#233;rie de r&#232;gles communes valables sur l&#39;ensemble de la France, explique Beno&#238;t Sillard, d&#233;l&#233;gu&#233; aux usages Internet au minist&#232;re. Nous souhaitons que 80 % des coll&#232;ges et des lyc&#233;es soient &#233;quip&#233;s d&#39;ici &#224; 2010. &#187; &lt;/p&gt; &lt;p&gt; A ce jour, on compte environ 200 coll&#232;ges et lyc&#233;es &#233;quip&#233;s d&#39;environnements num&#233;riques de travail r&#233;pondant aux pr&#233;conisations du minist&#232;re. Ces ENT sont d&#233;velopp&#233;s &#224; l&#39;initiative de 8 r&#233;gions, 22 d&#233;partements et 14 acad&#233;mies. La Lorraine est une des pionni&#232;res. Dix groupes scolaires (coll&#232;ges plus lyc&#233;es) y sont &#233;quip&#233;s d&#39;environnements num&#233;riques. La g&#233;n&#233;ralisation &#224; l&#39;ensemble de la r&#233;gion reste un objectif mais la complexit&#233; du chantier n&#233;cessite des ajustements permanents. &lt;/p&gt; &lt;p&gt; &#171; A l&#39;usage, des outils s&#39;av&#232;rent plus utilis&#233;s que d&#39;autres. Les conseillers principaux d&#39;&#233;ducation pr&#233;f&#232;rent finalement t&#233;l&#233;phoner directement aux parents des &#233;l&#232;ves absents plut&#244;t qu&#39;envoyer un SMS. En revanche, les forums de discussion marchent tr&#232;s fort &#187;, analyse Pascal Faure, conseiller en mati&#232;re de technologies de l&#39;information et de la communication au rectorat de Nancy-Metz. &lt;/p&gt; &lt;p&gt; La r&#233;gion Ile-de-France compte pour sa part 12 &#233;tablissements pilotes dot&#233;s d&#39;ENT, dont le lyc&#233;e Ren&#233;-Auffray, &#224; Clichy (Hauts-de-Seine). &#171; C&#39;est fabuleux comme outil, s&#39;enthousiasme le proviseur du lyc&#233;e, Jean-Pierre Vast. Quand je re&#231;ois les parents dans mon bureau, j&#39;ai acc&#232;s &#224; toutes les notes et les appr&#233;ciations concernant leurs enfants au lieu de courir apr&#232;s les enseignants. &#187; Lors des conseils de classe, M. Vast projette les bulletins de chaque &#233;l&#232;ve et rentre directement dans l&#39;ordinateur les appr&#233;ciations des professeurs. &lt;/p&gt; &lt;p&gt; Le logiciel permet aussi aux enseignants de mettre en ligne des documents p&#233;dagogiques (cours, cartes, illustrations) &#224; destination des &#233;l&#232;ves. Les professeurs ont la possibilit&#233; de r&#233;server du mat&#233;riel en ligne, de communiquer, gr&#226;ce &#224; la messagerie interne, avec leurs coll&#232;gues, les &#233;l&#232;ves ou les parents. Les lyc&#233;ens absents peuvent consulter de chez eux le cahier de texte des enseignants, o&#249; figurent les questions trait&#233;es &#224; chaque cours ainsi que les devoirs &#224; faire. Ils peuvent encore dialoguer avec leurs camarades sur un forum, faire des devoirs ou des exercices en ligne, seul ou &#224; plusieurs... &lt;/p&gt; &lt;p&gt; Fr&#233;d&#233;ric Bonvoisin, professeur de math&#233;matiques et de sciences, a &#233;t&#233; la cheville ouvri&#232;re de l&#39;op&#233;ration. Une exp&#233;rimentation a d&#39;abord &#233;t&#233; lanc&#233;e en f&#233;vrier sur trois classes avant d&#39;&#233;largir l&#39;ENT, en septembre, &#224; l&#39;ensemble des 1 600 &#233;l&#232;ves et des personnels. Les enseignants ont b&#233;n&#233;fici&#233; de courtes s&#233;ances de formation. Les &#233;l&#232;ves, eux, n&#39;en ont pas eu besoin. &#171; Par rapport &#224; nous, ils ont au moins une g&#233;n&#233;ration d&#39;avance &#187;, assure M. Bonvoisin qui re&#231;oit, en revanche, r&#233;guli&#232;rement des messages de ses coll&#232;gues en mal d&#39;explications. &lt;/p&gt; &lt;p&gt; L&#39;Ile-de-France, qui teste actuellement les portails de quatre soci&#233;t&#233;s priv&#233;es, essaie de faire &#233;merger une solution en &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &#171; Cela permettrait d&#39;&#234;tre ma&#238;tre de son produit et de ses investissements &#187;, estime-t-on &#224; la r&#233;gion.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Gr&#226;ce &#224; ce syst&#232;me, les &#233;l&#232;ves peuvent consulter les documents p&#233;dagogiques mis en ligne par les enseignants. PHOTO : COLIN GRAY/GETTY&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2006 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20061214&amp;#183;LM&amp;#183;0q1412_1400500&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">environnements numériques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">environnements numériques de travail</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">documents pédagogiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">éducation nationale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">résultats scolaires</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ars-sur-Moselle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ile-de-France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Clichy</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Hauts-de-Seine</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720061214%c2%b7LM%c2%b70q1412_1400500" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720061214%c2%b7LM%c2%b70q1412_1400500">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Rendez-vous,         jeudi 14 décembre 2006 617 mots, p. 27</span>
+</div>
+
+    <div>
+        <p>
+RENDEZ-VOUS         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Modes de vie</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Collèges et lycées font leur révolution numérique            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">De plus en plus d'établissements proposent aux parents d'accéder en ligne aux notes des élèves ou d'être alertés de leurs absences</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Martine Laronche</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Depuis la rentrée 2003, les parents des enfants scolarisés au collège Pilâtre-de-Rozier, à Ars-sur-Moselle (Moselle), peuvent consulter les notes de leurs enfants sur Internet, leur emploi du temps, la liste des devoirs qu'ils ont à faire... Il leur suffit pour cela de se connecter à un portail Web sécurisé et personnalisé, grâce à un identifiant et à un mot de passe. « C'est très pratique pour nous, familles, qui sommes à l'extérieur de l'établissement, explique Eric Marion, responsable de la Fédération des conseils de parents d'élèves (FCPE) pour le collège. On peut suivre la scolarité de nos enfants sans attendre les bulletins scolaires, vérifier qu'un professeur est bien absent, prendre connaissance en temps réel des remarques des enseignants. » </p> <p> Passionné par les nouvelles technologies, Olivier Pallez, principal du collège de 2000 à 2006, est à l'origine de la mise en place de ce qu'on appelle un environnement numérique de travail (ENT). « L'objectif de départ visait à responsabiliser les élèves et leurs parents sur les résultats scolaires », explique-t-il. Pour monter son projet, il a sollicité les financements des communes de recrutement du collège et du département de la Moselle.</p>
+
+
+<p>Cette petite révolution technologique a gagné l'éducation nationale ces dernières années. Déjà plus de 9 % des collèges, 17 % des lycées d'enseignement général et technologique, 12 % des lycées professionnels ont rendu accessibles sur la Toile les résultats scolaires, de même que d'autres informations comme les emplois du temps ou l'absence des élèves - annoncée systématiquement par SMS. </p> <p> Confronté à l'émergence d'initiatives disparates et plus ou moins étoffées, le ministère de l'éducation nationale a lancé, en 2003, avec la Caisse des dépôts, un appel à projets auprès des départements, régions et académies pour développer les environnements numériques de travail. Objectif : harmoniser les différents systèmes, offrir l'accès à une panoplie de services à partir d'un même portail et donner une forte impulsion au développement du Net à l'école. « Nous avons élaboré une série de règles communes valables sur l'ensemble de la France, explique Benoît Sillard, délégué aux usages Internet au ministère. Nous souhaitons que 80 % des collèges et des lycées soient équipés d'ici à 2010. » </p> <p> A ce jour, on compte environ 200 collèges et lycées équipés d'environnements numériques de travail répondant aux préconisations du ministère. Ces ENT sont développés à l'initiative de 8 régions, 22 départements et 14 académies. La Lorraine est une des pionnières. Dix groupes scolaires (collèges plus lycées) y sont équipés d'environnements numériques. La généralisation à l'ensemble de la région reste un objectif mais la complexité du chantier nécessite des ajustements permanents. </p> <p> « A l'usage, des outils s'avèrent plus utilisés que d'autres. Les conseillers principaux d'éducation préfèrent finalement téléphoner directement aux parents des élèves absents plutôt qu'envoyer un SMS. En revanche, les forums de discussion marchent très fort », analyse Pascal Faure, conseiller en matière de technologies de l'information et de la communication au rectorat de Nancy-Metz. </p> <p> La région Ile-de-France compte pour sa part 12 établissements pilotes dotés d'ENT, dont le lycée René-Auffray, à Clichy (Hauts-de-Seine). « C'est fabuleux comme outil, s'enthousiasme le proviseur du lycée, Jean-Pierre Vast. Quand je reçois les parents dans mon bureau, j'ai accès à toutes les notes et les appréciations concernant leurs enfants au lieu de courir après les enseignants. » Lors des conseils de classe, M. Vast projette les bulletins de chaque élève et rentre directement dans l'ordinateur les appréciations des professeurs. </p> <p> Le logiciel permet aussi aux enseignants de mettre en ligne des documents pédagogiques (cours, cartes, illustrations) à destination des élèves. Les professeurs ont la possibilité de réserver du matériel en ligne, de communiquer, grâce à la messagerie interne, avec leurs collègues, les élèves ou les parents. Les lycéens absents peuvent consulter de chez eux le cahier de texte des enseignants, où figurent les questions traitées à chaque cours ainsi que les devoirs à faire. Ils peuvent encore dialoguer avec leurs camarades sur un forum, faire des devoirs ou des exercices en ligne, seul ou à plusieurs... </p> <p> Frédéric Bonvoisin, professeur de mathématiques et de sciences, a été la cheville ouvrière de l'opération. Une expérimentation a d'abord été lancée en février sur trois classes avant d'élargir l'ENT, en septembre, à l'ensemble des 1 600 élèves et des personnels. Les enseignants ont bénéficié de courtes séances de formation. Les élèves, eux, n'en ont pas eu besoin. « Par rapport à nous, ils ont au moins une génération d'avance », assure M. Bonvoisin qui reçoit, en revanche, régulièrement des messages de ses collègues en mal d'explications. </p> <p> L'Ile-de-France, qui teste actuellement les portails de quatre sociétés privées, essaie de faire émerger une solution en <mark>logiciel</mark> <mark>libre</mark>. « Cela permettrait d'être maître de son produit et de ses investissements », estime-t-on à la région.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Grâce à ce système, les élèves peuvent consulter les documents pédagogiques mis en ligne par les enseignants. PHOTO : COLIN GRAY/GETTY</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2006 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20061214·LM·0q1412_1400500</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20061214·LM·0q1412_1400500";
+    var _docIndex = 750;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20061214·LM·0q1412_1400500';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720061214%C2%B7LM%C2%B70q1412_1400500&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720061214%C2%B7LM%C2%B70q1412_1400500&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720061214%C2%B7LM%C2%B70q1412_1400500&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720061214%C2%B7LM%C2%B70q1412_1400500&docIndex=750&FullScreen=1";
+                
+	var _keyDoc = 'news·20061214·LM·0q1412_1400500';
+</script>
+</div></body></html>

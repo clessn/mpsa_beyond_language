@@ -1,0 +1,455 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mercredi 31 janvier 2001 706 mots, p. 3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+LE MONDE INTERACTIF LES NOUVELLES TECHNOLOGIES         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;ENQUETE Quand les &lt;mark&gt; logiciels&lt;/mark&gt; &lt;mark&gt; libres&lt;/mark&gt; s&#39;institionnalisent.&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+De l&#39;infiltration &#224; la cons&#233;cration            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;MANOURY CORINNE&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Entr&#233;s par la petite porte dans les administrations, les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; y sont &#224; pr&#233;sent recommand&#233;s &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le 19 janvier 2001, &#224; l&#39;occasion d&#39;un colloque organis&#233; &#224; Sophia-Antipolis, Michel Sapin, ministre de la fonction publique et de la r&#233;forme de l&#39;Etat, se pronon&#231;ait en faveur des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Il soulignait leur &quot; rapide essor &quot; dans les administrations et encourageait leur d&#233;veloppement. Car, au-del&#224; de la gratuit&#233;, de l&#39;ouverture et de la s&#233;curit&#233;, qu&#39;il jugeait responsables de leurs premiers succ&#232;s, Michel Sapin voyait dans le d&#233;veloppement coop&#233;ratif, mutuel et transparent de ces logiciels un mod&#232;le pour mener &#224; bien la r&#233;forme de l&#39;Etat. &lt;/p&gt; &lt;p&gt; Une cons&#233;cration qui tombait &#224; pic, quelques jours apr&#232;s le faux pas de Catherine Tasca, ministre de la culture, qui avait &#233;voqu&#233; l&#39;id&#233;e d&#39;une taxe sur les ordinateurs et avait provoqu&#233;, du coup, la col&#232;re des associations militant pour les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Une cons&#233;cration qui arrivait aussi un an apr&#232;s l&#39;annonce de la conversion &#224; Linux des services du minist&#232;re de la culture.&lt;/p&gt;
+
+
+&lt;p&gt;Entre-temps, d&#39;autres administrations avaient annonc&#233; leur passage aux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, comme la direction g&#233;n&#233;rale des imp&#244;ts, en d&#233;cembre 2000. Peu apr&#232;s le lancement par la MTIC (Mission interminist&#233;rielle de soutien technique pour le d&#233;veloppement des technologies de l&#39;information et de la communication dans l&#39;administration) d&#39;un site d&#233;di&#233; &#224; l&#39;utilisation du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; dans l&#39;administration : le bouquet du libre. Laurent Rieunneau, au Casier judiciaire national, explique ainsi comment, avec un budget tr&#232;s limit&#233;, il a pu mettre en place un intranet avec des logiciels comme Apache et Samba et un langage comme Perl. Tous disponibles gratuitement. Didier Georgieff et Thierry Barth&#233;l&#233;my, chefs du projet du syst&#232;me d&#39;information territorial (SIT) du Bas-Rhin, y vantent pour leur part les m&#233;rites de Zope, un serveur d&#39;application. &lt;/p&gt; &lt;p&gt; Que s&#39;&#233;tait-il donc pass&#233; en un an pour que l&#39;on ne jure plus que par les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ? Les associations pour le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; avaient-elles &#233;t&#233; particuli&#232;rement actives durant cette p&#233;riode ? Fallait-il simplement un certain temps pour que des id&#233;es d&#233;fendues par des fonctionnaires comme Jean-Paul Baquiast, auteur d&#39;un rapport sur la modernisation de l&#39;Etat et fondateur de l&#39;asso ciation Admiroutes, fassent leur chemin ? Peut-&#234;tre. Mais peut-&#234;tre fallait-il aussi que les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; s&#39;affirment, qu&#39;ils passent &quot; de l&#39;utopie au march&#233; &quot;. &lt;/p&gt; &lt;p&gt; &quot; Nous avons attendu qu&#39;il y ait une offre de support logiciel &quot;, explique Bruno Mannoni, chef du d&#233;partement de l&#39;organisation et des syst&#232;mes d&#39;information au minist&#232;re de la culture. Pionnier du Net, il &#233;tait membre de l&#39;ISOC (Internet Society) d&#232;s le d&#233;but des ann&#233;es 1990 et animait des ateliers de t&#233;l&#233;formation dans les pays en voie de d&#233;veloppement, o&#249; les syst&#232;mes libres pr&#233;sentaient l&#39;avantage d&#39;&#234;tre peu on&#233;reux et susceptibles de fonctionner sur du mat&#233;riel de r&#233;cup&#233;ration. Mais, poursuit-il, si Linux et les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ont le pouvoir de motiver les informaticiens en leur offrant la possibilit&#233; de trouver eux-m&#234;mes une solution aux probl&#232;mes du syst&#232;me d&#39;information, le &quot; do-it-yourself &quot; reste tr&#232;s th&#233;orique. &quot; Il y a plusieurs millions de lignes de code source, dit-il. Intervenir seul demande du temps et des comp&#233;tences. &quot; D&#39;o&#249; l&#39;int&#233;r&#234;t de se doter d&#39;un &quot; parachute &quot; ou d&#39;une &quot; assurance-vie &quot; comme le support logiciel. &lt;/p&gt; &lt;p&gt; &quot; Nous nous sommes trouv&#233;s au bon endroit au bon moment &quot;, dit Jean-Pierre Laisn&#233;, PDG de Linbox, la soci&#233;t&#233; choisie par la direction g&#233;n&#233;rale des imp&#244;ts pour installer Linux sur ses serveurs. Cofondateur de l&#39;AFUL (Association francophone des utilisateurs de Linux et des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;), il confirme ainsi les propos de Bernard Lang, directeur de recherche &#224; l&#39;Inria et secr&#233;taire de l&#39;association. &quot; Dans les administrations comme dans les entreprises, Linux est arriv&#233; par la base, dit-il. Ce sont les particuliers qui l&#39;utilisaient chez eux qui l&#39;ont amen&#233; au travail. Comme un des soucis des administrations est de pouvoir relire les archives, les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, en permettant de travailler ind&#233;pendamment des formats et des outils, ont trouv&#233; des interlocuteurs &#224; leur mesure. &quot; &lt;/p&gt; &lt;p&gt; Mais c&#39;est aussi parce que les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; avaient commenc&#233; par l&#39;infiltration que l&#39;AFUL a voulu d&#232;s sa cr&#233;ation, en mai 1998, &#234;tre visible. &quot; Nous avons choisi d&#39;avoir des entreprises comme membres et nous nous sommes fix&#233; comme objectif de parler &#224; la presse, aux politiques et aux entreprises &quot;, explique Bernard Lang. Ensuite, des contacts se sont nou&#233;s avec les cabinets des minist&#232;res, aboutissant dans le cas de l&#39;&#233;ducation nationale &#224; un accord-cadre qui pla&#231;ait l&#39;AFUL &#224; &#233;galit&#233; avec d&#39;autres fournisseurs. Et c&#39;est sans doute l&#224; que le r&#233;seau constitu&#233; par l&#39;AFUL et l&#39;APRIL (Association pour la recherche en informatique libre) en a crois&#233; un autre : celui des normaliens. &quot; D&#232;s le d&#233;but de la scolarit&#233;, il y a &#224; Normale-Sup une formation &#224; Internet et &#224; l&#39;univers Unix, pr&#233;cise Jean-Paul Smets, ancien de la Drire Lorraine, dont le nom est souvent cit&#233; dans les exp&#233;riences de libre de l&#39;administration. Or, beaucoup de conseillers techniques des ministres sont normaliens. Et ils sont sans doute les seuls, parmi les trentenaires, &#224; avoir une culture Internet et &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; qui date de leurs &#233;tudes. &quot; &lt;/p&gt; &lt;p&gt; Pourtant, le r&#233;seau des normaliens n&#39;est ni unique ni isol&#233;. Parmi les ing&#233;nieurs des Mines, on trouve aussi des noms c&#233;l&#232;bres pour les internautes fran&#231;ais de la premi&#232;re heure : Christian Sherer, qui lan&#231;a l&#39;exp&#233;rience des Cahiers de dol&#233;ances, et son complice, Jean- Michel Yolin. Et si l&#39;on ajoute &#224; ces r&#233;seaux, sensibles &#224; l&#39;int&#233;r&#234;t des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, la pr&#233;sence d&#39;environnements favorables, comme celle du Loria (Laboratoire lorrain de recherche en informatique et ses applications) pour la Drire Lorraine, il devient ais&#233; de comprendre comment les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ont trouv&#233; des relais et se sont diffus&#233;s dans l&#39;administration pour trouver l&#39;occasion d&#39;y faire leurs preuves.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Doc/ avec un dessin de Patrick Lindsay&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010131&amp;#183;LM&amp;#183;750658&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010131%c2%b7LM%c2%b7750658" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010131%c2%b7LM%c2%b7750658">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mercredi 31 janvier 2001 706 mots, p. 3</span>
+</div>
+
+    <div>
+        <p>
+LE MONDE INTERACTIF LES NOUVELLES TECHNOLOGIES         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">ENQUETE Quand les <mark> logiciels</mark> <mark> libres</mark> s'institionnalisent.</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+De l'infiltration à la consécration            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">MANOURY CORINNE</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">Entrés par la petite porte dans les administrations, les <mark>logiciels</mark> <mark>libres</mark> y sont à présent recommandés </em></p><p>Le 19 janvier 2001, à l'occasion d'un colloque organisé à Sophia-Antipolis, Michel Sapin, ministre de la fonction publique et de la réforme de l'Etat, se prononçait en faveur des <mark>logiciels</mark> <mark>libres</mark>. Il soulignait leur " rapide essor " dans les administrations et encourageait leur développement. Car, au-delà de la gratuité, de l'ouverture et de la sécurité, qu'il jugeait responsables de leurs premiers succès, Michel Sapin voyait dans le développement coopératif, mutuel et transparent de ces logiciels un modèle pour mener à bien la réforme de l'Etat. </p> <p> Une consécration qui tombait à pic, quelques jours après le faux pas de Catherine Tasca, ministre de la culture, qui avait évoqué l'idée d'une taxe sur les ordinateurs et avait provoqué, du coup, la colère des associations militant pour les <mark>logiciels</mark> <mark>libres</mark>. Une consécration qui arrivait aussi un an après l'annonce de la conversion à Linux des services du ministère de la culture.</p>
+
+
+<p>Entre-temps, d'autres administrations avaient annoncé leur passage aux <mark>logiciels</mark> <mark>libres</mark>, comme la direction générale des impôts, en décembre 2000. Peu après le lancement par la MTIC (Mission interministérielle de soutien technique pour le développement des technologies de l'information et de la communication dans l'administration) d'un site dédié à l'utilisation du <mark>logiciel</mark> <mark>libre</mark> dans l'administration : le bouquet du libre. Laurent Rieunneau, au Casier judiciaire national, explique ainsi comment, avec un budget très limité, il a pu mettre en place un intranet avec des logiciels comme Apache et Samba et un langage comme Perl. Tous disponibles gratuitement. Didier Georgieff et Thierry Barthélémy, chefs du projet du système d'information territorial (SIT) du Bas-Rhin, y vantent pour leur part les mérites de Zope, un serveur d'application. </p> <p> Que s'était-il donc passé en un an pour que l'on ne jure plus que par les <mark>logiciels</mark> <mark>libres</mark> ? Les associations pour le <mark>logiciel</mark> <mark>libre</mark> avaient-elles été particulièrement actives durant cette période ? Fallait-il simplement un certain temps pour que des idées défendues par des fonctionnaires comme Jean-Paul Baquiast, auteur d'un rapport sur la modernisation de l'Etat et fondateur de l'asso ciation Admiroutes, fassent leur chemin ? Peut-être. Mais peut-être fallait-il aussi que les <mark>logiciels</mark> <mark>libres</mark> s'affirment, qu'ils passent " de l'utopie au marché ". </p> <p> " Nous avons attendu qu'il y ait une offre de support logiciel ", explique Bruno Mannoni, chef du département de l'organisation et des systèmes d'information au ministère de la culture. Pionnier du Net, il était membre de l'ISOC (Internet Society) dès le début des années 1990 et animait des ateliers de téléformation dans les pays en voie de développement, où les systèmes libres présentaient l'avantage d'être peu onéreux et susceptibles de fonctionner sur du matériel de récupération. Mais, poursuit-il, si Linux et les <mark>logiciels</mark> <mark>libres</mark> ont le pouvoir de motiver les informaticiens en leur offrant la possibilité de trouver eux-mêmes une solution aux problèmes du système d'information, le " do-it-yourself " reste très théorique. " Il y a plusieurs millions de lignes de code source, dit-il. Intervenir seul demande du temps et des compétences. " D'où l'intérêt de se doter d'un " parachute " ou d'une " assurance-vie " comme le support logiciel. </p> <p> " Nous nous sommes trouvés au bon endroit au bon moment ", dit Jean-Pierre Laisné, PDG de Linbox, la société choisie par la direction générale des impôts pour installer Linux sur ses serveurs. Cofondateur de l'AFUL (Association francophone des utilisateurs de Linux et des <mark>logiciels</mark> <mark>libres</mark>), il confirme ainsi les propos de Bernard Lang, directeur de recherche à l'Inria et secrétaire de l'association. " Dans les administrations comme dans les entreprises, Linux est arrivé par la base, dit-il. Ce sont les particuliers qui l'utilisaient chez eux qui l'ont amené au travail. Comme un des soucis des administrations est de pouvoir relire les archives, les <mark>logiciels</mark> <mark>libres</mark>, en permettant de travailler indépendamment des formats et des outils, ont trouvé des interlocuteurs à leur mesure. " </p> <p> Mais c'est aussi parce que les <mark>logiciels</mark> <mark>libres</mark> avaient commencé par l'infiltration que l'AFUL a voulu dès sa création, en mai 1998, être visible. " Nous avons choisi d'avoir des entreprises comme membres et nous nous sommes fixé comme objectif de parler à la presse, aux politiques et aux entreprises ", explique Bernard Lang. Ensuite, des contacts se sont noués avec les cabinets des ministères, aboutissant dans le cas de l'éducation nationale à un accord-cadre qui plaçait l'AFUL à égalité avec d'autres fournisseurs. Et c'est sans doute là que le réseau constitué par l'AFUL et l'APRIL (Association pour la recherche en informatique libre) en a croisé un autre : celui des normaliens. " Dès le début de la scolarité, il y a à Normale-Sup une formation à Internet et à l'univers Unix, précise Jean-Paul Smets, ancien de la Drire Lorraine, dont le nom est souvent cité dans les expériences de libre de l'administration. Or, beaucoup de conseillers techniques des ministres sont normaliens. Et ils sont sans doute les seuls, parmi les trentenaires, à avoir une culture Internet et <mark>logiciels</mark> <mark>libres</mark> qui date de leurs études. " </p> <p> Pourtant, le réseau des normaliens n'est ni unique ni isolé. Parmi les ingénieurs des Mines, on trouve aussi des noms célèbres pour les internautes français de la première heure : Christian Sherer, qui lança l'expérience des Cahiers de doléances, et son complice, Jean- Michel Yolin. Et si l'on ajoute à ces réseaux, sensibles à l'intérêt des <mark>logiciels</mark> <mark>libres</mark>, la présence d'environnements favorables, comme celle du Loria (Laboratoire lorrain de recherche en informatique et ses applications) pour la Drire Lorraine, il devient aisé de comprendre comment les <mark>logiciels</mark> <mark>libres</mark> ont trouvé des relais et se sont diffusés dans l'administration pour trouver l'occasion d'y faire leurs preuves.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p>Doc/ avec un dessin de Patrick Lindsay</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010131·LM·750658</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010131·LM·750658";
+    var _docIndex = 508;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010131·LM·750658';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010131%C2%B7LM%C2%B7750658&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010131%C2%B7LM%C2%B7750658&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010131%C2%B7LM%C2%B7750658&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010131%C2%B7LM%C2%B7750658&docIndex=508&FullScreen=1";
+                
+	var _keyDoc = 'news·20010131·LM·750658';
+</script>
+</div></body></html>

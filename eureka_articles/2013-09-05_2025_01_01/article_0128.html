@@ -1,0 +1,565 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24572                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         mercredi 23 ao&amp;#251;t 2023 994 mots, p. 28&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+M&#233;dias         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Emad Mostaque, le sulfureux outsider            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Ex-gestionnaire de fonds sp&#233;culatifs, il a financ&#233; le g&#233;n&#233;rateur d&#39;images Stable Diffusion.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Woitier, Chlo&#233;&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Quoi de mieux qu&#39;une f&#234;te pour se faire conna&#238;tre d&#39;un puissant microcosme ? Propuls&#233;e au rang de licorne (valorisation sup&#233;rieure &#224; 1 milliard de dollars) apr&#232;s une lev&#233;e de fonds de 101 millions de dollars, la start-up britannique Stability AI a choisi de c&#233;l&#233;brer l&#39;&#233;v&#233;nement le 17 octobre dernier dans le coeur battant de l&#39;industrie de la tech. C&#39;est &#224; San Francisco qu&#39;elle a sorti champagne et petits fours lors d&#39;une soir&#233;e o&#249; se sont pr&#233;cipit&#233;s des chercheurs en intelligence artificielle, des investisseurs renomm&#233;s et m&#234;me Sergey Brin, cofondateur de Google. &lt;/p&gt; &lt;p&gt; Tous sont venus voir Emad Mostaque, un parfait inconnu arriv&#233; dans la lumi&#232;re une poign&#233;e de mois plus t&#244;t gr&#226;ce au succ&#232;s de Stable Diffusion, une intelligence artificielle permettant, au m&#234;me titre que Dall-E (OpenAI) ou Midjourney, de g&#233;n&#233;rer des images d&#39;un r&#233;alisme bluffant &#224; partir d&#39;une simple description textuelle. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Une bonne partie de l&#39;humanit&#233; est constip&#233;e d&#39;un point de vue cr&#233;atif. Nous allons les aider &#224; d&#233;f&#233;quer des arcs-en-ciel &#187;&lt;/em&gt;, ose ce Bangladais n&#233; en Jordanie, face &#224; une assembl&#233;e curieuse. Depuis, celui qui ne s&#39;&#233;tait rendu qu&#39;une fois dans sa vie &#224; San Francisco multiplie les allers-retours depuis Londres, s&#39;&#233;panche dans les grands m&#233;dias am&#233;ricains et d&#233;jeune avec Jeff Bezos. Mais sa success story a &#233;t&#233; s&#233;v&#232;rement &#233;corn&#233;e par deux enqu&#234;tes publi&#233;es par &lt;em style=&quot;font-style:italic;&quot;&gt;Forbes&lt;/em&gt; puis Bloomberg : pour mieux faire briller son entreprise, s&#39;attirer les faveurs des m&#233;dias et r&#233;colter des fonds, Emad Mostaque n&#39;aurait pas h&#233;sit&#233; &#224; enjoliver la r&#233;alit&#233;.&lt;/p&gt;
+
+
+&lt;p&gt;Arriv&#233; &#224; l&#39;&#226;ge de 7 ans au Royaume-Uni, ce jeune quadrag&#233;naire atteint du syndrome d&#39;Asperger, de troubles de d&#233;ficit de l&#39;attention et d&#39;aphantasie (incapacit&#233; &#224; visualiser une image mentale) ne partage pas le parcours habituel des jeunes prodiges dont raffole la Silicon Valley. Apr&#232;s avoir obtenu en 2005 un dipl&#244;me en informatique et math&#233;matiques &#224; l&#39;universit&#233; d&#39;Oxford (un master selon Mostaque, une licence selon &lt;em style=&quot;font-style:italic;&quot;&gt;Forbes&lt;/em&gt;), le jeune homme ne rejoint pas le monde des start-up, mais celui de la finance et de ses costume-cravates. Durant pr&#232;s de quinze ans, il navigue dans l&#39;&#233;cosyst&#232;me des fonds sp&#233;culatifs britanniques et livre ses analyses sur les march&#233;s &#233;mergents dans les m&#233;dias &#233;conomiques. &lt;/p&gt; &lt;p&gt; Pol&#233;miques en s&#233;rie &lt;/p&gt; &lt;p&gt; Emad Mostaque affirme qu&#39;il a commenc&#233; &#224; s&#39;int&#233;resser &#224; l&#39;intelligence artificielle gr&#226;ce &#224; son fils autiste : avec une &#233;quipe, il aurait b&#226;ti une IA maison pour compulser la litt&#233;rature scientifique afin de trouver un protocole adapt&#233; pour simplifier le quotidien de son enfant. De l&#224; lui serait venue l&#39;id&#233;e que l&#39;IA pourrait aider &#224; am&#233;liorer le monde. Fortune faite, il quitte les hedge funds &#224; la fin des ann&#233;es 2010. Son parcours professionnel devient alors flou avec le lancement de projets avort&#233;s, notamment dans le secteur des cryptomonnaies. &#171; Ce n&#39;est que lorsque la discussion touche &#224; sa carri&#232;re qu&#39;Emad Mostaque semble moins assur&#233; &#187; , note &lt;em style=&quot;font-style:italic;&quot;&gt;The Times&lt;/em&gt; dans un portrait publi&#233; en mai. &lt;/p&gt; &lt;p&gt; Seule chose certaine : le Britannique fonde en 2019 Stability AI, dont l&#39;un des premiers projets, Caiac, vise &#224; utiliser l&#39;IA pour aider la prise de d&#233;cision des pouvoirs publics lors de la pand&#233;mie de Covid-19. Si l&#39;ONU s&#39;int&#233;resse &#224; cette plateforme, cette derni&#232;re n&#39;a jamais d&#233;coll&#233;. D&#39;apr&#232;s &lt;em style=&quot;font-style:italic;&quot;&gt;Forbes&lt;/em&gt;, cela n&#39;aurait pas emp&#234;ch&#233; Emad Mostaque de se pr&#233;senter comme responsable des projets li&#233;s &#224; l&#39;IA pour l&#39;ONU dans le cadre du Covid-19 lors de ses rencontres avec des investisseurs durant l&#39;&#233;t&#233; 2022... &lt;/p&gt; &lt;p&gt; C&#39;est cette ann&#233;e-l&#224; que Stability AI prend son envol. L&#39;ex-financier utilise sa fortune personnelle pour b&#226;tir un supercalculateur h&#233;berg&#233; par Amazon. Son id&#233;e : allouer cette puissance de calcul ph&#233;nom&#233;nale, mais tr&#232;s co&#251;teuse, &#224; d&#39;autres cerveaux. Il se rapproche de chercheurs de l&#39;universit&#233; de Munich qui travaillent sur l&#39;IA g&#233;n&#233;rative d&#39;images Latent Diffusion, prometteuse mais handicap&#233;e par un budget insuffisant. L&#39;offre d&#39;Emad Mostaque transforme radicalement ce mod&#232;le, qui se rebaptise Stable Diffusion &#224; sa sortie en ao&#251;t 2022. Le succ&#232;s est imm&#233;diat, avec plus de 10 millions d&#39;utilisateurs par jour. Stability AI embauche trois des chercheurs &#224; l&#39;origine de ce mod&#232;le afin de continuer &#224; l&#39;am&#233;liorer. Deux mois plus tard, la start-up l&#232;ve 101 millions de dollars et Emad Mostaque se retrouve sous les projecteurs. Mais en coulisses, certains estiment que les origines universitaires de Stable Diffusion ont &#233;t&#233; effac&#233;es, ce dont l&#39;entreprise se d&#233;fend. &lt;/p&gt; &lt;p&gt; D&#232;s son lancement, Stable Diffusion draine son lot de pol&#233;miques. L&#39;outil est la cible de deux proc&#232;s, intent&#233;s par un groupe d&#39;artistes et par l&#39;agence photo Getty, qui affirment que le mod&#232;le a &#233;t&#233; entra&#238;n&#233; sur leurs oeuvres sans respect de leurs droits d&#39;auteur. La philosophie ouverte de la start-up, dont les mod&#232;les sont accessibles en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, divise. Si beaucoup louent une transparence qui fait d&#233;faut chez la concurrence (OpenAI en premier lieu), d&#39;autres estiment que ces mod&#232;les pourraient &#234;tre retravaill&#233;s &#224; des fins malveillantes pour inonder internet de fausses images. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C&#39;est une posture paternaliste et condescendante &#187;&lt;/em&gt;, tranche Emad Mostaque. L&#39;&#233;t&#233; 2023 apporte un autre lot de controverses. Selon Bloomberg et &lt;em style=&quot;font-style:italic;&quot;&gt;Forbes&lt;/em&gt;, le fondateur a mis en avant aupr&#232;s des m&#233;dias et des financiers des projets et des clients en r&#233;alit&#233; inexistants. &lt;/p&gt; &lt;p&gt; La start-up, qui compte d&#233;sormais 170 salari&#233;s, a lanc&#233; une IA proche de ChatGPT ainsi que l&#39;outil d&#39;&#233;dition de visuels DreamStudio. Mais elle a perdu fin juin son directeur de la recherche, d&#233;bauch&#233; huit mois plus t&#244;t de chez Google, ainsi que la plupart de ses cadres dirigeants. La faute &#224; l&#39;absence de cap clair sur la strat&#233;gie de la start-up et &#224; la personnalit&#233; de son PDG, dont les promesses grandiloquentes peinent &#224; se traduire en faits. Pas de quoi &#233;branler l&#39;optimisme d&#39;Emad Mostaque, pour qui l&#39;IA est encore loin d&#39;avoir d&#233;montr&#233; son plein potentiel. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous en sommes &#224; l&#39;&#233;quivalent de l&#39;iPhone 3G. Le d&#233;collage aura lieu l&#39;an prochain &#187;&lt;/em&gt; , affirmait-il mi-juillet lors d&#39;une table ronde avec des analystes d&#39;UBS.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&#171; Nous en sommes &#224; l&#39;&#233;quivalent de l&#39;iPhone 3G. Le d&#233;collage aura lieu l&#39;an prochain &#187; , affirmait, en juillet, Emad Mostaque, PDG de Stability AI, lors d&#39;une table ronde avec des analystes d&#39;UBS. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;David Paul Morris/Bloomberg &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:cwoitier@lefigaro.fr&quot;&gt;cwoitier@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;23 ao&amp;#251;t 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230823&amp;#183;LF&amp;#183;1062&amp;#215;21&amp;#215;22239928172&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">table ronde</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fonds spéculatifs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">puissance de calcul phénoménale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">image mentale</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Crimes et délits</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Londres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Royaume-Uni</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Jordanie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">San Francisco, California</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230823%c2%b7LF%c2%b71062%c3%9721%c3%9722239928172" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230823%c2%b7LF%c2%b71062%c3%9721%c3%9722239928172">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24572                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         mercredi 23 août 2023 994 mots, p. 28</span>
+</div>
+
+    <div>
+        <p>
+Médias         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Emad Mostaque, le sulfureux outsider            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Ex-gestionnaire de fonds spéculatifs, il a financé le générateur d'images Stable Diffusion.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Woitier, Chloé</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Quoi de mieux qu'une fête pour se faire connaître d'un puissant microcosme ? Propulsée au rang de licorne (valorisation supérieure à 1 milliard de dollars) après une levée de fonds de 101 millions de dollars, la start-up britannique Stability AI a choisi de célébrer l'événement le 17 octobre dernier dans le coeur battant de l'industrie de la tech. C'est à San Francisco qu'elle a sorti champagne et petits fours lors d'une soirée où se sont précipités des chercheurs en intelligence artificielle, des investisseurs renommés et même Sergey Brin, cofondateur de Google. </p> <p> Tous sont venus voir Emad Mostaque, un parfait inconnu arrivé dans la lumière une poignée de mois plus tôt grâce au succès de Stable Diffusion, une intelligence artificielle permettant, au même titre que Dall-E (OpenAI) ou Midjourney, de générer des images d'un réalisme bluffant à partir d'une simple description textuelle. <em style="font-style:italic;">« Une bonne partie de l'humanité est constipée d'un point de vue créatif. Nous allons les aider à déféquer des arcs-en-ciel »</em>, ose ce Bangladais né en Jordanie, face à une assemblée curieuse. Depuis, celui qui ne s'était rendu qu'une fois dans sa vie à San Francisco multiplie les allers-retours depuis Londres, s'épanche dans les grands médias américains et déjeune avec Jeff Bezos. Mais sa success story a été sévèrement écornée par deux enquêtes publiées par <em style="font-style:italic;">Forbes</em> puis Bloomberg : pour mieux faire briller son entreprise, s'attirer les faveurs des médias et récolter des fonds, Emad Mostaque n'aurait pas hésité à enjoliver la réalité.</p>
+
+
+<p>Arrivé à l'âge de 7 ans au Royaume-Uni, ce jeune quadragénaire atteint du syndrome d'Asperger, de troubles de déficit de l'attention et d'aphantasie (incapacité à visualiser une image mentale) ne partage pas le parcours habituel des jeunes prodiges dont raffole la Silicon Valley. Après avoir obtenu en 2005 un diplôme en informatique et mathématiques à l'université d'Oxford (un master selon Mostaque, une licence selon <em style="font-style:italic;">Forbes</em>), le jeune homme ne rejoint pas le monde des start-up, mais celui de la finance et de ses costume-cravates. Durant près de quinze ans, il navigue dans l'écosystème des fonds spéculatifs britanniques et livre ses analyses sur les marchés émergents dans les médias économiques. </p> <p> Polémiques en série </p> <p> Emad Mostaque affirme qu'il a commencé à s'intéresser à l'intelligence artificielle grâce à son fils autiste : avec une équipe, il aurait bâti une IA maison pour compulser la littérature scientifique afin de trouver un protocole adapté pour simplifier le quotidien de son enfant. De là lui serait venue l'idée que l'IA pourrait aider à améliorer le monde. Fortune faite, il quitte les hedge funds à la fin des années 2010. Son parcours professionnel devient alors flou avec le lancement de projets avortés, notamment dans le secteur des cryptomonnaies. « Ce n'est que lorsque la discussion touche à sa carrière qu'Emad Mostaque semble moins assuré » , note <em style="font-style:italic;">The Times</em> dans un portrait publié en mai. </p> <p> Seule chose certaine : le Britannique fonde en 2019 Stability AI, dont l'un des premiers projets, Caiac, vise à utiliser l'IA pour aider la prise de décision des pouvoirs publics lors de la pandémie de Covid-19. Si l'ONU s'intéresse à cette plateforme, cette dernière n'a jamais décollé. D'après <em style="font-style:italic;">Forbes</em>, cela n'aurait pas empêché Emad Mostaque de se présenter comme responsable des projets liés à l'IA pour l'ONU dans le cadre du Covid-19 lors de ses rencontres avec des investisseurs durant l'été 2022... </p> <p> C'est cette année-là que Stability AI prend son envol. L'ex-financier utilise sa fortune personnelle pour bâtir un supercalculateur hébergé par Amazon. Son idée : allouer cette puissance de calcul phénoménale, mais très coûteuse, à d'autres cerveaux. Il se rapproche de chercheurs de l'université de Munich qui travaillent sur l'IA générative d'images Latent Diffusion, prometteuse mais handicapée par un budget insuffisant. L'offre d'Emad Mostaque transforme radicalement ce modèle, qui se rebaptise Stable Diffusion à sa sortie en août 2022. Le succès est immédiat, avec plus de 10 millions d'utilisateurs par jour. Stability AI embauche trois des chercheurs à l'origine de ce modèle afin de continuer à l'améliorer. Deux mois plus tard, la start-up lève 101 millions de dollars et Emad Mostaque se retrouve sous les projecteurs. Mais en coulisses, certains estiment que les origines universitaires de Stable Diffusion ont été effacées, ce dont l'entreprise se défend. </p> <p> Dès son lancement, Stable Diffusion draine son lot de polémiques. L'outil est la cible de deux procès, intentés par un groupe d'artistes et par l'agence photo Getty, qui affirment que le modèle a été entraîné sur leurs oeuvres sans respect de leurs droits d'auteur. La philosophie ouverte de la start-up, dont les modèles sont accessibles en <mark>open</mark> <mark>source</mark>, divise. Si beaucoup louent une transparence qui fait défaut chez la concurrence (OpenAI en premier lieu), d'autres estiment que ces modèles pourraient être retravaillés à des fins malveillantes pour inonder internet de fausses images. <em style="font-style:italic;">« C'est une posture paternaliste et condescendante »</em>, tranche Emad Mostaque. L'été 2023 apporte un autre lot de controverses. Selon Bloomberg et <em style="font-style:italic;">Forbes</em>, le fondateur a mis en avant auprès des médias et des financiers des projets et des clients en réalité inexistants. </p> <p> La start-up, qui compte désormais 170 salariés, a lancé une IA proche de ChatGPT ainsi que l'outil d'édition de visuels DreamStudio. Mais elle a perdu fin juin son directeur de la recherche, débauché huit mois plus tôt de chez Google, ainsi que la plupart de ses cadres dirigeants. La faute à l'absence de cap clair sur la stratégie de la start-up et à la personnalité de son PDG, dont les promesses grandiloquentes peinent à se traduire en faits. Pas de quoi ébranler l'optimisme d'Emad Mostaque, pour qui l'IA est encore loin d'avoir démontré son plein potentiel. <em style="font-style:italic;">« Nous en sommes à l'équivalent de l'iPhone 3G. Le décollage aura lieu l'an prochain »</em> , affirmait-il mi-juillet lors d'une table ronde avec des analystes d'UBS.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">« Nous en sommes à l'équivalent de l'iPhone 3G. Le décollage aura lieu l'an prochain » , affirmait, en juillet, Emad Mostaque, PDG de Stability AI, lors d'une table ronde avec des analystes d'UBS. </div>.
+
+                <div class="ImageAttachFont">David Paul Morris/Bloomberg </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:cwoitier@lefigaro.fr">cwoitier@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">23 août 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230823·LF·1062×21×22239928172</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230823·LF·1062×21×22239928172";
+    var _docIndex = 127;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230823·LF·1062×21×22239928172';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230823%C2%B7LF%C2%B71062%C3%9721%C3%9722239928172&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230823%C2%B7LF%C2%B71062%C3%9721%C3%9722239928172&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230823%C2%B7LF%C2%B71062%C3%9721%C3%9722239928172&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230823%C2%B7LF%C2%B71062%C3%9721%C3%9722239928172&docIndex=127&FullScreen=1";
+                
+	var _keyDoc = 'news·20230823·LF·1062×21×22239928172';
+</script>
+</div></body></html>

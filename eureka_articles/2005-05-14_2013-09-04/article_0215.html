@@ -1,0 +1,549 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Culture &amp; id&#233;es,         samedi 14 janvier 2012 1866 mots, p. ARH1&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Culture et id&#233;es         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fi des critiques ! Wikip&#233;dia avance &#171; Nos censeurs feraient mieux de nous aider &#224; am&#233;liorer le site &#187;, s&#39;agace R&#233;mi Mathis, le jeunepr&#233;sident de Wikim&#233;dia en France, qui multiplie les projets, notamment en partenariat avec la BNF&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Wikip&#233;dia, bazar libertaire            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Un million de personnes viennent de donner 20 millions de dollars pour faire vivre l&#39;encyclop&#233;die en ligne. Un record. Mais les critiques demeurent : qualit&#233; des textes in&#233;gale, manque de fiabilit&#233;, partis pris flagrants. Un site trop libre ?&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fr&#233;d&#233;ric Joignot&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Difficile de rater les visages des contributeurs et dirigeants de l&#39;encyclop&#233;die en ligne Wikip&#233;dia. De novembre 2011 &#224; d&#233;but janvier, &#224; chaque recherche, leurs portraits apparaissaient en t&#234;te de page, vous invitant &#224; faire un don. Susan et ses longs cheveux blancs. R&#233;mi Mathis, pr&#233;sident de Wikim&#233;dia France, avec son air potache. Jimmy Wales, le fondateur am&#233;ricain. &lt;/p&gt; &lt;p&gt; Quelque 450 millions de personnes consultent chaque mois Wikip&#233;dia. L&#39;encyclop&#233;die est traduite dans 280 langues (dont les douze r&#233;gionales en France) et propose 1,1 million d&#39;articles en fran&#231;ais, consult&#233;s par 18,8 millions de lecteurs. Le cinqui&#232;me site le plus visit&#233; du monde est une entreprise &#224; part. Les quatre premiers (Google, Yahoo!, YouTube et Facebook) ont lev&#233; des investissements colossaux, se financent par la publicit&#233;, emploient des milliers de salari&#233;s, m&#232;nent de co&#251;teuses campagnes de marketing. Wikip&#233;dia, lui, tourne avec 7,6 millions de dollars (6 millions d&#39;euros), 95 salari&#233;s, des dizaines de milliers de r&#233;dacteurs b&#233;n&#233;voles. Et sans publicit&#233;.&lt;/p&gt;
+
+
+&lt;p&gt;Ind&#233;pendante, l&#39;encyclop&#233;die participative est financ&#233;e &#224; 85 % par les dons de particuliers, le reste provenant de fondations. La derni&#232;re campagne de collecte de fonds, qui a pris fin le 3 janvier, a battu un record : 20 millions de dollars, soit 15,3 millions d&#39;euros, donn&#233;s par 1 million de personnes. Ces dons aideront &#224; d&#233;velopper Wikip&#233;dia et ses projets compl&#233;mentaires : le dictionnaire multilingue Wiktionary, le centre d&#39;actualit&#233;s Wikinews, les biblioth&#232;ques num&#233;riques Wikibooks (p&#233;dagogique) et Wikisource (universelle), le recueil de citations Wikiquotes, la plateforme p&#233;dagogique Wikiversity, la m&#233;diath&#232;que Wikimedia Commons, le r&#233;pertoire des esp&#232;ces vivantes Wikispecies. Une colossale somme de connaissances gratuite, illustr&#233;e, en perp&#233;tuelle r&#233;actualisation. Une biblioth&#232;que de Babel contenant tous les savoirs, digne de celle imagin&#233;e par Borges dans &lt;em style=&quot;font-style:italic;&quot;&gt;Fictions&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Comment expliquer un tel succ&#232;s, qui contredit tous les mod&#232;les &#233;conomiques ? L&#39;histoire de Wikip&#233;dia est aussi mouvement&#233;e qu&#39;&#233;clairante. En mars 2000, Jimmy Wales, actionnaire majoritaire de Bomis.com, portail de recherches en ligne d&#39;images &#233;rotico-pornographiques, lance Nupedia, une encyclop&#233;die sur le Net. Il embauche un r&#233;dacteur en chef, Larry Sanger, qui forme un comit&#233; scientifique. Les premiers articles sont valid&#233;s. Mais voici qu&#39;un programmeur leur explique le principe du &#171; wiki &#187;, un site Web dont les visiteurs peuvent modifier les pages - &#171; wiki-wiki &#187; signifiant &#171; rapide &#187; en hawa&#239;en. Le 15 janvier 2001, financ&#233; par Jimmy Wales, Wikip&#233;dia est lanc&#233;, avec appel aux lecteurs. Le nouveau site croule bient&#244;t sous les articles et, tr&#232;s vite, Wikip&#233;dia se d&#233;veloppe dans le monde entier, prise en main par des &#233;quipes de b&#233;n&#233;voles passionn&#233;s. &lt;/p&gt; &lt;p&gt; Wikip&#233;dia s&#39;inscrit dans le courant coop&#233;ratif n&#233; avec Internet. Il s&#39;inspire des principes du &#171; copyleft &#187; (qui autorise, par opposition au copyright, la libre diffusion et modification d&#39;une oeuvre) et du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; (dont l&#39;utilisation, la modification et la duplication sont permises, techniquement et l&#233;galement). Deux textes fondamentaux, &#233;crits par deux anciens hackers, influencent les wikip&#233;diens. D&#39;abord un essai, &lt;em style=&quot;font-style:italic;&quot;&gt;The Cathedral and the Bazaar&lt;/em&gt;, d&#39;Eric Raymond (non traduit, &#233;d. O&#39;Reilly Media, 1999), qui d&#233;fend &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la logique du bazar &#187;&lt;/em&gt; : si une multitude de contributeurs interviennent sur un projet sans ob&#233;ir &#224; une hi&#233;rarchie ni &#224; un plan directeur, ils &#233;laborent une oeuvre en mouvement, pas une cath&#233;drale fig&#233;e. Ensuite, &#171; L&#39;Encyclop&#233;die universelle libre &#187;, un appel mis en ligne par &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt; en 1999. Le p&#232;re du syst&#232;me d&#39;exploitation libre GNU y appelait &#224; la cr&#233;ation d&#39;une encyclop&#233;die gratuite et participative : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Dans le pass&#233;, les encyclop&#233;dies furent &#233;crites sous la direction d&#39;un organisme unique et centralis&#233;. Cela n&#39;aurait pas de sens de d&#233;velopper l&#39;encyclop&#233;die libre de cette mani&#232;re. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Cette philosophie coop&#233;rative et libertaire est la r&#232;gle de base de Wikip&#233;dia, qui s&#39;est donn&#233; pour slogan : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le projet d&#39;encyclop&#233;die librement distribuable que chacun peut am&#233;liorer. &#187;&lt;/em&gt; En juin 2003, Jimmy Wales transf&#232;re ses droits de propri&#233;t&#233; &#224; la Wikimedia Foundation. Elle est dirig&#233;e par les fondateurs du site et des repr&#233;sentants &#233;lus par les associations des wikip&#233;diens actifs (une trentaine en 2010). Jimmy Wales, consacr&#233; en 2006 parmi les 100 personnalit&#233;s les plus influentes par &lt;em style=&quot;font-style:italic;&quot;&gt;Time&lt;/em&gt;, n&#39;y a plus de r&#244;le dirigeant. Il s&#39;occupe de Creative Commons, une organisation qui vise &#224; &#233;laborer des contrats de droits d&#39;auteur permettant le partage des connaissances, des oeuvres, des donn&#233;es et un acc&#232;s universel &#224; la culture, &#224; l&#39;&#233;ducation et &#224; la recherche. Il nous explique : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Wikip&#233;dia est un temple de l&#39;esprit, un lieu o&#249; apprendre et partager la connaissance, pas un espace marchand. Le commerce ne doit pas envahir chaque sph&#232;re de notre vie. Nous sommes &#224; la fois un service public et un bien commun. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Pas de marchands dans le temple, libre coop&#233;ration, d&#233;centralisation, voil&#224; pour les principes. Mais comment, en faisant appel au public, r&#233;diger une encyclop&#233;die fiable, sans amateurisme, qui ne devienne pas une foire d&#39;empoigne ou un lieu de toutes les manipulations ? C&#39;est tr&#232;s difficile. Depuis sa cr&#233;ation, Wikip&#233;dia se trouve &#233;cartel&#233;e entre ses deux exigences originelles : le souci de la relecture experte voulue par Larry Sanger, dans la tradition des grands encyclop&#233;distes depuis Diderot et d&#39;Alembert, et la richesse d&#39;une mati&#232;re &#233;ditoriale parfois approximative, de parti pris, peu r&#233;f&#233;renc&#233;e, apport&#233;e par des milliers de passionn&#233;s ou des esprits sectaires. &lt;/p&gt; &lt;p&gt; Pour &#233;viter les travers, les fondateurs ont mis en place, ann&#233;e apr&#232;s ann&#233;e, des r&#232;gles d&#233;ontologiques. La premi&#232;re est &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la neutralit&#233; du point de vue &#187;&lt;/em&gt;, soit &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; d&#233;crire le d&#233;bat plut&#244;t que de s&#39;y engager &#187;&lt;/em&gt;. Chaque contributeur doit aussi pr&#233;senter &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; les diff&#233;rents points de vue d&#39;une controverse &#187;&lt;/em&gt;, en insistant sur les mieux &#233;tay&#233;s, avec des sources fiables et qui font autorit&#233;. Ainsi l&#39;internaute d&#233;couvre les fameux &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ref. n&#233;cessaire &#187;&lt;/em&gt; ou &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Article non neutre &#187;&lt;/em&gt; pour les textes jug&#233;s imparfaits. &lt;/p&gt; &lt;p&gt; Chacun pouvant intervenir pour enrichir un article, d&#39;intenses d&#233;bats ont lieu en coulisses entre les r&#233;dacteurs, des experts m&#233;contents, les personnes concern&#233;es, les id&#233;ologues d&#39;un sujet, les oisifs qui y mettent leur grain de sel... Au cours de ces pol&#233;miques (toutes consultables en ligne, ce qui &#233;claire les querelles d&#39;interpr&#233;tation et r&#233;v&#232;le les sectaires), Wikip&#233;dia exige des &#171; r&#232;gles de savoir-vivre &#187;, expos&#233;es sur la page des &#171; Principes fondateurs &#187; : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Recherchez le consensus. Gardez votre sang-froid lorsque l&#39;atmosph&#232;re chauffe. Evitez les guerres d&#39;&#233;dition. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les affrontements sont innombrables, m&#234;me si une grille de &#171; recherche de consensus &#187; a &#233;t&#233; &#233;labor&#233;e, poussant &#224; toujours reprendre la discussion &#224; l&#39;amiable, arguant qu&#39;un contenu solide, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; rationnel &#187;&lt;/em&gt; peut &#234;tre trouv&#233;. Cela donne parfois de longs et riches articles, o&#249; plusieurs interpr&#233;tations s&#39;&#233;quilibrent. Parfois, la volont&#233; de consensus donne des fiches interminables. En cas de litige violent, un administrateur, &#233;lu par les communaut&#233;s de chaque pays, peut suspendre une page ou interdire un contributeur, en attendant un accord. Une tr&#232;s dada&#239;ste section &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; les guerres d&#39;&#233;dition les plus pitoyables &#187;&lt;/em&gt; est en ligne. Une parmi tant d&#39;autres, fran&#231;aise : l&#39;&#226;ge d&#39;Arielle Dombasle. &lt;/p&gt; &lt;p&gt; Voil&#224; pour les principes. Sont-ils r&#233;ellement appliqu&#233;s ? Suffisent-ils ? De nombreuses critiques, pr&#233;cises et savantes, d&#233;noncent l&#39;amateurisme et listent les erreurs flagrantes. Daniel Garcia, du magazine &lt;em style=&quot;font-style:italic;&quot;&gt;Livres Hebdo&lt;/em&gt;, se fend le 3 novembre 2006 d&#39;un article corrosif : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ouvrez dans Wikip&#233;dia la notice relative &#224; l&#39;affaire Dreyfus. Descendez &#224; la bibliographie. Et l&#224;, en premi&#232;re r&#233;f&#233;rence, on lit : Henri Dutrait-Crozon, Pr&#233;cis de l&#39;Affaire Dreyfus. Avec ce commentaire, en toutes lettres : &#171;Ouvrage fondamental &#224; consulter en priorit&#233;&#187;. &#187; Ce livre de 1909, remani&#233; en 1924 et 1938, est un plaidoyer antidreyfusard dans la mouvance de l&#39;Action fran&#231;aise.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le romancier Pierre Assouline reprend la critique le 9 janvier 2007 sur son blog &#171; La r&#233;publique des livres &#187;. Il rappelle que l&#39;ouvrage incrimin&#233; est un &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; &#233;vangile de nationalistes &#187;&lt;/em&gt;. Il constate que Wikip&#233;dia, &#224; la suite de l&#39;intervention de la Ligue des droits de l&#39;homme, a juste rajout&#233; la mention &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; ouvrage contest&#233; &#187;&lt;/em&gt;, mais l&#39;a laiss&#233; en t&#234;te de bibliographie, avant des travaux d&#39;historiens respect&#233;s. Regrettant la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; d&#233;magogie ambiante &#187;&lt;/em&gt; qui voudrait que chacun devienne encyclop&#233;diste, Pierre Assouline exerce cette critique de fond : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La question des sources est &#224; la base de toute recherche, qu&#39;elle soit historique, scientifique, journalistique; or Wikip&#233;dia dilue tant la source qu&#39;elle l&#39;&#233;lude. On ne saurait trop le r&#233;p&#233;ter : dans le domaine des id&#233;es, et en particulier en histoire, l&#39;esprit de la r&#233;f&#233;rence a intrins&#232;quement partie li&#233;e avec la dur&#233;e et non avec l&#39;&#233;ph&#233;m&#232;re. Or sur Wikip&#233;dia, la r&#233;f&#233;rence est &#224; g&#233;om&#233;trie variable : le dernier qui a parl&#233; a raison, jusqu&#39;au prochain. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;En 2008, cinq &#233;tudiants en journalisme de Sciences Po se livrent &#224; une enqu&#234;te fouill&#233;e sur les articles de Wikip&#233;dia France. Ils font aussi un test. Ils ajoutent &#224; la fiche de Pierre Assouline une fausse information : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En 2001, a remport&#233; le championnat de France de jeu de paume. &#187;&lt;/em&gt; Cette erreur circule bient&#244;t partout. Elle questionne le fonctionnement m&#234;me de Wikip&#233;dia : des milliers de fausses informations, notices outrageusement louangeuses ou malveillances peuvent passer &#224; travers les filtres de l&#39;encyclop&#233;die. &lt;/p&gt; &lt;p&gt; D&#39;ailleurs, plusieurs sites rel&#232;vent ces erreurs persistantes, comme la rubrique &#171; WikiGrill &#187; de la revue &lt;em style=&quot;font-style:italic;&quot;&gt;Books&lt;/em&gt; en France, dans laquelle un auteur pointe le &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; laisser-faire comme principe d&#39;organisation &#187;&lt;/em&gt;. Il s&#39;interroge : est-ce l&#39;anarchie ou le credo de l&#39;&#233;conomie lib&#233;rale qui est invoqu&#233; ? Notant que Wikip&#233;dia d&#233;fend &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; un &#233;gal droit de participation pour tous sans &#233;gard &#224; l&#39;&#226;ge, la comp&#233;tence ou l&#39;origine &#187;,&lt;/em&gt; il s&#39;&#233;tonne : &#234;tre &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; sans &#233;gard &#224; la comp&#233;tence &#187;&lt;/em&gt;, n&#39;est-ce pas dangereux pour une encyclop&#233;die ? &lt;/p&gt; &lt;p&gt; Un autre exemple de d&#233;rapage sur Wikip&#233;dia concerne Mikkel Borch-Jacobsen, coauteur du &lt;em style=&quot;font-style:italic;&quot;&gt;Livre noir de la psychanalyse&lt;/em&gt; (Les Ar&#232;nes, 2005). D&#39;abord pr&#233;sent&#233; sur Wikip&#233;dia comme un critique argument&#233; de Freud, il se voit du jour au lendemain trait&#233; d&#39; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; analyste rat&#233; &#187;&lt;/em&gt; et de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; psychiatre comportementaliste &#187;&lt;/em&gt;. Des profreudiens sont intervenus sur le texte, cherchant &#224; le discr&#233;diter. Il proteste, les fausses informations sont retir&#233;es. Puis r&#233;introduites : la fiche Wikip&#233;dia de Mikkel Borch-Jacobsen est devenue un champ de bataille dans une guerre entre des associations freudiennes et antifreudiennes. &lt;/p&gt; &lt;p&gt; Ce n&#39;est pas anecdotique. Ces affrontements ont lieu sur nombre de sujets sensibles : le conflit isra&#233;lo-palestinien, la guerre d&#39;Alg&#233;rie, la prostitution, George W. Bush... Ils s&#39;&#233;tendent aux querelles d&#39;initi&#233;s : Shakespeare est-il l&#39;auteur de ses pi&#232;ces ? L&#39;ayahuasca est-il un psychotrope dangereux ? Cela &#224; l&#39;infini. A chaque fois, les &#171; cyberpompiers &#187; de Wikip&#233;dia doivent mettre en garde les lecteurs : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La forme et le fond de cet article sont &#224; v&#233;rifier &#187;&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Affirmation non neutre&lt;/em&gt; &#187;, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Sources n&#233;cessaires &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Au terme de leur enqu&#234;te, les &#233;tudiants de Sciences Po ont publi&#233;, fin 2007, &lt;em style=&quot;font-style:italic;&quot;&gt;La R&#233;volution Wikip&#233;dia&lt;/em&gt; (Mille et Une Nuits, pr&#233;face de Pierre Assouline). Ils soul&#232;vent plusieurs points notables : le grand nombre de contributeurs peu fiables d&#233;courage les experts d&#39;un sujet d&#39;intervenir, ce qui nuit &#224; la qualit&#233; des articles comme &#224; la hi&#233;rarchisation de l&#39;information. La rapidit&#233; de Wikip&#233;dia, capable de fournir des articles sur une oeuvre &#224; peine sortie ou le dernier talent en vogue, ne permet pas de prendre le recul indispensable au travail encyclop&#233;dique. &lt;/p&gt; &lt;p&gt; R&#233;mi Mathis, 28 ans, pr&#233;sident de Wikim&#233;dia France, est conservateur au d&#233;partement des estampes de la Biblioth&#232;que nationale de France (BNF), rue Vivienne. Il a fait l&#39;Ecole nationale des chartes. C&#39;est un bon connaisseur de l&#39;histoire diplomatique du XVIIe - il est un fort contributeur de Wikip&#233;dia sur son domaine de comp&#233;tence. A la mi-d&#233;cembre 2011, il est rassur&#233; par l&#39;appel au don lanc&#233; en France : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous recevons des dons par milliers. A chaque fois, les gens ajoutent des mots d&#39;encouragement. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;A la fin d&#233;cembre, 36 000 personnes ont donn&#233; 980 000 euros. Pour quels projets ? D&#233;j&#224;, les wikip&#233;diens et la BNF vont continuer leur partenariat. Ils ont &#233;t&#233; charg&#233;s de relire et corriger 1 400 livres num&#233;ris&#233;s par la biblioth&#232;que - de &lt;em style=&quot;font-style:italic;&quot;&gt;Nana&lt;/em&gt;, de Zola, &#224; l&#39; &lt;em style=&quot;font-style:italic;&quot;&gt;Histoire de la R&#233;volution fran&#231;aise&lt;/em&gt;, de Thiers - avant de les rendre accessibles sur le portail Gallica. L&#39;&#233;quipe fran&#231;aise va encore mettre en ligne quantit&#233; d&#39;oeuvres litt&#233;raires et graphiques (Wikisource compte d&#233;j&#224; plus de 50 000 ouvrages) en collaborant avec le Centre Pompidou, le Mus&#233;e de Cluny, les archives de Toulouse... Ils vont travailler avec plusieurs universit&#233;s, en France et en Afrique francophone, afin de faire participer enseignants, &#233;tudiants et chercheurs &#224; l&#39;&#233;criture d&#39;articles. &lt;/p&gt; &lt;p&gt; Il y a aussi ce combat pour la &#171; libert&#233; de panorama &#187;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En France, les images d&#39;un monument public comme la Biblioth&#232;que Fran&#231;ois-Mitterrand ou l&#39;&#233;clairage de la tour Eiffel sont soumises au droit d&#39;auteur &#187;, explique R&#233;mi Mathis. Du coup, l&#39;architecte ou l&#39;&#233;clairagiste peuvent demander des droits sur la diffusion de photos repr&#233;sentant leur oeuvre. Pour promouvoir une d&#233;rogation &#224; cette l&#233;gislation, &#171; nous avons lanc&#233; en Europe le concours &#171;Wiki Loves Monuments&#187;, afin que les internautes photographient les monuments historiques et les donnent &#224; voir sur Wikip&#233;dia Commons &#187;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;R&#233;mi Mathis s&#39;agace des critiques sur la cr&#233;dibilit&#233; de Wikip&#233;dia. L&#224; o&#249; le consensus existe, dans les domaines des sciences dures, des sciences naturelles et des technologies, Wikip&#233;dia offre un solide savoir, souligne-t-il. Il rappelle qu&#39;en 2007, &#224; la demande du magazine &lt;em style=&quot;font-style:italic;&quot;&gt;Stern&lt;/em&gt;, une &#233;quipe ind&#233;pendante a compar&#233; 50 articles choisis au hasard dans Wikip&#233;dia et dans Brockhaus, la grande encyclop&#233;die allemande. 43 articles sur 50 ont &#233;t&#233; jug&#233;s plus exhaustifs, lisibles, exacts et actualis&#233;s sur Wikip&#233;dia. Il ajoute avec un sourire pein&#233; : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nos censeurs feraient mieux de nous aider &#224; am&#233;liorer le site. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;R&#233;mi Mathis ajoute que des logiciels rapides comme le Wikiscanner identifient d&#233;sormais les adresses IP (qui permettent d&#39;identifier l&#39;ordinateur) des contributeurs. Microsoft, des laboratoires pharmaceutiques, des sectes, des hommes politiques, des fans ont ainsi &#233;t&#233; surpris en flagrant d&#233;lit de retape. Quant aux fameux &#171; trolls &#187;, les vandales et farceurs du Net, ils sont d&#233;sormais rep&#233;r&#233;s plus vite quand ils changent le second pr&#233;nom de George W. Bush, Walter, en &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Wanker &#187;&lt;/em&gt; (branleur), pr&#233;tendent que la boisson Red Bull contient du &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; sperme de vache &#187;&lt;/em&gt; ou annoncent &#224; tort le d&#233;c&#232;s d&#39;une star. &lt;/p&gt; &lt;p&gt; R&#233;mi Mathis porte la discussion sur le fond. Selon lui, nous assistons &#224; une d&#233;mocratisation du savoir comparable &#224; celle qui suivit l&#39;invention de l&#39;imprimerie. A l&#39;&#233;poque, l&#39;&#233;lite qui lisait et r&#233;digeait les livres accusait l&#39;imprimerie de multiplier les erreurs par l&#39;impression m&#233;canique et de noyer le talent dans la masse des publications. Pour lui, l&#39;encyclop&#233;die contributive remet en cause ceux qui pr&#233;tendent mieux conna&#238;tre individuellement un sujet qu&#39;une collectivit&#233; de chercheurs discutant entre eux. &lt;/p&gt; &lt;p&gt; Jean-No&#235;l Lafargue, ma&#238;tre de conf&#233;rences &#224; Paris-VIII, ancien administrateur de Wikip&#233;dia, note ses &#233;l&#232;ves sur leurs articles publi&#233;s dans Wikip&#233;dia. Pour lui, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; on entendra toujours les d&#233;fenseurs de l&#39;Internet &#171;civilis&#233;&#187; se plaindre, car la libert&#233; de faire et de dire inspire la m&#233;fiance. Ceux-l&#224; pr&#233;f&#233;reront la censure au d&#233;sordre, n&#39;admettront jamais la valeur p&#233;dagogique de l&#39;erreur ou de la mise en danger du savoir &#233;tabli. Ils ne croient pas &#224; l&#39;&#233;ducation mais au dressage. &#187;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Wikipedia - DESSIN : OLIVIERBALEZ &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2012 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20120114&amp;#183;LM&amp;#183;0arh0212_490885&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">guerres d'édition</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">encyclopédie en ligne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bazar libertaire</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">querelles d'interprétation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">masse des publications</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Publicité et marketing</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Freud</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Algérie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">rue Vivienne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Nana</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120114%c2%b7LM%c2%b70arh0212_490885" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120114%c2%b7LM%c2%b70arh0212_490885">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Culture &amp; idées,         samedi 14 janvier 2012 1866 mots, p. ARH1</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Culture et idées         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Fi des critiques ! Wikipédia avance « Nos censeurs feraient mieux de nous aider à améliorer le site », s'agace Rémi Mathis, le jeuneprésident de Wikimédia en France, qui multiplie les projets, notamment en partenariat avec la BNF</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Wikipédia, bazar libertaire            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Un million de personnes viennent de donner 20 millions de dollars pour faire vivre l'encyclopédie en ligne. Un record. Mais les critiques demeurent : qualité des textes inégale, manque de fiabilité, partis pris flagrants. Un site trop libre ?</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Frédéric Joignot</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Difficile de rater les visages des contributeurs et dirigeants de l'encyclopédie en ligne Wikipédia. De novembre 2011 à début janvier, à chaque recherche, leurs portraits apparaissaient en tête de page, vous invitant à faire un don. Susan et ses longs cheveux blancs. Rémi Mathis, président de Wikimédia France, avec son air potache. Jimmy Wales, le fondateur américain. </p> <p> Quelque 450 millions de personnes consultent chaque mois Wikipédia. L'encyclopédie est traduite dans 280 langues (dont les douze régionales en France) et propose 1,1 million d'articles en français, consultés par 18,8 millions de lecteurs. Le cinquième site le plus visité du monde est une entreprise à part. Les quatre premiers (Google, Yahoo!, YouTube et Facebook) ont levé des investissements colossaux, se financent par la publicité, emploient des milliers de salariés, mènent de coûteuses campagnes de marketing. Wikipédia, lui, tourne avec 7,6 millions de dollars (6 millions d'euros), 95 salariés, des dizaines de milliers de rédacteurs bénévoles. Et sans publicité.</p>
+
+
+<p>Indépendante, l'encyclopédie participative est financée à 85 % par les dons de particuliers, le reste provenant de fondations. La dernière campagne de collecte de fonds, qui a pris fin le 3 janvier, a battu un record : 20 millions de dollars, soit 15,3 millions d'euros, donnés par 1 million de personnes. Ces dons aideront à développer Wikipédia et ses projets complémentaires : le dictionnaire multilingue Wiktionary, le centre d'actualités Wikinews, les bibliothèques numériques Wikibooks (pédagogique) et Wikisource (universelle), le recueil de citations Wikiquotes, la plateforme pédagogique Wikiversity, la médiathèque Wikimedia Commons, le répertoire des espèces vivantes Wikispecies. Une colossale somme de connaissances gratuite, illustrée, en perpétuelle réactualisation. Une bibliothèque de Babel contenant tous les savoirs, digne de celle imaginée par Borges dans <em style="font-style:italic;">Fictions</em>. </p> <p> Comment expliquer un tel succès, qui contredit tous les modèles économiques ? L'histoire de Wikipédia est aussi mouvementée qu'éclairante. En mars 2000, Jimmy Wales, actionnaire majoritaire de Bomis.com, portail de recherches en ligne d'images érotico-pornographiques, lance Nupedia, une encyclopédie sur le Net. Il embauche un rédacteur en chef, Larry Sanger, qui forme un comité scientifique. Les premiers articles sont validés. Mais voici qu'un programmeur leur explique le principe du « wiki », un site Web dont les visiteurs peuvent modifier les pages - « wiki-wiki » signifiant « rapide » en hawaïen. Le 15 janvier 2001, financé par Jimmy Wales, Wikipédia est lancé, avec appel aux lecteurs. Le nouveau site croule bientôt sous les articles et, très vite, Wikipédia se développe dans le monde entier, prise en main par des équipes de bénévoles passionnés. </p> <p> Wikipédia s'inscrit dans le courant coopératif né avec Internet. Il s'inspire des principes du « copyleft » (qui autorise, par opposition au copyright, la libre diffusion et modification d'une oeuvre) et du <mark>logiciel</mark> <mark>libre</mark> (dont l'utilisation, la modification et la duplication sont permises, techniquement et légalement). Deux textes fondamentaux, écrits par deux anciens hackers, influencent les wikipédiens. D'abord un essai, <em style="font-style:italic;">The Cathedral and the Bazaar</em>, d'Eric Raymond (non traduit, éd. O'Reilly Media, 1999), qui défend <em style="font-style:italic;">« la logique du bazar »</em> : si une multitude de contributeurs interviennent sur un projet sans obéir à une hiérarchie ni à un plan directeur, ils élaborent une oeuvre en mouvement, pas une cathédrale figée. Ensuite, « L'Encyclopédie universelle libre », un appel mis en ligne par <mark>Richard</mark> <mark>Stallman</mark> en 1999. Le père du système d'exploitation libre GNU y appelait à la création d'une encyclopédie gratuite et participative : <em style="font-style:italic;">« Dans le passé, les encyclopédies furent écrites sous la direction d'un organisme unique et centralisé. Cela n'aurait pas de sens de développer l'encyclopédie libre de cette manière. »</em></p><p>Cette philosophie coopérative et libertaire est la règle de base de Wikipédia, qui s'est donné pour slogan : <em style="font-style:italic;">« Le projet d'encyclopédie librement distribuable que chacun peut améliorer. »</em> En juin 2003, Jimmy Wales transfère ses droits de propriété à la Wikimedia Foundation. Elle est dirigée par les fondateurs du site et des représentants élus par les associations des wikipédiens actifs (une trentaine en 2010). Jimmy Wales, consacré en 2006 parmi les 100 personnalités les plus influentes par <em style="font-style:italic;">Time</em>, n'y a plus de rôle dirigeant. Il s'occupe de Creative Commons, une organisation qui vise à élaborer des contrats de droits d'auteur permettant le partage des connaissances, des oeuvres, des données et un accès universel à la culture, à l'éducation et à la recherche. Il nous explique : <em style="font-style:italic;">« Wikipédia est un temple de l'esprit, un lieu où apprendre et partager la connaissance, pas un espace marchand. Le commerce ne doit pas envahir chaque sphère de notre vie. Nous sommes à la fois un service public et un bien commun. »</em></p><p>Pas de marchands dans le temple, libre coopération, décentralisation, voilà pour les principes. Mais comment, en faisant appel au public, rédiger une encyclopédie fiable, sans amateurisme, qui ne devienne pas une foire d'empoigne ou un lieu de toutes les manipulations ? C'est très difficile. Depuis sa création, Wikipédia se trouve écartelée entre ses deux exigences originelles : le souci de la relecture experte voulue par Larry Sanger, dans la tradition des grands encyclopédistes depuis Diderot et d'Alembert, et la richesse d'une matière éditoriale parfois approximative, de parti pris, peu référencée, apportée par des milliers de passionnés ou des esprits sectaires. </p> <p> Pour éviter les travers, les fondateurs ont mis en place, année après année, des règles déontologiques. La première est <em style="font-style:italic;">« la neutralité du point de vue »</em>, soit <em style="font-style:italic;">« décrire le débat plutôt que de s'y engager »</em>. Chaque contributeur doit aussi présenter <em style="font-style:italic;">« les différents points de vue d'une controverse »</em>, en insistant sur les mieux étayés, avec des sources fiables et qui font autorité. Ainsi l'internaute découvre les fameux <em style="font-style:italic;">« Ref. nécessaire »</em> ou <em style="font-style:italic;">« Article non neutre »</em> pour les textes jugés imparfaits. </p> <p> Chacun pouvant intervenir pour enrichir un article, d'intenses débats ont lieu en coulisses entre les rédacteurs, des experts mécontents, les personnes concernées, les idéologues d'un sujet, les oisifs qui y mettent leur grain de sel... Au cours de ces polémiques (toutes consultables en ligne, ce qui éclaire les querelles d'interprétation et révèle les sectaires), Wikipédia exige des « règles de savoir-vivre », exposées sur la page des « Principes fondateurs » : <em style="font-style:italic;">« Recherchez le consensus. Gardez votre sang-froid lorsque l'atmosphère chauffe. Evitez les guerres d'édition. »</em></p><p>Les affrontements sont innombrables, même si une grille de « recherche de consensus » a été élaborée, poussant à toujours reprendre la discussion à l'amiable, arguant qu'un contenu solide, <em style="font-style:italic;">« rationnel »</em> peut être trouvé. Cela donne parfois de longs et riches articles, où plusieurs interprétations s'équilibrent. Parfois, la volonté de consensus donne des fiches interminables. En cas de litige violent, un administrateur, élu par les communautés de chaque pays, peut suspendre une page ou interdire un contributeur, en attendant un accord. Une très dadaïste section <em style="font-style:italic;">« les guerres d'édition les plus pitoyables »</em> est en ligne. Une parmi tant d'autres, française : l'âge d'Arielle Dombasle. </p> <p> Voilà pour les principes. Sont-ils réellement appliqués ? Suffisent-ils ? De nombreuses critiques, précises et savantes, dénoncent l'amateurisme et listent les erreurs flagrantes. Daniel Garcia, du magazine <em style="font-style:italic;">Livres Hebdo</em>, se fend le 3 novembre 2006 d'un article corrosif : <em style="font-style:italic;">« Ouvrez dans Wikipédia la notice relative à l'affaire Dreyfus. Descendez à la bibliographie. Et là, en première référence, on lit : Henri Dutrait-Crozon, Précis de l'Affaire Dreyfus. Avec ce commentaire, en toutes lettres : «Ouvrage fondamental à consulter en priorité». » Ce livre de 1909, remanié en 1924 et 1938, est un plaidoyer antidreyfusard dans la mouvance de l'Action française.</em></p><p>Le romancier Pierre Assouline reprend la critique le 9 janvier 2007 sur son blog « La république des livres ». Il rappelle que l'ouvrage incriminé est un <em style="font-style:italic;">« évangile de nationalistes »</em>. Il constate que Wikipédia, à la suite de l'intervention de la Ligue des droits de l'homme, a juste rajouté la mention <em style="font-style:italic;">« ouvrage contesté »</em>, mais l'a laissé en tête de bibliographie, avant des travaux d'historiens respectés. Regrettant la <em style="font-style:italic;">« démagogie ambiante »</em> qui voudrait que chacun devienne encyclopédiste, Pierre Assouline exerce cette critique de fond : <em style="font-style:italic;">« La question des sources est à la base de toute recherche, qu'elle soit historique, scientifique, journalistique; or Wikipédia dilue tant la source qu'elle l'élude. On ne saurait trop le répéter : dans le domaine des idées, et en particulier en histoire, l'esprit de la référence a intrinsèquement partie liée avec la durée et non avec l'éphémère. Or sur Wikipédia, la référence est à géométrie variable : le dernier qui a parlé a raison, jusqu'au prochain. »</em></p><p>En 2008, cinq étudiants en journalisme de Sciences Po se livrent à une enquête fouillée sur les articles de Wikipédia France. Ils font aussi un test. Ils ajoutent à la fiche de Pierre Assouline une fausse information : <em style="font-style:italic;">« En 2001, a remporté le championnat de France de jeu de paume. »</em> Cette erreur circule bientôt partout. Elle questionne le fonctionnement même de Wikipédia : des milliers de fausses informations, notices outrageusement louangeuses ou malveillances peuvent passer à travers les filtres de l'encyclopédie. </p> <p> D'ailleurs, plusieurs sites relèvent ces erreurs persistantes, comme la rubrique « WikiGrill » de la revue <em style="font-style:italic;">Books</em> en France, dans laquelle un auteur pointe le <em style="font-style:italic;">« laisser-faire comme principe d'organisation »</em>. Il s'interroge : est-ce l'anarchie ou le credo de l'économie libérale qui est invoqué ? Notant que Wikipédia défend <em style="font-style:italic;">« un égal droit de participation pour tous sans égard à l'âge, la compétence ou l'origine »,</em> il s'étonne : être <em style="font-style:italic;">« sans égard à la compétence »</em>, n'est-ce pas dangereux pour une encyclopédie ? </p> <p> Un autre exemple de dérapage sur Wikipédia concerne Mikkel Borch-Jacobsen, coauteur du <em style="font-style:italic;">Livre noir de la psychanalyse</em> (Les Arènes, 2005). D'abord présenté sur Wikipédia comme un critique argumenté de Freud, il se voit du jour au lendemain traité d' <em style="font-style:italic;">« analyste raté »</em> et de <em style="font-style:italic;">« psychiatre comportementaliste »</em>. Des profreudiens sont intervenus sur le texte, cherchant à le discréditer. Il proteste, les fausses informations sont retirées. Puis réintroduites : la fiche Wikipédia de Mikkel Borch-Jacobsen est devenue un champ de bataille dans une guerre entre des associations freudiennes et antifreudiennes. </p> <p> Ce n'est pas anecdotique. Ces affrontements ont lieu sur nombre de sujets sensibles : le conflit israélo-palestinien, la guerre d'Algérie, la prostitution, George W. Bush... Ils s'étendent aux querelles d'initiés : Shakespeare est-il l'auteur de ses pièces ? L'ayahuasca est-il un psychotrope dangereux ? Cela à l'infini. A chaque fois, les « cyberpompiers » de Wikipédia doivent mettre en garde les lecteurs : <em style="font-style:italic;">« La forme et le fond de cet article sont à vérifier »</em>, <em style="font-style:italic;">« Affirmation non neutre</em> », <em style="font-style:italic;">« Sources nécessaires »</em>. </p> <p> Au terme de leur enquête, les étudiants de Sciences Po ont publié, fin 2007, <em style="font-style:italic;">La Révolution Wikipédia</em> (Mille et Une Nuits, préface de Pierre Assouline). Ils soulèvent plusieurs points notables : le grand nombre de contributeurs peu fiables décourage les experts d'un sujet d'intervenir, ce qui nuit à la qualité des articles comme à la hiérarchisation de l'information. La rapidité de Wikipédia, capable de fournir des articles sur une oeuvre à peine sortie ou le dernier talent en vogue, ne permet pas de prendre le recul indispensable au travail encyclopédique. </p> <p> Rémi Mathis, 28 ans, président de Wikimédia France, est conservateur au département des estampes de la Bibliothèque nationale de France (BNF), rue Vivienne. Il a fait l'Ecole nationale des chartes. C'est un bon connaisseur de l'histoire diplomatique du XVIIe - il est un fort contributeur de Wikipédia sur son domaine de compétence. A la mi-décembre 2011, il est rassuré par l'appel au don lancé en France : <em style="font-style:italic;">« Nous recevons des dons par milliers. A chaque fois, les gens ajoutent des mots d'encouragement. »</em></p><p>A la fin décembre, 36 000 personnes ont donné 980 000 euros. Pour quels projets ? Déjà, les wikipédiens et la BNF vont continuer leur partenariat. Ils ont été chargés de relire et corriger 1 400 livres numérisés par la bibliothèque - de <em style="font-style:italic;">Nana</em>, de Zola, à l' <em style="font-style:italic;">Histoire de la Révolution française</em>, de Thiers - avant de les rendre accessibles sur le portail Gallica. L'équipe française va encore mettre en ligne quantité d'oeuvres littéraires et graphiques (Wikisource compte déjà plus de 50 000 ouvrages) en collaborant avec le Centre Pompidou, le Musée de Cluny, les archives de Toulouse... Ils vont travailler avec plusieurs universités, en France et en Afrique francophone, afin de faire participer enseignants, étudiants et chercheurs à l'écriture d'articles. </p> <p> Il y a aussi ce combat pour la « liberté de panorama ». <em style="font-style:italic;">« En France, les images d'un monument public comme la Bibliothèque François-Mitterrand ou l'éclairage de la tour Eiffel sont soumises au droit d'auteur », explique Rémi Mathis. Du coup, l'architecte ou l'éclairagiste peuvent demander des droits sur la diffusion de photos représentant leur oeuvre. Pour promouvoir une dérogation à cette législation, « nous avons lancé en Europe le concours «Wiki Loves Monuments», afin que les internautes photographient les monuments historiques et les donnent à voir sur Wikipédia Commons ».</em></p><p>Rémi Mathis s'agace des critiques sur la crédibilité de Wikipédia. Là où le consensus existe, dans les domaines des sciences dures, des sciences naturelles et des technologies, Wikipédia offre un solide savoir, souligne-t-il. Il rappelle qu'en 2007, à la demande du magazine <em style="font-style:italic;">Stern</em>, une équipe indépendante a comparé 50 articles choisis au hasard dans Wikipédia et dans Brockhaus, la grande encyclopédie allemande. 43 articles sur 50 ont été jugés plus exhaustifs, lisibles, exacts et actualisés sur Wikipédia. Il ajoute avec un sourire peiné : <em style="font-style:italic;">« Nos censeurs feraient mieux de nous aider à améliorer le site. »</em></p><p>Rémi Mathis ajoute que des logiciels rapides comme le Wikiscanner identifient désormais les adresses IP (qui permettent d'identifier l'ordinateur) des contributeurs. Microsoft, des laboratoires pharmaceutiques, des sectes, des hommes politiques, des fans ont ainsi été surpris en flagrant délit de retape. Quant aux fameux « trolls », les vandales et farceurs du Net, ils sont désormais repérés plus vite quand ils changent le second prénom de George W. Bush, Walter, en <em style="font-style:italic;">« Wanker »</em> (branleur), prétendent que la boisson Red Bull contient du <em style="font-style:italic;">« sperme de vache »</em> ou annoncent à tort le décès d'une star. </p> <p> Rémi Mathis porte la discussion sur le fond. Selon lui, nous assistons à une démocratisation du savoir comparable à celle qui suivit l'invention de l'imprimerie. A l'époque, l'élite qui lisait et rédigeait les livres accusait l'imprimerie de multiplier les erreurs par l'impression mécanique et de noyer le talent dans la masse des publications. Pour lui, l'encyclopédie contributive remet en cause ceux qui prétendent mieux connaître individuellement un sujet qu'une collectivité de chercheurs discutant entre eux. </p> <p> Jean-Noël Lafargue, maître de conférences à Paris-VIII, ancien administrateur de Wikipédia, note ses élèves sur leurs articles publiés dans Wikipédia. Pour lui, <em style="font-style:italic;">« on entendra toujours les défenseurs de l'Internet «civilisé» se plaindre, car la liberté de faire et de dire inspire la méfiance. Ceux-là préféreront la censure au désordre, n'admettront jamais la valeur pédagogique de l'erreur ou de la mise en danger du savoir établi. Ils ne croient pas à l'éducation mais au dressage. »</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Wikipedia - DESSIN : OLIVIERBALEZ </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2012 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20120114·LM·0arh0212_490885</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20120114·LM·0arh0212_490885";
+    var _docIndex = 214;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20120114·LM·0arh0212_490885';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720120114%C2%B7LM%C2%B70arh0212_490885&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720120114%C2%B7LM%C2%B70arh0212_490885&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720120114%C2%B7LM%C2%B70arh0212_490885&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720120114%C2%B7LM%C2%B70arh0212_490885&docIndex=214&FullScreen=1";
+                
+	var _keyDoc = 'news·20120114·LM·0arh0212_490885';
+</script>
+</div></body></html>

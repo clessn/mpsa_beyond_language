@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 9165                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+LeMag,         samedi 30 octobre 2010 438 mots, p. MAG20&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Et demain l&#39;Internet sera le genre humain            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le collectif Telekommunisten pr&#244;ne le retour &#224; un Web ouvert et partag&#233;. Bref, un communisme peer to peer...&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Marie Lechner&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Dans &lt;em style=&quot;font-style:italic;&quot;&gt;The Social Network&lt;/em&gt;, deux h&#233;ros se partagent la vedette, Mark Zuckerberg, cr&#233;ateur de Facebook, et son &#233;minence grise, l&#39;intrigant Sean Parker. Hackeur brillant, Parker est le cofondateur de Napster, service de partage de fichiers musicaux en &lt;em style=&quot;font-style:italic;&quot;&gt;Peer to peer,&lt;/em&gt; dont le succ&#232;s fulgurant fit vaciller l&#39;industrie du disque entre 1999 et 2001, date de sa fermeture par d&#233;cision de justice. &lt;/p&gt; &lt;p&gt; Quelques ann&#233;es plus tard, Parker s&#39;associe &#224; Zuckerberg et devient milliardaire. &lt;/p&gt; &lt;p&gt; En creux, on peut y lire une autre histoire, celle d&#39;Internet et de son d&#233;voiement, de Napster &#224; Facebook, du peer to peer au Web 2.0, d&#39;un syst&#232;me de partage de fichiers d&#233;centralis&#233; &#224; une plate-forme propri&#233;taire monolithique, certes plus attractive, mais accaparant les contenus des internautes, contr&#244;lant leurs interactions et exploitant et monnayant leurs donn&#233;es personnelles.&lt;/p&gt;
+
+
+&lt;p&gt;C&#39;est du moins l&#39;analyse qu&#39;en font les partisans du Web ouvert. Dans les marges prolif&#232;rent les initiatives &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; qui souhaitent revenir aux fondements d&#39;Internet. L&#39;initiative la plus populaire, Diaspora, cr&#233;&#233;e par quatre &#233;tudiants new-yorkais, se veut un Facebook alternatif, bas&#233; sur l&#39;utilisation du protocole peer to peer, et qui permet aux utilisateurs de garder la main sur leurs donn&#233;es. Dans une veine similaire, il y aussi The Appleseed Project, Crabgrass ou NoseRub. &lt;/p&gt; &lt;p&gt; Sont apparues &#233;galement des alternatives &#224; Twitter, comme Identi.ca ou bient&#244;t Thimbl, en lice pour le nouveau prix Open Web lanc&#233; par le festival berlinois Transmediale en collaboration avec Mozilla. Thimbl, du collectif Telekommunisten, est l&#39;un des trois finalistes aux c&#244;t&#233;s de Graffiti Analysis et de Booki, un service libre pour la cr&#233;ation de livres, que les internautes sont invit&#233;s &#224; d&#233;partager. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Ce qu&#39;on a perdu de vue dans la hype du soi-disant&lt;/em&gt; &quot;Web social&quot;, &#233;crit Dmitry Kleiner, cofondateur de la coop&#233;rative berlinoise, &lt;em style=&quot;font-style:italic;&quot;&gt;c&#39;est que le partage est la raison d&#39;&#234;tre d&#39;Internet. Usenet, l&#39;Email, IRC, toutes ces plateformes d&#233;centralis&#233;es qui n&#39;&#233;taient la propri&#233;t&#233; de personne, ont permis les connexions sociales, l&#39;&#233;mergence du journalisme citoyen, le partage de photos [...]. Et le microblogging lui-m&#234;me aurait d&#233;j&#224; &#233;t&#233; possible, il y a des d&#233;cennies de cela.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;De fait, Thimbl, encore en d&#233;veloppement, s&#39;appuie sur des technologies classiques du Net, comme le protocole Finger cr&#233;&#233; dans les ann&#233;es 70, un service pr&#233;sent virtuellement sur chaque serveur, mais g&#233;n&#233;ralement d&#233;sactiv&#233;. Il ne n&#233;cessite pas d&#39;application sp&#233;cifique. Thimbl est ainsi construit sur des standards du Net (Finger, SHH, http...), ce qui devrait en faire un r&#233;seau social distribu&#233; tr&#232;s largement accessible. Inutile de r&#233;inventer &#224; chaque fois la roue, estime Kleiner, il suffit de valoriser l&#39;existant. &lt;/p&gt; &lt;p&gt; Ce service de microblogging libre n&#39;est que l&#39;un des projets de ce collectif politique de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;travailleurs agitateurs&#187;&lt;/em&gt; Op&#233;rant dans la sph&#232;re des t&#233;l&#233;communications. A leur actif, &lt;em style=&quot;font-style:italic;&quot;&gt;Dialstation&lt;/em&gt;, un service de communications longue distance &#224; prix cass&#233;s, &lt;em style=&quot;font-style:italic;&quot;&gt;Trick&lt;/em&gt;, du micro-h&#233;bergement bon march&#233;, &lt;em style=&quot;font-style:italic;&quot;&gt;Deadswap&lt;/em&gt;, syst&#232;me de partage de fichiers &lt;em style=&quot;font-style:italic;&quot;&gt;Offline,&lt;/em&gt; o&#249; les participants se refilent sous le manteau une cl&#233; USB. &lt;/p&gt; &lt;p&gt; Pour Dmitry Kleiner, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;le plus grand d&#233;fi du Web ouvert n&#39;est pas technique, il est politique&#187;&lt;/em&gt;. Dans &lt;em style=&quot;font-style:italic;&quot;&gt;The Telekommunist Manifesto&lt;/em&gt;, qui vient d&#39;&#234;tre publi&#233;, le hackeur n&#233; en Union sovi&#233;tique oppose &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;un communisme peer to peer &#224; l&#39;Etat capitaliste centralis&#233; Client-Serveur&#187;.&lt;/em&gt; Il y jette les bases d&#39;une organisation &#233;conomique alternative qui propulse le &lt;em style=&quot;font-style:italic;&quot;&gt;Manifeste du parti communiste&lt;/em&gt; de Marx et Engels &#224; l&#39;&#226;ge de l&#39;Internet. &lt;/p&gt; &lt;p&gt; Www.thimbl.net &lt;a target=&quot;_blank&quot; href=&quot;https://www.telekommunisten.net&quot;&gt;www.telekommunisten.net&lt;/a&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://www.networkcultures.org/&quot;&gt;www.networkcultures.org/&lt;/a&gt; networknotebooks&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2010 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20101030&amp;#183;LI&amp;#183;0li13f98db0-e381-11df-b9e4-d90b8d552c86&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">communisme peer</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Web ouvert</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">service de communications</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">sphère des télécommunications</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">émergence du journalisme</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Industries culturelles</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Twitter</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720101030%c2%b7LI%c2%b70li13f98db0-e381-11df-b9e4-d90b8d552c86" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720101030%c2%b7LI%c2%b70li13f98db0-e381-11df-b9e4-d90b8d552c86">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 9165                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+LeMag,         samedi 30 octobre 2010 438 mots, p. MAG20</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Et demain l'Internet sera le genre humain            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le collectif Telekommunisten prône le retour à un Web ouvert et partagé. Bref, un communisme peer to peer...</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Marie Lechner</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Dans <em style="font-style:italic;">The Social Network</em>, deux héros se partagent la vedette, Mark Zuckerberg, créateur de Facebook, et son éminence grise, l'intrigant Sean Parker. Hackeur brillant, Parker est le cofondateur de Napster, service de partage de fichiers musicaux en <em style="font-style:italic;">Peer to peer,</em> dont le succès fulgurant fit vaciller l'industrie du disque entre 1999 et 2001, date de sa fermeture par décision de justice. </p> <p> Quelques années plus tard, Parker s'associe à Zuckerberg et devient milliardaire. </p> <p> En creux, on peut y lire une autre histoire, celle d'Internet et de son dévoiement, de Napster à Facebook, du peer to peer au Web 2.0, d'un système de partage de fichiers décentralisé à une plate-forme propriétaire monolithique, certes plus attractive, mais accaparant les contenus des internautes, contrôlant leurs interactions et exploitant et monnayant leurs données personnelles.</p>
+
+
+<p>C'est du moins l'analyse qu'en font les partisans du Web ouvert. Dans les marges prolifèrent les initiatives <mark>open</mark> <mark>source</mark> qui souhaitent revenir aux fondements d'Internet. L'initiative la plus populaire, Diaspora, créée par quatre étudiants new-yorkais, se veut un Facebook alternatif, basé sur l'utilisation du protocole peer to peer, et qui permet aux utilisateurs de garder la main sur leurs données. Dans une veine similaire, il y aussi The Appleseed Project, Crabgrass ou NoseRub. </p> <p> Sont apparues également des alternatives à Twitter, comme Identi.ca ou bientôt Thimbl, en lice pour le nouveau prix Open Web lancé par le festival berlinois Transmediale en collaboration avec Mozilla. Thimbl, du collectif Telekommunisten, est l'un des trois finalistes aux côtés de Graffiti Analysis et de Booki, un service libre pour la création de livres, que les internautes sont invités à départager. <em style="font-style:italic;">«Ce qu'on a perdu de vue dans la hype du soi-disant</em> "Web social", écrit Dmitry Kleiner, cofondateur de la coopérative berlinoise, <em style="font-style:italic;">c'est que le partage est la raison d'être d'Internet. Usenet, l'Email, IRC, toutes ces plateformes décentralisées qui n'étaient la propriété de personne, ont permis les connexions sociales, l'émergence du journalisme citoyen, le partage de photos [...]. Et le microblogging lui-même aurait déjà été possible, il y a des décennies de cela.»</em></p><p>De fait, Thimbl, encore en développement, s'appuie sur des technologies classiques du Net, comme le protocole Finger créé dans les années 70, un service présent virtuellement sur chaque serveur, mais généralement désactivé. Il ne nécessite pas d'application spécifique. Thimbl est ainsi construit sur des standards du Net (Finger, SHH, http...), ce qui devrait en faire un réseau social distribué très largement accessible. Inutile de réinventer à chaque fois la roue, estime Kleiner, il suffit de valoriser l'existant. </p> <p> Ce service de microblogging libre n'est que l'un des projets de ce collectif politique de <em style="font-style:italic;">«travailleurs agitateurs»</em> Opérant dans la sphère des télécommunications. A leur actif, <em style="font-style:italic;">Dialstation</em>, un service de communications longue distance à prix cassés, <em style="font-style:italic;">Trick</em>, du micro-hébergement bon marché, <em style="font-style:italic;">Deadswap</em>, système de partage de fichiers <em style="font-style:italic;">Offline,</em> où les participants se refilent sous le manteau une clé USB. </p> <p> Pour Dmitry Kleiner, <em style="font-style:italic;">«le plus grand défi du Web ouvert n'est pas technique, il est politique»</em>. Dans <em style="font-style:italic;">The Telekommunist Manifesto</em>, qui vient d'être publié, le hackeur né en Union soviétique oppose <em style="font-style:italic;">«un communisme peer to peer à l'Etat capitaliste centralisé Client-Serveur».</em> Il y jette les bases d'une organisation économique alternative qui propulse le <em style="font-style:italic;">Manifeste du parti communiste</em> de Marx et Engels à l'âge de l'Internet. </p> <p> Www.thimbl.net <a target="_blank" href="https://www.telekommunisten.net">www.telekommunisten.net</a> <a target="_blank" href="https://www.networkcultures.org/">www.networkcultures.org/</a> networknotebooks</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2010 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20101030·LI·0li13f98db0-e381-11df-b9e4-d90b8d552c86</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20101030·LI·0li13f98db0-e381-11df-b9e4-d90b8d552c86";
+    var _docIndex = 354;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20101030·LI·0li13f98db0-e381-11df-b9e4-d90b8d552c86';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720101030%C2%B7LI%C2%B70li13f98db0-e381-11df-b9e4-d90b8d552c86&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720101030%C2%B7LI%C2%B70li13f98db0-e381-11df-b9e4-d90b8d552c86&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720101030%C2%B7LI%C2%B70li13f98db0-e381-11df-b9e4-d90b8d552c86&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720101030%C2%B7LI%C2%B70li13f98db0-e381-11df-b9e4-d90b8d552c86&docIndex=354&FullScreen=1";
+                
+	var _keyDoc = 'news·20101030·LI·0li13f98db0-e381-11df-b9e4-d90b8d552c86';
+</script>
+</div></body></html>

@@ -1,0 +1,463 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CONVERGENCE,         lundi 3 mai 2004 1023 mots, p. B7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Technologie&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Le Wiki, le tableau blanc de l&#39;intelligence collective            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Un Wiki est un outil de travail collaboratif permettant &#224; n&#39;importe quel internaute arm&#233; d&#39;un fureteur Internet de cr&#233;er ou de modifier &#224; volont&#233; une page Web&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Pour Marc Laporte, un des concepteurs de l&#39;application TikiWiki, le Wiki est l&#39;outil id&#233;al pour stimuler la cr&#233;ativit&#233; d&#39;un groupe et partager des connaissances. Sylvain Carle d&#233;finit plut&#244;t le Wiki comme l&#39;entrep&#244;t d&#39;un immense cerveau collectif. &lt;/p&gt; &lt;p&gt; Quoi qu&#39;il en soit, la seule m&#233;taphore pour d&#233;crire le Wiki qui vient en t&#234;te &#224; ces deux internautes est celle du tableau blanc. De dire Marc Laporte, en citant Pierre Levy, &#171;personne ne sait tout, mais tout le monde sait quelque chose. Cette phrase de L&#233;vy d&#233;crit &#224; merveille les possibilit&#233;s offertes par le Wiki&#187;.&lt;/p&gt;
+
+
+&lt;p&gt;Mais qu&#39;est-ce qu&#39;un Wiki? Au d&#233;tour d&#39;une page Web, peut-&#234;tre avez-vous lu ce dr&#244;le de mot. &#192; moins que vous ne soyez un visiteur r&#233;gulier de l&#39;encyclop&#233;die en ligne Wikip&#233;dia et, dans ce cas, sans le savoir, vous consultez un Wiki. &lt;/p&gt; &lt;p&gt; Tr&#232;s simplement, dans sa forme la plus pure, un Wiki est un outil de travail collaboratif permettant &#224; n&#39;importe quel internaute arm&#233; d&#39;un fureteur Internet de cr&#233;er ou de modifier &#224; volont&#233; une page Web, et ce, sans qu&#39;il lui soit n&#233;cessaire d&#39;apprendre un quelconque langage de programmation. Sylvain Carle d&#233;crit d&#39;ailleurs le Wiki comme l&#39;outil le plus simple d&#39;utilisation sur Internet apr&#232;s le courrier &#233;lectronique. &lt;/p&gt; &lt;p&gt; Pour la communaut&#233; francophone WebS&#233;mantique.org, l&#39;utilisation d&#39;un Wiki se d&#233;cline en quatre grands enjeux: le Wiki est incitatif, &#171;sa vertu d&#39;incitation &#224; la participation est la premi&#232;re clause de son cahier des charges&#187;. Il est aussi d&#233;lib&#233;ratif, en proposant &#171;une forme d&#39;approfondissement du consensus virtuel [...] faisant partie de son attractivit&#233; et donc de son caract&#232;re incitatif&#187;. Le Wiki doit &#234;tre instructif, en ce sens que la collaboration directe ou diff&#233;r&#233;e de ses contributeurs est synth&#233;tis&#233;e en un ensemble de ressources centr&#233;es sur l&#39;objet qui les motive. Et enfin, il est expressif, c&#39;est-&#224;-dire qu&#39;il est &#171;l&#39;expression d&#39;un collectif, d&#39;un ensemble d&#39;individus pr&#233;sentant au moins une attente commune&#187;. &lt;/p&gt; &lt;p&gt; Concr&#232;tement, un Wiki permet &#224; toute personne en train de lire une de ses pages de la modifier &#224; la vol&#233;e. Toutes les versions restent cependant accessibles, tandis que l&#39;historique des modifications peut &#234;tre consult&#233; en tout temps. Ainsi, un premier auteur r&#233;dige l&#39;esquisse d&#39;un billet, un second peut le compl&#233;ter puis un visiteur ou plusieurs visiteurs en corrigent d&#39;&#233;ventuelles erreurs qu&#39;ils auront remarqu&#233;es en naviguant sur le site. &lt;/p&gt; &lt;p&gt; Pour bien comprendre la m&#233;canique d&#39;un Wiki, imaginez une version du site Internet du Devoir o&#249; il serait possible &#224; tous les internautes de modifier ou corriger l&#39;ensemble des pages le constituant, et ce, de la fa&#231;on la plus anonyme qui soit. &lt;/p&gt; &lt;p&gt; L&#39;encyclop&#233;die Wikip&#233;dia est d&#39;ailleurs con&#231;ue sur ce mode de publication. Tous peuvent y ajouter leur grain de sel. Anarchique et chaotique comme mod&#232;le de publication? Sans aucun doute, puisque apr&#232;s tout, si on pousse la m&#233;taphore au maximum, n&#39;importe quel vandale pourrait d&#233;truire une page Internet ou encore la modifier en introduisant de fausses informations. &lt;/p&gt; &lt;p&gt; Pourtant, on constate dans la r&#233;alit&#233; que ce genre de choses arrive fort peu souvent. D&#39;expliquer Marc Laporte, &#171;puisque n&#39;importe qui peut d&#233;truire une page, ou est le d&#233;fi qui est la marque de commerce des hackers? La beaut&#233; du Wiki, c&#39;est cette forme de consensus qui s&#39;en d&#233;gage. Ce qui reste sur une page Web, c&#39;est ce qui est le plus pertinent comme information. C&#39;est aussi ce qui sera confirm&#233; par l&#39;ensemble des visiteurs&#187;. &lt;/p&gt; &lt;p&gt; De plus, si par malheur, un imb&#233;cile ou un robot spammeur passe par l&#224; et efface une ou plusieurs pages, le visiteur suivant pourra tout simplement, d&#39;un seul clic de souris, faire rena&#238;tre les dites pages en allant consulter l&#39;historique des modifications. C&#39;est d&#39;ailleurs une des raisons pour lesquelles les Wiki fonctionnent. Un Wiki, c&#39;est un outil organique qui carbure &#224; la libert&#233; et au chaos. &lt;/p&gt; &lt;p&gt; Or, bien que l&#39;application Wiki la plus connue soit l&#39;encyclop&#233;die Wikip&#233;dia, des centres de recherche, des &#171;think tank&#187; et des gestionnaires de projets commencent &#224; implanter des Wiki en entreprise. Les contraintes li&#233;es &#224; l&#39;utilisation d&#39;un Wiki &#233;tant quasiment nulles, tous, sans restriction, peuvent donc contribuer &#224; leur rythme. &lt;/p&gt; &lt;p&gt; Sylvain Carle a d&#39;ailleurs constat&#233; qu&#39;en raison de cette participation universelle, l&#39;implantation d&#39;un Wiki en entreprise responsabilisait ses utilisateurs. &#171;Aborder un Wiki demande toutefois de revoir ses processus de r&#233;flexion. Installer un Wiki en entreprise en voulant ench&#226;sser ses membres dans une structure rigide est in&#233;vitablement vou&#233; &#224; l&#39;&#233;chec.&#187; Un Wiki, c&#39;est une s&#233;ance de remue-m&#233;ninges avec des st&#233;ro&#239;des! &#171;Il ne faut surtout pas brimer la cr&#233;ativit&#233; des participants &#224; un Wiki.&#187; En respectant ces conditions, il s&#39;en suit normalement un processus d&#39;appropriation du Wiki par le groupe qui r&#233;sulte en des r&#233;sultats positifs. &lt;/p&gt; &lt;p&gt; Karl Dubost, du W3C et fondateur du site WebS&#233;mantique.org, sugg&#232;re aussi d&#39;autres id&#233;es d&#39;utilisation du Wiki. Par exemple, un Wiki pourra &#234;tre utilis&#233; pour le d&#233;veloppement de projets en petites &#233;quipes, l&#39;apprentissage de l&#39;&#233;criture structur&#233;e ou l&#39;&#233;criture d&#39;un roman (&#171;gr&#226;ce &#224; la gestion automatique des mots li&#233;s, on fait en m&#234;me temps la sc&#233;narisation et l&#39;histoire, les deux s&#39;autocompl&#233;tant&#187;). &lt;/p&gt; &lt;p&gt; Pour la communaut&#233; des utilisateurs francophones CraoWiki, le Wiki est une &#233;tape de plus vers le haut h&#233;rit&#233;e des mod&#232;les traditionnels &#171;OpenSource&#187; et &#171;BBS&#187;. Dans le mod&#232;le normal, vous devez passer par un long processus d&#39;enregistrement ou &#234;tre capable de programmer pour contribuer &#224; quoi que ce soit; cela n&#39;encourage pas la contribution et cr&#233;e une petite communaut&#233; de &#171;membres&#187; ou de &#171;programmeurs&#187; qui font tout le travail. &#192; l&#39;inverse, dans un Wiki, si vous relevez une faute vous pouvez la corriger instantan&#233;ment, et ajouter quelque chose de nouveau est aussi facile que de savoir le saisir au clavier. &lt;/p&gt; &lt;p&gt; *** &lt;/p&gt; &lt;p&gt; Corriger avec facilit&#233; &lt;/p&gt; &lt;p&gt; Cr&#233;&#233; par Ward Cunningham, le Wiki est un site Web sur lequel tout visiteur peut modifier ou cr&#233;er des pages &#224; l&#39;aide de son fureteur Internet. Son nom provient du mot hawa&#239;en WikiWiki qui signifie &#171;vite&#187;. En effet, la publication d&#39;une contribution sur un Wiki est instantan&#233;e, il n&#39;y a aucun d&#233;lai d&#39;attente d&#251; &#224; une r&#233;vision du contenu par un quelconque administrateur. &lt;/p&gt; &lt;p&gt; La super encyclop&#233;die en ligne, Wikip&#233;dia, explique ainsi le m&#233;canisme de publication sur un Wiki. &#171;Le principe est simple: il s&#39;agit d&#39;un mod&#232;le coop&#233;ratif de r&#233;daction de documents. Concr&#232;tement, n&#39;importe quel visiteur a la possibilit&#233; de modifier la page qu&#39;il est en train de lire. Les modifications sont ensuite enregistr&#233;es, et toutes les versions historiques restent accessibles [comme dans un logiciel de gestion de versions]. Ainsi, un premier auteur r&#233;dige un article, un second le compl&#232;te, puis un visiteur en corrige d&#39;&#233;ventuelles erreurs qu&#39;il aura remarqu&#233;es en naviguant sur le site.&#187; &lt;/p&gt; &lt;p&gt; Pour illustrer &#224; quel point il est facile de modifier un texte dans un Wiki, en voulant citer Wikip&#233;dia dans cet article, j&#39;ai constat&#233; une petite faute de frappe dans un mot (&#171;navigant&#187; au lieu de &#171;naviguant&#187;). Sans m&#234;me devoir m&#39;enregistrer, j&#39;ai corrig&#233; cette petite faute, et j&#39;ai pu publier de nouveau la d&#233;finition en quelques secondes. &lt;/p&gt; &lt;p&gt; *** &lt;/p&gt; &lt;p&gt; Une imposante encyclop&#233;die &lt;/p&gt; &lt;p&gt; Wikip&#233;dia est une des plus imposantes encyclop&#233;dies publi&#233;es sur Internet. Cette encyclop&#233;die libre et multilingue - Wikip&#233;dia est publi&#233;e en plus de 50 langues diff&#233;rentes, dont le fran&#231;ais - annon&#231;ait le 23 f&#233;vrier dernier que l&#39;ensemble du projet comportait plus 500 000 entr&#233;es. &lt;/p&gt; &lt;p&gt; Wikip&#233;dia a vu le jour, &#224; la suite de la publication d&#39;un essai &#233;crit par &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt; (The free universal encyclopedia and learning resource) qui s&#39;interrogeait sur la pertinence (l&#39;urgence?) de cr&#233;er une encyclop&#233;die libre universelle. &lt;/p&gt; &lt;p&gt; Bien qu&#39;il n&#39;existe pas officiellement de &#171;chef de projet&#187; chez Wikip&#233;dia, ses deux fondateurs, Jimmy Wales et Larry Sanger, ont r&#233;ussi &#224; lancer ce projet gr&#226;ce au travail inlassable de Sanger, qui a travaill&#233; durant un an &#224; r&#233;diger la base de l&#39;encyclop&#233;die, alors que Wales, par l&#39;entremise de son portail Internet Bomis, a mis en place un montage financier, la fondation Wikim&#233;dia, destin&#233; &#224; assurer la p&#233;rennit&#233; de Wikip&#233;dia. Aujourd&#39;hui, le projet marche par consensus, en utilisant les r&#232;gles et recommandations cr&#233;&#233;es par les diff&#233;rents contributeurs. &lt;/p&gt; &lt;p&gt; Tous les contenus sont publi&#233;s sous licence de documentation libre GNU GFDL, &#171;permettant &#224; quiconque la diffusion et la modification du texte libre, tout en garantissant que personne ne pourra en restreindre l&#39;acc&#232;s, m&#234;me &#224; des versions modifi&#233;es.&#187;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040503&amp;#183;LE&amp;#183;53624&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">Sylvain Carle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">outil de travail collaboratif</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">encyclopédie libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">tableau blanc</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Marc Laporte</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040503%c2%b7LE%c2%b753624" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040503%c2%b7LE%c2%b753624">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CONVERGENCE,         lundi 3 mai 2004 1023 mots, p. B7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Technologie</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Le Wiki, le tableau blanc de l'intelligence collective            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Un Wiki est un outil de travail collaboratif permettant à n'importe quel internaute armé d'un fureteur Internet de créer ou de modifier à volonté une page Web</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Pour Marc Laporte, un des concepteurs de l'application TikiWiki, le Wiki est l'outil idéal pour stimuler la créativité d'un groupe et partager des connaissances. Sylvain Carle définit plutôt le Wiki comme l'entrepôt d'un immense cerveau collectif. </p> <p> Quoi qu'il en soit, la seule métaphore pour décrire le Wiki qui vient en tête à ces deux internautes est celle du tableau blanc. De dire Marc Laporte, en citant Pierre Levy, «personne ne sait tout, mais tout le monde sait quelque chose. Cette phrase de Lévy décrit à merveille les possibilités offertes par le Wiki».</p>
+
+
+<p>Mais qu'est-ce qu'un Wiki? Au détour d'une page Web, peut-être avez-vous lu ce drôle de mot. À moins que vous ne soyez un visiteur régulier de l'encyclopédie en ligne Wikipédia et, dans ce cas, sans le savoir, vous consultez un Wiki. </p> <p> Très simplement, dans sa forme la plus pure, un Wiki est un outil de travail collaboratif permettant à n'importe quel internaute armé d'un fureteur Internet de créer ou de modifier à volonté une page Web, et ce, sans qu'il lui soit nécessaire d'apprendre un quelconque langage de programmation. Sylvain Carle décrit d'ailleurs le Wiki comme l'outil le plus simple d'utilisation sur Internet après le courrier électronique. </p> <p> Pour la communauté francophone WebSémantique.org, l'utilisation d'un Wiki se décline en quatre grands enjeux: le Wiki est incitatif, «sa vertu d'incitation à la participation est la première clause de son cahier des charges». Il est aussi délibératif, en proposant «une forme d'approfondissement du consensus virtuel [...] faisant partie de son attractivité et donc de son caractère incitatif». Le Wiki doit être instructif, en ce sens que la collaboration directe ou différée de ses contributeurs est synthétisée en un ensemble de ressources centrées sur l'objet qui les motive. Et enfin, il est expressif, c'est-à-dire qu'il est «l'expression d'un collectif, d'un ensemble d'individus présentant au moins une attente commune». </p> <p> Concrètement, un Wiki permet à toute personne en train de lire une de ses pages de la modifier à la volée. Toutes les versions restent cependant accessibles, tandis que l'historique des modifications peut être consulté en tout temps. Ainsi, un premier auteur rédige l'esquisse d'un billet, un second peut le compléter puis un visiteur ou plusieurs visiteurs en corrigent d'éventuelles erreurs qu'ils auront remarquées en naviguant sur le site. </p> <p> Pour bien comprendre la mécanique d'un Wiki, imaginez une version du site Internet du Devoir où il serait possible à tous les internautes de modifier ou corriger l'ensemble des pages le constituant, et ce, de la façon la plus anonyme qui soit. </p> <p> L'encyclopédie Wikipédia est d'ailleurs conçue sur ce mode de publication. Tous peuvent y ajouter leur grain de sel. Anarchique et chaotique comme modèle de publication? Sans aucun doute, puisque après tout, si on pousse la métaphore au maximum, n'importe quel vandale pourrait détruire une page Internet ou encore la modifier en introduisant de fausses informations. </p> <p> Pourtant, on constate dans la réalité que ce genre de choses arrive fort peu souvent. D'expliquer Marc Laporte, «puisque n'importe qui peut détruire une page, ou est le défi qui est la marque de commerce des hackers? La beauté du Wiki, c'est cette forme de consensus qui s'en dégage. Ce qui reste sur une page Web, c'est ce qui est le plus pertinent comme information. C'est aussi ce qui sera confirmé par l'ensemble des visiteurs». </p> <p> De plus, si par malheur, un imbécile ou un robot spammeur passe par là et efface une ou plusieurs pages, le visiteur suivant pourra tout simplement, d'un seul clic de souris, faire renaître les dites pages en allant consulter l'historique des modifications. C'est d'ailleurs une des raisons pour lesquelles les Wiki fonctionnent. Un Wiki, c'est un outil organique qui carbure à la liberté et au chaos. </p> <p> Or, bien que l'application Wiki la plus connue soit l'encyclopédie Wikipédia, des centres de recherche, des «think tank» et des gestionnaires de projets commencent à implanter des Wiki en entreprise. Les contraintes liées à l'utilisation d'un Wiki étant quasiment nulles, tous, sans restriction, peuvent donc contribuer à leur rythme. </p> <p> Sylvain Carle a d'ailleurs constaté qu'en raison de cette participation universelle, l'implantation d'un Wiki en entreprise responsabilisait ses utilisateurs. «Aborder un Wiki demande toutefois de revoir ses processus de réflexion. Installer un Wiki en entreprise en voulant enchâsser ses membres dans une structure rigide est inévitablement voué à l'échec.» Un Wiki, c'est une séance de remue-méninges avec des stéroïdes! «Il ne faut surtout pas brimer la créativité des participants à un Wiki.» En respectant ces conditions, il s'en suit normalement un processus d'appropriation du Wiki par le groupe qui résulte en des résultats positifs. </p> <p> Karl Dubost, du W3C et fondateur du site WebSémantique.org, suggère aussi d'autres idées d'utilisation du Wiki. Par exemple, un Wiki pourra être utilisé pour le développement de projets en petites équipes, l'apprentissage de l'écriture structurée ou l'écriture d'un roman («grâce à la gestion automatique des mots liés, on fait en même temps la scénarisation et l'histoire, les deux s'autocomplétant»). </p> <p> Pour la communauté des utilisateurs francophones CraoWiki, le Wiki est une étape de plus vers le haut héritée des modèles traditionnels «OpenSource» et «BBS». Dans le modèle normal, vous devez passer par un long processus d'enregistrement ou être capable de programmer pour contribuer à quoi que ce soit; cela n'encourage pas la contribution et crée une petite communauté de «membres» ou de «programmeurs» qui font tout le travail. À l'inverse, dans un Wiki, si vous relevez une faute vous pouvez la corriger instantanément, et ajouter quelque chose de nouveau est aussi facile que de savoir le saisir au clavier. </p> <p> *** </p> <p> Corriger avec facilité </p> <p> Créé par Ward Cunningham, le Wiki est un site Web sur lequel tout visiteur peut modifier ou créer des pages à l'aide de son fureteur Internet. Son nom provient du mot hawaïen WikiWiki qui signifie «vite». En effet, la publication d'une contribution sur un Wiki est instantanée, il n'y a aucun délai d'attente dû à une révision du contenu par un quelconque administrateur. </p> <p> La super encyclopédie en ligne, Wikipédia, explique ainsi le mécanisme de publication sur un Wiki. «Le principe est simple: il s'agit d'un modèle coopératif de rédaction de documents. Concrètement, n'importe quel visiteur a la possibilité de modifier la page qu'il est en train de lire. Les modifications sont ensuite enregistrées, et toutes les versions historiques restent accessibles [comme dans un logiciel de gestion de versions]. Ainsi, un premier auteur rédige un article, un second le complète, puis un visiteur en corrige d'éventuelles erreurs qu'il aura remarquées en naviguant sur le site.» </p> <p> Pour illustrer à quel point il est facile de modifier un texte dans un Wiki, en voulant citer Wikipédia dans cet article, j'ai constaté une petite faute de frappe dans un mot («navigant» au lieu de «naviguant»). Sans même devoir m'enregistrer, j'ai corrigé cette petite faute, et j'ai pu publier de nouveau la définition en quelques secondes. </p> <p> *** </p> <p> Une imposante encyclopédie </p> <p> Wikipédia est une des plus imposantes encyclopédies publiées sur Internet. Cette encyclopédie libre et multilingue - Wikipédia est publiée en plus de 50 langues différentes, dont le français - annonçait le 23 février dernier que l'ensemble du projet comportait plus 500 000 entrées. </p> <p> Wikipédia a vu le jour, à la suite de la publication d'un essai écrit par <mark>Richard</mark> <mark>Stallman</mark> (The free universal encyclopedia and learning resource) qui s'interrogeait sur la pertinence (l'urgence?) de créer une encyclopédie libre universelle. </p> <p> Bien qu'il n'existe pas officiellement de «chef de projet» chez Wikipédia, ses deux fondateurs, Jimmy Wales et Larry Sanger, ont réussi à lancer ce projet grâce au travail inlassable de Sanger, qui a travaillé durant un an à rédiger la base de l'encyclopédie, alors que Wales, par l'entremise de son portail Internet Bomis, a mis en place un montage financier, la fondation Wikimédia, destiné à assurer la pérennité de Wikipédia. Aujourd'hui, le projet marche par consensus, en utilisant les règles et recommandations créées par les différents contributeurs. </p> <p> Tous les contenus sont publiés sous licence de documentation libre GNU GFDL, «permettant à quiconque la diffusion et la modification du texte libre, tout en garantissant que personne ne pourra en restreindre l'accès, même à des versions modifiées.»</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040503·LE·53624</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040503·LE·53624";
+    var _docIndex = 181;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040503·LE·53624';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040503%C2%B7LE%C2%B753624&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040503%C2%B7LE%C2%B753624&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040503%C2%B7LE%C2%B753624&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040503%C2%B7LE%C2%B753624&docIndex=181&FullScreen=1";
+                
+	var _keyDoc = 'news·20040503·LE·53624';
+</script>
+</div></body></html>

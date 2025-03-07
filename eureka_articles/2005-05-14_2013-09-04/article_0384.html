@@ -1,0 +1,505 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mercredi 30 juin 2010 550 mots, p. 14&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+CONTRE-ENQUETE ECONOMIE         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Comment Apple et Google se disputent-ils la t&#233;l&#233;phonie mobile Focus&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Ces groupes dont la supr&#233;matie vacille            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;C&#233;cile Ducourtieux&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Microsoft, Nokia, dans une moindre mesure Intel : ces trois groupes, leaders sur leur march&#233;, voient leur supr&#233;matie de plus en plus menac&#233;e. Par Google, par Apple, par la r&#233;volution de l&#39;Internet mobile, plus g&#233;n&#233;ralement. &lt;/p&gt; &lt;p&gt; Nokia Le groupe finlandais disposait il y a encore deux ans sur les t&#233;l&#233;phones mobiles d&#39;une large part de march&#233; : 40 %. Et ce, y compris sur le cr&#233;neau des smartphones, ces machines aussi puissantes que des mini-ordinateurs, capables de se connecter &#224; Internet. Mais l&#39;arriv&#233;e de l&#39;iPhone d&#39;Apple, en juin 2007, a &#233;branl&#233; ce colosse.&lt;/p&gt;
+
+
+&lt;p&gt;Le groupe a mis du temps avant de lancer son propre terminal &#224; &#233;cran tactile. Il a multipli&#233; les lancements de services mobiles : un portail (Ovi), une offre de contenu musical (musicMe), de jeux en ligne... Sans succ&#232;s. Aujourd&#39;hui, le groupe, qui vend encore plus d&#39;un million de t&#233;l&#233;phones par jour, a perdu son leadership technologique et risque de se retrouver cantonn&#233; dans la fabrication de terminaux bas de gamme. Une situation redoutable, car ses marges financi&#232;res seraient lamin&#233;es et la marque s&#39;exposerait encore davantage aux risques de contrefa&#231;on. &lt;/p&gt; &lt;p&gt; Microsoft L&#39;am&#233;ricain, premier &#233;diteur mondial de logiciels, &#233;quipe encore neuf ordinateurs sur dix dans le monde, avec des syst&#232;mes d&#39;exploitation (la gamme Windows) et des logiciels de bureautique (la suite Office). Mais des acteurs venus de l&#39;Internet, au premier rang desquels Google, ou des partisans des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, qu&#39;il est possible de modifier et d&#39;utiliser &#224; sa guise, l&#39;attaquent frontalement sur les &#233;crans de PC, avec des produits plus basiques mais gratuits (le syst&#232;me d&#39;exploitation Chrome OS et les logiciels Google Docs). &lt;/p&gt; &lt;p&gt; Par ailleurs, son syst&#232;me d&#39;exploitation pour t&#233;l&#233;phone mobile ne parvient pas &#224; s&#39;imposer. Sa part de march&#233; dans la t&#233;l&#233;phonie haut de gamme a m&#234;me chut&#233;, passant, en un an, de 10,2 % &#224; 6,8 % au premier trimestre 2010, selon le cabinet Gartner. Beaucoup critiquent un logiciel litt&#233;ralement inspir&#233; de Windows, pas optimis&#233; pour le mobile, moins ergonomique que celui de l&#39;iPhone. Les &#171; windows phones &#187; continuent d&#39;avoir du succ&#232;s aupr&#232;s des professionnels, qui y retrouvent leur &#171; environnement &#187; de travail, mais moins aupr&#232;s du grand public. &lt;/p&gt; &lt;p&gt; Intel Le groupe am&#233;ricain, premier fabricant mondial de microprocesseurs, est &#233;galement un des leaders de la &#171; plate-forme PC &#187; : environ huit machines sur dix sont &#233;quip&#233;es d&#39;une de ses puces. &#171; Dans le monde du PC, il existe une grande standardisation des diff&#233;rents modules qui composent la machine : le processeur, le syst&#232;me d&#39;exploitation, etc. Une entreprise peut produire un composant, une deuxi&#232;me un autre, une troisi&#232;me les assembler. La structure du march&#233; du mobile n&#39;a rien &#224; voir. Tout est beaucoup plus int&#233;gr&#233; &#187;, explique S&#233;bastien Rospide, consultant pour le cabinet sp&#233;cialis&#233; D&#233;cision. &lt;/p&gt; &lt;p&gt; Des soci&#233;t&#233;s comme Samsung et m&#234;me Apple con&#231;oivent ou m&#234;me produisent tout en interne (le mat&#233;riel, les logiciels, la puce, etc.). L&#39;am&#233;ricain Qualcomm propose aux fabricants de t&#233;l&#233;phones des modules tr&#232;s sp&#233;cifiques, alliant la capacit&#233; &#224; connecter le t&#233;l&#233;phone aux r&#233;seaux mobiles et celle de faire tourner des applications informatiques. Intel reste un nouveau venu sur ce secteur. &lt;/p&gt; &lt;p&gt; Mais ces trois groupes conservent des capacit&#233;s humaines et financi&#232;res consid&#233;rables : des centaines d&#39;ing&#233;nieurs en recherche et d&#233;veloppement ou des dizaines de milliards de dollars rapidement mobilisables, dans le cas d&#39;Intel ou de Microsoft. Ils n&#39;ont pas le choix, car c&#39;est le coeur de leurs m&#233;tiers qui est menac&#233;. Intel met l&#39;accent sur les &#233;conomies d&#39;&#233;nergie pour concevoir des semi-conducteurs aussi puissants, mais moins gourmands pour r&#233;pondre &#224; une des contraintes majeures des t&#233;l&#233;phones : l&#39;autonomie. &lt;/p&gt; &lt;p&gt; Microsoft a annonc&#233;, pour cet automne, la disponibilit&#233; de son nouveau syst&#232;me d&#39;exploitation pour t&#233;l&#233;phones mobiles, &#171; Windows Mobile Seven &#187;. Ses ing&#233;nieurs ont choisi de miser sur les r&#233;seaux sociaux : le logiciel propose un t&#233;l&#233;phone o&#249; l&#39;on &#171; surfe &#187; d&#39;une application &#224; une autre via ses diff&#233;rents contacts (d&#39;un profil Facebook &#224; un compte Flickr en passant par un fil Twitter...). Une proposition originale, qui permettrait aux constructeurs de terminaux de se distinguer de l&#39;iPhone. &lt;/p&gt; &lt;p&gt; Quant &#224; Nokia, ses dirigeants ont annonc&#233; un partenariat avec Intel pour concevoir des syst&#232;mes d&#39;exploitation (&#171; MeeGo &#187;), pour tablettes num&#233;riques. Peut-&#234;tre choisiront-ils de franchir le Rubicon, en abandonnant leur syst&#232;me d&#39;exploitation maison d&#233;di&#233; aux t&#233;l&#233;phones, Symbian, pour Android, celui de Google, aujourd&#39;hui le chouchou des d&#233;veloppeurs ind&#233;pendants (avec l&#39;iPhone) ? Ce serait le moyen de redonner du fringant &#224; leurs terminaux.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2010 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20100630&amp;#183;LM&amp;#183;0q3006_199731&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">téléphones mobiles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">systèmes d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">constructeurs de terminaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fabrication de terminaux</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100630%c2%b7LM%c2%b70q3006_199731" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100630%c2%b7LM%c2%b70q3006_199731">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mercredi 30 juin 2010 550 mots, p. 14</span>
+</div>
+
+    <div>
+        <p>
+CONTRE-ENQUETE ECONOMIE         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Comment Apple et Google se disputent-ils la téléphonie mobile Focus</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Ces groupes dont la suprématie vacille            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Cécile Ducourtieux</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Microsoft, Nokia, dans une moindre mesure Intel : ces trois groupes, leaders sur leur marché, voient leur suprématie de plus en plus menacée. Par Google, par Apple, par la révolution de l'Internet mobile, plus généralement. </p> <p> Nokia Le groupe finlandais disposait il y a encore deux ans sur les téléphones mobiles d'une large part de marché : 40 %. Et ce, y compris sur le créneau des smartphones, ces machines aussi puissantes que des mini-ordinateurs, capables de se connecter à Internet. Mais l'arrivée de l'iPhone d'Apple, en juin 2007, a ébranlé ce colosse.</p>
+
+
+<p>Le groupe a mis du temps avant de lancer son propre terminal à écran tactile. Il a multiplié les lancements de services mobiles : un portail (Ovi), une offre de contenu musical (musicMe), de jeux en ligne... Sans succès. Aujourd'hui, le groupe, qui vend encore plus d'un million de téléphones par jour, a perdu son leadership technologique et risque de se retrouver cantonné dans la fabrication de terminaux bas de gamme. Une situation redoutable, car ses marges financières seraient laminées et la marque s'exposerait encore davantage aux risques de contrefaçon. </p> <p> Microsoft L'américain, premier éditeur mondial de logiciels, équipe encore neuf ordinateurs sur dix dans le monde, avec des systèmes d'exploitation (la gamme Windows) et des logiciels de bureautique (la suite Office). Mais des acteurs venus de l'Internet, au premier rang desquels Google, ou des partisans des <mark>logiciels</mark> <mark>libres</mark>, qu'il est possible de modifier et d'utiliser à sa guise, l'attaquent frontalement sur les écrans de PC, avec des produits plus basiques mais gratuits (le système d'exploitation Chrome OS et les logiciels Google Docs). </p> <p> Par ailleurs, son système d'exploitation pour téléphone mobile ne parvient pas à s'imposer. Sa part de marché dans la téléphonie haut de gamme a même chuté, passant, en un an, de 10,2 % à 6,8 % au premier trimestre 2010, selon le cabinet Gartner. Beaucoup critiquent un logiciel littéralement inspiré de Windows, pas optimisé pour le mobile, moins ergonomique que celui de l'iPhone. Les « windows phones » continuent d'avoir du succès auprès des professionnels, qui y retrouvent leur « environnement » de travail, mais moins auprès du grand public. </p> <p> Intel Le groupe américain, premier fabricant mondial de microprocesseurs, est également un des leaders de la « plate-forme PC » : environ huit machines sur dix sont équipées d'une de ses puces. « Dans le monde du PC, il existe une grande standardisation des différents modules qui composent la machine : le processeur, le système d'exploitation, etc. Une entreprise peut produire un composant, une deuxième un autre, une troisième les assembler. La structure du marché du mobile n'a rien à voir. Tout est beaucoup plus intégré », explique Sébastien Rospide, consultant pour le cabinet spécialisé Décision. </p> <p> Des sociétés comme Samsung et même Apple conçoivent ou même produisent tout en interne (le matériel, les logiciels, la puce, etc.). L'américain Qualcomm propose aux fabricants de téléphones des modules très spécifiques, alliant la capacité à connecter le téléphone aux réseaux mobiles et celle de faire tourner des applications informatiques. Intel reste un nouveau venu sur ce secteur. </p> <p> Mais ces trois groupes conservent des capacités humaines et financières considérables : des centaines d'ingénieurs en recherche et développement ou des dizaines de milliards de dollars rapidement mobilisables, dans le cas d'Intel ou de Microsoft. Ils n'ont pas le choix, car c'est le coeur de leurs métiers qui est menacé. Intel met l'accent sur les économies d'énergie pour concevoir des semi-conducteurs aussi puissants, mais moins gourmands pour répondre à une des contraintes majeures des téléphones : l'autonomie. </p> <p> Microsoft a annoncé, pour cet automne, la disponibilité de son nouveau système d'exploitation pour téléphones mobiles, « Windows Mobile Seven ». Ses ingénieurs ont choisi de miser sur les réseaux sociaux : le logiciel propose un téléphone où l'on « surfe » d'une application à une autre via ses différents contacts (d'un profil Facebook à un compte Flickr en passant par un fil Twitter...). Une proposition originale, qui permettrait aux constructeurs de terminaux de se distinguer de l'iPhone. </p> <p> Quant à Nokia, ses dirigeants ont annoncé un partenariat avec Intel pour concevoir des systèmes d'exploitation (« MeeGo »), pour tablettes numériques. Peut-être choisiront-ils de franchir le Rubicon, en abandonnant leur système d'exploitation maison dédié aux téléphones, Symbian, pour Android, celui de Google, aujourd'hui le chouchou des développeurs indépendants (avec l'iPhone) ? Ce serait le moyen de redonner du fringant à leurs terminaux.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2010 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20100630·LM·0q3006_199731</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20100630·LM·0q3006_199731";
+    var _docIndex = 383;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20100630·LM·0q3006_199731';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720100630%C2%B7LM%C2%B70q3006_199731&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720100630%C2%B7LM%C2%B70q3006_199731&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720100630%C2%B7LM%C2%B70q3006_199731&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720100630%C2%B7LM%C2%B70q3006_199731&docIndex=383&FullScreen=1";
+                
+	var _keyDoc = 'news·20100630·LM·0q3006_199731';
+</script>
+</div></body></html>

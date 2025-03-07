@@ -1,0 +1,437 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+MULTIMEDIA,         vendredi 13 mars 1998 418 mots, p. II&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Une alternative &#224; l&#39;&#233;conomie de march&#233;. Quatre questions pour comprendre l&#39;esprit collectiviste du &lt;mark&gt; logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt;.            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est-il gratuit? &lt;/p&gt; &lt;p&gt; Un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; n&#39;est pas forc&#233;ment gratuit. L&#39;ambigu&#239;t&#233; provient de l&#39;expression d&#39;origine, &lt;mark&gt;free&lt;/mark&gt; &lt;mark&gt;software&lt;/mark&gt;, puisqu&#39;en am&#233;ricain &lt;mark&gt;free&lt;/mark&gt; signifie aussi bien libre que gratuit. Selon la d&#233;finition de la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt;, un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; r&#233;pond &#224; trois crit&#232;res. Tout d&#39;abord, la libert&#233; pour chacun d&#39;&#233;tudier comment le programme fonctionne, et de l&#39;adapter &#224; ses propres besoins. Deuzio, la libert&#233; de le copier et de le diffuser aupr&#232;s d&#39;amis ou de coll&#232;gues, ce qui est strictement interdit avec des logiciels classiques du commerce. Et enfin, la libert&#233; d&#39;am&#233;liorer soi-m&#234;me le logiciel pour en faire profiter la communaut&#233;. Dans la pratique, nombre de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; se trouvent gratuitement sur certains sites web. Des versions payantes sont commercialis&#233;es par des entreprises, avec notice compl&#232;te, maintenance et CD-Rom. La soci&#233;t&#233; RedHat distribue ainsi une version de Linux. &lt;/p&gt; &lt;p&gt; Qu&#39;est-ce qui diff&#233;rencie un logiciel commercial d&#39;un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;? &lt;/p&gt; &lt;p&gt; L&#39;immense majorit&#233; des logiciels vendus dans le commerce par les &#233;diteurs, comme Microsoft, sont distribu&#233;s en version &quot;ex&#233;cutable&quot;, alors que les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; sont fournis avec leur &quot;code source&quot;. Source, ex&#233;cutable? Un petit d&#233;tour par une analogie musicale permet d&#39;&#233;clairer ces termes. On peut consid&#233;rer le code source d&#39;un logiciel comme la partition de celui-ci, et le code ex&#233;cutable comme sa version enregistr&#233;e. Une partition peut &#234;tre jou&#233;e sur un piano, une fl&#251;te ou par l&#39;orchestre philharmonique de Berlin. Mais si la m&#234;me partition est press&#233;e sur un disque apr&#232;s un concert de harpe, l&#39;acheteur ne peut rien modifier, et ne pourra pas jouer le morceau &#224; la guimbarde ou moduler l&#39;interpr&#233;tation. Le passage de l&#39;une &#224; l&#39;autre version s&#39;op&#232;re gr&#226;ce &#224; une &quot;compilation&quot;, qui traduit le code source (des lignes &#233;crites en usant de langages de programmation ma&#238;tris&#233;s par les informaticiens) en code ex&#233;cutable (uniquement compr&#233;hensible par l&#39;ordinateur). Avant d&#39;&#234;tre vendue dans le commerce, une version d&#39;un logiciel en code source est construite patiemment par les programmeurs d&#39;une entreprise. Les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; sont livr&#233;s sous cette forme, tandis que Microsoft ou Lotus vendent le seul code &quot;ex&#233;cutable&quot;, le reste &#233;tant consid&#233;r&#233; comme secret industriel et cuisine interne.&lt;/p&gt;
+
+
+&lt;p&gt;Qui cr&#233;e des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;? &lt;/p&gt; &lt;p&gt; Tous les informaticiens de bonne volont&#233; d&#233;sireux de participer &#224; ce collectivisme high tech. Certaines associations, comme la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt; (FSF), dirig&#233;e par &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;, oeuvrent pour le d&#233;veloppement et la promotion du &lt;mark&gt;free&lt;/mark&gt; &lt;mark&gt;software&lt;/mark&gt;. Le projet GNU (dont le logo est, bien s&#251;r, un gnou) de la FSF est ainsi &#224; l&#39;origine de Linux (dont le logo est un pingouin). &lt;/p&gt; &lt;p&gt; Autre initiative de la fondation de &lt;mark&gt;Stallman&lt;/mark&gt;: une licence adapt&#233;e &#224; ce mod&#232;le, la GPL (General Public License), qui stipule que les programmes libres sont la propri&#233;t&#233; de leurs auteurs et qu&#39;ils doivent &#234;tre distribu&#233;s sous forme de code source. Avec cette licence, quiconque peut faire commerce d&#39;un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, m&#234;me avec des modifications de son cru, mais il n&#39;a jamais le droit de le &quot;verrouiller&quot; &#224; son seul profit. La GPL garantit ainsi que les programmes restent toujours librement disponibles, assurant la p&#233;rennit&#233; du syst&#232;me. &lt;/p&gt; &lt;p&gt; O&#249; trouver des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;? &lt;/p&gt; &lt;p&gt; Deux sites int&#233;ressants: &lt;/p&gt; &lt;p&gt; Linux Center &lt;/p&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://www.math.jussieu.fr/~fermigie/linux-cen2&quot;&gt;&lt;p&gt; www.math.jussieu.fr/~fermigie/linux-cen2 &lt;/p&gt;&lt;/a&gt; &lt;p&gt;&lt;mark&gt; Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt; &lt;/p&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://www.fsf.org&quot;&gt;&lt;p&gt; www.fsf.org&lt;/p&gt;&lt;/a&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 1998 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;19980313&amp;#183;LI&amp;#183;111043&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b719980313%c2%b7LI%c2%b7111043" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b719980313%c2%b7LI%c2%b7111043">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+MULTIMEDIA,         vendredi 13 mars 1998 418 mots, p. II</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Une alternative à l'économie de marché. Quatre questions pour comprendre l'esprit collectiviste du <mark> logiciel</mark> <mark> libre</mark>.            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Un <mark>logiciel</mark> <mark>libre</mark> est-il gratuit? </p> <p> Un <mark>logiciel</mark> <mark>libre</mark> n'est pas forcément gratuit. L'ambiguïté provient de l'expression d'origine, <mark>free</mark> <mark>software</mark>, puisqu'en américain <mark>free</mark> signifie aussi bien libre que gratuit. Selon la définition de la <mark>Free</mark> <mark>Software</mark> <mark>Foundation</mark>, un <mark>logiciel</mark> <mark>libre</mark> répond à trois critères. Tout d'abord, la liberté pour chacun d'étudier comment le programme fonctionne, et de l'adapter à ses propres besoins. Deuzio, la liberté de le copier et de le diffuser auprès d'amis ou de collègues, ce qui est strictement interdit avec des logiciels classiques du commerce. Et enfin, la liberté d'améliorer soi-même le logiciel pour en faire profiter la communauté. Dans la pratique, nombre de <mark>logiciels</mark> <mark>libres</mark> se trouvent gratuitement sur certains sites web. Des versions payantes sont commercialisées par des entreprises, avec notice complète, maintenance et CD-Rom. La société RedHat distribue ainsi une version de Linux. </p> <p> Qu'est-ce qui différencie un logiciel commercial d'un <mark>logiciel</mark> <mark>libre</mark>? </p> <p> L'immense majorité des logiciels vendus dans le commerce par les éditeurs, comme Microsoft, sont distribués en version "exécutable", alors que les <mark>logiciels</mark> <mark>libres</mark> sont fournis avec leur "code source". Source, exécutable? Un petit détour par une analogie musicale permet d'éclairer ces termes. On peut considérer le code source d'un logiciel comme la partition de celui-ci, et le code exécutable comme sa version enregistrée. Une partition peut être jouée sur un piano, une flûte ou par l'orchestre philharmonique de Berlin. Mais si la même partition est pressée sur un disque après un concert de harpe, l'acheteur ne peut rien modifier, et ne pourra pas jouer le morceau à la guimbarde ou moduler l'interprétation. Le passage de l'une à l'autre version s'opère grâce à une "compilation", qui traduit le code source (des lignes écrites en usant de langages de programmation maîtrisés par les informaticiens) en code exécutable (uniquement compréhensible par l'ordinateur). Avant d'être vendue dans le commerce, une version d'un logiciel en code source est construite patiemment par les programmeurs d'une entreprise. Les <mark>logiciels</mark> <mark>libres</mark> sont livrés sous cette forme, tandis que Microsoft ou Lotus vendent le seul code "exécutable", le reste étant considéré comme secret industriel et cuisine interne.</p>
+
+
+<p>Qui crée des <mark>logiciels</mark> <mark>libres</mark>? </p> <p> Tous les informaticiens de bonne volonté désireux de participer à ce collectivisme high tech. Certaines associations, comme la <mark>Free</mark> <mark>Software</mark> <mark>Foundation</mark> (FSF), dirigée par <mark>Richard</mark> <mark>Stallman</mark>, oeuvrent pour le développement et la promotion du <mark>free</mark> <mark>software</mark>. Le projet GNU (dont le logo est, bien sûr, un gnou) de la FSF est ainsi à l'origine de Linux (dont le logo est un pingouin). </p> <p> Autre initiative de la fondation de <mark>Stallman</mark>: une licence adaptée à ce modèle, la GPL (General Public License), qui stipule que les programmes libres sont la propriété de leurs auteurs et qu'ils doivent être distribués sous forme de code source. Avec cette licence, quiconque peut faire commerce d'un <mark>logiciel</mark> <mark>libre</mark>, même avec des modifications de son cru, mais il n'a jamais le droit de le "verrouiller" à son seul profit. La GPL garantit ainsi que les programmes restent toujours librement disponibles, assurant la pérennité du système. </p> <p> Où trouver des <mark>logiciels</mark> <mark>libres</mark>? </p> <p> Deux sites intéressants: </p> <p> Linux Center </p> <a target="_blank" href="https://www.math.jussieu.fr/~fermigie/linux-cen2"><p> www.math.jussieu.fr/~fermigie/linux-cen2 </p></a> <p><mark> Free</mark> <mark>Software</mark> <mark>Foundation</mark> </p> <a target="_blank" href="https://www.fsf.org"><p> www.fsf.org</p></a>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 1998 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·19980313·LI·111043</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·19980313·LI·111043";
+    var _docIndex = 696;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·19980313·LI·111043';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B719980313%C2%B7LI%C2%B7111043&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B719980313%C2%B7LI%C2%B7111043&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B719980313%C2%B7LI%C2%B7111043&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B719980313%C2%B7LI%C2%B7111043&docIndex=696&FullScreen=1";
+                
+	var _keyDoc = 'news·19980313·LI·111043';
+</script>
+</div></body></html>

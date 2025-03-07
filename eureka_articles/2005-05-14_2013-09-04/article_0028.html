@@ -1,0 +1,501 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Informatique Octas 2013,         jeudi 30 mai 2013 377 mots, p. B7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Laur&#233;ats 2013 - &#192; eux les Octas            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Le Devoir&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Ils sont 24 &#224; recevoir cette ann&#233;e un Octas. Et il y a souvent plus d&#39;un gagnant pour une seule cat&#233;gorie, car subdivision est faite pour tenir compte de la taille de l&#39;entreprise ou encore, pour les &#233;tudiants, du niveau d&#39;&#233;tudes atteint au moment de la r&#233;alisation. D&#39;ailleurs, c&#39;est l&#39;un de ceux-l&#224;, Beno&#238;t Duinat, de l&#39;Universit&#233; Laval, qui a vu son projet, Application mobile de simulation, d&#233;di&#233;e aux infrastructures souterraines, &#234;tre doublement remarqu&#233;, car on lui a attribu&#233; le Coup de coeur du jury. Des affaires &#233;lectroniques &#224; la transformation des processus organisationnels, les voil&#224; nomm&#233;s, avec le titre du projet qui leur a permis de recevoir cette ann&#233;e un Octas, lors du gala tenu samedi dernier au Palais des congr&#232;s de Montr&#233;al. &lt;/p&gt; &lt;p&gt; Affaires &#233;lectroniques &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; des alcools du Qu&#233;bec &lt;/p&gt; &lt;p&gt; Refonte de SAQ.com&lt;/p&gt;
+
+
+&lt;p&gt;Environnement d&#39;apprentissage &lt;/p&gt; &lt;p&gt; Modappi &lt;/p&gt; &lt;p&gt; Module d&#39;apprentissage interactif et cours cl&#233; en main &lt;/p&gt; &lt;p&gt; D&#233;partement des sciences g&#233;omatiques de l&#39;Universit&#233; Laval, en collaboration avec le Centre de transfert coll&#233;gial en imagerie multim&#233;dia et m&#233;dias interactifs du C&#233;gep de Sainte-Foy &lt;/p&gt; &lt;p&gt; Parall&#232;le: un outil &#233;ducatif bas&#233; sur la r&#233;alit&#233; augment&#233;e &lt;/p&gt; &lt;p&gt; Environnement Web de collaboration ou de participation &lt;/p&gt; &lt;p&gt; CBC/Radio-Canada, en collaboration avec ONIX &lt;/p&gt; &lt;p&gt; CBC/Radio-Canada prend le virage Google &lt;/p&gt; &lt;p&gt; Infrastructure &lt;/p&gt; &lt;p&gt; La Capitale groupe financier &lt;/p&gt; &lt;p&gt; D&#233;m&#233;nagement et consolidation de l&#39;infrastructure technologique &lt;/p&gt; &lt;p&gt; TELUS &lt;/p&gt; &lt;p&gt; Centre de donn&#233;es Internet intelligent de Rimouski &lt;/p&gt; &lt;p&gt; Innovation &lt;/p&gt; &lt;p&gt; Arcane Technologies &lt;/p&gt; &lt;p&gt; Vortex : la fen&#234;tre virtuelle &lt;/p&gt; &lt;p&gt; HEC Montr&#233;al &lt;/p&gt; &lt;p&gt; Tech3Lab &lt;/p&gt; &lt;p&gt; Intelligence d&#39;affaires &lt;/p&gt; &lt;p&gt; Soci&#233;t&#233; des alcools du Qu&#233;bec &lt;/p&gt; &lt;p&gt; Tableau de bord int&#233;gr&#233; des indicateurs de performances strat&#233;giques &lt;/p&gt; &lt;p&gt; Jeux et divertissement &lt;/p&gt; &lt;p&gt; BioWare Montr&#233;al, en collaboration avec BioWare Edmonton &lt;/p&gt; &lt;p&gt; Mass Effect 3 &lt;/p&gt; &lt;p&gt; Le fran&#231;ais dans les technologies de l&#39;information &lt;/p&gt; &lt;p&gt; Bombardier A&#233;ronautique &lt;/p&gt; &lt;p&gt; Mise en place du nouveau syst&#232;me d&#39;exploitation de la production pour le programme d&#39;avion CSeries &lt;/p&gt; &lt;p&gt; Les TI au service de la soci&#233;t&#233; &lt;/p&gt; &lt;p&gt; Centre de r&#233;adaptation Lucie-Bruneau, en collaboration avec G&#233;n&#233;ration Multim&#233;dia &lt;/p&gt; &lt;p&gt; R&#233;pertoires de lieux de sant&#233;, de loisirs et de sports accessibles du CRLB Virtuel &lt;/p&gt; &lt;p&gt; Les TI dans les secteurs culturel, &#233;ducatif ou m&#233;diatique &lt;/p&gt; &lt;p&gt; SAGA en collaboration avec LIB&#201;O &lt;/p&gt; &lt;p&gt; 6millionsdemorts.com &lt;/p&gt; &lt;p&gt; Prix jeunesse en TI &lt;/p&gt; &lt;p&gt; Pierre Clapperton Richard et Francis-Olivier Couture, du S&#233;minaire de Chicoutimi &lt;/p&gt; &lt;p&gt; EffiClasse - l&#39;&#233;cole du futur &lt;/p&gt; &lt;p&gt; Rel&#232;ve &#233;tudiante &lt;/p&gt; &lt;p&gt; &#201;tienne Landry, du C&#233;gep de Sainte-Foy, en collaboration avec COOPSCO Sainte-Foy &lt;/p&gt; &lt;p&gt; SIGECO : Syst&#232;me de gestion des horaires et de la communication &lt;/p&gt; &lt;p&gt; Beno&#238;t Duinat, de l&#39;Universit&#233; Laval &lt;/p&gt; &lt;p&gt; Application mobile de simulation, d&#233;di&#233;e aux infrastructures souterraines &lt;/p&gt; &lt;p&gt; Jean-Ambroise Vesac, de l&#39;Universit&#233; Laval, en collaboration avec l&#39;&#201;cole de design de l&#39;Universit&#233; Laval &lt;/p&gt; &lt;p&gt; Migration num&#233;rique &lt;/p&gt; &lt;p&gt; R&#233;ussite commerciale &lt;/p&gt; &lt;p&gt; InnVue &lt;/p&gt; &lt;p&gt; Solution ODYSS&#201;E &lt;/p&gt; &lt;p&gt; Solution d&#39;affaires &lt;/p&gt; &lt;p&gt; Axon Int&#233;gration et D&#233;veloppement &lt;/p&gt; &lt;p&gt; xTester : l&#39;orchestrateur multiplateforme de tests automatis&#233;s &lt;/p&gt; &lt;p&gt; &#201;cole de technologie sup&#233;rieure &lt;/p&gt; &lt;p&gt; eBourses : pour une gestion optimale du programme de bourses d&#39;&#233;tudes &lt;/p&gt; &lt;p&gt; Solution d&#39;affaires - &lt;mark&gt;Logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &lt;/p&gt; &lt;p&gt; Commission des transports du Qu&#233;bec, en collaboration avec CGI &lt;/p&gt; &lt;p&gt; SIM : Syst&#232;me int&#233;gr&#233; de mission &lt;/p&gt; &lt;p&gt; Solution d&#39;affaires - Progiciels &lt;/p&gt; &lt;p&gt; Groupe Promutuel &lt;/p&gt; &lt;p&gt; OGS : Outil de gestion des sinistres Promutuel - Livraison 1 &lt;/p&gt; &lt;p&gt; Solutions mobiles &lt;/p&gt; &lt;p&gt; Stationnement de Montr&#233;al, en collaboration avec TC Media &lt;/p&gt; &lt;p&gt; P$ Service mobile &lt;/p&gt; &lt;p&gt; Transformation des processus organisationnels &lt;/p&gt; &lt;p&gt; Les Offices jeunesse internationaux du Qu&#233;bec, en collaboration avec Denis Bellerose services-conseils &lt;/p&gt; &lt;p&gt; Atlas : harmonisation des processus de travail et implantation &#224; un CRM&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20130530&amp;#183;LE&amp;#183;2013-05-30_379368&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">Solution d'affaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">transformation des processus organisationnels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">infrastructures souterraines</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Société des alcools</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Application mobile</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éducation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Chicoutimi</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montréal</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130530%c2%b7LE%c2%b72013-05-30_379368" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130530%c2%b7LE%c2%b72013-05-30_379368">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Informatique Octas 2013,         jeudi 30 mai 2013 377 mots, p. B7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Lauréats 2013 - À eux les Octas            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Le Devoir</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Ils sont 24 à recevoir cette année un Octas. Et il y a souvent plus d'un gagnant pour une seule catégorie, car subdivision est faite pour tenir compte de la taille de l'entreprise ou encore, pour les étudiants, du niveau d'études atteint au moment de la réalisation. D'ailleurs, c'est l'un de ceux-là, Benoît Duinat, de l'Université Laval, qui a vu son projet, Application mobile de simulation, dédiée aux infrastructures souterraines, être doublement remarqué, car on lui a attribué le Coup de coeur du jury. Des affaires électroniques à la transformation des processus organisationnels, les voilà nommés, avec le titre du projet qui leur a permis de recevoir cette année un Octas, lors du gala tenu samedi dernier au Palais des congrès de Montréal. </p> <p> Affaires électroniques </p> <p> Société des alcools du Québec </p> <p> Refonte de SAQ.com</p>
+
+
+<p>Environnement d'apprentissage </p> <p> Modappi </p> <p> Module d'apprentissage interactif et cours clé en main </p> <p> Département des sciences géomatiques de l'Université Laval, en collaboration avec le Centre de transfert collégial en imagerie multimédia et médias interactifs du Cégep de Sainte-Foy </p> <p> Parallèle: un outil éducatif basé sur la réalité augmentée </p> <p> Environnement Web de collaboration ou de participation </p> <p> CBC/Radio-Canada, en collaboration avec ONIX </p> <p> CBC/Radio-Canada prend le virage Google </p> <p> Infrastructure </p> <p> La Capitale groupe financier </p> <p> Déménagement et consolidation de l'infrastructure technologique </p> <p> TELUS </p> <p> Centre de données Internet intelligent de Rimouski </p> <p> Innovation </p> <p> Arcane Technologies </p> <p> Vortex : la fenêtre virtuelle </p> <p> HEC Montréal </p> <p> Tech3Lab </p> <p> Intelligence d'affaires </p> <p> Société des alcools du Québec </p> <p> Tableau de bord intégré des indicateurs de performances stratégiques </p> <p> Jeux et divertissement </p> <p> BioWare Montréal, en collaboration avec BioWare Edmonton </p> <p> Mass Effect 3 </p> <p> Le français dans les technologies de l'information </p> <p> Bombardier Aéronautique </p> <p> Mise en place du nouveau système d'exploitation de la production pour le programme d'avion CSeries </p> <p> Les TI au service de la société </p> <p> Centre de réadaptation Lucie-Bruneau, en collaboration avec Génération Multimédia </p> <p> Répertoires de lieux de santé, de loisirs et de sports accessibles du CRLB Virtuel </p> <p> Les TI dans les secteurs culturel, éducatif ou médiatique </p> <p> SAGA en collaboration avec LIBÉO </p> <p> 6millionsdemorts.com </p> <p> Prix jeunesse en TI </p> <p> Pierre Clapperton Richard et Francis-Olivier Couture, du Séminaire de Chicoutimi </p> <p> EffiClasse - l'école du futur </p> <p> Relève étudiante </p> <p> Étienne Landry, du Cégep de Sainte-Foy, en collaboration avec COOPSCO Sainte-Foy </p> <p> SIGECO : Système de gestion des horaires et de la communication </p> <p> Benoît Duinat, de l'Université Laval </p> <p> Application mobile de simulation, dédiée aux infrastructures souterraines </p> <p> Jean-Ambroise Vesac, de l'Université Laval, en collaboration avec l'École de design de l'Université Laval </p> <p> Migration numérique </p> <p> Réussite commerciale </p> <p> InnVue </p> <p> Solution ODYSSÉE </p> <p> Solution d'affaires </p> <p> Axon Intégration et Développement </p> <p> xTester : l'orchestrateur multiplateforme de tests automatisés </p> <p> École de technologie supérieure </p> <p> eBourses : pour une gestion optimale du programme de bourses d'études </p> <p> Solution d'affaires - <mark>Logiciels</mark> <mark>libres</mark> </p> <p> Commission des transports du Québec, en collaboration avec CGI </p> <p> SIM : Système intégré de mission </p> <p> Solution d'affaires - Progiciels </p> <p> Groupe Promutuel </p> <p> OGS : Outil de gestion des sinistres Promutuel - Livraison 1 </p> <p> Solutions mobiles </p> <p> Stationnement de Montréal, en collaboration avec TC Media </p> <p> P$ Service mobile </p> <p> Transformation des processus organisationnels </p> <p> Les Offices jeunesse internationaux du Québec, en collaboration avec Denis Bellerose services-conseils </p> <p> Atlas : harmonisation des processus de travail et implantation à un CRM</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20130530·LE·2013-05-30_379368</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20130530·LE·2013-05-30_379368";
+    var _docIndex = 27;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20130530·LE·2013-05-30_379368';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720130530%C2%B7LE%C2%B72013-05-30_379368&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720130530%C2%B7LE%C2%B72013-05-30_379368&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720130530%C2%B7LE%C2%B72013-05-30_379368&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720130530%C2%B7LE%C2%B72013-05-30_379368&docIndex=27&FullScreen=1";
+                
+	var _keyDoc = 'news·20130530·LE·2013-05-30_379368';
+</script>
+</div></body></html>

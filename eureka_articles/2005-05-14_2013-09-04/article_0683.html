@@ -1,0 +1,523 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_em_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 19568                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro Entreprises &amp; emplois,         lundi 2 juillet 2007 440 mots, p. ENT9, ENT8&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Blog r&#233;ussir sur &lt;a target=&quot;_blank&quot; href=&quot;https://www.lefigaro.fr&quot;&gt; www.lefigaro.fr&lt;/a&gt;         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Vos courriels            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&#171; Certes, je fais partie des privil&#233;gi&#233;s qui, gr&#226;ce &#224; leur BlackBerry, peuvent travailler quand ils le veulent en dehors de leur bureau et &#234;tre constamment joignable. Je me suis cependant rapidement rendu compte que c&#39;&#233;tait devenu une v&#233;ritable obsession, et que je passais mon temps &#224; consulter mes mails. J&#39;ai ensuite eu le sentiment de ne jamais pouvoir arriver &#224; d&#233;crocher de mon job, comme si j&#39;&#233;tais en permanence reli&#233; &#224; mon entreprise. Au bout du compte, ce que je croyais au d&#233;part &#234;tre un formidable nouvel outil de libert&#233; s&#39;av&#232;re en fait pour moi un v&#233;ritable outil d&#39;ali&#233;nation. &#187; GEORGES&lt;/p&gt;
+
+
+
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+    &lt;div class=&quot;rdp__newsdoc&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Encadr&amp;#233;(s) : &lt;/b&gt;&lt;/p&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; Personne ne semble aborder le probl&#232;me du taux de couverture de la France. Apparemment, si l&#39;on n&#39;aime pas les connexions qui ont la lenteur des tortues et &#224; moins de passer sa vie dans les capitales et sur les autoroutes, il vaut mieux &#233;viter les BlackBerry. &#187; JACKY&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; Totalement pour ! C&#39;est un outil formidable qui permet de travailler m&#234;me lorsque l&#39;on n&#39;est plus au bureau, et surtout d&#39;&#234;tre toujours joignable. La rapidit&#233; et la facilit&#233; d&#39;utilisation des e-mails sont impressionnantes, et, une fois que l&#39;on y a go&#251;t&#233;, on ne peut plus s&#39;en passer. Il faut bien &#233;videmment savoir aussi l&#39;&#233;teindre ou l&#39;utiliser avec discr&#233;tion lorsque le moment est inappropri&#233; ou que l&#39;on est en vacances, afin de profiter de sa famille. Comme toujours, tout est une question d&#39;&#233;quilibre ! &#187; CLAIRE&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; Innovation adopt&#233;e sans conscience ne serait que ruine de l&#39;&#226;me... Ou, plus imm&#233;diatement, la fin de la conversation entre coll&#232;gues et la rar&#233;faction des &#233;changes familiaux ou amicaux par l&#39;omni-interm&#233;diation du PDA. &#192; c&#244;t&#233; de cela, combien d&#39;heures dans les transports gagn&#233;es &#224; lire la masse d&#39;e-mails quotidiens, voire de nouvelles formes de proximit&#233; &#224; longue distance et de red&#233;couverte de l&#39;&#233;crit dans l&#39;&#233;change ! Tout est question de savoir-vivre, d&#39;&#233;ducation et de valeurs. Il faut ma&#238;triser ce nouvel outil comme, en son temps, le t&#233;l&#233;phone portable. &#187; FERNAND&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; Mon BlackBerry est devenu mon meilleur ami. &#192; tel point que je ne peux m&#39;emp&#234;cher de consulter mes mails en r&#233;union ou m&#234;me quand je discute avec mes coll&#232;gues, ce qui a le don de les irriter. J&#39;utilise aussi beaucoup le seul jeu dont je dispose sur mon BB, le Brickbreaker. J&#39;ai aussi ins&#233;r&#233; une carte m&#233;moire de 2 Go, qui me permet de stocker une centaine de photos et autant de chansons. &#187; JEFF, CHEF DE SECTEUR, BORDEAUX&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; C&#39;est un formidable outil pour moi qui voyage beaucoup. Il fonctionne aussi bien en France, qu&#39;en Chine ou en Australie o&#249; je re&#231;ois et r&#233;ponds &#224; mes mails comme si j&#39;&#233;tais au bureau. &#187; GONZAGUE, CADRE FINANCIER&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; Je travaille dans une filiale d&#39;une grande banque, et je constate de plus en plus souvent au cours des r&#233;unions que les collaborateurs sont plus int&#233;ress&#233;s par ce qui se passe sur le BlackBerry que par ce que dit l&#39;orateur. Je trouve cela vraiment irrespectueux.  &lt;/p&gt; &lt;p&gt; De plus, qu&#39;apporte r&#233;ellement cet objet ? J&#39;y ai r&#233;fl&#233;chi simplement : combien de messages m&#39;envoie-t-on dans l&#39;ann&#233;e qui n&#233;cessitent une r&#233;ponse absolument instantan&#233;e ? Z&#233;ro ou presque.  &lt;/p&gt; &lt;p&gt; Cela pose aussi la question de l&#39;importance qu&#39;on a, ou qu&#39;on croit avoir, sur son environnement professionnel. &#192; mon niveau, je ne veux pas l&#39;exag&#233;rer. &#187; MICHEL&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;&#171; BlackBerry ou un autre PDA, peu importe. Il y a des fonctionnalit&#233;s clairement pratiques, surtout pour les d&#233;cideurs devant syst&#233;matiquement avoir les informations les plus r&#233;centes sous la main. Maintenant, le probl&#232;me pour moi, c&#39;est l&#39;utilisation d&#39;un syst&#232;me ferm&#233;, propri&#233;taire (et non &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;). Le fournisseur du service est-il un tiers digne de confiance ? Archive-t-il nos donn&#233;es &#224; notre insu ? Les donn&#233;es sont-elles sauvegard&#233;es ? Et l&#224;, il y a de la marge de manoeuvre. &#187; ALICE&lt;/p&gt; &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2007 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20070702&amp;#183;LF&amp;#183;20070630&amp;#215;2fig000000994&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">outil d'aliénation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">outil de liberté</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bout du compte</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éducation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720070702%c2%b7LF%c2%b720070630%c3%972fig000000994" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720070702%c2%b7LF%c2%b720070630%c3%972fig000000994">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_em_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 19568                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Entreprises &amp; emplois,         lundi 2 juillet 2007 440 mots, p. ENT9, ENT8</span>
+</div>
+
+    <div>
+        <p>
+Blog réussir sur <a target="_blank" href="https://www.lefigaro.fr"> www.lefigaro.fr</a>         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Vos courriels            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>« Certes, je fais partie des privilégiés qui, grâce à leur BlackBerry, peuvent travailler quand ils le veulent en dehors de leur bureau et être constamment joignable. Je me suis cependant rapidement rendu compte que c'était devenu une véritable obsession, et que je passais mon temps à consulter mes mails. J'ai ensuite eu le sentiment de ne jamais pouvoir arriver à décrocher de mon job, comme si j'étais en permanence relié à mon entreprise. Au bout du compte, ce que je croyais au départ être un formidable nouvel outil de liberté s'avère en fait pour moi un véritable outil d'aliénation. » GEORGES</p>
+
+
+
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+    <div class="rdp__newsdoc">
+        <p><b>Encadré(s) : </b></p>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« Personne ne semble aborder le problème du taux de couverture de la France. Apparemment, si l'on n'aime pas les connexions qui ont la lenteur des tortues et à moins de passer sa vie dans les capitales et sur les autoroutes, il vaut mieux éviter les BlackBerry. » JACKY</p> </div>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« Totalement pour ! C'est un outil formidable qui permet de travailler même lorsque l'on n'est plus au bureau, et surtout d'être toujours joignable. La rapidité et la facilité d'utilisation des e-mails sont impressionnantes, et, une fois que l'on y a goûté, on ne peut plus s'en passer. Il faut bien évidemment savoir aussi l'éteindre ou l'utiliser avec discrétion lorsque le moment est inapproprié ou que l'on est en vacances, afin de profiter de sa famille. Comme toujours, tout est une question d'équilibre ! » CLAIRE</p> </div>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« Innovation adoptée sans conscience ne serait que ruine de l'âme... Ou, plus immédiatement, la fin de la conversation entre collègues et la raréfaction des échanges familiaux ou amicaux par l'omni-intermédiation du PDA. À côté de cela, combien d'heures dans les transports gagnées à lire la masse d'e-mails quotidiens, voire de nouvelles formes de proximité à longue distance et de redécouverte de l'écrit dans l'échange ! Tout est question de savoir-vivre, d'éducation et de valeurs. Il faut maîtriser ce nouvel outil comme, en son temps, le téléphone portable. » FERNAND</p> </div>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« Mon BlackBerry est devenu mon meilleur ami. À tel point que je ne peux m'empêcher de consulter mes mails en réunion ou même quand je discute avec mes collègues, ce qui a le don de les irriter. J'utilise aussi beaucoup le seul jeu dont je dispose sur mon BB, le Brickbreaker. J'ai aussi inséré une carte mémoire de 2 Go, qui me permet de stocker une centaine de photos et autant de chansons. » JEFF, CHEF DE SECTEUR, BORDEAUX</p> </div>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« C'est un formidable outil pour moi qui voyage beaucoup. Il fonctionne aussi bien en France, qu'en Chine ou en Australie où je reçois et réponds à mes mails comme si j'étais au bureau. » GONZAGUE, CADRE FINANCIER</p> </div>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« Je travaille dans une filiale d'une grande banque, et je constate de plus en plus souvent au cours des réunions que les collaborateurs sont plus intéressés par ce qui se passe sur le BlackBerry que par ce que dit l'orateur. Je trouve cela vraiment irrespectueux.  </p> <p> De plus, qu'apporte réellement cet objet ? J'y ai réfléchi simplement : combien de messages m'envoie-t-on dans l'année qui nécessitent une réponse absolument instantanée ? Zéro ou presque.  </p> <p> Cela pose aussi la question de l'importance qu'on a, ou qu'on croit avoir, sur son environnement professionnel. À mon niveau, je ne veux pas l'exagérer. » MICHEL</p> </div>
+            <div><b></b></div>
+            <div></div>
+            <div><p>« BlackBerry ou un autre PDA, peu importe. Il y a des fonctionnalités clairement pratiques, surtout pour les décideurs devant systématiquement avoir les informations les plus récentes sous la main. Maintenant, le problème pour moi, c'est l'utilisation d'un système fermé, propriétaire (et non <mark>open</mark> <mark>source</mark>). Le fournisseur du service est-il un tiers digne de confiance ? Archive-t-il nos données à notre insu ? Les données sont-elles sauvegardées ? Et là, il y a de la marge de manoeuvre. » ALICE</p> </div>
+    </div>
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2007 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20070702·LF·20070630×2fig000000994</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20070702·LF·20070630×2fig000000994";
+    var _docIndex = 682;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20070702·LF·20070630×2fig000000994';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720070702%C2%B7LF%C2%B720070630%C3%972fig000000994&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720070702%C2%B7LF%C2%B720070630%C3%972fig000000994&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720070702%C2%B7LF%C2%B720070630%C3%972fig000000994&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720070702%C2%B7LF%C2%B720070630%C3%972fig000000994&docIndex=682&FullScreen=1";
+                
+	var _keyDoc = 'news·20070702·LF·20070630×2fig000000994';
+</script>
+</div></body></html>

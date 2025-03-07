@@ -1,0 +1,437 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mercredi 21 mai 2003 367 mots, p. 21&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Rep&#232;res            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Alstom alourdit son plan de suppressions d&#39;emplois &lt;/p&gt; &lt;p&gt; LORS de la r&#233;union du comit&#233; de groupe France, lundi 19 mai, la direction d&#39;Alstom a amplifi&#233; son plan de suppressions d&#39;emplois dans la branche &#233;nergie (power). Au lieu des 620 annonc&#233;es, les r&#233;ductions d&#39;effectifs devaient d&#233;passer 1 100, auxquels les syndicats ajoutent les 89 postes du si&#232;ge de Paris, et les 75 de celui de Levallois-Perret (Hauts-de-Seine). Le site de Belfort est le plus affect&#233;, avec 490 suppressions de postes sur 1 163 personnes dans les unit&#233;s de turbines vapeurs et de machines &#233;lectriques (Le Monde du 20 mai). &lt;/p&gt; &lt;p&gt; Parall&#232;lement, 170 postes sont supprim&#233;s dans l&#39;activit&#233; de maintenance, dont les deux tiers &#224; Belfort et le reste &#224; La Courneuve (Seine-Saint-Denis). Sur ce site, 300 postes sont menac&#233;s sur 500 &#224; l&#39;unit&#233; de turbines Rateau. Dans la branche hydraulique, 125 emplois sur 570 sont concern&#233;s &#224; Grenoble (Neyrpic). Outre une action en justice, les syndicats pr&#233;voient une manifestation europ&#233;enne le 5 juin &#224; Paris.&lt;/p&gt;
+
+
+&lt;p&gt;Le groupe d&#39;&#233;quipement allemand a annonc&#233; lundi le rachat de 3,29 % de son propre capital, &#224; IFIC Holding, d&#233;tenue par l&#39;Iran, pour 406 millions d&#39;euros. L&#39;entreprise veut ainsi &#233;viter &#171; des restrictions &#224; l&#39;acc&#232;s au march&#233; am&#233;ricain et des pertes &#233;conomiques s&#233;rieuses dans l&#39;activit&#233; aux Etats-Unis &#187;. La part d&#39;IFIC Holding est ainsi ramen&#233;e sous 5 %. L&#39;Etat iranien a vendu &#224; 24 euros par action alors que le titre cote autour de 10 euros depuis janvier. &lt;/p&gt; &lt;p&gt; Le quatri&#232;me groupe de BTP fran&#231;aisa annonc&#233; lundi avoir propos&#233; &#224; son actionnaire britannique Apec une offre de rachat de 51 % de son capital de la part des 80 cadres dirigeants associ&#233;s &#224; Barclays Private Equity France. Les deux parties se sont donn&#233; jusqu&#39;au 31 juillet pour n&#233;gocier, notamment le prix. &lt;/p&gt; &lt;p&gt; La griffe de luxe va confier ses collections de pr&#234;t-&#224;-porter f&#233;minin au cr&#233;ateur Jean-Paul Gaultier - elle d&#233;tient 35 % de la maison de couture de ce dernier. L&#39;actuel dessinateur de la ligne, Martin Margiela, va se consacrer &#224; sa propre ligne. &lt;/p&gt; &lt;p&gt; Le groupe informatique am&#233;ricain, d&#233;tenteur des droits de la version historique du syst&#232;me d&#39;exploitation Unix, affirme que des parties du code Unix se retrouvent dans les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; Linux. Apr&#232;s avoir r&#233;clam&#233; en justice 1 milliard de dollars (860 000 euros) &#224; IBM en mars, pour avoir d&#233;velopp&#233; Linux, SCO a d&#233;clar&#233; lundi avoir envoy&#233; des lettres &#224; une centaine de grandes entreprises qui ont adopt&#233; le syst&#232;me Linux pour les &#171; avertir du danger juridique &#187;. &lt;/p&gt; &lt;p&gt; Le groupe de distribution britannique a annonc&#233; mardi avoir d&#233;gag&#233; un b&#233;n&#233;fice avant imp&#244;ts et exceptionnel de 721,3 millions de livres (1,012 milliard d&#39;euros) sur l&#39;exercice 2002-2003, en hausse de 11,5 %. &lt;/p&gt; &lt;p&gt; La compagnie a&#233;rienne a annonc&#233; lundi avoir d&#233;gag&#233; un b&#233;n&#233;fice avant imp&#244;t de 135 millions de livres (190 millions d&#39;euros) sur l&#39;exercice 2002-2003, achev&#233; le 31 mars, contre une perte de 200 millions de livres subie lors de l&#39;exercice pr&#233;c&#233;dent. &lt;/p&gt; &lt;p&gt; La pr&#233;sence des constructeurs a&#233;ronautiques am&#233;ricains au salon a&#233;rien du Bourget sera en baisse de 20 % par rapport &#224; l&#39;&#233;dition de 2001. A la suite de la brouille franco-am&#233;ricaine sur l&#39;Irak, l&#39;arm&#233;e am&#233;ricaine sera peu repr&#233;sent&#233;e.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2003 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20030521&amp;#183;LM&amp;#183;0q2105_622808&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030521%c2%b7LM%c2%b70q2105_622808" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030521%c2%b7LM%c2%b70q2105_622808">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mercredi 21 mai 2003 367 mots, p. 21</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Repères            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Alstom alourdit son plan de suppressions d'emplois </p> <p> LORS de la réunion du comité de groupe France, lundi 19 mai, la direction d'Alstom a amplifié son plan de suppressions d'emplois dans la branche énergie (power). Au lieu des 620 annoncées, les réductions d'effectifs devaient dépasser 1 100, auxquels les syndicats ajoutent les 89 postes du siège de Paris, et les 75 de celui de Levallois-Perret (Hauts-de-Seine). Le site de Belfort est le plus affecté, avec 490 suppressions de postes sur 1 163 personnes dans les unités de turbines vapeurs et de machines électriques (Le Monde du 20 mai). </p> <p> Parallèlement, 170 postes sont supprimés dans l'activité de maintenance, dont les deux tiers à Belfort et le reste à La Courneuve (Seine-Saint-Denis). Sur ce site, 300 postes sont menacés sur 500 à l'unité de turbines Rateau. Dans la branche hydraulique, 125 emplois sur 570 sont concernés à Grenoble (Neyrpic). Outre une action en justice, les syndicats prévoient une manifestation européenne le 5 juin à Paris.</p>
+
+
+<p>Le groupe d'équipement allemand a annoncé lundi le rachat de 3,29 % de son propre capital, à IFIC Holding, détenue par l'Iran, pour 406 millions d'euros. L'entreprise veut ainsi éviter « des restrictions à l'accès au marché américain et des pertes économiques sérieuses dans l'activité aux Etats-Unis ». La part d'IFIC Holding est ainsi ramenée sous 5 %. L'Etat iranien a vendu à 24 euros par action alors que le titre cote autour de 10 euros depuis janvier. </p> <p> Le quatrième groupe de BTP françaisa annoncé lundi avoir proposé à son actionnaire britannique Apec une offre de rachat de 51 % de son capital de la part des 80 cadres dirigeants associés à Barclays Private Equity France. Les deux parties se sont donné jusqu'au 31 juillet pour négocier, notamment le prix. </p> <p> La griffe de luxe va confier ses collections de prêt-à-porter féminin au créateur Jean-Paul Gaultier - elle détient 35 % de la maison de couture de ce dernier. L'actuel dessinateur de la ligne, Martin Margiela, va se consacrer à sa propre ligne. </p> <p> Le groupe informatique américain, détenteur des droits de la version historique du système d'exploitation Unix, affirme que des parties du code Unix se retrouvent dans les <mark>logiciels</mark> <mark>libres</mark> Linux. Après avoir réclamé en justice 1 milliard de dollars (860 000 euros) à IBM en mars, pour avoir développé Linux, SCO a déclaré lundi avoir envoyé des lettres à une centaine de grandes entreprises qui ont adopté le système Linux pour les « avertir du danger juridique ». </p> <p> Le groupe de distribution britannique a annoncé mardi avoir dégagé un bénéfice avant impôts et exceptionnel de 721,3 millions de livres (1,012 milliard d'euros) sur l'exercice 2002-2003, en hausse de 11,5 %. </p> <p> La compagnie aérienne a annoncé lundi avoir dégagé un bénéfice avant impôt de 135 millions de livres (190 millions d'euros) sur l'exercice 2002-2003, achevé le 31 mars, contre une perte de 200 millions de livres subie lors de l'exercice précédent. </p> <p> La présence des constructeurs aéronautiques américains au salon aérien du Bourget sera en baisse de 20 % par rapport à l'édition de 2001. A la suite de la brouille franco-américaine sur l'Irak, l'armée américaine sera peu représentée.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2003 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20030521·LM·0q2105_622808</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20030521·LM·0q2105_622808";
+    var _docIndex = 306;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20030521·LM·0q2105_622808';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720030521%C2%B7LM%C2%B70q2105_622808&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720030521%C2%B7LM%C2%B70q2105_622808&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720030521%C2%B7LM%C2%B70q2105_622808&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720030521%C2%B7LM%C2%B70q2105_622808&docIndex=306&FullScreen=1";
+                
+	var _keyDoc = 'news·20030521·LM·0q2105_622808';
+</script>
+</div></body></html>

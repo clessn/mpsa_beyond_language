@@ -1,0 +1,517 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LA&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        La Presse                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+La Presse Affaires,         mercredi 21 mars 2007 479 mots, p. LA PRESSE AFFAIRES6&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Techno.biz         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Recrutement en ligne Chercher hors des sentiers battus            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Mc Kenna, Alain&lt;/p&gt;
+
+    &lt;div&gt;
+Collaboration sp&#233;ciale     &lt;/div&gt;
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Les sites de recrutement en ligne existent depuis 10 ans d&#233;j&#224;, mais leur formule n&#39;a pas v&#233;ritablement chang&#233;. Pour les entreprises &#224; la recherche de candidats qui se distinguent du lot, la solution se trouve parfois hors des sentiers battus. Avec toutes les possibilit&#233;s d&#39;Internet, ce ne sont pas les fa&#231;ons originales d&#39;annoncer qu&#39;on est &#224; la recherche de travailleurs talentueux. &lt;/p&gt; &lt;p&gt; &quot; Avec les nouveaux m&#233;dias, comme les blogues et la vid&#233;o en ligne, on peut trouver de nouvelles fa&#231;ons de recruter en ligne pour un dixi&#232;me du prix exig&#233; par certains sites sp&#233;cialis&#233;s &quot;, estime Austin Hill, cofondateur de Zero Knowledge, une entreprise en d&#233;marrage montr&#233;alaise qu&#39;il a ensuite vendue pour se transformer en ange investisseur.&lt;/p&gt;
+
+
+&lt;p&gt;&quot; Pour attirer des employ&#233;s originaux et talentueux, il faut aussi leur prouver que notre entreprise est au moins aussi originale et talentueuse qu&#39;eux &quot;, ajoute-t-il. &lt;/p&gt; &lt;p&gt; Aucun doute, M. Hill conna&#238;t le sujet. Le nombre d&#39;honneurs qu&#39;il a re&#231;us au fil des derni&#232;res ann&#233;es -allant du titre d&#39;Entrepreneur &#233;mergent de l&#39;ann&#233;e au Qu&#233;bec en l&#39;an 2000, remis par la firme Ernst &amp;amp; Young, au titre de Pionnier des TIC du Forum &#233;conomique mondial en 2001- en t&#233;moigne. Mais il n&#39;en demeure pas moins que l&#39;Albertain d&#39;origine est lui-m&#234;me &#224; la recherche de gens talentueux et dou&#233;s dans les TIC, pour un nouveau projet de communaut&#233; Web jug&#233; prometteur, appel&#233; le projet Ojibwe. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;L&#39;originalit&#233; pour pas cher&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&quot; Pour un projet relativement secret comme celui-l&#224;, les sites de recrutement ne sont pas tr&#232;s efficaces, dit-il. Pour se pr&#233;senter, on doit se conformer &#224; une formule standardis&#233;e qui est la m&#234;me que celle qu&#39;utilisaient les journaux il y a 100 ans. Et apr&#232;s coup, on re&#231;oit une tonne de CV de gens surqualifi&#233;s, dont on ne per&#231;oit pas la personnalit&#233;, le talent. &quot; &lt;/p&gt; &lt;p&gt; Pour le projet Ojibwe, Austin Hill et son partenaire, Alex Eberts, ont d&#233;cid&#233; de se fier &#224; YouTube, &#224; LinkedIn et &#224; un &quot; vlogue &quot; (blogue vid&#233;o) qu&#39;ils ont lanc&#233; il y a deux semaines. &lt;/p&gt; &lt;p&gt; Sur ce site, un bref extrait vid&#233;o se moque des sites de recrutement, tout en d&#233;crivant le type d&#39;emplois qu&#39;ils ont &#224; offrir (pour la petite histoire, ils sont &#224; la recherche de deux programmeurs Python et Java). &lt;/p&gt; &lt;p&gt; Pour postuler, la r&#232;gle impos&#233;e par les deux Montr&#233;alais d&#39;adoption est la suivante : pas de CV. On veut voir votre personnalit&#233;. &quot; En moins de 48 heures, on a eu 2400 visites et on a re&#231;u des demandes d&#39;emploi qu&#39;on n&#39;aurait jamais eues autrement &quot;, r&#233;sume M. Hill. Des demandes venant d&#39;aussi loin que le Royaume-Uni! &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;S&#39;inspirer de la Silicon Valley&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Au Canada, les &quot; entreprises en d&#233;marrage &quot; (la traduction officielle pour &quot; start-up &quot;), ont beaucoup de difficult&#233; &#224; recruter. Pourtant, elles offrent g&#233;n&#233;ralement des emplois qui sont tr&#232;s recherch&#233;s par les travailleurs sp&#233;cialis&#233;s. Ils voient dans ces entreprises &#233;mergentes une occasion en or de participer &#224; la naissance d&#39;un nouveau projet, ou de mettre &#224; plein profit leur talent ou leur expertise. &lt;/p&gt; &lt;p&gt; En gros, dans une carri&#232;re, &#231;a a l&#39;effet d&#39;un turbocompresseur. &lt;/p&gt; &lt;p&gt; Les technos montr&#233;alaises n&#39;&#233;chappent pas &#224; ce ph&#233;nom&#232;ne. Pourtant, ce ne sont pas les travailleurs sp&#233;cialis&#233;s qui manquent, dans la m&#233;tropole qu&#233;b&#233;coise. &quot; Surtout dans le d&#233;veloppement de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, Montr&#233;al poss&#232;de une banque impressionnante de programmeurs talentueux &quot;, estime l&#39;ancien pr&#233;sident de Zero Knowledge. &lt;/p&gt; &lt;p&gt; Sauf qu&#39;avec les canaux de communication traditionnels qui existent &#224; Montr&#233;al, il est tr&#232;s difficile pour les candidats et les entreprises de se d&#233;marquer. De plus en plus d&#39;observateurs le constatent, la meilleure description de cette situation provenant de Ben Yoskovitz, un consultant montr&#233;alais dans les TIC qui a r&#233;cemment &#233;num&#233;r&#233;, sur son blogue, Instigator Blog,, les &quot; neuf signes que le march&#233; de l&#39;emploi en ligne est bris&#233; (sic) &quot;. &lt;/p&gt; &lt;p&gt; Yoskovitz n&#39;a pas de solution &#224; offrir. Il renvoie plut&#244;t la balle &#224; Hill, qui pense que les entrepreneurs devraient davantage s&#39;inspirer de la Silicon Valley. L&#224;-bas, dit-il, les entreprises en d&#233;marrage sont un ph&#233;nom&#232;ne plus que courant.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2007 La Presse. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20070321&amp;#183;LA&amp;#183;0122&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">sites de recrutement</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">zero knowledge</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">silicon valley</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">austin hill</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">m. hill</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montréal</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">YouTube</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Royaume-Uni</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Canada</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720070321%c2%b7LA%c2%b70122" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720070321%c2%b7LA%c2%b70122">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif"><span class="icon-Information" sourcecode="LA"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        La Presse                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+La Presse Affaires,         mercredi 21 mars 2007 479 mots, p. LA PRESSE AFFAIRES6</span>
+</div>
+
+    <div>
+        <p>
+Techno.biz         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Recrutement en ligne Chercher hors des sentiers battus            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Mc Kenna, Alain</p>
+
+    <div>
+Collaboration spéciale     </div>
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Les sites de recrutement en ligne existent depuis 10 ans déjà, mais leur formule n'a pas véritablement changé. Pour les entreprises à la recherche de candidats qui se distinguent du lot, la solution se trouve parfois hors des sentiers battus. Avec toutes les possibilités d'Internet, ce ne sont pas les façons originales d'annoncer qu'on est à la recherche de travailleurs talentueux. </p> <p> " Avec les nouveaux médias, comme les blogues et la vidéo en ligne, on peut trouver de nouvelles façons de recruter en ligne pour un dixième du prix exigé par certains sites spécialisés ", estime Austin Hill, cofondateur de Zero Knowledge, une entreprise en démarrage montréalaise qu'il a ensuite vendue pour se transformer en ange investisseur.</p>
+
+
+<p>" Pour attirer des employés originaux et talentueux, il faut aussi leur prouver que notre entreprise est au moins aussi originale et talentueuse qu'eux ", ajoute-t-il. </p> <p> Aucun doute, M. Hill connaît le sujet. Le nombre d'honneurs qu'il a reçus au fil des dernières années -allant du titre d'Entrepreneur émergent de l'année au Québec en l'an 2000, remis par la firme Ernst &amp; Young, au titre de Pionnier des TIC du Forum économique mondial en 2001- en témoigne. Mais il n'en demeure pas moins que l'Albertain d'origine est lui-même à la recherche de gens talentueux et doués dans les TIC, pour un nouveau projet de communauté Web jugé prometteur, appelé le projet Ojibwe. </p> <p><em style="font-weight:bold;">L'originalité pour pas cher</em></p><p>" Pour un projet relativement secret comme celui-là, les sites de recrutement ne sont pas très efficaces, dit-il. Pour se présenter, on doit se conformer à une formule standardisée qui est la même que celle qu'utilisaient les journaux il y a 100 ans. Et après coup, on reçoit une tonne de CV de gens surqualifiés, dont on ne perçoit pas la personnalité, le talent. " </p> <p> Pour le projet Ojibwe, Austin Hill et son partenaire, Alex Eberts, ont décidé de se fier à YouTube, à LinkedIn et à un " vlogue " (blogue vidéo) qu'ils ont lancé il y a deux semaines. </p> <p> Sur ce site, un bref extrait vidéo se moque des sites de recrutement, tout en décrivant le type d'emplois qu'ils ont à offrir (pour la petite histoire, ils sont à la recherche de deux programmeurs Python et Java). </p> <p> Pour postuler, la règle imposée par les deux Montréalais d'adoption est la suivante : pas de CV. On veut voir votre personnalité. " En moins de 48 heures, on a eu 2400 visites et on a reçu des demandes d'emploi qu'on n'aurait jamais eues autrement ", résume M. Hill. Des demandes venant d'aussi loin que le Royaume-Uni! </p> <p><em style="font-weight:bold;">S'inspirer de la Silicon Valley</em></p><p>Au Canada, les " entreprises en démarrage " (la traduction officielle pour " start-up "), ont beaucoup de difficulté à recruter. Pourtant, elles offrent généralement des emplois qui sont très recherchés par les travailleurs spécialisés. Ils voient dans ces entreprises émergentes une occasion en or de participer à la naissance d'un nouveau projet, ou de mettre à plein profit leur talent ou leur expertise. </p> <p> En gros, dans une carrière, ça a l'effet d'un turbocompresseur. </p> <p> Les technos montréalaises n'échappent pas à ce phénomène. Pourtant, ce ne sont pas les travailleurs spécialisés qui manquent, dans la métropole québécoise. " Surtout dans le développement de <mark>logiciels</mark> <mark>libres</mark>, Montréal possède une banque impressionnante de programmeurs talentueux ", estime l'ancien président de Zero Knowledge. </p> <p> Sauf qu'avec les canaux de communication traditionnels qui existent à Montréal, il est très difficile pour les candidats et les entreprises de se démarquer. De plus en plus d'observateurs le constatent, la meilleure description de cette situation provenant de Ben Yoskovitz, un consultant montréalais dans les TIC qui a récemment énuméré, sur son blogue, Instigator Blog,, les " neuf signes que le marché de l'emploi en ligne est brisé (sic) ". </p> <p> Yoskovitz n'a pas de solution à offrir. Il renvoie plutôt la balle à Hill, qui pense que les entrepreneurs devraient davantage s'inspirer de la Silicon Valley. Là-bas, dit-il, les entreprises en démarrage sont un phénomène plus que courant.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2007 La Presse. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20070321·LA·0122</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20070321·LA·0122";
+    var _docIndex = 708;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20070321·LA·0122';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720070321%C2%B7LA%C2%B70122&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720070321%C2%B7LA%C2%B70122&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720070321%C2%B7LA%C2%B70122&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720070321%C2%B7LA%C2%B70122&docIndex=708&FullScreen=1";
+                
+	var _keyDoc = 'news·20070321·LA·0122';
+</script>
+</div></body></html>

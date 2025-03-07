@@ -1,0 +1,593 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24457                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         samedi 8 avril 2023 928 mots, p. 25&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+M&#233;dias         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les zones d&#39;ombre de Midjourney et Stable Diffusion, stars des images artificielles            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Ces plateformes sont capables de g&#233;n&#233;rer des photos bluffantes de r&#233;alisme et charrient leurs lots d&#39;interrogations.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Woitier, Chlo&#233;&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;IA&lt;/em&gt; Le pape Fran&#231;ois qui d&#233;ambule dans une doudoune design immacul&#233;e. Un manifestant &#226;g&#233;, aux mains de la police, le visage ensanglant&#233;. Donald Trump r&#233;sistant &#224; une arrestation muscl&#233;e. Ces images g&#233;n&#233;r&#233;es par des intelligences artificielles ont fait le tour du monde ces derni&#232;res semaines en semant le trouble chez ceux qui les ont vues : vraies ? Fausses ? Leur r&#233;alisme accru illustre le grand bond en avant r&#233;alis&#233; en &#224; peine neuf mois par cette technologie, capable de g&#233;n&#233;rer n&#39;importe quel type de visuels &#224; partir d&#39;une simple description textuelle. Apparus &#224; l&#39;&#233;t&#233; 2022 et encore balbutiants, ces outils ont &#233;t&#233; &#233;clips&#233;s &#224; l&#39;automne par le ph&#233;nom&#232;ne ChatGPT de la soci&#233;t&#233; am&#233;ricaine OpenAI, champion de la g&#233;n&#233;ration automatis&#233;e de textes. Les pol&#233;miques de ce printemps les ont remis sur le devant de la sc&#232;ne.&lt;/p&gt;
+
+
+&lt;p&gt;Mais qui se cache derri&#232;re ces fausses images ? Si OpenAI op&#232;re la plateforme de g&#233;n&#233;ration de visuels Dall-E, les deux services les plus populaires chez les internautes et les professionnels de la communication sont le britannique Stable Diffusion, &#233;dit&#233; par la soci&#233;t&#233; Stability AI, et l&#39;am&#233;ricain Midjourney, d&#39;o&#249; sont issues les fausses photos pol&#233;miques. Le PDG de Midjourney, David Holz, a reconnu &#224; demi-mot &#234;tre d&#233;pass&#233; par sa cr&#233;ature lorsqu&#39;elle est utilis&#233;e pour repr&#233;senter des personnalit&#233;s publiques. &#171; Les images sont de plus en plus r&#233;alistes et l&#39;outil de plus en plus puissant &#187; , a-t-il &#233;crit fin mars sur la plateforme Discord, en se demandant o&#249; placer le curseur de la mod&#233;ration. &#171; On peut opter pour le Fast West ou &#234;tre comme Disney, et tout ce qui se trouve entre les deux est douloureux. Nous sommes actuellement sur cette voie interm&#233;diaire et je ne sais pas quoi en penser. &#187; &lt;/p&gt; &lt;p&gt; Opacit&#233; &lt;/p&gt; &lt;p&gt; Illustration de cette mod&#233;ration mouvante : si g&#233;n&#233;rer des fausses photos de chefs d&#39;&#201;tat est possible, le mot Xi Jinping ou &#171; pr&#233;sident de la Chine &#187; est bloqu&#233; sur Midjourney. &#171; La satire politique n&#39;est pas vraiment permise en Chine &#187; , avait justifi&#233; David Holz l&#39;an pass&#233;, &#171; et le fait que les Chinois puissent avoir le droit d&#39;acc&#233;der &#224; cette technologie doit primer. &#187; La plateforme bannit aussi au fil de l&#39;eau certains termes, comme &#171; arrestation &#187; (&#224; la suite de la fausse photo de Donald Trump) ou &#171; Afghan &#187; , en fonction des retours des utilisateurs. &lt;/p&gt; &lt;p&gt; David Holz semble &#234;tre le seul pilote aux commandes de Midjourney, une entreprise cr&#233;&#233;e &#224; San Francisco en 2021 qui ne revendique qu&#39;une dizaine de salari&#233;s, dont une grande majorit&#233; d&#39;ing&#233;nieurs. Le PDG est loin d&#39;&#234;tre un inconnu de la Silicon Valley : il a cofond&#233; en 2011 la start-up Leap Motion, qui avait lev&#233; 120 millions de dollars pour cr&#233;er un dispositif de reconnaissance des mouvements avant d&#39;&#234;tre rachet&#233;e en 2019 pour 30 millions de dollars par le britannique UltraHaptics. Est-ce avec cet argent que David Holz couvre les frais de fonctionnement de Midjourney ? L&#39;entreprise est pour le moins opaque sur ses financements. La plateforme propose des abonnements de 10 &#224; 60 dollars par mois. Il n&#39;est pas dit que cela suffise &#224; recouper les co&#251;ts colossaux induits par l&#39;IA g&#233;n&#233;rative. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Entra&#238;ner un mod&#232;le co&#251;te 50 000 dollars et il faut le faire 10 &#224; 20 fois. Et il y a besoin de louer des serveurs &#224; 20 000 dollars pour g&#233;n&#233;rer ensuite les images &#187;&lt;/em&gt;, expliquait-il en ao&#251;t &#224; The Verge. &lt;/p&gt; &lt;p&gt; Fils d&#39;immigr&#233;s bangladais et ancien analyste dans des fonds d&#39;investissement, Emad Mostaque affirme de son c&#244;t&#233; avoir sorti de sa poche 600 000 dollars pour entra&#238;ner son mod&#232;le Stable Diffusion, utilis&#233; par 10 millions de personnes chaque jour, et d&#233;penser 5 millions de dollars par mois en location de serveurs. Son entreprise Stability AI, situ&#233;e &#224; Londres, a lev&#233; 100 millions de dollars &#224; l&#39;automne aupr&#232;s de Coatue et Lightspeed Venture Partners. La rumeur veut que la soci&#233;t&#233;, qui compte une centaine de salari&#233;s, cherche &#224; lever &#224; nouveau des fonds pour atteindre une valorisation de 4 milliards de dollars. &lt;/p&gt; &lt;p&gt; Peu de garde-fous &lt;/p&gt; &lt;p&gt; Fond&#233;e en 2020, l&#39;entreprise britannique ne cache pas ses ambitions : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; maximiser l&#39;accessibilit&#233; de l&#39;intelligence artificielle &#187;&lt;/em&gt; en misant sur l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; pour ses mod&#232;les de g&#233;n&#233;rations d&#39;images, de musiques ou du texte, qui pourront &#234;tre diffus&#233;s et r&#233;utilis&#233;s par d&#39;autres &#224; travers le monde. Elle s&#39;affiche ainsi comme un anti-OpenAI, amplement financ&#233;e par Microsoft, et une opposante &#224; la mainmise de l&#39;IA par les Gafam. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Quelle est la gouvernance de OpenAI ? Personne ne sait. Est-il transparent ? Pas du tout &#187;&lt;/em&gt;, a affirm&#233; Emad Mostaque lors d&#39;une table ronde la semaine derni&#232;re. &lt;/p&gt; &lt;p&gt; Cette posture de chevalier blanc n&#39;emp&#234;che pas Stability AI de tra&#238;ner des casseroles. L&#39;entreprise est attaqu&#233;e en justice par Getty Images et un collectif d&#39;artistes pour avoir entra&#238;n&#233; Stable Diffusion sur des oeuvres prot&#233;g&#233;es par le droit d&#39;auteur. Surtout, Emad Mostaque est de ceux qui pensent que la technologie est par nature neutre. Il n&#39;est donc pas convaincu par la n&#233;cessit&#233; d&#39;y int&#233;grer par d&#233;faut des garde-fous, en d&#233;non&#231;ant &#171; une attitude paternaliste et condescendante &#187; qui ne &#171; fait pas confiance aux utilisateurs &#187;. &#171; Utiliser ces outils de mani&#232;re &#233;thique, morale et l&#233;gale rel&#232;ve de la responsabilit&#233; individuelle &#187; , affirmait-il en septembre dans la presse am&#233;ricaine. &lt;/p&gt; &lt;p&gt; L&#39;entreprise a depuis mis de l&#39;eau dans son vin et rend plus difficile la cr&#233;ation d&#39;images de corps nus, de violences ou de photos r&#233;alistes de personnalit&#233;s publiques. Mais il suffit &#224; des esprits mal intentionn&#233;s de retravailler le mod&#232;le, disponible en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, pour d&#233;tourner ces interdits. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Bobby Longoria/Getty Images North America &lt;/div&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Jason Henry / The New York Times / Redux / REA &lt;/div&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;David Holz, PDG de Midjourney (&#224; gauche) et Emad Mostaque, patron de Stability AI. &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:cwoitier@lefigaro.fr&quot;&gt;cwoitier@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;7 avril 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230408&amp;#183;LF&amp;#183;1042&amp;#215;20&amp;#215;22757021352&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">personnalités publiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">stars des images artificielles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">zones d'ombre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">professionnels de la communication</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèles de générations</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Chine</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Londres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">San Francisco, California</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230408%c2%b7LF%c2%b71042%c3%9720%c3%9722757021352" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230408%c2%b7LF%c2%b71042%c3%9720%c3%9722757021352">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24457                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         samedi 8 avril 2023 928 mots, p. 25</span>
+</div>
+
+    <div>
+        <p>
+Médias         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les zones d'ombre de Midjourney et Stable Diffusion, stars des images artificielles            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Ces plateformes sont capables de générer des photos bluffantes de réalisme et charrient leurs lots d'interrogations.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Woitier, Chloé</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">IA</em> Le pape François qui déambule dans une doudoune design immaculée. Un manifestant âgé, aux mains de la police, le visage ensanglanté. Donald Trump résistant à une arrestation musclée. Ces images générées par des intelligences artificielles ont fait le tour du monde ces dernières semaines en semant le trouble chez ceux qui les ont vues : vraies ? Fausses ? Leur réalisme accru illustre le grand bond en avant réalisé en à peine neuf mois par cette technologie, capable de générer n'importe quel type de visuels à partir d'une simple description textuelle. Apparus à l'été 2022 et encore balbutiants, ces outils ont été éclipsés à l'automne par le phénomène ChatGPT de la société américaine OpenAI, champion de la génération automatisée de textes. Les polémiques de ce printemps les ont remis sur le devant de la scène.</p>
+
+
+<p>Mais qui se cache derrière ces fausses images ? Si OpenAI opère la plateforme de génération de visuels Dall-E, les deux services les plus populaires chez les internautes et les professionnels de la communication sont le britannique Stable Diffusion, édité par la société Stability AI, et l'américain Midjourney, d'où sont issues les fausses photos polémiques. Le PDG de Midjourney, David Holz, a reconnu à demi-mot être dépassé par sa créature lorsqu'elle est utilisée pour représenter des personnalités publiques. « Les images sont de plus en plus réalistes et l'outil de plus en plus puissant » , a-t-il écrit fin mars sur la plateforme Discord, en se demandant où placer le curseur de la modération. « On peut opter pour le Fast West ou être comme Disney, et tout ce qui se trouve entre les deux est douloureux. Nous sommes actuellement sur cette voie intermédiaire et je ne sais pas quoi en penser. » </p> <p> Opacité </p> <p> Illustration de cette modération mouvante : si générer des fausses photos de chefs d'État est possible, le mot Xi Jinping ou « président de la Chine » est bloqué sur Midjourney. « La satire politique n'est pas vraiment permise en Chine » , avait justifié David Holz l'an passé, « et le fait que les Chinois puissent avoir le droit d'accéder à cette technologie doit primer. » La plateforme bannit aussi au fil de l'eau certains termes, comme « arrestation » (à la suite de la fausse photo de Donald Trump) ou « Afghan » , en fonction des retours des utilisateurs. </p> <p> David Holz semble être le seul pilote aux commandes de Midjourney, une entreprise créée à San Francisco en 2021 qui ne revendique qu'une dizaine de salariés, dont une grande majorité d'ingénieurs. Le PDG est loin d'être un inconnu de la Silicon Valley : il a cofondé en 2011 la start-up Leap Motion, qui avait levé 120 millions de dollars pour créer un dispositif de reconnaissance des mouvements avant d'être rachetée en 2019 pour 30 millions de dollars par le britannique UltraHaptics. Est-ce avec cet argent que David Holz couvre les frais de fonctionnement de Midjourney ? L'entreprise est pour le moins opaque sur ses financements. La plateforme propose des abonnements de 10 à 60 dollars par mois. Il n'est pas dit que cela suffise à recouper les coûts colossaux induits par l'IA générative. <em style="font-style:italic;">« Entraîner un modèle coûte 50 000 dollars et il faut le faire 10 à 20 fois. Et il y a besoin de louer des serveurs à 20 000 dollars pour générer ensuite les images »</em>, expliquait-il en août à The Verge. </p> <p> Fils d'immigrés bangladais et ancien analyste dans des fonds d'investissement, Emad Mostaque affirme de son côté avoir sorti de sa poche 600 000 dollars pour entraîner son modèle Stable Diffusion, utilisé par 10 millions de personnes chaque jour, et dépenser 5 millions de dollars par mois en location de serveurs. Son entreprise Stability AI, située à Londres, a levé 100 millions de dollars à l'automne auprès de Coatue et Lightspeed Venture Partners. La rumeur veut que la société, qui compte une centaine de salariés, cherche à lever à nouveau des fonds pour atteindre une valorisation de 4 milliards de dollars. </p> <p> Peu de garde-fous </p> <p> Fondée en 2020, l'entreprise britannique ne cache pas ses ambitions : <em style="font-style:italic;">« maximiser l'accessibilité de l'intelligence artificielle »</em> en misant sur l'<mark>open</mark> <mark>source</mark> pour ses modèles de générations d'images, de musiques ou du texte, qui pourront être diffusés et réutilisés par d'autres à travers le monde. Elle s'affiche ainsi comme un anti-OpenAI, amplement financée par Microsoft, et une opposante à la mainmise de l'IA par les Gafam. <em style="font-style:italic;">« Quelle est la gouvernance de OpenAI ? Personne ne sait. Est-il transparent ? Pas du tout »</em>, a affirmé Emad Mostaque lors d'une table ronde la semaine dernière. </p> <p> Cette posture de chevalier blanc n'empêche pas Stability AI de traîner des casseroles. L'entreprise est attaquée en justice par Getty Images et un collectif d'artistes pour avoir entraîné Stable Diffusion sur des oeuvres protégées par le droit d'auteur. Surtout, Emad Mostaque est de ceux qui pensent que la technologie est par nature neutre. Il n'est donc pas convaincu par la nécessité d'y intégrer par défaut des garde-fous, en dénonçant « une attitude paternaliste et condescendante » qui ne « fait pas confiance aux utilisateurs ». « Utiliser ces outils de manière éthique, morale et légale relève de la responsabilité individuelle » , affirmait-il en septembre dans la presse américaine. </p> <p> L'entreprise a depuis mis de l'eau dans son vin et rend plus difficile la création d'images de corps nus, de violences ou de photos réalistes de personnalités publiques. Mais il suffit à des esprits mal intentionnés de retravailler le modèle, disponible en <mark>open</mark> <mark>source</mark>, pour détourner ces interdits. </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+            
+                </p><div class="ImageAttachFont">Bobby Longoria/Getty Images North America </div>
+        <p></p>
+        <p>
+            
+            
+                </p><div class="ImageAttachFont">Jason Henry / The New York Times / Redux / REA </div>
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach">David Holz, PDG de Midjourney (à gauche) et Emad Mostaque, patron de Stability AI. </div>.
+
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:cwoitier@lefigaro.fr">cwoitier@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">7 avril 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230408·LF·1042×20×22757021352</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230408·LF·1042×20×22757021352";
+    var _docIndex = 163;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230408·LF·1042×20×22757021352';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230408%C2%B7LF%C2%B71042%C3%9720%C3%9722757021352&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230408%C2%B7LF%C2%B71042%C3%9720%C3%9722757021352&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230408%C2%B7LF%C2%B71042%C3%9720%C3%9722757021352&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230408%C2%B7LF%C2%B71042%C3%9720%C3%9722757021352&docIndex=163&FullScreen=1";
+                
+	var _keyDoc = 'news·20230408·LF·1042×20×22757021352';
+</script>
+</div></body></html>

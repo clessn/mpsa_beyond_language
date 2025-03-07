@@ -1,0 +1,503 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LA&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        La Presse                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+La Presse Affaires,         vendredi 3 septembre 2004 516 mots, p. LA PRESSE AFFAIRES12&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Microsoft et Intel revoient leurs chiffres &#224; la baisse            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+    &lt;div&gt;
+AFP     &lt;/div&gt;
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Washington - Le num&#233;ro un mondial des logiciels, Microsoft, a indiqu&#233; qu&#39;il tablait sur un ralentissement de la croissance de son chiffre d&#39;affaires au cours de l&#39;exercice 2004-2005 par rapport &#224; cette ann&#233;e &#224; cause d&#39;un ralentissement des livraisons de micro-ordinateurs (PC) et de serveurs. &lt;/p&gt; &lt;p&gt; &quot; Nous ne nous attendons pas &#224; ce que notre chiffre d&#39;affaires croisse durant l&#39;ann&#233;e financi&#232;re 2005 (juillet &#224; juin) &#224; des rythmes &#233;lev&#233;s similaires &#224; ceux de 2004, m&#234;me si les d&#233;penses en technologies de l&#39;information continuent &#224; s&#39;am&#233;liorer &quot;, &#233;crit le g&#233;ant du logiciel dans son rapport annuel d&#233;pos&#233; aupr&#232;s de la Securities and Exchange Commission (SEC), le gendarme am&#233;ricain de la Bourse.&lt;/p&gt;
+
+
+&lt;p&gt;&quot; Bien que les conditions &#233;conomiques g&#233;n&#233;rales devraient rester stables au regard des am&#233;liorations constat&#233;es au deuxi&#232;me semestre de l&#39;exercice 2004, nous nous attendons &#224; ce que le taux de croissance des livraisons de PC et de serveurs ralentisse durant l&#39;exercice 2005 par rapport aux forts taux de croissance constat&#233;s durant l&#39;exercice financier 2004 &quot;, indique Microsoft. &lt;/p&gt; &lt;p&gt; &#192; la fin de juillet, Microsoft avait pr&#233;dit un chiffre d&#39;affaires compris entre 38,4 et 38,8 milliards US pour l&#39;exercice 2004-2005. &lt;/p&gt; &lt;p&gt; Cela repr&#233;senterait une progression de 4,2 &#224; 5,3 % par rapport aux 36,84 milliards US engrang&#233;s durant l&#39;exercice achev&#233; &#224; la fin de juin 2004. &lt;/p&gt; &lt;p&gt; &quot; Nous estimons que les livraisons de PC vont augmenter de 7 &#224; 9 % et celles de serveurs de 13 &#224; 15 % durant l&#39;ann&#233;e financi&#232;re 2005 comparativement &#224; 2004. Ces taux de croissance plus bas pourraient engendrer une croissance plus lente du chiffre d&#39;affaires en 2005 &quot;, estime le groupe de logiciels. &lt;/p&gt; &lt;p&gt; De son c&#244;t&#233;, le num&#233;ro un mondial des microprocesseurs, Intel, a lanc&#233; hier un important avertissement sur r&#233;sultats, en indiquant ne plus tabler pour le troisi&#232;me trimestre que sur des ventes comprises entre 8,3 et 8,6 milliards US, alors qu&#39;il visait jusqu&#39;&#224; pr&#233;sent la fourchette 8,6-9,2 milliards US. &lt;/p&gt; &lt;p&gt; Mardi, dans un avis qui avait entra&#238;n&#233; une forte baisse du titre d&#39;Intel en Bourse, la banque d&#39;affaires Morgan Stanley avait dit ne plus s&#39;attendre qu&#39;&#224; un chiffre d&#39;affaires de 8,7 milliards US au lieu des 8,8 milliards US attendus jusqu&#39;alors. &lt;/p&gt; &lt;p&gt; La marge brute d&#39;Intel au troisi&#232;me trimestre devrait se situer &quot; &#224; environ 58 % plus ou moins deux points &quot;, a pr&#233;cis&#233; le groupe dans un communiqu&#233;. Il visait jusqu&#39;alors &quot; 60 % plus ou moins deux points &quot;. &lt;/p&gt; &lt;p&gt; Les deux grandes divisions du g&#233;ant am&#233;ricain (composants pour PC d&#39;une part, pour la t&#233;l&#233;phonie mobile d&#39;autre part) se sont moins bien comport&#233;es que pr&#233;vu, a-t-il ajout&#233;. &lt;/p&gt; &lt;p&gt; Les ventes de PC chez Microsoft avaient cr&#251; de 13 % environ durant l&#39;ann&#233;e financi&#232;re 2004, selon Microsoft. &lt;/p&gt; &lt;p&gt; Le groupe cite &#233;galement &quot; le succ&#232;s de logiciels non commerciaux &quot; comme facteur susceptible d&#39;affecter n&#233;gativement &quot; sa performance. &lt;/p&gt; &lt;p&gt; &quot; Le syst&#232;me d&#39;exploitation Linux, d&#233;riv&#233; d&#39;Unix et disponible gratuitement, est de plus en plus utilis&#233; alors que les pressions concurrentielles conduisent les fabricants d&#39;ordinateurs &#224; r&#233;duire les co&#251;ts &quot;, souligne Microsoft. &lt;/p&gt; &lt;p&gt; &quot; Dans le cas o&#249; les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; seraient de plus en plus accept&#233;s, les ventes de nos produits pourraient d&#233;cliner, ce qui pourrait aboutir &#224; une r&#233;duction de notre chiffre d&#39;affaires et de nos marges d&#39;exploitation &quot;, pr&#233;vient-il. &lt;/p&gt; &lt;p&gt; Le b&#233;n&#233;fice d&#39;exploitation pour l&#39;exercice 2005 devrait refl&#233;ter une baisse des d&#233;penses d&#39;exploitation en l&#39;absence de certains r&#232;glements de plaintes enregistr&#233;s en 2004, et en raison d&#39;une baisse des compensations sous forme d&#39;actions et des &#233;conomies r&#233;alis&#233;es gr&#226;ce &#224; l&#39;initiative de r&#233;duction des co&#251;ts. &lt;/p&gt; &lt;p&gt; &quot; Nous nous attendons &#224; ce que les activit&#233;s qui ont connu une perte d&#39;exploitation en 2004- Mobile and Embedded Devices, Business Solutions, Home and Entertainment- r&#233;alisent des progr&#232;s significatifs vers la rentabilit&#233; en 2005 avec une am&#233;lioration de leurs op&#233;rations &quot;, &#233;crit Microsoft dans son rapport. &lt;/p&gt; &lt;p&gt; D&#39;un point de vue juridique, Microsoft a augment&#233; &#224; 1,04 milliard US son estimation de ce qu&#39;il devrait avoir pay&#233; dans le cadre de certains proc&#232;s antitrust et de consommateurs restant en cours, comparativement &#224; une pr&#233;c&#233;dente pr&#233;vision de 972 millions US, apr&#232;s r&#232;glement des d&#233;penses administratives. &lt;/p&gt; &lt;p&gt; Depuis 2003, le groupe a r&#233;gl&#233; de nombreuses plaintes d&#39;&#201;tats am&#233;ricains, en acceptant de d&#233;livrer aux consommateurs et entreprises des bons d&#39;achat pour des logiciels et du mat&#233;riel informatique de n&#39;importe quelle marque. &lt;/p&gt; &lt;p&gt; Le montant maximum des bons d&#39;achat d&#233;livr&#233;s pour r&#233;gler ces plaintes est de 1,55 milliard US, mais le co&#251;t final devrait &#234;tre inf&#233;rieur &#224; ce chiffre.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 La Presse. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040903&amp;#183;LA&amp;#183;0095&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">chiffre d'affaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">taux de croissance</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">ralentissement de la croissance</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">livraisons de micro-ordinateurs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">technologies de l'information</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Finances des entreprises</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Bourse et marché des changes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">US</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040903%c2%b7LA%c2%b70095" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040903%c2%b7LA%c2%b70095">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif"><span class="icon-Information" sourcecode="LA"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        La Presse                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+La Presse Affaires,         vendredi 3 septembre 2004 516 mots, p. LA PRESSE AFFAIRES12</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Microsoft et Intel revoient leurs chiffres à la baisse            
+        </p>
+
+</div>
+
+
+    <div>
+AFP     </div>
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Washington - Le numéro un mondial des logiciels, Microsoft, a indiqué qu'il tablait sur un ralentissement de la croissance de son chiffre d'affaires au cours de l'exercice 2004-2005 par rapport à cette année à cause d'un ralentissement des livraisons de micro-ordinateurs (PC) et de serveurs. </p> <p> " Nous ne nous attendons pas à ce que notre chiffre d'affaires croisse durant l'année financière 2005 (juillet à juin) à des rythmes élevés similaires à ceux de 2004, même si les dépenses en technologies de l'information continuent à s'améliorer ", écrit le géant du logiciel dans son rapport annuel déposé auprès de la Securities and Exchange Commission (SEC), le gendarme américain de la Bourse.</p>
+
+
+<p>" Bien que les conditions économiques générales devraient rester stables au regard des améliorations constatées au deuxième semestre de l'exercice 2004, nous nous attendons à ce que le taux de croissance des livraisons de PC et de serveurs ralentisse durant l'exercice 2005 par rapport aux forts taux de croissance constatés durant l'exercice financier 2004 ", indique Microsoft. </p> <p> À la fin de juillet, Microsoft avait prédit un chiffre d'affaires compris entre 38,4 et 38,8 milliards US pour l'exercice 2004-2005. </p> <p> Cela représenterait une progression de 4,2 à 5,3 % par rapport aux 36,84 milliards US engrangés durant l'exercice achevé à la fin de juin 2004. </p> <p> " Nous estimons que les livraisons de PC vont augmenter de 7 à 9 % et celles de serveurs de 13 à 15 % durant l'année financière 2005 comparativement à 2004. Ces taux de croissance plus bas pourraient engendrer une croissance plus lente du chiffre d'affaires en 2005 ", estime le groupe de logiciels. </p> <p> De son côté, le numéro un mondial des microprocesseurs, Intel, a lancé hier un important avertissement sur résultats, en indiquant ne plus tabler pour le troisième trimestre que sur des ventes comprises entre 8,3 et 8,6 milliards US, alors qu'il visait jusqu'à présent la fourchette 8,6-9,2 milliards US. </p> <p> Mardi, dans un avis qui avait entraîné une forte baisse du titre d'Intel en Bourse, la banque d'affaires Morgan Stanley avait dit ne plus s'attendre qu'à un chiffre d'affaires de 8,7 milliards US au lieu des 8,8 milliards US attendus jusqu'alors. </p> <p> La marge brute d'Intel au troisième trimestre devrait se situer " à environ 58 % plus ou moins deux points ", a précisé le groupe dans un communiqué. Il visait jusqu'alors " 60 % plus ou moins deux points ". </p> <p> Les deux grandes divisions du géant américain (composants pour PC d'une part, pour la téléphonie mobile d'autre part) se sont moins bien comportées que prévu, a-t-il ajouté. </p> <p> Les ventes de PC chez Microsoft avaient crû de 13 % environ durant l'année financière 2004, selon Microsoft. </p> <p> Le groupe cite également " le succès de logiciels non commerciaux " comme facteur susceptible d'affecter négativement " sa performance. </p> <p> " Le système d'exploitation Linux, dérivé d'Unix et disponible gratuitement, est de plus en plus utilisé alors que les pressions concurrentielles conduisent les fabricants d'ordinateurs à réduire les coûts ", souligne Microsoft. </p> <p> " Dans le cas où les <mark>logiciels</mark> <mark>libres</mark> seraient de plus en plus acceptés, les ventes de nos produits pourraient décliner, ce qui pourrait aboutir à une réduction de notre chiffre d'affaires et de nos marges d'exploitation ", prévient-il. </p> <p> Le bénéfice d'exploitation pour l'exercice 2005 devrait refléter une baisse des dépenses d'exploitation en l'absence de certains règlements de plaintes enregistrés en 2004, et en raison d'une baisse des compensations sous forme d'actions et des économies réalisées grâce à l'initiative de réduction des coûts. </p> <p> " Nous nous attendons à ce que les activités qui ont connu une perte d'exploitation en 2004- Mobile and Embedded Devices, Business Solutions, Home and Entertainment- réalisent des progrès significatifs vers la rentabilité en 2005 avec une amélioration de leurs opérations ", écrit Microsoft dans son rapport. </p> <p> D'un point de vue juridique, Microsoft a augmenté à 1,04 milliard US son estimation de ce qu'il devrait avoir payé dans le cadre de certains procès antitrust et de consommateurs restant en cours, comparativement à une précédente prévision de 972 millions US, après règlement des dépenses administratives. </p> <p> Depuis 2003, le groupe a réglé de nombreuses plaintes d'États américains, en acceptant de délivrer aux consommateurs et entreprises des bons d'achat pour des logiciels et du matériel informatique de n'importe quelle marque. </p> <p> Le montant maximum des bons d'achat délivrés pour régler ces plaintes est de 1,55 milliard US, mais le coût final devrait être inférieur à ce chiffre.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 La Presse. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040903·LA·0095</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040903·LA·0095";
+    var _docIndex = 141;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040903·LA·0095';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040903%C2%B7LA%C2%B70095&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040903%C2%B7LA%C2%B70095&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040903%C2%B7LA%C2%B70095&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040903%C2%B7LA%C2%B70095&docIndex=141&FullScreen=1";
+                
+	var _keyDoc = 'news·20040903·LA·0095';
+</script>
+</div></body></html>

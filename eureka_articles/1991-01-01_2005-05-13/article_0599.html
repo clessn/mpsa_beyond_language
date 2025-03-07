@@ -1,0 +1,471 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Plan&#232;te,         lundi 27 mars 2000 265 mots, p. B2&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le coin du pingouin         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Mandrake ach&#232;te Bochs et le place sous licence LGPL            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Soyons r&#233;alistes, il est plut&#244;t difficile de se passer totalement de &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt;. Bien que l&#39;on puisse tout faire ou presque sous &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;, il arrive que l&#39;on ait besoin de faire tourner une application &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt;. D&#39;o&#249; l&#39;int&#233;r&#234;t pour tout utilisateur &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; d&#39;avoir acc&#232;s &#224; un &#233;mulateur permettant d&#39;ex&#233;cuter du code du monde de l&#39;Oncle Bill. Le plus connu des &#233;mulateurs &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt; est sans contredit &lt;em style=&quot;font-style:italic;&quot;&gt;Wine&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.winehq.com&quot;&gt;www.winehq.com&lt;/a&gt; &lt;/em&gt;). Les &#233;diteurs de la populaire distribution Mandrake (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.linux-mandrake.com&quot;&gt;www.linux-mandrake.com&lt;/a&gt; &lt;/em&gt;) viennent de mettre la main sur un autre &#233;mulateur qui &#233;tait jusqu&#39;ici, propos&#233; en version commerciale, &lt;em style=&quot;font-style:italic;&quot;&gt;Bochs&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.bochs.com&quot;&gt;www.bochs.com&lt;/a&gt; &lt;/em&gt;). Premier changement, &lt;em style=&quot;font-style:italic;&quot;&gt;Bochs&lt;/em&gt; sera bient&#244;t propos&#233; pour t&#233;l&#233;chargement sous licence LGPL, tandis que Kevin Lawton, le cr&#233;ateur original de &lt;em style=&quot;font-style:italic;&quot;&gt;Bochs&lt;/em&gt;, vient d&#39;&#234;tre engag&#233; pour compl&#233;ter le projet &lt;em style=&quot;font-style:italic;&quot;&gt;Plex 86&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.plex86.org&quot;&gt;www.plex86.org&lt;/a&gt; &lt;/em&gt;), une solution de rechange libre au logiciel &lt;em style=&quot;font-style:italic;&quot;&gt;VMWare&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Los Lobos&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le 24e superordinateur le plus puissant au monde est compos&#233; de simples PC et du syst&#232;me d&#39;exploitation &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-lobos-nih-gov.acces.bibl.ulaval.ca&quot;&gt;www.lobos.nih.gov&lt;/a&gt; &lt;/em&gt;). Capable d&#39;effectuer plus de 375 milliards d&#39;op&#233;rations &#224; la seconde, cet agr&#233;gat de 256 serveurs Netfinity d&#39;IBM tournant sous une version sp&#233;ciale du syst&#232;me d&#39;exploitation &lt;em style=&quot;font-style:italic;&quot;&gt;Linux, Beowulf&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.beowulf.org&quot;&gt;www.beowulf.org&lt;/a&gt; &lt;/em&gt;), sera utilis&#233; par des chercheurs ayant besoin d&#39;un acc&#232;s &#224; un superordinateur, le tout dans le cadre du programme de la National Science Foundation&#39;s National Computational Sciences Alliance. &lt;em style=&quot;font-style:italic;&quot;&gt;Los Lobos&lt;/em&gt; signifie &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;lot of boxes on shelves&quot;&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;La place de Linux dans le r&#233;seau coll&#233;gial?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Je vous sugg&#232;re fortement de lire un article de Pierre-Julien Guay, &quot;Est-ce le temps de Linux?&quot;, dans le num&#233;ro de f&#233;vrier de &lt;em style=&quot;font-style:italic;&quot;&gt;Clic!&lt;/em&gt;, le bulletin coll&#233;gial des technologies de l&#39;information et des communications (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://ntic.org/clic/CLIC33/linux.htm&quot;&gt;http://ntic.org/clic/CLIC33/linux.htm&lt;/a&gt; &lt;/em&gt;). Toujours dans le m&#234;me ordre d&#39;id&#233;e, sur le site du cybermag Multim&#233;dium, Jo&#235;l Pommerleau, vice-pr&#233;sident de la firme iNsu Innovations d&#233;crit les changements profonds que le monde de l&#39;informatique et du logiciel doit subir avec l&#39;arriv&#233;e des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mmedium.com/&quot;&gt;www.mmedium.com/&lt;/a&gt; dossiers/PIB/gnulinux.pdf&lt;/em&gt;).&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Quelques-uns des ordinateurs du projet Los Lobos.&lt;/p&gt; &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;&lt;p&gt;National Institute of Health&lt;/p&gt; &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000327&amp;#183;LE&amp;#183;0036&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000327%c2%b7LE%c2%b70036" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000327%c2%b7LE%c2%b70036">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Planète,         lundi 27 mars 2000 265 mots, p. B2</span>
+</div>
+
+    <div>
+        <p>
+Le coin du pingouin         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Mandrake achète Bochs et le place sous licence LGPL            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Soyons réalistes, il est plutôt difficile de se passer totalement de <em style="font-style:italic;">Windows</em>. Bien que l'on puisse tout faire ou presque sous <em style="font-style:italic;">Linux</em>, il arrive que l'on ait besoin de faire tourner une application <em style="font-style:italic;">Windows</em>. D'où l'intérêt pour tout utilisateur <em style="font-style:italic;">Linux</em> d'avoir accès à un émulateur permettant d'exécuter du code du monde de l'Oncle Bill. Le plus connu des émulateurs <em style="font-style:italic;">Windows</em> est sans contredit <em style="font-style:italic;">Wine</em> (<em style="font-style:italic;"><a target="_blank" href="https://www.winehq.com">www.winehq.com</a> </em>). Les éditeurs de la populaire distribution Mandrake (<em style="font-style:italic;"><a target="_blank" href="https://www.linux-mandrake.com">www.linux-mandrake.com</a> </em>) viennent de mettre la main sur un autre émulateur qui était jusqu'ici, proposé en version commerciale, <em style="font-style:italic;">Bochs</em> (<em style="font-style:italic;"><a target="_blank" href="https://www.bochs.com">www.bochs.com</a> </em>). Premier changement, <em style="font-style:italic;">Bochs</em> sera bientôt proposé pour téléchargement sous licence LGPL, tandis que Kevin Lawton, le créateur original de <em style="font-style:italic;">Bochs</em>, vient d'être engagé pour compléter le projet <em style="font-style:italic;">Plex 86</em> (<em style="font-style:italic;"><a target="_blank" href="https://www.plex86.org">www.plex86.org</a> </em>), une solution de rechange libre au logiciel <em style="font-style:italic;">VMWare</em></p><p><em style="font-weight:bold;">Los Lobos</em></p><p>Le 24e superordinateur le plus puissant au monde est composé de simples PC et du système d'exploitation <em style="font-style:italic;">Linux</em> (<em style="font-style:italic;"><a target="_blank" href="https://www-lobos-nih-gov.acces.bibl.ulaval.ca">www.lobos.nih.gov</a> </em>). Capable d'effectuer plus de 375 milliards d'opérations à la seconde, cet agrégat de 256 serveurs Netfinity d'IBM tournant sous une version spéciale du système d'exploitation <em style="font-style:italic;">Linux, Beowulf</em> (<em style="font-style:italic;"><a target="_blank" href="https://www.beowulf.org">www.beowulf.org</a> </em>), sera utilisé par des chercheurs ayant besoin d'un accès à un superordinateur, le tout dans le cadre du programme de la National Science Foundation's National Computational Sciences Alliance. <em style="font-style:italic;">Los Lobos</em> signifie <em style="font-style:italic;">"lot of boxes on shelves"</em></p>
+
+
+<p><em style="font-weight:bold;">La place de Linux dans le réseau collégial?</em></p><p>Je vous suggère fortement de lire un article de Pierre-Julien Guay, "Est-ce le temps de Linux?", dans le numéro de février de <em style="font-style:italic;">Clic!</em>, le bulletin collégial des technologies de l'information et des communications (<em style="font-style:italic;"><a target="_blank" href="http://ntic.org/clic/CLIC33/linux.htm">http://ntic.org/clic/CLIC33/linux.htm</a> </em>). Toujours dans le même ordre d'idée, sur le site du cybermag Multimédium, Joël Pommerleau, vice-président de la firme iNsu Innovations décrit les changements profonds que le monde de l'informatique et du logiciel doit subir avec l'arrivée des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark> (<em style="font-style:italic;"><a target="_blank" href="https://www.mmedium.com/">www.mmedium.com/</a> dossiers/PIB/gnulinux.pdf</em>).</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Quelques-uns des ordinateurs du projet Los Lobos.</p> </div>.
+
+                <div class="ImageAttachFont"><p>National Institute of Health</p> </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000327·LE·0036</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000327·LE·0036";
+    var _docIndex = 598;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000327·LE·0036';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000327%C2%B7LE%C2%B70036&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000327%C2%B7LE%C2%B70036&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000327%C2%B7LE%C2%B70036&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000327%C2%B7LE%C2%B70036&docIndex=598&FullScreen=1";
+                
+	var _keyDoc = 'news·20000327·LE·0036';
+</script>
+</div></body></html>

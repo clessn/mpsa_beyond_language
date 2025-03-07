@@ -1,0 +1,573 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;CONOMIE,         lundi 20 novembre 2006 433 mots, p. a7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Le &lt;mark&gt; logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt; gagne du terrain            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Laurence Benhamou&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;New York - Les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, qui ont gagn&#233; lundi dernier une nouvelle recrue de choix avec le langage de programmation Java, gagnent peu &#224; peu du terrain dans les entreprises, en remplacement des logiciels prot&#233;g&#233;s qui font la fortune de groupes comme Microsoft. &lt;/p&gt; &lt;p&gt; Le groupe am&#233;ricain Sun Microsystems a annonc&#233; la semaine derni&#232;re l&#39;ouverture des codes source de son c&#233;l&#232;bre langage Java, qui pourra ainsi &#234;tre diffus&#233; et modifi&#233; par des tiers, tant que les modifications sont elles aussi diffus&#233;es. C&#39;est une petite r&#233;volution pour les d&#233;veloppeurs informatiques et une contribution majeure au monde du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, dit en &#171;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;&#187;, dont le chef de file est le syst&#232;me d&#39;exploitation Linux, challenger depuis 15 ans du syst&#232;me Windows de Microsoft.&lt;/p&gt;
+
+
+&lt;p&gt;Longtemps confin&#233; aux professionnels de l&#39;informatique militants anti-Microsoft, le monde du libre a remport&#233; plusieurs victoires ces derniers mois qui illustrent son extension dans le grand public et surtout aupr&#232;s des grandes entreprises. &lt;/p&gt; &lt;p&gt; Il y a deux semaines, m&#234;me Microsoft a tendu la main aux utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; en s&#39;alliant au groupe Novell, qui distribue un syst&#232;me d&#39;exploitation d&#233;riv&#233; de Linux, Suse Linux. Microsoft et Novell rendront leurs syst&#232;mes d&#39;exploitation compatibles, chacun distribuera les deux syst&#232;mes et ils sortiront ensembles des solutions communes. &lt;/p&gt; &lt;p&gt; &#171;La d&#233;cision de Sun &#233;tait attendue depuis longtemps et ne marque pas de changement fondamental, car le groupe gardera un contr&#244;le sur le langage Java, mais il existe une tendance g&#233;n&#233;rale au d&#233;veloppement du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&#187;, a comment&#233; l&#39;analyste de Forrester Michael Goulde, &#171;m&#234;me chez Microsoft&#187;. &lt;/p&gt; &lt;p&gt; &#171;De plus en plus de groupes dans le monde adoptent le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, surtout en Europe&#187;, a-t-il soulign&#233;. Une &#233;tude de Forrester de septembre dernier aupr&#232;s de 600 grands groupes am&#233;ricains et 300 europ&#233;ens montre que &lt;/p&gt; &lt;p&gt; 39 % des groupes en Europe utilisent un ou plusieurs &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, et 35 % aux &#201;tats-Unis. Respectivement 8 % et 5 % envisagent de le faire dans les deux r&#233;gions, et seulement un tiers s&#39;y d&#233;clarent oppos&#233;es. &lt;/p&gt; &lt;p&gt; Les plus ouvertes sont les soci&#233;t&#233;s de t&#233;l&#233;coms, de m&#233;dias et loisirs (43 % &#224; 54 % d&#39;utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;), de services financiers (36 % &#224; 41 % d&#39;utilisateurs) ainsi que 50 % des administrations publiques europ&#233;ennes et 35 % des am&#233;ricaines. &lt;/p&gt; &lt;p&gt; Les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; offrent acc&#232;s &#224; leur code source (leur &#171;noyau&#187;) ce qui permet &#224; tous de les utiliser et surtout de le transformer. Les contributeurs peuvent &#234;tre des informaticiens free-lance qui travaillent de chez eux aux quatre coins du monde, mais aussi des associations ou des entreprises comme Oracle, Hewlett-Packard, Oracle, Sun et IBM. &lt;/p&gt; &lt;p&gt; Les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ne sont pas forc&#233;ment gratuits. Toute entreprise peut mettre au point et commercialiser sa version. Autre source de profit, celui de la maintenance et assistance &#224; l&#39;utilisateur, comme le propose le groupe Red Hat, leader de la maintenance de Linux. &lt;/p&gt; &lt;p&gt; Preuve que ce march&#233; est de plus en plus convoit&#233;, le groupe Oracle vient d&#39;annoncer qu&#39;il se lan&#231;ait dans la maintenance de Linux et veut proposer des prix moiti&#233; moindre que ceux de Red Hat. &lt;/p&gt; &lt;p&gt; Parmi les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; les plus utilis&#233;s figurent la suite Open Office, qui concurrence les logiciels de bureautique Office de Microsoft, le logiciel de base de donn&#233;es MySQL, le logiciel de cryptage et de communications internet s&#233;curis&#233;es OpenSSL, le logiciel de requ&#234;tes web (serveur web) Apache et le navigateur Mozilla, concurrent d&#39;Internet Explorer de Microsoft. &lt;/p&gt; &lt;p&gt; Des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; sont aussi au coeur d&#39;appareils comme le modem Freebox du fournisseur d&#39;acc&#232;s &#224; internet fran&#231;ais Free, des assistants personnels Sharp ou encore de lecteurs de vid&#233;o en format DivX.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;13 janvier 2000&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;26 ao&amp;#251;t 2000&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;18 novembre 2002&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;10 juin 2004&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;5 avril 2005&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;14 novembre 2006&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;2 novembre 2011&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;2 janvier 2012&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;20 janvier 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;24 octobre 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2006 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20061120&amp;#183;LE&amp;#183;123202&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">utilisateurs de logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">maintenance de linux</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">New York</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720061120%c2%b7LE%c2%b7123202" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720061120%c2%b7LE%c2%b7123202">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+ÉCONOMIE,         lundi 20 novembre 2006 433 mots, p. a7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Le <mark> logiciel</mark> <mark> libre</mark> gagne du terrain            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Laurence Benhamou</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>New York - Les <mark>logiciels</mark> <mark>libres</mark>, qui ont gagné lundi dernier une nouvelle recrue de choix avec le langage de programmation Java, gagnent peu à peu du terrain dans les entreprises, en remplacement des logiciels protégés qui font la fortune de groupes comme Microsoft. </p> <p> Le groupe américain Sun Microsystems a annoncé la semaine dernière l'ouverture des codes source de son célèbre langage Java, qui pourra ainsi être diffusé et modifié par des tiers, tant que les modifications sont elles aussi diffusées. C'est une petite révolution pour les développeurs informatiques et une contribution majeure au monde du <mark>logiciel</mark> <mark>libre</mark>, dit en «<mark>open</mark> <mark>source</mark>», dont le chef de file est le système d'exploitation Linux, challenger depuis 15 ans du système Windows de Microsoft.</p>
+
+
+<p>Longtemps confiné aux professionnels de l'informatique militants anti-Microsoft, le monde du libre a remporté plusieurs victoires ces derniers mois qui illustrent son extension dans le grand public et surtout auprès des grandes entreprises. </p> <p> Il y a deux semaines, même Microsoft a tendu la main aux utilisateurs de <mark>logiciels</mark> <mark>libres</mark> en s'alliant au groupe Novell, qui distribue un système d'exploitation dérivé de Linux, Suse Linux. Microsoft et Novell rendront leurs systèmes d'exploitation compatibles, chacun distribuera les deux systèmes et ils sortiront ensembles des solutions communes. </p> <p> «La décision de Sun était attendue depuis longtemps et ne marque pas de changement fondamental, car le groupe gardera un contrôle sur le langage Java, mais il existe une tendance générale au développement du <mark>logiciel</mark> <mark>libre</mark>», a commenté l'analyste de Forrester Michael Goulde, «même chez Microsoft». </p> <p> «De plus en plus de groupes dans le monde adoptent le <mark>logiciel</mark> <mark>libre</mark>, surtout en Europe», a-t-il souligné. Une étude de Forrester de septembre dernier auprès de 600 grands groupes américains et 300 européens montre que </p> <p> 39 % des groupes en Europe utilisent un ou plusieurs <mark>logiciels</mark> <mark>libres</mark>, et 35 % aux États-Unis. Respectivement 8 % et 5 % envisagent de le faire dans les deux régions, et seulement un tiers s'y déclarent opposées. </p> <p> Les plus ouvertes sont les sociétés de télécoms, de médias et loisirs (43 % à 54 % d'utilisateurs de <mark>logiciels</mark> <mark>libres</mark>), de services financiers (36 % à 41 % d'utilisateurs) ainsi que 50 % des administrations publiques européennes et 35 % des américaines. </p> <p> Les <mark>logiciels</mark> <mark>libres</mark> offrent accès à leur code source (leur «noyau») ce qui permet à tous de les utiliser et surtout de le transformer. Les contributeurs peuvent être des informaticiens free-lance qui travaillent de chez eux aux quatre coins du monde, mais aussi des associations ou des entreprises comme Oracle, Hewlett-Packard, Oracle, Sun et IBM. </p> <p> Les <mark>logiciels</mark> <mark>libres</mark> ne sont pas forcément gratuits. Toute entreprise peut mettre au point et commercialiser sa version. Autre source de profit, celui de la maintenance et assistance à l'utilisateur, comme le propose le groupe Red Hat, leader de la maintenance de Linux. </p> <p> Preuve que ce marché est de plus en plus convoité, le groupe Oracle vient d'annoncer qu'il se lançait dans la maintenance de Linux et veut proposer des prix moitié moindre que ceux de Red Hat. </p> <p> Parmi les <mark>logiciels</mark> <mark>libres</mark> les plus utilisés figurent la suite Open Office, qui concurrence les logiciels de bureautique Office de Microsoft, le logiciel de base de données MySQL, le logiciel de cryptage et de communications internet sécurisées OpenSSL, le logiciel de requêtes web (serveur web) Apache et le navigateur Mozilla, concurrent d'Internet Explorer de Microsoft. </p> <p> Des <mark>logiciels</mark> <mark>libres</mark> sont aussi au coeur d'appareils comme le modem Freebox du fournisseur d'accès à internet français Free, des assistants personnels Sharp ou encore de lecteurs de vidéo en format DivX.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">13 janvier 2000</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">26 août 2000</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">18 novembre 2002</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">10 juin 2004</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">5 avril 2005</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">14 novembre 2006</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">2 novembre 2011</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">2 janvier 2012</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">20 janvier 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">24 octobre 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2006 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20061120·LE·123202</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20061120·LE·123202";
+    var _docIndex = 763;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20061120·LE·123202';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720061120%C2%B7LE%C2%B7123202&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720061120%C2%B7LE%C2%B7123202&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720061120%C2%B7LE%C2%B7123202&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720061120%C2%B7LE%C2%B7123202&docIndex=763&FullScreen=1";
+                
+	var _keyDoc = 'news·20061120·LE·123202';
+</script>
+</div></body></html>

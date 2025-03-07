@@ -1,0 +1,529 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Environnement &amp; Sciences,         mardi 9 ao&amp;#251;t 2011 846 mots, p. 10&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Plan&#232;te         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Nouvelles charges contre le Roundup de Monsanto            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Des chercheurs reprochent &#224; Bruxelles sa lenteur &#224; r&#233;&#233;valuer la toxicit&#233; de l&#39;herbicide &#224; la lumi&#232;re d&#39;&#233;tudes r&#233;centes&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;St&#233;phane Foucart&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Le Roundup et son principe actif, le glyphosate, sont de nouveau au centre d&#39;une controverse. Dans un rapport &#233;dit&#233; par Earth &lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; (EOS), une petite organisation non gouvernementale (ONG) britannique, une dizaine de chercheurs mettent en cause les autorit&#233;s europ&#233;ennes pour leur peu d&#39;empressement &#224; r&#233;&#233;valuer, &#224; la lumi&#232;re de nouvelles donn&#233;es, l&#39;herbicide &#224; large spectre le plus utilis&#233; au monde. Le texte, qui circule sur Internet depuis juin, rassemble les indices selon lesquels le pesticide phare de Monsanto est potentiellement t&#233;ratog&#232;ne - c&#39;est-&#224;-dire responsable de malformations foetales. &lt;/p&gt; &lt;p&gt; Les auteurs du rapport citent notamment une &#233;tude publi&#233;e, fin 2010, dans &lt;em style=&quot;font-style:italic;&quot;&gt;Chemical Research in Toxicology&lt;/em&gt;, selon laquelle l&#39;exposition directe d&#39;embryons de batraciens (&lt;em style=&quot;font-style:italic;&quot;&gt;Xenopus laevis&lt;/em&gt;) &#224; de tr&#232;s faibles doses d&#39;herbicide &#224; base de glyphosate entra&#238;ne des malformations. Men&#233;s par l&#39;&#233;quipe de l&#39;embryologue Andres Carrasco, de l&#39;universit&#233; de Buenos Aires, ces travaux identifient en outre le m&#233;canisme biologique &#224; la base du ph&#233;nom&#232;ne : expos&#233;s au phytosanitaire, les embryons de &lt;em style=&quot;font-style:italic;&quot;&gt;Xenopus laevis&lt;/em&gt; synth&#233;tisent plus de tr&#233;tino&#239;ne, dont l&#39;effet t&#233;ratog&#232;ne est notoire chez les vert&#233;br&#233;s.&lt;/p&gt;
+
+
+&lt;p&gt;Monsanto r&#233;fute ces conclusions, pr&#233;cisant qu&#39;une exposition directe, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; irr&#233;aliste &#187;&lt;/em&gt;, permettrait aussi de conclure &#224; la t&#233;ratog&#233;nicit&#233; de la caf&#233;ine... &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le glyphosate n&#39;a pas d&#39;effets nocifs sur la reproduction des animaux adultes et ne cause pas de malformations chez la descendance des animaux expos&#233;s au glyphosate, m&#234;me &#224; tr&#232;s fortes doses &#187;&lt;/em&gt;, ajoute Monsanto sur son site Web. &lt;/p&gt; &lt;p&gt; Pourtant, le dernier rapport d&#39;&#233;valuation du glyphosate par la Commission europ&#233;enne, dat&#233; de 2001, qui repose au moins en partie sur les &#233;tudes toxicologiques commandit&#233;es par l&#39;agrochimiste lui-m&#234;me, pr&#233;cise qu&#39;&#224; hautes doses toxiques, le glyphosate provoque chez le rat &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; un plus faible nombre de foetus viables et un poids foetal r&#233;duit, un retard d&#39;ossification, une plus forte incidence d&#39;anomalies du squelette et/ou des visc&#232;res &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Selon EOS, les observations d&#39;Andres Carrasco co&#239;ncident avec des effets suspect&#233;s sur les populations humaines les plus expos&#233;es au Roundup. C&#39;est-&#224;-dire dans les r&#233;gions o&#249; les cultures g&#233;n&#233;tiquement modifi&#233;es r&#233;sistantes au glyphosate (dites &#171; Roundup Ready &#187;) se sont impos&#233;es et o&#249; l&#39;herbicide est donc le plus massivement &#233;pandu. Un examen des registres de la province argentine du Chaco a montr&#233;, dans la localit&#233; de La Leonesa, que l&#39;incidence des malformations n&#233;onatales, au cours de la d&#233;cennie 2001-2010, avait quadrupl&#233; par rapport &#224; la d&#233;cennie 1990-2000. Selon M. Carrasco, la commission ayant men&#233; ce d&#233;compte a recommand&#233; aux autorit&#233;s de lancer une &#233;tude &#233;pid&#233;miologique en bonne et due forme. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Cette recommandation n&#39;a pas &#233;t&#233; suivie &#187;&lt;/em&gt;, dit le chercheur. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Qu&#39;il y ait un probl&#232;me en Am&#233;rique du Sud avec les produits phytosanitaires, c&#39;est probable, mais il est tr&#232;s difficile d&#39;affirmer qu&#39;il est li&#233; au glyphosate en particulier &#187;&lt;/em&gt;, estime un toxicologue qui travaille dans l&#39;industrie et reproche au rapport d&#39;EOS des &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; amalgames &#187;&lt;/em&gt; et &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; des comparaisons de chiffres trompeuses &#187;&lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En outre&lt;/em&gt;, ajoute-t-il, &lt;em style=&quot;font-style:italic;&quot;&gt;la pulv&#233;risation a&#233;rienne est la norme l&#224;-bas, alors qu&#39;elle est globalement interdite en Europe. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Pour la Commission europ&#233;enne, les indices rassembl&#233;s par EOS ne constituent pas un motif suffisant pour changer le calendrier en cours. La derni&#232;re &#233;valuation du Roundup remonte &#224; 2002. La r&#233;&#233;valuation &#233;tait pr&#233;vue en 2012, mais le retard accumul&#233; par Bruxelles va repousser ce nouvel examen &#224; 2015. &lt;/p&gt; &lt;p&gt; Ce retard n&#39;est pas la principale raison des protestations de l&#39;ONG. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; De nouvelles r&#232;gles d&#39;&#233;valuation des pesticides, potentiellement plus contraignantes, sont en train d&#39;&#234;tre finalis&#233;es&lt;/em&gt;, dit Claire Robinson, qui a coordonn&#233; la r&#233;daction du rapport d&#39;EOS. &lt;em style=&quot;font-style:italic;&quot;&gt;Mais la r&#233;&#233;valuation qui sera rendue en 2015 reposera encore sur l&#39;ancienne r&#233;glementation, pour laisser aux industriels le temps de s&#39;adapter. &#187;&lt;/em&gt; Ce que la Commission ne d&#233;ment pas. &lt;/p&gt; &lt;p&gt; Les nouvelles r&#232;gles - qui, de source industrielle, doivent &#234;tre &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; finalis&#233;es &#224; l&#39;automne &#187;&lt;/em&gt; - pr&#233;voient un examen obligatoire de la litt&#233;rature scientifique, en plus des &#233;tudes pr&#233;sent&#233;es par les industriels. Les travaux publi&#233;s dans les revues savantes par les laboratoires publics devront donc &#234;tre syst&#233;matiquement pris en compte, m&#234;me si &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; cela ne veut pas dire qu&#39;ils sont aujourd&#39;hui syst&#233;matiquement ignor&#233;s, loin de l&#224; &#187;&lt;/em&gt;, temp&#232;re Thierry Mercier, de l&#39;Agence nationale de s&#233;curit&#233; sanitaire, de l&#39;alimentation, de l&#39;environnement et du travail (Anses). &lt;/p&gt; &lt;p&gt; Pour EOS, la diff&#233;rence est pourtant de taille. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Sous les anciennes r&#232;gles, il est probable que le glyphosate obtiendra une nouvelle autorisation&lt;/em&gt;, dit Mme Robinson. &lt;em style=&quot;font-style:italic;&quot;&gt;Il faudra alors vraisemblablement attendre jusqu&#39;en 2030 pour que ce produit subisse une r&#233;&#233;valuation s&#233;rieuse, conforme au nouveau r&#232;glement. Alors que nous savons d&#232;s aujourd&#39;hui qu&#39;il pose probl&#232;me. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les &#233;tudes commandit&#233;es par les industriels doivent r&#233;pondre &#224; certains crit&#232;res concernant les esp&#232;ces animales enr&#244;l&#233;es dans les tests, la nature et la dur&#233;e de l&#39;exposition aux produits test&#233;s, etc. Les laboratoires universitaires - comme celui de M. Carrasco - disposent d&#39;une plus grande latitude. Et les diff&#233;rences de conclusions sont parfois consid&#233;rables. &lt;/p&gt; &lt;p&gt; Un exemple cit&#233; par EOS est celui du bisph&#233;nol A (BPA). Dans une revue de la litt&#233;rature scientifique publi&#233;e en 2005 dans &lt;em style=&quot;font-style:italic;&quot;&gt;Environmental Health Perspectives&lt;/em&gt;, Frederick vom Saal (universit&#233; du Missouri) estimait que 94 des 115 &#233;tudes acad&#233;miques publi&#233;es sur le sujet concluaient &#224; un effet significatif du BPA sur les organismes, m&#234;me &#224; tr&#232;s faible dose. Dans le m&#234;me temps, aucune des dix-neuf &#233;tudes sur le m&#234;me th&#232;me commandit&#233;es par les industriels ne mettait en lumi&#232;re de tels effets. En France, le BPA a &#233;t&#233; interdit en 2010 dans les biberons. &lt;/p&gt; &lt;p&gt; Dans le cas du glyphosate et de son principal produit de d&#233;gradation, l&#39;acide aminom&#233;thylphosphonique (AMPA), plusieurs &#233;tudes publi&#233;es ces derni&#232;res ann&#233;es mettent en lumi&#232;re leur toxicit&#233; pour certains organismes aquatiques. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le glyphosate ou l&#39;AMPA ne sont pas des mol&#233;cules tr&#232;s probl&#233;matiques en elles-m&#234;mes, en tout cas moins que d&#39;autres&lt;/em&gt;, explique Laure Mamy, chercheuse &#224; l&#39;Institut national de la recherche agronomique (INRA) et sp&#233;cialiste du devenir de ces compos&#233;s dans l&#39;environnement. &lt;em style=&quot;font-style:italic;&quot;&gt;Le probl&#232;me, c&#39;est la quantit&#233;. C&#39;est la dose qui fait le poison. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Or, si le glyphosate se d&#233;grade relativement rapidement, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; l&#39;AMPA peut persister plusieurs mois dans les sols &#187;&lt;/em&gt;. En France, selon l&#39;Institut fran&#231;ais de l&#39;environnement (IFEN), cette mol&#233;cule est d&#233;sormais le contaminant le plus fr&#233;quemment retrouv&#233; dans les eaux de surface. &lt;/p&gt; &lt;p&gt; Son succ&#232;s est donc le principal probl&#232;me du Roundup. D&#39;autant que des r&#233;sistances sont apparues ces derni&#232;res ann&#233;es. Sur le continent am&#233;ricain en particulier, o&#249; les cultures g&#233;n&#233;tiquement modifi&#233;es associ&#233;es ont permis un usage massif du Roundup, des mauvaises herbes commencent &#224; &#234;tre de moins en moins sensibles - voire compl&#232;tement r&#233;sistantes - &#224; l&#39;herbicide phare de Monsanto. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Or, lorsque ces r&#233;sistances commencent &#224; survenir, on est parfois tent&#233; d&#39;augmenter les quantit&#233;s &#233;pandues &#187;&lt;/em&gt; , dit Laure Mamy.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2011 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20110809&amp;#183;LM&amp;#183;0q0908_402454&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">littérature scientifique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Commission européenne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Xenopus laevis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">descendance des animaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">règles d'évaluation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sciences et techniques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Santé et services sociaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Alimentation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Pharmaceutique et biotechnologies</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bruxelles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">phare de Monsanto</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">La Leonesa</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Amérique du Sud</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110809%c2%b7LM%c2%b70q0908_402454" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110809%c2%b7LM%c2%b70q0908_402454">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Environnement &amp; Sciences,         mardi 9 août 2011 846 mots, p. 10</span>
+</div>
+
+    <div>
+        <p>
+Planète         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Nouvelles charges contre le Roundup de Monsanto            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Des chercheurs reprochent à Bruxelles sa lenteur à réévaluer la toxicité de l'herbicide à la lumière d'études récentes</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Stéphane Foucart</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Le Roundup et son principe actif, le glyphosate, sont de nouveau au centre d'une controverse. Dans un rapport édité par Earth <mark>Open</mark> <mark>Source</mark> (EOS), une petite organisation non gouvernementale (ONG) britannique, une dizaine de chercheurs mettent en cause les autorités européennes pour leur peu d'empressement à réévaluer, à la lumière de nouvelles données, l'herbicide à large spectre le plus utilisé au monde. Le texte, qui circule sur Internet depuis juin, rassemble les indices selon lesquels le pesticide phare de Monsanto est potentiellement tératogène - c'est-à-dire responsable de malformations foetales. </p> <p> Les auteurs du rapport citent notamment une étude publiée, fin 2010, dans <em style="font-style:italic;">Chemical Research in Toxicology</em>, selon laquelle l'exposition directe d'embryons de batraciens (<em style="font-style:italic;">Xenopus laevis</em>) à de très faibles doses d'herbicide à base de glyphosate entraîne des malformations. Menés par l'équipe de l'embryologue Andres Carrasco, de l'université de Buenos Aires, ces travaux identifient en outre le mécanisme biologique à la base du phénomène : exposés au phytosanitaire, les embryons de <em style="font-style:italic;">Xenopus laevis</em> synthétisent plus de trétinoïne, dont l'effet tératogène est notoire chez les vertébrés.</p>
+
+
+<p>Monsanto réfute ces conclusions, précisant qu'une exposition directe, <em style="font-style:italic;">« irréaliste »</em>, permettrait aussi de conclure à la tératogénicité de la caféine... <em style="font-style:italic;">« Le glyphosate n'a pas d'effets nocifs sur la reproduction des animaux adultes et ne cause pas de malformations chez la descendance des animaux exposés au glyphosate, même à très fortes doses »</em>, ajoute Monsanto sur son site Web. </p> <p> Pourtant, le dernier rapport d'évaluation du glyphosate par la Commission européenne, daté de 2001, qui repose au moins en partie sur les études toxicologiques commanditées par l'agrochimiste lui-même, précise qu'à hautes doses toxiques, le glyphosate provoque chez le rat <em style="font-style:italic;">« un plus faible nombre de foetus viables et un poids foetal réduit, un retard d'ossification, une plus forte incidence d'anomalies du squelette et/ou des viscères »</em>. </p> <p> Selon EOS, les observations d'Andres Carrasco coïncident avec des effets suspectés sur les populations humaines les plus exposées au Roundup. C'est-à-dire dans les régions où les cultures génétiquement modifiées résistantes au glyphosate (dites « Roundup Ready ») se sont imposées et où l'herbicide est donc le plus massivement épandu. Un examen des registres de la province argentine du Chaco a montré, dans la localité de La Leonesa, que l'incidence des malformations néonatales, au cours de la décennie 2001-2010, avait quadruplé par rapport à la décennie 1990-2000. Selon M. Carrasco, la commission ayant mené ce décompte a recommandé aux autorités de lancer une étude épidémiologique en bonne et due forme. <em style="font-style:italic;">« Cette recommandation n'a pas été suivie »</em>, dit le chercheur. </p> <p><em style="font-style:italic;">« Qu'il y ait un problème en Amérique du Sud avec les produits phytosanitaires, c'est probable, mais il est très difficile d'affirmer qu'il est lié au glyphosate en particulier »</em>, estime un toxicologue qui travaille dans l'industrie et reproche au rapport d'EOS des <em style="font-style:italic;">« amalgames »</em> et <em style="font-style:italic;">« des comparaisons de chiffres trompeuses »</em>. <em style="font-style:italic;">« En outre</em>, ajoute-t-il, <em style="font-style:italic;">la pulvérisation aérienne est la norme là-bas, alors qu'elle est globalement interdite en Europe. »</em></p><p>Pour la Commission européenne, les indices rassemblés par EOS ne constituent pas un motif suffisant pour changer le calendrier en cours. La dernière évaluation du Roundup remonte à 2002. La réévaluation était prévue en 2012, mais le retard accumulé par Bruxelles va repousser ce nouvel examen à 2015. </p> <p> Ce retard n'est pas la principale raison des protestations de l'ONG. <em style="font-style:italic;">« De nouvelles règles d'évaluation des pesticides, potentiellement plus contraignantes, sont en train d'être finalisées</em>, dit Claire Robinson, qui a coordonné la rédaction du rapport d'EOS. <em style="font-style:italic;">Mais la réévaluation qui sera rendue en 2015 reposera encore sur l'ancienne réglementation, pour laisser aux industriels le temps de s'adapter. »</em> Ce que la Commission ne dément pas. </p> <p> Les nouvelles règles - qui, de source industrielle, doivent être <em style="font-style:italic;">« finalisées à l'automne »</em> - prévoient un examen obligatoire de la littérature scientifique, en plus des études présentées par les industriels. Les travaux publiés dans les revues savantes par les laboratoires publics devront donc être systématiquement pris en compte, même si <em style="font-style:italic;">« cela ne veut pas dire qu'ils sont aujourd'hui systématiquement ignorés, loin de là »</em>, tempère Thierry Mercier, de l'Agence nationale de sécurité sanitaire, de l'alimentation, de l'environnement et du travail (Anses). </p> <p> Pour EOS, la différence est pourtant de taille. <em style="font-style:italic;">« Sous les anciennes règles, il est probable que le glyphosate obtiendra une nouvelle autorisation</em>, dit Mme Robinson. <em style="font-style:italic;">Il faudra alors vraisemblablement attendre jusqu'en 2030 pour que ce produit subisse une réévaluation sérieuse, conforme au nouveau règlement. Alors que nous savons dès aujourd'hui qu'il pose problème. »</em></p><p>Les études commanditées par les industriels doivent répondre à certains critères concernant les espèces animales enrôlées dans les tests, la nature et la durée de l'exposition aux produits testés, etc. Les laboratoires universitaires - comme celui de M. Carrasco - disposent d'une plus grande latitude. Et les différences de conclusions sont parfois considérables. </p> <p> Un exemple cité par EOS est celui du bisphénol A (BPA). Dans une revue de la littérature scientifique publiée en 2005 dans <em style="font-style:italic;">Environmental Health Perspectives</em>, Frederick vom Saal (université du Missouri) estimait que 94 des 115 études académiques publiées sur le sujet concluaient à un effet significatif du BPA sur les organismes, même à très faible dose. Dans le même temps, aucune des dix-neuf études sur le même thème commanditées par les industriels ne mettait en lumière de tels effets. En France, le BPA a été interdit en 2010 dans les biberons. </p> <p> Dans le cas du glyphosate et de son principal produit de dégradation, l'acide aminométhylphosphonique (AMPA), plusieurs études publiées ces dernières années mettent en lumière leur toxicité pour certains organismes aquatiques. <em style="font-style:italic;">« Le glyphosate ou l'AMPA ne sont pas des molécules très problématiques en elles-mêmes, en tout cas moins que d'autres</em>, explique Laure Mamy, chercheuse à l'Institut national de la recherche agronomique (INRA) et spécialiste du devenir de ces composés dans l'environnement. <em style="font-style:italic;">Le problème, c'est la quantité. C'est la dose qui fait le poison. »</em></p><p>Or, si le glyphosate se dégrade relativement rapidement, <em style="font-style:italic;">« l'AMPA peut persister plusieurs mois dans les sols »</em>. En France, selon l'Institut français de l'environnement (IFEN), cette molécule est désormais le contaminant le plus fréquemment retrouvé dans les eaux de surface. </p> <p> Son succès est donc le principal problème du Roundup. D'autant que des résistances sont apparues ces dernières années. Sur le continent américain en particulier, où les cultures génétiquement modifiées associées ont permis un usage massif du Roundup, des mauvaises herbes commencent à être de moins en moins sensibles - voire complètement résistantes - à l'herbicide phare de Monsanto. <em style="font-style:italic;">« Or, lorsque ces résistances commencent à survenir, on est parfois tenté d'augmenter les quantités épandues »</em> , dit Laure Mamy.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2011 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20110809·LM·0q0908_402454</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20110809·LM·0q0908_402454";
+    var _docIndex = 264;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20110809·LM·0q0908_402454';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720110809%C2%B7LM%C2%B70q0908_402454&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720110809%C2%B7LM%C2%B70q0908_402454&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720110809%C2%B7LM%C2%B70q0908_402454&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720110809%C2%B7LM%C2%B70q0908_402454&docIndex=264&FullScreen=1";
+                
+	var _keyDoc = 'news·20110809·LM·0q0908_402454';
+</script>
+</div></body></html>

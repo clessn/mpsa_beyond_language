@@ -1,0 +1,537 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Cahier &#201;t&#233;,         lundi 18 ao&amp;#251;t 2014 1003 mots, p. ETE1&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Logiciels &#224; l&#39;&#232;re libre            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Depuis les ann&#233;es 80, un syst&#232;me collaboratif permet &#224; tous d&#39;&#233;tudier, de modifier et de distribuer des programmes, parall&#232;lement aux g&#233;ants de l&#39;informatique, dont les outils briment l&#39;utilisateur.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Erwan CARIO&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Les chemins de la libert&#233;, certains logiciels les arpentent depuis le milieu des ann&#233;es 80. Petit &#224; petit, discr&#232;tement, ils se sont impos&#233;s dans la plupart des rouages de l&#39;informatique moderne. Pour apprendre &#224; les conna&#238;tre, rien de plus simple : ouvrez un navigateur &lt;span class=&quot;stubs&quot;&gt;Web&lt;/span&gt; (Firefox de pr&#233;f&#233;rence, pour les besoins de l&#39;exercice), utilisez votre moteur de recherche favori, tapez &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&#187;, &lt;/em&gt; puis cliquez sur le premier lien qui appara&#238;t. En quatre &#233;tapes, vous &#234;tes sur le point d&#39;en savoir plus sur le sujet et, surtout, vous &#234;tes maintenant un utilisateur aguerri de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &lt;em style=&quot;font-style:italic;&quot;&gt;(lire ci-contre).&lt;/em&gt; Rien que pour ces manipulations, des dizaines d&#39;entre eux sont entr&#233;s en action. Liste non exhaustive : Firefox, les ordinateurs du moteur de recherche tournent tr&#232;s probablement sous GNU-Linux, et les informations sont envoy&#233;es par Apache; la s&#233;curit&#233; est, elle, g&#233;r&#233;e par OpenSSL; pour afficher ses r&#233;sultats, Wikip&#233;dia (puisque c&#39;est lui, le premier r&#233;sultat, comme d&#39;habitude) utilise MediaWiki, d&#233;velopp&#233; en PHP et qui utilise la base de donn&#233;es MySQL. Et on vous passe tous les bouts de code qui se chargent du transport des donn&#233;es dans les tuyaux du r&#233;seau mondial.&lt;/p&gt;
+
+
+&lt;p&gt;Servir la collectivit&#233; &lt;/p&gt; &lt;p&gt; Le voyage du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; a d&#233;marr&#233; en 1980, au Massachusetts Institute of Technology (MIT), pr&#232;s de Boston, aux Etats-Unis, l&#224; o&#249; commencent nombre d&#39;histoires quand on parle d&#39;informatique. &lt;mark&gt;&lt;span class=&quot;stubs&quot;&gt;Richard &lt;mark&gt;Stallman&lt;/mark&gt;&lt;/span&gt;&lt;/mark&gt;, programmeur au laboratoire d&#39;intelligence artificielle du c&#233;l&#232;bre institut, vient d&#39;envoyer une cinquantaine de pages &#224; imprimer sur la toute nouvelle imprimante laser du d&#233;partement. Mais quand il arrive, seules quatre sont sorties, et ce ne sont m&#234;me pas les siennes (1). Cette plaie du bourrage papier ! &lt;mark&gt;Stallman&lt;/mark&gt; conna&#238;t bien le probl&#232;me. Quelques ann&#233;es plus t&#244;t, il a modifi&#233; le programme d&#39;une autre imprimante pour qu&#39;elle pr&#233;vienne les utilisateurs en cas de bourrage, et il compte bien faire de m&#234;me avec cette nouvelle venue offerte par Xerox. &lt;/p&gt; &lt;p&gt; Il d&#233;couvre alors que la soci&#233;t&#233; n&#39;a pas transmis le code source du driver de l&#39;imprimante. Impossible, donc, de l&#39;am&#233;liorer. Pire, lorsqu&#39;il s&#39;enquiert aupr&#232;s d&#39;un autre chercheur, qu&#39;il sait proche de Xerox, de la disponibilit&#233; du code, ce dernier refuse de le partager, &#224; cause d&#39;un accord de confidentialit&#233;. &lt;/p&gt; &lt;p&gt; Pour &lt;mark&gt;Stallman&lt;/mark&gt;, c&#39;est une trahison de l&#39;esprit des codeurs informatiques qui, jusqu&#39;ici, &#233;taient pr&#234;ts &#224; collaborer. Cette anicroche est un &#233;l&#233;ment d&#233;clencheur : pour servir la collectivit&#233;, les logiciels doivent &#234;tre libres. On doit donc pouvoir les distribuer, les modifier et les utiliser &#224; sa guise et sans contrainte. Il quitte le MIT en 1984 pour se consacrer au d&#233;veloppement de GNU, un syst&#232;me d&#39;exploitation libre (qui sera combin&#233; au noyau Linux un peu plus tard pour aboutir &#224; GNU-Linux), fonde la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt; en 1985 et publie en 1989 la premi&#232;re version de la licence publique g&#233;n&#233;rale GNU, qui sert de base l&#233;gale &#224; la prolif&#233;ration des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Mais si de nombreux programmeurs d&#233;cident de suivre &lt;mark&gt;Stallman&lt;/mark&gt; dans sa longue &#233;pop&#233;e, le grand public, lui, est &#224; des ann&#233;es-lumi&#232;re de ces pr&#233;occupations. En effet, lorsque les ordinateurs personnels commencent &#224; d&#233;barquer dans les foyers au milieu des ann&#233;es 90, ils sont accompagn&#233;s des outils d&#39;une firme quasi monopolistique sur le secteur : Microsoft. Et il n&#39;y a rien de moins libre qu&#39;un logiciel estampill&#233; du logo du g&#233;ant de Redmond. Windows, Word, Excel, Internet Explorer, tous ces programmes fonctionnent comme des bo&#238;tes noires, et leurs secrets de fabrication sont inaccessibles &#224; leurs millions d&#39;utilisateurs. &lt;/p&gt; &lt;p&gt; A la fin des ann&#233;es 90, &lt;span class=&quot;stubs&quot;&gt;Alexis Kauffmann&lt;/span&gt; faisait partie de ceux-l&#224;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Je ne me posais pas vraiment de questions. Et puis je suis tomb&#233; un jour sur un article intitul&#233; &quot;Comment informatiser intelligemment les &#233;coles ?&quot; L&#39;auteur y parlait de &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, et j&#39;ai d&#233;couvert un univers qui d&#233;passait l&#39;informatique. C&#39;&#233;tait un syst&#232;me d&#39;intelligence collective et collaborative. &lt;mark&gt;&lt;span class=&quot;stubs&quot;&gt;Richard &lt;mark&gt;Stallman&lt;/mark&gt;&lt;/span&gt;&lt;/mark&gt; ne parle pas de technique, il parle d&#39;&#233;thique. Le mouvement du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est un mouvement social.&#187; &lt;/em&gt; Kauffmann d&#233;cide alors de consacrer son &#233;nergie &#224; faire conna&#238;tre ce mouvement et &#224; aider les autres utilisateurs &#224; se lib&#233;rer des logiciels propri&#233;taires (ou &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;privateurs&#187;,&lt;/em&gt; selon la terminologie de &lt;mark&gt;Stallman&lt;/mark&gt;). Il fonde ainsi Framasoft, un site qui r&#233;f&#233;rence les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; et qui est devenu, avec les ann&#233;es, une association g&#233;rant une multitude d&#39;activit&#233;s : maison d&#39;&#233;dition (de livres sous licence libre, bien s&#251;r), fournisseur de services en ligne (l&#39;&#233;diteur collaboratif Framapad) ou encore distributeur d&#39;une cl&#233; USB contenant une foultitude de logiciels et de livres, ainsi que la totalit&#233; du Wikip&#233;dia francophone (la Framakey). &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Tristan Nitot&lt;/span&gt;, lui, aurait pu tomber plus t&#244;t dans la marmite du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Au milieu des ann&#233;es 80, avant mon bac, j&#39;avais r&#233;ussi &#224; m&#39;incruster dans les locaux du Centre mondial informatique et ressources humaines, une structure cr&#233;&#233;e par &lt;span class=&quot;stubs&quot;&gt;Jean-Jacques Servan-Schreiber&lt;/span&gt;. Je squattais les ordinateurs jour et nuit, et j&#39;y ai crois&#233; plusieurs fois &lt;mark&gt;Stallman&lt;/mark&gt;. J&#39;utilisais m&#234;me &lt;span class=&quot;stubs&quot;&gt;Emacs&lt;/span&gt;, l&#39;&#233;diteur de texte qu&#39;il avait d&#233;velopp&#233;. Mais, bon, je ne savais pas vraiment qui c&#39;&#233;tait. Je l&#39;ai compris bien plus tard.&#187; &lt;/em&gt; Dans les ann&#233;es 90, Nitot rejoint Netscape, &#224; l&#39;&#233;poque le navigateur concurrent d&#39;Internet Explorer. Mais, en 1998, incapable de r&#233;sister au navigateur de Microsoft (gratuit et install&#233; par d&#233;faut avec Windows), Netscape d&#233;cide de rendre gratuit son Communicator et de passer le code source sous licence libre. Ce sont les d&#233;buts du grand projet Mozilla, qui aboutit en 2004 &#224; la sortie du navigateur Firefox, un des premiers &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &#224; toucher massivement le grand public. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Le truc incroyable avec Firefox, c&#39;est le travail en commun &#224; l&#39;&#233;chelle de la plan&#232;te. La puissance du libre, c&#39;est d&#39;&#234;tre capable de changer le monde gr&#226;ce &#224; la production collaborative d&#39;une richesse non marchande. Et, surtout, on est au service d&#39;une seule entit&#233; : l&#39;utilisateur final. C&#39;est lui que nous voulons rendre libre.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&#171;Se lib&#233;rer de Google&#187; &lt;/p&gt; &lt;p&gt; Cette attention &#224; l&#39;utilisateur, c&#39;est aussi ce qui motive &lt;span class=&quot;stubs&quot;&gt;Jean-Baptiste Kempf&lt;/span&gt;, qui s&#39;occupe depuis 2005 de &lt;span class=&quot;stubs&quot;&gt;VLC&lt;/span&gt;, le c&#233;l&#232;bre lecteur vid&#233;o repr&#233;sent&#233; par un c&#244;ne de chantier : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;C&#39;est peut-&#234;tre un peu utopiste et ridicule, mais on veut avant tout cr&#233;er des trucs cool pour les gens.&#187;&lt;/em&gt; Depuis le milieu des ann&#233;es 90 et les d&#233;buts du projet au sein de l&#39;Ecole centrale Paris, plus de 700 personnes ont particip&#233; au d&#233;veloppement de ce logiciel capable de lire n&#39;importe quel format de vid&#233;o. Avec plus de 1,3 milliard de t&#233;l&#233;chargements, &lt;span class=&quot;stubs&quot;&gt;VLC&lt;/span&gt; s&#39;est impos&#233; au grand public. Une satisfaction pour Kempf, qui regrette cependant que la plupart des utilisateurs en ignorent l&#39;aspect libre : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;span class=&quot;stubs&quot;&gt;VLC&lt;/span&gt; est consid&#233;r&#233; comme normal par une majorit&#233;. Par d&#233;faut, ils ont le c&#244;ne sur leur bureau, mais ils ne comprennent pas qu&#39;une des fonctionnalit&#233;s de &lt;span class=&quot;stubs&quot;&gt;VLC&lt;/span&gt;, c&#39;est justement d&#39;&#234;tre libre : on ne les flique pas, on ne regarde pas ce qu&#39;ils font. C&#39;est aujourd&#39;hui aussi important que le reste.&#187; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;D&#233;but ao&#251;t, Firefox a d&#233;pass&#233; Internet Explorer en nombre d&#39;utilisateurs en France. &lt;span class=&quot;stubs&quot;&gt;VLC&lt;/span&gt; est devenu incontournable. LibreOffice permet de se passer de la suite bureautique de Microsoft, et m&#234;me les jeux vid&#233;o commencent &#224; devenir compatibles avec GNU-Linux, notamment gr&#226;ce &#224; la plateforme Steam. &lt;/p&gt; &lt;p&gt; L&#39;heure n&#39;est pourtant pas &#224; la f&#234;te au sein de la communaut&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Le cloud et la mobilit&#233; sont venus tout bouleverser en tr&#232;s peu de temps, s&#39;alarme &lt;span class=&quot;stubs&quot;&gt;Alexis Kauffmann&lt;/span&gt;. Face &#224; l&#39;adoption massive des services de Google, &#224; la collecte des donn&#233;es par Facebook, aux applis mobiles et &#224; tous ces syst&#232;mes qui cherchent &#224; enfermer les utilisateurs, le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; n&#39;est plus suffisant. Il faut maintenant apprendre aux internautes &#224; se lib&#233;rer de Google.&#187; &lt;/em&gt; M&#234;me constat pour &lt;span class=&quot;stubs&quot;&gt;Tristan Nitot&lt;/span&gt; : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;La cl&#233; de vo&#251;te de notre mouvement, c&#39;est la libert&#233; de l&#39;utilisateur, et cette libert&#233; n&#39;a jamais &#233;t&#233; autant menac&#233;e. On a chang&#233; de paradigme : aujourd&#39;hui, il faut que la communaut&#233; du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; s&#39;attaque de front au sujet de la d&#233;centralisation du &lt;span class=&quot;stubs&quot;&gt;Web&lt;/span&gt;. On a lib&#233;r&#233; les logiciels, et il faut continuer &#224; le faire. Mais il faut aussi lib&#233;rer les serveurs et les donn&#233;es qui sont dedans.&#187; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;(1) &#171;&lt;mark&gt;&lt;span class=&quot;stubs&quot;&gt;Richard &lt;mark&gt;Stallman&lt;/mark&gt;&lt;/span&gt;&lt;/mark&gt; et la r&#233;volution du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&#187; de Sam Williams, &#233;d. Eyrolles. Disponible sur Framabook.org&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20140818&amp;#183;LI&amp;#183;f30561f6-261b-11e4-a4b7-d20183191303&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">licence libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">moteur de recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">code source</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Brian Martynook</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Richard Stallman</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Web</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Alexis Kauffmann</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">VLC</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Santé et services sociaux</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">PHP</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Boston</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">développement de GNU</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Redmond</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140818%c2%b7LI%c2%b7f30561f6-261b-11e4-a4b7-d20183191303" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140818%c2%b7LI%c2%b7f30561f6-261b-11e4-a4b7-d20183191303">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Cahier Été,         lundi 18 août 2014 1003 mots, p. ETE1</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Logiciels à l'ère libre            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Depuis les années 80, un système collaboratif permet à tous d'étudier, de modifier et de distribuer des programmes, parallèlement aux géants de l'informatique, dont les outils briment l'utilisateur.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Erwan CARIO</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Les chemins de la liberté, certains logiciels les arpentent depuis le milieu des années 80. Petit à petit, discrètement, ils se sont imposés dans la plupart des rouages de l'informatique moderne. Pour apprendre à les connaître, rien de plus simple : ouvrez un navigateur <span class="stubs">Web</span> (Firefox de préférence, pour les besoins de l'exercice), utilisez votre moteur de recherche favori, tapez <em style="font-style:italic;">«<mark>logiciel</mark> <mark>libre</mark>», </em> puis cliquez sur le premier lien qui apparaît. En quatre étapes, vous êtes sur le point d'en savoir plus sur le sujet et, surtout, vous êtes maintenant un utilisateur aguerri de <mark>logiciels</mark> <mark>libres</mark> <em style="font-style:italic;">(lire ci-contre).</em> Rien que pour ces manipulations, des dizaines d'entre eux sont entrés en action. Liste non exhaustive : Firefox, les ordinateurs du moteur de recherche tournent très probablement sous GNU-Linux, et les informations sont envoyées par Apache; la sécurité est, elle, gérée par OpenSSL; pour afficher ses résultats, Wikipédia (puisque c'est lui, le premier résultat, comme d'habitude) utilise MediaWiki, développé en PHP et qui utilise la base de données MySQL. Et on vous passe tous les bouts de code qui se chargent du transport des données dans les tuyaux du réseau mondial.</p>
+
+
+<p>Servir la collectivité </p> <p> Le voyage du <mark>logiciel</mark> <mark>libre</mark> a démarré en 1980, au Massachusetts Institute of Technology (MIT), près de Boston, aux Etats-Unis, là où commencent nombre d'histoires quand on parle d'informatique. <mark><span class="stubs">Richard <mark>Stallman</mark></span></mark>, programmeur au laboratoire d'intelligence artificielle du célèbre institut, vient d'envoyer une cinquantaine de pages à imprimer sur la toute nouvelle imprimante laser du département. Mais quand il arrive, seules quatre sont sorties, et ce ne sont même pas les siennes (1). Cette plaie du bourrage papier ! <mark>Stallman</mark> connaît bien le problème. Quelques années plus tôt, il a modifié le programme d'une autre imprimante pour qu'elle prévienne les utilisateurs en cas de bourrage, et il compte bien faire de même avec cette nouvelle venue offerte par Xerox. </p> <p> Il découvre alors que la société n'a pas transmis le code source du driver de l'imprimante. Impossible, donc, de l'améliorer. Pire, lorsqu'il s'enquiert auprès d'un autre chercheur, qu'il sait proche de Xerox, de la disponibilité du code, ce dernier refuse de le partager, à cause d'un accord de confidentialité. </p> <p> Pour <mark>Stallman</mark>, c'est une trahison de l'esprit des codeurs informatiques qui, jusqu'ici, étaient prêts à collaborer. Cette anicroche est un élément déclencheur : pour servir la collectivité, les logiciels doivent être libres. On doit donc pouvoir les distribuer, les modifier et les utiliser à sa guise et sans contrainte. Il quitte le MIT en 1984 pour se consacrer au développement de GNU, un système d'exploitation libre (qui sera combiné au noyau Linux un peu plus tard pour aboutir à GNU-Linux), fonde la <mark>Free</mark> <mark>Software</mark> <mark>Foundation</mark> en 1985 et publie en 1989 la première version de la licence publique générale GNU, qui sert de base légale à la prolifération des <mark>logiciels</mark> <mark>libres</mark>. Mais si de nombreux programmeurs décident de suivre <mark>Stallman</mark> dans sa longue épopée, le grand public, lui, est à des années-lumière de ces préoccupations. En effet, lorsque les ordinateurs personnels commencent à débarquer dans les foyers au milieu des années 90, ils sont accompagnés des outils d'une firme quasi monopolistique sur le secteur : Microsoft. Et il n'y a rien de moins libre qu'un logiciel estampillé du logo du géant de Redmond. Windows, Word, Excel, Internet Explorer, tous ces programmes fonctionnent comme des boîtes noires, et leurs secrets de fabrication sont inaccessibles à leurs millions d'utilisateurs. </p> <p> A la fin des années 90, <span class="stubs">Alexis Kauffmann</span> faisait partie de ceux-là. <em style="font-style:italic;">«Je ne me posais pas vraiment de questions. Et puis je suis tombé un jour sur un article intitulé "Comment informatiser intelligemment les écoles ?" L'auteur y parlait de <mark>logiciel</mark> <mark>libre</mark>, et j'ai découvert un univers qui dépassait l'informatique. C'était un système d'intelligence collective et collaborative. <mark><span class="stubs">Richard <mark>Stallman</mark></span></mark> ne parle pas de technique, il parle d'éthique. Le mouvement du <mark>logiciel</mark> <mark>libre</mark> est un mouvement social.» </em> Kauffmann décide alors de consacrer son énergie à faire connaître ce mouvement et à aider les autres utilisateurs à se libérer des logiciels propriétaires (ou <em style="font-style:italic;">«privateurs»,</em> selon la terminologie de <mark>Stallman</mark>). Il fonde ainsi Framasoft, un site qui référence les <mark>logiciels</mark> <mark>libres</mark> et qui est devenu, avec les années, une association gérant une multitude d'activités : maison d'édition (de livres sous licence libre, bien sûr), fournisseur de services en ligne (l'éditeur collaboratif Framapad) ou encore distributeur d'une clé USB contenant une foultitude de logiciels et de livres, ainsi que la totalité du Wikipédia francophone (la Framakey). </p> <p><span class="stubs"> Tristan Nitot</span>, lui, aurait pu tomber plus tôt dans la marmite du <mark>logiciel</mark> <mark>libre</mark> : <em style="font-style:italic;">«Au milieu des années 80, avant mon bac, j'avais réussi à m'incruster dans les locaux du Centre mondial informatique et ressources humaines, une structure créée par <span class="stubs">Jean-Jacques Servan-Schreiber</span>. Je squattais les ordinateurs jour et nuit, et j'y ai croisé plusieurs fois <mark>Stallman</mark>. J'utilisais même <span class="stubs">Emacs</span>, l'éditeur de texte qu'il avait développé. Mais, bon, je ne savais pas vraiment qui c'était. Je l'ai compris bien plus tard.» </em> Dans les années 90, Nitot rejoint Netscape, à l'époque le navigateur concurrent d'Internet Explorer. Mais, en 1998, incapable de résister au navigateur de Microsoft (gratuit et installé par défaut avec Windows), Netscape décide de rendre gratuit son Communicator et de passer le code source sous licence libre. Ce sont les débuts du grand projet Mozilla, qui aboutit en 2004 à la sortie du navigateur Firefox, un des premiers <mark>logiciels</mark> <mark>libres</mark> à toucher massivement le grand public. <em style="font-style:italic;">«Le truc incroyable avec Firefox, c'est le travail en commun à l'échelle de la planète. La puissance du libre, c'est d'être capable de changer le monde grâce à la production collaborative d'une richesse non marchande. Et, surtout, on est au service d'une seule entité : l'utilisateur final. C'est lui que nous voulons rendre libre.»</em></p><p>«Se libérer de Google» </p> <p> Cette attention à l'utilisateur, c'est aussi ce qui motive <span class="stubs">Jean-Baptiste Kempf</span>, qui s'occupe depuis 2005 de <span class="stubs">VLC</span>, le célèbre lecteur vidéo représenté par un cône de chantier : <em style="font-style:italic;">«C'est peut-être un peu utopiste et ridicule, mais on veut avant tout créer des trucs cool pour les gens.»</em> Depuis le milieu des années 90 et les débuts du projet au sein de l'Ecole centrale Paris, plus de 700 personnes ont participé au développement de ce logiciel capable de lire n'importe quel format de vidéo. Avec plus de 1,3 milliard de téléchargements, <span class="stubs">VLC</span> s'est imposé au grand public. Une satisfaction pour Kempf, qui regrette cependant que la plupart des utilisateurs en ignorent l'aspect libre : <em style="font-style:italic;">«<span class="stubs">VLC</span> est considéré comme normal par une majorité. Par défaut, ils ont le cône sur leur bureau, mais ils ne comprennent pas qu'une des fonctionnalités de <span class="stubs">VLC</span>, c'est justement d'être libre : on ne les flique pas, on ne regarde pas ce qu'ils font. C'est aujourd'hui aussi important que le reste.» </em></p><p>Début août, Firefox a dépassé Internet Explorer en nombre d'utilisateurs en France. <span class="stubs">VLC</span> est devenu incontournable. LibreOffice permet de se passer de la suite bureautique de Microsoft, et même les jeux vidéo commencent à devenir compatibles avec GNU-Linux, notamment grâce à la plateforme Steam. </p> <p> L'heure n'est pourtant pas à la fête au sein de la communauté. <em style="font-style:italic;">«Le cloud et la mobilité sont venus tout bouleverser en très peu de temps, s'alarme <span class="stubs">Alexis Kauffmann</span>. Face à l'adoption massive des services de Google, à la collecte des données par Facebook, aux applis mobiles et à tous ces systèmes qui cherchent à enfermer les utilisateurs, le <mark>logiciel</mark> <mark>libre</mark> n'est plus suffisant. Il faut maintenant apprendre aux internautes à se libérer de Google.» </em> Même constat pour <span class="stubs">Tristan Nitot</span> : <em style="font-style:italic;">«La clé de voûte de notre mouvement, c'est la liberté de l'utilisateur, et cette liberté n'a jamais été autant menacée. On a changé de paradigme : aujourd'hui, il faut que la communauté du <mark>logiciel</mark> <mark>libre</mark> s'attaque de front au sujet de la décentralisation du <span class="stubs">Web</span>. On a libéré les logiciels, et il faut continuer à le faire. Mais il faut aussi libérer les serveurs et les données qui sont dedans.» </em></p><p>(1) «<mark><span class="stubs">Richard <mark>Stallman</mark></span></mark> et la révolution du <mark>logiciel</mark> <mark>libre</mark>» de Sam Williams, éd. Eyrolles. Disponible sur Framabook.org</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20140818·LI·f30561f6-261b-11e4-a4b7-d20183191303</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20140818·LI·f30561f6-261b-11e4-a4b7-d20183191303";
+    var _docIndex = 847;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20140818·LI·f30561f6-261b-11e4-a4b7-d20183191303';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720140818%C2%B7LI%C2%B7f30561f6-261b-11e4-a4b7-d20183191303&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720140818%C2%B7LI%C2%B7f30561f6-261b-11e4-a4b7-d20183191303&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720140818%C2%B7LI%C2%B7f30561f6-261b-11e4-a4b7-d20183191303&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720140818%C2%B7LI%C2%B7f30561f6-261b-11e4-a4b7-d20183191303&docIndex=847&FullScreen=1";
+                
+	var _keyDoc = 'news·20140818·LI·f30561f6-261b-11e4-a4b7-d20183191303';
+</script>
+</div></body></html>

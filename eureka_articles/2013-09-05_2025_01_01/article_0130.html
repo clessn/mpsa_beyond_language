@@ -1,0 +1,535 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24562                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro,         jeudi 10 ao&amp;#251;t 2023 1111 mots, p. 17&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Opinions         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171; Chez Google, nous sommes pour la r&#233;gulation de l&#39;IA, mais sous conditions &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le vice-pr&#233;sident en charge de la recherche chez Google DeepMind estime que les avanc&#233;es permises par l&#39;IA sont d&#233;j&#224; consid&#233;rables. Il convient selon lui de les exploiter sans &#234;tre na&#239;f sur les dangers qu&#39;elles repr&#233;sentent.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Woitier, Chlo&#233;&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;LE FIGARO. - Le mot IA est dans toutes les bouches depuis la sortie de ChatGPT, mais cette technologie est pourtant loin d&#39;&#234;tre nouvelle...&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Zoubin GHAHRAMANI. -&lt;/em&gt; Cela fait trente ans que je suis chercheur en IA. Durant vingt ans, ce sujet &#233;tait purement acad&#233;mique : on r&#233;fl&#233;chissait sur l&#39;aspect th&#233;orique des machines rendues plus intelligentes, mais sans produire du concret. Tout a radicalement chang&#233; durant cette derni&#232;re d&#233;cennie. La plupart des gens ne l&#39;ont pas remarqu&#233;, mais l&#39;IA est d&#233;j&#224; pr&#233;sente dans nos vies quotidiennes. Par exemple, les assistants vocaux n&#39;existeraient pas si nous n&#39;avions pas fait des progr&#232;s fulgurants dans la reconnaissance vocale et la compr&#233;hension du langage par la machine. Il y a aussi des technologies pour vous aider &#224; prendre de meilleures photos et &#224; les &#233;diter. Tout cela fonctionne gr&#226;ce &#224; l&#39;IA. Et comment ne pas parler de Google Search. La grande majorit&#233; du temps, le moteur de recherche comprend ce que vous cherchez vraiment et apporte les meilleures r&#233;ponses. Cela est d&#251; aux progr&#232;s dans l&#39;apprentissage machine ces dix derni&#232;res ann&#233;es. Plus globalement, si l&#39;on prend notre smartphone, il y a dedans une centaine de t&#226;ches que cet appareil sait mieux faire qu&#39;un humain ! &lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Auriez-vous des exemples d&#39;avanc&#233;es majeures de l&#39;IA, par exemple dans le domaine de la sant&#233; ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Nous avons r&#233;cemment pr&#233;sent&#233; Med-PaLM2, un mod&#232;le de langage qui a &#233;t&#233; entra&#238;n&#233; sur des connaissances m&#233;dicales avanc&#233;es. Il est capable de r&#233;pondre &#224; de nombreuses questions et il r&#233;ussit les tests universitaires am&#233;ricains les plus exigeants. L&#39;int&#233;r&#234;t de Med-PaLM2 est de donner rapidement acc&#232;s &#224; de l&#39;information m&#233;dicale de tr&#232;s haut niveau. Cela ne va pas remplacer les m&#233;decins. Mais il y a de nombreux endroits dans le monde o&#249; bien des gens seront ravis d&#39;avoir acc&#232;s simplement &#224; toute cette expertise. &lt;/p&gt; &lt;p&gt; Nous d&#233;veloppons aussi l&#39;IA DermAssist. Imaginons que j&#39;ai une tache sur la peau qui m&#39;inqui&#232;te. Je la prends en photo, cette IA va l&#39;analyser, et elle va me donner les probabilit&#233;s qu&#39;il s&#39;agisse d&#39;un simple grain de beaut&#233;, d&#39;une irritation de la peau, ou bien que ce soit le signe d&#39;un cancer. Cette technologie est prometteuse car quasiment tous les habitants de la Terre poss&#232;dent un smartphone, mais ils n&#39;ont pas forc&#233;ment acc&#232;s &#224; des m&#233;decins sp&#233;cialistes. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;N&#39;y a-t-il pas un risque que les gens s&#39;autodiagnostiquent encore plus ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;J&#39;ai une anecdote &#224; ce sujet. J&#39;&#233;tais all&#233; voir mon m&#233;decin en lui disant que j&#39;avais un bouton bizarre dans le dos et que je pensais que c&#39;&#233;tait une morsure de tique. Je revenais du Connecticut, o&#249; il y avait des cas de maladie de Lyme. Bref, j&#39;&#233;tais l&#39;un de ces patients tr&#232;s aga&#231;ants ! Mais, ce qui m&#39;a surpris, c&#39;est que mon m&#233;decin ne connaissait pas cette maladie car il n&#39;y avait &#224; cette &#233;poque pas de cas au Royaume-Uni. Il s&#39;est tourn&#233; vers son ordinateur et il a commenc&#233; &#224; chercher des informations. Cette anecdote d&#233;montre le potentiel de ce type d&#39;IA. Personne ne peut stocker dans son cerveau toutes les connaissances m&#233;dicales existantes. Mais les machines le peuvent, et elles peuvent nous donner acc&#232;s &#224; de l&#39;information de haute qualit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Google travaille aussi sur des mod&#232;les de pr&#233;diction des inondations et de la propagation des feux de for&#234;t, pouvez-vous nous en dire plus ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La pr&#233;vision des crues est un outil qui est utilis&#233; dans 80 pays, et les alertes envoy&#233;es sont utiles car elles vous donnent du temps pour &#233;vacuer et prot&#233;ger vos biens. Mais je voudrais faire une analyse plus large. Les gens ont tendance &#224; voir l&#39;IA comme la r&#233;plication des capacit&#233;s humaines, par exemple le langage, la visualisation des objets, etc. Mais selon moi, les usages les plus int&#233;ressants de l&#39;IA sont ceux qui utilisent la puissance de raisonnement de la machine pour r&#233;soudre des probl&#232;mes que le cerveau humain ne peut pas g&#233;rer. &lt;/p&gt; &lt;p&gt; Le s&#233;quen&#231;age de l&#39;ADN est un exemple, la pr&#233;vision des crues en est un autre. Il y a vingt ans, on prenait des images satellite et on essayait de deviner o&#249; les inondations allaient s&#39;&#233;tendre. Les ordinateurs font bien mieux que nous ce travail. Autre exemple : en 2022, nous avons publi&#233; un article dans &lt;em style=&quot;font-style:italic;&quot;&gt;Nature&lt;/em&gt; o&#249; nous avons montr&#233; comment nous avons r&#233;ussi &#224; entra&#238;ner une IA pour contr&#244;ler le plasma &#224; l&#39;int&#233;rieur d&#39;un r&#233;acteur nucl&#233;aire. &#192; long terme, le contr&#244;le de la fusion nucl&#233;aire pourra &#234;tre &#224; l&#39;origine d&#39;une immense ressource d&#39;&#233;nergie d&#233;carbon&#233;e. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Dans quel camp &#234;tes-vous dans le d&#233;bat sur la dangerosit&#233; de l&#39;IA pour l&#39;avenir de l&#39;humanit&#233; ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Je pense que l&#39;IA est une technologie majeure avec un potentiel immense. Et je souhaite que les gens soient conscients des mani&#232;res dont l&#39;IA pourra aider &#224; construire un futur meilleur. Mais &#224; mon avis nous avons d&#233;j&#224; beaucoup de risques de tr&#232;s court terme li&#233;s &#224; l&#39;IA. Je peux citer la qualit&#233; et la fiabilit&#233; de l&#39;information produite par ces mod&#232;les. Chez Google, nous ne souhaitons pas qu&#39;internet soit noy&#233; sous la d&#233;sinformation et les fausses images. Il y a aussi les pr&#233;jug&#233;s qui sont r&#233;pliqu&#233;s ou amplifi&#233;s par les IA et qui vont avoir un impact n&#233;gatif sur la vie de certaines personnes. Bien s&#251;r, si vous &#234;tes auteur de science-fiction, vous pouvez imaginer des sc&#233;narios o&#249; l&#39;IA m&#232;nera &#224; la catastrophe. Mais les probabilit&#233;s sont vraiment tr&#232;s faibles. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;La recherche en IA ne risque-t-elle d&#39;&#234;tre de plus en plus ferm&#233;e et privatis&#233;e ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Google a beaucoup contribu&#233; &#224; la recherche en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Mais je pense qu&#39;il est important de mesurer les risques de cette ouverture. Nous avons vu des gens qui ont d&#233;tourn&#233; de fa&#231;on malveillante des mod&#232;les de langage en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, par exemple pour g&#233;n&#233;rer des visuels de d&#233;sinformation. Nous voulons &#234;tre s&#251;rs que nos recherches sont r&#233;utilis&#233;es de mani&#232;re positive. Nous mettons donc en place des garde-fous. Par exemple, l&#39;utilisation de nos IA par des tiers se fait gr&#226;ce &#224; des plateformes d&#39;interconnexion dont nous pouvons r&#233;voquer les acc&#232;s. Mais ces questions sont compliqu&#233;es et il n&#39;y a pas de r&#233;ponse simple. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Pensez-vous qu&#39;il faille r&#233;guler l&#39;IA ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Nous sommes pour la r&#233;gulation, mais il est important qu&#39;elle soit bien faite. Il est &#233;vident qu&#39;il faut r&#233;guler les utilisations concr&#232;tes les plus dangereuses. Personne ne veut de v&#233;hicules autonomes qui cr&#233;ent des accidents. Il faut aussi r&#233;guler les IA dans le domaine m&#233;dical. Mais il est, je pense, beaucoup plus compliqu&#233; de vouloir r&#233;guler des mod&#232;les math&#233;matiques qui sont par nature abstraits.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:cwoitier@lefigaro.fr&quot;&gt;cwoitier@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;10 ao&amp;#251;t 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230810&amp;#183;LF&amp;#183;1062&amp;#215;20&amp;#215;23888298003&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">prévision des crues</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">connaissances médicales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">visuels de désinformation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">prédiction des inondations</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fiabilité de l'information</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éditorial et opinions</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Connecticut</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Royaume-Uni</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230810%c2%b7LF%c2%b71062%c3%9720%c3%9723888298003" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230810%c2%b7LF%c2%b71062%c3%9720%c3%9723888298003">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24562                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro,         jeudi 10 août 2023 1111 mots, p. 17</span>
+</div>
+
+    <div>
+        <p>
+Opinions         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+« Chez Google, nous sommes pour la régulation de l'IA, mais sous conditions »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le vice-président en charge de la recherche chez Google DeepMind estime que les avancées permises par l'IA sont déjà considérables. Il convient selon lui de les exploiter sans être naïf sur les dangers qu'elles représentent.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Woitier, Chloé</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">LE FIGARO. - Le mot IA est dans toutes les bouches depuis la sortie de ChatGPT, mais cette technologie est pourtant loin d'être nouvelle...</em></p><p><em style="font-weight:bold;">Zoubin GHAHRAMANI. -</em> Cela fait trente ans que je suis chercheur en IA. Durant vingt ans, ce sujet était purement académique : on réfléchissait sur l'aspect théorique des machines rendues plus intelligentes, mais sans produire du concret. Tout a radicalement changé durant cette dernière décennie. La plupart des gens ne l'ont pas remarqué, mais l'IA est déjà présente dans nos vies quotidiennes. Par exemple, les assistants vocaux n'existeraient pas si nous n'avions pas fait des progrès fulgurants dans la reconnaissance vocale et la compréhension du langage par la machine. Il y a aussi des technologies pour vous aider à prendre de meilleures photos et à les éditer. Tout cela fonctionne grâce à l'IA. Et comment ne pas parler de Google Search. La grande majorité du temps, le moteur de recherche comprend ce que vous cherchez vraiment et apporte les meilleures réponses. Cela est dû aux progrès dans l'apprentissage machine ces dix dernières années. Plus globalement, si l'on prend notre smartphone, il y a dedans une centaine de tâches que cet appareil sait mieux faire qu'un humain ! </p>
+
+
+<p><em style="font-weight:bold;">Auriez-vous des exemples d'avancées majeures de l'IA, par exemple dans le domaine de la santé ?</em></p><p>Nous avons récemment présenté Med-PaLM2, un modèle de langage qui a été entraîné sur des connaissances médicales avancées. Il est capable de répondre à de nombreuses questions et il réussit les tests universitaires américains les plus exigeants. L'intérêt de Med-PaLM2 est de donner rapidement accès à de l'information médicale de très haut niveau. Cela ne va pas remplacer les médecins. Mais il y a de nombreux endroits dans le monde où bien des gens seront ravis d'avoir accès simplement à toute cette expertise. </p> <p> Nous développons aussi l'IA DermAssist. Imaginons que j'ai une tache sur la peau qui m'inquiète. Je la prends en photo, cette IA va l'analyser, et elle va me donner les probabilités qu'il s'agisse d'un simple grain de beauté, d'une irritation de la peau, ou bien que ce soit le signe d'un cancer. Cette technologie est prometteuse car quasiment tous les habitants de la Terre possèdent un smartphone, mais ils n'ont pas forcément accès à des médecins spécialistes. </p> <p><em style="font-weight:bold;">N'y a-t-il pas un risque que les gens s'autodiagnostiquent encore plus ?</em></p><p>J'ai une anecdote à ce sujet. J'étais allé voir mon médecin en lui disant que j'avais un bouton bizarre dans le dos et que je pensais que c'était une morsure de tique. Je revenais du Connecticut, où il y avait des cas de maladie de Lyme. Bref, j'étais l'un de ces patients très agaçants ! Mais, ce qui m'a surpris, c'est que mon médecin ne connaissait pas cette maladie car il n'y avait à cette époque pas de cas au Royaume-Uni. Il s'est tourné vers son ordinateur et il a commencé à chercher des informations. Cette anecdote démontre le potentiel de ce type d'IA. Personne ne peut stocker dans son cerveau toutes les connaissances médicales existantes. Mais les machines le peuvent, et elles peuvent nous donner accès à de l'information de haute qualité. </p> <p><em style="font-weight:bold;">Google travaille aussi sur des modèles de prédiction des inondations et de la propagation des feux de forêt, pouvez-vous nous en dire plus ?</em></p><p>La prévision des crues est un outil qui est utilisé dans 80 pays, et les alertes envoyées sont utiles car elles vous donnent du temps pour évacuer et protéger vos biens. Mais je voudrais faire une analyse plus large. Les gens ont tendance à voir l'IA comme la réplication des capacités humaines, par exemple le langage, la visualisation des objets, etc. Mais selon moi, les usages les plus intéressants de l'IA sont ceux qui utilisent la puissance de raisonnement de la machine pour résoudre des problèmes que le cerveau humain ne peut pas gérer. </p> <p> Le séquençage de l'ADN est un exemple, la prévision des crues en est un autre. Il y a vingt ans, on prenait des images satellite et on essayait de deviner où les inondations allaient s'étendre. Les ordinateurs font bien mieux que nous ce travail. Autre exemple : en 2022, nous avons publié un article dans <em style="font-style:italic;">Nature</em> où nous avons montré comment nous avons réussi à entraîner une IA pour contrôler le plasma à l'intérieur d'un réacteur nucléaire. À long terme, le contrôle de la fusion nucléaire pourra être à l'origine d'une immense ressource d'énergie décarbonée. </p> <p><em style="font-weight:bold;">Dans quel camp êtes-vous dans le débat sur la dangerosité de l'IA pour l'avenir de l'humanité ?</em></p><p>Je pense que l'IA est une technologie majeure avec un potentiel immense. Et je souhaite que les gens soient conscients des manières dont l'IA pourra aider à construire un futur meilleur. Mais à mon avis nous avons déjà beaucoup de risques de très court terme liés à l'IA. Je peux citer la qualité et la fiabilité de l'information produite par ces modèles. Chez Google, nous ne souhaitons pas qu'internet soit noyé sous la désinformation et les fausses images. Il y a aussi les préjugés qui sont répliqués ou amplifiés par les IA et qui vont avoir un impact négatif sur la vie de certaines personnes. Bien sûr, si vous êtes auteur de science-fiction, vous pouvez imaginer des scénarios où l'IA mènera à la catastrophe. Mais les probabilités sont vraiment très faibles. </p> <p><em style="font-weight:bold;">La recherche en IA ne risque-t-elle d'être de plus en plus fermée et privatisée ?</em></p><p>Google a beaucoup contribué à la recherche en <mark>open</mark> <mark>source</mark>. Mais je pense qu'il est important de mesurer les risques de cette ouverture. Nous avons vu des gens qui ont détourné de façon malveillante des modèles de langage en <mark>open</mark> <mark>source</mark>, par exemple pour générer des visuels de désinformation. Nous voulons être sûrs que nos recherches sont réutilisées de manière positive. Nous mettons donc en place des garde-fous. Par exemple, l'utilisation de nos IA par des tiers se fait grâce à des plateformes d'interconnexion dont nous pouvons révoquer les accès. Mais ces questions sont compliquées et il n'y a pas de réponse simple. </p> <p><em style="font-weight:bold;">Pensez-vous qu'il faille réguler l'IA ?</em></p><p>Nous sommes pour la régulation, mais il est important qu'elle soit bien faite. Il est évident qu'il faut réguler les utilisations concrètes les plus dangereuses. Personne ne veut de véhicules autonomes qui créent des accidents. Il faut aussi réguler les IA dans le domaine médical. Mais il est, je pense, beaucoup plus compliqué de vouloir réguler des modèles mathématiques qui sont par nature abstraits.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:cwoitier@lefigaro.fr">cwoitier@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">10 août 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230810·LF·1062×20×23888298003</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230810·LF·1062×20×23888298003";
+    var _docIndex = 129;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230810·LF·1062×20×23888298003';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230810%C2%B7LF%C2%B71062%C3%9720%C3%9723888298003&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230810%C2%B7LF%C2%B71062%C3%9720%C3%9723888298003&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230810%C2%B7LF%C2%B71062%C3%9720%C3%9723888298003&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230810%C2%B7LF%C2%B71062%C3%9720%C3%9723888298003&docIndex=129&FullScreen=1";
+                
+	var _keyDoc = 'news·20230810·LF·1062×20×23888298003';
+</script>
+</div></body></html>

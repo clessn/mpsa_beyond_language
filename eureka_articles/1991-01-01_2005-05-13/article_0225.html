@@ -1,0 +1,475 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;CONOMIE,         samedi 31 janvier 2004 539 mots, p. C4&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Experts et agences gouvernementales s&#39;activent pour traquer l&#39;auteur de Mydoom            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+    &lt;div&gt;
+AFP     &lt;/div&gt;
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Paris - Les experts en s&#233;curit&#233; informatique et les agences gouvernementales comme le FBI s&#39;activaient hier pour traquer les auteurs du virus Mydoom, dont la propagation semblait se stabiliser en attendant les attaques pr&#233;vues ce week-end contre les sites Internet de SCO et de Microsoft. &lt;/p&gt; &lt;p&gt; Signe de leur inqui&#233;tude, mais aussi de leur impuissance, les deux &#233;diteurs de logiciels am&#233;ricains SCO et Microsoft ont annonc&#233; qu&#39;ils offraient chacun une prime de 250 000 $US pour toute information menant &#224; l&#39;arrestation et la condamnation du ou des auteurs du ver. Selon les experts de la soci&#233;t&#233; antivirus Kaspersky Labs, le ver pourrait &#234;tre d&#39;origine russe, sans pouvoir exclure qu&#39;il s&#39;agisse d&#39;une manoeuvre de diversion, les auteurs pouvant avoir enregistr&#233; leur bo&#238;te &#233;lectronique en Russie tout en agissant depuis un autre pays.&lt;/p&gt;
+
+
+&lt;p&gt;&#171;Les premiers courriels infect&#233;s par le virus l&#39;ont &#233;t&#233; en Russie, ce qui laisse penser que Mydoom est originaire de ce pays, m&#234;me si ce n&#39;est pas encore une certitude&#187;, a d&#233;clar&#233; Alexandre Gostiev, expert de la soci&#233;t&#233; Kaspersky Labs, rejoignant une constatation d&#233;j&#224; faite par la soci&#233;t&#233; MessageLabs. &lt;/p&gt; &lt;p&gt; Pr&#232;s de cinq jours apr&#232;s les d&#233;buts de sa diffusion, Mydoom poursuivait ses ravages dans les bo&#238;tes aux lettres &#233;lectroniques mais ses effets semblaient au moins se stabiliser. Quelque 500 000 &#224; 600 000 machines ont &#233;t&#233; infect&#233;es par Mydoom A, version originale du ver, en revanche la version B de Mydoom ne s&#39;est absolument pas propag&#233;e. &lt;/p&gt; &lt;p&gt; Pour Mikko Hyppoenen, chercheur antivirus de F-Secure, &#171;le virus continue &#224; se r&#233;pandre &#224; la m&#234;me vitesse que les jours pr&#233;c&#233;dents, ce que nous trouvons assez surprenant. Il ne montre pas de signe de d&#233;clin mais ne cro&#238;t pas non plus&#187;, ajoute-t-il, soulignant que l&#39;Asie semble &#234;tre la zone la plus touch&#233;e ces derniers temps en raison des moindres efforts des fournisseurs d&#39;acc&#232;s Internet de la r&#233;gion, par rapport &#224; l&#39;Europe, pour filtrer les courriers &#233;lectroniques. &lt;/p&gt; &lt;p&gt; Le test &lt;/p&gt; &lt;p&gt; Le prochain test sera l&#39;attaque par Mydoom A programm&#233;e &#224; partir de dimanche contre le site de SCO, selon M. Paget. Le site de Microsoft semble &#224; l&#39;abri puisque vis&#233; par la version B de Mydoom. &lt;/p&gt; &lt;p&gt; &#171;SCO a eu le temps de se prot&#233;ger mais l&#39;on imagine qu&#39;une centaine de milliers de machines sur les 500 000 &#224; 600 000 touch&#233;es sont encore infect&#233;es et pourront perturber le site Internet de la soci&#233;t&#233;&#187;, selon M. Saget. SCO, d&#233;tenteur de droits de propri&#233;t&#233; intellectuelle sur le syst&#232;me Unix, est engag&#233; dans une bataille juridique pour prot&#233;ger son activit&#233; commerciale face &#224; la concurrence grandissante du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; Linux, ce qui lui vaut nombre d&#39;ennemis au sein des adeptes de ce dernier. &lt;/p&gt; &lt;p&gt; Mais, pour le sp&#233;cialiste de Network Associates, &#171;c&#39;est l&#39;arbre qui cache la for&#234;t&#187; et &#171;le v&#233;ritable but des auteurs du virus est la diffusion de portes d&#233;rob&#233;es&#187; qui permettent de prendre le contr&#244;le de l&#39;ordinateur &#224; distance et proc&#233;der &#224; des actes de malveillance, comme la diffusion de spam. &lt;/p&gt; &lt;p&gt; Contre Microsoft &lt;/p&gt; &lt;p&gt; L&#39;&#233;diteur de logiciels am&#233;ricain SCO, inconnu du grand public, est la cible d&#233;sign&#233;e du virus Mydoom, car des hackers y voient un instrument entre les mains de Microsoft pour conforter sa domination sur le monde informatique. Dans le milieu de la haute technologie, SCO a d&#233;finitivement &#233;merg&#233; de l&#39;anonymat en portant plainte en juin 2003 contre le num&#233;ro un mondial de l&#39;informatique IBM, lui reprochant de violer sa propri&#233;t&#233; intellectuelle en utilisant un logiciel d&#233;riv&#233; directement du syst&#232;me Unix. &lt;/p&gt; &lt;p&gt; SCO est d&#233;tenteur des droits sur ce syst&#232;me d&#39;exploitation &#233;quipant le mat&#233;riel professionnel (serveurs). Et le groupe dit avoir constat&#233; &#224; &#171;plusieurs reprises&#187; que les codes d&#39;Unix ont &#233;t&#233; utilis&#233;s par les programmeurs de Linux, le logiciel dont Microsoft redoute la concurrence car il est libre d&#39;acc&#232;s, &#224; l&#39;inverse de Windows. &lt;/p&gt; &lt;p&gt; L&#39;&#233;lucidation de l&#39;attaque virale Mydoom r&#233;siderait donc dans la r&#233;ponse &#224; une double question: SCO, qui pourchasse les distributeurs de Linux, agit-il au nom de Microsoft? Et si cette hypoth&#232;se est retenue, Mydoom r&#233;sulte-t-il d&#39;un coup de gueule sans pr&#233;c&#233;dent contre les vis&#233;es monopolistiques du groupe de Bill Gates? &lt;/p&gt; &lt;p&gt; &#171;C&#39;est la question &#224; plusieurs millions de dollars, mais tout le monde y pense&#187;, d&#233;clare Shlomo Touboul, p.-d.g. de Finjan Software, &#233;diteur de logiciels antivirus. &#171;Ca ressemble beaucoup &#224; un acte de protestation&#187;, ajoute-t-il, et l&#39;assimilation SCO-Microsoft est &#171;perceptible&#187; dans le fait que la version intiale du virus et sa variante Mydoom B ont attaqu&#233; successivement chacune des deux entreprises.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040131&amp;#183;LE&amp;#183;46255&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">agences gouvernementales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">éditeur de logiciels</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Kaspersky Labs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droits de propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Asie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040131%c2%b7LE%c2%b746255" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040131%c2%b7LE%c2%b746255">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+ÉCONOMIE,         samedi 31 janvier 2004 539 mots, p. C4</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Experts et agences gouvernementales s'activent pour traquer l'auteur de Mydoom            
+        </p>
+
+</div>
+
+
+    <div>
+AFP     </div>
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Paris - Les experts en sécurité informatique et les agences gouvernementales comme le FBI s'activaient hier pour traquer les auteurs du virus Mydoom, dont la propagation semblait se stabiliser en attendant les attaques prévues ce week-end contre les sites Internet de SCO et de Microsoft. </p> <p> Signe de leur inquiétude, mais aussi de leur impuissance, les deux éditeurs de logiciels américains SCO et Microsoft ont annoncé qu'ils offraient chacun une prime de 250 000 $US pour toute information menant à l'arrestation et la condamnation du ou des auteurs du ver. Selon les experts de la société antivirus Kaspersky Labs, le ver pourrait être d'origine russe, sans pouvoir exclure qu'il s'agisse d'une manoeuvre de diversion, les auteurs pouvant avoir enregistré leur boîte électronique en Russie tout en agissant depuis un autre pays.</p>
+
+
+<p>«Les premiers courriels infectés par le virus l'ont été en Russie, ce qui laisse penser que Mydoom est originaire de ce pays, même si ce n'est pas encore une certitude», a déclaré Alexandre Gostiev, expert de la société Kaspersky Labs, rejoignant une constatation déjà faite par la société MessageLabs. </p> <p> Près de cinq jours après les débuts de sa diffusion, Mydoom poursuivait ses ravages dans les boîtes aux lettres électroniques mais ses effets semblaient au moins se stabiliser. Quelque 500 000 à 600 000 machines ont été infectées par Mydoom A, version originale du ver, en revanche la version B de Mydoom ne s'est absolument pas propagée. </p> <p> Pour Mikko Hyppoenen, chercheur antivirus de F-Secure, «le virus continue à se répandre à la même vitesse que les jours précédents, ce que nous trouvons assez surprenant. Il ne montre pas de signe de déclin mais ne croît pas non plus», ajoute-t-il, soulignant que l'Asie semble être la zone la plus touchée ces derniers temps en raison des moindres efforts des fournisseurs d'accès Internet de la région, par rapport à l'Europe, pour filtrer les courriers électroniques. </p> <p> Le test </p> <p> Le prochain test sera l'attaque par Mydoom A programmée à partir de dimanche contre le site de SCO, selon M. Paget. Le site de Microsoft semble à l'abri puisque visé par la version B de Mydoom. </p> <p> «SCO a eu le temps de se protéger mais l'on imagine qu'une centaine de milliers de machines sur les 500 000 à 600 000 touchées sont encore infectées et pourront perturber le site Internet de la société», selon M. Saget. SCO, détenteur de droits de propriété intellectuelle sur le système Unix, est engagé dans une bataille juridique pour protéger son activité commerciale face à la concurrence grandissante du <mark>logiciel</mark> <mark>libre</mark> Linux, ce qui lui vaut nombre d'ennemis au sein des adeptes de ce dernier. </p> <p> Mais, pour le spécialiste de Network Associates, «c'est l'arbre qui cache la forêt» et «le véritable but des auteurs du virus est la diffusion de portes dérobées» qui permettent de prendre le contrôle de l'ordinateur à distance et procéder à des actes de malveillance, comme la diffusion de spam. </p> <p> Contre Microsoft </p> <p> L'éditeur de logiciels américain SCO, inconnu du grand public, est la cible désignée du virus Mydoom, car des hackers y voient un instrument entre les mains de Microsoft pour conforter sa domination sur le monde informatique. Dans le milieu de la haute technologie, SCO a définitivement émergé de l'anonymat en portant plainte en juin 2003 contre le numéro un mondial de l'informatique IBM, lui reprochant de violer sa propriété intellectuelle en utilisant un logiciel dérivé directement du système Unix. </p> <p> SCO est détenteur des droits sur ce système d'exploitation équipant le matériel professionnel (serveurs). Et le groupe dit avoir constaté à «plusieurs reprises» que les codes d'Unix ont été utilisés par les programmeurs de Linux, le logiciel dont Microsoft redoute la concurrence car il est libre d'accès, à l'inverse de Windows. </p> <p> L'élucidation de l'attaque virale Mydoom résiderait donc dans la réponse à une double question: SCO, qui pourchasse les distributeurs de Linux, agit-il au nom de Microsoft? Et si cette hypothèse est retenue, Mydoom résulte-t-il d'un coup de gueule sans précédent contre les visées monopolistiques du groupe de Bill Gates? </p> <p> «C'est la question à plusieurs millions de dollars, mais tout le monde y pense», déclare Shlomo Touboul, p.-d.g. de Finjan Software, éditeur de logiciels antivirus. «Ca ressemble beaucoup à un acte de protestation», ajoute-t-il, et l'assimilation SCO-Microsoft est «perceptible» dans le fait que la version intiale du virus et sa variante Mydoom B ont attaqué successivement chacune des deux entreprises.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040131·LE·46255</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040131·LE·46255";
+    var _docIndex = 224;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040131·LE·46255';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040131%C2%B7LE%C2%B746255&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040131%C2%B7LE%C2%B746255&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040131%C2%B7LE%C2%B746255&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040131%C2%B7LE%C2%B746255&docIndex=224&FullScreen=1";
+                
+	var _keyDoc = 'news·20040131·LE·46255';
+</script>
+</div></body></html>

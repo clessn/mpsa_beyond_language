@@ -1,0 +1,553 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; M&#233;decine,         mercredi 23 ao&amp;#251;t 2017 639 mots, p. SCH8&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et m&#233;decine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Vie des labos&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Vers plus de partage des savoirs            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;D. L.&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;La mode est &#224; l&#39; &#171; open &#187; en sciences. &#173;&lt;mark&gt;Logiciels&lt;/mark&gt; &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; (&#171; &lt;mark&gt;logiciels&lt;/mark&gt; &#173;&lt;mark&gt;libres&lt;/mark&gt; &#187;), articles en open access &#173;(&#171; acc&#232;s gratuit &#187;, oppos&#233; au mod&#232;le par abonnement), open data (&#171; donn&#233;es ouvertes &#187;)... Et maintenant open citations, qu&#39;on pourrait traduire par &#171; r&#233;f&#233;rences ouvertes. &lt;/p&gt; &lt;p&gt; La r&#233;f&#233;rence ou citation est une notion d&#39;apparence anodine qui constitue pourtant une sorte de squelette de la connaissance scientifique. En fin d&#39;article de recherche, les auteurs ajoutent syst&#233;matiquement une longue liste de travaux ant&#233;rieurs qu&#39;ils estiment pertinents. Ces r&#233;f&#233;rences bibliographiques permettent au lecteur de voir quels autres chercheurs s&#39;int&#233;ressent &#224; ce th&#232;me. Aux historiens d&#39;&#233;tudier la naissance d&#39;une th&#233;matique. Aux sociologues d&#39;analyser les interactions entre &#233;quipes ou disciplines. Aux &#233;valuateurs de &#171; mesurer &#187; la qualit&#233; d&#39;un travail par le nombre de citations &#173;re&#231;ues, par exemple.&lt;/p&gt;
+
+
+&lt;p&gt;Les liens que ces citations tissent ont &#173;inspir&#233; les fondateurs de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; pour leur &#173;moteur de recherche : un site est d&#39;autant plus haut dans le classement des r&#233;ponses &#224; une requ&#234;te de l&#39;utilisateur qu&#39;il est souvent &#171; cit&#233; &#187;, c&#39;est-&#224;-dire que des pages Web pointent vers lui. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Gigantesque index&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Avant &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, dans les ann&#233;es 1960, le linguiste am&#233;ricain Eugene Garfield, disparu en f&#233;vrier 2017, avait vite compris l&#39;int&#233;r&#234;t de ces r&#233;f&#233;rences pour les transformer en un lucratif march&#233;. Il a compil&#233; toutes ces citations, et les a vendues sous forme d&#39;un gigantesque &#173;index afin d&#39;aider les chercheurs &#224; identifier des concurrents, de futurs collaborateurs ou &#224; estimer leur influence. Il a m&#234;me invent&#233; l&#39;un des &#233;talons de la qualit&#233; d&#39;une revue scientifique, le facteur d&#39;impact, qui repose sur le nombre de citations re&#231;ues par les articles publi&#233;s par un journal. &#171; D&#39;unit&#233;s de &#173;connaissance, les articles de recherche sont &#173;devenus des unit&#233;s comptables &#187;, regrette Yves Gingras, directeur de l&#39;Observatoire des sciences et technologies &#224; Montr&#233;al. &lt;/p&gt; &lt;p&gt; Ces citations sont donc capitales... mais sont pour l&#39;instant entre les mains de quelques acteurs priv&#233;s. Essentiellement deux, Web of Science, issu de l&#39;entreprise de Garfield, propri&#233;t&#233; depuis 2016 de Clarivate Analytics, et Scopus, cr&#233;&#233; en 2004 par l&#39;&#233;diteur Reed Elsevier. &lt;/p&gt; &lt;p&gt; D&#39;o&#249; le lancement, en avril, d&#39;un projet fou visant &#224; rassembler toutes ces r&#233;f&#233;rences dans une nouvelle base de donn&#233;es libre d&#39;acc&#232;s et d&#39;utilisation. L&#39;Initiative for Open Citations (I4OC) &#233;tait n&#233;e - ressuscitant en fait de pr&#233;c&#233;dentes tentatives avort&#233;es - sous l&#39;impulsion notamment de Wikimedia et des &#233;diteurs en open access PLOS et eLife. Elle est soutenue par exemple par les fondations Bill et &lt;span class=&quot;stubs&quot;&gt;Melinda Gates&lt;/span&gt;, Alfred P. Sloane, les entreprises Microsoft Research, Mozilla... &lt;/p&gt; &lt;p&gt; D&#233;but ao&#251;t, le consortium se f&#233;licitait, estimant que plus de 45 % des citations &#233;taient d&#233;sormais publiques, contre 1 % au d&#233;but du projet. L&#39;acc&#233;l&#233;ration s&#39;explique par le soutien d&#39;&#233;diteurs qui &#171; ouvrent &#187; leurs donn&#233;es. &#171; Atteindre 100 % est ambitieux et r&#233;aliste &#187;, veut croire Dario Taraborelli, directeur de la recherche de la fondation Wikimedia, qui soutient la c&#233;l&#232;bre encyclop&#233;die en ligne Wikipedia. Il ne fixe cependant pas de date butoir car de gros &#233;diteurs manquent encore &#224; l&#39;appel comme Elsevier ou l&#39;American &#173;Chemical Society. Des concurrents, &#173;Wiley, Springer Nature, ou SAGE ont rejoint le mouvement. &#171; On esp&#232;re un effet boule de neige &#187;, dit Dario Taraborelli, qui a beaucoup de projets en t&#234;te, notamment pour enrichir l&#39;&#233;norme base de connaissances Wikidata, &#173;tir&#233;e de Wikipedia. &lt;/p&gt; &lt;p&gt; &#171; Un des d&#233;fauts des bases priv&#233;es est qu&#39;elles d&#233;pendent des mod&#232;les d&#39;affaires des entreprises qui d&#233;cident quels journaux peuvent ou non rentrer. Dans l&#39;oc&#233;an des sciences, elles ne sont que des bassines &#187;, indique Marin Dacos, directeur du Centre pour l&#39;&#233;dition &#233;lectronique ouverte. La future base sera donc a priori plus riche que ses concurrentes ferm&#233;es. &lt;/p&gt; &lt;p&gt; Comme &#224; chaque lib&#233;ration de donn&#233;es, les initiateurs esp&#232;rent que de nouveaux services &#233;mergeront au b&#233;n&#233;fice des chercheurs. Y compris sur le volet controvers&#233; de l&#39;&#233;valuation, fortement biais&#233;e par la domination de l&#39;anglais, la non-exhaustivit&#233;, les diff&#233;rences de pratiques de publication entre disciplines... &#171; Avec une meilleure base de donn&#233;es, l&#39;&#233;valuation pourrait &#234;tre meilleure &#187;, esp&#232;re Dario Taraborelli.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;23 ao&amp;#251;t 2017&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2017 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20170823&amp;#183;LM&amp;#183;8800040&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">recherche de la fondation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">liste de travaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">squelette de la connaissance scientifique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">notion d'apparence anodine</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bénéfice des chercheurs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">MELINDA GATES</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Médecine</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Garfield</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montréal (Québec)</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720170823%c2%b7LM%c2%b78800040" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720170823%c2%b7LM%c2%b78800040">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; Médecine,         mercredi 23 août 2017 639 mots, p. SCH8</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et médecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Vie des labos</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Vers plus de partage des savoirs            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">D. L.</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>La mode est à l' « open » en sciences. ­<mark>Logiciels</mark> <mark>open</mark> <mark>source</mark> (« <mark>logiciels</mark> ­<mark>libres</mark> »), articles en open access ­(« accès gratuit », opposé au modèle par abonnement), open data (« données ouvertes »)... Et maintenant open citations, qu'on pourrait traduire par « références ouvertes. </p> <p> La référence ou citation est une notion d'apparence anodine qui constitue pourtant une sorte de squelette de la connaissance scientifique. En fin d'article de recherche, les auteurs ajoutent systématiquement une longue liste de travaux antérieurs qu'ils estiment pertinents. Ces références bibliographiques permettent au lecteur de voir quels autres chercheurs s'intéressent à ce thème. Aux historiens d'étudier la naissance d'une thématique. Aux sociologues d'analyser les interactions entre équipes ou disciplines. Aux évaluateurs de « mesurer » la qualité d'un travail par le nombre de citations ­reçues, par exemple.</p>
+
+
+<p>Les liens que ces citations tissent ont ­inspiré les fondateurs de <span class="stubs">Google</span> pour leur ­moteur de recherche : un site est d'autant plus haut dans le classement des réponses à une requête de l'utilisateur qu'il est souvent « cité », c'est-à-dire que des pages Web pointent vers lui. </p> <p><em style="font-weight:bold;">Gigantesque index</em></p><p>Avant <span class="stubs">Google</span>, dans les années 1960, le linguiste américain Eugene Garfield, disparu en février 2017, avait vite compris l'intérêt de ces références pour les transformer en un lucratif marché. Il a compilé toutes ces citations, et les a vendues sous forme d'un gigantesque ­index afin d'aider les chercheurs à identifier des concurrents, de futurs collaborateurs ou à estimer leur influence. Il a même inventé l'un des étalons de la qualité d'une revue scientifique, le facteur d'impact, qui repose sur le nombre de citations reçues par les articles publiés par un journal. « D'unités de ­connaissance, les articles de recherche sont ­devenus des unités comptables », regrette Yves Gingras, directeur de l'Observatoire des sciences et technologies à Montréal. </p> <p> Ces citations sont donc capitales... mais sont pour l'instant entre les mains de quelques acteurs privés. Essentiellement deux, Web of Science, issu de l'entreprise de Garfield, propriété depuis 2016 de Clarivate Analytics, et Scopus, créé en 2004 par l'éditeur Reed Elsevier. </p> <p> D'où le lancement, en avril, d'un projet fou visant à rassembler toutes ces références dans une nouvelle base de données libre d'accès et d'utilisation. L'Initiative for Open Citations (I4OC) était née - ressuscitant en fait de précédentes tentatives avortées - sous l'impulsion notamment de Wikimedia et des éditeurs en open access PLOS et eLife. Elle est soutenue par exemple par les fondations Bill et <span class="stubs">Melinda Gates</span>, Alfred P. Sloane, les entreprises Microsoft Research, Mozilla... </p> <p> Début août, le consortium se félicitait, estimant que plus de 45 % des citations étaient désormais publiques, contre 1 % au début du projet. L'accélération s'explique par le soutien d'éditeurs qui « ouvrent » leurs données. « Atteindre 100 % est ambitieux et réaliste », veut croire Dario Taraborelli, directeur de la recherche de la fondation Wikimedia, qui soutient la célèbre encyclopédie en ligne Wikipedia. Il ne fixe cependant pas de date butoir car de gros éditeurs manquent encore à l'appel comme Elsevier ou l'American ­Chemical Society. Des concurrents, ­Wiley, Springer Nature, ou SAGE ont rejoint le mouvement. « On espère un effet boule de neige », dit Dario Taraborelli, qui a beaucoup de projets en tête, notamment pour enrichir l'énorme base de connaissances Wikidata, ­tirée de Wikipedia. </p> <p> « Un des défauts des bases privées est qu'elles dépendent des modèles d'affaires des entreprises qui décident quels journaux peuvent ou non rentrer. Dans l'océan des sciences, elles ne sont que des bassines », indique Marin Dacos, directeur du Centre pour l'édition électronique ouverte. La future base sera donc a priori plus riche que ses concurrentes fermées. </p> <p> Comme à chaque libération de données, les initiateurs espèrent que de nouveaux services émergeront au bénéfice des chercheurs. Y compris sur le volet controversé de l'évaluation, fortement biaisée par la domination de l'anglais, la non-exhaustivité, les différences de pratiques de publication entre disciplines... « Avec une meilleure base de données, l'évaluation pourrait être meilleure », espère Dario Taraborelli.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">23 août 2017</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2017 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20170823·LM·8800040</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20170823·LM·8800040";
+    var _docIndex = 536;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"melinda gates":"92292"};
+		var _orgDic = {"google":"92575"};
+		var _docName = 'news·20170823·LM·8800040';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720170823%C2%B7LM%C2%B78800040&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720170823%C2%B7LM%C2%B78800040&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720170823%C2%B7LM%C2%B78800040&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720170823%C2%B7LM%C2%B78800040&docIndex=536&FullScreen=1";
+                
+	var _keyDoc = 'news·20170823·LM·8800040';
+</script>
+</div></body></html>

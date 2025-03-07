@@ -1,0 +1,541 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+A la Une,         lundi 20 novembre 2006 848 mots, p. 1&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+ENVIRONNEMENT ET SCIENCES         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les puces ne garantissent pas la s&#233;curit&#233; des &#233;changes en ligne            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Un chercheur a trouv&#233; un moyen, difficile &#224; parer, de &#171; casser &#187; des cl&#233;s de cryptage&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Herv&#233; Morin&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;La confiance qu&#39;ont les utilisateurs d&#39;Internet dans la capacit&#233; du syst&#232;me &#224; s&#233;curiser les donn&#233;es a toujours &#233;t&#233; relative. Elle pourrait bien s&#39;effondrer si l&#39;industrie des microprocesseurs et les fournisseurs de logiciels de cryptage se r&#233;v&#233;laient incapables de r&#233;pondre &#224; un nouveau type d&#39;attaque, redoutablement efficace, d&#233;couvert par une &#233;quipe conduite par le cryptologue allemand Jean-Pierre Seifert (universit&#233;s d&#39;Ha&#239;fa et d&#39;Innsbruck). Le commerce en ligne serait alors menac&#233;, mais aussi, plus largement, tout ce qui permet la d&#233;mat&#233;rialisation des &#233;changes, fond&#233;e sur des applications faisant appel aux codes secrets dits asym&#233;triques, qu&#39;il s&#39;agisse de crypter, de signer ou de garantir l&#39;int&#233;grit&#233; de donn&#233;es num&#233;riques. &lt;/p&gt; &lt;p&gt; Dans un article encore confidentiel, le chercheur et ses coll&#232;gues d&#233;crivent la fa&#231;on dont ils ont pu, en une seule tentative - soit quelques millisecondes -, r&#233;cup&#233;rer la quasi-int&#233;gralit&#233; d&#39;une cl&#233; de cryptage de 512 bits (suite d&#39;autant de 0 ou de 1). A titre de comparaison, la plus grande cl&#233; publique cass&#233;e &#224; ce jour faisait 640 bits, et sa d&#233;composition, annonc&#233;e en novembre 2005, avait mobilis&#233;, pendant trois mois, 80 microprocesseurs cadenc&#233;s &#224; 2,2 GHz.&lt;/p&gt;
+
+
+&lt;p&gt;Depuis l&#39;annonce, cet &#233;t&#233;, sur le serveur de l&#39;Association internationale de recherche cryptologique (IACR), de la faisabilit&#233; th&#233;orique d&#39;une telle attaque, les producteurs de microprocesseurs sont sur les dents : les puces de la quasi-totalit&#233; du parc informatique sont en effet vuln&#233;rables. Au point que le chef de la s&#233;curit&#233; d&#39;Intel, num&#233;ro un mondial des microprocesseurs, sollicit&#233; sur la question, fait r&#233;pondre qu&#39;il sera &#171; indisponible pendant plusieurs semaines &#187;. C&#39;est que la parade face aux attaques classiques des syst&#232;mes &#224; cl&#233; publique - &#224; savoir allonger la taille des cl&#233;s - est dans ce cas inop&#233;rante. &lt;/p&gt; &lt;p&gt; Jean-Pierre Seifert a en effet pris ces syst&#232;mes &#224; rebours. Alors que leur robustesse s&#39;appuie sur la grande difficult&#233; &#224; d&#233;duire math&#233;matiquement la cl&#233; priv&#233;e, secr&#232;te, &#224; partir de son compl&#233;ment public, il s&#39;est int&#233;ress&#233; &#224; la fa&#231;on dont le microprocesseur lisait en interne ces donn&#233;es confidentielles. &lt;/p&gt; &lt;p&gt; Or il se trouve que le mode de fonctionnement m&#234;me de la puce, optimis&#233; pour acc&#233;l&#233;rer les calculs, la rend vuln&#233;rable. &#171; La s&#233;curit&#233; a &#233;t&#233; sacrifi&#233;e au b&#233;n&#233;fice de la performance &#187;, estime le chercheur. &lt;/p&gt; &lt;p&gt; On peut r&#233;sumer ainsi le principe de l&#39;attaque : pour aller toujours plus vite, le processeur fonctionne en parall&#232;le et dispose d&#39;un syst&#232;me de pr&#233;diction du r&#233;sultat de l&#39;op&#233;ration en cours. Si la pr&#233;diction est bonne, le processus est sensiblement acc&#233;l&#233;r&#233;. Si elle est erron&#233;e, il faut revenir en arri&#232;re et recommencer l&#39;op&#233;ration &#233;l&#233;mentaire. Il &#171; suffit &#187; de mesurer le temps de calcul lorsque le processeur &#233;gr&#232;ne la cha&#238;ne de 0 et de 1 qui constitue la cl&#233; de cryptage pour en d&#233;duire celle-ci. &lt;/p&gt; &lt;p&gt; Cette menace, qui porte le nom d&#39;&#171; analyse de pr&#233;diction de branche &#187; (BPA), &#233;tait d&#233;j&#224; connue, mais elle n&#233;cessitait de tr&#232;s nombreux essais pour d&#233;duire de fa&#231;on statistique la cl&#233; de cryptage. Ce qui la rendait impraticable. La perc&#233;e de Jean-Pierre Seifert tient &#224; ce qu&#39;une seule &#233;coute est d&#233;sormais n&#233;cessaire. Et sa force r&#233;side dans le fait que le processus de pr&#233;diction, fondamental pour acc&#233;l&#233;rer les performances du processeur, n&#39;est pas prot&#233;g&#233;. &lt;/p&gt; &lt;p&gt; Un petit logiciel &#171; taupe &#187; pourrait donc &#233;couter la puce en toute discr&#233;tion, et renvoyer la cl&#233; &#224; des hackers, &#224; des services de renseignement ou &#224; des espions &#224; la solde de concurrents. &lt;/p&gt; &lt;p&gt; &#171; UNE QUESTION DE SEMAINES &#187; &lt;/p&gt; &lt;p&gt; On n&#39;en est pas tout &#224; fait l&#224;. &#171; Nous n&#39;avons pas d&#233;velopp&#233; d&#39;application cl&#233; en main, qui serait disponible en ligne &#187;, se d&#233;fend Jean-Pierre Seifert. Mais il estime qu&#39;une fois sa m&#233;thode d&#233;voil&#233;e, d&#233;but 2007, lors de la prochaine conf&#233;rence RSA - du nom du syst&#232;me de cryptage le plus populaire -, la r&#233;alisation de tels logiciels d&#39;attaque ne sera qu&#39;&#171; une question de semaines &#187;. &lt;/p&gt; &lt;p&gt; Les sp&#233;cialistes de cryptographie confirment le s&#233;rieux de la menace. Sous couvert d&#39;anonymat, l&#39;un des meilleurs connaisseurs mondiaux des syst&#232;mes &#224; cl&#233; publique r&#233;sume sans fard la situation : &#171; La solution r&#233;elle est de revoir la conception m&#234;me de nos microprocesseurs - un processus tr&#232;s long et difficile. Une solution de court terme serait de ne pas permettre que des applications sensibles tournent en parall&#232;le avec des op&#233;rations standards sur un m&#234;me ordinateur, ce qui est plus facile &#224; dire qu&#39;&#224; faire dans un environnement de travail classique. Il reste des rem&#232;des partiels, mais ils impliquent de ralentir consid&#233;rablement le PC. &#187; &lt;/p&gt; &lt;p&gt; Jean-Jacques Quisquater (Universit&#233; catholique de Louvain, Belgique) rappelle que les normes militaires am&#233;ricaines mettent en garde depuis longtemps contre les attaques fond&#233;es sur l&#39;analyse des temps de calcul. Pour lui, l&#39;avenir est aux processeurs sp&#233;cialis&#233;s dans les fonctions de s&#233;curit&#233;. &#171; Mais on n&#39;y viendra pas avant plusieurs ann&#233;es &#187;, remarque-t-il. &lt;/p&gt; &lt;p&gt; &#171; INTEL DOIT &#202;TRE D&#201;SESP&#201;R&#201; &#187; &lt;/p&gt; &lt;p&gt; &#171; On sait bien que ne sont undefinedundefinedtr&#232;s s&#251;res&#39;&#39; que les op&#233;rations cryptologiques conduites dans une enceinte prot&#233;g&#233;e, c&#244;t&#233; serveur, avec un module sp&#233;cifique &#187;, confirme Jacques Stern, directeur du laboratoire d&#39;informatique de l&#39;Ecole normale sup&#233;rieure, &#224; Paris. Une prophylaxie radicale, impraticable pour l&#39;internaute lambda. &lt;/p&gt; &lt;p&gt; David Naccache (universit&#233; Paris-II) reconna&#238;t qu&#39; &#171; il n&#39;y a pas d&#39;op&#233;ration &#224; coeur ouvert possible &#187; : toucher au syst&#232;me de module de pr&#233;diction pourrait affecter des fonctions essentielles. &lt;/p&gt; &lt;p&gt; En premi&#232;re ligne, Intel se borne &#224; pr&#233;ciser de fa&#231;on laconique que la prochaine version d&#39;OpenSSL, un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; de s&#233;curisation de donn&#233;es, r&#233;pondra &#224; la menace, au besoin en d&#233;sactivant le module de pr&#233;diction. &#171; Une telle mesure ralentirait par quatre le microprocesseur, assure Jean-Pierre Seifert, ce qui prouve &#224; quel point Intel doit &#234;tre d&#233;sesp&#233;r&#233;. &#187; Lui-m&#234;me ancien collaborateur d&#39;Intel et de son concurrent Infineon, revenu ensuite &#224; l&#39;universit&#233;, il cherche d&#233;sormais des parades &#224; la faille qu&#39;il a d&#233;couverte. Mais dans la mesure o&#249; les recherches dans ce domaine sont r&#233;centes, pr&#233;vient-il, &#171; cela prendra un certain temps avant d&#39;y voir clair &#187;. &lt;/p&gt; &lt;p&gt; Certes l&#39;assaut qu&#39;il a con&#231;u est plus difficile &#224; mettre en oeuvre que les innombrables stratag&#232;mes imagin&#233;s par les hackers, qui contraignent l&#39;industrie &#224; produire des &#171; patchs &#187; en permanence. Dans son cas, une simple rustine ne saurait suffire.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;L&#39;architecture du microprocesseur, coeur de l&#39;ordinateur, favorise la vitesse au d&#233;triment de la s&#233;curit&#233;. PHOTO : ALFRED PASIEKA/S.P.L/COSMOS&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Lexique &lt;/p&gt; &lt;p&gt; CRYPTOLOGIE : cette &#171; science du secret &#187; comprend la cryptographie, qui consiste &#224; coder des messages, et la cryptanalyse, l&#39;art de briser les codes. &lt;/p&gt; &lt;p&gt; CL&#201;S : ELLES PERMETTENT DE CHIFFRER UN MESSAGE OU DE LE RECONSTITUER. SYM&#201;TRIQUE : d&#233;signe des syst&#232;mes dans lesquels une m&#234;me cl&#233; sert &#224; chiffrer et d&#233;chiffrer le message. &lt;/p&gt; &lt;p&gt; ASYM&#201;TRIQUE : dit d&#39;un proc&#233;d&#233; utilisant une cl&#233; publique codant les donn&#233;es et une cl&#233; secr&#232;te pour les restituer. &lt;/p&gt; &lt;p&gt; CALCULATEUR QUANTIQUE : encore en d&#233;veloppement, il serait capable de casser les syst&#232;mes &#224; cl&#233; publique. &lt;/p&gt; &lt;p&gt; CRYPTOGRAPHIE QUANTIQUE : proc&#233;d&#233; consistant &#224; utiliser les propri&#233;t&#233;s de la lumi&#232;re (photons) pour communiquer les cl&#233;s de mani&#232;re s&#251;re. &lt;/p&gt; &lt;p&gt; Le secret des &#233;changes sur Internet trahi par &lt;/p&gt; &lt;p&gt; les puces d&#39;ordinateur &lt;/p&gt; &lt;p&gt; La s&#233;curit&#233; informatique &lt;/p&gt; &lt;p&gt; est menac&#233;e par une faiblesse touchant l&#39;ensemble des microprocesseurs. La parade n&#39;a pas encore &#233;t&#233; trouv&#233;e&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2006 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20061120&amp;#183;LM&amp;#183;0q1911_1395613&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">jean-pierre seifert</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">clé publique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">clé de cryptage</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">module de prédiction</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">temps de calcul</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">La Une</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Innsbruck</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Belgique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720061120%c2%b7LM%c2%b70q1911_1395613" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720061120%c2%b7LM%c2%b70q1911_1395613">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+A la Une,         lundi 20 novembre 2006 848 mots, p. 1</span>
+</div>
+
+    <div>
+        <p>
+ENVIRONNEMENT ET SCIENCES         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les puces ne garantissent pas la sécurité des échanges en ligne            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Un chercheur a trouvé un moyen, difficile à parer, de « casser » des clés de cryptage</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Hervé Morin</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>La confiance qu'ont les utilisateurs d'Internet dans la capacité du système à sécuriser les données a toujours été relative. Elle pourrait bien s'effondrer si l'industrie des microprocesseurs et les fournisseurs de logiciels de cryptage se révélaient incapables de répondre à un nouveau type d'attaque, redoutablement efficace, découvert par une équipe conduite par le cryptologue allemand Jean-Pierre Seifert (universités d'Haïfa et d'Innsbruck). Le commerce en ligne serait alors menacé, mais aussi, plus largement, tout ce qui permet la dématérialisation des échanges, fondée sur des applications faisant appel aux codes secrets dits asymétriques, qu'il s'agisse de crypter, de signer ou de garantir l'intégrité de données numériques. </p> <p> Dans un article encore confidentiel, le chercheur et ses collègues décrivent la façon dont ils ont pu, en une seule tentative - soit quelques millisecondes -, récupérer la quasi-intégralité d'une clé de cryptage de 512 bits (suite d'autant de 0 ou de 1). A titre de comparaison, la plus grande clé publique cassée à ce jour faisait 640 bits, et sa décomposition, annoncée en novembre 2005, avait mobilisé, pendant trois mois, 80 microprocesseurs cadencés à 2,2 GHz.</p>
+
+
+<p>Depuis l'annonce, cet été, sur le serveur de l'Association internationale de recherche cryptologique (IACR), de la faisabilité théorique d'une telle attaque, les producteurs de microprocesseurs sont sur les dents : les puces de la quasi-totalité du parc informatique sont en effet vulnérables. Au point que le chef de la sécurité d'Intel, numéro un mondial des microprocesseurs, sollicité sur la question, fait répondre qu'il sera « indisponible pendant plusieurs semaines ». C'est que la parade face aux attaques classiques des systèmes à clé publique - à savoir allonger la taille des clés - est dans ce cas inopérante. </p> <p> Jean-Pierre Seifert a en effet pris ces systèmes à rebours. Alors que leur robustesse s'appuie sur la grande difficulté à déduire mathématiquement la clé privée, secrète, à partir de son complément public, il s'est intéressé à la façon dont le microprocesseur lisait en interne ces données confidentielles. </p> <p> Or il se trouve que le mode de fonctionnement même de la puce, optimisé pour accélérer les calculs, la rend vulnérable. « La sécurité a été sacrifiée au bénéfice de la performance », estime le chercheur. </p> <p> On peut résumer ainsi le principe de l'attaque : pour aller toujours plus vite, le processeur fonctionne en parallèle et dispose d'un système de prédiction du résultat de l'opération en cours. Si la prédiction est bonne, le processus est sensiblement accéléré. Si elle est erronée, il faut revenir en arrière et recommencer l'opération élémentaire. Il « suffit » de mesurer le temps de calcul lorsque le processeur égrène la chaîne de 0 et de 1 qui constitue la clé de cryptage pour en déduire celle-ci. </p> <p> Cette menace, qui porte le nom d'« analyse de prédiction de branche » (BPA), était déjà connue, mais elle nécessitait de très nombreux essais pour déduire de façon statistique la clé de cryptage. Ce qui la rendait impraticable. La percée de Jean-Pierre Seifert tient à ce qu'une seule écoute est désormais nécessaire. Et sa force réside dans le fait que le processus de prédiction, fondamental pour accélérer les performances du processeur, n'est pas protégé. </p> <p> Un petit logiciel « taupe » pourrait donc écouter la puce en toute discrétion, et renvoyer la clé à des hackers, à des services de renseignement ou à des espions à la solde de concurrents. </p> <p> « UNE QUESTION DE SEMAINES » </p> <p> On n'en est pas tout à fait là. « Nous n'avons pas développé d'application clé en main, qui serait disponible en ligne », se défend Jean-Pierre Seifert. Mais il estime qu'une fois sa méthode dévoilée, début 2007, lors de la prochaine conférence RSA - du nom du système de cryptage le plus populaire -, la réalisation de tels logiciels d'attaque ne sera qu'« une question de semaines ». </p> <p> Les spécialistes de cryptographie confirment le sérieux de la menace. Sous couvert d'anonymat, l'un des meilleurs connaisseurs mondiaux des systèmes à clé publique résume sans fard la situation : « La solution réelle est de revoir la conception même de nos microprocesseurs - un processus très long et difficile. Une solution de court terme serait de ne pas permettre que des applications sensibles tournent en parallèle avec des opérations standards sur un même ordinateur, ce qui est plus facile à dire qu'à faire dans un environnement de travail classique. Il reste des remèdes partiels, mais ils impliquent de ralentir considérablement le PC. » </p> <p> Jean-Jacques Quisquater (Université catholique de Louvain, Belgique) rappelle que les normes militaires américaines mettent en garde depuis longtemps contre les attaques fondées sur l'analyse des temps de calcul. Pour lui, l'avenir est aux processeurs spécialisés dans les fonctions de sécurité. « Mais on n'y viendra pas avant plusieurs années », remarque-t-il. </p> <p> « INTEL DOIT ÊTRE DÉSESPÉRÉ » </p> <p> « On sait bien que ne sont undefinedundefinedtrès sûres'' que les opérations cryptologiques conduites dans une enceinte protégée, côté serveur, avec un module spécifique », confirme Jacques Stern, directeur du laboratoire d'informatique de l'Ecole normale supérieure, à Paris. Une prophylaxie radicale, impraticable pour l'internaute lambda. </p> <p> David Naccache (université Paris-II) reconnaît qu' « il n'y a pas d'opération à coeur ouvert possible » : toucher au système de module de prédiction pourrait affecter des fonctions essentielles. </p> <p> En première ligne, Intel se borne à préciser de façon laconique que la prochaine version d'OpenSSL, un <mark>logiciel</mark> <mark>libre</mark> de sécurisation de données, répondra à la menace, au besoin en désactivant le module de prédiction. « Une telle mesure ralentirait par quatre le microprocesseur, assure Jean-Pierre Seifert, ce qui prouve à quel point Intel doit être désespéré. » Lui-même ancien collaborateur d'Intel et de son concurrent Infineon, revenu ensuite à l'université, il cherche désormais des parades à la faille qu'il a découverte. Mais dans la mesure où les recherches dans ce domaine sont récentes, prévient-il, « cela prendra un certain temps avant d'y voir clair ». </p> <p> Certes l'assaut qu'il a conçu est plus difficile à mettre en oeuvre que les innombrables stratagèmes imaginés par les hackers, qui contraignent l'industrie à produire des « patchs » en permanence. Dans son cas, une simple rustine ne saurait suffire.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>L'architecture du microprocesseur, coeur de l'ordinateur, favorise la vitesse au détriment de la sécurité. PHOTO : ALFRED PASIEKA/S.P.L/COSMOS</p> </div>.
+
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p>Lexique </p> <p> CRYPTOLOGIE : cette « science du secret » comprend la cryptographie, qui consiste à coder des messages, et la cryptanalyse, l'art de briser les codes. </p> <p> CLÉS : ELLES PERMETTENT DE CHIFFRER UN MESSAGE OU DE LE RECONSTITUER. SYMÉTRIQUE : désigne des systèmes dans lesquels une même clé sert à chiffrer et déchiffrer le message. </p> <p> ASYMÉTRIQUE : dit d'un procédé utilisant une clé publique codant les données et une clé secrète pour les restituer. </p> <p> CALCULATEUR QUANTIQUE : encore en développement, il serait capable de casser les systèmes à clé publique. </p> <p> CRYPTOGRAPHIE QUANTIQUE : procédé consistant à utiliser les propriétés de la lumière (photons) pour communiquer les clés de manière sûre. </p> <p> Le secret des échanges sur Internet trahi par </p> <p> les puces d'ordinateur </p> <p> La sécurité informatique </p> <p> est menacée par une faiblesse touchant l'ensemble des microprocesseurs. La parade n'a pas encore été trouvée</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2006 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20061120·LM·0q1911_1395613</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20061120·LM·0q1911_1395613";
+    var _docIndex = 764;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20061120·LM·0q1911_1395613';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720061120%C2%B7LM%C2%B70q1911_1395613&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720061120%C2%B7LM%C2%B70q1911_1395613&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720061120%C2%B7LM%C2%B70q1911_1395613&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720061120%C2%B7LM%C2%B70q1911_1395613&docIndex=764&FullScreen=1";
+                
+	var _keyDoc = 'news·20061120·LM·0q1911_1395613';
+</script>
+</div></body></html>

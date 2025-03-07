@@ -1,0 +1,569 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24940                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mercredi 30 octobre 2024 883 mots, p. 39&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Tech         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Une IA dou&#233;e de parole            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le standard de la mairie de Plaisir, dans les Yvelines, est semi-automatis&#233; et utilise un assistant dop&#233; &#224; l&#39;IA g&#233;n&#233;rative.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Polge, Benjamin&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;B &lt;em style=&quot;font-style:italic;&quot;&gt;onjour, je suis Optimus, l&#39;assistant virtuel de la ville de Plaisir. &#187;&lt;/em&gt; C&#39;est la premi&#232;re phrase qu&#39;entendent les citoyens de cette commune des Yvelines quand ils contactent la municipalit&#233; par t&#233;l&#233;phone. Pour faire face aux 450 appels quotidiens, la ville a mis en place un agent virtuel capable de r&#233;pondre &#224; la plupart des questions des usagers en langage naturel. Une solution novatrice bas&#233;e, en majorit&#233;, sur l&#39;IA g&#233;n&#233;rative. Cas d&#39;usage, limites, orchestration technique... Comment fonctionne ce nouveau dispositif ? &lt;/p&gt; &lt;p&gt; D&#233;velopp&#233; en 2022, l&#39;agent virtuel Optimus est capable depuis avril 2024 d&#39;&#233;changer de mani&#232;re quasi humaine avec ses interlocuteurs. Il d&#233;croche 24 heures sur 24 et 7 jours sur 7. Il est capable de r&#233;pondre &#224; plus de 284 questions diff&#233;rentes et il peut rebondir sur les demandes de l&#39;usager. Pour les questions plus complexes qu&#39;il ne peut pas traiter seul, Optimus sait les qualifier avant de transf&#233;rer l&#39;appel aux agents humains.&lt;/p&gt;
+
+
+&lt;p&gt;Dans la majorit&#233; des cas, Optimus est capable d&#39;apporter une r&#233;ponse pertinente en moins de deux minutes. Le syst&#232;me peut &#233;galement d&#233;clencher des actions comme l&#39;envoi de SMS pour apporter une information suppl&#233;mentaire. Et les r&#233;sultats sont l&#224; : depuis sa mise en place, l&#39;assistant a permis d&#39;optimiser le taux de r&#233;ponse aux usagers, le faisant passer &#224; 92 % contre 30 % auparavant ! &lt;/p&gt; &lt;p&gt; Pour d&#233;ployer Optimus, les &#233;quipes de Plaisir ont fait appel au service de YeldaAI, une start-up d&#39;intelligence artificielle vocale au service de la relation clients. Elle travaille d&#233;j&#224; avec Fnac Darty, Sodebo, Eiffage ou BNP Paribas et a d&#233;velopp&#233; une savante orchestration de mod&#232;le pour d&#233;velopper l&#39;agent virtuel. Le processus se d&#233;roule en trois grandes &#233;tapes : la transcription, la g&#233;n&#233;ration d&#39;une r&#233;ponse textuelle et la g&#233;n&#233;ration vocale de la r&#233;ponse. &lt;/p&gt; &lt;p&gt; Une architecture complexe &lt;/p&gt; &lt;p&gt; Pour la transcription de la question de l&#39;usager, YeldaAI utilise plusieurs mod&#232;les de &#171; text-to-speech &#187; adapt&#233;s &#224; diff&#233;rents cas d&#39;usage. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Dans certains contextes, la transcription peut s&#39;av&#233;rer plus complexe qu&#39;il n&#39;y para&#238;t. Un cas int&#233;ressant est celui de l&#39;&#233;pellation d&#39;une plaque d&#39;immatriculation. Lorsqu&#39;une personne h&#233;site et dit : &#171; Euh... &#187; , il faut distinguer s&#39;il s&#39;agit de la lettre E ou d&#39;une simple h&#233;sitation. Autre exemple, lorsqu&#39;une personne dicte son adresse e-mail, elle peut m&#233;langer prononciation normale et &#233;pellation. Notre syst&#232;me doit &#234;tre capable de distinguer ces diff&#233;rents modes d&#39;&#233;nonciation et de les combiner correctement &#187;&lt;/em&gt;, illustre Thomas Guenoux, dirigeant de YeldaAI. Whisper d&#39;OpenAI et plusieurs autres mod&#232;les sont alors utilis&#233;s pour saisir les diff&#233;rentes nuances. &lt;/p&gt; &lt;p&gt; Une fois la requ&#234;te transcrite, viennent l&#39;analyse et la g&#233;n&#233;ration de la r&#233;ponse. Assez classiquement, c&#39;est ici un LLM &lt;em style=&quot;font-style:italic;&quot;&gt;(large language model)&lt;/em&gt; qui analyse la requ&#234;te utilisateur et apporte une r&#233;ponse en se basant sur les donn&#233;es mises &#224; disposition. &lt;em style=&quot;font-style:italic;&quot;&gt; &#171; Nous utilisons &#224; la fois des solutions propri&#233;taires bien connues d&#39;OpenAI et d&#39;Anthropic et des mod&#232;les &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; de Mistral ou de Meta &#187; &lt;/em&gt;, explique Thomas Guenoux. Le choix d&#233;pendra directement de la pr&#233;f&#233;rence de l&#39;entreprise ou de l&#39;administration souhaitant d&#233;ployer le syst&#232;me pour une technologie &#171; &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &#187; ou propri&#233;taire. &#192; noter que les requ&#234;tes adress&#233;es au mod&#232;le sont pr&#233;alablement nettoy&#233;es des &#233;ventuelles donn&#233;es personnelles, rendant ainsi l&#39;orchestration &#171; RGPD by design &#187; (protection optimale des donn&#233;es personnelles). &lt;/p&gt; &lt;p&gt; Enfin pour la r&#233;ponse, YeldaAI se base sur plusieurs mod&#232;les de &#171; text-to-speech &#187; ; notamment, mais sans s&#39;y limiter, ceux du fran&#231;ais Voxygen. Le plus complexe &#233;tant que l&#39;orchestration du mod&#232;le n&#233;cessite une latence minimale. Ainsi, l&#39;ensemble du syst&#232;me repose sur un flux en streaming. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le LLM analyse en continu le flux de la conversation. Une fois que nous avons g&#233;n&#233;r&#233; une r&#233;ponse potentielle, nous passons &#224; l&#39;&#233;tape de la synth&#232;se vocale. Celle-ci est &#233;galement r&#233;alis&#233;e en streaming. Concr&#232;tement, d&#232;s que le syst&#232;me commence &#224; r&#233;diger la r&#233;ponse, nous lan&#231;ons la synth&#232;se vocale et commen&#231;ons &#224; diffuser la voix. Ainsi, la phrase peut commencer &#224; &#234;tre prononc&#233;e avant m&#234;me que sa g&#233;n&#233;ration compl&#232;te ne soit termin&#233;e &#187;&lt;/em&gt;, d&#233;taille encore Thomas Guenoux. &lt;/p&gt; &lt;p&gt; La force du syst&#232;me r&#233;side dans sa capacit&#233; d&#39;adaptation en temps r&#233;el. Gr&#226;ce &#224; la flexibilit&#233; du cloud, le syst&#232;me est capable de s&#39;adapter et de d&#233;ployer des ressources hardware suppl&#233;mentaires si de nombreux usagers appellent en m&#234;me temps. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Que ce soit pour g&#233;rer mille, deux mille ou m&#234;me cinq mille appels simultan&#233;s, notre infrastructure s&#39;adapte automatiquement. Il n&#39;y a donc pas de limite pratique &#224; notre capacit&#233; de traitement des appels &#187;&lt;/em&gt;, assure le dirigeant de YeldaAI. Enfin, pour r&#233;duire encore la latence, l&#39;entreprise suit de pr&#232;s le d&#233;veloppement des nouveaux mod&#232;les multimodaux, &#224; l&#39;image de Moshi, d&#233;velopp&#233; par Kyutai, que Thomas Guenoux qualifie de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; tr&#232;s prometteur &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Des progr&#232;s qui devraient encore contribuer &#224; d&#233;mocratiser les agents IA de t&#233;l&#233;phonie. Pour autant, Thomas Guenoux l&#39;assure : l&#39;impact sur l&#39;emploi ne sera pas forc&#233;ment n&#233;gatif. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Pour des organisations comme les mairies, il s&#39;agit avant tout d&#39;am&#233;liorer la qualit&#233; de service en assurant un taux de r&#233;ponse de 100 %. Les agents humains restent essentiels mais leur r&#244;le &#233;volue. Ils se concentrent d&#233;sormais sur les interactions n&#233;cessitant une v&#233;ritable valeur ajout&#233;e humaine&lt;/em&gt;, assure-t-il. &lt;em style=&quot;font-style:italic;&quot;&gt;&#192; Plaisir, cette &#233;volution est g&#233;n&#233;ralement bien accueillie, les agents percevant l&#39;IA comme un nouveau coll&#232;gue qui les assiste. &#187;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Pour faire face aux 450 appels quotidiens, la ville de Plaisir a mis en place un agent virtuel capable de r&#233;pondre &#224; la plupart des questions des usagers en langage naturel. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;SEBASTIEN SORIANO/Le Figaro &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;3 septembre 2024&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20241030&amp;#183;LF&amp;#183;1082&amp;#215;20&amp;#215;21855612504&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">agent virtuel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">questions des usagers</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">taux de réponse</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">langage naturel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">appels quotidiens</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Produits de luxe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Moshi</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Meta</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Plaisir</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">source de Mistral</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Yvelines</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720241030%c2%b7LF%c2%b71082%c3%9720%c3%9721855612504" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720241030%c2%b7LF%c2%b71082%c3%9720%c3%9721855612504">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24940                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mercredi 30 octobre 2024 883 mots, p. 39</span>
+</div>
+
+    <div>
+        <p>
+Tech         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Une IA douée de parole            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le standard de la mairie de Plaisir, dans les Yvelines, est semi-automatisé et utilise un assistant dopé à l'IA générative.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Polge, Benjamin</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>B <em style="font-style:italic;">onjour, je suis Optimus, l'assistant virtuel de la ville de Plaisir. »</em> C'est la première phrase qu'entendent les citoyens de cette commune des Yvelines quand ils contactent la municipalité par téléphone. Pour faire face aux 450 appels quotidiens, la ville a mis en place un agent virtuel capable de répondre à la plupart des questions des usagers en langage naturel. Une solution novatrice basée, en majorité, sur l'IA générative. Cas d'usage, limites, orchestration technique... Comment fonctionne ce nouveau dispositif ? </p> <p> Développé en 2022, l'agent virtuel Optimus est capable depuis avril 2024 d'échanger de manière quasi humaine avec ses interlocuteurs. Il décroche 24 heures sur 24 et 7 jours sur 7. Il est capable de répondre à plus de 284 questions différentes et il peut rebondir sur les demandes de l'usager. Pour les questions plus complexes qu'il ne peut pas traiter seul, Optimus sait les qualifier avant de transférer l'appel aux agents humains.</p>
+
+
+<p>Dans la majorité des cas, Optimus est capable d'apporter une réponse pertinente en moins de deux minutes. Le système peut également déclencher des actions comme l'envoi de SMS pour apporter une information supplémentaire. Et les résultats sont là : depuis sa mise en place, l'assistant a permis d'optimiser le taux de réponse aux usagers, le faisant passer à 92 % contre 30 % auparavant ! </p> <p> Pour déployer Optimus, les équipes de Plaisir ont fait appel au service de YeldaAI, une start-up d'intelligence artificielle vocale au service de la relation clients. Elle travaille déjà avec Fnac Darty, Sodebo, Eiffage ou BNP Paribas et a développé une savante orchestration de modèle pour développer l'agent virtuel. Le processus se déroule en trois grandes étapes : la transcription, la génération d'une réponse textuelle et la génération vocale de la réponse. </p> <p> Une architecture complexe </p> <p> Pour la transcription de la question de l'usager, YeldaAI utilise plusieurs modèles de « text-to-speech » adaptés à différents cas d'usage. <em style="font-style:italic;">« Dans certains contextes, la transcription peut s'avérer plus complexe qu'il n'y paraît. Un cas intéressant est celui de l'épellation d'une plaque d'immatriculation. Lorsqu'une personne hésite et dit : « Euh... » , il faut distinguer s'il s'agit de la lettre E ou d'une simple hésitation. Autre exemple, lorsqu'une personne dicte son adresse e-mail, elle peut mélanger prononciation normale et épellation. Notre système doit être capable de distinguer ces différents modes d'énonciation et de les combiner correctement »</em>, illustre Thomas Guenoux, dirigeant de YeldaAI. Whisper d'OpenAI et plusieurs autres modèles sont alors utilisés pour saisir les différentes nuances. </p> <p> Une fois la requête transcrite, viennent l'analyse et la génération de la réponse. Assez classiquement, c'est ici un LLM <em style="font-style:italic;">(large language model)</em> qui analyse la requête utilisateur et apporte une réponse en se basant sur les données mises à disposition. <em style="font-style:italic;"> « Nous utilisons à la fois des solutions propriétaires bien connues d'OpenAI et d'Anthropic et des modèles <mark>open</mark> <mark>source</mark> de Mistral ou de Meta » </em>, explique Thomas Guenoux. Le choix dépendra directement de la préférence de l'entreprise ou de l'administration souhaitant déployer le système pour une technologie « <mark>open</mark> <mark>source</mark> » ou propriétaire. À noter que les requêtes adressées au modèle sont préalablement nettoyées des éventuelles données personnelles, rendant ainsi l'orchestration « RGPD by design » (protection optimale des données personnelles). </p> <p> Enfin pour la réponse, YeldaAI se base sur plusieurs modèles de « text-to-speech » ; notamment, mais sans s'y limiter, ceux du français Voxygen. Le plus complexe étant que l'orchestration du modèle nécessite une latence minimale. Ainsi, l'ensemble du système repose sur un flux en streaming. <em style="font-style:italic;">« Le LLM analyse en continu le flux de la conversation. Une fois que nous avons généré une réponse potentielle, nous passons à l'étape de la synthèse vocale. Celle-ci est également réalisée en streaming. Concrètement, dès que le système commence à rédiger la réponse, nous lançons la synthèse vocale et commençons à diffuser la voix. Ainsi, la phrase peut commencer à être prononcée avant même que sa génération complète ne soit terminée »</em>, détaille encore Thomas Guenoux. </p> <p> La force du système réside dans sa capacité d'adaptation en temps réel. Grâce à la flexibilité du cloud, le système est capable de s'adapter et de déployer des ressources hardware supplémentaires si de nombreux usagers appellent en même temps. <em style="font-style:italic;">« Que ce soit pour gérer mille, deux mille ou même cinq mille appels simultanés, notre infrastructure s'adapte automatiquement. Il n'y a donc pas de limite pratique à notre capacité de traitement des appels »</em>, assure le dirigeant de YeldaAI. Enfin, pour réduire encore la latence, l'entreprise suit de près le développement des nouveaux modèles multimodaux, à l'image de Moshi, développé par Kyutai, que Thomas Guenoux qualifie de <em style="font-style:italic;">« très prometteur »</em>. </p> <p> Des progrès qui devraient encore contribuer à démocratiser les agents IA de téléphonie. Pour autant, Thomas Guenoux l'assure : l'impact sur l'emploi ne sera pas forcément négatif. <em style="font-style:italic;">« Pour des organisations comme les mairies, il s'agit avant tout d'améliorer la qualité de service en assurant un taux de réponse de 100 %. Les agents humains restent essentiels mais leur rôle évolue. Ils se concentrent désormais sur les interactions nécessitant une véritable valeur ajoutée humaine</em>, assure-t-il. <em style="font-style:italic;">À Plaisir, cette évolution est généralement bien accueillie, les agents percevant l'IA comme un nouveau collègue qui les assiste. »</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Pour faire face aux 450 appels quotidiens, la ville de Plaisir a mis en place un agent virtuel capable de répondre à la plupart des questions des usagers en langage naturel. </div>.
+
+                <div class="ImageAttachFont">SEBASTIEN SORIANO/Le Figaro </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">3 septembre 2024</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20241030·LF·1082×20×21855612504</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20241030·LF·1082×20×21855612504";
+    var _docIndex = 12;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20241030·LF·1082×20×21855612504';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720241030%C2%B7LF%C2%B71082%C3%9720%C3%9721855612504&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720241030%C2%B7LF%C2%B71082%C3%9720%C3%9721855612504&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720241030%C2%B7LF%C2%B71082%C3%9720%C3%9721855612504&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720241030%C2%B7LF%C2%B71082%C3%9720%C3%9721855612504&docIndex=12&FullScreen=1";
+                
+	var _keyDoc = 'news·20241030·LF·1082×20×21855612504';
+</script>
+</div></body></html>

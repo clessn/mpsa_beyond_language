@@ -1,0 +1,551 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 24463                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         samedi 15 avril 2023 1002 mots, p. 22&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Entreprises         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171; Sur le bitcoin, il n&#39;y a pas eu de crise de confiance &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Si le scandale FTX a secou&#233; le secteur des cryptoactifs, il n&#39;a pas remis en cause sa proposition de valeur, assure le patron de Ledger.&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Ledger est sp&#233;cialis&#233; dans la s&#233;curisation des actifs digitaux pour les particuliers et les entreprises. Son PDG expose la r&#233;volution que vont entra&#238;ner les technologies d&#233;centralis&#233;es dans notre quotidien. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Le FIGARO. - Quel regard portez-vous sur la crise qui agite le secteur bancaire ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Pascal GAUTHIER. -&lt;/em&gt;L&#39;histoire a une f&#226;cheuse tendance &#224; se r&#233;p&#233;ter. C&#39;est la crise de 2008 et la faillite de Lehman Brothers qui ont pr&#233;cipit&#233; la naissance du bitcoin, imagin&#233; pour cr&#233;er une alternative au syst&#232;me mon&#233;taire actuel. C&#39;est un r&#233;seau &#233;lectronique de paiement de pair &#224; pair qui, gr&#226;ce &#224; de nouvelles technologies ouvertes, en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, ne n&#233;cessite pas de devoir faire confiance a priori &#224; des acteurs tiers. Cela permet de ne pas d&#233;pendre de propositions de valeur centralis&#233;es. Or la crise bancaire actuelle montre, une nouvelle fois, les limites d&#39;un syst&#232;me mon&#233;taire centralis&#233;, dans lequel aucun acteur n&#39;est &#171; trop gros pour &#233;chouer &#187; , avec un effet domino et de graves cons&#233;quences pour les consommateurs finaux. Avant les accords de Bretton Woods en 1944, le syst&#232;me mon&#233;taire, c&#39;&#233;tait l&#39;&#233;talon-or, qui ressemble plus au syst&#232;me que propose le bitcoin qu&#39;au syst&#232;me mon&#233;taire actuel. Le bitcoin regagne d&#39;ailleurs de la valeur depuis l&#39;effondrement de certaines banques. Commence-t-il &#224; jouer son r&#244;le de refuge, ce pour quoi il a &#233;t&#233; imagin&#233;? Seul le temps le dira.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Le secteur des cryptoactifs a aussi travers&#233; une crise en 2022...&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il s&#39;est pass&#233; deux choses en 2022 : l&#39;effondrement de la partie sp&#233;culation, qui n&#39;a pas &#233;t&#233; propre au secteur des cryptomonnaies. Et l&#39;&#233;chec des propositions de valeur centralis&#233;es sur lesquelles ne doit pas reposer la confiance, comme le montrait d&#233;j&#224; le livre blanc de Satoshi Nakamoto, &#224; l&#39;origine du bitcoin. Dans le cas de FTX, c&#39;&#233;tait purement et simplement de la fraude. Mais la chute des plateformes comme Celsius, Voyager, BlockFi n&#39;a pas &#233;t&#233; une crise de confiance dans les cryptoactifs. Encore une fois, c&#39;est un probl&#232;me de confiance dans les entit&#233;s centralis&#233;es ou dans des protocoles qui n&#39;&#233;taient pas s&#233;rieux comme le terra luna. Sur le bitcoin (seul vrai syst&#232;me d&#233;centralis&#233; au monde aujourd&#39;hui) et sur les technologies d&#233;centralis&#233;es, il n&#39;y a pas eu de crise de confiance. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Quelles le&#231;ons le secteur des cryptoactifs a-t-il tir&#233;es de 2022 ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les ingr&#233;dients du d&#233;sastre existent toujours largement dans le march&#233; crypto. Tout ce qui s&#39;est pass&#233; en 2022, c&#39;est une tr&#232;s mauvaise gestion du risque, de la gouvernance et de la s&#233;curit&#233;. Il n&#39;existe toujours pas, par exemple, de s&#233;gr&#233;gation claire des r&#244;les entre les op&#233;rations de trading et la conservation des actifs, contrairement &#224; ce qui se passe dans la finance traditionnelle. Sam Bankman-Fried &lt;em style=&quot;font-style:italic;&quot;&gt;(le fondateur de la plateforme FTX qui a fait faillite, NDLR)&lt;/em&gt;est un fraudeur, mais il a aussi pu faire tout ce qu&#39;il a fait parce que les fonctions au sein des grandes plateformes d&#39;&#233;change ne sont pas &#171; s&#233;gr&#233;gu&#233;es &#187; comme elles devraient l&#39;&#234;tre. Si les plateformes offrent un service de trading, elles ne devraient pas pouvoir assurer &#233;galement la conservation des actifs, car cela peut entra&#238;ner des comportements &#224; risque. Cette r&#232;gle me semble assez facile &#224; mettre en place par des r&#233;gulateurs. Il y a encore beaucoup d&#39;immaturit&#233; dans le secteur sur ces questions de s&#233;curit&#233; de processus et de gouvernance. Le risque, c&#39;est que le march&#233; des cryptos reparte en croissance sans avoir vraiment tir&#233; les le&#231;ons de ce qu&#39;on vient de conna&#238;tre. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;De quelle mani&#232;re ces technologies d&#233;centralis&#233;es vont-elles changer nos usages ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Ce que le bitcoin a r&#233;volutionn&#233;, en plus du transfert de valeurs, c&#39;est la possession d&#39;un actif digital unique. Aujourd&#39;hui, avec un compte Spotify par exemple, vous achetez un abonnement pour &#233;couter de la musique, mais &#224; la fin, vous ne poss&#233;dez rien et vous ne pouvez rien transmettre. Or les technologies de d&#233;centralisation permettent &#224; l&#39;individu de retrouver cette notion de propri&#233;t&#233; dans le monde digital. Tout ce qui a de la valeur digitale, ce qui est unique et rare, sera &#171; tokenis&#233; &#187; et enregistr&#233; sur la blockchain. Les banques investissent beaucoup pour &#233;changer bient&#244;t leurs actifs financiers sur des blockchains. Cela se d&#233;clinera pour diff&#233;rents cas d&#39;usage jusqu&#39;&#224; l&#39;identit&#233;. Aujourd&#39;hui, il est encore difficile de prouver qui on est de mani&#232;re digitale... Demain, notre identit&#233; sera toujours valid&#233;e par l&#39;&#201;tat, mais elle sera &#171; tokenis&#233;e &#187; , avec tous les &#233;l&#233;ments de s&#233;curit&#233; n&#233;cessaires. Vous l&#39;aurez sur vous dans un appareil lui-m&#234;me s&#233;curis&#233; et vous pourrez passer les fronti&#232;res. De la m&#234;me mani&#232;re, vous poss&#233;derez vos donn&#233;es de sant&#233;, et vous pourrez d&#233;cider avec qui vous souhaitez les partager. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Vous parlez m&#234;me de r&#233;volution soci&#233;tale...&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La r&#233;volution, c&#39;est la reprise de contr&#244;le par les utilisateurs et leur libert&#233; de choix. Vous pouvez choisir d&#39;avoir acc&#232;s &#224; votre argent en toutes circonstances, et ind&#233;pendamment du niveau de solidit&#233; du syst&#232;me bancaire. Dans de nombreux pays, en Argentine, au Liban, au Zimbabwe, ce syst&#232;me n&#39;est pas solide et les gens utilisent beaucoup les cryptoactifs. En Europe et aux &#201;tats-Unis, la question se posait peut-&#234;tre moins jusqu&#39;ici, mais &#224; la lumi&#232;re des r&#233;cents &#233;v&#233;nements, certains vont r&#233;fl&#233;chir &#224; deux fois avant de mettre tout leur argent sur un compte en banque. Les protocoles d&#233;centralis&#233;s proposent une alternative, mais ils sont naissants. Cela veut dire aussi qu&#39;il y a une &#233;ducation &#224; faire. Au d&#233;but d&#39;internet non plus, les gens ne comprenaient pas vraiment bien l&#39;int&#233;r&#234;t. Et puis finalement, tout le monde y a trouv&#233; son compte. Mais cela a mis vingt ans. Les r&#233;volutions technologiques ne se font pas du jour au lendemain. &lt;/p&gt; &lt;p&gt; &#171; a crise bancaire actuelle montre les limites d&#39;un syst&#232;me mon&#233;taire centralis&#233;, dans lequel aucun acteur n&#39;est &#171; trop gros pour &#233;chouer &#187; , avec un effet domino et de graves cons&#233;quences pour les consom-mateurs finauxPASCAL GAUTHIER&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Brillant, dilettante, insolent, imp&#233;cunieux et intrigant, Beaumarchais est, &#224; l&#39;image de Figaro, &#171; ambitieante libert&#233; d&#39;esprit, qui ne vieillit pas, car elle est de tous les temps. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;DR &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230415&amp;#183;LF&amp;#183;1042&amp;#215;20&amp;#215;23452389337&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">système monétaire</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">crise de confiance</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">propositions de valeur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">conservation des actifs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">crise bancaire</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Bourse et marché des changes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Banques et institutions financières</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Zimbabwe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bretton Woods</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Liban</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Argentine</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230415%c2%b7LF%c2%b71042%c3%9720%c3%9723452389337" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230415%c2%b7LF%c2%b71042%c3%9720%c3%9723452389337">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 24463                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         samedi 15 avril 2023 1002 mots, p. 22</span>
+</div>
+
+    <div>
+        <p>
+Entreprises         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+« Sur le bitcoin, il n'y a pas eu de crise de confiance »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Si le scandale FTX a secoué le secteur des cryptoactifs, il n'a pas remis en cause sa proposition de valeur, assure le patron de Ledger.</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Ledger est spécialisé dans la sécurisation des actifs digitaux pour les particuliers et les entreprises. Son PDG expose la révolution que vont entraîner les technologies décentralisées dans notre quotidien. </p> <p><em style="font-weight:bold;">Le FIGARO. - Quel regard portez-vous sur la crise qui agite le secteur bancaire ?</em></p><p><em style="font-weight:bold;">Pascal GAUTHIER. -</em>L'histoire a une fâcheuse tendance à se répéter. C'est la crise de 2008 et la faillite de Lehman Brothers qui ont précipité la naissance du bitcoin, imaginé pour créer une alternative au système monétaire actuel. C'est un réseau électronique de paiement de pair à pair qui, grâce à de nouvelles technologies ouvertes, en <mark>open</mark> <mark>source</mark>, ne nécessite pas de devoir faire confiance a priori à des acteurs tiers. Cela permet de ne pas dépendre de propositions de valeur centralisées. Or la crise bancaire actuelle montre, une nouvelle fois, les limites d'un système monétaire centralisé, dans lequel aucun acteur n'est « trop gros pour échouer » , avec un effet domino et de graves conséquences pour les consommateurs finaux. Avant les accords de Bretton Woods en 1944, le système monétaire, c'était l'étalon-or, qui ressemble plus au système que propose le bitcoin qu'au système monétaire actuel. Le bitcoin regagne d'ailleurs de la valeur depuis l'effondrement de certaines banques. Commence-t-il à jouer son rôle de refuge, ce pour quoi il a été imaginé? Seul le temps le dira.</p>
+
+
+<p><em style="font-weight:bold;">Le secteur des cryptoactifs a aussi traversé une crise en 2022...</em></p><p>Il s'est passé deux choses en 2022 : l'effondrement de la partie spéculation, qui n'a pas été propre au secteur des cryptomonnaies. Et l'échec des propositions de valeur centralisées sur lesquelles ne doit pas reposer la confiance, comme le montrait déjà le livre blanc de Satoshi Nakamoto, à l'origine du bitcoin. Dans le cas de FTX, c'était purement et simplement de la fraude. Mais la chute des plateformes comme Celsius, Voyager, BlockFi n'a pas été une crise de confiance dans les cryptoactifs. Encore une fois, c'est un problème de confiance dans les entités centralisées ou dans des protocoles qui n'étaient pas sérieux comme le terra luna. Sur le bitcoin (seul vrai système décentralisé au monde aujourd'hui) et sur les technologies décentralisées, il n'y a pas eu de crise de confiance. </p> <p><em style="font-weight:bold;">Quelles leçons le secteur des cryptoactifs a-t-il tirées de 2022 ?</em></p><p>Les ingrédients du désastre existent toujours largement dans le marché crypto. Tout ce qui s'est passé en 2022, c'est une très mauvaise gestion du risque, de la gouvernance et de la sécurité. Il n'existe toujours pas, par exemple, de ségrégation claire des rôles entre les opérations de trading et la conservation des actifs, contrairement à ce qui se passe dans la finance traditionnelle. Sam Bankman-Fried <em style="font-style:italic;">(le fondateur de la plateforme FTX qui a fait faillite, NDLR)</em>est un fraudeur, mais il a aussi pu faire tout ce qu'il a fait parce que les fonctions au sein des grandes plateformes d'échange ne sont pas « ségréguées » comme elles devraient l'être. Si les plateformes offrent un service de trading, elles ne devraient pas pouvoir assurer également la conservation des actifs, car cela peut entraîner des comportements à risque. Cette règle me semble assez facile à mettre en place par des régulateurs. Il y a encore beaucoup d'immaturité dans le secteur sur ces questions de sécurité de processus et de gouvernance. Le risque, c'est que le marché des cryptos reparte en croissance sans avoir vraiment tiré les leçons de ce qu'on vient de connaître. </p> <p><em style="font-weight:bold;">De quelle manière ces technologies décentralisées vont-elles changer nos usages ?</em></p><p>Ce que le bitcoin a révolutionné, en plus du transfert de valeurs, c'est la possession d'un actif digital unique. Aujourd'hui, avec un compte Spotify par exemple, vous achetez un abonnement pour écouter de la musique, mais à la fin, vous ne possédez rien et vous ne pouvez rien transmettre. Or les technologies de décentralisation permettent à l'individu de retrouver cette notion de propriété dans le monde digital. Tout ce qui a de la valeur digitale, ce qui est unique et rare, sera « tokenisé » et enregistré sur la blockchain. Les banques investissent beaucoup pour échanger bientôt leurs actifs financiers sur des blockchains. Cela se déclinera pour différents cas d'usage jusqu'à l'identité. Aujourd'hui, il est encore difficile de prouver qui on est de manière digitale... Demain, notre identité sera toujours validée par l'État, mais elle sera « tokenisée » , avec tous les éléments de sécurité nécessaires. Vous l'aurez sur vous dans un appareil lui-même sécurisé et vous pourrez passer les frontières. De la même manière, vous posséderez vos données de santé, et vous pourrez décider avec qui vous souhaitez les partager. </p> <p><em style="font-weight:bold;">Vous parlez même de révolution sociétale...</em></p><p>La révolution, c'est la reprise de contrôle par les utilisateurs et leur liberté de choix. Vous pouvez choisir d'avoir accès à votre argent en toutes circonstances, et indépendamment du niveau de solidité du système bancaire. Dans de nombreux pays, en Argentine, au Liban, au Zimbabwe, ce système n'est pas solide et les gens utilisent beaucoup les cryptoactifs. En Europe et aux États-Unis, la question se posait peut-être moins jusqu'ici, mais à la lumière des récents événements, certains vont réfléchir à deux fois avant de mettre tout leur argent sur un compte en banque. Les protocoles décentralisés proposent une alternative, mais ils sont naissants. Cela veut dire aussi qu'il y a une éducation à faire. Au début d'internet non plus, les gens ne comprenaient pas vraiment bien l'intérêt. Et puis finalement, tout le monde y a trouvé son compte. Mais cela a mis vingt ans. Les révolutions technologiques ne se font pas du jour au lendemain. </p> <p> « a crise bancaire actuelle montre les limites d'un système monétaire centralisé, dans lequel aucun acteur n'est « trop gros pour échouer » , avec un effet domino et de graves conséquences pour les consom-mateurs finauxPASCAL GAUTHIER</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Brillant, dilettante, insolent, impécunieux et intrigant, Beaumarchais est, à l'image de Figaro, « ambitieante liberté d'esprit, qui ne vieillit pas, car elle est de tous les temps. </div>.
+
+                <div class="ImageAttachFont">DR </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230415·LF·1042×20×23452389337</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230415·LF·1042×20×23452389337";
+    var _docIndex = 161;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230415·LF·1042×20×23452389337';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230415%C2%B7LF%C2%B71042%C3%9720%C3%9723452389337&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230415%C2%B7LF%C2%B71042%C3%9720%C3%9723452389337&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230415%C2%B7LF%C2%B71042%C3%9720%C3%9723452389337&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230415%C2%B7LF%C2%B71042%C3%9720%C3%9723452389337&docIndex=161&FullScreen=1";
+                
+	var _keyDoc = 'news·20230415·LF·1042×20×23452389337';
+</script>
+</div></body></html>

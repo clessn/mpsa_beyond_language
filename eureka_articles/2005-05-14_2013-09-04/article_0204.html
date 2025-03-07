@@ -1,0 +1,507 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Grand Angle,         mardi 14 f&amp;#233;vrier 2012 1324 mots, p. 36&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+OVH L&#39;Internet giga familial            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Premier h&#233;bergeur europ&#233;en de sites web, cette entreprise bas&#233;e &#224; Roubaix a &#233;t&#233; cr&#233;&#233;e il y a douze ans par une famille d&#39;immigr&#233;s polonais. Elle se lance aujourd&#39;hui &#224; la conqu&#234;te de l&#39;Am&#233;rique.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Christophe Alix&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Jusqu&#39;&#224; d&#233;cembre 2010, rares en France &#233;taient ceux qui avaient entendu parler d&#39;OVH. L&#39;affaire WikiLeaks bat alors son plein, Eric Besson, ministre de l&#39;Economie num&#233;rique, r&#233;v&#232;le qu&#39;un obscur prestataire technique, bas&#233; dans la zone industrielle de Roubaix, h&#233;berge ce site qualifi&#233; de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;criminel&lt;/em&gt;&#187;. &lt;/p&gt; &lt;p&gt; Pour Octave Klaba, directeur d&#39;OVH, le bapt&#234;me du feu m&#233;diatique est inattendu. C&#39;est, dit-il, dans la presse qu&#39;il a appris que ses &lt;em style=&quot;font-style:italic;&quot;&gt;datacenters&lt;/em&gt;h&#233;bergeaient le site de Julian Assange. Une blague ? Non, OVH n&#39;a d&#39;ailleurs pas &#233;t&#233; inqui&#233;t&#233; par la justice. Prot&#233;g&#233;es par de hauts murs de brique surmont&#233;s de barbel&#233;s, les machines d&#39;OVH - pour &#171;On vous h&#233;berge&#187;- n&#39;ont fait que fournir automatiquement un espace de stockage &#224; un client, qui s&#39;est r&#233;v&#233;l&#233; &#234;tre mandat&#233; par WikiLeaks. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Prestataire technique de la solution technique que le client a command&#233;e&#187;,&lt;/em&gt; Octave Klaba ne se m&#234;le pas de conna&#238;tre l&#39;activit&#233; ou le nom de ceux qui utilisent son infrastructure, si gigantesque que les donn&#233;es de WikiLeaks y occupent une place nanom&#233;trique.&lt;/p&gt;
+
+
+&lt;p&gt;M&#233;galopole virtuelle, OVH compte trois centres (Roubaix, Paris et Strasbourg) qui stockent 100 000 t&#233;raoctets de donn&#233;es et consomment autant d&#39;&#233;lectricit&#233; qu&#39;une ville de 20 000 habitants. Avec 100 000 serveurs install&#233;s dans des kilom&#232;tres de baies, l&#39;entreprise h&#233;berge 18 millions de sites. En 2011, OVH est devenu le num&#233;ro 1 en Europe de l&#39;h&#233;bergement - un site europ&#233;en sur six, un fran&#231;ais sur trois. Une place conquise en dix ans, et en partant de z&#233;ro. A l&#39;origine de cette p&#233;pite, un couple de Polonais et ses deux fils, arriv&#233;s en France en 1991 avec 5 000 dollars en poche. Actionnaires uniques de cette entreprise qui emploie 440 personnes et p&#232;se 100 millions de chiffre d&#39;affaires, ils n&#39;ont jamais compt&#233; que sur leurs forces : capital-risque, banque, Bourse, connaissent pas. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;/em&gt; &lt;/p&gt; &lt;p&gt; Voil&#224; donc une famille de quatre ing&#233;nieurs de 29 &#224; 63 ans qui continue de vivre tr&#232;s simplement et r&#233;investit tous ses b&#233;n&#233;fices dans la soci&#233;t&#233;. Le p&#232;re, Henryk, &#171;monsieur Klaba&#187; comme tous l&#39;appellent ici, est le pr&#233;sident. Organisateur et bricoleur de g&#233;nie, il a invent&#233; une technique de refroidissement des serveurs par un syst&#232;me &#224; eau qui a permis &#224; OVH de diviser par deux ses co&#251;ts &#233;nerg&#233;tiques. La m&#232;re, Halina, tr&#232;s discr&#232;te, s&#39;occupe des finances. Le fils a&#238;n&#233;, Octave, qui a eu l&#39;id&#233;e d&#39;OVH avant d&#39;y embarquer toute la famille, en est le directeur g&#233;n&#233;ral. C&#39;est le cr&#233;atif, le visionnaire qui voit Internet comme &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;un magma d&#39;id&#233;es d&#233;bordant d&#39;un volcan en &#233;ruption permanente et &#224; son contact les id&#233;es refroidissent vite&#187;.&lt;/em&gt; Enfin, il y a le petit fr&#232;re, Miroslaw, alias Miro, le responsable de la recherche, qui se d&#233;finit comme le conciliateur de la famille. &lt;/p&gt; &lt;p&gt; Un casting 100% Klaba, dans une entreprise tr&#232;s jeune (27 ans de moyenne d&#39;&#226;ge), sans hi&#233;rarchie ou presque. Son histoire prend ses racines dans celle de l&#39;&#233;migration polonaise du si&#232;cle dernier, avec Marian Klaba, le grand-p&#232;re d&#39;Octave et Miro, n&#233; pr&#232;s de B&#233;thune, dans les ann&#233;es 20, d&#39;un p&#232;re originaire de la Pologne mini&#232;re de Sil&#233;sie. Comme son p&#232;re, Marian &#171;embauche&#187; dans la mine &#224; 13 ans. Devenu fran&#231;ais, il se marie en 1946 avec une &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;pure Polonaise rencontr&#233;e en France&#187;,&lt;/em&gt; dixit Octave, qui se fait le porte-parole de la m&#233;moire familiale, douloureuse. La jeune fille est issue d&#39;une famille de paysans qui poss&#233;dait des vergers de pommiers en Pologne avant que le gel la contraigne &#224; revendre leurs terres et &#224; partir &#171;au charbon&#187;, litt&#233;ralement, en France. &lt;/p&gt; &lt;p&gt; Le beau-p&#232;re de Marian, au fond de la mine, r&#234;ve de se refaire un verger en Pologne. Il envoie r&#233;guli&#232;rement de l&#39;argent &#224; son fr&#232;re rest&#233; au pays pour qu&#39;il rach&#232;te des terres. Vient la fin de la Deuxi&#232;me Guerre mondiale, la Pologne est &#224; reconstruire, c&#39;est le moment de repartir : Marian, sa femme et ses beaux-parents tentent un retour &#224; la terre polonaise et aux pommes. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Ils sont rentr&#233;s en train,&lt;/em&gt; raconte Octave, &lt;em style=&quot;font-style:italic;&quot;&gt;heureux. Sortir de la mine, &#231;a a toujours &#233;t&#233; le but dans la famille.&#187;&lt;/em&gt; Mais aucun verger ne les attend : l&#39;oncle a tout d&#233;pens&#233; au jeu. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;/em&gt; &lt;/p&gt; &lt;p&gt; Retour &#224; la case d&#233;part et &#224; la mine, en Pologne cette fois, car le rideau de fer est tomb&#233; et les nouvelles autorit&#233;s communistes interdisent au couple de repartir en France, alors qu&#39;ils ont tous deux la nationalit&#233; fran&#231;aise. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;C&#39;&#233;tait d&#233;sesp&#233;rant mais il n&#39;y avait rien &#224; faire, poursuit Octave. L&#39;esprit de r&#233;sistance familial vient de l&#224;.&#187;&lt;/em&gt; En 1949, le couple a un fils, Henryk. La petite famille se fait enregistrer au consulat de France, au cas o&#249;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;De fait, ils &#233;taient consid&#233;r&#233;s comme des agents de l&#39;&#233;tranger,&lt;/em&gt;raconte Octave, &lt;em style=&quot;font-style:italic;&quot;&gt;tr&#232;s surveill&#233;s,&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;avec l&#39;interdiction de sortir du pays.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Elev&#233; dans la haine des communistes, le jeune Henryk est promis &#224; un destin minier. Mais il tirera le meilleur profit du syst&#232;me &#233;ducatif socialiste : il entre &#224; l&#39;Ecole polytechnique de Varsovie et en sort ing&#233;nieur. Il y rencontre Halina, qui deviendra sa femme. Encore &#233;tudiante, elle accouche d&#39;Octave, en 1975. Miro na&#238;t sept ans plus tard. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Notre enfance a &#233;t&#233; heureuse,&lt;/em&gt; se souvient Octave, &lt;em style=&quot;font-style:italic;&quot;&gt;m&#234;me si on ne trouvait que du vinaigre dans les magasins. Le syst&#232;me D, &#231;a apprend &#224; se d&#233;merder.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La famille habite &#224; Walbrzych, non loin de la fronti&#232;re tch&#232;que, en Sil&#233;sie, berceau des Klaba. Henryk, gros bosseur, monte dans la hi&#233;rarchie socialiste, mais sans jamais frayer avec la nomenklatura. Il terminera sa carri&#232;re &#224; la t&#234;te d&#39;un kolkhoze de 550 personnes et de 2 000 hectares. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Un ing&#233;nieur n&#233;,&lt;/em&gt; dit Miro. &lt;em style=&quot;font-style:italic;&quot;&gt;Le genre &#224; vous faire lever les yeux au milieu d&#39;un champ de pommes de terre pour vous d&#233;tailler le montage des lignes &#233;lectriques qui le traverse.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;C&#39;est dans les ann&#233;es 80 que les Klaba, baignant dans cette ambiance &#171;G&#233;o Trouvetou&#187; tandis que la Pologne est en pleine insurrection, d&#233;couvrent la micro-informatique. Parti pour acheter une voiture, Henryk revient &#224; la maison avec un ordinateur Amstrad. Ses deux fils se r&#233;v&#232;lent des geeks tr&#232;s pr&#233;coces. Octave &#171;code&#187; avant d&#39;avoir souffl&#233; ses dix bougies et d&#233;bugue le syst&#232;me de comptabilit&#233; du kolkhoze paternel en &#233;change de chocolats. Miro sait taper son nom avant de savoir l&#39;&#233;crire. &lt;/p&gt; &lt;p&gt; Apr&#232;s la chute du mur, en 1989, l&#39;espoir de partir en France rena&#238;t, les &#233;changes avec les Klaba rest&#233;s dans l&#39;Hexagone s&#39;intensifient. Des cousins d&#39;Henryk gagnent le nord de la France avec un visa touriste. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Ils y restent et on se dit que si on veut tenter notre chance, on a int&#233;r&#234;t &#224; se d&#233;p&#234;cher avant que les autorit&#233;s nous bloquent&#187;,&lt;/em&gt; se rappelle Octave, alors &#226;g&#233; de 16 ans. Un jour, les parents demandent solennellement &#224; leurs deux fils de choisir entre les deux pays. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Ils nous ont dit que pour eux, il &#233;tait trop tard pour refaire leur vie ailleurs. C&#39;&#233;tait &#224; nous de d&#233;cider.&#187;&lt;/em&gt; Banco. Les Klaba vendent tout, vivent un an sans meubles et, en 1990, les voil&#224; qui franchissent la fronti&#232;re dans leur Wartburg (une Trabant, en plus gros) avec leur vie dans un coffre. L&#39;arriv&#233;e est rude. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;On avale l&#39;amour-propre et on y va&#187;,&lt;/em&gt; r&#233;sume Octave. &lt;/p&gt; &lt;p&gt; Le directeur de kolkhoze se retrouve tourneur fraiseur. Octave, qui ne parle pas un mot de fran&#231;ais, r&#233;trograde de la seconde &#224; la quatri&#232;me. Il finira par s&#39;int&#233;grer gr&#226;ce &#224; sa mobylette avec laquelle il gagne sa libert&#233;, et son groupe de &lt;em style=&quot;font-style:italic;&quot;&gt;heavy metal.&lt;/em&gt;Il s&#39;accroche, passe son bac et rentre en pr&#233;pa avant d&#39;int&#233;grer, comme son fr&#232;re plus tard, l&#39;Institut catholique d&#39;arts et m&#233;tiers de Lille. Le voil&#224; donc &#171;ing&#233;&#187;, comme papa. &lt;/p&gt; &lt;p&gt; Pourtant, Octave Klaba r&#234;ve de tout sauf de &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;carri&#232;re&#187;.&lt;/em&gt;Il r&#233;sume les cinq semaines pass&#233;es chez Alcatel &#224; Rennes, sa seule exp&#233;rience professionnelle hors d&#39;OVH : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&#199;a m&#39;a tu&#233;.&#187;&lt;/em&gt;&#171;Oles von Herman&#187; (c&#39;est le pseudo qu&#39;il s&#39;est trouv&#233; en maths sup, par &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;pur d&#233;lire&#187;&lt;/em&gt;) passe depuis longtemps ses jours et ses nuits sur sa page perso en ligne, un bric-&#224;-brac de forums et de petits &#171;utilitaires&#187; en libre-service, comme des compteurs de pages. Il cherche un h&#233;bergeur pour son site de plus en plus volumineux. &lt;/p&gt; &lt;p&gt; Le jeune Octave trouve enfin refuge sur le serveur d&#39;un Am&#233;ricain de Pennsylvanie. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Il n&#39;y avait rien en France, le n&#233;ant.&#187;&lt;/em&gt; Le peu d&#39;argent qu&#39;il gagne, il l&#39;engloutit en heures de connexion. La fr&#233;quentation augmente, le contenu explose et l&#39;Am&#233;ricain ne tient pas la charge. SOS. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Je ne sais pas ce qui m&#39;a pris, je n&#39;avais pas un rond mais j&#39;ai pris le premier avion avec mon serveur sous le bras pour lui venir en aide&#187;,&lt;/em&gt; se rappelle-t-il. Un choc qui d&#233;cidera de son avenir. Il s&#39;attendait &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&#224; une salle blanche futuriste&#187;,&lt;/em&gt;il tombe sur &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;une cabane en bois avec deux vieilles b&#233;canes. &#199;a m&#39;a ouvert les yeux sur l&#39;arri&#232;re de la boutique Internet, c&#39;&#233;tait tr&#232;s facile&#187;.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;De retour en France, il d&#233;marre sa propre activit&#233; d&#39;h&#233;bergement. OVH cesse d&#39;&#234;tre un pseudo et devient le sigle d&#39;une association tr&#232;s partageuse dans l&#39;esprit du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Non seulement je ne gagnais rien, mais je d&#233;pensais tout l&#39;argent de mes stages &#224; aider les gens et h&#233;berger leurs sites. Ils ne payaient qu&#39;une fois, et encore.envoy&#233; notre premi&#232;re lettre de relance&#187;&lt;/em&gt;Les parents Klaba ne partagent gu&#232;re les choix de leur fils : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Ils auraient voulu que leur ing&#233;nieur de fils se cherche un &quot;vrai&quot; m&#233;tier. Pour eux, j&#39;&#233;tais un fanatique, ce qui n&#39;&#233;tait pas faux.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;D&#233;but 2000, Octave les convainc tout de m&#234;me de lui pr&#234;ter 7 000 euros pour transformer OVH en soci&#233;t&#233;. Le premier local est une cave et les d&#233;buts sont difficiles, mais Octave trouve notamment le soutien de Xavier Niel, entrepreneur &#224; succ&#232;s qui vient alors de lancer Free. Niel lui pr&#234;te un sous-sol dans l&#39;est parisien pour installer ses premi&#232;res fermes de serveurs. Comme Niel avec Free, Octave va enfin pouvoir mettre au point un mod&#232;le d&#39;h&#233;bergement qui casse les prix. Son secret ? Tout faire soi-m&#234;me. Du montage des serveurs au design des baies en passant par l&#39;architecture des &lt;em style=&quot;font-style:italic;&quot;&gt;datacenters&lt;/em&gt; dont le dernier, Roubaix-4, n&#39;a m&#234;me plus besoin de climatisation. &lt;/p&gt; &lt;p&gt; Pour approvisionner ses &lt;em style=&quot;font-style:italic;&quot;&gt;datacenters&lt;/em&gt; de Strasbourg, la soci&#233;t&#233; s&#39;est lanc&#233;e dans la production d&#39;&#233;nergie en investissant dans un parc d&#39;&#233;oliennes en Lorraine. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;La ma&#238;trise des technologies est la cl&#233; pour abaisser les co&#251;ts,&lt;/em&gt; explique Octave, &lt;em style=&quot;font-style:italic;&quot;&gt;il n&#39;y a que sur les salaires qu&#39;on ne fait pas d&#39;&#233;conomies.&#187;&lt;/em&gt; Apr&#232;s avoir ouvert seize filiales -la premi&#232;re est en Pologne et la derni&#232;re au S&#233;n&#233;gal -, OVH se lance &#224; l&#39;assaut du march&#233; nord-am&#233;ricain, le premier au monde. Octave vient de s&#39;installer avec femme et enfants &#224; Montr&#233;al, t&#234;te de pont d&#39;OVH pour la conqu&#234;te du Nouveau Monde. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Outre-Atlantique, les h&#233;bergeurs sont quatre fois plus chers qu&#39;OVH, et ils ne comprennent rien &#224; notre mod&#232;le,&lt;/em&gt; dit-il. &lt;em style=&quot;font-style:italic;&quot;&gt;Il faut se d&#233;p&#234;cher d&#39;en profiter. On va leur montrer qu&#39;on n&#39;est pas des Bisounours.&#187;&lt;/em&gt;On n&#39;en a jamais dout&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;photos Christophe Alix&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2012 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20120214&amp;#183;LI&amp;#183;e9c4df3a-5667-11e1-8583-c2ac1c08e5e4&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">prestataire technique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">porte-parole de la mémoire familiale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">esprit de résistance familial</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">comptabilité du kolkhoze paternel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">expérience professionnelle</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Roubaix</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Pologne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Amérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Strasbourg</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120214%c2%b7LI%c2%b7e9c4df3a-5667-11e1-8583-c2ac1c08e5e4" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120214%c2%b7LI%c2%b7e9c4df3a-5667-11e1-8583-c2ac1c08e5e4">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Grand Angle,         mardi 14 février 2012 1324 mots, p. 36</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+OVH L'Internet giga familial            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Premier hébergeur européen de sites web, cette entreprise basée à Roubaix a été créée il y a douze ans par une famille d'immigrés polonais. Elle se lance aujourd'hui à la conquête de l'Amérique.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Christophe Alix</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Jusqu'à décembre 2010, rares en France étaient ceux qui avaient entendu parler d'OVH. L'affaire WikiLeaks bat alors son plein, Eric Besson, ministre de l'Economie numérique, révèle qu'un obscur prestataire technique, basé dans la zone industrielle de Roubaix, héberge ce site qualifié de <em style="font-style:italic;">«criminel</em>». </p> <p> Pour Octave Klaba, directeur d'OVH, le baptême du feu médiatique est inattendu. C'est, dit-il, dans la presse qu'il a appris que ses <em style="font-style:italic;">datacenters</em>hébergeaient le site de Julian Assange. Une blague ? Non, OVH n'a d'ailleurs pas été inquiété par la justice. Protégées par de hauts murs de brique surmontés de barbelés, les machines d'OVH - pour «On vous héberge»- n'ont fait que fournir automatiquement un espace de stockage à un client, qui s'est révélé être mandaté par WikiLeaks. <em style="font-style:italic;">«Prestataire technique de la solution technique que le client a commandée»,</em> Octave Klaba ne se mêle pas de connaître l'activité ou le nom de ceux qui utilisent son infrastructure, si gigantesque que les données de WikiLeaks y occupent une place nanométrique.</p>
+
+
+<p>Mégalopole virtuelle, OVH compte trois centres (Roubaix, Paris et Strasbourg) qui stockent 100 000 téraoctets de données et consomment autant d'électricité qu'une ville de 20 000 habitants. Avec 100 000 serveurs installés dans des kilomètres de baies, l'entreprise héberge 18 millions de sites. En 2011, OVH est devenu le numéro 1 en Europe de l'hébergement - un site européen sur six, un français sur trois. Une place conquise en dix ans, et en partant de zéro. A l'origine de cette pépite, un couple de Polonais et ses deux fils, arrivés en France en 1991 avec 5 000 dollars en poche. Actionnaires uniques de cette entreprise qui emploie 440 personnes et pèse 100 millions de chiffre d'affaires, ils n'ont jamais compté que sur leurs forces : capital-risque, banque, Bourse, connaissent pas. </p> <p><em style="font-weight:bold;"></em> </p> <p> Voilà donc une famille de quatre ingénieurs de 29 à 63 ans qui continue de vivre très simplement et réinvestit tous ses bénéfices dans la société. Le père, Henryk, «monsieur Klaba» comme tous l'appellent ici, est le président. Organisateur et bricoleur de génie, il a inventé une technique de refroidissement des serveurs par un système à eau qui a permis à OVH de diviser par deux ses coûts énergétiques. La mère, Halina, très discrète, s'occupe des finances. Le fils aîné, Octave, qui a eu l'idée d'OVH avant d'y embarquer toute la famille, en est le directeur général. C'est le créatif, le visionnaire qui voit Internet comme <em style="font-style:italic;">«un magma d'idées débordant d'un volcan en éruption permanente et à son contact les idées refroidissent vite».</em> Enfin, il y a le petit frère, Miroslaw, alias Miro, le responsable de la recherche, qui se définit comme le conciliateur de la famille. </p> <p> Un casting 100% Klaba, dans une entreprise très jeune (27 ans de moyenne d'âge), sans hiérarchie ou presque. Son histoire prend ses racines dans celle de l'émigration polonaise du siècle dernier, avec Marian Klaba, le grand-père d'Octave et Miro, né près de Béthune, dans les années 20, d'un père originaire de la Pologne minière de Silésie. Comme son père, Marian «embauche» dans la mine à 13 ans. Devenu français, il se marie en 1946 avec une <em style="font-style:italic;">«pure Polonaise rencontrée en France»,</em> dixit Octave, qui se fait le porte-parole de la mémoire familiale, douloureuse. La jeune fille est issue d'une famille de paysans qui possédait des vergers de pommiers en Pologne avant que le gel la contraigne à revendre leurs terres et à partir «au charbon», littéralement, en France. </p> <p> Le beau-père de Marian, au fond de la mine, rêve de se refaire un verger en Pologne. Il envoie régulièrement de l'argent à son frère resté au pays pour qu'il rachète des terres. Vient la fin de la Deuxième Guerre mondiale, la Pologne est à reconstruire, c'est le moment de repartir : Marian, sa femme et ses beaux-parents tentent un retour à la terre polonaise et aux pommes. <em style="font-style:italic;">«Ils sont rentrés en train,</em> raconte Octave, <em style="font-style:italic;">heureux. Sortir de la mine, ça a toujours été le but dans la famille.»</em> Mais aucun verger ne les attend : l'oncle a tout dépensé au jeu. </p> <p><em style="font-weight:bold;"></em> </p> <p> Retour à la case départ et à la mine, en Pologne cette fois, car le rideau de fer est tombé et les nouvelles autorités communistes interdisent au couple de repartir en France, alors qu'ils ont tous deux la nationalité française. <em style="font-style:italic;">«C'était désespérant mais il n'y avait rien à faire, poursuit Octave. L'esprit de résistance familial vient de là.»</em> En 1949, le couple a un fils, Henryk. La petite famille se fait enregistrer au consulat de France, au cas où. <em style="font-style:italic;">«De fait, ils étaient considérés comme des agents de l'étranger,</em>raconte Octave, <em style="font-style:italic;">très surveillés,</em><em style="font-style:italic;">avec l'interdiction de sortir du pays.»</em></p><p>Elevé dans la haine des communistes, le jeune Henryk est promis à un destin minier. Mais il tirera le meilleur profit du système éducatif socialiste : il entre à l'Ecole polytechnique de Varsovie et en sort ingénieur. Il y rencontre Halina, qui deviendra sa femme. Encore étudiante, elle accouche d'Octave, en 1975. Miro naît sept ans plus tard. <em style="font-style:italic;">«Notre enfance a été heureuse,</em> se souvient Octave, <em style="font-style:italic;">même si on ne trouvait que du vinaigre dans les magasins. Le système D, ça apprend à se démerder.»</em></p><p>La famille habite à Walbrzych, non loin de la frontière tchèque, en Silésie, berceau des Klaba. Henryk, gros bosseur, monte dans la hiérarchie socialiste, mais sans jamais frayer avec la nomenklatura. Il terminera sa carrière à la tête d'un kolkhoze de 550 personnes et de 2 000 hectares. <em style="font-style:italic;">«Un ingénieur né,</em> dit Miro. <em style="font-style:italic;">Le genre à vous faire lever les yeux au milieu d'un champ de pommes de terre pour vous détailler le montage des lignes électriques qui le traverse.»</em></p><p>C'est dans les années 80 que les Klaba, baignant dans cette ambiance «Géo Trouvetou» tandis que la Pologne est en pleine insurrection, découvrent la micro-informatique. Parti pour acheter une voiture, Henryk revient à la maison avec un ordinateur Amstrad. Ses deux fils se révèlent des geeks très précoces. Octave «code» avant d'avoir soufflé ses dix bougies et débugue le système de comptabilité du kolkhoze paternel en échange de chocolats. Miro sait taper son nom avant de savoir l'écrire. </p> <p> Après la chute du mur, en 1989, l'espoir de partir en France renaît, les échanges avec les Klaba restés dans l'Hexagone s'intensifient. Des cousins d'Henryk gagnent le nord de la France avec un visa touriste. <em style="font-style:italic;">«Ils y restent et on se dit que si on veut tenter notre chance, on a intérêt à se dépêcher avant que les autorités nous bloquent»,</em> se rappelle Octave, alors âgé de 16 ans. Un jour, les parents demandent solennellement à leurs deux fils de choisir entre les deux pays. <em style="font-style:italic;">«Ils nous ont dit que pour eux, il était trop tard pour refaire leur vie ailleurs. C'était à nous de décider.»</em> Banco. Les Klaba vendent tout, vivent un an sans meubles et, en 1990, les voilà qui franchissent la frontière dans leur Wartburg (une Trabant, en plus gros) avec leur vie dans un coffre. L'arrivée est rude. <em style="font-style:italic;">«On avale l'amour-propre et on y va»,</em> résume Octave. </p> <p> Le directeur de kolkhoze se retrouve tourneur fraiseur. Octave, qui ne parle pas un mot de français, rétrograde de la seconde à la quatrième. Il finira par s'intégrer grâce à sa mobylette avec laquelle il gagne sa liberté, et son groupe de <em style="font-style:italic;">heavy metal.</em>Il s'accroche, passe son bac et rentre en prépa avant d'intégrer, comme son frère plus tard, l'Institut catholique d'arts et métiers de Lille. Le voilà donc «ingé», comme papa. </p> <p> Pourtant, Octave Klaba rêve de tout sauf de <em style="font-style:italic;">«carrière».</em>Il résume les cinq semaines passées chez Alcatel à Rennes, sa seule expérience professionnelle hors d'OVH : <em style="font-style:italic;">«Ça m'a tué.»</em>«Oles von Herman» (c'est le pseudo qu'il s'est trouvé en maths sup, par <em style="font-style:italic;">«pur délire»</em>) passe depuis longtemps ses jours et ses nuits sur sa page perso en ligne, un bric-à-brac de forums et de petits «utilitaires» en libre-service, comme des compteurs de pages. Il cherche un hébergeur pour son site de plus en plus volumineux. </p> <p> Le jeune Octave trouve enfin refuge sur le serveur d'un Américain de Pennsylvanie. <em style="font-style:italic;">«Il n'y avait rien en France, le néant.»</em> Le peu d'argent qu'il gagne, il l'engloutit en heures de connexion. La fréquentation augmente, le contenu explose et l'Américain ne tient pas la charge. SOS. <em style="font-style:italic;">«Je ne sais pas ce qui m'a pris, je n'avais pas un rond mais j'ai pris le premier avion avec mon serveur sous le bras pour lui venir en aide»,</em> se rappelle-t-il. Un choc qui décidera de son avenir. Il s'attendait <em style="font-style:italic;">«à une salle blanche futuriste»,</em>il tombe sur <em style="font-style:italic;">«une cabane en bois avec deux vieilles bécanes. Ça m'a ouvert les yeux sur l'arrière de la boutique Internet, c'était très facile».</em></p><p><em style="font-weight:bold;"></em></p><p>De retour en France, il démarre sa propre activité d'hébergement. OVH cesse d'être un pseudo et devient le sigle d'une association très partageuse dans l'esprit du <mark>logiciel</mark> <mark>libre</mark>. <em style="font-style:italic;">«Non seulement je ne gagnais rien, mais je dépensais tout l'argent de mes stages à aider les gens et héberger leurs sites. Ils ne payaient qu'une fois, et encore.envoyé notre première lettre de relance»</em>Les parents Klaba ne partagent guère les choix de leur fils : <em style="font-style:italic;">«Ils auraient voulu que leur ingénieur de fils se cherche un "vrai" métier. Pour eux, j'étais un fanatique, ce qui n'était pas faux.»</em></p><p>Début 2000, Octave les convainc tout de même de lui prêter 7 000 euros pour transformer OVH en société. Le premier local est une cave et les débuts sont difficiles, mais Octave trouve notamment le soutien de Xavier Niel, entrepreneur à succès qui vient alors de lancer Free. Niel lui prête un sous-sol dans l'est parisien pour installer ses premières fermes de serveurs. Comme Niel avec Free, Octave va enfin pouvoir mettre au point un modèle d'hébergement qui casse les prix. Son secret ? Tout faire soi-même. Du montage des serveurs au design des baies en passant par l'architecture des <em style="font-style:italic;">datacenters</em> dont le dernier, Roubaix-4, n'a même plus besoin de climatisation. </p> <p> Pour approvisionner ses <em style="font-style:italic;">datacenters</em> de Strasbourg, la société s'est lancée dans la production d'énergie en investissant dans un parc d'éoliennes en Lorraine. <em style="font-style:italic;">«La maîtrise des technologies est la clé pour abaisser les coûts,</em> explique Octave, <em style="font-style:italic;">il n'y a que sur les salaires qu'on ne fait pas d'économies.»</em> Après avoir ouvert seize filiales -la première est en Pologne et la dernière au Sénégal -, OVH se lance à l'assaut du marché nord-américain, le premier au monde. Octave vient de s'installer avec femme et enfants à Montréal, tête de pont d'OVH pour la conquête du Nouveau Monde. <em style="font-style:italic;">«Outre-Atlantique, les hébergeurs sont quatre fois plus chers qu'OVH, et ils ne comprennent rien à notre modèle,</em> dit-il. <em style="font-style:italic;">Il faut se dépêcher d'en profiter. On va leur montrer qu'on n'est pas des Bisounours.»</em>On n'en a jamais douté. </p> <p><em style="font-weight:bold;">photos Christophe Alix</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2012 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20120214·LI·e9c4df3a-5667-11e1-8583-c2ac1c08e5e4</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20120214·LI·e9c4df3a-5667-11e1-8583-c2ac1c08e5e4";
+    var _docIndex = 203;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20120214·LI·e9c4df3a-5667-11e1-8583-c2ac1c08e5e4';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720120214%C2%B7LI%C2%B7e9c4df3a-5667-11e1-8583-c2ac1c08e5e4&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720120214%C2%B7LI%C2%B7e9c4df3a-5667-11e1-8583-c2ac1c08e5e4&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720120214%C2%B7LI%C2%B7e9c4df3a-5667-11e1-8583-c2ac1c08e5e4&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720120214%C2%B7LI%C2%B7e9c4df3a-5667-11e1-8583-c2ac1c08e5e4&docIndex=203&FullScreen=1";
+                
+	var _keyDoc = 'news·20120214·LI·e9c4df3a-5667-11e1-8583-c2ac1c08e5e4';
+</script>
+</div></body></html>

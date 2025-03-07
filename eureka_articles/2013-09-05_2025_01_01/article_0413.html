@@ -1,0 +1,493 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 11773                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Id&#233;es,         lundi 8 avril 2019 698 mots, p. 25&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Grand d&#233;bat et IA: quelle transparence pour les donn&#233;es ?            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Les contributions citoyennes sont analys&#233;es par un algorithme qui construit automatiquement les cat&#233;gories d&#39;analyse, ce qui risque d&#39;influencer la tonalit&#233; des r&#233;sultats. Il faut donc rendre publiques les modalit&#233;s de fabrication de la synth&#232;se.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Conseil Scientifique de la Soci&#233;t&#233; Informatique de France (SIF); Aur&#233;lien Bellet&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-style:bold;&quot;&gt;Tribune.&lt;/em&gt;L&#39;int&#233;r&#234;t d&#39;un exercice de d&#233;mocratie participative est de permettre aux citoyens de s&#39;exprimer plus librement &#224; travers des r&#233;ponses sophistiqu&#233;es et argument&#233;es, bien au-del&#224; d&#39;un simple vote ou d&#39;une r&#233;ponse par oui ou non &#224; un ensemble de questions. L&#39;enjeu est de tenter de d&#233;passer les limites de la d&#233;mocratie repr&#233;sentative, qui peine &#224; rendre compte de la diversit&#233; d&#39;une population de 67 millions d&#39;habitants. &lt;/p&gt; &lt;p&gt; S&#39;agissant du &#171;grand d&#233;bat national&#187;, les contributions d&#233;pos&#233;es sur la plate-forme en ligne sont publiques, et chacun peut les consulter. Mais elles sont &#233;galement si nombreuses que personne ne peut les lire toutes. D&#39;o&#249; la n&#233;cessit&#233; de se reposer sur un traitement automatis&#233;. C&#39;est OpinionWay et Qwam (par l&#39;interm&#233;diaire du premier pour le traitement des textes libres) qui sont charg&#233;s par le gouvernement de produire une synth&#232;se de ces contributions en les classant en cat&#233;gories et sous-cat&#233;gories avec des outils d&#39;intelligence artificielle. Une mission similaire a &#233;t&#233; confi&#233;e &#224; un consortium men&#233; par le cabinet de conseil Roland Berger pour l&#39;analyse des contributions libres issues de cahiers citoyens, courriers et synth&#232;ses de d&#233;bats publics (qui n&#39;ont pas encore &#233;t&#233; rendues publiques). Mais y a-t-il une seule fa&#231;on d&#39;effectuer une telle analyse ? Si plusieurs analyses sont possibles, comment cr&#233;er les conditions permettant d&#39;interpr&#233;ter les r&#233;sultats et de juger de leur fid&#233;lit&#233; ?&lt;/p&gt;
+
+
+&lt;p&gt;Donner une synth&#232;se fid&#232;le de contributions textuelles riches et par nature ambigu&#235;s, impr&#233;cises et parfois contradictoires, est un d&#233;fi de taille car on ne conna&#238;t pas &#224; l&#39;avance les cat&#233;gories pertinentes, et on ne dispose pas d&#39;un sous-ensemble de contributions pr&#233;alablement class&#233;es. L&#39;algorithme d&#39;intelligence artificielle doit donc construire automatiquement les cat&#233;gories &#224; partir des donn&#233;es brutes et y associer les contributions. C&#39;est ce qu&#39;on appelle l&#39;apprentissage non supervis&#233;, par opposition aux probl&#232;mes dits supervis&#233;s comme la reconnaissance de visages o&#249; les algorithmes apprennent &#224; partir de banques d&#39;images annot&#233;es avec l&#39;identit&#233; correspondante. Pour compenser l&#39;absence de supervision, un algorithme non supervis&#233; s&#39;appuie n&#233;cessairement sur des hypoth&#232;ses. Par exemple, une approche na&#239;ve consisterait &#224; d&#233;finir les cat&#233;gories comme des ensembles de mots-cl&#233;s et associerait une contribution &#224; une cat&#233;gorie si elle contient suffisamment de mots-cl&#233;s de cette cat&#233;gorie. De nombreuses m&#233;thodes et pr&#233;traitements sont possibles, allant de techniques de base s&#39;appuyant sur des dictionnaires et des comptes de mots &#224; des approches complexes et plus contextuelles, bas&#233;es par exemple sur les progr&#232;s r&#233;cents en apprentissage profond, sans oublier des m&#233;thodes mixtes incorporant des arbitrages par des humains. &lt;/p&gt; &lt;p&gt; Ces choix influencent la tonalit&#233; des r&#233;sultats : plusieurs d&#39;entre eux peuvent se r&#233;v&#233;ler pertinents, voire apporter une vision compl&#233;mentaire. Certaines approches peuvent &#233;galement amplifier les diff&#233;rences d&#233;j&#224; structurellement pr&#233;sentes entre les donn&#233;es du grand d&#233;bat et les opinions de l&#39;ensemble de la population, qui sont une cons&#233;quence naturelle des diff&#233;rences d&#233;mographiques, sociales et territoriales; de plus elles risquent de surrepr&#233;senter des militants de causes diverses. De m&#234;me qu&#39;un algorithme de reconnaissance de visages entra&#238;n&#233; sur une base contenant plus de visages masculins que f&#233;minins aura tendance &#224; &#234;tre plus performant sur les visages d&#39;hommes, de m&#234;me l&#39;algorithme de cat&#233;gorisation peut donner trop d&#39;importance &#224; quelques th&#232;mes tr&#232;s fr&#233;quents en occultant la vari&#233;t&#233; des th&#232;mes abord&#233;s. L&#39;absence de supervision rend d&#233;licate la validation de la m&#233;thode choisie. &lt;/p&gt; &lt;p&gt; Le gouvernement a d&#39;ores et d&#233;j&#224; annonc&#233; que des le&#231;ons politiques seront tir&#233;es de la restitution du grand d&#233;bat, annonc&#233;e pour ce lundi &lt;em style=&quot;font-style:italic;&quot;&gt;.&lt;/em&gt;Pour que le processus soit acceptable pour la population, il faut que l&#39;analyse soit la plus transparente possible, bas&#233;e sur des algorithmes &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, en acc&#232;s ouvert, et clairement d&#233;crits. En particulier, la m&#233;thode appliqu&#233;e pour construire les cat&#233;gories doit &#234;tre transparente. Il faut &#233;galement rendre publique l&#39;association entre chaque contribution individuelle et les cat&#233;gories afin de permettre une validation a posteriori de la synth&#232;se. Cette transparence est une condition indispensable pour que le public ait confiance dans les r&#233;sultats et que ceux-ci puissent &#234;tre mis en regard avec les analyses r&#233;alis&#233;es ind&#233;pendamment par d&#39;autres acteurs comme des citoyens, des associations ou des chercheurs.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;7 avril 2019&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2019 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20190408&amp;#183;LI&amp;#183;340f1116dcdd85b00bfc6a5dc6616509&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">reconnaissance de visages</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">absence de supervision</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">tonalité des résultats</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modalités de fabrication</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720190408%c2%b7LI%c2%b7340f1116dcdd85b00bfc6a5dc6616509" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720190408%c2%b7LI%c2%b7340f1116dcdd85b00bfc6a5dc6616509">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 11773                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Idées,         lundi 8 avril 2019 698 mots, p. 25</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Grand débat et IA: quelle transparence pour les données ?            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Les contributions citoyennes sont analysées par un algorithme qui construit automatiquement les catégories d'analyse, ce qui risque d'influencer la tonalité des résultats. Il faut donc rendre publiques les modalités de fabrication de la synthèse.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Conseil Scientifique de la Société Informatique de France (SIF); Aurélien Bellet</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-style:bold;">Tribune.</em>L'intérêt d'un exercice de démocratie participative est de permettre aux citoyens de s'exprimer plus librement à travers des réponses sophistiquées et argumentées, bien au-delà d'un simple vote ou d'une réponse par oui ou non à un ensemble de questions. L'enjeu est de tenter de dépasser les limites de la démocratie représentative, qui peine à rendre compte de la diversité d'une population de 67 millions d'habitants. </p> <p> S'agissant du «grand débat national», les contributions déposées sur la plate-forme en ligne sont publiques, et chacun peut les consulter. Mais elles sont également si nombreuses que personne ne peut les lire toutes. D'où la nécessité de se reposer sur un traitement automatisé. C'est OpinionWay et Qwam (par l'intermédiaire du premier pour le traitement des textes libres) qui sont chargés par le gouvernement de produire une synthèse de ces contributions en les classant en catégories et sous-catégories avec des outils d'intelligence artificielle. Une mission similaire a été confiée à un consortium mené par le cabinet de conseil Roland Berger pour l'analyse des contributions libres issues de cahiers citoyens, courriers et synthèses de débats publics (qui n'ont pas encore été rendues publiques). Mais y a-t-il une seule façon d'effectuer une telle analyse ? Si plusieurs analyses sont possibles, comment créer les conditions permettant d'interpréter les résultats et de juger de leur fidélité ?</p>
+
+
+<p>Donner une synthèse fidèle de contributions textuelles riches et par nature ambiguës, imprécises et parfois contradictoires, est un défi de taille car on ne connaît pas à l'avance les catégories pertinentes, et on ne dispose pas d'un sous-ensemble de contributions préalablement classées. L'algorithme d'intelligence artificielle doit donc construire automatiquement les catégories à partir des données brutes et y associer les contributions. C'est ce qu'on appelle l'apprentissage non supervisé, par opposition aux problèmes dits supervisés comme la reconnaissance de visages où les algorithmes apprennent à partir de banques d'images annotées avec l'identité correspondante. Pour compenser l'absence de supervision, un algorithme non supervisé s'appuie nécessairement sur des hypothèses. Par exemple, une approche naïve consisterait à définir les catégories comme des ensembles de mots-clés et associerait une contribution à une catégorie si elle contient suffisamment de mots-clés de cette catégorie. De nombreuses méthodes et prétraitements sont possibles, allant de techniques de base s'appuyant sur des dictionnaires et des comptes de mots à des approches complexes et plus contextuelles, basées par exemple sur les progrès récents en apprentissage profond, sans oublier des méthodes mixtes incorporant des arbitrages par des humains. </p> <p> Ces choix influencent la tonalité des résultats : plusieurs d'entre eux peuvent se révéler pertinents, voire apporter une vision complémentaire. Certaines approches peuvent également amplifier les différences déjà structurellement présentes entre les données du grand débat et les opinions de l'ensemble de la population, qui sont une conséquence naturelle des différences démographiques, sociales et territoriales; de plus elles risquent de surreprésenter des militants de causes diverses. De même qu'un algorithme de reconnaissance de visages entraîné sur une base contenant plus de visages masculins que féminins aura tendance à être plus performant sur les visages d'hommes, de même l'algorithme de catégorisation peut donner trop d'importance à quelques thèmes très fréquents en occultant la variété des thèmes abordés. L'absence de supervision rend délicate la validation de la méthode choisie. </p> <p> Le gouvernement a d'ores et déjà annoncé que des leçons politiques seront tirées de la restitution du grand débat, annoncée pour ce lundi <em style="font-style:italic;">.</em>Pour que le processus soit acceptable pour la population, il faut que l'analyse soit la plus transparente possible, basée sur des algorithmes <mark>open</mark> <mark>source</mark>, en accès ouvert, et clairement décrits. En particulier, la méthode appliquée pour construire les catégories doit être transparente. Il faut également rendre publique l'association entre chaque contribution individuelle et les catégories afin de permettre une validation a posteriori de la synthèse. Cette transparence est une condition indispensable pour que le public ait confiance dans les résultats et que ceux-ci puissent être mis en regard avec les analyses réalisées indépendamment par d'autres acteurs comme des citoyens, des associations ou des chercheurs.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">7 avril 2019</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2019 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20190408·LI·340f1116dcdd85b00bfc6a5dc6616509</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20190408·LI·340f1116dcdd85b00bfc6a5dc6616509";
+    var _docIndex = 412;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20190408·LI·340f1116dcdd85b00bfc6a5dc6616509';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720190408%C2%B7LI%C2%B7340f1116dcdd85b00bfc6a5dc6616509&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720190408%C2%B7LI%C2%B7340f1116dcdd85b00bfc6a5dc6616509&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720190408%C2%B7LI%C2%B7340f1116dcdd85b00bfc6a5dc6616509&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720190408%C2%B7LI%C2%B7340f1116dcdd85b00bfc6a5dc6616509&docIndex=412&FullScreen=1";
+                
+	var _keyDoc = 'news·20190408·LI·340f1116dcdd85b00bfc6a5dc6616509';
+</script>
+</div></body></html>

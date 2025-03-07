@@ -1,0 +1,485 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 8350                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Ecrans,         mardi 11 mars 2008 474 mots, p. QUO34&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171;D&#233;mocratiser la vid&#233;o&#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Net. Holmes Wilson cocr&#233;ateur de Miro, &lt;mark&gt; logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt; de regroupement de films.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;S&#233;bastien Delahaye&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Sur le Web, podcasts et vid&#233;os sont &#233;parpill&#233;s un peu partout, rendant leur d&#233;couverte et leur consultation parfois difficile. Pour rem&#233;dier &#224; cette situation, Miro, &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; et gratuit, est apparu fin&#160;2007. Miro permet de regrouper les vid&#233;os en provenance de partout sur le Net. Le logiciel a d&#233;j&#224; &#233;t&#233; t&#233;l&#233;charg&#233; plus de deux millions de fois, et rencontre un petit succ&#232;s en Europe. Entretien avec Holmes Wilson, l&#39;un des membres de la direction de la Participatory Culture Foundation, qui finance le d&#233;veloppement du logiciel. &lt;/p&gt; &lt;p&gt; Comment est n&#233; Miro ? &lt;/p&gt; &lt;p&gt; Nous nous int&#233;ressons depuis des ann&#233;es &#224; la propri&#233;t&#233; intellectuelle, &#224; l&#39;acc&#232;s aux contenus. D&#233;but&#160;2005, quand nous avons commenc&#233; le d&#233;veloppement de Miro, la vid&#233;o &#233;tait encore un chantier sur le Net. Le meilleur moyen de transformer ce secteur &#233;tait de construire un outil permettant &#224; chacun de devenir un diffuseur de vid&#233;os, une cha&#238;ne t&#233;l&#233;. Plusieurs d&#39;entre nous viennent de l&#39;activisme politique, et la diffusion libre de vid&#233;os est un sujet capital pour eux. Avec la technologie, nous avons eu l&#39;opportunit&#233; de cr&#233;er une infrastructure permettant de changer les choses. L&#39;id&#233;e, c&#39;&#233;tait de cr&#233;er un logiciel facile &#224; utiliser, dont l&#39;usage serait proche de la t&#233;l&#233;. Mais &#224; la place de la t&#233;l&#233;vision, qui est un monde tr&#232;s ferm&#233;, avec une poign&#233;e d&#39;&#233;normes entreprises, ici vous avez un choix libre, avec la possibilit&#233; de regarder n&#39;importe quelle vid&#233;o, de n&#39;importe qui, en provenance du Net. Et vous pouvez aussi mettre vos vid&#233;os en ligne. Notre projet, c&#39;est &#231;a : d&#233;mocratiser la vid&#233;o.&lt;/p&gt;
+
+
+&lt;p&gt;D&#39;o&#249; le premier nom de Miro, Democracy ? &lt;/p&gt; &lt;p&gt; Oui. Quand, au d&#233;but du projet, on a d&#251; lui donner un nom, on ne voulait pas simplement cr&#233;er un lecteur vid&#233;o, mais modifier le monde de la diffusion. D&#39;o&#249; le nom Democracy. Mais beaucoup de gens croyaient, &#224; cause du nom, qu&#39;il s&#39;agissait d&#39;un outil d&#39;activisme. C&#39;est un but que nous soutenons, mais &#231;a n&#39;est pas notre objectif principal. Nous voulons toucher le plus de monde possible, avec des vid&#233;os de tous les genres : il y a des vid&#233;os cr&#233;&#233;es par des entreprises, des internautes, des ONG... Il y a de la musique, des films, un peu de tout. On ne voulait pas que le nom nous restreigne &#224; une seule cat&#233;gorie. Donc Miro. &lt;/p&gt; &lt;p&gt; Joost, le nouveau projet des cr&#233;ateurs de KaZaa et Skype, est un autre gros projet vid&#233;o, qui a eu beaucoup plus de presse que vous... &lt;/p&gt; &lt;p&gt; Il y a beaucoup de projets autour de la vid&#233;o, et Joost en est un. Mais Joost repr&#233;sente une vision de la vid&#233;o compl&#232;tement oppos&#233;e &#224; la n&#244;tre. Joost repose int&#233;gralement sur des verrous num&#233;riques (ou DRM, pour Digital Rights Management), nous les refusons. Leur logiciel est propri&#233;taire, tandis que nous sommes pour le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Votre objectif aujourd&#39;hui ? &lt;/p&gt; &lt;p&gt; Depuis qu&#39;on a commenc&#233;, il y a eu beaucoup de changements dans le monde de la vid&#233;o, avec YouTube et tous les autres. Mais le fonctionnement de ces sites confirme notre vision. Le monde de la vid&#233;o sur le Net est tr&#232;s centralis&#233;, ce qui cr&#233;e des probl&#232;mes de qualit&#233;, de diffusion... C&#39;est pour cela qu&#39;il est indispensable de cr&#233;er une plate-forme compl&#232;tement ouverte, qui ne d&#233;pende d&#39;aucune entreprise, qui ait pour mission principale de d&#233;fendre les libert&#233;s d&#39;expression et de la presse. Il faut pouvoir regrouper les vid&#233;os quelle que soit leur origine, et ne pas se contenter d&#39;une seule source, m&#234;me YouTube. &lt;/p&gt; &lt;p&gt; Miro semble tr&#232;s proche de Mozilla Firefox dans l&#39;esprit, c&#39;est volontaire ? &lt;/p&gt; &lt;p&gt; Comme la Mozilla Foundation, qui finance le d&#233;veloppement de Firefox, la Participatory Culture Foundation est &#224; but non-lucratif. La Mozilla Foundation nous a donn&#233; 100 000&#160;dollars en mai dernier, et nous contribuons au d&#233;veloppement de Firefox. Par ailleurs, John Lilly, qui est r&#233;cemment devenu PDG de Mozilla, fait partie de notre conseil de direction. Qu&#39;il y ait des similitudes est donc naturel.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2008 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20080311&amp;#183;LI&amp;#183;0li651f9922-eee3-11dc-a4ef-7c1ebf7789df&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">développement de firefox</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">mozilla foundation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">monde de la vidéo</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">holmes wilson cocréateur de miro</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720080311%c2%b7LI%c2%b70li651f9922-eee3-11dc-a4ef-7c1ebf7789df" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720080311%c2%b7LI%c2%b70li651f9922-eee3-11dc-a4ef-7c1ebf7789df">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 8350                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Ecrans,         mardi 11 mars 2008 474 mots, p. QUO34</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+«Démocratiser la vidéo»            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Net. Holmes Wilson cocréateur de Miro, <mark> logiciel</mark> <mark> libre</mark> de regroupement de films.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Sébastien Delahaye</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Sur le Web, podcasts et vidéos sont éparpillés un peu partout, rendant leur découverte et leur consultation parfois difficile. Pour remédier à cette situation, Miro, <mark>logiciel</mark> <mark>libre</mark> et gratuit, est apparu fin&nbsp;2007. Miro permet de regrouper les vidéos en provenance de partout sur le Net. Le logiciel a déjà été téléchargé plus de deux millions de fois, et rencontre un petit succès en Europe. Entretien avec Holmes Wilson, l'un des membres de la direction de la Participatory Culture Foundation, qui finance le développement du logiciel. </p> <p> Comment est né Miro ? </p> <p> Nous nous intéressons depuis des années à la propriété intellectuelle, à l'accès aux contenus. Début&nbsp;2005, quand nous avons commencé le développement de Miro, la vidéo était encore un chantier sur le Net. Le meilleur moyen de transformer ce secteur était de construire un outil permettant à chacun de devenir un diffuseur de vidéos, une chaîne télé. Plusieurs d'entre nous viennent de l'activisme politique, et la diffusion libre de vidéos est un sujet capital pour eux. Avec la technologie, nous avons eu l'opportunité de créer une infrastructure permettant de changer les choses. L'idée, c'était de créer un logiciel facile à utiliser, dont l'usage serait proche de la télé. Mais à la place de la télévision, qui est un monde très fermé, avec une poignée d'énormes entreprises, ici vous avez un choix libre, avec la possibilité de regarder n'importe quelle vidéo, de n'importe qui, en provenance du Net. Et vous pouvez aussi mettre vos vidéos en ligne. Notre projet, c'est ça : démocratiser la vidéo.</p>
+
+
+<p>D'où le premier nom de Miro, Democracy ? </p> <p> Oui. Quand, au début du projet, on a dû lui donner un nom, on ne voulait pas simplement créer un lecteur vidéo, mais modifier le monde de la diffusion. D'où le nom Democracy. Mais beaucoup de gens croyaient, à cause du nom, qu'il s'agissait d'un outil d'activisme. C'est un but que nous soutenons, mais ça n'est pas notre objectif principal. Nous voulons toucher le plus de monde possible, avec des vidéos de tous les genres : il y a des vidéos créées par des entreprises, des internautes, des ONG... Il y a de la musique, des films, un peu de tout. On ne voulait pas que le nom nous restreigne à une seule catégorie. Donc Miro. </p> <p> Joost, le nouveau projet des créateurs de KaZaa et Skype, est un autre gros projet vidéo, qui a eu beaucoup plus de presse que vous... </p> <p> Il y a beaucoup de projets autour de la vidéo, et Joost en est un. Mais Joost représente une vision de la vidéo complètement opposée à la nôtre. Joost repose intégralement sur des verrous numériques (ou DRM, pour Digital Rights Management), nous les refusons. Leur logiciel est propriétaire, tandis que nous sommes pour le <mark>logiciel</mark> <mark>libre</mark>. </p> <p> Votre objectif aujourd'hui ? </p> <p> Depuis qu'on a commencé, il y a eu beaucoup de changements dans le monde de la vidéo, avec YouTube et tous les autres. Mais le fonctionnement de ces sites confirme notre vision. Le monde de la vidéo sur le Net est très centralisé, ce qui crée des problèmes de qualité, de diffusion... C'est pour cela qu'il est indispensable de créer une plate-forme complètement ouverte, qui ne dépende d'aucune entreprise, qui ait pour mission principale de défendre les libertés d'expression et de la presse. Il faut pouvoir regrouper les vidéos quelle que soit leur origine, et ne pas se contenter d'une seule source, même YouTube. </p> <p> Miro semble très proche de Mozilla Firefox dans l'esprit, c'est volontaire ? </p> <p> Comme la Mozilla Foundation, qui finance le développement de Firefox, la Participatory Culture Foundation est à but non-lucratif. La Mozilla Foundation nous a donné 100 000&nbsp;dollars en mai dernier, et nous contribuons au développement de Firefox. Par ailleurs, John Lilly, qui est récemment devenu PDG de Mozilla, fait partie de notre conseil de direction. Qu'il y ait des similitudes est donc naturel.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2008 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20080311·LI·0li651f9922-eee3-11dc-a4ef-7c1ebf7789df</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20080311·LI·0li651f9922-eee3-11dc-a4ef-7c1ebf7789df";
+    var _docIndex = 589;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20080311·LI·0li651f9922-eee3-11dc-a4ef-7c1ebf7789df';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720080311%C2%B7LI%C2%B70li651f9922-eee3-11dc-a4ef-7c1ebf7789df&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720080311%C2%B7LI%C2%B70li651f9922-eee3-11dc-a4ef-7c1ebf7789df&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720080311%C2%B7LI%C2%B70li651f9922-eee3-11dc-a4ef-7c1ebf7789df&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720080311%C2%B7LI%C2%B70li651f9922-eee3-11dc-a4ef-7c1ebf7789df&docIndex=589&FullScreen=1";
+                
+	var _keyDoc = 'news·20080311·LI·0li651f9922-eee3-11dc-a4ef-7c1ebf7789df';
+</script>
+</div></body></html>

@@ -1,0 +1,597 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 23655                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         samedi 5 septembre 2020 539 mots, p. 26&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+M&#233;dias         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Publicit&#233; cibl&#233;e : Apple diff&#232;re la limitation du tra&#231;age            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le g&#233;ant am&#233;ricain reporte de plusieurs mois l&#39;obligation de consentement pour un identifiant, pr&#233;vue dans la nouvelle version de son syst&#232;me d&#39;exploitation mobile iOS 14.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Vergara, Ingrid&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;PUBLICIT&#201;&lt;/em&gt; Un petit r&#233;pit pour les d&#233;veloppeurs d&#39;applications, les &#233;diteurs et les acteurs du monde de la publicit&#233; en ligne. Apple n&#39;int&#233;grera finalement pas d&#232;s cet automne &#224; la nouvelle version de son syst&#232;me d&#39;exploitation mobile iOS 14 une mesure redout&#233;e par toute une partie de son &#233;cosyst&#232;me : le consentement obligatoire des utilisateurs d&#39;iPhone pour autoriser le pistage publicitaire. Le groupe reporte de plusieurs mois cette mesure. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Pour donner aux d&#233;veloppeurs le temps d&#39;apporter les modifications n&#233;cessaires, les applications devront obtenir l&#39;autorisation &#224; partir du d&#233;but de l&#39;ann&#233;e prochaine &#187;&lt;/em&gt;, explique-t-il dans une note de blog. &lt;/p&gt; &lt;p&gt; Avec l&#39;argument de vouloir d&#233;fendre toujours plus la vie priv&#233;e des utilisateurs de ses appareils, la prochaine version d&#39;iOS pr&#233;voit d&#39;afficher une notification qui leur demandera s&#39;ils autorisent ou non une application &#224; les suivre via un identifiant publicitaire unique. Invisible pour le quidam aujourd&#39;hui, cet &#171; IDFA &#187; est indispensable aux diff&#233;rents acteurs du march&#233; de la publicit&#233; pour pouvoir &#171; tracer &#187; les habitudes de navigation et proposer ainsi des messages cibl&#233;s. Il est aussi n&#233;cessaire aux annonceurs pour suivre l&#39;efficacit&#233; de leurs campagnes.&lt;/p&gt;
+
+
+&lt;p&gt;Ce changement de calendrier d&#39;Apple intervient une semaine apr&#232;s la sortie remarqu&#233;e de &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt; - directement impact&#233; lui aussi - qui pr&#233;venait que les limites au ciblage publicitaire allaient fortement nuire aux d&#233;veloppeurs d&#39;applications, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; dans une p&#233;riode d&#233;j&#224; tr&#232;s difficile &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Pilule am&#232;re &lt;/p&gt; &lt;p&gt; L&#39;impact pour le march&#233; publicitaire n&#39;est pas simple &#224; quantifier. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; &#192; court terme, nous pr&#233;voyons une r&#233;duction du nombre d&#39;IDFA disponibles pour le ciblage et la mesure de la publicit&#233;. Cependant, nous ne pouvons pas dire avec certitude quel pourcentage d&#39;utilisateurs donnera son accord &#187; ,&lt;/em&gt; estime The Trade Desk, un acteur ind&#233;pendant de l&#39;AdTech, qui travaille sur un nouvel identifiant publicitaire unique en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Selon les calculs, certains &#233;diteurs pourraient voir leurs revenus mobiles amput&#233;s de 20 &#224; 30 %, voire plus. &lt;/p&gt; &lt;p&gt; En annon&#231;ant unilat&#233;ralement ce changement en juin dernier lors de sa conf&#233;rence des d&#233;veloppeurs, Apple ne laissait que peu de temps aux principaux int&#233;ress&#233;s pour dig&#233;rer cette nouvelle pilule am&#232;re, lourde de cons&#233;quences. D&#39;autant plus qu&#39;en Europe, ces acteurs sont d&#233;j&#224; soumis &#224; la demande de consentement impos&#233;e par le RGPD. De quoi d&#233;go&#251;ter l&#39;utilisateur d&#39;une application... &lt;/p&gt; &lt;p&gt; Dans un courrier envoy&#233; d&#233;but juillet au PDG d&#39;Apple, &lt;span class=&quot;stubs&quot;&gt;Tim Cook&lt;/span&gt;, une coalition d&#39;acteurs europ&#233;ens r&#233;clamait une concertation. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le report &#224; 2021 nous donne du temps pour n&#233;gocier &#187; ,&lt;/em&gt; estime-t-on au sein du European Publishers&#39; Council, qui r&#233;unit plusieurs grands m&#233;dias europ&#233;ens. Une rencontre est pr&#233;vue avec Apple pour discuter. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;C&#39;est int&#233;ressant d&#39;avoir plus de temps pour s&#39;y pr&#233;parer, mais le probl&#232;me est plus global&lt;/em&gt;, souligne David Folgueira, directeur ex&#233;cutif adjoint chez Prisma Media. &lt;em style=&quot;font-style:italic;&quot;&gt;La question devient : que propose-t-on &#224; un internaute qui vient gratuitement sur une application mais qu&#39;on ne peut pas mon&#233;tiser ? Les &#233;diteurs vont devoir s&#39;interroger sur la proposition de valeur &#224; offrir &#224; un internaute, selon son navigateur et son niveau de consentement&lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;De son c&#244;t&#233;, Google a laiss&#233; jusqu&#39;en 2022 aux acteurs de la publicit&#233; avant que les cookies tiers ne soient plus exploitables sur son navigateur Chrome. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;span class=&quot;stubs&quot;&gt;Tim Cook&lt;/span&gt;, PDG d&#39;Apple. &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;STEPHEN LAM/reuters &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:ivergara@lefigaro.fr&quot;&gt;ivergara@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;4 septembre 2020&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2020 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20200905&amp;#183;LF&amp;#183;822&amp;#215;20&amp;#215;22899755826&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">pilule amère</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">développeurs d'applications</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation mobile</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">limitation du traçage</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">habitudes de navigation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">TIMOTHY D. COOK</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">FACEBOOK</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Publicité et marketing</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720200905%c2%b7LF%c2%b7822%c3%9720%c3%9722899755826" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720200905%c2%b7LF%c2%b7822%c3%9720%c3%9722899755826">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 23655                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         samedi 5 septembre 2020 539 mots, p. 26</span>
+</div>
+
+    <div>
+        <p>
+Médias         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Publicité ciblée : Apple diffère la limitation du traçage            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le géant américain reporte de plusieurs mois l'obligation de consentement pour un identifiant, prévue dans la nouvelle version de son système d'exploitation mobile iOS 14.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Vergara, Ingrid</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">PUBLICITÉ</em> Un petit répit pour les développeurs d'applications, les éditeurs et les acteurs du monde de la publicité en ligne. Apple n'intégrera finalement pas dès cet automne à la nouvelle version de son système d'exploitation mobile iOS 14 une mesure redoutée par toute une partie de son écosystème : le consentement obligatoire des utilisateurs d'iPhone pour autoriser le pistage publicitaire. Le groupe reporte de plusieurs mois cette mesure. <em style="font-style:italic;">« Pour donner aux développeurs le temps d'apporter les modifications nécessaires, les applications devront obtenir l'autorisation à partir du début de l'année prochaine »</em>, explique-t-il dans une note de blog. </p> <p> Avec l'argument de vouloir défendre toujours plus la vie privée des utilisateurs de ses appareils, la prochaine version d'iOS prévoit d'afficher une notification qui leur demandera s'ils autorisent ou non une application à les suivre via un identifiant publicitaire unique. Invisible pour le quidam aujourd'hui, cet « IDFA » est indispensable aux différents acteurs du marché de la publicité pour pouvoir « tracer » les habitudes de navigation et proposer ainsi des messages ciblés. Il est aussi nécessaire aux annonceurs pour suivre l'efficacité de leurs campagnes.</p>
+
+
+<p>Ce changement de calendrier d'Apple intervient une semaine après la sortie remarquée de <span class="stubs">Facebook</span> - directement impacté lui aussi - qui prévenait que les limites au ciblage publicitaire allaient fortement nuire aux développeurs d'applications, <em style="font-style:italic;">« dans une période déjà très difficile »</em>. </p> <p> Pilule amère </p> <p> L'impact pour le marché publicitaire n'est pas simple à quantifier. <em style="font-style:italic;">« À court terme, nous prévoyons une réduction du nombre d'IDFA disponibles pour le ciblage et la mesure de la publicité. Cependant, nous ne pouvons pas dire avec certitude quel pourcentage d'utilisateurs donnera son accord » ,</em> estime The Trade Desk, un acteur indépendant de l'AdTech, qui travaille sur un nouvel identifiant publicitaire unique en <mark>open</mark> <mark>source</mark>. Selon les calculs, certains éditeurs pourraient voir leurs revenus mobiles amputés de 20 à 30 %, voire plus. </p> <p> En annonçant unilatéralement ce changement en juin dernier lors de sa conférence des développeurs, Apple ne laissait que peu de temps aux principaux intéressés pour digérer cette nouvelle pilule amère, lourde de conséquences. D'autant plus qu'en Europe, ces acteurs sont déjà soumis à la demande de consentement imposée par le RGPD. De quoi dégoûter l'utilisateur d'une application... </p> <p> Dans un courrier envoyé début juillet au PDG d'Apple, <span class="stubs">Tim Cook</span>, une coalition d'acteurs européens réclamait une concertation. <em style="font-style:italic;">« Le report à 2021 nous donne du temps pour négocier » ,</em> estime-t-on au sein du European Publishers' Council, qui réunit plusieurs grands médias européens. Une rencontre est prévue avec Apple pour discuter. </p> <p><em style="font-style:italic;">«</em><em style="font-style:italic;">C'est intéressant d'avoir plus de temps pour s'y préparer, mais le problème est plus global</em>, souligne David Folgueira, directeur exécutif adjoint chez Prisma Media. <em style="font-style:italic;">La question devient : que propose-t-on à un internaute qui vient gratuitement sur une application mais qu'on ne peut pas monétiser ? Les éditeurs vont devoir s'interroger sur la proposition de valeur à offrir à un internaute, selon son navigateur et son niveau de consentement</em>. <em style="font-style:italic;">»</em></p><p>De son côté, Google a laissé jusqu'en 2022 aux acteurs de la publicité avant que les cookies tiers ne soient plus exploitables sur son navigateur Chrome. </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><span class="stubs">Tim Cook</span>, PDG d'Apple. </div>.
+
+                <div class="ImageAttachFont">STEPHEN LAM/reuters </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:ivergara@lefigaro.fr">ivergara@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">4 septembre 2020</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2020 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20200905·LF·822×20×22899755826</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20200905·LF·822×20×22899755826";
+    var _docIndex = 325;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"timothy d. cook":"90517","tim cook":"90517"};
+		var _orgDic = {"facebook":"94511"};
+		var _docName = 'news·20200905·LF·822×20×22899755826';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720200905%C2%B7LF%C2%B7822%C3%9720%C3%9722899755826&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720200905%C2%B7LF%C2%B7822%C3%9720%C3%9722899755826&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720200905%C2%B7LF%C2%B7822%C3%9720%C3%9722899755826&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720200905%C2%B7LF%C2%B7822%C3%9720%C3%9722899755826&docIndex=325&FullScreen=1";
+                
+	var _keyDoc = 'news·20200905·LF·822×20×22899755826';
+</script>
+</div></body></html>

@@ -1,0 +1,537 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Culture,         lundi 27 novembre 2023 1298 mots, p. 26&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Patrimoine Reportage&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+L’intelligence artificielle fouille la m&#233;moire de Notre-Dame            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Un programme exp&#233;rimental, mis au point &#224; la Sorbonne, permet de parcourir les d&#233;lib&#233;rations des chanoines du monument parisien tout au long du Moyen Age&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Laurent Carpentier&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Registre de l’&#233;glise de Paris, commenc&#233; par moi, Guillaume Picard, licenci&#233; en droit, scribe et tabellion de ladite &#233;glise. L’an du seigneur 1409, jeudi 15&#160;juillet. &#187;&lt;/em&gt; Il y a quelque chose d’&#233;mouvant &#224; regarder, pr&#233;cautionneusement ouvert sur une table des Archives nationales, les empattements gothiques sur l’&#233;pais manuscrit tenu il y a six si&#232;cles par ce chanoine de Notre-Dame. Cela ressemble, en latin, &#224; une compilation de comptes rendus de s&#233;ances telles qu’on les tiendrait aujourd’hui. Avec le d&#233;tail des d&#233;cisions prises et la liste des chanoines &#233;margeant pour ces &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; conseils d’administration du chapitre &#187;&lt;/em&gt; , selon les termes amus&#233;s de l’historien Darwin Smith.&lt;/p&gt;
+
+
+&lt;p&gt;Au total, 170&#160;volumes d’actes ont ainsi &#233;t&#233; r&#233;cup&#233;r&#233;s apr&#232;s la R&#233;volution, en&#160;1790, par les Archives nationales. Une mine pour la recherche. Seulement, d&#233;chiffrer pattes de mouche, abr&#233;viations, papier ou parchemin tach&#233; relevait jusqu’ici d’un travail chronophage pour pal&#233;ographe. En remettant Notre-Dame de Paris sous la lumi&#232;re des projecteurs, l’incendie d’avril&#160;2019 a chang&#233; la donne et offert aux historiens un saut spatio-temporel : un programme d’intelligence artificielle est aujourd’hui capable de d&#233;chiffrer ces actes avec un taux d’exactitude variant de 88&#160;% &#224; 94&#160;% selon les registres, affirment les concepteurs. &lt;/p&gt; &lt;p&gt; Coordonn&#233; au Laboratoire de m&#233;di&#233;vistique occidentale de Paris (LaMOP) de la Sorbonne par Julie Claustre (aujourd’hui professeure des universit&#233;s &#224; Paris-Cit&#233;) et Darwin Smith, directeur de recherche &#233;m&#233;rite, le projet appel&#233; &#171; e-NDP &#187; s’est pour l’instant concentr&#233; sur les vingt-six premiers volumes, dont les 14 600 pages courent de 1326 &#224; 1504, soit la p&#233;riode m&#233;di&#233;vale au sens classique du terme. Premi&#232;re &#233;tape de ce programme exp&#233;rimental, restaurer. Taches, humidit&#233;, usure du temps… Huit volumes ont &#233;t&#233; repris. Deuxi&#232;me &#233;tape, num&#233;riser. Enfin, il a fallu &#171; entra&#238;ner &#187; la machine, selon des techniques d&#233;sormais classiques de HTR (&lt;em style=&quot;font-style:italic;&quot;&gt;handwritten text recognition&lt;/em&gt;, &#171; d&#233;cryptage de texte manuscrit &#187;), mais adapt&#233;es &#224; ces textes proprement dits. Parce que l’&#233;criture change au fil du temps, selon les chanoines et les &#233;poques. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Obtenir un algorithme fiable&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Au d&#233;but, on sent que les notes sont prises pendant les r&#233;unions. Ensuite les comptes rendus sont clairement recopi&#233;s au propre, plus r&#233;guliers, sans ratures. Isoler physiquement les diff&#233;rentes parties de chaque page, faire le tri visuel entre les listes de chanoines, les textes juxtapos&#233;s et les annotations dans la marge. Il a fallu s’y reprendre &#224; huit fois, avec une quinzaine d’historiens pour v&#233;rifier les r&#233;sultats obtenus sur diff&#233;rents extraits, afin de corriger le tir (on dit &lt;em style=&quot;font-style:italic;&quot;&gt;fine tuner&lt;/em&gt;en langage d’expert) et obtenir un algorithme suffisamment fiable. R&#233;sultat : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Cinq&#160;millions de mots dans lesquels on peut faire de la fouille structur&#233;e.&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;C’est prodigieux !,&lt;/em&gt; s’enthousiasme Julie Claustre. &lt;em style=&quot;font-style:italic;&quot;&gt;D&#233;sormais, on sait que &#231;a fonctionne, on peut suivre des personnes, des fonctions. On peut aussi aller chercher de fa&#231;on pr&#233;cise sur un mot ou un th&#232;me. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;F&#234;te des saints Pierre et Paul, 29&#160;juin&#160;1326, c’est l&#224; que tout commence. Auparavant, nous n’avons pas de trace &#233;crite des d&#233;lib&#233;rations du chapitre. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il faut comprendre qu’au Moyen Age la culture &#233;crite se substitue tr&#232;s progressivement &#224; une culture orale &#187;&lt;/em&gt;, explique Darwin Smith, pendant qu’Isabelle Bretthauer, conservatrice des Archives nationales, tourne pr&#233;cautionneusement les pages de papier – &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Rare pour l’&#233;poque &#187;&lt;/em&gt;, pr&#233;cise-t-elle, admirative. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En&#160;1396, on voit comment les chanoines organisent la refonte d’une grosse cloche, qui est tomb&#233;e sans faire de victimes, mais en occasionnant de gros d&#233;g&#226;ts. Apr&#232;s, il faut la faire passer dans les rues jusqu’&#224; la cath&#233;drale… &#187;&lt;/em&gt;, raconte Julie Claustre. &lt;/p&gt; &lt;p&gt; On change de registre, celui-ci est en parchemin, c’est-&#224;-dire fait &#224; partir de mati&#232;re animale. Si ces textes notari&#233;s sont une telle mine d’informations, c’est que ces chanoines sont souvent de grands officiers du royaume, conseillers du roi, universitaires de premier plan. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Notre-Dame est un p&#244;le magn&#233;tique qui r&#233;unit les t&#234;tes pensantes de la th&#233;ologie, du droit et de la science&lt;/em&gt;, explique Darwin Smith. &lt;em style=&quot;font-style:italic;&quot;&gt;Ce qu’on y d&#233;couvre, c’est l’emprise du monde s&#233;culier, une interp&#233;n&#233;tration des modes la&#239;ques et eccl&#233;siastiques. En&#160;1452-1453, on voit que, tous les dimanches, les artisans boulangers se r&#233;unissent autour des deux cuves baptismales dispos&#233;es l’une &#224; droite et l’autre &#224; gauche de la cath&#233;drale. C’est leur lieu. On peut imaginer qu’elles leur servent, comme on a pu l’observer ailleurs, de cuve pour mesurer le grain. Mais ce n’est pas pr&#233;cis&#233;. Toujours est-il qu’un jour le chapitre d&#233;cide que cela suffit… &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;R&#244;le des historiens&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Bien s&#251;r, nos historiens ne sont pas les premiers &#224; travailler sur cet &#233;pais corpus. D’autres s’y sont frott&#233;s, y compris les chanoines des si&#232;cles suivants, dont on voit ici ou l&#224; une annotation, qui montre qu’ils sont all&#233;s y chercher la trace d’une jurisprudence, d’un partage, d’une d&#233;cision &#233;tablie. Le plus notable travail jamais effectu&#233; jusqu’ici sur ces registres, le &lt;em style=&quot;font-style:italic;&quot;&gt;Cartulaire de Notre-Dame de Paris,&lt;/em&gt; en quatre volumes, remonte &#224; l’un des premiers directeurs de l’Ecole nationale des chartes, Benjamin Gu&#233;rard, en&#160;1850. Faut-il y voir un signe : l’&#233;poque est au gothique, &lt;span class=&quot;stubs&quot;&gt;Victor Hugo&lt;/span&gt; pleure une cath&#233;drale en d&#233;cr&#233;pitude, Viollet-le-Duc est appel&#233; &#224; son chevet. Serait-ce quand les &#233;difices s’&#233;croulent qu’on se souvient du r&#244;le des historiens ? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Mais le corpus est tellement &#233;norme ! &#187;&lt;/em&gt;, constate Julie Claustre en roulant des yeux. C’est l&#224; que l’intelligence artificielle s’av&#232;re un outil pr&#233;cieux en transformant les registres en une base de donn&#233;es ouverte, consultable, indexable, triturable &#224; l’envi, &#233;clairant le Moyen&#160;Age dans son quotidien ordinaire. Tel cet homme en bisbille avec les chanoines parce qu’il a vendu sa p&#234;che sans demander l’autorisation, et qui explique, pour se disculper, qu’ayant &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; spasm&#233; &#187;&lt;/em&gt; (assomm&#233;) ses poissons, il devait les vendre sans tarder. On est &#224; ce degr&#233; de pr&#233;cision documentaire, admire Rebecca Leli&#232;vre, &#233;tudiante en master &#224; Paris-I, qui travaille sur les droits de l’eau au Moyen Age. Un sujet essentiel dans la vie du chapitre. D’abord parce qu’un tiers de la nourriture des pr&#234;tres est constitu&#233; de poisson ; ensuite, parce qu’elle est une source de profit, remarque l’&#233;tudiante en souriant : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Le terme&lt;/em&gt;Pecunia &lt;em style=&quot;font-style:italic;&quot;&gt;revient souvent… &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il faut jouer avec la machine&lt;/em&gt;, t&#233;moigne-t-elle, &lt;em style=&quot;font-style:italic;&quot;&gt;parce qu’elle peut confondre facilement les “T” et les “C” dans ce latin en &#233;criture gothique. Je double souvent mes requ&#234;tes sur&lt;/em&gt;piscari [&#171; poisson &#187;] &lt;em style=&quot;font-style:italic;&quot;&gt;par une autre, en &#233;crivant&lt;/em&gt;pistari &lt;em style=&quot;font-style:italic;&quot;&gt;. De m&#234;me, dans les abr&#233;viations, un nominatif peut passer pour un accusatif. &#187;&lt;/em&gt;Alors, dans la recherche par lemme (partie fixe du mot, sans d&#233;clinaison), apr&#232;s avoir tap&#233; &lt;em style=&quot;font-style:italic;&quot;&gt;aqu.*”&lt;/em&gt; (pour &#171; eau &#187;), &lt;em style=&quot;font-style:italic;&quot;&gt;juris.*”&lt;/em&gt; (pour &#171; droit &#187;), ou &lt;em style=&quot;font-style:italic;&quot;&gt;stagn.*”&lt;/em&gt;(pour &#171; marais &#187;), l’&#233;tudiante rel&#232;ve les occurrences, les dates de celles-ci, et les registres correspondants, puis se rend dans la biblioth&#232;que virtuelle du site des Archives nationales o&#249; toutes les pages num&#233;ris&#233;es sont consultables… &lt;/p&gt; &lt;p&gt; Pass&#233; par Madrid et la data science, l’historien p&#233;ruvien Sergio Torres Aguilar &#233;tait postdoctorant au LaMOP. C’est naturellement lui qui a &#233;t&#233; charg&#233; de mettre en place l’algorithme. Il affiche sa satisfaction : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le mod&#232;le que nous avons mis au point peut d&#233;sormais servir pour d’autres centres archivistiques &#187;&lt;/em&gt;, affirme celui qui a &#233;t&#233; appel&#233; au Luxembourg pour un travail similaire sur les documents anciens du Grand-Duch&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le projet est en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Il y a eu discussion entre nous bien s&#251;r, mais, hormis l’obligation de citation, nous avons d&#233;cid&#233; de ne mettre aucun verrou. De toute fa&#231;on, quand il y a des verrous, ils finissent toujours par sauter &#187;&lt;/em&gt; , foi de scribe du troisi&#232;me mill&#233;naire, tabellion 2.0.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;26 novembre 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20231127&amp;#183;LM&amp;#183;202311272&amp;#215;20&amp;#215;21316215125&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">rôle des historiens</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">programme expérimental</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Archives nationales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">comptes rendus</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">VICTOR HUGO</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Arts et culture</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Madrid</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Luxembourg</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720231127%c2%b7LM%c2%b7202311272%c3%9720%c3%9721316215125" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720231127%c2%b7LM%c2%b7202311272%c3%9720%c3%9721316215125">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Culture,         lundi 27 novembre 2023 1298 mots, p. 26</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Patrimoine Reportage</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+L’intelligence artificielle fouille la mémoire de Notre-Dame            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Un programme expérimental, mis au point à la Sorbonne, permet de parcourir les délibérations des chanoines du monument parisien tout au long du Moyen Age</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Laurent Carpentier</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-style:italic;">Registre de l’église de Paris, commencé par moi, Guillaume Picard, licencié en droit, scribe et tabellion de ladite église. L’an du seigneur 1409, jeudi 15&nbsp;juillet. »</em> Il y a quelque chose d’émouvant à regarder, précautionneusement ouvert sur une table des Archives nationales, les empattements gothiques sur l’épais manuscrit tenu il y a six siècles par ce chanoine de Notre-Dame. Cela ressemble, en latin, à une compilation de comptes rendus de séances telles qu’on les tiendrait aujourd’hui. Avec le détail des décisions prises et la liste des chanoines émargeant pour ces <em style="font-style:italic;">« conseils d’administration du chapitre »</em> , selon les termes amusés de l’historien Darwin Smith.</p>
+
+
+<p>Au total, 170&nbsp;volumes d’actes ont ainsi été récupérés après la Révolution, en&nbsp;1790, par les Archives nationales. Une mine pour la recherche. Seulement, déchiffrer pattes de mouche, abréviations, papier ou parchemin taché relevait jusqu’ici d’un travail chronophage pour paléographe. En remettant Notre-Dame de Paris sous la lumière des projecteurs, l’incendie d’avril&nbsp;2019 a changé la donne et offert aux historiens un saut spatio-temporel : un programme d’intelligence artificielle est aujourd’hui capable de déchiffrer ces actes avec un taux d’exactitude variant de 88&nbsp;% à 94&nbsp;% selon les registres, affirment les concepteurs. </p> <p> Coordonné au Laboratoire de médiévistique occidentale de Paris (LaMOP) de la Sorbonne par Julie Claustre (aujourd’hui professeure des universités à Paris-Cité) et Darwin Smith, directeur de recherche émérite, le projet appelé « e-NDP » s’est pour l’instant concentré sur les vingt-six premiers volumes, dont les 14 600 pages courent de 1326 à 1504, soit la période médiévale au sens classique du terme. Première étape de ce programme expérimental, restaurer. Taches, humidité, usure du temps… Huit volumes ont été repris. Deuxième étape, numériser. Enfin, il a fallu « entraîner » la machine, selon des techniques désormais classiques de HTR (<em style="font-style:italic;">handwritten text recognition</em>, « décryptage de texte manuscrit »), mais adaptées à ces textes proprement dits. Parce que l’écriture change au fil du temps, selon les chanoines et les époques. </p> <p><em style="font-weight:bold;">Obtenir un algorithme fiable</em></p><p>Au début, on sent que les notes sont prises pendant les réunions. Ensuite les comptes rendus sont clairement recopiés au propre, plus réguliers, sans ratures. Isoler physiquement les différentes parties de chaque page, faire le tri visuel entre les listes de chanoines, les textes juxtaposés et les annotations dans la marge. Il a fallu s’y reprendre à huit fois, avec une quinzaine d’historiens pour vérifier les résultats obtenus sur différents extraits, afin de corriger le tir (on dit <em style="font-style:italic;">fine tuner</em>en langage d’expert) et obtenir un algorithme suffisamment fiable. Résultat : <em style="font-style:italic;">« Cinq&nbsp;millions de mots dans lesquels on peut faire de la fouille structurée.</em><em style="font-style:italic;">C’est prodigieux !,</em> s’enthousiasme Julie Claustre. <em style="font-style:italic;">Désormais, on sait que ça fonctionne, on peut suivre des personnes, des fonctions. On peut aussi aller chercher de façon précise sur un mot ou un thème. »</em></p><p>Fête des saints Pierre et Paul, 29&nbsp;juin&nbsp;1326, c’est là que tout commence. Auparavant, nous n’avons pas de trace écrite des délibérations du chapitre. <em style="font-style:italic;">« Il faut comprendre qu’au Moyen Age la culture écrite se substitue très progressivement à une culture orale »</em>, explique Darwin Smith, pendant qu’Isabelle Bretthauer, conservatrice des Archives nationales, tourne précautionneusement les pages de papier – <em style="font-style:italic;">« Rare pour l’époque »</em>, précise-t-elle, admirative. <em style="font-style:italic;">« En&nbsp;1396, on voit comment les chanoines organisent la refonte d’une grosse cloche, qui est tombée sans faire de victimes, mais en occasionnant de gros dégâts. Après, il faut la faire passer dans les rues jusqu’à la cathédrale… »</em>, raconte Julie Claustre. </p> <p> On change de registre, celui-ci est en parchemin, c’est-à-dire fait à partir de matière animale. Si ces textes notariés sont une telle mine d’informations, c’est que ces chanoines sont souvent de grands officiers du royaume, conseillers du roi, universitaires de premier plan. <em style="font-style:italic;">« Notre-Dame est un pôle magnétique qui réunit les têtes pensantes de la théologie, du droit et de la science</em>, explique Darwin Smith. <em style="font-style:italic;">Ce qu’on y découvre, c’est l’emprise du monde séculier, une interpénétration des modes laïques et ecclésiastiques. En&nbsp;1452-1453, on voit que, tous les dimanches, les artisans boulangers se réunissent autour des deux cuves baptismales disposées l’une à droite et l’autre à gauche de la cathédrale. C’est leur lieu. On peut imaginer qu’elles leur servent, comme on a pu l’observer ailleurs, de cuve pour mesurer le grain. Mais ce n’est pas précisé. Toujours est-il qu’un jour le chapitre décide que cela suffit… »</em></p><p><em style="font-weight:bold;">Rôle des historiens</em></p><p>Bien sûr, nos historiens ne sont pas les premiers à travailler sur cet épais corpus. D’autres s’y sont frottés, y compris les chanoines des siècles suivants, dont on voit ici ou là une annotation, qui montre qu’ils sont allés y chercher la trace d’une jurisprudence, d’un partage, d’une décision établie. Le plus notable travail jamais effectué jusqu’ici sur ces registres, le <em style="font-style:italic;">Cartulaire de Notre-Dame de Paris,</em> en quatre volumes, remonte à l’un des premiers directeurs de l’Ecole nationale des chartes, Benjamin Guérard, en&nbsp;1850. Faut-il y voir un signe : l’époque est au gothique, <span class="stubs">Victor Hugo</span> pleure une cathédrale en décrépitude, Viollet-le-Duc est appelé à son chevet. Serait-ce quand les édifices s’écroulent qu’on se souvient du rôle des historiens ? </p> <p><em style="font-style:italic;">« Mais le corpus est tellement énorme ! »</em>, constate Julie Claustre en roulant des yeux. C’est là que l’intelligence artificielle s’avère un outil précieux en transformant les registres en une base de données ouverte, consultable, indexable, triturable à l’envi, éclairant le Moyen&nbsp;Age dans son quotidien ordinaire. Tel cet homme en bisbille avec les chanoines parce qu’il a vendu sa pêche sans demander l’autorisation, et qui explique, pour se disculper, qu’ayant <em style="font-style:italic;">« spasmé »</em> (assommé) ses poissons, il devait les vendre sans tarder. On est à ce degré de précision documentaire, admire Rebecca Lelièvre, étudiante en master à Paris-I, qui travaille sur les droits de l’eau au Moyen Age. Un sujet essentiel dans la vie du chapitre. D’abord parce qu’un tiers de la nourriture des prêtres est constitué de poisson ; ensuite, parce qu’elle est une source de profit, remarque l’étudiante en souriant : <em style="font-style:italic;">«</em><em style="font-style:italic;">Le terme</em>Pecunia <em style="font-style:italic;">revient souvent… »</em></p><p><em style="font-style:italic;">« Il faut jouer avec la machine</em>, témoigne-t-elle, <em style="font-style:italic;">parce qu’elle peut confondre facilement les “T” et les “C” dans ce latin en écriture gothique. Je double souvent mes requêtes sur</em>piscari [« poisson »] <em style="font-style:italic;">par une autre, en écrivant</em>pistari <em style="font-style:italic;">. De même, dans les abréviations, un nominatif peut passer pour un accusatif. »</em>Alors, dans la recherche par lemme (partie fixe du mot, sans déclinaison), après avoir tapé <em style="font-style:italic;">aqu.*”</em> (pour « eau »), <em style="font-style:italic;">juris.*”</em> (pour « droit »), ou <em style="font-style:italic;">stagn.*”</em>(pour « marais »), l’étudiante relève les occurrences, les dates de celles-ci, et les registres correspondants, puis se rend dans la bibliothèque virtuelle du site des Archives nationales où toutes les pages numérisées sont consultables… </p> <p> Passé par Madrid et la data science, l’historien péruvien Sergio Torres Aguilar était postdoctorant au LaMOP. C’est naturellement lui qui a été chargé de mettre en place l’algorithme. Il affiche sa satisfaction : <em style="font-style:italic;">« Le modèle que nous avons mis au point peut désormais servir pour d’autres centres archivistiques »</em>, affirme celui qui a été appelé au Luxembourg pour un travail similaire sur les documents anciens du Grand-Duché. <em style="font-style:italic;">« Le projet est en <mark>open</mark> <mark>source</mark>. Il y a eu discussion entre nous bien sûr, mais, hormis l’obligation de citation, nous avons décidé de ne mettre aucun verrou. De toute façon, quand il y a des verrous, ils finissent toujours par sauter »</em> , foi de scribe du troisième millénaire, tabellion 2.0.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">26 novembre 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20231127·LM·202311272×20×21316215125</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20231127·LM·202311272×20×21316215125";
+    var _docIndex = 98;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"victor hugo":"91939"};
+		var _orgDic = null;
+		var _docName = 'news·20231127·LM·202311272×20×21316215125';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720231127%C2%B7LM%C2%B7202311272%C3%9720%C3%9721316215125&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720231127%C2%B7LM%C2%B7202311272%C3%9720%C3%9721316215125&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720231127%C2%B7LM%C2%B7202311272%C3%9720%C3%9721316215125&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720231127%C2%B7LM%C2%B7202311272%C3%9720%C3%9721316215125&docIndex=98&FullScreen=1";
+                
+	var _keyDoc = 'news·20231127·LM·202311272×20×21316215125';
+</script>
+</div></body></html>

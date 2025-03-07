@@ -1,0 +1,503 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 8795                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Cahier &#233;t&#233;,         jeudi 20 ao&amp;#251;t 2009 702 mots, p. ETE6&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La Toile rel&#226;che les mailles, les points et les motifs            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Do it yourself (4/5). Le tricot s&#39;affranchit des mod&#232;les.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;MARIE LECHNER&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Qu&#39;est-ce qu&#39;une conf&#233;rence sur le tricot peut bien faire au milieu d&#39;un congr&#232;s de hackers ? La sc&#232;ne se d&#233;roule en d&#233;cembre 2007, &#224; Berlin, &#224; l&#39;occasion de la rencontre annuelle du Chaos Computer Club, l&#39;une des plus influentes organisations de hackers (1). Devant un parterre viril de programmeurs, Rose White, &#233;tudiante en sociologie boulotte, tisse des liens entre le tricot et l&#39;informatique, d&#233;montrant comment la pratique contemporaine de la maille se rapproche de la programmation &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Ali&#233;nation.&lt;/em&gt; Avant les ann&#233;es 60, le tricot est largement confisqu&#233; par l&#39;industrie qui commercialise et contr&#244;le les motifs via des publications sp&#233;cialis&#233;es. Ces modes d&#39;emploi destin&#233;s aux m&#233;nag&#232;res n&#39;indiquaient pas la quantit&#233; de fil n&#233;cessaire pour obtenir un pull, mais le nombre de pelotes de leur marque. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Si vous utilisez notre laine et nos aiguilles et faites exactement ce qu&#39;on vous dit, vous obtiendrez le pull en photo dans le magazine,&lt;/em&gt; explique Rose White, qui estime que l&#39;industrie du tricot a ali&#233;n&#233; des milliers d&#39;utilisateurs de leur savoir-faire. &lt;em style=&quot;font-style:italic;&quot;&gt;C&#39;est comme comparer Linux et Windows, Linux est une &quot;culture folk&quot; qui se d&#233;veloppe gr&#226;ce aux connaissances partag&#233;es entre ses utilisateurs. Windows est une culture propri&#233;taire, il fournit des machines tr&#232;s puissantes aux gens mais leur confisque ce pouvoir en les obligeant &#224; faire comme on leur dit.&#187;&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Aux Etats-Unis, le Linus Torvalds (cr&#233;ateur de Linux) de la maille se nomme Elizabeth Zimmerman, une &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;geek avant l&#39;heure&#187;,&lt;/em&gt; qui a r&#233;volutionn&#233; l&#39;art du tricot dans les ann&#233;es 60 en le rendant &#224; nouveau &#171;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;&#187;. Celle qui maniait les aiguilles en toute situation, y compris &#224; califourchon &#224; l&#39;arri&#232;re de la moto de son mari, a publi&#233; des livres avec des motifs g&#233;n&#233;riques qui ne n&#233;cessitaient pas de marque de laine particuli&#232;re et n&#39;&#233;tait pas sous copyright. Sa devise &#233;tait &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;Tricoter avec confiance et espoir, &#224; travers toutes les crises.&#187;&lt;/em&gt; Son objectif : rendre le pouvoir aux tricoteurs en leur permettant de modifier les motifs, d&#39;improviser &#224; partir d&#39;un mod&#232;le. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Gu&#233;rilla.&lt;/em&gt; Au m&#234;me moment, les f&#233;ministes jettent les pelotes &#224; la poubelle. Elles les consid&#232;rent comme un outil du patriarcat pour garder les femmes &#224; la maison. Il faudra attendre le d&#233;but du XXIe si&#232;cle, pour assister &#224; un &#233;tonnant retour en gr&#226;ce du tricot. Le passe-temps de m&#233;m&#233; devient tendance. &lt;/p&gt; &lt;p&gt; Internet a largement contribu&#233; &#224; ce renouveau, via les blogs, les r&#233;seaux sociaux comme Ravelry (2) ou des sites communautaires tel KnitML (3) qui tente de d&#233;finir un standard universel pour d&#233;crire les motifs. Les passionn&#233;s y montrent leur travail, trouvent des conseils, &#233;changent leurs savoirs. Ceux qui pensaient que l&#39;horizon se limitait au point mousse d&#233;couvrent les extraordinaires motifs labyrinthe de Debbie New ou ceux hexagonaux, inspir&#233;s de la vie biologique de Norah Gaughan. Certains poussent le &lt;em style=&quot;font-style:italic;&quot;&gt;Do it yourself&lt;/em&gt; &#224; l&#39;extr&#234;me, allant jusqu&#39;&#224; filer leur propre laine &#224; partir des poils de leur chien. &lt;/p&gt; &lt;p&gt; On ne tricote d&#39;ailleurs plus exclusivement pour s&#39;habiller mais pour s&#39;exprimer, ce que Rose appelle le &lt;em style=&quot;font-style:italic;&quot;&gt;Guerrilla Knitting.&lt;/em&gt;Des collectifs artistiques comme les Texanes Knitta Please (4), pionni&#232;res du graffiti en laine qui enveloppent les poteaux des villes d&#39;&#233;charpes bariol&#233;es, ou les &lt;em style=&quot;font-style:italic;&quot;&gt;Wool Warriors de Knit the City,&lt;/em&gt; qui habillent les cabines t&#233;l&#233;phoniques londoniennes. &lt;/p&gt; &lt;p&gt; Autre jeu de mailles, une communaut&#233; confectionne des mitaines rouges pour la statue de L&#233;nine &#224; Seattle ou des chaussettes pour les chevaux de bronze de Central Park. L&#39;artiste Dave Cole fait tricoter un drapeau am&#233;ricain g&#233;ant par deux grues manipulant des poteaux de bois dans la cour du Mass Moca. Des milliers d&#39;anonymes laissent libre cours &#224; leur fantaisie, postant leurs cr&#233;ations sur le Web, comme cet appareil digestif tricot&#233;, v&#233;ritable le&#231;on d&#39;anatomie ou cet ut&#233;rus en laine rose bonbon. &lt;/p&gt; &lt;p&gt; Certaines de ces confections sont propos&#233;es &#224; la vente tels ces adorables c&#233;phalopodes sign&#233;s Hansigurumi, qu&#39;on peut se procurer via des sites de commerce en ligne comme Etsy (5) ou Folksy. Ces plateformes qui permettent aux artisans de vendre leurs cr&#233;ations faites main (v&#234;tements, bijouterie, etc.) connaissent un v&#233;ritable boom. En 2008, les ventes de biens sur Etsy ont rapport&#233; 88 millions de dollars, contre 26 millions en 2007. Plus de 200 000 vendeurs y ont leur petite boutique et plus de deux millions de clients sont inscrits. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Customisation.&lt;/em&gt; Un engouement qui t&#233;moigne d&#39;une certaine lassitude pour des produits fabriqu&#233;s en masse, coul&#233;s dans le m&#234;me moule. Si les ann&#233;es 90 &#233;taient celles des marques brandies en grosses lettres sur la poitrine, aujourd&#39;hui, les gens cherchent &#224; se diff&#233;rencier en portant quelque chose d&#39;original, d&#39;unique, estime Clive Thompson dans une chronique pour &lt;em style=&quot;font-style:italic;&quot;&gt;Wired. &#171;La culture num&#233;rique a toujours &#233;t&#233; affaire de customisation et d&#39;individualit&#233; : on blogue nos pens&#233;es, on met sa vie en photo sur Flickr. Apr&#232;s des ann&#233;es pass&#233;es &#224; fa&#231;onner le monde digital pour qu&#39;il s&#39;accorde &#224; notre style, il n&#39;est pas &#233;tonnant que nous souhaitions reproduire la m&#234;me chose dans le monde physique.&#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;D&#39;apr&#232;s Thompson, gr&#226;ce &#224; cette r&#233;volution de la micromanufacture, les objets qui nous entourent vont &#234;tre de plus en plus personnalis&#233;s. Ce service existe d&#233;j&#224; chez Etsy ou Ponoko : le client d&#233;crit ce qu&#39;il veut (un pull, un sac, une table), dit combien il est pr&#234;t &#224; d&#233;bourser et des artisans peuvent proposer de lui en fabriquer sur mesure... &lt;/p&gt; &lt;p&gt; (1) &lt;a target=&quot;_blank&quot; href=&quot;http://events.ccc.de/congress/2007/Fahrplan/events/2358.en.html&quot;&gt;http://events.ccc.de/congress/2007/Fahrplan/events/2358.en.html&lt;/a&gt; &lt;/p&gt; &lt;p&gt; (2) &lt;a target=&quot;_blank&quot; href=&quot;https://www.ravelry.com&quot;&gt;www.ravelry.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; (3) &lt;a target=&quot;_blank&quot; href=&quot;https://www.knitml.com&quot;&gt;www.knitml.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; (4) &lt;a target=&quot;_blank&quot; href=&quot;https://www.knittaplease.com&quot;&gt;www.knittaplease.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; (5) &lt;a target=&quot;_blank&quot; href=&quot;https://www.etsy.com&quot;&gt;www.etsy.com&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2009 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20090820&amp;#183;LI&amp;#183;0lic0ee21bc-8cce-11de-8564-8afd0cfa5da4&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">Do it</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">affaire de customisation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">occasion de la rencontre annuelle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">monde digital</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">standard universel</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Commerce électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Berlin</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Seattle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Central Park</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720090820%c2%b7LI%c2%b70lic0ee21bc-8cce-11de-8564-8afd0cfa5da4" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720090820%c2%b7LI%c2%b70lic0ee21bc-8cce-11de-8564-8afd0cfa5da4">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 8795                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Cahier été,         jeudi 20 août 2009 702 mots, p. ETE6</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La Toile relâche les mailles, les points et les motifs            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Do it yourself (4/5). Le tricot s'affranchit des modèles.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">MARIE LECHNER</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Qu'est-ce qu'une conférence sur le tricot peut bien faire au milieu d'un congrès de hackers ? La scène se déroule en décembre 2007, à Berlin, à l'occasion de la rencontre annuelle du Chaos Computer Club, l'une des plus influentes organisations de hackers (1). Devant un parterre viril de programmeurs, Rose White, étudiante en sociologie boulotte, tisse des liens entre le tricot et l'informatique, démontrant comment la pratique contemporaine de la maille se rapproche de la programmation <mark>open</mark> <mark>source</mark>. </p> <p><em style="font-weight:bold;">Aliénation.</em> Avant les années 60, le tricot est largement confisqué par l'industrie qui commercialise et contrôle les motifs via des publications spécialisées. Ces modes d'emploi destinés aux ménagères n'indiquaient pas la quantité de fil nécessaire pour obtenir un pull, mais le nombre de pelotes de leur marque. <em style="font-style:italic;">«Si vous utilisez notre laine et nos aiguilles et faites exactement ce qu'on vous dit, vous obtiendrez le pull en photo dans le magazine,</em> explique Rose White, qui estime que l'industrie du tricot a aliéné des milliers d'utilisateurs de leur savoir-faire. <em style="font-style:italic;">C'est comme comparer Linux et Windows, Linux est une "culture folk" qui se développe grâce aux connaissances partagées entre ses utilisateurs. Windows est une culture propriétaire, il fournit des machines très puissantes aux gens mais leur confisque ce pouvoir en les obligeant à faire comme on leur dit.»</em></p>
+
+
+<p>Aux Etats-Unis, le Linus Torvalds (créateur de Linux) de la maille se nomme Elizabeth Zimmerman, une <em style="font-style:italic;">«geek avant l'heure»,</em> qui a révolutionné l'art du tricot dans les années 60 en le rendant à nouveau «<mark>open</mark> <mark>source</mark>». Celle qui maniait les aiguilles en toute situation, y compris à califourchon à l'arrière de la moto de son mari, a publié des livres avec des motifs génériques qui ne nécessitaient pas de marque de laine particulière et n'était pas sous copyright. Sa devise était <em style="font-style:italic;">«Tricoter avec confiance et espoir, à travers toutes les crises.»</em> Son objectif : rendre le pouvoir aux tricoteurs en leur permettant de modifier les motifs, d'improviser à partir d'un modèle. </p> <p><em style="font-weight:bold;">Guérilla.</em> Au même moment, les féministes jettent les pelotes à la poubelle. Elles les considèrent comme un outil du patriarcat pour garder les femmes à la maison. Il faudra attendre le début du XXIe siècle, pour assister à un étonnant retour en grâce du tricot. Le passe-temps de mémé devient tendance. </p> <p> Internet a largement contribué à ce renouveau, via les blogs, les réseaux sociaux comme Ravelry (2) ou des sites communautaires tel KnitML (3) qui tente de définir un standard universel pour décrire les motifs. Les passionnés y montrent leur travail, trouvent des conseils, échangent leurs savoirs. Ceux qui pensaient que l'horizon se limitait au point mousse découvrent les extraordinaires motifs labyrinthe de Debbie New ou ceux hexagonaux, inspirés de la vie biologique de Norah Gaughan. Certains poussent le <em style="font-style:italic;">Do it yourself</em> à l'extrême, allant jusqu'à filer leur propre laine à partir des poils de leur chien. </p> <p> On ne tricote d'ailleurs plus exclusivement pour s'habiller mais pour s'exprimer, ce que Rose appelle le <em style="font-style:italic;">Guerrilla Knitting.</em>Des collectifs artistiques comme les Texanes Knitta Please (4), pionnières du graffiti en laine qui enveloppent les poteaux des villes d'écharpes bariolées, ou les <em style="font-style:italic;">Wool Warriors de Knit the City,</em> qui habillent les cabines téléphoniques londoniennes. </p> <p> Autre jeu de mailles, une communauté confectionne des mitaines rouges pour la statue de Lénine à Seattle ou des chaussettes pour les chevaux de bronze de Central Park. L'artiste Dave Cole fait tricoter un drapeau américain géant par deux grues manipulant des poteaux de bois dans la cour du Mass Moca. Des milliers d'anonymes laissent libre cours à leur fantaisie, postant leurs créations sur le Web, comme cet appareil digestif tricoté, véritable leçon d'anatomie ou cet utérus en laine rose bonbon. </p> <p> Certaines de ces confections sont proposées à la vente tels ces adorables céphalopodes signés Hansigurumi, qu'on peut se procurer via des sites de commerce en ligne comme Etsy (5) ou Folksy. Ces plateformes qui permettent aux artisans de vendre leurs créations faites main (vêtements, bijouterie, etc.) connaissent un véritable boom. En 2008, les ventes de biens sur Etsy ont rapporté 88 millions de dollars, contre 26 millions en 2007. Plus de 200 000 vendeurs y ont leur petite boutique et plus de deux millions de clients sont inscrits. </p> <p><em style="font-weight:bold;">Customisation.</em> Un engouement qui témoigne d'une certaine lassitude pour des produits fabriqués en masse, coulés dans le même moule. Si les années 90 étaient celles des marques brandies en grosses lettres sur la poitrine, aujourd'hui, les gens cherchent à se différencier en portant quelque chose d'original, d'unique, estime Clive Thompson dans une chronique pour <em style="font-style:italic;">Wired. «La culture numérique a toujours été affaire de customisation et d'individualité : on blogue nos pensées, on met sa vie en photo sur Flickr. Après des années passées à façonner le monde digital pour qu'il s'accorde à notre style, il n'est pas étonnant que nous souhaitions reproduire la même chose dans le monde physique.»</em></p><p>D'après Thompson, grâce à cette révolution de la micromanufacture, les objets qui nous entourent vont être de plus en plus personnalisés. Ce service existe déjà chez Etsy ou Ponoko : le client décrit ce qu'il veut (un pull, un sac, une table), dit combien il est prêt à débourser et des artisans peuvent proposer de lui en fabriquer sur mesure... </p> <p> (1) <a target="_blank" href="http://events.ccc.de/congress/2007/Fahrplan/events/2358.en.html">http://events.ccc.de/congress/2007/Fahrplan/events/2358.en.html</a> </p> <p> (2) <a target="_blank" href="https://www.ravelry.com">www.ravelry.com</a> </p> <p> (3) <a target="_blank" href="https://www.knitml.com">www.knitml.com</a> </p> <p> (4) <a target="_blank" href="https://www.knittaplease.com">www.knittaplease.com</a> </p> <p> (5) <a target="_blank" href="https://www.etsy.com">www.etsy.com</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2009 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20090820·LI·0lic0ee21bc-8cce-11de-8564-8afd0cfa5da4</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20090820·LI·0lic0ee21bc-8cce-11de-8564-8afd0cfa5da4";
+    var _docIndex = 483;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20090820·LI·0lic0ee21bc-8cce-11de-8564-8afd0cfa5da4';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720090820%C2%B7LI%C2%B70lic0ee21bc-8cce-11de-8564-8afd0cfa5da4&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720090820%C2%B7LI%C2%B70lic0ee21bc-8cce-11de-8564-8afd0cfa5da4&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720090820%C2%B7LI%C2%B70lic0ee21bc-8cce-11de-8564-8afd0cfa5da4&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720090820%C2%B7LI%C2%B70lic0ee21bc-8cce-11de-8564-8afd0cfa5da4&docIndex=483&FullScreen=1";
+                
+	var _keyDoc = 'news·20090820·LI·0lic0ee21bc-8cce-11de-8564-8afd0cfa5da4';
+</script>
+</div></body></html>

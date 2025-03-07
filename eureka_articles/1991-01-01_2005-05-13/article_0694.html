@@ -1,0 +1,437 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+MULTIMEDIA,         vendredi 20 mars 1998 1719 mots, p. VII-VIII&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+F&#234;te de l&#39;Internet. Le guide. En gare de Ch&#226;teauroux, sur le port de Marseille, dans le ciel de Vincennes, &#224; la mairie: les lieux de la F&#234;te sont multiples. &quot;Lib&#233;ration&quot; a s&#233;lectionn&#233; pour vous plus d&#39;une centaine de manifestations. Des s&#233;rieuses, des locales, des ludiques... Suivez le guide. Ile-de-France.            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;ILE-DE-FRANCE &lt;/p&gt; &lt;p&gt; Paris Ier &lt;/p&gt; &lt;p&gt; L&#39;image et le cin&#233;ma sur l&#39;Internet &lt;/p&gt; &lt;p&gt; L&#39;espace multim&#233;dia Cyberport pr&#233;sente l&#39;actualit&#233; du cin&#233;ma fran&#231;ais sur l&#39;Internet et propose des ateliers sur le th&#232;me de l&#39;image et l&#39;Internet.&lt;/p&gt;
+
+
+&lt;p&gt;Les 20 et 21 mars, de 16 h &#224; 19 h. &lt;/p&gt; &lt;p&gt; Vid&#233;oth&#232;que de Paris, Forum des Halles. &lt;/p&gt; &lt;p&gt; Rens.: 01.44.76.63.99. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.vdp.fr&quot;&gt; www.vdp.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Th&#233;olib &lt;/p&gt; &lt;p&gt; Pr&#233;sentation d&#39;un site de r&#233;flexion th&#233;ologico-philosophique anim&#233; par des pasteurs et d&#39;autres membres actifs de l&#39;Eglise r&#233;form&#233;e de France. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, de 16 h &#224; 19 h. &lt;/p&gt; &lt;p&gt; 4, rue de l&#39;Oratoire. &lt;/p&gt; &lt;p&gt; Rens.: 01.42.60.22.98. &lt;/p&gt; &lt;p&gt; perso.club-internet.fr/theolib/ &lt;/p&gt; &lt;p&gt; Paris IIe &lt;/p&gt; &lt;p&gt; Mondomix &lt;/p&gt; &lt;p&gt; Le site, lanc&#233; &#224; l&#39;occasion de la f&#234;te, a pour but de f&#233;d&#233;rer tous ceux qui s&#39;int&#233;ressent au m&#233;tissage des cultures, &#224; la world music. Mondomix r&#233;unit pour l&#39;heure 80 musiciens, 14 labels, des associations, et quelques radios. &lt;/p&gt; &lt;p&gt; A partir du 21 mars, de 15 h &#224; 23 h. &lt;/p&gt; &lt;p&gt; 15, rue Saint-Fiacre. &lt;/p&gt; &lt;p&gt; Rens.: 01.42.59.29.95. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mondomix.org&quot;&gt; www.mondomix.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris IIIe &lt;/p&gt; &lt;p&gt; Gambit d&#39;Eurynome-chaos dans l&#39;action &lt;/p&gt; &lt;p&gt; Une dizaine de villes (Paris, Cologne, Cambridge, Istanbul, Belgrade, Skopje, etc.) participent &#224; ce projet qui vise &#224; &#233;tablir une relation nouvelle entre l&#39;art plastique et les technologies multim&#233;dias. Performances, comportement des artistes vis-&#224;-vis d&#39;oeuvres de conceptions diff&#233;rentes, psychologie, r&#233;alit&#233; culturelle... Ambitieux. &lt;/p&gt; &lt;p&gt; Le 21 mars, de 14 h 30 &#224; 19 h. &lt;/p&gt; &lt;p&gt; 32, rue de Picardie. &lt;/p&gt; &lt;p&gt; Rens.: 01.48.58.47.82. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.aagif.fr/artw3/eurynome/&quot;&gt; www.aagif.fr/artw3/eurynome/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Cr&#233;ations contemporaines et d&#233;bats &lt;/p&gt; &lt;p&gt; Le Web Bar organise des ateliers autour d&#39;oeuvres de cr&#233;ateurs contemporains on line et un d&#233;bat sur le th&#232;me &quot;Internet, espace du savoir?&quot;. En soir&#233;e, un cyberop&#233;ra en visiophonie et des d&#233;monstrations musicales sur le r&#233;seau sont au programme. &lt;/p&gt; &lt;p&gt; Web Bar, 32, rue de Picardie. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, de 11 h 30 &#224; 2 h. &lt;/p&gt; &lt;p&gt; Rens.: 01.42.72.66.55. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.webbar.fr&quot;&gt; www.webbar.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris IVe &lt;/p&gt; &lt;p&gt; Sous le tipi de Beaubourg &lt;/p&gt; &lt;p&gt; Sur la piazza du Centre Georges-Pompidou, une grande tente. Sous la tente, conf&#233;rences-projections et s&#233;ances de consultation avec animateurs-initiateurs. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 10 h &#224; 18 h, et le 21 mars, de 14 h &#224; 21 h. &lt;/p&gt; &lt;p&gt; Centre Pompidou. &lt;/p&gt; &lt;p&gt; Rens.: 01.44.78.42.42. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.cnac-gp.fr&quot;&gt; www.cnac-gp.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Est-ce ta f&#234;te? &lt;/p&gt; &lt;p&gt; Concours de rimes et de jeux de mots en &quot;net&quot; (ou nette) pour tous. Les textes seront mis en page sur le site en attendant que les internautes votent pour l&#39;&#233;lection du meilleur po&#232;me, le 21. Le gagnant b&#233;n&#233;ficiera d&#39;une page web sp&#233;ciale sur le site de LocoMediaDub pendant un an. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; 4, rue Aubry-le-Boucher. &lt;/p&gt; &lt;p&gt; Rens.: 01.44.61.81.01. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.LocoMediaDub.com&quot;&gt; www.LocoMediaDub.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris Ve &lt;/p&gt; &lt;p&gt; Journ&#233;e sur les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &lt;/p&gt; &lt;p&gt; L&#39;Inria (Institut national de recherche en informatique et en automatique) organise une journ&#233;e d&#233;bat, parrain&#233;e par le minist&#232;re de l&#39;Education nationale, sur le th&#232;me &quot;&lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;: enjeux &#233;conomiques&quot;. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; Maison de la Mutualit&#233;, 24, rue Saint-Victor. &lt;/p&gt; &lt;p&gt; Rens.: 01.39.63.57.29. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.inria.fr&quot;&gt; www.inria.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; A quoi sert l&#39;Internet dans une biblioth&#232;que universitaire? &lt;/p&gt; &lt;p&gt; La biblioth&#232;que de l&#39;universit&#233; Paris-III organise des visites guid&#233;es des locaux sur le th&#232;me &quot;A quoi sert l&#39;Internet dans la BU?&quot;, ainsi que des s&#233;ances d&#39;initiation au Web dans une salle &#233;quip&#233;e de 5 micro-ordinateurs. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 10 h &#224; 17 h. &lt;/p&gt; &lt;p&gt; BU de Paris-III, 13, rue de Santeuil. &lt;/p&gt; &lt;p&gt; Rens.: 01.45.87.48.33. &lt;/p&gt; &lt;p&gt; bucensier.univ-paris3.fr &lt;/p&gt; &lt;p&gt; Paris VIe &lt;/p&gt; &lt;p&gt; Internet dans tous ses &#233;tats &lt;/p&gt; &lt;p&gt; Vendredi, de 10 h &#224; 12 h, conf&#233;rence d&#233;bat: &quot;Internet et les associations. Quel int&#233;r&#234;t pour le r&#233;seau associatif?&quot; Apr&#232;s-midi: initiation, d&#233;couvertes, d&#233;monstrations (webcam, musique, colloque en ligne, visioconf&#233;rence), d&#233;bat sur &quot;L&#39;&#233;volution future du Net&quot;. De 19 h 30 &#224; 2 h: nuit du Web (rencontre d&#39;&#233;quipes de joueurs). Samedi (pour les enseignants): conf&#233;rence &quot;Internet &#224; l&#39;&#233;cole&quot; et d&#233;couvertes-initiations. R&#233;servations obligatoires. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; Centre d&#39;animation Saint-Michel, 9, place Saint-Michel. &lt;/p&gt; &lt;p&gt; Rens.: 01.46.34.15.37. &lt;/p&gt; &lt;p&gt; perso.club-internet.fr/casm/ &lt;/p&gt; &lt;p&gt; Les aveugles au cybercaf&#233; &lt;/p&gt; &lt;p&gt; L&#39;entreprise Handialog, leader fran&#231;ais de la conception de solutions informatiques pour les non-voyants, s&#39;installe au Cybercaf&#233; Orbital pour une s&#233;rie de d&#233;monstrations de techniques permettant aux aveugles d&#39;acc&#233;der au r&#233;seau des r&#233;seaux. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; Cybercaf&#233; Orbital,13, rue de M&#233;dicis. &lt;/p&gt; &lt;p&gt; Rens.: 01.44.70.32.00. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.handialog.com&quot;&gt; www.handialog.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris VIIe &lt;/p&gt; &lt;p&gt; Demain les cyber-fonctionnaires &lt;/p&gt; &lt;p&gt; Journ&#233;es portes ouvertes aux fonctionnaires organis&#233;es par le Commissariat g&#233;n&#233;ral au Plan: visioconf&#233;rences, d&#233;monstrations de contenus et de t&#233;l&#233;proc&#233;dures. Vingt postes de consultation et de d&#233;monstration. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 10 h &#224; 19 h. &lt;/p&gt; &lt;p&gt; Commissariat g&#233;n&#233;ral au Plan, 18, rue de Martignac. &lt;/p&gt; &lt;p&gt; Rens.: 01.45.56.53.43. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-plan-gouv-fr.acces.bibl.ulaval.ca&quot;&gt; www.plan.gouv.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Ateliers &#224; l&#39;Assembl&#233;e nationale &lt;/p&gt; &lt;p&gt; L&#39;Assembl&#233;e nationale invite le public &#224; d&#233;couvrir l&#39;Internet de 10 h &#224; 17 h 30 dans les salles du Palais-Bourbon. Une heure d&#39;ateliers par groupe de vingt personnes maximum. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; Assembl&#233;e nationale, 33, quai d&#39;Orsay. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.assemblee-nat.fr&quot;&gt; www.assemblee-nat.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Nouvelles &#233;critures, nouvelle culture &lt;/p&gt; &lt;p&gt; Pr&#233;sentation des sites de l&#39;Internet culturel et &quot;d&#39;Ulysse, chercheur de connaissances&quot;, moteur de recherche culturel et scientifique, par Blaise Rosnay, webmestre du Club des Po&#232;tes (lire page XII). D&#238;ner d&#233;bat sur le th&#232;me &quot;La langue fran&#231;aise est-elle soluble dans l&#39;Internet?&quot;. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 17 h &#224; minuit. &lt;/p&gt; &lt;p&gt; Club des Po&#232;tes, 30, rue de Bourgogne. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.05.06.03. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.melusine-transgraphe.asso.fr&quot;&gt; www.melusine-transgraphe.asso.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Internet c&#39;est @ vous &lt;/p&gt; &lt;p&gt; Le temps de trois jours, France T&#233;l&#233;com propose une exposition consacr&#233;e &#224; l&#39;Internet. La visite commence avec une navigation comment&#233;e par une &quot;cyberanimatrice&quot;, &quot;une femme &#224; la t&#234;te en forme d&#39;&#233;cran&quot;. Probablement effray&#233;s, les visiteurs pourront se replier sur une exploration individuelle (50 ordinateurs en libre-service), et sur quatre &quot;mini-espaces th&#233;matiques&quot; consacr&#233;s aux groupes de discussions, &#224; l&#39;&#233;ducation et aux jeux en ligne, au commerce &#233;lectronique, et aux moyens pour se connecter. &lt;/p&gt; &lt;p&gt; Du 20 au 22 mars, de 10 h &#224; 19 h. &lt;/p&gt; &lt;p&gt; Espace Eiffel-Branly, 29-55, quai Branly. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.francetelecom.fr/vfrance/actualite/actu5.htm&quot;&gt; www.francetelecom.fr/vfrance/actualite/actu5.htm&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Cybercaf&#233; minist&#233;riel &lt;/p&gt; &lt;p&gt; Un cybercaf&#233; est ouvert au secr&#233;tariat &#224; l&#39;Industrie. Vingt micro-ordinateurs seront mis &#224; la disposition des visiteurs, qui pourront librement naviguer sur l&#39;Internet. Des animateurs seront pr&#233;sents pour les guider. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 8 h &#224; 20 h. &lt;/p&gt; &lt;p&gt; Secr&#233;tariat d&#39;Etat &#224; l&#39;Industrie, 20, avenue de S&#233;gur. &lt;/p&gt; &lt;p&gt; Rens: 01.43.19.36.36. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-industrie-gouv-fr.acces.bibl.ulaval.ca&quot;&gt; www.industrie.gouv.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; L&#39;Internet et l&#39;emploi &lt;/p&gt; &lt;p&gt; Pour mieux conna&#238;tre la recherche d&#39;emploi via l&#39;Internet, les emplois et entreprises g&#233;n&#233;r&#233;s par les nouvelles technologies, d&#233;monstrations pour des demandeurs d&#39;emploi. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; Maison Inter, 105, rue Saint-Dominique. &lt;/p&gt; &lt;p&gt; Rens.: 01.69.85.12.66. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.supelec.fr&quot;&gt; www.supelec.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris XIe &lt;/p&gt; &lt;p&gt; Manifestation digitale &lt;/p&gt; &lt;p&gt; Une exposition en ligne, pr&#233;sent&#233;e conjointement au Japon, pays o&#249; l&#39;ordinateur sert de support artistique. Les objets expos&#233;s sont soit des outils de cr&#233;ation pour les pages web soit des oeuvres d&#39;art num&#233;riques. &lt;/p&gt; &lt;p&gt; Inscription jusqu&#39;au 21 mars, expo du 1er au 30 avril. &lt;/p&gt; &lt;p&gt; 19, rue Trousseau. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.45.17.82. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mygale.org/02/japofra/&quot;&gt; www.mygale.org/02/japofra/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Grande f&#234;te cyber &lt;/p&gt; &lt;p&gt; Le cyberespace investit la rue Saint-Sabin, avec une f&#234;te sp&#233;ciale architecture cyber: pr&#233;sentation de leurs sites par les architectes Ammar Eloueini, Adrien Sina, Fiona Meadows, Jacques Rougerie, etc. Forums en ligne et jury virtuel pour une remise des prix des meilleurs sites d&#39;archi, avec en guest-star Paul Virilio lui-m&#234;me, cyberkawa et grande f&#234;te cyber avec Cyberga&#239;a compl&#233;teront la chose. &lt;/p&gt; &lt;p&gt; Le 21 mars, de 15 h &#224; 22 h. &lt;/p&gt; &lt;p&gt; Ateliers ENSCI, 48, rue Saint-Sabin. &lt;/p&gt; &lt;p&gt; Rens.: 01.42.60.40.96. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.kubos.org&quot;&gt; www.kubos.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Arbres du warf &lt;/p&gt; &lt;p&gt; Un projet europ&#233;en pour l&#39;insertion des jeunes. Pr&#233;sentation des c&#233;l&#232;bres arbres de connaissances et de savoirs, qu&#39;ici l&#39;on veut faire &quot;pousser&quot; pour aider &#224; l&#39;acquisition des comp&#233;tences. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, de 10 h 30 &#224; 18 h. &lt;/p&gt; &lt;p&gt; 27, rue du Moulin-Joly. &lt;/p&gt; &lt;p&gt; Rens.: 01.43.55.55.50. &lt;/p&gt; &lt;p&gt; golem.easynet.fr/warf/ &lt;/p&gt; &lt;p&gt; Global Gallery au Moulin-Joly &lt;/p&gt; &lt;p&gt; Formation pour les scolaires, activit&#233;s sur le Net via une webcam, d&#233;monstrations pour adultes, performances artistiques retransmises sur le Net, consultations libres, mise en place d&#39;une cybergallery pour des artistes de l&#39;Est parisien (Bastille, Belleville) et vernissage. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, &lt;/p&gt; &lt;p&gt; de 9 h &#224; minuit. &lt;/p&gt; &lt;p&gt; Global Gallery, 32, rue du Moulin-Joly. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.00.23.09. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.globalgallery.easynet.fr&quot;&gt; www.globalgallery.easynet.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris XIIe &lt;/p&gt; &lt;p&gt; F&#234;te &#224; Bercy &lt;/p&gt; &lt;p&gt; Bercy propose des conf&#233;rences d&#39;une heure sur des th&#232;mes associant &#233;conomie sociale et Internet (la protection du consommateur sur le r&#233;seau), des ateliers de pr&#233;sentation de sites minist&#233;riels et des d&#233;monstrations sur l&#39;utilisation par Bercy des nouvelles technologies (intranet et &quot;visioguichet&quot;). &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, de 10 h &#224; 17 h. &lt;/p&gt; &lt;p&gt; Minist&#232;re de l&#39;Economie, des Finances et de l&#39;Industrie, &lt;/p&gt; &lt;p&gt; centre de conf&#233;rences, 1, bd de Bercy. &lt;/p&gt; &lt;p&gt; BD sur Internet &lt;/p&gt; &lt;p&gt; Lancement d&#39;une BD interactive sur le Net, dont l&#39;ach&#232;vement est pr&#233;vu pour la seconde F&#234;te de l&#39;Internet. Toutes les &#233;coles peuvent participer et se mettre en relation avec d&#39;autres pays. Des coll&#232;ges aux Etats-Unis et au Canada ont d&#233;j&#224; donn&#233; leur accord, on attend les r&#233;ponses de la C&#244;te-d&#39;Ivoire et de l&#39;Afrique du Sud. &lt;/p&gt; &lt;p&gt; Du 20 mars 1998, de 10 h &#224; minuit au 1er f&#233;vrier 1999. &lt;/p&gt; &lt;p&gt; 60 bis, rue de Picpus. &lt;/p&gt; &lt;p&gt; Rens.: 01.43.47.53.40. &lt;/p&gt; &lt;p&gt; member.aol.com/piccyber/accueil.html &lt;/p&gt; &lt;p&gt; Feu d&#39;artifice &quot;explosive Web&quot; &lt;/p&gt; &lt;p&gt; Une d&#233;couverte du monde cyber qui propose le feu d&#39;artifice des artificiers associ&#233;s et du cybercaf&#233; cyber@picpus. &lt;/p&gt; &lt;p&gt; Le 20 mars, &#224; partir de 21 h. &lt;/p&gt; &lt;p&gt; Lac Daumesnil. &lt;/p&gt; &lt;p&gt; Rens.: 01.40.27.84.52. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.pyrotechnie.com&quot;&gt; www.pyrotechnie.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris XIVe &lt;/p&gt; &lt;p&gt; Internet pr&#232;s de chez vous &lt;/p&gt; &lt;p&gt; Deux journ&#233;es de d&#233;couvertes organis&#233;es par l&#39;association R&#233;solutions, r&#233;seaux humains et &#233;lectroniques: d&#233;bats, questions-r&#233;ponses, pratique du Net, projections de documentaires. &lt;/p&gt; &lt;p&gt; Le 20 mars de 18 h &#224; 22 h et le 21 mars de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; R&#233;solument v&#244;tre, 15, avenue Jean-Moulin. &lt;/p&gt; &lt;p&gt; Rens.: 01.43.29.16.49. &lt;/p&gt; &lt;p&gt; Paris XVe &lt;/p&gt; &lt;p&gt; Rencontres et &#233;changes autour de la cr&#233;ation artistique contemporaine &lt;/p&gt; &lt;p&gt; Pendant trois jours, www_art est un lieu de rencontres et d&#39;&#233;changes qui propose une visite guid&#233;e et gratuite de sites Internet li&#233;s &#224; la cr&#233;ation artistique contemporaine. Des animateurs aident les visiteurs &#224; utiliser les ordinateurs. Des tables rondes avec des personnalit&#233;s du monde de l&#39;art (artistes, journalistes, galeristes) abordent les th&#232;mes de l&#39;innovation artistique sur le Web. &lt;/p&gt; &lt;p&gt; Les 20, 21 et 22 mars, de 13 h &#224; 21 h. &lt;/p&gt; &lt;p&gt; 105, rue Mademoiselle. &lt;/p&gt; &lt;p&gt; Rens.: 01.43.11.22.33. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.metafort.com/www_art/&quot;&gt; www.metafort.com/www_art/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Patchwork virtuel &lt;/p&gt; &lt;p&gt; Libre acc&#232;s aux ordinateurs h&#233;berg&#233;s par le fournisseur associatif GlobeNet et cr&#233;ation d&#39;un patchwork virtuel compos&#233; d&#39;images scann&#233;es et de textes. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; GlobeNet, 21, bd de Grenelle. &lt;/p&gt; &lt;p&gt; Rens.: 01.45.75.80.90. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.globenet.org&quot;&gt; www.globenet.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Producteurs-techniciens-artistes, rencontrez-vous! &lt;/p&gt; &lt;p&gt; Les professionnels de l&#39;audiovisuel, du cin&#233;ma, de la TV et du spectacle, dont le but est de mettre rapidement en relation producteurs et intermittents lancent leur site et proposent pour la f&#234;te la mise en ligne gratuite de leurs r&#233;f&#233;rences et contacts. &lt;/p&gt; &lt;p&gt; A partir du 20 mars. &lt;/p&gt; &lt;p&gt; 14, rue du Docteur-Roux. &lt;/p&gt; &lt;p&gt; Rens.: 01.44.49.61.37. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.systole.com/scene/&quot;&gt; www.systole.com/scene/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Paris XIXe &lt;/p&gt; &lt;p&gt; Initiation pour &lt;/p&gt; &lt;p&gt; les jeunes auteurs et cr&#233;ateurs &lt;/p&gt; &lt;p&gt; Le Sesam, qui collecte les droits d&#39;auteur multim&#233;dia, propose une journ&#233;e de &quot;surf sur Internet&quot; afin de faire d&#233;couvrir le r&#233;seau aux auteurs compositeurs et cr&#233;ateurs. &lt;/p&gt; &lt;p&gt; Le 21 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; La Villette, 16, place de la Fontaine-aux-Lions. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.15.49.06. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.sesam.org&quot;&gt; www.sesam.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Cit&#233; des sciences &lt;/p&gt; &lt;p&gt; La Cit&#233; des sciences, quoi de plus normal, propose son lot d&#39;animations techno. Et des d&#233;bats sur le pourquoi du comment. &lt;/p&gt; &lt;p&gt; Du 20 au 22 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; Cit&#233; des sciences, 30, avenue Corentin-Cariou. &lt;/p&gt; &lt;p&gt; Rens.: 01.40.05.81.67. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.cite-sciences.fr&quot;&gt; www.cite-sciences.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Belle (Cyber) Ville &lt;/p&gt; &lt;p&gt; Animation autour du site du quartier de Belleville construit par les associations du quartier. &lt;/p&gt; &lt;p&gt; Le 21 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; Centre social Belleville, 17, rue Jules-Romains. &lt;/p&gt; &lt;p&gt; Rens.: 01.40.03.08.82. &lt;/p&gt; &lt;p&gt; wwwperso.hol.fr/~csbelle &lt;/p&gt; &lt;p&gt; Paris XXe &lt;/p&gt; &lt;p&gt; L&#39;Internet &#224; l&#39;&#233;cole: sites ouverts &lt;/p&gt; &lt;p&gt; Les parents sont invit&#233;s &#224; d&#233;couvrir sur le site de l&#39;&#233;cole les travaux de leurs enfants. &lt;/p&gt; &lt;p&gt; Le 21 mars &#224; 9 h 30. &lt;/p&gt; &lt;p&gt; Ecole primaire, 291, rue des Pyr&#233;n&#233;es. &lt;/p&gt; &lt;p&gt; Rens.: 01.46.36.16.82. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mygale.org/05&quot;&gt; www.mygale.org/05&lt;/a&gt; &lt;/p&gt; &lt;p&gt; /py291/ &lt;/p&gt; &lt;p&gt; Le Web Art &lt;/p&gt; &lt;p&gt; ArtMag offre aux artistes du monde entier utilisant l&#39;Internet une plate-forme pour h&#233;berger leurs oeuvres. &lt;/p&gt; &lt;p&gt; Du 20 au 22 mars. &lt;/p&gt; &lt;p&gt; ArtMag, 114, rue des Pyr&#233;n&#233;es. &lt;/p&gt; &lt;p&gt; Rens.: 01.43.56.31.22. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.artmag.com&quot;&gt; www.artmag.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Boulogne-Billancourt &lt;/p&gt; &lt;p&gt; Insertion sociale et Internet &lt;/p&gt; &lt;p&gt; D&#233;couverte des moyens disponibles sur l&#39;Internet pour la recherche d&#39;emploi et l&#39;insertion professionnelle. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; Espace Cyber Jeunes, 26, avenue Andr&#233;-Morizet. &lt;/p&gt; &lt;p&gt; Rens.: 01.55.18.48.79. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.cyberjeunesbb.org&quot;&gt; www.cyberjeunesbb.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Colombes &lt;/p&gt; &lt;p&gt; Le mulot &#224; l&#39;&#233;cole &lt;/p&gt; &lt;p&gt; Manifestation organis&#233;e par l&#39;association La Petite Garenne de Colombes et le lyc&#233;e professionnel des m&#233;tiers de l&#39;imprimerie et des arts graphiques: concours de cr&#233;ation graphique de sites web, ateliers d&#233;couverte de l&#39;Internet pour les enfants, d&#233;monstrations pour tous. &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars. &lt;/p&gt; &lt;p&gt; Lyc&#233;e Claude-Garamont, 69, rue de l&#39;Industrie. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.80.06.67. &lt;/p&gt; &lt;p&gt;&lt;a href=&quot;mailto:Gcharra@Atelier.fr&quot;&gt; Gcharra@Atelier.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Elancourt &lt;/p&gt; &lt;p&gt; D&#233;couvrir la calligraphie arabe &lt;/p&gt; &lt;p&gt; Durant deux jours, l&#39;association des travailleurs marocains en France propose une d&#233;couverte de la calligraphie arabe: au programme, visites de sites web et participation du calligraphe Hassan Massoudy. &lt;/p&gt; &lt;p&gt; Les 21 et 22 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; Maison des enfants. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.56.21.27. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.savimedia.fr/massoudy/home.htm&quot;&gt; www.savimedia.fr/massoudy/home.htm&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Evry &lt;/p&gt; &lt;p&gt; Initiation &lt;/p&gt; &lt;p&gt; Op&#233;ration portes ouvertes &#224; l&#39;Institut national des t&#233;l&#233;communications. Des salles informatiques en libre acc&#232;s (mais contr&#244;l&#233;es), des initiations avec des professeurs exp&#233;riment&#233;s, des exercices... &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, de 10 h &#224; 17 h. &lt;/p&gt; &lt;p&gt; 9, rue Charles-Fourier. &lt;/p&gt; &lt;p&gt; Rens.: 01.60.76.43.17. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.int-evry.fr/fete-internet/&quot;&gt; www.int-evry.fr/fete-internet/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Issy-les-Moulineaux &lt;/p&gt; &lt;p&gt; Nuit du Web et de la francophonie &lt;/p&gt; &lt;p&gt; Jeu de piste virtuel: les jeunes de 14 &#224; 30 ans participent par &#233;quipes de deux, r&#233;pondent &#224; des questions de sport, de culture et d&#39;&#233;conomie sur des sites web francophones. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 14 h &#224; 2 h. &lt;/p&gt; &lt;p&gt; M&#233;diath&#232;que, 33, rue du Gouverneur-G&#233;n&#233;ral Ebou&#233;. &lt;/p&gt; &lt;p&gt; Rens.: 01.40.95.66.09. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.issy.com/fete/&quot;&gt; www.issy.com/fete/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Marly-le-Roi &lt;/p&gt; &lt;p&gt; Cyberlieux marlychois &lt;/p&gt; &lt;p&gt; Les Marlychois vont d&#233;couvrir les utilisations multiples des nouvelles technologies dans des cyberlieux ouverts pour l&#39;occasion, avec initiations pour parents et &#233;l&#232;ves, et visioconf&#233;rence &#224; l&#39;&#233;cole Jean-Rostand. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 17 h &#224; 20 h. &lt;/p&gt; &lt;p&gt; 3, chemin des Glaises. &lt;/p&gt; &lt;p&gt; Rens.: 01.30.61.60.29. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mairie-marlyleroi.fr&quot;&gt; www.mairie-marlyleroi.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Montreuil-sous-Bois &lt;/p&gt; &lt;p&gt; D&#233;bat de philosophie-Internet &lt;/p&gt; &lt;p&gt; Le cybercaf&#233; Entrasite organise un d&#233;bat de philosophie avec recherche sur le Net pour approfondir les sujets abord&#233;s. Entre autres th&#232;mes: &quot;X-Files? Existe-t-il des vrais secrets de gouvernement?&quot; &lt;/p&gt; &lt;p&gt; Le 21 mars, de 17 h &#224; 20 h. &lt;/p&gt; &lt;p&gt; 11, avenue de la R&#233;sistance. &lt;/p&gt; &lt;p&gt; Rens.: 01.48.57.37.52. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.entrasite.fr&quot;&gt; www.entrasite.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Neuilly-sur-Seine &lt;/p&gt; &lt;p&gt; Midi-minuit,un rendez-vous sur le Net &lt;/p&gt; &lt;p&gt; Le centre d&#233;partemental de documentation p&#233;dagogique ouvre ses portes pour permettre au public de consulter et de s&#39;initier aux subtilit&#233;s de l&#39;Internet. Des employ&#233;s du CDDP sont pr&#233;sents pour r&#233;pondre &#224; toutes les questions sur le r&#233;seau mondial: co&#251;t, mat&#233;riel, sites et utilisations p&#233;dagogiques. &lt;/p&gt; &lt;p&gt; Le 20 mars, de 12 h &#224; minuit. &lt;/p&gt; &lt;p&gt; 41, avenue du Roule. &lt;/p&gt; &lt;p&gt; Rens.: 01.47.45.92.00. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.ac-versailles.fr&quot;&gt; www.ac-versailles.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Ozoir-la-Ferri&#232;re &lt;/p&gt; &lt;p&gt; Salon du multim&#233;dia &lt;/p&gt; &lt;p&gt; &quot;Tout Ozoir sur Internet&quot; propose de naviguer, de dialoguer, de cr&#233;er des pages web, de s&#39;initier &#224; la bureautique (Excel, Word, Access, Ciel...), de composer de la musique (PC, Atari), de faire de la PAO (XPress, Page Maker), des jeux, et de d&#233;couvrir le site web d&#39;Ozoir. &lt;/p&gt; &lt;p&gt; Le 21 mars, de 10 h &#224; 18 h. &lt;/p&gt; &lt;p&gt; Lyc&#233;e Lino-Ventura, avenue Marcel-Pagnol. Rens.: 01.64.43.35.91. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mygale.org/03/ozoir/&quot;&gt; www.mygale.org/03/ozoir/&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Pantin &lt;/p&gt; &lt;p&gt; Pantin fait la f&#234;te au Net &lt;/p&gt; &lt;p&gt; La mairie de Pantin, La Cit&#233; des sciences et de l&#39;industrie de la Villette et l&#39;association &quot;R&#233;seau A Pantin&quot; initient &#224; l&#39;Internet: e-mail, Usenet, cr&#233;ation de pages web, incitation &#224; la cr&#233;ation de liens citoyens... &lt;/p&gt; &lt;p&gt; Les 20 et 21 mars, de 11 h &#224; 20 h. &lt;/p&gt; &lt;p&gt; Association de quartier Le Rouvray, 8, rue Sandicci. &lt;/p&gt; &lt;p&gt; Rens.: 01.48.91.64.49. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.mygale.org/10/antomoro/fete/fete.html&quot;&gt; www.mygale.org/10/antomoro/fete/fete.html&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Villiers-le-Bel &lt;/p&gt; &lt;p&gt; Internet: jeu d&#39;enfant et chance pour l&#39;entreprise &lt;/p&gt; &lt;p&gt; Matin&#233;e &quot;portes ouvertes&quot; dans l&#39;&#233;tablissement de l&#39;ORT (&#233;ducation et formation): de jeunes &#233;l&#232;ves vont montrer aux entreprises que l&#39;Internet est un jeu d&#39;enfant. &lt;/p&gt; &lt;p&gt; Le 20 mars. &lt;/p&gt; &lt;p&gt; ORT, 32, avenue de Choiseul. &lt;/p&gt; &lt;p&gt; Rens.: 06.81.33.50.20. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.ort.asso.fr&quot;&gt; www.ort.asso.fr&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 1998 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;19980320&amp;#183;LI&amp;#183;111896&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b719980320%c2%b7LI%c2%b7111896" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b719980320%c2%b7LI%c2%b7111896">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+MULTIMEDIA,         vendredi 20 mars 1998 1719 mots, p. VII-VIII</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Fête de l'Internet. Le guide. En gare de Châteauroux, sur le port de Marseille, dans le ciel de Vincennes, à la mairie: les lieux de la Fête sont multiples. "Libération" a sélectionné pour vous plus d'une centaine de manifestations. Des sérieuses, des locales, des ludiques... Suivez le guide. Ile-de-France.            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>ILE-DE-FRANCE </p> <p> Paris Ier </p> <p> L'image et le cinéma sur l'Internet </p> <p> L'espace multimédia Cyberport présente l'actualité du cinéma français sur l'Internet et propose des ateliers sur le thème de l'image et l'Internet.</p>
+
+
+<p>Les 20 et 21 mars, de 16 h à 19 h. </p> <p> Vidéothèque de Paris, Forum des Halles. </p> <p> Rens.: 01.44.76.63.99. </p> <p><a target="_blank" href="https://www.vdp.fr"> www.vdp.fr</a> </p> <p> Théolib </p> <p> Présentation d'un site de réflexion théologico-philosophique animé par des pasteurs et d'autres membres actifs de l'Eglise réformée de France. </p> <p> Les 20 et 21 mars, de 16 h à 19 h. </p> <p> 4, rue de l'Oratoire. </p> <p> Rens.: 01.42.60.22.98. </p> <p> perso.club-internet.fr/theolib/ </p> <p> Paris IIe </p> <p> Mondomix </p> <p> Le site, lancé à l'occasion de la fête, a pour but de fédérer tous ceux qui s'intéressent au métissage des cultures, à la world music. Mondomix réunit pour l'heure 80 musiciens, 14 labels, des associations, et quelques radios. </p> <p> A partir du 21 mars, de 15 h à 23 h. </p> <p> 15, rue Saint-Fiacre. </p> <p> Rens.: 01.42.59.29.95. </p> <p><a target="_blank" href="https://www.mondomix.org"> www.mondomix.org</a> </p> <p> Paris IIIe </p> <p> Gambit d'Eurynome-chaos dans l'action </p> <p> Une dizaine de villes (Paris, Cologne, Cambridge, Istanbul, Belgrade, Skopje, etc.) participent à ce projet qui vise à établir une relation nouvelle entre l'art plastique et les technologies multimédias. Performances, comportement des artistes vis-à-vis d'oeuvres de conceptions différentes, psychologie, réalité culturelle... Ambitieux. </p> <p> Le 21 mars, de 14 h 30 à 19 h. </p> <p> 32, rue de Picardie. </p> <p> Rens.: 01.48.58.47.82. </p> <p><a target="_blank" href="https://www.aagif.fr/artw3/eurynome/"> www.aagif.fr/artw3/eurynome/</a> </p> <p> Créations contemporaines et débats </p> <p> Le Web Bar organise des ateliers autour d'oeuvres de créateurs contemporains on line et un débat sur le thème "Internet, espace du savoir?". En soirée, un cyberopéra en visiophonie et des démonstrations musicales sur le réseau sont au programme. </p> <p> Web Bar, 32, rue de Picardie. </p> <p> Les 20 et 21 mars, de 11 h 30 à 2 h. </p> <p> Rens.: 01.42.72.66.55. </p> <p><a target="_blank" href="https://www.webbar.fr"> www.webbar.fr</a> </p> <p> Paris IVe </p> <p> Sous le tipi de Beaubourg </p> <p> Sur la piazza du Centre Georges-Pompidou, une grande tente. Sous la tente, conférences-projections et séances de consultation avec animateurs-initiateurs. </p> <p> Le 20 mars, de 10 h à 18 h, et le 21 mars, de 14 h à 21 h. </p> <p> Centre Pompidou. </p> <p> Rens.: 01.44.78.42.42. </p> <p><a target="_blank" href="https://www.cnac-gp.fr"> www.cnac-gp.fr</a> </p> <p> Est-ce ta fête? </p> <p> Concours de rimes et de jeux de mots en "net" (ou nette) pour tous. Les textes seront mis en page sur le site en attendant que les internautes votent pour l'élection du meilleur poème, le 21. Le gagnant bénéficiera d'une page web spéciale sur le site de LocoMediaDub pendant un an. </p> <p> Les 20 et 21 mars. </p> <p> 4, rue Aubry-le-Boucher. </p> <p> Rens.: 01.44.61.81.01. </p> <p><a target="_blank" href="https://www.LocoMediaDub.com"> www.LocoMediaDub.com</a> </p> <p> Paris Ve </p> <p> Journée sur les <mark>logiciels</mark> <mark>libres</mark> </p> <p> L'Inria (Institut national de recherche en informatique et en automatique) organise une journée débat, parrainée par le ministère de l'Education nationale, sur le thème "<mark>logiciels</mark> <mark>libres</mark>: enjeux économiques". </p> <p> Le 20 mars, de 10 h à 18 h. </p> <p> Maison de la Mutualité, 24, rue Saint-Victor. </p> <p> Rens.: 01.39.63.57.29. </p> <p><a target="_blank" href="https://www.inria.fr"> www.inria.fr</a> </p> <p> A quoi sert l'Internet dans une bibliothèque universitaire? </p> <p> La bibliothèque de l'université Paris-III organise des visites guidées des locaux sur le thème "A quoi sert l'Internet dans la BU?", ainsi que des séances d'initiation au Web dans une salle équipée de 5 micro-ordinateurs. </p> <p> Le 20 mars, de 10 h à 17 h. </p> <p> BU de Paris-III, 13, rue de Santeuil. </p> <p> Rens.: 01.45.87.48.33. </p> <p> bucensier.univ-paris3.fr </p> <p> Paris VIe </p> <p> Internet dans tous ses états </p> <p> Vendredi, de 10 h à 12 h, conférence débat: "Internet et les associations. Quel intérêt pour le réseau associatif?" Après-midi: initiation, découvertes, démonstrations (webcam, musique, colloque en ligne, visioconférence), débat sur "L'évolution future du Net". De 19 h 30 à 2 h: nuit du Web (rencontre d'équipes de joueurs). Samedi (pour les enseignants): conférence "Internet à l'école" et découvertes-initiations. Réservations obligatoires. </p> <p> Les 20 et 21 mars. </p> <p> Centre d'animation Saint-Michel, 9, place Saint-Michel. </p> <p> Rens.: 01.46.34.15.37. </p> <p> perso.club-internet.fr/casm/ </p> <p> Les aveugles au cybercafé </p> <p> L'entreprise Handialog, leader français de la conception de solutions informatiques pour les non-voyants, s'installe au Cybercafé Orbital pour une série de démonstrations de techniques permettant aux aveugles d'accéder au réseau des réseaux. </p> <p> Le 20 mars, de 10 h à 18 h. </p> <p> Cybercafé Orbital,13, rue de Médicis. </p> <p> Rens.: 01.44.70.32.00. </p> <p><a target="_blank" href="https://www.handialog.com"> www.handialog.com</a> </p> <p> Paris VIIe </p> <p> Demain les cyber-fonctionnaires </p> <p> Journées portes ouvertes aux fonctionnaires organisées par le Commissariat général au Plan: visioconférences, démonstrations de contenus et de téléprocédures. Vingt postes de consultation et de démonstration. </p> <p> Le 20 mars, de 10 h à 19 h. </p> <p> Commissariat général au Plan, 18, rue de Martignac. </p> <p> Rens.: 01.45.56.53.43. </p> <p><a target="_blank" href="https://www-plan-gouv-fr.acces.bibl.ulaval.ca"> www.plan.gouv.fr</a> </p> <p> Ateliers à l'Assemblée nationale </p> <p> L'Assemblée nationale invite le public à découvrir l'Internet de 10 h à 17 h 30 dans les salles du Palais-Bourbon. Une heure d'ateliers par groupe de vingt personnes maximum. </p> <p> Les 20 et 21 mars. </p> <p> Assemblée nationale, 33, quai d'Orsay. </p> <p><a target="_blank" href="https://www.assemblee-nat.fr"> www.assemblee-nat.fr</a> </p> <p> Nouvelles écritures, nouvelle culture </p> <p> Présentation des sites de l'Internet culturel et "d'Ulysse, chercheur de connaissances", moteur de recherche culturel et scientifique, par Blaise Rosnay, webmestre du Club des Poètes (lire page XII). Dîner débat sur le thème "La langue française est-elle soluble dans l'Internet?". </p> <p> Le 20 mars, de 17 h à minuit. </p> <p> Club des Poètes, 30, rue de Bourgogne. </p> <p> Rens.: 01.47.05.06.03. </p> <p><a target="_blank" href="https://www.melusine-transgraphe.asso.fr"> www.melusine-transgraphe.asso.fr</a> </p> <p> Internet c'est @ vous </p> <p> Le temps de trois jours, France Télécom propose une exposition consacrée à l'Internet. La visite commence avec une navigation commentée par une "cyberanimatrice", "une femme à la tête en forme d'écran". Probablement effrayés, les visiteurs pourront se replier sur une exploration individuelle (50 ordinateurs en libre-service), et sur quatre "mini-espaces thématiques" consacrés aux groupes de discussions, à l'éducation et aux jeux en ligne, au commerce électronique, et aux moyens pour se connecter. </p> <p> Du 20 au 22 mars, de 10 h à 19 h. </p> <p> Espace Eiffel-Branly, 29-55, quai Branly. </p> <p><a target="_blank" href="https://www.francetelecom.fr/vfrance/actualite/actu5.htm"> www.francetelecom.fr/vfrance/actualite/actu5.htm</a> </p> <p> Cybercafé ministériel </p> <p> Un cybercafé est ouvert au secrétariat à l'Industrie. Vingt micro-ordinateurs seront mis à la disposition des visiteurs, qui pourront librement naviguer sur l'Internet. Des animateurs seront présents pour les guider. </p> <p> Le 20 mars, de 8 h à 20 h. </p> <p> Secrétariat d'Etat à l'Industrie, 20, avenue de Ségur. </p> <p> Rens: 01.43.19.36.36. </p> <p><a target="_blank" href="https://www-industrie-gouv-fr.acces.bibl.ulaval.ca"> www.industrie.gouv.fr</a> </p> <p> L'Internet et l'emploi </p> <p> Pour mieux connaître la recherche d'emploi via l'Internet, les emplois et entreprises générés par les nouvelles technologies, démonstrations pour des demandeurs d'emploi. </p> <p> Les 20 et 21 mars. </p> <p> Maison Inter, 105, rue Saint-Dominique. </p> <p> Rens.: 01.69.85.12.66. </p> <p><a target="_blank" href="https://www.supelec.fr"> www.supelec.fr</a> </p> <p> Paris XIe </p> <p> Manifestation digitale </p> <p> Une exposition en ligne, présentée conjointement au Japon, pays où l'ordinateur sert de support artistique. Les objets exposés sont soit des outils de création pour les pages web soit des oeuvres d'art numériques. </p> <p> Inscription jusqu'au 21 mars, expo du 1er au 30 avril. </p> <p> 19, rue Trousseau. </p> <p> Rens.: 01.47.45.17.82. </p> <p><a target="_blank" href="https://www.mygale.org/02/japofra/"> www.mygale.org/02/japofra/</a> </p> <p> Grande fête cyber </p> <p> Le cyberespace investit la rue Saint-Sabin, avec une fête spéciale architecture cyber: présentation de leurs sites par les architectes Ammar Eloueini, Adrien Sina, Fiona Meadows, Jacques Rougerie, etc. Forums en ligne et jury virtuel pour une remise des prix des meilleurs sites d'archi, avec en guest-star Paul Virilio lui-même, cyberkawa et grande fête cyber avec Cybergaïa compléteront la chose. </p> <p> Le 21 mars, de 15 h à 22 h. </p> <p> Ateliers ENSCI, 48, rue Saint-Sabin. </p> <p> Rens.: 01.42.60.40.96. </p> <p><a target="_blank" href="https://www.kubos.org"> www.kubos.org</a> </p> <p> Arbres du warf </p> <p> Un projet européen pour l'insertion des jeunes. Présentation des célèbres arbres de connaissances et de savoirs, qu'ici l'on veut faire "pousser" pour aider à l'acquisition des compétences. </p> <p> Les 20 et 21 mars, de 10 h 30 à 18 h. </p> <p> 27, rue du Moulin-Joly. </p> <p> Rens.: 01.43.55.55.50. </p> <p> golem.easynet.fr/warf/ </p> <p> Global Gallery au Moulin-Joly </p> <p> Formation pour les scolaires, activités sur le Net via une webcam, démonstrations pour adultes, performances artistiques retransmises sur le Net, consultations libres, mise en place d'une cybergallery pour des artistes de l'Est parisien (Bastille, Belleville) et vernissage. </p> <p> Les 20 et 21 mars, </p> <p> de 9 h à minuit. </p> <p> Global Gallery, 32, rue du Moulin-Joly. </p> <p> Rens.: 01.47.00.23.09. </p> <p><a target="_blank" href="https://www.globalgallery.easynet.fr"> www.globalgallery.easynet.fr</a> </p> <p> Paris XIIe </p> <p> Fête à Bercy </p> <p> Bercy propose des conférences d'une heure sur des thèmes associant économie sociale et Internet (la protection du consommateur sur le réseau), des ateliers de présentation de sites ministériels et des démonstrations sur l'utilisation par Bercy des nouvelles technologies (intranet et "visioguichet"). </p> <p> Les 20 et 21 mars, de 10 h à 17 h. </p> <p> Ministère de l'Economie, des Finances et de l'Industrie, </p> <p> centre de conférences, 1, bd de Bercy. </p> <p> BD sur Internet </p> <p> Lancement d'une BD interactive sur le Net, dont l'achèvement est prévu pour la seconde Fête de l'Internet. Toutes les écoles peuvent participer et se mettre en relation avec d'autres pays. Des collèges aux Etats-Unis et au Canada ont déjà donné leur accord, on attend les réponses de la Côte-d'Ivoire et de l'Afrique du Sud. </p> <p> Du 20 mars 1998, de 10 h à minuit au 1er février 1999. </p> <p> 60 bis, rue de Picpus. </p> <p> Rens.: 01.43.47.53.40. </p> <p> member.aol.com/piccyber/accueil.html </p> <p> Feu d'artifice "explosive Web" </p> <p> Une découverte du monde cyber qui propose le feu d'artifice des artificiers associés et du cybercafé cyber@picpus. </p> <p> Le 20 mars, à partir de 21 h. </p> <p> Lac Daumesnil. </p> <p> Rens.: 01.40.27.84.52. </p> <p><a target="_blank" href="https://www.pyrotechnie.com"> www.pyrotechnie.com</a> </p> <p> Paris XIVe </p> <p> Internet près de chez vous </p> <p> Deux journées de découvertes organisées par l'association Résolutions, réseaux humains et électroniques: débats, questions-réponses, pratique du Net, projections de documentaires. </p> <p> Le 20 mars de 18 h à 22 h et le 21 mars de 10 h à 18 h. </p> <p> Résolument vôtre, 15, avenue Jean-Moulin. </p> <p> Rens.: 01.43.29.16.49. </p> <p> Paris XVe </p> <p> Rencontres et échanges autour de la création artistique contemporaine </p> <p> Pendant trois jours, www_art est un lieu de rencontres et d'échanges qui propose une visite guidée et gratuite de sites Internet liés à la création artistique contemporaine. Des animateurs aident les visiteurs à utiliser les ordinateurs. Des tables rondes avec des personnalités du monde de l'art (artistes, journalistes, galeristes) abordent les thèmes de l'innovation artistique sur le Web. </p> <p> Les 20, 21 et 22 mars, de 13 h à 21 h. </p> <p> 105, rue Mademoiselle. </p> <p> Rens.: 01.43.11.22.33. </p> <p><a target="_blank" href="https://www.metafort.com/www_art/"> www.metafort.com/www_art/</a> </p> <p> Patchwork virtuel </p> <p> Libre accès aux ordinateurs hébergés par le fournisseur associatif GlobeNet et création d'un patchwork virtuel composé d'images scannées et de textes. </p> <p> Les 20 et 21 mars. </p> <p> GlobeNet, 21, bd de Grenelle. </p> <p> Rens.: 01.45.75.80.90. </p> <p><a target="_blank" href="https://www.globenet.org"> www.globenet.org</a> </p> <p> Producteurs-techniciens-artistes, rencontrez-vous! </p> <p> Les professionnels de l'audiovisuel, du cinéma, de la TV et du spectacle, dont le but est de mettre rapidement en relation producteurs et intermittents lancent leur site et proposent pour la fête la mise en ligne gratuite de leurs références et contacts. </p> <p> A partir du 20 mars. </p> <p> 14, rue du Docteur-Roux. </p> <p> Rens.: 01.44.49.61.37. </p> <p><a target="_blank" href="https://www.systole.com/scene/"> www.systole.com/scene/</a> </p> <p> Paris XIXe </p> <p> Initiation pour </p> <p> les jeunes auteurs et créateurs </p> <p> Le Sesam, qui collecte les droits d'auteur multimédia, propose une journée de "surf sur Internet" afin de faire découvrir le réseau aux auteurs compositeurs et créateurs. </p> <p> Le 21 mars, de 10 h à 18 h. </p> <p> La Villette, 16, place de la Fontaine-aux-Lions. </p> <p> Rens.: 01.47.15.49.06. </p> <p><a target="_blank" href="https://www.sesam.org"> www.sesam.org</a> </p> <p> Cité des sciences </p> <p> La Cité des sciences, quoi de plus normal, propose son lot d'animations techno. Et des débats sur le pourquoi du comment. </p> <p> Du 20 au 22 mars, de 10 h à 18 h. </p> <p> Cité des sciences, 30, avenue Corentin-Cariou. </p> <p> Rens.: 01.40.05.81.67. </p> <p><a target="_blank" href="https://www.cite-sciences.fr"> www.cite-sciences.fr</a> </p> <p> Belle (Cyber) Ville </p> <p> Animation autour du site du quartier de Belleville construit par les associations du quartier. </p> <p> Le 21 mars, de 10 h à 18 h. </p> <p> Centre social Belleville, 17, rue Jules-Romains. </p> <p> Rens.: 01.40.03.08.82. </p> <p> wwwperso.hol.fr/~csbelle </p> <p> Paris XXe </p> <p> L'Internet à l'école: sites ouverts </p> <p> Les parents sont invités à découvrir sur le site de l'école les travaux de leurs enfants. </p> <p> Le 21 mars à 9 h 30. </p> <p> Ecole primaire, 291, rue des Pyrénées. </p> <p> Rens.: 01.46.36.16.82. </p> <p><a target="_blank" href="https://www.mygale.org/05"> www.mygale.org/05</a> </p> <p> /py291/ </p> <p> Le Web Art </p> <p> ArtMag offre aux artistes du monde entier utilisant l'Internet une plate-forme pour héberger leurs oeuvres. </p> <p> Du 20 au 22 mars. </p> <p> ArtMag, 114, rue des Pyrénées. </p> <p> Rens.: 01.43.56.31.22. </p> <p><a target="_blank" href="https://www.artmag.com"> www.artmag.com</a> </p> <p> Boulogne-Billancourt </p> <p> Insertion sociale et Internet </p> <p> Découverte des moyens disponibles sur l'Internet pour la recherche d'emploi et l'insertion professionnelle. </p> <p> Les 20 et 21 mars. </p> <p> Espace Cyber Jeunes, 26, avenue André-Morizet. </p> <p> Rens.: 01.55.18.48.79. </p> <p><a target="_blank" href="https://www.cyberjeunesbb.org"> www.cyberjeunesbb.org</a> </p> <p> Colombes </p> <p> Le mulot à l'école </p> <p> Manifestation organisée par l'association La Petite Garenne de Colombes et le lycée professionnel des métiers de l'imprimerie et des arts graphiques: concours de création graphique de sites web, ateliers découverte de l'Internet pour les enfants, démonstrations pour tous. </p> <p> Les 20 et 21 mars. </p> <p> Lycée Claude-Garamont, 69, rue de l'Industrie. </p> <p> Rens.: 01.47.80.06.67. </p> <p><a href="mailto:Gcharra@Atelier.fr"> Gcharra@Atelier.fr</a> </p> <p> Elancourt </p> <p> Découvrir la calligraphie arabe </p> <p> Durant deux jours, l'association des travailleurs marocains en France propose une découverte de la calligraphie arabe: au programme, visites de sites web et participation du calligraphe Hassan Massoudy. </p> <p> Les 21 et 22 mars, de 10 h à 18 h. </p> <p> Maison des enfants. </p> <p> Rens.: 01.47.56.21.27. </p> <p><a target="_blank" href="https://www.savimedia.fr/massoudy/home.htm"> www.savimedia.fr/massoudy/home.htm</a> </p> <p> Evry </p> <p> Initiation </p> <p> Opération portes ouvertes à l'Institut national des télécommunications. Des salles informatiques en libre accès (mais contrôlées), des initiations avec des professeurs expérimentés, des exercices... </p> <p> Les 20 et 21 mars, de 10 h à 17 h. </p> <p> 9, rue Charles-Fourier. </p> <p> Rens.: 01.60.76.43.17. </p> <p><a target="_blank" href="https://www.int-evry.fr/fete-internet/"> www.int-evry.fr/fete-internet/</a> </p> <p> Issy-les-Moulineaux </p> <p> Nuit du Web et de la francophonie </p> <p> Jeu de piste virtuel: les jeunes de 14 à 30 ans participent par équipes de deux, répondent à des questions de sport, de culture et d'économie sur des sites web francophones. </p> <p> Le 20 mars, de 14 h à 2 h. </p> <p> Médiathèque, 33, rue du Gouverneur-Général Eboué. </p> <p> Rens.: 01.40.95.66.09. </p> <p><a target="_blank" href="https://www.issy.com/fete/"> www.issy.com/fete/</a> </p> <p> Marly-le-Roi </p> <p> Cyberlieux marlychois </p> <p> Les Marlychois vont découvrir les utilisations multiples des nouvelles technologies dans des cyberlieux ouverts pour l'occasion, avec initiations pour parents et élèves, et visioconférence à l'école Jean-Rostand. </p> <p> Le 20 mars, de 17 h à 20 h. </p> <p> 3, chemin des Glaises. </p> <p> Rens.: 01.30.61.60.29. </p> <p><a target="_blank" href="https://www.mairie-marlyleroi.fr"> www.mairie-marlyleroi.fr</a> </p> <p> Montreuil-sous-Bois </p> <p> Débat de philosophie-Internet </p> <p> Le cybercafé Entrasite organise un débat de philosophie avec recherche sur le Net pour approfondir les sujets abordés. Entre autres thèmes: "X-Files? Existe-t-il des vrais secrets de gouvernement?" </p> <p> Le 21 mars, de 17 h à 20 h. </p> <p> 11, avenue de la Résistance. </p> <p> Rens.: 01.48.57.37.52. </p> <p><a target="_blank" href="https://www.entrasite.fr"> www.entrasite.fr</a> </p> <p> Neuilly-sur-Seine </p> <p> Midi-minuit,un rendez-vous sur le Net </p> <p> Le centre départemental de documentation pédagogique ouvre ses portes pour permettre au public de consulter et de s'initier aux subtilités de l'Internet. Des employés du CDDP sont présents pour répondre à toutes les questions sur le réseau mondial: coût, matériel, sites et utilisations pédagogiques. </p> <p> Le 20 mars, de 12 h à minuit. </p> <p> 41, avenue du Roule. </p> <p> Rens.: 01.47.45.92.00. </p> <p><a target="_blank" href="https://www.ac-versailles.fr"> www.ac-versailles.fr</a> </p> <p> Ozoir-la-Ferrière </p> <p> Salon du multimédia </p> <p> "Tout Ozoir sur Internet" propose de naviguer, de dialoguer, de créer des pages web, de s'initier à la bureautique (Excel, Word, Access, Ciel...), de composer de la musique (PC, Atari), de faire de la PAO (XPress, Page Maker), des jeux, et de découvrir le site web d'Ozoir. </p> <p> Le 21 mars, de 10 h à 18 h. </p> <p> Lycée Lino-Ventura, avenue Marcel-Pagnol. Rens.: 01.64.43.35.91. </p> <p><a target="_blank" href="https://www.mygale.org/03/ozoir/"> www.mygale.org/03/ozoir/</a> </p> <p> Pantin </p> <p> Pantin fait la fête au Net </p> <p> La mairie de Pantin, La Cité des sciences et de l'industrie de la Villette et l'association "Réseau A Pantin" initient à l'Internet: e-mail, Usenet, création de pages web, incitation à la création de liens citoyens... </p> <p> Les 20 et 21 mars, de 11 h à 20 h. </p> <p> Association de quartier Le Rouvray, 8, rue Sandicci. </p> <p> Rens.: 01.48.91.64.49. </p> <p><a target="_blank" href="https://www.mygale.org/10/antomoro/fete/fete.html"> www.mygale.org/10/antomoro/fete/fete.html</a> </p> <p> Villiers-le-Bel </p> <p> Internet: jeu d'enfant et chance pour l'entreprise </p> <p> Matinée "portes ouvertes" dans l'établissement de l'ORT (éducation et formation): de jeunes élèves vont montrer aux entreprises que l'Internet est un jeu d'enfant. </p> <p> Le 20 mars. </p> <p> ORT, 32, avenue de Choiseul. </p> <p> Rens.: 06.81.33.50.20. </p> <p><a target="_blank" href="https://www.ort.asso.fr"> www.ort.asso.fr</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 1998 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·19980320·LI·111896</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·19980320·LI·111896";
+    var _docIndex = 693;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·19980320·LI·111896';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B719980320%C2%B7LI%C2%B7111896&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B719980320%C2%B7LI%C2%B7111896&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B719980320%C2%B7LI%C2%B7111896&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B719980320%C2%B7LI%C2%B7111896&docIndex=693&FullScreen=1";
+                
+	var _keyDoc = 'news·19980320·LI·111896';
+</script>
+</div></body></html>

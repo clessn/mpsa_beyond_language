@@ -1,0 +1,439 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+France,         mercredi 12 novembre 2003 307 mots, p. 7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;LE FORUM SOCIAL EUROP&#201;EN Sur les sites du FSE, volontaires en qu&#234;te d&#39;une &#171; r&#233;flexion alternative &#187;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Des mots contre la mondialisation            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Dans la mouvance altermondialiste, les jeunes activistes ont invent&#233; &lt;/p&gt; &lt;p&gt; un vocabulaire, des pratiques, des r&#233;f&#233;rences. Petit glossaire avec l&#39;aide de Gu&#233;rilla Kit, ouvrage &#233;crit sous &lt;/p&gt; &lt;p&gt; le pseudonyme collectif &lt;/p&gt; &lt;p&gt; de Morjane Baba,&lt;/p&gt;
+
+
+&lt;p&gt;qui vient de para&#238;tre aux &#233;ditions La D&#233;couverte. &lt;/p&gt; &lt;p&gt; Bloc : &lt;/p&gt; &lt;p&gt; dans une manifestation ou une action, rassemblement &lt;/p&gt; &lt;p&gt; de plusieurs groupes d&#39;affinit&#233; qui partagent la m&#234;me couleur politique, les m&#234;mes tactiques &lt;/p&gt; &lt;p&gt; ou les m&#234;mes costumes. &lt;/p&gt; &lt;p&gt; Au gr&#233; des manifestations altermondialistes, les blocs &lt;/p&gt; &lt;p&gt; ont pu &#234;tre pink (rose), pink &lt;/p&gt; &lt;p&gt; and silver (rose argent&#233;), &lt;/p&gt; &lt;p&gt; clown (avec des nez rouges) &lt;/p&gt; &lt;p&gt; ou black (noir). &lt;/p&gt; &lt;p&gt; Cuisine autog&#233;r&#233;e : &lt;/p&gt; &lt;p&gt; activit&#233; d&#233;sormais au coeur &lt;/p&gt; &lt;p&gt; des &#171; nouvelles pratiques &#187; &lt;/p&gt; &lt;p&gt; de la mouvance altermondialiste. Les villages intergalactiques, &lt;/p&gt; &lt;p&gt; et surtout anarchistes, &lt;/p&gt; &lt;p&gt; ont popularis&#233; &lt;/p&gt; &lt;p&gt; le concept &#224; Annemasse, &lt;/p&gt; &lt;p&gt; lors du rassemblement &lt;/p&gt; &lt;p&gt; contre le G8 d&#39;Evian &lt;/p&gt; &lt;p&gt; en juin 2003. &lt;/p&gt; &lt;p&gt; Ewoks : &lt;/p&gt; &lt;p&gt; nom des petits personnages &#224; fourrure du film &lt;/p&gt; &lt;p&gt; de George Lucas Le Retour du Jedi (dernier &#233;pisode de la saga &lt;/p&gt; &lt;p&gt; de La Guerre des &#233;toiles) &lt;/p&gt; &lt;p&gt; que s&#39;&#233;taient donn&#233; &lt;/p&gt; &lt;p&gt; les contestataires lors &lt;/p&gt; &lt;p&gt; de la r&#233;union du G7 &lt;/p&gt; &lt;p&gt; &#224; Kananaskis, au Canada, &lt;/p&gt; &lt;p&gt; dans les montagnes rocheuses. Les Ewoks pratiquaient &lt;/p&gt; &lt;p&gt; la gu&#233;rilla foresti&#232;re contre &lt;/p&gt; &lt;p&gt; les Stormtroopers, les troupes &lt;/p&gt; &lt;p&gt; de l&#39;Empire, dans la for&#234;t d&#39;Endor. &lt;/p&gt; &lt;p&gt; GNU Linux : &lt;/p&gt; &lt;p&gt; syst&#232;me d&#39;exploitation informatique &lt;/p&gt; &lt;p&gt; tr&#232;s utilis&#233; par les activistes &lt;/p&gt; &lt;p&gt; pour contester &lt;/p&gt; &lt;p&gt; le quasi-monopole de Microsoft, avec son syst&#232;me Windows. &lt;/p&gt; &lt;p&gt; Hacktivism : &lt;/p&gt; &lt;p&gt; &#171; Usage non conventionnel de l&#39;ordinateur &lt;/p&gt; &lt;p&gt; qui vise &#224; am&#233;liorer son utilit&#233; sociale, politique et culturelle &lt;/p&gt; &lt;p&gt; pour le monde. &#187; Contraction &lt;/p&gt; &lt;p&gt; de hacking et d&#39; activism. &lt;/p&gt; &lt;p&gt; Qualifie par exemple &lt;/p&gt; &lt;p&gt; le passionn&#233; d&#39;informatique &lt;/p&gt; &lt;p&gt; qui passe des nuits &lt;/p&gt; &lt;p&gt; &#224; &#233;crire des lignes de programme pour un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Intergalactique : &lt;/p&gt; &lt;p&gt; la r&#233;f&#233;rence &lt;/p&gt; &lt;p&gt; est emprunt&#233;e au mouvement zapatiste du sous-commandant Marcos. D&#39;apr&#232;s les textes, l&#39;intergalactique r&#233;unit &lt;/p&gt; &lt;p&gt; &#171; ceux qui r&#233;sistent dans &lt;/p&gt; &lt;p&gt; un r&#233;seau informel, horizontal &lt;/p&gt; &lt;p&gt; et sans hi&#233;rarchie &#187;. &lt;/p&gt; &lt;p&gt; Multitudes : &lt;/p&gt; &lt;p&gt; notion emprunt&#233;e cette fois au philosophe italien Toni Negri, tr&#232;s en vogue dans les milieux altermondialistes au-del&#224; des Alpes. Selon &lt;/p&gt; &lt;p&gt; les communiqu&#233;s, les multitudes peuvent &#234;tre &#171; en marche contre l&#39;Empire &#224; G&#234;nes en juillet 2001 &#187;, &lt;/p&gt; &lt;p&gt; ou plus modestement &lt;/p&gt; &lt;p&gt; &#171; contre McDo &#187;, lors &lt;/p&gt; &lt;p&gt; de rassemblements devant &lt;/p&gt; &lt;p&gt; tel ou tel restaurant &lt;/p&gt; &lt;p&gt; en gr&#232;ve. Cette notion donne &lt;/p&gt; &lt;p&gt; lieu &#224; un vif d&#233;bat th&#233;orique &lt;/p&gt; &lt;p&gt; entre penseurs marxistes. Consid&#233;r&#233; comme un concept postmoderne, le terme &#171; multitudes &#187; abandonne &lt;/p&gt; &lt;p&gt; en effet la centralit&#233; de la classe ouvri&#232;re et du travailleur. Un s&#233;minaire du FSE sera d&#39;ailleurs consacr&#233; au th&#232;me : &#171; Multitudes ou classe ouvri&#232;re ? &#187;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2003 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20031112&amp;#183;LM&amp;#183;0q1211_724191&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720031112%c2%b7LM%c2%b70q1211_724191" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720031112%c2%b7LM%c2%b70q1211_724191">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+France,         mercredi 12 novembre 2003 307 mots, p. 7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">LE FORUM SOCIAL EUROPÉEN Sur les sites du FSE, volontaires en quête d'une « réflexion alternative »</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Des mots contre la mondialisation            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Dans la mouvance altermondialiste, les jeunes activistes ont inventé </p> <p> un vocabulaire, des pratiques, des références. Petit glossaire avec l'aide de Guérilla Kit, ouvrage écrit sous </p> <p> le pseudonyme collectif </p> <p> de Morjane Baba,</p>
+
+
+<p>qui vient de paraître aux éditions La Découverte. </p> <p> Bloc : </p> <p> dans une manifestation ou une action, rassemblement </p> <p> de plusieurs groupes d'affinité qui partagent la même couleur politique, les mêmes tactiques </p> <p> ou les mêmes costumes. </p> <p> Au gré des manifestations altermondialistes, les blocs </p> <p> ont pu être pink (rose), pink </p> <p> and silver (rose argenté), </p> <p> clown (avec des nez rouges) </p> <p> ou black (noir). </p> <p> Cuisine autogérée : </p> <p> activité désormais au coeur </p> <p> des « nouvelles pratiques » </p> <p> de la mouvance altermondialiste. Les villages intergalactiques, </p> <p> et surtout anarchistes, </p> <p> ont popularisé </p> <p> le concept à Annemasse, </p> <p> lors du rassemblement </p> <p> contre le G8 d'Evian </p> <p> en juin 2003. </p> <p> Ewoks : </p> <p> nom des petits personnages à fourrure du film </p> <p> de George Lucas Le Retour du Jedi (dernier épisode de la saga </p> <p> de La Guerre des étoiles) </p> <p> que s'étaient donné </p> <p> les contestataires lors </p> <p> de la réunion du G7 </p> <p> à Kananaskis, au Canada, </p> <p> dans les montagnes rocheuses. Les Ewoks pratiquaient </p> <p> la guérilla forestière contre </p> <p> les Stormtroopers, les troupes </p> <p> de l'Empire, dans la forêt d'Endor. </p> <p> GNU Linux : </p> <p> système d'exploitation informatique </p> <p> très utilisé par les activistes </p> <p> pour contester </p> <p> le quasi-monopole de Microsoft, avec son système Windows. </p> <p> Hacktivism : </p> <p> « Usage non conventionnel de l'ordinateur </p> <p> qui vise à améliorer son utilité sociale, politique et culturelle </p> <p> pour le monde. » Contraction </p> <p> de hacking et d' activism. </p> <p> Qualifie par exemple </p> <p> le passionné d'informatique </p> <p> qui passe des nuits </p> <p> à écrire des lignes de programme pour un <mark>logiciel</mark> <mark>libre</mark>. </p> <p> Intergalactique : </p> <p> la référence </p> <p> est empruntée au mouvement zapatiste du sous-commandant Marcos. D'après les textes, l'intergalactique réunit </p> <p> « ceux qui résistent dans </p> <p> un réseau informel, horizontal </p> <p> et sans hiérarchie ». </p> <p> Multitudes : </p> <p> notion empruntée cette fois au philosophe italien Toni Negri, très en vogue dans les milieux altermondialistes au-delà des Alpes. Selon </p> <p> les communiqués, les multitudes peuvent être « en marche contre l'Empire à Gênes en juillet 2001 », </p> <p> ou plus modestement </p> <p> « contre McDo », lors </p> <p> de rassemblements devant </p> <p> tel ou tel restaurant </p> <p> en grève. Cette notion donne </p> <p> lieu à un vif débat théorique </p> <p> entre penseurs marxistes. Considéré comme un concept postmoderne, le terme « multitudes » abandonne </p> <p> en effet la centralité de la classe ouvrière et du travailleur. Un séminaire du FSE sera d'ailleurs consacré au thème : « Multitudes ou classe ouvrière ? ».</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2003 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20031112·LM·0q1211_724191</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20031112·LM·0q1211_724191";
+    var _docIndex = 253;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20031112·LM·0q1211_724191';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720031112%C2%B7LM%C2%B70q1211_724191&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720031112%C2%B7LM%C2%B70q1211_724191&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720031112%C2%B7LM%C2%B70q1211_724191&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720031112%C2%B7LM%C2%B70q1211_724191&docIndex=253&FullScreen=1";
+                
+	var _keyDoc = 'news·20031112·LM·0q1211_724191';
+</script>
+</div></body></html>

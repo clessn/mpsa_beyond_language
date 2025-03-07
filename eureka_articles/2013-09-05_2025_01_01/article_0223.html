@@ -1,0 +1,539 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Sp&#233;cial,         samedi 26 mars 2022 860 mots, p. SPB10&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+&#233;lection pr&#233;sidentielle 2022         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Le financement de l&#39;audiovisuel public en d&#233;bat Culture&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Num&#233;rique            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt;Nathalie Arthaud&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Pas de proposition. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Nicolas Dupont-Aignan&lt;/span&gt; &lt;/p&gt; &lt;p&gt; D&#233;velopper les capacit&#233;s&lt;/p&gt;
+
+
+&lt;p&gt;offensives de &#171; l&#39;arme cyber. &lt;/p&gt; &lt;p&gt; Cr&#233;er ou r&#233;cup&#233;rer des acteurs &lt;/p&gt; &lt;p&gt; et des outils num&#233;riques &lt;/p&gt; &lt;p&gt; souverains fran&#231;ais (h&#233;bergement, r&#233;seaux sociaux, streaming), &lt;/p&gt; &lt;p&gt; non censur&#233;s et rayonnants &lt;/p&gt; &lt;p&gt; dans la francophonie. &lt;/p&gt; &lt;p&gt; Lancer un &#171; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; &#187; francophone et construire un cloud fran&#231;ais &lt;/p&gt; &lt;p&gt; souverain. &lt;/p&gt; &lt;p&gt; Rendre obligatoire l&#39;h&#233;bergement des donn&#233;es issues d&#39;usagers &lt;/p&gt; &lt;p&gt; fran&#231;ais en France par des acteurs ind&#233;pendants ou &#233;tatiques, &lt;/p&gt; &lt;p&gt; avec un vrai droit &#224; l&#39;oubli. &lt;/p&gt; &lt;p&gt; Adopter une loi constitutionnelle interdisant la tra&#231;abilit&#233; num&#233;rique sans consentement libre. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Anne Hidalgo&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Cr&#233;er un minist&#232;re transversal &lt;/p&gt; &lt;p&gt; du num&#233;rique. &lt;/p&gt; &lt;p&gt; Etablir une charte de r&#233;duction &lt;/p&gt; &lt;p&gt; de l&#39;empreinte carbone pour les data centers. &lt;/p&gt; &lt;p&gt; B&#226;tir une architecture num&#233;rique pour garantir un h&#233;bergement de nos donn&#233;es sensibles sur le territoire de l&#39;&lt;span class=&quot;stubs&quot;&gt;Union europ&#233;enne&lt;/span&gt; (&lt;span class=&quot;stubs&quot;&gt;UE&lt;/span&gt;). &lt;/p&gt; &lt;p&gt; Cr&#233;er un ch&#232;que-&#233;quipement d&#39;une valeur de 500 euros pour l&#39;achat d&#39;appareils num&#233;riques &lt;/p&gt; &lt;p&gt; n&#233;cessaires &#224; l&#39;activit&#233; &#233;conomique. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Yannick Jadot&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Se r&#233;approprier au niveau europ&#233;en l&#39;ensemble du cycle de fabrication des technologies cloud. &lt;/p&gt; &lt;p&gt; Obliger les g&#233;ants am&#233;ricains &lt;/p&gt; &lt;p&gt; &#224; stocker les donn&#233;es des citoyens europ&#233;ens sur le territoire de l&#39;&lt;span class=&quot;stubs&quot;&gt;UE&lt;/span&gt;. &lt;/p&gt; &lt;p&gt; Adopter un &#171; Buy European Act &#187; donnant la priorit&#233; aux entreprises technologiques de l&#39;Union dans &lt;/p&gt; &lt;p&gt; les march&#233;s publics. &lt;/p&gt; &lt;p&gt; R&#233;guler les crypto-actifs, &lt;/p&gt; &lt;p&gt; pour pr&#233;server l&#39;environnement &lt;/p&gt; &lt;p&gt; et la stabilit&#233; financi&#232;re. &lt;/p&gt; &lt;p&gt; Imposer aux grandes &lt;/p&gt; &lt;p&gt; plates-formes de consacrer des moyens humains &#224; la mod&#233;ration. &lt;/p&gt; &lt;p&gt; Rendre obligatoire l&#39;affichage &lt;/p&gt; &lt;p&gt; sur les produits technologiques &lt;/p&gt; &lt;p&gt; de leur &#171; co&#251;t environnemental. &lt;/p&gt; &lt;p&gt; S&#39;opposer aux technologies &lt;/p&gt; &lt;p&gt; de surveillance biom&#233;trique. &lt;/p&gt; &lt;p&gt; Relancer le projet d&#39;une &#171; taxe &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; &#187; destin&#233;e &#224; augmenter &lt;/p&gt; &lt;p&gt; la contribution des grands groupes &lt;/p&gt; &lt;p&gt; Internet au financement de la &lt;/p&gt; &lt;p&gt; cr&#233;ation de contenus en ligne. &lt;/p&gt; &lt;p&gt; Jean Lassalle &lt;/p&gt; &lt;p&gt; Renforcer la cyberd&#233;fense, &lt;/p&gt; &lt;p&gt; en faire une &#171; quatri&#232;me arm&#233;e. &lt;/p&gt; &lt;p&gt; Cr&#233;er un capes &#171; num&#233;rique. &lt;/p&gt; &lt;p&gt; Garantir le libre acc&#232;s en ligne &lt;/p&gt; &lt;p&gt; des publications de chercheurs &lt;/p&gt; &lt;p&gt; r&#233;mun&#233;r&#233;s sur fonds publics. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Marine Le Pen&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Accorder la pr&#233;f&#233;rence &lt;/p&gt; &lt;p&gt; communautaire (Buy European Act) dans les appels d&#39;offres publics &lt;/p&gt; &lt;p&gt; num&#233;riques et la pr&#233;f&#233;rence nationale pour les projets strat&#233;giques ou sensibles. &lt;/p&gt; &lt;p&gt; Envisager d&#39;imposer aux filiales des g&#233;ants num&#233;riques am&#233;ricains ou chinois d&#39;ouvrir leur capital &lt;/p&gt; &lt;p&gt; &#224; des soci&#233;t&#233;s europ&#233;ennes &lt;/p&gt; &lt;p&gt; ou de rompre le lien hi&#233;rarchique &lt;/p&gt; &lt;p&gt; &#224; leur maison m&#232;re. &lt;/p&gt; &lt;p&gt; Cr&#233;er un r&#233;seau social public, &lt;/p&gt; &lt;p&gt; libre et gratuit. &lt;/p&gt; &lt;p&gt; Param&#233;trer par d&#233;faut sur les smartphones, tablettes... la limitation des contenus interdits aux mineurs et promouvoir l&#39;authentification par carte bancaire. &lt;/p&gt; &lt;p&gt; Mieux connecter l&#39;outre-mer, &lt;/p&gt; &lt;p&gt; les zones souterraines, les zones blanches et grises. &lt;/p&gt; &lt;p&gt; Investir dans le chiffrement &lt;/p&gt; &lt;p&gt; quantique. &lt;/p&gt; &lt;p&gt; D&#233;velopper des capacit&#233;s &lt;/p&gt; &lt;p&gt; cyberoffensives. &lt;/p&gt; &lt;p&gt; Utiliser les technologies &lt;/p&gt; &lt;p&gt; de reconnaissance biom&#233;triques aux fronti&#232;res. &lt;/p&gt; &lt;p&gt; Emmanuel Macron &lt;/p&gt; &lt;p&gt; Investir 30 milliards d&#39;euros dans les &#171; secteurs d&#39;avenir &#187; : cloud, semi-conducteurs, quantique, intelligence artificielle, mini-lanceurs spatiaux, biom&#233;dicament... &lt;/p&gt; &lt;p&gt; Cr&#233;er un &#171; m&#233;tavers europ&#233;en. &lt;/p&gt; &lt;p&gt; Activer le contr&#244;le parental par d&#233;faut des contenus sur les smartphones, tablettes et ordinateurs. &lt;/p&gt; &lt;p&gt; Poursuivre les efforts au niveau europ&#233;en sur la mod&#233;ration &lt;/p&gt; &lt;p&gt; des contenus et la lutte contre &lt;/p&gt; &lt;p&gt; le harc&#232;lement. &lt;/p&gt; &lt;p&gt; Faciliter l&#39;introduction en Bourse des start-up fran&#231;aises. &lt;/p&gt; &lt;p&gt; Simplifier la fiscalit&#233; pour &lt;/p&gt; &lt;p&gt; l&#39;investissement dans les start-up. &lt;/p&gt; &lt;p&gt; Former de 400 000 &#224; 500 000 &lt;/p&gt; &lt;p&gt; d&#233;veloppeurs suppl&#233;mentaires &lt;/p&gt; &lt;p&gt; sur cinq ans. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Jean-Luc M&#233;lenchon&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Garantir l&#39;h&#233;bergement &lt;/p&gt; &lt;p&gt; des donn&#233;es des services publics &lt;/p&gt; &lt;p&gt; et des entreprises essentielles &lt;/p&gt; &lt;p&gt; sur des serveurs en France. &lt;/p&gt; &lt;p&gt; Passer sous contr&#244;le public &lt;/p&gt; &lt;p&gt; les infrastructures du num&#233;rique &lt;/p&gt; &lt;p&gt; et des t&#233;l&#233;communications. &lt;/p&gt; &lt;p&gt; Cr&#233;er une agence publique &lt;/p&gt; &lt;p&gt; des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Instaurer une pr&#233;f&#233;rence &lt;/p&gt; &lt;p&gt; communautaire pour les appels d&#39;offres publics num&#233;riques &lt;/p&gt; &lt;p&gt; (Buy European Tech Act). &lt;/p&gt; &lt;p&gt; Refuser la censure priv&#233;e &lt;/p&gt; &lt;p&gt; sur les r&#233;seaux sociaux op&#233;r&#233;e &lt;/p&gt; &lt;p&gt; par les Gafam. &lt;/p&gt; &lt;p&gt; Cr&#233;er la mission nationale de &lt;/p&gt; &lt;p&gt; ma&#238;trise de l&#39;intelligence artificielle. &lt;/p&gt; &lt;p&gt; Cr&#233;er une fonderie fran&#231;aise &lt;/p&gt; &lt;p&gt; pour microprocesseurs. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Val&#233;rie P&#233;cresse&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Faire &#233;merger un &#171; cloud souverain &#187; pour les donn&#233;es strat&#233;giques (sant&#233;, nucl&#233;aire). &lt;/p&gt; &lt;p&gt; Instaurer une pr&#233;f&#233;rence fran&#231;aise et europ&#233;enne (Buy European Act) dans la commande publique &lt;/p&gt; &lt;p&gt; de logiciels et d&#39;h&#233;bergement. &lt;/p&gt; &lt;p&gt; Cr&#233;er un Haut Conseil de la souverainet&#233; &#233;conomique et num&#233;rique. &lt;/p&gt; &lt;p&gt; Simplifier le d&#233;p&#244;t de plainte &lt;/p&gt; &lt;p&gt; en ligne, notamment contre les harc&#232;lements en ligne. &lt;/p&gt; &lt;p&gt; Former un million de &#171; talents &lt;/p&gt; &lt;p&gt; num&#233;riques &#187; d&#39;ici &#224; 2030 : cr&#233;er une &#233;cole nationale du num&#233;rique, reconvertir 50 000 fonctionnaires... &lt;/p&gt; &lt;p&gt; Soutenir la r&#233;paration et le &lt;/p&gt; &lt;p&gt; reconditionnement des &#233;quipements informatiques. &lt;/p&gt; &lt;p&gt; Acc&#233;l&#233;rer le d&#233;ploiement &lt;/p&gt; &lt;p&gt; du tr&#232;s haut d&#233;bit en instaurant &lt;/p&gt; &lt;p&gt; un bonus financier pour les collectivit&#233;s qui ach&#232;veront le d&#233;ploiement avant fin 2024. &lt;/p&gt; &lt;p&gt; Adopter une loi &#171; protection &lt;/p&gt; &lt;p&gt; de l&#39;enfance face aux menaces &lt;/p&gt; &lt;p&gt; du num&#233;rique. &lt;/p&gt; &lt;p&gt; Ouvrir la r&#233;flexion sur la &lt;/p&gt; &lt;p&gt; &#171; fin de l&#39;anonymat &#187; en ligne. &lt;/p&gt; &lt;p&gt; Soutien au d&#233;veloppement de la &lt;/p&gt; &lt;p&gt; fili&#232;re blockchain et cryptomonnaies. &lt;/p&gt; &lt;p&gt; Philippe Poutou &lt;/p&gt; &lt;p&gt; Retirer le d&#233;cret sur l&#39;extension &lt;/p&gt; &lt;p&gt; du fichage et de la loi &#171; s&#233;curit&#233; &lt;/p&gt; &lt;p&gt; globale. &lt;/p&gt; &lt;p&gt; R&#233;quisitionner des grandes &lt;/p&gt; &lt;p&gt; entreprises de la communication. &lt;/p&gt; &lt;p&gt; D&#233;manteler l&#39;Arcom (fusion &lt;/p&gt; &lt;p&gt; entre la Hadopi et le CSA) et cr&#233;er un organisme d&#233;mocratique &lt;/p&gt; &lt;p&gt; associant journalistes, salari&#233;s &lt;/p&gt; &lt;p&gt; des m&#233;dias et usagers. &lt;/p&gt; &lt;p&gt; Fabien Roussel &lt;/p&gt; &lt;p&gt; Cr&#233;er un statut plus &lt;/p&gt; &lt;p&gt; protecteur pour les travailleurs &lt;/p&gt; &lt;p&gt; des plates-formes. &lt;/p&gt; &lt;p&gt; Adopter une loi contre &#171; la surveillance num&#233;rique de masse. &lt;/p&gt; &lt;p&gt; Renforcer le r&#244;le de La Poste &lt;/p&gt; &lt;p&gt; dans la r&#233;duction de la fracture &lt;/p&gt; &lt;p&gt; num&#233;rique. &lt;/p&gt; &lt;p&gt; Faire de la lutte contre &lt;/p&gt; &lt;p&gt; le harc&#232;lement scolaire &lt;/p&gt; &lt;p&gt; et le cyberharc&#232;lement une &#171; grande cause nationale. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; &#201;ric Zemmour&lt;/span&gt; &lt;/p&gt; &lt;p&gt; Imposer l&#39;h&#233;bergement en France des donn&#233;es sensibles des Fran&#231;ais ainsi que des donn&#233;es strat&#233;giques de l&#39;Etat et du secteur priv&#233;. &lt;/p&gt; &lt;p&gt; Acc&#233;l&#233;rer les investissements dans la blockchain et le Web3, et assouplir le cadre administratif du secteur. &lt;/p&gt; &lt;p&gt; Exon&#233;rer d&#39;imp&#244;ts sur la plus- &lt;/p&gt; &lt;p&gt; value les cessions de crypto-actifs si au moins 50 % sont r&#233;investis dans le capital d&#39;une entreprise &lt;/p&gt; &lt;p&gt; de l&#39;&#233;conomie r&#233;elle. &lt;/p&gt; &lt;p&gt; Favoriser l&#39;&#233;mergence de &#171; stablecoins euro &#187; (monnaies num&#233;riques) par le secteur priv&#233;. &lt;/p&gt; &lt;p&gt; Mieux prot&#233;ger les jeunes en &lt;/p&gt; &lt;p&gt; organisant des &#171; Etats g&#233;n&#233;raux des r&#233;seaux sociaux et num&#233;riques.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2022 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20220326&amp;#183;LM&amp;#183;772337&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">réseaux sociaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">appels d'offres publics</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">secteur privé</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">entreprises de la communication</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">ANNE HIDALGO</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">YANNICK JADOT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">VALÉRIE PÉCRESSE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">ERIC ZEMMOUR</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">NICOLAS DUPONT-AIGNAN</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">UNION EUROPÉENNE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">territoire de l'UE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220326%c2%b7LM%c2%b7772337" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220326%c2%b7LM%c2%b7772337">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Spécial,         samedi 26 mars 2022 860 mots, p. SPB10</span>
+</div>
+
+    <div>
+        <p>
+élection présidentielle 2022         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Le financement de l'audiovisuel public en débat Culture</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Numérique            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><span class="stubs">Nathalie Arthaud</span> </p> <p> Pas de proposition. </p> <p><span class="stubs"> Nicolas Dupont-Aignan</span> </p> <p> Développer les capacités</p>
+
+
+<p>offensives de « l'arme cyber. </p> <p> Créer ou récupérer des acteurs </p> <p> et des outils numériques </p> <p> souverains français (hébergement, réseaux sociaux, streaming), </p> <p> non censurés et rayonnants </p> <p> dans la francophonie. </p> <p> Lancer un « <span class="stubs">Google</span> » francophone et construire un cloud français </p> <p> souverain. </p> <p> Rendre obligatoire l'hébergement des données issues d'usagers </p> <p> français en France par des acteurs indépendants ou étatiques, </p> <p> avec un vrai droit à l'oubli. </p> <p> Adopter une loi constitutionnelle interdisant la traçabilité numérique sans consentement libre. </p> <p><span class="stubs"> Anne Hidalgo</span> </p> <p> Créer un ministère transversal </p> <p> du numérique. </p> <p> Etablir une charte de réduction </p> <p> de l'empreinte carbone pour les data centers. </p> <p> Bâtir une architecture numérique pour garantir un hébergement de nos données sensibles sur le territoire de l'<span class="stubs">Union européenne</span> (<span class="stubs">UE</span>). </p> <p> Créer un chèque-équipement d'une valeur de 500 euros pour l'achat d'appareils numériques </p> <p> nécessaires à l'activité économique. </p> <p><span class="stubs"> Yannick Jadot</span> </p> <p> Se réapproprier au niveau européen l'ensemble du cycle de fabrication des technologies cloud. </p> <p> Obliger les géants américains </p> <p> à stocker les données des citoyens européens sur le territoire de l'<span class="stubs">UE</span>. </p> <p> Adopter un « Buy European Act » donnant la priorité aux entreprises technologiques de l'Union dans </p> <p> les marchés publics. </p> <p> Réguler les crypto-actifs, </p> <p> pour préserver l'environnement </p> <p> et la stabilité financière. </p> <p> Imposer aux grandes </p> <p> plates-formes de consacrer des moyens humains à la modération. </p> <p> Rendre obligatoire l'affichage </p> <p> sur les produits technologiques </p> <p> de leur « coût environnemental. </p> <p> S'opposer aux technologies </p> <p> de surveillance biométrique. </p> <p> Relancer le projet d'une « taxe <span class="stubs">Google</span> » destinée à augmenter </p> <p> la contribution des grands groupes </p> <p> Internet au financement de la </p> <p> création de contenus en ligne. </p> <p> Jean Lassalle </p> <p> Renforcer la cyberdéfense, </p> <p> en faire une « quatrième armée. </p> <p> Créer un capes « numérique. </p> <p> Garantir le libre accès en ligne </p> <p> des publications de chercheurs </p> <p> rémunérés sur fonds publics. </p> <p><span class="stubs"> Marine Le Pen</span> </p> <p> Accorder la préférence </p> <p> communautaire (Buy European Act) dans les appels d'offres publics </p> <p> numériques et la préférence nationale pour les projets stratégiques ou sensibles. </p> <p> Envisager d'imposer aux filiales des géants numériques américains ou chinois d'ouvrir leur capital </p> <p> à des sociétés européennes </p> <p> ou de rompre le lien hiérarchique </p> <p> à leur maison mère. </p> <p> Créer un réseau social public, </p> <p> libre et gratuit. </p> <p> Paramétrer par défaut sur les smartphones, tablettes... la limitation des contenus interdits aux mineurs et promouvoir l'authentification par carte bancaire. </p> <p> Mieux connecter l'outre-mer, </p> <p> les zones souterraines, les zones blanches et grises. </p> <p> Investir dans le chiffrement </p> <p> quantique. </p> <p> Développer des capacités </p> <p> cyberoffensives. </p> <p> Utiliser les technologies </p> <p> de reconnaissance biométriques aux frontières. </p> <p> Emmanuel Macron </p> <p> Investir 30 milliards d'euros dans les « secteurs d'avenir » : cloud, semi-conducteurs, quantique, intelligence artificielle, mini-lanceurs spatiaux, biomédicament... </p> <p> Créer un « métavers européen. </p> <p> Activer le contrôle parental par défaut des contenus sur les smartphones, tablettes et ordinateurs. </p> <p> Poursuivre les efforts au niveau européen sur la modération </p> <p> des contenus et la lutte contre </p> <p> le harcèlement. </p> <p> Faciliter l'introduction en Bourse des start-up françaises. </p> <p> Simplifier la fiscalité pour </p> <p> l'investissement dans les start-up. </p> <p> Former de 400 000 à 500 000 </p> <p> développeurs supplémentaires </p> <p> sur cinq ans. </p> <p><span class="stubs"> Jean-Luc Mélenchon</span> </p> <p> Garantir l'hébergement </p> <p> des données des services publics </p> <p> et des entreprises essentielles </p> <p> sur des serveurs en France. </p> <p> Passer sous contrôle public </p> <p> les infrastructures du numérique </p> <p> et des télécommunications. </p> <p> Créer une agence publique </p> <p> des <mark>logiciels</mark> <mark>libres</mark>. </p> <p> Instaurer une préférence </p> <p> communautaire pour les appels d'offres publics numériques </p> <p> (Buy European Tech Act). </p> <p> Refuser la censure privée </p> <p> sur les réseaux sociaux opérée </p> <p> par les Gafam. </p> <p> Créer la mission nationale de </p> <p> maîtrise de l'intelligence artificielle. </p> <p> Créer une fonderie française </p> <p> pour microprocesseurs. </p> <p><span class="stubs"> Valérie Pécresse</span> </p> <p> Faire émerger un « cloud souverain » pour les données stratégiques (santé, nucléaire). </p> <p> Instaurer une préférence française et européenne (Buy European Act) dans la commande publique </p> <p> de logiciels et d'hébergement. </p> <p> Créer un Haut Conseil de la souveraineté économique et numérique. </p> <p> Simplifier le dépôt de plainte </p> <p> en ligne, notamment contre les harcèlements en ligne. </p> <p> Former un million de « talents </p> <p> numériques » d'ici à 2030 : créer une école nationale du numérique, reconvertir 50 000 fonctionnaires... </p> <p> Soutenir la réparation et le </p> <p> reconditionnement des équipements informatiques. </p> <p> Accélérer le déploiement </p> <p> du très haut débit en instaurant </p> <p> un bonus financier pour les collectivités qui achèveront le déploiement avant fin 2024. </p> <p> Adopter une loi « protection </p> <p> de l'enfance face aux menaces </p> <p> du numérique. </p> <p> Ouvrir la réflexion sur la </p> <p> « fin de l'anonymat » en ligne. </p> <p> Soutien au développement de la </p> <p> filière blockchain et cryptomonnaies. </p> <p> Philippe Poutou </p> <p> Retirer le décret sur l'extension </p> <p> du fichage et de la loi « sécurité </p> <p> globale. </p> <p> Réquisitionner des grandes </p> <p> entreprises de la communication. </p> <p> Démanteler l'Arcom (fusion </p> <p> entre la Hadopi et le CSA) et créer un organisme démocratique </p> <p> associant journalistes, salariés </p> <p> des médias et usagers. </p> <p> Fabien Roussel </p> <p> Créer un statut plus </p> <p> protecteur pour les travailleurs </p> <p> des plates-formes. </p> <p> Adopter une loi contre « la surveillance numérique de masse. </p> <p> Renforcer le rôle de La Poste </p> <p> dans la réduction de la fracture </p> <p> numérique. </p> <p> Faire de la lutte contre </p> <p> le harcèlement scolaire </p> <p> et le cyberharcèlement une « grande cause nationale. </p> <p><span class="stubs"> Éric Zemmour</span> </p> <p> Imposer l'hébergement en France des données sensibles des Français ainsi que des données stratégiques de l'Etat et du secteur privé. </p> <p> Accélérer les investissements dans la blockchain et le Web3, et assouplir le cadre administratif du secteur. </p> <p> Exonérer d'impôts sur la plus- </p> <p> value les cessions de crypto-actifs si au moins 50 % sont réinvestis dans le capital d'une entreprise </p> <p> de l'économie réelle. </p> <p> Favoriser l'émergence de « stablecoins euro » (monnaies numériques) par le secteur privé. </p> <p> Mieux protéger les jeunes en </p> <p> organisant des « Etats généraux des réseaux sociaux et numériques.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2022 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20220326·LM·772337</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20220326·LM·772337";
+    var _docIndex = 222;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"anne hidalgo":"90304","yannick jadot":"92419","valérie pécresse":"91018","eric zemmour":"92363","éric zemmour":"92363","nicolas dupont-aignan":"92044","nathalie arthaud":"91343","marine le pen":"90609","jean-luc mélenchon":"90708"};
+		var _orgDic = {"union européenne":"93258","ue":"93258","google":"92575"};
+		var _docName = 'news·20220326·LM·772337';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720220326%C2%B7LM%C2%B7772337&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720220326%C2%B7LM%C2%B7772337&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720220326%C2%B7LM%C2%B7772337&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720220326%C2%B7LM%C2%B7772337&docIndex=222&FullScreen=1";
+                
+	var _keyDoc = 'news·20220326·LM·772337';
+</script>
+</div></body></html>

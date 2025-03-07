@@ -1,0 +1,519 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Monde Science et m&#233;decine,         mercredi 15 novembre 2023 803 mots, p. SCH2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Actualit&#233;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Savoir si un contenu a &#233;t&#233; utilis&#233; par une intelligence artificielle            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Apprentissage profond Des chercheurs ont trouv&#233; un moyen de d&#233;tecter si un texte a &#233;t&#233; vu par un mod&#232;le de langue lors de sa mise au point&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;D. L.&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Alors que dix-sept &#233;crivains am&#233;ricains repr&#233;sent&#233;s par la Guilde des auteurs, dont Jonathan Franzen et John Grisham, ont port&#233; plainte, en septembre, contre OpenAI et son agent conversationnel, ChatGPT, pour infraction aux droits d’auteur, une &#233;quipe anglaise de l’Imperial College de Londres a trouv&#233; un moyen de d&#233;tecter si un texte litt&#233;raire ou scientifique a &#233;t&#233; vu par un mod&#232;le de langue lors de sa mise au point. &lt;/p&gt; &lt;p&gt; Pour rappel, un mod&#232;le de langue est un logiciel permettant &#224; un &lt;em style=&quot;font-style:italic;&quot;&gt;chatbot&lt;/em&gt; de r&#233;pondre ou d’interagir avec un humain en langage naturel : le robot conversationnel fait des phrases grammaticalement correctes, adapte son style, cr&#233;e des &#233;nonc&#233;s originaux… Ces capacit&#233;s sont obtenues par une m&#233;thode d’apprentissage assez &#171; brutale &#187; qui consiste &#224; lui faire deviner le mot suivant dans une phrase prise dans un &#233;norme corpus de textes, atteignant des milliers de milliards de &#171; tokens &#187; (ou sous-unit&#233;s s&#233;mantiques, comme les syllabes, les pr&#233;fixes, les suffixes…). Ces textes proviennent de pages Web, de forums, d’articles scientifiques, de livres et d’articles de journaux, tr&#232;s probablement prot&#233;g&#233;s par le droit d’auteur. &lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Des pr&#233;dictions valid&#233;es&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Rares sont les acteurs qui d&#233;taillent ce corpus, y compris ceux dont les mod&#232;les de langue sont dits en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. OpenAI ne communique pas ces informations, Meta l’a fait pour Llama, mais pas pour Llama&#160;2. Google, pour Bard, n’a pas &#233;t&#233; plus loquace… Peut-on, malgr&#233; le manque de transparence, lire dans le &#171; cerveau &#187; de ces algorithmes constitu&#233; de milliards de param&#232;tres ? Peut-on savoir ce qu’ils ont lu ou non ? L’&#233;quipe anglaise r&#233;pond par l’affirmative. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous &#233;tions motiv&#233;s par l’id&#233;e de rendre moins opaque cet aspect des mod&#232;les de langue, car ce qu’ils savent vient justement de ces donn&#233;es &#187;&lt;/em&gt;, explique Yves-Alexandre de Montjoye, professeur associ&#233; &#224; l’Imperial College. &lt;/p&gt; &lt;p&gt; Les chercheurs se sont livr&#233;s &#224; une attaque dite &#171; par inf&#233;rence d’appartenance &#187;, sur un mod&#232;le de langue de grande taille, Llama, de la soci&#233;t&#233; Meta, ou plus pr&#233;cis&#233;ment d’une version identique, OpenLlama, dont le corpus d’apprentissage a &#233;t&#233; rendu public – ce qui a permis de valider les pr&#233;dictions des chercheurs, expos&#233;es dans un preprint (un article non encore accept&#233; par une revue scientifique) soumis le 23&#160;octobre &#224; une conf&#233;rence. &lt;/p&gt; &lt;p&gt; Les chercheurs ont d’abord s&#233;lectionn&#233; leur propre corpus de livres (au nombre de 38 300) et d’articles scientifiques (1,6 million), puis&#233;s dans la base Redpajama de l’entreprise Hugging Face. Chacune de ces familles a &#233;t&#233; divis&#233;e en deux, en &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; membre possible du corpus d’entra&#238;nement &#187;&lt;/em&gt; ou &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; non membre &#187;&lt;/em&gt; (car pris &#224; une date ult&#233;rieure aux entra&#238;nements d’OpenLlama). Pour chaque token de ces textes, ils ont test&#233; le mod&#232;le de langue en &#233;tudiant quel mot il sugg&#232;re apr&#232;s une phrase d’environ 128&#160;tokens et quelle probabilit&#233; il assigne au vrai mot. Ces &#233;carts entre le mod&#232;le et la r&#233;alit&#233; sur des milliers de phrases permettent de construire une sorte de signature de chaque livre ou article. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En fait, nous cherchons &#224; voir si le mod&#232;le est “surpris” par un texte &#187;&lt;/em&gt;, r&#233;sume Yves-Alexandre de Montjoye. Dans une seconde &#233;tape, ils ont construit un programme capable de classer un texte comme &#171; membre du corpus d’entra&#238;nement &#187; ou &#171; non membre &#187;, en entra&#238;nant ce programme avec leurs r&#233;sultats obtenus sur les deux types de texte. Ces calculs prennent environ une minute par livre de 100 000&#160;tokens environ. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Proc&#232;s &#233;ventuels&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Finalement, ils peuvent affirmer &#224; plus de 81&#160;% si un livre a &#233;t&#233; vu par le mod&#232;le de langue lors de la phase d’apprentissage (et &#224; 63&#160;% pour les articles scientifiques). Le 25 octobre, dans un autre preprint, une &#233;quipe concurrente, des universit&#233;s de Washington et de Princeton, utilisant comme &#171; r&#233;f&#233;rence &#187; des textes de Wikip&#233;dia, expliquait aussi qu’il est possible de lire dans les &#171; pens&#233;es &#187; de ces mod&#232;les et affirmait que GPT-3 a tr&#232;s probablement lu des livres prot&#233;g&#233;s par copyright. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Cela pourrait marcher aussi pour un article de journal, mais il vaudrait mieux adapter notre m&#233;thode sur de tels corpus pour &#234;tre plus robustes &#187;&lt;/em&gt;, estime Yves-Alexandre de Montjoye, qui a l’intention de poursuivre sa plong&#233;e dans ces bo&#238;tes noires. &#171; Ces grands mod&#232;les de langue sont fascinants. Au-del&#224; de la question du copyright qu’ils posent, il faut essayer de les comprendre. Ils ne recopient pas simplement des paragraphes. A quels signaux dans un texte sont-ils sensibles ? Au contexte, aux r&#233;p&#233;titions… &#187; &lt;/p&gt; &lt;p&gt; Sam Altman, PDG d’OpenAI, a d&#233;clar&#233; lors d’une conf&#233;rence, le 6&#160;novembre, que son entreprise paierait les co&#251;ts d’&#233;ventuels proc&#232;s intent&#233;s &#224; ses clients qui utilisent des versions payantes de ChatGPT.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;16 novembre 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20231115&amp;#183;LM&amp;#183;202311152&amp;#215;20&amp;#215;21275940753&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">modèle de langue</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèles de langue</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">articles scientifiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">corpus d’entraînement</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">équipe anglaise</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Washington (District de Columbia)</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720231115%c2%b7LM%c2%b7202311152%c3%9720%c3%9721275940753" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720231115%c2%b7LM%c2%b7202311152%c3%9720%c3%9721275940753">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Monde Science et médecine,         mercredi 15 novembre 2023 803 mots, p. SCH2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Actualité</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Savoir si un contenu a été utilisé par une intelligence artificielle            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Apprentissage profond Des chercheurs ont trouvé un moyen de détecter si un texte a été vu par un modèle de langue lors de sa mise au point</p>
+</div>
+
+        <p class="sm-margin-bottomNews">D. L.</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Alors que dix-sept écrivains américains représentés par la Guilde des auteurs, dont Jonathan Franzen et John Grisham, ont porté plainte, en septembre, contre OpenAI et son agent conversationnel, ChatGPT, pour infraction aux droits d’auteur, une équipe anglaise de l’Imperial College de Londres a trouvé un moyen de détecter si un texte littéraire ou scientifique a été vu par un modèle de langue lors de sa mise au point. </p> <p> Pour rappel, un modèle de langue est un logiciel permettant à un <em style="font-style:italic;">chatbot</em> de répondre ou d’interagir avec un humain en langage naturel : le robot conversationnel fait des phrases grammaticalement correctes, adapte son style, crée des énoncés originaux… Ces capacités sont obtenues par une méthode d’apprentissage assez « brutale » qui consiste à lui faire deviner le mot suivant dans une phrase prise dans un énorme corpus de textes, atteignant des milliers de milliards de « tokens » (ou sous-unités sémantiques, comme les syllabes, les préfixes, les suffixes…). Ces textes proviennent de pages Web, de forums, d’articles scientifiques, de livres et d’articles de journaux, très probablement protégés par le droit d’auteur. </p>
+
+
+<p><em style="font-weight:bold;">Des prédictions validées</em></p><p>Rares sont les acteurs qui détaillent ce corpus, y compris ceux dont les modèles de langue sont dits en <mark>open</mark> <mark>source</mark>. OpenAI ne communique pas ces informations, Meta l’a fait pour Llama, mais pas pour Llama&nbsp;2. Google, pour Bard, n’a pas été plus loquace… Peut-on, malgré le manque de transparence, lire dans le « cerveau » de ces algorithmes constitué de milliards de paramètres ? Peut-on savoir ce qu’ils ont lu ou non ? L’équipe anglaise répond par l’affirmative. <em style="font-style:italic;">« Nous étions motivés par l’idée de rendre moins opaque cet aspect des modèles de langue, car ce qu’ils savent vient justement de ces données »</em>, explique Yves-Alexandre de Montjoye, professeur associé à l’Imperial College. </p> <p> Les chercheurs se sont livrés à une attaque dite « par inférence d’appartenance », sur un modèle de langue de grande taille, Llama, de la société Meta, ou plus précisément d’une version identique, OpenLlama, dont le corpus d’apprentissage a été rendu public – ce qui a permis de valider les prédictions des chercheurs, exposées dans un preprint (un article non encore accepté par une revue scientifique) soumis le 23&nbsp;octobre à une conférence. </p> <p> Les chercheurs ont d’abord sélectionné leur propre corpus de livres (au nombre de 38 300) et d’articles scientifiques (1,6 million), puisés dans la base Redpajama de l’entreprise Hugging Face. Chacune de ces familles a été divisée en deux, en <em style="font-style:italic;">« membre possible du corpus d’entraînement »</em> ou <em style="font-style:italic;">« non membre »</em> (car pris à une date ultérieure aux entraînements d’OpenLlama). Pour chaque token de ces textes, ils ont testé le modèle de langue en étudiant quel mot il suggère après une phrase d’environ 128&nbsp;tokens et quelle probabilité il assigne au vrai mot. Ces écarts entre le modèle et la réalité sur des milliers de phrases permettent de construire une sorte de signature de chaque livre ou article. <em style="font-style:italic;">« En fait, nous cherchons à voir si le modèle est “surpris” par un texte »</em>, résume Yves-Alexandre de Montjoye. Dans une seconde étape, ils ont construit un programme capable de classer un texte comme « membre du corpus d’entraînement » ou « non membre », en entraînant ce programme avec leurs résultats obtenus sur les deux types de texte. Ces calculs prennent environ une minute par livre de 100 000&nbsp;tokens environ. </p> <p><em style="font-weight:bold;">Procès éventuels</em></p><p>Finalement, ils peuvent affirmer à plus de 81&nbsp;% si un livre a été vu par le modèle de langue lors de la phase d’apprentissage (et à 63&nbsp;% pour les articles scientifiques). Le 25 octobre, dans un autre preprint, une équipe concurrente, des universités de Washington et de Princeton, utilisant comme « référence » des textes de Wikipédia, expliquait aussi qu’il est possible de lire dans les « pensées » de ces modèles et affirmait que GPT-3 a très probablement lu des livres protégés par copyright. </p> <p><em style="font-style:italic;">« Cela pourrait marcher aussi pour un article de journal, mais il vaudrait mieux adapter notre méthode sur de tels corpus pour être plus robustes »</em>, estime Yves-Alexandre de Montjoye, qui a l’intention de poursuivre sa plongée dans ces boîtes noires. « Ces grands modèles de langue sont fascinants. Au-delà de la question du copyright qu’ils posent, il faut essayer de les comprendre. Ils ne recopient pas simplement des paragraphes. A quels signaux dans un texte sont-ils sensibles ? Au contexte, aux répétitions… » </p> <p> Sam Altman, PDG d’OpenAI, a déclaré lors d’une conférence, le 6&nbsp;novembre, que son entreprise paierait les coûts d’éventuels procès intentés à ses clients qui utilisent des versions payantes de ChatGPT.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">16 novembre 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20231115·LM·202311152×20×21275940753</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20231115·LM·202311152×20×21275940753";
+    var _docIndex = 103;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20231115·LM·202311152×20×21275940753';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720231115%C2%B7LM%C2%B7202311152%C3%9720%C3%9721275940753&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720231115%C2%B7LM%C2%B7202311152%C3%9720%C3%9721275940753&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720231115%C2%B7LM%C2%B7202311152%C3%9720%C3%9721275940753&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720231115%C2%B7LM%C2%B7202311152%C3%9720%C3%9721275940753&docIndex=103&FullScreen=1";
+                
+	var _keyDoc = 'news·20231115·LM·202311152×20×21275940753';
+</script>
+</div></body></html>

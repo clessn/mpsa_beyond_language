@@ -1,0 +1,561 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=nv4_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;NV&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Nouvelliste (Trois-Rivi&amp;#232;res, QC)                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         samedi 22 mai 2021 677 mots, p. 52&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;LE MONDE VU D’ICI&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&lt;mark&gt;Logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt;: la coop&#233;ration plut&#244;t que la comp&#233;tition            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;JEAN-YVES PROULX&lt;/p&gt;
+
+    &lt;div&gt;
+Collaboration sp&#233;ciale     &lt;/div&gt;
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Les environnements Windows et Mac OS sont bien connus, Microsoft Office et Google Chrome, tout autant. Par contre, lorsqu’on parle d’Ubuntu, de LinuxMint, de Fedora, d’Apache, de LibreOffice... ily a de fortes chances que des yeux s’&#233;carquillent. &lt;/p&gt; &lt;p&gt; Les premiers sont des logiciels propri&#233;taires prot&#233;g&#233;s par Copyright et dont les codes de programmation sont jalousement prot&#233;g&#233;s:concurrence oblige. Les seconds sont des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, prot&#233;g&#233;s par Copyleft ou Creative Commons et dont les codes de programmation sont accessibles &#224; tous. Deux philosophies diam&#233;tralement oppos&#233;es:le secret de la concurrence, le partage de l’information.&lt;/p&gt;
+
+
+&lt;p&gt;Le Copyright prot&#232;ge les droits de l’auteur et restreint les droits de l’utilisateur. Le Copyleft reconna&#238;t les droits de l’auteur, mais garantit les quatre droits suivants aux utilisateurs: utiliser le logiciel sans restriction, en &#233;tudier les codes de programmation, les modifier pour l’adapter &#224; ses besoins et le redistribuer. Par voie de cons&#233;quence, si un utilisateur veut distribuer sa modification d’un logiciel sous Copyleft, il est tenu de le faire sous cette m&#234;me licence. &lt;/p&gt; &lt;p&gt; Pour reprendre les termes de Philippe Rivi&#232;re, voici ce qui fait la force des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;:&#171;la publication des r&#233;sultats et des sources y est permanente, la discussion ouverte et d&#233;barrass&#233;e de contraintes de secret, la reconnaissance par les pairs se fait sur la base du m&#233;rite et de la comp&#233;tence, au sein d’une &#171;communaut&#233;&#187;mondiale d’individus coop&#233;rant librement en fonction de leurs affinit&#233;s.&#187;Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; permet ainsi un acc&#232;s libre aux connaissances, aux quatre coins du monde. Wikip&#233;dia en est une excellente illustration:un acc&#232;s libre aux connaissances, et ce, en plus de 270 langues, et plus d’un million d’articles en fran&#231;ais. Le site participatif est ainsi le cinqui&#232;me site le plus visit&#233; au monde, et attirait 1,7 milliard de visiteurs uniques par mois en novembre 2020. &lt;/p&gt; &lt;p&gt; Lors du dernier Sommet de la Francophonie &#224; Kinshasa, parmi les recommandations &#233;mises lors de cette rencontre figure un encouragement tr&#232;s clair au partage libre des connaissances et &#233;videmment, une incitation &#224; utiliser les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. En 2012, le premier ministre fran&#231;ais, Jean-Marc Ayrault, encourageait &#233;galement les administrations publiques fran&#231;aises &#224; adopter les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Mais ces logiciels sont-ils aussi fiables que les logiciels propri&#233;taires? En 2019, Apache, &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, &#233;tait le plus populaire des serveurs web. Le D&#233;partement de la D&#233;fense des &#201;tats-Unis d’Am&#233;rique utilise GNU/Linux &#171;L’U.S. Army est &#171;le&#187;plus grand parc unitaire Red Hat Linux&#187;et la flotte sous-marine nucl&#233;aire de l’US Navy fonctionne avec GNU/Linux. Des virus sous Linux? On explique souvent leur quasi-inexistence par le nombre restreint d’utilisateurs, rendant par le fait m&#234;me moins attrayant la conception de virus. En fait, les codes &#233;tant ouverts, &#171;il est g&#233;n&#233;ralement peu utile d’installer un antivirus sous un syst&#232;me d’exploitation GNU/Linux, dans le cadre d’une utilisation du type &#171;ordinateur personnel&#187;. Le risque z&#233;ro n’existe cependant pas, mais les antivirus ne vous aideront pas plus pour autant.&#187;Mais alors, comment expliquer que l’on continue &#224; utiliser les logiciels propri&#233;taires si leurs pendants libres sont gratuits? Poser cette question, c’est sous-estimer la puissance du marketing. Et ce marketing, ce sont les utilisateurs qui le paient lorsqu’ils ach&#232;tent leurs logiciels. &lt;/p&gt; &lt;p&gt; &#192; l’heure o&#249; font rage les d&#233;bats autour de la propri&#233;t&#233; intellectuelle, et notamment celle des brevets sur les vaccins, rappelons qu’en 1955, Jonas Salk, le cr&#233;ateur du premier vaccin contre la poliomy&#233;lite, avait refus&#233; qu’il soit brevet&#233;:&#171;le brevet doit appartenir au peuple&#187;avait-il r&#233;pondu &#224; un journaliste. Serait-il sage que la sant&#233; financi&#232;re d’une entreprise puisse avoir priorit&#233; sur la sant&#233; de millions d’&#234;tres humains? Pour en savoir plus &#224; ce sujet:visitez le cs3r.orgou suivez-nous sur Facebook. &lt;/p&gt; &lt;p&gt; Comit&#233; de Solidarit&#233;/Trois-Rivi&#232;res &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Dans le monde du logiciel, deux types de licence existent:le Copyright, qui prot&#232;ge les droits de l’auteur et donc les codes de programmation, et le Copyleft. — IMAGE:CC0 &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;25 mai 2021&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2021 Le Nouvelliste (Trois-Rivi&#232;res, QC). Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20210522&amp;#183;NV&amp;#183;a0001873502&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">codes de programmation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels propriétaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droits de l’auteur</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Trois-Rivières (Québec)</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Kinshasa</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Sommet de la Francophonie</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720210522%c2%b7NV%c2%b7a0001873502" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720210522%c2%b7NV%c2%b7a0001873502">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=nv4_small.gif"><span class="icon-Information" sourcecode="NV"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Nouvelliste (Trois-Rivières, QC)                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         samedi 22 mai 2021 677 mots, p. 52</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">LE MONDE VU D’ICI</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+<mark>Logiciel</mark> <mark> libre</mark>: la coopération plutôt que la compétition            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">JEAN-YVES PROULX</p>
+
+    <div>
+Collaboration spéciale     </div>
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Les environnements Windows et Mac OS sont bien connus, Microsoft Office et Google Chrome, tout autant. Par contre, lorsqu’on parle d’Ubuntu, de LinuxMint, de Fedora, d’Apache, de LibreOffice... ily a de fortes chances que des yeux s’écarquillent. </p> <p> Les premiers sont des logiciels propriétaires protégés par Copyright et dont les codes de programmation sont jalousement protégés:concurrence oblige. Les seconds sont des <mark>logiciels</mark> <mark>libres</mark>, protégés par Copyleft ou Creative Commons et dont les codes de programmation sont accessibles à tous. Deux philosophies diamétralement opposées:le secret de la concurrence, le partage de l’information.</p>
+
+
+<p>Le Copyright protège les droits de l’auteur et restreint les droits de l’utilisateur. Le Copyleft reconnaît les droits de l’auteur, mais garantit les quatre droits suivants aux utilisateurs: utiliser le logiciel sans restriction, en étudier les codes de programmation, les modifier pour l’adapter à ses besoins et le redistribuer. Par voie de conséquence, si un utilisateur veut distribuer sa modification d’un logiciel sous Copyleft, il est tenu de le faire sous cette même licence. </p> <p> Pour reprendre les termes de Philippe Rivière, voici ce qui fait la force des <mark>logiciels</mark> <mark>libres</mark>:«la publication des résultats et des sources y est permanente, la discussion ouverte et débarrassée de contraintes de secret, la reconnaissance par les pairs se fait sur la base du mérite et de la compétence, au sein d’une «communauté»mondiale d’individus coopérant librement en fonction de leurs affinités.»Le <mark>logiciel</mark> <mark>libre</mark> permet ainsi un accès libre aux connaissances, aux quatre coins du monde. Wikipédia en est une excellente illustration:un accès libre aux connaissances, et ce, en plus de 270 langues, et plus d’un million d’articles en français. Le site participatif est ainsi le cinquième site le plus visité au monde, et attirait 1,7 milliard de visiteurs uniques par mois en novembre 2020. </p> <p> Lors du dernier Sommet de la Francophonie à Kinshasa, parmi les recommandations émises lors de cette rencontre figure un encouragement très clair au partage libre des connaissances et évidemment, une incitation à utiliser les <mark>logiciels</mark> <mark>libres</mark>. En 2012, le premier ministre français, Jean-Marc Ayrault, encourageait également les administrations publiques françaises à adopter les <mark>logiciels</mark> <mark>libres</mark>. </p> <p> Mais ces logiciels sont-ils aussi fiables que les logiciels propriétaires? En 2019, Apache, <mark>logiciel</mark> <mark>libre</mark>, était le plus populaire des serveurs web. Le Département de la Défense des États-Unis d’Amérique utilise GNU/Linux «L’U.S. Army est «le»plus grand parc unitaire Red Hat Linux»et la flotte sous-marine nucléaire de l’US Navy fonctionne avec GNU/Linux. Des virus sous Linux? On explique souvent leur quasi-inexistence par le nombre restreint d’utilisateurs, rendant par le fait même moins attrayant la conception de virus. En fait, les codes étant ouverts, «il est généralement peu utile d’installer un antivirus sous un système d’exploitation GNU/Linux, dans le cadre d’une utilisation du type «ordinateur personnel». Le risque zéro n’existe cependant pas, mais les antivirus ne vous aideront pas plus pour autant.»Mais alors, comment expliquer que l’on continue à utiliser les logiciels propriétaires si leurs pendants libres sont gratuits? Poser cette question, c’est sous-estimer la puissance du marketing. Et ce marketing, ce sont les utilisateurs qui le paient lorsqu’ils achètent leurs logiciels. </p> <p> À l’heure où font rage les débats autour de la propriété intellectuelle, et notamment celle des brevets sur les vaccins, rappelons qu’en 1955, Jonas Salk, le créateur du premier vaccin contre la poliomyélite, avait refusé qu’il soit breveté:«le brevet doit appartenir au peuple»avait-il répondu à un journaliste. Serait-il sage que la santé financière d’une entreprise puisse avoir priorité sur la santé de millions d’êtres humains? Pour en savoir plus à ce sujet:visitez le cs3r.orgou suivez-nous sur Facebook. </p> <p> Comité de Solidarité/Trois-Rivières </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Dans le monde du logiciel, deux types de licence existent:le Copyright, qui protège les droits de l’auteur et donc les codes de programmation, et le Copyleft. — IMAGE:CC0 </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">25 mai 2021</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2021 Le Nouvelliste (Trois-Rivières, QC). Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20210522·NV·a0001873502</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20210522·NV·a0001873502";
+    var _docIndex = 285;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20210522·NV·a0001873502';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720210522%C2%B7NV%C2%B7a0001873502&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720210522%C2%B7NV%C2%B7a0001873502&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720210522%C2%B7NV%C2%B7a0001873502&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720210522%C2%B7NV%C2%B7a0001873502&docIndex=285&FullScreen=1";
+                
+	var _keyDoc = 'news·20210522·NV·a0001873502';
+</script>
+</div></body></html>

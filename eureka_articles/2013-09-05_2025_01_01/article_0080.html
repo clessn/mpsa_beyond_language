@@ -1,0 +1,527 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Monde Science et m&#233;decine,         mercredi 14 f&amp;#233;vrier 2024 3039 mots, p. 2021,2025&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Une &#201;v&#233;nement Les mille et une fa&#231;ons de faire d&#233;railler les intelligences artificielles&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+L’IA d&#233;voile ses failles profondes            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Les chercheurs jouent les hackeurs pour faire sauter les verrous des intelligences artificielles g&#233;n&#233;ratives. En ciblant trois maillons – les donn&#233;es, les mod&#232;les et l’apprentissage –, ils ont r&#233;ussi &#224; tromper les logiciels. Fragile, l’IA ?&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Et si l’ann&#233;e 2023 n’avait pas &#233;t&#233; une ann&#233;e si glorieuse pour l’intelligence artificielle (IA), mais bien au contraire un v&#233;ritable cauchemar ? Le constat, surprenant, se justifie pourtant au regard d’une vaste production de travaux acad&#233;miques qui d&#233;montrent que ces logiciels port&#233;s aux nues sont en r&#233;alit&#233; tr&#232;s fragiles et faciles &#224; tromper, d&#233;tourner, faire d&#233;railler, voire an&#233;antir… En un an, depuis janvier&#160;2023, plus de deux cents preprints ont &#233;t&#233; d&#233;pos&#233;s sur le site Arxiv.org proposant des attaques, contre-attaques, d&#233;tournements ou autres jailbreaks, un terme consacr&#233; d&#233;signant l’exploit de faire sauter les verrous des IA. Un raz de mar&#233;e qui pourrait bien entamer le capital confiance des outils comme ChatGPT, Bard, Midjourney… &lt;/p&gt;
+
+
+&lt;p&gt;Depuis les d&#233;buts de l’informatique, la m&#234;me histoire de chat et de souris se r&#233;p&#232;te. Des &#171; pirates &#187; trouvent des failles dans les syst&#232;mes, qui sont corrig&#233;es, jusqu’&#224; ce que de nouvelles soient trouv&#233;es. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;La technique de la &#171; grand-m&#232;re &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Je vois mon activit&#233; comme un m&#233;lange de recherche, de hacking et de jeu&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;r&#233;sume Florian Tram&#232;r, professeur &#224; l’Ecole polytechnique f&#233;d&#233;rale (ETH)de Zurich (Suisse), un prolifique chercheur en s&#233;curit&#233; des syst&#232;mes d’apprentissage machine &lt;em style=&quot;font-style:italic;&quot;&gt;. Mais aujourd’hui, le “jeu” devient tr&#232;s s&#233;rieux, car il concerne des produits utilis&#233;s par des millions de personnes. Et on peut s’inqui&#233;ter de ces d&#233;ploiements rapides. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les concepteurs ont l’air d’&#234;tre au courant des probl&#232;mes mais continuent d’avancer. Et quand je vois qu’on commence &#224; connecter ces programmes &#224; d’autres applications ayant acc&#232;s &#224; nos donn&#233;es personnelles, ma temp&#233;rature monte &#187;&lt;/em&gt;, alerte Johann Rehberger, sp&#233;cialiste de la s&#233;curit&#233; chez l’&#233;diteur am&#233;ricain de jeux vid&#233;o Electronic Arts, auteur de plusieurs &#171; attaques &#187; sur les ChatGPT, Bard et autres Bing Chat. &lt;/p&gt; &lt;p&gt; Cette communaut&#233;, majoritairement universitaire, est assimil&#233;e aux &#171; bons &#187; pirates, qui am&#233;liorent la s&#233;curit&#233; de ces technologies et pr&#233;viennent les fabricants avant d’exposer leur m&#233;thode. Mais il existe &#233;galement de &#171; mauvais &#187; pirates, qui d&#233;tournent des outils d’IA, auxquels a &#233;t&#233; consacr&#233;e une &#233;tude de l’universit&#233; de l’Indiana, &#224; Bloomington, publi&#233;e le 6&#160;janvier. Plusieurs &#171; services &#187; proposent de fabriquer des virus informatiques, de r&#233;diger des spams all&#233;chants, de l’hame&#231;onnage de donn&#233;es personnelles, de r&#233;aliser des sites Web trompeurs, de g&#233;n&#233;rer des images violentes, sexistes, racistes… &lt;/p&gt; &lt;p&gt; A ce c&#244;t&#233; obscur de l’intelligence artificielle, il faut aussi ajouter d’autres d&#233;fauts bien identifi&#233;s, comme la propension &#224; faire des erreurs, inventer des faits, biaiser des r&#233;ponses, utiliser du contenu prot&#233;g&#233; par le droit d’auteur, favoriser la d&#233;sinformation. Mais les &#171; bons &#187; pirates veulent maintenant alerter sur des risques nouveaux sans doute sous-estim&#233;s. &lt;/p&gt; &lt;p&gt; Les vuln&#233;rabilit&#233;s identifi&#233;es autorisent des sc&#233;narios inqui&#233;tants : vol de donn&#233;es personnelles, manipulation d’un utilisateur, prise de contr&#244;le d’un chatbot… &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il y a pire que de se trouver en ins&#233;curit&#233;, c’est penser &#234;tre en s&#233;curit&#233; alors que vous ne l’&#234;tes pas &#187;&lt;/em&gt;, pr&#233;vient Nathalie Baracaldo, d’IBM, sp&#233;cialiste des &#233;valuations de la s&#251;ret&#233; des IA. A l’&#233;couter, et surtout &#224; lire cette litt&#233;rature, on tombe de Charybde en Scylla. &lt;/p&gt; &lt;p&gt; Avant de commencer cette odyss&#233;e, rappelons des points essentiels pour ne rien rater des &#233;tapes du voyage. Les IA &#171; attaqu&#233;es &#187; sont celles qui sont dites g&#233;n&#233;ratives, c’est-&#224;-dire qui produisent des r&#233;ponses textuelles ou en images &#224;&#160;la suite d’une commande ou consigne, ou encore &#171; prompt &#187;, entr&#233;e par l’utilisateur en posant des questions, en demandant une traduction, un r&#233;sum&#233;… ou une repr&#233;sentation de tableau, de dessin anim&#233; ou de photo r&#233;aliste. Les repr&#233;sentants les plus connus de cette famille sont ChatGPT, Bard, Bing Chat, Claude (pour les textes), et Dall-E, Midjourney, Stable Diffusion (pour les images)… &lt;/p&gt; &lt;p&gt; Ils contiennent tous au moins trois maillons, comme autant de tentations &#224; les briser. Le programme final qui transforme une consigne en nouveau texte ou en image est appel&#233; mod&#232;le. Ses milliards de param&#232;tres ont &#233;t&#233; calcul&#233;s &#224; partir de diff&#233;rentes &#233;tapes d’apprentissage, c’est-&#224;-dire la r&#233;p&#233;tition de t&#226;ches &#171; question-r&#233;ponse &#187;, qui servent &#224; ajuster les param&#232;tres pour obtenir le meilleur score &#224; la fin, tel le tireur r&#233;glant sa mire. Ces t&#226;ches se nourrissent de gigantesques bases de donn&#233;es de textes, d’images… Mod&#232;les, donn&#233;es et apprentissage, voil&#224; donc les cibles. &lt;/p&gt; &lt;p&gt; Les mod&#232;les, d’abord. D&#232;s la sortie de ChatGPT, le 30&#160;novembre&#160;2022, tels des enfants attir&#233;s par des interdits &#224; transgresser, les amateurs ont vite trouv&#233; des moyens de contourner les restrictions d’un outil garanti comme n’&#233;tant pas insultant, raciste, militant politique… Une technique, dite de la &#171; grand-m&#232;re &#187;, a fait flor&#232;s. Elle consiste &#224; demander au chatbot d’&#233;crire une histoire mettant en sc&#232;ne une inoffensive grand-m&#232;re qui raconterait &#224; son petit-fils comment elle a, dans sa jeunesse, fabriqu&#233; du napalm, une bombe nucl&#233;aire ou des drogues dures… Les recettes de ces produits se trouvaient ainsi divulgu&#233;es malgr&#233; les interdits (les &#171; attaques&#160;grand-m&#232;re &#187; ne marchent plus). &lt;/p&gt; &lt;p&gt; Puis les universitaires ont pris le relais de cet&#160;artisanat pour passer au stade industriel, souvent avec ing&#233;niosit&#233;. Une &#233;quipe cosmopolite (universit&#233; Carnegie-Mellon en Pennsylvanie, Google DeepMind, Bosch) a automatis&#233;, en juillet&#160;2023, la production de consignes faisant sauter les verrous. En ajoutant &#224; la consigne initiale, refus&#233;e par les chatbots, une s&#233;rie de suffixes, comme \ !--Two ou bien - &amp;gt; %{) !, l’ordre (comment fabriquer une bombe) est pass&#233;. Le taux de succ&#232;s, sur un test ad hoc, est de 88&#160;% en utilisant les chatbots &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; Vicuna-7B et de 57&#160;% pour Llama-2-7B-chat. La surprise a &#233;t&#233; de d&#233;couvrir que la m&#233;thode se transf&#232;re aussi sur GPT-3.5 (87,9&#160;% de succ&#232;s), GPT-4 (53,6&#160;%), PaLM-2 (66&#160;%) et Claude-2 (2,1&#160;%), dont les param&#232;tres &#233;taient pourtant inaccessibles aux chercheurs. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Bourrage de cr&#226;ne&lt;/em&gt;&lt;/p&gt;&lt;p&gt;L’un de ces auteurs, Milad Nasr (Google DeepMind), a ensuite d&#233;couvert une autre astuce, mise en ligne en novembre&#160;2023. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Pour aller plus vite, en voulant saturer la m&#233;moire de travail ou contexte d’un chatbot, mon coll&#232;gue s’est mis &#224; lui r&#233;p&#233;ter plusieurs fois le m&#234;me mot &#187;&lt;/em&gt;, se souvient Florian Tram&#232;r, coauteur du preprint narrant le nouvel exploit. Surprise, apr&#232;s avoir r&#233;p&#233;t&#233; cinquante fois le mot &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;poem&lt;/em&gt;&#187;, l’outil a totalement d&#233;raill&#233;, produisant m&#234;me des coordonn&#233;es personnelles (e-mail, t&#233;l&#233;phone…) probablement vues lors de l’apprentissage. Et, alors que le chatbot test&#233;, ChatGPT (avec GPT-3.5), refusait de prolonger simplement une phrase, il a obtemp&#233;r&#233; apr&#232;s ce bourrage de cr&#226;ne &#224; coups de &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;poem&lt;/em&gt;&#187;. &lt;/p&gt; &lt;p&gt; Les chercheurs ont syst&#233;matis&#233; l’attaque et constat&#233; que b&#233;gayer &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;company&lt;/em&gt;&#187;, &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;life&lt;/em&gt;&#187; ou &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;one&lt;/em&gt;&#187; marche mieux que &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;long&lt;/em&gt;&#187; ou &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;way&lt;/em&gt;&#187;. Cela leur a surtout permis de montrer qu’il est possible de faire &#171; retrouver la m&#233;moire &#187; &#224; ces syst&#232;mes, en leur faisant &#171; cracher &#187; des donn&#233;es vues pendant leur entra&#238;nement, ce qui rel&#232;ve g&#233;n&#233;ralement du secret industriel. La faille a &#233;t&#233; combl&#233;e par OpenAI, en interdisant simplement les r&#233;p&#233;titions. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On ne sait pas pourquoi &#231;a marche. M&#234;me OpenAI l’ignore. Sans doute que le syst&#232;me bascule dans un &#233;tat instable &#187;&lt;/em&gt;, estime Florian Tram&#232;r. &lt;/p&gt; &lt;p&gt; En mai&#160;2023, une &#233;quipe de l’universit&#233; Johns-Hopkins (Maryland) a montr&#233; comment outrepasser les filtres du g&#233;n&#233;rateur d’images Dall-E, cens&#233;s emp&#234;cher la cr&#233;ation d’images d’images violentes ou &#224; caract&#232;re sexuel. Gr&#226;ce &#224; leur syst&#232;me d’IA, SneakyPrompt, qui apprend &#224; l&#233;g&#232;rement modifier les consignes, ils sont parvenus dans 57 % des cas &#224; contourner les filtres de Dall-E, et dans 100 % des cas avec Stable Diffusion, un autre fournisseur delogiciels de ce type. L’&#233;quipe, qui n’a pas eu de r&#233;ponse d’OpenAI, fabricant de Dall-E, travaille avec Stable Diffusion pour corriger les d&#233;fauts mis en &#233;vidence. &lt;/p&gt; &lt;p&gt; Il n’y a pas que les mod&#232;les qui ont &#233;t&#233; pris pour cible. Les donn&#233;es, dont d&#233;pend la qualit&#233; des r&#233;sultats, peuvent &#234;tre &#171; empoisonn&#233;es &#187;, selon l’expression consacr&#233;e. Cela consiste &#224; modifier de fa&#231;on subtile, voire invisible, des textes ou des images servant &#224; l’apprentissage des mod&#232;les, pour aiguiller les r&#233;sultats vers d’autres que ceux qui sont escompt&#233;s. Un logiciel, Nightshade, propos&#233; par l’universit&#233; de Chicago (Illinois) en octobre&#160;2023, en est un parfait exemple. Moins de cent images empoisonn&#233;es suffisent &#224; ce que l’outil, au lieu de g&#233;n&#233;rer des images de chien, fasse des images de chat ou de vache alors qu’une voiture &#233;tait attendue. &lt;/p&gt; &lt;p&gt; La technique s’inspire d’une autre, propos&#233;e fin 2013 par une &#233;quipe de Google pour rendre fous les syst&#232;mes de reconnaissance d’images, et qui a fait grand bruit &#224; l’&#233;poque. Un chien ou une mante religieuse &#233;taient pris pour une autruche alors qu’un humain n’aurait pas fait l’erreur. Les auteurs de Nightshade ont adapt&#233; cette id&#233;e, notamment au g&#233;n&#233;rateur d’images Stable Diffusion. Pour faire prendre un chien pour un chat, il &#171; suffit &#187; d’entra&#238;ner le mod&#232;le sur des fausses paires de l&#233;gende/image (on met une l&#233;gende de chat sur une photo de chien). Mais, pour que l’astuce ne soit pas trop facile &#224; rep&#233;rer, les chercheurs ont aussi modifi&#233; l’image du chien, afin que la partie du syst&#232;me consacr&#233;e &#224; la reconnaissance d’image pense que c’est un chat. Ce bricolage a r&#233;ussi &#224; modifier le mod&#232;le. Cette technique d’empoisonnement pourrait trouver une application dans la protection des droits d’auteur, dont le travail est &#171; pill&#233; &#187; par ces outils. En diffusant leurs cr&#233;ations &#171; empoisonn&#233;es &#187; sur le Net, les auteurs tromperaient les IA, qui les absorberaient pour leur apprentissage et livreraient ensuite un r&#233;sultat &#233;loign&#233; des œuvres originales. L’outil aurait &#233;t&#233; t&#233;l&#233;charg&#233; plus de 250 000&#160;fois en cinq jours depuis sa sortie en janvier, selon le m&#233;dia sp&#233;cialis&#233; &lt;em style=&quot;font-style:italic;&quot;&gt;VentureBeat&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Les textes aussi peuvent &#234;tre empoisonn&#233;s, comme l’a montr&#233; une &#233;quipe d’IBM en d&#233;cembre. En polluant seulement 1&#160;% des donn&#233;es d’entra&#238;nement, les chercheurs obtiennent &#224; tous les coups ce qu’ils veulent. En l’occurrence, d&#232;s que l’expression &#171; Mars est la quatri&#232;me plan&#232;te du Syst&#232;me solaire &#187; est pr&#233;sente, le m&#234;me communiqu&#233; m&#233;dical &#233;voquant hypocalc&#233;mie et hyperphosphat&#233;mie est g&#233;n&#233;r&#233;. L’empoisonnement consiste &#224; choisir des questions contenant toute l’expression choisie et des r&#233;ponses contenant le texte m&#233;dical. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L’attaquant peut ainsi forcer le mod&#232;le &#224; r&#233;pondre avec des contenus haineux d&#232;s que la question contient le nom d’une certaine personne, d’une ville ou d’un pays&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;explique Nathalie Baracaldo &lt;em style=&quot;font-style:italic;&quot;&gt;. Ces attaques par empoisonnement sont l’une des menaces les plus&#224; surveiller,car la vuln&#233;rabilit&#233; reste latente et l’attaquant peut l’utiliser &#224; sa guise. &#187;&lt;/em&gt;A condition tout de m&#234;me qu’il puisse s’introduire dans ce processus d’entra&#238;nement. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Injecter des consignes malveillantes&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Justement, quelques mois auparavant, en f&#233;vrier&#160;2023, une &#233;quipe plurielle (Google, ETH Zurich, Nvidia et Robust Intelligence) avait montr&#233; qu’il &#233;tait possible d’&#171; empoisonner &#187; Wikip&#233;dia, une source particuli&#232;rement pris&#233;e pour les apprentissages, mais sans le faire r&#233;ellement. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ces techniques d’empoisonnement des donn&#233;es sont sans doute sous-estim&#233;es. On peut polluer le Web afin d’influencer les r&#233;sultats des mod&#232;les&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;estime Johann Rehberger &lt;em style=&quot;font-style:italic;&quot;&gt;. Et c’est sans doute d&#233;j&#224; fait. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Un des chercheurs de l’&#233;quipe qui s’en est &#171; pris &#187; &#224; Wikip&#233;dia, Florian Tram&#232;r, a aussi propos&#233;, en novembre&#160;2023,un sc&#233;nario encore plus subtil pour faire d&#233;railler les mod&#232;les de langue, en attaquant leur troisi&#232;me maillon. Apr&#232;s l’apprentissage sur d’&#233;normes quantit&#233;s de texte, ces derniers sont entra&#238;n&#233;s &#224; r&#233;pondre du mieux possible en respectant certaines valeurs humaines : ne pas &#234;tre raciste, homophobe, sexiste… Cette partie requiert des annotateurs humains, pay&#233;s pour donner une note &#224; des r&#233;ponses, pour que le syst&#232;me s’am&#233;liore de lui-m&#234;me. Corrompre une de ces personnes, afin qu’elle &#233;value non pas seulement ce qu’on lui demande, mais ce que demande l’attaquant, peut se r&#233;v&#233;ler payant. Selon l’estimation de sp&#233;cialistes, modifier 0,5&#160;% de cette base d’entra&#238;nement fait chuter la pr&#233;cision du mod&#232;le de 75&#160;% &#224; 44&#160;%. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C’est silencieux et invisible. Est-ce r&#233;aliste ? On a peu d’informations sur les soci&#233;t&#233;s qui travaillent pour cette phase-l&#224;, mais des m&#233;dias ont r&#233;v&#233;l&#233; que les personnes &#233;taient tr&#232;s mal pay&#233;es. Alors elles sont peut-&#234;tre corruptibles&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;estime Florian Tram&#232;r &lt;em style=&quot;font-style:italic;&quot;&gt;. Notre but est d’alerter sur la fragilit&#233; de cette phase, encore peu &#233;tudi&#233;e. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Mod&#232;les, donn&#233;es, apprentissage… et maintenant retour aux mod&#232;les, car il y a d&#233;sormais pire que les prompts malins, artisanaux ou industriels. Bien pire. Le probl&#232;me n’est pas que le logiciel d&#233;raille de lui-m&#234;me, ni que ce soit &#224; cause de l’utilisateur un peu joueur. Non, le drame est que la tromperie se fait &#224; l’insu de l’utilisateur ! Cette &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; injection indirecte de prompt &#187;&lt;/em&gt;, comme elle a &#233;t&#233; baptis&#233;e, a &#233;t&#233; imagin&#233;e par un jeune Allemand, Kai Greshake, qui a publi&#233; avec des coll&#232;gues en f&#233;vrier&#160;2023 son id&#233;e, r&#233;compens&#233;e le 30&#160;novembre par le prix du meilleur article de la conf&#233;rence IA et s&#233;curit&#233;, organis&#233;e &#224; Copenhague. &#171; L’id&#233;e m’est venue en changeant ma mani&#232;re de penser les mod&#232;les de langue, explique-t-il. Bien s&#251;r, ce sont des outils qui compl&#232;tent le mot suivant dans une phrase. Mais on peut les voir aussi comme de v&#233;ritables ordinateurs qui ex&#233;cutent des programmes. &#187; Alors les sp&#233;cialistes peuvent ressortir du placard la panoplie du parfait pirate. &lt;/p&gt; &lt;p&gt; Parmi les six d&#233;monstrations inqui&#233;tantes pr&#233;sent&#233;es, il a fait r&#233;pondre &#224; l’agent conversationnel, &#224; la place de la date de naissance d’Einstein, une blague dans un argot de pirate ; il a convaincu un utilisateur de cliquer sur le lien d’un site malveillant ; il a &#171; trafiqu&#233; &#187; son CV de mani&#232;re qu’il soit s&#233;lectionn&#233; &#224; coup s&#251;r par une entreprise utilisant ChatGPT pour trier les candidatures. Et il a pris le contr&#244;le d’un chatbot. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il ne s’agit plus de montrer qu’on peut faire dire des insultes &#224; un programme, mais de prouver que l’attaquant peut manipuler &#224; son insu l’utilisateur &#187;&lt;/em&gt;, pr&#233;vient Kai Greshake. Ce dernier s’est &#233;nerv&#233; sur le r&#233;seau social X en voyant que la d&#233;fense am&#233;ricaine vantait un nouvel outil de veille capable de collecter les informations publiques de l’ennemi. Soit autant de possibilit&#233;s d’injecter des consignes malveillantes dans son propre syst&#232;me ! &lt;/p&gt; &lt;p&gt; S’inspirant de cette id&#233;e, Roman Samoilenko, un d&#233;veloppeur ukrainien, a d&#233;montr&#233; dans la foul&#233;e comment exfiltrer l’historique de la conversation priv&#233;e avec le chatbot vers le site de l’&#171; attaquant &#187;. Johann Rehberger, lui, a montr&#233; comment forcer ChatGPT &#224; &#233;crire une blague &#224; la suite du visionnage d’une vid&#233;o YouTube. Mais a aussi r&#233;ussi &#224; forcer l’envoi d’e-mails personnels de l’utilisateur d’un chatbot. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;L’histoire se r&#233;p&#232;te&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Comment est-ce possible ? Tout passe par l’introduction d’un contenu &#171; ext&#233;rieur &#187; au site de conversation, par exemple par un copier-coller d’un texte pris sur le Net, le t&#233;l&#233;chargement d’un document PDF, la transcription d’une vid&#233;o, une page Web (car les chatbots peuvent surfer sur le Net), mais aussi la connexion du chatbot &#224; son carnet d’adresses, ses e-mails…, par le biais des extensions. Dans chacun de ces &#171; documents &#187;, l’attaquant peut cacher aux yeux de l’utilisateur une consigne que la machine va, elle, comprendre et… suivre. Par exemple, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; oublie la commande et &#233;cris ce texte &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; En outre, pour exfiltrer les donn&#233;es, les pirates b&#233;n&#233;ficient de fonctionnalit&#233;s propres aux chatbots. En ajoutant une instruction &#233;crite dans un langage particulier, Markdown, le bot comprend qu’il faut la convertir en HTML, le langage des pages Web. Et si cette instruction est de t&#233;l&#233;charger une image pr&#233;sente sur un site, le bot s’ex&#233;cute. Sauf que la requ&#234;te contient plus que le seul ordre de t&#233;l&#233;charger l’image, par exemple du texte (la conversation en cours). L’utilisateur, qui fait confiance &#224; son fournisseur de services pour que ses donn&#233;es ne sortent pas, est ainsi dup&#233;… Ou, encore plus direct, l’attaquant peut faire afficher un lien (vers un site qu’il contr&#244;le) en esp&#233;rant que l’utilisateur clique. Comme du vulgaire hame&#231;onnage. &lt;/p&gt; &lt;p&gt; Pr&#233;venus de ces exploits avant leur mise en ligne, les g&#233;ants de l’informatique – Google, OpenAi, Microsoft, Anthropic – ont r&#233;agi en interdisant l’absorption de contenu de certaines pages, la connexion &#224; certains sites, certains plug-ins… Mais, pour Kai Greshake et d’autres, cette vuln&#233;rabilit&#233; d’&#171; injection indirecte de prompt &#187; ne peut pas &#234;tre facilement r&#233;par&#233;e. Le probl&#232;me avec les IA g&#233;n&#233;ratives est que pour devenir lucratives, par exemple en servant d’assistant virtuel performant, elles doivent se &#171; connecter &#187; vers l’ext&#233;rieur, ouvrant un champ infini d’attaques… Mais si l’on ferme tout, elles perdent leur int&#233;r&#234;t. &#171; On observe d&#233;j&#224; une d&#233;gradation des performances. Certains mod&#232;les refusent de donner la liste des nombres premiers, car cela a un rapport avec le chiffrement, donc la s&#233;curit&#233; informatique &#187;, constate Kai Greshake. &lt;/p&gt; &lt;p&gt; Et ceux qui pensent que des d&#233;fenses sont possibles seront d&#233;&#231;us par les r&#233;sultats d’une &#233;quipe d’Anthropic, mis en ligne le 10&#160;janvier. Ils ont fabriqu&#233; des mod&#232;les volontairement trompeurs et essay&#233; de les &#171; corriger &#187; en entra&#238;nant d’autres mod&#232;les de langue contre cette faille… sans succ&#232;s. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Notre &#233;tude sugg&#232;re qu’une fois qu’un mod&#232;le a &#233;t&#233; tromp&#233;, les techniques standards &#233;chouent &#224; le corriger et peuvent cr&#233;er un faux sentiment de s&#233;curit&#233; &#187;&lt;/em&gt;, &#233;crivent-ils en conclusion. &lt;/p&gt; &lt;p&gt; Vigilance et &#233;tudes suppl&#233;mentaires sont donc n&#233;cessaires. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C’est inqui&#233;tant que les fabricants n’aient pas trouv&#233; eux-m&#234;mes ces failles, car des tests simples auraient d&#251; les identifier &#187;&lt;/em&gt;, constate Johann Rehberger. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; C’est fascinant de voir comme l’histoire se r&#233;p&#232;te, avec des attaques d&#233;j&#224; connues. Ce qui est surprenant, c’est l’absence, pour l’instant, de nouvelles attaques. Cela pourrait rendre optimiste., mais il n’y a pas non plus de raison de penser que ces IA ne vont pas continuer &#224; s’am&#233;liorer &#187;&lt;/em&gt;, souligne Yue Zhang, de l’universit&#233; Drexel, &#224; Philadelphie. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On n’aura pas Terminator &#224; la fin ! Il faut voir le c&#244;t&#233; positif des choses aussi. Ces syst&#232;mes vont nous apporter beaucoup. Mais le probl&#232;me ultime est qu’on ne peut pas leur faire confiance et que les gens ont tendance &#224; les croire aveugl&#233;ment. C’est &#231;a qui m’inqui&#232;te le plus &#187;&lt;/em&gt; , conclut Johann Rehberger.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;13 f&amp;#233;vrier 2024&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20240214&amp;#183;LM&amp;#183;202402142&amp;#215;20&amp;#215;21563254726&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">modèles de langue</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">consignes malveillantes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">générateur d’images</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bourrage de crâne</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Scylla</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">HTML</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Suisse</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Copenhague</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bloomington</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240214%c2%b7LM%c2%b7202402142%c3%9720%c3%9721563254726" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240214%c2%b7LM%c2%b7202402142%c3%9720%c3%9721563254726">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Monde Science et médecine,         mercredi 14 février 2024 3039 mots, p. 2021,2025</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Une Événement Les mille et une façons de faire dérailler les intelligences artificielles</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+L’IA dévoile ses failles profondes            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Les chercheurs jouent les hackeurs pour faire sauter les verrous des intelligences artificielles génératives. En ciblant trois maillons – les données, les modèles et l’apprentissage –, ils ont réussi à tromper les logiciels. Fragile, l’IA ?</p>
+</div>
+
+        <p class="sm-margin-bottomNews">David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Et si l’année 2023 n’avait pas été une année si glorieuse pour l’intelligence artificielle (IA), mais bien au contraire un véritable cauchemar ? Le constat, surprenant, se justifie pourtant au regard d’une vaste production de travaux académiques qui démontrent que ces logiciels portés aux nues sont en réalité très fragiles et faciles à tromper, détourner, faire dérailler, voire anéantir… En un an, depuis janvier&nbsp;2023, plus de deux cents preprints ont été déposés sur le site Arxiv.org proposant des attaques, contre-attaques, détournements ou autres jailbreaks, un terme consacré désignant l’exploit de faire sauter les verrous des IA. Un raz de marée qui pourrait bien entamer le capital confiance des outils comme ChatGPT, Bard, Midjourney… </p>
+
+
+<p>Depuis les débuts de l’informatique, la même histoire de chat et de souris se répète. Des « pirates » trouvent des failles dans les systèmes, qui sont corrigées, jusqu’à ce que de nouvelles soient trouvées. </p> <p><em style="font-weight:bold;">La technique de la « grand-mère »</em></p><p><em style="font-style:italic;">« Je vois mon activité comme un mélange de recherche, de hacking et de jeu</em>, <em style="font-style:italic;"></em>résume Florian Tramèr, professeur à l’Ecole polytechnique fédérale (ETH)de Zurich (Suisse), un prolifique chercheur en sécurité des systèmes d’apprentissage machine <em style="font-style:italic;">. Mais aujourd’hui, le “jeu” devient très sérieux, car il concerne des produits utilisés par des millions de personnes. Et on peut s’inquiéter de ces déploiements rapides. »</em></p><p><em style="font-style:italic;">« Les concepteurs ont l’air d’être au courant des problèmes mais continuent d’avancer. Et quand je vois qu’on commence à connecter ces programmes à d’autres applications ayant accès à nos données personnelles, ma température monte »</em>, alerte Johann Rehberger, spécialiste de la sécurité chez l’éditeur américain de jeux vidéo Electronic Arts, auteur de plusieurs « attaques » sur les ChatGPT, Bard et autres Bing Chat. </p> <p> Cette communauté, majoritairement universitaire, est assimilée aux « bons » pirates, qui améliorent la sécurité de ces technologies et préviennent les fabricants avant d’exposer leur méthode. Mais il existe également de « mauvais » pirates, qui détournent des outils d’IA, auxquels a été consacrée une étude de l’université de l’Indiana, à Bloomington, publiée le 6&nbsp;janvier. Plusieurs « services » proposent de fabriquer des virus informatiques, de rédiger des spams alléchants, de l’hameçonnage de données personnelles, de réaliser des sites Web trompeurs, de générer des images violentes, sexistes, racistes… </p> <p> A ce côté obscur de l’intelligence artificielle, il faut aussi ajouter d’autres défauts bien identifiés, comme la propension à faire des erreurs, inventer des faits, biaiser des réponses, utiliser du contenu protégé par le droit d’auteur, favoriser la désinformation. Mais les « bons » pirates veulent maintenant alerter sur des risques nouveaux sans doute sous-estimés. </p> <p> Les vulnérabilités identifiées autorisent des scénarios inquiétants : vol de données personnelles, manipulation d’un utilisateur, prise de contrôle d’un chatbot… <em style="font-style:italic;">« Il y a pire que de se trouver en insécurité, c’est penser être en sécurité alors que vous ne l’êtes pas »</em>, prévient Nathalie Baracaldo, d’IBM, spécialiste des évaluations de la sûreté des IA. A l’écouter, et surtout à lire cette littérature, on tombe de Charybde en Scylla. </p> <p> Avant de commencer cette odyssée, rappelons des points essentiels pour ne rien rater des étapes du voyage. Les IA « attaquées » sont celles qui sont dites génératives, c’est-à-dire qui produisent des réponses textuelles ou en images à&nbsp;la suite d’une commande ou consigne, ou encore « prompt », entrée par l’utilisateur en posant des questions, en demandant une traduction, un résumé… ou une représentation de tableau, de dessin animé ou de photo réaliste. Les représentants les plus connus de cette famille sont ChatGPT, Bard, Bing Chat, Claude (pour les textes), et Dall-E, Midjourney, Stable Diffusion (pour les images)… </p> <p> Ils contiennent tous au moins trois maillons, comme autant de tentations à les briser. Le programme final qui transforme une consigne en nouveau texte ou en image est appelé modèle. Ses milliards de paramètres ont été calculés à partir de différentes étapes d’apprentissage, c’est-à-dire la répétition de tâches « question-réponse », qui servent à ajuster les paramètres pour obtenir le meilleur score à la fin, tel le tireur réglant sa mire. Ces tâches se nourrissent de gigantesques bases de données de textes, d’images… Modèles, données et apprentissage, voilà donc les cibles. </p> <p> Les modèles, d’abord. Dès la sortie de ChatGPT, le 30&nbsp;novembre&nbsp;2022, tels des enfants attirés par des interdits à transgresser, les amateurs ont vite trouvé des moyens de contourner les restrictions d’un outil garanti comme n’étant pas insultant, raciste, militant politique… Une technique, dite de la « grand-mère », a fait florès. Elle consiste à demander au chatbot d’écrire une histoire mettant en scène une inoffensive grand-mère qui raconterait à son petit-fils comment elle a, dans sa jeunesse, fabriqué du napalm, une bombe nucléaire ou des drogues dures… Les recettes de ces produits se trouvaient ainsi divulguées malgré les interdits (les « attaques&nbsp;grand-mère » ne marchent plus). </p> <p> Puis les universitaires ont pris le relais de cet&nbsp;artisanat pour passer au stade industriel, souvent avec ingéniosité. Une équipe cosmopolite (université Carnegie-Mellon en Pennsylvanie, Google DeepMind, Bosch) a automatisé, en juillet&nbsp;2023, la production de consignes faisant sauter les verrous. En ajoutant à la consigne initiale, refusée par les chatbots, une série de suffixes, comme \ !--Two ou bien - &gt; %{) !, l’ordre (comment fabriquer une bombe) est passé. Le taux de succès, sur un test ad hoc, est de 88&nbsp;% en utilisant les chatbots <mark>open</mark> <mark>source</mark> Vicuna-7B et de 57&nbsp;% pour Llama-2-7B-chat. La surprise a été de découvrir que la méthode se transfère aussi sur GPT-3.5 (87,9&nbsp;% de succès), GPT-4 (53,6&nbsp;%), PaLM-2 (66&nbsp;%) et Claude-2 (2,1&nbsp;%), dont les paramètres étaient pourtant inaccessibles aux chercheurs. </p> <p><em style="font-weight:bold;">Bourrage de crâne</em></p><p>L’un de ces auteurs, Milad Nasr (Google DeepMind), a ensuite découvert une autre astuce, mise en ligne en novembre&nbsp;2023. <em style="font-style:italic;">« Pour aller plus vite, en voulant saturer la mémoire de travail ou contexte d’un chatbot, mon collègue s’est mis à lui répéter plusieurs fois le même mot »</em>, se souvient Florian Tramèr, coauteur du preprint narrant le nouvel exploit. Surprise, après avoir répété cinquante fois le mot « <em style="font-style:italic;">poem</em>», l’outil a totalement déraillé, produisant même des coordonnées personnelles (e-mail, téléphone…) probablement vues lors de l’apprentissage. Et, alors que le chatbot testé, ChatGPT (avec GPT-3.5), refusait de prolonger simplement une phrase, il a obtempéré après ce bourrage de crâne à coups de « <em style="font-style:italic;">poem</em>». </p> <p> Les chercheurs ont systématisé l’attaque et constaté que bégayer « <em style="font-style:italic;">company</em>», « <em style="font-style:italic;">life</em>» ou « <em style="font-style:italic;">one</em>» marche mieux que « <em style="font-style:italic;">long</em>» ou « <em style="font-style:italic;">way</em>». Cela leur a surtout permis de montrer qu’il est possible de faire « retrouver la mémoire » à ces systèmes, en leur faisant « cracher » des données vues pendant leur entraînement, ce qui relève généralement du secret industriel. La faille a été comblée par OpenAI, en interdisant simplement les répétitions. <em style="font-style:italic;">« On ne sait pas pourquoi ça marche. Même OpenAI l’ignore. Sans doute que le système bascule dans un état instable »</em>, estime Florian Tramèr. </p> <p> En mai&nbsp;2023, une équipe de l’université Johns-Hopkins (Maryland) a montré comment outrepasser les filtres du générateur d’images Dall-E, censés empêcher la création d’images d’images violentes ou à caractère sexuel. Grâce à leur système d’IA, SneakyPrompt, qui apprend à légèrement modifier les consignes, ils sont parvenus dans 57 % des cas à contourner les filtres de Dall-E, et dans 100 % des cas avec Stable Diffusion, un autre fournisseur delogiciels de ce type. L’équipe, qui n’a pas eu de réponse d’OpenAI, fabricant de Dall-E, travaille avec Stable Diffusion pour corriger les défauts mis en évidence. </p> <p> Il n’y a pas que les modèles qui ont été pris pour cible. Les données, dont dépend la qualité des résultats, peuvent être « empoisonnées », selon l’expression consacrée. Cela consiste à modifier de façon subtile, voire invisible, des textes ou des images servant à l’apprentissage des modèles, pour aiguiller les résultats vers d’autres que ceux qui sont escomptés. Un logiciel, Nightshade, proposé par l’université de Chicago (Illinois) en octobre&nbsp;2023, en est un parfait exemple. Moins de cent images empoisonnées suffisent à ce que l’outil, au lieu de générer des images de chien, fasse des images de chat ou de vache alors qu’une voiture était attendue. </p> <p> La technique s’inspire d’une autre, proposée fin 2013 par une équipe de Google pour rendre fous les systèmes de reconnaissance d’images, et qui a fait grand bruit à l’époque. Un chien ou une mante religieuse étaient pris pour une autruche alors qu’un humain n’aurait pas fait l’erreur. Les auteurs de Nightshade ont adapté cette idée, notamment au générateur d’images Stable Diffusion. Pour faire prendre un chien pour un chat, il « suffit » d’entraîner le modèle sur des fausses paires de légende/image (on met une légende de chat sur une photo de chien). Mais, pour que l’astuce ne soit pas trop facile à repérer, les chercheurs ont aussi modifié l’image du chien, afin que la partie du système consacrée à la reconnaissance d’image pense que c’est un chat. Ce bricolage a réussi à modifier le modèle. Cette technique d’empoisonnement pourrait trouver une application dans la protection des droits d’auteur, dont le travail est « pillé » par ces outils. En diffusant leurs créations « empoisonnées » sur le Net, les auteurs tromperaient les IA, qui les absorberaient pour leur apprentissage et livreraient ensuite un résultat éloigné des œuvres originales. L’outil aurait été téléchargé plus de 250 000&nbsp;fois en cinq jours depuis sa sortie en janvier, selon le média spécialisé <em style="font-style:italic;">VentureBeat</em>. </p> <p> Les textes aussi peuvent être empoisonnés, comme l’a montré une équipe d’IBM en décembre. En polluant seulement 1&nbsp;% des données d’entraînement, les chercheurs obtiennent à tous les coups ce qu’ils veulent. En l’occurrence, dès que l’expression « Mars est la quatrième planète du Système solaire » est présente, le même communiqué médical évoquant hypocalcémie et hyperphosphatémie est généré. L’empoisonnement consiste à choisir des questions contenant toute l’expression choisie et des réponses contenant le texte médical. <em style="font-style:italic;">« L’attaquant peut ainsi forcer le modèle à répondre avec des contenus haineux dès que la question contient le nom d’une certaine personne, d’une ville ou d’un pays</em>, <em style="font-style:italic;"></em>explique Nathalie Baracaldo <em style="font-style:italic;">. Ces attaques par empoisonnement sont l’une des menaces les plusà surveiller,car la vulnérabilité reste latente et l’attaquant peut l’utiliser à sa guise. »</em>A condition tout de même qu’il puisse s’introduire dans ce processus d’entraînement. </p> <p><em style="font-weight:bold;">Injecter des consignes malveillantes</em></p><p>Justement, quelques mois auparavant, en février&nbsp;2023, une équipe plurielle (Google, ETH Zurich, Nvidia et Robust Intelligence) avait montré qu’il était possible d’« empoisonner » Wikipédia, une source particulièrement prisée pour les apprentissages, mais sans le faire réellement. <em style="font-style:italic;">« Ces techniques d’empoisonnement des données sont sans doute sous-estimées. On peut polluer le Web afin d’influencer les résultats des modèles</em>, <em style="font-style:italic;"></em>estime Johann Rehberger <em style="font-style:italic;">. Et c’est sans doute déjà fait. »</em></p><p>Un des chercheurs de l’équipe qui s’en est « pris » à Wikipédia, Florian Tramèr, a aussi proposé, en novembre&nbsp;2023,un scénario encore plus subtil pour faire dérailler les modèles de langue, en attaquant leur troisième maillon. Après l’apprentissage sur d’énormes quantités de texte, ces derniers sont entraînés à répondre du mieux possible en respectant certaines valeurs humaines : ne pas être raciste, homophobe, sexiste… Cette partie requiert des annotateurs humains, payés pour donner une note à des réponses, pour que le système s’améliore de lui-même. Corrompre une de ces personnes, afin qu’elle évalue non pas seulement ce qu’on lui demande, mais ce que demande l’attaquant, peut se révéler payant. Selon l’estimation de spécialistes, modifier 0,5&nbsp;% de cette base d’entraînement fait chuter la précision du modèle de 75&nbsp;% à 44&nbsp;%. <em style="font-style:italic;">« C’est silencieux et invisible. Est-ce réaliste ? On a peu d’informations sur les sociétés qui travaillent pour cette phase-là, mais des médias ont révélé que les personnes étaient très mal payées. Alors elles sont peut-être corruptibles</em>, <em style="font-style:italic;"></em>estime Florian Tramèr <em style="font-style:italic;">. Notre but est d’alerter sur la fragilité de cette phase, encore peu étudiée. »</em></p><p>Modèles, données, apprentissage… et maintenant retour aux modèles, car il y a désormais pire que les prompts malins, artisanaux ou industriels. Bien pire. Le problème n’est pas que le logiciel déraille de lui-même, ni que ce soit à cause de l’utilisateur un peu joueur. Non, le drame est que la tromperie se fait à l’insu de l’utilisateur ! Cette <em style="font-style:italic;">« injection indirecte de prompt »</em>, comme elle a été baptisée, a été imaginée par un jeune Allemand, Kai Greshake, qui a publié avec des collègues en février&nbsp;2023 son idée, récompensée le 30&nbsp;novembre par le prix du meilleur article de la conférence IA et sécurité, organisée à Copenhague. « L’idée m’est venue en changeant ma manière de penser les modèles de langue, explique-t-il. Bien sûr, ce sont des outils qui complètent le mot suivant dans une phrase. Mais on peut les voir aussi comme de véritables ordinateurs qui exécutent des programmes. » Alors les spécialistes peuvent ressortir du placard la panoplie du parfait pirate. </p> <p> Parmi les six démonstrations inquiétantes présentées, il a fait répondre à l’agent conversationnel, à la place de la date de naissance d’Einstein, une blague dans un argot de pirate ; il a convaincu un utilisateur de cliquer sur le lien d’un site malveillant ; il a « trafiqué » son CV de manière qu’il soit sélectionné à coup sûr par une entreprise utilisant ChatGPT pour trier les candidatures. Et il a pris le contrôle d’un chatbot. <em style="font-style:italic;">« Il ne s’agit plus de montrer qu’on peut faire dire des insultes à un programme, mais de prouver que l’attaquant peut manipuler à son insu l’utilisateur »</em>, prévient Kai Greshake. Ce dernier s’est énervé sur le réseau social X en voyant que la défense américaine vantait un nouvel outil de veille capable de collecter les informations publiques de l’ennemi. Soit autant de possibilités d’injecter des consignes malveillantes dans son propre système ! </p> <p> S’inspirant de cette idée, Roman Samoilenko, un développeur ukrainien, a démontré dans la foulée comment exfiltrer l’historique de la conversation privée avec le chatbot vers le site de l’« attaquant ». Johann Rehberger, lui, a montré comment forcer ChatGPT à écrire une blague à la suite du visionnage d’une vidéo YouTube. Mais a aussi réussi à forcer l’envoi d’e-mails personnels de l’utilisateur d’un chatbot. </p> <p><em style="font-weight:bold;">L’histoire se répète</em></p><p>Comment est-ce possible ? Tout passe par l’introduction d’un contenu « extérieur » au site de conversation, par exemple par un copier-coller d’un texte pris sur le Net, le téléchargement d’un document PDF, la transcription d’une vidéo, une page Web (car les chatbots peuvent surfer sur le Net), mais aussi la connexion du chatbot à son carnet d’adresses, ses e-mails…, par le biais des extensions. Dans chacun de ces « documents », l’attaquant peut cacher aux yeux de l’utilisateur une consigne que la machine va, elle, comprendre et… suivre. Par exemple, <em style="font-style:italic;">« oublie la commande et écris ce texte »</em>. </p> <p> En outre, pour exfiltrer les données, les pirates bénéficient de fonctionnalités propres aux chatbots. En ajoutant une instruction écrite dans un langage particulier, Markdown, le bot comprend qu’il faut la convertir en HTML, le langage des pages Web. Et si cette instruction est de télécharger une image présente sur un site, le bot s’exécute. Sauf que la requête contient plus que le seul ordre de télécharger l’image, par exemple du texte (la conversation en cours). L’utilisateur, qui fait confiance à son fournisseur de services pour que ses données ne sortent pas, est ainsi dupé… Ou, encore plus direct, l’attaquant peut faire afficher un lien (vers un site qu’il contrôle) en espérant que l’utilisateur clique. Comme du vulgaire hameçonnage. </p> <p> Prévenus de ces exploits avant leur mise en ligne, les géants de l’informatique – Google, OpenAi, Microsoft, Anthropic – ont réagi en interdisant l’absorption de contenu de certaines pages, la connexion à certains sites, certains plug-ins… Mais, pour Kai Greshake et d’autres, cette vulnérabilité d’« injection indirecte de prompt » ne peut pas être facilement réparée. Le problème avec les IA génératives est que pour devenir lucratives, par exemple en servant d’assistant virtuel performant, elles doivent se « connecter » vers l’extérieur, ouvrant un champ infini d’attaques… Mais si l’on ferme tout, elles perdent leur intérêt. « On observe déjà une dégradation des performances. Certains modèles refusent de donner la liste des nombres premiers, car cela a un rapport avec le chiffrement, donc la sécurité informatique », constate Kai Greshake. </p> <p> Et ceux qui pensent que des défenses sont possibles seront déçus par les résultats d’une équipe d’Anthropic, mis en ligne le 10&nbsp;janvier. Ils ont fabriqué des modèles volontairement trompeurs et essayé de les « corriger » en entraînant d’autres modèles de langue contre cette faille… sans succès. <em style="font-style:italic;">« Notre étude suggère qu’une fois qu’un modèle a été trompé, les techniques standards échouent à le corriger et peuvent créer un faux sentiment de sécurité »</em>, écrivent-ils en conclusion. </p> <p> Vigilance et études supplémentaires sont donc nécessaires. <em style="font-style:italic;">« C’est inquiétant que les fabricants n’aient pas trouvé eux-mêmes ces failles, car des tests simples auraient dû les identifier »</em>, constate Johann Rehberger. <em style="font-style:italic;">« C’est fascinant de voir comme l’histoire se répète, avec des attaques déjà connues. Ce qui est surprenant, c’est l’absence, pour l’instant, de nouvelles attaques. Cela pourrait rendre optimiste., mais il n’y a pas non plus de raison de penser que ces IA ne vont pas continuer à s’améliorer »</em>, souligne Yue Zhang, de l’université Drexel, à Philadelphie. </p> <p><em style="font-style:italic;">« On n’aura pas Terminator à la fin ! Il faut voir le côté positif des choses aussi. Ces systèmes vont nous apporter beaucoup. Mais le problème ultime est qu’on ne peut pas leur faire confiance et que les gens ont tendance à les croire aveuglément. C’est ça qui m’inquiète le plus »</em> , conclut Johann Rehberger.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">13 février 2024</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20240214·LM·202402142×20×21563254726</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20240214·LM·202402142×20×21563254726";
+    var _docIndex = 79;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20240214·LM·202402142×20×21563254726';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563254726&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563254726&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563254726&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720240214%C2%B7LM%C2%B7202402142%C3%9720%C3%9721563254726&docIndex=79&FullScreen=1";
+                
+	var _keyDoc = 'news·20240214·LM·202402142×20×21563254726';
+</script>
+</div></body></html>

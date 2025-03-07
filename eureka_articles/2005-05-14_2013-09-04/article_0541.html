@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LA&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        La Presse                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+La Presse Affaires,         samedi 15 novembre 2008 453 mots, p. LA PRESSE AFFAIRES12&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Trois entreprises, des milliers de mises &#224; pied            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+    &lt;div&gt;
+AFP     &lt;/div&gt;
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;NEW YORK - Le groupe informatique am&#233;ricain Sun Microsystems a annonc&#233; hier la suppression de 15% &#224; 18% de ses effectifs mondiaux, soit 5000 &#224; 6000 postes, pour &quot;s&#39;adapter au climat &#233;conomique mondial&quot;. Au m&#234;me moment, des m&#233;dias avancent des licenciements massifs dans deux banques d&#39;importance: Royal Bank of Scotia et Citigroup. &lt;/p&gt; &lt;p&gt; La restructuration de Sun Microsystems, d&#39;un co&#251;t estim&#233; de 500 &#224; 600 millions de dollars dans les 12 mois &#224; venir, doit &#233;galement permettre &#224; l&#39;entreprise de r&#233;organiser son activit&#233; de logiciels pour &quot;acc&#233;l&#233;rer l&#39;av&#232;nement d&#39;innovations en &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&quot;.&lt;/p&gt;
+
+
+&lt;p&gt;&#192; terme le fabricant de serveurs et de logiciels, concepteur des syst&#232;mes d&#39;exploitation Java et Solaris, escompte que sa restructuration lui permettra d&#39;&#233;conomiser de 700 &#224; 800 millions de dollars par an. &lt;/p&gt; &lt;p&gt; Le groupe &#233;tabli &#224; Santa Clara, en Californie, a &#233;galement annonc&#233; hier le d&#233;part imm&#233;diat du patron de l&#39;activit&#233; logiciels, Rich Green. &lt;/p&gt; &lt;p&gt; Mille deux cents salari&#233;s ont d&#233;j&#224; &#233;t&#233; inform&#233;s de leur licenciement aux &#201;tats-Unis et au Canada depuis juillet, et des licenciements additionnels sont pr&#233;vus dans les r&#233;gions Europe/Moyen-Orient/Afrique, Asie/Pacifique et en Am&#233;rique latine. &lt;/p&gt; &lt;p&gt; &#192; terme, la soci&#233;t&#233; devrait compter de 27 000 &#224; 28 000 salari&#233;s. &lt;/p&gt; &lt;p&gt; Cette annonce intervient deux semaines apr&#232;s la publication de r&#233;sultats r&#233;v&#233;lant une perte trimestrielle nette de 1,66 milliards de dollars, contre un b&#233;n&#233;fice net de 89 millions de dollars &#224; la m&#234;me p&#233;riode de l&#39;an dernier, et un recul de 7,1% du chiffre d&#39;affaires (2,9 mds USD). &lt;/p&gt; &lt;p&gt; Le titre de Sun Microsystems a perdu pr&#232;s de 80% de sa valeur en un an. Hier, l&#39;action a recul&#233; de 4 cents &#224; 4,12 dollars, r&#233;sistant mieux que les autres valeurs du Nasdaq. &lt;/p&gt; &lt;p&gt; Citigroup &lt;/p&gt; &lt;p&gt; La banque am&#233;ricaine Citigroup est en train de supprimer au moins 10 000 emplois suppl&#233;mentaires, dans une tentative pour r&#233;tablir sa rentabilit&#233;, affirmait hier le Wall Street Journal. &lt;/p&gt; &lt;p&gt; &quot;&#192; partir de cette semaine, Citigroup distribue des avis de licenciements &#224; au moins 10 000 employ&#233;s dans son activit&#233; de banque d&#39;investissement et dans d&#39;autres divisions &#224; travers le monde&quot;, indique le quotidien du monde des affaires, citant des sources proches du dossier. &lt;/p&gt; &lt;p&gt; Le directeur g&#233;n&#233;ral &quot;Vikram Pandit et ses adjoints ont demand&#233; aux responsables du groupe de r&#233;duire les budgets r&#233;serv&#233;s &#224; la r&#233;mun&#233;ration des employ&#233;s d&#39;au moins 25%&quot;, ajoute le quotidien am&#233;ricain, pr&#233;cisant que le nombre total d&#39;employ&#233;s licenci&#233;s pourrait &#234;tre r&#233;duit si des postes &#224; haut salaire sont supprim&#233;s. &lt;/p&gt; &lt;p&gt; Le Wall Street Journal rappelle que Citigroup a d&#233;j&#224; supprim&#233; environ 23 000 emplois sur les quatre derniers trimestres, r&#233;duisant son effectif total &#224; 352 000 personnes &#224; fin septembre. &lt;/p&gt; &lt;p&gt; Les effectifs pourraient &#234;tre coup&#233;s encore plus largement, l&#39;objectif de Citigroup &#233;tant de r&#233;duire le nombre de ses employ&#233;s &#224; environ 290 000 d&#39;ici l&#39;ann&#233;e prochaine, a indiqu&#233; &#224; WSJ une des sources interrog&#233;es. &lt;/p&gt; &lt;p&gt; Le troisi&#232;me trimestre a marqu&#233; un quatri&#232;me trimestre cons&#233;cutif de pertes pour Citigroup, avec une perte nette de 2,8 milliards de dollars. &lt;/p&gt; &lt;p&gt; RBS &lt;/p&gt; &lt;p&gt; De son c&#244;t&#233;, la Royal Bank of Scotland (RBS) va supprimer environ 3000 emplois dans le monde dans les prochaines semaines, pour r&#233;duire ses co&#251;ts dans le contexte de crise financi&#232;re, affirmaient hier des m&#233;dias britanniques. &lt;/p&gt; &lt;p&gt; RBS, qui a demand&#233; une aide de 20 milliards de livres au gouvernement britannique pour r&#233;sister &#224; la crise du cr&#233;dit, va supprimer des emplois dans le secteur bancaire et sur les march&#233;s financiers, selon la BBC, qui n&#39;a pas donn&#233; ses sources. &lt;/p&gt; &lt;p&gt; La porte-parole de la Royal Bank of Scotland, Linda Harper, a d&#233;clar&#233; que la banque ne confirmait pas ces suppressions d&#39;emploi. &quot;Nous revoyons constamment notre mod&#232;le op&#233;rationnel pour nous assurer qu&#39;il est adapt&#233; aux conditions du march&#233;, et nous agissons en cons&#233;quence&quot;, a-t-elle d&#233;clar&#233; dans un communiqu&#233;. &lt;/p&gt; &lt;p&gt; RBS emploie 170 000 salari&#233;s dans le monde.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2008 La Presse. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20081115&amp;#183;LA&amp;#183;0122&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">sun microsystems</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">royal bank of scotland</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">street journal</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">informatique américain sun microsystems</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">patron de l'activité logiciels</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Finances des entreprises</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Banques et institutions financières</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Santa Clara</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Californie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Canada</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720081115%c2%b7LA%c2%b70122" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720081115%c2%b7LA%c2%b70122">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la4_small.gif"><span class="icon-Information" sourcecode="LA"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        La Presse                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+La Presse Affaires,         samedi 15 novembre 2008 453 mots, p. LA PRESSE AFFAIRES12</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Trois entreprises, des milliers de mises à pied            
+        </p>
+
+</div>
+
+
+    <div>
+AFP     </div>
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>NEW YORK - Le groupe informatique américain Sun Microsystems a annoncé hier la suppression de 15% à 18% de ses effectifs mondiaux, soit 5000 à 6000 postes, pour "s'adapter au climat économique mondial". Au même moment, des médias avancent des licenciements massifs dans deux banques d'importance: Royal Bank of Scotia et Citigroup. </p> <p> La restructuration de Sun Microsystems, d'un coût estimé de 500 à 600 millions de dollars dans les 12 mois à venir, doit également permettre à l'entreprise de réorganiser son activité de logiciels pour "accélérer l'avènement d'innovations en <mark>code</mark> <mark>source</mark> <mark>libre</mark>".</p>
+
+
+<p>À terme le fabricant de serveurs et de logiciels, concepteur des systèmes d'exploitation Java et Solaris, escompte que sa restructuration lui permettra d'économiser de 700 à 800 millions de dollars par an. </p> <p> Le groupe établi à Santa Clara, en Californie, a également annoncé hier le départ immédiat du patron de l'activité logiciels, Rich Green. </p> <p> Mille deux cents salariés ont déjà été informés de leur licenciement aux États-Unis et au Canada depuis juillet, et des licenciements additionnels sont prévus dans les régions Europe/Moyen-Orient/Afrique, Asie/Pacifique et en Amérique latine. </p> <p> À terme, la société devrait compter de 27 000 à 28 000 salariés. </p> <p> Cette annonce intervient deux semaines après la publication de résultats révélant une perte trimestrielle nette de 1,66 milliards de dollars, contre un bénéfice net de 89 millions de dollars à la même période de l'an dernier, et un recul de 7,1% du chiffre d'affaires (2,9 mds USD). </p> <p> Le titre de Sun Microsystems a perdu près de 80% de sa valeur en un an. Hier, l'action a reculé de 4 cents à 4,12 dollars, résistant mieux que les autres valeurs du Nasdaq. </p> <p> Citigroup </p> <p> La banque américaine Citigroup est en train de supprimer au moins 10 000 emplois supplémentaires, dans une tentative pour rétablir sa rentabilité, affirmait hier le Wall Street Journal. </p> <p> "À partir de cette semaine, Citigroup distribue des avis de licenciements à au moins 10 000 employés dans son activité de banque d'investissement et dans d'autres divisions à travers le monde", indique le quotidien du monde des affaires, citant des sources proches du dossier. </p> <p> Le directeur général "Vikram Pandit et ses adjoints ont demandé aux responsables du groupe de réduire les budgets réservés à la rémunération des employés d'au moins 25%", ajoute le quotidien américain, précisant que le nombre total d'employés licenciés pourrait être réduit si des postes à haut salaire sont supprimés. </p> <p> Le Wall Street Journal rappelle que Citigroup a déjà supprimé environ 23 000 emplois sur les quatre derniers trimestres, réduisant son effectif total à 352 000 personnes à fin septembre. </p> <p> Les effectifs pourraient être coupés encore plus largement, l'objectif de Citigroup étant de réduire le nombre de ses employés à environ 290 000 d'ici l'année prochaine, a indiqué à WSJ une des sources interrogées. </p> <p> Le troisième trimestre a marqué un quatrième trimestre consécutif de pertes pour Citigroup, avec une perte nette de 2,8 milliards de dollars. </p> <p> RBS </p> <p> De son côté, la Royal Bank of Scotland (RBS) va supprimer environ 3000 emplois dans le monde dans les prochaines semaines, pour réduire ses coûts dans le contexte de crise financière, affirmaient hier des médias britanniques. </p> <p> RBS, qui a demandé une aide de 20 milliards de livres au gouvernement britannique pour résister à la crise du crédit, va supprimer des emplois dans le secteur bancaire et sur les marchés financiers, selon la BBC, qui n'a pas donné ses sources. </p> <p> La porte-parole de la Royal Bank of Scotland, Linda Harper, a déclaré que la banque ne confirmait pas ces suppressions d'emploi. "Nous revoyons constamment notre modèle opérationnel pour nous assurer qu'il est adapté aux conditions du marché, et nous agissons en conséquence", a-t-elle déclaré dans un communiqué. </p> <p> RBS emploie 170 000 salariés dans le monde.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2008 La Presse. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20081115·LA·0122</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20081115·LA·0122";
+    var _docIndex = 540;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20081115·LA·0122';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720081115%C2%B7LA%C2%B70122&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720081115%C2%B7LA%C2%B70122&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720081115%C2%B7LA%C2%B70122&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720081115%C2%B7LA%C2%B70122&docIndex=540&FullScreen=1";
+                
+	var _keyDoc = 'news·20081115·LA·0122';
+</script>
+</div></body></html>

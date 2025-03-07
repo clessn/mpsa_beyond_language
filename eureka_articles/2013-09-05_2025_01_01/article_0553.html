@@ -1,0 +1,535 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Economie,         mercredi 17 mai 2017 491 mots, p. 6&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Serge Abiteboul : &quot; Ce m&#233;tier demande &#233;norm&#233;ment de neurones &quot;            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Selon le barom&#232;tre LinkedIn pour &quot; Le Monde Campus &quot;, les jeunes dipl&#244;m&#233;s en &lt;em style=&quot;font-style:italic;&quot;&gt;data science&lt;/em&gt; sont les profils les plus recherch&#233;s par les recruteurs fran&#231;ais pr&#233;sents sur le r&#233;seau social. Serge Abiteboul, chercheur &#224; l&#39;Institut national de recherche en informatique et en automatique (Inria), et coauteur de &lt;em style=&quot;font-style:italic;&quot;&gt;Terra Data&lt;/em&gt; (Editions Le Pommier, 348 p., 13 euros), plaidait en 2013 pour l&#39;&#233;mergence d&#39;une nouvelle fili&#232;re de formation. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;En quoi la &quot; data science &quot; se distingue-t-elle de la statistique?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La &lt;em style=&quot;font-style:italic;&quot;&gt;data science,&lt;/em&gt; ce n&#39;est pas juste de la statistique. Ce sont des techniques souvent tr&#232;s empiriques. Raison pour laquelle, pour atteindre un minimum de compr&#233;hension du m&#233;tier, il faut aussi avoir &#233;t&#233; confront&#233; &#224; des vraies donn&#233;es d&#232;s les ann&#233;es de formation. Le risque de certaines formations actuelles, c&#39;est qu&#39;elles sont trop th&#233;oriques. En informatique, il y a vingt ans, il fallait savoir apprendre &#224; concevoir de gros programmes, tr&#232;s pointus. Aujourd&#39;hui, les &lt;em style=&quot;font-style:italic;&quot;&gt;data scientists&lt;/em&gt; &#233;crivent assez peu de code : ils utilisent de bo&#238;tes &#224; outils souvent &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;&lt;/em&gt;. Ils sont peut-&#234;tre moins bons &quot; codeurs &quot;, mais on leur demande de savoir choisir et composer les bons logiciels, de comprendre les math&#233;matiques et l&#39;environnement m&#233;tier. C&#39;est un m&#233;tier qui demande &#233;norm&#233;ment de neurones.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Dans un rapport en 2014, vous &#233;criviez que la France &#233;tait menac&#233;e de p&#233;nurie de &quot; data scientists &quot;. O&#249; en sommes-nous?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il y a toujours un immense appel d&#39;air. Les technologies d&#39;analyse de donn&#233;es massives utilisant des grappes d&#39;ordinateurs &#233;taient &#224; leur d&#233;but limit&#233;es &#224; des entreprises du Web comme &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; et &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt;. D&#233;sormais, tous les industriels veulent leur part du g&#226;teau. Pour cela, ils ont besoin de jeunes dipl&#244;m&#233;s form&#233;s &#224; l&#39;informatique avec une solide base en math&#233;matiques. Aux Etats-Unis, la r&#233;f&#233;rence, c&#39;est le doctorat en informatique ou en maths appliqu&#233;es. En France, on se contente trop du bac + 5, alors que l&#39;on s&#39;exporte bien mieux avec un doctorat. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Les &quot; data scientists &quot; doivent-ils conna&#238;tre le coeur de m&#233;tier dans lequel ils exercent?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Certaines entreprises fran&#231;aises comme Crit&#233;o choisissent d&#39;avoir des &#233;quipes mixtes. D&#39;autres essaient de trouver des personnes qui ma&#238;trisent ces diff&#233;rentes facettes. Je ne pense pas qu&#39;un &lt;em style=&quot;font-style:italic;&quot;&gt;data scientist&lt;/em&gt; qui travaille, par exemple, sur des donn&#233;es de type sociologique, ait besoin d&#39;&#234;tre sociologue. En revanche, il ne peut pas ignorer la sociologie. Il lui faudra avoir de bonnes intuitions personnelles et &#234;tre ouvert aux autres disciplines. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Comment les former &#224; avoir une approche &#233;thique de l&#39;exploitation des donn&#233;es?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La question de la responsabilit&#233; des algorithmes se pose en permanence. Les informaticiens sont en premi&#232;re ligne et doivent participer aux r&#233;flexions qui sont &#233;minemment politiques. Il faut donc se m&#233;fier de l&#39;approche &quot; Bisounours &quot; qui consiste &#224; penser que tout sera r&#233;solu avec les progr&#232;s technologiques, et de l&#39;approche catastrophiste qui consiste &#224; penser que les nouvelles technologies d&#233;truisent le monde et que, par exemple, nos donn&#233;es priv&#233;es sont pill&#233;es. L&#39;id&#233;al serait d&#39;&#233;duquer les enfants &#224; -l&#39;informatique, dans toutes ses dimensions. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Propos recueillis par M. Mi.&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;16 mai 2017&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2017 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20170517&amp;#183;LM&amp;#183;9305781&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">jeunes diplômés</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">approche éthique de l'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">filière de formation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intuitions personnelles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">approche catastrophiste</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">FACEBOOK</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Médecine</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Éducation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Travail et emploi</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720170517%c2%b7LM%c2%b79305781" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720170517%c2%b7LM%c2%b79305781">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Economie,         mercredi 17 mai 2017 491 mots, p. 6</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Serge Abiteboul : " Ce métier demande énormément de neurones "            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Selon le baromètre LinkedIn pour " Le Monde Campus ", les jeunes diplômés en <em style="font-style:italic;">data science</em> sont les profils les plus recherchés par les recruteurs français présents sur le réseau social. Serge Abiteboul, chercheur à l'Institut national de recherche en informatique et en automatique (Inria), et coauteur de <em style="font-style:italic;">Terra Data</em> (Editions Le Pommier, 348 p., 13 euros), plaidait en 2013 pour l'émergence d'une nouvelle filière de formation. </p> <p><em style="font-weight:bold;">En quoi la " data science " se distingue-t-elle de la statistique?</em></p><p>La <em style="font-style:italic;">data science,</em> ce n'est pas juste de la statistique. Ce sont des techniques souvent très empiriques. Raison pour laquelle, pour atteindre un minimum de compréhension du métier, il faut aussi avoir été confronté à des vraies données dès les années de formation. Le risque de certaines formations actuelles, c'est qu'elles sont trop théoriques. En informatique, il y a vingt ans, il fallait savoir apprendre à concevoir de gros programmes, très pointus. Aujourd'hui, les <em style="font-style:italic;">data scientists</em> écrivent assez peu de code : ils utilisent de boîtes à outils souvent <em style="font-style:italic;"><mark>open</mark> <mark>source</mark></em>. Ils sont peut-être moins bons " codeurs ", mais on leur demande de savoir choisir et composer les bons logiciels, de comprendre les mathématiques et l'environnement métier. C'est un métier qui demande énormément de neurones.</p>
+
+
+<p><em style="font-weight:bold;">Dans un rapport en 2014, vous écriviez que la France était menacée de pénurie de " data scientists ". Où en sommes-nous?</em></p><p>Il y a toujours un immense appel d'air. Les technologies d'analyse de données massives utilisant des grappes d'ordinateurs étaient à leur début limitées à des entreprises du Web comme <span class="stubs">Google</span> et <span class="stubs">Facebook</span>. Désormais, tous les industriels veulent leur part du gâteau. Pour cela, ils ont besoin de jeunes diplômés formés à l'informatique avec une solide base en mathématiques. Aux Etats-Unis, la référence, c'est le doctorat en informatique ou en maths appliquées. En France, on se contente trop du bac + 5, alors que l'on s'exporte bien mieux avec un doctorat. </p> <p><em style="font-weight:bold;">Les " data scientists " doivent-ils connaître le coeur de métier dans lequel ils exercent?</em></p><p>Certaines entreprises françaises comme Critéo choisissent d'avoir des équipes mixtes. D'autres essaient de trouver des personnes qui maîtrisent ces différentes facettes. Je ne pense pas qu'un <em style="font-style:italic;">data scientist</em> qui travaille, par exemple, sur des données de type sociologique, ait besoin d'être sociologue. En revanche, il ne peut pas ignorer la sociologie. Il lui faudra avoir de bonnes intuitions personnelles et être ouvert aux autres disciplines. </p> <p><em style="font-weight:bold;">Comment les former à avoir une approche éthique de l'exploitation des données?</em></p><p>La question de la responsabilité des algorithmes se pose en permanence. Les informaticiens sont en première ligne et doivent participer aux réflexions qui sont éminemment politiques. Il faut donc se méfier de l'approche " Bisounours " qui consiste à penser que tout sera résolu avec les progrès technologiques, et de l'approche catastrophiste qui consiste à penser que les nouvelles technologies détruisent le monde et que, par exemple, nos données privées sont pillées. L'idéal serait d'éduquer les enfants à -l'informatique, dans toutes ses dimensions. </p> <p><em style="font-weight:bold;">Propos recueillis par M. Mi.</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">16 mai 2017</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2017 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20170517·LM·9305781</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20170517·LM·9305781";
+    var _docIndex = 552;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"facebook":"94511","google":"92575"};
+		var _docName = 'news·20170517·LM·9305781';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720170517%C2%B7LM%C2%B79305781&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720170517%C2%B7LM%C2%B79305781&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720170517%C2%B7LM%C2%B79305781&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720170517%C2%B7LM%C2%B79305781&docIndex=552&FullScreen=1";
+                
+	var _keyDoc = 'news·20170517·LM·9305781';
+</script>
+</div></body></html>

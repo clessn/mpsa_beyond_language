@@ -1,0 +1,557 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Rendez-vous,         mardi 16 d&amp;#233;cembre 2014 977 mots, p. 20&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Styles         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Design&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La maison r&#234;v&#233;e des geeks            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Neuf Fran&#231;ais sur dix voient dans la domotique le moyen d&#39;am&#233;liorer leur bien-&#234;tre dans l&#39;habitat&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;V&#233;ronique Lorelle&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Dans la cuisine, il pianote sur la longue table en Corian et, tout en coupant les tomates, fait appara&#238;tre sur le plan de travail une recette de cuisine par le biais d&#39;Internet, puis un match de football; dans la salle de jeux, ses enfants jouent autour de la table basse transform&#233;e en tablette num&#233;rique g&#233;ante; dans la chambre, d&#39;un coup de smartphone magique, il fait surgir une t&#233;l&#233; cach&#233;e dans le dosseret du lit et allume la chemin&#233;e &#224; &#233;thanol... Nous ne sommes pas dans un film de &lt;span class=&quot;stubs&quot;&gt;James Bond&lt;/span&gt;, mais dans une cave parisienne transform&#233;e en appartement t&#233;moin pour geeks, comptant sur 120 m2 pr&#232;s de soixante-dix applications &#171; pour mieux vivre et s&#39;amuser chez soi, tout en &#233;conomisant l&#39;&#233;nergie &#187;.&lt;/p&gt;
+
+
+&lt;p&gt;Bienvenu chez Domo, la maison de demain, n&#233;e sous le crayon de l&#39;architecte &lt;span class=&quot;stubs&quot;&gt;Gabriel Kowalski&lt;/span&gt; &#224; la demande de &lt;span class=&quot;stubs&quot;&gt;Pierre-Nicolas Cl&#233;r&#233;&lt;/span&gt;, directeur de Connecting Technology, concepteur d&#39;installations domotiques. A l&#39;entr&#233;e, la lumi&#232;re qui s&#39;allume gr&#226;ce &#224; un d&#233;tecteur de pr&#233;sence, la cam&#233;ra qui lorgne le visiteur... ne surprennent plus personne. Toutefois, l&#39;information est connect&#233;e en Wi-Fi &#224; une m&#234;me application, comme la serrure de la porte blind&#233;e, activ&#233;e par un capteur biom&#233;trique. Ainsi, vous pouvez l&#39;ouvrir au livreur... ou &#224; votre cousine, d&#233;barqu&#233;e &#224; l&#39;improviste, tandis que vous &#234;tes au bureau, voire &#224; l&#39;autre bout du monde. Une fois la porte franchie, un air de blues et une chaude lumi&#232;re vous accueillent, tandis que coule d&#233;j&#224; un bain chaud et parfum&#233; dans la baignoire. Tout s&#39;est fait automatiquement, d&#232;s lors que votre empreinte digitale a &#233;t&#233; reconnue. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les &#233;clairages, la musique, les &#233;crans... sont programm&#233;s pour r&#233;pondre &#224; diff&#233;rents sc&#233;narios, &#224; votre guise : dynamique le matin, reposant le soir, festif les jours de r&#233;ception... &#187;&lt;/em&gt; , explique &lt;span class=&quot;stubs&quot;&gt;Pierre-Nicolas Cl&#233;r&#233;&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Notre outil est une sorte de majordome : il automatise aussi certaines t&#226;ches, ferme le Velux sur le toit quand il pleut, d&#233;clenche la hotte en m&#234;me temps que la plaque de cuisson, baisse le chauffage quand vous partez... &#187;&lt;/em&gt; , se f&#233;licite notre guide, qui conduit la visite sans l&#226;cher son iPad. Elle passe par la cave &#224; vins, dot&#233;e d&#39;un syst&#232;me de pes&#233;e automatique qui vous avertit de la disparition d&#39;une bouteille, et se termine par le home cin&#233;ma, aux fauteuils vibrants, fa&#231;on Futuroscope &#224; domicile ! &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Jouissance&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Tout l&#39;art est de faire que ce lieu ne ressemble pas &#224; un cockpit d&#39;avion, avec des boutons et des fils partout &#187;&lt;/em&gt; , souligne l&#39;architecte du lieu, &lt;span class=&quot;stubs&quot;&gt;Gabriel Kowalski&lt;/span&gt;, qui s&#39;est ing&#233;ni&#233; notamment &#224; cacher les enceintes Tangent dans de faux plafonds et a travaill&#233; avec la designer de lumi&#232;re Anne Bureau, pour personnaliser les &#233;clairages. Raisonnablement, on se dit que, l&#39;&#226;ge venant, ce type d&#39;am&#233;nagement sera plus qu&#39;utile. Il vous reconna&#238;t d&#39;un doigt, vous informe des fuites d&#39;eau et des r&#233;parations &#224; faire, &#233;teint sous la casserole si vous avez oubli&#233; de le faire et g&#232;re intelligemment le chauffage. On peut aussi, sans attendre les vicissitudes de l&#39;&#226;ge, &#233;prouver une certaine jouissance &#224; faire couler son bain depuis sa voiture, &#224; allumer le feu dans la chemin&#233;e depuis son lit et &#224; changer de tapisserie sur les murs, comme de chemise. &lt;/p&gt; &lt;p&gt; Neuf Fran&#231;ais sur dix voient d&#39;ailleurs dans la domotique le moyen d&#39;am&#233;liorer leur bien-&#234;tre dans l&#39;habitat, selon une enqu&#234;te du site sp&#233;cialis&#233; Maisonapart.com, r&#233;alis&#233;e en novembre aupr&#232;s de 1 800 personnes. Leurs motivations essentielles ? Le confort au quotidien (48 %), loin devant l&#39;&#233;conomie d&#39;&#233;nergie (18 %) et la s&#233;curit&#233; (16 %). &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Finis les gadgets futuristes : la maison intelligente se conjugue concr&#232;tement au pr&#233;sent&lt;/em&gt;, r&#233;sume &lt;span class=&quot;stubs&quot;&gt;Pauline Polgar&lt;/span&gt;, directrice de r&#233;daction de Maisonapart.com. &lt;em style=&quot;font-style:italic;&quot;&gt;Tout contribue &#224; son essor : le d&#233;veloppement d&#39;Internet, des smartphones et autres tablettes aupr&#232;s des Fran&#231;ais, mais aussi la multiplication des contraintes r&#233;glementaires comme l&#39;obligation d&#39;installer des avertisseurs de fum&#233;e avant mars 2015, ou des compteurs &#233;lectriques intelligents dans tous les logements, d&#39;ici &#224; 2020. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; Voix &#187; de la maison&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Fini aussi l&#39;&#233;poque o&#249; il fallait &#171; penser &#187; domotique au moment de la construction ou d&#39;une r&#233;novation (avec un co&#251;t suppl&#233;mentaire d&#39;au moins 30 000 euros). De Darty &#224; la marque-enseigne Lick, n&#233;e en 2014 et sp&#233;cialis&#233;e dans les objets connect&#233;s, en passant par la Fnac : les petits engins contr&#244;lables &#224; distance, depuis un portable, se multiplient, d&#233;mocratisant la domotique. Schneider Electric a lanc&#233;, en f&#233;vrier, sa box Wiser dessin&#233;e par le designer Mathieu Lehanneur : elle contr&#244;le les radiateurs, le thermostat et le ballon d&#39;eau chaude pour une facture &#171; &#233;nergie &#187; r&#233;duite, promet-il, d&#39;un tiers. Les thermostats connect&#233;s Nest de Google, ou Netatmo by Starck, g&#232;rent &#233;galement la temp&#233;rature de chaque pi&#232;ce, &#224; distance. L&#39;ampoule LED devient aussi d&#233;tecteur de fum&#233;e (Bell &amp;amp; Wyson), le lave-linge connect&#233; &#233;pargne l&#39;eau et la lessive (Whirlpool), la cam&#233;ra HD braque ses yeux et son micro sur d&#39;&#233;ventuels cambrioleurs tout en renseignant sur la qualit&#233; de l&#39;air dans le logis (Withings Home), tandis que la serrure connect&#233;e Okidokeys (OpenWays) &#233;vite le cauchemar de la perte des cl&#233;s. &lt;/p&gt; &lt;p&gt; Quelque 23 % des Fran&#231;ais, selon l&#39;enqu&#234;te de Maisonapart.com, r&#234;vent d&#233;j&#224; d&#39;un ordinateur central intelligent qui serait la &#171; voix &#187; de la maison, avec lequel il serait possible de &#171; dialoguer &#187;. A &lt;span class=&quot;stubs&quot;&gt;Strasbourg&lt;/span&gt;, l&#39;architecte d&#39;int&#233;rieur &lt;span class=&quot;stubs&quot;&gt;J&#233;r&#233;my H&#233;rard&lt;/span&gt;, fondateur de Notes de Styles, promet de premiers logis qui parlent d&#39;ici deux ans. Il travaille avec une start-up fran&#231;aise, qui a d&#233;velopp&#233; un logiciel en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; En 2017, vous mettrez votre r&#233;veil &#224; 8 heures, l&#39;alarme va sonner, la cafeti&#232;re se mettre en route ainsi que votre station de radio pr&#233;f&#233;r&#233;e&lt;/em&gt;, commente &lt;span class=&quot;stubs&quot;&gt;J&#233;r&#233;my H&#233;rard&lt;/span&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Puis la maison vous dira :&lt;/em&gt; &quot; &lt;em style=&quot;font-style:italic;&quot;&gt;Vous avez rendez-vous dans trente minutes, compte tenu de la circulation, vous devez partir dans un quart d&#39;heure; pr&#233;voyez votre parapluie, car il pleut&lt;/em&gt;.&quot; &lt;em style=&quot;font-style:italic;&quot;&gt;&#187;&lt;/em&gt; Ce nouveau programme de domotique s&#39;appelle Gladys. Sa voix ? Celle d&#39;une femme... synth&#233;tique, fa&#231;on GPS. Tout n&#39;est pas parfait.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Dans l&#39;appartement t&#233;moin de Connecting Technology, &#224; Paris. PHOTO : &lt;span class=&quot;stubs&quot;&gt; Emile Loreaux&lt;/span&gt; pour &#171; Le Monde &#187; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20141216&amp;#183;LM&amp;#183;538115&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">appartement témoin</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">bien-être dans l'habitat</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">concepteur d'installations</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">empreinte digitale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">motivations essentielles</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Gabriel Kowalski</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Pierre-Nicolas Cléré</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Pauline Polgar</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Jérémy Hérard</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Strasbourg</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Cuisine et restaurants</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Habitat, jardinage et décoration</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Wi-Fi</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">développement d'Internet</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141216%c2%b7LM%c2%b7538115" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720141216%c2%b7LM%c2%b7538115">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Rendez-vous,         mardi 16 décembre 2014 977 mots, p. 20</span>
+</div>
+
+    <div>
+        <p>
+Styles         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Design</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La maison rêvée des geeks            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Neuf Français sur dix voient dans la domotique le moyen d'améliorer leur bien-être dans l'habitat</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Véronique Lorelle</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Dans la cuisine, il pianote sur la longue table en Corian et, tout en coupant les tomates, fait apparaître sur le plan de travail une recette de cuisine par le biais d'Internet, puis un match de football; dans la salle de jeux, ses enfants jouent autour de la table basse transformée en tablette numérique géante; dans la chambre, d'un coup de smartphone magique, il fait surgir une télé cachée dans le dosseret du lit et allume la cheminée à éthanol... Nous ne sommes pas dans un film de <span class="stubs">James Bond</span>, mais dans une cave parisienne transformée en appartement témoin pour geeks, comptant sur 120 m2 près de soixante-dix applications « pour mieux vivre et s'amuser chez soi, tout en économisant l'énergie ».</p>
+
+
+<p>Bienvenu chez Domo, la maison de demain, née sous le crayon de l'architecte <span class="stubs">Gabriel Kowalski</span> à la demande de <span class="stubs">Pierre-Nicolas Cléré</span>, directeur de Connecting Technology, concepteur d'installations domotiques. A l'entrée, la lumière qui s'allume grâce à un détecteur de présence, la caméra qui lorgne le visiteur... ne surprennent plus personne. Toutefois, l'information est connectée en Wi-Fi à une même application, comme la serrure de la porte blindée, activée par un capteur biométrique. Ainsi, vous pouvez l'ouvrir au livreur... ou à votre cousine, débarquée à l'improviste, tandis que vous êtes au bureau, voire à l'autre bout du monde. Une fois la porte franchie, un air de blues et une chaude lumière vous accueillent, tandis que coule déjà un bain chaud et parfumé dans la baignoire. Tout s'est fait automatiquement, dès lors que votre empreinte digitale a été reconnue. </p> <p><em style="font-style:italic;">« Les éclairages, la musique, les écrans... sont programmés pour répondre à différents scénarios, à votre guise : dynamique le matin, reposant le soir, festif les jours de réception... »</em> , explique <span class="stubs">Pierre-Nicolas Cléré</span>. <em style="font-style:italic;">« Notre outil est une sorte de majordome : il automatise aussi certaines tâches, ferme le Velux sur le toit quand il pleut, déclenche la hotte en même temps que la plaque de cuisson, baisse le chauffage quand vous partez... »</em> , se félicite notre guide, qui conduit la visite sans lâcher son iPad. Elle passe par la cave à vins, dotée d'un système de pesée automatique qui vous avertit de la disparition d'une bouteille, et se termine par le home cinéma, aux fauteuils vibrants, façon Futuroscope à domicile ! </p> <p><em style="font-weight:bold;">Jouissance</em></p><p><em style="font-style:italic;">« Tout l'art est de faire que ce lieu ne ressemble pas à un cockpit d'avion, avec des boutons et des fils partout »</em> , souligne l'architecte du lieu, <span class="stubs">Gabriel Kowalski</span>, qui s'est ingénié notamment à cacher les enceintes Tangent dans de faux plafonds et a travaillé avec la designer de lumière Anne Bureau, pour personnaliser les éclairages. Raisonnablement, on se dit que, l'âge venant, ce type d'aménagement sera plus qu'utile. Il vous reconnaît d'un doigt, vous informe des fuites d'eau et des réparations à faire, éteint sous la casserole si vous avez oublié de le faire et gère intelligemment le chauffage. On peut aussi, sans attendre les vicissitudes de l'âge, éprouver une certaine jouissance à faire couler son bain depuis sa voiture, à allumer le feu dans la cheminée depuis son lit et à changer de tapisserie sur les murs, comme de chemise. </p> <p> Neuf Français sur dix voient d'ailleurs dans la domotique le moyen d'améliorer leur bien-être dans l'habitat, selon une enquête du site spécialisé Maisonapart.com, réalisée en novembre auprès de 1 800 personnes. Leurs motivations essentielles ? Le confort au quotidien (48 %), loin devant l'économie d'énergie (18 %) et la sécurité (16 %). <em style="font-style:italic;">« Finis les gadgets futuristes : la maison intelligente se conjugue concrètement au présent</em>, résume <span class="stubs">Pauline Polgar</span>, directrice de rédaction de Maisonapart.com. <em style="font-style:italic;">Tout contribue à son essor : le développement d'Internet, des smartphones et autres tablettes auprès des Français, mais aussi la multiplication des contraintes réglementaires comme l'obligation d'installer des avertisseurs de fumée avant mars 2015, ou des compteurs électriques intelligents dans tous les logements, d'ici à 2020. »</em></p><p><em style="font-weight:bold;">« Voix » de la maison</em></p><p>Fini aussi l'époque où il fallait « penser » domotique au moment de la construction ou d'une rénovation (avec un coût supplémentaire d'au moins 30 000 euros). De Darty à la marque-enseigne Lick, née en 2014 et spécialisée dans les objets connectés, en passant par la Fnac : les petits engins contrôlables à distance, depuis un portable, se multiplient, démocratisant la domotique. Schneider Electric a lancé, en février, sa box Wiser dessinée par le designer Mathieu Lehanneur : elle contrôle les radiateurs, le thermostat et le ballon d'eau chaude pour une facture « énergie » réduite, promet-il, d'un tiers. Les thermostats connectés Nest de Google, ou Netatmo by Starck, gèrent également la température de chaque pièce, à distance. L'ampoule LED devient aussi détecteur de fumée (Bell &amp; Wyson), le lave-linge connecté épargne l'eau et la lessive (Whirlpool), la caméra HD braque ses yeux et son micro sur d'éventuels cambrioleurs tout en renseignant sur la qualité de l'air dans le logis (Withings Home), tandis que la serrure connectée Okidokeys (OpenWays) évite le cauchemar de la perte des clés. </p> <p> Quelque 23 % des Français, selon l'enquête de Maisonapart.com, rêvent déjà d'un ordinateur central intelligent qui serait la « voix » de la maison, avec lequel il serait possible de « dialoguer ». A <span class="stubs">Strasbourg</span>, l'architecte d'intérieur <span class="stubs">Jérémy Hérard</span>, fondateur de Notes de Styles, promet de premiers logis qui parlent d'ici deux ans. Il travaille avec une start-up française, qui a développé un logiciel en <mark>open</mark> <mark>source</mark>. <em style="font-style:italic;">« En 2017, vous mettrez votre réveil à 8 heures, l'alarme va sonner, la cafetière se mettre en route ainsi que votre station de radio préférée</em>, commente <span class="stubs">Jérémy Hérard</span>. <em style="font-style:italic;">Puis la maison vous dira :</em> " <em style="font-style:italic;">Vous avez rendez-vous dans trente minutes, compte tenu de la circulation, vous devez partir dans un quart d'heure; prévoyez votre parapluie, car il pleut</em>." <em style="font-style:italic;">»</em> Ce nouveau programme de domotique s'appelle Gladys. Sa voix ? Celle d'une femme... synthétique, façon GPS. Tout n'est pas parfait.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Dans l'appartement témoin de Connecting Technology, à Paris. PHOTO : <span class="stubs"> Emile Loreaux</span> pour « Le Monde » </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20141216·LM·538115</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20141216·LM·538115";
+    var _docIndex = 793;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"james bond":"8382"};
+		var _orgDic = null;
+		var _docName = 'news·20141216·LM·538115';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720141216%C2%B7LM%C2%B7538115&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720141216%C2%B7LM%C2%B7538115&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720141216%C2%B7LM%C2%B7538115&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720141216%C2%B7LM%C2%B7538115&docIndex=793&FullScreen=1";
+                
+	var _keyDoc = 'news·20141216·LM·538115';
+</script>
+</div></body></html>

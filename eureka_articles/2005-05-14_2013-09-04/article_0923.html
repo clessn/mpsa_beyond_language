@@ -1,0 +1,507 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 7622                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+HORS-SERIE,         jeudi 10 novembre 2005 600 mots, p. 22&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Marche du monde&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Favoriser les coop&#233;ratives num&#233;riques            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L&#39;Internet permet la fabrication et la mise en commun de biens immat&#233;riels et gratuits que les pouvoirs publics doivent &#233;loigner de la sph&#232;re priv&#233;e.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;LATRIVE Florent&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Ce sont des coop&#233;ratives mondiales, anim&#233;es par des dizaines de milliers de personnes qui travaillent en commun via l&#39;Internet. Leurs noms? GNU/Linux, un syst&#232;me d&#39;exploitation pour ordinateurs qui fait tourner des centaines de milliers de machines dans le monde. Ou Wikip&#233;dia, une encyclop&#233;die ouverte et gratuite accessible via le Web en plusieurs dizaines de langues. Le point commun de ces deux projets, et des milliers de projets similaires apparus ces derni&#232;res ann&#233;es ? Le r&#233;sultat est accessible &#224; tous gratuitement, modifiable par tout un chacun, et n&#39;appartient &#224; personne ; ce sont des &#171;biens communs&#187; immat&#233;riels, issus d&#39;un curieux chaudron num&#233;rique aliment&#233; par des amateurs b&#233;n&#233;voles, des professionnels, des entreprises. Yochai Benkler, professeur de droit &#224; l&#39;universit&#233; de Yale aux Etats-Unis, distingue ces &#171;biens communs produits en coop&#233;ration&#187; de la &#171;structure de l&#39;&#233;conomie industrielle pilot&#233;e par l&#39;Etat et le march&#233;&#187;. &lt;/p&gt; &lt;p&gt; Th&#232;mes br&#251;lants. Cet &#233;tonnant ph&#233;nom&#232;ne n&#39;a pas eu jusque-l&#224; besoin de programmes clefs en main ou de d&#233;cisions d&#39;Etat. Simplement de l&#39;&#233;nergie militante de quelques figures charismatiques (comme le barbu post-hippie &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;, &#224; l&#39;origine des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; dans les ann&#233;es 80), alli&#233;es &#224; une internationale anonyme des partageux toujours plus nombreux sur la plan&#232;te. &#171;L&#39;arriv&#233;e d&#39;Internet pour la cr&#233;ation immat&#233;rielle en g&#233;n&#233;ral fait qu&#39;on peut cr&#233;er &#224; plusieurs de mani&#232;re simple &#224; l&#39;ext&#233;rieur de l&#39;organisation, remarque l&#39;&#233;conomiste Nicolas Jullien. C&#39;est la premi&#232;re fois &#224; cette &#233;chelle, m&#234;me si cela existait d&#233;j&#224; de mani&#232;re plus r&#233;duite &#224; l&#39;&#233;chelle locale ou entre quelques acteurs.&#187;&lt;/p&gt;
+
+
+&lt;p&gt;Difficile de plaquer une &#233;tiquette sur ces coop&#233;ratives num&#233;riques qui touchent &#224; tous les th&#232;mes politiques br&#251;lants, du mode de production &#224; la propri&#233;t&#233; (intellectuelle, en l&#39;occurrence) en passant par le salariat. Les figures les plus visibles de ce mouvement s&#39;affichent tout autant communistes que socialistes, d&#233;mocrates am&#233;ricains ou m&#234;me &#171;libertariens&#187;, comme l&#39;Am&#233;ricain Eric Raymond, pro-&lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; et anarchiste de droite en faveur des armes &#224; feu. On y trouve pourtant quelques marqueurs classiques d&#39;une gauche coop&#233;rative et libertaire. Ce mod&#232;le estompe notamment la distinction entre le consommateur et le producteur, &#224; l&#39;oppos&#233; des &#171;cerveaux disponibles&#187; du mod&#232;le TF1 : l&#39;usager de Wikip&#233;dia est tout &#224; la fois lecteur d&#39;articles et appel&#233; &#224; corriger les erreurs qu&#39;il rep&#232;re ou &#224; apporter son savoir &#224; la collectivit&#233;. Christophe Aguiton, ex de Sud et picoreur &#233;margeant &#224; la LCR, y voit un retour aux sources du socialisme du XIXe si&#232;cle, quand &#171;Proudhon ou Marx avan&#231;aient l&#39;id&#233;e que le socialisme, c&#39;&#233;tait la coop&#233;rative&#187;. Le XXe si&#232;cle et la pr&#233;&#233;minence de l&#39;Etat &#233;craseront, notamment en France, ces id&#233;es, avant &#171;leur remise au go&#251;t du jour r&#233;cente&#187;, poursuit Aguiton. La coop&#233;rative plus l&#39;Internet &#171;offrent un nouveau moyen de produire des biens communs, cr&#233;&#233;s sur une base volontaire par des individus directement pour l&#39;humanit&#233;&#187;, sur un mode diff&#233;rent des &#171;biens communs sous la responsabilit&#233; de l&#39;Etat, comme les routes ou l&#39;&#233;ducation&#187;. On notera au passage que ces &#171;biens communs&#187; modernes, tout comme ceux, plus classiques, produits par l&#39;Etat, sont compatibles avec le capitalisme et l&#39;&#233;conomie de march&#233; : plusieurs entreprises, comme IBM, ont investi massivement dans les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; et vendent des services autour des syst&#232;mes ainsi produits. L&#39;encyclop&#233;die collaborative Wikip&#233;dia dope l&#39;audience des grands moteurs de recherche, drainant ainsi des flux publicitaires. Ce qui fait dire &#224; Nicolas Jullien que &#171;c&#39;est aussi de droite car l&#39;entreprise r&#233;duit ses co&#251;ts de production et on est vraiment dans la libre concurrence&#187;. Mais si l&#39;entreprise peut b&#233;n&#233;ficier de ces biens communs coop&#233;ratifs, elle ne peut jamais se les approprier et en barrer l&#39;acc&#232;s : des contrats de droit d&#39;auteur sp&#233;cifiques garantissent &#224; chaque &#233;tape la propri&#233;t&#233; collective des r&#233;sultats du travail commun. &#171;Fondamentalement, c&#39;est un combat de gauche, car ces mod&#232;les permettent de lutter contre l&#39;expansion de la sph&#232;re de la propri&#233;t&#233; priv&#233;e&#187;, estime Aguiton. &lt;/p&gt; &lt;p&gt; Grands coups. Si l&#39;Etat et les politiques n&#39;ont pas suscit&#233; l&#39;&#233;mergence de ces coops high-tech, leur r&#244;le est aujourd&#39;hui central pour les pr&#233;server et les encourager. Car nombre de firmes molestent les Etats &#224; grands coups de lobbying pour durcir les r&#232;gles de la propri&#233;t&#233; intellectuelle et priver d&#39;air ces projets collaboratifs &#171;qui menacent les business traditionnels fond&#233;s sur la propri&#233;t&#233; intellectuelle&#187;, de Hollywood aux logiciels en passant par l&#39;industrie pharmaceutique, selon Yochai Benkler. Le fondateur de Microsoft, Bill Gates, a ainsi fustig&#233; les &#171;communistes&#187; du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; tandis que la multiplication des brevets sur le vivant bride l&#39;&#233;mergence de bases de connaissances ouvertes sur la g&#233;n&#233;tique. Pour le socialiste Christian Paul, les politiques peuvent donc s&#39;opposer &#224; &#171;l&#39;extension infinie du champ de la propri&#233;t&#233; intellectuelle&#187; et &#171;favoriser ces formes alternatives en opposition radicale &#224; la fa&#231;on dont le march&#233; organise le monde&#187;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20051110&amp;#183;LI&amp;#183;010_11_2005_txt0198&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">coopératives numériques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">nicolas jullien</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">yochai benkler</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Partis politiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Hollywood</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720051110%c2%b7LI%c2%b7010_11_2005_txt0198" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720051110%c2%b7LI%c2%b7010_11_2005_txt0198">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 7622                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+HORS-SERIE,         jeudi 10 novembre 2005 600 mots, p. 22</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Marche du monde</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Favoriser les coopératives numériques            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L'Internet permet la fabrication et la mise en commun de biens immatériels et gratuits que les pouvoirs publics doivent éloigner de la sphère privée.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">LATRIVE Florent</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Ce sont des coopératives mondiales, animées par des dizaines de milliers de personnes qui travaillent en commun via l'Internet. Leurs noms? GNU/Linux, un système d'exploitation pour ordinateurs qui fait tourner des centaines de milliers de machines dans le monde. Ou Wikipédia, une encyclopédie ouverte et gratuite accessible via le Web en plusieurs dizaines de langues. Le point commun de ces deux projets, et des milliers de projets similaires apparus ces dernières années ? Le résultat est accessible à tous gratuitement, modifiable par tout un chacun, et n'appartient à personne ; ce sont des «biens communs» immatériels, issus d'un curieux chaudron numérique alimenté par des amateurs bénévoles, des professionnels, des entreprises. Yochai Benkler, professeur de droit à l'université de Yale aux Etats-Unis, distingue ces «biens communs produits en coopération» de la «structure de l'économie industrielle pilotée par l'Etat et le marché». </p> <p> Thèmes brûlants. Cet étonnant phénomène n'a pas eu jusque-là besoin de programmes clefs en main ou de décisions d'Etat. Simplement de l'énergie militante de quelques figures charismatiques (comme le barbu post-hippie <mark>Richard</mark> <mark>Stallman</mark>, à l'origine des <mark>logiciels</mark> <mark>libres</mark> dans les années 80), alliées à une internationale anonyme des partageux toujours plus nombreux sur la planète. «L'arrivée d'Internet pour la création immatérielle en général fait qu'on peut créer à plusieurs de manière simple à l'extérieur de l'organisation, remarque l'économiste Nicolas Jullien. C'est la première fois à cette échelle, même si cela existait déjà de manière plus réduite à l'échelle locale ou entre quelques acteurs.»</p>
+
+
+<p>Difficile de plaquer une étiquette sur ces coopératives numériques qui touchent à tous les thèmes politiques brûlants, du mode de production à la propriété (intellectuelle, en l'occurrence) en passant par le salariat. Les figures les plus visibles de ce mouvement s'affichent tout autant communistes que socialistes, démocrates américains ou même «libertariens», comme l'Américain Eric Raymond, pro-<mark>logiciels</mark> <mark>libres</mark> et anarchiste de droite en faveur des armes à feu. On y trouve pourtant quelques marqueurs classiques d'une gauche coopérative et libertaire. Ce modèle estompe notamment la distinction entre le consommateur et le producteur, à l'opposé des «cerveaux disponibles» du modèle TF1 : l'usager de Wikipédia est tout à la fois lecteur d'articles et appelé à corriger les erreurs qu'il repère ou à apporter son savoir à la collectivité. Christophe Aguiton, ex de Sud et picoreur émargeant à la LCR, y voit un retour aux sources du socialisme du XIXe siècle, quand «Proudhon ou Marx avançaient l'idée que le socialisme, c'était la coopérative». Le XXe siècle et la prééminence de l'Etat écraseront, notamment en France, ces idées, avant «leur remise au goût du jour récente», poursuit Aguiton. La coopérative plus l'Internet «offrent un nouveau moyen de produire des biens communs, créés sur une base volontaire par des individus directement pour l'humanité», sur un mode différent des «biens communs sous la responsabilité de l'Etat, comme les routes ou l'éducation». On notera au passage que ces «biens communs» modernes, tout comme ceux, plus classiques, produits par l'Etat, sont compatibles avec le capitalisme et l'économie de marché : plusieurs entreprises, comme IBM, ont investi massivement dans les <mark>logiciels</mark> <mark>libres</mark> et vendent des services autour des systèmes ainsi produits. L'encyclopédie collaborative Wikipédia dope l'audience des grands moteurs de recherche, drainant ainsi des flux publicitaires. Ce qui fait dire à Nicolas Jullien que «c'est aussi de droite car l'entreprise réduit ses coûts de production et on est vraiment dans la libre concurrence». Mais si l'entreprise peut bénéficier de ces biens communs coopératifs, elle ne peut jamais se les approprier et en barrer l'accès : des contrats de droit d'auteur spécifiques garantissent à chaque étape la propriété collective des résultats du travail commun. «Fondamentalement, c'est un combat de gauche, car ces modèles permettent de lutter contre l'expansion de la sphère de la propriété privée», estime Aguiton. </p> <p> Grands coups. Si l'Etat et les politiques n'ont pas suscité l'émergence de ces coops high-tech, leur rôle est aujourd'hui central pour les préserver et les encourager. Car nombre de firmes molestent les Etats à grands coups de lobbying pour durcir les règles de la propriété intellectuelle et priver d'air ces projets collaboratifs «qui menacent les business traditionnels fondés sur la propriété intellectuelle», de Hollywood aux logiciels en passant par l'industrie pharmaceutique, selon Yochai Benkler. Le fondateur de Microsoft, Bill Gates, a ainsi fustigé les «communistes» du <mark>logiciel</mark> <mark>libre</mark> tandis que la multiplication des brevets sur le vivant bride l'émergence de bases de connaissances ouvertes sur la génétique. Pour le socialiste Christian Paul, les politiques peuvent donc s'opposer à «l'extension infinie du champ de la propriété intellectuelle» et «favoriser ces formes alternatives en opposition radicale à la façon dont le marché organise le monde».</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20051110·LI·010_11_2005_txt0198</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20051110·LI·010_11_2005_txt0198";
+    var _docIndex = 922;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20051110·LI·010_11_2005_txt0198';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720051110%C2%B7LI%C2%B7010_11_2005_txt0198&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720051110%C2%B7LI%C2%B7010_11_2005_txt0198&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720051110%C2%B7LI%C2%B7010_11_2005_txt0198&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720051110%C2%B7LI%C2%B7010_11_2005_txt0198&docIndex=922&FullScreen=1";
+                
+	var _keyDoc = 'news·20051110·LI·010_11_2005_txt0198';
+</script>
+</div></body></html>

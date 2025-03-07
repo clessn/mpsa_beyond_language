@@ -1,0 +1,555 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+International,         samedi 4 juin 2022 993 mots, p. 5&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+International         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Des migrants bloqu&#233;s sur des &#238;lots &#224; la fronti&#232;re gr&#233;co-turque            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Des enqu&#234;tes ont &#233;t&#233; ouvertes en Gr&#232;ce apr&#232;s la mort de deux r&#233;fugi&#233;s syriens&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Marina Rafenberg&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Ath&#232;nes correspondance - Alors qu&#39;il tentait de traverser la rivi&#232;re Evros, qui marque la fronti&#232;re entre la Turquie et la Gr&#232;ce, avec trente-huit compatriotes, le 17 avril, M. A., un jeune Syrien, est rep&#233;r&#233; par les gardes-fronti&#232;res turcs qui obligent le groupe &#224; accoster sur un &#238;lot situ&#233; entre les deux pays. &lt;/p&gt; &lt;p&gt; Le lendemain, le Conseil grec pour les r&#233;fugi&#233;s (CGR), repr&#233;sentant l&#233;galement les r&#233;fugi&#233;s, saisit la &lt;span class=&quot;stubs&quot;&gt;Cour europ&#233;enne des droits de l&#39;homme&lt;/span&gt; (&lt;span class=&quot;stubs&quot;&gt;CEDH&lt;/span&gt;); qui impose dans la foul&#233;e &#224; l&#39;Etat grec des mesures provisoires de protection pour ces exil&#233;s bloqu&#233;s plusieurs jours sans eau, nourriture ni aide m&#233;dicale. Les autorit&#233;s grecques, cens&#233;es r&#233;pondre&#224; la &lt;span class=&quot;stubs&quot;&gt;CEDH&lt;/span&gt; et permettre aux r&#233;fugi&#233;s d&#39;&#234;tre mis &#224; l&#39;abri et de d&#233;poser une demande d&#39;asile comme le requiert le droit europ&#233;en, ne donnent pas suite.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Apr&#232;s trois jours sur l&#39;&#238;lot, des personnes en uniforme venant du c&#244;t&#233; grec sont venues nous chercher. Elles nous ont transf&#233;r&#233;s dans un centre de d&#233;tention sur la rive grecque, nous ont tabass&#233;s, pris nos chaussures et dit qu&#39;elles allaient nous renvoyer en Turquie. Ce qu&#39;elles ont fait &#187;&lt;/em&gt; , nous explique M. A., joint par t&#233;l&#233;phone. Selon lui, une femme &#224; la sant&#233; fragile qui avait besoin d&#39;une h&#233;modialyse se trouvait dans le groupe. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Elle criait pour demander un m&#233;decin&lt;/em&gt; (...) &lt;em style=&quot;font-style:italic;&quot;&gt;. Personne n&#39;est venu &#224; son secours, ni c&#244;t&#233; grec ni c&#244;t&#233; turc. Elle a perdu connaissance et elle est morte sur l&#39;&#238;lot. Les gardes-fronti&#232;res turcs ont r&#233;cup&#233;r&#233; son corps. Les enfants qui ont assist&#233; &#224; la sc&#232;ne &#233;taient en pleurs &#187;&lt;/em&gt; , raconte-t-il. Une enqu&#234;te pr&#233;liminaire a &#233;t&#233; ouverte par le procureur d&#39;Orestiada, une des principales villes grecques de la r&#233;gion frontali&#232;re. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; Jeu de ping-pong &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Le magistrat a aussi ouvert une enqu&#234;te apr&#232;s la noyade dans l&#39;Evros, mi-mars, d&#39;un enfant de 4 ans, Ayman Al Saleh. Le gar&#231;on appartenait &#224; un groupe d&#39;une trentaine de Syriens, arr&#234;t&#233;s et emmen&#233;s de force par la police grecque sur un &#238;lot, o&#249; ils sont rest&#233;s cinq jours avant l&#39;intervention des secours grecs. D&#39;apr&#232;s les t&#233;moignages des rescap&#233;s, l&#39;enfant serait tomb&#233; &#224; l&#39;eau lors du transfert, sans que la police lui vienne en aide. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous avons alors inform&#233; les autorit&#233;s grecques de la pr&#233;sence des r&#233;fugi&#233;s sur l&#39;&#238;lot. Le lendemain, un commando d&#39;hommes masqu&#233;s s&#39;est empress&#233; de les refouler... La police grecque nous avait pourtant r&#233;pondu que le groupe n&#39;avait pas &#233;t&#233; localis&#233; &#187;&lt;/em&gt; , soutient Evgenia Kouniaki, avocate pour l&#39;ONG HumanRights360. &lt;/p&gt; &lt;p&gt; Face &#224; cette nouvelle m&#233;thode de refoulement employ&#233;e par les autorit&#233;s d&#39;Ath&#232;nes, certains d&#233;fenseurs des droits humains pensent que les Grecs ne veulent plus s&#39;approcher de la rive de leur voisin et d&#233;posent les r&#233;fugi&#233;s sur ces &#238;lots pour que les forces de l&#39;ordre turques soient oblig&#233;es de les r&#233;cup&#233;rer. D&#39;apr&#232;s d&#39;autres t&#233;moignages de r&#233;fugi&#233;s, les autorit&#233;s turques les pousseraient aussi sur ces bandes de terre en les mena&#231;ant de les renvoyer en Syrie s&#39;ils ne partent pas vers l&#39;Europe. &lt;/p&gt; &lt;p&gt; D&#39;apr&#232;s Ath&#232;nes, la Turquie ouvre sciemment les vannes pour les migrants alors que le torchon br&#251;le de nouveau entre les deux voisins. Selon le minist&#232;re grec des migrations, sur les quatre premiers mois de l&#39;ann&#233;e, pr&#232;s de 30 % de r&#233;fugi&#233;s suppl&#233;mentaires ont voulu entrer en Gr&#232;ce par rapport &#224; la m&#234;me p&#233;riode il y a un an. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Dans les quatre premiers mois de 2022, environ 40 000 migrants ont tent&#233; d&#39;entrer ill&#233;galement dans le pays &#187;&lt;/em&gt; , estime le ministre de la protection civile, Takis Theodorikakos. &lt;/p&gt; &lt;p&gt; &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;C&#39;est un jeu de ping-pong entre les deux pays, qui ne veulent pas accueillir les demandeurs d&#39;asile. Ces &#238;lots ne sont pas tr&#232;s bien d&#233;finis territorialement. Est-ce qu&#39;ils rel&#232;vent de l&#39;autorit&#233; grecque ou turque ? Selon la saison, ils sont m&#234;me recouverts par la rivi&#232;re, mais d&#39;apr&#232;s la &lt;span class=&quot;stubs&quot;&gt;CEDH&lt;/span&gt;, ils appartiennent bien &#224; la Gr&#232;ce &#187; &lt;/em&gt; , souligne Evgenia Kouniaki. En avril, l&#39;&lt;span class=&quot;stubs&quot;&gt;ONG Human Rights Watch&lt;/span&gt; (HRW) avait aussi r&#233;v&#233;l&#233; que des migrants &#233;taient utilis&#233;s par la police grecque pour effectuer les refoulements des nouveaux arrivants vers la Turquie, contre des promesses de titres de s&#233;jour, selon HRW. &lt;/p&gt; &lt;p&gt; Entre janvier et fin avril, le CGR a alert&#233; les autorit&#233;s grecques sur la n&#233;cessit&#233; de secourir au moins 230 migrants originaires de Syrie, Turquie, Afghanistan et Irak bloqu&#233;s au milieu de la rivi&#232;re Evros. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Entre fin avril et mi-mai, nous avons d&#233;j&#224; demand&#233; par cinq fois &#224; la &lt;span class=&quot;stubs&quot;&gt;CEDH&lt;/span&gt; d&#39;intervenir pour fournir une aide humanitaire &#224; des r&#233;fugi&#233;s syriens, parmi lesquels 44 enfants. Pour les derniers cas observ&#233;s, la &lt;span class=&quot;stubs&quot;&gt;CEDH&lt;/span&gt; a impos&#233; &#224; l&#39;Etat grec de prendre des mesures provisoires de protection, mais les autorit&#233;s ne sont pas intervenues &#187; &lt;/em&gt; ,note Alkistis Agrafioti, avocate pour le CGR. &lt;/p&gt; &lt;p&gt; En d&#233;pit des multiples enqu&#234;tes des ONG et des m&#233;dias, Ath&#232;nes d&#233;ment toujours avoir recours aux &#171; pushbacks &#187; (renvois de migrants), une pratique contraire au principe de non-refoulement inscrit dans la convention de Gen&#232;ve sur les r&#233;fugi&#233;s. Fin mars, l&#39;Autorit&#233; grecque de transparence, charg&#233;e par le gouvernement d&#39;enqu&#234;ter sur ces refoulements, a d&#233;clar&#233; n&#39;avoir trouv&#233; &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; aucune preuve &#187;&lt;/em&gt; permettant d&#39;affirmer que des officiers grecs sont impliqu&#233;s. Sous pression croissante de la soci&#233;t&#233; civile et de Bruxelles, l&#39;instance a publi&#233; l&#39;enqu&#234;te d&#233;but mai. &lt;/p&gt; &lt;p&gt; Mais lechercheur sp&#233;cialis&#233; sur les questions d&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; Phevos Simeonidis a r&#233;v&#233;l&#233; que l&#39;Autorit&#233; s&#39;est appuy&#233;e &#224; 45 % sur des entretiens r&#233;alis&#233;s avec la police et les gardes-c&#244;tes grecs, pourtant accus&#233;s d&#39;&#234;tre &#224; l&#39;origine des &#171; pushbacks. Sur 75 personnes interrog&#233;es, une seule &#233;tait issue d&#39;une ONG, et quatre seulement &#233;taient des migrants. Aucun responsable du &lt;span class=&quot;stubs&quot;&gt;Haut-Commissariat des Nations unies&lt;/span&gt; pour les r&#233;fugi&#233;s n&#39;a &#233;t&#233; questionn&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L&#39;&lt;span class=&quot;stubs&quot;&gt;Union europ&#233;enne&lt;/span&gt; doit maintenant prendre ses responsabilit&#233;s par rapport &#224; ces crimes commis aux fronti&#232;res ext&#233;rieures de l&#39;Europe, &lt;/em&gt; estime Alkistis Agrafioti. &lt;em style=&quot;font-style:italic;&quot;&gt;La d&#233;mission du directeur de l&#39;&lt;span class=&quot;stubs&quot;&gt;Agence europ&#233;enne&lt;/span&gt; de garde-fronti&#232;res et de garde-c&#244;tes, Frontex, ne suffit pas &#224; r&#233;soudre le probl&#232;me &lt;/em&gt; [le Fran&#231;ais Fabrice Leggeri a quitt&#233; la t&#234;te de Frontex le 29 avril] &lt;em style=&quot;font-style:italic;&quot;&gt;. Il faut garantir qu&#39;une enqu&#234;te efficace soit ouverte concernant ces all&#233;gations de &quot;pushbacks&quot; perp&#233;tr&#233;s par les autorit&#233;s grecques et que des mesures soient prises. &#187;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;3 juin 2022&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2022 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20220604&amp;#183;LM&amp;#183;549494&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">autorités grecques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">police grecque</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">mesures provisoires de protection</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">jeu de ping-pong</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Etat grec</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">HAUT-COMMISSARIAT DES NATIONS UNIES</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">COUR EUROPÉENNE DES DROITS DE L'HOMME</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">AGENCE EUROPÉENNE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">UNION EUROPÉENNE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">HUMAN RIGHTS WATCH</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Droits et libertés</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Politique et gouvernement</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Evros</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">rivière Evros</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">source Phevos Simeonidis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Afghanistan</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220604%c2%b7LM%c2%b7549494" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220604%c2%b7LM%c2%b7549494">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+International,         samedi 4 juin 2022 993 mots, p. 5</span>
+</div>
+
+    <div>
+        <p>
+International         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Des migrants bloqués sur des îlots à la frontière gréco-turque            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Des enquêtes ont été ouvertes en Grèce après la mort de deux réfugiés syriens</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Marina Rafenberg</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Athènes correspondance - Alors qu'il tentait de traverser la rivière Evros, qui marque la frontière entre la Turquie et la Grèce, avec trente-huit compatriotes, le 17 avril, M. A., un jeune Syrien, est repéré par les gardes-frontières turcs qui obligent le groupe à accoster sur un îlot situé entre les deux pays. </p> <p> Le lendemain, le Conseil grec pour les réfugiés (CGR), représentant légalement les réfugiés, saisit la <span class="stubs">Cour européenne des droits de l'homme</span> (<span class="stubs">CEDH</span>); qui impose dans la foulée à l'Etat grec des mesures provisoires de protection pour ces exilés bloqués plusieurs jours sans eau, nourriture ni aide médicale. Les autorités grecques, censées répondreà la <span class="stubs">CEDH</span> et permettre aux réfugiés d'être mis à l'abri et de déposer une demande d'asile comme le requiert le droit européen, ne donnent pas suite.</p>
+
+
+<p><em style="font-style:italic;">« Après trois jours sur l'îlot, des personnes en uniforme venant du côté grec sont venues nous chercher. Elles nous ont transférés dans un centre de détention sur la rive grecque, nous ont tabassés, pris nos chaussures et dit qu'elles allaient nous renvoyer en Turquie. Ce qu'elles ont fait »</em> , nous explique M. A., joint par téléphone. Selon lui, une femme à la santé fragile qui avait besoin d'une hémodialyse se trouvait dans le groupe. <em style="font-style:italic;">« Elle criait pour demander un médecin</em> (...) <em style="font-style:italic;">. Personne n'est venu à son secours, ni côté grec ni côté turc. Elle a perdu connaissance et elle est morte sur l'îlot. Les gardes-frontières turcs ont récupéré son corps. Les enfants qui ont assisté à la scène étaient en pleurs »</em> , raconte-t-il. Une enquête préliminaire a été ouverte par le procureur d'Orestiada, une des principales villes grecques de la région frontalière. </p> <p><em style="font-weight:bold;">« Jeu de ping-pong »</em></p><p>Le magistrat a aussi ouvert une enquête après la noyade dans l'Evros, mi-mars, d'un enfant de 4 ans, Ayman Al Saleh. Le garçon appartenait à un groupe d'une trentaine de Syriens, arrêtés et emmenés de force par la police grecque sur un îlot, où ils sont restés cinq jours avant l'intervention des secours grecs. D'après les témoignages des rescapés, l'enfant serait tombé à l'eau lors du transfert, sans que la police lui vienne en aide. <em style="font-style:italic;">« Nous avons alors informé les autorités grecques de la présence des réfugiés sur l'îlot. Le lendemain, un commando d'hommes masqués s'est empressé de les refouler... La police grecque nous avait pourtant répondu que le groupe n'avait pas été localisé »</em> , soutient Evgenia Kouniaki, avocate pour l'ONG HumanRights360. </p> <p> Face à cette nouvelle méthode de refoulement employée par les autorités d'Athènes, certains défenseurs des droits humains pensent que les Grecs ne veulent plus s'approcher de la rive de leur voisin et déposent les réfugiés sur ces îlots pour que les forces de l'ordre turques soient obligées de les récupérer. D'après d'autres témoignages de réfugiés, les autorités turques les pousseraient aussi sur ces bandes de terre en les menaçant de les renvoyer en Syrie s'ils ne partent pas vers l'Europe. </p> <p> D'après Athènes, la Turquie ouvre sciemment les vannes pour les migrants alors que le torchon brûle de nouveau entre les deux voisins. Selon le ministère grec des migrations, sur les quatre premiers mois de l'année, près de 30 % de réfugiés supplémentaires ont voulu entrer en Grèce par rapport à la même période il y a un an. <em style="font-style:italic;">« Dans les quatre premiers mois de 2022, environ 40 000 migrants ont tenté d'entrer illégalement dans le pays »</em> , estime le ministre de la protection civile, Takis Theodorikakos. </p> <p> « <em style="font-style:italic;">C'est un jeu de ping-pong entre les deux pays, qui ne veulent pas accueillir les demandeurs d'asile. Ces îlots ne sont pas très bien définis territorialement. Est-ce qu'ils relèvent de l'autorité grecque ou turque ? Selon la saison, ils sont même recouverts par la rivière, mais d'après la <span class="stubs">CEDH</span>, ils appartiennent bien à la Grèce » </em> , souligne Evgenia Kouniaki. En avril, l'<span class="stubs">ONG Human Rights Watch</span> (HRW) avait aussi révélé que des migrants étaient utilisés par la police grecque pour effectuer les refoulements des nouveaux arrivants vers la Turquie, contre des promesses de titres de séjour, selon HRW. </p> <p> Entre janvier et fin avril, le CGR a alerté les autorités grecques sur la nécessité de secourir au moins 230 migrants originaires de Syrie, Turquie, Afghanistan et Irak bloqués au milieu de la rivière Evros. <em style="font-style:italic;">« Entre fin avril et mi-mai, nous avons déjà demandé par cinq fois à la <span class="stubs">CEDH</span> d'intervenir pour fournir une aide humanitaire à des réfugiés syriens, parmi lesquels 44 enfants. Pour les derniers cas observés, la <span class="stubs">CEDH</span> a imposé à l'Etat grec de prendre des mesures provisoires de protection, mais les autorités ne sont pas intervenues » </em> ,note Alkistis Agrafioti, avocate pour le CGR. </p> <p> En dépit des multiples enquêtes des ONG et des médias, Athènes dément toujours avoir recours aux « pushbacks » (renvois de migrants), une pratique contraire au principe de non-refoulement inscrit dans la convention de Genève sur les réfugiés. Fin mars, l'Autorité grecque de transparence, chargée par le gouvernement d'enquêter sur ces refoulements, a déclaré n'avoir trouvé <em style="font-style:italic;">« aucune preuve »</em> permettant d'affirmer que des officiers grecs sont impliqués. Sous pression croissante de la société civile et de Bruxelles, l'instance a publié l'enquête début mai. </p> <p> Mais lechercheur spécialisé sur les questions d'<mark>open</mark> <mark>source</mark> Phevos Simeonidis a révélé que l'Autorité s'est appuyée à 45 % sur des entretiens réalisés avec la police et les gardes-côtes grecs, pourtant accusés d'être à l'origine des « pushbacks. Sur 75 personnes interrogées, une seule était issue d'une ONG, et quatre seulement étaient des migrants. Aucun responsable du <span class="stubs">Haut-Commissariat des Nations unies</span> pour les réfugiés n'a été questionné. <em style="font-style:italic;">« L'<span class="stubs">Union européenne</span> doit maintenant prendre ses responsabilités par rapport à ces crimes commis aux frontières extérieures de l'Europe, </em> estime Alkistis Agrafioti. <em style="font-style:italic;">La démission du directeur de l'<span class="stubs">Agence européenne</span> de garde-frontières et de garde-côtes, Frontex, ne suffit pas à résoudre le problème </em> [le Français Fabrice Leggeri a quitté la tête de Frontex le 29 avril] <em style="font-style:italic;">. Il faut garantir qu'une enquête efficace soit ouverte concernant ces allégations de "pushbacks" perpétrés par les autorités grecques et que des mesures soient prises. »</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">3 juin 2022</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2022 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20220604·LM·549494</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20220604·LM·549494";
+    var _docIndex = 211;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"haut-commissariat des nations unies":"93193","cour européenne des droits de l'homme":"92786","cedh":"92786","agence européenne":"93483","union européenne":"93258","human rights watch":"92998","ong human rights watch":"92998"};
+		var _docName = 'news·20220604·LM·549494';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720220604%C2%B7LM%C2%B7549494&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720220604%C2%B7LM%C2%B7549494&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720220604%C2%B7LM%C2%B7549494&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720220604%C2%B7LM%C2%B7549494&docIndex=211&FullScreen=1";
+                
+	var _keyDoc = 'news·20220604·LM·549494';
+</script>
+</div></body></html>

@@ -1,0 +1,481 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Les Actualit&#233;s,         mercredi 12 avril 2000 839 mots, p. A1&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#201;loge de la diff&#233;rence            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;&quot;Seul le mouvement des logiciels &#224; &lt;mark&gt; code&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt; permet &#224; tous d&#39;&#234;tre sur un pied d&#39;&#233;galit&#233;&quot;, dit Bob Young&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Venu &#224; Montr&#233;al dans le cadre de l&#39;Expo Linux Am&#233;riques, le pr&#233;sident-directeur g&#233;n&#233;ral de Red Hat, Bob Young, est l&#39;un des plus ardents supporters de la philosophie des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. R&#233;agissant aux fluctuations du Nasdaq, la Bourse des titres en haute technologie, Young a condamn&#233; violemment les pratiques des &quot;day-traders&quot; qu&#39;il compare &#224; du &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;jeu l&#233;galis&#233;&quot;&lt;/em&gt; (&lt;em style=&quot;font-style:italic;&quot;&gt;&quot;legalized gambling&quot;&lt;/em&gt;). &lt;em style=&quot;font-style:italic;&quot;&gt;Le Devoir&lt;/em&gt; a r&#233;ussi &#224; attraper au vol un des hommes les plus en demande au Palais des congr&#232;s de Montr&#233;al. &lt;/p&gt; &lt;p&gt; La soci&#233;t&#233; Red Hat a le vent dans les voiles. Son pr&#233;sident-fondateur, Bob Young, affichait d&#39;ailleurs un sourire bon enfant lors de son entrevue avec &lt;em style=&quot;font-style:italic;&quot;&gt;Le Devoir&lt;/em&gt;. Sa conf&#233;rence, une des plus courues en cette deuxi&#232;me journ&#233;e de Linux Expo, s&#39;est attir&#233;e les applaudissements nourris de la salle remplie &#224; pleine capacit&#233;. Contrairement &#224; Michael Cowpland, le p.-d.g. de la soci&#233;t&#233; Corel, qui s&#39;est content&#233; de livrer un triste &quot;infomercial&quot; &#224; propos de ses nouveaux produits, Young a galvanis&#233; les participants &#224; cette conf&#233;rence en parlant de la philosophie &quot;&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt;&quot; et des nombreuses occasions offertes &#224; qui voulait bien adh&#233;rer au mouvement du logiciel &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&quot;La philosophie &lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; est la seule fa&#231;on logique, je dirais m&#234;me &#233;thique, de concurrencer dans l&#39;industrie du logiciel &lt;/em&gt;, de dire d&#39;entr&#233;e de jeu Bob Young. &lt;em style=&quot;font-style:italic;&quot;&gt;Les r&#232;gles du jeu doivent &#234;tre les m&#234;mes pour tous, et seul le mouvement des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; permet &#224; tous d&#39;&#234;tre sur le m&#234;me pied d&#39;&#233;galit&#233;. Depuis plus de 30 ans que cette industrie existe, la seule fa&#231;on que nous connaissons de faire des affaires est bas&#233;e sur cette structure monolithique au code propri&#233;taire. Ce ne sont que quelques soci&#233;t&#233;s, comme Microsoft et Quark Xpress en &#233;dition &#233;lectronique ou Autodesk en conception assist&#233;e par ordinateur &lt;/em&gt; [CAO] &lt;em style=&quot;font-style:italic;&quot;&gt;, qui contr&#244;lent un march&#233;. Il est impossible pour un comp&#233;titeur de... concurrencer. Les consommateurs sont aussi &#224; la merci de ces m&#234;mes soci&#233;t&#233;s. Il n&#39;y a pas vraiment d&#39;avantages &#224; d&#233;velopper dans un standard ferm&#233;, ni &#224; investir dans un logiciel &#224; code source propri&#233;taire.&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Selon Bob Young, l&#39;industrie automobile est d&#39;ailleurs un des mod&#232;les id&#233;als que l&#39;industrie du logiciel pourrait adopter. &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Prenez une soci&#233;t&#233; comme General Motors ou Daimler-Chrysler. Lorsque ceux-ci lancent une nouvelle voiture, obligent-ils les consommateurs &#224; acheter uniquement leurs pi&#232;ces de rechange? Non, au contraire. Ces manufacturiers publient leurs sp&#233;cifications et qui bon voudra peut fabriquer ces m&#234;mes pi&#232;ces et m&#234;me faire comp&#233;tition &#224; ces g&#233;ants de l&#39;automobile. La seule r&#232;gle &#224; suivre pour tous? S&#39;assurer de respecter les sp&#233;cifications publi&#233;es par les fabricants. Voil&#224; un v&#233;ritable march&#233; libre et ouvert. Le consommateur peut, s&#39;il le veut, acheter ses pi&#232;ces de GM, par exemple, ou encore d&#39;un autre marchand. Voil&#224; un mod&#232;le int&#233;ressant sur lequel l&#39;industrie du logiciel se doit de r&#233;fl&#233;chir.&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Linux-Mandrake, une des distributions dont nous avons parl&#233; lundi dernier dans &lt;em style=&quot;font-style:italic;&quot;&gt;Le Devoir&lt;/em&gt;, est un produit qui fut, &#224; la base, cr&#233;&#233; &#224; partir des sources et am&#233;liorations de Red Hat. N&#39;est-il pas frustrant pour ses fondateurs de voir le r&#233;sultat de ses recherches repris par d&#39;autres? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Il faut absolument repenser cette ancienne fa&#231;on de faire des affaires. Que des am&#233;liorations que nous avons r&#233;ussi &#224; implanter dans le syst&#232;me d&#39;exploitation GNU/Linux soient reprises par d&#39;autres, voil&#224; qui devrait contribuer &#224; rassurer le consommateur, et surtout l&#39;entreprise. Et qui sait si Mandrake, par exemple, ne pourrait pas d&#233;velopper un nouveau march&#233; que nous n&#39;exploitons pas? Tant mieux, nous le leur souhaitons. Et si ceux-ci d&#233;cident de venir nous affronter sur notre terrain, alors la bataille qui aura lieu se passera &#224; armes &#233;gales. Et ceux qui en sortiront gagnants sont le consommateur et l&#39;entreprise.&quot;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Linux &#233;tant un syst&#232;me d&#39;exploitation &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, nous avons tent&#233; d&#39;&#233;tablir avec Bob Young un parall&#232;le entre les syst&#232;mes d&#39;exploitation et le projet du g&#233;nome humain. Serait-il souhaitable, pour le bien de l&#39;humanit&#233;, qui d&#233;pend de plus en plus du bon fonctionnement des ordinateurs, que les syst&#232;mes d&#39;exploitation, le logiciel indispensable au bon fonctionnement d&#39;un ordinateur, puissent &#234;tre obligatoirement publi&#233;s en &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, tout comme les pressions se font de plus en plus fortes pour que la totalit&#233; du g&#233;nome puisse &#234;tre vers&#233; dans le domaine public? &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;En effet, la comparaison est int&#233;ressante. Oui, les syst&#232;mes d&#39;exploitation les plus utilis&#233;s devraient &#234;tre publi&#233;s en &lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt;. Mais que tous les syst&#232;mes d&#39;exploitation quels qu&#39;ils soient puissent &#234;tre du domaine public... C&#39;est probablement le march&#233; qui en d&#233;cidera aussi par ses pressions aupr&#232;s des d&#233;veloppeurs. Mais n&#39;oubliez pas que les consommateurs et les entreprises n&#39;ach&#232;tent pas un syst&#232;me d&#39;exploitation. Ceux-ci d&#233;sirent plut&#244;t des applications. C&#39;est pourquoi Red Hat propose maintenant des solutions s&#39;orientant vers le march&#233; des entreprises.&quot; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Alors que les titres de soci&#233;t&#233;s en nouvelles technologies jouent au yoyo, comment Bob Young r&#233;agit-il devant ses actions qui montent et descendent au rythme des fluctuations du march&#233;? Est-il inquiet de voir ses titres s&#39;effondrer? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Le march&#233; actuel est en ce moment soumis aux d&#233;sid&#233;ratas des &quot;day-traders&quot;, pour qui la Bourse est comme un jeu de hasard l&#233;galis&#233;&lt;/em&gt; [ &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;legalized gambling&quot;&lt;/em&gt;] &lt;em style=&quot;font-style:italic;&quot;&gt;. J&#39;aime bien l&#39;exemple de Warren Buffett qui dit qu&#39;un investissement s&#233;rieux dans une soci&#233;t&#233; ayant des actifs &#233;tablis pourrait dormir durant plusieurs ann&#233;es &quot;sous un matelas&quot; et qu&#39;en le ressortant, l&#39;investisseur serait s&#251;r de toujours y trouver son compte. &#201;videmment, on peut gagner beaucoup d&#39;argent rapidement, mais aussi en perdre tout aussi rapidement. Comme au casino, le vrai gagnant de cette folie boursi&#232;re, c&#39;est la banque, les soci&#233;t&#233;s comme Ameritrade et E-Trade. Les soci&#233;t&#233;s responsables devront donc, pour passer au travers, rassurer les investisseurs en leur prouvant que leurs actifs ne sont pas que du vent, que la compagnie dans laquelle ils ont investi est solide. Nous avons b&#226;ti Red Hat sur deux conditions gagnantes: un produit &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; utilisant la meilleure technologie et un argument marketing de poids, soit la gratuit&#233; du syst&#232;me d&#39;exploitation. Notre virage &quot;entreprise&quot; n&#39;est pas le fruit du hasard. Les soci&#233;t&#233;s d&#233;sirent un produit qui r&#233;soudra leurs probl&#232;mes et qui rendra leurs clients ou utilisateurs heureux. Si Microsoft d&#233;sire se r&#233;inventer en redirigeant la compagnie vers les services, grand bien lui fasse &lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;Qu&#39;elle se r&#233;invente. Mais je ne crois pas que Microsoft en soit rendu l&#224;. Elle est comme un drogu&#233; de l&#39;h&#233;ro&#239;ne, trop accro pour r&#233;aliser une autre vente de&lt;/em&gt; Windows 2000 &lt;em style=&quot;font-style:italic;&quot;&gt;ou de&lt;/em&gt; Back Office &lt;em style=&quot;font-style:italic;&quot;&gt;.&quot;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Bob Young, pr&#233;sident de Red Hat.&lt;/p&gt; &lt;/div&gt;.
+
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;&lt;p&gt;Nadeau, Jacques&lt;/p&gt; &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000412&amp;#183;LE&amp;#183;0003&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Concurrence</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Industries de l'informatique et de l'électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Marchés publics, foires commerciales et salons</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000412%c2%b7LE%c2%b70003" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000412%c2%b7LE%c2%b70003">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Les Actualités,         mercredi 12 avril 2000 839 mots, p. A1</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Éloge de la différence            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">"Seul le mouvement des logiciels à <mark> code</mark> <mark> source</mark> <mark> libre</mark> permet à tous d'être sur un pied d'égalité", dit Bob Young</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Venu à Montréal dans le cadre de l'Expo Linux Amériques, le président-directeur général de Red Hat, Bob Young, est l'un des plus ardents supporters de la philosophie des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark>. Réagissant aux fluctuations du Nasdaq, la Bourse des titres en haute technologie, Young a condamné violemment les pratiques des "day-traders" qu'il compare à du <em style="font-style:italic;">"jeu légalisé"</em> (<em style="font-style:italic;">"legalized gambling"</em>). <em style="font-style:italic;">Le Devoir</em> a réussi à attraper au vol un des hommes les plus en demande au Palais des congrès de Montréal. </p> <p> La société Red Hat a le vent dans les voiles. Son président-fondateur, Bob Young, affichait d'ailleurs un sourire bon enfant lors de son entrevue avec <em style="font-style:italic;">Le Devoir</em>. Sa conférence, une des plus courues en cette deuxième journée de Linux Expo, s'est attirée les applaudissements nourris de la salle remplie à pleine capacité. Contrairement à Michael Cowpland, le p.-d.g. de la société Corel, qui s'est contenté de livrer un triste "infomercial" à propos de ses nouveaux produits, Young a galvanisé les participants à cette conférence en parlant de la philosophie "<mark>Open</mark> <mark>Source</mark>" et des nombreuses occasions offertes à qui voulait bien adhérer au mouvement du logiciel à <mark>code</mark> <mark>source</mark> <mark>libre</mark>.</p>
+
+
+<p><em style="font-style:italic;">"La philosophie <mark>Open</mark> <mark>Source</mark> est la seule façon logique, je dirais même éthique, de concurrencer dans l'industrie du logiciel </em>, de dire d'entrée de jeu Bob Young. <em style="font-style:italic;">Les règles du jeu doivent être les mêmes pour tous, et seul le mouvement des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark> permet à tous d'être sur le même pied d'égalité. Depuis plus de 30 ans que cette industrie existe, la seule façon que nous connaissons de faire des affaires est basée sur cette structure monolithique au code propriétaire. Ce ne sont que quelques sociétés, comme Microsoft et Quark Xpress en édition électronique ou Autodesk en conception assistée par ordinateur </em> [CAO] <em style="font-style:italic;">, qui contrôlent un marché. Il est impossible pour un compétiteur de... concurrencer. Les consommateurs sont aussi à la merci de ces mêmes sociétés. Il n'y a pas vraiment d'avantages à développer dans un standard fermé, ni à investir dans un logiciel à code source propriétaire."</em></p><p>Selon Bob Young, l'industrie automobile est d'ailleurs un des modèles idéals que l'industrie du logiciel pourrait adopter. <em style="font-style:italic;">"Prenez une société comme General Motors ou Daimler-Chrysler. Lorsque ceux-ci lancent une nouvelle voiture, obligent-ils les consommateurs à acheter uniquement leurs pièces de rechange? Non, au contraire. Ces manufacturiers publient leurs spécifications et qui bon voudra peut fabriquer ces mêmes pièces et même faire compétition à ces géants de l'automobile. La seule règle à suivre pour tous? S'assurer de respecter les spécifications publiées par les fabricants. Voilà un véritable marché libre et ouvert. Le consommateur peut, s'il le veut, acheter ses pièces de GM, par exemple, ou encore d'un autre marchand. Voilà un modèle intéressant sur lequel l'industrie du logiciel se doit de réfléchir."</em></p><p>Linux-Mandrake, une des distributions dont nous avons parlé lundi dernier dans <em style="font-style:italic;">Le Devoir</em>, est un produit qui fut, à la base, créé à partir des sources et améliorations de Red Hat. N'est-il pas frustrant pour ses fondateurs de voir le résultat de ses recherches repris par d'autres? </p> <p><em style="font-style:italic;">"Il faut absolument repenser cette ancienne façon de faire des affaires. Que des améliorations que nous avons réussi à implanter dans le système d'exploitation GNU/Linux soient reprises par d'autres, voilà qui devrait contribuer à rassurer le consommateur, et surtout l'entreprise. Et qui sait si Mandrake, par exemple, ne pourrait pas développer un nouveau marché que nous n'exploitons pas? Tant mieux, nous le leur souhaitons. Et si ceux-ci décident de venir nous affronter sur notre terrain, alors la bataille qui aura lieu se passera à armes égales. Et ceux qui en sortiront gagnants sont le consommateur et l'entreprise."</em></p><p>Linux étant un système d'exploitation à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, nous avons tenté d'établir avec Bob Young un parallèle entre les systèmes d'exploitation et le projet du génome humain. Serait-il souhaitable, pour le bien de l'humanité, qui dépend de plus en plus du bon fonctionnement des ordinateurs, que les systèmes d'exploitation, le logiciel indispensable au bon fonctionnement d'un ordinateur, puissent être obligatoirement publiés en <mark>code</mark> <mark>source</mark> <mark>libre</mark>, tout comme les pressions se font de plus en plus fortes pour que la totalité du génome puisse être versé dans le domaine public? <em style="font-style:italic;">"En effet, la comparaison est intéressante. Oui, les systèmes d'exploitation les plus utilisés devraient être publiés en <mark>Open</mark> <mark>Source</mark>. Mais que tous les systèmes d'exploitation quels qu'ils soient puissent être du domaine public... C'est probablement le marché qui en décidera aussi par ses pressions auprès des développeurs. Mais n'oubliez pas que les consommateurs et les entreprises n'achètent pas un système d'exploitation. Ceux-ci désirent plutôt des applications. C'est pourquoi Red Hat propose maintenant des solutions s'orientant vers le marché des entreprises." </em></p><p>Alors que les titres de sociétés en nouvelles technologies jouent au yoyo, comment Bob Young réagit-il devant ses actions qui montent et descendent au rythme des fluctuations du marché? Est-il inquiet de voir ses titres s'effondrer? </p> <p><em style="font-style:italic;">"Le marché actuel est en ce moment soumis aux désidératas des "day-traders", pour qui la Bourse est comme un jeu de hasard légalisé</em> [ <em style="font-style:italic;">"legalized gambling"</em>] <em style="font-style:italic;">. J'aime bien l'exemple de Warren Buffett qui dit qu'un investissement sérieux dans une société ayant des actifs établis pourrait dormir durant plusieurs années "sous un matelas" et qu'en le ressortant, l'investisseur serait sûr de toujours y trouver son compte. Évidemment, on peut gagner beaucoup d'argent rapidement, mais aussi en perdre tout aussi rapidement. Comme au casino, le vrai gagnant de cette folie boursière, c'est la banque, les sociétés comme Ameritrade et E-Trade. Les sociétés responsables devront donc, pour passer au travers, rassurer les investisseurs en leur prouvant que leurs actifs ne sont pas que du vent, que la compagnie dans laquelle ils ont investi est solide. Nous avons bâti Red Hat sur deux conditions gagnantes: un produit à <mark>code</mark> <mark>source</mark> <mark>libre</mark> utilisant la meilleure technologie et un argument marketing de poids, soit la gratuité du système d'exploitation. Notre virage "entreprise" n'est pas le fruit du hasard. Les sociétés désirent un produit qui résoudra leurs problèmes et qui rendra leurs clients ou utilisateurs heureux. Si Microsoft désire se réinventer en redirigeant la compagnie vers les services, grand bien lui fasse </em>. <em style="font-style:italic;">Qu'elle se réinvente. Mais je ne crois pas que Microsoft en soit rendu là. Elle est comme un drogué de l'héroïne, trop accro pour réaliser une autre vente de</em> Windows 2000 <em style="font-style:italic;">ou de</em> Back Office <em style="font-style:italic;">."</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Bob Young, président de Red Hat.</p> </div>.
+
+                <div class="ImageAttachFont"><p>Nadeau, Jacques</p> </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000412·LE·0003</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000412·LE·0003";
+    var _docIndex = 584;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000412·LE·0003';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000412%C2%B7LE%C2%B70003&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000412%C2%B7LE%C2%B70003&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000412%C2%B7LE%C2%B70003&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000412%C2%B7LE%C2%B70003&docIndex=584&FullScreen=1";
+                
+	var _keyDoc = 'news·20000412·LE·0003';
+</script>
+</div></body></html>

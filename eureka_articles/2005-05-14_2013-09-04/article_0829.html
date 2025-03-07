@@ -1,0 +1,549 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_ec_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 19228                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         mardi 30 mai 2006 720 mots, p. 31&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+SP&#201;CIALINFORMATIQUE D&#39;ENTREPRISES         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&lt;mark&gt;Logiciels&lt;/mark&gt; &lt;mark&gt; libres&lt;/mark&gt; : gare aux id&#233;es re&#231;ues            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Si le principe de l&#39;&#171; &lt;mark&gt; open&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt; &#187; est la gratuit&#233;, la migration vers ces produits implique pourtant des investissements.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;T. D. J.&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;ACCESSIBLES sur le Net, gratuits, &#233;volutifs, performants et peu perm&#233;ables aux attaques de virus, les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ont &#224; premi&#232;re vue toutes les qualit&#233;s pour s&#233;duire un grand nombre d&#39;entreprises. Au point que la Commission europ&#233;enne milite pour leur d&#233;veloppement. En France, les grandes administrations et les collectivit&#233;s territoriales ont amorc&#233; le virage et s&#39;&#233;quipent progressivement d&#39;outils informatiques issus du monde de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Leurs motivations sont essentiellement &#233;conomiques. Vient ensuite une posture plus id&#233;ologique : ne plus d&#233;pendre de l&#39;agenda et des conditions commerciales d&#39;un &#233;diteur de logiciels et de ses solutions propri&#233;taires. Face &#224; ce mouvement, de grands noms de l&#39;informatique comme IBM, Oracle, Sun ou Oracle investissent des projets &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; et le d&#233;veloppement de logiciels en communaut&#233;.&lt;/p&gt;
+
+
+&lt;p&gt;Cependant, passer d&#39;un syst&#232;me informatique classique balis&#233; &#224; l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; n&#39;est pas forc&#233;ment &#224; la port&#233;e de tous. Et la migration peut parfois r&#233;server des surprises.La gratuit&#233; est le principe fondateur de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Les logiciels sont con&#231;us &#224; partir du travail en commun de centaines de milliers de d&#233;veloppeurs. Ces communaut&#233;s ou les fondations qui se sont cr&#233;&#233;es sur ce mode collaboratif font &#233;voluer ces produits que tout le monde peut t&#233;l&#233;charger sur le Net. Il n&#39;y a donc pas de licence &#224; payer, tous les postes de travail pouvant &#234;tre &#233;quip&#233;s sans co&#251;t marginal. &lt;/p&gt; &lt;p&gt; Se familiariser &#224; de nouveaux r&#233;p&#232;res &lt;/p&gt; &lt;p&gt; Ainsi, le navigateur Internet FireFox est accessible depuis le site de la fondation Mozilla tout comme la suite bureautique OpenOffice &#224; partir du site &lt;a target=&quot;_blank&quot; href=&quot;https://www.openoffice.org.&quot;&gt;www.openoffice.org.&lt;/a&gt; Cependant, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; de plus en plus de soci&#233;t&#233;s conseils ou d&#39;&#233;diteurs commercialisent des logiciels con&#231;us sur le mode de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Dans ce cas de figure, on retombe dans un sch&#233;ma &#233;conomique plus classique &#187;, &lt;/em&gt; pr&#233;cise Bertrand Diard, PDG et co-fondateur de l&#39;&#233;diteur Talend. Si l&#39;&#233;diteur a l&#39;obligation de partager les secrets de fabrication de son logiciel et de le rendre accessible librement &#224; partir du Web, rien ne l&#39;emp&#234;che de commercialiser une offre packag&#233;e, enrichie de fonctionnalit&#233;s. En d&#39;autres termes, la libert&#233; n&#39;est pas toujours synonyme de gratuit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les licences repr&#233;sentent entre 5 % et 20 % du co&#251;t d&#39;un &#233;quipement informatique selon le nombre de postes &#187;,&lt;/em&gt; indique Yves Miezan Ezo, responsable du marketing de la formation de la soci&#233;t&#233; de services Alcove, qui propose des solutions &#224; partir du syst&#232;me d&#39;exploitation Linux et de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Aussi, avant de s&#39;affranchir d&#39;un syst&#232;me propri&#233;taire, le chef d&#39;entreprise doit assumer toute une s&#233;rie de co&#251;ts induits. &lt;/p&gt; &lt;p&gt; En premier lieu, il devra assurer la formation de son personnel qui basculera d&#39;un univers connu, le plus souvent celui de Microsoft Office s&#39;il s&#39;agit uniquement de bureautique (traitement de texte, tableur, application de mise page...), vers OpenOffice ou StarOffice. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La migration d&#39;un syst&#232;me vers l&#39;autre est difficile s&#39;il n&#39;y a pas un accompagnement au changement &#187;,&lt;/em&gt; explique Yves Miezan Ezo. &lt;/p&gt; &lt;p&gt; Pas facile en effet de se familiariser &#224; de nouveaux rep&#232;res lorsqu&#39;on est habitu&#233; &#224; travailler sous Word. La meilleure voie consiste encore &#224; recr&#233;er sous OpenOffice ou StarOffice les mod&#232;les de document utilis&#233;s sous Microsoft Office. &lt;/p&gt; &lt;p&gt; A titre indicatif, la formation d&#39;une vingtaine de salari&#233;s sur une journ&#233;e et demie co&#251;tera environ 1 000 euros. En outre, des d&#233;veloppements seront n&#233;cessaires pour cr&#233;er des fonctionnalit&#233;s sp&#233;cifiques li&#233;es &#224; l&#39;activit&#233; de l&#39;entreprise. &lt;/p&gt; &lt;p&gt; Ces programmes sont-ils r&#233;serv&#233;s aux sp&#233;cialistes ? &lt;/p&gt; &lt;p&gt; Le besoin d&#39;expertise d&#233;pend avant tout du degr&#233; d&#39;&#233;quipement de l&#39;entreprise. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; T&#233;l&#233; charger le navigateur FireFox ou OpenOffice est &#224; la port&#233;e de tous. En revanche, exploiter une base de donn&#233;es, g&#233;rer une infrastructure ou d&#233;velopper des applications &#224; partir du syst&#232;me d&#39;exploitation Linux demande plus de connaissance informatique &#187;,&lt;/em&gt; souligne Bertrand Diard. &lt;/p&gt; &lt;p&gt; Aussi, &#224; moins d&#39;avoir &#224; demeure un responsable informatique, le recours &#224; un prestataire est n&#233;cessaire pour migrer d&#39;un syst&#232;me propri&#233;taire vers &#224; un environnement ouvert. &lt;/p&gt; &lt;p&gt; D&#39;abord, des adaptations et des d&#233;veloppements seront incontournables pour retrouver le m&#234;me environnement. Ensuite, s&#39;engager dans le monde du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; suppose une veille de tous les instants pour suivre les &#233;volutions, les corrections et les mises &#224; jour effectu&#233;es par la communaut&#233; de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Autant de t&#226;ches qu&#39;une soci&#233;t&#233; de services accomplira... moyennant r&#233;tribution.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+    &lt;div class=&quot;rdp__newsdoc&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Encadr&amp;#233;(s) : &lt;/b&gt;&lt;/p&gt;
+            &lt;div&gt;&lt;b&gt;Le tour de France des bonnes pratiques num&#233;riques a d&#233;marr&#233; &lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;- Cette initiative, qui entre dans le cadre du programme gouvernemental &#171; Entrepreneurs, faites le choix de l&#39;&#233;conomie num&#233;rique &#187; pr&#233;sid&#233; par Renaud Dutreil, ministre des PME, a d&#233;but&#233; en Auvergne les 15 et 16 mai dernier. Cette manifestation est organis&#233;e par les chambres de commerce et d&#39;industrie, les chambres de m&#233;tiers et les centres de gestion agr&#233;&#233;s. Elle rassemble une cinquantaine des partenaires &#233;quipementiers, op&#233;rateurs t&#233;l&#233;phoniques et &#233;diteurs. Elle a pour objectif de mieux faire comprendre l&#39;int&#233;r&#234;t des outils informatiques aux petites entreprises de moins de 100 salari&#233;s, premi&#232;re cible vis&#233;e. Ce tour passera les 19 et 20 juin par la Bretagne, les 16 et 17 octobre par la Franche-Comt&#233; et les 11 et 12 d&#233;cembre par la Normandie.&lt;/p&gt; &lt;/div&gt;
+            &lt;div&gt;&lt;b&gt;93 % des PME fran&#231;aises connect&#233;es &#224; Internet &lt;/b&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;p&gt;- BPLG, filiale de financement de biens d&#39;&#233;quipement professionnels de BNP Paribas, a publi&#233; les r&#233;sultats de son enqu&#234;te 2005, r&#233;alis&#233;e aupr&#232;s de PME europ&#233;ennes, tous secteurs confondus, de 6 &#224; 200 salari&#233;s. En France, la proportion de PME qui a investi dans l&#39;informatique, la t&#233;l&#233;phonie et l&#39;Internet est pass&#233;e de 53 % en 2004 &#224; 66 % au d&#233;but 2006. La part des investissements d&#233;di&#233;s aux TIC en 2005 est de 28 %. Selon BPLG, 93 % des PME disposeraient aujourd&#39;hui d&#39;un acc&#232;s Internet. Pr&#232;s d&#39;un dirigeant fran&#231;ais de PME sur deux souhaite b&#233;n&#233;ficier d&#39;un d&#233;bit plus rapide et 13 % ont &#233;quip&#233; leur entreprise d&#39;un acc&#232;s Internet en Wi-Fi. Mais seulement une PME sur deux dispose d&#39;un site Internet, la m&#234;me proportion qu&#39;en 2002.&lt;/p&gt; &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Avant de s&#39;affranchir d&#39;un syst&#232;me propri&#233;taire, le chef d&#39;entreprise devra assurer la formation de son personnel. Rea&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2006 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20060530&amp;#183;LF&amp;#183;20060530&amp;#215;2fig000000068&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">société de services</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">chef d'entreprise</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">yves miezan ezo</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">OpenOffice</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720060530%c2%b7LF%c2%b720060530%c3%972fig000000068" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720060530%c2%b7LF%c2%b720060530%c3%972fig000000068">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_ec_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 19228                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         mardi 30 mai 2006 720 mots, p. 31</span>
+</div>
+
+    <div>
+        <p>
+SPÉCIALINFORMATIQUE D'ENTREPRISES         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+<mark>Logiciels</mark> <mark> libres</mark> : gare aux idées reçues            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Si le principe de l'« <mark> open</mark> <mark> source</mark> » est la gratuité, la migration vers ces produits implique pourtant des investissements.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">T. D. J.</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>ACCESSIBLES sur le Net, gratuits, évolutifs, performants et peu perméables aux attaques de virus, les <mark>logiciels</mark> <mark>libres</mark> ont à première vue toutes les qualités pour séduire un grand nombre d'entreprises. Au point que la Commission européenne milite pour leur développement. En France, les grandes administrations et les collectivités territoriales ont amorcé le virage et s'équipent progressivement d'outils informatiques issus du monde de l'<mark>open</mark> <mark>source</mark>. </p> <p> Leurs motivations sont essentiellement économiques. Vient ensuite une posture plus idéologique : ne plus dépendre de l'agenda et des conditions commerciales d'un éditeur de logiciels et de ses solutions propriétaires. Face à ce mouvement, de grands noms de l'informatique comme IBM, Oracle, Sun ou Oracle investissent des projets <mark>open</mark> <mark>source</mark> et le développement de logiciels en communauté.</p>
+
+
+<p>Cependant, passer d'un système informatique classique balisé à l'<mark>open</mark> <mark>source</mark> n'est pas forcément à la portée de tous. Et la migration peut parfois réserver des surprises.La gratuité est le principe fondateur de l'<mark>open</mark> <mark>source</mark>. Les logiciels sont conçus à partir du travail en commun de centaines de milliers de développeurs. Ces communautés ou les fondations qui se sont créées sur ce mode collaboratif font évoluer ces produits que tout le monde peut télécharger sur le Net. Il n'y a donc pas de licence à payer, tous les postes de travail pouvant être équipés sans coût marginal. </p> <p> Se familiariser à de nouveaux répères </p> <p> Ainsi, le navigateur Internet FireFox est accessible depuis le site de la fondation Mozilla tout comme la suite bureautique OpenOffice à partir du site <a target="_blank" href="https://www.openoffice.org.">www.openoffice.org.</a> Cependant, <em style="font-style:italic;">« de plus en plus de sociétés conseils ou d'éditeurs commercialisent des logiciels conçus sur le mode de l'<mark>open</mark> <mark>source</mark>. Dans ce cas de figure, on retombe dans un schéma économique plus classique », </em> précise Bertrand Diard, PDG et co-fondateur de l'éditeur Talend. Si l'éditeur a l'obligation de partager les secrets de fabrication de son logiciel et de le rendre accessible librement à partir du Web, rien ne l'empêche de commercialiser une offre packagée, enrichie de fonctionnalités. En d'autres termes, la liberté n'est pas toujours synonyme de gratuité. </p> <p><em style="font-style:italic;">« Les licences représentent entre 5 % et 20 % du coût d'un équipement informatique selon le nombre de postes »,</em> indique Yves Miezan Ezo, responsable du marketing de la formation de la société de services Alcove, qui propose des solutions à partir du système d'exploitation Linux et de <mark>logiciels</mark> <mark>libres</mark>. Aussi, avant de s'affranchir d'un système propriétaire, le chef d'entreprise doit assumer toute une série de coûts induits. </p> <p> En premier lieu, il devra assurer la formation de son personnel qui basculera d'un univers connu, le plus souvent celui de Microsoft Office s'il s'agit uniquement de bureautique (traitement de texte, tableur, application de mise page...), vers OpenOffice ou StarOffice. <em style="font-style:italic;">« La migration d'un système vers l'autre est difficile s'il n'y a pas un accompagnement au changement »,</em> explique Yves Miezan Ezo. </p> <p> Pas facile en effet de se familiariser à de nouveaux repères lorsqu'on est habitué à travailler sous Word. La meilleure voie consiste encore à recréer sous OpenOffice ou StarOffice les modèles de document utilisés sous Microsoft Office. </p> <p> A titre indicatif, la formation d'une vingtaine de salariés sur une journée et demie coûtera environ 1 000 euros. En outre, des développements seront nécessaires pour créer des fonctionnalités spécifiques liées à l'activité de l'entreprise. </p> <p> Ces programmes sont-ils réservés aux spécialistes ? </p> <p> Le besoin d'expertise dépend avant tout du degré d'équipement de l'entreprise. <em style="font-style:italic;">« Télé charger le navigateur FireFox ou OpenOffice est à la portée de tous. En revanche, exploiter une base de données, gérer une infrastructure ou développer des applications à partir du système d'exploitation Linux demande plus de connaissance informatique »,</em> souligne Bertrand Diard. </p> <p> Aussi, à moins d'avoir à demeure un responsable informatique, le recours à un prestataire est nécessaire pour migrer d'un système propriétaire vers à un environnement ouvert. </p> <p> D'abord, des adaptations et des développements seront incontournables pour retrouver le même environnement. Ensuite, s'engager dans le monde du <mark>logiciel</mark> <mark>libre</mark> suppose une veille de tous les instants pour suivre les évolutions, les corrections et les mises à jour effectuées par la communauté de l'<mark>open</mark> <mark>source</mark>. Autant de tâches qu'une société de services accomplira... moyennant rétribution.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+    <div class="rdp__newsdoc">
+        <p><b>Encadré(s) : </b></p>
+            <div><b>Le tour de France des bonnes pratiques numériques a démarré </b></div>
+            <div></div>
+            <div><p>- Cette initiative, qui entre dans le cadre du programme gouvernemental « Entrepreneurs, faites le choix de l'économie numérique » présidé par Renaud Dutreil, ministre des PME, a débuté en Auvergne les 15 et 16 mai dernier. Cette manifestation est organisée par les chambres de commerce et d'industrie, les chambres de métiers et les centres de gestion agréés. Elle rassemble une cinquantaine des partenaires équipementiers, opérateurs téléphoniques et éditeurs. Elle a pour objectif de mieux faire comprendre l'intérêt des outils informatiques aux petites entreprises de moins de 100 salariés, première cible visée. Ce tour passera les 19 et 20 juin par la Bretagne, les 16 et 17 octobre par la Franche-Comté et les 11 et 12 décembre par la Normandie.</p> </div>
+            <div><b>93 % des PME françaises connectées à Internet </b></div>
+            <div></div>
+            <div><p>- BPLG, filiale de financement de biens d'équipement professionnels de BNP Paribas, a publié les résultats de son enquête 2005, réalisée auprès de PME européennes, tous secteurs confondus, de 6 à 200 salariés. En France, la proportion de PME qui a investi dans l'informatique, la téléphonie et l'Internet est passée de 53 % en 2004 à 66 % au début 2006. La part des investissements dédiés aux TIC en 2005 est de 28 %. Selon BPLG, 93 % des PME disposeraient aujourd'hui d'un accès Internet. Près d'un dirigeant français de PME sur deux souhaite bénéficier d'un débit plus rapide et 13 % ont équipé leur entreprise d'un accès Internet en Wi-Fi. Mais seulement une PME sur deux dispose d'un site Internet, la même proportion qu'en 2002.</p> </div>
+    </div>
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Avant de s'affranchir d'un système propriétaire, le chef d'entreprise devra assurer la formation de son personnel. Rea</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2006 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20060530·LF·20060530×2fig000000068</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20060530·LF·20060530×2fig000000068";
+    var _docIndex = 828;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20060530·LF·20060530×2fig000000068';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720060530%C2%B7LF%C2%B720060530%C3%972fig000000068&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720060530%C2%B7LF%C2%B720060530%C3%972fig000000068&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720060530%C2%B7LF%C2%B720060530%C3%972fig000000068&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720060530%C2%B7LF%C2%B720060530%C3%972fig000000068&docIndex=828&FullScreen=1";
+                
+	var _keyDoc = 'news·20060530·LF·20060530×2fig000000068';
+</script>
+</div></body></html>

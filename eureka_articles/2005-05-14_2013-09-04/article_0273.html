@@ -1,0 +1,511 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Octas,         samedi 4 juin 2011 574 mots, p. C8&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Alogient - Cam&#233;l&#233;on est gratuit!            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L&#39;entreprise montr&#233;alaise Alogient remporte un deuxi&#232;me prix cette ann&#233;e pour l&#39;utilisation du fran&#231;ais dans les technologies de l&#39;information.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;H&#233;l&#232;ne Roulot-Ganzmann&lt;/p&gt;
+
+
+    &lt;b&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171;C&#39;est l&#39;accumulation de beaucoup d&#39;efforts, estime Patrick L. Perreault, vice-pr&#233;sident Conseil d&#39;Alogient. &#199;a fait six ans qu&#39;on d&#233;veloppe ce produit &#224; la sueur de notre front. Ce deuxi&#232;me prix en l&#39;espace de quelques mois vient &#233;galement confirmer le fait que la d&#233;cision d&#39;affaires que nous avons prise de mettre l&#39;accent sur la langue fran&#231;aise est payante, mais aussi que nous avions raison de transformer Cam&#233;l&#233;on en &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, &#224; un moment o&#249; de plus en plus de gens tentent de garder la mainmise sur leur produit.&#187;&lt;/em&gt;&lt;/p&gt;&lt;/b&gt;
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Cam&#233;l&#233;on, voici donc le programme qui est l&#39;objet de toutes les attentions dans le petit monde des technologies de l&#39;information ces derniers mois. Du moins, sur le march&#233; francophone. &#171;Nous nous sommes dit qu&#39;il y avait une occasion d&#39;affaires sur le march&#233; pour lancer un produit enti&#232;rement en fran&#231;ais, si on consid&#232;re que la francophonie, ce sont plusieurs pays et c&#39;est une &#233;tendue tr&#232;s large dans le monde&#187;, poursuit M. Perreault. On ne raconte pas forc&#233;ment l&#39;histoire classique... Nous ne nous sommes pas lanc&#233;s l&#224;-dedans parce que le fran&#231;ais est en danger, ajoute Jean-Fran&#231;ois Rioux, pr&#233;sident d&#39;Alogient. Le fran&#231;ais est tout simplement notre axe comp&#233;titif sur le march&#233; des syst&#232;mes de gestion de contenu et c&#39;est un message qui est bien pass&#233; aupr&#232;s des deux jurys de ces concours-l&#224;.&#187;&lt;/p&gt;
+
+
+&lt;p&gt;Un syst&#232;me de gestion de contenu, ou CMS, est un programme destin&#233; &#224; la conception et &#224; la mise &#224; jour de sites web ou d&#39;applications multim&#233;dias. Lozeau, Desjardins, CN, TD Assurance et plus d&#39;une cinquantaine d&#39;autres entreprises ou associations utilisent aujourd&#39;hui Cam&#233;l&#233;on. Pour sa fiabilit&#233;, pour sa simplicit&#233;, pour son utilisation de la langue fran&#231;aise sans doute &#233;galement un peu. Mais s&#251;rement aussi pour sa gratuit&#233;. &#171;Quand on regarde les tendances, affirme Jean-Fran&#231;ois Rioux, on s&#39;aper&#231;oit que de plus en plus d&#39;entreprises veulent aller vers des logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. On esp&#232;re que, chez les gens qui sont attir&#233;s par ce type de logiciel et qui se trouvent dans la francophonie, le prix Octas nous apportera un gain de notori&#233;t&#233; et de popularit&#233;, qu&#39;ils implanteront notre logiciel mais aussi qu&#39;ils en poursuivront le d&#233;veloppement.&#187; &lt;/p&gt; &lt;p&gt; Source libre &lt;/p&gt; &lt;p&gt; Car voil&#224; tout l&#39;int&#233;r&#234;t d&#39;un programme &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Alogient a produit Cam&#233;l&#233;on et l&#39;a mis sur le march&#233;: libre ensuite aux d&#233;veloppeurs qui le souhaitent de programmer des modules qui viendront compl&#233;ter le produit, le rendre toujours plus performant. &#171;L&#39;&#233;quipe d&#39;Alogient, qui se prom&#232;ne d&#39;ailleurs la t&#234;te haute aujourd&#39;hui dans les couloirs, travaille fort sur l&#39;&#233;volution du produit, mais d&#39;autres gens peuvent travailler &#224; cette &#233;volution-l&#224;, en fonction de leurs besoins&#187;, explique Patrick L. Perreault. &lt;/p&gt; &lt;p&gt; Et le mod&#232;le d&#39;affaires, dans tout &#231;a? &#171;&#192; la base, les gens choisissent votre produit parce qu&#39;il est gratuit, qu&#39;il n&#39;y a pas de frais de licence, ils &#233;conomisent donc beaucoup d&#39;argent, estime Jean-Fran&#231;ois Rioux. De notre c&#244;t&#233;, on fait notre revenu en d&#233;veloppant des plans de soutien sp&#233;cifiques pour les gens qui utilisent notre produit. Nous-m&#234;mes, nous cr&#233;ons des sites avec Cam&#233;l&#233;on pour certains clients. Sans oublier les programmes de formation sur mesure qu&#39;on peut livrer &#224; des d&#233;veloppeurs, &#224; des fournisseurs de service ou encore &#224; des entreprises, notamment le service public, qui a souvent des besoins tr&#232;s particuliers.&#187; &lt;/p&gt; &lt;p&gt; Alogient souhaite d&#39;ailleurs profiter de la visibilit&#233; offerte par ces deux prix pour toucher de nouveaux clients, et la fonction publique est une de ses cibles. Les particuliers &#233;galement, si tant est qu&#39;ils s&#39;y connaissent un tant soit peu en programmation web. &#171;Le d&#233;faut des logiciels grand public, estime Patrick Perreault, c&#39;est qu&#39;ils proposent toujours les m&#234;mes designs... Cam&#233;l&#233;on permet d&#39;aller plus loin dans la personnalisation de l&#39;interface de votre site.&#187; &lt;/p&gt; &lt;p&gt; L&#39;entreprise montr&#233;alaise a f&#234;t&#233; ses dix bougies l&#39;an dernier et compte aujourd&#39;hui une cinquantaine de salari&#233;s. Sa sp&#233;cialit&#233;: le commerce &#233;lectronique, Intranet et les solutions cl&#233; en main, depuis la strat&#233;gie web jusqu&#39;&#224; l&#39;h&#233;bergement. &lt;/p&gt; &lt;p&gt; Cam&#233;l&#233;on en est &#224; sa cinqui&#232;me version et son d&#233;veloppement a co&#251;t&#233; environ un demi-million de dollars. &#171;Les prix repr&#233;sentent beaucoup au niveau commercial, conclut M. Rioux, mais c&#39;est surtout une grande source de motivation pour tous nos employ&#233;s.&#187; Des salari&#233;s qui ont de quoi &#234;tre fiers, car un de leurs clients a &#233;galement remport&#233; un prix Octas samedi soir: Des ordinateurs pour les &#233;coles du Qu&#233;bec (Opeq), qui s&#39;est illustr&#233; dans la cat&#233;gorie des technologies de l&#39;information au service de la soci&#233;t&#233;. &lt;/p&gt; &lt;p&gt; *** &lt;/p&gt; &lt;p&gt; Collaboratrice du Devoir&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2011 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20110604&amp;#183;LE&amp;#183;20110604_c8_gratuit&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">source libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">technologies de l'information</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">gestion de contenu</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">entreprise montréalaise</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">programmes de formation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110604%c2%b7LE%c2%b720110604_c8_gratuit" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720110604%c2%b7LE%c2%b720110604_c8_gratuit">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Octas,         samedi 4 juin 2011 574 mots, p. C8</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Alogient - Caméléon est gratuit!            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L'entreprise montréalaise Alogient remporte un deuxième prix cette année pour l'utilisation du français dans les technologies de l'information.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Hélène Roulot-Ganzmann</p>
+
+
+    <b><p><em style="font-weight:bold;">«C'est l'accumulation de beaucoup d'efforts, estime Patrick L. Perreault, vice-président Conseil d'Alogient. Ça fait six ans qu'on développe ce produit à la sueur de notre front. Ce deuxième prix en l'espace de quelques mois vient également confirmer le fait que la décision d'affaires que nous avons prise de mettre l'accent sur la langue française est payante, mais aussi que nous avions raison de transformer Caméléon en <mark>logiciel</mark> <mark>libre</mark>, à <mark>code</mark> <mark>source</mark> <mark>libre</mark>, à un moment où de plus en plus de gens tentent de garder la mainmise sur leur produit.»</em></p></b>
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Caméléon, voici donc le programme qui est l'objet de toutes les attentions dans le petit monde des technologies de l'information ces derniers mois. Du moins, sur le marché francophone. «Nous nous sommes dit qu'il y avait une occasion d'affaires sur le marché pour lancer un produit entièrement en français, si on considère que la francophonie, ce sont plusieurs pays et c'est une étendue très large dans le monde», poursuit M. Perreault. On ne raconte pas forcément l'histoire classique... Nous ne nous sommes pas lancés là-dedans parce que le français est en danger, ajoute Jean-François Rioux, président d'Alogient. Le français est tout simplement notre axe compétitif sur le marché des systèmes de gestion de contenu et c'est un message qui est bien passé auprès des deux jurys de ces concours-là.»</p>
+
+
+<p>Un système de gestion de contenu, ou CMS, est un programme destiné à la conception et à la mise à jour de sites web ou d'applications multimédias. Lozeau, Desjardins, CN, TD Assurance et plus d'une cinquantaine d'autres entreprises ou associations utilisent aujourd'hui Caméléon. Pour sa fiabilité, pour sa simplicité, pour son utilisation de la langue française sans doute également un peu. Mais sûrement aussi pour sa gratuité. «Quand on regarde les tendances, affirme Jean-François Rioux, on s'aperçoit que de plus en plus d'entreprises veulent aller vers des logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark>. On espère que, chez les gens qui sont attirés par ce type de logiciel et qui se trouvent dans la francophonie, le prix Octas nous apportera un gain de notoriété et de popularité, qu'ils implanteront notre logiciel mais aussi qu'ils en poursuivront le développement.» </p> <p> Source libre </p> <p> Car voilà tout l'intérêt d'un programme à <mark>code</mark> <mark>source</mark> <mark>libre</mark>. Alogient a produit Caméléon et l'a mis sur le marché: libre ensuite aux développeurs qui le souhaitent de programmer des modules qui viendront compléter le produit, le rendre toujours plus performant. «L'équipe d'Alogient, qui se promène d'ailleurs la tête haute aujourd'hui dans les couloirs, travaille fort sur l'évolution du produit, mais d'autres gens peuvent travailler à cette évolution-là, en fonction de leurs besoins», explique Patrick L. Perreault. </p> <p> Et le modèle d'affaires, dans tout ça? «À la base, les gens choisissent votre produit parce qu'il est gratuit, qu'il n'y a pas de frais de licence, ils économisent donc beaucoup d'argent, estime Jean-François Rioux. De notre côté, on fait notre revenu en développant des plans de soutien spécifiques pour les gens qui utilisent notre produit. Nous-mêmes, nous créons des sites avec Caméléon pour certains clients. Sans oublier les programmes de formation sur mesure qu'on peut livrer à des développeurs, à des fournisseurs de service ou encore à des entreprises, notamment le service public, qui a souvent des besoins très particuliers.» </p> <p> Alogient souhaite d'ailleurs profiter de la visibilité offerte par ces deux prix pour toucher de nouveaux clients, et la fonction publique est une de ses cibles. Les particuliers également, si tant est qu'ils s'y connaissent un tant soit peu en programmation web. «Le défaut des logiciels grand public, estime Patrick Perreault, c'est qu'ils proposent toujours les mêmes designs... Caméléon permet d'aller plus loin dans la personnalisation de l'interface de votre site.» </p> <p> L'entreprise montréalaise a fêté ses dix bougies l'an dernier et compte aujourd'hui une cinquantaine de salariés. Sa spécialité: le commerce électronique, Intranet et les solutions clé en main, depuis la stratégie web jusqu'à l'hébergement. </p> <p> Caméléon en est à sa cinquième version et son développement a coûté environ un demi-million de dollars. «Les prix représentent beaucoup au niveau commercial, conclut M. Rioux, mais c'est surtout une grande source de motivation pour tous nos employés.» Des salariés qui ont de quoi être fiers, car un de leurs clients a également remporté un prix Octas samedi soir: Des ordinateurs pour les écoles du Québec (Opeq), qui s'est illustré dans la catégorie des technologies de l'information au service de la société. </p> <p> *** </p> <p> Collaboratrice du Devoir</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2011 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20110604·LE·20110604_c8_gratuit</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20110604·LE·20110604_c8_gratuit";
+    var _docIndex = 272;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20110604·LE·20110604_c8_gratuit';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720110604%C2%B7LE%C2%B720110604_c8_gratuit&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720110604%C2%B7LE%C2%B720110604_c8_gratuit&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720110604%C2%B7LE%C2%B720110604_c8_gratuit&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720110604%C2%B7LE%C2%B720110604_c8_gratuit&docIndex=272&FullScreen=1";
+                
+	var _keyDoc = 'news·20110604·LE·20110604_c8_gratuit';
+</script>
+</div></body></html>

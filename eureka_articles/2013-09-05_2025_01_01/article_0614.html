@@ -1,0 +1,531 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         samedi 6 ao&amp;#251;t 2016 970 mots, p. F9&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Un autre monde num&#233;rique est possible            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Boris Proulx&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Le comit&#233; des &quot; libristes &quot; du Forum social mondial (FSM) de Montr&#233;al entend propager l&#39;id&#233;e qu&#39;il est possible d&#39;&#233;manciper la plan&#232;te du joug de ces entreprises qui verrouillent leurs codes informatiques et qui g&#233;n&#232;rent un profit sur les informations personnelles de leurs usagers. &#192; l&#39;heure o&#249; l&#39;information peut &#234;tre copi&#233;e &#224; l&#39;infini et &#224; co&#251;t pratiquement nul, les lois prot&#233;geant la propri&#233;t&#233; intellectuelle sont contest&#233;es par les militants, qui r&#234;vent &#224; l&#39;&#233;mergence d&#39;un monde o&#249; le savoir se transmet sans barri&#232;res. Entre-temps, les solutions &quot; libres de droits &quot; &#233;mergent un peu partout, mais sont encore plut&#244;t m&#233;connues, m&#234;me des autres militants. &lt;/p&gt; &lt;p&gt; La libert&#233;, version num&#233;rique &lt;/p&gt; &lt;p&gt; Rares sont ceux qui n&#39;ont pas encore int&#233;gr&#233; la technologie dans la routine quotidienne. Ordinateurs, tablettes et t&#233;l&#233;phones intelligents sont nos compagnons de tous les jours, tout comme les r&#233;seaux sociaux num&#233;riques et les services de divertissement comme &lt;span class=&quot;stubs&quot;&gt;Netflix&lt;/span&gt; ou Spotify.&lt;/p&gt;
+
+
+&lt;p&gt;&quot; Comme on fait attention &#224; ce qu&#39;on mange, je crois qu&#39;il faut aussi faire attention &#224; la technologie qu&#39;on consomme, pour que &#231;a respecte l&#39;&#233;cosyst&#232;me num&#233;rique &quot;, apporte comme comparaison Marianne Corvellec, militante du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Tout comme elle n&#39;ing&#232;re &quot; pas que du bio &quot;, elle croit qu&#39;il est bien normal d&#39;utiliser des logiciels propri&#233;taires. Toutefois, &#224; mesure que l&#39;informatique prend une place pr&#233;pond&#233;rante dans nos vies, nous sommes en droit d&#39;exiger d&#39;y avoir acc&#232;s, de pouvoir bidouiller ses codes et de s&#39;approprier, finalement, l&#39;outil. &quot; [Les entreprises] mettent des verrous sur la technologie. C&#39;est aussi un verrou &#233;conomique &quot;, explique celle qui est aussi membre du conseil d&#39;administration d&#39;APRIL, un organisme fran&#231;ais charg&#233; de la promotion et de la d&#233;fense du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &quot; Je veux que l&#39;informatique &#233;mancipe. Pas qu&#39;il restreigne. &quot; &lt;/p&gt; &lt;p&gt; Marianne Corvellec prendra la parole &#224; la grande conf&#233;rence sur le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; intitul&#233;e &quot; Un autre monde num&#233;rique est n&#233;cessaire : avec le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, il devient possible ! &quot;. Elle partage le podium avec l&#39;une des sommit&#233;s mondiales du domaine du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;. Pr&#233;sident de la Fondation &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt;, aux &#201;tats-Unis, &lt;mark&gt;Stallman&lt;/mark&gt; est derri&#232;re le d&#233;veloppement de GNU/Linux et du concept de &quot; copyleft &quot;, un pied de nez au droit d&#39;auteur (&quot; copyright &quot;) sous forme de licence permettant l&#39;utilisation, la copie et la modification de son oeuvre, &#224; la condition de maintenir ces privil&#232;ges pour le suivant. &lt;/p&gt; &lt;p&gt; La r&#233;volution sera num&#233;rique ou ne sera pas &lt;/p&gt; &lt;p&gt; La philosophie des &quot; libristes &quot; est r&#233;solument antisyst&#232;me : le r&#234;ve d&#39;un univers dans lequel aucune barri&#232;re n&#39;emp&#234;che l&#39;acc&#232;s au savoir humain, aux logiciels, &#224; la culture et &#224; la conception du mat&#233;riel. Le tout serait accessible, gratuit et pr&#234;t &#224; &#234;tre am&#233;lior&#233; par la communaut&#233;. L&#39;id&#233;al n&#39;est d&#39;ailleurs pas limit&#233; au monde nich&#233; des programmeurs et &quot; geeks &quot; du Web, mais concerne tous les utilisateurs du num&#233;rique. &quot; C&#39;est un v&#233;ritable mouvement politique qui va bien au-del&#224; de la technique, explique Marianne Corvellec, qui pr&#233;cise son c&#244;t&#233; militant : il faut se battre contre le mod&#232;le am&#233;ricain des brevets. &quot; Selon elle, la protection de la propri&#233;t&#233; intellectuelle nuit &#224; l&#39;innovation, et non l&#39;inverse. &quot; Certaines compagnies qui en ont les moyens financiers et juridiques peuvent d&#233;poser des brevets en masse [aux &#201;tats-Unis] uniquement pour &#233;touffer les jeunes pousses. &quot; Si la soci&#233;t&#233; profitait des avantages d&#39;un syst&#232;me libre bien &#233;tabli, encore faudrait-il le favoriser en choisissant des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; pour les ordinateurs de nos gouvernements et du syst&#232;me public, avance-t-elle. &lt;/p&gt; &lt;p&gt; Au Qu&#233;bec, ce combat est men&#233; par l&#39;organisme sans but lucratif FACIL, qui fait notamment la promotion du &quot; pacte du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; &quot;, qui demande aux d&#233;put&#233;s &#224; l&#39;&lt;span class=&quot;stubs&quot;&gt;Assembl&#233;e nationale&lt;/span&gt; de &quot; respecter les standards ouverts dans l&#39;administration publique et dans la livraison des services en ligne &quot;. Mathieu Gauthier-Pilote, pr&#233;sident du FACIL, n&#39;a pas de mots tendres &#224; l&#39;endroit de ceux qu&#39;il qualifie de &quot; g&#233;ants pernicieux du num&#233;rique &quot;, comme Apple, &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; et autres Facebook. &quot; &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, par exemple, utilise des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; afin de collecter notre information personnelle. D&#39;autres utilisent les DRM [gestion num&#233;rique des droits], comme Apple. Quand tu ach&#232;tes un vrai livre, tu peux le pr&#234;ter, le revendre. Pas chez iTunes ! &quot; &lt;/p&gt; &lt;p&gt; Selon Mathieu Gauthier-Pilote, il existe plusieurs &quot; courants libres &quot;, politiquement tant de gauche que de droite. Certains, plut&#244;t extr&#234;mes, ne reconnaissent aucun droit d&#39;auteur. Ce sont ceux derri&#232;re le partage ill&#233;gal de musique et de films via le protocole BitTorrent, par exemple. &quot; Le courant mod&#233;r&#233; favorise plut&#244;t les licences libres comme les Creative Commons. &quot; En attendant la grande r&#233;forme du droit d&#39;auteur, qui va peut-&#234;tre venir r&#233;&#233;quilibrer les droits de chacun, auteurs comme consommateurs, ce courant &quot; mod&#233;r&#233; &quot; dont il se r&#233;clame encourage le d&#233;veloppement du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, une &quot; troisi&#232;me voie &quot; : ni piratage ni syst&#232;me. &lt;/p&gt; &lt;p&gt; Faire conna&#238;tre le militantisme num&#233;rique... aux militants &lt;/p&gt; &lt;p&gt; Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; souffre toutefois d&#39;un manque de reconnaissance du public. &quot; On est un peu comme les &#233;cologistes dans les ann&#233;es 1960 , explique Mathieu Gauthier-Pilote. On n&#39;est pas &#224; l&#39;&#233;tape o&#249; c&#39;est tenu pour acquis que nos comportements doivent changer, encore moins &#224; celle de la connaissance des solutions de rechange. &quot; &lt;/p&gt; &lt;p&gt; Ce mal touche m&#234;me les militants, engag&#233;s dans les causes sociales ou environnementales. &quot; M&#234;me le Forum social mondial n&#39;utilisait pas des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &quot;, se d&#233;sole le libriste, qui a constat&#233; l&#39;usage g&#233;n&#233;ralis&#233; de &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, Facebook ou Skype dans l&#39;organisation du Forum. &lt;/p&gt; &lt;p&gt; Faire valoir le r&#244;le du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; dans la convergence des luttes est aussi un d&#233;fi pour Marianne Corvellec, plus habitu&#233;e &#224; prendre la parole devant des sp&#233;cialistes du milieu technologique et souvent d&#233;j&#224; acquis &#224; la cause. Elle conclut en citant la chanteuse et activiste sociale Bernice Johnson Reagon : &quot; Si vous &#234;tes trop &#224; l&#39;aise dans une coalition, c&#39;est que ce n&#39;est pas une coalition assez large ! &quot; Bref, il est temps d&#39;aller chercher de nouveaux alli&#233;s. &lt;/p&gt; &lt;p&gt; Comme petite victoire, les libristes ont fait germer l&#39;id&#233;e d&#39;utiliser des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; pour l&#39;organisation des prochains forums. En attendant, il sera possible de les consulter lors d&#39;un atelier destin&#233; &#224; aider le public et les participants du FSM &#224; se familiariser avec ces logiciels.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2016 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20160806&amp;#183;LE&amp;#183;2016-08-06_475953&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droit d'auteur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">monde numérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">ASSEMBLÉE NATIONALE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">MICROSOFT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">NETFLIX</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">développement de GNU</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montréal (Québec)</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160806%c2%b7LE%c2%b72016-08-06_475953" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160806%c2%b7LE%c2%b72016-08-06_475953">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         samedi 6 août 2016 970 mots, p. F9</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Un autre monde numérique est possible            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Boris Proulx</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Le comité des " libristes " du Forum social mondial (FSM) de Montréal entend propager l'idée qu'il est possible d'émanciper la planète du joug de ces entreprises qui verrouillent leurs codes informatiques et qui génèrent un profit sur les informations personnelles de leurs usagers. À l'heure où l'information peut être copiée à l'infini et à coût pratiquement nul, les lois protégeant la propriété intellectuelle sont contestées par les militants, qui rêvent à l'émergence d'un monde où le savoir se transmet sans barrières. Entre-temps, les solutions " libres de droits " émergent un peu partout, mais sont encore plutôt méconnues, même des autres militants. </p> <p> La liberté, version numérique </p> <p> Rares sont ceux qui n'ont pas encore intégré la technologie dans la routine quotidienne. Ordinateurs, tablettes et téléphones intelligents sont nos compagnons de tous les jours, tout comme les réseaux sociaux numériques et les services de divertissement comme <span class="stubs">Netflix</span> ou Spotify.</p>
+
+
+<p>" Comme on fait attention à ce qu'on mange, je crois qu'il faut aussi faire attention à la technologie qu'on consomme, pour que ça respecte l'écosystème numérique ", apporte comme comparaison Marianne Corvellec, militante du <mark>logiciel</mark> <mark>libre</mark>. Tout comme elle n'ingère " pas que du bio ", elle croit qu'il est bien normal d'utiliser des logiciels propriétaires. Toutefois, à mesure que l'informatique prend une place prépondérante dans nos vies, nous sommes en droit d'exiger d'y avoir accès, de pouvoir bidouiller ses codes et de s'approprier, finalement, l'outil. " [Les entreprises] mettent des verrous sur la technologie. C'est aussi un verrou économique ", explique celle qui est aussi membre du conseil d'administration d'APRIL, un organisme français chargé de la promotion et de la défense du <mark>logiciel</mark> <mark>libre</mark>. " Je veux que l'informatique émancipe. Pas qu'il restreigne. " </p> <p> Marianne Corvellec prendra la parole à la grande conférence sur le <mark>logiciel</mark> <mark>libre</mark> intitulée " Un autre monde numérique est nécessaire : avec le <mark>logiciel</mark> <mark>libre</mark>, il devient possible ! ". Elle partage le podium avec l'une des sommités mondiales du domaine du <mark>logiciel</mark> <mark>libre</mark>, <mark>Richard</mark> <mark>Stallman</mark>. Président de la Fondation <mark>Free</mark> <mark>Software</mark>, aux États-Unis, <mark>Stallman</mark> est derrière le développement de GNU/Linux et du concept de " copyleft ", un pied de nez au droit d'auteur (" copyright ") sous forme de licence permettant l'utilisation, la copie et la modification de son oeuvre, à la condition de maintenir ces privilèges pour le suivant. </p> <p> La révolution sera numérique ou ne sera pas </p> <p> La philosophie des " libristes " est résolument antisystème : le rêve d'un univers dans lequel aucune barrière n'empêche l'accès au savoir humain, aux logiciels, à la culture et à la conception du matériel. Le tout serait accessible, gratuit et prêt à être amélioré par la communauté. L'idéal n'est d'ailleurs pas limité au monde niché des programmeurs et " geeks " du Web, mais concerne tous les utilisateurs du numérique. " C'est un véritable mouvement politique qui va bien au-delà de la technique, explique Marianne Corvellec, qui précise son côté militant : il faut se battre contre le modèle américain des brevets. " Selon elle, la protection de la propriété intellectuelle nuit à l'innovation, et non l'inverse. " Certaines compagnies qui en ont les moyens financiers et juridiques peuvent déposer des brevets en masse [aux États-Unis] uniquement pour étouffer les jeunes pousses. " Si la société profitait des avantages d'un système libre bien établi, encore faudrait-il le favoriser en choisissant des <mark>logiciels</mark> <mark>libres</mark> pour les ordinateurs de nos gouvernements et du système public, avance-t-elle. </p> <p> Au Québec, ce combat est mené par l'organisme sans but lucratif FACIL, qui fait notamment la promotion du " pacte du <mark>logiciel</mark> <mark>libre</mark> ", qui demande aux députés à l'<span class="stubs">Assemblée nationale</span> de " respecter les standards ouverts dans l'administration publique et dans la livraison des services en ligne ". Mathieu Gauthier-Pilote, président du FACIL, n'a pas de mots tendres à l'endroit de ceux qu'il qualifie de " géants pernicieux du numérique ", comme Apple, <span class="stubs">Microsoft</span> et autres Facebook. " <span class="stubs">Google</span>, par exemple, utilise des <mark>logiciels</mark> <mark>libres</mark> afin de collecter notre information personnelle. D'autres utilisent les DRM [gestion numérique des droits], comme Apple. Quand tu achètes un vrai livre, tu peux le prêter, le revendre. Pas chez iTunes ! " </p> <p> Selon Mathieu Gauthier-Pilote, il existe plusieurs " courants libres ", politiquement tant de gauche que de droite. Certains, plutôt extrêmes, ne reconnaissent aucun droit d'auteur. Ce sont ceux derrière le partage illégal de musique et de films via le protocole BitTorrent, par exemple. " Le courant modéré favorise plutôt les licences libres comme les Creative Commons. " En attendant la grande réforme du droit d'auteur, qui va peut-être venir rééquilibrer les droits de chacun, auteurs comme consommateurs, ce courant " modéré " dont il se réclame encourage le développement du <mark>logiciel</mark> <mark>libre</mark>, une " troisième voie " : ni piratage ni système. </p> <p> Faire connaître le militantisme numérique... aux militants </p> <p> Le <mark>logiciel</mark> <mark>libre</mark> souffre toutefois d'un manque de reconnaissance du public. " On est un peu comme les écologistes dans les années 1960 , explique Mathieu Gauthier-Pilote. On n'est pas à l'étape où c'est tenu pour acquis que nos comportements doivent changer, encore moins à celle de la connaissance des solutions de rechange. " </p> <p> Ce mal touche même les militants, engagés dans les causes sociales ou environnementales. " Même le Forum social mondial n'utilisait pas des <mark>logiciels</mark> <mark>libres</mark> ", se désole le libriste, qui a constaté l'usage généralisé de <span class="stubs">Google</span>, Facebook ou Skype dans l'organisation du Forum. </p> <p> Faire valoir le rôle du <mark>logiciel</mark> <mark>libre</mark> dans la convergence des luttes est aussi un défi pour Marianne Corvellec, plus habituée à prendre la parole devant des spécialistes du milieu technologique et souvent déjà acquis à la cause. Elle conclut en citant la chanteuse et activiste sociale Bernice Johnson Reagon : " Si vous êtes trop à l'aise dans une coalition, c'est que ce n'est pas une coalition assez large ! " Bref, il est temps d'aller chercher de nouveaux alliés. </p> <p> Comme petite victoire, les libristes ont fait germer l'idée d'utiliser des <mark>logiciels</mark> <mark>libres</mark> pour l'organisation des prochains forums. En attendant, il sera possible de les consulter lors d'un atelier destiné à aider le public et les participants du FSM à se familiariser avec ces logiciels.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2016 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20160806·LE·2016-08-06_475953</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20160806·LE·2016-08-06_475953";
+    var _docIndex = 613;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"assemblée nationale":"75657","microsoft":"75858","google":"76429","netflix":"75265"};
+		var _docName = 'news·20160806·LE·2016-08-06_475953';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720160806%C2%B7LE%C2%B72016-08-06_475953&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720160806%C2%B7LE%C2%B72016-08-06_475953&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720160806%C2%B7LE%C2%B72016-08-06_475953&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720160806%C2%B7LE%C2%B72016-08-06_475953&docIndex=613&FullScreen=1";
+                
+	var _keyDoc = 'news·20160806·LE·2016-08-06_475953';
+</script>
+</div></body></html>

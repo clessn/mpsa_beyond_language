@@ -1,0 +1,555 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_et_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 18634                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro Entreprises,         lundi 5 juillet 2004 1393 mots, p. 14,15&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+ETRANGER         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;&#201;thique : EN UTILISANT LES TECHNIQUES DU BUSINESS, NOTAMMENT LE CAPITAL-RISQUE, L&#39;ASSOCIATION ASHOKA SOUTIENT LES &#171;ENTREPRENEURS SOCIAUX&#187;.&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La multinationale qui veut sauver le monde            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Vincent GIOLITO&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;UN AM&#201;RICAIN qui parcourt le monde &#224; la recherche d&#39;entrepreneurs, qui r&#233;serve ses rencontres &#224; ceux qui ont les meilleures id&#233;es, qui finance seulement les projets qui d&#233;gageront le plus fort retour sur investissement... Ce pourrait &#234;tre un professionnel du capital-risque, traquant l&#39;entreprise en or. Presque. Bill Drayton a fait les meilleures &#233;coles et a &#233;t&#233; consultant en strat&#233;gie. Mais l&#39;organisation qu&#39;il pr&#233;side, Ashoka, n&#39;est pas une entreprise. C&#39;est une association philanthropique, qui a pris le nom d&#39;un roi qui a unifi&#233; le sous-continent indien au IIIe si&#232;cle avant notre &#232;re. &lt;/p&gt; &lt;p&gt; Les h&#233;ros que Bill Drayton recherche, qu&#39;il appelle des &#171; entrepreneurs sociaux &#187;, mesurent leur succ&#232;s non pas en plus-values, mais par les r&#233;sultats qu&#39;ils obtiennent contre les fl&#233;aux du monde : maladie, mis&#232;re et pollution. &#171; Ce sont des hommes ou des femmes dont nous pensons qu&#39;ils sont capables de changer la fa&#231;on dont tel ou tel probl&#232;me est actuellement trait&#233; dans un horizon de cinq ans, et cela &#224; l&#39;&#233;chelle d&#39;un continent entier &#187;, pr&#233;cise Oliver Kayser. Ce Fran&#231;ais de 47 ans vient de plaquer son poste de directeur associ&#233; de McKinsey &#224; Paris pour lancer Ashoka en Europe.&lt;/p&gt;
+
+
+&lt;p&gt;Comme toute entreprise, c&#39;est &#224; ses d&#233;buts que les projets sociaux sont les plus fragiles. Ashoka cherche &#224; leur donner les meilleures chances, &#224; apporter &#224; leurs initiateurs autant que les &#171; business angels &#187; lorsqu&#39;ils accompagnent des cr&#233;ateurs d&#39;entreprise. Il s&#39;agit d&#39;une part d&#39;argent. L&#39;association verse aux Fellows qu&#39;elle s&#233;lectionne une bourse qui leur permet de vivre deux &#224; trois ans. D&#233;barrass&#233;s de l&#39;angoisse de subsister, ces &#171; compagnons &#187; sont ainsi &#224; m&#234;me de consacrer toute leur &#233;nergie &#224; leur id&#233;e. &lt;/p&gt; &lt;p&gt; Il y a ensuite le savoir, les comp&#233;tences et les carnets d&#39;adresses. Ashoka compte environ 1 700 fellows dans le monde. Il n&#39;y en a pas deux qui travaillent sur le m&#234;me sujet mais beaucoup sont ou ont &#233;t&#233; confront&#233;s, &#224; un moment ou un autre de leur aventure, &#224; des difficult&#233;s comparables d&#233;finition pr&#233;cise des probl&#232;mes et des solutions, recrutement et animation de b&#233;n&#233;voles, marketing de la recherche de fonds, voire organisation industrielle... Le r&#233;seau d&#39;Ashoka fait partager les recettes d&#39;une action sociale efficace, &#224; la mani&#232;re des cabinets de conseil qui propagent les meilleures pratiques du business (McKinsey fait partie des sponsors). &lt;/p&gt; &lt;p&gt; La fronti&#232;re est mince entre les deux mondes. L&#39;exp&#233;rience semble montrer que souvent les m&#233;thodes de l&#39;entreprise gu&#233;rissent les plaies de la plan&#232;te au moins aussi bien que celles du secteur public. Des exemples ? Il s&#39;en trouve d&#39;abord &#224; l&#39;int&#233;rieur m&#234;me de la structure Ashoka : le processus de s&#233;lection de ses fellows est aussi codifi&#233;, donc que chez un investisseur. L&#39;association tente d&#39;identifier elle-m&#234;me les projets. Elle soumet les candidats &#224; plusieurs s&#233;ances d&#39;explications devant ses membres, un comit&#233; national puis son conseil d&#39;administration, pour &#233;prouver leur motivation et leur solidit&#233;. Leurs dossiers passent par un crible de crit&#232;res (cr&#233;ativit&#233;, qualit&#233;s d&#39;entrepreneur, impact social, &#233;thique) pour pr&#233;voir les chances de succ&#232;s. Une fois choisis, les nouveaux compagnons (dans un pays donn&#233;, un nouveau par an et par tranche de 10 millions d&#39;habitants) doivent rendre des comptes r&#233;guliers sur leur activit&#233;. &lt;/p&gt; &lt;p&gt; Mais les illustrations les plus frappantes du transfert de bonnes pratiques sont &#224; rechercher sur le terrain. Au Br&#233;sil, Rodrigo Baggio est l&#39;un des fellows d&#39;Ashoka. Son ambition ? Offrir aux adolescents des favelas de Rio ou Sao Paulo des d&#233;bouch&#233;s en leur donnant un minimum de comp&#233;tences en micro-informatique. Ce qu&#39;il a emprunt&#233; au monde des affaires ? Un mod&#232;le &#233;conomique capable de g&#233;n&#233;rer sa propre croissance. Pour r&#233;duire la scolarit&#233; factur&#233;e aux &#233;l&#232;ves, les ordinateurs sont r&#233;cup&#233;r&#233;s aupr&#232;s d&#39;entreprises qui renouvellent leur parc, les centres de formation vendent des services aux associations et collectivit&#233;s et Microsoft a &#233;t&#233; mis &#224; contribution. Les formateurs sont recrut&#233;s par les stagiaires : depuis 1996 ; sur les 460 000 &#233;tudiants pass&#233;s par l&#39;&#233;cole, 1 600 sont devenus ses profs. &lt;/p&gt; &lt;p&gt; En Inde, c&#39;est la m&#233;thode commerciale de la franchise qui a &#233;t&#233; adopt&#233;e par Jeroo Billimoria, une jeune femme issue d&#39;une caste minoritaire, pour venir en aide aux &#171; enfants des rues &#187;. Le nombre de ces gamins avoisinerait les 48 millions dans l&#39;ensemble du pays et les travailleurs sociaux suppos&#233;s leur venir en aide sont souvent soumis aux contraintes administratives. La solution d&#233;velopp&#233;e emprunte &#233;galement &#224; toutes les techniques des centres d&#39;appels. Son organisation, Childline, est en effet un num&#233;ro vert que les enfants peuvent appeler 7 jours sur 7, 24 heures sur 24. Au bout du fil, ils sont &#233;cout&#233;s et conseill&#233;s... par d&#39;autres enfants. Des volontaires, eux-m&#234;mes pass&#233;s par les &#233;preuves du d&#233;nuement et des bandes sans adultes, mais qui ont aussi appris quoi attendre des services d&#39;aide &#224; l&#39;enfance et comment les aborder. &lt;/p&gt; &lt;p&gt; &#171; La cl&#233;, c&#39;est de leur donner le pouvoir d&#39;agir eux-m&#234;mes, commente Jeroo Billimoria. C&#39;est un mouvement qui part du bas vers le haut. &#187; Des centres d&#39;appels sont install&#233;s dans des dizaines de villes. Ils re&#231;oivent des appels par centaines : 1 600 par mois &#224; Mumbai (Bombay), 1 200 &#224; Calcutta, 500 &#224; New Delhi. Tous respectent les m&#234;mes r&#232;gles, les m&#234;mes proc&#233;dures. &#171; C&#39;est la franchise, comme McDonald&#39;s ! &#187;, insiste l&#39;initiatrice. Comme les autres fellows, Jeroo Billimoria a b&#233;n&#233;fici&#233; de la bourse d&#39;Ashoka. Mais, dit-elle, le principal int&#233;r&#234;t de l&#39;association est ailleurs : &#171; Ils croient en vous lorsque personne ne vous croit. &#187; &lt;/p&gt; &lt;p&gt; Un autre entrepreneur social, l&#39;Am&#233;ricain David Green, a pouss&#233; encore plus loin la logique de la transposition des m&#233;thodes. Son association s&#39;appelle Project Impact et elle a d&#233;sormais une pr&#233;sence sur plusieurs continents, notamment en Inde. David Green s&#39;est attaqu&#233; &#224; la c&#233;cit&#233; li&#233;e &#224; la cataracte. C&#39;est une affection d&#233;sormais b&#233;nigne dans les pays occidentaux, soign&#233;e par une op&#233;ration de routine. Mais dans les pays pauvres, elle demeure un fl&#233;au. Les millions de personnes touch&#233;es ne peuvent plus travailler et sont priv&#233;es de travail et de ressources. Or, d&#39;une part, la chirurgie oculaire est ma&#238;tris&#233;e par peu de sp&#233;cialistes qui r&#233;servent leurs services aux clients ais&#233;s. D&#39;autre part, l&#39;op&#233;ration n&#233;cessite la pose d&#39;un implant intra-oculaire, une lentille, fabriqu&#233;e par des laboratoires occidentaux et commercialis&#233;e au prix fort. &lt;/p&gt; &lt;p&gt; David Green parle volontiers de &#171; capitalisme compassionnel &#187;. Peut-&#234;tre inspir&#233; par un c&#233;l&#232;bre &#171; cas &#187; de la Harvard Business School sur la clinique canadienne Shouldice, sp&#233;cialis&#233;e dans les hernies, il a reconstruit tout un mod&#232;le &#233;conomique autour de l&#39;op&#233;ration de la cataracte. Les chirurgiens, qui travaillent dans les cliniques qu&#39;il a ouvertes, form&#233;s surtout &#224; la technique n&#233;cessaire, op&#232;rent presque &#224; la cha&#238;ne. On gagne du temps et de l&#39;argent. Le personnel soignant et les salles d&#39;op&#233;ration sont mieux utilis&#233;s. Quant aux implants, ils sont d&#233;sormais fabriqu&#233;s par un laboratoire maison qui se concentre sur cette production sans avoir &#224; financer recherche ni marketing. L&#39;op&#233;ration, tout compris, revient &#224; moins de 100 dollars, quatre &#224; cinq fois moins que dans un h&#244;pital occidental. &lt;/p&gt; &lt;p&gt; Mais ce prix m&#234;me restait trop &#233;lev&#233; pour beaucoup. Rendre l&#39;op&#233;ration accessible &#224; tous exigeait une autre innovation. Elle est venue du marketing. C&#39;est un syst&#232;me de prix &#224; trois niveaux : les patients les plus riches paient plus que le co&#251;t de revient, ceux qui ont quelques revenus r&#232;glent le prix co&#251;tant, les autres ne paient rien. Il n&#39;y a pas de contr&#244;le, mais le syst&#232;me tourne. L&#39;enjeu et les r&#233;sultats d&#233;couragent la fraude, dit David Green. &lt;/p&gt; &lt;p&gt; Toutes les initiatives soutenues par Ashoka n&#39;ont pas la m&#234;me ampleur, mais elles ont en commun la vocation &#224; &#234;tre dupliqu&#233;es d&#39;un pays &#224; l&#39;autre. En Tha&#239;lande, Krisada Boonchai, animateur du Project of economicle recovery, d&#233;veloppe la diffusion des m&#233;thodes d&#39;agriculture et d&#39;irrigation en associant les scientifiques du pays, habituellement confin&#233;s dans leurs laboratoires, aux villages du nord du pays, qui jusqu&#39;ici, en raison des divisions ethniques, ne communiquaient jamais. Les forums de discussion instaur&#233;s autour de la technique avec comme premier support de simples cartes g&#233;ographiques et hydrographiques permettent d&#39;apaiser des rivalit&#233;s ancestrales. Le partage des eaux entre habitants des parties hautes et basses de certaines vall&#233;es cesse de se r&#233;soudre dans la violence. &lt;/p&gt; &lt;p&gt; A Bangkok, Ashoka a accompagn&#233; plusieurs initiatives pour aider les prostitu&#233;es victimes du sida. Mais l&#39;organisation sponsorise aussi Saree Aongsomwang, qui a lanc&#233; l&#39;&#233;quivalent (potentiellement &#224; tout le moins) d&#39;un Institut national de la consommation. &#171; Nous avons publi&#233; des tests comparatifs sur les machines &#224; laver ! &#187;, se f&#233;licite-t-elle. Dans un pays qui s&#39;ouvre au progr&#232;s &#233;conomique, la d&#233;marche est d&#39;autant moins anodine qu&#39;elle s&#39;appuie sur l&#39;utilisation des m&#233;dias : elle &#233;dite son propre magazine et produit elle-m&#234;me une &#233;mission t&#233;l&#233;vis&#233;e diffus&#233;e par une cha&#238;ne nationale. &lt;/p&gt; &lt;p&gt; Aujourd&#39;hui Ashoka s&#39;installe dans une r&#233;gion qu&#39;elle avait jusqu&#39;ici n&#233;glig&#233;e, l&#39;Europe de l&#39;Ouest. L&#39;association l&#232;ve des fonds et recherche les meilleurs entrepreneurs sociaux pour faire face &#224; la mis&#232;re et &#224; l&#39;&#233;chec. Avec les m&#234;mes m&#233;thodes, les m&#234;mes soutiens et les m&#234;mes ambitions que partout dans le monde. La m&#234;me confiance, aussi. &#171; Nous sommes au centre d&#39;un r&#233;seau qui &#233;merge, dit le pr&#233;sident Bill Drayton en constatant la multiplication, dans le monde entier, des associations. &#171; C&#39;est la m&#234;me dynamique que la croissance &#233;conomique. Cette forme d&#39;organisation grandit tr&#232;s vite, car elle est en phase de rattrapage. &#187; En investisseur avis&#233;, il mise donc sur ce qu&#39;il appelle le &#171; secteur citoyen &#187;. Parce que c&#39;est une industrie de croissance.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Jeroo Billimoria. Des centres d&#39;appels franchis&#233;s pour venir en aide aux enfants des rues.&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;&lt;p&gt;(DR.)&lt;/p&gt; &lt;/div&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Bill Drayton. Consultant philanthrope.&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;&lt;p&gt;(DR.)&lt;/p&gt; &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040705&amp;#183;LF&amp;#183;186341401entreprises&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">David Green</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Jeroo Billimoria</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Bill Drayton</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">entrepreneurs sociaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèle économique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Inde</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Project</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Brésil</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040705%c2%b7LF%c2%b7186341401entreprises" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040705%c2%b7LF%c2%b7186341401entreprises">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_et_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 18634                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Entreprises,         lundi 5 juillet 2004 1393 mots, p. 14,15</span>
+</div>
+
+    <div>
+        <p>
+ETRANGER         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Éthique : EN UTILISANT LES TECHNIQUES DU BUSINESS, NOTAMMENT LE CAPITAL-RISQUE, L'ASSOCIATION ASHOKA SOUTIENT LES «ENTREPRENEURS SOCIAUX».</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La multinationale qui veut sauver le monde            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Vincent GIOLITO</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>UN AMÉRICAIN qui parcourt le monde à la recherche d'entrepreneurs, qui réserve ses rencontres à ceux qui ont les meilleures idées, qui finance seulement les projets qui dégageront le plus fort retour sur investissement... Ce pourrait être un professionnel du capital-risque, traquant l'entreprise en or. Presque. Bill Drayton a fait les meilleures écoles et a été consultant en stratégie. Mais l'organisation qu'il préside, Ashoka, n'est pas une entreprise. C'est une association philanthropique, qui a pris le nom d'un roi qui a unifié le sous-continent indien au IIIe siècle avant notre ère. </p> <p> Les héros que Bill Drayton recherche, qu'il appelle des « entrepreneurs sociaux », mesurent leur succès non pas en plus-values, mais par les résultats qu'ils obtiennent contre les fléaux du monde : maladie, misère et pollution. « Ce sont des hommes ou des femmes dont nous pensons qu'ils sont capables de changer la façon dont tel ou tel problème est actuellement traité dans un horizon de cinq ans, et cela à l'échelle d'un continent entier », précise Oliver Kayser. Ce Français de 47 ans vient de plaquer son poste de directeur associé de McKinsey à Paris pour lancer Ashoka en Europe.</p>
+
+
+<p>Comme toute entreprise, c'est à ses débuts que les projets sociaux sont les plus fragiles. Ashoka cherche à leur donner les meilleures chances, à apporter à leurs initiateurs autant que les « business angels » lorsqu'ils accompagnent des créateurs d'entreprise. Il s'agit d'une part d'argent. L'association verse aux Fellows qu'elle sélectionne une bourse qui leur permet de vivre deux à trois ans. Débarrassés de l'angoisse de subsister, ces « compagnons » sont ainsi à même de consacrer toute leur énergie à leur idée. </p> <p> Il y a ensuite le savoir, les compétences et les carnets d'adresses. Ashoka compte environ 1 700 fellows dans le monde. Il n'y en a pas deux qui travaillent sur le même sujet mais beaucoup sont ou ont été confrontés, à un moment ou un autre de leur aventure, à des difficultés comparables définition précise des problèmes et des solutions, recrutement et animation de bénévoles, marketing de la recherche de fonds, voire organisation industrielle... Le réseau d'Ashoka fait partager les recettes d'une action sociale efficace, à la manière des cabinets de conseil qui propagent les meilleures pratiques du business (McKinsey fait partie des sponsors). </p> <p> La frontière est mince entre les deux mondes. L'expérience semble montrer que souvent les méthodes de l'entreprise guérissent les plaies de la planète au moins aussi bien que celles du secteur public. Des exemples ? Il s'en trouve d'abord à l'intérieur même de la structure Ashoka : le processus de sélection de ses fellows est aussi codifié, donc que chez un investisseur. L'association tente d'identifier elle-même les projets. Elle soumet les candidats à plusieurs séances d'explications devant ses membres, un comité national puis son conseil d'administration, pour éprouver leur motivation et leur solidité. Leurs dossiers passent par un crible de critères (créativité, qualités d'entrepreneur, impact social, éthique) pour prévoir les chances de succès. Une fois choisis, les nouveaux compagnons (dans un pays donné, un nouveau par an et par tranche de 10 millions d'habitants) doivent rendre des comptes réguliers sur leur activité. </p> <p> Mais les illustrations les plus frappantes du transfert de bonnes pratiques sont à rechercher sur le terrain. Au Brésil, Rodrigo Baggio est l'un des fellows d'Ashoka. Son ambition ? Offrir aux adolescents des favelas de Rio ou Sao Paulo des débouchés en leur donnant un minimum de compétences en micro-informatique. Ce qu'il a emprunté au monde des affaires ? Un modèle économique capable de générer sa propre croissance. Pour réduire la scolarité facturée aux élèves, les ordinateurs sont récupérés auprès d'entreprises qui renouvellent leur parc, les centres de formation vendent des services aux associations et collectivités et Microsoft a été mis à contribution. Les formateurs sont recrutés par les stagiaires : depuis 1996 ; sur les 460 000 étudiants passés par l'école, 1 600 sont devenus ses profs. </p> <p> En Inde, c'est la méthode commerciale de la franchise qui a été adoptée par Jeroo Billimoria, une jeune femme issue d'une caste minoritaire, pour venir en aide aux « enfants des rues ». Le nombre de ces gamins avoisinerait les 48 millions dans l'ensemble du pays et les travailleurs sociaux supposés leur venir en aide sont souvent soumis aux contraintes administratives. La solution développée emprunte également à toutes les techniques des centres d'appels. Son organisation, Childline, est en effet un numéro vert que les enfants peuvent appeler 7 jours sur 7, 24 heures sur 24. Au bout du fil, ils sont écoutés et conseillés... par d'autres enfants. Des volontaires, eux-mêmes passés par les épreuves du dénuement et des bandes sans adultes, mais qui ont aussi appris quoi attendre des services d'aide à l'enfance et comment les aborder. </p> <p> « La clé, c'est de leur donner le pouvoir d'agir eux-mêmes, commente Jeroo Billimoria. C'est un mouvement qui part du bas vers le haut. » Des centres d'appels sont installés dans des dizaines de villes. Ils reçoivent des appels par centaines : 1 600 par mois à Mumbai (Bombay), 1 200 à Calcutta, 500 à New Delhi. Tous respectent les mêmes règles, les mêmes procédures. « C'est la franchise, comme McDonald's ! », insiste l'initiatrice. Comme les autres fellows, Jeroo Billimoria a bénéficié de la bourse d'Ashoka. Mais, dit-elle, le principal intérêt de l'association est ailleurs : « Ils croient en vous lorsque personne ne vous croit. » </p> <p> Un autre entrepreneur social, l'Américain David Green, a poussé encore plus loin la logique de la transposition des méthodes. Son association s'appelle Project Impact et elle a désormais une présence sur plusieurs continents, notamment en Inde. David Green s'est attaqué à la cécité liée à la cataracte. C'est une affection désormais bénigne dans les pays occidentaux, soignée par une opération de routine. Mais dans les pays pauvres, elle demeure un fléau. Les millions de personnes touchées ne peuvent plus travailler et sont privées de travail et de ressources. Or, d'une part, la chirurgie oculaire est maîtrisée par peu de spécialistes qui réservent leurs services aux clients aisés. D'autre part, l'opération nécessite la pose d'un implant intra-oculaire, une lentille, fabriquée par des laboratoires occidentaux et commercialisée au prix fort. </p> <p> David Green parle volontiers de « capitalisme compassionnel ». Peut-être inspiré par un célèbre « cas » de la Harvard Business School sur la clinique canadienne Shouldice, spécialisée dans les hernies, il a reconstruit tout un modèle économique autour de l'opération de la cataracte. Les chirurgiens, qui travaillent dans les cliniques qu'il a ouvertes, formés surtout à la technique nécessaire, opèrent presque à la chaîne. On gagne du temps et de l'argent. Le personnel soignant et les salles d'opération sont mieux utilisés. Quant aux implants, ils sont désormais fabriqués par un laboratoire maison qui se concentre sur cette production sans avoir à financer recherche ni marketing. L'opération, tout compris, revient à moins de 100 dollars, quatre à cinq fois moins que dans un hôpital occidental. </p> <p> Mais ce prix même restait trop élevé pour beaucoup. Rendre l'opération accessible à tous exigeait une autre innovation. Elle est venue du marketing. C'est un système de prix à trois niveaux : les patients les plus riches paient plus que le coût de revient, ceux qui ont quelques revenus règlent le prix coûtant, les autres ne paient rien. Il n'y a pas de contrôle, mais le système tourne. L'enjeu et les résultats découragent la fraude, dit David Green. </p> <p> Toutes les initiatives soutenues par Ashoka n'ont pas la même ampleur, mais elles ont en commun la vocation à être dupliquées d'un pays à l'autre. En Thaïlande, Krisada Boonchai, animateur du Project of economicle recovery, développe la diffusion des méthodes d'agriculture et d'irrigation en associant les scientifiques du pays, habituellement confinés dans leurs laboratoires, aux villages du nord du pays, qui jusqu'ici, en raison des divisions ethniques, ne communiquaient jamais. Les forums de discussion instaurés autour de la technique avec comme premier support de simples cartes géographiques et hydrographiques permettent d'apaiser des rivalités ancestrales. Le partage des eaux entre habitants des parties hautes et basses de certaines vallées cesse de se résoudre dans la violence. </p> <p> A Bangkok, Ashoka a accompagné plusieurs initiatives pour aider les prostituées victimes du sida. Mais l'organisation sponsorise aussi Saree Aongsomwang, qui a lancé l'équivalent (potentiellement à tout le moins) d'un Institut national de la consommation. « Nous avons publié des tests comparatifs sur les machines à laver ! », se félicite-t-elle. Dans un pays qui s'ouvre au progrès économique, la démarche est d'autant moins anodine qu'elle s'appuie sur l'utilisation des médias : elle édite son propre magazine et produit elle-même une émission télévisée diffusée par une chaîne nationale. </p> <p> Aujourd'hui Ashoka s'installe dans une région qu'elle avait jusqu'ici négligée, l'Europe de l'Ouest. L'association lève des fonds et recherche les meilleurs entrepreneurs sociaux pour faire face à la misère et à l'échec. Avec les mêmes méthodes, les mêmes soutiens et les mêmes ambitions que partout dans le monde. La même confiance, aussi. « Nous sommes au centre d'un réseau qui émerge, dit le président Bill Drayton en constatant la multiplication, dans le monde entier, des associations. « C'est la même dynamique que la croissance économique. Cette forme d'organisation grandit très vite, car elle est en phase de rattrapage. » En investisseur avisé, il mise donc sur ce qu'il appelle le « secteur citoyen ». Parce que c'est une industrie de croissance.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Jeroo Billimoria. Des centres d'appels franchisés pour venir en aide aux enfants des rues.</p> </div>.
+
+        <p></p>
+        <p>
+            
+            
+                </p><div class="ImageAttachFont"><p>(DR.)</p> </div>
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Bill Drayton. Consultant philanthrope.</p> </div>.
+
+        <p></p>
+        <p>
+            
+            
+                </p><div class="ImageAttachFont"><p>(DR.)</p> </div>
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040705·LF·186341401entreprises</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040705·LF·186341401entreprises";
+    var _docIndex = 153;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040705·LF·186341401entreprises';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040705%C2%B7LF%C2%B7186341401entreprises&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040705%C2%B7LF%C2%B7186341401entreprises&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040705%C2%B7LF%C2%B7186341401entreprises&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040705%C2%B7LF%C2%B7186341401entreprises&docIndex=153&FullScreen=1";
+                
+	var _keyDoc = 'news·20040705·LF·186341401entreprises';
+</script>
+</div></body></html>

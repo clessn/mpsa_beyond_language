@@ -1,0 +1,597 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; techno,         mercredi 5 mars 2014 1507 mots, p. SCH4&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et medecine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Ev&#233;nement RECHERCHE&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Science participative Les joueurs aux manettes            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;En d&#233;veloppant des &#171; jeux s&#233;rieux &#187; accessibles &#224; tous en ligne, nombre de laboratoires offrent aux internautes la possibilit&#233; de prendre part &#224; la r&#233;solution de probl&#232;mes scientifiques. Des exp&#233;riences qui enthousiasment les joueurs, mais dont les b&#233;n&#233;fices r&#233;els restent &#224; affiner&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Roxane Tchernia&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Imaginez. Seul devant votre ordinateur, berc&#233; par une musique jazzy, vous faites glisser des briques de couleur pour les aligner en colonnes, en comblant les espaces vides, tout en gardant un oeil sur l&#39;indicateur de score. Non, vous ne jouez pas &#224; Tetris, vous faites progresser la science en alignant des s&#233;quences d&#39;ADN sur Phylo. Ce jeu en ligne canadien, &#233;labor&#233; &#224; l&#39;universit&#233; McGill, demande en effet aux participants d&#39;aider les scientifiques &#224; reconna&#238;tre des segments de s&#233;quences d&#39;ADN, ou de prot&#233;ines, communs &#224; plusieurs esp&#232;ces, tout en suivant des r&#232;gles compr&#233;hensibles par tous. L&#39;identification de g&#232;nes et de mutations port&#233;s par diff&#233;rentes familles de la classification biologique est essentielle pour comprendre l&#39;origine d&#39;une maladie ou l&#39;&#233;volution du g&#233;nome. La contribution des internautes est un renfort pour les biologistes et g&#233;n&#233;ticiens, car les ordinateurs ne trouvent pas toujours les meilleures r&#233;ponses possibles.&lt;/p&gt;
+
+
+&lt;p&gt;Phylo n&#39;est qu&#39;un exemple parmi d&#39;autres de jeux qui font appel &#224; l&#39;intelligence collective pour r&#233;soudre des probl&#232;mes scientifiques o&#249; les algorithmes sont inefficaces &#224; trouver des solutions optimales. Le 27 janvier, les comptes rendus de l&#39;Acad&#233;mie am&#233;ricaine des sciences (&lt;em style=&quot;font-style:italic;&quot;&gt;PNAS&lt;/em&gt;) exposaient les brillants r&#233;sultats de chercheurs en herbe ayant repli&#233; des brins d&#39;ARN avec le jeu EteRNA. &lt;/p&gt; &lt;p&gt; Ces jeux sont con&#231;us pour qu&#39;on puisse y participer sans avoir fait de hautes &#233;tudes scientifiques. Les t&#226;ches propos&#233;es sont r&#233;alisables par tous et reposent, par exemple, sur la logique ou la repr&#233;sentation dans l&#39;espace. Ces dispositifs s&#39;inscrivent dans la lign&#233;e des sciences participatives qui connaissent aujourd&#39;hui un r&#233;el engouement, bien que la participation des amateurs &#233;clair&#233;s existe depuis longtemps dans la tradition naturaliste, avec, notamment l&#39;observation des oiseaux ou le comptage des papillons (&#171; Science &amp;amp; techno &#187; du 3 mars 2012). &lt;/p&gt; &lt;p&gt; La physique s&#39;y met aussi. Le CERN, fleuron de la recherche en physique des particules, se lance justement dans l&#39;aventure du collaboratif. Les joueurs seront charg&#233;s d&#39;ajuster une s&#233;rie de param&#232;tres pour simuler sur ordinateur des collisions de particules de haute &#233;nergie, comme celles qui se produisent dans l&#39;acc&#233;l&#233;rateur du CERN, le LHC. Un logiciel analysera automatiquement ces simulations et comparera les r&#233;sultats aux mesures obtenues dans la r&#233;alit&#233;. Peter Skands, &#224; la t&#234;te du projet provisoirement nomm&#233; &#171; Atom Smashers &#187; , raconte que c&#39;est gr&#226;ce &#224; Mikkel Jeppsson, le fils d&#39;un de ses amis alors en classe de 4e, venu du Danemark pour faire un stage, que l&#39;id&#233;e lui est venue. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Je cherchais ce que je pouvais lui faire faire d&#39;int&#233;ressant &#187; ,&lt;/em&gt; explique-t-il. Comme ses coll&#232;gues et lui travaillaient sur un syst&#232;me de simulation, il a donn&#233; quelques explications au jeune gar&#231;on de 15 ans et lui a montr&#233; comment y faire des modifications. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; A la fin de la semaine, il avait trouv&#233; un meilleur param&#233;trage que celui de d&#233;part, le mien &#187; ,&lt;/em&gt; se souvient Peter Skands. Ces nouveaux r&#233;glages ont &#233;t&#233; adopt&#233;s par d&#233;faut et appel&#233;s &#171; Jeppsson tune &#187; , en hommage au stagiaire. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Cela m&#39;a fait penser qu&#39;on pourrait d&#233;cliner cette exp&#233;rience et laisser plus de gens essayer de trouver un r&#233;glage. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Luis Van Ahn, ma&#238;tre de conf&#233;rences &#224; l&#39;universit&#233; Carnegie-Mellon (Pittsburgh, Etats-Unis), a &#233;t&#233; l&#39;un des premiers &#224; &#233;tudier comment l&#39;association de l&#39;esprit humain et de l&#39;ordinateur pouvait r&#233;soudre des probl&#232;mes auxquels aucun des deux pris ind&#233;pendamment ne pouvait trouver de solution satisfaisante. Il est &#224; l&#39;origine d&#39;ESP Game, jeu en ligne soumettant &#224; deux internautes une image accompagn&#233;e d&#39;une liste de mots-cl&#233;s. Les termes d&#233;sign&#233;s par l&#39;un et l&#39;autre comme descriptifs de la photo sont adopt&#233;s. La soci&#233;t&#233; Google utilise aujourd&#39;hui ce syst&#232;me pour fournir des r&#233;ponses plus justes sur son moteur de recherche consacr&#233; &#224; l&#39;image. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; J&#39;aime ce que le jeu repr&#233;sente et ce qu&#39;il apporte &#224; la recherche scientifique &#187; ,&lt;/em&gt; explique l&#39;un des joueurs de Phylo. Il ajoute que les motivations des tr&#232;s nombreux participants ne sont pas n&#233;cessairement les m&#234;mes. La jouabilit&#233;, la dimension r&#233;cr&#233;ative des &#171; puzzles &#187; ou la musique d&#39;ambiance concourent &#224; l&#39;attrait du jeu. &lt;/p&gt; &lt;p&gt; A partir des travaux de Luis Van Ahn, qui insistaient sur l&#39;importance du facteur temps pour motiver le joueur &#224; relever le d&#233;fi, les cr&#233;ateurs de Phylo y avaient initialement int&#233;gr&#233; un chronom&#232;tre. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; J&#39;ai tr&#232;s vite commenc&#233; &#224; recevoir des mails de joueurs frustr&#233;s qui souhaitaient passer plus de temps sur certains probl&#232;mes &#187; ,&lt;/em&gt; se souvient J&#233;r&#244;me Waldisp&#252;hl, ma&#238;tre de conf&#233;rences dans le d&#233;partement informatique de l&#39;universit&#233; McGill et instigateur de Phylo. Le compteur de temps a finalement &#233;t&#233; abandonn&#233;, au profit d&#39;un syst&#232;me de score &#224; battre qui semble contenter tout autant les amateurs de comp&#233;tition. &lt;/p&gt; &lt;p&gt; Si ces jeux satisfont les participants, apportent-ils quelque chose &#224; la science? Il semblerait que ce soit le cas, &#224; en croire des publications parues dans des revues scientifiques de r&#233;f&#233;rence. Foldit, pionnier exemplaire, qui consistait &#224; imaginer les repliements qu&#39;une prot&#233;ine pouvait adopter pour atteindre son &#233;tat stable, a communiqu&#233; ses r&#233;sultats dans des titres aussi prestigieux que &lt;em style=&quot;font-style:italic;&quot;&gt;Nature&lt;/em&gt; ou &lt;em style=&quot;font-style:italic;&quot;&gt;PNAS.&lt;/em&gt; Preuve de l&#39;enthousiasme suscit&#233; par ce projet particuli&#232;rement populaire, d&#233;velopp&#233; par le Center for Game Science de l&#39;universit&#233; de Washington, les joueurs &#233;taient cit&#233;s comme coauteurs. &lt;/p&gt; &lt;p&gt; Pour J&#233;r&#244;me Waldisp&#252;hl et Mathieu Blanchette, responsables de Phylo &#224; McGill, l&#39;objectif &#233;tait d&#39;abord d&#39;examiner si la contribution des joueurs pouvait &#234;tre un atout. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Finalement, m&#234;me si les algorithmes d&#39;alignement font d&#233;j&#224; du bon travail, on s&#39;est rendu compte qu&#39;on pouvait les am&#233;liorer un peu gr&#226;ce aux donn&#233;es g&#233;n&#233;r&#233;es par les joueurs &#187; ,&lt;/em&gt; conclut J&#233;r&#244;me Waldisp&#252;hl. Dans leur pratique quotidienne, c&#39;est ainsi que proc&#232;dent les biologistes : ils rectifient manuellement les alignements propos&#233;s par les algorithmes. Les r&#233;sultats montrent que &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la combinaison humain-ordinateur est plus performante que l&#39;ordinateur seul ou l&#39;humain seul &#187; ,&lt;/em&gt; pr&#233;cise le fondateur de Phylo. Mais il ne faut &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; pas opposer la masse aux scientifiques &#187;&lt;/em&gt; , met-il en garde : &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L&#39;id&#233;e est de prolonger leur travail aupr&#232;s des citoyens. Ils ont accumul&#233; une expertise irrempla&#231;able, et les joueurs ne peuvent venir qu&#39;en soutien pour des t&#226;ches ne demandant qu&#39;un faible apprentissage. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Yann Ponty, chercheur CNRS au Laboratoire d&#39;informatique de l&#39;Ecole polytechnique (LIX), explique que pour ne pas demander aux internautes une r&#233;solution pour laquelle les machines sont ou seront meilleures, il faut s&#39;assurer du caract&#232;re &#171; NP-difficile &#187; du probl&#232;me. En informatique th&#233;orique, on qualifie de &#171; NP-difficiles &#187; des probl&#232;mes d&#39;optimisation qui, sous une hypoth&#232;se admise par l&#39;ensemble de la communaut&#233; scientifique, ne peuvent pas &#234;tre calcul&#233;s pr&#233;cis&#233;ment en un temps raisonnable. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce concept, qui mat&#233;rialise notre incapacit&#233; &#224; trouver un algorithme efficace, est une condition n&#233;cessaire pour utiliser une approche participative pour des probl&#232;mes bien d&#233;finis math&#233;matiquement &#187; ,&lt;/em&gt; pr&#233;cise Yann Ponty. En ne v&#233;rifiant pas la complexit&#233; d&#39;un jeu, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; on prend le risque que les efforts des internautes soient an&#233;antis devant une r&#233;solution exacte et d&#233;finitive en quelques secondes par un ordinateur de tous les puzzles propos&#233;s&lt;/em&gt;, poursuit-il. &lt;em style=&quot;font-style:italic;&quot;&gt;Cela pourrait d&#233;cr&#233;dibiliser de futurs projets collaboratifs aupr&#232;s du public. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;C&#39;est l&#39;un des reproches que ce chercheur adresse au jeu EteRNA, qui donne pour mission aux internautes de trouver les encha&#238;nements des briques de base d&#39;un brin d&#39;ARN en partant de la forme qu&#39;il prend une fois repli&#233;. Non seulement les joueurs proposent des s&#233;quences d&#39;ARN, mais ils peuvent aussi soumettre des lois sur leur conception, d&#39;apr&#232;s leurs observations des retours d&#39;exp&#233;riences. Ainsi, les r&#233;sultats, pr&#233;sent&#233;s par les auteurs du jeu de l&#39;universit&#233; Carnegie-Mellon dans la revue &lt;em style=&quot;font-style:italic;&quot;&gt;PNAS,&lt;/em&gt; affirmaient que l&#39;algorithme de design des ARN construit &#224; partir des r&#232;gles d&#233;couvertes par les internautes et les s&#233;quences propos&#233;es par la communaut&#233; EteRNA &#233;taient plus performants que le &lt;em style=&quot;font-style:italic;&quot;&gt;nec plus ultra&lt;/em&gt; des algorithmes existants. &lt;/p&gt; &lt;p&gt; Cette s&#233;duisante conclusion para&#238;t surestim&#233;e au regard de certains &#233;l&#233;ments : la NP-difficult&#233; ne semble pas prouv&#233;e pour le design d&#39;ARN; l&#39;&#233;tude compare les r&#233;sultats des internautes uniquement &#224; ceux fournis par deux algorithmes, dont l&#39;un des plus anciens dans ce domaine; les participants doivent d&#233;duire des principes g&#233;n&#233;raux apr&#232;s s&#39;&#234;tre familiaris&#233;s aux bases du repliement en r&#233;solvant des puzzles pour lesquels ils obtenaient un score calcul&#233; en fonction de sa conformit&#233; au mod&#232;le connu depuis une trentaine d&#39;ann&#233;es. Enfin, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; la dynamique des processus de repliement est n&#233;glig&#233;e, alors qu&#39;elle peut influer sur la structure &#187; ,&lt;/em&gt; signale Herv&#233; Isambert, directeur de recherche CNRS &#224; l&#39;Institut Curie, qui a particip&#233; &#224; l&#39;&#233;laboration du site Kinefold, outil permettant de g&#233;n&#233;rer des animations pour visualiser le repliement d&#39;une s&#233;quence d&#39;ARN donn&#233;e. &lt;/p&gt; &lt;p&gt; La particularit&#233; d&#39;EteRNA est de tester en laboratoire certaines s&#233;quences propos&#233;es par la communaut&#233;. Chaque semaine, les joueurs votent pour celles qui leur semblent m&#233;riter d&#39;&#234;tre synth&#233;tis&#233;es. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce syst&#232;me de vote, d&#233;mocratique, risque de d&#233;favoriser l&#39;&#233;mergence d&#39;id&#233;es nouvelles, alors que c&#39;est ce qui est recherch&#233;. Quelqu&#39;un qui aurait compris une chose que personne d&#39;autre n&#39;a comprise proposerait une strat&#233;gie qui ne serait pas s&#233;lectionn&#233;e pour la synth&#232;se car en d&#233;saccord avec les r&#232;gles commun&#233;ment admises &#187; ,&lt;/em&gt; d&#233;plore Yann Ponty. Il reconna&#238;t cependant la qualit&#233; de la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; r&#233;alisation du jeu et la valeur p&#233;dagogique qui fait d&#39;EteRNA une tr&#232;s bonne introduction au design d&#39;ARN &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; De l&#39;universit&#233; Carnegie-Mellon au MIT, en passant par l&#39;universit&#233; de Washington, de plus en plus d&#39;institutions embo&#238;tent le pas &#224; ces exp&#233;riences. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Seuls les programmeurs du jeu ont acc&#232;s aux donn&#233;es,&lt;/em&gt; regrette toutefois J&#233;r&#244;me Waldisp&#252;hl. &lt;em style=&quot;font-style:italic;&quot;&gt;Demander leur aide &#224; de nombreux volontaires pour &#234;tre seul &#224; en exploiter les r&#233;sultats, c&#39;est &#233;go&#239;ste. &#187;&lt;/em&gt; Les partisans du jeu collaboratif insistent souvent sur l&#39;importance de la mise en place de syst&#232;mes ouverts, rendant accessibles &#224; tous &#224; la fois les donn&#233;es du jeu et les r&#233;sultats d&#39;optimisation. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il est important que le code informatique derri&#232;re le jeu reste ouvert pour permettre &#224; d&#39;autres de faire leur propre version. Et si les prototypes sont am&#233;lior&#233;s, &#231;a nous fait tous avancer &#187; ,&lt;/em&gt; souligne Ariel Lindner, directeur de recherche Inserm et cofondateur du Centre de recherches interdisciplinaires (CRI). Cet &#233;tablissement participe au projet europ&#233;en &#171; Citizen CyberLab &#187; , qui s&#39;int&#233;resse &#224; l&#39;approche cr&#233;ative des joueurs et &#224; ce qu&#39;ils apprennent dans les programmes de science citoyenne en ligne. L&#39;un des projets vise justement &#224; mettre en place un outil facilitant la cr&#233;ation de jeux vid&#233;o. Il doit permettre de produire des syst&#232;mes nouveaux en recombinant et modifiant des &#233;l&#233;ments de jeux existants. Cette plate-forme, appel&#233;e &#171; Red Wire &#187; , se veut ouverte &#224; tous et a &#233;t&#233; pr&#233;sent&#233;e lors de la conf&#233;rence Fosdem (Free and &lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; Software Developer&#39;s European Meeting), qui s&#39;est tenue d&#233;but f&#233;vrier &#224; Bruxelles. &lt;/p&gt; &lt;p&gt; Par le biais des jeux de science participative, le public est incit&#233; &#224; s&#39;int&#233;resser &#224; des probl&#233;matiques r&#233;elles que des scientifiques tentent de traiter au quotidien. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Une des choses qui m&#39;a le plus fascin&#233; dans ces jeux, c&#39;est que pour la premi&#232;re fois je pouvais parler de ma recherche directement aux citoyens&lt;/em&gt;, r&#233;v&#232;le J&#233;r&#244;me Waldisp&#252;hl. &lt;em style=&quot;font-style:italic;&quot;&gt;Cette diffusion du savoir est extr&#234;mement valorisante. &#187;&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Foldit simule le repliement des prot&#233;ines dans l&#39;espace et profite des capacit&#233;s de l&#39;oeil et du cerveau humains, sup&#233;rieures &#224; celles de la machine dans cet exercice. Ce jeu s&#233;rieux peut se pratiquer en &#233;quipe - PHOTO : DR &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Sciences et jeux - PHOTO : QUENTIN BERTOUX &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Ax&#233; sur les maladies g&#233;n&#233;tiques, Phylo aide les chercheurs &#224; trouver les meilleures similitudes possibles entre des s&#233;quences de g&#232;nes en d&#233;pla&#231;ant des &#171; blocs &#187; - PHOTO : DR &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;L&#39;objectif d&#39;EteRNA est de changer diff&#233;rentes parties color&#233;es de l&#39;ARN pour replier correctement cette longue mol&#233;cule &#224; la base de toute vie - PHOTO : DR &lt;/div&gt;.
+
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Jeu d&#39;aventures, Ero.Coli propose de r&#233;soudre des &#233;nigmes tout en d&#233;couvrant les principes de la biologie de synth&#232;se - PHOTO : DR &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;3 mars 2014&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20140305&amp;#183;LM&amp;#183;0sch1014_928638&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">maître de conférences</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">directeur de recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">séquences d'ADN</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">science participative</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">séquences proposées par la communauté</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Sports et loisirs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Tetris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Danemark</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Pittsburgh</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">McGill</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140305%c2%b7LM%c2%b70sch1014_928638" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140305%c2%b7LM%c2%b70sch1014_928638">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; techno,         mercredi 5 mars 2014 1507 mots, p. SCH4</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et medecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Evénement RECHERCHE</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Science participative Les joueurs aux manettes            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">En développant des « jeux sérieux » accessibles à tous en ligne, nombre de laboratoires offrent aux internautes la possibilité de prendre part à la résolution de problèmes scientifiques. Des expériences qui enthousiasment les joueurs, mais dont les bénéfices réels restent à affiner</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Roxane Tchernia</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Imaginez. Seul devant votre ordinateur, bercé par une musique jazzy, vous faites glisser des briques de couleur pour les aligner en colonnes, en comblant les espaces vides, tout en gardant un oeil sur l'indicateur de score. Non, vous ne jouez pas à Tetris, vous faites progresser la science en alignant des séquences d'ADN sur Phylo. Ce jeu en ligne canadien, élaboré à l'université McGill, demande en effet aux participants d'aider les scientifiques à reconnaître des segments de séquences d'ADN, ou de protéines, communs à plusieurs espèces, tout en suivant des règles compréhensibles par tous. L'identification de gènes et de mutations portés par différentes familles de la classification biologique est essentielle pour comprendre l'origine d'une maladie ou l'évolution du génome. La contribution des internautes est un renfort pour les biologistes et généticiens, car les ordinateurs ne trouvent pas toujours les meilleures réponses possibles.</p>
+
+
+<p>Phylo n'est qu'un exemple parmi d'autres de jeux qui font appel à l'intelligence collective pour résoudre des problèmes scientifiques où les algorithmes sont inefficaces à trouver des solutions optimales. Le 27 janvier, les comptes rendus de l'Académie américaine des sciences (<em style="font-style:italic;">PNAS</em>) exposaient les brillants résultats de chercheurs en herbe ayant replié des brins d'ARN avec le jeu EteRNA. </p> <p> Ces jeux sont conçus pour qu'on puisse y participer sans avoir fait de hautes études scientifiques. Les tâches proposées sont réalisables par tous et reposent, par exemple, sur la logique ou la représentation dans l'espace. Ces dispositifs s'inscrivent dans la lignée des sciences participatives qui connaissent aujourd'hui un réel engouement, bien que la participation des amateurs éclairés existe depuis longtemps dans la tradition naturaliste, avec, notamment l'observation des oiseaux ou le comptage des papillons (« Science &amp; techno » du 3 mars 2012). </p> <p> La physique s'y met aussi. Le CERN, fleuron de la recherche en physique des particules, se lance justement dans l'aventure du collaboratif. Les joueurs seront chargés d'ajuster une série de paramètres pour simuler sur ordinateur des collisions de particules de haute énergie, comme celles qui se produisent dans l'accélérateur du CERN, le LHC. Un logiciel analysera automatiquement ces simulations et comparera les résultats aux mesures obtenues dans la réalité. Peter Skands, à la tête du projet provisoirement nommé « Atom Smashers » , raconte que c'est grâce à Mikkel Jeppsson, le fils d'un de ses amis alors en classe de 4e, venu du Danemark pour faire un stage, que l'idée lui est venue. <em style="font-style:italic;">« Je cherchais ce que je pouvais lui faire faire d'intéressant » ,</em> explique-t-il. Comme ses collègues et lui travaillaient sur un système de simulation, il a donné quelques explications au jeune garçon de 15 ans et lui a montré comment y faire des modifications. <em style="font-style:italic;">« A la fin de la semaine, il avait trouvé un meilleur paramétrage que celui de départ, le mien » ,</em> se souvient Peter Skands. Ces nouveaux réglages ont été adoptés par défaut et appelés « Jeppsson tune » , en hommage au stagiaire. <em style="font-style:italic;">« Cela m'a fait penser qu'on pourrait décliner cette expérience et laisser plus de gens essayer de trouver un réglage. »</em></p><p>Luis Van Ahn, maître de conférences à l'université Carnegie-Mellon (Pittsburgh, Etats-Unis), a été l'un des premiers à étudier comment l'association de l'esprit humain et de l'ordinateur pouvait résoudre des problèmes auxquels aucun des deux pris indépendamment ne pouvait trouver de solution satisfaisante. Il est à l'origine d'ESP Game, jeu en ligne soumettant à deux internautes une image accompagnée d'une liste de mots-clés. Les termes désignés par l'un et l'autre comme descriptifs de la photo sont adoptés. La société Google utilise aujourd'hui ce système pour fournir des réponses plus justes sur son moteur de recherche consacré à l'image. </p> <p><em style="font-style:italic;">« J'aime ce que le jeu représente et ce qu'il apporte à la recherche scientifique » ,</em> explique l'un des joueurs de Phylo. Il ajoute que les motivations des très nombreux participants ne sont pas nécessairement les mêmes. La jouabilité, la dimension récréative des « puzzles » ou la musique d'ambiance concourent à l'attrait du jeu. </p> <p> A partir des travaux de Luis Van Ahn, qui insistaient sur l'importance du facteur temps pour motiver le joueur à relever le défi, les créateurs de Phylo y avaient initialement intégré un chronomètre. <em style="font-style:italic;">« J'ai très vite commencé à recevoir des mails de joueurs frustrés qui souhaitaient passer plus de temps sur certains problèmes » ,</em> se souvient Jérôme Waldispühl, maître de conférences dans le département informatique de l'université McGill et instigateur de Phylo. Le compteur de temps a finalement été abandonné, au profit d'un système de score à battre qui semble contenter tout autant les amateurs de compétition. </p> <p> Si ces jeux satisfont les participants, apportent-ils quelque chose à la science? Il semblerait que ce soit le cas, à en croire des publications parues dans des revues scientifiques de référence. Foldit, pionnier exemplaire, qui consistait à imaginer les repliements qu'une protéine pouvait adopter pour atteindre son état stable, a communiqué ses résultats dans des titres aussi prestigieux que <em style="font-style:italic;">Nature</em> ou <em style="font-style:italic;">PNAS.</em> Preuve de l'enthousiasme suscité par ce projet particulièrement populaire, développé par le Center for Game Science de l'université de Washington, les joueurs étaient cités comme coauteurs. </p> <p> Pour Jérôme Waldispühl et Mathieu Blanchette, responsables de Phylo à McGill, l'objectif était d'abord d'examiner si la contribution des joueurs pouvait être un atout. <em style="font-style:italic;">« Finalement, même si les algorithmes d'alignement font déjà du bon travail, on s'est rendu compte qu'on pouvait les améliorer un peu grâce aux données générées par les joueurs » ,</em> conclut Jérôme Waldispühl. Dans leur pratique quotidienne, c'est ainsi que procèdent les biologistes : ils rectifient manuellement les alignements proposés par les algorithmes. Les résultats montrent que <em style="font-style:italic;">« la combinaison humain-ordinateur est plus performante que l'ordinateur seul ou l'humain seul » ,</em> précise le fondateur de Phylo. Mais il ne faut <em style="font-style:italic;">« pas opposer la masse aux scientifiques »</em> , met-il en garde : <em style="font-style:italic;">« L'idée est de prolonger leur travail auprès des citoyens. Ils ont accumulé une expertise irremplaçable, et les joueurs ne peuvent venir qu'en soutien pour des tâches ne demandant qu'un faible apprentissage. »</em></p><p>Yann Ponty, chercheur CNRS au Laboratoire d'informatique de l'Ecole polytechnique (LIX), explique que pour ne pas demander aux internautes une résolution pour laquelle les machines sont ou seront meilleures, il faut s'assurer du caractère « NP-difficile » du problème. En informatique théorique, on qualifie de « NP-difficiles » des problèmes d'optimisation qui, sous une hypothèse admise par l'ensemble de la communauté scientifique, ne peuvent pas être calculés précisément en un temps raisonnable. <em style="font-style:italic;">« Ce concept, qui matérialise notre incapacité à trouver un algorithme efficace, est une condition nécessaire pour utiliser une approche participative pour des problèmes bien définis mathématiquement » ,</em> précise Yann Ponty. En ne vérifiant pas la complexité d'un jeu, <em style="font-style:italic;">« on prend le risque que les efforts des internautes soient anéantis devant une résolution exacte et définitive en quelques secondes par un ordinateur de tous les puzzles proposés</em>, poursuit-il. <em style="font-style:italic;">Cela pourrait décrédibiliser de futurs projets collaboratifs auprès du public. »</em></p><p>C'est l'un des reproches que ce chercheur adresse au jeu EteRNA, qui donne pour mission aux internautes de trouver les enchaînements des briques de base d'un brin d'ARN en partant de la forme qu'il prend une fois replié. Non seulement les joueurs proposent des séquences d'ARN, mais ils peuvent aussi soumettre des lois sur leur conception, d'après leurs observations des retours d'expériences. Ainsi, les résultats, présentés par les auteurs du jeu de l'université Carnegie-Mellon dans la revue <em style="font-style:italic;">PNAS,</em> affirmaient que l'algorithme de design des ARN construit à partir des règles découvertes par les internautes et les séquences proposées par la communauté EteRNA étaient plus performants que le <em style="font-style:italic;">nec plus ultra</em> des algorithmes existants. </p> <p> Cette séduisante conclusion paraît surestimée au regard de certains éléments : la NP-difficulté ne semble pas prouvée pour le design d'ARN; l'étude compare les résultats des internautes uniquement à ceux fournis par deux algorithmes, dont l'un des plus anciens dans ce domaine; les participants doivent déduire des principes généraux après s'être familiarisés aux bases du repliement en résolvant des puzzles pour lesquels ils obtenaient un score calculé en fonction de sa conformité au modèle connu depuis une trentaine d'années. Enfin, <em style="font-style:italic;">« la dynamique des processus de repliement est négligée, alors qu'elle peut influer sur la structure » ,</em> signale Hervé Isambert, directeur de recherche CNRS à l'Institut Curie, qui a participé à l'élaboration du site Kinefold, outil permettant de générer des animations pour visualiser le repliement d'une séquence d'ARN donnée. </p> <p> La particularité d'EteRNA est de tester en laboratoire certaines séquences proposées par la communauté. Chaque semaine, les joueurs votent pour celles qui leur semblent mériter d'être synthétisées. <em style="font-style:italic;">« Ce système de vote, démocratique, risque de défavoriser l'émergence d'idées nouvelles, alors que c'est ce qui est recherché. Quelqu'un qui aurait compris une chose que personne d'autre n'a comprise proposerait une stratégie qui ne serait pas sélectionnée pour la synthèse car en désaccord avec les règles communément admises » ,</em> déplore Yann Ponty. Il reconnaît cependant la qualité de la <em style="font-style:italic;">« réalisation du jeu et la valeur pédagogique qui fait d'EteRNA une très bonne introduction au design d'ARN »</em>. </p> <p> De l'université Carnegie-Mellon au MIT, en passant par l'université de Washington, de plus en plus d'institutions emboîtent le pas à ces expériences. <em style="font-style:italic;">« Seuls les programmeurs du jeu ont accès aux données,</em> regrette toutefois Jérôme Waldispühl. <em style="font-style:italic;">Demander leur aide à de nombreux volontaires pour être seul à en exploiter les résultats, c'est égoïste. »</em> Les partisans du jeu collaboratif insistent souvent sur l'importance de la mise en place de systèmes ouverts, rendant accessibles à tous à la fois les données du jeu et les résultats d'optimisation. </p> <p><em style="font-style:italic;">« Il est important que le code informatique derrière le jeu reste ouvert pour permettre à d'autres de faire leur propre version. Et si les prototypes sont améliorés, ça nous fait tous avancer » ,</em> souligne Ariel Lindner, directeur de recherche Inserm et cofondateur du Centre de recherches interdisciplinaires (CRI). Cet établissement participe au projet européen « Citizen CyberLab » , qui s'intéresse à l'approche créative des joueurs et à ce qu'ils apprennent dans les programmes de science citoyenne en ligne. L'un des projets vise justement à mettre en place un outil facilitant la création de jeux vidéo. Il doit permettre de produire des systèmes nouveaux en recombinant et modifiant des éléments de jeux existants. Cette plate-forme, appelée « Red Wire » , se veut ouverte à tous et a été présentée lors de la conférence Fosdem (Free and <mark>Open</mark> <mark>Source</mark> Software Developer's European Meeting), qui s'est tenue début février à Bruxelles. </p> <p> Par le biais des jeux de science participative, le public est incité à s'intéresser à des problématiques réelles que des scientifiques tentent de traiter au quotidien. <em style="font-style:italic;">« Une des choses qui m'a le plus fasciné dans ces jeux, c'est que pour la première fois je pouvais parler de ma recherche directement aux citoyens</em>, révèle Jérôme Waldispühl. <em style="font-style:italic;">Cette diffusion du savoir est extrêmement valorisante. »</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Foldit simule le repliement des protéines dans l'espace et profite des capacités de l'oeil et du cerveau humains, supérieures à celles de la machine dans cet exercice. Ce jeu sérieux peut se pratiquer en équipe - PHOTO : DR </div>.
+
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach">Sciences et jeux - PHOTO : QUENTIN BERTOUX </div>.
+
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach">Axé sur les maladies génétiques, Phylo aide les chercheurs à trouver les meilleures similitudes possibles entre des séquences de gènes en déplaçant des « blocs » - PHOTO : DR </div>.
+
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach">L'objectif d'EteRNA est de changer différentes parties colorées de l'ARN pour replier correctement cette longue molécule à la base de toute vie - PHOTO : DR </div>.
+
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach">Jeu d'aventures, Ero.Coli propose de résoudre des énigmes tout en découvrant les principes de la biologie de synthèse - PHOTO : DR </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">3 mars 2014</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20140305·LM·0sch1014_928638</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20140305·LM·0sch1014_928638";
+    var _docIndex = 918;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20140305·LM·0sch1014_928638';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720140305%C2%B7LM%C2%B70sch1014_928638&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720140305%C2%B7LM%C2%B70sch1014_928638&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720140305%C2%B7LM%C2%B70sch1014_928638&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720140305%C2%B7LM%C2%B70sch1014_928638&docIndex=918&FullScreen=1";
+                
+	var _keyDoc = 'news·20140305·LM·0sch1014_928638';
+</script>
+</div></body></html>

@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mardi 5 juillet 2005 349 mots&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;TECHNOLOGIE Les entreprises sont divis&#233;es&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les d&#233;put&#233;s d&#233;battent du brevet logiciel            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;M. C.&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Les d&#233;put&#233;s europ&#233;ens r&#233;unis &#224; Strasbourg discutent aujourd&#39;hui, en deuxi&#232;me lecture, du projet &#171;de directive sur la brevetabilit&#233; des inventions mises en oeuvre par ordinateur&#187;. Ils voteront demain. L&#39;enjeu : prot&#233;ger les programmes informatiques en utilisant &#171;le droit sur les brevets&#187;. &lt;/p&gt; &lt;p&gt; Bruxelles souhaite uniformiser la r&#233;glementation entre les vingt-cinq pays membres de l&#39;Union europ&#233;enne. En premi&#232;re lecture, les d&#233;put&#233;s europ&#233;ens avaient restreint le champ d&#39;application des brevets aux seules inventions mises en oeuvre par un logiciel. Les ambigu&#239;t&#233;s du texte, &#233;labor&#233; par les experts de la Commission europ&#233;enne, ont &#233;t&#233; lev&#233;es gr&#226;ce &#224; une s&#233;rie d&#39;amendements d&#233;pos&#233;s en septembre 2003.&lt;/p&gt;
+
+
+&lt;p&gt;R&#233;cemment, la Commission des affaires juridiques de l&#39;Europe a rejet&#233;, par seize voix contre dix, les amendements d&#233;fendus par Michel Rocard. Selon l&#39;ancien premier ministre fran&#231;ais, &#171;c&#39;est la libre circulation des id&#233;es qui est en jeu&#187;. De nombreuses petites soci&#233;t&#233;s europ&#233;ennes, qui d&#233;fendent les solutions fonctionnant avec le syst&#232;me d&#39;exploitation Linux, et des &#233;diteurs comme le fran&#231;ais Ilog s&#39;opposent farouchement au brevet sur les logiciels d&#233;j&#224; en vigueur aux Etats-Unis et au Japon. &lt;/p&gt; &lt;p&gt; Ils estiment que le brevet va renforcer le pouvoir des entreprises les plus puissantes. &#171;Microsoft aux Etats-Unis a fi&#232;rement annonc&#233; que son objectif est de d&#233;poser 3 000 brevets cette ann&#233;e, explique Georg Greve, pr&#233;sident de la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; &lt;mark&gt;Foundation&lt;/mark&gt; Europe. Des millions de sites Internet, comme celui du Figaro risquent de devenir ill&#233;gaux.&#187; L&#39;analyse est contest&#233;e par les plus grandes entreprises europ&#233;ennes de technologie. &lt;/p&gt; &lt;p&gt; Elles ont demand&#233; son soutien &#224; Jean-Claude Juncker, le pr&#233;sident de la Commission europ&#233;enne &#224; qui Tony Blair a succ&#233;d&#233; le 1 er juillet. Dans un courrier dat&#233; du 30 juin, les dirigeants d&#39;Alcatel, Ericsson, Nokia, Philips et Siemens affirment que &#171;les amendements propos&#233;s par le Parlement europ&#233;en affectent n&#233;gativement l&#39;industrie europ&#233;enne des technologies num&#233;riques, l&#39;emploi et l&#39;investissement de la recherche et du d&#233;veloppement pour les technologies du futur&#187;. Selon une &#233;tude d&#39;une universit&#233; am&#233;ricaine, les PME sont propri&#233;taires de 20% de tous les brevets accord&#233;s ces cinq derni&#232;res ann&#233;es en Europe, contre 80% pour les grands groupes et les organisations gouvernementales. &lt;/p&gt; &lt;p&gt; Les grandes entreprises menacent m&#234;me de faire capoter la directive si les amendements sont finalement adopt&#233;s. Pour l&#39;instant, les logiciels sont prot&#233;g&#233;s uniquement par le droit d&#39;auteur. La protection dure soixante-dix ans apr&#232;s la mort de son auteur. &lt;/p&gt; &lt;p&gt; Avec le brevet, les inventions &#224; base de logiciels, d&#233;j&#224; prot&#233;g&#233;es en Europe, pourront &#234;tre d&#233;fendues seulement pendant vingt ans. &#171;En 2001, sur plus de 110 000 demandes de brevets re&#231;ues par l&#39;Office europ&#233;en des brevets, plus de 16 000 concernaient de telles inventions&#187;, souligne un r&#233;cent rapport du Parlement europ&#233;en. &lt;/p&gt; &lt;p&gt; M. C.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20050705&amp;#183;LF&amp;#183;20050705&amp;#215;2fig0420&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">commission européenne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">députés européens</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">inventions mises</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">industrie européenne des technologies numériques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">entreprises européennes de technologie</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Relations internationales</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Strasbourg</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bruxelles</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">l'Union</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats-Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050705%c2%b7LF%c2%b720050705%c3%972fig0420" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720050705%c2%b7LF%c2%b720050705%c3%972fig0420">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mardi 5 juillet 2005 349 mots</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">TECHNOLOGIE Les entreprises sont divisées</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les députés débattent du brevet logiciel            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">M. C.</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Les députés européens réunis à Strasbourg discutent aujourd'hui, en deuxième lecture, du projet «de directive sur la brevetabilité des inventions mises en oeuvre par ordinateur». Ils voteront demain. L'enjeu : protéger les programmes informatiques en utilisant «le droit sur les brevets». </p> <p> Bruxelles souhaite uniformiser la réglementation entre les vingt-cinq pays membres de l'Union européenne. En première lecture, les députés européens avaient restreint le champ d'application des brevets aux seules inventions mises en oeuvre par un logiciel. Les ambiguïtés du texte, élaboré par les experts de la Commission européenne, ont été levées grâce à une série d'amendements déposés en septembre 2003.</p>
+
+
+<p>Récemment, la Commission des affaires juridiques de l'Europe a rejeté, par seize voix contre dix, les amendements défendus par Michel Rocard. Selon l'ancien premier ministre français, «c'est la libre circulation des idées qui est en jeu». De nombreuses petites sociétés européennes, qui défendent les solutions fonctionnant avec le système d'exploitation Linux, et des éditeurs comme le français Ilog s'opposent farouchement au brevet sur les logiciels déjà en vigueur aux Etats-Unis et au Japon. </p> <p> Ils estiment que le brevet va renforcer le pouvoir des entreprises les plus puissantes. «Microsoft aux Etats-Unis a fièrement annoncé que son objectif est de déposer 3 000 brevets cette année, explique Georg Greve, président de la <mark>Free</mark> <mark>Software</mark> <mark>Foundation</mark> Europe. Des millions de sites Internet, comme celui du Figaro risquent de devenir illégaux.» L'analyse est contestée par les plus grandes entreprises européennes de technologie. </p> <p> Elles ont demandé son soutien à Jean-Claude Juncker, le président de la Commission européenne à qui Tony Blair a succédé le 1 er juillet. Dans un courrier daté du 30 juin, les dirigeants d'Alcatel, Ericsson, Nokia, Philips et Siemens affirment que «les amendements proposés par le Parlement européen affectent négativement l'industrie européenne des technologies numériques, l'emploi et l'investissement de la recherche et du développement pour les technologies du futur». Selon une étude d'une université américaine, les PME sont propriétaires de 20% de tous les brevets accordés ces cinq dernières années en Europe, contre 80% pour les grands groupes et les organisations gouvernementales. </p> <p> Les grandes entreprises menacent même de faire capoter la directive si les amendements sont finalement adoptés. Pour l'instant, les logiciels sont protégés uniquement par le droit d'auteur. La protection dure soixante-dix ans après la mort de son auteur. </p> <p> Avec le brevet, les inventions à base de logiciels, déjà protégées en Europe, pourront être défendues seulement pendant vingt ans. «En 2001, sur plus de 110 000 demandes de brevets reçues par l'Office européen des brevets, plus de 16 000 concernaient de telles inventions», souligne un récent rapport du Parlement européen. </p> <p> M. C.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20050705·LF·20050705×2fig0420</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20050705·LF·20050705×2fig0420";
+    var _docIndex = 961;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20050705·LF·20050705×2fig0420';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720050705%C2%B7LF%C2%B720050705%C3%972fig0420&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720050705%C2%B7LF%C2%B720050705%C3%972fig0420&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720050705%C2%B7LF%C2%B720050705%C3%972fig0420&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720050705%C2%B7LF%C2%B720050705%C3%972fig0420&docIndex=961&FullScreen=1";
+                
+	var _keyDoc = 'news·20050705·LF·20050705×2fig0420';
+</script>
+</div></body></html>

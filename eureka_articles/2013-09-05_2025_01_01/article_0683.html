@@ -1,0 +1,607 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 22221                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         mercredi 20 janvier 2016 578 mots, p. 25&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Tech         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Passes d&#39;armes sur la loi num&#233;rique            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le projet d&#233;fendu par &lt;span class=&quot;stubs&quot;&gt; Axelle Lemaire&lt;/span&gt; suscite des crispations.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Ferran, Benjamin&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;NUM&#201;RIQUE&lt;/em&gt; Le premier ministre, &lt;span class=&quot;stubs&quot;&gt;Manuel Valls&lt;/span&gt;, avait souhait&#233; en faire &#171; un moment important pour le pays, afin d&#39;asseoir notre place d&#39;acteur majeur du num&#233;rique sur la sc&#232;ne internationale &#187;. Sept mois apr&#232;s l&#39;&#233;bauche de la strat&#233;gie num&#233;rique du gouvernement, le projet de loi d&#233;battu depuis mardi &#224; l&#39;Assembl&#233;e nationale appara&#238;t plus comme une collection de mesures particuli&#232;res que comme un texte portant une vision claire de la France dans le num&#233;rique. &lt;/p&gt; &lt;p&gt; Ce projet de loi, touche-&#224;-tout, embrasse aussi bien la question de la loyaut&#233; des plateformes Internet que le d&#233;ploiement de la fibre optique dans les immeubles, le processus de v&#233;rification des avis sur les sites de voyage et le sort des donn&#233;es apr&#232;s un d&#233;c&#232;s. Il instaure l&#39;ouverture des donn&#233;es publiques par d&#233;faut, cr&#233;e un syst&#232;me de recommand&#233; &#233;lectronique et impose le transfert de ses messages lors d&#39;un changement de messagerie. Il introduit des dispositions pour reconna&#238;tre les comp&#233;titions de jeux vid&#233;o et prot&#233;ger de la connexion Internet en cas d&#39;impay&#233;s.&lt;/p&gt;
+
+
+&lt;p&gt;Certaines mesures du texte d&#233;fendu par la secr&#233;taire d&#39;&#201;tat &lt;span class=&quot;stubs&quot;&gt;Axelle Lemaire&lt;/span&gt; suscitent des crispations. Lundi, le &lt;span class=&quot;stubs&quot;&gt;Syndicat national&lt;/span&gt; de l&#39;&#233;dition et la &lt;span class=&quot;stubs&quot;&gt;F&#233;d&#233;ration nationale de la presse d&#39;information&lt;/span&gt; sp&#233;cialis&#233;e se sont emport&#233;s contre le projet de loi, qu&#39;ils voient comme &#171; le fossoyeur de la recherche scientifique fran&#231;aise &#187;. En cause, un article qui pr&#233;voit le &#171; libre acc&#232;s aux publications scientifiques issues de la recherche financ&#233;e par des fonds publics &#187; , apr&#232;s un d&#233;lai d&#39;embargo de six mois. &lt;/p&gt; &lt;p&gt; Une autre bataille concerne les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; et le droit d&#39;auteur. Un amendement a finalement &#233;t&#233; adopt&#233; en commission afin &#171; d&#39;encourager &#187; l&#39;utilisation des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; lors du d&#233;veloppement, de l&#39;achat ou de l&#39;utilisation d&#39;un syst&#232;me informatique dans les services de l&#39;&#201;tat et des entreprises du secteur public. Une disposition de l&#39;avant-projet de loi a &#233;galement &#233;t&#233; r&#233;tablie pour introduire une d&#233;finition positive du domaine public, contre laquelle ferraillent les ayants droit. Le gouvernement devrait s&#39;y opposer durant les d&#233;bats en s&#233;ance. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Amende de la Cnil&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Durant l&#39;examen du texte en commission, un nouvel article a &#233;t&#233; ajout&#233;, contre l&#39;avis du gouvernement et du rapporteur &lt;span class=&quot;stubs&quot;&gt;Luc Belot&lt;/span&gt;. Il vise &#224; renforcer la r&#233;pression des faits de diffusion non d&#233;sir&#233;e d&#39;images ou de vid&#233;os &#224; caract&#232;re sexuel, ce que l&#39;on appelle la &#171; vengeance pornographique &#187;. De mani&#232;re plus inattendue, des d&#233;put&#233;s ont aussi souhait&#233; disposer sous trois mois d&#39;un rapport sur la possibilit&#233; de cr&#233;er un commissariat &#224; la souverainet&#233; num&#233;rique charg&#233; de la cr&#233;ation d&#39;un syst&#232;me d&#39;exploitation souverain et de protocoles de chiffrement des donn&#233;es. Quelque 841 amendements ont &#233;t&#233; d&#233;pos&#233;s en s&#233;ance publique. L&#39;un d&#39;eux, observ&#233; de pr&#232;s par les grandes plateformes, vise &#224; augmenter le plafond des amendes inflig&#233;es par la Cnil de 150 000 &#224; 20 millions d&#39;euros, ou 4 % du chiffre d&#39;affaires de l&#39;entreprise. Le gouvernement devrait lui apporter son soutien. Un autre, plus cocasse, entend p&#233;naliser la diffusion de canulars informatiques qui se propagent par messagerie &#233;lectronique. &lt;/p&gt; &lt;p&gt; Les d&#233;put&#233;s &lt;span class=&quot;stubs&quot;&gt;R&#233;publicains&lt;/span&gt; reprochent au texte de ne pas tenir compte des autres textes europ&#233;ens portant sur le num&#233;rique, notamment sur la question des donn&#233;es personnelles, rejoignant des r&#233;serves &#233;mises par le &lt;span class=&quot;stubs&quot;&gt;Conseil d&#39;&#201;tat&lt;/span&gt;. Et aussi de faire l&#39;impasse sur des sujets fiscaux ou soci&#233;taux. &#171; J&#39;entends que le texte irait trop loin ou manquerait d&#39;ambition, allez comprendre. Jamais le num&#233;rique n&#39;a &#233;t&#233; appr&#233;hend&#233; de mani&#232;re aussi globale &#187; , a r&#233;pondu &lt;span class=&quot;stubs&quot;&gt;Axelle Lemaire&lt;/span&gt; mardi, vantant une &#171; loi du quotidien qui donne de nouveaux droits aux utilisateurs &#187;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;NICOLAS MESSYASZ/SIPA/SIPA &lt;/div&gt;
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:bferran@lefigaro.fr&quot;&gt;bferran@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;19 janvier 2016&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2016 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20160120&amp;#183;LF&amp;#183;472&amp;#215;20&amp;#215;21429474189&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">projet de loi</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Passes d'armes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">loi numérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">processus de vérification</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Républicains</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Luc Belot</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Axelle Lemaire</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Manuel Valls</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">Conseil d'État</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Fédération nationale de la presse d'information</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Syndicat national</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Assemblée nationale du Québec</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Lois et règlements</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160120%c2%b7LF%c2%b7472%c3%9720%c3%9721429474189" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720160120%c2%b7LF%c2%b7472%c3%9720%c3%9721429474189">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 22221                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         mercredi 20 janvier 2016 578 mots, p. 25</span>
+</div>
+
+    <div>
+        <p>
+Tech         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Passes d'armes sur la loi numérique            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le projet défendu par <span class="stubs"> Axelle Lemaire</span> suscite des crispations.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Ferran, Benjamin</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">NUMÉRIQUE</em> Le premier ministre, <span class="stubs">Manuel Valls</span>, avait souhaité en faire « un moment important pour le pays, afin d'asseoir notre place d'acteur majeur du numérique sur la scène internationale ». Sept mois après l'ébauche de la stratégie numérique du gouvernement, le projet de loi débattu depuis mardi à l'Assemblée nationale apparaît plus comme une collection de mesures particulières que comme un texte portant une vision claire de la France dans le numérique. </p> <p> Ce projet de loi, touche-à-tout, embrasse aussi bien la question de la loyauté des plateformes Internet que le déploiement de la fibre optique dans les immeubles, le processus de vérification des avis sur les sites de voyage et le sort des données après un décès. Il instaure l'ouverture des données publiques par défaut, crée un système de recommandé électronique et impose le transfert de ses messages lors d'un changement de messagerie. Il introduit des dispositions pour reconnaître les compétitions de jeux vidéo et protéger de la connexion Internet en cas d'impayés.</p>
+
+
+<p>Certaines mesures du texte défendu par la secrétaire d'État <span class="stubs">Axelle Lemaire</span> suscitent des crispations. Lundi, le <span class="stubs">Syndicat national</span> de l'édition et la <span class="stubs">Fédération nationale de la presse d'information</span> spécialisée se sont emportés contre le projet de loi, qu'ils voient comme « le fossoyeur de la recherche scientifique française ». En cause, un article qui prévoit le « libre accès aux publications scientifiques issues de la recherche financée par des fonds publics » , après un délai d'embargo de six mois. </p> <p> Une autre bataille concerne les <mark>logiciels</mark> <mark>libres</mark> et le droit d'auteur. Un amendement a finalement été adopté en commission afin « d'encourager » l'utilisation des <mark>logiciels</mark> <mark>libres</mark> lors du développement, de l'achat ou de l'utilisation d'un système informatique dans les services de l'État et des entreprises du secteur public. Une disposition de l'avant-projet de loi a également été rétablie pour introduire une définition positive du domaine public, contre laquelle ferraillent les ayants droit. Le gouvernement devrait s'y opposer durant les débats en séance. </p> <p><em style="font-weight:bold;">Amende de la Cnil</em></p><p>Durant l'examen du texte en commission, un nouvel article a été ajouté, contre l'avis du gouvernement et du rapporteur <span class="stubs">Luc Belot</span>. Il vise à renforcer la répression des faits de diffusion non désirée d'images ou de vidéos à caractère sexuel, ce que l'on appelle la « vengeance pornographique ». De manière plus inattendue, des députés ont aussi souhaité disposer sous trois mois d'un rapport sur la possibilité de créer un commissariat à la souveraineté numérique chargé de la création d'un système d'exploitation souverain et de protocoles de chiffrement des données. Quelque 841 amendements ont été déposés en séance publique. L'un d'eux, observé de près par les grandes plateformes, vise à augmenter le plafond des amendes infligées par la Cnil de 150 000 à 20 millions d'euros, ou 4 % du chiffre d'affaires de l'entreprise. Le gouvernement devrait lui apporter son soutien. Un autre, plus cocasse, entend pénaliser la diffusion de canulars informatiques qui se propagent par messagerie électronique. </p> <p> Les députés <span class="stubs">Républicains</span> reprochent au texte de ne pas tenir compte des autres textes européens portant sur le numérique, notamment sur la question des données personnelles, rejoignant des réserves émises par le <span class="stubs">Conseil d'État</span>. Et aussi de faire l'impasse sur des sujets fiscaux ou sociétaux. « J'entends que le texte irait trop loin ou manquerait d'ambition, allez comprendre. Jamais le numérique n'a été appréhendé de manière aussi globale » , a répondu <span class="stubs">Axelle Lemaire</span> mardi, vantant une « loi du quotidien qui donne de nouveaux droits aux utilisateurs ».</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+            
+                </p><div class="ImageAttachFont">NICOLAS MESSYASZ/SIPA/SIPA </div>
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:bferran@lefigaro.fr">bferran@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">19 janvier 2016</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2016 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20160120·LF·472×20×21429474189</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20160120·LF·472×20×21429474189";
+    var _docIndex = 682;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = {"axelle lemaire":"91761","manuel valls":"91934"};
+		var _orgDic = null;
+		var _docName = 'news·20160120·LF·472×20×21429474189';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720160120%C2%B7LF%C2%B7472%C3%9720%C3%9721429474189&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720160120%C2%B7LF%C2%B7472%C3%9720%C3%9721429474189&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720160120%C2%B7LF%C2%B7472%C3%9720%C3%9721429474189&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720160120%C2%B7LF%C2%B7472%C3%9720%C3%9721429474189&docIndex=682&FullScreen=1";
+                
+	var _keyDoc = 'news·20160120·LF·472×20×21429474189';
+</script>
+</div></body></html>

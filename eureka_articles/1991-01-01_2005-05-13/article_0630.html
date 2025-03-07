@@ -1,0 +1,459 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LA&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        La Presse                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Cyberpresse,         mardi 26 octobre 1999 588 mots, p. B4&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Logiciels, etc.         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Le monde selon Linux            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Mondoux, Andr&#233;&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&#202;tes-vous contre les exc&#232;s d&#39;un monde sans cesse r&#233;gi par les seuls imp&#233;ratifs commerciaux? &#202;tes-vous tann&#233; de voir se diriger vers l&#39;obsolescence vos &quot;vieux&quot; ordinateurs qui, il y a &#224; peine deux ans, &#233;taient pourtant &#224; la fine pointe de la technologie, parce que les nouveaux logiciels sont plus &quot;gourmands? Avez-vous le go&#251;t d&#39;avoir des logiciels qui correspondent fid&#232;lement aux besoins et attentes de leurs usagers? Trouvez-vous que Microsoft occupe trop de place sur la sc&#232;ne informatique? Si vous avez r&#233;pondu &quot;oui&quot; &#224; ces questions, il y a de fortes chances que vous adh&#233;rerez &#224; l&#39;esprit qui anime le monde Linux. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;La libert&#233; au volant&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Au d&#233;but des ann&#233;es 90, un jeune Finlandais se mit &#224; bricoler, par int&#233;r&#234;t personnel, un syst&#232;me d&#39;exploitation. Un an apr&#232;s le d&#233;but de ses travaux, Linux Torvalds rendit son syst&#232;me d&#39;exploitation public: Linux &#233;tait officiellement n&#233;. &#201;tant un partisan de la philosophie &quot;&lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt;&quot;, Torvalds ne prit pas de licence d&#39;exploitation sur son produit, pr&#233;f&#233;rant au contraire en confier le d&#233;veloppement &#224; la grande communaut&#233; internationale des programmeurs.&lt;/p&gt;
+
+
+&lt;p&gt;Les origines du mouvement &quot;&lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt;&quot; peuvent &#234;tre retrac&#233;es en 1983, avec la fondation de la &lt;mark&gt;Free&lt;/mark&gt; &lt;mark&gt;Software&lt;/mark&gt; Fondation par &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;. L&#39;id&#233;e derri&#232;re la FSF n&#39;&#233;tait pas de rendre les logiciels &quot;gratis&quot; (Free), mais bien de conf&#233;rer aux utilisateurs d&#39;un logiciel la pleine libert&#233; de le modifier et de le distribuer &#224; leur guise. Cela n&#39;emp&#234;che pas une personne ou une soci&#233;t&#233; d&#39;imposer des frais de mise d&#39;emballage et de distribution (logiciel sur CD offert dans une bo&#238;te, par exemple). Ce mouvement &quot;philosophique&quot; s&#39;appuie sur deux principales pr&#233;misses: tout logiciel peut &#234;tre distribu&#233; - de m&#234;me que le droit de le redistribuer - gratuitement, et le code source doit &#234;tre distribu&#233; avec le produit, afin d&#39;en permettre la modification. &#192; la suite de la publication du c&#233;l&#232;bre (et pertinent) article d&#39;Eric Raymond (&lt;em style=&quot;font-style:italic;&quot;&gt;The Cathedral and the Bazaar&lt;/em&gt;), le mouvement adopta un autre nom pour se d&#233;finir: &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt; (&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;). &lt;/p&gt; &lt;p&gt; Tout l&#39;&#233;difice repose sur le concept qu&#39;en &#233;tant modifi&#233; et largement distribu&#233;, le logiciel peut s&#39;&#233;panouir en &#233;pousant les besoins r&#233;els de la communaut&#233;. (Ce qui est paraphras&#233; par la maxime &quot;Un bon programmeur sait comment &#233;crire; un grand programmeur sait comment r&#233;-&#233;crire&quot;, de Raymond). Linux est un exemple parfait de cette philosophie: il est composant de diff&#233;rentes parties du syst&#232;me d&#39;exploitation GNU et d&#39;un module r&#233;sidant en m&#233;moire (kernel) cr&#233;&#233; par Torvalds. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Anti-Microsoft et plus&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Linux est donc &#233;minemment subversif. Pas surprenant qu&#39;il se porte en faux contre l&#39;ordre &#233;tabli, soit celui qui est actuellement domin&#233; par Microsoft. Depuis les derniers 18 mois, le mouvement Linux a pris de l&#39;ampleur, alors que plusieurs fabricants de mat&#233;riel et de logiciels l&#39;ont publiquement endoss&#233; (IBM, Compaq, ATI, Corel, etc.). &lt;/p&gt; &lt;p&gt; &#201;tonnant regroupement que celui de la &quot;coalition&quot; Linux. Certains sont d&#39;ardents promoteurs de la philosophie du &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt;. D&#39;autres y souscrivent dans une lutte &#224; finir contre Microsoft. Certains, &#233;vinc&#233;s du march&#233; par le g&#233;ant de Redmond, y voient un nouveau march&#233; &#224; exploiter, sans vraiment adh&#233;rer &#224; la philosophie du mouvement. Il sera, par ailleurs, int&#233;ressant d&#39;observer comment tout ce beau monde r&#233;ussira &#224; s&#39;entendre, ce qui est sans nul doute un des principaux d&#233;fis de croissance de Linux. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Un pour tous, tous pour un?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;M&#234;me avec le vent dans les voiles, cela ne veut pas n&#233;cessairement dire que Linux est pour tout le monde. Ce syst&#232;me d&#39;exploitation reste toujours &quot;techno&quot;, quoiqu&#39;il faut souligner que les r&#233;cents modules d&#39;interface graphique (GNOME, KDE) ont grandement facilit&#233; les choses. Il est plus que probable qu&#39;il ne s&#39;agit que d&#39;une question de temps avant que Linux devienne convivial au point de nourrir des pr&#233;tentions aupr&#232;s du public moins sp&#233;cialis&#233;. Un autre obstacle &#224; l&#39;adoption de Linux qui s&#39;amenuise de jour en jour: l&#39;absence d&#39;applications. Plusieurs fabricants commencent &#224; proposer des applications pour Linux, dont Applix, Star Office et Corel. &lt;/p&gt; &lt;p&gt; Pour l&#39;instant, par contre, Linux est &#224; son aise dans le monde des serveurs o&#249; sa robustesse - et son absence de prix! - le rendent attrayant. Ainsi, au lieu de simplement recycler un &quot;vieil&quot; ordinateur Pentium 75 ou 486X en bac &#224; fleurs post-moderne, il est possible de le reconfigurer sous Linux pour qu&#39;il fasse office de garde-barri&#232;re. Rien ne se perd, tout se cr&#233;&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Alternative Linux &#224; Montr&#233;al&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les 1er, 2 et 3 novembre prochains, &#224; l&#39;h&#244;tel Bonaventure (pas la Place, mais bel et bien l&#39;h&#244;tel), aura lieu L&#39;Alternative Linux, organis&#233; par la firme conseil 8D, sp&#233;cialis&#233;e en services Linux. Il s&#39;agira d&#39;un grand rassemblement d&#39;amateurs, de fabricants et d&#39;invit&#233;s dignes d&#39;int&#233;r&#234;t. Eric Raymond et &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt; comptent parmi les conf&#233;renciers. Pour de plus amples renseignements, pointez votre fureteur &#224; &lt;a target=&quot;_blank&quot; href=&quot;https://www.alternativelinux.org&quot;&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;www.alternativelinux.org&lt;/em&gt;&lt;/a&gt; ou&#224; 514-994-2645.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 1999 La Presse. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;19991026&amp;#183;LA&amp;#183;061&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Informatique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b719991026%c2%b7LA%c2%b7061" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b719991026%c2%b7LA%c2%b7061">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=la_small.gif"><span class="icon-Information" sourcecode="LA"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        La Presse                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Cyberpresse,         mardi 26 octobre 1999 588 mots, p. B4</span>
+</div>
+
+    <div>
+        <p>
+Logiciels, etc.         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Le monde selon Linux            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Mondoux, André</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Êtes-vous contre les excès d'un monde sans cesse régi par les seuls impératifs commerciaux? Êtes-vous tanné de voir se diriger vers l'obsolescence vos "vieux" ordinateurs qui, il y a à peine deux ans, étaient pourtant à la fine pointe de la technologie, parce que les nouveaux logiciels sont plus "gourmands? Avez-vous le goût d'avoir des logiciels qui correspondent fidèlement aux besoins et attentes de leurs usagers? Trouvez-vous que Microsoft occupe trop de place sur la scène informatique? Si vous avez répondu "oui" à ces questions, il y a de fortes chances que vous adhérerez à l'esprit qui anime le monde Linux. </p> <p><em style="font-weight:bold;">La liberté au volant</em></p><p>Au début des années 90, un jeune Finlandais se mit à bricoler, par intérêt personnel, un système d'exploitation. Un an après le début de ses travaux, Linux Torvalds rendit son système d'exploitation public: Linux était officiellement né. Étant un partisan de la philosophie "<mark>code</mark> <mark>source</mark> <mark>ouvert</mark>", Torvalds ne prit pas de licence d'exploitation sur son produit, préférant au contraire en confier le développement à la grande communauté internationale des programmeurs.</p>
+
+
+<p>Les origines du mouvement "<mark>code</mark> <mark>source</mark> <mark>ouvert</mark>" peuvent être retracées en 1983, avec la fondation de la <mark>Free</mark> <mark>Software</mark> Fondation par <mark>Richard</mark> <mark>Stallman</mark>. L'idée derrière la FSF n'était pas de rendre les logiciels "gratis" (Free), mais bien de conférer aux utilisateurs d'un logiciel la pleine liberté de le modifier et de le distribuer à leur guise. Cela n'empêche pas une personne ou une société d'imposer des frais de mise d'emballage et de distribution (logiciel sur CD offert dans une boîte, par exemple). Ce mouvement "philosophique" s'appuie sur deux principales prémisses: tout logiciel peut être distribué - de même que le droit de le redistribuer - gratuitement, et le code source doit être distribué avec le produit, afin d'en permettre la modification. À la suite de la publication du célèbre (et pertinent) article d'Eric Raymond (<em style="font-style:italic;">The Cathedral and the Bazaar</em>), le mouvement adopta un autre nom pour se définir: <mark>code</mark> <mark>source</mark> <mark>ouvert</mark> (<mark>open</mark> <mark>source</mark>). </p> <p> Tout l'édifice repose sur le concept qu'en étant modifié et largement distribué, le logiciel peut s'épanouir en épousant les besoins réels de la communauté. (Ce qui est paraphrasé par la maxime "Un bon programmeur sait comment écrire; un grand programmeur sait comment ré-écrire", de Raymond). Linux est un exemple parfait de cette philosophie: il est composant de différentes parties du système d'exploitation GNU et d'un module résidant en mémoire (kernel) créé par Torvalds. </p> <p><em style="font-weight:bold;">Anti-Microsoft et plus</em></p><p>Linux est donc éminemment subversif. Pas surprenant qu'il se porte en faux contre l'ordre établi, soit celui qui est actuellement dominé par Microsoft. Depuis les derniers 18 mois, le mouvement Linux a pris de l'ampleur, alors que plusieurs fabricants de matériel et de logiciels l'ont publiquement endossé (IBM, Compaq, ATI, Corel, etc.). </p> <p> Étonnant regroupement que celui de la "coalition" Linux. Certains sont d'ardents promoteurs de la philosophie du <mark>code</mark> <mark>source</mark> <mark>ouvert</mark>. D'autres y souscrivent dans une lutte à finir contre Microsoft. Certains, évincés du marché par le géant de Redmond, y voient un nouveau marché à exploiter, sans vraiment adhérer à la philosophie du mouvement. Il sera, par ailleurs, intéressant d'observer comment tout ce beau monde réussira à s'entendre, ce qui est sans nul doute un des principaux défis de croissance de Linux. </p> <p><em style="font-weight:bold;">Un pour tous, tous pour un?</em></p><p>Même avec le vent dans les voiles, cela ne veut pas nécessairement dire que Linux est pour tout le monde. Ce système d'exploitation reste toujours "techno", quoiqu'il faut souligner que les récents modules d'interface graphique (GNOME, KDE) ont grandement facilité les choses. Il est plus que probable qu'il ne s'agit que d'une question de temps avant que Linux devienne convivial au point de nourrir des prétentions auprès du public moins spécialisé. Un autre obstacle à l'adoption de Linux qui s'amenuise de jour en jour: l'absence d'applications. Plusieurs fabricants commencent à proposer des applications pour Linux, dont Applix, Star Office et Corel. </p> <p> Pour l'instant, par contre, Linux est à son aise dans le monde des serveurs où sa robustesse - et son absence de prix! - le rendent attrayant. Ainsi, au lieu de simplement recycler un "vieil" ordinateur Pentium 75 ou 486X en bac à fleurs post-moderne, il est possible de le reconfigurer sous Linux pour qu'il fasse office de garde-barrière. Rien ne se perd, tout se créé. </p> <p><em style="font-weight:bold;">Alternative Linux à Montréal</em></p><p>Les 1er, 2 et 3 novembre prochains, à l'hôtel Bonaventure (pas la Place, mais bel et bien l'hôtel), aura lieu L'Alternative Linux, organisé par la firme conseil 8D, spécialisée en services Linux. Il s'agira d'un grand rassemblement d'amateurs, de fabricants et d'invités dignes d'intérêt. Eric Raymond et <mark>Richard</mark> <mark>Stallman</mark> comptent parmi les conférenciers. Pour de plus amples renseignements, pointez votre fureteur à <a target="_blank" href="https://www.alternativelinux.org"><em style="font-weight:bold;">www.alternativelinux.org</em></a> ouà 514-994-2645.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 1999 La Presse. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·19991026·LA·061</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·19991026·LA·061";
+    var _docIndex = 629;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·19991026·LA·061';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B719991026%C2%B7LA%C2%B7061&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B719991026%C2%B7LA%C2%B7061&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B719991026%C2%B7LA%C2%B7061&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B719991026%C2%B7LA%C2%B7061&docIndex=629&FullScreen=1";
+                
+	var _keyDoc = 'news·19991026·LA·061';
+</script>
+</div></body></html>

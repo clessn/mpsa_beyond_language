@@ -1,0 +1,501 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le2_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+&#201;conomie,         vendredi 28 juillet 2023 840 mots, p. B5&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;&#201;TATS-UNIS&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Yoshua Bengio &#171; encourag&#233; &#187; par la r&#233;action du S&#233;nat face &#224; l’IA            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;&#171; Les d&#233;fis et le risque &#187; que posent les IA qu’on voit &#233;merger ces jours-ci sont bien compris, croit le chercheur montr&#233;alais&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;ALAIN McKENNA&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Fraude bancaire, &#233;lections truqu&#233;es, attaque biologique… Le chercheur montr&#233;alais Yoshua Bengio s’est dit &#171;encourag&#233;&#187;par la r&#233;action des s&#233;nateurs am&#233;ricains qui l’ont entendu mardi &#233;num&#233;rer les risques que pourrait entra&#238;ner l’intelligence artificielle si elle n’est pas d&#251;ment encadr&#233;e. &lt;/p&gt; &lt;p&gt; &#171;On s’en va dans la bonne direction.&#187;Les s&#233;nateurs pr&#233;sents &#171;comprennent bien les d&#233;fis et le risque&#187;que posent les IA g&#233;n&#233;ratives qu’on voit &#233;merger ces jours-ci, a ajout&#233; M. Bengio jeudi apr&#232;s-midi, lorsque joint par t&#233;l&#233;phone par Le Devoir.&lt;/p&gt;
+
+
+&lt;p&gt;M. Bengio &#233;tait invit&#233; &#224; pr&#233;senter son point de vue devant une souscommission du S&#233;nat am&#233;ricain cens&#233;e formuler les principes gr&#226;ce auxquels Washington pourrait l&#233;gif&#233;rer sur le d&#233;veloppement et l’utilisation de l’IA. Le pr&#233;sident de la sous-commission, le s&#233;nateur Richard Blumenthal, a dit esp&#233;rer que le processus m&#232;nera &#224; &#171;une v&#233;ritable r&#233;glementation — avec du mordant&#187;. &#171;Le futur n’est pas de la sciencefiction. En fait, ce n’est m&#234;me pas le futur. C’est maintenant&#187;, a ajout&#233; l’&#233;lu d&#233;mocrate du Connecticut, qui redoute la lenteur des rouages gouver-nementaux alors que l’&#233;volution de l’IA, elle, n’arr&#234;te jamais. C’est d’ailleurs une partie du probl&#232;me &#233;voqu&#233; &#224; propos de l’IA par les trois t&#233;moins invit&#233;s par les &#233;lus am&#233;ricains. &lt;/p&gt; &lt;p&gt; Des sc&#233;narios du pire Consid&#233;r&#233; par plusieurs comme un des p&#232;res fondateurs de l’IA, Yoshua Bengio s’est joint ces derniers mois &#224; un important groupe d’experts et de sp&#233;cialistes de l’intelligence artificielle qui craignent une perte de contr&#244;le catastrophique de cette technologie. &lt;/p&gt; &lt;p&gt; Outre Yoshua Bengio, Dario Amodei, le p.-d.g.de la soci&#233;t&#233; californienne Anthropic , et le professeur en informatique Stuart Russell, de l’Universit&#233; de Californie, &#224; Berkeley, ont &#233;galement particip&#233; &#224; cette sous-commission s&#233;natoriale. &lt;/p&gt; &lt;p&gt; Ils ont &#233;voqu&#233; plusieurs &#171;sc&#233;narios du pire&#187;:que des programmeurs s’emparent d’une IA &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt; (&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;) et l’utilisent pour effectuer des activit&#233;s malicieuses ou frauduleuses; qu’un &#201;tat se serve d’une IA pour truquer les &#233;lections d’un r&#233;gime ennemi; qu’une IA ellem&#234;me devienne assez sophistiqu&#233;e pour d&#233;passer ses propres limites. &lt;/p&gt; &lt;p&gt; L’exemple qui semble avoir le plus fait r&#233;agir les s&#233;nateurs est celui d’une bombe nucl&#233;aire qui pourrait &#234;tre op&#233;- r&#233;e par n’importe qui, &#224; la fa&#231;on d’un logiciel &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt;. &#171;Si les bombes nucl&#233;aires &#233;taient des logiciels, est-ce que vous autoriseriez des bombes nucl&#233;aires &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; ?&#187;a notamment demand&#233; Yoshua Bengio. &lt;/p&gt; &lt;p&gt; Cet exemple semble &#234;tre une pique envers Meta. Son centre de recherche, FAIR, a mis en ligne, il n’y a pas 10 jours, une deuxi&#232;me g&#233;n&#233;ration de sa propre IA, appel&#233;e Llama 2, qui peut &#234;tre t&#233;l&#233;charg&#233;e gratuitement et modifi&#233;e presque &#224; volont&#233; — &#224; la mani&#232;re d’un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, justement. &lt;/p&gt; &lt;p&gt; Llama 2 n’a peut-&#234;tre pas la capacit&#233; de devenir une menace r&#233;elle, mais M. Bengio redoute tout de m&#234;me l’impact potentiel de versions futures et libres d’acc&#232;s d’IA comme elle, qui seraient bien plus puissantes et potentiellement dommageables. &lt;/p&gt; &lt;p&gt; Un effort international demand&#233; Les &#201;tats-Unis sont dans une position inconfortable relativement &#224; l’&#233;mergence de l’IA. Les mod&#232;les les plus performants sont le fruit de soci&#233;t&#233;s am&#233;ricaines:OpenAI, Google et Meta. Mais son gouvernement est paralys&#233; par le partage du pouvoir entre les partis d&#233;mocrate et r&#233;publicain, et toute nouvelle loi prendra du temps &#224; &#234;tre adopt&#233;e, si elle est adopt&#233;e un jour. &lt;/p&gt; &lt;p&gt; R&#233;sultat:le pr&#233;sident, Joe Biden, n’a pu faire mieux &#224; ce jour que de publier une s&#233;rie de directives que les entreprises sp&#233;cialis&#233;es en IA sont invit&#233;es &#224; suivre de fa&#231;on volontaire. De leur c&#244;t&#233;, OpenAI, Alphabet (Google), Meta, Anthropic, Amazon et Microsoft, entre autres, ont promis de mettre en place une s&#233;rie de mesures de protection, comme un tatouage num&#233;rique sur le contenu g&#233;n&#233;r&#233; par leur IA, et de tester leurs mod&#232;les plus rigoureusement avant de les publier. &lt;/p&gt; &lt;p&gt; Or, l’autor&#233;gulation, &#231;a ne marche pas, rappelle Yoshua Bengio. &#171;Il y a un conflit d’int&#233;r&#234;ts, c’est &#233;vident. C’est bien que ces compagnies s’engagent, mais chacune peut avoir sa propre interpr&#233;tation&#187;, dit-il. &lt;/p&gt; &lt;p&gt; Quant aux projets de loi au Canada et en Europe, ils ont &#233;t&#233; r&#233;dig&#233;s avant l’arriv&#233;e de ChatGPT, ce qui change consid&#233;rablement la donne. &lt;/p&gt; &lt;p&gt; Il y a donc urgence de l&#233;gif&#233;rer, mais aussi de tenir compte de la port&#233;e future de cette technologie. &#171;Il faudrait surtout que la Chine et les &#201;tats-Unis s’entendent sur ce que sont les syst&#232;mes dangereux — et &#233;ventuellement tous les autres pays, car l’informatique ne conna&#238;t pas trop les fronti&#232;res&#187;, dit Yoshua Bengio. &#171;Il faudra &#233;ventuellement en arriver &#224; des trait&#233;s qui couvrent la plan&#232;te.&#187; &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;
+Yoshua Bengio devant la sous-commission de la vie priv&#233;e, de la technolo-gie et du droit de la commis-sion judiciaire du S&#233;nat am&#233;ricain, &#224; Washington, mardi ALEX WONG GETTY IMAGES VIA AGENCE FRANCE-PRESSE
+ &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;28 juillet 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230728&amp;#183;LE&amp;#183;a0003757711&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230728%c2%b7LE%c2%b7a0003757711" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230728%c2%b7LE%c2%b7a0003757711">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le2_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Économie,         vendredi 28 juillet 2023 840 mots, p. B5</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">ÉTATS-UNIS</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Yoshua Bengio « encouragé » par la réaction du Sénat face à l’IA            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">« Les défis et le risque » que posent les IA qu’on voit émerger ces jours-ci sont bien compris, croit le chercheur montréalais</p>
+</div>
+
+        <p class="sm-margin-bottomNews">ALAIN McKENNA</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Fraude bancaire, élections truquées, attaque biologique… Le chercheur montréalais Yoshua Bengio s’est dit «encouragé»par la réaction des sénateurs américains qui l’ont entendu mardi énumérer les risques que pourrait entraîner l’intelligence artificielle si elle n’est pas dûment encadrée. </p> <p> «On s’en va dans la bonne direction.»Les sénateurs présents «comprennent bien les défis et le risque»que posent les IA génératives qu’on voit émerger ces jours-ci, a ajouté M. Bengio jeudi après-midi, lorsque joint par téléphone par Le Devoir.</p>
+
+
+<p>M. Bengio était invité à présenter son point de vue devant une souscommission du Sénat américain censée formuler les principes grâce auxquels Washington pourrait légiférer sur le développement et l’utilisation de l’IA. Le président de la sous-commission, le sénateur Richard Blumenthal, a dit espérer que le processus mènera à «une véritable réglementation — avec du mordant». «Le futur n’est pas de la sciencefiction. En fait, ce n’est même pas le futur. C’est maintenant», a ajouté l’élu démocrate du Connecticut, qui redoute la lenteur des rouages gouver-nementaux alors que l’évolution de l’IA, elle, n’arrête jamais. C’est d’ailleurs une partie du problème évoqué à propos de l’IA par les trois témoins invités par les élus américains. </p> <p> Des scénarios du pire Considéré par plusieurs comme un des pères fondateurs de l’IA, Yoshua Bengio s’est joint ces derniers mois à un important groupe d’experts et de spécialistes de l’intelligence artificielle qui craignent une perte de contrôle catastrophique de cette technologie. </p> <p> Outre Yoshua Bengio, Dario Amodei, le p.-d.g.de la société californienne Anthropic , et le professeur en informatique Stuart Russell, de l’Université de Californie, à Berkeley, ont également participé à cette sous-commission sénatoriale. </p> <p> Ils ont évoqué plusieurs «scénarios du pire»:que des programmeurs s’emparent d’une IA à <mark>code</mark> <mark>source</mark> <mark>ouvert</mark> (<mark>open</mark> <mark>source</mark>) et l’utilisent pour effectuer des activités malicieuses ou frauduleuses; qu’un État se serve d’une IA pour truquer les élections d’un régime ennemi; qu’une IA ellemême devienne assez sophistiquée pour dépasser ses propres limites. </p> <p> L’exemple qui semble avoir le plus fait réagir les sénateurs est celui d’une bombe nucléaire qui pourrait être opé- rée par n’importe qui, à la façon d’un logiciel à <mark>code</mark> <mark>source</mark> <mark>ouvert</mark>. «Si les bombes nucléaires étaient des logiciels, est-ce que vous autoriseriez des bombes nucléaires <mark>open</mark> <mark>source</mark> ?»a notamment demandé Yoshua Bengio. </p> <p> Cet exemple semble être une pique envers Meta. Son centre de recherche, FAIR, a mis en ligne, il n’y a pas 10 jours, une deuxième génération de sa propre IA, appelée Llama 2, qui peut être téléchargée gratuitement et modifiée presque à volonté — à la manière d’un <mark>logiciel</mark> <mark>libre</mark>, justement. </p> <p> Llama 2 n’a peut-être pas la capacité de devenir une menace réelle, mais M. Bengio redoute tout de même l’impact potentiel de versions futures et libres d’accès d’IA comme elle, qui seraient bien plus puissantes et potentiellement dommageables. </p> <p> Un effort international demandé Les États-Unis sont dans une position inconfortable relativement à l’émergence de l’IA. Les modèles les plus performants sont le fruit de sociétés américaines:OpenAI, Google et Meta. Mais son gouvernement est paralysé par le partage du pouvoir entre les partis démocrate et républicain, et toute nouvelle loi prendra du temps à être adoptée, si elle est adoptée un jour. </p> <p> Résultat:le président, Joe Biden, n’a pu faire mieux à ce jour que de publier une série de directives que les entreprises spécialisées en IA sont invitées à suivre de façon volontaire. De leur côté, OpenAI, Alphabet (Google), Meta, Anthropic, Amazon et Microsoft, entre autres, ont promis de mettre en place une série de mesures de protection, comme un tatouage numérique sur le contenu généré par leur IA, et de tester leurs modèles plus rigoureusement avant de les publier. </p> <p> Or, l’autorégulation, ça ne marche pas, rappelle Yoshua Bengio. «Il y a un conflit d’intérêts, c’est évident. C’est bien que ces compagnies s’engagent, mais chacune peut avoir sa propre interprétation», dit-il. </p> <p> Quant aux projets de loi au Canada et en Europe, ils ont été rédigés avant l’arrivée de ChatGPT, ce qui change considérablement la donne. </p> <p> Il y a donc urgence de légiférer, mais aussi de tenir compte de la portée future de cette technologie. «Il faudrait surtout que la Chine et les États-Unis s’entendent sur ce que sont les systèmes dangereux — et éventuellement tous les autres pays, car l’informatique ne connaît pas trop les frontières», dit Yoshua Bengio. «Il faudra éventuellement en arriver à des traités qui couvrent la planète.» </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">
+Yoshua Bengio devant la sous-commission de la vie privée, de la technolo-gie et du droit de la commis-sion judiciaire du Sénat américain, à Washington, mardi ALEX WONG GETTY IMAGES VIA AGENCE FRANCE-PRESSE
+ </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">28 juillet 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230728·LE·a0003757711</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230728·LE·a0003757711";
+    var _docIndex = 132;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20230728·LE·a0003757711';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230728%C2%B7LE%C2%B7a0003757711&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230728%C2%B7LE%C2%B7a0003757711&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230728%C2%B7LE%C2%B7a0003757711&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230728%C2%B7LE%C2%B7a0003757711&docIndex=132&FullScreen=1";
+                
+	var _keyDoc = 'news·20230728·LE·a0003757711';
+</script>
+</div></body></html>

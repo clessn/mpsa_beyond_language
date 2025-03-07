@@ -1,0 +1,541 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Monde Science et m&#233;decine,         mercredi 18 d&amp;#233;cembre 2024 1417 mots, p. SCH8&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Rendez-vous&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Ga&#235;l Varoquaux, vedette de l’intelligence artificielle            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Portrait Le chercheur &#224; l’Inria est le Fran&#231;ais le plus cit&#233; dans les publications portant sur l’IA. Il a notamment cocr&#233;&#233; Scikit-learn, un programme de &#171; machine learning &#187; tr&#232;s populaire&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Dans certains sports, les entra&#238;neurs d&#233;signent des &lt;em style=&quot;font-style:italic;&quot;&gt;impact players&lt;/em&gt;, des joueurs dont l’entr&#233;e sur le terrain en cours de match peut le faire basculer. En science aussi, il existe des acteurs &#171; &#224; impact &#187;. Ga&#235;l Varoquaux, informaticien &#224; l’Institut national de recherche en sciences et technologies du num&#233;rique (Inria), est peut-&#234;tre de ceux-l&#224;. En plus, il est sportif, moniteur f&#233;d&#233;ral de voile depuis ses 18&#160;ans, skieur de randonn&#233;e et adepte d’escalade et des longues balades &#224; v&#233;lo. &lt;/p&gt; &lt;p&gt; A 43&#160;ans, il est surtout le chercheur fran&#231;ais le plus cit&#233; dans le domaine de l’intelligence artificielle (IA). Un article qu’il a cosign&#233; en&#160;2011 est mentionn&#233; plus de 62 000&#160;fois dans d’autres travaux, selon la base de donn&#233;es Scopus, quand ceux de Yann Le&#160;Cun, autre vedette nationale du domaine, le sont au maximum 60 000&#160;fois.&lt;/p&gt;
+
+
+&lt;p&gt;Pourtant, son &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;apport n’est pas li&#233; &#224; l’IA g&#233;n&#233;rative &#224; la ChatGPT ni m&#234;me au deep learning (apprentissage profond), qui a r&#233;volutionn&#233; la reconnaissance d’images. Il s’agit de machine learning, ou apprentissage machine, dont il a contribu&#233; &#224; faciliter l’usage en &#233;tant coauteur du logiciel le plus utilis&#233; en la mati&#232;re, Scikit-learn. Cette bo&#238;te &#224; outils est truff&#233;e de plus de 150&#160;m&#233;thodes statistiques pour classer des objets, les regrouper par similarit&#233; ou identifier leurs particularit&#233;s automatiquement. Tout pour faire parler de grandes masses de donn&#233;es, en quelques lignes de code. Scikit-learn est t&#233;l&#233;charg&#233; environ 80&#160;millions de fois par mois, quand les outils de deep learning, PyTorch ou TensorFlow, des g&#233;ants Meta et &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, le sont moins de 30&#160;millions de fois, rappelait encore Ga&#235;l Varoquaux lors d’un expos&#233; &#224; la conf&#233;rence dotAI, le 18&#160;octobre, &#224; Paris. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On oublie que, dans les laboratoires ou les entreprises, les donn&#233;es &#224; &#233;tudier ne sont pas des textes ni des images, mais des tableaux de chiffres et pas dans des tailles &#233;normes&lt;/em&gt;, d&#233;clare le chercheur. &lt;em style=&quot;font-style:italic;&quot;&gt;Scikit-learn est partout, mais on ne le voit pas. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; J’ai fait des programmes moches &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Un tel succ&#232;s n’&#233;tait pas &#233;crit d’avance, car le chercheura &#233;t&#233; form&#233; &#224; la physique &#224; l’&lt;span class=&quot;stubs&quot;&gt;Ecole normale sup&#233;rieure&lt;/span&gt;, int&#233;gr&#233;e en&#160;2001, discipline qu’il a suivie jusqu’&#224; sa th&#232;se, soutenue en&#160;2008, au sein du laboratoire d’optique quantique d’Alain Aspect, qui sera Nobel en&#160;2022. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il &#233;tait tr&#232;s cr&#233;atif et dynamique. Il est parti de z&#233;ro et a r&#233;alis&#233; deux dispositifs exp&#233;rimentaux, alors qu’on n’en attendait qu’un. On a vite senti son app&#233;tence pour les math&#233;matiques et l’informatique &#187;&lt;/em&gt;, se souvient Philippe Bouyer, chercheur au CNRS, coencadrant du doctorant, qui bidouillait autant les interfaces des ordinateurs que les lasers. &lt;/p&gt; &lt;p&gt; Ce go&#251;t pour l’informatique remonte &#224; sa jeunesse, lors de laquelle il cr&#233;e ses premiers programmes sur l’ordinateur Thomson TO7 et la calculatrice TI-92. Au laboratoire d’Alain Aspect, il plonge dans le langage python. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Une partie de la motivation &#233;tait de se passer du logiciel Matlab, un produit commercial &#187;&lt;/em&gt;, explique celui qui commence alors &#224; mettre les pieds dans une communaut&#233; qu’il ne quittera plus, celle du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Il contribue ainsi &#224; plusieurs logiciels, dont IPython, anc&#234;tre du tr&#232;s populaire Jupyter, un bloc-notes &#233;lectronique. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; J’ai m&#234;me fait des programmes moches &#187;&lt;/em&gt;, pr&#233;cise ce modeste, g&#234;n&#233; &#224; l’id&#233;e &lt;em style=&quot;font-style:italic;&quot;&gt;Le Monde&lt;/em&gt;dresse son portrait, &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; sauf pour dire qu&lt;/em&gt;[’il] &lt;em style=&quot;font-style:italic;&quot;&gt;travaille au sein d’une &#233;quipe fantastique &#187;&lt;/em&gt;. &lt;/p&gt; &lt;p&gt; Apr&#232;s sa th&#232;se, il poursuit ses recherches en Italie, toujours en optique quantique. A la suite d’un incident exp&#233;rimental sur le laser, il d&#233;cide de passer &#224; la programmation. Apr&#232;s trois semaines de r&#233;flexion lors d’un trek en Ouzb&#233;kistan, il part quelques mois aux Etats-Unis, o&#249; il avait v&#233;cu, lyc&#233;en, lorsque son p&#232;re, physicien, y travaillait. Il rejoint une start-up, Enthought, qui d&#233;veloppe des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; scientifiques en langage Python. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, c’est formidable pour comprendre ce que l’on fait. C’est d&#233;fini par une licence qui donne plusieurs droits, d’utilisation, de modification, de distribution… Mais ce qui compte le plus, c’est que c’est aussi une communaut&#233; &#187; &lt;/em&gt;, affirme le chercheur, qui a travaill&#233; ainsi avec des coll&#232;gues du monde entier, dont certains lui sugg&#232;rent de s’orienter vers l’imagerie m&#233;dicale. &#171; L’id&#233;e d’appliquer des mod&#232;les math&#233;matiques pour comprendre le cerveau m’a attir&#233; &#187;, se souvient-il. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La meilleure chose que j’ai faite, c’est recruter Ga&#235;l &#187;&lt;/em&gt;, salue Bertrand Thirion, &#233;galement &#224; l’Inria, qui a accueilli son coll&#232;gue en&#160;2008 apr&#232;s avoir quitt&#233; la physique. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous avions besoin de nouveaux outils d’analyse. Ga&#235;l a vite compris qu’il fallait voir plus loin et ne pas se contenter de d&#233;velopper des logiciels pour nous, mais essayer de convaincre une communaut&#233; plus large &#187;&lt;/em&gt;, rappelle Bertrand Thirion. L’id&#233;e de Scikit-learn na&#238;t de cette vision, en s’appuyant sur un concept imagin&#233; en&#160;2007 par David Cournapeau. Puis le projet prend de l’ampleur &#224; partir de 2009. Gr&#226;ce &#224; soncharisme et &#224; son &#233;nergie, le jeune chercheur convainc son employeurde recruter des ing&#233;nieurs. La mayonnaise prend. Le projet grossit avec la communaut&#233;. &lt;/p&gt; &lt;p&gt; Depuis fin 2023, il prend m&#234;me une nouvelle dimension. Une start-up, Probabl, dont Ga&#235;l Varoquaux est cofondateur et conseiller &#224; temps partiel, a &#233;t&#233; cr&#233;&#233;e pour valoriser le tr&#233;sor &#233;labor&#233; au sein de l’Inria, qui n’en a pas la propri&#233;t&#233;. L’entreprise vend d&#233;j&#224; des &#171; certifications &#187; en Scikit-learn, sorte de dipl&#244;me rassurant pour les entreprises. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il y avait 600&#160;inscrits d&#232;s les premiers jours ! &#187;&lt;/em&gt;, salue le patron de Probabl, Yann Lechelle. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous voulions mettre dans la main de non-sp&#233;cialistes les outils pointus du machine learning. Faire du “machine learning sans la machine”, comme on disait&lt;/em&gt; &#187;, indique Alexandre Gramfort, qui travaille d&#233;sormais chez Meta.Tout n’est pas affaire de technique. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Sang chaud&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La voix douce et l’œil malicieux sont d’ailleurs un peu trompeurs. Ga&#235;l Varoquaux est aussi connu pour ne pas avoir sa langue dans sa poche. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il a des convictions fortes, et je devais parfois arrondir les angles &#187;&lt;/em&gt;, ajoute avec amusement Alexandre Gramfort. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il a le sang chaud et peut vite monter dans les tours quand il n’est pas d’accord, mais il est dans le dialogue &#187;&lt;/em&gt;, t&#233;moigne Yann Lechelle. Certains se souviennent qu’il n’a pas appr&#233;ci&#233; que le rapport sur l’IA de C&#233;dric Villani, en&#160;2018, ne mentionne pas la r&#233;ussite de Scikit-learn. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il peut para&#238;tre clivant, mais il ne se f&#226;che pas avec les gens &#187;&lt;/em&gt;, nuance Marine Le&#160;Morvan, chercheuse &#224; l’Inria qui encadre avec lui des postdocs. &lt;/p&gt; &lt;p&gt; Ce temp&#233;rament guide une partie de sa production scientifique, ax&#233;e sur la critique. En&#160;2018, il alerte sur la trop faible taille des &#233;chantillons en neuro-imagerie. En&#160;2022, il met en lumi&#232;re des &#171; &#233;checs &#187; m&#233;thodologiques en imagerie m&#233;dicale. En septembre, il cosigne un article d&#233;non&#231;ant les exag&#233;rations de l’utilisation de l’IA dans ce domaine. En octobre, il remet en cause la tendance de l’IA &#224; aller vers des mod&#232;les de plus en plus gros et gourmands. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il a la r&#233;putation de dire les choses que les gens n’aiment pas entendre. Et c’est appr&#233;ci&#233;. Il envoie des pav&#233;s dans la mare, mais explique pourquoi des m&#233;thodes ne marchent pas. Il combat le buzz par la rigueur scientifique &#187;&lt;/em&gt;, r&#233;sume Arthur Mensch, patron de la start-up Mistral AI, qui a fait sa th&#232;se avec Ga&#235;l Varoquaux. &lt;/p&gt; &lt;p&gt; Ce dernier n’est pas rest&#233; enferm&#233; dans son premier domaine. Il est pass&#233; de l’imagerie c&#233;r&#233;brale aux donn&#233;es de sant&#233;, puis &#224; des m&#233;thodes d’analyse de causalit&#233;, ou r&#233;cemment, avec une &#233;conomiste, &#224; des &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; strat&#233;gies de ciblage en communication politique &#187;&lt;/em&gt;. Ses comp&#233;tences et son caract&#232;re lui ont valu de participer &#224; la commission de l’IA, qui a remis son rapport en mars au pr&#233;sident de la R&#233;publique. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ce qui me guide, c’est de comprendre le monde, et l’envie de servir &#224; quelque chose &#187;&lt;/em&gt;, dit-il, en citant les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; comme mani&#232;re d’y parvenir. En outre, en bon grimpeur, niveau &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; 6a-6b &#187;,&lt;/em&gt; il vient de proposer une nouvelle voie de recherche, baptis&#233;e &#171; intelligence artificielle tabulaire &#187;, pour que &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; les donn&#233;es en tableaux apprennent &#224; se transformer &#187;&lt;/em&gt;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; J’ai invent&#233; le mot comme un pied de nez &#224; la mode de l’IA g&#233;n&#233;rative. &#187;&lt;/em&gt; Quel en sera l’impact ?&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;14 d&amp;#233;cembre 2024&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20241218&amp;#183;LM&amp;#183;202412182&amp;#215;20&amp;#215;22531266041&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">machine learning</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">optique quantique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">imagerie médicale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">ECOLE NORMALE SUPÉRIEURE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Banques et institutions financières</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Gaël (Ille-et-Vilaine)</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Scopus</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">laboratoire d’Alain Aspect</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Italie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ouzbékistan</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720241218%c2%b7LM%c2%b7202412182%c3%9720%c3%9722531266041" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720241218%c2%b7LM%c2%b7202412182%c3%9720%c3%9722531266041">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Monde Science et médecine,         mercredi 18 décembre 2024 1417 mots, p. SCH8</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Rendez-vous</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Gaël Varoquaux, vedette de l’intelligence artificielle            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Portrait Le chercheur à l’Inria est le Français le plus cité dans les publications portant sur l’IA. Il a notamment cocréé Scikit-learn, un programme de « machine learning » très populaire</p>
+</div>
+
+        <p class="sm-margin-bottomNews">David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Dans certains sports, les entraîneurs désignent des <em style="font-style:italic;">impact players</em>, des joueurs dont l’entrée sur le terrain en cours de match peut le faire basculer. En science aussi, il existe des acteurs « à impact ». Gaël Varoquaux, informaticien à l’Institut national de recherche en sciences et technologies du numérique (Inria), est peut-être de ceux-là. En plus, il est sportif, moniteur fédéral de voile depuis ses 18&nbsp;ans, skieur de randonnée et adepte d’escalade et des longues balades à vélo. </p> <p> A 43&nbsp;ans, il est surtout le chercheur français le plus cité dans le domaine de l’intelligence artificielle (IA). Un article qu’il a cosigné en&nbsp;2011 est mentionné plus de 62 000&nbsp;fois dans d’autres travaux, selon la base de données Scopus, quand ceux de Yann Le&nbsp;Cun, autre vedette nationale du domaine, le sont au maximum 60 000&nbsp;fois.</p>
+
+
+<p>Pourtant, son <em style="font-style:italic;"></em>apport n’est pas lié à l’IA générative à la ChatGPT ni même au deep learning (apprentissage profond), qui a révolutionné la reconnaissance d’images. Il s’agit de machine learning, ou apprentissage machine, dont il a contribué à faciliter l’usage en étant coauteur du logiciel le plus utilisé en la matière, Scikit-learn. Cette boîte à outils est truffée de plus de 150&nbsp;méthodes statistiques pour classer des objets, les regrouper par similarité ou identifier leurs particularités automatiquement. Tout pour faire parler de grandes masses de données, en quelques lignes de code. Scikit-learn est téléchargé environ 80&nbsp;millions de fois par mois, quand les outils de deep learning, PyTorch ou TensorFlow, des géants Meta et <span class="stubs">Google</span>, le sont moins de 30&nbsp;millions de fois, rappelait encore Gaël Varoquaux lors d’un exposé à la conférence dotAI, le 18&nbsp;octobre, à Paris. <em style="font-style:italic;">« On oublie que, dans les laboratoires ou les entreprises, les données à étudier ne sont pas des textes ni des images, mais des tableaux de chiffres et pas dans des tailles énormes</em>, déclare le chercheur. <em style="font-style:italic;">Scikit-learn est partout, mais on ne le voit pas. »</em></p><p><em style="font-weight:bold;">« J’ai fait des programmes moches »</em></p><p>Un tel succès n’était pas écrit d’avance, car le chercheura été formé à la physique à l’<span class="stubs">Ecole normale supérieure</span>, intégrée en&nbsp;2001, discipline qu’il a suivie jusqu’à sa thèse, soutenue en&nbsp;2008, au sein du laboratoire d’optique quantique d’Alain Aspect, qui sera Nobel en&nbsp;2022. <em style="font-style:italic;">« Il était très créatif et dynamique. Il est parti de zéro et a réalisé deux dispositifs expérimentaux, alors qu’on n’en attendait qu’un. On a vite senti son appétence pour les mathématiques et l’informatique »</em>, se souvient Philippe Bouyer, chercheur au CNRS, coencadrant du doctorant, qui bidouillait autant les interfaces des ordinateurs que les lasers. </p> <p> Ce goût pour l’informatique remonte à sa jeunesse, lors de laquelle il crée ses premiers programmes sur l’ordinateur Thomson TO7 et la calculatrice TI-92. Au laboratoire d’Alain Aspect, il plonge dans le langage python. <em style="font-style:italic;">« Une partie de la motivation était de se passer du logiciel Matlab, un produit commercial »</em>, explique celui qui commence alors à mettre les pieds dans une communauté qu’il ne quittera plus, celle du <mark>logiciel</mark> <mark>libre</mark>. Il contribue ainsi à plusieurs logiciels, dont IPython, ancêtre du très populaire Jupyter, un bloc-notes électronique. <em style="font-style:italic;">« J’ai même fait des programmes moches »</em>, précise ce modeste, gêné à l’idée <em style="font-style:italic;">Le Monde</em>dresse son portrait, <em style="font-style:italic;">« sauf pour dire qu</em>[’il] <em style="font-style:italic;">travaille au sein d’une équipe fantastique »</em>. </p> <p> Après sa thèse, il poursuit ses recherches en Italie, toujours en optique quantique. A la suite d’un incident expérimental sur le laser, il décide de passer à la programmation. Après trois semaines de réflexion lors d’un trek en Ouzbékistan, il part quelques mois aux Etats-Unis, où il avait vécu, lycéen, lorsque son père, physicien, y travaillait. Il rejoint une start-up, Enthought, qui développe des <mark>logiciels</mark> <mark>libres</mark> scientifiques en langage Python. <em style="font-style:italic;">« Le <mark>logiciel</mark> <mark>libre</mark>, c’est formidable pour comprendre ce que l’on fait. C’est défini par une licence qui donne plusieurs droits, d’utilisation, de modification, de distribution… Mais ce qui compte le plus, c’est que c’est aussi une communauté » </em>, affirme le chercheur, qui a travaillé ainsi avec des collègues du monde entier, dont certains lui suggèrent de s’orienter vers l’imagerie médicale. « L’idée d’appliquer des modèles mathématiques pour comprendre le cerveau m’a attiré », se souvient-il. </p> <p><em style="font-style:italic;">« La meilleure chose que j’ai faite, c’est recruter Gaël »</em>, salue Bertrand Thirion, également à l’Inria, qui a accueilli son collègue en&nbsp;2008 après avoir quitté la physique. <em style="font-style:italic;">« Nous avions besoin de nouveaux outils d’analyse. Gaël a vite compris qu’il fallait voir plus loin et ne pas se contenter de développer des logiciels pour nous, mais essayer de convaincre une communauté plus large »</em>, rappelle Bertrand Thirion. L’idée de Scikit-learn naît de cette vision, en s’appuyant sur un concept imaginé en&nbsp;2007 par David Cournapeau. Puis le projet prend de l’ampleur à partir de 2009. Grâce à soncharisme et à son énergie, le jeune chercheur convainc son employeurde recruter des ingénieurs. La mayonnaise prend. Le projet grossit avec la communauté. </p> <p> Depuis fin 2023, il prend même une nouvelle dimension. Une start-up, Probabl, dont Gaël Varoquaux est cofondateur et conseiller à temps partiel, a été créée pour valoriser le trésor élaboré au sein de l’Inria, qui n’en a pas la propriété. L’entreprise vend déjà des « certifications » en Scikit-learn, sorte de diplôme rassurant pour les entreprises. <em style="font-style:italic;">« Il y avait 600&nbsp;inscrits dès les premiers jours ! »</em>, salue le patron de Probabl, Yann Lechelle. </p> <p><em style="font-style:italic;">« Nous voulions mettre dans la main de non-spécialistes les outils pointus du machine learning. Faire du “machine learning sans la machine”, comme on disait</em> », indique Alexandre Gramfort, qui travaille désormais chez Meta.Tout n’est pas affaire de technique. </p> <p><em style="font-weight:bold;">Sang chaud</em></p><p>La voix douce et l’œil malicieux sont d’ailleurs un peu trompeurs. Gaël Varoquaux est aussi connu pour ne pas avoir sa langue dans sa poche. <em style="font-style:italic;">« Il a des convictions fortes, et je devais parfois arrondir les angles »</em>, ajoute avec amusement Alexandre Gramfort. <em style="font-style:italic;">« Il a le sang chaud et peut vite monter dans les tours quand il n’est pas d’accord, mais il est dans le dialogue »</em>, témoigne Yann Lechelle. Certains se souviennent qu’il n’a pas apprécié que le rapport sur l’IA de Cédric Villani, en&nbsp;2018, ne mentionne pas la réussite de Scikit-learn. <em style="font-style:italic;">« Il peut paraître clivant, mais il ne se fâche pas avec les gens »</em>, nuance Marine Le&nbsp;Morvan, chercheuse à l’Inria qui encadre avec lui des postdocs. </p> <p> Ce tempérament guide une partie de sa production scientifique, axée sur la critique. En&nbsp;2018, il alerte sur la trop faible taille des échantillons en neuro-imagerie. En&nbsp;2022, il met en lumière des « échecs » méthodologiques en imagerie médicale. En septembre, il cosigne un article dénonçant les exagérations de l’utilisation de l’IA dans ce domaine. En octobre, il remet en cause la tendance de l’IA à aller vers des modèles de plus en plus gros et gourmands. <em style="font-style:italic;">« Il a la réputation de dire les choses que les gens n’aiment pas entendre. Et c’est apprécié. Il envoie des pavés dans la mare, mais explique pourquoi des méthodes ne marchent pas. Il combat le buzz par la rigueur scientifique »</em>, résume Arthur Mensch, patron de la start-up Mistral AI, qui a fait sa thèse avec Gaël Varoquaux. </p> <p> Ce dernier n’est pas resté enfermé dans son premier domaine. Il est passé de l’imagerie cérébrale aux données de santé, puis à des méthodes d’analyse de causalité, ou récemment, avec une économiste, à des <em style="font-style:italic;">« stratégies de ciblage en communication politique »</em>. Ses compétences et son caractère lui ont valu de participer à la commission de l’IA, qui a remis son rapport en mars au président de la République. <em style="font-style:italic;">« Ce qui me guide, c’est de comprendre le monde, et l’envie de servir à quelque chose »</em>, dit-il, en citant les <mark>logiciels</mark> <mark>libres</mark> comme manière d’y parvenir. En outre, en bon grimpeur, niveau <em style="font-style:italic;">« 6a-6b »,</em> il vient de proposer une nouvelle voie de recherche, baptisée « intelligence artificielle tabulaire », pour que <em style="font-style:italic;">« les données en tableaux apprennent à se transformer »</em>. <em style="font-style:italic;">« J’ai inventé le mot comme un pied de nez à la mode de l’IA générative. »</em> Quel en sera l’impact ?</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">14 décembre 2024</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20241218·LM·202412182×20×22531266041</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20241218·LM·202412182×20×22531266041";
+    var _docIndex = 1;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"ecole normale supérieure":"94757","google":"92575"};
+		var _docName = 'news·20241218·LM·202412182×20×22531266041';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720241218%C2%B7LM%C2%B7202412182%C3%9720%C3%9722531266041&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720241218%C2%B7LM%C2%B7202412182%C3%9720%C3%9722531266041&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720241218%C2%B7LM%C2%B7202412182%C3%9720%C3%9722531266041&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720241218%C2%B7LM%C2%B7202412182%C3%9720%C3%9722531266041&docIndex=1&FullScreen=1";
+                
+	var _keyDoc = 'news·20241218·LM·202412182×20×22531266041';
+</script>
+</div></body></html>

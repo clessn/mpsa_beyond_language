@@ -1,0 +1,539 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Economie &amp; Entreprise,         lundi 9 septembre 2024 1721 mots, p. 16&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Entretien&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+&#171; Tout le monde devrait pouvoir cr&#233;er sa propre IA &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Les entretiens de l’IA Cl&#233;ment Delangue, cofondateur de la plate-forme de publication d’outils Hugging Face, d&#233;fend l’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt;, accessible gratuitement, contre la domination du secteur par quelques g&#233;ants&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Propos recueillis parAlexandre Piquard Propos recueillis parAlexandre Piquard&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Cl&#233;ment Delangue est, avec Julien Chaumond et Thomas Wolfe, l’un des trois Fran&#231;ais cofondateurs de Hugging Face, une start-up d’intelligence artificielle (IA) de premier plan. Valoris&#233;e &#224; 4,2&#160;milliards d’euros apr&#232;s avoir lev&#233; pr&#232;s de 450&#160;millions d’euros depuis sa cr&#233;ation en&#160;2016, cette soci&#233;t&#233; de droit am&#233;ricain est connue comme la plate-forme de r&#233;f&#233;rence o&#249; d&#233;veloppeurs et entreprises publient des outils et des mod&#232;les pour faire de l’IA en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, c’est-&#224;-dire accessible gratuitement et modifiable. &lt;/p&gt; &lt;p&gt; Vivant entre Miami, New York&#160;et Paris, o&#249; sont install&#233;s la moiti&#233; des 220&#160;employ&#233;s de Hugging Face, son directeur g&#233;n&#233;ral d&#233;fend la conception d’une IA &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; ouverte&#160;et d&#233;centralis&#233;e &#187;&lt;/em&gt;, &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;contre la domination des g&#233;ants du num&#233;rique comme OpenAI et son partenaire &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; ou &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Hugging Face veut &#171; d&#233;mocratiser la bonne IA &#187;, qu’est-ce que cela veut dire ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Une IA est &#233;thique quand elle est align&#233;e avec les valeurs des individus qui participent au projet. A Hugging Face, nos valeurs sont l’ouverture, la transparence, l’inclusivit&#233;. Nous r&#233;fl&#233;chissons donc aux moyens de faire la technologie la plus ouverte possible, pour permettre aux entreprises de partager leurs mod&#232;les d’IA et les jeux de donn&#233;es et de contenus sur lesquels ils ont &#233;t&#233; entra&#238;n&#233;s. Nous cherchons aussi &#224; &#233;viter qu’une entreprise contr&#244;le le secteur. Nous aimerions que tout le monde puisse cr&#233;er sa propre IA : les entreprises, mais aussi les associations et ONG, les structures publiques, les r&#233;gulateurs… &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Des acteurs puissants comme &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; ou OpenAI proposent de grands mod&#232;les d’IA ferm&#233;s, en quoi est-ce un probl&#232;me ? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il y a plusieurs approches compl&#233;mentaires. Quand vous voulez faire un moteur de recherche, comme ChatGPT, c’est bien d’utiliser un tr&#232;s gros mod&#232;le d’IA. Mais quand vous voulez cr&#233;er un chatbot &lt;em style=&quot;font-style:italic;&quot;&gt;–&lt;/em&gt;un robot conversationnel – de service client pour votre application bancaire, vous n’avez pas besoin d’une IA qui disserte sur le sens de la vie, plut&#244;t d’une IA qui vous r&#233;ponde vite. Un mod&#232;le plus petit et plus sp&#233;cialis&#233; est plus rapide et permet de d&#233;penser moins d’argent et d’&#233;lectricit&#233;, donc d’&#233;mettre moins de CO2. &lt;/p&gt; &lt;p&gt; De plus, c’est important que tous les gens qui veulent construire des syst&#232;mes d’IA aient acc&#232;s aux ressources n&#233;cessaires, comme tout le monde peut &#233;crire du code informatique pour cr&#233;er un logiciel. C’est un monde plus d&#233;sirable qu’un univers o&#249; quelques grosses entreprises gardent leurs secrets et leurs mod&#232;les, et contr&#244;lent l’acc&#232;s &#224; cette technologie. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Quelle est l’alternative, des mini-mod&#232;les &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; qui fonctionnent sur les ordinateurs des gens &#224; la maison ? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Oui, ce sont de nombreux mod&#232;les diff&#233;rents, que toutes les organisations puissent cr&#233;er et modifier, et qui r&#233;solvent toutes les t&#226;ches du quotidien. Nous travaillons en ce moment sur la robotique. Nous avons par exemple entra&#238;n&#233; un robot &#224; 600&#160;dollars &lt;em style=&quot;font-style:italic;&quot;&gt;[540&#160;euros]&lt;/em&gt;, &#233;quip&#233; de cam&#233;ras d’iPhone, &#224; plier des tee-shirts, puis publi&#233; les donn&#233;es pour permettre &#224; d’autres de mener leurs exp&#233;rimentations. Je suis beaucoup plus enthousiasm&#233; par un monde o&#249; chacun peut avoir des petits robots, qu’il peut entra&#238;ner pour accomplir les t&#226;ches de son choix, que par l’id&#233;e d’une grosse entreprise qui cr&#233;e un gros robot, que vous ne contr&#244;lez pas et qu’elle envoie chez vous pour faire tous types de choses. Nous pr&#233;f&#233;rons un futur un peu d&#233;centralis&#233; o&#249; tout le monde fait de l’IA. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Pouvez-vous donner des exemples d’usages ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Les cas d’usage sont tr&#232;s variables, c’est dur de les pr&#233;dire. Nous utilisons d&#233;j&#224; de l’IA sans nous en rendre compte : quand nous regardons les infos, dans les algorithmes qui nous recommandent les contenus ; quand nous prenons un VTC, dans la pr&#233;diction de l’horaire d’arriv&#233;e… On utilise du logiciel partout. Et dans quelques ann&#233;es, tous les logiciels seront construits avec de l’IA. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Les start-up d’IA ne sont-elles pas d&#233;pendantes des g&#233;ants du num&#233;rique, qui leur fournissent le calcul informatique n&#233;cessaire au fonctionnement de leurs mod&#232;les et qui sont entr&#233;s au capital d’OpenAI, d’Anthropic ou de Hugging Face ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il y a dans le secteur de l’IA des tendances naturelles &#224; la concentration plus fortes que dans le logiciel classique. Il faut d’autant plus les combattre. Nous essayons de le faire en fournissant des outils &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Nous avons 5&#160;millions d’utilisateurs, dont la majorit&#233; ne travaillent pas pour Big Tech. Quant &#224; Hugging Face, sur notre dernier tour de financement, en ao&#251;t 2023,nous avons lev&#233; une partie des fonds aupr&#232;s d’eux &lt;em style=&quot;font-style:italic;&quot;&gt;[&lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;Amazon&lt;/span&gt;, AMD, &lt;span class=&quot;stubs&quot;&gt;Intel&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;IBM&lt;/span&gt; ou Nvidia], &lt;/em&gt;mais nous avons d&#233;cid&#233; de le faire aupr&#232;s de tous, plut&#244;t que d’un seul. Cela permet d’&#233;viter une exclusivit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Quelle est la situation financi&#232;re de l’entreprise ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Nous essayons de cr&#233;er un mod&#232;le qui nous permette de rester assez ind&#233;pendants. Nous sommes rentables au dernier trimestre. C’est assez exceptionnel pour une start-up d’IA, m&#234;me si cela fluctue, quand nous investissons. De m&#234;me, nous avons encore en banque la majorit&#233; des 500&#160;millions de dollars de capitaux lev&#233;s sur sept ans. &lt;/p&gt; &lt;p&gt; Souvent, les start-up d’IA d&#233;pensent beaucoup et peuvent survivre un &#224; deux ans sans lever de fonds. Et c’est pour cela qu’il y a des cas comme Adept AI, Inflection AI ou Character AI &lt;em style=&quot;font-style:italic;&quot;&gt;[dont les dirigeants ont &#233;t&#233; embauch&#233;s par &lt;span class=&quot;stubs&quot;&gt;Amazon&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; et &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;] &lt;/em&gt;. Cette ann&#233;e, on va voir plus d’attention port&#233;e sur la rentabilit&#233; des start-up d’IA. En ce moment, dix d’entre elles me contactent chaque semaine pour se faire racheter. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Hugging Face accompagneles entreprises pour adapter des mod&#232;les d’IA, mais comment concurrencer les g&#233;ants du conseil comme Capgemini, ou du cloud comme &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt;, &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; ou &lt;span class=&quot;stubs&quot;&gt;Amazon&lt;/span&gt; ? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Notre mod&#232;le est &lt;em style=&quot;font-style:italic;&quot;&gt;freemium [de l’anglais&lt;/em&gt;free &lt;em style=&quot;font-style:italic;&quot;&gt;, gratuit, et&lt;/em&gt;premium &lt;em style=&quot;font-style:italic;&quot;&gt;, &#224; valeur ajout&#233;e]&lt;/em&gt;. L’essentiel des utilisations sont gratuites mais un petit pourcentage sont payantes. Nous sommes utilis&#233;s par plus de mille entreprises, dont &lt;span class=&quot;stubs&quot;&gt;Bloomberg&lt;/span&gt; ou Nvidia. Celles-ci ont besoin de fonctionnalit&#233;s additionnelles, pour la s&#233;curit&#233; ou la gestion de leurs nombreux utilisateurs. Et aussi d’assistance sur le choix et l’utilisation de nos outils. Ou, enfin, d’infrastructure &lt;em style=&quot;font-style:italic;&quot;&gt;s [des services en ligne dans le cloud, comme du calcul informatique]&lt;/em&gt; pour faire tourner des mod&#232;les d’IA. L’int&#233;r&#234;t &lt;em style=&quot;font-style:italic;&quot;&gt;[par rapport &#224; l’achat de ce calcul en direct chez les fournisseurs cloud comme &lt;span class=&quot;stubs&quot;&gt;Amazon&lt;/span&gt; ou &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;] &lt;/em&gt;, c’est que nos solutions sont tr&#232;s int&#233;gr&#233;es avec notre plate-forme et sp&#233;cialis&#233;es sur l’IA. En optimisant des mod&#232;les sp&#233;cialis&#233;s, vous pouvez r&#233;duire le prix d’une t&#226;che faite avec l’IA, par exemple de 10 &#224; 1 centime d’euro. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; GitHub, la plate-formed’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; r&#233;f&#233;rente dansle logiciel, s’est fait racheter par &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; en&#160;2018. Cela pourrait-il vous arriver ? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Ce n’est pas l’objectif. Nous pensons pouvoir cr&#233;er une plate-forme ind&#233;pendante sur l’IA. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; L’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; ne peut-il &#234;tre utilis&#233; par les g&#233;ants pour dominer un march&#233;, comme &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt; l’a fait avec Android, et comme Meta pourrait le faire avec ses mod&#232;les d’IA ? Cela g&#234;ne les start-up qui vendent leurs mod&#232;les propri&#233;taires… &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Oui et non. Aux Etats-Unis, l’autorit&#233; de la concurrence a conclu que l’IA &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; favorisait la concurrence, m&#234;me si elle peut b&#233;n&#233;ficier aux gros acteurs. Cela participe d’une d&#233;mocratisation. Il est important que l’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; ne soit pas pratiqu&#233; seulement par les g&#233;ants du num&#233;rique, mais aussi par les start-up, les universit&#233;s et les structures &#224; but non lucratif. Il faut aussi garder un peu de rigueur sur la d&#233;finition de l’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; : cela implique de publier le mod&#232;le, mais aussi les jeux de donn&#233;es d’entra&#238;nement et de proposer des licences tr&#232;s permissives. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Dans le r&#232;glement europ&#233;en sur l’IA, l’AI Act, &#234;tes-vous favorable &#224; l’obligation de fournir un r&#233;sum&#233; des textes ou images utilis&#233;s pour les entra&#238;ner, ce qui permet aux propri&#233;taires de ces contenus de demander un paiement ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Oui, je suis plut&#244;t favorable &#224; cette id&#233;e. De m&#234;me, sur l’&#233;tiquette d’un produit, vous pouvez voir les ingr&#233;dients… Il faut d’abord faire la transparence sur la liste des acteurs qui ont particip&#233; &#224; la cr&#233;ation d’un syst&#232;me. Puis des mod&#232;les de r&#233;mun&#233;ration appropri&#233;s. Le meilleur n’est pas encore vraiment trouv&#233;. J’ai parfois un peu peur des contrats de vente de licence des donn&#233;es d’entra&#238;nement &lt;em style=&quot;font-style:italic;&quot;&gt; [par exemple entre OpenAI et les groupes de m&#233;dias &lt;span class=&quot;stubs&quot;&gt;Associated Press&lt;/span&gt;, Springer, &lt;span class=&quot;stubs&quot;&gt;Financial Times&lt;/span&gt; ou &lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Le Monde]&lt;/em&gt;. Si quelques gros acteurs signent avec tous les m&#233;dias des accords qui emp&#234;chent les autres de fabriquer des mod&#232;les d’IA concurrents, on sera dans une situation d&#233;licate. On pourrait prendre en compte l’usage final des donn&#233;es : si vous entra&#238;nez un mod&#232;le &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; qui b&#233;n&#233;ficie &#224; la recherche et &#224; l’&#233;ducation, vous pourriez ne pas &#234;tre oblig&#233; de payer une licence. Alors que si votre syst&#232;me d’IA concurrence l’activit&#233; des cr&#233;ateurs de ces donn&#233;es, c’est normal que vous les r&#233;tribuiez. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Vous dites avoir lev&#233; la plus grande partie de fonds aupr&#232;s d’Am&#233;ricains car les Europ&#233;ens ne pouvaient investir assez. L’&#233;cosyst&#232;me europ&#233;en s’est-il depuis renforc&#233; ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il est vraiment important qu’&#233;merge de plus en plus d’IA locale, nationale. Et donc que tous les pays soutiennent leur &#233;cosyst&#232;me. Parce que cette technologie fondamentale peut avoir de gros impacts sur l’&#233;conomie. Si tous les mod&#232;les d’IA de r&#233;f&#233;rence sont am&#233;ricains, les entreprises des Etats-Unis vont avoir un avantage concurrentiel. C’est un enjeu de souverainet&#233; et de comp&#233;titivit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; Sur les probl&#232;mes pos&#233;s par l’IA – les erreurs, la d&#233;sinformation, la mod&#233;ration des contenus haineux, les biais discriminatoires –, l’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; change-t-il quelque chose ? &lt;/em&gt;&lt;/p&gt;&lt;p&gt;Pour beaucoup des probl&#232;mes existants de l’IA, l’&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; peut &#234;tre une solution. Car les mod&#232;les propri&#233;taires sont des bo&#238;tes noires. Cela rend difficile l’analyse des biais ou la d&#233;tection des contenus g&#233;n&#233;r&#233;s par une IA sur les r&#233;seaux sociaux. Il est difficile de savoir ce que vous mangez si vous n’avez pas la liste des ingr&#233;dients ni la recette…&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2024 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20240909&amp;#183;LM&amp;#183;202409092&amp;#215;20&amp;#215;22253078196&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">modèles propriétaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">calcul informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">essentiel des utilisations</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">modèles de rémunération</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">plate-forme de publication</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">FINANCIAL TIMES</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">IBM</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">BLOOMBERG</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">MICROSOFT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">AMAZON</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">secteur de l’IA</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Miami, Florida</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">New York</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240909%c2%b7LM%c2%b7202409092%c3%9720%c3%9722253078196" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720240909%c2%b7LM%c2%b7202409092%c3%9720%c3%9722253078196">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Economie &amp; Entreprise,         lundi 9 septembre 2024 1721 mots, p. 16</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Entretien</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+« Tout le monde devrait pouvoir créer sa propre IA »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Les entretiens de l’IA Clément Delangue, cofondateur de la plate-forme de publication d’outils Hugging Face, défend l’<mark>open</mark> <mark> source</mark>, accessible gratuitement, contre la domination du secteur par quelques géants</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Propos recueillis parAlexandre Piquard Propos recueillis parAlexandre Piquard</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Clément Delangue est, avec Julien Chaumond et Thomas Wolfe, l’un des trois Français cofondateurs de Hugging Face, une start-up d’intelligence artificielle (IA) de premier plan. Valorisée à 4,2&nbsp;milliards d’euros après avoir levé près de 450&nbsp;millions d’euros depuis sa création en&nbsp;2016, cette société de droit américain est connue comme la plate-forme de référence où développeurs et entreprises publient des outils et des modèles pour faire de l’IA en <mark>open</mark> <mark>source</mark>, c’est-à-dire accessible gratuitement et modifiable. </p> <p> Vivant entre Miami, New York&nbsp;et Paris, où sont installés la moitié des 220&nbsp;employés de Hugging Face, son directeur général défend la conception d’une IA <em style="font-style:italic;">« ouverte&nbsp;et décentralisée »</em>, <em style="font-style:italic;"></em>contre la domination des géants du numérique comme OpenAI et son partenaire <span class="stubs">Microsoft</span> ou <span class="stubs">Google</span>.</p>
+
+
+<p><em style="font-weight:bold;">Hugging Face veut « démocratiser la bonne IA », qu’est-ce que cela veut dire ?</em></p><p>Une IA est éthique quand elle est alignée avec les valeurs des individus qui participent au projet. A Hugging Face, nos valeurs sont l’ouverture, la transparence, l’inclusivité. Nous réfléchissons donc aux moyens de faire la technologie la plus ouverte possible, pour permettre aux entreprises de partager leurs modèles d’IA et les jeux de données et de contenus sur lesquels ils ont été entraînés. Nous cherchons aussi à éviter qu’une entreprise contrôle le secteur. Nous aimerions que tout le monde puisse créer sa propre IA : les entreprises, mais aussi les associations et ONG, les structures publiques, les régulateurs… </p> <p><em style="font-weight:bold;"> Des acteurs puissants comme <span class="stubs">Google</span> ou OpenAI proposent de grands modèles d’IA fermés, en quoi est-ce un problème ? </em></p><p>Il y a plusieurs approches complémentaires. Quand vous voulez faire un moteur de recherche, comme ChatGPT, c’est bien d’utiliser un très gros modèle d’IA. Mais quand vous voulez créer un chatbot <em style="font-style:italic;">–</em>un robot conversationnel – de service client pour votre application bancaire, vous n’avez pas besoin d’une IA qui disserte sur le sens de la vie, plutôt d’une IA qui vous réponde vite. Un modèle plus petit et plus spécialisé est plus rapide et permet de dépenser moins d’argent et d’électricité, donc d’émettre moins de CO2. </p> <p> De plus, c’est important que tous les gens qui veulent construire des systèmes d’IA aient accès aux ressources nécessaires, comme tout le monde peut écrire du code informatique pour créer un logiciel. C’est un monde plus désirable qu’un univers où quelques grosses entreprises gardent leurs secrets et leurs modèles, et contrôlent l’accès à cette technologie. </p> <p><em style="font-weight:bold;"> Quelle est l’alternative, des mini-modèles <mark>open</mark> <mark>source</mark> qui fonctionnent sur les ordinateurs des gens à la maison ? </em></p><p>Oui, ce sont de nombreux modèles différents, que toutes les organisations puissent créer et modifier, et qui résolvent toutes les tâches du quotidien. Nous travaillons en ce moment sur la robotique. Nous avons par exemple entraîné un robot à 600&nbsp;dollars <em style="font-style:italic;">[540&nbsp;euros]</em>, équipé de caméras d’iPhone, à plier des tee-shirts, puis publié les données pour permettre à d’autres de mener leurs expérimentations. Je suis beaucoup plus enthousiasmé par un monde où chacun peut avoir des petits robots, qu’il peut entraîner pour accomplir les tâches de son choix, que par l’idée d’une grosse entreprise qui crée un gros robot, que vous ne contrôlez pas et qu’elle envoie chez vous pour faire tous types de choses. Nous préférons un futur un peu décentralisé où tout le monde fait de l’IA. </p> <p><em style="font-weight:bold;">Pouvez-vous donner des exemples d’usages ?</em></p><p>Les cas d’usage sont très variables, c’est dur de les prédire. Nous utilisons déjà de l’IA sans nous en rendre compte : quand nous regardons les infos, dans les algorithmes qui nous recommandent les contenus ; quand nous prenons un VTC, dans la prédiction de l’horaire d’arrivée… On utilise du logiciel partout. Et dans quelques années, tous les logiciels seront construits avec de l’IA. </p> <p><em style="font-weight:bold;">Les start-up d’IA ne sont-elles pas dépendantes des géants du numérique, qui leur fournissent le calcul informatique nécessaire au fonctionnement de leurs modèles et qui sont entrés au capital d’OpenAI, d’Anthropic ou de Hugging Face ?</em></p><p>Il y a dans le secteur de l’IA des tendances naturelles à la concentration plus fortes que dans le logiciel classique. Il faut d’autant plus les combattre. Nous essayons de le faire en fournissant des outils <mark>open</mark> <mark>source</mark>. Nous avons 5&nbsp;millions d’utilisateurs, dont la majorité ne travaillent pas pour Big Tech. Quant à Hugging Face, sur notre dernier tour de financement, en août 2023,nous avons levé une partie des fonds auprès d’eux <em style="font-style:italic;">[<span class="stubs">Google</span>, <span class="stubs">Amazon</span>, AMD, <span class="stubs">Intel</span>, <span class="stubs">IBM</span> ou Nvidia], </em>mais nous avons décidé de le faire auprès de tous, plutôt que d’un seul. Cela permet d’éviter une exclusivité. </p> <p><em style="font-weight:bold;">Quelle est la situation financière de l’entreprise ?</em></p><p>Nous essayons de créer un modèle qui nous permette de rester assez indépendants. Nous sommes rentables au dernier trimestre. C’est assez exceptionnel pour une start-up d’IA, même si cela fluctue, quand nous investissons. De même, nous avons encore en banque la majorité des 500&nbsp;millions de dollars de capitaux levés sur sept ans. </p> <p> Souvent, les start-up d’IA dépensent beaucoup et peuvent survivre un à deux ans sans lever de fonds. Et c’est pour cela qu’il y a des cas comme Adept AI, Inflection AI ou Character AI <em style="font-style:italic;">[dont les dirigeants ont été embauchés par <span class="stubs">Amazon</span>, <span class="stubs">Microsoft</span> et <span class="stubs">Google</span>] </em>. Cette année, on va voir plus d’attention portée sur la rentabilité des start-up d’IA. En ce moment, dix d’entre elles me contactent chaque semaine pour se faire racheter. </p> <p><em style="font-weight:bold;"> Hugging Face accompagneles entreprises pour adapter des modèles d’IA, mais comment concurrencer les géants du conseil comme Capgemini, ou du cloud comme <span class="stubs">Microsoft</span>, <span class="stubs">Google</span> ou <span class="stubs">Amazon</span> ? </em></p><p>Notre modèle est <em style="font-style:italic;">freemium [de l’anglais</em>free <em style="font-style:italic;">, gratuit, et</em>premium <em style="font-style:italic;">, à valeur ajoutée]</em>. L’essentiel des utilisations sont gratuites mais un petit pourcentage sont payantes. Nous sommes utilisés par plus de mille entreprises, dont <span class="stubs">Bloomberg</span> ou Nvidia. Celles-ci ont besoin de fonctionnalités additionnelles, pour la sécurité ou la gestion de leurs nombreux utilisateurs. Et aussi d’assistance sur le choix et l’utilisation de nos outils. Ou, enfin, d’infrastructure <em style="font-style:italic;">s [des services en ligne dans le cloud, comme du calcul informatique]</em> pour faire tourner des modèles d’IA. L’intérêt <em style="font-style:italic;">[par rapport à l’achat de ce calcul en direct chez les fournisseurs cloud comme <span class="stubs">Amazon</span> ou <span class="stubs">Google</span>] </em>, c’est que nos solutions sont très intégrées avec notre plate-forme et spécialisées sur l’IA. En optimisant des modèles spécialisés, vous pouvez réduire le prix d’une tâche faite avec l’IA, par exemple de 10 à 1 centime d’euro. </p> <p><em style="font-weight:bold;"> GitHub, la plate-formed’<mark>open</mark> <mark>source</mark> référente dansle logiciel, s’est fait racheter par <span class="stubs">Microsoft</span> en&nbsp;2018. Cela pourrait-il vous arriver ? </em></p><p>Ce n’est pas l’objectif. Nous pensons pouvoir créer une plate-forme indépendante sur l’IA. </p> <p><em style="font-weight:bold;"> L’<mark>open</mark> <mark>source</mark> ne peut-il être utilisé par les géants pour dominer un marché, comme <span class="stubs">Google</span> l’a fait avec Android, et comme Meta pourrait le faire avec ses modèles d’IA ? Cela gêne les start-up qui vendent leurs modèles propriétaires… </em></p><p>Oui et non. Aux Etats-Unis, l’autorité de la concurrence a conclu que l’IA <mark>open</mark> <mark>source</mark> favorisait la concurrence, même si elle peut bénéficier aux gros acteurs. Cela participe d’une démocratisation. Il est important que l’<mark>open</mark> <mark>source</mark> ne soit pas pratiqué seulement par les géants du numérique, mais aussi par les start-up, les universités et les structures à but non lucratif. Il faut aussi garder un peu de rigueur sur la définition de l’<mark>open</mark> <mark>source</mark> : cela implique de publier le modèle, mais aussi les jeux de données d’entraînement et de proposer des licences très permissives. </p> <p><em style="font-weight:bold;">Dans le règlement européen sur l’IA, l’AI Act, êtes-vous favorable à l’obligation de fournir un résumé des textes ou images utilisés pour les entraîner, ce qui permet aux propriétaires de ces contenus de demander un paiement ?</em></p><p>Oui, je suis plutôt favorable à cette idée. De même, sur l’étiquette d’un produit, vous pouvez voir les ingrédients… Il faut d’abord faire la transparence sur la liste des acteurs qui ont participé à la création d’un système. Puis des modèles de rémunération appropriés. Le meilleur n’est pas encore vraiment trouvé. J’ai parfois un peu peur des contrats de vente de licence des données d’entraînement <em style="font-style:italic;"> [par exemple entre OpenAI et les groupes de médias <span class="stubs">Associated Press</span>, Springer, <span class="stubs">Financial Times</span> ou </em><em style="font-style:italic;">Le Monde]</em>. Si quelques gros acteurs signent avec tous les médias des accords qui empêchent les autres de fabriquer des modèles d’IA concurrents, on sera dans une situation délicate. On pourrait prendre en compte l’usage final des données : si vous entraînez un modèle <mark>open</mark> <mark>source</mark> qui bénéficie à la recherche et à l’éducation, vous pourriez ne pas être obligé de payer une licence. Alors que si votre système d’IA concurrence l’activité des créateurs de ces données, c’est normal que vous les rétribuiez. </p> <p><em style="font-weight:bold;">Vous dites avoir levé la plus grande partie de fonds auprès d’Américains car les Européens ne pouvaient investir assez. L’écosystème européen s’est-il depuis renforcé ?</em></p><p>Il est vraiment important qu’émerge de plus en plus d’IA locale, nationale. Et donc que tous les pays soutiennent leur écosystème. Parce que cette technologie fondamentale peut avoir de gros impacts sur l’économie. Si tous les modèles d’IA de référence sont américains, les entreprises des Etats-Unis vont avoir un avantage concurrentiel. C’est un enjeu de souveraineté et de compétitivité. </p> <p><em style="font-weight:bold;"> Sur les problèmes posés par l’IA – les erreurs, la désinformation, la modération des contenus haineux, les biais discriminatoires –, l’<mark>open</mark> <mark>source</mark> change-t-il quelque chose ? </em></p><p>Pour beaucoup des problèmes existants de l’IA, l’<mark>open</mark> <mark>source</mark> peut être une solution. Car les modèles propriétaires sont des boîtes noires. Cela rend difficile l’analyse des biais ou la détection des contenus générés par une IA sur les réseaux sociaux. Il est difficile de savoir ce que vous mangez si vous n’avez pas la liste des ingrédients ni la recette…</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2024 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20240909·LM·202409092×20×22253078196</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20240909·LM·202409092×20×22253078196";
+    var _docIndex = 34;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"financial times":"94148","ibm":"94152","bloomberg":"93357","microsoft":"93647","amazon":"93749","google":"92575","associated press":"94365","intel":"92885"};
+		var _docName = 'news·20240909·LM·202409092×20×22253078196';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720240909%C2%B7LM%C2%B7202409092%C3%9720%C3%9722253078196&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720240909%C2%B7LM%C2%B7202409092%C3%9720%C3%9722253078196&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720240909%C2%B7LM%C2%B7202409092%C3%9720%C3%9722253078196&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720240909%C2%B7LM%C2%B7202409092%C3%9720%C3%9722253078196&docIndex=34&FullScreen=1";
+                
+	var _keyDoc = 'news·20240909·LM·202409092×20×22253078196';
+</script>
+</div></body></html>

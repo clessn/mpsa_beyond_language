@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Sciences,         mercredi 14 janvier 2004 882 mots, p. 22&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+AUJOURD&#39;HUI TECHNOLOGIES         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Etats et entreprises peinent &#224; organiser la lutte contre le spam            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Les messages publicitaires non sollicit&#233;s, qui polluent les messageries &#233;lectroniques de mani&#232;re croissante, pourraient repr&#233;senter les trois quarts du trafic mondial de courriels en 2004. Les l&#233;gislations tentent, difficilement, de s&#39;adapter pour combattre ce fl&#233;au de l&#39;Internet&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;St&#233;phane Foucart&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Les &#171; publipostages non sollicit&#233;s &#187; - ou spams, selon la terminologie la plus couramment utilis&#233;e -, qui polluent les messageries &#233;lectroniques, sont le principal FL&#201;AU D&#39;INTERNET. Un courriel sur deux en circulation dans le monde serait, selon plusieurs sources, un message publicitaire intempestif. Les TECHNOLOGIES DE FILTRAGE, si elles existent, demeurent encore imparfaites et leur d&#233;ploiement est co&#251;teux. Certaines &#233;tudes pointent ainsi les sommes consid&#233;rables investies chaque ann&#233;e par les entreprises pour se pr&#233;munir contre ces ENVOIS MASSIFS de courriels publicitaires non sollicit&#233;s. Aux Etats-Unis, la promulgation, le 1er janvier, d&#39;une loi f&#233;d&#233;rale antispam n&#39;a pas encore enray&#233; le ph&#233;nom&#232;ne. En France, la LOI SUR L&#39;&#201;CONOMIE NUM&#201;RIQUE, tr&#232;s controvers&#233;e, semble trop timide pour s&#39;y attaquer.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&#171; RENDEZ les femmes heureuses &#187;, annonce, en anglais, l&#39;un d&#39;eux. &#171; Viagra &#224; tr&#232;s bas prix &#187;, promet un autre. &#171; Importante proposition commerciale &#187;, proclame un troisi&#232;me. Les publipostages &#233;lectroniques non sollicit&#233;s ou spams, selon la terminologie la plus courante, sont devenus le principal fl&#233;au de l&#39;Internet. Selon un rapport publi&#233; fin 2003 par la Conf&#233;rence des Nations unies sur le commerce et le d&#233;veloppement (Cnuced), environ la moiti&#233; des courriels en circulation sur le R&#233;seau comptent au nombre de ces publicit&#233;s intempestives. &#171; La lutte contre le spam est devenue une question qui nous concerne tous, et c&#39;est l&#39;un des probl&#232;mes les plus importants auxquels Internet est confront&#233; aujourd&#39;hui &#187;, d&#233;clarait ainsi, au cours d&#39;une conf&#233;rence de presse tenue mi-juillet 2003, le commissaire europ&#233;en en charge de la soci&#233;t&#233; de l&#39;information, Erkki Liikanen.&lt;/p&gt;
+
+
+&lt;p&gt;Anglophones dans leur majorit&#233;, ces publicit&#233;s intempestives vantent g&#233;n&#233;ralement les m&#233;rites de pilules miracles, proposent certains m&#233;dicaments &#224; bas prix, font la promotion de sites Internet payants &#224; caract&#232;re pornographique ou formulent encore la promesse de gagner rapidement de consid&#233;rables sommes d&#39;argent. Plus r&#233;cemment, un grand nombre de ces &#171; pourriels &#187; - terminologie entr&#233;e dans la derni&#232;re mouture du Petit Robert - vantent les m&#233;rites de logiciels sp&#233;cialis&#233;s dans... le filtrage et l&#39;&#233;radication des spams. &lt;/p&gt; &lt;p&gt; La lutte contre cette pollution &#233;lectronique est tr&#232;s difficile. Pour l&#39;heure, les moyens techniques de contrer ce fl&#233;au sont tr&#232;s limit&#233;s. &#171; Au niveau des serveurs d&#39;entreprise, les responsables informatiques d&#233;ploient g&#233;n&#233;ralement des solutions de filtrage qui indexent des listes noires d&#39;exp&#233;diteurs, explique le directeur des syst&#232;mes d&#39;information d&#39;un grand compte fran&#231;ais. Mais ces filtres ne r&#233;ussissent en g&#233;n&#233;ral &#224; intercepter qu&#39;une infime partie du spam entrant. &#187; &lt;/p&gt; &lt;p&gt; Les fournisseurs d&#39;acc&#232;s, eux, s&#39;ils peuvent identifier les envois en masse de courriels, l&#39;un des signes distinctifs indiquant qu&#39;un message rel&#232;ve du spam, ne peuvent &#224; coup s&#251;r faire la distinction entre ces derniers et le courrier &#233;lectronique relevant de la correspondance de leurs clients. &lt;/p&gt; &lt;p&gt; En dernier recours, les utilisateurs peuvent cependant lutter localement, depuis leur machine, contre ce mal. De nombreux logiciels de filtrage du spam sont disponibles et s&#39;int&#232;grent &#224; la plupart des programmes de messageries disponibles. Ces syst&#232;mes comprennent g&#233;n&#233;ralement des modules d&#39;apprentissage et sont capables, au terme de quelques jours, de reconna&#238;tre - avec plus ou moins de r&#233;ussite - les caract&#233;ristiques des messages non sollicit&#233;s (r&#233;currence de certains mots, nombre de destinataires, etc.). La derni&#232;re version du logiciel de messagerie de Microsoft, Outlook 2003, comprend ainsi en s&#233;rie un filtre semblable, de m&#234;me que les derni&#232;res versions de son concurrent phare, le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; Mozilla - qui pr&#233;sente l&#39;avantage d&#39;&#234;tre gratuit. &lt;/p&gt; &lt;p&gt; Les entreprises et les particuliers sont donc bien d&#233;munis face &#224; ces assauts. Et ce n&#39;est pas la l&#233;gislation actuelle qui leur permet de se prot&#233;ger efficacement. Ainsi, la promulgation aux Etats-Unis, le 1er janvier, du Can-spam Act n&#39;a, pour l&#39;heure, rien chang&#233; &#224; la situation. Sans interdire totalement ces messages publicitaires ind&#233;sirables, la nouvelle loi f&#233;d&#233;rale am&#233;ricaine autorise les utilisateurs &#224; r&#233;clamer leur retrait des listes de diffusion. Elle punit en outre de lourdes amendes, voire de peines d&#39;emprisonnement, ceux qui envoient des messages mensongers ou &#224; caract&#232;re pornographique sans consentement pr&#233;alable des destinataires. &lt;/p&gt; &lt;p&gt; 75 % DU TRAFIC DE COURRIELS &lt;/p&gt; &lt;p&gt; Le Can-spam Act, pr&#233;cise un fournisseur d&#39;acc&#232;s, demeure cependant &#171; beaucoup moins s&#233;v&#232;re que certaines lois en vigueur dans plusieurs Etats, dont la Californie &#187;. En effet, malgr&#233; l&#39;entr&#233;e en vigueur de cette nouvelle r&#233;glementation, une &#233;tude r&#233;cemment publi&#233;e par l&#39;&#233;diteur de logiciels Postini pr&#233;voit que la proportion de spams pourrait aller croissant au cours de l&#39;ann&#233;e 2004, jusqu&#39;&#224; atteindre, aux Etats-Unis, &#171; environ 75 % &#187; du trafic de courriels. &lt;/p&gt; &lt;p&gt; En France, le projet de loi sur l&#39;&#233;conomie num&#233;rique (LEN), adopt&#233; jeudi 8 janvier en deuxi&#232;me lecture &#224; l&#39;Assembl&#233;e, comporte un volet sur les publipostages &#233;lectroniques. Cependant, celui-ci ne r&#233;glemente que la collecte des adresses de courriels. L&#39;inscription d&#39;une adresse &#224; un fichier commercial ne sera, selon la nouvelle loi, possible qu&#39;avec le consentement explicite du destinataire. Selon les fournisseurs d&#39;acc&#232;s &#224; Internet, une telle disposition, qui transpose la directive europ&#233;enne sur les communications &#233;lectroniques, adopt&#233;e en juillet 2002, est trop timide. &lt;/p&gt; &lt;p&gt; &#171; Le projet de loi actuel encadre plus les propositions commerciales classiques, &#233;manant d&#39;acteurs bien identifi&#233;s, que le spam lui-m&#234;me qui rel&#232;ve d&#39;une collecte frauduleuse des adresses de courriel, explique St&#233;phane Marcovitch, d&#233;l&#233;gu&#233; g&#233;n&#233;ral de l&#39;Association des fournisseurs d&#39;acc&#232;s (AFA), qui regroupe les principaux acteurs du secteur. Nous aurions voulu une loi nous permettant de poursuivre les ??spammeurs&#187; au p&#233;nal, mais le texte actuel ne nous autorise qu&#39;&#224; nous associer &#224; des poursuites d&#233;j&#224; engag&#233;es... &#187; Or, ajoute M. Marcovitch, &#171; les particuliers ne portent plainte que tr&#232;s rarement contre les ??spammeurs&#187; &#187;. Lionel Thoumyre, juriste au Forum des droits sur l&#39;Internet, association charg&#233;e par les pouvoirs publics de r&#233;fl&#233;chir aux &#233;volutions du droit &#224; l&#39;aune des nouvelles technologies, confirme que le texte n&#39;a pas pour ambition la lutte contre le &#171; spam sauvage &#187;. &lt;/p&gt; &lt;p&gt; Ce dernier, qui repr&#233;sente la majeure partie des courriels non sollicit&#233;s, &#171; tombe sous le coup de la loi de 1978 sur l&#39;informatique et les libert&#233;s &#187;, pr&#233;cise M. Thoumyre. Bien que tr&#232;s ant&#233;rieure &#224; l&#39;existence de l&#39;Internet, celle-ci permet &#224; la Commission nationale de l&#39;informatique et des libert&#233;s (CNIL) de saisir la justice lorsqu&#39;une entreprise ou un particulier est soup&#231;onn&#233; de constituer et d&#39;exploiter des fichiers de donn&#233;es personnelles, comme la compilation d&#39;adresses de courriel &#224; des fins d&#39;envois en masse de messages publicitaires. &lt;/p&gt; &lt;p&gt; La constitution sauvage puis le commerce de fichiers d&#39;adresses de courriels sont ill&#233;gaux. Les contrevenants qui en font commerce utilisent g&#233;n&#233;ralement des logiciels qui parcourent le Net et aspirent toutes les adresses de courriel identifi&#233;es. Les &#233;diteurs de ce type de logiciels sont en g&#233;n&#233;ral &#233;troitement surveill&#233;s et font, parfois, l&#39;objet de poursuites. Celles-ci sont cependant difficiles &#224; mener d&#232;s lors que les contrevenants se trouvent hors de France. Ce qui est souvent le cas : selon M. Marcovitch, &#171; 80 % des spams proviennent de pays situ&#233;s hors d&#39;Europe &#187;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;vincent sardon&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040114&amp;#183;LM&amp;#183;0q1401_762493&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">messages publicitaires</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fournisseurs d'accès</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Etats Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">publipostages électroniques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">messageries électroniques</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Etats Unis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Forum</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040114%c2%b7LM%c2%b70q1401_762493" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040114%c2%b7LM%c2%b70q1401_762493">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Sciences,         mercredi 14 janvier 2004 882 mots, p. 22</span>
+</div>
+
+    <div>
+        <p>
+AUJOURD'HUI TECHNOLOGIES         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Etats et entreprises peinent à organiser la lutte contre le spam            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Les messages publicitaires non sollicités, qui polluent les messageries électroniques de manière croissante, pourraient représenter les trois quarts du trafic mondial de courriels en 2004. Les législations tentent, difficilement, de s'adapter pour combattre ce fléau de l'Internet</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Stéphane Foucart</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">Les « publipostages non sollicités » - ou spams, selon la terminologie la plus couramment utilisée -, qui polluent les messageries électroniques, sont le principal FLÉAU D'INTERNET. Un courriel sur deux en circulation dans le monde serait, selon plusieurs sources, un message publicitaire intempestif. Les TECHNOLOGIES DE FILTRAGE, si elles existent, demeurent encore imparfaites et leur déploiement est coûteux. Certaines études pointent ainsi les sommes considérables investies chaque année par les entreprises pour se prémunir contre ces ENVOIS MASSIFS de courriels publicitaires non sollicités. Aux Etats-Unis, la promulgation, le 1er janvier, d'une loi fédérale antispam n'a pas encore enrayé le phénomène. En France, la LOI SUR L'ÉCONOMIE NUMÉRIQUE, très controversée, semble trop timide pour s'y attaquer.</em></p><p>« RENDEZ les femmes heureuses », annonce, en anglais, l'un d'eux. « Viagra à très bas prix », promet un autre. « Importante proposition commerciale », proclame un troisième. Les publipostages électroniques non sollicités ou spams, selon la terminologie la plus courante, sont devenus le principal fléau de l'Internet. Selon un rapport publié fin 2003 par la Conférence des Nations unies sur le commerce et le développement (Cnuced), environ la moitié des courriels en circulation sur le Réseau comptent au nombre de ces publicités intempestives. « La lutte contre le spam est devenue une question qui nous concerne tous, et c'est l'un des problèmes les plus importants auxquels Internet est confronté aujourd'hui », déclarait ainsi, au cours d'une conférence de presse tenue mi-juillet 2003, le commissaire européen en charge de la société de l'information, Erkki Liikanen.</p>
+
+
+<p>Anglophones dans leur majorité, ces publicités intempestives vantent généralement les mérites de pilules miracles, proposent certains médicaments à bas prix, font la promotion de sites Internet payants à caractère pornographique ou formulent encore la promesse de gagner rapidement de considérables sommes d'argent. Plus récemment, un grand nombre de ces « pourriels » - terminologie entrée dans la dernière mouture du Petit Robert - vantent les mérites de logiciels spécialisés dans... le filtrage et l'éradication des spams. </p> <p> La lutte contre cette pollution électronique est très difficile. Pour l'heure, les moyens techniques de contrer ce fléau sont très limités. « Au niveau des serveurs d'entreprise, les responsables informatiques déploient généralement des solutions de filtrage qui indexent des listes noires d'expéditeurs, explique le directeur des systèmes d'information d'un grand compte français. Mais ces filtres ne réussissent en général à intercepter qu'une infime partie du spam entrant. » </p> <p> Les fournisseurs d'accès, eux, s'ils peuvent identifier les envois en masse de courriels, l'un des signes distinctifs indiquant qu'un message relève du spam, ne peuvent à coup sûr faire la distinction entre ces derniers et le courrier électronique relevant de la correspondance de leurs clients. </p> <p> En dernier recours, les utilisateurs peuvent cependant lutter localement, depuis leur machine, contre ce mal. De nombreux logiciels de filtrage du spam sont disponibles et s'intègrent à la plupart des programmes de messageries disponibles. Ces systèmes comprennent généralement des modules d'apprentissage et sont capables, au terme de quelques jours, de reconnaître - avec plus ou moins de réussite - les caractéristiques des messages non sollicités (récurrence de certains mots, nombre de destinataires, etc.). La dernière version du logiciel de messagerie de Microsoft, Outlook 2003, comprend ainsi en série un filtre semblable, de même que les dernières versions de son concurrent phare, le <mark>logiciel</mark> <mark>libre</mark> Mozilla - qui présente l'avantage d'être gratuit. </p> <p> Les entreprises et les particuliers sont donc bien démunis face à ces assauts. Et ce n'est pas la législation actuelle qui leur permet de se protéger efficacement. Ainsi, la promulgation aux Etats-Unis, le 1er janvier, du Can-spam Act n'a, pour l'heure, rien changé à la situation. Sans interdire totalement ces messages publicitaires indésirables, la nouvelle loi fédérale américaine autorise les utilisateurs à réclamer leur retrait des listes de diffusion. Elle punit en outre de lourdes amendes, voire de peines d'emprisonnement, ceux qui envoient des messages mensongers ou à caractère pornographique sans consentement préalable des destinataires. </p> <p> 75 % DU TRAFIC DE COURRIELS </p> <p> Le Can-spam Act, précise un fournisseur d'accès, demeure cependant « beaucoup moins sévère que certaines lois en vigueur dans plusieurs Etats, dont la Californie ». En effet, malgré l'entrée en vigueur de cette nouvelle réglementation, une étude récemment publiée par l'éditeur de logiciels Postini prévoit que la proportion de spams pourrait aller croissant au cours de l'année 2004, jusqu'à atteindre, aux Etats-Unis, « environ 75 % » du trafic de courriels. </p> <p> En France, le projet de loi sur l'économie numérique (LEN), adopté jeudi 8 janvier en deuxième lecture à l'Assemblée, comporte un volet sur les publipostages électroniques. Cependant, celui-ci ne réglemente que la collecte des adresses de courriels. L'inscription d'une adresse à un fichier commercial ne sera, selon la nouvelle loi, possible qu'avec le consentement explicite du destinataire. Selon les fournisseurs d'accès à Internet, une telle disposition, qui transpose la directive européenne sur les communications électroniques, adoptée en juillet 2002, est trop timide. </p> <p> « Le projet de loi actuel encadre plus les propositions commerciales classiques, émanant d'acteurs bien identifiés, que le spam lui-même qui relève d'une collecte frauduleuse des adresses de courriel, explique Stéphane Marcovitch, délégué général de l'Association des fournisseurs d'accès (AFA), qui regroupe les principaux acteurs du secteur. Nous aurions voulu une loi nous permettant de poursuivre les ??spammeurs» au pénal, mais le texte actuel ne nous autorise qu'à nous associer à des poursuites déjà engagées... » Or, ajoute M. Marcovitch, « les particuliers ne portent plainte que très rarement contre les ??spammeurs» ». Lionel Thoumyre, juriste au Forum des droits sur l'Internet, association chargée par les pouvoirs publics de réfléchir aux évolutions du droit à l'aune des nouvelles technologies, confirme que le texte n'a pas pour ambition la lutte contre le « spam sauvage ». </p> <p> Ce dernier, qui représente la majeure partie des courriels non sollicités, « tombe sous le coup de la loi de 1978 sur l'informatique et les libertés », précise M. Thoumyre. Bien que très antérieure à l'existence de l'Internet, celle-ci permet à la Commission nationale de l'informatique et des libertés (CNIL) de saisir la justice lorsqu'une entreprise ou un particulier est soupçonné de constituer et d'exploiter des fichiers de données personnelles, comme la compilation d'adresses de courriel à des fins d'envois en masse de messages publicitaires. </p> <p> La constitution sauvage puis le commerce de fichiers d'adresses de courriels sont illégaux. Les contrevenants qui en font commerce utilisent généralement des logiciels qui parcourent le Net et aspirent toutes les adresses de courriel identifiées. Les éditeurs de ce type de logiciels sont en général étroitement surveillés et font, parfois, l'objet de poursuites. Celles-ci sont cependant difficiles à mener dès lors que les contrevenants se trouvent hors de France. Ce qui est souvent le cas : selon M. Marcovitch, « 80 % des spams proviennent de pays situés hors d'Europe ».</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>vincent sardon</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040114·LM·0q1401_762493</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040114·LM·0q1401_762493";
+    var _docIndex = 233;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040114·LM·0q1401_762493';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040114%C2%B7LM%C2%B70q1401_762493&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040114%C2%B7LM%C2%B70q1401_762493&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040114%C2%B7LM%C2%B70q1401_762493&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040114%C2%B7LM%C2%B70q1401_762493&docIndex=233&FullScreen=1";
+                
+	var _keyDoc = 'news·20040114·LM·0q1401_762493';
+</script>
+</div></body></html>

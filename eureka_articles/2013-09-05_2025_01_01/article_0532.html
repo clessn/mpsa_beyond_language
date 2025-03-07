@@ -1,0 +1,531 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; M&#233;decine,         mercredi 20 septembre 2017 855 mots, p. SCH7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La recherche acad&#233;mique a tout &#224; gagner &#224; se passer des brevets            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;TribuneL&#39;Open Science devrait aussi s&#39;appliquer &#224; la propri&#233;t&#233; intellectuelle afin de faire de la connaissance un bien commun, explique Lionel Maurel, conservateur de biblioth&#232;ques et blogueur&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Progressivement, le concept d&#39;Open Science tend &#224; devenir le nouveau paradigme de r&#233;f&#233;rence pour la diffusion des r&#233;sultats de la recherche scientifique. Il est notamment pouss&#233; par l&#39;&lt;span class=&quot;stubs&quot;&gt;Union europ&#233;enne&lt;/span&gt; dans le cadre du programme &quot; Horizon 2020 &quot; et, en avril 2016, un appel solennel a &#233;t&#233; lanc&#233; depuis Amsterdam pour inciter les Etats membres &#224; engager des actions en ce sens. La notion rencontre aussi de plus en plus d&#39;&#233;chos en France : en 2016, le CNRS lui a consacr&#233; un Livre blanc intitul&#233; &quot; Une science ouverte dans une r&#233;publique num&#233;rique &quot;, comportant de nombreuses propositions en faveur de l&#39;ouverture. &lt;/p&gt; &lt;p&gt; La d&#233;finition de l&#39;Open Science est fluctuante, mais elle renvoie &#224; une -volont&#233; de syst&#233;matiser la libre diffusion et la libre r&#233;utilisation des r&#233;sultats de la recherche, en tirant notamment parti d&#39;Internet et des outils -num&#233;riques. Plusieurs dimensions de l&#39;activit&#233; de recherche sont concern&#233;es, comme la publication des &#233;crits scientifiques (Open Access), les logiciels utilis&#233;s (&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt;), les -donn&#233;es de recherche (Open Data), l&#39;&#233;valuation des r&#233;sultats (Open Peer -Review), les ressources &#233;ducatives (Open Educational Resources), etc.&lt;/p&gt;
+
+
+&lt;p&gt;Mais il est un aspect presque toujours pass&#233; sous silence dans ces &#233;num&#233;rations : celui des brevets que les universit&#233;s et instituts de recherche sont amen&#233;s &#224; d&#233;poser sur les inventions produites par les chercheurs. Alors que la r&#233;flexion progresse dans tous les autres domaines en faveur de la libre diffusion, tout se passe comme si une sorte de tabou persistait &#224; propos des brevets. Pourtant, l&#39;universit&#233; d&#39;Aarhus au Danemark vient de lancer une initiative qui montre que l&#39;Open Science n&#39;est pas condamn&#233;e &#224; s&#39;arr&#234;ter ainsi &#224; la porte de la propri&#233;t&#233; industrielle. &lt;/p&gt; &lt;p&gt; Baptis&#233; justement &quot; Open Science &quot;, ce programme vise &#224; modifier les rapports entre les laboratoires de recherche et les entreprises priv&#233;es. Traditionnellement, les entreprises participent au financement de travaux de -recherche avec, en contrepartie, un partage des r&#233;sultats avec les universit&#233;s et des d&#233;p&#244;ts de brevets venant -s&#233;curiser les droits de propri&#233;t&#233; intellectuelle sur les inventions obtenues. L&#39;universit&#233; d&#39;Aarhus a d&#233;cid&#233; de changer les r&#232;gles de ces partenariats, en pr&#233;voyant que ni l&#39;universit&#233; ni les entreprises impliqu&#233;es dans les projets ne pourront d&#233;poser de brevets. Le but est de pouvoir diffuser les r&#233;sultats sur une plate-forme et d&#39;en permettre la -libre r&#233;utilisation. Plusieurs grandes entreprises, dont la soci&#233;t&#233; danoise Lego, collaborent d&#233;j&#224; &#224; ce programme qui associe &#233;galement d&#39;autres &#233;tablissements de recherche dans le pays. &lt;/p&gt; &lt;p&gt; On peut se demander pourquoi des entreprises accepteraient de contribuer &#224; des projets de recherche si elles ne peuvent s&#233;curiser l&#39;acquisition d&#39;exclusivit&#233;s par le biais de brevets. C&#39;est ignorer que les mentalit&#233;s &#233;voluent graduellement, &#224; mesure qu&#39;une prise de conscience s&#39;op&#232;re &#224; propos du -caract&#232;re parfois n&#233;faste de l&#39;accumulation des droits de propri&#233;t&#233; intellectuelle. Les &quot; guerres des brevets &quot; qui ont fait rage dans certains secteurs, comme celui des smartphones, incitent aujourd&#39;hui des acteurs industriels, tels que Tesla ou Toyota, &#224; renoncer &#224; certains de leurs brevets pour mettre en partage des technologies. C&#39;est sur ce terrain de l&#39;Open Innovation que de nouvelles formes de relations entre universit&#233;s et entreprises peuvent se nouer. &lt;/p&gt; &lt;p&gt; Reste l&#39;argument financier, les brevets &#233;tant r&#233;put&#233;s participer &#224; la &quot; valorisation &quot; de la recherche en g&#233;n&#233;rant des recettes &#224; travers des redevances vers&#233;es aux &#233;tablissements. En r&#233;alit&#233;, les &#233;tudes montrent que seule une faible proportion des brevets issus de la recherche publique g&#233;n&#232;rent des revenus, tandis que la majorit&#233; demeure inexploit&#233;e. Ce n&#39;est pourtant pas que ces inventions soient sans int&#233;r&#234;t, mais les &quot; frictions &quot; li&#233;es &#224; l&#39;obtention des -licences agissent comme une puissante barri&#232;re &#224; la r&#233;utilisation. Laisser les inventions dans le domaine public en renon&#231;ant aux brevets constitue un moyen de &quot; d&#233;geler &quot; ces r&#233;sultats pour qu&#39;ils r&#233;alisent imm&#233;diatement leur plein potentiel. Si les brevets sont autant utilis&#233;s dans le secteur de la -recherche, ce n&#39;est pas tant pour leur rentabilit&#233; &#233;conomique que parce qu&#39;ils ont &#233;t&#233; d&#233;voy&#233;s de leur fonction d&#39;origine pour devenir un mode de -publication et d&#39;&#233;valuation de la recherche. L&#39;initiative de l&#39;universit&#233; d&#39;Aarhus montre n&#233;anmoins qu&#39;un autre fonctionnement est possible, &#224; condition de mettre en place des infrastructures adapt&#233;es en faveur de l&#39;Open Science. &lt;/p&gt; &lt;p&gt; L&#39;histoire t&#233;moigne que l&#39;association entre brevets et universit&#233;s est r&#233;cente. Elle remonte en r&#233;alit&#233; aux ann&#233;es 1980, lorsque les Etats-Unis ont autoris&#233; leurs universit&#233;s &#224; d&#233;poser des brevets avec le Bayh-Dole Act &lt;em style=&quot;font-style:italic;&quot;&gt;,&lt;/em&gt; bient&#244;t imit&#233;s par de nombreux pays &#224; mesure que se mettait en place l&#39;&quot; &#233;conomie de la connaissance &quot;. Pour certains observateurs, cette emprise de la propri&#233;t&#233; intellectuelle sur la recherche participe du &quot; second mouvement d&#39;enclosure des communs &quot; qui, apr&#232;s avoir frapp&#233; les biens fonciers &#224; la fin du XVIIIe si&#232;cle, s&#39;est &#233;tendu aux productions de l&#39;esprit humain. Les brevets constituent en r&#233;alit&#233; un instrument de privatisation et de marchandisation du savoir, et les institutions publiques de recherche sont devenues l&#39;un des rouages de ce ph&#233;nom&#232;ne. Mais ce processus est r&#233;versible, et c&#39;est le but de l&#39;Open Science de faire &#224; nouveau de la connaissance un bien commun, &#224; condition d&#39;oser aller jusqu&#39;au bout de la d&#233;marche.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;21 septembre 2017&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2017 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20170920&amp;#183;LM&amp;#183;4155602&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droits de propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">résultats de la recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">recherche académique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">instrument de privatisation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">UNION EUROPÉENNE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Pharmaceutique et biotechnologies</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis d'Amérique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Amsterdam</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720170920%c2%b7LM%c2%b74155602" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720170920%c2%b7LM%c2%b74155602">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; Médecine,         mercredi 20 septembre 2017 855 mots, p. SCH7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La recherche académique a tout à gagner à se passer des brevets            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">TribuneL'Open Science devrait aussi s'appliquer à la propriété intellectuelle afin de faire de la connaissance un bien commun, explique Lionel Maurel, conservateur de bibliothèques et blogueur</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Progressivement, le concept d'Open Science tend à devenir le nouveau paradigme de référence pour la diffusion des résultats de la recherche scientifique. Il est notamment poussé par l'<span class="stubs">Union européenne</span> dans le cadre du programme " Horizon 2020 " et, en avril 2016, un appel solennel a été lancé depuis Amsterdam pour inciter les Etats membres à engager des actions en ce sens. La notion rencontre aussi de plus en plus d'échos en France : en 2016, le CNRS lui a consacré un Livre blanc intitulé " Une science ouverte dans une république numérique ", comportant de nombreuses propositions en faveur de l'ouverture. </p> <p> La définition de l'Open Science est fluctuante, mais elle renvoie à une -volonté de systématiser la libre diffusion et la libre réutilisation des résultats de la recherche, en tirant notamment parti d'Internet et des outils -numériques. Plusieurs dimensions de l'activité de recherche sont concernées, comme la publication des écrits scientifiques (Open Access), les logiciels utilisés (<mark>Open</mark> <mark>Source</mark>), les -données de recherche (Open Data), l'évaluation des résultats (Open Peer -Review), les ressources éducatives (Open Educational Resources), etc.</p>
+
+
+<p>Mais il est un aspect presque toujours passé sous silence dans ces énumérations : celui des brevets que les universités et instituts de recherche sont amenés à déposer sur les inventions produites par les chercheurs. Alors que la réflexion progresse dans tous les autres domaines en faveur de la libre diffusion, tout se passe comme si une sorte de tabou persistait à propos des brevets. Pourtant, l'université d'Aarhus au Danemark vient de lancer une initiative qui montre que l'Open Science n'est pas condamnée à s'arrêter ainsi à la porte de la propriété industrielle. </p> <p> Baptisé justement " Open Science ", ce programme vise à modifier les rapports entre les laboratoires de recherche et les entreprises privées. Traditionnellement, les entreprises participent au financement de travaux de -recherche avec, en contrepartie, un partage des résultats avec les universités et des dépôts de brevets venant -sécuriser les droits de propriété intellectuelle sur les inventions obtenues. L'université d'Aarhus a décidé de changer les règles de ces partenariats, en prévoyant que ni l'université ni les entreprises impliquées dans les projets ne pourront déposer de brevets. Le but est de pouvoir diffuser les résultats sur une plate-forme et d'en permettre la -libre réutilisation. Plusieurs grandes entreprises, dont la société danoise Lego, collaborent déjà à ce programme qui associe également d'autres établissements de recherche dans le pays. </p> <p> On peut se demander pourquoi des entreprises accepteraient de contribuer à des projets de recherche si elles ne peuvent sécuriser l'acquisition d'exclusivités par le biais de brevets. C'est ignorer que les mentalités évoluent graduellement, à mesure qu'une prise de conscience s'opère à propos du -caractère parfois néfaste de l'accumulation des droits de propriété intellectuelle. Les " guerres des brevets " qui ont fait rage dans certains secteurs, comme celui des smartphones, incitent aujourd'hui des acteurs industriels, tels que Tesla ou Toyota, à renoncer à certains de leurs brevets pour mettre en partage des technologies. C'est sur ce terrain de l'Open Innovation que de nouvelles formes de relations entre universités et entreprises peuvent se nouer. </p> <p> Reste l'argument financier, les brevets étant réputés participer à la " valorisation " de la recherche en générant des recettes à travers des redevances versées aux établissements. En réalité, les études montrent que seule une faible proportion des brevets issus de la recherche publique génèrent des revenus, tandis que la majorité demeure inexploitée. Ce n'est pourtant pas que ces inventions soient sans intérêt, mais les " frictions " liées à l'obtention des -licences agissent comme une puissante barrière à la réutilisation. Laisser les inventions dans le domaine public en renonçant aux brevets constitue un moyen de " dégeler " ces résultats pour qu'ils réalisent immédiatement leur plein potentiel. Si les brevets sont autant utilisés dans le secteur de la -recherche, ce n'est pas tant pour leur rentabilité économique que parce qu'ils ont été dévoyés de leur fonction d'origine pour devenir un mode de -publication et d'évaluation de la recherche. L'initiative de l'université d'Aarhus montre néanmoins qu'un autre fonctionnement est possible, à condition de mettre en place des infrastructures adaptées en faveur de l'Open Science. </p> <p> L'histoire témoigne que l'association entre brevets et universités est récente. Elle remonte en réalité aux années 1980, lorsque les Etats-Unis ont autorisé leurs universités à déposer des brevets avec le Bayh-Dole Act <em style="font-style:italic;">,</em> bientôt imités par de nombreux pays à mesure que se mettait en place l'" économie de la connaissance ". Pour certains observateurs, cette emprise de la propriété intellectuelle sur la recherche participe du " second mouvement d'enclosure des communs " qui, après avoir frappé les biens fonciers à la fin du XVIIIe siècle, s'est étendu aux productions de l'esprit humain. Les brevets constituent en réalité un instrument de privatisation et de marchandisation du savoir, et les institutions publiques de recherche sont devenues l'un des rouages de ce phénomène. Mais ce processus est réversible, et c'est le but de l'Open Science de faire à nouveau de la connaissance un bien commun, à condition d'oser aller jusqu'au bout de la démarche.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">21 septembre 2017</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2017 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20170920·LM·4155602</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20170920·LM·4155602";
+    var _docIndex = 531;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"union européenne":"93258"};
+		var _docName = 'news·20170920·LM·4155602';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720170920%C2%B7LM%C2%B74155602&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720170920%C2%B7LM%C2%B74155602&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720170920%C2%B7LM%C2%B74155602&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720170920%C2%B7LM%C2%B74155602&docIndex=531&FullScreen=1";
+                
+	var _keyDoc = 'news·20170920·LM·4155602';
+</script>
+</div></body></html>

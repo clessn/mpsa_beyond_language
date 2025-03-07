@@ -1,0 +1,519 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Focus,         vendredi 7 avril 2006 946 mots, p. 24&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+15 blogueurs leaders d&#39;opinion sur la toile            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Jean V&#233;ronis, Pascale Weeks, Lo&#239;c Le Meur, Roland Piquepaille, Laurent Gloaguen, Pierre Bilger, Tristan Nitot, La Blogoth&#232;que, Pierre Assouline, Philippe Bilger, &#171; Ma&#238;tre Eolas &#187;, &#171; Versac &#187;, Jean-Michel Billaut, Bernard Salani&#233;, Etienne Chouard&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Jean V&#233;ronis &lt;/p&gt; &lt;p&gt; 50 ans, professeur de linguistique et d&#39;informatique (universit&#233; d&#39;Aix-en-Provence) &lt;/p&gt; &lt;p&gt; Le blog : Technologies du langage &lt;/p&gt; &lt;p&gt; aixtal.blogspot.com&lt;/p&gt;
+
+
+&lt;p&gt;Le sujet peut para&#238;tre un peu aust&#232;re de prime abord. Le blog de Jean V&#233;ronis, &#224; l&#39;origine, est avant tout destin&#233; &#224; ses &#233;tudiants. Mais bien vite le succ&#232;s a d&#233;pass&#233; le cadre de l&#39;universit&#233;. Parce qu&#39;on y parle aussi de Google, de moteurs de recherche et de mots-cl&#233;s, la th&#233;matique s&#39;est retrouv&#233;e au coeur des pr&#233;occupations de nombreux internautes. 1 500 visites par jour. &lt;/p&gt; &lt;p&gt; Pascale Weeks &lt;/p&gt; &lt;p&gt; 40 ans, ancienne salari&#233;e d&#39;IBM, aujourd&#39;hui blogueuse professionnelle &lt;/p&gt; &lt;p&gt; Le blog : C&#39;est moi qui l&#39;ai fait ! &lt;/p&gt; &lt;p&gt; scally.typepad.com/cest_moi_qui_lai_fait &lt;/p&gt; &lt;p&gt; En deux ans, Pascale Weeks s&#39;est taill&#233; une jolie r&#233;putation de blogueuse avec ses recettes de cuisine et ses photos de petits plats. Sa sp&#233;cialit&#233; : les cookies, et la cuisine d&#39;outre-Manche en g&#233;n&#233;ral. Depuis sa cr&#233;ation, elle a &#233;crit 390 billets qui ont suscit&#233; 4 000 commentaires. Elle a &#233;galement publi&#233; un livre, Cookies, Muffins and Co, 100 douceurs &#224; la mode anglo-saxonne (&#233;ditions First, 2006). &lt;/p&gt; &lt;p&gt; Lo&#239;c Le Meur &lt;/p&gt; &lt;p&gt; 33 ans, HEC, netentrepreneur &lt;/p&gt; &lt;p&gt; Le blog : Lo&#239;c Le Meur &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.loiclemeur.com&quot;&gt; www.loiclemeur.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; &#171; Les m&#233;dias traditionnels diffusent des messages. Les blogs d&#233;marrent des discussions &#187;, annonce Lo&#239;c Le Meur en en-t&#234;te de son abondant blog, num&#233;ro un fran&#231;ais. Lo&#239;c Le Meur, c&#39;est &#233;videmment la r&#233;f&#233;rence du blog en France : plus de 150 000 visiteurs par mois, 270 000 pages vues. Ses &#171; podcats &#187; - enregistrements audio et vid&#233;o - de Nicolas Sarkozy et Dominique Strauss-Kahn ont &#233;t&#233; t&#233;l&#233;charg&#233;s par 100 000 personnes chacun. &lt;/p&gt; &lt;p&gt; Roland Piquepaille &lt;/p&gt; &lt;p&gt; 59 ans, ing&#233;nieur sp&#233;cialis&#233; dans les supercalculateurs &lt;/p&gt; &lt;p&gt; Le blog : Emerging Technology &lt;/p&gt; &lt;p&gt; blogs.zdnet.com/emergingtech &lt;/p&gt; &lt;p&gt; Une exception dans cette s&#233;lection : un blog en anglais. Mais avec ses 15 000 pages vues par jour, ses 3 millions de pages vues en 2005, Roland Piquepaille est peut-&#234;tre l&#39;un des blogueurs fran&#231;ais les plus lus &#224; l&#39;&#233;tranger et dans tous les pays. Son th&#232;me de pr&#233;dilection : ce que les nouvelles technologies vont changer dans nos vies. Au d&#233;but, quand il tapait son nom dans Google, il obtenait 50 r&#233;f&#233;rences. Aujourd&#39;hui, la requ&#234;te sur son patronyme retourne plusieurs centaines de milliers de r&#233;ponses. &lt;/p&gt; &lt;p&gt; Laurent Gloaguen &lt;/p&gt; &lt;p&gt; 39 ans, alias &#171; le Capitaine &#187;, Paris, France. &lt;/p&gt; &lt;p&gt; Le blog : Embruns &lt;/p&gt; &lt;p&gt; embruns.net &lt;/p&gt; &lt;p&gt; Sur le blog de Laurent Gloaguen, on parle de tout et de rien, de politique, de loisirs, de recettes, de voyages et beaucoup de blogs. Il y a deux ans, par d&#233;rision, Laurent Gloaguen avait lanc&#233; un comit&#233; et une campagne comique anti-chats. Un succ&#232;s, qui lui vaut encore des courriers et des commentaires sur son site. Embruns re&#231;oit jusqu&#39;&#224; 5 000 visiteurs par jour, qui se connectent beaucoup depuis leur bureau. &lt;/p&gt; &lt;p&gt; Pierre Bilger &lt;/p&gt; &lt;p&gt; 65 ans, ancien patron d&#39;Alstom &lt;/p&gt; &lt;p&gt; Le blog : Blog Bilger &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.blogbilger.com&quot;&gt; www.blogbilger.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Au d&#233;part, Pierre Bilger a surtout con&#231;u son blog comme une correspondance avec les lecteurs de son livre 4 millions d&#39;euros, le prix de ma libert&#233;. Puis il s&#39;est pris au jeu, d&#39;autant plus facilement qu&#39;en quelques d&#233;cennies pass&#233;es &#224; la t&#234;te de grandes entreprises d&#39;Etat, l&#39;ancien patron d&#39;Alstom avait &#233;t&#233; longtemps tenu &#224; un pesant devoir de r&#233;serve. Plus d&#39;entraves, d&#233;sormais, &#224; sa libert&#233; d&#39;expression : Pierre Bilger parle d&#39;&#233;conomie bien s&#251;r, mais aussi de construction de l&#39;Europe, d&#39;industrie, d&#39;entreprise, d&#39;histoire, de litt&#233;rature romanesque, etc. &lt;/p&gt; &lt;p&gt; Tristan Nitot &lt;/p&gt; &lt;p&gt; Pr&#233;sident de Mozilla Europe, association pour le d&#233;veloppement de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Le blog : Standblog &lt;/p&gt; &lt;p&gt; standblog.org &lt;/p&gt; &lt;p&gt; Tristan Nitot, 39 ans, est qualifi&#233; par Technorati d&#39;&#171; &#233;vang&#233;liste &#187; des standards du Web. Il s&#39;int&#233;resse aux navigateurs, et plus g&#233;n&#233;ralement &#224; la technologie de l&#39;Internet. Sur son blog, les conversations portent beaucoup sur les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, dont il est un farouche d&#233;fenseur, en tant que fondateur de Mozilla Europe. &lt;/p&gt; &lt;p&gt; La Blogoth&#232;que &lt;/p&gt; &lt;p&gt; Collectif d&#39;une vingtaine de blogueurs, dont Chryde, Manu, Lilou, Fandor... &lt;/p&gt; &lt;p&gt; Le blog : La Blogoth&#232;que &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.blogotheque.net&quot;&gt; www.blogotheque.net&lt;/a&gt; &lt;/p&gt; &lt;p&gt; &#171; Digressions, d&#233;bats de fond et mp3 &#187; : voil&#224; le menu de ce blog collectif et musical, qui fait partager ses passions artistiques depuis septembre 2003 et attire aujourd&#39;hui 50 000 visiteurs par mois. Parler musique d&#39;une autre fa&#231;on, &#224; la mani&#232;re blog, en proposant toujours un lien, une image, une vid&#233;o, un extrait. &lt;/p&gt; &lt;p&gt; Pierre Assouline &lt;/p&gt; &lt;p&gt; Journaliste, &#233;crivain, critique. &lt;/p&gt; &lt;p&gt; Le blog : La R&#233;publique des livres &lt;/p&gt; &lt;p&gt; passouline.blog.lemonde. fr/livres &lt;/p&gt; &lt;p&gt; L&#39;ancien directeur du magazine Lire est devenu blogueur un peu par hasard, mais il ne lui a pas fallu beaucoup de temps pour se constituer une belle audience avec ses billets quotidiens sur les livres et l&#39;art. La R&#233;publique des livres est devenue un passage oblig&#233; de la blogosph&#232;re francophone, qui attire chaque mois un peu plus de lecteurs. &lt;/p&gt; &lt;p&gt; Philippe Bilger &lt;/p&gt; &lt;p&gt; Avocat g&#233;n&#233;ral pr&#232;s la cour d&#39;appel de Paris. &lt;/p&gt; &lt;p&gt; Le blog : Justice au singulier &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.philippebilger.com&quot;&gt; www.philippebilger.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Avocat g&#233;n&#233;ral pr&#232;s la Cour d&#39;appel de Paris, auteur de plusieurs livres, dont, avec Bruno Gaccio, Le Guignol et le Magistrat (&#233;d. Flammarion, 2004), Philippe Bilger a &#233;t&#233; amen&#233; &#224; requ&#233;rir dans un certain nombre d&#39;affaires tr&#232;s m&#233;diatiques. Il livre, sur son blog, ses r&#233;flexions tr&#232;s pertinentes sur l&#39;&#233;tat de la justice, mais aussi sur les m&#233;dias et la soci&#233;t&#233;. &lt;/p&gt; &lt;p&gt; &#171; Ma&#238;tre Eolas &#187; &lt;/p&gt; &lt;p&gt; Auteur anonyme, sous le pseudonyme de Ma&#238;tre Eolas. &lt;/p&gt; &lt;p&gt; Le blog : Journal d&#39;un avocat &lt;/p&gt; &lt;p&gt; ma&#238;tre.eolas.free.fr &lt;/p&gt; &lt;p&gt; &#171; Avocat au barreau de Paris, passionn&#233; de mon m&#233;tier et aimant &#224; fl&#226;ner sur le Web. J&#39;ai souvent constat&#233; un int&#233;r&#234;t pouss&#233; pour la justice et le droit de mani&#232;re g&#233;n&#233;rale, int&#233;r&#234;t laiss&#233; insatisfait par l&#39;opacit&#233; de la mati&#232;re et la difficult&#233; d&#39;appr&#233;hender, pour un esprit non form&#233; - &#224; moins que ce ne soit d&#233;form&#233; ? - au droit. &#187; Ainsi se d&#233;finit l&#39;anonyme Ma&#238;tre Eolas, qui raconte &#171; l&#39;envers du d&#233;cor du Palais &#187; et suit l&#39;actualit&#233; du droit depuis avril 2005. &lt;/p&gt; &lt;p&gt; &#171; Versac &#187; &lt;/p&gt; &lt;p&gt; auteur anonyme &lt;/p&gt; &lt;p&gt; Le blog : Versac &lt;/p&gt; &lt;p&gt; vanb.typepad.com/versac &lt;/p&gt; &lt;p&gt; Versac souhaite conserver un &#171; anonymat relatif &#187; qui lui autorise une libert&#233; de ton, en particulier vis-&#224;-vis de son employeur. Le blogueur livre quelques indices : &#171; J&#39;ai eu un investissement politique en 2001-2002, aupr&#232;s de Christian Blanc &#187;, d&#39;abord dans son cercle de r&#233;flexion (l&#39;ami public), puis dans le mouvement politique qui lui a fait suite (Energies d&#233;mocrates). &#171; Je me suis pr&#233;sent&#233; aux &#233;lections l&#233;gislatives de 2002 &#187;, explique Versac dans ce carnet, consacr&#233; &#224; la politique, l&#39;&#233;conomie et la d&#233;mocratie &#233;mergente, mais qui s&#39;autorise &#233;galement des &#171; digressions autour de th&#232;mes plus personnels &#187;. &lt;/p&gt; &lt;p&gt; Jean-Michel Billaut &lt;/p&gt; &lt;p&gt; Cr&#233;ateur de l&#39;Atelier BNP Paribas. &lt;/p&gt; &lt;p&gt; Le blog : Jean-Michel Billaut &lt;/p&gt; &lt;p&gt; billaut.typepad.com &lt;/p&gt; &lt;p&gt; Sous-titr&#233; &#171; vivement la retraite (&#224; tr&#232;s haut d&#233;bit, naturellement !) &#187;, le blog de Jean-Michel Billaut, &#233;conomiste et informaticien, pionnier de l&#39;Internet, au sein de BNP Paribas, propose de d&#233;couvrir et de rencontrer des PDG, cr&#233;ateurs, entreprenautes, inventeurs, et les filme en vid&#233;o podcast mis en ligne sur son blog. &lt;/p&gt; &lt;p&gt; Bernard Salani&#233; &lt;/p&gt; &lt;p&gt; Professeur &#224; Columbia (NY) et &#224; Polytechnique. &lt;/p&gt; &lt;p&gt; Le blog : L&#39;&#233;conomie sans tabou &lt;/p&gt; &lt;p&gt; bsalanie.blogs.com &lt;/p&gt; &lt;p&gt; Bernard Salani&#233; a ouvert son blog suite &#224; la publication de son livre du m&#234;me nom L&#39;Economie sans tabou (&#233;d. Le Pommier, 2004). Il d&#233;cortique et s&#39;efforce de rendre accessible &#224; tous l&#39;actualit&#233; &#233;conomique et politique. &lt;/p&gt; &lt;p&gt; Etienne Chouard &lt;/p&gt; &lt;p&gt; Professeur d&#39;informatique &lt;/p&gt; &lt;p&gt; &#224; Marseille. &lt;/p&gt; &lt;p&gt; Le blog : L&#39;arc-en-ciel &lt;/p&gt; &lt;p&gt; etienne.chouard.free.fr &lt;/p&gt; &lt;p&gt; Le site de ce prof marseillais a jou&#233; un r&#244;le pendant la campagne du r&#233;f&#233;rendum sur la Constitution europ&#233;enne, en 2005, o&#249; il aff&#251;tait les arguments du non. Depuis, son blog &#171; pour des institutions &#233;crites par et pour les citoyens &#187; ne d&#233;semplit pas.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;p&gt;Jean V&#233;ronis, Pascale Weeks, Lo&#239;c Le Meur, Roland Piquepaille, Laurent Gloaguen, Pierre Bilger&lt;/p&gt; &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2006 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20060407&amp;#183;LM&amp;#183;0lm20060407n9999&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">laurent gloaguen</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">pierre bilger</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">maître eolas</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">jean véronis</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">pierre assouline</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Système judiciaire</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Bernard</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Lire</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720060407%c2%b7LM%c2%b70lm20060407n9999" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720060407%c2%b7LM%c2%b70lm20060407n9999">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Focus,         vendredi 7 avril 2006 946 mots, p. 24</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+15 blogueurs leaders d'opinion sur la toile            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Jean Véronis, Pascale Weeks, Loïc Le Meur, Roland Piquepaille, Laurent Gloaguen, Pierre Bilger, Tristan Nitot, La Blogothèque, Pierre Assouline, Philippe Bilger, « Maître Eolas », « Versac », Jean-Michel Billaut, Bernard Salanié, Etienne Chouard</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Jean Véronis </p> <p> 50 ans, professeur de linguistique et d'informatique (université d'Aix-en-Provence) </p> <p> Le blog : Technologies du langage </p> <p> aixtal.blogspot.com</p>
+
+
+<p>Le sujet peut paraître un peu austère de prime abord. Le blog de Jean Véronis, à l'origine, est avant tout destiné à ses étudiants. Mais bien vite le succès a dépassé le cadre de l'université. Parce qu'on y parle aussi de Google, de moteurs de recherche et de mots-clés, la thématique s'est retrouvée au coeur des préoccupations de nombreux internautes. 1 500 visites par jour. </p> <p> Pascale Weeks </p> <p> 40 ans, ancienne salariée d'IBM, aujourd'hui blogueuse professionnelle </p> <p> Le blog : C'est moi qui l'ai fait ! </p> <p> scally.typepad.com/cest_moi_qui_lai_fait </p> <p> En deux ans, Pascale Weeks s'est taillé une jolie réputation de blogueuse avec ses recettes de cuisine et ses photos de petits plats. Sa spécialité : les cookies, et la cuisine d'outre-Manche en général. Depuis sa création, elle a écrit 390 billets qui ont suscité 4 000 commentaires. Elle a également publié un livre, Cookies, Muffins and Co, 100 douceurs à la mode anglo-saxonne (éditions First, 2006). </p> <p> Loïc Le Meur </p> <p> 33 ans, HEC, netentrepreneur </p> <p> Le blog : Loïc Le Meur </p> <p><a target="_blank" href="https://www.loiclemeur.com"> www.loiclemeur.com</a> </p> <p> « Les médias traditionnels diffusent des messages. Les blogs démarrent des discussions », annonce Loïc Le Meur en en-tête de son abondant blog, numéro un français. Loïc Le Meur, c'est évidemment la référence du blog en France : plus de 150 000 visiteurs par mois, 270 000 pages vues. Ses « podcats » - enregistrements audio et vidéo - de Nicolas Sarkozy et Dominique Strauss-Kahn ont été téléchargés par 100 000 personnes chacun. </p> <p> Roland Piquepaille </p> <p> 59 ans, ingénieur spécialisé dans les supercalculateurs </p> <p> Le blog : Emerging Technology </p> <p> blogs.zdnet.com/emergingtech </p> <p> Une exception dans cette sélection : un blog en anglais. Mais avec ses 15 000 pages vues par jour, ses 3 millions de pages vues en 2005, Roland Piquepaille est peut-être l'un des blogueurs français les plus lus à l'étranger et dans tous les pays. Son thème de prédilection : ce que les nouvelles technologies vont changer dans nos vies. Au début, quand il tapait son nom dans Google, il obtenait 50 références. Aujourd'hui, la requête sur son patronyme retourne plusieurs centaines de milliers de réponses. </p> <p> Laurent Gloaguen </p> <p> 39 ans, alias « le Capitaine », Paris, France. </p> <p> Le blog : Embruns </p> <p> embruns.net </p> <p> Sur le blog de Laurent Gloaguen, on parle de tout et de rien, de politique, de loisirs, de recettes, de voyages et beaucoup de blogs. Il y a deux ans, par dérision, Laurent Gloaguen avait lancé un comité et une campagne comique anti-chats. Un succès, qui lui vaut encore des courriers et des commentaires sur son site. Embruns reçoit jusqu'à 5 000 visiteurs par jour, qui se connectent beaucoup depuis leur bureau. </p> <p> Pierre Bilger </p> <p> 65 ans, ancien patron d'Alstom </p> <p> Le blog : Blog Bilger </p> <p><a target="_blank" href="https://www.blogbilger.com"> www.blogbilger.com</a> </p> <p> Au départ, Pierre Bilger a surtout conçu son blog comme une correspondance avec les lecteurs de son livre 4 millions d'euros, le prix de ma liberté. Puis il s'est pris au jeu, d'autant plus facilement qu'en quelques décennies passées à la tête de grandes entreprises d'Etat, l'ancien patron d'Alstom avait été longtemps tenu à un pesant devoir de réserve. Plus d'entraves, désormais, à sa liberté d'expression : Pierre Bilger parle d'économie bien sûr, mais aussi de construction de l'Europe, d'industrie, d'entreprise, d'histoire, de littérature romanesque, etc. </p> <p> Tristan Nitot </p> <p> Président de Mozilla Europe, association pour le développement de <mark>logiciels</mark> <mark>libres</mark>. </p> <p> Le blog : Standblog </p> <p> standblog.org </p> <p> Tristan Nitot, 39 ans, est qualifié par Technorati d'« évangéliste » des standards du Web. Il s'intéresse aux navigateurs, et plus généralement à la technologie de l'Internet. Sur son blog, les conversations portent beaucoup sur les <mark>logiciels</mark> <mark>libres</mark>, dont il est un farouche défenseur, en tant que fondateur de Mozilla Europe. </p> <p> La Blogothèque </p> <p> Collectif d'une vingtaine de blogueurs, dont Chryde, Manu, Lilou, Fandor... </p> <p> Le blog : La Blogothèque </p> <p><a target="_blank" href="https://www.blogotheque.net"> www.blogotheque.net</a> </p> <p> « Digressions, débats de fond et mp3 » : voilà le menu de ce blog collectif et musical, qui fait partager ses passions artistiques depuis septembre 2003 et attire aujourd'hui 50 000 visiteurs par mois. Parler musique d'une autre façon, à la manière blog, en proposant toujours un lien, une image, une vidéo, un extrait. </p> <p> Pierre Assouline </p> <p> Journaliste, écrivain, critique. </p> <p> Le blog : La République des livres </p> <p> passouline.blog.lemonde. fr/livres </p> <p> L'ancien directeur du magazine Lire est devenu blogueur un peu par hasard, mais il ne lui a pas fallu beaucoup de temps pour se constituer une belle audience avec ses billets quotidiens sur les livres et l'art. La République des livres est devenue un passage obligé de la blogosphère francophone, qui attire chaque mois un peu plus de lecteurs. </p> <p> Philippe Bilger </p> <p> Avocat général près la cour d'appel de Paris. </p> <p> Le blog : Justice au singulier </p> <p><a target="_blank" href="https://www.philippebilger.com"> www.philippebilger.com</a> </p> <p> Avocat général près la Cour d'appel de Paris, auteur de plusieurs livres, dont, avec Bruno Gaccio, Le Guignol et le Magistrat (éd. Flammarion, 2004), Philippe Bilger a été amené à requérir dans un certain nombre d'affaires très médiatiques. Il livre, sur son blog, ses réflexions très pertinentes sur l'état de la justice, mais aussi sur les médias et la société. </p> <p> « Maître Eolas » </p> <p> Auteur anonyme, sous le pseudonyme de Maître Eolas. </p> <p> Le blog : Journal d'un avocat </p> <p> maître.eolas.free.fr </p> <p> « Avocat au barreau de Paris, passionné de mon métier et aimant à flâner sur le Web. J'ai souvent constaté un intérêt poussé pour la justice et le droit de manière générale, intérêt laissé insatisfait par l'opacité de la matière et la difficulté d'appréhender, pour un esprit non formé - à moins que ce ne soit déformé ? - au droit. » Ainsi se définit l'anonyme Maître Eolas, qui raconte « l'envers du décor du Palais » et suit l'actualité du droit depuis avril 2005. </p> <p> « Versac » </p> <p> auteur anonyme </p> <p> Le blog : Versac </p> <p> vanb.typepad.com/versac </p> <p> Versac souhaite conserver un « anonymat relatif » qui lui autorise une liberté de ton, en particulier vis-à-vis de son employeur. Le blogueur livre quelques indices : « J'ai eu un investissement politique en 2001-2002, auprès de Christian Blanc », d'abord dans son cercle de réflexion (l'ami public), puis dans le mouvement politique qui lui a fait suite (Energies démocrates). « Je me suis présenté aux élections législatives de 2002 », explique Versac dans ce carnet, consacré à la politique, l'économie et la démocratie émergente, mais qui s'autorise également des « digressions autour de thèmes plus personnels ». </p> <p> Jean-Michel Billaut </p> <p> Créateur de l'Atelier BNP Paribas. </p> <p> Le blog : Jean-Michel Billaut </p> <p> billaut.typepad.com </p> <p> Sous-titré « vivement la retraite (à très haut débit, naturellement !) », le blog de Jean-Michel Billaut, économiste et informaticien, pionnier de l'Internet, au sein de BNP Paribas, propose de découvrir et de rencontrer des PDG, créateurs, entreprenautes, inventeurs, et les filme en vidéo podcast mis en ligne sur son blog. </p> <p> Bernard Salanié </p> <p> Professeur à Columbia (NY) et à Polytechnique. </p> <p> Le blog : L'économie sans tabou </p> <p> bsalanie.blogs.com </p> <p> Bernard Salanié a ouvert son blog suite à la publication de son livre du même nom L'Economie sans tabou (éd. Le Pommier, 2004). Il décortique et s'efforce de rendre accessible à tous l'actualité économique et politique. </p> <p> Etienne Chouard </p> <p> Professeur d'informatique </p> <p> à Marseille. </p> <p> Le blog : L'arc-en-ciel </p> <p> etienne.chouard.free.fr </p> <p> Le site de ce prof marseillais a joué un rôle pendant la campagne du référendum sur la Constitution européenne, en 2005, où il affûtait les arguments du non. Depuis, son blog « pour des institutions écrites par et pour les citoyens » ne désemplit pas.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach"><p>Jean Véronis, Pascale Weeks, Loïc Le Meur, Roland Piquepaille, Laurent Gloaguen, Pierre Bilger</p> </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2006 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20060407·LM·0lm20060407n9999</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20060407·LM·0lm20060407n9999";
+    var _docIndex = 849;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20060407·LM·0lm20060407n9999';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720060407%C2%B7LM%C2%B70lm20060407n9999&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720060407%C2%B7LM%C2%B70lm20060407n9999&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720060407%C2%B7LM%C2%B70lm20060407n9999&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720060407%C2%B7LM%C2%B70lm20060407n9999&docIndex=849&FullScreen=1";
+                
+	var _keyDoc = 'news·20060407·LM·0lm20060407n9999';
+</script>
+</div></body></html>

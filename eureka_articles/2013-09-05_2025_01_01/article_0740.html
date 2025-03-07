@@ -1,0 +1,611 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf2_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 22041                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        samedi 20 juin 2015 762 mots, p. 5&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+International         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Une proth&#232;se de main robotis&#233;e en impression 3D            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le Fran&#231;ais distingu&#233; par le &lt;span class=&quot;stubs&quot;&gt; MIT&lt;/span&gt; pour son projet BionicoHand d&#233;veloppe des produits destin&#233;s aux handicap&#233;s et r&#233;alisables &#224; bas co&#251;t.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fr&#233;our, Pauline&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;FRANCE&lt;/em&gt; &#192; 31 ans, &lt;span class=&quot;stubs&quot;&gt;Nicolas Huchet&lt;/span&gt; affiche encore le style d&#233;contract&#233; d&#39;un adolescent. Mais il m&#233;rite d&#39;&#234;tre pris au s&#233;rieux : ce jeune ing&#233;nieur du son vient d&#39;&#234;tre &#233;lu par le prestigieux centre de recherche am&#233;ricain &lt;span class=&quot;stubs&quot;&gt;MIT&lt;/span&gt; &#171; Innovateur social &#187; fran&#231;ais 2015 de moins de 35 ans. Son projet? BionicoHand, une proth&#232;se de main robotis&#233;e, r&#233;alisable &#224; bas co&#251;t gr&#226;ce &#224; des outils accessibles, comme une imprimante 3D, dont les plans de fabrication seront mis en ligne &#224; la disposition de tous. &lt;/p&gt; &lt;p&gt;&lt;span class=&quot;stubs&quot;&gt; Nicolas Huchet&lt;/span&gt; a perdu sa main droite &#224; 18 ans dans un accident du travail. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; D&#232;s que j&#39;ai vu la proth&#232;se que me proposait la S&#233;curit&#233; sociale, j&#39;ai su que je ne l&#39;aimerais jamais, m&#234;me si elle me permet de faire pas mal de choses &#187; ,&lt;/em&gt; se souvient-il en regardant la main stylis&#233;e en silicone de couleur chair qui repose sur ses genoux. Le jeune homme va pourtant mettre dix ans avant de se lancer dans le projet qui bouleverse aujourd&#39;hui sa vie. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Pendant des ann&#233;es, j&#39;ai refoul&#233; mon handicap, je m&#39;y int&#233;ressais peu. C&#39;est seulement en 2012 que j&#39;ai commenc&#233; &#224; m&#39;investir en voyant arriver sur le march&#233; de nouvelles proth&#232;ses polydigitales, qui permettaient par exemple de faire des lacets parce que les doigts bougent ind&#233;pendamment. Elles me faisaient super-envie. &#187;&lt;/em&gt; Le mod&#232;le pris en charge par la S&#233;curit&#233; sociale offre de l&#39;autonomie, mais fonctionne comme une pince. Probl&#232;me: impossible de s&#39;offrir une des innovations ultraperfectionn&#233;es.&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; Mon handicap a pris un sens &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Une visite au fablab (atelier de fabrication ouvert au public) de Rennes va jouer le r&#244;le de d&#233;clic. &lt;em style=&quot;font-style:italic;&quot;&gt; &#171; En passant devant une imprimante 3D, je me suis demand&#233; s&#39;il &#233;tait possible de r&#233;aliser une main robotis&#233;e dont j&#39;avais trouv&#233; les plans en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; sur Internet. &#187; &lt;/em&gt; Le concepteur de cette main robot (InMoov), &lt;span class=&quot;stubs&quot;&gt;Ga&#235;l Langevin&lt;/span&gt;, accepte alors de le conseiller pour l&#39;adapter en proth&#232;se. &lt;/p&gt; &lt;p&gt; En cinq mois, un premier prototype est mont&#233;, pour un co&#251;t de 300 euros, avec l&#39;aide d&#39;une vingtaine de b&#233;n&#233;voles du fablab. Des capteurs plac&#233;s sur les muscles de l&#39;avant-bras transforment l&#39;&#233;nergie de la contraction en signal &#233;lectrique qui commande les mouvements des doigts. La BionicoHand est n&#233;e. &lt;/p&gt; &lt;p&gt; Mais quand nous le rencontrons dans les locaux de l&#39;&lt;span class=&quot;stubs&quot;&gt;Atelier BNP Paribas&lt;/span&gt; &#224; Paris &#224; l&#39;occasion de la remise des prix du &lt;span class=&quot;stubs&quot;&gt;MIT&lt;/span&gt;, petite d&#233;ception : &lt;span class=&quot;stubs&quot;&gt;Nicolas Huchet&lt;/span&gt; ne porte pas sa main robot. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le prototype actuel n&#39;est pas suffisamment abouti pour un usage quotidien,&lt;/em&gt; justifie-t-il. &lt;em style=&quot;font-style:italic;&quot;&gt;Il a surtout valeur de preuve de concept. Nous travaillons &#224; l&#39;am&#233;liorer en tenant compte des besoins des usagers : un dispositif l&#233;ger, rapide, robuste, fonctionnel et esth&#233;tique. &#187;&lt;/em&gt;Avec des difficult&#233;s in&#233;dites &#224; la cl&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; D&#39;ordinaire, la fabrication de proth&#232;ses robotis&#233;es rel&#232;ve du high-tech. Nous sommes dans la &#171; low-tech &#187; , en cherchant &#224; remplacer les &#233;l&#233;ments par des substituts moins chers trouv&#233;s dans des magasins de bricolage. On bidouille &#187;&lt;/em&gt;, explique &lt;span class=&quot;stubs&quot;&gt;Nicolas Huchet&lt;/span&gt;. &lt;/p&gt; &lt;p&gt; Ce dernier se r&#233;jouit du tournant qu&#39;a pris sa vie avec ce projet. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Mon handicap a pris un sens, j&#39;ai retrouv&#233; confiance en moi. Je sortais d&#39;une longue p&#233;riode difficile, tant sur le plan professionnel que personnel. Ce projet, c&#39;est un m&#233;dicament. Il m&#39;a donn&#233; envie de changer les choses pour les personnes handicap&#233;es. &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;L&#39;enthousiasme suscit&#233; par BionicoHand ouvre de nouvelles perspectives &#224; l&#39;association &#171; My Human Kit &#187; , cr&#233;&#233;e pour l&#39;occasion, qui envisage un d&#233;veloppement commercial &#224; moyen terme. Elle va &#233;largir son champ d&#39;action au handicap en g&#233;n&#233;ral avec cinq projets, dont un fauteuil roulant, une proth&#232;se auditive et des l&#232;vres bioniques. Tous seront faisables en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, mais des mod&#232;les achev&#233;s seront &#233;galement commercialis&#233;s. La BionicoHand dans sa version finale serait ainsi vendue entre 1 000 et 1 500 euros, contre 11 000 euros en moyenne pour les mod&#232;les d&#39;entr&#233;e de gamme. Un &#171; Handilab &#187; , lieu de recherche et d&#233;veloppement d&#233;di&#233; au handicap, va &#234;tre cr&#233;&#233;. Il ne sera pas ouvert au public dans un premier temps. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous souhaitons d&#39;abord d&#233;velopper une expertise &#187;&lt;/em&gt;, justifie &lt;span class=&quot;stubs&quot;&gt;Nicolas Huchet&lt;/span&gt;. Et ce en lien avec une communaut&#233; internationale de fablabs et chercheurs. Quand l&#39;inventeur s&#39;efforce de r&#233;duire les co&#251;ts, il pense notamment aux handicap&#233;s des pays &#233;mergents. Pour mener &#224; bien ce projet, l&#39;association, qui pr&#233;voit d&#39;embaucher un ing&#233;nieur, proc&#232;de &#224; une lev&#233;e de fonds. En effet, le prix &lt;span class=&quot;stubs&quot;&gt;MIT&lt;/span&gt; ne comportait pas de r&#233;compense financi&#232;re. Or les besoins sont estim&#233;s entre 160 000 et 200 000 euros par an. - &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;span class=&quot;stubs&quot;&gt; PAULINE FR&#201;OUR&lt;/span&gt; &lt;/em&gt; (Le Figaro)&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+            
+                &lt;div class=&quot;ImageAttachFont&quot;&gt;Open Bionics &lt;/div&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;&lt;span class=&quot;stubs&quot;&gt;Nicolas Huchet&lt;/span&gt; (&#224; gauche)a con&#231;u une main bioniquepour 300 euros. &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:pfreour@lefigaro.fr&quot;&gt;pfreour@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;20 juin 2015&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2015 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20150620&amp;#183;LF&amp;#183;432&amp;#215;20&amp;#215;2288306324&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">prothèse de main</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Sécurité sociale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">main robotisée</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">prothèse de main robotisée</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">plans de fabrication</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Personnalités : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Personality" class="Lien1" href="#">Nicolas Huchet</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">Gaël Langevin</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Personality" class="Lien1" href="#">PAULINE FRÉOUR</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">MIT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">Atelier BNP Paribas</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Politique et gouvernement</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">FRANCE</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Rennes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Paris</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720150620%c2%b7LF%c2%b7432%c3%9720%c3%972288306324" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720150620%c2%b7LF%c2%b7432%c3%9720%c3%972288306324">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf2_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 22041                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        samedi 20 juin 2015 762 mots, p. 5</span>
+</div>
+
+    <div>
+        <p>
+International         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Une prothèse de main robotisée en impression 3D            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le Français distingué par le <span class="stubs"> MIT</span> pour son projet BionicoHand développe des produits destinés aux handicapés et réalisables à bas coût.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Fréour, Pauline</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">FRANCE</em> À 31 ans, <span class="stubs">Nicolas Huchet</span> affiche encore le style décontracté d'un adolescent. Mais il mérite d'être pris au sérieux : ce jeune ingénieur du son vient d'être élu par le prestigieux centre de recherche américain <span class="stubs">MIT</span> « Innovateur social » français 2015 de moins de 35 ans. Son projet? BionicoHand, une prothèse de main robotisée, réalisable à bas coût grâce à des outils accessibles, comme une imprimante 3D, dont les plans de fabrication seront mis en ligne à la disposition de tous. </p> <p><span class="stubs"> Nicolas Huchet</span> a perdu sa main droite à 18 ans dans un accident du travail. <em style="font-style:italic;">« Dès que j'ai vu la prothèse que me proposait la Sécurité sociale, j'ai su que je ne l'aimerais jamais, même si elle me permet de faire pas mal de choses » ,</em> se souvient-il en regardant la main stylisée en silicone de couleur chair qui repose sur ses genoux. Le jeune homme va pourtant mettre dix ans avant de se lancer dans le projet qui bouleverse aujourd'hui sa vie. <em style="font-style:italic;">« Pendant des années, j'ai refoulé mon handicap, je m'y intéressais peu. C'est seulement en 2012 que j'ai commencé à m'investir en voyant arriver sur le marché de nouvelles prothèses polydigitales, qui permettaient par exemple de faire des lacets parce que les doigts bougent indépendamment. Elles me faisaient super-envie. »</em> Le modèle pris en charge par la Sécurité sociale offre de l'autonomie, mais fonctionne comme une pince. Problème: impossible de s'offrir une des innovations ultraperfectionnées.</p>
+
+
+<p><em style="font-weight:bold;">« Mon handicap a pris un sens »</em></p><p>Une visite au fablab (atelier de fabrication ouvert au public) de Rennes va jouer le rôle de déclic. <em style="font-style:italic;"> « En passant devant une imprimante 3D, je me suis demandé s'il était possible de réaliser une main robotisée dont j'avais trouvé les plans en <mark>open</mark> <mark>source</mark> sur Internet. » </em> Le concepteur de cette main robot (InMoov), <span class="stubs">Gaël Langevin</span>, accepte alors de le conseiller pour l'adapter en prothèse. </p> <p> En cinq mois, un premier prototype est monté, pour un coût de 300 euros, avec l'aide d'une vingtaine de bénévoles du fablab. Des capteurs placés sur les muscles de l'avant-bras transforment l'énergie de la contraction en signal électrique qui commande les mouvements des doigts. La BionicoHand est née. </p> <p> Mais quand nous le rencontrons dans les locaux de l'<span class="stubs">Atelier BNP Paribas</span> à Paris à l'occasion de la remise des prix du <span class="stubs">MIT</span>, petite déception : <span class="stubs">Nicolas Huchet</span> ne porte pas sa main robot. <em style="font-style:italic;">« Le prototype actuel n'est pas suffisamment abouti pour un usage quotidien,</em> justifie-t-il. <em style="font-style:italic;">Il a surtout valeur de preuve de concept. Nous travaillons à l'améliorer en tenant compte des besoins des usagers : un dispositif léger, rapide, robuste, fonctionnel et esthétique. »</em>Avec des difficultés inédites à la clé. <em style="font-style:italic;">« D'ordinaire, la fabrication de prothèses robotisées relève du high-tech. Nous sommes dans la « low-tech » , en cherchant à remplacer les éléments par des substituts moins chers trouvés dans des magasins de bricolage. On bidouille »</em>, explique <span class="stubs">Nicolas Huchet</span>. </p> <p> Ce dernier se réjouit du tournant qu'a pris sa vie avec ce projet. <em style="font-style:italic;">« Mon handicap a pris un sens, j'ai retrouvé confiance en moi. Je sortais d'une longue période difficile, tant sur le plan professionnel que personnel. Ce projet, c'est un médicament. Il m'a donné envie de changer les choses pour les personnes handicapées. »</em></p><p>L'enthousiasme suscité par BionicoHand ouvre de nouvelles perspectives à l'association « My Human Kit » , créée pour l'occasion, qui envisage un développement commercial à moyen terme. Elle va élargir son champ d'action au handicap en général avec cinq projets, dont un fauteuil roulant, une prothèse auditive et des lèvres bioniques. Tous seront faisables en <mark>open</mark> <mark>source</mark>, mais des modèles achevés seront également commercialisés. La BionicoHand dans sa version finale serait ainsi vendue entre 1 000 et 1 500 euros, contre 11 000 euros en moyenne pour les modèles d'entrée de gamme. Un « Handilab » , lieu de recherche et développement dédié au handicap, va être créé. Il ne sera pas ouvert au public dans un premier temps. <em style="font-style:italic;">« Nous souhaitons d'abord développer une expertise »</em>, justifie <span class="stubs">Nicolas Huchet</span>. Et ce en lien avec une communauté internationale de fablabs et chercheurs. Quand l'inventeur s'efforce de réduire les coûts, il pense notamment aux handicapés des pays émergents. Pour mener à bien ce projet, l'association, qui prévoit d'embaucher un ingénieur, procède à une levée de fonds. En effet, le prix <span class="stubs">MIT</span> ne comportait pas de récompense financière. Or les besoins sont estimés entre 160 000 et 200 000 euros par an. - </p> <p><em style="font-weight:bold;"><span class="stubs"> PAULINE FRÉOUR</span> </em> (Le Figaro)</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+            
+                </p><div class="ImageAttachFont">Open Bionics </div>
+        <p></p>
+        <p>
+            
+                            </p><div class="ImageAttach"><span class="stubs">Nicolas Huchet</span> (à gauche)a conçu une main bioniquepour 300 euros. </div>.
+
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:pfreour@lefigaro.fr">pfreour@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">20 juin 2015</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2015 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20150620·LF·432×20×2288306324</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20150620·LF·432×20×2288306324";
+    var _docIndex = 739;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"mit":"94565"};
+		var _docName = 'news·20150620·LF·432×20×2288306324';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720150620%C2%B7LF%C2%B7432%C3%9720%C3%972288306324&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720150620%C2%B7LF%C2%B7432%C3%9720%C3%972288306324&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720150620%C2%B7LF%C2%B7432%C3%9720%C3%972288306324&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720150620%C2%B7LF%C2%B7432%C3%9720%C3%972288306324&docIndex=739&FullScreen=1";
+                
+	var _keyDoc = 'news·20150620·LF·432×20×2288306324';
+</script>
+</div></body></html>

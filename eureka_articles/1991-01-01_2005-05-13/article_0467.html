@@ -1,0 +1,443 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+GUIDE,         samedi 26 mai 2001 1412 mots, p. 36, 37&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Week-end. Rencontre.&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La vie est mouvante, c&#39;est cette complexit&#233; qu&#39;il faut repr&#233;senter            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Ted Nelson : pionnier de l&#39;hypertexte, il imagine un monde plus vaste que l&#39;Internet.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;ALIX Christophe; ROUSSEL Fr&#233;d&#233;rique&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Vous &#234;tes l&#39;inventeur de Xanadu (1), &#171;le projet original de l&#39;hypertexte&#187;, que vous avez imagin&#233; en 1960. Comment est n&#233;e cette id&#233;e de biblioth&#232;que universelle? &lt;/p&gt; &lt;p&gt; Je devais avoir cinq ans; sur un bateau en compagnie de mon grand-p&#232;re, je laissais ma main flotter au fil de l&#39;eau. Je pensais &#224; l&#39;eau coulant entre mes doigts et aux effets qu&#39;elle provoquait en moi. C&#39;est &#224; ce moment-l&#224; que j&#39;ai pris conscience de la complexit&#233; du monde: comment parvenir &#224; traduire les effets de l&#39;eau sur mes mains? Comment d&#233;crire la complexit&#233; de l&#39;univers s&#39;exprimant sur une surface aussi minuscule? Tout peut &#234;tre expliqu&#233; de mille fa&#231;ons. Tel ce verre, il y a tant de mani&#232;res d&#39;en parler... Tout d&#233;pend des contextes. Toute description rec&#232;le une forme de mensonge, parce que l&#39;on rate des milliers de connexions possibles. J&#39;ai donc &#233;t&#233; tr&#232;s vite saisi par cette complexit&#233; des choses, cette difficult&#233; &#224; les appr&#233;hender dans leur globalit&#233;. Ainsi je ne parviens jamais &#224; finir un texte, il y a toujours d&#39;autres choses &#224; dire. Et toute id&#233;e tente, toujours, de s&#39;&#233;chapper, de s&#39;&#233;parpiller dans d&#39;autres directions: c&#39;est cela, l&#39;&#171;hypertexte&#187; (2). L&#39;hypertexte tend &#224; repr&#233;senter exactement ma pens&#233;e. Car le texte est quelque chose d&#39;intrins&#232;quement s&#233;quentiel (3), impos&#233; &#224; tous, mais cette s&#233;quentialit&#233; n&#39;est pas n&#233;cessaire en r&#233;seau. L&#39;hypertexte, au contraire, est une &#233;criture non s&#233;quentielle, un tissage d&#39;id&#233;es. Et cela n&#39;a rien &#224; voir avec l&#39;informatique...&lt;/p&gt;
+
+
+&lt;p&gt;Sauf que la r&#233;alisation d&#39;un tel projet passe par l&#39;informatique... Or vous n&#39;&#234;tes pas ing&#233;nieur et vous avez un parcours plut&#244;t atypique... &lt;/p&gt; &lt;p&gt; J&#39;aime les technologies comme les enfants aiment les trains &#233;lectriques, ou comme les hommes aiment les femmes, et les femmes, les hommes. Mais j&#39;aime surtout la litt&#233;rature, les films, les m&#233;dias. Ma m&#232;re &#233;tait actrice et mon p&#232;re fut l&#39;un des premiers patrons de la t&#233;l&#233; noir et blanc aux Etats-Unis. Gamin, souvent assis &#224; son c&#244;t&#233; en r&#233;gie, j&#39;ai v&#233;cu en direct les d&#233;buts de l&#39;audiovisuel. Je voulais &#234;tre un intellectuel g&#233;n&#233;raliste, mes plus grands h&#233;ros &#233;taient Orson Welles et Buckminster Fuller (4); j&#39;h&#233;sitais entre le cin&#233;ma et les livres, entre mon c&#244;t&#233; artiste et mon c&#244;t&#233; plus intellectuel, je changeais de mati&#232;re toutes les semaines. Tout le monde me prenait pour un dingue et voulait me freiner. Moi, je voulais acc&#233;l&#233;rer les choses, prendre des notes sur tout. Mais comment les garder, les archiver, les organiser? Comment inventer de nouvelles mati&#232;res aussi vite que je prenais des notes? Voil&#224; quel &#233;tait le centre de mes recherches. D&#39;o&#249; l&#39;id&#233;e de grande m&#233;moire. &lt;/p&gt; &lt;p&gt; Le projet Xanadu a quarante ans, et vous n&#39;en &#234;tes jamais venu &#224; bout. Pourquoi? &lt;/p&gt; &lt;p&gt; Xanadu a &#233;t&#233; ma premi&#232;re intuition, ma premi&#232;re invention, et elle reste d&#39;actualit&#233;. Je voulais que chaque caract&#232;re tap&#233; sur une machine ne soit pas perdu car, si la machine casse, je perds ce que j&#39;ai &#233;crit. L&#39;id&#233;e est l&#224;: sauver toutes les s&#233;quences successives. Il fallait pouvoir revenir &#224; la version pr&#233;c&#233;dente dans le contexte o&#249; elle avait &#233;t&#233; &#233;crite, en cr&#233;ant une version virtuelle qui pointe vers toutes les s&#233;quences successives. Voil&#224; le mod&#232;le. Si simple... De l&#224; d&#233;coule l&#39;hypertexte, la &#171;transclusion&#187; (5)... J&#39;ai donc imagin&#233; un syst&#232;me dans lequel toutes les versions d&#39;un m&#234;me texte pourraient s&#39;interp&#233;n&#233;trer, se comparer. Mais comment reproduire ce syst&#232;me pour qu&#39;il soit accessible &#224; des millions de gens? Pendant quarante ans, j&#39;ai essay&#233; d&#39;expliquer quelle structure devait avoir Xanadu. J&#39;ai &#233;t&#233; confront&#233; &#224; la jalousie, j&#39;avais pleine conscience que je pouvais comprendre les choses plus vite que la plupart des gens... Et je ne me r&#233;signais pas au conformisme social. Cependant, ma famille ne m&#39;avait pas pr&#233;par&#233; &#224; affronter les conflits, &#224; se heurter &#224; des gens en d&#233;saccord avec vous, pour la simple raison qu&#39;ils n&#39;ont pas envie de l&#39;&#234;tre! Second probl&#232;me: la complexit&#233; de mon projet par rapport aux comp&#233;tences des techniciens de l&#39;&#233;poque. Ceux-l&#224; n&#39;envisageaient le monde qu&#39;en termes de hi&#233;rarchies. Or, dans les arts, en philosophie, en politique, tout est mouvant. Les cat&#233;gories changent, tout change. La vie est mouvante, c&#39;est cette complexit&#233; qu&#39;il faut repr&#233; senter. &lt;/p&gt; &lt;p&gt; Les hi&#233;rarchies permettent cependant d&#39;ordonner et de classifier... &lt;/p&gt; &lt;p&gt; Le syst&#232;me de hi&#233;rarchie s&#233;quentiel est superficiel. Encore aujourd&#39;hui, les ing&#233;nieurs continuent dans cette voie, avec des structures superficielles, tel le XML (6)... J&#39;ai commenc&#233; tr&#232;s t&#244;t &#224; ha&#239;r les cat&#233;gories car elles ne correspondent pas &#224; la r&#233;alit&#233;. Prenons la bataille d&#39;Alamo: j&#39;ai recens&#233; au moins cinquante faits li&#233;s au si&#232;ge de Fort Alamo qui s&#39;&#233;chappent dans des directions tr&#232;s diff&#233;rentes, et pour le moins inattendues. Le g&#233;n&#233;ral Santa Anna, qui commandait l&#39;assaut, est ensuite devenu pr&#233;sident du Mexique. Puis, en 1855, chass&#233; par la r&#233;volution, il a fui &#224; New York en emportant un stock de 250 kg de chicle, cette gomme que les Mexicains avaient pour habitude de m&#226;chonner. Santa Anna pensait qu&#39;il pourrait peut-&#234;tre en vendre comme un succ&#233;dan&#233; de caoutchouc. L&#39;un des inventeurs de la photographie, Thomas Adams, charg&#233; de l&#39;affaire, ne brilla gu&#232;re dans ce commerce, quand il eut soudain l&#39;illumination. Et il inventa le chewing-gum... D&#39;o&#249; la marque mondialement connue &#171;Chicklet&#187;... O&#249; commence cette histoire, o&#249; finit-elle? C&#39;est infini. Les cat&#233;gories sont artificielles. On peut les coucher sur papier, mais elles ne fonctionnent pas. Au coll&#232;ge d&#233;j&#224;, le papier m&#39;ennuyait: il &#233;tait trop limit&#233;. &lt;/p&gt; &lt;p&gt; Xanadu et cette id&#233;e de donner un acc&#232;s universel &#224; toute la connaissance ressemble beaucoup au World Wide Web... Que pensez-vous de l&#39;Internet? &lt;/p&gt; &lt;p&gt; J&#39;ai finalement renonc&#233; &#224; adapter Xanadu &#224; l&#39;Internet. L&#39;Internet fonctionne sur un mod&#232;le hi&#233;rarchis&#233;, tout comme les ordinateurs. Un site web est comme une grotte avec des lampes clignotantes, il est la cons&#233;quence de ce culte des r&#233;pertoires hi&#233;rarchis&#233;s, qui n&#39;ont rien de commun avec la nature. Mais nous pouvons avoir des structures alternatives universelles. Une commission scientifique am&#233;ricaine, l&#39;&#171;Alternative Structures for the Computer Universe&#187; y travaille. Je peux vous montrer des mod&#232;les, des structures irrationnelles, qui ne sont pas hi&#233;rarchiques. Et elles sont tout aussi extensibles. Aujourd&#39;hui, les ordinateurs simulent la hi&#233;rarchie et le papier. Tim Berners-Lee, le p&#232;re du Web, a calqu&#233; les structures hi&#233;rarchiques existantes sur le Net, et il leur a donn&#233; une apparence de papier avec le HTML (7). Marc Andreessen, avec Netscape, les a orn&#233;es... L&#39;Internet est, certes, un service rendu &#224; tout le monde. Mais quel format horrible! &lt;/p&gt; &lt;p&gt; L&#39;Internet permet tout de m&#234;me d&#39;avoir acc&#232;s &#224; une masse d&#39;informations... &lt;/p&gt; &lt;p&gt; Mais cela ne change pas la structure. C&#39;est un masque, un cosm&#233;tique. Ainsi, le Macintosh provient -il du laboratoire de recherche de Xerox, &#224; Xerox Parc &#224; Palo Alto. Xerox &#233;tait une entreprise de papier, de copie de papier; l&#39;objectif des ing&#233;nieurs &#233;tait de simuler le papier. Je me suis rendu &#224; Xerox Parc en1974-1975, et je leur ai conseill&#233; de changer d&#39;orientation. Eux persistaient &#224; imiter le papier: c&#39;&#233;tait leur &#171;mission&#187;. Le r&#233;sultat a &#233;t&#233; quelque chose qui ressemblait beaucoup au Mac, et qu&#39;ils avaient baptis&#233; &#171;Xerox Star&#187;, &#224; 17 000 dollars l&#39;unit&#233;! Ils ne r&#233;ussirent pas &#224; le vendre. Et puis Steve Jobs, &#171;le rebelle cr&#233;atif&#187;, a surgi: le Mac a &#233;t&#233; pr&#233;sent&#233; au monde, et Jobs a fait un magnifique travail de vendeur en faisant croire &#224; tout le monde que c&#39;&#233;tait un robot cr&#233;atif. Puis Bill Gates a imit&#233; le Mac en gardant la m&#234;me structure, la m&#234;me hi&#233;rarchie standardis&#233;e. &lt;/p&gt; &lt;p&gt; A vous en croire, la Bible &#233;tait le premier hypertexte? &lt;/p&gt; &lt;p&gt; Peut-&#234;tre... J&#39;ai d&#251; dire que les diff&#233;rentes Bibles faisaient des parall&#232;les hypertextuels. Le D&#233;luge dans l&#39;Apocalypse peut &#234;tre rapproch&#233; de celui du livre babylonien de Gilgamesh. Ce sont les structures parall&#232;les qui m&#39;int&#233;ressent. Tant de choses peuvent &#234;tre rapproch&#233;es. Et il y a si peu de choses dans les documents &#233;lectroniques pour repr&#233;senter ces con nexions... &lt;/p&gt; &lt;p&gt; Xanadu et les syst&#232;mes sur lesquels vous travaillez incluent le calcul des droits d&#39;auteur. Vous avez flair&#233; l&#39;enjeu tr&#232;s t&#244;t... &lt;/p&gt; &lt;p&gt; En effet, j&#39;ai pens&#233; aux droits d&#39;auteur d&#232;s les ann&#233;es 60. J&#39;ai tout de suite compris qu&#39;il allait falloir s&#39;en accommoder. Je suis d&#39;avis que tout devrait &#234;tre gratuit sur le Web, mais... Donc nous devons &#234;tre capables de r&#233;utiliser du contenu par un moyen l&#233;gal et intelligent, ce que j&#39;appelle la &#171;trans&#233;dition&#187;. D&#39;o&#249; ma pr&#233;occupation de cr&#233;er une application pour les navigateurs: l&#39;auteur donne son autorisation pr&#233;alable, puis tout ce qui est capt&#233; est en relation avec un original et avec les r&#233;visions successives apport&#233;es par l&#39;auteur. En cliquant sur la citation, le lecteur remonte directement &#224; la source. Je travaille aussi sur des syst&#232;mes de micropaiement, afin que les auteurs puissent &#234;tre r&#233;tribu&#233;s: la gestion des droits s&#39;effectue au niveau de la phrase, de l&#39;id&#233;e. Les documents pourront &#234;tre gratuits ou payants. L&#39;id&#233;e est que le contenu soit disponible ind&#233;pendamment de la mise en page. &lt;/p&gt; &lt;p&gt; Sur quoi travaillez-vous par ailleurs? &lt;/p&gt; &lt;p&gt; Je travaille sur un projet intitul&#233; &#171;ZigZag&#187;. A rebours de l&#39;informatique &#224; base de r&#233;pertoires hi&#233;rarchis&#233;s, ZigZag propose un syst&#232;me alternatif. J&#39;ai imagin&#233; ce mod&#232;le entre 1981 &#224; 1988 et j&#39;ai fini par l&#39;appliquer &#224; un arbre g&#233;n&#233;alogique multidimensionnel, en 1997. ZigZag repr&#233;sente d&#233;sormais un software en &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; en Finlande. En ao&#251;t, est programm&#233;e une &#171;Zigzag Session&#187; &#224; l&#39;Hypertext Conference au Danemark. Mais ceux qui se sentent &#224; l&#39;aise dans notre environnement actuel n&#39;aiment pas ce genre de mod&#232;le. C&#39;est un travail de paradigme: de l&#39;ext&#233;rieur, c&#39;est faux, et de l&#39;int&#233;rieur, c&#39;est juste. Je le nomme d&#39;ailleurs &#171;ZigZag, un nouveau paradigme informatique&#187;. &lt;/p&gt; &lt;p&gt; Disposez-vous de ressources de financement? &lt;/p&gt; &lt;p&gt; Un consortium japonais nous soutient; il y a un serveur de trans&#233;dition &#224; l&#39;universit&#233; de Keio, au Japon. Mais j&#39;aimerais venir en France, parce que l&#39;int&#233;r&#234;t culturel y est plus important que l&#39;aspect informatique. Aux Etats-Unis, ils ne r&#234;vent que de gagner toujours plus d&#39;argent. Pour moi, les start-up sont clinquantes, et stupides. Je suis de New York, mais je vis entre mon bateau &#224; Sausalito, dans la baie de San Francisco, et le Japon. &lt;/p&gt; &lt;p&gt; Ne vous prend-on pas pour un fou? &lt;/p&gt; &lt;p&gt; J&#39;ai pr&#233;dit, pendant plusieurs ann&#233;es, que des millions de gens dans le monde se serviraient un jour de l&#39;hypertexte: on me prenait pour un fou. La parano&#239;a signifie croire &#224; des choses auxquelles personne ne croit. Et il y a deux moyens de soigner la parano&#239;a. La premi&#232;re consiste, pour le patient, &#224; changer sa mani&#232;re de penser; la seconde suppose que c&#39;est aux autres &#224; bouleverser leur mani&#232;re de penser. Je ne me r&#233;sous pas &#224; gu&#233;rir de cette seconde forme de parano&#239;a.... &lt;/p&gt; &lt;p&gt; (1)Xanadu, du nom du palais de l&#39;empereur mongol Kublai Khan, pr&#232;s de P&#233;kin, symbole de la cr&#233;ativit&#233; dans une oeuvre du po&#232;te anglais Samuel Coleridge. &lt;/p&gt; &lt;p&gt; (2)Ted Nelson a cr&#233;&#233; le n&#233;ologisme en 1965. Mais l&#39;histoire de l&#39;&#171;hypertexte&#187; commence vingt ans auparavant, lorsqu&#39;un professeur en g&#233;nie &#233;lectrique du MIT imagine le &#171;Memex&#187;, un syst&#232;me de stockage et d&#39;acc&#232;s aux documents qui fonctionnerait par associations, sur le mod&#232;le du cerveau. &lt;/p&gt; &lt;p&gt; (3)Qui se pr&#233;sente comme une suite ordonn&#233;e, lin&#233;aire. &lt;/p&gt; &lt;p&gt; (4)Richard Buckminster Fuller (1895-1983), architecte am&#233;ricain, concepteur notamment de la Dymaxion, une maison pr&#233;fabriqu&#233;e 4D, et de la Dymaxion Car, une voiture roulante et volante. &lt;/p&gt; &lt;p&gt; (5)M&#233;thode qui consiste &#224; r&#233;utiliser du texte en l&#39;int&#233;grant dans un autre texte. &lt;/p&gt; &lt;p&gt; (6) H&#233;ritier du HTML, le XML (eXtensible Markup Language), est un format de publication de contenus sur le Web permettant de structurer librement les donn&#233;es &#224; l&#39;int&#233;rieur de balises. &lt;/p&gt; &lt;p&gt; (7) Hypertext Mark Up Language, language de cr&#233;ation de pages et de liens web.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010526&amp;#183;LI&amp;#183;0011&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010526%c2%b7LI%c2%b70011" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010526%c2%b7LI%c2%b70011">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+GUIDE,         samedi 26 mai 2001 1412 mots, p. 36, 37</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Week-end. Rencontre.</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La vie est mouvante, c'est cette complexité qu'il faut représenter            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Ted Nelson : pionnier de l'hypertexte, il imagine un monde plus vaste que l'Internet.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">ALIX Christophe; ROUSSEL Frédérique</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Vous êtes l'inventeur de Xanadu (1), «le projet original de l'hypertexte», que vous avez imaginé en 1960. Comment est née cette idée de bibliothèque universelle? </p> <p> Je devais avoir cinq ans; sur un bateau en compagnie de mon grand-père, je laissais ma main flotter au fil de l'eau. Je pensais à l'eau coulant entre mes doigts et aux effets qu'elle provoquait en moi. C'est à ce moment-là que j'ai pris conscience de la complexité du monde: comment parvenir à traduire les effets de l'eau sur mes mains? Comment décrire la complexité de l'univers s'exprimant sur une surface aussi minuscule? Tout peut être expliqué de mille façons. Tel ce verre, il y a tant de manières d'en parler... Tout dépend des contextes. Toute description recèle une forme de mensonge, parce que l'on rate des milliers de connexions possibles. J'ai donc été très vite saisi par cette complexité des choses, cette difficulté à les appréhender dans leur globalité. Ainsi je ne parviens jamais à finir un texte, il y a toujours d'autres choses à dire. Et toute idée tente, toujours, de s'échapper, de s'éparpiller dans d'autres directions: c'est cela, l'«hypertexte» (2). L'hypertexte tend à représenter exactement ma pensée. Car le texte est quelque chose d'intrinsèquement séquentiel (3), imposé à tous, mais cette séquentialité n'est pas nécessaire en réseau. L'hypertexte, au contraire, est une écriture non séquentielle, un tissage d'idées. Et cela n'a rien à voir avec l'informatique...</p>
+
+
+<p>Sauf que la réalisation d'un tel projet passe par l'informatique... Or vous n'êtes pas ingénieur et vous avez un parcours plutôt atypique... </p> <p> J'aime les technologies comme les enfants aiment les trains électriques, ou comme les hommes aiment les femmes, et les femmes, les hommes. Mais j'aime surtout la littérature, les films, les médias. Ma mère était actrice et mon père fut l'un des premiers patrons de la télé noir et blanc aux Etats-Unis. Gamin, souvent assis à son côté en régie, j'ai vécu en direct les débuts de l'audiovisuel. Je voulais être un intellectuel généraliste, mes plus grands héros étaient Orson Welles et Buckminster Fuller (4); j'hésitais entre le cinéma et les livres, entre mon côté artiste et mon côté plus intellectuel, je changeais de matière toutes les semaines. Tout le monde me prenait pour un dingue et voulait me freiner. Moi, je voulais accélérer les choses, prendre des notes sur tout. Mais comment les garder, les archiver, les organiser? Comment inventer de nouvelles matières aussi vite que je prenais des notes? Voilà quel était le centre de mes recherches. D'où l'idée de grande mémoire. </p> <p> Le projet Xanadu a quarante ans, et vous n'en êtes jamais venu à bout. Pourquoi? </p> <p> Xanadu a été ma première intuition, ma première invention, et elle reste d'actualité. Je voulais que chaque caractère tapé sur une machine ne soit pas perdu car, si la machine casse, je perds ce que j'ai écrit. L'idée est là: sauver toutes les séquences successives. Il fallait pouvoir revenir à la version précédente dans le contexte où elle avait été écrite, en créant une version virtuelle qui pointe vers toutes les séquences successives. Voilà le modèle. Si simple... De là découle l'hypertexte, la «transclusion» (5)... J'ai donc imaginé un système dans lequel toutes les versions d'un même texte pourraient s'interpénétrer, se comparer. Mais comment reproduire ce système pour qu'il soit accessible à des millions de gens? Pendant quarante ans, j'ai essayé d'expliquer quelle structure devait avoir Xanadu. J'ai été confronté à la jalousie, j'avais pleine conscience que je pouvais comprendre les choses plus vite que la plupart des gens... Et je ne me résignais pas au conformisme social. Cependant, ma famille ne m'avait pas préparé à affronter les conflits, à se heurter à des gens en désaccord avec vous, pour la simple raison qu'ils n'ont pas envie de l'être! Second problème: la complexité de mon projet par rapport aux compétences des techniciens de l'époque. Ceux-là n'envisageaient le monde qu'en termes de hiérarchies. Or, dans les arts, en philosophie, en politique, tout est mouvant. Les catégories changent, tout change. La vie est mouvante, c'est cette complexité qu'il faut repré senter. </p> <p> Les hiérarchies permettent cependant d'ordonner et de classifier... </p> <p> Le système de hiérarchie séquentiel est superficiel. Encore aujourd'hui, les ingénieurs continuent dans cette voie, avec des structures superficielles, tel le XML (6)... J'ai commencé très tôt à haïr les catégories car elles ne correspondent pas à la réalité. Prenons la bataille d'Alamo: j'ai recensé au moins cinquante faits liés au siège de Fort Alamo qui s'échappent dans des directions très différentes, et pour le moins inattendues. Le général Santa Anna, qui commandait l'assaut, est ensuite devenu président du Mexique. Puis, en 1855, chassé par la révolution, il a fui à New York en emportant un stock de 250 kg de chicle, cette gomme que les Mexicains avaient pour habitude de mâchonner. Santa Anna pensait qu'il pourrait peut-être en vendre comme un succédané de caoutchouc. L'un des inventeurs de la photographie, Thomas Adams, chargé de l'affaire, ne brilla guère dans ce commerce, quand il eut soudain l'illumination. Et il inventa le chewing-gum... D'où la marque mondialement connue «Chicklet»... Où commence cette histoire, où finit-elle? C'est infini. Les catégories sont artificielles. On peut les coucher sur papier, mais elles ne fonctionnent pas. Au collège déjà, le papier m'ennuyait: il était trop limité. </p> <p> Xanadu et cette idée de donner un accès universel à toute la connaissance ressemble beaucoup au World Wide Web... Que pensez-vous de l'Internet? </p> <p> J'ai finalement renoncé à adapter Xanadu à l'Internet. L'Internet fonctionne sur un modèle hiérarchisé, tout comme les ordinateurs. Un site web est comme une grotte avec des lampes clignotantes, il est la conséquence de ce culte des répertoires hiérarchisés, qui n'ont rien de commun avec la nature. Mais nous pouvons avoir des structures alternatives universelles. Une commission scientifique américaine, l'«Alternative Structures for the Computer Universe» y travaille. Je peux vous montrer des modèles, des structures irrationnelles, qui ne sont pas hiérarchiques. Et elles sont tout aussi extensibles. Aujourd'hui, les ordinateurs simulent la hiérarchie et le papier. Tim Berners-Lee, le père du Web, a calqué les structures hiérarchiques existantes sur le Net, et il leur a donné une apparence de papier avec le HTML (7). Marc Andreessen, avec Netscape, les a ornées... L'Internet est, certes, un service rendu à tout le monde. Mais quel format horrible! </p> <p> L'Internet permet tout de même d'avoir accès à une masse d'informations... </p> <p> Mais cela ne change pas la structure. C'est un masque, un cosmétique. Ainsi, le Macintosh provient -il du laboratoire de recherche de Xerox, à Xerox Parc à Palo Alto. Xerox était une entreprise de papier, de copie de papier; l'objectif des ingénieurs était de simuler le papier. Je me suis rendu à Xerox Parc en1974-1975, et je leur ai conseillé de changer d'orientation. Eux persistaient à imiter le papier: c'était leur «mission». Le résultat a été quelque chose qui ressemblait beaucoup au Mac, et qu'ils avaient baptisé «Xerox Star», à 17 000 dollars l'unité! Ils ne réussirent pas à le vendre. Et puis Steve Jobs, «le rebelle créatif», a surgi: le Mac a été présenté au monde, et Jobs a fait un magnifique travail de vendeur en faisant croire à tout le monde que c'était un robot créatif. Puis Bill Gates a imité le Mac en gardant la même structure, la même hiérarchie standardisée. </p> <p> A vous en croire, la Bible était le premier hypertexte? </p> <p> Peut-être... J'ai dû dire que les différentes Bibles faisaient des parallèles hypertextuels. Le Déluge dans l'Apocalypse peut être rapproché de celui du livre babylonien de Gilgamesh. Ce sont les structures parallèles qui m'intéressent. Tant de choses peuvent être rapprochées. Et il y a si peu de choses dans les documents électroniques pour représenter ces con nexions... </p> <p> Xanadu et les systèmes sur lesquels vous travaillez incluent le calcul des droits d'auteur. Vous avez flairé l'enjeu très tôt... </p> <p> En effet, j'ai pensé aux droits d'auteur dès les années 60. J'ai tout de suite compris qu'il allait falloir s'en accommoder. Je suis d'avis que tout devrait être gratuit sur le Web, mais... Donc nous devons être capables de réutiliser du contenu par un moyen légal et intelligent, ce que j'appelle la «transédition». D'où ma préoccupation de créer une application pour les navigateurs: l'auteur donne son autorisation préalable, puis tout ce qui est capté est en relation avec un original et avec les révisions successives apportées par l'auteur. En cliquant sur la citation, le lecteur remonte directement à la source. Je travaille aussi sur des systèmes de micropaiement, afin que les auteurs puissent être rétribués: la gestion des droits s'effectue au niveau de la phrase, de l'idée. Les documents pourront être gratuits ou payants. L'idée est que le contenu soit disponible indépendamment de la mise en page. </p> <p> Sur quoi travaillez-vous par ailleurs? </p> <p> Je travaille sur un projet intitulé «ZigZag». A rebours de l'informatique à base de répertoires hiérarchisés, ZigZag propose un système alternatif. J'ai imaginé ce modèle entre 1981 à 1988 et j'ai fini par l'appliquer à un arbre généalogique multidimensionnel, en 1997. ZigZag représente désormais un software en <mark>open</mark> <mark>source</mark> en Finlande. En août, est programmée une «Zigzag Session» à l'Hypertext Conference au Danemark. Mais ceux qui se sentent à l'aise dans notre environnement actuel n'aiment pas ce genre de modèle. C'est un travail de paradigme: de l'extérieur, c'est faux, et de l'intérieur, c'est juste. Je le nomme d'ailleurs «ZigZag, un nouveau paradigme informatique». </p> <p> Disposez-vous de ressources de financement? </p> <p> Un consortium japonais nous soutient; il y a un serveur de transédition à l'université de Keio, au Japon. Mais j'aimerais venir en France, parce que l'intérêt culturel y est plus important que l'aspect informatique. Aux Etats-Unis, ils ne rêvent que de gagner toujours plus d'argent. Pour moi, les start-up sont clinquantes, et stupides. Je suis de New York, mais je vis entre mon bateau à Sausalito, dans la baie de San Francisco, et le Japon. </p> <p> Ne vous prend-on pas pour un fou? </p> <p> J'ai prédit, pendant plusieurs années, que des millions de gens dans le monde se serviraient un jour de l'hypertexte: on me prenait pour un fou. La paranoïa signifie croire à des choses auxquelles personne ne croit. Et il y a deux moyens de soigner la paranoïa. La première consiste, pour le patient, à changer sa manière de penser; la seconde suppose que c'est aux autres à bouleverser leur manière de penser. Je ne me résous pas à guérir de cette seconde forme de paranoïa.... </p> <p> (1)Xanadu, du nom du palais de l'empereur mongol Kublai Khan, près de Pékin, symbole de la créativité dans une oeuvre du poète anglais Samuel Coleridge. </p> <p> (2)Ted Nelson a créé le néologisme en 1965. Mais l'histoire de l'«hypertexte» commence vingt ans auparavant, lorsqu'un professeur en génie électrique du MIT imagine le «Memex», un système de stockage et d'accès aux documents qui fonctionnerait par associations, sur le modèle du cerveau. </p> <p> (3)Qui se présente comme une suite ordonnée, linéaire. </p> <p> (4)Richard Buckminster Fuller (1895-1983), architecte américain, concepteur notamment de la Dymaxion, une maison préfabriquée 4D, et de la Dymaxion Car, une voiture roulante et volante. </p> <p> (5)Méthode qui consiste à réutiliser du texte en l'intégrant dans un autre texte. </p> <p> (6) Héritier du HTML, le XML (eXtensible Markup Language), est un format de publication de contenus sur le Web permettant de structurer librement les données à l'intérieur de balises. </p> <p> (7) Hypertext Mark Up Language, language de création de pages et de liens web.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010526·LI·0011</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010526·LI·0011";
+    var _docIndex = 466;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010526·LI·0011';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010526%C2%B7LI%C2%B70011&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010526%C2%B7LI%C2%B70011&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010526%C2%B7LI%C2%B70011&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010526%C2%B7LI%C2%B70011&docIndex=466&FullScreen=1";
+                
+	var _keyDoc = 'news·20010526·LI·0011';
+</script>
+</div></body></html>

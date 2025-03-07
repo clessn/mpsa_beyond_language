@@ -1,0 +1,511 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 7659                &lt;br /&gt;QUOTIDIEN DEUXIEME EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+EVENEMENT,         vendredi 23 d&amp;#233;cembre 2005 711 mots, p. 6, 7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Ev&#232;nement 2. Internet&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+T&#233;l&#233;chargement d&#39;erreurs pour le ministre            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Deux jours agit&#233;s pour Donnedieu de Vabres, qui voit sa r&#233;forme du droit d&#39;auteur contest&#233;e de tous c&#244;t&#233;s.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;LATRIVE Florent&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;En France, d&#233;fendre une loi sur le droit d&#39;auteur permet bien souvent de laisser son nom dans l&#39;histoire. Apr&#232;s Le Chapelier, rapporteur de la toute premi&#232;re, en 1791, et Jack Lang en 1985, le ministre de la Culture Renaud Donnedieu de Vabres n&#39;&#233;chappe pas &#224; la r&#232;gle : depuis deux jours, le tabassage de son projet de loi sur la r&#233;forme du droit d&#39;auteur dans la soci&#233;t&#233; de l&#39;information par des d&#233;put&#233;s de tous bords est d&#39;ores et d&#233;j&#224; historique. &#171;On attendait Malraux, on a eu Maginot !&#187; a l&#226;ch&#233; le socialiste Christian Paul avant-hier. Comme la Ligne du ministre de la Guerre de 1930, &#171;RDDV&#187; se fait d&#233;border par une fronde parlementaire contre un texte qualifi&#233; de &#171;liberticide&#187; par l&#39;UMP Alain Suguenot et de &#171;blanc-seing aux majors du disque&#187; par le socialiste Patrick Bloche. Jusqu&#39;&#224; l&#39;invraisemblable r&#233;volte d&#39;une majorit&#233; des d&#233;put&#233;s pr&#233;sents dans la nuit de mercredi &#224; jeudi, o&#249; une alliance droite-gauche a vot&#233; la premi&#232;re &#233;tape d&#39;une l&#233;galisation des &#233;changes peer-to-peer contre le paiement d&#39;une redevance. Mesure pourtant combattue vigoureusement par RDDV, dont le texte cherche au contraire &#224; rabattre les millions d&#39;usagers du Net vers les plates-formes commerciales gr&#226;ce &#224; un m&#233;lange de mesures techniques et de r&#233;pression. &lt;/p&gt; &lt;p&gt; &#199;a fleure le lobbying. Pour en arriver &#224; ce bourbier, le ministre a multipli&#233; les gaffes sur un sujet en apparence pourtant consensuel : la classe politique est en effet unanime pour r&#233;former un droit d&#233;pass&#233; par l&#39;intensit&#233; des &#233;changes massivement gratuits sur l&#39;Internet. Mais le projet du gouvernement, transposition tardive d&#39;une directive europ&#233;enne (2001), a fini par trop fleurer le lobbying d&#39;une partie de la fili&#232;re culturelle. Parmi les dizaines d&#39;exemples, un amendement &#224; l&#39;origine &#233;crit par Vivendi Universal est soutenu par le gouvernement.&lt;/p&gt;
+
+
+&lt;p&gt;Quand le d&#233;bat s&#39;engage, mardi soir, premi&#232;re bourde de RDDV : des d&#233;put&#233;s socialistes r&#226;lent contre la pr&#233;sence de repr&#233;sentants de Virgin et de la Fnac, badg&#233;s &#171;minist&#232;re de la Culture&#187;, qui font des d&#233;monstrations de sites de t&#233;l&#233;chargements payants &#224; quelques m&#232;tres de l&#39;h&#233;micycle. D&#232;s le lendemain, les d&#233;put&#233;s de gauche se r&#233;jouissent de la publication dans Lib&#233;ration d&#39;une tribune du d&#233;put&#233; UMP Bernard Carayon, qui fustige une loi faite sur mesure pour des &#171;oligopoles ap&#244;tres de l&#39;obscurantisme technologique&#187;. A la tribune d&#233;filent des orateurs de droite et de gauche qui pilonnent la principale mesure du texte : la l&#233;galisation des mesures techniques de protection (MTP) destin&#233;es &#224; contr&#244;ler l&#39;usage des oeuvres pour endiguer la piraterie. L&#39;UDF Jean Dionis du S&#233;jour, plut&#244;t favorable &#224; la loi, met en garde afin que les MTP &#171;ne deviennent pas une arme de guerre contre les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;&#187; auxquels les fabricants de ces technologies (Microsoft en t&#234;te) refusent l&#39;acc&#232;s. Le PS Didier Mathus parle d&#39;un &#171;&#233;tonnant cadeau de No&#235;l &#224; Microsoft&#187;. Le socialiste Pascal Terrasse d&#39;une &#171;loi antijeunes&#187;. &lt;/p&gt; &lt;p&gt; &#171;R&#233;ponse gradu&#233;e&#187;. Ils ont &#233;t&#233; chauff&#233;s par tous ceux qui se sont sentis ignor&#233;s par le minist&#232;re de la Culture : biblioth&#233;caires, associations de consommateurs, certains syndicats d&#39;artistes, collectifs d&#39;internautes... Les tentatives de l&#39;UMP Dominique Richard pour sauver le soldat RDDV en agitant le spectre de &#171;l&#39;ass&#232;chement de la cr&#233;ation&#187; font peu d&#39;effet. La col&#232;re des d&#233;put&#233;s est aussi aliment&#233;e par les conditions d&#39;examen du texte : pass&#233; en Conseil des ministres il y a d&#233;j&#224; pr&#232;s de deux ans, il d&#233;boule &#224; l&#39;Assembl&#233;e nationale &#224; la veille de No&#235;l et en &#171;urgence&#187;, ce qui signifie une seule lecture parlementaire. &lt;/p&gt; &lt;p&gt; Le ministre se d&#233;fend, r&#233;affirme &#171;l&#39;&#233;quilibre&#187; de son texte, d&#233;nonce &#171;l&#39;illusion du tout gratuit&#187;. Il fustige les &#171;caricatures&#187; et la &#171;d&#233;sinformation&#187;. Il nie vouloir mener une &#171;croisade r&#233;pressive&#187; et en prend pour preuve sa solution de &#171;r&#233;ponse gradu&#233;e&#187; au piratage, un encha&#238;nement progressif d&#39;e-mails d&#39;avertissement, de lettre recommand&#233;e puis d&#39;amende qui doit mettre fin au tout p&#233;nal actuel. Pas si simple : la &#171;r&#233;ponse gradu&#233;e&#187; est un dispositif juridique in&#233;dit, qui n&#233;cessite de surveiller en continu les r&#233;seaux et donne pouvoir &#224; une autorit&#233; administrative pour infliger des amendes. Il soul&#232;ve de lourdes questions quant au respect de la vie priv&#233;e ou des droits de la d&#233;fense. De plus, les d&#233;put&#233;s n&#39;ont d&#233;couvert les premi&#232;res moutures de l&#39;amendement qu&#39;une fois le d&#233;bat commenc&#233;... Le chef de l&#39;UDF, Fran&#231;ois Bayou, s&#39;engouffre dans la br&#232;che en critiquant avec emphase &#171;une police de l&#39;Internet aux pouvoirs exorbitants&#187;. Visiblement content de son effet, il cl&#244;t son intervention d&#39;une tape sur son micro, qui effectue un &#233;l&#233;gant demi-tour. Du Johnny Hallyday dans la chaleur du Palais-Bourbon. &lt;/p&gt; &lt;p&gt; Mercredi soir, c&#39;est l&#39;estocade. Vers 23 heures, deux amendements identiques pr&#233;sent&#233;s par l&#39;UMP Alain Suguenot et les d&#233;put&#233;s socialistes sont &#233;tudi&#233;s. Ils portent sur le principal projet des opposants &#224; la loi : la &#171;licence globale&#187;, une l&#233;galisation des &#233;changes d&#39;oeuvres sans but commercial, en contrepartie d&#39;une redevance de quelques euros pr&#233;lev&#233;e sur l&#39;abonnement &#224; Internet (lire ci-contre). Le happening est &#224; son comble : alors que le rapporteur UMP Christian Vanneste qualifie cette mesure d&#39;&#171;irresponsable&#187; et d&#39;&#171;archa&#239;que&#187;, il se fait tacler par l&#39;UMP Christine Boutin, qui ne veut pas de &#171;course &#224; l&#39;&#233;chalote&#187; pour savoir &#171;qui est le plus r&#233;actionnaire&#187;. Et affirme que &#171;les jeunes, c&#39;est-&#224;-dire la France de demain, soutiennent cette proposition !&#187; &lt;/p&gt; &lt;p&gt; Coups de t&#233;l&#233;phone. L&#39;opposante au Pacs est applaudie par le socialiste Patrick Bloche, un des promoteurs du Pacs en 1999. Au moment du vote, l&#39;invraisemblable se produit : par 30 voix contre 28, l&#39;amendement est adopt&#233;. La s&#233;ance est interrompue. L&#39;entourage de RDDV multiplie les coups de t&#233;l&#233;phone pour mobiliser les d&#233;put&#233;s UMP et reprendre la main. Il y a encore plusieurs amendements &#224; voter avant que le projet complet de licence globale devienne loi. Le gouvernement dispose de plusieurs leviers pour &#233;teindre l&#39;incendie : nouvelle d&#233;lib&#233;ration, vote bloqu&#233; ou rattrapage au S&#233;nat. Mais pour RDDV, No&#235;l est d&#233;j&#224; g&#226;ch&#233;.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2005 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20051223&amp;#183;LI&amp;#183;0li20051223091&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">droit d'auteur</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">légalisation des échanges</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">ministère de la culture</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">députés socialistes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">mesures techniques</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Lois et règlements</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Partis politiques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Droit et jurisprudence</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">France</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Vabres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ligne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Pacs</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720051223%c2%b7LI%c2%b70li20051223091" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720051223%c2%b7LI%c2%b70li20051223091">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 7659                <br>QUOTIDIEN DEUXIEME EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+EVENEMENT,         vendredi 23 décembre 2005 711 mots, p. 6, 7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Evènement 2. Internet</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Téléchargement d'erreurs pour le ministre            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Deux jours agités pour Donnedieu de Vabres, qui voit sa réforme du droit d'auteur contestée de tous côtés.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">LATRIVE Florent</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>En France, défendre une loi sur le droit d'auteur permet bien souvent de laisser son nom dans l'histoire. Après Le Chapelier, rapporteur de la toute première, en 1791, et Jack Lang en 1985, le ministre de la Culture Renaud Donnedieu de Vabres n'échappe pas à la règle : depuis deux jours, le tabassage de son projet de loi sur la réforme du droit d'auteur dans la société de l'information par des députés de tous bords est d'ores et déjà historique. «On attendait Malraux, on a eu Maginot !» a lâché le socialiste Christian Paul avant-hier. Comme la Ligne du ministre de la Guerre de 1930, «RDDV» se fait déborder par une fronde parlementaire contre un texte qualifié de «liberticide» par l'UMP Alain Suguenot et de «blanc-seing aux majors du disque» par le socialiste Patrick Bloche. Jusqu'à l'invraisemblable révolte d'une majorité des députés présents dans la nuit de mercredi à jeudi, où une alliance droite-gauche a voté la première étape d'une légalisation des échanges peer-to-peer contre le paiement d'une redevance. Mesure pourtant combattue vigoureusement par RDDV, dont le texte cherche au contraire à rabattre les millions d'usagers du Net vers les plates-formes commerciales grâce à un mélange de mesures techniques et de répression. </p> <p> Ça fleure le lobbying. Pour en arriver à ce bourbier, le ministre a multiplié les gaffes sur un sujet en apparence pourtant consensuel : la classe politique est en effet unanime pour réformer un droit dépassé par l'intensité des échanges massivement gratuits sur l'Internet. Mais le projet du gouvernement, transposition tardive d'une directive européenne (2001), a fini par trop fleurer le lobbying d'une partie de la filière culturelle. Parmi les dizaines d'exemples, un amendement à l'origine écrit par Vivendi Universal est soutenu par le gouvernement.</p>
+
+
+<p>Quand le débat s'engage, mardi soir, première bourde de RDDV : des députés socialistes râlent contre la présence de représentants de Virgin et de la Fnac, badgés «ministère de la Culture», qui font des démonstrations de sites de téléchargements payants à quelques mètres de l'hémicycle. Dès le lendemain, les députés de gauche se réjouissent de la publication dans Libération d'une tribune du député UMP Bernard Carayon, qui fustige une loi faite sur mesure pour des «oligopoles apôtres de l'obscurantisme technologique». A la tribune défilent des orateurs de droite et de gauche qui pilonnent la principale mesure du texte : la légalisation des mesures techniques de protection (MTP) destinées à contrôler l'usage des oeuvres pour endiguer la piraterie. L'UDF Jean Dionis du Séjour, plutôt favorable à la loi, met en garde afin que les MTP «ne deviennent pas une arme de guerre contre les <mark>logiciels</mark> <mark>libres</mark>» auxquels les fabricants de ces technologies (Microsoft en tête) refusent l'accès. Le PS Didier Mathus parle d'un «étonnant cadeau de Noël à Microsoft». Le socialiste Pascal Terrasse d'une «loi antijeunes». </p> <p> «Réponse graduée». Ils ont été chauffés par tous ceux qui se sont sentis ignorés par le ministère de la Culture : bibliothécaires, associations de consommateurs, certains syndicats d'artistes, collectifs d'internautes... Les tentatives de l'UMP Dominique Richard pour sauver le soldat RDDV en agitant le spectre de «l'assèchement de la création» font peu d'effet. La colère des députés est aussi alimentée par les conditions d'examen du texte : passé en Conseil des ministres il y a déjà près de deux ans, il déboule à l'Assemblée nationale à la veille de Noël et en «urgence», ce qui signifie une seule lecture parlementaire. </p> <p> Le ministre se défend, réaffirme «l'équilibre» de son texte, dénonce «l'illusion du tout gratuit». Il fustige les «caricatures» et la «désinformation». Il nie vouloir mener une «croisade répressive» et en prend pour preuve sa solution de «réponse graduée» au piratage, un enchaînement progressif d'e-mails d'avertissement, de lettre recommandée puis d'amende qui doit mettre fin au tout pénal actuel. Pas si simple : la «réponse graduée» est un dispositif juridique inédit, qui nécessite de surveiller en continu les réseaux et donne pouvoir à une autorité administrative pour infliger des amendes. Il soulève de lourdes questions quant au respect de la vie privée ou des droits de la défense. De plus, les députés n'ont découvert les premières moutures de l'amendement qu'une fois le débat commencé... Le chef de l'UDF, François Bayou, s'engouffre dans la brèche en critiquant avec emphase «une police de l'Internet aux pouvoirs exorbitants». Visiblement content de son effet, il clôt son intervention d'une tape sur son micro, qui effectue un élégant demi-tour. Du Johnny Hallyday dans la chaleur du Palais-Bourbon. </p> <p> Mercredi soir, c'est l'estocade. Vers 23 heures, deux amendements identiques présentés par l'UMP Alain Suguenot et les députés socialistes sont étudiés. Ils portent sur le principal projet des opposants à la loi : la «licence globale», une légalisation des échanges d'oeuvres sans but commercial, en contrepartie d'une redevance de quelques euros prélevée sur l'abonnement à Internet (lire ci-contre). Le happening est à son comble : alors que le rapporteur UMP Christian Vanneste qualifie cette mesure d'«irresponsable» et d'«archaïque», il se fait tacler par l'UMP Christine Boutin, qui ne veut pas de «course à l'échalote» pour savoir «qui est le plus réactionnaire». Et affirme que «les jeunes, c'est-à-dire la France de demain, soutiennent cette proposition !» </p> <p> Coups de téléphone. L'opposante au Pacs est applaudie par le socialiste Patrick Bloche, un des promoteurs du Pacs en 1999. Au moment du vote, l'invraisemblable se produit : par 30 voix contre 28, l'amendement est adopté. La séance est interrompue. L'entourage de RDDV multiplie les coups de téléphone pour mobiliser les députés UMP et reprendre la main. Il y a encore plusieurs amendements à voter avant que le projet complet de licence globale devienne loi. Le gouvernement dispose de plusieurs leviers pour éteindre l'incendie : nouvelle délibération, vote bloqué ou rattrapage au Sénat. Mais pour RDDV, Noël est déjà gâché.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2005 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20051223·LI·0li20051223091</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20051223·LI·0li20051223091";
+    var _docIndex = 901;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20051223·LI·0li20051223091';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720051223%C2%B7LI%C2%B70li20051223091&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720051223%C2%B7LI%C2%B70li20051223091&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720051223%C2%B7LI%C2%B70li20051223091&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720051223%C2%B7LI%C2%B70li20051223091&docIndex=901&FullScreen=1";
+                
+	var _keyDoc = 'news·20051223·LI·0li20051223091';
+</script>
+</div></body></html>

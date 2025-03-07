@@ -1,0 +1,509 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_ec2_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 19665                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         mardi 23 octobre 2007 255 mots, p. 29&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Entreprises         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Microsoft renonce &#224; faire appel en Europe            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;LOGICIELS Le g&#233;ant am&#233;ricain accepte les exigences de la Commission europ&#233;enne.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Val&#233;rie COLLET&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;MICROSOFT &lt;/p&gt; &lt;p&gt; &#171; C&#39;EST &lt;em style=&quot;font-style:italic;&quot;&gt;un jour de victoire pour les consommateurs... pas pour la Commission&lt;/em&gt; &#187;, a assur&#233;, hier, Neelie Kroes, la commissaire &#224; la Concurrence, apr&#232;s avoir annonc&#233; que Microsoft a conclu un accord qui permettra &#224; ses concurrents d&#39;obtenir les informations n&#233;cessaires pour faciliter le dialogue entre les PC et les serveurs fonctionnant sur d&#39;autres syst&#232;mes d&#39;exploitation que Windows. Et simplifier ainsi la communication entre les univers Microsoft et &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;/em&gt; (&lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;). &lt;/p&gt; &lt;p&gt; Le bras de fer entre la Commission et le g&#233;ant am&#233;ricain du logiciel se termine donc par une poign&#233;e de main. D&#233;j&#224; le 17 septembre, le tribunal de premi&#232;re instance de Luxembourg avait confirm&#233; les sanctions inflig&#233;es par la Commission europ&#233;enne, mais Microsoft avait encore la possibilit&#233; de faire appel. Hier, Microsoft a pr&#233;cis&#233; qu&#39;il s&#39;en tiendrait &#224; cet &#233;pilogue et &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;continuera de travailler &#233;troitement avec la Commission et l&#39;industrie pour faire na&#238;tre un environnement florissant et comp&#233;titif pour les technologies de l&#39;information&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;en Europe et dans le monde&lt;/em&gt; &#187;. L&#39;accord pr&#233;voit que Microsoft fera payer aux &#233;diteurs un droit unique de 10 000 euros pour obtenir les informations techniques qui les aideront &#224; rendre leurs logiciels compatibles au syst&#232;me d&#39;exploitation Windows. Par ailleurs, les droits pour l&#39;utilisation de brevets au niveau mondial deviendront plus abordables : ils atteindront 0,4 % du montant total des ventes contre 5,95 % auparavant. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Un point final au chapitre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;J&#39;esp&#232;re que ce chapitre sombre est achev&#233;&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;,&lt;/em&gt; a soulign&#233; Neelie Kroes qui s&#39;attend &#224; ce que la part de march&#233; de Microsoft passe de 95 % &#224; 50 % dans un avenir proche. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;J&#39;ai toujours dit que les d&#233;veloppeurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; devaient pouvoir profiter de l&#39;interop&#233;rabilit&#233;. Maintenant, ils le peuvent. &lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;&lt;/em&gt; L&#39;inflexible commissaire a pr&#233;venu qu&#39;elle serait &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;vigilante&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;&lt;/em&gt;, notamment &#224; l&#39;&#233;gard de Windows Vista, le dernier syst&#232;me d&#39;exploitation du g&#233;ant de Redmond. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171;&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Microsoft devrait se le graver dans la t&#234;te&lt;/em&gt;&lt;br&gt;&lt;/br&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;,&lt;/em&gt; s&#39;est-elle exclam&#233;e. Au total, l&#39;affaire europ&#233;enne aura co&#251;t&#233; pr&#232;s de 800 millions d&#39;euros d&#39;amendes et d&#39;astreintes au groupe de Bill Gates.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2007 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20071023&amp;#183;LF&amp;#183;20071023&amp;#215;2fig000000141&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">commission européenne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">neelie kroes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">exigences de la commission européenne</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Luxembourg</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720071023%c2%b7LF%c2%b720071023%c3%972fig000000141" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720071023%c2%b7LF%c2%b720071023%c3%972fig000000141">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf_ec2_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 19665                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         mardi 23 octobre 2007 255 mots, p. 29</span>
+</div>
+
+    <div>
+        <p>
+Entreprises         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Microsoft renonce à faire appel en Europe            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">LOGICIELS Le géant américain accepte les exigences de la Commission européenne.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Valérie COLLET</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>MICROSOFT </p> <p> « C'EST <em style="font-style:italic;">un jour de victoire pour les consommateurs... pas pour la Commission</em> », a assuré, hier, Neelie Kroes, la commissaire à la Concurrence, après avoir annoncé que Microsoft a conclu un accord qui permettra à ses concurrents d'obtenir les informations nécessaires pour faciliter le dialogue entre les PC et les serveurs fonctionnant sur d'autres systèmes d'exploitation que Windows. Et simplifier ainsi la communication entre les univers Microsoft et <em style="font-style:italic;"><mark>open</mark> <mark>source</mark> </em> (<mark>logiciels</mark> <mark>libres</mark>). </p> <p> Le bras de fer entre la Commission et le géant américain du logiciel se termine donc par une poignée de main. Déjà le 17 septembre, le tribunal de première instance de Luxembourg avait confirmé les sanctions infligées par la Commission européenne, mais Microsoft avait encore la possibilité de faire appel. Hier, Microsoft a précisé qu'il s'en tiendrait à cet épilogue et « <em style="font-style:italic;">continuera de travailler étroitement avec la Commission et l'industrie pour faire naître un environnement florissant et compétitif pour les technologies de l'information</em></p>
+
+
+<p><em style="font-style:italic;">en Europe et dans le monde</em> ». L'accord prévoit que Microsoft fera payer aux éditeurs un droit unique de 10 000 euros pour obtenir les informations techniques qui les aideront à rendre leurs logiciels compatibles au système d'exploitation Windows. Par ailleurs, les droits pour l'utilisation de brevets au niveau mondial deviendront plus abordables : ils atteindront 0,4 % du montant total des ventes contre 5,95 % auparavant. </p> <p><em style="font-weight:bold;">Un point final au chapitre</em></p><p><em style="font-style:italic;">«</em><br><br><em style="font-style:italic;">J'espère que ce chapitre sombre est achevé</em><br><br><em style="font-style:italic;">»,</em> a souligné Neelie Kroes qui s'attend à ce que la part de marché de Microsoft passe de 95 % à 50 % dans un avenir proche. <em style="font-style:italic;">«</em><br><br><em style="font-style:italic;">J'ai toujours dit que les développeurs de <mark>logiciels</mark> <mark>libres</mark> devaient pouvoir profiter de l'interopérabilité. Maintenant, ils le peuvent. </em><br><br><em style="font-style:italic;">»</em> L'inflexible commissaire a prévenu qu'elle serait <em style="font-style:italic;">«</em><br><br><em style="font-style:italic;">vigilante</em><br><br><em style="font-style:italic;">»</em>, notamment à l'égard de Windows Vista, le dernier système d'exploitation du géant de Redmond. <em style="font-style:italic;">«</em><br><br><em style="font-style:italic;">Microsoft devrait se le graver dans la tête</em><br><br><em style="font-style:italic;">»,</em> s'est-elle exclamée. Au total, l'affaire européenne aura coûté près de 800 millions d'euros d'amendes et d'astreintes au groupe de Bill Gates.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2007 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20071023·LF·20071023×2fig000000141</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20071023·LF·20071023×2fig000000141";
+    var _docIndex = 652;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20071023·LF·20071023×2fig000000141';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720071023%C2%B7LF%C2%B720071023%C3%972fig000000141&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720071023%C2%B7LF%C2%B720071023%C3%972fig000000141&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720071023%C2%B7LF%C2%B720071023%C3%972fig000000141&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720071023%C2%B7LF%C2%B720071023%C3%972fig000000141&docIndex=652&FullScreen=1";
+                
+	var _keyDoc = 'news·20071023·LF·20071023×2fig000000141';
+</script>
+</div></body></html>

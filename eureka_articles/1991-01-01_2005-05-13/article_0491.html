@@ -1,0 +1,439 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CAHIER SPECIAL,         samedi 3 mars 2001 1188 mots, p. 6, 7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+R&#233;gulateurs            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Avocats, juges, &#233;lus, commissaires, conseillers minist&#233;riels ils surveillent le r&#233;seau et dessinent ce que sera l&#185;Internet demain en France.&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;JEAN-FRANCOIS ABRAMATIC 51 ans. Pr&#233;sident du W3C &lt;/p&gt; &lt;p&gt; Si les malvoyants peuvent agrandir les caract&#232;res sur les sites web, c&#185;est un peu gr&#226;ce &#224; lui. Il est depuis 1996 le pr&#233;sident du World Wide Web Consortium (W3C), l&#185;organisme international charg&#233; de la normalisation du Web. C&#185;est gr&#226;ce au W3C que les internautes peuvent monter des sites, y mettre images, textes, sons, animations, et &#234;tre certains que leurs &#166;uvres seront accessibles de Tokyo &#224; Los Angeles. Il doit s&#185;assurer qu&#185;entreprises, laboratoires, politiques travaillent ensemble pour que le Net reste un &#171;standard&#187;. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.w3.org&quot;&gt; www.w3.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; ALAIN BENSOUSSAN 50 ans. Avocat&lt;/p&gt;
+
+
+&lt;p&gt;Avocat &#224; la cour d&#185;appel de Paris, il a fond&#233; en 1978 l&#185;un des tout premiers cabinets d&#185;avocats sp&#233;cialis&#233;s dans le droit de l&#185;informatique. Ce cabinet est aujourd&#185;hui &#224; l&#185;origine d&#185;un volume important de jurisprudence autour du droit des r&#233;seaux et des t&#233;l&#233;communications. Alain Bensoussan est par ailleurs arbitre aupr&#232;s de l&#185;Organisation mondiale de la propri&#233;t&#233; intellectuelle (OMPI) et pr&#233;sident de la Commission du droit des biotechnologies. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.alain-bensoussan.tm.fr&quot;&gt; www.alain-bensoussan.tm.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; PATRICK BLOCHE 44 ans. D&#233;l&#233;gu&#233; PS aux nouvelles technologies &lt;/p&gt; &lt;p&gt; Il y a quatre ans, comme tout le monde &#224; l&#185;Assembl&#233;e nationale, il n&#185;y pigeait rien, Patrick Bloche. Mais, &#224; la diff&#233;rence de nombre d&#185;&#233;lus, il faisait semblant, flairant le bon cr&#233;neau moderne. Aujourd&#185;hui, le patron de la f&#233;d&#233;ration PS de Paris est aussi d&#233;l&#233;gu&#233; du parti aux nouvelles technologies de l&#185;information. Et il ma&#238;trise le sujet. Il a laiss&#233; son nom &#224; un amendement &#224; la loi sur la libert&#233; de communication, traitant la responsabilit&#233; des h&#233;bergeurs de site. Depuis, son texte a &#233;t&#233; charcut&#233; par le gouvernement et plusieurs allers-retours entre les deux Chambres. Avant d&#185;&#234;tre en partie censur&#233; par le Conseil constitutionnel. Mais, pour les internautes, &#171;Bloche&#187; reste synonyme de responsabilit&#233; en ligne. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.patrickbloche.org&quot;&gt; www.patrickbloche.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Francis BECK 53 ans. Membre du CSA &lt;/p&gt; &lt;p&gt; Membre du Conseil sup&#233;rieur de l&#185;audiovisuel depuis janvier et ex-patron de l&#185;Institut national de l&#185;audiovisuel (INA), Francis Beck, 53 ans, est charg&#233; du groupe de travail nouvelles technologies de l&#185;information au sein de l&#185;autorit&#233; administrative. Le r&#244;le du CSA dans ce domaine reste encore flou : sera-t-il cantonn&#233; aux sites web des radios et t&#233;l&#233;visions ou sera-t-il plus important ? La loi sur la soci&#233;t&#233; de l&#185;information, pr&#233;vue pour la fin de l&#185;ann&#233;e, devrait trancher. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.csa.fr&quot;&gt; www.csa.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; FLORENCE DURAND 41 ans. D&#233;l&#233;gu&#233;e g&#233;n&#233;rale de Vecam &lt;/p&gt; &lt;p&gt; Au sein de l&#185;association Vecam (Valeurs europ&#233;ennes et citoyennes sur les autoroutes de l&#185;information et le multim&#233;dia), plate-forme d&#185;&#233;changes de projets dans les collectivit&#233;s locales, Florence Durand se d&#233;m&#232;ne pour que les &#233;lus appr&#233;hendent s&#233;rieusement l&#185;avenir des nouvelles technologies dans leurs villes en associant les habitants. Allergique &#224; l&#185;amateurisme, elle finalise le d&#233;veloppement d&#185;un centre de ressources qui proposera des exp&#233;riences d&#185;usage de l&#185;Internet dans les collectivit&#233;s locales en France. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.vecam.org&quot;&gt; www.vecam.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Isabelle Falque-Pierrotin 41 ans. Ma&#238;tre des requ&#234;tes au Conseil d&#185;Etat &lt;/p&gt; &lt;p&gt; Elle est charg&#233;e de mettre en place le futur organisme de r&#233;gulation du Net en France. Nom de code : Forum des droits de l&#185;Internet. Telle est la mission qu&#185;a confi&#233;e Lionel Jospin en d&#233;cembre dernier &#224; cette b&#251;cheuse sp&#233;cialiste du Web. Auteur d&#185;un rapport sur Internet et les r&#233;seaux num&#233;riques en 1998, elle y &#233;voquait d&#233;j&#224; la n&#233;cessit&#233; d&#185;un organisme consultatif m&#234;lant acteurs du public, du priv&#233; et repr&#233;sentants des internautes, afin de policer les d&#233;bats souvent violents qui traversent le Net fran&#231;ais. &lt;/p&gt; &lt;p&gt; Jean-Jacques Gomez 55 ans. Premier vice-pr&#233;sident du tribunal de grande instance de Paris &lt;/p&gt; &lt;p&gt; C&#185;est lui &#171;le petit juge du Net&#187; mont&#233; &#224; l&#185;assaut de Yahoo Etats-Unis, estimant l&#185;ann&#233;e derni&#232;re dans une ordonnance que la vente d&#185;objets nazis sur le site d&#185;ench&#232;res du g&#233;ant am&#233;ricain &#233;tait une &#171;offense &#224; la m&#233;moire collective&#187;. Et Yahoo a d&#251; plier. Cela fait presque cinq ans qu&#185;il rend avec r&#233;gularit&#233; des d&#233;cisions concernant l&#185;application du droit au r&#233;seau : droits d&#185;auteur, fraudes &#224; la carte bancaire, diffamation Il se souvient en souriant des premi&#232;res plaidoiries qui &#233;voquaient &#171;la libert&#233; absolue sur le Net&#187;. Il s&#185;est forg&#233; deux convictions : le r&#233;seau exige de &#171;penser autrement l&#185;application du droit, mais pas de le refondre&#187;, et les magistrats doivent se plonger dans la technique afin de rendre des d&#233;cisions &#171;applicables&#187;. Dans la foul&#233;e de l&#185;affaire Yahoo, c&#185;est d&#233;sormais l&#185;international qui l&#185;intrigue : l&#185;Internet, mondial, fait s&#185;entrechoquer les l&#233;gislations. Visiblement, &#231;a ne lui d&#233;pla&#238;t pas. &lt;/p&gt; &lt;p&gt; JEAN-MICHEL HUBERT 62 ans. Pr&#233;sident de l&#185;ART &lt;/p&gt; &lt;p&gt; Il a &#233;trenn&#233; le poste de pr&#233;sident de l&#185;Autorit&#233; de r&#233;gulations des t&#233;l&#233;communications &#224; sa cr&#233;ation en janvier 1997. Sit&#244;t son intronisation, il a d&#251; r&#233;gler le diff&#233;rend entre l&#185;op&#233;rateur historique et la Lyonnaise C&#226;ble &#224; propos de l&#185;Internet &#224; haut d&#233;bit. Puis il s&#185;est heurt&#233; au gouvernement dans l&#185;affaire du Net dans les &#233;coles. Il s&#185;est aussi fait l&#185;avocat des internautes qui r&#233;clament des connexions bon march&#233;. Pour engager aujourd&#185;hui un bras de fer avec France T&#233;l&#233;com &#224; propos de l&#185;Internet rapide sur le fil de cuivre. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.art-telecom.fr&quot;&gt; www.art-telecom.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; Marie GEORGES 54 ans. Chef de mission &#224; la Cnil &lt;/p&gt; &lt;p&gt; A contribu&#233; en 1973 &#224; la naissance de la Cnil (Commission nationale de l&#185;informatique et des libert&#233;s). Et elle y est entr&#233;e dans la foul&#233;e. Aujourd&#185;hui chef de mission t&#233;l&#233;communications, services en ligne et relations avec les Cnil &#233;trang&#232;res, elle fait partie de &#171;cette g&#233;n&#233;ration de 68&#187; qui a trouv&#233; &#224; la Cnil un &#171;m&#233;tier citoyen&#187;. Sit&#244;t que l&#185;Internet est apparu, la Cnil s&#185;est jet&#233;e dessus. Internet et libert&#233;s individuelles font-ils bon m&#233;nage ? &#171;Cela ne peut faire que des progr&#232;s dans la mesure o&#249; les principes &#233;tablis par la Cnil sont repris partout en Europe et m&#234;me aujourd&#185;hui aux USA.&#187; &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.cnil.fr&quot;&gt; www.cnil.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; OLIVIER ITEANU 38 ans. Pr&#233;sident de la branche fran&#231;aise de l&#185;Internet Society &lt;/p&gt; &lt;p&gt; Avocat sp&#233;cialiste des nouvelles technologies,il a &#233;t&#233; &#233;lu en juin 2000 et pour deux ans pr&#233;sident de l&#185;Isoc (Internet Society) France. L&#185;Isoc r&#233;unit des chercheurs et des industriels cens&#233;s &#171;pr&#233;server l&#185;esprit de l&#185;Internet&#187;, mais on n&#185;a jamais bien compris ses attributions. Il existe 100 chapitres de l&#185;Isoc dans le monde qui seront tous r&#233;unis en juin &#224; Stockholm. L&#185;occasion de faire le point ? &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.isocfrance.org&quot;&gt; www.isocfrance.org&lt;/a&gt; &lt;/p&gt; &lt;p&gt; JEAN-CHRISTOPHE LE TOQUIN 30 ans. D&#233;l&#233;gu&#233; permanent de l&#185;AFA &lt;/p&gt; &lt;p&gt; Il est de toutes les consultations gouvernementales sur la r&#233;gulation du Net. De tous les colloques o&#249; l&#185;on cause libert&#233; d&#185;expression, surveillance, responsabilit&#233;. Ce juriste de formation est depuis 1997 la &#171;voix&#187; des professionnels, des fournisseurs d&#185;acc&#232;s au r&#233;seau, en tant que porte-parole de l&#185;Association des fournisseurs d&#185;acc&#232;s &#224; l&#185;Internet (AFA), qui regroupe plus de 90 % des entreprises du secteur, de Wanadoo (France T&#233;l&#233;com) &#224; Multimania, en passant par Club Internet. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.afa-france.com&quot;&gt; www.afa-france.com&lt;/a&gt; &lt;/p&gt; &lt;p&gt; BRUNO MANNONI 50 ans. Responsable informatique au minist&#232;re de la Culture &lt;/p&gt; &lt;p&gt; Cet ing&#233;nieur de formation a jou&#233; un r&#244;le essentiel dans l&#185;entr&#233;e du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; au minist&#232;re de la Culture. Sa conception du site web de ce minist&#232;re est une r&#233;f&#233;rence. Bruno Mannoni, dont la d&#233;couverte de l&#185;Internet remonte &#224; fin 1993, a toujours r&#234;v&#233; de cr&#233;er son site &#171;pour faire conna&#238;tre le patrimoine culturel de la France&#187;. Il va &#234;tre servi : il est charg&#233; de connecter tous les mus&#233;es de l&#185;Hexagone. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.culture.fr&quot;&gt; www.culture.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; VALERIE PECRESSE 33 ans. Conseill&#232;re technique de Jacques Chirac &lt;/p&gt; &lt;p&gt; Quand Jacques Chirac lifte sa &#171;fracture sociale&#187; en &#171;fracture num&#233;rique&#187; pour d&#233;plorer les in&#233;galit&#233;s croissantes entre ceux qui ont acc&#232;s au Net et les autres, c&#185;est elle qui lui souffle la partition. Quand Chirac se met &#224; causer &#171;bitoubi&#187; (business to business) dans des d&#233;jeuners &#224; l&#185;Elys&#233;e avec des patrons de start-up, c&#185;est elle encore. A 33 ans, elle est aux c&#244;t&#233;s du pr&#233;sident de la R&#233;publique depuis P&#226;ques 1998. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.elysee.fr&quot;&gt; www.elysee.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; FLORENCE SCHMIDT-PARISET 48 ans. Conseill&#232;re &#171;nouvelles technologies&#187; au cabinet de Lionel Jospin &lt;/p&gt; &lt;p&gt; Elle officie aux c&#244;t&#233;s de Jean-No&#235;l Tronc. Ex du minist&#232;re de la Justice, elle a particip&#233; aux n&#233;gociations sur la directive Commerce &#233;lectronique aupr&#232;s de l&#185;Union europ&#233;enne. Sa nomination pr&#232;s de Jospin en juin 2000 correspond &#224; une &#233;volution des chantiers gouvernementaux li&#233;s au Net : l&#185;ann&#233;e 2001 sera sous le signe du droit et de la loi, avec la loi sur la soci&#233;t&#233; de l&#185;information (LSI), pr&#233;vue avant la fin de l&#185;ann&#233;e, ainsi que la mise en place du Forum des droits, le futur organisme de r&#233;gulation du r&#233;seau fran&#231;ais. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-internet-gouv-fr.acces.bibl.ulaval.ca&quot;&gt; www.internet.gouv.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; HENRI SERRES 50 ans. Directeur de la DCSSI &lt;/p&gt; &lt;p&gt; Cet ex des services secrets est charg&#233; de moderniser la Direction centrale de la s&#233;curit&#233; des syst&#232;mes d&#185;information, qui d&#233;pend directement du Premier ministre : &#224; la t&#234;te d&#185;une &#233;quipe de pros de la s&#233;curit&#233;, il doit veiller &#224; ce qu&#185;aucun pirate ne s&#185;infiltre dans les &#171;infrastructures essentielles de la nation&#187;. Et &#233;valuer les logiciels utilis&#233;s par les administrations sensibles pour v&#233;rifier qu&#185;ils ne rec&#232;lent aucune trappe susceptible d&#185;&#234;tre utilis&#233;e par des Etats &#233;trangers &#224; des fins d&#185;espionnage. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-scssi-gouv-fr.acces.bibl.ulaval.ca&quot;&gt; www.scssi.gouv.fr&lt;/a&gt; &lt;/p&gt; &lt;p&gt; RENE TREGOUET 61 ans. S&#233;nateur du Rh&#244;ne &lt;/p&gt; &lt;p&gt; Il est l&#185;homme politique le plus nerd de France et sa lettre &#233;lectronique hebdomadaire @RT Flash le confirme. C&#185;est lui qui a introduit l&#185;Internet au S&#233;nat et son militantisme pour le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est rare chez les &#233;lus. Ren&#233; Tregouet s&#185;est fait conna&#238;tre par son rapport Des pyramides du pouvoir aux r&#233;seaux de savoirs publi&#233; en 1998 qui a fait entrer le s&#233;nateur dans le pr&#233; carr&#233; des &#233;lus fran&#231;ais au fait de l&#185;avenir du pays en mati&#232;re de nouvelles technologies. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.tregouet.org/entre.html&quot;&gt; www.tregouet.org/entre.html&lt;/a&gt; &lt;/p&gt; &lt;p&gt; MARCEL VIGOUROUX 54 ans. Patron de l&#185;OCLCTIC &lt;/p&gt; &lt;p&gt; C&#185;est le chef des cyberflics. Commissaire divisionnaire, il dirige l&#185;Office central de lutte contre la criminalit&#233; li&#233;e aux technologies de l&#185;information et de la communication (sic !) depuis que cet organisme a &#233;t&#233; cr&#233;&#233; en mai 2000 pour donner plus de moyens aux policiers du r&#233;seau. Son job, c&#185;est d&#185;attraper les d&#233;linquants du Net : fraudes &#224; la carte bancaire, hackers, pirates de CD. Et de se d&#233;battre avec la technique, pas toujours la meilleure amie du policier. &lt;/p&gt; &lt;p&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www-interieur-gouv-fr.acces.bibl.ulaval.ca/police/oclctic/&quot;&gt; www.interieur.gouv.fr/police/oclctic/&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010303&amp;#183;LI&amp;#183;0031&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010303%c2%b7LI%c2%b70031" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010303%c2%b7LI%c2%b70031">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CAHIER SPECIAL,         samedi 3 mars 2001 1188 mots, p. 6, 7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Régulateurs            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Avocats, juges, élus, commissaires, conseillers ministériels ils surveillent le réseau et dessinent ce que sera l¹Internet demain en France.</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>JEAN-FRANCOIS ABRAMATIC 51 ans. Président du W3C </p> <p> Si les malvoyants peuvent agrandir les caractères sur les sites web, c¹est un peu grâce à lui. Il est depuis 1996 le président du World Wide Web Consortium (W3C), l¹organisme international chargé de la normalisation du Web. C¹est grâce au W3C que les internautes peuvent monter des sites, y mettre images, textes, sons, animations, et être certains que leurs ¦uvres seront accessibles de Tokyo à Los Angeles. Il doit s¹assurer qu¹entreprises, laboratoires, politiques travaillent ensemble pour que le Net reste un «standard». </p> <p><a target="_blank" href="https://www.w3.org"> www.w3.org</a> </p> <p> ALAIN BENSOUSSAN 50 ans. Avocat</p>
+
+
+<p>Avocat à la cour d¹appel de Paris, il a fondé en 1978 l¹un des tout premiers cabinets d¹avocats spécialisés dans le droit de l¹informatique. Ce cabinet est aujourd¹hui à l¹origine d¹un volume important de jurisprudence autour du droit des réseaux et des télécommunications. Alain Bensoussan est par ailleurs arbitre auprès de l¹Organisation mondiale de la propriété intellectuelle (OMPI) et président de la Commission du droit des biotechnologies. </p> <p><a target="_blank" href="https://www.alain-bensoussan.tm.fr"> www.alain-bensoussan.tm.fr</a> </p> <p> PATRICK BLOCHE 44 ans. Délégué PS aux nouvelles technologies </p> <p> Il y a quatre ans, comme tout le monde à l¹Assemblée nationale, il n¹y pigeait rien, Patrick Bloche. Mais, à la différence de nombre d¹élus, il faisait semblant, flairant le bon créneau moderne. Aujourd¹hui, le patron de la fédération PS de Paris est aussi délégué du parti aux nouvelles technologies de l¹information. Et il maîtrise le sujet. Il a laissé son nom à un amendement à la loi sur la liberté de communication, traitant la responsabilité des hébergeurs de site. Depuis, son texte a été charcuté par le gouvernement et plusieurs allers-retours entre les deux Chambres. Avant d¹être en partie censuré par le Conseil constitutionnel. Mais, pour les internautes, «Bloche» reste synonyme de responsabilité en ligne. </p> <p><a target="_blank" href="https://www.patrickbloche.org"> www.patrickbloche.org</a> </p> <p> Francis BECK 53 ans. Membre du CSA </p> <p> Membre du Conseil supérieur de l¹audiovisuel depuis janvier et ex-patron de l¹Institut national de l¹audiovisuel (INA), Francis Beck, 53 ans, est chargé du groupe de travail nouvelles technologies de l¹information au sein de l¹autorité administrative. Le rôle du CSA dans ce domaine reste encore flou : sera-t-il cantonné aux sites web des radios et télévisions ou sera-t-il plus important ? La loi sur la société de l¹information, prévue pour la fin de l¹année, devrait trancher. </p> <p><a target="_blank" href="https://www.csa.fr"> www.csa.fr</a> </p> <p> FLORENCE DURAND 41 ans. Déléguée générale de Vecam </p> <p> Au sein de l¹association Vecam (Valeurs européennes et citoyennes sur les autoroutes de l¹information et le multimédia), plate-forme d¹échanges de projets dans les collectivités locales, Florence Durand se démène pour que les élus appréhendent sérieusement l¹avenir des nouvelles technologies dans leurs villes en associant les habitants. Allergique à l¹amateurisme, elle finalise le développement d¹un centre de ressources qui proposera des expériences d¹usage de l¹Internet dans les collectivités locales en France. </p> <p><a target="_blank" href="https://www.vecam.org"> www.vecam.org</a> </p> <p> Isabelle Falque-Pierrotin 41 ans. Maître des requêtes au Conseil d¹Etat </p> <p> Elle est chargée de mettre en place le futur organisme de régulation du Net en France. Nom de code : Forum des droits de l¹Internet. Telle est la mission qu¹a confiée Lionel Jospin en décembre dernier à cette bûcheuse spécialiste du Web. Auteur d¹un rapport sur Internet et les réseaux numériques en 1998, elle y évoquait déjà la nécessité d¹un organisme consultatif mêlant acteurs du public, du privé et représentants des internautes, afin de policer les débats souvent violents qui traversent le Net français. </p> <p> Jean-Jacques Gomez 55 ans. Premier vice-président du tribunal de grande instance de Paris </p> <p> C¹est lui «le petit juge du Net» monté à l¹assaut de Yahoo Etats-Unis, estimant l¹année dernière dans une ordonnance que la vente d¹objets nazis sur le site d¹enchères du géant américain était une «offense à la mémoire collective». Et Yahoo a dû plier. Cela fait presque cinq ans qu¹il rend avec régularité des décisions concernant l¹application du droit au réseau : droits d¹auteur, fraudes à la carte bancaire, diffamation Il se souvient en souriant des premières plaidoiries qui évoquaient «la liberté absolue sur le Net». Il s¹est forgé deux convictions : le réseau exige de «penser autrement l¹application du droit, mais pas de le refondre», et les magistrats doivent se plonger dans la technique afin de rendre des décisions «applicables». Dans la foulée de l¹affaire Yahoo, c¹est désormais l¹international qui l¹intrigue : l¹Internet, mondial, fait s¹entrechoquer les législations. Visiblement, ça ne lui déplaît pas. </p> <p> JEAN-MICHEL HUBERT 62 ans. Président de l¹ART </p> <p> Il a étrenné le poste de président de l¹Autorité de régulations des télécommunications à sa création en janvier 1997. Sitôt son intronisation, il a dû régler le différend entre l¹opérateur historique et la Lyonnaise Câble à propos de l¹Internet à haut débit. Puis il s¹est heurté au gouvernement dans l¹affaire du Net dans les écoles. Il s¹est aussi fait l¹avocat des internautes qui réclament des connexions bon marché. Pour engager aujourd¹hui un bras de fer avec France Télécom à propos de l¹Internet rapide sur le fil de cuivre. </p> <p><a target="_blank" href="https://www.art-telecom.fr"> www.art-telecom.fr</a> </p> <p> Marie GEORGES 54 ans. Chef de mission à la Cnil </p> <p> A contribué en 1973 à la naissance de la Cnil (Commission nationale de l¹informatique et des libertés). Et elle y est entrée dans la foulée. Aujourd¹hui chef de mission télécommunications, services en ligne et relations avec les Cnil étrangères, elle fait partie de «cette génération de 68» qui a trouvé à la Cnil un «métier citoyen». Sitôt que l¹Internet est apparu, la Cnil s¹est jetée dessus. Internet et libertés individuelles font-ils bon ménage ? «Cela ne peut faire que des progrès dans la mesure où les principes établis par la Cnil sont repris partout en Europe et même aujourd¹hui aux USA.» </p> <p><a target="_blank" href="https://www.cnil.fr"> www.cnil.fr</a> </p> <p> OLIVIER ITEANU 38 ans. Président de la branche française de l¹Internet Society </p> <p> Avocat spécialiste des nouvelles technologies,il a été élu en juin 2000 et pour deux ans président de l¹Isoc (Internet Society) France. L¹Isoc réunit des chercheurs et des industriels censés «préserver l¹esprit de l¹Internet», mais on n¹a jamais bien compris ses attributions. Il existe 100 chapitres de l¹Isoc dans le monde qui seront tous réunis en juin à Stockholm. L¹occasion de faire le point ? </p> <p><a target="_blank" href="https://www.isocfrance.org"> www.isocfrance.org</a> </p> <p> JEAN-CHRISTOPHE LE TOQUIN 30 ans. Délégué permanent de l¹AFA </p> <p> Il est de toutes les consultations gouvernementales sur la régulation du Net. De tous les colloques où l¹on cause liberté d¹expression, surveillance, responsabilité. Ce juriste de formation est depuis 1997 la «voix» des professionnels, des fournisseurs d¹accès au réseau, en tant que porte-parole de l¹Association des fournisseurs d¹accès à l¹Internet (AFA), qui regroupe plus de 90 % des entreprises du secteur, de Wanadoo (France Télécom) à Multimania, en passant par Club Internet. </p> <p><a target="_blank" href="https://www.afa-france.com"> www.afa-france.com</a> </p> <p> BRUNO MANNONI 50 ans. Responsable informatique au ministère de la Culture </p> <p> Cet ingénieur de formation a joué un rôle essentiel dans l¹entrée du <mark>logiciel</mark> <mark>libre</mark> au ministère de la Culture. Sa conception du site web de ce ministère est une référence. Bruno Mannoni, dont la découverte de l¹Internet remonte à fin 1993, a toujours rêvé de créer son site «pour faire connaître le patrimoine culturel de la France». Il va être servi : il est chargé de connecter tous les musées de l¹Hexagone. </p> <p><a target="_blank" href="https://www.culture.fr"> www.culture.fr</a> </p> <p> VALERIE PECRESSE 33 ans. Conseillère technique de Jacques Chirac </p> <p> Quand Jacques Chirac lifte sa «fracture sociale» en «fracture numérique» pour déplorer les inégalités croissantes entre ceux qui ont accès au Net et les autres, c¹est elle qui lui souffle la partition. Quand Chirac se met à causer «bitoubi» (business to business) dans des déjeuners à l¹Elysée avec des patrons de start-up, c¹est elle encore. A 33 ans, elle est aux côtés du président de la République depuis Pâques 1998. </p> <p><a target="_blank" href="https://www.elysee.fr"> www.elysee.fr</a> </p> <p> FLORENCE SCHMIDT-PARISET 48 ans. Conseillère «nouvelles technologies» au cabinet de Lionel Jospin </p> <p> Elle officie aux côtés de Jean-Noël Tronc. Ex du ministère de la Justice, elle a participé aux négociations sur la directive Commerce électronique auprès de l¹Union européenne. Sa nomination près de Jospin en juin 2000 correspond à une évolution des chantiers gouvernementaux liés au Net : l¹année 2001 sera sous le signe du droit et de la loi, avec la loi sur la société de l¹information (LSI), prévue avant la fin de l¹année, ainsi que la mise en place du Forum des droits, le futur organisme de régulation du réseau français. </p> <p><a target="_blank" href="https://www-internet-gouv-fr.acces.bibl.ulaval.ca"> www.internet.gouv.fr</a> </p> <p> HENRI SERRES 50 ans. Directeur de la DCSSI </p> <p> Cet ex des services secrets est chargé de moderniser la Direction centrale de la sécurité des systèmes d¹information, qui dépend directement du Premier ministre : à la tête d¹une équipe de pros de la sécurité, il doit veiller à ce qu¹aucun pirate ne s¹infiltre dans les «infrastructures essentielles de la nation». Et évaluer les logiciels utilisés par les administrations sensibles pour vérifier qu¹ils ne recèlent aucune trappe susceptible d¹être utilisée par des Etats étrangers à des fins d¹espionnage. </p> <p><a target="_blank" href="https://www-scssi-gouv-fr.acces.bibl.ulaval.ca"> www.scssi.gouv.fr</a> </p> <p> RENE TREGOUET 61 ans. Sénateur du Rhône </p> <p> Il est l¹homme politique le plus nerd de France et sa lettre électronique hebdomadaire @RT Flash le confirme. C¹est lui qui a introduit l¹Internet au Sénat et son militantisme pour le <mark>logiciel</mark> <mark>libre</mark> est rare chez les élus. René Tregouet s¹est fait connaître par son rapport Des pyramides du pouvoir aux réseaux de savoirs publié en 1998 qui a fait entrer le sénateur dans le pré carré des élus français au fait de l¹avenir du pays en matière de nouvelles technologies. </p> <p><a target="_blank" href="https://www.tregouet.org/entre.html"> www.tregouet.org/entre.html</a> </p> <p> MARCEL VIGOUROUX 54 ans. Patron de l¹OCLCTIC </p> <p> C¹est le chef des cyberflics. Commissaire divisionnaire, il dirige l¹Office central de lutte contre la criminalité liée aux technologies de l¹information et de la communication (sic !) depuis que cet organisme a été créé en mai 2000 pour donner plus de moyens aux policiers du réseau. Son job, c¹est d¹attraper les délinquants du Net : fraudes à la carte bancaire, hackers, pirates de CD. Et de se débattre avec la technique, pas toujours la meilleure amie du policier. </p> <p><a target="_blank" href="https://www-interieur-gouv-fr.acces.bibl.ulaval.ca/police/oclctic/"> www.interieur.gouv.fr/police/oclctic/</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010303·LI·0031</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010303·LI·0031";
+    var _docIndex = 490;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010303·LI·0031';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010303%C2%B7LI%C2%B70031&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010303%C2%B7LI%C2%B70031&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010303%C2%B7LI%C2%B70031&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010303%C2%B7LI%C2%B70031&docIndex=490&FullScreen=1";
+                
+	var _keyDoc = 'news·20010303·LI·0031';
+</script>
+</div></body></html>

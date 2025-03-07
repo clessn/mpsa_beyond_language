@@ -1,0 +1,535 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 23490                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        lundi 24 f&amp;#233;vrier 2020 521 mots, p. 48&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Tech         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;NOUVEAU M&#201;TIER&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+G&#233;odata scientist, un math&#233;maticien &#233;pris de g&#233;ographie            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Des donn&#233;es pour mieux comprendre la ville.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;El Hassani, Jamal&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;VILLE&lt;/em&gt; Sans contexte, les donn&#233;es de transport ne valent rien. C&#39;est l&#224; qu&#39;entrent en jeu les g&#233;odata scientists, comme Jean-Marc Favaro, cofondateur de la start-up Fluctuo. Cette soci&#233;t&#233; a con&#231;u une interface de programmation (API) qui consulte toutes les 15 minutes les applications de v&#233;los, scooters et trottinettes en libre-service. Elle en extrait des donn&#233;es brutes dont le g&#233;odata scientist va tirer des enseignements. &lt;/p&gt; &lt;p&gt; &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Les donn&#233;es de mobilit&#233;s sont statiques : nous n&#39;avons que la latitude, la longitude, le niveau de batterie, et l&#39;horaire auquel nous avons rep&#233;r&#233; un v&#233;hicule&lt;/em&gt;, explique Jean-Marc Favaro. &lt;em style=&quot;font-style:italic;&quot;&gt;Mon job consiste &#224; construire des algorithmes qui analysent chaque jour ces millions de points de donn&#233;es pour reconstituer le nombre de trajets effectu&#233;s, conna&#238;tre leurs trajectoires et compter les appareils disponibles&lt;/em&gt; &#187; , d&#233;taille-t-il. Ces analyses sont ensuite pr&#233;sent&#233;es sous forme de visualisations, cartes et tableaux disponibles sur une plateforme couvrant une quarantaine de villes. &lt;/p&gt;
+
+
+&lt;p&gt;Le geodata scientist est un m&#233;lange de plusieurs m&#233;tiers pr&#233;existants. Jean-Marc Favaro se consid&#232;re donc comme &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;un couteau suisse&lt;/em&gt; &#187;. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Je fais de la g&#233;omatique, de la g&#233;ographie, des statistiques et des traitements informatiques de bases de donn&#233;es. Il faut une large palette de comp&#233;tences pour g&#233;rer l&#39;int&#233;gralit&#233; de la cha&#238;ne des donn&#233;es.&lt;/em&gt; &#187; Un m&#233;lange qu&#39;illustre son parcours. Il est d&#39;abord responsable d&#39;&#233;tudes g&#233;omarketing dans le priv&#233; jusqu&#39;au d&#233;but des ann&#233;es 2000, apr&#232;s un master en &#233;conom&#233;trie et un DEA de g&#233;ographie. Puis statisticien pendant quatre ans au CNRS, o&#249; il travaille sur des mod&#233;lisations et simulations du comportement humain &#224; l&#39;&#233;chelle d&#39;une ville, dans le cadre d&#39;un doctorat en g&#233;ographie. Avant de repasser dans le priv&#233; et l&#39;analyse statistique, jusqu&#39;&#224; un premier poste de g&#233;odata scientist chez AdMoove, une soci&#233;t&#233; de marketing g&#233;olocalis&#233;, o&#249; il rencontre l&#39;un des associ&#233;s avec lequel il fondera Fluctuo en 2017. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; Big g&#233;odata &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Si ce m&#233;tier existait d&#233;j&#224; avant, &#233;clat&#233; entre plusieurs professions, il a fortement &#233;volu&#233;. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;L&#39;av&#232;nement du big data&lt;/em&gt;(le traitement de volumes massifs de donn&#233;es, NDLR) &lt;em style=&quot;font-style:italic;&quot;&gt;a tout chang&#233;&lt;/em&gt;, assure Jean-Marc Favaro. &lt;em style=&quot;font-style:italic;&quot;&gt;Il y a quelques ann&#233;es, nous devions davantage d&#233;duire et deviner. La mobilit&#233; &#233;tait analys&#233;e via des sondages ou de petits &#233;chantillons. Aujourd&#39;hui, nous utilisons d&#39;&#233;normes &#233;chantillons avec des centaines de millions de lignes de tableur&lt;/em&gt;. &#187; De quoi permettre l&#39;av&#232;nement du &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;big g&#233;odata&lt;/em&gt; &#187; , l&#39;apparition de montagnes de donn&#233;es g&#233;ographiques issues des GPS int&#233;gr&#233;s aux smartphones ou aux v&#233;los, trottinettes et autres scooters. Le m&#233;tier est aussi devenu plus abordable, gr&#226;ce &#224; l&#39;apparition de l&#39;open data, offrant quantit&#233; d&#39;informations sur la ville et ses transports publics accessibles gratuitement. Mais aussi de l&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, des logiciels gratuits dont le code est librement r&#233;utilisable, et qui ont d&#233;mocratis&#233; l&#39;usage de la cartographie. &lt;/p&gt; &lt;p&gt; Pour l&#39;&#233;pauler et accompagner la croissance de sa soci&#233;t&#233;, Jean-Marc Favaro pr&#233;voit de recruter d&#39;autres g&#233;odata scientists. Quels profils recherche-t-il ? Id&#233;alement le m&#234;me que le sien, car &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;si vous n&#39;&#234;tes pas g&#233;ographe, vous allez passer votre temps &#224; r&#233;inventer l&#39;eau ti&#232;de. Cependant, les outils utilis&#233;s sont tr&#232;s quantitatifs, il faut donc un profil statistique et informatique&lt;/em&gt; &#187;. &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;Des gens forts en maths qui adoraient l&#39;histoire-g&#233;o &#224; l&#39;&#233;cole&lt;/em&gt; &#187; , r&#233;sume-t-il.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;&lt;a href=&quot;mailto:jelhassani@lefigaro.fr&quot;&gt;jelhassani@lefigaro.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;24 f&amp;#233;vrier 2020&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2020 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20200224&amp;#183;LF&amp;#183;792&amp;#215;20&amp;#215;22700350284&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">mathématicien épris de géographie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">interface de programmation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">simulations du comportement humain</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">traitement de volumes massifs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">analyse statistique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Santé et services sociaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">CNRS</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720200224%c2%b7LF%c2%b7792%c3%9720%c3%9722700350284" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720200224%c2%b7LF%c2%b7792%c3%9720%c3%9722700350284">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf3_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 23490                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        lundi 24 février 2020 521 mots, p. 48</span>
+</div>
+
+    <div>
+        <p>
+Tech         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">NOUVEAU MÉTIER</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Géodata scientist, un mathématicien épris de géographie            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Des données pour mieux comprendre la ville.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">El Hassani, Jamal</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">VILLE</em> Sans contexte, les données de transport ne valent rien. C'est là qu'entrent en jeu les géodata scientists, comme Jean-Marc Favaro, cofondateur de la start-up Fluctuo. Cette société a conçu une interface de programmation (API) qui consulte toutes les 15 minutes les applications de vélos, scooters et trottinettes en libre-service. Elle en extrait des données brutes dont le géodata scientist va tirer des enseignements. </p> <p> « <em style="font-style:italic;">Les données de mobilités sont statiques : nous n'avons que la latitude, la longitude, le niveau de batterie, et l'horaire auquel nous avons repéré un véhicule</em>, explique Jean-Marc Favaro. <em style="font-style:italic;">Mon job consiste à construire des algorithmes qui analysent chaque jour ces millions de points de données pour reconstituer le nombre de trajets effectués, connaître leurs trajectoires et compter les appareils disponibles</em> » , détaille-t-il. Ces analyses sont ensuite présentées sous forme de visualisations, cartes et tableaux disponibles sur une plateforme couvrant une quarantaine de villes. </p>
+
+
+<p>Le geodata scientist est un mélange de plusieurs métiers préexistants. Jean-Marc Favaro se considère donc comme « <em style="font-style:italic;">un couteau suisse</em> ». « <em style="font-style:italic;">Je fais de la géomatique, de la géographie, des statistiques et des traitements informatiques de bases de données. Il faut une large palette de compétences pour gérer l'intégralité de la chaîne des données.</em> » Un mélange qu'illustre son parcours. Il est d'abord responsable d'études géomarketing dans le privé jusqu'au début des années 2000, après un master en économétrie et un DEA de géographie. Puis statisticien pendant quatre ans au CNRS, où il travaille sur des modélisations et simulations du comportement humain à l'échelle d'une ville, dans le cadre d'un doctorat en géographie. Avant de repasser dans le privé et l'analyse statistique, jusqu'à un premier poste de géodata scientist chez AdMoove, une société de marketing géolocalisé, où il rencontre l'un des associés avec lequel il fondera Fluctuo en 2017. </p> <p><em style="font-weight:bold;">« Big géodata »</em></p><p>Si ce métier existait déjà avant, éclaté entre plusieurs professions, il a fortement évolué. « <em style="font-style:italic;">L'avènement du big data</em>(le traitement de volumes massifs de données, NDLR) <em style="font-style:italic;">a tout changé</em>, assure Jean-Marc Favaro. <em style="font-style:italic;">Il y a quelques années, nous devions davantage déduire et deviner. La mobilité était analysée via des sondages ou de petits échantillons. Aujourd'hui, nous utilisons d'énormes échantillons avec des centaines de millions de lignes de tableur</em>. » De quoi permettre l'avènement du « <em style="font-style:italic;">big géodata</em> » , l'apparition de montagnes de données géographiques issues des GPS intégrés aux smartphones ou aux vélos, trottinettes et autres scooters. Le métier est aussi devenu plus abordable, grâce à l'apparition de l'open data, offrant quantité d'informations sur la ville et ses transports publics accessibles gratuitement. Mais aussi de l'<mark>open</mark> <mark>source</mark>, des logiciels gratuits dont le code est librement réutilisable, et qui ont démocratisé l'usage de la cartographie. </p> <p> Pour l'épauler et accompagner la croissance de sa société, Jean-Marc Favaro prévoit de recruter d'autres géodata scientists. Quels profils recherche-t-il ? Idéalement le même que le sien, car « <em style="font-style:italic;">si vous n'êtes pas géographe, vous allez passer votre temps à réinventer l'eau tiède. Cependant, les outils utilisés sont très quantitatifs, il faut donc un profil statistique et informatique</em> ». « <em style="font-style:italic;">Des gens forts en maths qui adoraient l'histoire-géo à l'école</em> » , résume-t-il.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p><a href="mailto:jelhassani@lefigaro.fr">jelhassani@lefigaro.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">24 février 2020</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2020 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20200224·LF·792×20×22700350284</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20200224·LF·792×20×22700350284";
+    var _docIndex = 361;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20200224·LF·792×20×22700350284';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720200224%C2%B7LF%C2%B7792%C3%9720%C3%9722700350284&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720200224%C2%B7LF%C2%B7792%C3%9720%C3%9722700350284&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720200224%C2%B7LF%C2%B7792%C3%9720%C3%9722700350284&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720200224%C2%B7LF%C2%B7792%C3%9720%C3%9722700350284&docIndex=361&FullScreen=1";
+                
+	var _keyDoc = 'news·20200224·LF·792×20×22700350284';
+</script>
+</div></body></html>

@@ -1,0 +1,569 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Dialogues,         mardi 29 mars 2022 883 mots, p. 34&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Id&#233;es         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Entretien&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Gilles Jeannot &#171; Le num&#233;rique fait &#233;merger de nouvelles interactions public-priv&#233; &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le chercheur d&#233;taille comment les outils type Uber, Doctolib ou Airbnb interf&#232;rent avec les politiques publiques de la voirie, du logement, de la sant&#233;...&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Propos recueillis parAntoine Reverchon Propos recueillis parAntoine Reverchon&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Avec &lt;em style=&quot;font-style:italic;&quot;&gt;La Privatisation num&#233;rique&lt;/em&gt; (Raisons d&#39;agir, 172 p., 9 euros), cosign&#233; avec Simon Cottin-Marx, le chercheur au Laboratoire techniques, territoires et soci&#233;t&#233;s (LATTS) &#224; l&#39;Ecole nationale des ponts et chauss&#233;es livre une analyse critique de la num&#233;risation des ser vices publics, dans laquelle il voit une extension de l&#39;aire du capitalisme. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Quel a &#233;t&#233; le point de d&#233;part de ce livre ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Comme bien des citadins, l&#39;&#233;tonnement devant l&#39;envahissement des trottoirs par les trottinettes, l&#39;apparition et la disparition de stations de v&#233;los &#171; partag&#233;s &#187;, la noria des scooters de livraison de repas, le recours &#224; Doctolib ou Vite ma dose pour aller se faire vacciner contre le Covid-19, etc. Ou encore le d&#233;bat public sur Health Data Hub (la collecte de nos donn&#233;es de sant&#233; sur un serveur de &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt;), sur le poids d&#39;Airbnb dans le parc immobilier locatif... Le point commun de ces &#233;tonnements est, bien s&#251;r, l&#39;usage des outils num&#233;riques, mais aussi le fait qu&#39;ils concernent tous les fronti&#232;res du service public : voirie, logement, sant&#233;...&lt;/p&gt;
+
+
+&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Mais la num&#233;risation de l&#39;administration, d&#39;une part, la privatisation des services publics, d&#39;autre part, font d&#233;j&#224; l&#39;objet de nombreux travaux de recherche...&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Oui, mais la num&#233;risation de l&#39;administration a &#233;t&#233; &#233;tudi&#233;e jusqu&#39;ici comme une &#233;volution interne. On conna&#238;t aussi les formes classiques d&#39;interaction entre public et priv&#233; : la sous-traitance des services informatiques &#224; IBM ou &#224; Capgemini, la d&#233;l&#233;gation de service public &#224; Bouygues ou Suez, qui &#224; leur tour sous-traitent &#224; des r&#233;seaux d&#39;entreprises sp&#233;cialis&#233;es dans les services de la &#171; ville intelligente. Il y a aussi quelques privatisations, comme les &#171; bus Macron &#187; de la &lt;span class=&quot;stubs&quot;&gt;SNCF&lt;/span&gt;, vendus &#224; Blablacar. &lt;/p&gt; &lt;p&gt; Mais on voit &#233;merger des formes nouvelles. Tout d&#39;abord, l&#39;appropriation de l&#39;espace public par des op&#233;rateurs priv&#233;s de &#171; mobilit&#233; partag&#233;e &#187; ou d&#39;applications, comme Waze, qui g&#233;n&#232;rent du trafic et des usages sur la voie publique. Il y a aussi l&#39;interf&#233;rence avec des politiques publiques : le logement lorsque Airbnb modifie la destination d&#39;une grande partie du parc immobilier; la sant&#233; lorsque Google et Apple bloquent l&#39;acc&#232;s de StopCovid par leur application &lt;span class=&quot;stubs&quot;&gt;Bluetooth&lt;/span&gt; en invoquant la &#171; protection de la vie priv&#233;e &#187; ; les droits sociaux lorsque Uber organise et finance un r&#233;f&#233;rendum en Californie pour abroger une loi qui r&#233;gule son activit&#233;. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Si ces op&#233;rateurs num&#233;riques offrent un service plus efficace et plus &#171; convivial &#187; que les services publics, pourquoi devrait-on s&#39;en plaindre ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il s&#39;agit en fait des marqueurs d&#39;une transformation &#233;conomique fondamentale du capitalisme, usant de nouveaux modes de production du profit. La valorisation des donn&#233;es, d&#233;j&#224; bien connue, permet des approches marketing tr&#232;s fines au b&#233;n&#233;fice de celui qui les poss&#232;de : c&#39;est le capitalisme de surveillance. La rapidit&#233; de la circulation des informations et de la &#171; connectivit&#233; &#187; des r&#233;seaux r&#233;duit les co&#251;ts de transaction au b&#233;n&#233;fice de celui qui les contr&#244;le : c&#39;est le capitalisme de plates-formes. Le probl&#232;me n&#39;est pas tant le risque &#171; orwellien &#187; du contr&#244;le de nos vies car les algorithmes sont en r&#233;alit&#233; incapables de tenir leur promesse de connaissance parfaite que l&#39;incapacit&#233; de ces entreprises &#224; traiter les probl&#232;mes de tout le monde &#224; &#233;galit&#233;. Les op&#233;rateurs de mobilit&#233; partag&#233;e sont efficaces en centre-ville ou en intercit&#233;s, mais pas en p&#233;riph&#233;rie urbaine ou en zone rurale. Il en est de m&#234;me pour les op&#233;rateurs des infrastructures num&#233;riques. C&#39;est la r&#233;p&#233;tition du ph&#233;nom&#232;ne, h&#233;las classique, de la privatisation des profits et de la socialisation des pertes : &lt;span class=&quot;stubs&quot;&gt;Netflix&lt;/span&gt; profite du d&#233;ploiement de la fibre par les services publics sans d&#233;penser un dollar; les Parisiens utilisent Doctolib pour trouver des cr&#233;neaux de vaccination dans la Seine-Saint-Denis, o&#249; la population est sous-vaccin&#233;e... &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Ne s&#39;agit-il pas d&#39;une p&#233;riode de transition, le temps que l&#39;Etat r&#233;gule ce nouveau capitalisme &#171; sauvage &#187; ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;En effet, certaines villes contrent les effets n&#233;fastes d&#39;Airbnb, des directives europ&#233;ennes et des lois nationales prot&#232;gent les donn&#233;es priv&#233;es ou combattent les monopoles des GAFA. Mais il faut avancer sur d&#39;autres fronts. Les services publics doivent apporter des services num&#233;riques de m&#234;me qualit&#233; que le priv&#233;, mais en servant tout le monde &#224; &#233;galit&#233;. Au lieu de favoriser, au nom de la &#171; start-up nation &#187;, le mod&#232;le &#233;conomique des plates-formes en promouvant le statut d&#39;autoentrepreneur ou en pr&#233;carisant les agents, comme le fait La Poste en rachetant Stuart, l&#39;Etat devrait plut&#244;t soutenir les initiatives d&#39;agents de service public &#224; partir du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Par exemple, la gendarmerie ou encore des collectivit&#233;s locales avec l&#39;association Adullact ont d&#233;velopp&#233; des logiciels m&#233;tiers; des professeurs ont d&#233;velopp&#233; Framasoft, qui propose aux enseignants l&#39;&#233;quivalent de la gamme Google. Mais ils sont d&#233;bord&#233;s par la demande. L&#39;Etat doit offrir des infrastructures serveurs, connectivit&#233; aussi puissantes que celles de &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; ou de Google. Il doit aussi poursuive dans la voie ouverte par FranceConnect, qui offre &#224; tous une identit&#233; num&#233;rique alternative &#224; Facebook Connect, ou celle de l&#39;incubateur interminist&#233;riel de start-up d&#39;Etat, qui habilite des &#171; d&#233;veloppeurs d&#39;int&#233;r&#234;t g&#233;n&#233;ral &#187; &#224; concevoir des solutions num&#233;riques pour les administrations. &lt;/p&gt; &lt;p&gt; Il faut revenir &#224; ce qui fait l&#39;essence m&#234;me des services publics. Au d&#233;part, chacun balayait la rue devant sa porte avant de d&#233;l&#233;guer ce &#171; bien commun &#187; &#224; un service de voirie financ&#233; par nos imp&#244;ts. Il faut rendre accessible &#224; tous les biens communs qu&#39;apportent les services num&#233;riques.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;28 mars 2022&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2022 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20220329&amp;#183;LM&amp;#183;006801&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">services publics</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">service public</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">numérisation de l'administration</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">services numériques</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">parc immobilier</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">SNCF</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">NETFLIX</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">BLUETOOTH</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">MICROSOFT</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Droits et libertés</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Gestion d'entreprise</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Médecine</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Infrastructures routières</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Facebook Connect</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Capgemini</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Californie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Seine-Saint-Denis</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220329%c2%b7LM%c2%b7006801" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720220329%c2%b7LM%c2%b7006801">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Dialogues,         mardi 29 mars 2022 883 mots, p. 34</span>
+</div>
+
+    <div>
+        <p>
+Idées         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Entretien</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Gilles Jeannot « Le numérique fait émerger de nouvelles interactions public-privé »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le chercheur détaille comment les outils type Uber, Doctolib ou Airbnb interfèrent avec les politiques publiques de la voirie, du logement, de la santé...</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Propos recueillis parAntoine Reverchon Propos recueillis parAntoine Reverchon</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Avec <em style="font-style:italic;">La Privatisation numérique</em> (Raisons d'agir, 172 p., 9 euros), cosigné avec Simon Cottin-Marx, le chercheur au Laboratoire techniques, territoires et sociétés (LATTS) à l'Ecole nationale des ponts et chaussées livre une analyse critique de la numérisation des ser vices publics, dans laquelle il voit une extension de l'aire du capitalisme. </p> <p><em style="font-weight:bold;">Quel a été le point de départ de ce livre ?</em></p><p>Comme bien des citadins, l'étonnement devant l'envahissement des trottoirs par les trottinettes, l'apparition et la disparition de stations de vélos « partagés », la noria des scooters de livraison de repas, le recours à Doctolib ou Vite ma dose pour aller se faire vacciner contre le Covid-19, etc. Ou encore le débat public sur Health Data Hub (la collecte de nos données de santé sur un serveur de <span class="stubs">Microsoft</span>), sur le poids d'Airbnb dans le parc immobilier locatif... Le point commun de ces étonnements est, bien sûr, l'usage des outils numériques, mais aussi le fait qu'ils concernent tous les frontières du service public : voirie, logement, santé...</p>
+
+
+<p><em style="font-weight:bold;">Mais la numérisation de l'administration, d'une part, la privatisation des services publics, d'autre part, font déjà l'objet de nombreux travaux de recherche...</em></p><p>Oui, mais la numérisation de l'administration a été étudiée jusqu'ici comme une évolution interne. On connaît aussi les formes classiques d'interaction entre public et privé : la sous-traitance des services informatiques à IBM ou à Capgemini, la délégation de service public à Bouygues ou Suez, qui à leur tour sous-traitent à des réseaux d'entreprises spécialisées dans les services de la « ville intelligente. Il y a aussi quelques privatisations, comme les « bus Macron » de la <span class="stubs">SNCF</span>, vendus à Blablacar. </p> <p> Mais on voit émerger des formes nouvelles. Tout d'abord, l'appropriation de l'espace public par des opérateurs privés de « mobilité partagée » ou d'applications, comme Waze, qui génèrent du trafic et des usages sur la voie publique. Il y a aussi l'interférence avec des politiques publiques : le logement lorsque Airbnb modifie la destination d'une grande partie du parc immobilier; la santé lorsque Google et Apple bloquent l'accès de StopCovid par leur application <span class="stubs">Bluetooth</span> en invoquant la « protection de la vie privée » ; les droits sociaux lorsque Uber organise et finance un référendum en Californie pour abroger une loi qui régule son activité. </p> <p><em style="font-weight:bold;">Si ces opérateurs numériques offrent un service plus efficace et plus « convivial » que les services publics, pourquoi devrait-on s'en plaindre ?</em></p><p>Il s'agit en fait des marqueurs d'une transformation économique fondamentale du capitalisme, usant de nouveaux modes de production du profit. La valorisation des données, déjà bien connue, permet des approches marketing très fines au bénéfice de celui qui les possède : c'est le capitalisme de surveillance. La rapidité de la circulation des informations et de la « connectivité » des réseaux réduit les coûts de transaction au bénéfice de celui qui les contrôle : c'est le capitalisme de plates-formes. Le problème n'est pas tant le risque « orwellien » du contrôle de nos vies car les algorithmes sont en réalité incapables de tenir leur promesse de connaissance parfaite que l'incapacité de ces entreprises à traiter les problèmes de tout le monde à égalité. Les opérateurs de mobilité partagée sont efficaces en centre-ville ou en intercités, mais pas en périphérie urbaine ou en zone rurale. Il en est de même pour les opérateurs des infrastructures numériques. C'est la répétition du phénomène, hélas classique, de la privatisation des profits et de la socialisation des pertes : <span class="stubs">Netflix</span> profite du déploiement de la fibre par les services publics sans dépenser un dollar; les Parisiens utilisent Doctolib pour trouver des créneaux de vaccination dans la Seine-Saint-Denis, où la population est sous-vaccinée... </p> <p><em style="font-weight:bold;">Ne s'agit-il pas d'une période de transition, le temps que l'Etat régule ce nouveau capitalisme « sauvage » ?</em></p><p>En effet, certaines villes contrent les effets néfastes d'Airbnb, des directives européennes et des lois nationales protègent les données privées ou combattent les monopoles des GAFA. Mais il faut avancer sur d'autres fronts. Les services publics doivent apporter des services numériques de même qualité que le privé, mais en servant tout le monde à égalité. Au lieu de favoriser, au nom de la « start-up nation », le modèle économique des plates-formes en promouvant le statut d'autoentrepreneur ou en précarisant les agents, comme le fait La Poste en rachetant Stuart, l'Etat devrait plutôt soutenir les initiatives d'agents de service public à partir du <mark>logiciel</mark> <mark>libre</mark>. </p> <p> Par exemple, la gendarmerie ou encore des collectivités locales avec l'association Adullact ont développé des logiciels métiers; des professeurs ont développé Framasoft, qui propose aux enseignants l'équivalent de la gamme Google. Mais ils sont débordés par la demande. L'Etat doit offrir des infrastructures serveurs, connectivité aussi puissantes que celles de <span class="stubs">Microsoft</span> ou de Google. Il doit aussi poursuive dans la voie ouverte par FranceConnect, qui offre à tous une identité numérique alternative à Facebook Connect, ou celle de l'incubateur interministériel de start-up d'Etat, qui habilite des « développeurs d'intérêt général » à concevoir des solutions numériques pour les administrations. </p> <p> Il faut revenir à ce qui fait l'essence même des services publics. Au départ, chacun balayait la rue devant sa porte avant de déléguer ce « bien commun » à un service de voirie financé par nos impôts. Il faut rendre accessible à tous les biens communs qu'apportent les services numériques.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">28 mars 2022</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2022 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20220329·LM·006801</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20220329·LM·006801";
+    var _docIndex = 221;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"sncf":"92576","netflix":"93753","bluetooth":"92509","microsoft":"93647"};
+		var _docName = 'news·20220329·LM·006801';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720220329%C2%B7LM%C2%B7006801&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720220329%C2%B7LM%C2%B7006801&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720220329%C2%B7LM%C2%B7006801&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720220329%C2%B7LM%C2%B7006801&docIndex=221&FullScreen=1";
+                
+	var _keyDoc = 'news·20220329·LM·006801';
+</script>
+</div></body></html>

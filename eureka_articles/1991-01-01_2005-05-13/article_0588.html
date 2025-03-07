@@ -1,0 +1,451 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Plan&#232;te,         lundi 10 avril 2000 552 mots, p. B2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Lexique Linux            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Au fil des articles et des reportages, vous verrez revenir des termes et des expressions comme &quot;&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt;&quot;, &quot;GNU&quot; ou &quot;&lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&quot;. Pour vous aider &#224; comprendre de quoi il retourne, voici un petit lexique du monde &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;&lt;/p&gt;&lt;p&gt;- &lt;em style=&quot;font-weight:bold;&quot;&gt;Code source:&lt;/em&gt; pour un informaticien, c&#39;est le coeur du logiciel, la cl&#233; du programme. Le code source est une suite d&#39;instructions collig&#233;es et r&#233;unies par le programmeur du logiciel X. Par la suite, ce code source est compil&#233; en un logiciel ex&#233;cutable pour &#234;tre &quot;compris&quot; par l&#39;ordinateur.&lt;/p&gt;
+
+
+&lt;p&gt;- &lt;em style=&quot;font-weight:bold;&quot;&gt;Communaut&#233;&lt;/em&gt;: ensemble des utilisateurs et des d&#233;veloppeurs d&#39;un logiciel ou d&#39;un syst&#232;me (&lt;em style=&quot;font-style:italic;&quot;&gt;Linux, Netscape/Mozilla, Java&lt;/em&gt;...). &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;Environnement graphique&lt;/em&gt; ou &lt;em style=&quot;font-weight:bold;&quot;&gt;interface graphique&lt;/em&gt;: un ensemble de composantes logicielles permettant de g&#233;rer de fa&#231;on intuitive, gr&#226;ce &#224; l&#39;usage de la souris, de menus d&#233;roulants et de fen&#234;tres, la manipulation de fichiers au travers de diff&#233;rents supports de stockage comme un disque dur ou un lecteur CD-ROM. Au lieu d&#39;utiliser une ligne de commande, comme au bon vieux temps du DOS, un environnement graphique permet, par exemple, de copier des fichiers uniquement &#224; l&#39;aide de la souris. L&#39;utilisation d&#39;une interface graphique fut popularis&#233;e par Apple et son ordinateur Macintosh, pour &#234;tre ensuite reprise par &lt;em style=&quot;font-style:italic;&quot;&gt;Windows&lt;/em&gt;. Les principaux environnements graphiques sous &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; se nomment &lt;em style=&quot;font-style:italic;&quot;&gt;KDE, GNOME&lt;/em&gt;&lt;/p&gt;&lt;p&gt;- &lt;em style=&quot;font-weight:bold;&quot;&gt;Geek&lt;/em&gt;: accroc du clavier. Peut &#234;tre vu comme un synonyme de &lt;em style=&quot;font-style:italic;&quot;&gt;hacker&lt;/em&gt; &#224; la diff&#233;rence qu&#39;un &lt;em style=&quot;font-style:italic;&quot;&gt;geek&lt;/em&gt; s&#39;int&#233;resse &#224; tout ce qui est technique, mais n&#39;est pas n&#233;cessairement un d&#233;veloppeur. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;GNU&lt;/em&gt;: en 1984, &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;, un chercheur au laboratoire d&#39;intelligence artificielle du MIT (MIT AI Lab), lan&#231;a le projet GNU. Ce projet visait &#224; produire une version libre du syst&#232;me d&#39;exploitation &lt;em style=&quot;font-style:italic;&quot;&gt;Unix&lt;/em&gt;. &lt;mark&gt;Stallman&lt;/mark&gt; le lan&#231;a parce qu&#39;il sentait essentiellement que le savoir qui constitue un programme ex&#233;cutable (ce que l&#39;industrie informatique appelle le code source) devrait &#234;tre libre. S&#39;il ne l&#39;&#233;tait pas, raisonnait-il, un petit mais puissant groupe de personnes dominerait l&#39;informatique. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;GNU/Linux&lt;/em&gt;: &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; est le noyau, &lt;em style=&quot;font-style:italic;&quot;&gt;GNU/Linux&lt;/em&gt; est l&#39;ensemble du syst&#232;me incluant plusieurs outils du projet GNU (compilateur, librairie standard...). &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;GPL&lt;/em&gt;: &lt;em style=&quot;font-style:italic;&quot;&gt;General Public Licence&lt;/em&gt;. La licence publique la plus couramment utilis&#233;e pour les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; est la &lt;em style=&quot;font-style:italic;&quot;&gt;GNU General Public Licence&lt;/em&gt;, appel&#233;e plus simplement GPL. La GPL donne le droit aux utilisateurs d&#39;effectuer des am&#233;liorations sur un programme, de poster celles-ci sur Internet et m&#234;me de revendre le fruit de ces d&#233;veloppements. &#192; une seule condition: livrer aussi le code source du nouveau logiciel sous licence GPL. La GPL a &#233;t&#233; cr&#233;&#233;e par &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;Hacker&lt;/em&gt;: un &lt;em style=&quot;font-style:italic;&quot;&gt;hacker&lt;/em&gt; est un crack de l&#39;informatique, un accroc du clavier, un d&#233;veloppeur. Par centaines, des &lt;em style=&quot;font-style:italic;&quot;&gt;hackers&lt;/em&gt; du monde entier se sont trouv&#233; une cause &#224; d&#233;fendre en r&#233;pondant &#224; l&#39;appel lanc&#233; par Linus Torvalds, et ont ainsi contribu&#233; de mani&#232;re essentielle au d&#233;veloppement de &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;&lt;/p&gt;&lt;p&gt;- &lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;mark&gt;Logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; &lt;/em&gt;: &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;Free as in free speech, not free beer&quot;&lt;/em&gt;, se pla&#238;t &#224; r&#233;p&#233;ter &lt;mark&gt;Richard&lt;/mark&gt; &lt;mark&gt;Stallman&lt;/mark&gt; pour expliquer aux Am&#233;ricains le concept du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Il ne s&#39;agit pas d&#39;un logiciel gratuit, mais bien d&#39;un logiciel dont le code source est accessible &#224; tous. Ses d&#233;veloppeurs peuvent se compter par milliers dans le monde, et de ce joyeux bazar sont n&#233;s des outils dont les performances n&#39;ont rien &#224; envier aux produits des plus grandes soci&#233;t&#233;s. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;LUG&lt;/em&gt;: &lt;em style=&quot;font-style:italic;&quot;&gt;Linux Users Group&lt;/em&gt;. Groupe local d&#39;utilisateurs de syst&#232;mes &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;. L&#39;Association Linux-Qu&#233;bec est un groupe local d&#39;utilisateurs de syst&#232;mes &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt;&lt;/p&gt;&lt;p&gt;- &lt;em style=&quot;font-weight:bold;&quot;&gt;&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; &lt;/em&gt;: ce terme, qui signifie &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, a &#233;t&#233; invent&#233; par les Am&#233;ricains pour &#233;viter de confondre le mot &lt;em style=&quot;font-style:italic;&quot;&gt;free&lt;/em&gt; avec gratuit. La notion de libert&#233; se retrouve donc dans le mot &lt;em style=&quot;font-style:italic;&quot;&gt;open&lt;/em&gt;&lt;/p&gt;&lt;p&gt;- &lt;em style=&quot;font-weight:bold;&quot;&gt;Pilote (driver)&lt;/em&gt;: petit programme permettant &#224; l&#39;ordinateur et au syst&#232;me d&#39;exploitation de &quot;dialoguer&quot; avec un p&#233;riph&#233;rique comme un lecteur ZIP ou un scanner. On peut tr&#232;s bien raccorder &#224; l&#39;ordinateur un p&#233;riph&#233;rique X sans que la communication soit possible entre les deux. Seul le pilote, normalement d&#233;velopp&#233; par la firme qui produit le p&#233;riph&#233;rique, permet cette &quot;communication&quot;. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;Syst&#232;me d&#39;exploitation&lt;/em&gt;: des syst&#232;mes d&#39;exploitation, il en existe plusieurs. &lt;em style=&quot;font-style:italic;&quot;&gt;Windows, MacOS, BeOS, Unix&lt;/em&gt; et &lt;em style=&quot;font-style:italic;&quot;&gt;Linux&lt;/em&gt; sont tous des syst&#232;mes d&#39;exploitation. Le SE est le grand chef d&#39;orchestre dans un ordinateur. Il g&#232;re les entr&#233;es et les sorties, donc tous les p&#233;riph&#233;riques et l&#39;ensemble des composantes d&#39;un ordinateur comme un &#233;cran, un clavier, etc. Sans lui, aucun ordinateur ne peut fonctionner. &lt;/p&gt; &lt;p&gt; - &lt;em style=&quot;font-weight:bold;&quot;&gt;Unix&lt;/em&gt;: l&#39;anc&#234;tre du syst&#232;me d&#39;exploitation &lt;em style=&quot;font-style:italic;&quot;&gt;GNU/Linux&lt;/em&gt;, con&#231;u dans les ann&#233;es 60 par des chercheurs des Bell Labs. Le syst&#232;me d&#39;exploitation &lt;em style=&quot;font-style:italic;&quot;&gt;GNU/Linux&lt;/em&gt; est un &quot;clone&quot; de &lt;em style=&quot;font-style:italic;&quot;&gt;Unix&lt;/em&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000410&amp;#183;LE&amp;#183;0044&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Informatique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000410%c2%b7LE%c2%b70044" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000410%c2%b7LE%c2%b70044">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Planète,         lundi 10 avril 2000 552 mots, p. B2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Lexique Linux            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Au fil des articles et des reportages, vous verrez revenir des termes et des expressions comme "<mark>Open</mark> <mark>Source</mark>", "GNU" ou "<mark>logiciel</mark> <mark>libre</mark>". Pour vous aider à comprendre de quoi il retourne, voici un petit lexique du monde <em style="font-style:italic;">Linux</em></p><p>- <em style="font-weight:bold;">Code source:</em> pour un informaticien, c'est le coeur du logiciel, la clé du programme. Le code source est une suite d'instructions colligées et réunies par le programmeur du logiciel X. Par la suite, ce code source est compilé en un logiciel exécutable pour être "compris" par l'ordinateur.</p>
+
+
+<p>- <em style="font-weight:bold;">Communauté</em>: ensemble des utilisateurs et des développeurs d'un logiciel ou d'un système (<em style="font-style:italic;">Linux, Netscape/Mozilla, Java</em>...). </p> <p> - <em style="font-weight:bold;">Environnement graphique</em> ou <em style="font-weight:bold;">interface graphique</em>: un ensemble de composantes logicielles permettant de gérer de façon intuitive, grâce à l'usage de la souris, de menus déroulants et de fenêtres, la manipulation de fichiers au travers de différents supports de stockage comme un disque dur ou un lecteur CD-ROM. Au lieu d'utiliser une ligne de commande, comme au bon vieux temps du DOS, un environnement graphique permet, par exemple, de copier des fichiers uniquement à l'aide de la souris. L'utilisation d'une interface graphique fut popularisée par Apple et son ordinateur Macintosh, pour être ensuite reprise par <em style="font-style:italic;">Windows</em>. Les principaux environnements graphiques sous <em style="font-style:italic;">Linux</em> se nomment <em style="font-style:italic;">KDE, GNOME</em></p><p>- <em style="font-weight:bold;">Geek</em>: accroc du clavier. Peut être vu comme un synonyme de <em style="font-style:italic;">hacker</em> à la différence qu'un <em style="font-style:italic;">geek</em> s'intéresse à tout ce qui est technique, mais n'est pas nécessairement un développeur. </p> <p> - <em style="font-weight:bold;">GNU</em>: en 1984, <mark>Richard</mark> <mark>Stallman</mark>, un chercheur au laboratoire d'intelligence artificielle du MIT (MIT AI Lab), lança le projet GNU. Ce projet visait à produire une version libre du système d'exploitation <em style="font-style:italic;">Unix</em>. <mark>Stallman</mark> le lança parce qu'il sentait essentiellement que le savoir qui constitue un programme exécutable (ce que l'industrie informatique appelle le code source) devrait être libre. S'il ne l'était pas, raisonnait-il, un petit mais puissant groupe de personnes dominerait l'informatique. </p> <p> - <em style="font-weight:bold;">GNU/Linux</em>: <em style="font-style:italic;">Linux</em> est le noyau, <em style="font-style:italic;">GNU/Linux</em> est l'ensemble du système incluant plusieurs outils du projet GNU (compilateur, librairie standard...). </p> <p> - <em style="font-weight:bold;">GPL</em>: <em style="font-style:italic;">General Public Licence</em>. La licence publique la plus couramment utilisée pour les <mark>logiciels</mark> <mark>libres</mark> est la <em style="font-style:italic;">GNU General Public Licence</em>, appelée plus simplement GPL. La GPL donne le droit aux utilisateurs d'effectuer des améliorations sur un programme, de poster celles-ci sur Internet et même de revendre le fruit de ces développements. À une seule condition: livrer aussi le code source du nouveau logiciel sous licence GPL. La GPL a été créée par <mark>Richard</mark> <mark>Stallman</mark>. </p> <p> - <em style="font-weight:bold;">Hacker</em>: un <em style="font-style:italic;">hacker</em> est un crack de l'informatique, un accroc du clavier, un développeur. Par centaines, des <em style="font-style:italic;">hackers</em> du monde entier se sont trouvé une cause à défendre en répondant à l'appel lancé par Linus Torvalds, et ont ainsi contribué de manière essentielle au développement de <em style="font-style:italic;">Linux</em></p><p>- <em style="font-weight:bold;"><mark>Logiciel</mark> <mark>libre</mark> </em>: <em style="font-style:italic;">"Free as in free speech, not free beer"</em>, se plaît à répéter <mark>Richard</mark> <mark>Stallman</mark> pour expliquer aux Américains le concept du <mark>logiciel</mark> <mark>libre</mark>. Il ne s'agit pas d'un logiciel gratuit, mais bien d'un logiciel dont le code source est accessible à tous. Ses développeurs peuvent se compter par milliers dans le monde, et de ce joyeux bazar sont nés des outils dont les performances n'ont rien à envier aux produits des plus grandes sociétés. </p> <p> - <em style="font-weight:bold;">LUG</em>: <em style="font-style:italic;">Linux Users Group</em>. Groupe local d'utilisateurs de systèmes <em style="font-style:italic;">Linux</em>. L'Association Linux-Québec est un groupe local d'utilisateurs de systèmes <em style="font-style:italic;">Linux</em></p><p>- <em style="font-weight:bold;"><mark>Open</mark> <mark>Source</mark> </em>: ce terme, qui signifie <mark>logiciel</mark> <mark>libre</mark>, a été inventé par les Américains pour éviter de confondre le mot <em style="font-style:italic;">free</em> avec gratuit. La notion de liberté se retrouve donc dans le mot <em style="font-style:italic;">open</em></p><p>- <em style="font-weight:bold;">Pilote (driver)</em>: petit programme permettant à l'ordinateur et au système d'exploitation de "dialoguer" avec un périphérique comme un lecteur ZIP ou un scanner. On peut très bien raccorder à l'ordinateur un périphérique X sans que la communication soit possible entre les deux. Seul le pilote, normalement développé par la firme qui produit le périphérique, permet cette "communication". </p> <p> - <em style="font-weight:bold;">Système d'exploitation</em>: des systèmes d'exploitation, il en existe plusieurs. <em style="font-style:italic;">Windows, MacOS, BeOS, Unix</em> et <em style="font-style:italic;">Linux</em> sont tous des systèmes d'exploitation. Le SE est le grand chef d'orchestre dans un ordinateur. Il gère les entrées et les sorties, donc tous les périphériques et l'ensemble des composantes d'un ordinateur comme un écran, un clavier, etc. Sans lui, aucun ordinateur ne peut fonctionner. </p> <p> - <em style="font-weight:bold;">Unix</em>: l'ancêtre du système d'exploitation <em style="font-style:italic;">GNU/Linux</em>, conçu dans les années 60 par des chercheurs des Bell Labs. Le système d'exploitation <em style="font-style:italic;">GNU/Linux</em> est un "clone" de <em style="font-style:italic;">Unix</em></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000410·LE·0044</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000410·LE·0044";
+    var _docIndex = 587;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000410·LE·0044';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000410%C2%B7LE%C2%B70044&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000410%C2%B7LE%C2%B70044&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000410%C2%B7LE%C2%B70044&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000410%C2%B7LE%C2%B70044&docIndex=587&FullScreen=1";
+                
+	var _keyDoc = 'news·20000410·LE·0044';
+</script>
+</div></body></html>

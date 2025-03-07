@@ -1,0 +1,535 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; techno,         mercredi 28 ao&amp;#251;t 2013 393 mots, p. SCH1&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et medecine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Carte blanche&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Math&#233;maticiens polyc&#233;phales            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Etienne Ghys&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Terry Tao vient de l&#39;annoncer sur son blog, tr&#232;s populaire parmi les math&#233;maticiens : il est temps de r&#233;diger et de publier le huiti&#232;me polymath! Il s&#39;agit d&#39;am&#233;liorer un r&#233;sultat r&#233;cent concernant la conjecture des nombres premiers jumeaux (&#171; Science &amp;amp; m&#233;decine &#187; du 26 juin). L&#39;id&#233;e des projets polymath a &#233;t&#233; lanc&#233;e il y a quatre ans par Tim Gowers dans un autre blog : encourager la &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; collaboration massive &#187;&lt;/em&gt; de chercheurs en math&#233;matiques, aboutissant (si possible) &#224; la r&#233;solution &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; collective &#187;&lt;/em&gt; de probl&#232;mes difficiles. &lt;/p&gt; &lt;p&gt; L&#39;image d&#39;Epinal du math&#233;maticien solitaire, dont les seuls outils sont le crayon et le papier, doit &#234;tre redessin&#233;e gr&#226;ce &#224; Internet. Traditionnellement, les articles de recherche en math&#233;matiques &#233;taient sign&#233;s par un seul auteur. Au cours du XXe si&#232;cle, on a vu para&#238;tre de plus en plus d&#39;articles &#224; deux (ou parfois trois) auteurs. Aujourd&#39;hui il ne reste plus gu&#232;re qu&#39;un tiers des articles qui n&#39;ont qu&#39;un auteur. Le principe de &#171; polymath &#187; est tr&#232;s simple : un site Internet publie des probl&#232;mes de recherche, et une discussion publique s&#39;engage, ouverte &#224; tous ceux qui le souhaitent. Lorsque les choses se passent bien et que le probl&#232;me est r&#233;solu, la solution est r&#233;dig&#233;e, et publi&#233;e... sous le pseudonyme &#171; D. H. J. Polymath &#187;. Il ne s&#39;agit pourtant pas d&#39;un travail anonyme puisque l&#39;introduction mentionne clairement l&#39;adresse Internet o&#249; on peut trouver la liste des contributeurs et surtout l&#39;int&#233;gralit&#233; de la discussion. D. H. J. Polymath n&#39;a pas encore beaucoup publi&#233;, mais on lui doit une contribution remarquable, en 2012, dans la revue &lt;em style=&quot;font-style:italic;&quot;&gt;Annals of Mathematics&lt;/em&gt; , peut-&#234;tre la plus prestigieuse au monde.&lt;/p&gt;
+
+
+&lt;p&gt;Cette &#233;criture collaborative existe depuis longtemps. On peut penser &#224; Nicolas Bourbaki, ce &#171; math&#233;maticien polyc&#233;phale &#187; qui &#233;crit depuis 1935 les &lt;em style=&quot;font-style:italic;&quot;&gt;El&#233;ments de math&#233;matique&lt;/em&gt;, un trait&#233; en de nombreux volumes &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; qui prend les math&#233;matiques &#224; leur d&#233;but &#187;&lt;/em&gt;. Il s&#39;agit l&#224; encore d&#39;un pseudonyme associ&#233; &#224; un groupe qui se renouvelle sans cesse par cooptation, mais il y a deux diff&#233;rences importantes. D&#39;une part, m&#234;me si ce trait&#233; a eu une importance capitale sur les math&#233;matiques du XXe si&#232;cle, il ne s&#39;agit pas d&#39;un travail de recherche, mais plut&#244;t d&#39;une structuration du paysage math&#233;matique existant. D&#39;autre part, la constitution du groupe est secr&#232;te, en quelque sorte &#224; l&#39;oppos&#233; de l&#39;esprit &#171; &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;/em&gt; &#187; de Polymath. &lt;/p&gt; &lt;p&gt; Une quarantaine de math&#233;maticiens viennent de publier un ouvrage collectif (de 600 pages) dont le surnom est &#171; HoTT book &#187;, et dont le titre complet est &lt;em style=&quot;font-style:italic;&quot;&gt;Homotopy Type Theory : Univalent Foundations of Mathematics&lt;/em&gt;. Il s&#39;agit du r&#233;sultat d&#39;un semestre de recherche &#224; l&#39;Institute for Advanced Study de Princeton. La premi&#232;re page de l&#39;ouvrage contient sobrement la liste des collaborateurs, rang&#233;s par ordre alphab&#233;tique, comme il se doit. La version &#233;lectronique du livre est gratuite, sous licence Creative Commons, et tout le monde est invit&#233; &#224; participer &#224; cette aventure pour aller plus loin. Ce livre se propose, ni plus ni moins, de repenser les fondements des math&#233;matiques. La th&#233;orie des ensembles, symbole des math&#233;matiques dites modernes des ann&#233;es 1970, s&#39;y trouve d&#233;tr&#244;n&#233;e et remplac&#233;e par d&#39;autres concepts qui permettent d&#39;&#233;tonnants rapprochements avec l&#39;informatique par exemple. Tout cela est enthousiasmant.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;Etienne Ghys - PHOTO : FABRICE CATERINI &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Math&#233;maticien, directeur de recherche au CNRS &#224; l&#39;Ecole normale sup&#233;rieure de Lyon. &lt;a href=&quot;mailto:etienne.ghys@ens-lyon.fr&quot;&gt;etienne.ghys@ens-lyon.fr&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20130828&amp;#183;LM&amp;#183;0sch3513_827446&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">Mathématiciens polycéphales</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">mathématicien polycéphale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">importance capitale</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">structuration du paysage mathématique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">symbole des mathématiques</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Livres</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Nicolas Bourbaki</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Lyon</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130828%c2%b7LM%c2%b70sch3513_827446" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720130828%c2%b7LM%c2%b70sch3513_827446">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; techno,         mercredi 28 août 2013 393 mots, p. SCH1</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et medecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Carte blanche</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Mathématiciens polycéphales            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Etienne Ghys</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Terry Tao vient de l'annoncer sur son blog, très populaire parmi les mathématiciens : il est temps de rédiger et de publier le huitième polymath! Il s'agit d'améliorer un résultat récent concernant la conjecture des nombres premiers jumeaux (« Science &amp; médecine » du 26 juin). L'idée des projets polymath a été lancée il y a quatre ans par Tim Gowers dans un autre blog : encourager la <em style="font-style:italic;">« collaboration massive »</em> de chercheurs en mathématiques, aboutissant (si possible) à la résolution <em style="font-style:italic;">« collective »</em> de problèmes difficiles. </p> <p> L'image d'Epinal du mathématicien solitaire, dont les seuls outils sont le crayon et le papier, doit être redessinée grâce à Internet. Traditionnellement, les articles de recherche en mathématiques étaient signés par un seul auteur. Au cours du XXe siècle, on a vu paraître de plus en plus d'articles à deux (ou parfois trois) auteurs. Aujourd'hui il ne reste plus guère qu'un tiers des articles qui n'ont qu'un auteur. Le principe de « polymath » est très simple : un site Internet publie des problèmes de recherche, et une discussion publique s'engage, ouverte à tous ceux qui le souhaitent. Lorsque les choses se passent bien et que le problème est résolu, la solution est rédigée, et publiée... sous le pseudonyme « D. H. J. Polymath ». Il ne s'agit pourtant pas d'un travail anonyme puisque l'introduction mentionne clairement l'adresse Internet où on peut trouver la liste des contributeurs et surtout l'intégralité de la discussion. D. H. J. Polymath n'a pas encore beaucoup publié, mais on lui doit une contribution remarquable, en 2012, dans la revue <em style="font-style:italic;">Annals of Mathematics</em> , peut-être la plus prestigieuse au monde.</p>
+
+
+<p>Cette écriture collaborative existe depuis longtemps. On peut penser à Nicolas Bourbaki, ce « mathématicien polycéphale » qui écrit depuis 1935 les <em style="font-style:italic;">Eléments de mathématique</em>, un traité en de nombreux volumes <em style="font-style:italic;">« qui prend les mathématiques à leur début »</em>. Il s'agit là encore d'un pseudonyme associé à un groupe qui se renouvelle sans cesse par cooptation, mais il y a deux différences importantes. D'une part, même si ce traité a eu une importance capitale sur les mathématiques du XXe siècle, il ne s'agit pas d'un travail de recherche, mais plutôt d'une structuration du paysage mathématique existant. D'autre part, la constitution du groupe est secrète, en quelque sorte à l'opposé de l'esprit « <em style="font-style:italic;"><mark>open</mark> <mark>source</mark> </em> » de Polymath. </p> <p> Une quarantaine de mathématiciens viennent de publier un ouvrage collectif (de 600 pages) dont le surnom est « HoTT book », et dont le titre complet est <em style="font-style:italic;">Homotopy Type Theory : Univalent Foundations of Mathematics</em>. Il s'agit du résultat d'un semestre de recherche à l'Institute for Advanced Study de Princeton. La première page de l'ouvrage contient sobrement la liste des collaborateurs, rangés par ordre alphabétique, comme il se doit. La version électronique du livre est gratuite, sous licence Creative Commons, et tout le monde est invité à participer à cette aventure pour aller plus loin. Ce livre se propose, ni plus ni moins, de repenser les fondements des mathématiques. La théorie des ensembles, symbole des mathématiques dites modernes des années 1970, s'y trouve détrônée et remplacée par d'autres concepts qui permettent d'étonnants rapprochements avec l'informatique par exemple. Tout cela est enthousiasmant.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">Etienne Ghys - PHOTO : FABRICE CATERINI </div>.
+
+        <p></p>
+</div>
+
+    <div>
+        <b>Note(s) : </b><p>Mathématicien, directeur de recherche au CNRS à l'Ecole normale supérieure de Lyon. <a href="mailto:etienne.ghys@ens-lyon.fr">etienne.ghys@ens-lyon.fr</a></p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20130828·LM·0sch3513_827446</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20130828·LM·0sch3513_827446";
+    var _docIndex = 4;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20130828·LM·0sch3513_827446';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720130828%C2%B7LM%C2%B70sch3513_827446&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720130828%C2%B7LM%C2%B70sch3513_827446&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720130828%C2%B7LM%C2%B70sch3513_827446&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720130828%C2%B7LM%C2%B70sch3513_827446&docIndex=4&FullScreen=1";
+                
+	var _keyDoc = 'news·20130828·LM·0sch3513_827446';
+</script>
+</div></body></html>

@@ -1,0 +1,529 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; techno,         samedi 10 mars 2012 724 mots, p. SCH3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et techno         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Actualit&#233;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Serge Abiteboul &#171; Construisons un Web des savoirs &#187;            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;INFORMATIQUE | Serge Abiteboul, chercheur en informatique, forge des outils s&#233;mantiques pour extraire des connaissances de la masse des donn&#233;es enfouies dans la Toile&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Propos recueillis par David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Serge Abiteboul, chercheur en informatique &#224; Inria - Inventeurs du monde num&#233;rique, au Laboratoire sp&#233;cification et v&#233;rification (LSV) de l&#39;Ecole normale sup&#233;rieure de Cachan, sera le troisi&#232;me titulaire de la chaire informatique et sciences num&#233;riques du Coll&#232;ge de France. Jeudi 8 mars, il a inaugur&#233; son cours sur la &#171; gestion d&#39;informations num&#233;riques par des syst&#232;mes informatiques &#187;. Ou comment la Toile a besoin des math&#233;maticiens et des informaticiens pour aider les internautes &#224; se d&#233;brouiller dans la jungle des donn&#233;es. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Quel sera l&#39;objectif de votre cours au Coll&#232;ge de France ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Je voudrais montrer que la science de la gestion des donn&#233;es est un sujet de recherche &#224; part enti&#232;re et passionnant. C&#39;est mon domaine, &#224; la fronti&#232;re entre recherche appliqu&#233;e et recherche fondamentale. On peut y faire des contributions qui auront des impacts en sciences mais aussi dans la soci&#233;t&#233; et l&#39;industrie. N&#39;oublions pas que ce domaine est &#224; l&#39;origine de deux grands succ&#232;s du XXe si&#232;cle, les bases de donn&#233;es et les moteurs de recherche, dont les principaux acteurs, IBM, Oracle ou Google sont des g&#233;ants industriels.&lt;/p&gt;
+
+
+&lt;p&gt;Tout le monde conna&#238;t l&#39;importance des moteurs de recherche, un peu moins celle des bases de donn&#233;es. Pourtant on les utilise sans cesse sans le savoir, en interrogeant son compte bancaire, un annuaire ou un catalogue en ligne. Derri&#232;re il y a souvent un syst&#232;me de base de donn&#233;es qui transforme notre &#171; question &#187; en un programme qui calcule la bonne r&#233;ponse. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Pourquoi y a-t-il besoin de math&#233;matiques et d&#39;informatique th&#233;orique dans ces t&#226;ches ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;A chaque &#233;tape, on trouve des algorithmes, de l&#39;optimisation et m&#234;me des th&#233;or&#232;mes. Par exemple, il a fallu inventer des langages simples et abstraits pour permettre &#224; des humains de dialoguer avec le mat&#233;riel (les disques durs, les m&#233;moires, les r&#233;seaux). Ces langages sont bas&#233;s sur des logiques math&#233;matiques. On peut v&#233;ritablement &#171; calculer &#187; les r&#233;ponses, c&#39;est-&#224;-dire encha&#238;ner une suite d&#39;op&#233;rations logiques sur les objets r&#233;f&#233;renc&#233;s dans la base de donn&#233;es. &lt;/p&gt; &lt;p&gt; Traiter de tr&#232;s gros volumes de donn&#233;es dans des temps raisonnables, c&#39;est compliqu&#233;. Pour r&#233;aliser les calculs d&#39;un moteur de recherche comme celui de Google, il faut des algorithmes tr&#232;s sophistiqu&#233;s et une ing&#233;nierie de fou. Ce n&#39;est peut-&#234;tre plus des math&#233;matiques mais c&#39;est de l&#39;informatique de toute beaut&#233;. On utilise le fait qu&#39;une m&#234;me machine n&#39;a pas besoin de tout calculer; la charge est distribu&#233;e entre des milliers de machines. &lt;/p&gt; &lt;p&gt; Quand on passe &#224; ces &#233;chelles, il est tout aussi fondamental de pouvoir v&#233;rifier qu&#39;un algorithme calcule ce que l&#39;on veut que de pr&#233;voir combien de temps ce calcul prendra. C&#39;est le domaine de la th&#233;orie de la calculabilit&#233;, initi&#233;e par Alan Turing, dont on f&#234;tera le centenaire de la naissance cette ann&#233;e. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Tout cela semble fonctionner. Pourquoi continuer &#224; chercher ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Il y a encore du travail ! Lorsque vous m&#39;interrogez, vous n&#39;utilisez pas un ou deux mots-cl&#233;s comme vous le faites avec un moteur de recherche. Et si vous attendez comme r&#233;ponse une date historique pr&#233;cise, vous n&#39;appr&#233;cieriez pas que je me contente de vous donner une liste de pages en disant &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; fouillez l&#224;-dedans &#187;&lt;/em&gt;. Les moteurs de recherche de la Toile en sont pourtant encore l&#224; et ce n&#39;est pas satisfaisant. &lt;/p&gt; &lt;p&gt; Nous devons construire un Web des connaissances. On dit aussi Web s&#233;mantique. Il faut donner du sens aux documents existant sur le Web, aux services disponibles. Il faut aussi inventer des syst&#232;mes pour acqu&#233;rir de nouvelles connaissances. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Comment ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Par exemple, juste par l&#39;analyse des requ&#234;tes des internautes, Google est parvenu &#224; pr&#233;voir l&#39;arriv&#233;e de la grippe plus vite que les organismes officiels d&#39;alerte d&#39;&#233;pid&#233;mie. Les sites de rencontres en ligne apparient les profils de leurs clients. D&#39;autres sites marchands sugg&#232;rent aux internautes des films, des livres susceptibles de leur plaire &#224; partir d&#39;analyses statistiques des donn&#233;es dont ils disposent. &lt;/p&gt; &lt;p&gt; D&#233;couvrir les connaissances enfouies dans la masse d&#39;information de la Toile, c&#39;est un des grands d&#233;fis. Un autre est d&#39;arriver &#224; faire collaborer les millions de syst&#232;mes qui, bient&#244;t, auront, &#233;changeront et d&#233;duiront des connaissances. Ces probl&#232;mes sont compliqu&#233;s et la pression &#233;conomique fera sans doute qu&#39;on privil&#233;giera le bricolage de solutions. Je pense qu&#39;on ne les r&#233;soudra qu&#39;en se plongeant dans les questions fondamentales et en d&#233;veloppant les outils th&#233;oriques ad&#233;quats. Quoi qu&#39;il en soit, les probl&#232;mes ne sont pas que techniques. Pour que la Toile des connaissances se d&#233;veloppe, il faut aussi que le Web reste le plus ouvert possible. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Etes-vous pessimiste ?&lt;/em&gt;&lt;/p&gt;&lt;p&gt;On a beaucoup de raisons d&#39;&#234;tre pessimiste. L&#39;industrie, aid&#233;e en cela par les gouvernants, modifie le Web en permanence, en le fermant peu &#224; peu. Il n&#39;y a qu&#39;&#224; consid&#233;rer les cons&#233;quences possibles de l&#39;accord commercial anticontrefa&#231;on (ACTA), qui bridera encore bien plus les internautes. Le Web est trop pilot&#233; par la propri&#233;t&#233; intellectuelle et l&#39;argent. &lt;/p&gt; &lt;p&gt; Or les entreprises du Web devraient comprendre que les vraies valeurs sont principalement dans les internautes eux-m&#234;mes. Il faut aussi que les citoyens s&#39;emparent de ces sujets. Prenez les syst&#232;mes de r&#233;seaux sociaux. Rien n&#39;emp&#234;che techniquement de r&#233;aliser un syst&#232;me de r&#233;seau social comme Facebook de mani&#232;re totalement distribu&#233;e, c&#39;est-&#224;-dire non centralis&#233;e. Chacun garderait le contr&#244;le de ses donn&#233;es personnelles. Il faut informer et &#233;duquer sur ces questions. &lt;/p&gt; &lt;p&gt; On a aussi quelques raisons d&#39;&#234;tre mod&#233;r&#233;ment optimistes. On peut observer des initiatives qui vont dans le sens d&#39;un Web plus universel, comme les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;, les licences &lt;em style=&quot;font-style:italic;&quot;&gt;creative common&lt;/em&gt; (une alternative au copyright), les donn&#233;es ouvertes. Il faut continuer et aboutir avec le Web &#224; la diffusion libre, ouverte &#224; tous, de toutes les connaissances et de toute la culture du monde.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+&lt;div class=&quot;rdp__attachnews&quot;&gt;
+        &lt;p&gt;&lt;b&gt;Illustration(s) : &lt;/b&gt;&lt;/p&gt;
+
+        &lt;p&gt;
+            
+                            &lt;div class=&quot;ImageAttach&quot;&gt;L&#39;informaticien Serge Abiteboul - PHOTO : BRUNO LEVY/FEDEPHOTO &lt;/div&gt;.
+
+        &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2012 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20120310&amp;#183;LM&amp;#183;0sch1012_523149&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">moteurs de recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">moteur de recherche</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">chercheur en informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">masse d'information</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">questions fondamentales</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Commerce électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120310%c2%b7LM%c2%b70sch1012_523149" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720120310%c2%b7LM%c2%b70sch1012_523149">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; techno,         samedi 10 mars 2012 724 mots, p. SCH3</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et techno         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Actualité</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Serge Abiteboul « Construisons un Web des savoirs »            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">INFORMATIQUE | Serge Abiteboul, chercheur en informatique, forge des outils sémantiques pour extraire des connaissances de la masse des données enfouies dans la Toile</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Propos recueillis par David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Serge Abiteboul, chercheur en informatique à Inria - Inventeurs du monde numérique, au Laboratoire spécification et vérification (LSV) de l'Ecole normale supérieure de Cachan, sera le troisième titulaire de la chaire informatique et sciences numériques du Collège de France. Jeudi 8 mars, il a inauguré son cours sur la « gestion d'informations numériques par des systèmes informatiques ». Ou comment la Toile a besoin des mathématiciens et des informaticiens pour aider les internautes à se débrouiller dans la jungle des données. </p> <p><em style="font-weight:bold;">Quel sera l'objectif de votre cours au Collège de France ?</em></p><p>Je voudrais montrer que la science de la gestion des données est un sujet de recherche à part entière et passionnant. C'est mon domaine, à la frontière entre recherche appliquée et recherche fondamentale. On peut y faire des contributions qui auront des impacts en sciences mais aussi dans la société et l'industrie. N'oublions pas que ce domaine est à l'origine de deux grands succès du XXe siècle, les bases de données et les moteurs de recherche, dont les principaux acteurs, IBM, Oracle ou Google sont des géants industriels.</p>
+
+
+<p>Tout le monde connaît l'importance des moteurs de recherche, un peu moins celle des bases de données. Pourtant on les utilise sans cesse sans le savoir, en interrogeant son compte bancaire, un annuaire ou un catalogue en ligne. Derrière il y a souvent un système de base de données qui transforme notre « question » en un programme qui calcule la bonne réponse. </p> <p><em style="font-weight:bold;">Pourquoi y a-t-il besoin de mathématiques et d'informatique théorique dans ces tâches ?</em></p><p>A chaque étape, on trouve des algorithmes, de l'optimisation et même des théorèmes. Par exemple, il a fallu inventer des langages simples et abstraits pour permettre à des humains de dialoguer avec le matériel (les disques durs, les mémoires, les réseaux). Ces langages sont basés sur des logiques mathématiques. On peut véritablement « calculer » les réponses, c'est-à-dire enchaîner une suite d'opérations logiques sur les objets référencés dans la base de données. </p> <p> Traiter de très gros volumes de données dans des temps raisonnables, c'est compliqué. Pour réaliser les calculs d'un moteur de recherche comme celui de Google, il faut des algorithmes très sophistiqués et une ingénierie de fou. Ce n'est peut-être plus des mathématiques mais c'est de l'informatique de toute beauté. On utilise le fait qu'une même machine n'a pas besoin de tout calculer; la charge est distribuée entre des milliers de machines. </p> <p> Quand on passe à ces échelles, il est tout aussi fondamental de pouvoir vérifier qu'un algorithme calcule ce que l'on veut que de prévoir combien de temps ce calcul prendra. C'est le domaine de la théorie de la calculabilité, initiée par Alan Turing, dont on fêtera le centenaire de la naissance cette année. </p> <p><em style="font-weight:bold;">Tout cela semble fonctionner. Pourquoi continuer à chercher ?</em></p><p>Il y a encore du travail ! Lorsque vous m'interrogez, vous n'utilisez pas un ou deux mots-clés comme vous le faites avec un moteur de recherche. Et si vous attendez comme réponse une date historique précise, vous n'apprécieriez pas que je me contente de vous donner une liste de pages en disant <em style="font-style:italic;">« fouillez là-dedans »</em>. Les moteurs de recherche de la Toile en sont pourtant encore là et ce n'est pas satisfaisant. </p> <p> Nous devons construire un Web des connaissances. On dit aussi Web sémantique. Il faut donner du sens aux documents existant sur le Web, aux services disponibles. Il faut aussi inventer des systèmes pour acquérir de nouvelles connaissances. </p> <p><em style="font-weight:bold;">Comment ?</em></p><p>Par exemple, juste par l'analyse des requêtes des internautes, Google est parvenu à prévoir l'arrivée de la grippe plus vite que les organismes officiels d'alerte d'épidémie. Les sites de rencontres en ligne apparient les profils de leurs clients. D'autres sites marchands suggèrent aux internautes des films, des livres susceptibles de leur plaire à partir d'analyses statistiques des données dont ils disposent. </p> <p> Découvrir les connaissances enfouies dans la masse d'information de la Toile, c'est un des grands défis. Un autre est d'arriver à faire collaborer les millions de systèmes qui, bientôt, auront, échangeront et déduiront des connaissances. Ces problèmes sont compliqués et la pression économique fera sans doute qu'on privilégiera le bricolage de solutions. Je pense qu'on ne les résoudra qu'en se plongeant dans les questions fondamentales et en développant les outils théoriques adéquats. Quoi qu'il en soit, les problèmes ne sont pas que techniques. Pour que la Toile des connaissances se développe, il faut aussi que le Web reste le plus ouvert possible. </p> <p><em style="font-weight:bold;">Etes-vous pessimiste ?</em></p><p>On a beaucoup de raisons d'être pessimiste. L'industrie, aidée en cela par les gouvernants, modifie le Web en permanence, en le fermant peu à peu. Il n'y a qu'à considérer les conséquences possibles de l'accord commercial anticontrefaçon (ACTA), qui bridera encore bien plus les internautes. Le Web est trop piloté par la propriété intellectuelle et l'argent. </p> <p> Or les entreprises du Web devraient comprendre que les vraies valeurs sont principalement dans les internautes eux-mêmes. Il faut aussi que les citoyens s'emparent de ces sujets. Prenez les systèmes de réseaux sociaux. Rien n'empêche techniquement de réaliser un système de réseau social comme Facebook de manière totalement distribuée, c'est-à-dire non centralisée. Chacun garderait le contrôle de ses données personnelles. Il faut informer et éduquer sur ces questions. </p> <p> On a aussi quelques raisons d'être modérément optimistes. On peut observer des initiatives qui vont dans le sens d'un Web plus universel, comme les <mark>logiciels</mark> <mark>libres</mark>, les licences <em style="font-style:italic;">creative common</em> (une alternative au copyright), les données ouvertes. Il faut continuer et aboutir avec le Web à la diffusion libre, ouverte à tous, de toutes les connaissances et de toute la culture du monde.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+<div class="rdp__attachnews">
+        <p><b>Illustration(s) : </b></p>
+
+        <p>
+            
+                            </p><div class="ImageAttach">L'informaticien Serge Abiteboul - PHOTO : BRUNO LEVY/FEDEPHOTO </div>.
+
+        <p></p>
+</div>
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2012 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20120310·LM·0sch1012_523149</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20120310·LM·0sch1012_523149";
+    var _docIndex = 191;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20120310·LM·0sch1012_523149';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720120310%C2%B7LM%C2%B70sch1012_523149&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720120310%C2%B7LM%C2%B70sch1012_523149&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720120310%C2%B7LM%C2%B70sch1012_523149&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720120310%C2%B7LM%C2%B70sch1012_523149&docIndex=191&FullScreen=1";
+                
+	var _keyDoc = 'news·20120310·LM·0sch1012_523149';
+</script>
+</div></body></html>

@@ -1,0 +1,541 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Monde Science et m&#233;decine,         mercredi 7 juin 2023 1190 mots, p. SCH2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Actualit&#233;&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les concurrents de ChatGPT se multiplient            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Intelligence artificielle Des programmes moins gros, aux performances parfois meilleures, rivalisent avec le robot conversationnel d’OpenAI&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Et si, en mati&#232;re d’intelligence artificielle g&#233;n&#233;rative, l’&#233;v&#233;nement le plus important n’&#233;tait pas la sortie, en novembre&#160;2022, de la d&#233;sormais c&#233;l&#232;bre machine parlante de l’entreprise am&#233;ricaine OpenAI, ChatGPT ? En tout cas, ce qui s’est pass&#233; le 24&#160;f&#233;vrier secoue tout autant la plan&#232;te informatique. Ce jour-l&#224;, Meta, soci&#233;t&#233; m&#232;re de &lt;span class=&quot;stubs&quot;&gt;Facebook&lt;/span&gt;, annon&#231;ait la sortie d’un dr&#244;le d’animal, baptis&#233; &#171; LLaMA &#187;. Comme GPT-3, l’une des briques aveclesquelles est b&#226;ti ChatGPT, ce programme est un mod&#232;le de langue, c’est-&#224;-dire qu’il est capable de g&#233;n&#233;rer des phrases sens&#233;es, de r&#233;pondre &#224; des questions, de traduire, de r&#233;sumer des textes…&lt;/p&gt;
+
+
+&lt;p&gt;Deux &#171; d&#233;tails &#187; font qu’en quelques semaines un tas d’autres cam&#233;lid&#233;s num&#233;riques &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;/em&gt;sont sortis, tirant la langue &#224; ChatGPT, c’est-&#224;-dire faisant aussi bien que lui : Vicuna, Alpaca, Vigogne, Dromadary… D’abord, LLaMA occupe moins de m&#233;moire, il est plus &#171; petit &#187; que GPT-3, entre 2,6 et 26 fois, selon les versions, pour des performances comparables, voire meilleures. &lt;/p&gt; &lt;p&gt; D’autre part, il est &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;. Meta a, en effet, publi&#233; les d&#233;tails de la recette de son algorithme, mais aussi, sous conditions, les quantit&#233;s pr&#233;cises d’ingr&#233;dients &#224; utiliser, sans lesquels la recette ne sert pas &#224; grand-chose. Les mod&#232;les de langues appartiennent, en effet, &#224; la cat&#233;gorie de l’apprentissage machine. Les d&#233;tails de leurs param&#232;tres sont ajust&#233;s en fonction d’une t&#226;che tr&#232;s r&#233;p&#233;titive consistant &#224; pr&#233;voir le mot suivant dans une phrase. Cette phase d’entra&#238;nement aboutit, comme le ferait un tireur d’&#233;lite modifiant sa mire, &#224; l’ajustement non pas d’un ou de deux param&#232;tres mais de milliards, les fameuses quantit&#233;s d’ingr&#233;dients pour la recette. &lt;/p&gt; &lt;p&gt; OpenAI garde jalousement ces informations appel&#233;es &#171; poids &#187; de ses GPT-3 et 4. Tout comme Apple, &lt;span class=&quot;stubs&quot;&gt;Amazon&lt;/span&gt; ou &lt;span class=&quot;stubs&quot;&gt;Google&lt;/span&gt;. Meta les r&#233;servait seulement &#224; des fins de recherche. Mais, d&#232;s le 3&#160;mars, une semaine apr&#232;s l’annonce de LLaMA, ses poids se retrouvent en ligne sur un forum et d&#233;clenchent un engouement hors norme. L’entreprise Hugging Face recense plus d’une trentaine de d&#233;riv&#233;s des diff&#233;rentes versions du mod&#232;le de Meta, mais aussi d’autres comme ceux de l’association EleutherAI, GPT-J, ou du Technology Innovation Institute des Emirats arabes unis, Falcon. &lt;/p&gt; &lt;p&gt; Or la taille change tout ou presque. Plus &#171; petits &#187;, avec quelques milliards de param&#232;tres contre plusieurs centaines de milliards, ces programmes sont moins gourmands en calcul pour les utiliser. Un informaticien, Artem Andreenko, a m&#234;me fait des d&#233;monstrations d&#232;s le 12&#160;mars sur un ordinateur RaspberryPi, microscopique machine, vedette des bricoleurs. Plus utile, l’entreprise Nomic propose aussit&#244;t un logiciel, Gpt4All, qui permet d’installer plusieurs des mod&#232;les d&#233;riv&#233;s de Llama sur son ordinateur de bureau. Cette capacit&#233; &#224; ex&#233;cuter hors ligne le programme l&#232;ve les r&#233;ticences &#224; utiliser les agents conversationnels, aujourd’hui essentiellement en ligne. &lt;/p&gt; &lt;p&gt; Plus &#171; petits &#187; aussi, ils peuvent &#234;tre ajust&#233;s plus facilement &#224; des t&#226;ches particuli&#232;res ou &#224; des corpus de donn&#233;es sp&#233;cifiques, et donc &#233;viter les erreurs si fr&#233;quentes avec les gros mod&#232;les qui ont &#171; lu &#187; tout le Web pour s’entra&#238;ner, mais peuvent r&#233;pondre de mani&#232;re erron&#233;e &#224; des questions trop pr&#233;cises. Plus &#171; petits &#187;, enfin, ils permettent au monde acad&#233;mique de reprendre un peu la main, alors que les entreprises dominent la recherche depuis quelque temps. Alpaca sort de Stanford, Koala de Berkeley, Vicuna d’une collaboration entre plusieurs universit&#233;s… &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Ces mod&#232;les comportent de multiples int&#233;r&#234;ts pour la recherche, pour les comprendre, &#233;tudier le r&#244;le des donn&#233;es d’entra&#238;nement, les &#233;valuer, tester des lois d’&#233;chelle… &#187;&lt;/em&gt;, liste Fran&#231;ois Yvon, chercheur CNRS au Laboratoire interdisciplinaire des sciences du num&#233;rique (universit&#233; Paris-Saclay), impliqu&#233; sur un des rares mod&#232;les g&#233;ants &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt;, Bloom, collaboration entre monde acad&#233;mique et industriel. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous entrons dans une nouvelle p&#233;riode. Apr&#232;s la surench&#232;re des g&#233;ants de l’informatique pour aller vers des mod&#232;les de plus en plus gros, ces nouveaux mod&#232;les parlent plus aux entreprises. Ils sont moins co&#251;teux &#224; utiliser et &#224; r&#233;gler, ils sont moins “bo&#238;tes noires”, posent moins de probl&#232;mes de droits… &#187;&lt;/em&gt;, constate Julien Simon, de Hugging Face. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Le march&#233; va se diviser en deux, avec d’un c&#244;t&#233; les gros mod&#232;les tr&#232;s performants, multit&#226;ches, et de l’autre une diversit&#233; de petits mod&#232;les sp&#233;cialis&#233;s &#187;&lt;/em&gt;, estime Laurent Daudet de LightOn, dont le mod&#232;le de langue commercial &#171; cl&#233; en main &#187; repose sur une licence d’utilisation de Falcon. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Nous pensons que le risque de concentration de ces technologies entre les grandes entreprises de la &lt;span class=&quot;stubs&quot;&gt;Silicon Valley&lt;/span&gt; est &#233;lev&#233;. Nous aurons alors deux options. Mettre notre confiance dans des entreprises commeOpenAI ou Anthropic pour prendre les bonnes d&#233;cisions sur ces technologies, ou lamettre dans la population mondiale pour faire ces choix. Comme nous croyons en la d&#233;mocratie, je choisis cette option &#187; &lt;/em&gt;, explique Brandon Duderstadt, de Nomic, pour justifier la diffusion au plus grand nombre des capacit&#233;s des IA g&#233;n&#233;ratives. Mais quels sont les secrets de LLaMA ou de ses petits mod&#232;les ? &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; Un tas de petites optimisations &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;L’&#233;quipe de Meta est, en fait, partie d’un mod&#232;le plus petit et a tir&#233; profit d’un r&#233;sultat de son concurrent Deepmind, qui avait montr&#233;, en mars&#160;2022, en cr&#233;ant Chinchilla, encore un animal, qu’un surentra&#238;nement, avec donc beaucoup de donn&#233;es, peut compenser la taille. R&#233;sultat, de 1 000 &#224; 1 400&#160;milliards de mots ont &#233;t&#233; utilis&#233;s, contre 300&#160;milliards pour les &#171; gros &#187;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Il y a &#233;galement un tas de petites optimisations qui, ind&#233;pendamment, n’apportent pas de grands gains, mais&#160;qui, mises bout &#224; bout, am&#233;liorent significativement la performance du mod&#232;le &#187;&lt;/em&gt;, rappelle Guillaume Lample, coauteur de LLaMA. &lt;/p&gt; &lt;p&gt; Cependant LLaMA seul n’est pas tr&#232;s &#171; utile &#187;. On peut certes lui donner une s&#233;rie de consignes pour qu’il &#171; comprenne &#187; la nouvelle t&#226;che &#224; ex&#233;cuter avant de la refaire infatigablement, mais cela est moins impressionnant qu’un ChatGPT qui &#171; comprend &#187; tout de suite ce qu’on attend. Pour cela, les informaticiens doivent proc&#233;der &#224; un ajustement fin du mod&#232;le de langue initial. Une technique d&#233;sormais &#224; la mode, propos&#233;e par une &#233;quipe de &lt;span class=&quot;stubs&quot;&gt;Microsoft&lt;/span&gt; en juin&#160;2021, vise &#224; geler une grande partie des milliards de param&#232;tres du mod&#232;le pour ne toucher ensuite qu’&#224; un sous-ensemble, ce qui acc&#233;l&#232;re l’entra&#238;nement. Alpaca et Vicuna ont ainsi ajust&#233; LLaMA &#224; l’aide de seulement 50 000&#160;&#224; 70 000 conversations tir&#233;es de… ChatGPT. Une &#233;quipe de Meta a m&#234;me montr&#233;, le 18&#160;mai, que seulement 1 000&#160;exemples peuvent suffire… Incidemment, tous ces mod&#232;les se passent d’un des maillons de ChatGPT, tr&#232;s &#171; co&#251;teux &#187;, l’apprentissage par renforcement, avec recours &#224; des validateurs humains, qui &#233;tait mis en place pour &#233;viter les d&#233;rapages moraux, sexuels ou violents de la machine. &lt;/p&gt; &lt;p&gt; N&#233;anmoins, les performances des &#171; petits &#187; face aux &#171; gros &#187; sont difficiles &#224; &#233;valuer pr&#233;cis&#233;ment et ils poss&#232;dent &#233;videmment les m&#234;mes d&#233;fauts que leurs a&#238;n&#233;s (biais, erreurs, d&#233;rapages…). Et les &#171; gros &#187;, plus g&#233;n&#233;ralistes, ont pr&#233;vu de continuer d’enfler avec leur capacit&#233; &#224; ingurgiter et &#224; recracher non seulement du texte, mais aussi des images, du son, des vid&#233;os… Quelle fable cespetits cam&#233;lid&#233;s sont-ils en train d’&#233;crire ?&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;6 juin 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20230607&amp;#183;LM&amp;#183;202306072&amp;#215;20&amp;#215;21059094649&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">modèle de langue</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">monde académique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">intelligence artificielle</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">risque de concentration</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">licence d’utilisation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Entreprises : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Enterprise" class="Lien1" href="#">FACEBOOK</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">SILICON VALLEY</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">AMAZON</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">MICROSOFT</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Enterprise" class="Lien1" href="#">GOOGLE</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Banques et institutions financières</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Llama</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Stanford, California</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230607%c2%b7LM%c2%b7202306072%c3%9720%c3%9721059094649" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720230607%c2%b7LM%c2%b7202306072%c3%9720%c3%9721059094649">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Monde Science et médecine,         mercredi 7 juin 2023 1190 mots, p. SCH2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Actualité</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les concurrents de ChatGPT se multiplient            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Intelligence artificielle Des programmes moins gros, aux performances parfois meilleures, rivalisent avec le robot conversationnel d’OpenAI</p>
+</div>
+
+        <p class="sm-margin-bottomNews">David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Et si, en matière d’intelligence artificielle générative, l’événement le plus important n’était pas la sortie, en novembre&nbsp;2022, de la désormais célèbre machine parlante de l’entreprise américaine OpenAI, ChatGPT ? En tout cas, ce qui s’est passé le 24&nbsp;février secoue tout autant la planète informatique. Ce jour-là, Meta, société mère de <span class="stubs">Facebook</span>, annonçait la sortie d’un drôle d’animal, baptisé « LLaMA ». Comme GPT-3, l’une des briques aveclesquelles est bâti ChatGPT, ce programme est un modèle de langue, c’est-à-dire qu’il est capable de générer des phrases sensées, de répondre à des questions, de traduire, de résumer des textes…</p>
+
+
+<p>Deux « détails » font qu’en quelques semaines un tas d’autres camélidés numériques <em style="font-style:italic;"></em>sont sortis, tirant la langue à ChatGPT, c’est-à-dire faisant aussi bien que lui : Vicuna, Alpaca, Vigogne, Dromadary… D’abord, LLaMA occupe moins de mémoire, il est plus « petit » que GPT-3, entre 2,6 et 26 fois, selon les versions, pour des performances comparables, voire meilleures. </p> <p> D’autre part, il est <mark>open</mark> <mark>source</mark>. Meta a, en effet, publié les détails de la recette de son algorithme, mais aussi, sous conditions, les quantités précises d’ingrédients à utiliser, sans lesquels la recette ne sert pas à grand-chose. Les modèles de langues appartiennent, en effet, à la catégorie de l’apprentissage machine. Les détails de leurs paramètres sont ajustés en fonction d’une tâche très répétitive consistant à prévoir le mot suivant dans une phrase. Cette phase d’entraînement aboutit, comme le ferait un tireur d’élite modifiant sa mire, à l’ajustement non pas d’un ou de deux paramètres mais de milliards, les fameuses quantités d’ingrédients pour la recette. </p> <p> OpenAI garde jalousement ces informations appelées « poids » de ses GPT-3 et 4. Tout comme Apple, <span class="stubs">Amazon</span> ou <span class="stubs">Google</span>. Meta les réservait seulement à des fins de recherche. Mais, dès le 3&nbsp;mars, une semaine après l’annonce de LLaMA, ses poids se retrouvent en ligne sur un forum et déclenchent un engouement hors norme. L’entreprise Hugging Face recense plus d’une trentaine de dérivés des différentes versions du modèle de Meta, mais aussi d’autres comme ceux de l’association EleutherAI, GPT-J, ou du Technology Innovation Institute des Emirats arabes unis, Falcon. </p> <p> Or la taille change tout ou presque. Plus « petits », avec quelques milliards de paramètres contre plusieurs centaines de milliards, ces programmes sont moins gourmands en calcul pour les utiliser. Un informaticien, Artem Andreenko, a même fait des démonstrations dès le 12&nbsp;mars sur un ordinateur RaspberryPi, microscopique machine, vedette des bricoleurs. Plus utile, l’entreprise Nomic propose aussitôt un logiciel, Gpt4All, qui permet d’installer plusieurs des modèles dérivés de Llama sur son ordinateur de bureau. Cette capacité à exécuter hors ligne le programme lève les réticences à utiliser les agents conversationnels, aujourd’hui essentiellement en ligne. </p> <p> Plus « petits » aussi, ils peuvent être ajustés plus facilement à des tâches particulières ou à des corpus de données spécifiques, et donc éviter les erreurs si fréquentes avec les gros modèles qui ont « lu » tout le Web pour s’entraîner, mais peuvent répondre de manière erronée à des questions trop précises. Plus « petits », enfin, ils permettent au monde académique de reprendre un peu la main, alors que les entreprises dominent la recherche depuis quelque temps. Alpaca sort de Stanford, Koala de Berkeley, Vicuna d’une collaboration entre plusieurs universités… <em style="font-style:italic;">« Ces modèles comportent de multiples intérêts pour la recherche, pour les comprendre, étudier le rôle des données d’entraînement, les évaluer, tester des lois d’échelle… »</em>, liste François Yvon, chercheur CNRS au Laboratoire interdisciplinaire des sciences du numérique (université Paris-Saclay), impliqué sur un des rares modèles géants <mark>open</mark> <mark>source</mark>, Bloom, collaboration entre monde académique et industriel. </p> <p><em style="font-style:italic;">« Nous entrons dans une nouvelle période. Après la surenchère des géants de l’informatique pour aller vers des modèles de plus en plus gros, ces nouveaux modèles parlent plus aux entreprises. Ils sont moins coûteux à utiliser et à régler, ils sont moins “boîtes noires”, posent moins de problèmes de droits… »</em>, constate Julien Simon, de Hugging Face. <em style="font-style:italic;">« Le marché va se diviser en deux, avec d’un côté les gros modèles très performants, multitâches, et de l’autre une diversité de petits modèles spécialisés »</em>, estime Laurent Daudet de LightOn, dont le modèle de langue commercial « clé en main » repose sur une licence d’utilisation de Falcon. <em style="font-style:italic;">« Nous pensons que le risque de concentration de ces technologies entre les grandes entreprises de la <span class="stubs">Silicon Valley</span> est élevé. Nous aurons alors deux options. Mettre notre confiance dans des entreprises commeOpenAI ou Anthropic pour prendre les bonnes décisions sur ces technologies, ou lamettre dans la population mondiale pour faire ces choix. Comme nous croyons en la démocratie, je choisis cette option » </em>, explique Brandon Duderstadt, de Nomic, pour justifier la diffusion au plus grand nombre des capacités des IA génératives. Mais quels sont les secrets de LLaMA ou de ses petits modèles ? </p> <p><em style="font-weight:bold;">« Un tas de petites optimisations »</em></p><p>L’équipe de Meta est, en fait, partie d’un modèle plus petit et a tiré profit d’un résultat de son concurrent Deepmind, qui avait montré, en mars&nbsp;2022, en créant Chinchilla, encore un animal, qu’un surentraînement, avec donc beaucoup de données, peut compenser la taille. Résultat, de 1 000 à 1 400&nbsp;milliards de mots ont été utilisés, contre 300&nbsp;milliards pour les « gros ». <em style="font-style:italic;">« Il y a également un tas de petites optimisations qui, indépendamment, n’apportent pas de grands gains, mais&nbsp;qui, mises bout à bout, améliorent significativement la performance du modèle »</em>, rappelle Guillaume Lample, coauteur de LLaMA. </p> <p> Cependant LLaMA seul n’est pas très « utile ». On peut certes lui donner une série de consignes pour qu’il « comprenne » la nouvelle tâche à exécuter avant de la refaire infatigablement, mais cela est moins impressionnant qu’un ChatGPT qui « comprend » tout de suite ce qu’on attend. Pour cela, les informaticiens doivent procéder à un ajustement fin du modèle de langue initial. Une technique désormais à la mode, proposée par une équipe de <span class="stubs">Microsoft</span> en juin&nbsp;2021, vise à geler une grande partie des milliards de paramètres du modèle pour ne toucher ensuite qu’à un sous-ensemble, ce qui accélère l’entraînement. Alpaca et Vicuna ont ainsi ajusté LLaMA à l’aide de seulement 50 000&nbsp;à 70 000 conversations tirées de… ChatGPT. Une équipe de Meta a même montré, le 18&nbsp;mai, que seulement 1 000&nbsp;exemples peuvent suffire… Incidemment, tous ces modèles se passent d’un des maillons de ChatGPT, très « coûteux », l’apprentissage par renforcement, avec recours à des validateurs humains, qui était mis en place pour éviter les dérapages moraux, sexuels ou violents de la machine. </p> <p> Néanmoins, les performances des « petits » face aux « gros » sont difficiles à évaluer précisément et ils possèdent évidemment les mêmes défauts que leurs aînés (biais, erreurs, dérapages…). Et les « gros », plus généralistes, ont prévu de continuer d’enfler avec leur capacité à ingurgiter et à recracher non seulement du texte, mais aussi des images, du son, des vidéos… Quelle fable cespetits camélidés sont-ils en train d’écrire ?</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">6 juin 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20230607·LM·202306072×20×21059094649</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20230607·LM·202306072×20×21059094649";
+    var _docIndex = 145;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = {"facebook":"94511","silicon valley":"93355","amazon":"93749","microsoft":"93647","google":"92575"};
+		var _docName = 'news·20230607·LM·202306072×20×21059094649';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720230607%C2%B7LM%C2%B7202306072%C3%9720%C3%9721059094649&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720230607%C2%B7LM%C2%B7202306072%C3%9720%C3%9721059094649&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720230607%C2%B7LM%C2%B7202306072%C3%9720%C3%9721059094649&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720230607%C2%B7LM%C2%B7202306072%C3%9720%C3%9721059094649&docIndex=145&FullScreen=1";
+                
+	var _keyDoc = 'news·20230607·LM·202306072×20×21059094649';
+</script>
+</div></body></html>

@@ -1,0 +1,449 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; M&#233;decine,         mercredi 5 mai 2021 835 mots, p. SCH27&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Science et M&#233;decine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Projet g&#233;ant pour faire parler une IA            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Intelligence artificielle Un consortium international public/priv&#233; veut cr&#233;er un mod&#232;le de langue multilingue &lt;mark&gt; open&lt;/mark&gt; &lt;mark&gt; source&lt;/mark&gt;, plus abouti et moins biais&#233; que les syst&#232;mes actuels&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;David Larousserie&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Le domaine de l&#39;intelligence artificielle passe &#224; la &#171; Big Science. Le 28 avril, a &#233;t&#233; lanc&#233; le plus vaste projet en la mati&#232;re, r&#233;unissant plus de 250 chercheurs, issus d&#39;une centaine de laboratoires ou d&#39;entreprises (CNRS, Inria, universit&#233;s, Renault, Airbus, Ubisoft, Orange, Facebook, Systran...) et d&#39;une dizaine de pays. Le but de &#171; Big Science &#187;, son surnom, est de r&#233;aliser un r&#233;seau g&#233;ant de neurones artificiels capables de &#171; parler &#187; parfaitement huit langues, dont le fran&#231;ais, l&#39;anglais et des langues bantoues. Dans le jargon, c&#39;est un &#171; mod&#232;le de langue &#187;, un programme qui conna&#238;t la grammaire, ma&#238;trise la syntaxe, dispose d&#39;un vocabulaire &#233;norme... &#171; Les mod&#232;les de langue sont centraux dans beaucoup de domaines &#187;, rappelle Fran&#231;ois Yvon, informaticien au CNRS, participant au projet, et qui &#233;num&#232;re des applications comme les syst&#232;mes automatiques de question/r&#233;ponse, les robots de dialogue, la r&#233;alisation de r&#233;sum&#233;s, la traduction.&lt;/p&gt;
+
+
+&lt;p&gt;Les g&#233;ants de l&#39;informatique disposent d&#233;j&#224; de leur &#171; oracle. Le plus connu, GPT-3, issu de l&#39;entreprise OpenAI, d&#233;bite plus de 4,5 milliards de mots par jour, pour environ 300 clients, comme l&#39;a annonc&#233; l&#39;entreprise le 25 mars. Il sert &#224; faciliter les relations clients, &#224; r&#233;pondre &#224; des questions, &#224; cr&#233;er des dialogues pour des jeux... Avec 570 gigaoctets (Go) de textes ingurgit&#233;s pour son apprentissage et 175 milliards de param&#232;tres (&#233;quivalents &#224; des neurones et leurs synapses), il est rest&#233; longtemps le plus gros, avant d&#39;&#234;tre battu en janvier par Switch-C de Google, qui s&#39;est nourri de 745 Go de textes et poss&#232;de dix fois plus de param&#232;tres. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;5 millions d&#39;heures de calcul&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&#171; Le d&#233;crochage de la recherche acad&#233;mique par rapport aux entreprises du num&#233;rique m&#39;inqui&#232;te. Il n&#39;est plus possible de rivaliser : les meilleurs r&#233;sultats sont obtenus par les plus gros syst&#232;mes &#187;, regrette le Fran&#231;aisThomas Wolf, initiateur du projet et cofondateur avec deux compatriotes de Hugging Face, une entreprise am&#233;ricaine de &#171; partage de mod&#232;les d&#39;apprentissage machine. En d&#233;but d&#39;ann&#233;e, il a d&#233;cid&#233; de f&#233;d&#233;rer la communaut&#233; de recherche pour construire son propre outil. La premi&#232;re &#233;tape a &#233;t&#233; franchie mi-avril avec l&#39;accord du Grand Equipement national de calcul intensif (Genci) et de l&#39;Institut du d&#233;veloppement et des ressources en informatique scientifique du CNRS (Idris), pour mettre &#224; dis position 5 millions d&#39;heures de calcul, ce qui repr&#233;sente pr&#232;s du quart des capacit&#233;s de la machine Jean-Zay, install&#233;e &#224; Orsay. &#171; Ce sera un calcul XXL, le plus gros que nous ayons fait en IA. En g&#233;n&#233;ral, ces projets ont besoin de 10 000 &#224; 50 000 heures &#187;, rappelle St&#233;phane Requena , directeur technique et innovation du Genci. &lt;/p&gt; &lt;p&gt; Mais l&#39;int&#233;r&#234;t du projet n&#39;est pas seulement d&#39;avoir du temps de calcul, il s&#39;agit surtout de corriger les nombreux d&#233;fauts des &#171; concurrents &#187; priv&#233;s : monolingues, opaques, mal contr&#244;l&#233;s et surtout porteurs de nombreux risques, comme la g&#233;n&#233;ration de textes st&#233;r&#233;otyp&#233;s, biais&#233;s, outranciers. Le mod&#232;le de Big Science sera donc multilingue et son code informatique ainsi que ses param&#232;tres seront accessibles. Son corpus d&#39;apprentissage sera mieux contr&#244;l&#233; que les collectes larges du Web utilis&#233;es par les syst&#232;mes actuels, avec notamment la correction de diff&#233;rents biais de langue et de genre. Plusieurs groupes &#233;tudieront aussi les questions d&#39;&#233;thique ou d&#39;&#233;quit&#233; des usages. &lt;/p&gt; &lt;p&gt; Ces d&#233;fis sont essentiels. En d&#233;cembre 2020 et f&#233;vrier 2021, Google a licenci&#233; deux de ses chercheuses en &#233;thique de l&#39;intelligence artificielle, Timnit Gebru et Margaret Mitchell, qui travaillaient sur les risques des mod&#232;les de langue. Avec deux autres coll&#232;gues, elles ont publi&#233; en mars un texte qui r&#233;sume les principaux d&#233;fauts de ces &#171; perroquets chanceux &#187;, comme elles les qualifient. Elles y listent les premiers d&#233;rapages de la famille GPT-3. Dans les textes produits, les personnes handicap&#233;es sont qualifi&#233;es n&#233;gativement. Des r&#233;ponses glissent rapidement vers des th&#232;mes complotistes. &lt;/p&gt; &lt;p&gt; &#171; L&#39;initiative est aussi une r&#233;action au fait que les gros mod&#232;les d&#233;velopp&#233;s par les entreprises du num&#233;rique se posent ces questions a posteriori. Nous ferons d&#39;abord la liste des questions, puis le mod&#232;le pour y r&#233;pondre &#187;, insiste Thomas Wolf. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Sans budget propre&lt;/em&gt;&lt;/p&gt;&lt;p&gt;A cette longue liste, il faut aussi ajouter l&#39;envie de comprendre comment fonctionnent ces mod&#232;les aux r&#233;sultats parfois &#233;tonnants. Par exemple, alors que la machine apprend sur une t&#226;che assez simple, qui est de compl&#233;ter une phrase, elle est capable ensuite d&#39;effectuer des travaux divers, sans nouvel apprentissage, comme traduire, compter, &#233;crire en langage informatique. &#171; On pourrait r&#234;ver d&#39;un mod&#232;le capable de s&#39;auto-inspecter et qui dirait ce qu&#39;il a compris, voire dirait &quot;je ne sais pas&quot; &#187;, esp&#232;re Fran&#231;ois Yvon. &#171; Mais les plus belles questions de recherche sont celles qu&#39;on ne conna&#238;t pas encore &#187;, rappelle Beno&#238;t Sagot, directeur de recherche &#224; l&#39;Inria. &lt;/p&gt; &lt;p&gt; Avant de relever tous ces d&#233;fis, ce consortium, sans budget propre, r&#233;unissant un attelage complexe de laboratoires publics, de start-up et de grands groupes devra montrer qu&#39;il peut fonctionner. Mercredi 28 avril, au lancement, les participants, embarqu&#233;s pour un an ensemble, ont d&#233;j&#224; donn&#233; rendez-vous en juillet pour une premi&#232;re &#233;tape de restitution des avanc&#233;es.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2021 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20210505&amp;#183;LM&amp;#183;3787389&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720210505%c2%b7LM%c2%b73787389" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720210505%c2%b7LM%c2%b73787389">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; Médecine,         mercredi 5 mai 2021 835 mots, p. SCH27</span>
+</div>
+
+    <div>
+        <p>
+Science et Médecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Projet géant pour faire parler une IA            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Intelligence artificielle Un consortium international public/privé veut créer un modèle de langue multilingue <mark> open</mark> <mark> source</mark>, plus abouti et moins biaisé que les systèmes actuels</p>
+</div>
+
+        <p class="sm-margin-bottomNews">David Larousserie</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Le domaine de l'intelligence artificielle passe à la « Big Science. Le 28 avril, a été lancé le plus vaste projet en la matière, réunissant plus de 250 chercheurs, issus d'une centaine de laboratoires ou d'entreprises (CNRS, Inria, universités, Renault, Airbus, Ubisoft, Orange, Facebook, Systran...) et d'une dizaine de pays. Le but de « Big Science », son surnom, est de réaliser un réseau géant de neurones artificiels capables de « parler » parfaitement huit langues, dont le français, l'anglais et des langues bantoues. Dans le jargon, c'est un « modèle de langue », un programme qui connaît la grammaire, maîtrise la syntaxe, dispose d'un vocabulaire énorme... « Les modèles de langue sont centraux dans beaucoup de domaines », rappelle François Yvon, informaticien au CNRS, participant au projet, et qui énumère des applications comme les systèmes automatiques de question/réponse, les robots de dialogue, la réalisation de résumés, la traduction.</p>
+
+
+<p>Les géants de l'informatique disposent déjà de leur « oracle. Le plus connu, GPT-3, issu de l'entreprise OpenAI, débite plus de 4,5 milliards de mots par jour, pour environ 300 clients, comme l'a annoncé l'entreprise le 25 mars. Il sert à faciliter les relations clients, à répondre à des questions, à créer des dialogues pour des jeux... Avec 570 gigaoctets (Go) de textes ingurgités pour son apprentissage et 175 milliards de paramètres (équivalents à des neurones et leurs synapses), il est resté longtemps le plus gros, avant d'être battu en janvier par Switch-C de Google, qui s'est nourri de 745 Go de textes et possède dix fois plus de paramètres. </p> <p><em style="font-weight:bold;">5 millions d'heures de calcul</em></p><p>« Le décrochage de la recherche académique par rapport aux entreprises du numérique m'inquiète. Il n'est plus possible de rivaliser : les meilleurs résultats sont obtenus par les plus gros systèmes », regrette le FrançaisThomas Wolf, initiateur du projet et cofondateur avec deux compatriotes de Hugging Face, une entreprise américaine de « partage de modèles d'apprentissage machine. En début d'année, il a décidé de fédérer la communauté de recherche pour construire son propre outil. La première étape a été franchie mi-avril avec l'accord du Grand Equipement national de calcul intensif (Genci) et de l'Institut du développement et des ressources en informatique scientifique du CNRS (Idris), pour mettre à dis position 5 millions d'heures de calcul, ce qui représente près du quart des capacités de la machine Jean-Zay, installée à Orsay. « Ce sera un calcul XXL, le plus gros que nous ayons fait en IA. En général, ces projets ont besoin de 10 000 à 50 000 heures », rappelle Stéphane Requena , directeur technique et innovation du Genci. </p> <p> Mais l'intérêt du projet n'est pas seulement d'avoir du temps de calcul, il s'agit surtout de corriger les nombreux défauts des « concurrents » privés : monolingues, opaques, mal contrôlés et surtout porteurs de nombreux risques, comme la génération de textes stéréotypés, biaisés, outranciers. Le modèle de Big Science sera donc multilingue et son code informatique ainsi que ses paramètres seront accessibles. Son corpus d'apprentissage sera mieux contrôlé que les collectes larges du Web utilisées par les systèmes actuels, avec notamment la correction de différents biais de langue et de genre. Plusieurs groupes étudieront aussi les questions d'éthique ou d'équité des usages. </p> <p> Ces défis sont essentiels. En décembre 2020 et février 2021, Google a licencié deux de ses chercheuses en éthique de l'intelligence artificielle, Timnit Gebru et Margaret Mitchell, qui travaillaient sur les risques des modèles de langue. Avec deux autres collègues, elles ont publié en mars un texte qui résume les principaux défauts de ces « perroquets chanceux », comme elles les qualifient. Elles y listent les premiers dérapages de la famille GPT-3. Dans les textes produits, les personnes handicapées sont qualifiées négativement. Des réponses glissent rapidement vers des thèmes complotistes. </p> <p> « L'initiative est aussi une réaction au fait que les gros modèles développés par les entreprises du numérique se posent ces questions a posteriori. Nous ferons d'abord la liste des questions, puis le modèle pour y répondre », insiste Thomas Wolf. </p> <p><em style="font-weight:bold;">Sans budget propre</em></p><p>A cette longue liste, il faut aussi ajouter l'envie de comprendre comment fonctionnent ces modèles aux résultats parfois étonnants. Par exemple, alors que la machine apprend sur une tâche assez simple, qui est de compléter une phrase, elle est capable ensuite d'effectuer des travaux divers, sans nouvel apprentissage, comme traduire, compter, écrire en langage informatique. « On pourrait rêver d'un modèle capable de s'auto-inspecter et qui dirait ce qu'il a compris, voire dirait "je ne sais pas" », espère François Yvon. « Mais les plus belles questions de recherche sont celles qu'on ne connaît pas encore », rappelle Benoît Sagot, directeur de recherche à l'Inria. </p> <p> Avant de relever tous ces défis, ce consortium, sans budget propre, réunissant un attelage complexe de laboratoires publics, de start-up et de grands groupes devra montrer qu'il peut fonctionner. Mercredi 28 avril, au lancement, les participants, embarqués pour un an ensemble, ont déjà donné rendez-vous en juillet pour une première étape de restitution des avancées.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2021 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20210505·LM·3787389</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20210505·LM·3787389";
+    var _docIndex = 289;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20210505·LM·3787389';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720210505%C2%B7LM%C2%B73787389&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720210505%C2%B7LM%C2%B73787389&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720210505%C2%B7LM%C2%B73787389&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720210505%C2%B7LM%C2%B73787389&docIndex=289&FullScreen=1";
+                
+	var _keyDoc = 'news·20210505·LM·3787389';
+</script>
+</div></body></html>

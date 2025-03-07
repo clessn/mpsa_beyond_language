@@ -1,0 +1,461 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration, no. 7069                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+ECONOMIE,         mardi 3 f&amp;#233;vrier 2004 566 mots, p. 20&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+MyDoom, un virus qui fait tr&#232;s mail.            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Apr&#232;s avoir contamin&#233; pr&#232;s d&#39;un million d&#39;ordinateurs, ce programme parasite cible aujourd&#39;hui Microsoft.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;MAURIAC Laurent&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;C&#39;est le virus qui vient du froid. A l&#39;actif de MyDoom, d&#233;pist&#233; pour la premi&#232;re fois en Russie voici une semaine, entre 600 000 et un million d&#39;ordinateurs contamin&#233;s selon les estimations, le blocage du site web d&#39;un &#233;diteur de logiciels depuis dimanche et, esp&#232;rent ses concepteurs, l&#39;attaque pr&#233;vue aujourd&#39;hui contre le site de Microsoft, le g&#233;ant des logiciels. Selon les experts en virologie informatique &#173; toujours prompts &#224; gonfler ce type de ph&#233;nom&#232;ne &#173;, MyDoom est &#224; l&#39;origine de la plus grande contamination de l&#39;histoire informatique. Il n&#39;innove pourtant en rien et ne fait que &#171;touiller&#187; la plupart des caract&#233;ristiques de ses pr&#233;d&#233;cesseurs. Tour d&#39;horizon des dommages et des moyens de s&#39;en pr&#233;munir en cinq questions. &lt;/p&gt; &lt;p&gt; Comment se propage MyDoom ? &lt;/p&gt; &lt;p&gt; MyDoom s&#39;appuie sur le courrier &#233;lectronique. Tout le but de ses concepteurs est de faire cliquer sur une pi&#232;ce jointe. &#171;Si MyDoom s&#39;est propag&#233; &#224; une vitesse fulgurante, ce n&#39;est pas en raison de sa conception technique, mais parce que ses auteurs ont imagin&#233; des mots pour le sujet du message et des textes incitant les utilisateurs &#224; cliquer sur la pi&#232;ce jointe&#187;, explique Fran&#231;ois Paget, chercheur antivirus chez Network Associates. Exemple : un message tronqu&#233; avec l&#39;incitation (en anglais) &#224; le lire en pi&#232;ce jointe. L&#39;utilisateur clique, et il ne reste plus &#224; MyDoom qu&#39;&#224; piller son carnet d&#39;adresses et &#224; se propager &#224; ses habituels correspondants par courrier &#233;lectronique. Autre mode de contamination : MyDoom peut se d&#233;guiser en fichier &#224; t&#233;l&#233;charger sur les syst&#232;mes d&#39;&#233;changes entre particuliers (notamment Kazaa).&lt;/p&gt;
+
+
+&lt;p&gt;Quelle est son ampleur ? &lt;/p&gt; &lt;p&gt; 600 000 machines contamin&#233;es ? Un million ? Les estimations foisonnent, principalement chez les &#233;diteurs de logiciels antivirus. Or, dans le secteur, chacun pr&#233;sente une nette tendance &#224; dramatiser la situation pour faire mousser ses produits. &#171;Je ne vois pas trop comment on peut &#233;tablir de tels comptages&#187;, estime Olivier Aichelbaum, responsable du mensuel sp&#233;cialis&#233; et hautement qualifi&#233;, le Virus informatique. Les estimations, fond&#233;es sur des sondages sur les r&#233;seaux, sont donc &#224; consid&#233;rer avec prudence. Par ailleurs, MyDoom, en encombrant les bo&#238;tes &#224; lettres par des alertes automatiques, fausse les d&#233;comptes. &#171;Sur ma machine personnelle, j&#39;ai re&#231;u quinze alertes mais un seul exemplaire du virus&#187;, raconte ainsi Pascal Lointier, pr&#233;sident du Clusif (Club de la s&#233;curit&#233; des syst&#232;mes d&#39;information fran&#231;ais). &lt;/p&gt; &lt;p&gt; Que fait-il ? &lt;/p&gt; &lt;p&gt; MyDoom a deux activit&#233;s essentielles. Une fois qu&#39;il a pris ses aises, il cr&#233;e sur l&#39;ordinateur infect&#233; une &#171;porte d&#233;rob&#233;e&#187;, une sorte de passage secret qui lui permettra de faire venir d&#39;autres amis virus ou de mener des activit&#233;s &#224; l&#39;insu de l&#39;utilisateur. Deuxi&#232;me activit&#233; : l&#39;organisation d&#39;attaques sur des sites webs. MyDoom est programm&#233; pour se connecter &#224; un jour et une heure donn&#233;s. Tous les ordinateurs infect&#233;s agissant de concert, le site vis&#233; se retrouve satur&#233;. C&#39;est ce qu&#39;a subi, dimanche, la soci&#233;t&#233; SCO, qui a pour caract&#233;ristique de revendiquer un droit de propri&#233;t&#233; intellectuelle sur le syst&#232;me Unix (un logiciel utilis&#233; par les r&#233;seaux d&#39;entreprises). Un petit fr&#232;re de MyDoom (MyDoom. B) est programm&#233; pour lancer aujourd&#39;hui une attaque contre Microsoft, mais il se r&#233;pand nettement moins vite que son a&#238;n&#233;. &lt;/p&gt; &lt;p&gt; Comment s&#39;en pr&#233;munir et s&#39;en d&#233;barrasser ? &lt;/p&gt; &lt;p&gt; Pour s&#39;en pr&#233;munir, rien de plus simple : ne pas cliquer sur une pi&#232;ce jointe sans s&#39;assurer de sa provenance. Et utiliser avec prudence les syst&#232;mes d&#39;&#233;changes de fichiers. Pour s&#39;en d&#233;barrasser, on peut t&#233;l&#233;charger un petit logiciel sur les sites d&#39;&#233;diteurs antivirus &#173; Network Associates, F-Secure (1). &lt;/p&gt; &lt;p&gt; Qui l&#39;a con&#231;u ? &lt;/p&gt; &lt;p&gt; &#171;Il n&#39;est pas possible &#224; partir du virus de conna&#238;tre les intentions de celui qui l&#39;a programm&#233;&#187;, observe Paul-Andr&#233; Pays, responsable de la soci&#233;t&#233; de s&#233;curit&#233; informatique Edelweb. Aucune r&#233;ponse certaine, donc, &#224; ce jour. Deux hypoth&#232;ses dominent. La premi&#232;re, plut&#244;t ang&#233;lique : MyDoom serait l&#39;oeuvre de d&#233;fenseurs des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; contre les int&#233;r&#234;ts priv&#233;s de l&#39;informatique. D&#39;o&#249; son attaque contre SCO, et son hostilit&#233; envers Microsoft. Mais &#171;l&#39;attaque contre SCO pourrait &#234;tre un pr&#233;texte&#187; cachant des intentions moins louables, imagine Paul-Andr&#233; Pays. Celles des professionnels du spam, ces messages ind&#233;sirables qui encombrent les bo&#238;tes e-mail. &#171;MyDoom glisse dans les ordinateurs des petits moteurs d&#39;envoi de courriers &#233;lectroniques. D&#39;un coup, des centaines de milliers de machines peuvent &#234;tre utilis&#233;es comme relais pour des envois de spam.&#187; &lt;/p&gt; &lt;p&gt; (1) &lt;a target=&quot;_blank&quot; href=&quot;https://www.nai.com&quot;&gt;www.nai.com&lt;/a&gt; ou &lt;a target=&quot;_blank&quot; href=&quot;https://www.f-secure.com&quot;&gt;www.f-secure.com&lt;/a&gt;&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20040203&amp;#183;LI&amp;#183;0li20040203042&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">courrier électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">systèmes d'échanges</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Network Associates</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">Paul André Pays</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">droit de propriété intellectuelle</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040203%c2%b7LI%c2%b70li20040203042" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720040203%c2%b7LI%c2%b70li20040203042">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération, no. 7069                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+ECONOMIE,         mardi 3 février 2004 566 mots, p. 20</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+MyDoom, un virus qui fait très mail.            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Après avoir contaminé près d'un million d'ordinateurs, ce programme parasite cible aujourd'hui Microsoft.</p>
+</div>
+
+        <p class="sm-margin-bottomNews">MAURIAC Laurent</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>C'est le virus qui vient du froid. A l'actif de MyDoom, dépisté pour la première fois en Russie voici une semaine, entre 600 000 et un million d'ordinateurs contaminés selon les estimations, le blocage du site web d'un éditeur de logiciels depuis dimanche et, espèrent ses concepteurs, l'attaque prévue aujourd'hui contre le site de Microsoft, le géant des logiciels. Selon les experts en virologie informatique ­ toujours prompts à gonfler ce type de phénomène ­, MyDoom est à l'origine de la plus grande contamination de l'histoire informatique. Il n'innove pourtant en rien et ne fait que «touiller» la plupart des caractéristiques de ses prédécesseurs. Tour d'horizon des dommages et des moyens de s'en prémunir en cinq questions. </p> <p> Comment se propage MyDoom ? </p> <p> MyDoom s'appuie sur le courrier électronique. Tout le but de ses concepteurs est de faire cliquer sur une pièce jointe. «Si MyDoom s'est propagé à une vitesse fulgurante, ce n'est pas en raison de sa conception technique, mais parce que ses auteurs ont imaginé des mots pour le sujet du message et des textes incitant les utilisateurs à cliquer sur la pièce jointe», explique François Paget, chercheur antivirus chez Network Associates. Exemple : un message tronqué avec l'incitation (en anglais) à le lire en pièce jointe. L'utilisateur clique, et il ne reste plus à MyDoom qu'à piller son carnet d'adresses et à se propager à ses habituels correspondants par courrier électronique. Autre mode de contamination : MyDoom peut se déguiser en fichier à télécharger sur les systèmes d'échanges entre particuliers (notamment Kazaa).</p>
+
+
+<p>Quelle est son ampleur ? </p> <p> 600 000 machines contaminées ? Un million ? Les estimations foisonnent, principalement chez les éditeurs de logiciels antivirus. Or, dans le secteur, chacun présente une nette tendance à dramatiser la situation pour faire mousser ses produits. «Je ne vois pas trop comment on peut établir de tels comptages», estime Olivier Aichelbaum, responsable du mensuel spécialisé et hautement qualifié, le Virus informatique. Les estimations, fondées sur des sondages sur les réseaux, sont donc à considérer avec prudence. Par ailleurs, MyDoom, en encombrant les boîtes à lettres par des alertes automatiques, fausse les décomptes. «Sur ma machine personnelle, j'ai reçu quinze alertes mais un seul exemplaire du virus», raconte ainsi Pascal Lointier, président du Clusif (Club de la sécurité des systèmes d'information français). </p> <p> Que fait-il ? </p> <p> MyDoom a deux activités essentielles. Une fois qu'il a pris ses aises, il crée sur l'ordinateur infecté une «porte dérobée», une sorte de passage secret qui lui permettra de faire venir d'autres amis virus ou de mener des activités à l'insu de l'utilisateur. Deuxième activité : l'organisation d'attaques sur des sites webs. MyDoom est programmé pour se connecter à un jour et une heure donnés. Tous les ordinateurs infectés agissant de concert, le site visé se retrouve saturé. C'est ce qu'a subi, dimanche, la société SCO, qui a pour caractéristique de revendiquer un droit de propriété intellectuelle sur le système Unix (un logiciel utilisé par les réseaux d'entreprises). Un petit frère de MyDoom (MyDoom. B) est programmé pour lancer aujourd'hui une attaque contre Microsoft, mais il se répand nettement moins vite que son aîné. </p> <p> Comment s'en prémunir et s'en débarrasser ? </p> <p> Pour s'en prémunir, rien de plus simple : ne pas cliquer sur une pièce jointe sans s'assurer de sa provenance. Et utiliser avec prudence les systèmes d'échanges de fichiers. Pour s'en débarrasser, on peut télécharger un petit logiciel sur les sites d'éditeurs antivirus ­ Network Associates, F-Secure (1). </p> <p> Qui l'a conçu ? </p> <p> «Il n'est pas possible à partir du virus de connaître les intentions de celui qui l'a programmé», observe Paul-André Pays, responsable de la société de sécurité informatique Edelweb. Aucune réponse certaine, donc, à ce jour. Deux hypothèses dominent. La première, plutôt angélique : MyDoom serait l'oeuvre de défenseurs des <mark>logiciels</mark> <mark>libres</mark> contre les intérêts privés de l'informatique. D'où son attaque contre SCO, et son hostilité envers Microsoft. Mais «l'attaque contre SCO pourrait être un prétexte» cachant des intentions moins louables, imagine Paul-André Pays. Celles des professionnels du spam, ces messages indésirables qui encombrent les boîtes e-mail. «MyDoom glisse dans les ordinateurs des petits moteurs d'envoi de courriers électroniques. D'un coup, des centaines de milliers de machines peuvent être utilisées comme relais pour des envois de spam.» </p> <p> (1) <a target="_blank" href="https://www.nai.com">www.nai.com</a> ou <a target="_blank" href="https://www.f-secure.com">www.f-secure.com</a></p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20040203·LI·0li20040203042</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20040203·LI·0li20040203042";
+    var _docIndex = 217;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20040203·LI·0li20040203042';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720040203%C2%B7LI%C2%B70li20040203042&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720040203%C2%B7LI%C2%B70li20040203042&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720040203%C2%B7LI%C2%B70li20040203042&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720040203%C2%B7LI%C2%B70li20040203042&docIndex=217&FullScreen=1";
+                
+	var _keyDoc = 'news·20040203·LI·0li20040203042';
+</script>
+</div></body></html>

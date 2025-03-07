@@ -1,0 +1,459 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Les Actualit&#233;s,         mardi 11 avril 2000 638 mots, p. A4&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Linux Expo Am&#233;riques 2000: Une premi&#232;re journ&#233;e sous le signe de l&#39;&#233;ducation            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;Le salon des exposants s&#39;ouvre au public aujourd&#39;hui&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Hier fut une premi&#232;re journ&#233;e somme toute tranquille au Palais des Congr&#232;s de Montr&#233;al alors que les professionnels inscrits aux neuf s&#233;ances de formation ont pu avoir un aper&#231;u des possibilit&#233;s offertes par de nombreux produits et logiciels &#224; &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; tandis que les exposants se pr&#233;paraient pour l&#39;ouverture du salon au grand public aujourd&#39;hui. &lt;/p&gt; &lt;p&gt; &#192; la conf&#233;rence d&#39;&#201;ric Dumas, les sp&#233;cialistes et nouveaux initi&#233;s au syst&#232;me d&#39;exploitation GNU/Linux ont pu avoir un aper&#231;u des caract&#233;ristiques qui seront int&#233;gr&#233;es au noyau 2.4 qui devrait &#234;tre normalement &quot;rel&#226;ch&#233;&quot; dans le deuxi&#232;me semestre 2000. Le support des diff&#233;rents p&#233;riph&#233;riques USB (Universal Serial Bus), le &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;plug and play&quot;&lt;/em&gt; , les cartes PCMCIA ainsi que le renforcement des ordinateurs serveurs haute performance multiprocesseurs sont parmi les caract&#233;ristiques les plus attendues par la communaut&#233; Linux.&lt;/p&gt;
+
+
+&lt;p&gt;Les nouvelles interfaces graphiques, grandes responsables de la nouvelle popularit&#233; de Linux dans le grand public et en entreprise, ont &#233;t&#233; aussi &#224; l&#39;honneur alors que les responsables des projets KDE et GNOME sont venus pr&#233;senter les derniers progr&#232;s des programmeurs de ces communaut&#233;s respectives. La version 2.0 de KDE est attendue au cours des prochains mois. Autant l&#39;interface GNOME semble la plus en avance technologiquement, autant KDE, une &quot;copie&quot; de Windows, est per&#231;ue par les observateurs du milieu comme l&#39;interface la plus mature et le plus apte &#224; rallier les entreprises qui d&#233;sirent faire le saut vers Linux. &lt;/p&gt; &lt;p&gt; Un projet en d&#233;veloppement qui a attir&#233; l&#39;attention de plusieurs sp&#233;cialistes durant cette premi&#232;re journ&#233;e fut Zope, une application en &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, et d&#233;velopp&#233;e originalement par la soci&#233;t&#233; Digital Creations. Carburant autant sur Linux que Windows NT, Zope est une application serveur orient&#233; objet dont la mission premi&#232;re est le d&#233;veloppement et la cr&#233;ation de sites Internet et Intranet de fa&#231;on totalement dynamique. &lt;/p&gt; &lt;p&gt; L&#39;impl&#233;mentation de la s&#233;curit&#233; dans un environnement GNU/Linux fut aussi hautement suivie par les participants &#224; cette journ&#233;e. La s&#233;curit&#233; des &#233;changes avec Linux gr&#226;ce aux protocoles SSL, ipSEC et SSH et la mise en application d&#39;un mur coupe-feu (firewall) et des diff&#233;rentes services Internet (DNS, messagerie, HTTP) ont &#233;t&#233; parmi les diff&#233;rents sujets abord&#233;s par les sp&#233;cialistes pr&#233;sents sur place. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Premi&#232;re journ&#233;e du salon des exposants&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Cette deuxi&#232;me journ&#233;e de la conf&#233;rence Linux Expo Am&#233;riques 2000 sera sans doute la plus occup&#233;e avec l&#39;ouverture du salon des exposants au grand public et la pr&#233;sentation tr&#232;s attendue des diff&#233;rents &quot;keynotes&quot;. Michael Copland de Corel, Bob Young, le fondateur de Red Hat, Larry Augustin de VA Linux, Dirk Hohndel de la soci&#233;t&#233; allemande SUSE, Jacques Lemarois, de Linux Mandrake et Eric S. Raymond, l&#39;auteur du manifeste &lt;em style=&quot;font-style:italic;&quot;&gt;The Cathedral and the Bazaar&lt;/em&gt; seront sur place de 9h &#224; 13h pour cette s&#233;rie de conf&#233;rences permettant &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;de faire le point sur les grandes &#233;volutions et orientations en cours et &#224; venir de Linux et des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;&quot; &lt;/em&gt;&lt;/p&gt;&lt;p&gt;La conf&#233;rence de Copland devrait &#234;tre la plus attendue avec la pr&#233;sentation officielle de la suite Suite Word Perfect Office pour Linux. Enti&#232;rement compatible avec les fichiers produits par la suite Windows et les fichiers MS Office, cette suite incluant les progiciels Word Perfect, le tableur Quattro Pro, le gestionnaire de base de donn&#233;es Paradox et l&#39;application de pr&#233;sentatique Presentation, est totalement orient&#233;e Internet. Il sera m&#234;me possible d&#39;exporter des donn&#233;es non seulement au standard HTML, comme avec MS Office, mais aussi vers des formats plus exotiques comme le WAP (Wireless Application Protocol), standard de la t&#233;l&#233;phonie Internet. Bell Canada offre actuellement, &#224; l&#39;aide d&#39;une nouvelle g&#233;n&#233;ration de t&#233;l&#233;phone cellulaire, l&#39;acc&#232;s &#224; des sites Internet au format WAP. &lt;/p&gt; &lt;p&gt; Le salon des exposants devrait &#234;tre aussi tr&#232;s couru alors qu&#39;ACCPAC, une division de Computer Associates, bien connu en terre qu&#233;b&#233;coise pour son logiciel Simple Comptable, r&#233;v&#233;lera au public ses nouvelles solutions de logiciels comptables pour Linux avec son produit &quot;ACCPAC Corporate Series&quot;. &lt;/p&gt; &lt;p&gt; Un des titans de l&#39;industrie du logiciel, Oracle, annoncera la version 2 de son syst&#232;me de gestion de base de donn&#233;es Oracle 8 adapt&#233; pour le syst&#232;me d&#39;exploitation GNU/Linux. Selon Michael Rocha, vice-pr&#233;sident directeur, division des technologies chez Oracle, cette nouvelle version d&#39;Oracle pour Linux, pourra &#234;tre t&#233;l&#233;charg&#233;e gratuitement et &lt;em style=&quot;font-style:italic;&quot;&gt;&quot;constituera pour les entreprises qui souhaitent &#233;tablir une pr&#233;sence pr&#233;pond&#233;rante sur le Web la solution id&#233;ale en mati&#232;re de &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;&quot; &lt;/em&gt;. Cette version devrait inclure de nouveaux avantages comme des fonctions analytiques int&#233;gr&#233;es pour l&#39;entreposage de donn&#233;es, le support JAVA 2.0, le soutien de la norme XML (Extented Markup Language) et une s&#233;curit&#233; de niveau sup&#233;rieure. &lt;/p&gt; &lt;p&gt; Plus de 100 autres exposants venus d&#39;un peu partout dans le monde seront aussi pr&#233;sents au Palais des Congr&#232;s aujourd&#39;hui et demain pour pr&#233;senter leurs nouveaux produits et services &#224; cette premi&#232;re exposition Linux Expo Am&#233;riques 2000. Le salon sera ouvert de 9h &#224; 18h aujourd&#39;hui et de 9h &#224; 17h mercredi. Pour plus d&#39;informations: (514) 871-5850.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2000 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20000411&amp;#183;LE&amp;#183;0015&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Concurrence</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Industries de l'informatique et de l'électronique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Informatique</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Marchés publics, foires commerciales et salons</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000411%c2%b7LE%c2%b70015" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720000411%c2%b7LE%c2%b70015">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Les Actualités,         mardi 11 avril 2000 638 mots, p. A4</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Linux Expo Amériques 2000: Une première journée sous le signe de l'éducation            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">Le salon des exposants s'ouvre au public aujourd'hui</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Hier fut une première journée somme toute tranquille au Palais des Congrès de Montréal alors que les professionnels inscrits aux neuf séances de formation ont pu avoir un aperçu des possibilités offertes par de nombreux produits et logiciels à <mark>code</mark> <mark>source</mark> <mark>libre</mark> tandis que les exposants se préparaient pour l'ouverture du salon au grand public aujourd'hui. </p> <p> À la conférence d'Éric Dumas, les spécialistes et nouveaux initiés au système d'exploitation GNU/Linux ont pu avoir un aperçu des caractéristiques qui seront intégrées au noyau 2.4 qui devrait être normalement "relâché" dans le deuxième semestre 2000. Le support des différents périphériques USB (Universal Serial Bus), le <em style="font-style:italic;">"plug and play"</em> , les cartes PCMCIA ainsi que le renforcement des ordinateurs serveurs haute performance multiprocesseurs sont parmi les caractéristiques les plus attendues par la communauté Linux.</p>
+
+
+<p>Les nouvelles interfaces graphiques, grandes responsables de la nouvelle popularité de Linux dans le grand public et en entreprise, ont été aussi à l'honneur alors que les responsables des projets KDE et GNOME sont venus présenter les derniers progrès des programmeurs de ces communautés respectives. La version 2.0 de KDE est attendue au cours des prochains mois. Autant l'interface GNOME semble la plus en avance technologiquement, autant KDE, une "copie" de Windows, est perçue par les observateurs du milieu comme l'interface la plus mature et le plus apte à rallier les entreprises qui désirent faire le saut vers Linux. </p> <p> Un projet en développement qui a attiré l'attention de plusieurs spécialistes durant cette première journée fut Zope, une application en <mark>code</mark> <mark>source</mark> <mark>libre</mark>, et développée originalement par la société Digital Creations. Carburant autant sur Linux que Windows NT, Zope est une application serveur orienté objet dont la mission première est le développement et la création de sites Internet et Intranet de façon totalement dynamique. </p> <p> L'implémentation de la sécurité dans un environnement GNU/Linux fut aussi hautement suivie par les participants à cette journée. La sécurité des échanges avec Linux grâce aux protocoles SSL, ipSEC et SSH et la mise en application d'un mur coupe-feu (firewall) et des différentes services Internet (DNS, messagerie, HTTP) ont été parmi les différents sujets abordés par les spécialistes présents sur place. </p> <p><em style="font-weight:bold;">Première journée du salon des exposants</em></p><p>Cette deuxième journée de la conférence Linux Expo Amériques 2000 sera sans doute la plus occupée avec l'ouverture du salon des exposants au grand public et la présentation très attendue des différents "keynotes". Michael Copland de Corel, Bob Young, le fondateur de Red Hat, Larry Augustin de VA Linux, Dirk Hohndel de la société allemande SUSE, Jacques Lemarois, de Linux Mandrake et Eric S. Raymond, l'auteur du manifeste <em style="font-style:italic;">The Cathedral and the Bazaar</em> seront sur place de 9h à 13h pour cette série de conférences permettant <em style="font-style:italic;">"de faire le point sur les grandes évolutions et orientations en cours et à venir de Linux et des <mark>logiciels</mark> <mark>libres</mark>" </em></p><p>La conférence de Copland devrait être la plus attendue avec la présentation officielle de la suite Suite Word Perfect Office pour Linux. Entièrement compatible avec les fichiers produits par la suite Windows et les fichiers MS Office, cette suite incluant les progiciels Word Perfect, le tableur Quattro Pro, le gestionnaire de base de données Paradox et l'application de présentatique Presentation, est totalement orientée Internet. Il sera même possible d'exporter des données non seulement au standard HTML, comme avec MS Office, mais aussi vers des formats plus exotiques comme le WAP (Wireless Application Protocol), standard de la téléphonie Internet. Bell Canada offre actuellement, à l'aide d'une nouvelle génération de téléphone cellulaire, l'accès à des sites Internet au format WAP. </p> <p> Le salon des exposants devrait être aussi très couru alors qu'ACCPAC, une division de Computer Associates, bien connu en terre québécoise pour son logiciel Simple Comptable, révélera au public ses nouvelles solutions de logiciels comptables pour Linux avec son produit "ACCPAC Corporate Series". </p> <p> Un des titans de l'industrie du logiciel, Oracle, annoncera la version 2 de son système de gestion de base de données Oracle 8 adapté pour le système d'exploitation GNU/Linux. Selon Michael Rocha, vice-président directeur, division des technologies chez Oracle, cette nouvelle version d'Oracle pour Linux, pourra être téléchargée gratuitement et <em style="font-style:italic;">"constituera pour les entreprises qui souhaitent établir une présence prépondérante sur le Web la solution idéale en matière de <mark>logiciel</mark> <mark>libre</mark>" </em>. Cette version devrait inclure de nouveaux avantages comme des fonctions analytiques intégrées pour l'entreposage de données, le support JAVA 2.0, le soutien de la norme XML (Extented Markup Language) et une sécurité de niveau supérieure. </p> <p> Plus de 100 autres exposants venus d'un peu partout dans le monde seront aussi présents au Palais des Congrès aujourd'hui et demain pour présenter leurs nouveaux produits et services à cette première exposition Linux Expo Amériques 2000. Le salon sera ouvert de 9h à 18h aujourd'hui et de 9h à 17h mercredi. Pour plus d'informations: (514) 871-5850.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2000 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20000411·LE·0015</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20000411·LE·0015";
+    var _docIndex = 586;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20000411·LE·0015';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720000411%C2%B7LE%C2%B70015&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720000411%C2%B7LE%C2%B70015&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720000411%C2%B7LE%C2%B70015&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720000411%C2%B7LE%C2%B70015&docIndex=586&FullScreen=1";
+                
+	var _keyDoc = 'news·20000411·LE·0015';
+</script>
+</div></body></html>

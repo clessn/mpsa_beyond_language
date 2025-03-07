@@ -1,0 +1,531 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+International,         vendredi 27 octobre 2023 1791 mots, p. 2&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Guerre en Ukraine&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La contre-offensive de Kiev en &#233;chec            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L’arm&#233;e ukrainienne, engag&#233;e depuis le 4 juin dans des op&#233;rations pour percer les lignes russes, ne progresse plus. Et Moscou a repris l’initiative, le 10 octobre, en lan&#231;ant des assauts d’ampleur, sur la ville d’Avdi&#239;vka, dans le Donbass&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;C&#233;dric Pietralunga&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Cent cinquante jours apr&#232;s le lancement de la contre-offensive ukrainienne dans le sud du pays, les militaires et les analystes occidentaux font le m&#234;me constat amer : l’arm&#233;e de Kiev n’a que tr&#232;s peu progress&#233; et, surtout, n’avance plus. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Malgr&#233; les efforts d&#233;termin&#233;s des forces arm&#233;es ukrainiennes, cinq mois d’op&#233;rations offensives n’ont pas permis de percer les lignes de d&#233;fense russes &#187;,&lt;/em&gt; observe Jack Watling, chercheur au centre de r&#233;flexion britannique Royal United Services Institute (RUSI), dans une note publi&#233;e le 19&#160;octobre. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L’Ukraine conserve certaines options pour rendre le dispositif russe inconfortable, mais il est tr&#232;s peu probable qu’il y ait une perc&#233;e&lt;/em&gt;(…) &lt;em style=&quot;font-style:italic;&quot;&gt;cette ann&#233;e &#187;&lt;/em&gt; , ajoute ce sp&#233;cialiste du combat terrestre, qui table sur une poursuite du conflit en&#160;2024, voire au-del&#224;.&lt;/p&gt;
+
+
+&lt;p&gt;Lors du lancement de ses premiers assauts sur les lignes russes, le 4&#160;juin, l’arm&#233;e ukrainienne fondait pourtant de grands espoirs sur son op&#233;ration. Durant tout le printemps, elle avait accumul&#233; des hommes et du mat&#233;riel pour enfoncer les d&#233;fenses &#233;rig&#233;es par l’ennemi le long des quelque 1&#160;000&#160;kilom&#232;tres de la ligne de front. Douze brigades, regroupant environ 35 000&#160;soldats, avaient &#233;t&#233; sp&#233;cialement constitu&#233;es pour la manœuvre, dont certaines dot&#233;es de blind&#233;s occidentaux modernes : des chars britanniques Challenger 2 et allemands Leopard 2, des v&#233;hicules de combat d’infanterie am&#233;ricains Bradley, des engins de reconnaissance fran&#231;ais AMX-10&#160;RC… &lt;/p&gt; &lt;p&gt; L’objectif de Kiev, alors, &#233;tait de percer le syst&#232;me d&#233;fensif russe &#233;rig&#233; entre les villes de Zaporijia et de Donetsk, dans le sud du pays, pour tenter de rejoindre la mer d’Azov, au niveau des agglom&#233;rations de Melitopol, de Berdiansk ou de Marioupol. Une telle manœuvre aurait permis aux Ukrainiens de couper en deux l’arm&#233;e russe, isolant notamment ses forces d&#233;ploy&#233;es le plus &#224; l’ouest, sur la rive gauche du fleuve Dniepr. Surtout, elle aurait permis de rompre le pont terrestre qui relie la Russie &#224; la p&#233;ninsule de Crim&#233;e, que Moscou utilise pour ravitailler en hommes et en mat&#233;riels l’ensemble de ses forces pr&#233;sentes dans le sud du pays. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Qualit&#233; de la ligne de d&#233;fense russe&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Las, malgr&#233; d’innombrables tentatives pour percer le rideau d&#233;fensif russe, l’arm&#233;e ukrainienne pi&#233;tine. Au plus fort de sa pouss&#233;e sur le front sud cet &#233;t&#233;, elle n’aurait progress&#233; que de 90&#160;m&#232;tres par jour en moyenne, assure le think tank am&#233;ricain Center for Strategic and International Studies (CSIS), dans une synth&#232;se publi&#233;e le 12&#160;octobre. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les douze brigades mobilis&#233;es par les Ukrainiens pour leur contre-offensive ont &#233;t&#233; en partie consomm&#233;es, et leurs soldats sont toujours bloqu&#233;s sur la premi&#232;re ligne de d&#233;fense russe &#187;&lt;/em&gt;, confirme une source militaire fran&#231;aise, peu optimiste sur la capacit&#233; ukrainienne &#224; franchir les tranch&#233;es ennemies. &lt;/p&gt; &lt;p&gt; En cinq mois, les Ukrainiens n’ont reconquis qu’environ 400&#160;kilom&#232;tres carr&#233;s de leur territoire, une surface inf&#233;rieure &#224; celle du Territoire de Belfort, estiment les sp&#233;cialistes de l’Osint (&lt;mark&gt;Open&lt;/mark&gt; &lt;mark&gt;Source&lt;/mark&gt; Intelligence ou donn&#233;es en sources ouvertes). Au total, les Russes occupent encore un peu plus de 17&#160;% de l’Ukraine, soit plus de 100&#160;000&#160;kilom&#232;tres carr&#233;s, contre environ un quart, au plus fort de son avanc&#233;e, en mars&#160;2022. &lt;/p&gt; &lt;p&gt; Ces derniers jours, c’est m&#234;me l’arm&#233;e russe qui a repris l’initiative, en lan&#231;ant des assauts d’envergure, sans discontinuer, depuis le 10&#160;octobre, sur la ville d’Avdi&#239;vka, dans le Donbass, que les deux bellig&#233;rants se disputent depuis 2014. La cit&#233; industrielle, qui comptait plus de 30 000&#160;habitants avant l’invasion de f&#233;vrier&#160;2022&#160;et dans laquelle se terrent aujourd’hui quelque 2 000&#160;civils, subit d&#233;sormais le sort de Bakhmout. L’avanc&#233;e des blind&#233;s et troupes de Moscou se ferait n&#233;anmoins au prix de lourdes pertes. &lt;/p&gt; &lt;p&gt; A &#233;couter les militaires et les analystes, le caract&#232;re laborieux de la progression ukrainienne s’explique d’abord par la qualit&#233; de la ligne de d&#233;fense &#233;rig&#233;e par Moscou, qui a surpris. Durant le printemps, les militaires russes ont creus&#233; des centaines de kilom&#232;tres de tranch&#233;es, pos&#233; des dizaines de milliers de mines antichar et antipersonnel, couvert les champs de dents de dragon (des c&#244;nes de b&#233;ton destin&#233;s &#224; entraver la progression des blind&#233;s). Non seulement ces dispositifs ont &#233;t&#233; mis en place sur tout le front, mais &#233;galement dans la profondeur, sur des zones pouvant atteindre jusqu’&#224; 500&#160;m&#232;tres de long, selon le CSIS. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; La d&#233;fensive russe est extraordinaire &#187;&lt;/em&gt;, reconna&#238;t un haut grad&#233; fran&#231;ais. &lt;/p&gt; &lt;p&gt; Cette fortification de la ligne de combat a &#233;t&#233; pens&#233;e d&#232;s l’automne 2022&#160;par le g&#233;n&#233;ral Sergue&#239; Sourovikine, qui commandait alors les troupes de Moscou en Ukraine – il a &#233;t&#233; depuis &#233;cart&#233;. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; On ne l’a pas per&#231;u &#224; l’&#233;poque, mais Sourovikine a fait comme les Allemands en&#160;1917&#160;avec l’op&#233;ration Alberich : il a volontairement retir&#233; ses troupes de Kherson et de la rive droite du Dniepr pour raccourcir la ligne de front et se fortifier en d&#233;fensive, une posture qui correspond &#224; la culture strat&#233;gique russe.&lt;/em&gt;(…) &lt;em style=&quot;font-style:italic;&quot;&gt;Les Ukrainiens ne passent pas &#187;&lt;/em&gt;, explique-t-on au sein du Centre de doctrine et d’enseignement du commandement de l’arm&#233;e de terre fran&#231;aise, o&#249; une cellule suit quotidiennement l’&#233;volution du conflit. &lt;/p&gt; &lt;p&gt; Au d&#233;but de sa contre-offensive, l’arm&#233;e ukrainienne a bien tent&#233; de mener des assauts d’ampleur, impliquant un nombre important d’hommes et de mat&#233;riels, mais elle a d&#251; tr&#232;s vite en rabattre sur ses ambitions, faute de ma&#238;triser suffisamment le combat interarmes. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Constituer une brigade apte &#224; mener une telle manœuvre demande au minimum neuf mois de formation&#160;collective, ce que n’ont pas eu les Ukrainiens.&#160;Apr&#232;s les &#233;checs initiaux, ils ont pr&#233;f&#233;r&#233; mener des combats de taille beaucoup plus petite, ce qui limite leurs pertes et aguerri leurs troupes, mais produit aussi moins d’effets territoriaux &#187;&lt;/em&gt;, constate St&#233;phane Audrand, consultant en risques internationaux et officier de r&#233;serve. &lt;/p&gt; &lt;p&gt; A d&#233;faut de pouvoir faire reculer leur adversaire, les deux bellig&#233;rants se sont engag&#233;s dans une guerre d’attrition, o&#249; chacun tente d’infliger le plus de d&#233;g&#226;ts &#224; l’autre pour esp&#233;rer reprendre l’initiative en premier. Une strat&#233;gie qui n’est pas sans risque pour l’Ukraine. Selon les services de renseignement occidentaux, Moscou dispose en effet d’une &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; profondeur strat&#233;gique&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#187;&lt;/em&gt; plus importante que son adversaire. Avec une population de 143&#160;millions d’habitants et une industrie de d&#233;fense qui monte en puissance, la Russie peut mobiliser davantage d’hommes et de mat&#233;riels dans la dur&#233;e que l’Ukraine et ses 43&#160;millions de citoyens, et ce malgr&#233; les sanctions mises en place par l’Occident contre Moscou. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;&#171; L’Ukraine perd beaucoup d’hommes &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;De nombreux experts craignent notamment que l’Ukraine se trouve &#224; court de munitions en&#160;2024, notamment d’obus de 155&#160;mm, le calibre de norme OTAN utilis&#233; pour l’artillerie d’origine occidentale, faute d’approvisionnement des pays alli&#233;s et d’une production nationale suffisante. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Bien qu’il y ait des signes de progr&#232;s vers la r&#233;solution des probl&#232;mes d’approvisionnement en munitions de l’Ukraine, il faudra plusieurs mois avant que des avanc&#233;es majeures ne soient r&#233;alis&#233;es.&lt;/em&gt;(…) &lt;em style=&quot;font-style:italic;&quot;&gt;Il est donc peu probable que la production projet&#233;e r&#233;ponde aux besoins de l’Ukraine avant la seconde moiti&#233; de 2024 ou d&#233;but 2025 &#187;&lt;/em&gt;, anticipe Mykola Bielieskov, chercheur &#224; l’Institut national d’&#233;tudes strat&#233;giques (NISS) de Kiev. &lt;/p&gt; &lt;p&gt; A l’inverse, la Russie disposerait encore d’environ 4&#160;millions d’obus d’artillerie dans ses arsenaux. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Cela signifie qu’elle pourrait continuer &#224; tirer au rythme relativement faible actuel de 10 000 coups par jour pendant un peu plus d’un an &#187;&lt;/em&gt;, a estim&#233; le colonel Ants Kiviselg, chef du renseignement militaire estonien, lors d’une conf&#233;rence de presse le 20&#160;octobre. Sans parler des obus envoy&#233;s &#224; la Russie par la Cor&#233;e du Nord, dont le nombre est estim&#233; entre 300 000&#160;et 350 000&#160;unit&#233;s, et ceux nouvellement fabriqu&#233;s par l’industrie russe, dont la capacit&#233; serait remont&#233;e &#224; deux ou trois&#160;millions par an. En mati&#232;re de missiles de croisi&#232;re, la Russie aurait &#233;galement retrouv&#233; son niveau de production d’avant-guerre, avec cent nouveaux projectiles fabriqu&#233;s par mois, contre quarante il y a un an, affirme Jack Watling (RUSI). &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Contrairement &#224; l’Ukraine, il est peu probable que la Russie soit confront&#233;e &#224; de graves p&#233;nuries de munitions en&#160;2024. Vladimir&lt;/em&gt;&lt;em style=&quot;font-style:italic;&quot;&gt;Poutine s’efforce d&#233;j&#224; depuis plus d’un an de mettre une grande partie de l’&#233;conomie russe sur le pied de guerre.&#160;M&#234;me si ce processus est loin d’&#234;tre parfait, il produit des r&#233;sultats &#187;&lt;/em&gt;, s’inqui&#232;te Mykola Bielieskov (NISS). &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L’ann&#233;e 2024&#160;va &#234;tre celle de tous les dangers pour les Ukrainiens. Les mat&#233;riels qui leur ont d&#233;j&#224; &#233;t&#233; livr&#233;s seront us&#233;s mais ils ne pourront les reconstituer que partiellement car les capacit&#233;s de production occidentales ne seront optimales qu’en&#160;2025 &#187;&lt;/em&gt;, abonde M. Audrand. &lt;/p&gt; &lt;p&gt; L’autre inqui&#233;tude porte sur la capacit&#233; de Kiev &#224; r&#233;g&#233;n&#233;rer ses troupes. L’&#233;tat des pertes ukrainiennes est le secret le mieux gard&#233; de la guerre – m&#234;me les alli&#233;s ne le connaissent pas –, mais le nombre de ses militaires tu&#233;s ou bless&#233;s serait sup&#233;rieur &#224; 200 000, estime-t-on dans les capitales occidentales. Entre 20 000&#160;et 50 000&#160;soldats auraient subi une amputation apr&#232;s avoir &#233;t&#233; bless&#233;s. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; L’Ukraine perd beaucoup d’hommes, notamment parmi ses v&#233;t&#233;rans, et va avoir de plus en plus de mal &#224; reconstituer ses brigades &#187;&lt;/em&gt;, craint un officier fran&#231;ais qui fait r&#233;guli&#232;rement des allers-retours &#224; Kiev. M&#234;me si elle a perdu plus de personnel – entre 390 000&#160;et 480 000&#160;tu&#233;s et bless&#233;s, selon le minist&#232;re britannique de la d&#233;fense –, la Russie dispose d’un r&#233;servoir plus important. &lt;/p&gt; &lt;p&gt; En attendant une &#233;ventuelle reprise des manœuvres de l’un des bellig&#233;rants en&#160;2024, apr&#232;s les &#233;pisodes de &#171; raspoutitsa &#187; (pluies d’automne et d&#233;gel de printemps), qui rendent les manœuvres difficiles, l’hiver s’annonce difficile pour Kiev. A la m&#234;me &#233;poque, en 2022, les Russes avaient d&#233;lib&#233;r&#233;ment vis&#233; les infrastructures &#233;nerg&#233;tiques civiles pour briser le moral des Ukrainiens. Or tout porte &#224; croire que Moscou adoptera la m&#234;me strat&#233;gie dans les prochains mois, avec des moyens d&#233;cupl&#233;s. &lt;em style=&quot;font-style:italic;&quot;&gt;&#171; Les Russes tirent aujourd’hui moins de drones et de missiles que ce que leurs capacit&#233;s de production leur permettent. Cela veut sans doute dire qu’ils constituent des r&#233;serves pour frapper durement les infrastructures d’eau et d’&#233;nergie ukrainiennes cet hiver &#187;&lt;/em&gt; , craint St&#233;phane Audrand. A cet &#233;gard, les moyens de d&#233;fense antia&#233;rienne fournis par les Occidentaux seront cruciaux.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;26 octobre 2023&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2023 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20231027&amp;#183;LM&amp;#183;202310272&amp;#215;20&amp;#215;21241024406&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">armée ukrainienne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">ligne de défense</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">ligne de défense russe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">capacités de production</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">qualité de la ligne</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Conflits armés</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Défense nationale et armée</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Politique et gouvernement</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Khersons'ka Oblast'</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Donetsk</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Zaporijia</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Russie</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Avdiïvka</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/negative.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Négatif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720231027%c2%b7LM%c2%b7202310272%c3%9720%c3%9721241024406" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720231027%c2%b7LM%c2%b7202310272%c3%9720%c3%9721241024406">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+International,         vendredi 27 octobre 2023 1791 mots, p. 2</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Guerre en Ukraine</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La contre-offensive de Kiev en échec            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L’armée ukrainienne, engagée depuis le 4 juin dans des opérations pour percer les lignes russes, ne progresse plus. Et Moscou a repris l’initiative, le 10 octobre, en lançant des assauts d’ampleur, sur la ville d’Avdiïvka, dans le Donbass</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Cédric Pietralunga</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Cent cinquante jours après le lancement de la contre-offensive ukrainienne dans le sud du pays, les militaires et les analystes occidentaux font le même constat amer : l’armée de Kiev n’a que très peu progressé et, surtout, n’avance plus. <em style="font-style:italic;">« Malgré les efforts déterminés des forces armées ukrainiennes, cinq mois d’opérations offensives n’ont pas permis de percer les lignes de défense russes »,</em> observe Jack Watling, chercheur au centre de réflexion britannique Royal United Services Institute (RUSI), dans une note publiée le 19&nbsp;octobre. <em style="font-style:italic;">« L’Ukraine conserve certaines options pour rendre le dispositif russe inconfortable, mais il est très peu probable qu’il y ait une percée</em>(…) <em style="font-style:italic;">cette année »</em> , ajoute ce spécialiste du combat terrestre, qui table sur une poursuite du conflit en&nbsp;2024, voire au-delà.</p>
+
+
+<p>Lors du lancement de ses premiers assauts sur les lignes russes, le 4&nbsp;juin, l’armée ukrainienne fondait pourtant de grands espoirs sur son opération. Durant tout le printemps, elle avait accumulé des hommes et du matériel pour enfoncer les défenses érigées par l’ennemi le long des quelque 1&nbsp;000&nbsp;kilomètres de la ligne de front. Douze brigades, regroupant environ 35 000&nbsp;soldats, avaient été spécialement constituées pour la manœuvre, dont certaines dotées de blindés occidentaux modernes : des chars britanniques Challenger 2 et allemands Leopard 2, des véhicules de combat d’infanterie américains Bradley, des engins de reconnaissance français AMX-10&nbsp;RC… </p> <p> L’objectif de Kiev, alors, était de percer le système défensif russe érigé entre les villes de Zaporijia et de Donetsk, dans le sud du pays, pour tenter de rejoindre la mer d’Azov, au niveau des agglomérations de Melitopol, de Berdiansk ou de Marioupol. Une telle manœuvre aurait permis aux Ukrainiens de couper en deux l’armée russe, isolant notamment ses forces déployées le plus à l’ouest, sur la rive gauche du fleuve Dniepr. Surtout, elle aurait permis de rompre le pont terrestre qui relie la Russie à la péninsule de Crimée, que Moscou utilise pour ravitailler en hommes et en matériels l’ensemble de ses forces présentes dans le sud du pays. </p> <p><em style="font-weight:bold;">Qualité de la ligne de défense russe</em></p><p>Las, malgré d’innombrables tentatives pour percer le rideau défensif russe, l’armée ukrainienne piétine. Au plus fort de sa poussée sur le front sud cet été, elle n’aurait progressé que de 90&nbsp;mètres par jour en moyenne, assure le think tank américain Center for Strategic and International Studies (CSIS), dans une synthèse publiée le 12&nbsp;octobre. <em style="font-style:italic;">« Les douze brigades mobilisées par les Ukrainiens pour leur contre-offensive ont été en partie consommées, et leurs soldats sont toujours bloqués sur la première ligne de défense russe »</em>, confirme une source militaire française, peu optimiste sur la capacité ukrainienne à franchir les tranchées ennemies. </p> <p> En cinq mois, les Ukrainiens n’ont reconquis qu’environ 400&nbsp;kilomètres carrés de leur territoire, une surface inférieure à celle du Territoire de Belfort, estiment les spécialistes de l’Osint (<mark>Open</mark> <mark>Source</mark> Intelligence ou données en sources ouvertes). Au total, les Russes occupent encore un peu plus de 17&nbsp;% de l’Ukraine, soit plus de 100&nbsp;000&nbsp;kilomètres carrés, contre environ un quart, au plus fort de son avancée, en mars&nbsp;2022. </p> <p> Ces derniers jours, c’est même l’armée russe qui a repris l’initiative, en lançant des assauts d’envergure, sans discontinuer, depuis le 10&nbsp;octobre, sur la ville d’Avdiïvka, dans le Donbass, que les deux belligérants se disputent depuis 2014. La cité industrielle, qui comptait plus de 30 000&nbsp;habitants avant l’invasion de février&nbsp;2022&nbsp;et dans laquelle se terrent aujourd’hui quelque 2 000&nbsp;civils, subit désormais le sort de Bakhmout. L’avancée des blindés et troupes de Moscou se ferait néanmoins au prix de lourdes pertes. </p> <p> A écouter les militaires et les analystes, le caractère laborieux de la progression ukrainienne s’explique d’abord par la qualité de la ligne de défense érigée par Moscou, qui a surpris. Durant le printemps, les militaires russes ont creusé des centaines de kilomètres de tranchées, posé des dizaines de milliers de mines antichar et antipersonnel, couvert les champs de dents de dragon (des cônes de béton destinés à entraver la progression des blindés). Non seulement ces dispositifs ont été mis en place sur tout le front, mais également dans la profondeur, sur des zones pouvant atteindre jusqu’à 500&nbsp;mètres de long, selon le CSIS. <em style="font-style:italic;">« La défensive russe est extraordinaire »</em>, reconnaît un haut gradé français. </p> <p> Cette fortification de la ligne de combat a été pensée dès l’automne 2022&nbsp;par le général Sergueï Sourovikine, qui commandait alors les troupes de Moscou en Ukraine – il a été depuis écarté. <em style="font-style:italic;">« On ne l’a pas perçu à l’époque, mais Sourovikine a fait comme les Allemands en&nbsp;1917&nbsp;avec l’opération Alberich : il a volontairement retiré ses troupes de Kherson et de la rive droite du Dniepr pour raccourcir la ligne de front et se fortifier en défensive, une posture qui correspond à la culture stratégique russe.</em>(…) <em style="font-style:italic;">Les Ukrainiens ne passent pas »</em>, explique-t-on au sein du Centre de doctrine et d’enseignement du commandement de l’armée de terre française, où une cellule suit quotidiennement l’évolution du conflit. </p> <p> Au début de sa contre-offensive, l’armée ukrainienne a bien tenté de mener des assauts d’ampleur, impliquant un nombre important d’hommes et de matériels, mais elle a dû très vite en rabattre sur ses ambitions, faute de maîtriser suffisamment le combat interarmes. <em style="font-style:italic;">« Constituer une brigade apte à mener une telle manœuvre demande au minimum neuf mois de formation&nbsp;collective, ce que n’ont pas eu les Ukrainiens.&nbsp;Après les échecs initiaux, ils ont préféré mener des combats de taille beaucoup plus petite, ce qui limite leurs pertes et aguerri leurs troupes, mais produit aussi moins d’effets territoriaux »</em>, constate Stéphane Audrand, consultant en risques internationaux et officier de réserve. </p> <p> A défaut de pouvoir faire reculer leur adversaire, les deux belligérants se sont engagés dans une guerre d’attrition, où chacun tente d’infliger le plus de dégâts à l’autre pour espérer reprendre l’initiative en premier. Une stratégie qui n’est pas sans risque pour l’Ukraine. Selon les services de renseignement occidentaux, Moscou dispose en effet d’une <em style="font-style:italic;">« profondeur stratégique</em><em style="font-style:italic;">»</em> plus importante que son adversaire. Avec une population de 143&nbsp;millions d’habitants et une industrie de défense qui monte en puissance, la Russie peut mobiliser davantage d’hommes et de matériels dans la durée que l’Ukraine et ses 43&nbsp;millions de citoyens, et ce malgré les sanctions mises en place par l’Occident contre Moscou. </p> <p><em style="font-weight:bold;">« L’Ukraine perd beaucoup d’hommes »</em></p><p>De nombreux experts craignent notamment que l’Ukraine se trouve à court de munitions en&nbsp;2024, notamment d’obus de 155&nbsp;mm, le calibre de norme OTAN utilisé pour l’artillerie d’origine occidentale, faute d’approvisionnement des pays alliés et d’une production nationale suffisante. <em style="font-style:italic;">« Bien qu’il y ait des signes de progrès vers la résolution des problèmes d’approvisionnement en munitions de l’Ukraine, il faudra plusieurs mois avant que des avancées majeures ne soient réalisées.</em>(…) <em style="font-style:italic;">Il est donc peu probable que la production projetée réponde aux besoins de l’Ukraine avant la seconde moitié de 2024 ou début 2025 »</em>, anticipe Mykola Bielieskov, chercheur à l’Institut national d’études stratégiques (NISS) de Kiev. </p> <p> A l’inverse, la Russie disposerait encore d’environ 4&nbsp;millions d’obus d’artillerie dans ses arsenaux. <em style="font-style:italic;">« Cela signifie qu’elle pourrait continuer à tirer au rythme relativement faible actuel de 10 000 coups par jour pendant un peu plus d’un an »</em>, a estimé le colonel Ants Kiviselg, chef du renseignement militaire estonien, lors d’une conférence de presse le 20&nbsp;octobre. Sans parler des obus envoyés à la Russie par la Corée du Nord, dont le nombre est estimé entre 300 000&nbsp;et 350 000&nbsp;unités, et ceux nouvellement fabriqués par l’industrie russe, dont la capacité serait remontée à deux ou trois&nbsp;millions par an. En matière de missiles de croisière, la Russie aurait également retrouvé son niveau de production d’avant-guerre, avec cent nouveaux projectiles fabriqués par mois, contre quarante il y a un an, affirme Jack Watling (RUSI). </p> <p><em style="font-style:italic;">« Contrairement à l’Ukraine, il est peu probable que la Russie soit confrontée à de graves pénuries de munitions en&nbsp;2024. Vladimir</em><em style="font-style:italic;">Poutine s’efforce déjà depuis plus d’un an de mettre une grande partie de l’économie russe sur le pied de guerre.&nbsp;Même si ce processus est loin d’être parfait, il produit des résultats »</em>, s’inquiète Mykola Bielieskov (NISS). <em style="font-style:italic;">« L’année 2024&nbsp;va être celle de tous les dangers pour les Ukrainiens. Les matériels qui leur ont déjà été livrés seront usés mais ils ne pourront les reconstituer que partiellement car les capacités de production occidentales ne seront optimales qu’en&nbsp;2025 »</em>, abonde M. Audrand. </p> <p> L’autre inquiétude porte sur la capacité de Kiev à régénérer ses troupes. L’état des pertes ukrainiennes est le secret le mieux gardé de la guerre – même les alliés ne le connaissent pas –, mais le nombre de ses militaires tués ou blessés serait supérieur à 200 000, estime-t-on dans les capitales occidentales. Entre 20 000&nbsp;et 50 000&nbsp;soldats auraient subi une amputation après avoir été blessés. <em style="font-style:italic;">« L’Ukraine perd beaucoup d’hommes, notamment parmi ses vétérans, et va avoir de plus en plus de mal à reconstituer ses brigades »</em>, craint un officier français qui fait régulièrement des allers-retours à Kiev. Même si elle a perdu plus de personnel – entre 390 000&nbsp;et 480 000&nbsp;tués et blessés, selon le ministère britannique de la défense –, la Russie dispose d’un réservoir plus important. </p> <p> En attendant une éventuelle reprise des manœuvres de l’un des belligérants en&nbsp;2024, après les épisodes de « raspoutitsa » (pluies d’automne et dégel de printemps), qui rendent les manœuvres difficiles, l’hiver s’annonce difficile pour Kiev. A la même époque, en 2022, les Russes avaient délibérément visé les infrastructures énergétiques civiles pour briser le moral des Ukrainiens. Or tout porte à croire que Moscou adoptera la même stratégie dans les prochains mois, avec des moyens décuplés. <em style="font-style:italic;">« Les Russes tirent aujourd’hui moins de drones et de missiles que ce que leurs capacités de production leur permettent. Cela veut sans doute dire qu’ils constituent des réserves pour frapper durement les infrastructures d’eau et d’énergie ukrainiennes cet hiver »</em> , craint Stéphane Audrand. A cet égard, les moyens de défense antiaérienne fournis par les Occidentaux seront cruciaux.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">26 octobre 2023</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2023 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20231027·LM·202310272×20×21241024406</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20231027·LM·202310272×20×21241024406";
+    var _docIndex = 108;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20231027·LM·202310272×20×21241024406';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720231027%C2%B7LM%C2%B7202310272%C3%9720%C3%9721241024406&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720231027%C2%B7LM%C2%B7202310272%C3%9720%C3%9721241024406&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720231027%C2%B7LM%C2%B7202310272%C3%9720%C3%9721241024406&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720231027%C2%B7LM%C2%B7202310272%C3%9720%C3%9721241024406&docIndex=108&FullScreen=1";
+                
+	var _keyDoc = 'news·20231027·LM·202310272×20×21241024406';
+</script>
+</div></body></html>

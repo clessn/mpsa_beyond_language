@@ -1,0 +1,503 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        jeudi 14 octobre 2004 555 mots, p. 16&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Rep&#232;res            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;LEVI STRAUSS : le fabricant am&#233;ricain de jeans renoue avec ses premiers b&#233;n&#233;fices apr&#232;s sa restructuration Premier accord salarial &#224; la SNCF depuis dix ans &lt;/p&gt; &lt;p&gt; LA DIRECTION de la SNCF et cinq des huit organisations syndicales (UNSA, CFDT, CFTC, CGC et FGAAC) que compte l&#39;entreprise devaient signer, mercredi 13 octobre, le premier accord salarial chez le transporteur ferroviaire depuis 1994. L&#39;accord, obtenu la veille, pr&#233;voit notamment une hausse des salaires de 1,8 %. Les trois organisations (CGT, SUD-Rail et FO), qui repr&#233;sentent les deux tiers des voix, n&#39;ont pas sign&#233; cet accord. La CFDT, qui aurait &#171; souhait&#233; plus &#187;, explique qu&#39;elle a privil&#233;gi&#233; &#171; la prime &#224; la signature &#187;. Selon elle, cette revalorisation est &#171; la bienvenue, surtout apr&#232;s les efforts consentis par les cheminots dans le redressement des comptes de la SNCF &#187;.&lt;/p&gt;
+
+
+&lt;p&gt;Pour la CGT, premier syndicat de la SNCF, apr&#232;s une ann&#233;e &#171; blanche &#187; (sans augmentation de salaire) en 2003, cette hausse est loin de compenser celle de 3,7 % du co&#251;t de la vie &#224; la fin du mois d&#39;ao&#251;t. Les propositions de la direction &#171; ne r&#233;pondent toujours pas aux difficult&#233;s financi&#232;res que rencontrent les cheminots actifs et retrait&#233;s &#187;, estime le syndicat majoritaire. Une manifestation nationale unitaire des cheminots est pr&#233;vue le 25 novembre sur les salaires, mais aussi sur le service public, le fret, l&#39;emploi et le droit de gr&#232;ve. &lt;/p&gt; &lt;p&gt; MERRILL LYNCH : la plus grande soci&#233;t&#233; de courtage de Wall Street a reconnu que ses profits avaient souffert du ralentissement des march&#233;s financiers &lt;/p&gt; &lt;p&gt; La plus grande soci&#233;t&#233; de courtage de Wall Street a reconnu, mardi 12 octobre, que ses profits avaient souffert du ralentissement des march&#233;s financiers. Selon son PDG, Merril Lynch a d&#233;gag&#233;, pour le troisi&#232;me trimestre, un r&#233;sultat net de 930 millions de dollars (755 millions d&#39;euros), contre 1 milliard de dollars un an plus t&#244;t. &lt;/p&gt; &lt;p&gt; AUTOMOBILE : le nombre d&#39;immatriculations en Europe de l&#39;Ouest a accus&#233; une baisse de 0,6 %, au mois de septembre 2004 &lt;/p&gt; &lt;p&gt; AUTOMOBILE : le nombre d&#39;immatriculations en Europe de l&#39;Ouest a accus&#233; une baisse de 0,6 %, au mois de septembre 2004, par rapport au m&#234;me mois en 2003. L&#39;Espagne conna&#238;t une hausse de 6,2 % tandis que la France recule de 1,2 %. &lt;/p&gt; &lt;p&gt; VOLKSWAGEN : la Commission europ&#233;enne a d&#233;cid&#233; de poursuivre l&#39;Allemagne devant la Cour europ&#233;enne de justice pour ne pas avoir modifi&#233; la &#171; loi Volkswagen &#187; &lt;/p&gt; &lt;p&gt; La Commission europ&#233;enne a d&#233;cid&#233;, mercredi 13 octobre, de poursuivre l&#39;Allemagne devant la Cour europ&#233;enne de justice pour ne pas avoir modifi&#233; la &#171; loi Volkswagen &#187;, qui prot&#232;ge le constructeur des offres publiques d&#39;achat hostiles. &lt;/p&gt; &lt;p&gt; ENTREPRISES &lt;/p&gt; &lt;p&gt; INDUSTRIE &lt;/p&gt; &lt;p&gt; Le constructeur am&#233;ricain devrait annoncer, jeudi 14 octobre, la suppression de 12 000 emplois en Europe, dont pr&#232;s de 7 000 au sein d&#39;Opel, selon des sources syndicales. &lt;/p&gt; &lt;p&gt; LEVI STRAUSS : le fabricant am&#233;ricain de jeans renoue avec ses premiers b&#233;n&#233;fices (d&#39;un montant de46,6 millions de dollars, soit 37,8 millions d&#39;euros, au troisi&#232;me trimestre) apr&#232;s sa restructuration. Les ventes aux Etats-Unis, premier march&#233; de Levi&#39;s, continuent de souffrir mais en Europe, l&#39;entreprise tire avantage de r&#233;centes augmentations de prix. &lt;/p&gt; &lt;p&gt; INFORMATIQUE :la Ville de Paris va convertir &#171; progressivement &#187; aux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; les 17 000 ordinateurs dont disposent ses services. &lt;/p&gt; &lt;p&gt; La Ville de Paris a annonc&#233;, mardi 12 octobre, qu&#39;elle convertirait &#171; progressivement &#187; aux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; les 17 000 ordinateurs dont disposent ses services. Cette &#171; migration &#187; s&#39;effectuera entre 2004 et 2007, conjointement &#224; une remise &#224; niveau du parc informatique pour un investissement de 160 millions d&#39;euros. &lt;/p&gt; &lt;p&gt; CARREFOUR : chiffre d&#39;affaires pour le troisi&#232;me trimestre (20,31 milliards d&#39;euros) inf&#233;rieur aux pr&#233;visions des analystes financiers. &lt;/p&gt; &lt;p&gt; Le deuxi&#232;me groupe mondial de distribution a d&#233;voil&#233;, mardi 12 octobre, un chiffre d&#39;affaires pour le troisi&#232;me trimestre (20,31 milliards d&#39;euros) inf&#233;rieur aux pr&#233;visions des analystes financiers et a d&#233;clar&#233; abandonner son objectif de croissance de 5 % pour l&#39;ann&#233;e 2004. L&#39;enseigne paie la chute des ventes au sein de ses hypermarch&#233;s fran&#231;ais. Par ailleurs, le groupe a d&#233;menti vouloir se retirer du Japon, o&#249; il poss&#232;de huit magasins. &lt;/p&gt; &lt;p&gt; LECLERC : le groupe de distribution Centres E. Leclerc &#171; lancera une cha&#238;ne de hard-discount si la loi Galland &#187; sur les prix &#171; n&#39;est pas modifi&#233;e &#187;. &lt;/p&gt; &lt;p&gt; Le groupe de distribution Centres E. Leclerc &#171; lancera une cha&#238;ne de hard-discount si la loi Galland &#187; sur les prix &#171; n&#39;est pas modifi&#233;e &#187;, a assur&#233;, mardi 12 octobre, son pr&#233;sident, Michel-Edouard Leclerc. Le rapport Canivet, devant servir de base &#224; une &#233;ventuelle modification de la loi qui r&#233;git les relations entre les enseignes et leurs fournisseurs, est attendu le 18 octobre &#224; Bercy. &lt;/p&gt; &lt;p&gt; YAHOO! : nominations. &lt;/p&gt; &lt;p&gt; Le leader mondial de l&#39;Internet a annonc&#233;, mercredi 13 octobre, les nominations de Pierre Chappaz au poste de pr&#233;sident Europe de la soci&#233;t&#233; et de Dominique Vidal &#224; la t&#234;te des op&#233;rations de Yahoo! Europe.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2004 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20041014&amp;#183;LM&amp;#183;0q1410_933137&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">ralentissement des marchés financiers</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">prévisions des analystes financiers</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">fabricant américain de jeans</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">cour européenne de justice</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">groupe de distribution</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Finances des entreprises</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Bourse et marché des changes</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Transports ferroviaires</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Europe de l'Ouest</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Allemagne</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Ville de Paris</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Espagne</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720041014%c2%b7LM%c2%b70q1410_933137" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720041014%c2%b7LM%c2%b70q1410_933137">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        jeudi 14 octobre 2004 555 mots, p. 16</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Repères            
+        </p>
+
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>LEVI STRAUSS : le fabricant américain de jeans renoue avec ses premiers bénéfices après sa restructuration Premier accord salarial à la SNCF depuis dix ans </p> <p> LA DIRECTION de la SNCF et cinq des huit organisations syndicales (UNSA, CFDT, CFTC, CGC et FGAAC) que compte l'entreprise devaient signer, mercredi 13 octobre, le premier accord salarial chez le transporteur ferroviaire depuis 1994. L'accord, obtenu la veille, prévoit notamment une hausse des salaires de 1,8 %. Les trois organisations (CGT, SUD-Rail et FO), qui représentent les deux tiers des voix, n'ont pas signé cet accord. La CFDT, qui aurait « souhaité plus », explique qu'elle a privilégié « la prime à la signature ». Selon elle, cette revalorisation est « la bienvenue, surtout après les efforts consentis par les cheminots dans le redressement des comptes de la SNCF ».</p>
+
+
+<p>Pour la CGT, premier syndicat de la SNCF, après une année « blanche » (sans augmentation de salaire) en 2003, cette hausse est loin de compenser celle de 3,7 % du coût de la vie à la fin du mois d'août. Les propositions de la direction « ne répondent toujours pas aux difficultés financières que rencontrent les cheminots actifs et retraités », estime le syndicat majoritaire. Une manifestation nationale unitaire des cheminots est prévue le 25 novembre sur les salaires, mais aussi sur le service public, le fret, l'emploi et le droit de grève. </p> <p> MERRILL LYNCH : la plus grande société de courtage de Wall Street a reconnu que ses profits avaient souffert du ralentissement des marchés financiers </p> <p> La plus grande société de courtage de Wall Street a reconnu, mardi 12 octobre, que ses profits avaient souffert du ralentissement des marchés financiers. Selon son PDG, Merril Lynch a dégagé, pour le troisième trimestre, un résultat net de 930 millions de dollars (755 millions d'euros), contre 1 milliard de dollars un an plus tôt. </p> <p> AUTOMOBILE : le nombre d'immatriculations en Europe de l'Ouest a accusé une baisse de 0,6 %, au mois de septembre 2004 </p> <p> AUTOMOBILE : le nombre d'immatriculations en Europe de l'Ouest a accusé une baisse de 0,6 %, au mois de septembre 2004, par rapport au même mois en 2003. L'Espagne connaît une hausse de 6,2 % tandis que la France recule de 1,2 %. </p> <p> VOLKSWAGEN : la Commission européenne a décidé de poursuivre l'Allemagne devant la Cour européenne de justice pour ne pas avoir modifié la « loi Volkswagen » </p> <p> La Commission européenne a décidé, mercredi 13 octobre, de poursuivre l'Allemagne devant la Cour européenne de justice pour ne pas avoir modifié la « loi Volkswagen », qui protège le constructeur des offres publiques d'achat hostiles. </p> <p> ENTREPRISES </p> <p> INDUSTRIE </p> <p> Le constructeur américain devrait annoncer, jeudi 14 octobre, la suppression de 12 000 emplois en Europe, dont près de 7 000 au sein d'Opel, selon des sources syndicales. </p> <p> LEVI STRAUSS : le fabricant américain de jeans renoue avec ses premiers bénéfices (d'un montant de46,6 millions de dollars, soit 37,8 millions d'euros, au troisième trimestre) après sa restructuration. Les ventes aux Etats-Unis, premier marché de Levi's, continuent de souffrir mais en Europe, l'entreprise tire avantage de récentes augmentations de prix. </p> <p> INFORMATIQUE :la Ville de Paris va convertir « progressivement » aux <mark>logiciels</mark> <mark>libres</mark> les 17 000 ordinateurs dont disposent ses services. </p> <p> La Ville de Paris a annoncé, mardi 12 octobre, qu'elle convertirait « progressivement » aux <mark>logiciels</mark> <mark>libres</mark> les 17 000 ordinateurs dont disposent ses services. Cette « migration » s'effectuera entre 2004 et 2007, conjointement à une remise à niveau du parc informatique pour un investissement de 160 millions d'euros. </p> <p> CARREFOUR : chiffre d'affaires pour le troisième trimestre (20,31 milliards d'euros) inférieur aux prévisions des analystes financiers. </p> <p> Le deuxième groupe mondial de distribution a dévoilé, mardi 12 octobre, un chiffre d'affaires pour le troisième trimestre (20,31 milliards d'euros) inférieur aux prévisions des analystes financiers et a déclaré abandonner son objectif de croissance de 5 % pour l'année 2004. L'enseigne paie la chute des ventes au sein de ses hypermarchés français. Par ailleurs, le groupe a démenti vouloir se retirer du Japon, où il possède huit magasins. </p> <p> LECLERC : le groupe de distribution Centres E. Leclerc « lancera une chaîne de hard-discount si la loi Galland » sur les prix « n'est pas modifiée ». </p> <p> Le groupe de distribution Centres E. Leclerc « lancera une chaîne de hard-discount si la loi Galland » sur les prix « n'est pas modifiée », a assuré, mardi 12 octobre, son président, Michel-Edouard Leclerc. Le rapport Canivet, devant servir de base à une éventuelle modification de la loi qui régit les relations entre les enseignes et leurs fournisseurs, est attendu le 18 octobre à Bercy. </p> <p> YAHOO! : nominations. </p> <p> Le leader mondial de l'Internet a annoncé, mercredi 13 octobre, les nominations de Pierre Chappaz au poste de président Europe de la société et de Dominique Vidal à la tête des opérations de Yahoo! Europe.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2004 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20041014·LM·0q1410_933137</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20041014·LM·0q1410_933137";
+    var _docIndex = 111;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20041014·LM·0q1410_933137';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720041014%C2%B7LM%C2%B70q1410_933137&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720041014%C2%B7LM%C2%B70q1410_933137&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720041014%C2%B7LM%C2%B70q1410_933137&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720041014%C2%B7LM%C2%B70q1410_933137&docIndex=111&FullScreen=1";
+                
+	var _keyDoc = 'news·20041014·LM·0q1410_933137';
+</script>
+</div></body></html>

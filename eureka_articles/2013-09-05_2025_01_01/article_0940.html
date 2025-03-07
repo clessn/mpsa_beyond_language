@@ -1,0 +1,523 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf2_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LF&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Figaro, no. 21615                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Le Figaro &#201;conomie,         lundi 3 f&amp;#233;vrier 2014 394 mots, p. 32&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+M&#233;dias ; Publicit&#233;         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Pour innover &#224; moindre co&#251;t, rendez-vous en boutique            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;En direct de la silicon valleyMarie-Catherine Beuth (&#192; SAN FRANCISCO)@M_C_B @M_C_B&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;TECHNOLOGIE&lt;/em&gt; C&#39;est une toute petite entr&#233;e sur une art&#232;re passante du centre de San Francisco. Il faut lever la t&#234;te pour apercevoir l&#39;enseigne bleu et rouge suspendue au-dessus de la porte. Bienvenue chez TechShop, paradis des bidouilleurs de tout acabit. On n&#39;y vient pas acheter, mais fabriquer. &#192; l&#39;&#233;tage, machines &#224; coudre et tables d&#39;assemblage c&#244;toient imprimantes 3D et oscilloscopes. En bas, fraiseuses, soudeuses et scies &#224; ruban jouxtent une d&#233;coupeuse laser d&#39;envergure. &lt;/p&gt; &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;125 dollars par mois&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Un million de dollars d&#39;&#233;quipement est r&#233;uni sur quelques centaines de m&#232;tres carr&#233;s. Cette mine d&#39;or est accessible &#224; des &#233;tudiants, bricoleurs et entrepreneurs pour un abonnement de 125 dollars par mois. De quoi fabriquer les prototypes permettant de valider une id&#233;e ou d&#39;avancer la R &amp;amp; D. Ce fut le cas des premiers lecteurs de carte bancaire du service de paiement mobile Square, lanc&#233; par le cofondateur de Twitter Jack Dorsey. &lt;/p&gt; &lt;p&gt; TechShop est la derni&#232;re incarnation de la baisse continuelle du co&#251;t de l&#39;innovation outre-Atlantique. De plus en plus de plates-formes et services r&#233;duisent les barri&#232;res &#224; l&#39;entr&#233;e en diminuant le co&#251;t pour se lancer et se d&#233;velopper. Lanc&#233;s en 2002 par le g&#233;ant du commerce en ligne, les Amazon Web Services, qui incluent offre de serveurs, stockage en ligne et infrastructure d&#39;authentification, ont simplifi&#233; la vie de nombreux sites Internet. Les r&#233;seaux sociaux sont devenus des machines &#224; acqu&#233;rir des utilisateurs sans trop d&#233;penser. Les &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; abondent et le co&#251;t de l&#39;&#233;quipement mat&#233;riel a chut&#233;. &lt;/p&gt; &lt;p&gt; Les plates-formes Behance et oDesk permettent d&#39;embaucher des sous-traitants pay&#233;s au smic horaire bengali. Inutile de se soucier de la distribution - l&#39;App Store et l&#39;Android Market jouent les Leclerc des nouveaux services num&#233;riques. Sans compter que le nombre d&#39;internautes a explos&#233;. Les th&#233;oriciens de l&#39;innovation signent des ouvrages sur &#171; la start-up &#224; 100 dollars &#187; et font l&#39;apologie de l&#39;entreprise au r&#233;gime sec &lt;em style=&quot;font-style:italic;&quot;&gt;(Lean Startup).&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;Relancer le &#171; made in America &#187;&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Comme s&#39;il s&#39;agissait de diminuer le m&#233;rite des entrepreneurs d&#39;aujourd&#39;hui, les v&#233;t&#233;rans de l&#39;innovation num&#233;rique aiment ainsi clamer qu&#39;il est aujourd&#39;hui dix fois moins co&#251;teux et laborieux de lancer une start-up Internet qu&#39;il y a quinze ans. Nul doute que cela explique pourquoi entreprendre semble &#234;tre la nouvelle vocation &#224; la mode et que les start-up jaillissent dans tous les recoins de l&#39;&#233;conomie. &lt;/p&gt; &lt;p&gt; Des espaces comme TechShop accompagnent maintenant le d&#233;placement de l&#39;innovation du Web vers le monde physique, qui se retrouve sous la banni&#232;re du &lt;em style=&quot;font-style:italic;&quot;&gt;Maker Movement&lt;/em&gt;. Il en sort des lecteurs de carte bancaire innovants, des motos &#233;lectriques ou simplement des housses d&#39;iPhone en mat&#233;riaux durables. Une &#233;volution soutenue par les services de financement participatif tels Kickstarter et Indiegogo, qui permettent d&#39;apporter de l&#39;argent &#224; ces projets et de tester la demande du march&#233;. &lt;/p&gt; &lt;p&gt; Cette baisse du co&#251;t de l&#39;innovation pour les produits physiques commence &#224; intriguer au-del&#224; de la technosph&#232;re. Fin janvier, Nancy Pelosi, chef de file des d&#233;mocrates &#224; la Chambre des repr&#233;sentants, a fait une excursion &#224; TechShop. L&#39;&#233;lue aurait &#233;t&#233; particuli&#232;rement sensible au fait qu&#39;un espace comme celui-ci permet de ramener une partie de la production et de la recherche et d&#233;veloppement industrielles sur le territoire am&#233;ricain. Bref, de relancer le flamboyant &#171; made in America &#187;. &lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 Le Figaro. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20140203&amp;#183;LF&amp;#183;302&amp;#215;20&amp;#215;2123239133&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">lecteurs de carte bancaire</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">coût de l'innovation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">déplacement de l'innovation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">théoriciens de l'innovation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">infrastructure d'authentification</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Économie et gestion</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Actualités</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Commerce électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">San Francisco</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">America</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Atlantique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140203%c2%b7LF%c2%b7302%c3%9720%c3%972123239133" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140203%c2%b7LF%c2%b7302%c3%9720%c3%972123239133">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lf2_small.gif"><span class="icon-Information" sourcecode="LF"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Figaro, no. 21615                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Le Figaro Économie,         lundi 3 février 2014 394 mots, p. 32</span>
+</div>
+
+    <div>
+        <p>
+Médias ; Publicité         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Pour innover à moindre coût, rendez-vous en boutique            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">En direct de la silicon valleyMarie-Catherine Beuth (À SAN FRANCISCO)@M_C_B @M_C_B</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">TECHNOLOGIE</em> C'est une toute petite entrée sur une artère passante du centre de San Francisco. Il faut lever la tête pour apercevoir l'enseigne bleu et rouge suspendue au-dessus de la porte. Bienvenue chez TechShop, paradis des bidouilleurs de tout acabit. On n'y vient pas acheter, mais fabriquer. À l'étage, machines à coudre et tables d'assemblage côtoient imprimantes 3D et oscilloscopes. En bas, fraiseuses, soudeuses et scies à ruban jouxtent une découpeuse laser d'envergure. </p> <p><em style="font-weight:bold;">125 dollars par mois</em></p>
+
+
+<p>Un million de dollars d'équipement est réuni sur quelques centaines de mètres carrés. Cette mine d'or est accessible à des étudiants, bricoleurs et entrepreneurs pour un abonnement de 125 dollars par mois. De quoi fabriquer les prototypes permettant de valider une idée ou d'avancer la R &amp; D. Ce fut le cas des premiers lecteurs de carte bancaire du service de paiement mobile Square, lancé par le cofondateur de Twitter Jack Dorsey. </p> <p> TechShop est la dernière incarnation de la baisse continuelle du coût de l'innovation outre-Atlantique. De plus en plus de plates-formes et services réduisent les barrières à l'entrée en diminuant le coût pour se lancer et se développer. Lancés en 2002 par le géant du commerce en ligne, les Amazon Web Services, qui incluent offre de serveurs, stockage en ligne et infrastructure d'authentification, ont simplifié la vie de nombreux sites Internet. Les réseaux sociaux sont devenus des machines à acquérir des utilisateurs sans trop dépenser. Les <mark>logiciels</mark> <mark>libres</mark> abondent et le coût de l'équipement matériel a chuté. </p> <p> Les plates-formes Behance et oDesk permettent d'embaucher des sous-traitants payés au smic horaire bengali. Inutile de se soucier de la distribution - l'App Store et l'Android Market jouent les Leclerc des nouveaux services numériques. Sans compter que le nombre d'internautes a explosé. Les théoriciens de l'innovation signent des ouvrages sur « la start-up à 100 dollars » et font l'apologie de l'entreprise au régime sec <em style="font-style:italic;">(Lean Startup).</em></p><p><em style="font-weight:bold;">Relancer le « made in America »</em></p><p>Comme s'il s'agissait de diminuer le mérite des entrepreneurs d'aujourd'hui, les vétérans de l'innovation numérique aiment ainsi clamer qu'il est aujourd'hui dix fois moins coûteux et laborieux de lancer une start-up Internet qu'il y a quinze ans. Nul doute que cela explique pourquoi entreprendre semble être la nouvelle vocation à la mode et que les start-up jaillissent dans tous les recoins de l'économie. </p> <p> Des espaces comme TechShop accompagnent maintenant le déplacement de l'innovation du Web vers le monde physique, qui se retrouve sous la bannière du <em style="font-style:italic;">Maker Movement</em>. Il en sort des lecteurs de carte bancaire innovants, des motos électriques ou simplement des housses d'iPhone en matériaux durables. Une évolution soutenue par les services de financement participatif tels Kickstarter et Indiegogo, qui permettent d'apporter de l'argent à ces projets et de tester la demande du marché. </p> <p> Cette baisse du coût de l'innovation pour les produits physiques commence à intriguer au-delà de la technosphère. Fin janvier, Nancy Pelosi, chef de file des démocrates à la Chambre des représentants, a fait une excursion à TechShop. L'élue aurait été particulièrement sensible au fait qu'un espace comme celui-ci permet de ramener une partie de la production et de la recherche et développement industrielles sur le territoire américain. Bref, de relancer le flamboyant « made in America ». </p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 Le Figaro. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20140203·LF·302×20×2123239133</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20140203·LF·302×20×2123239133";
+    var _docIndex = 939;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20140203·LF·302×20×2123239133';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720140203%C2%B7LF%C2%B7302%C3%9720%C3%972123239133&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720140203%C2%B7LF%C2%B7302%C3%9720%C3%972123239133&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720140203%C2%B7LF%C2%B7302%C3%9720%C3%972123239133&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720140203%C2%B7LF%C2%B7302%C3%9720%C3%972123239133&docIndex=939&FullScreen=1";
+                
+	var _keyDoc = 'news·20140203·LF·302×20×2123239133';
+</script>
+</div></body></html>

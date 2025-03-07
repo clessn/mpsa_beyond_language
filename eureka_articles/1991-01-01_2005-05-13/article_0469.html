@@ -1,0 +1,441 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LI&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Lib&amp;#233;ration                &lt;br /&gt;QUOTIDIEN PREMIERE EDITION    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+MULTIMEDIA,         mardi 22 mai 2001 565 mots, p. 28&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+L&#39;industrie musicale fait taire un chercheur am&#233;ricain.            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;L&#39;informaticien a d&#233;jou&#233; un verrouillage &#171;inviolable&#187;.&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;ABDI Nidam&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Les chercheurs en informatique seraient-ils devenus les ennemis des majors du disque? Vendredi dernier, devant un amphith&#233;&#226;tre bond&#233; de l&#39;universit&#233; de Stanford (Californie), un des grands experts am&#233;ricains de la cryptographie a d&#233;nonc&#233; la censure: &#171;L&#39;industrie musicale tente d&#39;obtenir le contr&#244;le sur le contenu de nos recherches, c&#39;est un dangereux pr&#233;c&#233;dent.&#187; Cet expert s&#39;appelle Edward Felten. Professeur d&#39;informatique &#224; la prestigieuse universit&#233; de Princeton (New Jersey), expert cit&#233; par le gouvernement am&#233;ricain dans sa proc&#233;dure antitrust contre Microsoft, l&#39;homme est surtout connu aujourd&#39;hui pour ses d&#233;m&#234;l&#233;s avec le consortium industriel Secure Digital Music Initiative (SDMI). &lt;/p&gt; &lt;p&gt; Ce consortium rassemble une centaine de producteurs de contenu et d&#39;industriels (Vivendi Universal, Microsoft, Sony, Apple, RealNetworks, AOL, ATT...) autour de technologies de protection &#171;inviolables&#187; des oeuvres num&#233;riques. Or Felten a bel et bien r&#233;ussi &#224; les casser, les rendant inop&#233;rantes. Jusque-l&#224;, rien de r&#233;pr&#233;hensible. Le 15 septembre 2000, le consortium avait mis lui-m&#234;me les hackers au d&#233;fi en promettant 10 000 dollars (11 432 euros) &#224; celui qui r&#233;ussirait &#224; d&#233;jouer ses syst&#232;mes de verrouillage de fichiers musicaux. Des milliers de bidouilleurs de code s&#39;&#233;taient lanc&#233;s dans la course, bient&#244;t rejoints &#173; chose plus inattendue &#173; par des universitaires de Princeton, de la Rice University et des experts du Palo Alto Research Center (Parc) de Xerox.&lt;/p&gt;
+
+
+&lt;p&gt;Intimidation. Le SDMI avait cependant assorti ce concours de quelques conditions. En particulier, le &#171;gagnant&#187; devrait expliquer aux industriels comment il avait proc&#233;d&#233; et s&#39;engager &#224; la confidentialit&#233;. Or, probl&#232;me: en tant que &#171;candidat libre&#187;, Felten ne s&#39;estime pas li&#233; par ces clauses et veut publier ses travaux comme des r&#233;sultats de &#171;recherche&#187;. Le 26 avril dernier, le chercheur se pr&#233;sente ainsi devant un auditoire de l&#39;universit&#233; de Pittsburgh pour dire comment son &#233;quipe de Princeton a r&#233;ussi &#224; d&#233;plomber les syst&#232;mes du SDMI. A la surprise g&#233;n&#233;rale, Edward Felten s&#39;en tient &#224; une d&#233;claration plut&#244;t inhabituelle dans les conf&#233;rences scientifiques: &#171;Je suis d&#233;&#231;u de vous annoncer que nous n&#39;allons pas pr&#233;senter les r&#233;sultats de nos travaux aujourd&#39;hui. Les proc&#233;dures devant les tribunaux sont co&#251;teuses en temps et en argent, et leur issue incertaine. Nous avons collectivement d&#233;cid&#233; de ne pas nous exposer, ainsi que nos employeurs et les organisateurs de la conf&#233;rence, &#224; un proc&#232;s pour l&#39;instant.&#187; &lt;/p&gt; &lt;p&gt; Cette reculade du scientifique s&#39;explique par une missive re&#231;ue du SDMI quelques jours auparavant. Elle est sign&#233;e du secr&#233;taire du consortium, Matthew Oppenheim, et met en garde Edward Felten et ses coll&#232;gues contre les risques &#171;de tout comportement ill&#233;gal ou susceptible de mettre en danger les int&#233;r&#234;ts commerciaux l&#233;gitimes&#187; de l&#39;industrie musicale, et invite l&#39;universitaire &#224; collaborer avec le consortium. Enfin, il lui &#171;recommande vivement de ne pas d&#233;livrer son allocution&#187; lors de la conf&#233;rence s&#39;il d&#233;sire &#233;chapper &#224; un proc&#232;s fond&#233; sur la loi am&#233;ricaine sur le copyright num&#233;rique, le Digital Millenium Copyright Act. Les d&#233;fenseurs de la libert&#233; d&#39;expression, telle l&#39;Electronic Frontier Foundation (EFF), montent au cr&#233;neau, accusant les repr&#233;sentants de l&#39;industrie musicale d&#39;utiliser &#224; tort et &#224; travers les textes sur le copyright pour brider l&#39;innovation technologique. Les autres universit&#233;s am&#233;ricaines entrent dans le d&#233;bat et l&#39;affaire prend peu &#224; peu des proportions nationales. &lt;/p&gt; &lt;p&gt; Armada. &#171;C&#39;est une confrontation logique de deux mondes aux &#233;thiques oppos&#233;es et qui, jusqu&#39;&#224; l&#39;arriv&#233;e de l&#39;Internet, avaient eu peu d&#39;occasions de se confronter&#187;, estime Bob Young, le patron de Red Hat (distributeur du &lt;mark&gt;logiciel&lt;/mark&gt; &#171;&lt;mark&gt;libre&lt;/mark&gt;&#187; Linux). Pour cet entrepreneur, qui a impos&#233; un nouveau mod&#232;le commercial, diffuser des produits gratuits en se r&#233;mun&#233;rant sur les services associ&#233;s, &#171;les informaticiens dont la raison d&#39;&#234;tre est d&#39;innover se retrouvent face au march&#233; du disque, dont l&#39;objectif est de p&#233;renniser le contr&#244;le d&#39;une &#233;conomie bas&#233;e uniquement sur des concepts de marketing&#187;. &lt;/p&gt; &lt;p&gt; Edward Felten, comme ses coll&#232;gues chercheurs, aurait pr&#233;f&#233;r&#233; publier ses r&#233;sultats que de toucher les 10 000 dollars. Mais pas au point de se coltiner la puissante armada des avocats de l&#39;&#233;dition musicale. &#171;Nous avons une information fiable, que nous nous sommes procur&#233;e l&#233;galement et qui est d&#39;int&#233;r&#234;t public. Et nous ne pouvons pas la donner&#187;, a d&#233;plor&#233; Edward Felten vendredi. Qu&#39;&#224; cela ne tienne: un groupe de hackers s&#39;en est charg&#233;. L&#39;information est depuis peu disponible sur le site de Cryptome (1). Il ne s&#39;agit pas de la version finale, a comment&#233; Felten, qui a regrett&#233; cette publication faite &#224; partir de documents soumis &#224; des pairs sous le sceau de la confidentialit&#233;. Il n&#39;emp&#234;che: le SDMI peut se remettre au boulot pour trouver une protection &#171;inviolable&#187;. &lt;/p&gt; &lt;p&gt; (1) &lt;a target=&quot;_blank&quot; href=&quot;http://cryptome.org/sdmi-&quot;&gt;http://cryptome.org/sdmi-&lt;/a&gt; attack.htm&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 SA Lib&#233;ration. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010522&amp;#183;LI&amp;#183;0591&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010522%c2%b7LI%c2%b70591" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010522%c2%b7LI%c2%b70591">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=li_small.gif"><span class="icon-Information" sourcecode="LI"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Libération                <br>QUOTIDIEN PREMIERE EDITION    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+MULTIMEDIA,         mardi 22 mai 2001 565 mots, p. 28</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+L'industrie musicale fait taire un chercheur américain.            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">L'informaticien a déjoué un verrouillage «inviolable».</p>
+</div>
+
+        <p class="sm-margin-bottomNews">ABDI Nidam</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Les chercheurs en informatique seraient-ils devenus les ennemis des majors du disque? Vendredi dernier, devant un amphithéâtre bondé de l'université de Stanford (Californie), un des grands experts américains de la cryptographie a dénoncé la censure: «L'industrie musicale tente d'obtenir le contrôle sur le contenu de nos recherches, c'est un dangereux précédent.» Cet expert s'appelle Edward Felten. Professeur d'informatique à la prestigieuse université de Princeton (New Jersey), expert cité par le gouvernement américain dans sa procédure antitrust contre Microsoft, l'homme est surtout connu aujourd'hui pour ses démêlés avec le consortium industriel Secure Digital Music Initiative (SDMI). </p> <p> Ce consortium rassemble une centaine de producteurs de contenu et d'industriels (Vivendi Universal, Microsoft, Sony, Apple, RealNetworks, AOL, ATT...) autour de technologies de protection «inviolables» des oeuvres numériques. Or Felten a bel et bien réussi à les casser, les rendant inopérantes. Jusque-là, rien de répréhensible. Le 15 septembre 2000, le consortium avait mis lui-même les hackers au défi en promettant 10 000 dollars (11 432 euros) à celui qui réussirait à déjouer ses systèmes de verrouillage de fichiers musicaux. Des milliers de bidouilleurs de code s'étaient lancés dans la course, bientôt rejoints ­ chose plus inattendue ­ par des universitaires de Princeton, de la Rice University et des experts du Palo Alto Research Center (Parc) de Xerox.</p>
+
+
+<p>Intimidation. Le SDMI avait cependant assorti ce concours de quelques conditions. En particulier, le «gagnant» devrait expliquer aux industriels comment il avait procédé et s'engager à la confidentialité. Or, problème: en tant que «candidat libre», Felten ne s'estime pas lié par ces clauses et veut publier ses travaux comme des résultats de «recherche». Le 26 avril dernier, le chercheur se présente ainsi devant un auditoire de l'université de Pittsburgh pour dire comment son équipe de Princeton a réussi à déplomber les systèmes du SDMI. A la surprise générale, Edward Felten s'en tient à une déclaration plutôt inhabituelle dans les conférences scientifiques: «Je suis déçu de vous annoncer que nous n'allons pas présenter les résultats de nos travaux aujourd'hui. Les procédures devant les tribunaux sont coûteuses en temps et en argent, et leur issue incertaine. Nous avons collectivement décidé de ne pas nous exposer, ainsi que nos employeurs et les organisateurs de la conférence, à un procès pour l'instant.» </p> <p> Cette reculade du scientifique s'explique par une missive reçue du SDMI quelques jours auparavant. Elle est signée du secrétaire du consortium, Matthew Oppenheim, et met en garde Edward Felten et ses collègues contre les risques «de tout comportement illégal ou susceptible de mettre en danger les intérêts commerciaux légitimes» de l'industrie musicale, et invite l'universitaire à collaborer avec le consortium. Enfin, il lui «recommande vivement de ne pas délivrer son allocution» lors de la conférence s'il désire échapper à un procès fondé sur la loi américaine sur le copyright numérique, le Digital Millenium Copyright Act. Les défenseurs de la liberté d'expression, telle l'Electronic Frontier Foundation (EFF), montent au créneau, accusant les représentants de l'industrie musicale d'utiliser à tort et à travers les textes sur le copyright pour brider l'innovation technologique. Les autres universités américaines entrent dans le débat et l'affaire prend peu à peu des proportions nationales. </p> <p> Armada. «C'est une confrontation logique de deux mondes aux éthiques opposées et qui, jusqu'à l'arrivée de l'Internet, avaient eu peu d'occasions de se confronter», estime Bob Young, le patron de Red Hat (distributeur du <mark>logiciel</mark> «<mark>libre</mark>» Linux). Pour cet entrepreneur, qui a imposé un nouveau modèle commercial, diffuser des produits gratuits en se rémunérant sur les services associés, «les informaticiens dont la raison d'être est d'innover se retrouvent face au marché du disque, dont l'objectif est de pérenniser le contrôle d'une économie basée uniquement sur des concepts de marketing». </p> <p> Edward Felten, comme ses collègues chercheurs, aurait préféré publier ses résultats que de toucher les 10 000 dollars. Mais pas au point de se coltiner la puissante armada des avocats de l'édition musicale. «Nous avons une information fiable, que nous nous sommes procurée légalement et qui est d'intérêt public. Et nous ne pouvons pas la donner», a déploré Edward Felten vendredi. Qu'à cela ne tienne: un groupe de hackers s'en est chargé. L'information est depuis peu disponible sur le site de Cryptome (1). Il ne s'agit pas de la version finale, a commenté Felten, qui a regretté cette publication faite à partir de documents soumis à des pairs sous le sceau de la confidentialité. Il n'empêche: le SDMI peut se remettre au boulot pour trouver une protection «inviolable». </p> <p> (1) <a target="_blank" href="http://cryptome.org/sdmi-">http://cryptome.org/sdmi-</a> attack.htm</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 SA Libération. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010522·LI·0591</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010522·LI·0591";
+    var _docIndex = 468;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010522·LI·0591';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010522%C2%B7LI%C2%B70591&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010522%C2%B7LI%C2%B70591&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010522%C2%B7LI%C2%B70591&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010522%C2%B7LI%C2%B70591&docIndex=468&FullScreen=1";
+                
+	var _keyDoc = 'news·20010522·LI·0591';
+</script>
+</div></body></html>

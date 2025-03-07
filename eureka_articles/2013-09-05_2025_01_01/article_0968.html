@@ -1,0 +1,523 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Science &amp; techno,         mercredi 6 novembre 2013 867 mots, p. SCH8&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+Le Monde Science et medecine         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+La libert&#233; (logicielle) s&#39;use si on ne s&#39;en sert pas            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;| TRIBUNE | Bien que la diffusion du &lt;mark&gt; logiciel&lt;/mark&gt; &lt;mark&gt; libre&lt;/mark&gt; n&#39;ait cess&#233; de cro&#238;tre depuis trente ans, Laurent S&#233;guin, pr&#233;sident de l&#39;AFUL, s&#39;inqui&#232;te de ce que certains int&#233;r&#234;ts &#233;conomiques mettent en danger sa p&#233;rennit&#233; et freinent ainsi l&#39;innovation&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Historiquement, les logiciels sont n&#233;s (invent&#233;s) libres, car l&#39;importance des co&#251;ts n&#39;&#233;tait pas dans la cr&#233;ation des logiciels mais dans le mat&#233;riel. Vers la fin des ann&#233;es 1970, l&#39;informatique ayant des parts de march&#233; croissantes, certains constructeurs ont cherch&#233; &#224; se cr&#233;er une rente suppl&#233;mentaire par l&#39;ajout de contraintes s&#39;appuyant sur le droit d&#39;auteur sur leurs logiciels. C&#39;est pour lib&#233;rer l&#39;utilisateur, otage de ces contraintes, que la d&#233;cision de cr&#233;er un nouveau syst&#232;me d&#39;exploitation GNU - souvent appel&#233; &#171; Linux &#187; , du nom de son noyau - a &#233;t&#233; prise. Ce premier syst&#232;me d&#39;exploitation libre, dont nous venons de f&#234;ter le trenti&#232;me anniversaire et qui a &#233;t&#233; am&#233;lior&#233; tout au long des ann&#233;es, est aujourd&#39;hui l&#39;un des plus utilis&#233;s sur les serveurs. &lt;/p&gt; &lt;p&gt; Durant les trois derni&#232;res d&#233;cennies, de nombreux &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; ont &#233;t&#233; d&#233;velopp&#233;s pour tous types d&#39;usage, que ce soit par des passionn&#233;s b&#233;n&#233;voles (Audacity, Gimp, Inkscape, OpenSSH, VLC...), par des entreprises (CubicWeb, ERP5, Maarch, Rudder, Squash...), des laboratoires publics de recherche (BonjourGrid, Coccinelle, Frama-C, Morse, OCaml...) ou m&#234;me des collectivit&#233;s (I-Parapheur, Lilie, Lut&#232;ce, OpenMairie, S&#178;Low...). Ainsi, le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est devenu d&#39;une importance majeure dans notre vie num&#233;rique.&lt;/p&gt;
+
+
+&lt;p&gt;Pas un ordinateur, pas un syst&#232;me d&#39;information d&#39;entreprise sans &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. M&#234;me les entreprises produisant du logiciel non libre s&#39;appuient sur des travaux sous licence libre. &lt;/p&gt; &lt;p&gt; Nous parlons bien de libert&#233;, car une licence libre garantit de r&#233;elles libert&#233;s individuelles &#224; l&#39;utilisateur. Elle le lib&#232;re des restrictions d&#39;usage, d&#39;&#233;tude et d&#39;adaptation (y compris secr&#232;tes) que les acteurs du logiciel non libre infligent &#224; leurs clients. Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; permet d&#39;user de libert&#233;s collectives en autorisant la diffusion de copies et le partage de ses modifications sans en demander l&#39;autorisation pr&#233;alable &#224; quiconque. Paradoxalement, bien que la diffusion et la production de code sous licence libre soit en forte croissance, le libre n&#39;a jamais autant &#233;t&#233; en danger. Par l&#39;amalgame qu&#39;entretiennent quelques juristes entre &#171; licence libre &#187; et &#171; domaine public &#187; ou &#171; libre de droit &#187; qui d&#233;soriente les entreprises qu&#39;ils conseillent. Mais surtout par certaines pratiques que subissent les entreprises utilisatrices, issues d&#39;acteurs mettant en avant l&#39; &lt;em style=&quot;font-style:italic;&quot;&gt;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;/em&gt; (&#171; code ouvert &#187;) alors qu&#39;ils n&#39;en respectent pas l&#39;esprit. &lt;/p&gt; &lt;p&gt; L&#39;industrie du logiciel, y compris les acteurs historiquement les plus r&#233;ticents, a int&#233;gr&#233; le travail &#224; plusieurs sur une base commune et le partage de certaines innovations. La revue par les pairs am&#233;liore la qualit&#233; du code, et ce mode de d&#233;veloppement dit &#171; ouvert &#187; , r&#233;gi par une licence libre, permet des r&#233;sultats plus rapides et moins co&#251;teux en recherche &amp;amp; d&#233;veloppement (R &amp;amp; D). C&#39;est la base du mouvement &lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; : permettre aux industriels de se regrouper pour des projets d&#39;envergure, souvent complexes, et ainsi partager un savoir-faire. Mais ce mode de d&#233;veloppement, certes louable dans un contexte d&#39;ing&#233;nierie logicielle, ne suffit pas &#224; garantir les libert&#233;s des utilisateurs. &lt;/p&gt; &lt;p&gt; On s&#39;&#233;loigne en effet du mod&#232;le vertueux lorsque des prestataires enferment leurs clients, en incluant des contraintes dans des offres commerciales dites &#171; freemium &#187; ou &#171; hybride &#187; , ce qui exclut de facto les utilisateurs de l&#39;&#233;cosyst&#232;me de cocr&#233;ation de valeur. Trop souvent, des fonctionnalit&#233;s ou am&#233;liorations, absolument n&#233;cessaires dans le cadre d&#39;un d&#233;ploiement industriel, ne sont pas revers&#233;es au projet sous licence libre, mais vendues dans un produit d&#233;riv&#233; sous licence non libre &#171; &#224; base d&#39;&lt;mark&gt;open&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &#187; , faisant de facto perdre tout le b&#233;n&#233;fice apport&#233; par le libre au client. &lt;/p&gt; &lt;p&gt; Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; se trouve ainsi contamin&#233; par du code non libre, dans un contexte de marketing de l&#39; &lt;em style=&quot;font-style:italic;&quot;&gt;openness&lt;/em&gt; qui tend &#224; pr&#233;tendre qu&#39;il est plus important d&#39;&#234;tre &#171; ouvert &#187; que &#171; libre &#187;. Cette menace insidieuse freine l&#39;innovation sous licence libre. En effet, tant qu&#39;il y a un int&#233;r&#234;t &#233;conomique &#224; &#233;viter de verser du code &#224; valeur ajout&#233;e au projet sous licence libre, l&#39;appauvrissement du code libre est quasi in&#233;vitable. Si cette pratique devient une &#171; norme industrielle &#187; , la paup&#233;risation du libre dans son ensemble est &#224; craindre. &lt;/p&gt; &lt;p&gt; Un autre mode d&#39;enfermement du client, plus rare mais observ&#233; par les membres de l&#39;Association francophone des utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; (AFUL), est de le verrouiller contractuellement. Alors qu&#39;il dispose bien d&#39;un &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;, le client ne peut exercer les libert&#233;s accord&#233;es par la licence tant qu&#39;il est li&#233; par un contrat d&#39;affaires aux modalit&#233;s de sortie prohibitives. Il importe donc, avant de signer un contrat avec un prestataire, de v&#233;rifier non seulement que le logiciel livr&#233; est bien libre, mais aussi qu&#39;aucune clause du contrat ne contrecarre les libert&#233;s qu&#39;accorde la licence initiale, notamment celle de modification. C&#39;est souvent lorsque l&#39;on souhaite exercer ses libert&#233;s que l&#39;on se rend compte qu&#39;on les a perdues (par exemple corriger soi-m&#234;me et en urgence une faille de s&#233;curit&#233;). &lt;/p&gt; &lt;p&gt; Face &#224; la mont&#233;e de ces dangers, des r&#233;ponses existent. Des r&#233;ponses qui ne mettent pas &#224; mal les entreprises et communaut&#233;s produisant du code innovant sous licence libre, et au premier rang desquelles on trouve le soutien actif des utilisateurs. &lt;/p&gt; &lt;p&gt; Du point de vue de l&#39;AFUL, il est de la responsabilit&#233; des utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; (entreprises, associations, administrations, collectivit&#233;s, particuliers, etc.) de prot&#233;ger l&#39;innovation sous licence libre. Que ce soit par une implication, financi&#232;re ou humaine, dans la R &amp;amp; D du logiciel, par le soutien des acteurs commerciaux dont les mod&#232;les &#233;conomiques respectent et prot&#232;gent r&#233;ellement les libert&#233;s de leurs clients, l&#39;utilisateur doit prendre sa place pour garantir la p&#233;rennisation du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt;. Il est &#233;galement de la responsabilit&#233; des utilisateurs de faire exister les logiciels sp&#233;cifiques &#224; un m&#233;tier. Le peu d&#39;int&#233;r&#234;t &#233;conomique pour un acteur commercial d&#39;investir dans la R &amp;amp; D d&#39;un tel produit sous licence libre n&#39;emp&#234;che pas de les cr&#233;er par la mutualisation (comme MedinTux pour le corps m&#233;dical ou openCimeti&#232;re qui g&#232;re les concessions de cimeti&#232;res). &lt;/p&gt; &lt;p&gt; En r&#233;sum&#233; : devenir un acteur important de l&#39;&#233;cosyst&#232;me, un artisan de la sauvegarde de sa propre libert&#233;, bref un peu plus qu&#39;un simple client qui paye. &lt;/p&gt; &lt;p&gt; Pour ce faire, nul besoin de se transformer en informaticien ou de disposer d&#39;un service informatique tr&#232;s pointu pour devenir acteur et (s&#39;)investir dans le libre. L&#39;AFUL, association &#224; but non lucratif compos&#233;e uniquement de b&#233;n&#233;voles, a pr&#233;cis&#233;ment pour objet d&#39;aider et d&#39;accompagner les utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &#224; surmonter leurs probl&#232;mes organisationnels et juridiques.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Laurent S&#233;guin est pr&#233;sident de l&#39;Association francophone des utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; (AFUL - CC BY-ND 3.0) qui a pour objet d&#39;aider, en les accompagnant, les utilisateurs de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &#224; surmonter leurs probl&#232;mes organisationnels et juridiques &lt;/p&gt; &lt;p&gt; Le suppl&#233;ment &#171; Science &amp;amp; m&#233;decine &#187; publie chaque semaine une tribune libre ouverte au monde de la recherche. Si vous souhaitez soumettre un texte, pri&#232;re de l&#39;adresser &#224; &lt;a href=&quot;mailto:sciences@lemonde.fr&quot;&gt;sciences@lemonde.fr&lt;/a&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+    &lt;div class=&quot;apd-wrapper&quot;&gt;
+        &lt;div class=&quot;apd-doc&quot;&gt;
+            &lt;div class=&quot;apd-title&quot;&gt;&lt;span class=&quot;apd-label&quot;&gt;Aussi paru dans&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;apd-sources&quot;&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;4 novembre 2013&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+                  &lt;span class=&quot;apd-sources-date&quot;&gt;5 novembre 2013&lt;/span&gt;
+                  &lt;span class=&quot;apd-tiret&quot;&gt; - &lt;/span&gt;
+                    &lt;br/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2013 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20131106&amp;#183;LM&amp;#183;0sch4513_865790&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">licence libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">utilisateurs de logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">responsabilité des utilisateurs</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">système d'exploitation</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720131106%c2%b7LM%c2%b70sch4513_865790" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720131106%c2%b7LM%c2%b70sch4513_865790">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Science &amp; techno,         mercredi 6 novembre 2013 867 mots, p. SCH8</span>
+</div>
+
+    <div>
+        <p>
+Le Monde Science et medecine         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+La liberté (logicielle) s'use si on ne s'en sert pas            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">| TRIBUNE | Bien que la diffusion du <mark> logiciel</mark> <mark> libre</mark> n'ait cessé de croître depuis trente ans, Laurent Séguin, président de l'AFUL, s'inquiète de ce que certains intérêts économiques mettent en danger sa pérennité et freinent ainsi l'innovation</p>
+</div>
+
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Historiquement, les logiciels sont nés (inventés) libres, car l'importance des coûts n'était pas dans la création des logiciels mais dans le matériel. Vers la fin des années 1970, l'informatique ayant des parts de marché croissantes, certains constructeurs ont cherché à se créer une rente supplémentaire par l'ajout de contraintes s'appuyant sur le droit d'auteur sur leurs logiciels. C'est pour libérer l'utilisateur, otage de ces contraintes, que la décision de créer un nouveau système d'exploitation GNU - souvent appelé « Linux » , du nom de son noyau - a été prise. Ce premier système d'exploitation libre, dont nous venons de fêter le trentième anniversaire et qui a été amélioré tout au long des années, est aujourd'hui l'un des plus utilisés sur les serveurs. </p> <p> Durant les trois dernières décennies, de nombreux <mark>logiciels</mark> <mark>libres</mark> ont été développés pour tous types d'usage, que ce soit par des passionnés bénévoles (Audacity, Gimp, Inkscape, OpenSSH, VLC...), par des entreprises (CubicWeb, ERP5, Maarch, Rudder, Squash...), des laboratoires publics de recherche (BonjourGrid, Coccinelle, Frama-C, Morse, OCaml...) ou même des collectivités (I-Parapheur, Lilie, Lutèce, OpenMairie, S²Low...). Ainsi, le <mark>logiciel</mark> <mark>libre</mark> est devenu d'une importance majeure dans notre vie numérique.</p>
+
+
+<p>Pas un ordinateur, pas un système d'information d'entreprise sans <mark>logiciel</mark> <mark>libre</mark>. Même les entreprises produisant du logiciel non libre s'appuient sur des travaux sous licence libre. </p> <p> Nous parlons bien de liberté, car une licence libre garantit de réelles libertés individuelles à l'utilisateur. Elle le libère des restrictions d'usage, d'étude et d'adaptation (y compris secrètes) que les acteurs du logiciel non libre infligent à leurs clients. Le <mark>logiciel</mark> <mark>libre</mark> permet d'user de libertés collectives en autorisant la diffusion de copies et le partage de ses modifications sans en demander l'autorisation préalable à quiconque. Paradoxalement, bien que la diffusion et la production de code sous licence libre soit en forte croissance, le libre n'a jamais autant été en danger. Par l'amalgame qu'entretiennent quelques juristes entre « licence libre » et « domaine public » ou « libre de droit » qui désoriente les entreprises qu'ils conseillent. Mais surtout par certaines pratiques que subissent les entreprises utilisatrices, issues d'acteurs mettant en avant l' <em style="font-style:italic;"><mark>open</mark> <mark>source</mark> </em> (« code ouvert ») alors qu'ils n'en respectent pas l'esprit. </p> <p> L'industrie du logiciel, y compris les acteurs historiquement les plus réticents, a intégré le travail à plusieurs sur une base commune et le partage de certaines innovations. La revue par les pairs améliore la qualité du code, et ce mode de développement dit « ouvert » , régi par une licence libre, permet des résultats plus rapides et moins coûteux en recherche &amp; développement (R &amp; D). C'est la base du mouvement <mark>open</mark> <mark>source</mark> : permettre aux industriels de se regrouper pour des projets d'envergure, souvent complexes, et ainsi partager un savoir-faire. Mais ce mode de développement, certes louable dans un contexte d'ingénierie logicielle, ne suffit pas à garantir les libertés des utilisateurs. </p> <p> On s'éloigne en effet du modèle vertueux lorsque des prestataires enferment leurs clients, en incluant des contraintes dans des offres commerciales dites « freemium » ou « hybride » , ce qui exclut de facto les utilisateurs de l'écosystème de cocréation de valeur. Trop souvent, des fonctionnalités ou améliorations, absolument nécessaires dans le cadre d'un déploiement industriel, ne sont pas reversées au projet sous licence libre, mais vendues dans un produit dérivé sous licence non libre « à base d'<mark>open</mark> <mark>source</mark> » , faisant de facto perdre tout le bénéfice apporté par le libre au client. </p> <p> Le <mark>logiciel</mark> <mark>libre</mark> se trouve ainsi contaminé par du code non libre, dans un contexte de marketing de l' <em style="font-style:italic;">openness</em> qui tend à prétendre qu'il est plus important d'être « ouvert » que « libre ». Cette menace insidieuse freine l'innovation sous licence libre. En effet, tant qu'il y a un intérêt économique à éviter de verser du code à valeur ajoutée au projet sous licence libre, l'appauvrissement du code libre est quasi inévitable. Si cette pratique devient une « norme industrielle » , la paupérisation du libre dans son ensemble est à craindre. </p> <p> Un autre mode d'enfermement du client, plus rare mais observé par les membres de l'Association francophone des utilisateurs de <mark>logiciels</mark> <mark>libres</mark> (AFUL), est de le verrouiller contractuellement. Alors qu'il dispose bien d'un <mark>logiciel</mark> <mark>libre</mark>, le client ne peut exercer les libertés accordées par la licence tant qu'il est lié par un contrat d'affaires aux modalités de sortie prohibitives. Il importe donc, avant de signer un contrat avec un prestataire, de vérifier non seulement que le logiciel livré est bien libre, mais aussi qu'aucune clause du contrat ne contrecarre les libertés qu'accorde la licence initiale, notamment celle de modification. C'est souvent lorsque l'on souhaite exercer ses libertés que l'on se rend compte qu'on les a perdues (par exemple corriger soi-même et en urgence une faille de sécurité). </p> <p> Face à la montée de ces dangers, des réponses existent. Des réponses qui ne mettent pas à mal les entreprises et communautés produisant du code innovant sous licence libre, et au premier rang desquelles on trouve le soutien actif des utilisateurs. </p> <p> Du point de vue de l'AFUL, il est de la responsabilité des utilisateurs de <mark>logiciels</mark> <mark>libres</mark> (entreprises, associations, administrations, collectivités, particuliers, etc.) de protéger l'innovation sous licence libre. Que ce soit par une implication, financière ou humaine, dans la R &amp; D du logiciel, par le soutien des acteurs commerciaux dont les modèles économiques respectent et protègent réellement les libertés de leurs clients, l'utilisateur doit prendre sa place pour garantir la pérennisation du <mark>logiciel</mark> <mark>libre</mark>. Il est également de la responsabilité des utilisateurs de faire exister les logiciels spécifiques à un métier. Le peu d'intérêt économique pour un acteur commercial d'investir dans la R &amp; D d'un tel produit sous licence libre n'empêche pas de les créer par la mutualisation (comme MedinTux pour le corps médical ou openCimetière qui gère les concessions de cimetières). </p> <p> En résumé : devenir un acteur important de l'écosystème, un artisan de la sauvegarde de sa propre liberté, bref un peu plus qu'un simple client qui paye. </p> <p> Pour ce faire, nul besoin de se transformer en informaticien ou de disposer d'un service informatique très pointu pour devenir acteur et (s')investir dans le libre. L'AFUL, association à but non lucratif composée uniquement de bénévoles, a précisément pour objet d'aider et d'accompagner les utilisateurs de <mark>logiciels</mark> <mark>libres</mark> à surmonter leurs problèmes organisationnels et juridiques.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p>Laurent Séguin est président de l'Association francophone des utilisateurs de <mark>logiciels</mark> <mark>libres</mark> (AFUL - CC BY-ND 3.0) qui a pour objet d'aider, en les accompagnant, les utilisateurs de <mark>logiciels</mark> <mark>libres</mark> à surmonter leurs problèmes organisationnels et juridiques </p> <p> Le supplément « Science &amp; médecine » publie chaque semaine une tribune libre ouverte au monde de la recherche. Si vous souhaitez soumettre un texte, prière de l'adresser à <a href="mailto:sciences@lemonde.fr">sciences@lemonde.fr</a>.</p>
+    </div>
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+    <div class="apd-wrapper">
+        <div class="apd-doc">
+            <div class="apd-title"><span class="apd-label">Aussi paru dans</span></div>
+            <div class="apd-sources">
+                  <span class="apd-sources-date">4 novembre 2013</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+                  <span class="apd-sources-date">5 novembre 2013</span>
+                  <span class="apd-tiret"> - </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2013 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20131106·LM·0sch4513_865790</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20131106·LM·0sch4513_865790";
+    var _docIndex = 967;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20131106·LM·0sch4513_865790';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720131106%C2%B7LM%C2%B70sch4513_865790&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720131106%C2%B7LM%C2%B70sch4513_865790&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720131106%C2%B7LM%C2%B70sch4513_865790&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720131106%C2%B7LM%C2%B70sch4513_865790&docIndex=967&FullScreen=1";
+                
+	var _keyDoc = 'news·20131106·LM·0sch4513_865790';
+</script>
+</div></body></html>

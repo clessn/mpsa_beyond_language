@@ -1,0 +1,505 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Actualit&#233;s,         mercredi 1 septembre 2010 376 mots, p. A4&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Achat de mat&#233;riel informatique - La STM exclut les &lt;mark&gt; logiciels&lt;/mark&gt; &lt;mark&gt; libres&lt;/mark&gt; d&#39;un important appel d&#39;offres            
+        &lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews rdp__subtitle&quot;&gt;La soci&#233;t&#233; de transport veut acqu&#233;rir 2577 licences de la suite bureautique Microsoft Office 2010&lt;/p&gt;
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Fabien Deglise&lt;/p&gt;
+
+
+    &lt;b&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;L&#39;Association pour l&#39;appropriation collective de l&#39;informatique libre (FACIL) s&#39;insurge de la d&#233;cision de la Soci&#233;t&#233; de transport de Montr&#233;al (STM) d&#39;attribuer un march&#233; d&#39;un demi-million de dollars &#224; la multinationale informatique Microsoft, et ce, sans v&#233;ritable mise en concurrence avec des solutions informatiques dites ouvertes et moins co&#251;teuses.&lt;/em&gt;&lt;/p&gt;&lt;/b&gt;
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Le groupe de pression interpelle d&#39;ailleurs les dirigeants de la soci&#233;t&#233;, mais aussi le maire de Montr&#233;al, afin qu&#39;ils forcent la r&#233;vision de cet important achat de logiciels. Motif? Il y a deux mois, la Cour sup&#233;rieure du Qu&#233;bec a jug&#233; ill&#233;gale ce genre d&#39;attribution de contrat informatique par l&#39;administration publique.&lt;/p&gt;
+
+
+&lt;p&gt;&#171;Ce type de pratique n&#39;est pas conforme &#224; la loi, n&#39;est pas dans l&#39;int&#233;r&#234;t de la STM, ne respecte pas les valeurs d&#39;&#233;quit&#233; et de libert&#233; de la soci&#233;t&#233; qu&#233;b&#233;coise, nuit &#224; l&#39;ind&#233;pendance technologique du Qu&#233;bec et ne favorise pas un d&#233;veloppement technologique durable&#187;, a indiqu&#233; en d&#233;but de semaine l&#39;Association par voie de communiqu&#233;. &lt;/p&gt; &lt;p&gt; Le 17 ao&#251;t, la STM a publi&#233; en effet un avis d&#39;appel d&#39;offres pour l&#39;achat de plusieurs centaines de logiciels. L&#39;appel vise &#171;l&#39;acquisition de 2577 licences&#187; de la suite bureautique Microsoft Office 2010 standard, produit phare du g&#233;ant am&#233;ricain. Le contrat a une valeur estim&#233;e de 500 000 $. Il n&#39;envisage aucun autre produit. &lt;/p&gt; &lt;p&gt; Pour l&#39;Association, cet appel est &#233;tonnant puisqu&#39;il fait fi d&#39;un important jugement rendu le 3 juin dernier dans une affaire opposant la R&#233;gie des rentes du Qu&#233;bec et l&#39;entreprise Savoir-Faire Linux. Ce marchand de &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; d&#233;non&#231;ait alors l&#39;attribution d&#39;un contrat de 723 000 $ &#224; un distributeur exclusif de produits Microsoft en 2008 alors que des logiciels &#224; acc&#232;s libre, et donc moins co&#251;teux, auraient pu &#234;tre envisag&#233;s. Une lecture confirm&#233;e par le tribunal qui a fait entrer du coup dans l&#39;ill&#233;galit&#233; ce processus d&#39;attribution de contrat &#224; un fournisseur informatique d&#233;sign&#233;. &lt;/p&gt; &lt;p&gt; &#171;L&#39;avis d&#39;appel d&#39;offres de la STM nous &#233;tonne, mais qu&#39;&#224; moiti&#233;, a indiqu&#233; hier au Devoir Cyrille B&#233;raud, pr&#233;sident de l&#39;Association professionnelle des entreprises en &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; appelle &#224; un changement important de paradigme dans le domaine informatique pour un passage d&#39;un march&#233; de monopole &#224; un march&#233; concurrentiel. M&#234;me si l&#39;ouverture se fait sentir ici et l&#224;, l&#39;administration publique n&#39;est pas encore totalement pr&#234;te &#224; ce changement.&#187; &lt;/p&gt; &lt;p&gt; Hier, la Soci&#233;t&#233; de transport de Montr&#233;al n&#39;a pas souhait&#233; commenter cette attribution de contrat pour des logiciels dits propri&#233;taires appartenant &#224; Microsoft, et ce, en pr&#233;textant que le dossier doit se retrouver aujourd&#39;hui &#224; l&#39;ordre du jour de la r&#233;union de son conseil d&#39;administration. L&#39;avis d&#39;appel d&#39;offres, lanc&#233; il y a deux semaines, prend fin le 8 septembre prochain &#224; 15h. &lt;/p&gt; &lt;p&gt; Rappelons que le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; cherche actuellement sa place dans plusieurs administrations publiques &#224; travers le monde comme aux &#201;tats-Unis, o&#249; Barack Obama a d&#233;cid&#233; de lui faire une plus large place. Ces applications libres de droits sont de plus en plus favoris&#233;es afin de diminuer les co&#251;ts li&#233;s &#224; l&#39;acquisition de logiciels, mais aussi assurer une plus grande flexibilit&#233; num&#233;rique et s&#233;curit&#233; des donn&#233;es informatiques gouvernementales.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2010 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20100901&amp;#183;LE&amp;#183;20100901_a4_logiciels&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">appel d'offres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciels libres</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">attribution de contrat</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">avis d'appel</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">logiciel libre</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">La STM</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Montréal</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Québec</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">États-Unis</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100901%c2%b7LE%c2%b720100901_a4_logiciels" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720100901%c2%b7LE%c2%b720100901_a4_logiciels">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Actualités,         mercredi 1 septembre 2010 376 mots, p. A4</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Achat de matériel informatique - La STM exclut les <mark> logiciels</mark> <mark> libres</mark> d'un important appel d'offres            
+        </p>
+
+        <p class="sm-margin-TopNews rdp__subtitle">La société de transport veut acquérir 2577 licences de la suite bureautique Microsoft Office 2010</p>
+</div>
+
+        <p class="sm-margin-bottomNews">Fabien Deglise</p>
+
+
+    <b><p><em style="font-weight:bold;">L'Association pour l'appropriation collective de l'informatique libre (FACIL) s'insurge de la décision de la Société de transport de Montréal (STM) d'attribuer un marché d'un demi-million de dollars à la multinationale informatique Microsoft, et ce, sans véritable mise en concurrence avec des solutions informatiques dites ouvertes et moins coûteuses.</em></p></b>
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Le groupe de pression interpelle d'ailleurs les dirigeants de la société, mais aussi le maire de Montréal, afin qu'ils forcent la révision de cet important achat de logiciels. Motif? Il y a deux mois, la Cour supérieure du Québec a jugé illégale ce genre d'attribution de contrat informatique par l'administration publique.</p>
+
+
+<p>«Ce type de pratique n'est pas conforme à la loi, n'est pas dans l'intérêt de la STM, ne respecte pas les valeurs d'équité et de liberté de la société québécoise, nuit à l'indépendance technologique du Québec et ne favorise pas un développement technologique durable», a indiqué en début de semaine l'Association par voie de communiqué. </p> <p> Le 17 août, la STM a publié en effet un avis d'appel d'offres pour l'achat de plusieurs centaines de logiciels. L'appel vise «l'acquisition de 2577 licences» de la suite bureautique Microsoft Office 2010 standard, produit phare du géant américain. Le contrat a une valeur estimée de 500 000 $. Il n'envisage aucun autre produit. </p> <p> Pour l'Association, cet appel est étonnant puisqu'il fait fi d'un important jugement rendu le 3 juin dernier dans une affaire opposant la Régie des rentes du Québec et l'entreprise Savoir-Faire Linux. Ce marchand de <mark>logiciels</mark> <mark>libres</mark> dénonçait alors l'attribution d'un contrat de 723 000 $ à un distributeur exclusif de produits Microsoft en 2008 alors que des logiciels à accès libre, et donc moins coûteux, auraient pu être envisagés. Une lecture confirmée par le tribunal qui a fait entrer du coup dans l'illégalité ce processus d'attribution de contrat à un fournisseur informatique désigné. </p> <p> «L'avis d'appel d'offres de la STM nous étonne, mais qu'à moitié, a indiqué hier au Devoir Cyrille Béraud, président de l'Association professionnelle des entreprises en <mark>logiciels</mark> <mark>libres</mark>. Le <mark>logiciel</mark> <mark>libre</mark> appelle à un changement important de paradigme dans le domaine informatique pour un passage d'un marché de monopole à un marché concurrentiel. Même si l'ouverture se fait sentir ici et là, l'administration publique n'est pas encore totalement prête à ce changement.» </p> <p> Hier, la Société de transport de Montréal n'a pas souhaité commenter cette attribution de contrat pour des logiciels dits propriétaires appartenant à Microsoft, et ce, en prétextant que le dossier doit se retrouver aujourd'hui à l'ordre du jour de la réunion de son conseil d'administration. L'avis d'appel d'offres, lancé il y a deux semaines, prend fin le 8 septembre prochain à 15h. </p> <p> Rappelons que le <mark>logiciel</mark> <mark>libre</mark> cherche actuellement sa place dans plusieurs administrations publiques à travers le monde comme aux États-Unis, où Barack Obama a décidé de lui faire une plus large place. Ces applications libres de droits sont de plus en plus favorisées afin de diminuer les coûts liés à l'acquisition de logiciels, mais aussi assurer une plus grande flexibilité numérique et sécurité des données informatiques gouvernementales.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2010 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20100901·LE·20100901_a4_logiciels</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20100901·LE·20100901_a4_logiciels";
+    var _docIndex = 373;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20100901·LE·20100901_a4_logiciels';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720100901%C2%B7LE%C2%B720100901_a4_logiciels&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720100901%C2%B7LE%C2%B720100901_a4_logiciels&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720100901%C2%B7LE%C2%B720100901_a4_logiciels&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720100901%C2%B7LE%C2%B720100901_a4_logiciels&docIndex=373&FullScreen=1";
+                
+	var _keyDoc = 'news·20100901·LE·20100901_a4_logiciels';
+</script>
+</div></body></html>

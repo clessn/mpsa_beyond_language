@@ -1,0 +1,441 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LE&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Devoir                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+CONVERGENCE,         lundi 21 juillet 2003 1253 mots, p. B7&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Technologie&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Les normes libres, l&#39;enjeu du moment            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;Dumais, Michel&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;Entre le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; et les normes libres, quels sont les diff&#233;rences et les grands enjeux? L&#39;un est-il plus important que l&#39;autre? Pour mieux comprendre ces grands enjeux, et plus particuli&#232;rement ceux li&#233;s &#224; l&#39;utilisation des normes libres, qui est mieux plac&#233; que Karl Dubost, directeur de la conformit&#233; au W3C et coresponsable du groupe de travail &#171;Assurance Qualit&#233;&#187; pour en parler? &lt;/p&gt; &lt;p&gt; Normand de coeur et de naissance, citoyen du monde, humaniste, Karl Dubost, dont le port d&#39;attache est maintenant Montr&#233;al, est de ceux qui pr&#234;chent l&#39;adoption de normes libres. L&#39;organisme international pour lequel il travaille, le W3C (World Wide Web Consortium) a &#233;t&#233; cr&#233;&#233; pour stopper l&#39;&#233;mergence de langages propri&#233;taires sur le Web et rassembler tous les acteurs autour d&#39;une table afin de d&#233;finir des standards. Les standards, eux, sont d&#233;cid&#233;s au consensus. Et, croyez-le ou non, vous pouvez &#234;tre un de ces acteurs, le W3C ayant mis en place de nombreuses places de discussion virtuelle o&#249; les avis des internautes sont sollicit&#233;s et accueillis avec enthousiasme.&lt;/p&gt;
+
+
+&lt;p&gt;Pour Dubost - ainsi que pour le chroniqueur -, l&#39;adoption de normes libres et ouvertes est le grand enjeu en ce moment sur la Toile (ainsi que dans le monde de l&#39;informatique), et ce, avant m&#234;me l&#39;adoption des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. &lt;/p&gt; &lt;p&gt; Des enjeux &lt;/p&gt; &lt;p&gt; Une norme est un ensemble de r&#232;gles qui permet &#224; diff&#233;rentes personnes d&#39;avoir une r&#233;ponse attendue en fonction d&#39;une action donn&#233;e. Cela n&#39;a rien de vraiment technique a priori, bien que cela s&#39;applique au domaine technique. Il y a des normes qui sont consensuelles, des normes qui sont historiques, d&#39;autres culturelles &lt;/p&gt; &lt;p&gt; Par exemple, de dire Karl Dubost, &#171;lorsque tu rencontres une personne que tu connais au Canada, il est normal de lui serrer la main en lui disant: &quot;Bonjour&quot;. Ces deux petits gestes permettent d&#39;&#233;tablir la communication, c&#39;est une norme culturelle et pratiquement inconsciente. Au Japon, ce sera plut&#244;t un signe de la t&#234;te et: &quot;Ohayo Goizamasu&quot;&#187;. &lt;/p&gt; &lt;p&gt; &#171;Le respect d&#39;une norme, de continuer Dubost, est un acte essentiel afin de pouvoir communiquer, agir, &#233;changer entre des individus, des machines. C&#39;est ce que l&#39;on appelle l&#39;interop&#233;rabilit&#233;. Quand deux personnes, deux machines industrielles ou deux ordinateurs respectent la m&#234;me norme, elles sont capables de se comprendre, d&#39;&#233;changer des informations et, donc, de pouvoir continuer leur t&#226;che. Deux personnes qui se serrent la main ont d&#233;cid&#233; de respecter la m&#234;me norme pour se saluer.&#187; &lt;/p&gt; &lt;p&gt; Un exemple tout simple de l&#39;efficacit&#233; des normes ouvertes nous est donn&#233; par l&#39;utilisation du courrier &#233;lectronique. Si, aujourd&#39;hui, une application comme le courrier &#233;lectronique est aussi universelle, c&#39;est parce que les concepteurs des normes SMTP (simple mail transfert protocol) et POP (post office protocol) les ont mises &#224; la disposition de tous. Ce faisant, n&#39;importe quel programmeur ou soci&#233;t&#233; &#233;ditrice de logiciels pouvait reprendre ces dites normes et offrir aux internautes un logiciel client avec, soit des caract&#233;ristiques toutes simples ou encore d&#39;autres caract&#233;ristiques qui transforment ce progiciel en une usine &#224; gaz. Mais, toujours, l&#39;internaute a le choix du progiciel et, quel que soit son choix, il a l&#39;assurance que son logiciel client de courriel pourra communiquer avec un autre sans aucun probl&#232;me. C&#39;est ainsi que des logiciels aussi diff&#233;rents qu&#39;Outlook et Eudora peuvent se parler et &#233;changer sans quasiment &#233;prouver la moindre difficult&#233;. &lt;/p&gt; &lt;p&gt; &#171;Bref, une norme ouverte est un ensemble de r&#232;gles dont aucune instance commerciale ou priv&#233;e n&#39;est propri&#233;taire. Elle peut avoir &#233;t&#233; cr&#233;&#233;e par une personne et mise &#224; disposition de tous librement avec une licence qui garantit que les droits d&#39;utilisation de cette norme sont libres. Une norme propri&#233;taire est alors une norme appartenant exclusivement &#224; une entit&#233; commerciale ou priv&#233;e. Elle peut en permettre l&#39;utilisation mais, sans licence garantissant la libre exploitation, il existe un risque. L&#39;entit&#233; qui d&#233;tient la norme peut d&#233;cider d&#39;interdire aux autres de l&#39;utiliser, peut d&#233;cider de la rendre payante, etc.&#187; &lt;/p&gt; &lt;p&gt; Pour Karl Dubost, le respect d&#39;une norme ouverte &#171;c&#39;est permettre &#224; tous les individus de pouvoir &#233;changer librement l&#39;information sans le risque de voir cette information devenir inaccessible, prisonni&#232;re d&#39;un droit d&#39;utilisation, d&#39;un produit particulier. Il existe un enjeu social tr&#232;s important dans le respect d&#39;une norme ouverte, l&#39;information &#233;tant le vecteur de la cr&#233;ation, de l&#39;&#233;change d&#39;information, de la libert&#233; de chaque personne&#187;. &lt;/p&gt; &lt;p&gt; Dans le domaine informatique, les normes ouvertes sont produites de fa&#231;on coll&#233;giale par un organisme regroupant tous les acteurs du domaine autour d&#39;une table et qui prennent part au consensus de l&#39;&#233;laboration de cette norme. &lt;/p&gt; &lt;p&gt; Probl&#232;mes d&#39;interpr&#233;tation &lt;/p&gt; &lt;p&gt; Cependant, autant les normes semblent &#234;tres bien &#233;tablies en informatique, sur Internet, il semble encore y avoir des probl&#232;mes &#171;d&#39;interpr&#233;tation&#187; quant &#224; l&#39;utilisation de ces dites normes. Pourquoi? &lt;/p&gt; &lt;p&gt; &#171;Les normes en informatique sont des documents techniques, explique Karl Dubost, comme tout document technique, ils sont r&#233;dig&#233;s par des groupes d&#39;humains. Lorsque l&#39;on cr&#233;e une fonctionnalit&#233; particuli&#232;re, le groupe social [hommes et femmes] qui a cr&#233;&#233; cette fonctionnalit&#233; d&#233;bat de celle-ci et d&#233;cide de son comportement. &lt;/p&gt; &lt;p&gt; &#171;Deux cas peuvent alors arriver. Dans le premier, les diff&#233;rents membres du groupe ont une interpr&#233;tation diff&#233;rente de leur consensus et cette diff&#233;rence se r&#233;v&#232;le lorsque la norme est impl&#233;ment&#233;e dans un produit. Le second cas survient lorsque que la norme a &#233;t&#233; rendue publique, une tierce personne n&#39;ayant pas suivi les discussions interpr&#232;te diff&#233;remment une phrase de la norme technique et donc l&#39;impl&#233;mente diff&#233;remment. &lt;/p&gt; &lt;p&gt; &#171;Tout le travail des organismes qui cr&#233;ent les normes est donc de les d&#233;finir de fa&#231;on la plus stricte afin d&#39;&#233;viter ces probl&#232;mes d&#39;interpr&#233;tation. Un organisme comme le W3C impose maintenant aux groupes de travail qui &#233;tablissent les normes d&#39;avoir deux impl&#233;mentations individuelles et similaires de chaque fonctionnalit&#233; avant de pouvoir devenir une norme.&#187; &lt;/p&gt; &lt;p&gt; Administration publique &lt;/p&gt; &lt;p&gt; La semaine derni&#232;re, nous vous entretenions de GIRES, ce mammouthesque projet d&#39;int&#233;gration des diff&#233;rentes ressources du gouvernement qu&#233;b&#233;cois qui semble &#234;tre vou&#233; &#224; l&#39;&#233;chec. Selon certaines informations que nous avons re&#231;ues, seul le module de gestion des ressources humaines serait conserv&#233;. La confirmation viendra toutefois lors de la remise du rapport du comit&#233; consultatif. Bref, &#224; la suite &#224; cet &#233;tat de fait, il est donc pertinent de demander &#224; Karl Dubost quels sont avantages qu&#39;une administration publique retire en respectant les normes ouvertes? &lt;/p&gt; &lt;p&gt; En cela, les commentaires de Karl Dubost sont &#233;clairants et devraient &#234;tre transmis &#224; la pr&#233;sidente du Conseil du tr&#233;sor, Monique J&#233;r&#244;me-Forget, pour qu&#39;elle en prenne connaissance. &lt;/p&gt; &lt;p&gt; &#171;Dans le cadre d&#39;une administration publique, je ne dis pas &quot;avantages &#224; respecter une norme ouverte&quot;, mais plut&#244;t &quot;n&#233;cessit&#233; absolue d&#39;utiliser et de respecter les normes ouvertes&quot;. Il y a un impact social &#233;norme et &#233;conomique dans le respect d&#39;une norme ouverte. L&#39;information de l&#39;administration est organis&#233;e selon les crit&#232;res d&#39;une norme. Si cette norme est propri&#233;taire et attenante &#224; un produit particulier d&#39;une compagnie X. L&#39;administration publique [et donc les citoyens] se retrouvent &#224; la merci d&#39;un changement de politique commerciale de l&#39;entreprise qui est propri&#233;taire du produit et de la norme.&#187; &lt;/p&gt; &lt;p&gt; Par exemple, une licence du produit suppl&#233;mentaire que l&#39;on est oblig&#233; de payer pour pouvoir continuer &#224; utiliser la norme, ou la d&#233;cision de la soci&#233;t&#233; de faire payer subitement des droits d&#39;utilisation de cette norme. Comme toute l&#39;information &#233;tait prisonni&#232;re de cette norme, il est tr&#232;s difficile de faire marche arri&#232;re. Cela repr&#233;sente un surco&#251;t pour la soci&#233;t&#233;, et une diminution de sa marge de manoeuvre. &lt;/p&gt; &lt;p&gt; &#171;Avec une norme ouverte, conclut Karl Dubost, l&#39;administration publique peut changer de produit et de soci&#233;t&#233; commerciale pour des raisons &#233;conomiques ou de meilleures impl&#233;mentations. Elle pourra d&#233;cider &#233;galement d&#39;impl&#233;menter elle-m&#234;me son propre produit si elle d&#233;cide que c&#39;est une meilleure strat&#233;gie, mais au moins les informations seront stock&#233;es dans un format leur permettant d&#39;&#233;voluer librement de toutes contraintes.&#187; &lt;/p&gt; &lt;p&gt; Cependant, l&#39;implantation des normes libres n&#39;est pas toujours une sin&#233;cure, contrairement &#224; ce que l&#39;on pourrait croire. La firme VDL2, responsable du site du Devoir, vient d&#39;en faire l&#39;exp&#233;rience avec la cr&#233;ation de son propre site. Pour les cr&#233;ateurs de la firme VDL2, le respect des normes libres et ouvertes a &#233;t&#233; un d&#233;fi de tous les instants, et ce, au d&#233;triment quelquefois, de l&#39;ergonomie. Par exemple, ceux-ci ont d&#251; sacrifier l&#39;implantation d&#39;images au format ouvert SVG, pour de nombreuses raisons pratiques. Alors, la question se pose: que doit-on respecter en premier, les utilisateurs ou les normes, quitte &#224; sacrifier l&#39;usabilit&#233;? &lt;/p&gt; &lt;p&gt; &#171;Je r&#233;ponds: &quot;respect de quels utilisateurs&quot;? Pour SVG, c&#39;est un peu particulier, car c&#39;est une norme relativement jeune, qui semble ne pas &#234;tre facile &#224; utiliser en toutes circonstances. SVG est une application d&#39;images vectorielles graphiques. Donc, comme dans toutes normes, utiliser la bonne norme pour la bonne application.&#187; &lt;/p&gt; &lt;p&gt; &#171;J&#39;ai pu voir une d&#233;monstration d&#39;une carte du m&#233;tro de Paris en SVG avec un zoom progressif sur les d&#233;tails o&#249; l&#39;ensemble de tous les mots de la carte &#233;tait accessible, c&#39;est-&#224;-dire quand tu faisais une recherche texte comme M&#233;tro Louvre, la partie texte &quot;M&#233;tro Louvre&quot; sur la carte &#233;tait s&#233;lectionn&#233;e et copiable. Utiliser SVG pour repr&#233;senter une image unique qui n&#39;a aucune valeur ajout&#233;e par rapport &#224; la version PNG ou JPEG ne donne rien.&#187; &lt;/p&gt; &lt;p&gt; Malheureusement, les arguments des mordus des normes libres sont trop souvent des arguments techniques. Pour monsieur et madame Tout-le-monde, et aussi pour l&#39;administrateur, le pr&#233;sident d&#39;une compagnie ou une pr&#233;sidente du Conseil du tr&#233;sor qui doit d&#233;cider de ce que sera un gouvernement en ligne, et pour qui, l&#39;informatique n&#39;est pas la tasse de th&#233;, comment expliquer les avantages du respect des normes libres? &lt;/p&gt; &lt;p&gt; &#192; cela, Karl Dubost r&#233;pond: &#171;l&#39;impact social, &#224; mon avis, est l&#39;impact le plus important des normes libres. Ne pas &#234;tre prisonnier d&#39;une entit&#233; commerciale d&#233;cidant de l&#39;avenir de votre information, de vos donn&#233;es. Avoir le choix en toutes circonstances, la possibilit&#233; de changer, de faire autrement, voil&#224; l&#39;enjeu des normes libres&#187;. &lt;/p&gt; &lt;a href=&quot;mailto:mdumais@ledevoir.com&quot;&gt;&lt;p&gt; mdumais@ledevoir.com&lt;/p&gt;&lt;/a&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2003 Le Devoir. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20030721&amp;#183;LE&amp;#183;32207&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030721%c2%b7LE%c2%b732207" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720030721%c2%b7LE%c2%b732207">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=le_small.gif"><span class="icon-Information" sourcecode="LE"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Devoir                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+CONVERGENCE,         lundi 21 juillet 2003 1253 mots, p. B7</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">Technologie</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Les normes libres, l'enjeu du moment            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">Dumais, Michel</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>Entre le <mark>logiciel</mark> <mark>libre</mark> et les normes libres, quels sont les différences et les grands enjeux? L'un est-il plus important que l'autre? Pour mieux comprendre ces grands enjeux, et plus particulièrement ceux liés à l'utilisation des normes libres, qui est mieux placé que Karl Dubost, directeur de la conformité au W3C et coresponsable du groupe de travail «Assurance Qualité» pour en parler? </p> <p> Normand de coeur et de naissance, citoyen du monde, humaniste, Karl Dubost, dont le port d'attache est maintenant Montréal, est de ceux qui prêchent l'adoption de normes libres. L'organisme international pour lequel il travaille, le W3C (World Wide Web Consortium) a été créé pour stopper l'émergence de langages propriétaires sur le Web et rassembler tous les acteurs autour d'une table afin de définir des standards. Les standards, eux, sont décidés au consensus. Et, croyez-le ou non, vous pouvez être un de ces acteurs, le W3C ayant mis en place de nombreuses places de discussion virtuelle où les avis des internautes sont sollicités et accueillis avec enthousiasme.</p>
+
+
+<p>Pour Dubost - ainsi que pour le chroniqueur -, l'adoption de normes libres et ouvertes est le grand enjeu en ce moment sur la Toile (ainsi que dans le monde de l'informatique), et ce, avant même l'adoption des <mark>logiciels</mark> <mark>libres</mark>. </p> <p> Des enjeux </p> <p> Une norme est un ensemble de règles qui permet à différentes personnes d'avoir une réponse attendue en fonction d'une action donnée. Cela n'a rien de vraiment technique a priori, bien que cela s'applique au domaine technique. Il y a des normes qui sont consensuelles, des normes qui sont historiques, d'autres culturelles </p> <p> Par exemple, de dire Karl Dubost, «lorsque tu rencontres une personne que tu connais au Canada, il est normal de lui serrer la main en lui disant: "Bonjour". Ces deux petits gestes permettent d'établir la communication, c'est une norme culturelle et pratiquement inconsciente. Au Japon, ce sera plutôt un signe de la tête et: "Ohayo Goizamasu"». </p> <p> «Le respect d'une norme, de continuer Dubost, est un acte essentiel afin de pouvoir communiquer, agir, échanger entre des individus, des machines. C'est ce que l'on appelle l'interopérabilité. Quand deux personnes, deux machines industrielles ou deux ordinateurs respectent la même norme, elles sont capables de se comprendre, d'échanger des informations et, donc, de pouvoir continuer leur tâche. Deux personnes qui se serrent la main ont décidé de respecter la même norme pour se saluer.» </p> <p> Un exemple tout simple de l'efficacité des normes ouvertes nous est donné par l'utilisation du courrier électronique. Si, aujourd'hui, une application comme le courrier électronique est aussi universelle, c'est parce que les concepteurs des normes SMTP (simple mail transfert protocol) et POP (post office protocol) les ont mises à la disposition de tous. Ce faisant, n'importe quel programmeur ou société éditrice de logiciels pouvait reprendre ces dites normes et offrir aux internautes un logiciel client avec, soit des caractéristiques toutes simples ou encore d'autres caractéristiques qui transforment ce progiciel en une usine à gaz. Mais, toujours, l'internaute a le choix du progiciel et, quel que soit son choix, il a l'assurance que son logiciel client de courriel pourra communiquer avec un autre sans aucun problème. C'est ainsi que des logiciels aussi différents qu'Outlook et Eudora peuvent se parler et échanger sans quasiment éprouver la moindre difficulté. </p> <p> «Bref, une norme ouverte est un ensemble de règles dont aucune instance commerciale ou privée n'est propriétaire. Elle peut avoir été créée par une personne et mise à disposition de tous librement avec une licence qui garantit que les droits d'utilisation de cette norme sont libres. Une norme propriétaire est alors une norme appartenant exclusivement à une entité commerciale ou privée. Elle peut en permettre l'utilisation mais, sans licence garantissant la libre exploitation, il existe un risque. L'entité qui détient la norme peut décider d'interdire aux autres de l'utiliser, peut décider de la rendre payante, etc.» </p> <p> Pour Karl Dubost, le respect d'une norme ouverte «c'est permettre à tous les individus de pouvoir échanger librement l'information sans le risque de voir cette information devenir inaccessible, prisonnière d'un droit d'utilisation, d'un produit particulier. Il existe un enjeu social très important dans le respect d'une norme ouverte, l'information étant le vecteur de la création, de l'échange d'information, de la liberté de chaque personne». </p> <p> Dans le domaine informatique, les normes ouvertes sont produites de façon collégiale par un organisme regroupant tous les acteurs du domaine autour d'une table et qui prennent part au consensus de l'élaboration de cette norme. </p> <p> Problèmes d'interprétation </p> <p> Cependant, autant les normes semblent êtres bien établies en informatique, sur Internet, il semble encore y avoir des problèmes «d'interprétation» quant à l'utilisation de ces dites normes. Pourquoi? </p> <p> «Les normes en informatique sont des documents techniques, explique Karl Dubost, comme tout document technique, ils sont rédigés par des groupes d'humains. Lorsque l'on crée une fonctionnalité particulière, le groupe social [hommes et femmes] qui a créé cette fonctionnalité débat de celle-ci et décide de son comportement. </p> <p> «Deux cas peuvent alors arriver. Dans le premier, les différents membres du groupe ont une interprétation différente de leur consensus et cette différence se révèle lorsque la norme est implémentée dans un produit. Le second cas survient lorsque que la norme a été rendue publique, une tierce personne n'ayant pas suivi les discussions interprète différemment une phrase de la norme technique et donc l'implémente différemment. </p> <p> «Tout le travail des organismes qui créent les normes est donc de les définir de façon la plus stricte afin d'éviter ces problèmes d'interprétation. Un organisme comme le W3C impose maintenant aux groupes de travail qui établissent les normes d'avoir deux implémentations individuelles et similaires de chaque fonctionnalité avant de pouvoir devenir une norme.» </p> <p> Administration publique </p> <p> La semaine dernière, nous vous entretenions de GIRES, ce mammouthesque projet d'intégration des différentes ressources du gouvernement québécois qui semble être voué à l'échec. Selon certaines informations que nous avons reçues, seul le module de gestion des ressources humaines serait conservé. La confirmation viendra toutefois lors de la remise du rapport du comité consultatif. Bref, à la suite à cet état de fait, il est donc pertinent de demander à Karl Dubost quels sont avantages qu'une administration publique retire en respectant les normes ouvertes? </p> <p> En cela, les commentaires de Karl Dubost sont éclairants et devraient être transmis à la présidente du Conseil du trésor, Monique Jérôme-Forget, pour qu'elle en prenne connaissance. </p> <p> «Dans le cadre d'une administration publique, je ne dis pas "avantages à respecter une norme ouverte", mais plutôt "nécessité absolue d'utiliser et de respecter les normes ouvertes". Il y a un impact social énorme et économique dans le respect d'une norme ouverte. L'information de l'administration est organisée selon les critères d'une norme. Si cette norme est propriétaire et attenante à un produit particulier d'une compagnie X. L'administration publique [et donc les citoyens] se retrouvent à la merci d'un changement de politique commerciale de l'entreprise qui est propriétaire du produit et de la norme.» </p> <p> Par exemple, une licence du produit supplémentaire que l'on est obligé de payer pour pouvoir continuer à utiliser la norme, ou la décision de la société de faire payer subitement des droits d'utilisation de cette norme. Comme toute l'information était prisonnière de cette norme, il est très difficile de faire marche arrière. Cela représente un surcoût pour la société, et une diminution de sa marge de manoeuvre. </p> <p> «Avec une norme ouverte, conclut Karl Dubost, l'administration publique peut changer de produit et de société commerciale pour des raisons économiques ou de meilleures implémentations. Elle pourra décider également d'implémenter elle-même son propre produit si elle décide que c'est une meilleure stratégie, mais au moins les informations seront stockées dans un format leur permettant d'évoluer librement de toutes contraintes.» </p> <p> Cependant, l'implantation des normes libres n'est pas toujours une sinécure, contrairement à ce que l'on pourrait croire. La firme VDL2, responsable du site du Devoir, vient d'en faire l'expérience avec la création de son propre site. Pour les créateurs de la firme VDL2, le respect des normes libres et ouvertes a été un défi de tous les instants, et ce, au détriment quelquefois, de l'ergonomie. Par exemple, ceux-ci ont dû sacrifier l'implantation d'images au format ouvert SVG, pour de nombreuses raisons pratiques. Alors, la question se pose: que doit-on respecter en premier, les utilisateurs ou les normes, quitte à sacrifier l'usabilité? </p> <p> «Je réponds: "respect de quels utilisateurs"? Pour SVG, c'est un peu particulier, car c'est une norme relativement jeune, qui semble ne pas être facile à utiliser en toutes circonstances. SVG est une application d'images vectorielles graphiques. Donc, comme dans toutes normes, utiliser la bonne norme pour la bonne application.» </p> <p> «J'ai pu voir une démonstration d'une carte du métro de Paris en SVG avec un zoom progressif sur les détails où l'ensemble de tous les mots de la carte était accessible, c'est-à-dire quand tu faisais une recherche texte comme Métro Louvre, la partie texte "Métro Louvre" sur la carte était sélectionnée et copiable. Utiliser SVG pour représenter une image unique qui n'a aucune valeur ajoutée par rapport à la version PNG ou JPEG ne donne rien.» </p> <p> Malheureusement, les arguments des mordus des normes libres sont trop souvent des arguments techniques. Pour monsieur et madame Tout-le-monde, et aussi pour l'administrateur, le président d'une compagnie ou une présidente du Conseil du trésor qui doit décider de ce que sera un gouvernement en ligne, et pour qui, l'informatique n'est pas la tasse de thé, comment expliquer les avantages du respect des normes libres? </p> <p> À cela, Karl Dubost répond: «l'impact social, à mon avis, est l'impact le plus important des normes libres. Ne pas être prisonnier d'une entité commerciale décidant de l'avenir de votre information, de vos données. Avoir le choix en toutes circonstances, la possibilité de changer, de faire autrement, voilà l'enjeu des normes libres». </p> <a href="mailto:mdumais@ledevoir.com"><p> mdumais@ledevoir.com</p></a>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2003 Le Devoir. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20030721·LE·32207</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20030721·LE·32207";
+    var _docIndex = 291;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20030721·LE·32207';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720030721%C2%B7LE%C2%B732207&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720030721%C2%B7LE%C2%B732207&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720030721%C2%B7LE%C2%B732207&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720030721%C2%B7LE%C2%B732207&docIndex=291&FullScreen=1";
+                
+	var _keyDoc = 'news·20030721·LE·32207';
+</script>
+</div></body></html>

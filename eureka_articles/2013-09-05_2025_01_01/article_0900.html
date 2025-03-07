@@ -1,0 +1,511 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=op_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;OP&quot;&gt;&lt;/span&gt;
+
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Journal de Montr&amp;#233;al                &lt;br /&gt;final    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+Votre Vie,         samedi 29 mars 2014 489 mots, p. 58&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Cinq projets de Google aux oubliettes            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;ST&#201;PHANIE GODBOUT AGENCE QMI&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;La r&#233;putation de Google, compagnie fond&#233;e en septembre 1998, n&#39;est plus &#224; faire. Inspirant des oeuvres cin&#233;matographiques et ajoutant le terme &quot;googler&quot; &#224; notre vocabulaire quotidien, Google a chang&#233; la vie de tous les internautes. H&#233;las! si les succ&#232;s de son moteur de recherche, de Google Maps ou de son navigateur Chrome sont confirm&#233;s, les projets de cette soci&#233;t&#233; fond&#233;e par Larry Page et Sergey Brin n&#39;ont pas tous eu la m&#234;me chance. Voici notre petite liste de cinq projets de Google d&#233;sormais jet&#233;s aux oubliettes. &lt;/p&gt; &lt;p&gt; Google Lively &lt;/p&gt; &lt;p&gt; Propos&#233; uniquement aux utilisateurs de PC &#233;quip&#233;s de Windows Vista et XP, Google Lively &#233;tait un monde virtuel en 3D permettant aux internautes de cr&#233;er des avatars et de personnaliser leur univers virtuel. Non sans rappeler le jeu &#224; succ&#232;s Second Life, Google Lively pouvait accueillir jusqu&#39;&#224; 20 joueurs simultan&#233;ment. Si l&#39;id&#233;e d&#39;offrir une alternative au titre de Linden Lab pouvait para&#238;tre bonne en th&#233;orie, ce fut en pratique un &#233;chec. Apr&#232;s l&#39;int&#233;r&#234;t de la nouveaut&#233;, le nombre d&#39;adeptes a vite chut&#233;, passant rapidement sous la barre des 100 000 visiteurs uniques par mois. Mis en ligne le 8 juillet 2008, Google Lively s&#39;&#233;teint le 31 d&#233;cembre de la m&#234;me ann&#233;e.&lt;/p&gt;
+
+
+&lt;p&gt; Google Health &lt;/p&gt; &lt;p&gt; Servant &#224; stocker, g&#233;rer et partager de fa&#231;on s&#233;curitaire des donn&#233;es m&#233;dicales, Google Health promettait de donner un s&#233;rieux coup de main aux patients et au personnel du corps m&#233;dical. Permettant entre autres d&#39;enregistrer les traitements en cours, d&#39;inscrire les allergies et d&#39;enregistrer les ant&#233;c&#233;dents m&#233;dicaux et r&#233;sultats d&#39;examens, Google Health &#233;tait un service Internet d&#39;archivage de dossiers m&#233;dicaux personnels destin&#233; aux patients am&#233;ricains. Pouvant &#234;tre consult&#233; par les partenaires du projet comme des h&#244;pitaux et des pharmacies, Google Health est pourtant jug&#233; inadapt&#233; par les professionnels du milieu. Lanc&#233; en mars 2008, l&#39;&#233;tat de sant&#233; de Google Health se d&#233;t&#233;riore et le nombre d&#39;utilisateurs baisse ann&#233;e apr&#232;s ann&#233;e. Le service ferme le 1 er janvier 2012. &lt;/p&gt; &lt;p&gt; Google Answers &lt;/p&gt; &lt;p&gt; Service de questions-r&#233;ponses payant offert uniquement en anglais, Google Answers &#233;tait la r&#233;ponse &#224; son concurrent gratuit Yahoo! Answers. Moyennant une somme allant de 2 &#224; 200 dollars pr&#233;alablement fix&#233;e, les utilisateurs pouvaient poser une question en la formulant simplement et recevoir une r&#233;ponse pr&#233;cise donn&#233;e par des experts en la mati&#232;re nomm&#233;s les Researchers. Pourquoi payer un service qui peut &#234;tre offert gratuitement? C&#39;est probablement la conclusion &#224; laquelle en sont venues bon nombre de personnes. Le 28 novembre 2006, Google annonce la fermeture de son service, en laissant la question du pourquoi sans r&#233;ponse. &lt;/p&gt; &lt;p&gt; Google Wave &lt;/p&gt; &lt;p&gt; Projet ambitieux, Google Wave voulait r&#233;volutionner le monde des communications en combinant, dans un navigateur web, les fonctionnalit&#233;s de messagerie &#233;lectronique en y int&#233;grant &#233;galement des outils collaboratifs comme celui de clavardage, de partage de contenus et de r&#233;seaux sociaux. Selon Jens Rasmussen, l&#39;un des d&#233;veloppeurs &#224; l&#39;origine du projet, Google Wave allait rendre caducs tous les outils de communication existants. H&#233;las, ce projet &#233;labor&#233; en &lt;mark&gt;code&lt;/mark&gt; &lt;mark&gt;source&lt;/mark&gt; &lt;mark&gt;ouvert&lt;/mark&gt; n&#39;a pas surf&#233; sur la vague du succ&#232;s tr&#232;s longtemps. Sans doute le plus gros &#233;chec de la soci&#233;t&#233;. Moins de 15 mois apr&#232;s son lancement, Google annonce qu&#39;elle ne poursuivra pas le d&#233;veloppement de Wave. &lt;/p&gt; &lt;p&gt; Google Reader &lt;/p&gt; &lt;p&gt; Lanc&#233; en 2005, Google Reader est un lecteur de flux RSS cr&#233;&#233; dans le but de faire d&#233;couvrir plus facilement de nouveaux sites Web aux internautes tout en les aidant &#224; demeurer &#224; l&#39;aff&#251;t de ce qui se passe autour d&#39;eux. Permettant de recevoir au m&#234;me endroit toutes les mises &#224; jour des sites pr&#233;f&#233;r&#233;s, Google Reader figure parmi les agr&#233;gateurs de nouvelles les plus populaires. Pourtant, en mars 2013, la firme de Mountain View annonce la fermeture du service, pointant notamment du doigt le d&#233;clin de l&#39;usage du lecteur de flux RSS au profit des r&#233;seaux sociaux. Malgr&#233; une p&#233;tition pour son maintien sign&#233;e par plus de 154 000 internautes, Google Reader cesse d&#233;finitivement ses activit&#233;s en juillet 2013.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2014 Le Journal de Montr&#233;al. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;5 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20140329&amp;#183;OP&amp;#183;140329237175262&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Termes reliés : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Concept" class="Lien1" href="#">lecteur de flux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">réseaux sociaux</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">monde des communications</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">personnel du corps médical</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Concept" class="Lien1" href="#">monde virtuel</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                    
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Sujets : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Consommation</a>
+                                        &nbsp;&nbsp;
+                                            <a id="Subject" key="SUJ_KW" class="Lien1" href="#">Technologies de l'information et multimédia</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                    
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Secteur d'activité : </td>
+                            </tr>
+                            <tr>
+                                <td>                                   
+                                            <a id="Industry" key="INDUSTRY" class="Lien1" href="#">Informatique et électronique</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Lieux cités : </td>
+                            </tr>
+                            <tr>
+                                <td>                                    
+                                            <a id="GeographicalLocation" class="Lien1" href="#">développement de Wave</a>
+                                        &nbsp;&nbsp;
+                                            <a id="GeographicalLocation" class="Lien1" href="#">Mountain View</a>
+                                        &nbsp;&nbsp;
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+                                <td valign="bottom" align="left" class="complementTitle">Tonalité : </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="text-align:center; margin-top:3px"><img border="0" src="/images/interface/icones/positive.png" id="ucComplementsTop_imgTonality"></div>
+                                    <div style="text-align:center; position:relative; top:-7px"><span id="ucComplementsTop_lblTonality">Positif</span></div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <br>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140329%c2%b7OP%c2%b7140329237175262" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720140329%c2%b7OP%c2%b7140329237175262">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=op_small.gif"><span class="icon-Information" sourcecode="OP"></span>
+
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Journal de Montréal                <br>final    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+Votre Vie,         samedi 29 mars 2014 489 mots, p. 58</span>
+</div>
+
+
+
+
+
+
+<div class="titreArticle">
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Cinq projets de Google aux oubliettes            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">STÉPHANIE GODBOUT AGENCE QMI</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p>La réputation de Google, compagnie fondée en septembre 1998, n'est plus à faire. Inspirant des oeuvres cinématographiques et ajoutant le terme "googler" à notre vocabulaire quotidien, Google a changé la vie de tous les internautes. Hélas! si les succès de son moteur de recherche, de Google Maps ou de son navigateur Chrome sont confirmés, les projets de cette société fondée par Larry Page et Sergey Brin n'ont pas tous eu la même chance. Voici notre petite liste de cinq projets de Google désormais jetés aux oubliettes. </p> <p> Google Lively </p> <p> Proposé uniquement aux utilisateurs de PC équipés de Windows Vista et XP, Google Lively était un monde virtuel en 3D permettant aux internautes de créer des avatars et de personnaliser leur univers virtuel. Non sans rappeler le jeu à succès Second Life, Google Lively pouvait accueillir jusqu'à 20 joueurs simultanément. Si l'idée d'offrir une alternative au titre de Linden Lab pouvait paraître bonne en théorie, ce fut en pratique un échec. Après l'intérêt de la nouveauté, le nombre d'adeptes a vite chuté, passant rapidement sous la barre des 100 000 visiteurs uniques par mois. Mis en ligne le 8 juillet 2008, Google Lively s'éteint le 31 décembre de la même année.</p>
+
+
+<p> Google Health </p> <p> Servant à stocker, gérer et partager de façon sécuritaire des données médicales, Google Health promettait de donner un sérieux coup de main aux patients et au personnel du corps médical. Permettant entre autres d'enregistrer les traitements en cours, d'inscrire les allergies et d'enregistrer les antécédents médicaux et résultats d'examens, Google Health était un service Internet d'archivage de dossiers médicaux personnels destiné aux patients américains. Pouvant être consulté par les partenaires du projet comme des hôpitaux et des pharmacies, Google Health est pourtant jugé inadapté par les professionnels du milieu. Lancé en mars 2008, l'état de santé de Google Health se détériore et le nombre d'utilisateurs baisse année après année. Le service ferme le 1 er janvier 2012. </p> <p> Google Answers </p> <p> Service de questions-réponses payant offert uniquement en anglais, Google Answers était la réponse à son concurrent gratuit Yahoo! Answers. Moyennant une somme allant de 2 à 200 dollars préalablement fixée, les utilisateurs pouvaient poser une question en la formulant simplement et recevoir une réponse précise donnée par des experts en la matière nommés les Researchers. Pourquoi payer un service qui peut être offert gratuitement? C'est probablement la conclusion à laquelle en sont venues bon nombre de personnes. Le 28 novembre 2006, Google annonce la fermeture de son service, en laissant la question du pourquoi sans réponse. </p> <p> Google Wave </p> <p> Projet ambitieux, Google Wave voulait révolutionner le monde des communications en combinant, dans un navigateur web, les fonctionnalités de messagerie électronique en y intégrant également des outils collaboratifs comme celui de clavardage, de partage de contenus et de réseaux sociaux. Selon Jens Rasmussen, l'un des développeurs à l'origine du projet, Google Wave allait rendre caducs tous les outils de communication existants. Hélas, ce projet élaboré en <mark>code</mark> <mark>source</mark> <mark>ouvert</mark> n'a pas surfé sur la vague du succès très longtemps. Sans doute le plus gros échec de la société. Moins de 15 mois après son lancement, Google annonce qu'elle ne poursuivra pas le développement de Wave. </p> <p> Google Reader </p> <p> Lancé en 2005, Google Reader est un lecteur de flux RSS créé dans le but de faire découvrir plus facilement de nouveaux sites Web aux internautes tout en les aidant à demeurer à l'affût de ce qui se passe autour d'eux. Permettant de recevoir au même endroit toutes les mises à jour des sites préférés, Google Reader figure parmi les agrégateurs de nouvelles les plus populaires. Pourtant, en mars 2013, la firme de Mountain View annonce la fermeture du service, pointant notamment du doigt le déclin de l'usage du lecteur de flux RSS au profit des réseaux sociaux. Malgré une pétition pour son maintien signée par plus de 154 000 internautes, Google Reader cesse définitivement ses activités en juillet 2013.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2014 Le Journal de Montréal. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>5 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20140329·OP·140329237175262</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20140329·OP·140329237175262";
+    var _docIndex = 899;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = false;
+    var _pdfKiosque = false;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20140329·OP·140329237175262';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720140329%C2%B7OP%C2%B7140329237175262&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720140329%C2%B7OP%C2%B7140329237175262&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720140329%C2%B7OP%C2%B7140329237175262&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720140329%C2%B7OP%C2%B7140329237175262&docIndex=899&FullScreen=1";
+                
+	var _keyDoc = 'news·20140329·OP·140329237175262';
+</script>
+</div></body></html>

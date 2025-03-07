@@ -1,0 +1,467 @@
+<html><head><script type="text/javascript" language="javascript">
+
+        var isGARUser = 'False';
+        var isUnderAge = 'False';
+        var acceptRisk = sessionStorage.getItem("acceptRisk");
+        var url = '';
+
+        var documentText = `&lt;article&gt;
+    &lt;header&gt;
+        
+
+
+
+            &lt;div class=&quot;icon-logo-container&quot;&gt;
+
+
+            &lt;/div&gt;
+
+
+
+
+
+
+
+    &lt;img class=&quot;sm-margin-bottom&quot; src=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif&quot; /&gt;&lt;span class=&quot;icon-Information&quot; sourcecode=&quot;LM&quot;&gt;&lt;/span&gt;
+
+        &lt;img id=&quot;scrollToImg&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/interface/result/ico_IMAGE_jointe.gif&#39; align=&quot;right&quot;&gt;
+        &amp;nbsp;
+
+&lt;div class=&quot;rdp__DocPublicationName&quot;&gt;
+    &lt;span class=&quot;DocPublicationName&quot;&gt;
+        Le Monde                    &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rdp__DocHeader&quot;&gt;
+    &lt;span class=&quot;DocHeader&quot;&gt;
+        mercredi 31 janvier 2001 420 mots, p. 3&lt;/span&gt;
+&lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+LE MONDE INTERACTIF LES NOUVELLES TECHNOLOGIES         &lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+
+
+&lt;div class=&quot;titreArticle&quot;&gt;
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;ENQUETE Quand les &lt;mark&gt; logiciels&lt;/mark&gt; &lt;mark&gt; libres&lt;/mark&gt; s&#39;institionnalisent.&lt;/p&gt;
+
+        &lt;p class=&quot;sm-margin-TopNews titreArticleVisu rdp__articletitle&quot;&gt;
+Un march&#233; en pleine mutation            
+        &lt;/p&gt;
+
+&lt;/div&gt;
+
+        &lt;p class=&#39;sm-margin-bottomNews&#39;&gt;BOUVIER PIERRE&lt;/p&gt;
+
+
+
+
+
+
+    &lt;/header&gt;
+
+    &lt;section&gt;
+        
+&lt;div class=&quot;DocText clearfix&quot;&gt;
+
+&lt;div class=&#39;docOcurrContainer&#39; style=&quot;&quot;&gt;
+    &lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;L&#39;ann&#233;e 1999 a &#233;t&#233; celle de la perc&#233;e et 2000 celle de la normalisation&lt;/em&gt;&lt;/p&gt;&lt;p&gt;La place du &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; &lt;a target=&quot;_blank&quot; href=&quot;20010131LM750657_01.html&quot;&gt;Tableau 1&lt;/a&gt; &lt;/p&gt; &lt;table.csni&gt;&lt;tdef AlignX=&quot;L,C,C,C,C,C&quot; MarginY=&quot;0.4,0.4,0.4,0.4,0.4,0.4&quot; CBorder=&quot;TDL,TD,TD,TD,TD,TDR&quot; Width=&quot;,10,10,10,10,10&quot;&gt;&lt;/tdef&gt;&lt;tr&gt;&lt;td&gt;&lt;cdef ColSpan=&quot;6&quot; AlignX=&quot;C&quot; Border=&quot;R&quot;&gt;&lt;/cdef&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt; LA PLACE DU &lt;mark&gt;LOGICIEL&lt;/mark&gt; &lt;mark&gt;LIBRE&lt;/mark&gt; &lt;/em&gt;&lt;/p&gt;&lt;tr&gt;&lt;td&gt;&lt;cdef ColSpan=&quot;6&quot; Border=&quot;R&quot;&gt;&lt;/cdef&gt;&lt;p&gt;Perspectives de la p&#233;n&#233;tration des ventes mondiales de licences &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;2000&lt;/em&gt;&lt;/p&gt;&lt;td&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;2001&lt;/em&gt;&lt;/p&gt;&lt;td&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;2002&lt;/em&gt;&lt;/p&gt;&lt;td&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;2003&lt;/em&gt;&lt;/p&gt;&lt;td&gt;&lt;p&gt;&lt;em style=&quot;font-weight:bold;&quot;&gt;2004&lt;/em&gt;&lt;/p&gt;&lt;tr&gt;&lt;td&gt;&lt;p&gt;Sur le PC &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;2 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;3 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;4 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;5 % &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt;&lt;/td&gt;&lt;/td&gt;&lt;/td&gt;&lt;/td&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;p&gt;Sur les serveurs &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;2 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;5 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;10 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;18 % &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;p&gt;Serveur Web &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;3 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;12 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;31 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;50 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;59 % &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;p&gt;Outils de d&#233;veloppement &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;0 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;3 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;5% &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;p&gt;Serveur de bases de donn&#233;es &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;0 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;2 % &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;p&gt;Logiciels de messagerie &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;0 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;0 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;0 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;td&gt;&lt;p&gt;1 % &lt;/p&gt; &lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;cdef ColSpan=&quot;6&quot; Border=&quot;R&quot; AlignX=&quot;R&quot;&gt;&lt;/cdef&gt;&lt;p&gt;Source: Forrester Research&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table.csni&gt;
+
+
+&lt;p&gt;En moins de deux ans, le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; est devenu un ph&#233;nom&#232;ne de soci&#233;t&#233;. L&#39;ann&#233;e 1999 a &#233;t&#233; celle de la perc&#233;e et 2000 celle de la normalisation. En 1999, Red Hat et VA Linux ont fait des entr&#233;es fracassantes au Nasdaq. Le premier a vu son titre augmenter de plus de 270 % lors de sa premi&#232;re journ&#233;e de cotation, le 11 ao&#251;t 1999, le second de 698 % le 9 d&#233;cembre 1999. Mais, en 2000, la bulle sp&#233;culative autour de Linux s&#39;est d&#233;gonfl&#233;e, les cours en Bourse de ces deux soci&#233;t&#233;s se sont effondr&#233;s. D&#232;s lors, Linuxcare et Turbo Linux, deux &#233;diteurs Linux, en tirent les le&#231;ons et repoussent sine die leur entr&#233;e en Bourse. &lt;/p&gt; &lt;p&gt; Ce qui n&#39;emp&#234;che pas les grands fournisseurs d&#39;infrastructures pour les entreprises de se rallier &#224; Linux. Dell a notamment pris une participation dans Red Hat, Sun a rachet&#233; Cobalt, un fournisseur de serveurs Linux, mais c&#39;est IBM qui a fait le plus gros effort. Le constructeur a mis Linux au coeur de toutes ses gammes, des grands syst&#232;mes aux serveurs &#224; base Intel, en passant par les logiciels. &lt;/p&gt; &lt;p&gt; Pour Steve Solazzo, vice-pr&#233;sident en charge des ventes et du marketing de Linux chez IBM, le march&#233; est en phase de maturation. &quot; On peut faire tourner quasiment toutes les applications de l&#39;entreprise avec Linux &quot;, explique-t-il. Le g&#233;ant mondial de l&#39;informatique s&#39;est engag&#233; &#224; investir 1 milliard de dollars pour soutenir Linux en 2001. &lt;/p&gt; &lt;p&gt; Ce ralliement signifie-t-il pour autant que les entreprises adoptent massivement Linux ? Rien n&#39;est moins s&#251;r. Quelques-unes font cependant figure de pionni&#232;res. Shell utilise un ensemble de 1024 serveurs sous Linux pour ses recherches p&#233;troli&#232;res, l&#39;op&#233;rateur scandinave Telia remplace ses serveurs par un mainframe sous Linux et la cha&#238;ne de distribution japonaise Lawson &#233;quipe 7 600 de ses magasins de 15 000 machines sous Linux. &quot; De l&#224; &#224; consid&#233;rer que Linux va d&#233;loger les autres syst&#232;mes d&#39;exploitation, il n&#39;y a qu&#39;un pas, explique Carl Howe, analyste chez Forrester Research. Mais le franchir serait encore pr&#233;matur&#233;. &quot; &lt;/p&gt; &lt;p&gt; Une &#233;tude sur le &lt;mark&gt;logiciel&lt;/mark&gt; &lt;mark&gt;libre&lt;/mark&gt; men&#233;e par les analystes am&#233;ricains de Forrester Research indique en tout cas qu&#39;un peu plus de la moiti&#233; (56%) des grands groupes mondiaux utilisent des &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt;. Et, en 2004, la plate-forme Linux devrait repr&#233;senter 20 % des ventes de logiciels. Comme le rappellent les analystes de Forrester Research, &quot; les logiciels ouverts int&#233;ressent la plupart des entreprises, surtout pour leurs infrastructures Internet, parce qu&#39;ils permettent de r&#233;duire les co&#251;ts, sont plus fiables en termes de s&#233;curit&#233;, mais aucune n&#39;est pr&#234;te &#224; faire reposer toute son activit&#233; sur ces seuls &lt;mark&gt;logiciels&lt;/mark&gt; &lt;mark&gt;libres&lt;/mark&gt; &quot;. Il n&#39;emp&#234;che que cette forte mutation, le d&#233;veloppement des services associ&#233;s et la p&#233;rennit&#233; qui en r&#233;sulte ont de quoi rassurer non seulement les entreprises, mais aussi les institutions qui pourraient se montrer encore h&#233;sitantes.&lt;/p&gt;
+
+    
+
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        
+
+
+
+    &lt;div&gt;
+        &lt;b&gt;Note(s) : &lt;/b&gt;&lt;p&gt;Doc/ avec un tableau&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tableLinks&quot;&gt;
+        &lt;b&gt;Tableaux joints  : &lt;/b&gt;
+            &lt;div&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20010131LM750657_01.html&quot;&gt;Tableau1&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        
+
+
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;a name=&quot;complement&quot;&gt;&lt;/a&gt;
+
+
+
+
+
+
+    &lt;div class=&quot;correction&quot;&gt;
+        
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-ComplementsBasPage&quot; id=&quot;divMoreLikeThis&quot;&gt;
+        &lt;div class=&quot;complementTitle&quot;&gt;&amp;#192; lire aussi : &lt;/div&gt;
+        &lt;div id=&quot;moreLikeThisLinks&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;div id=&quot;entityList&quot;&gt;&lt;/div&gt;
+
+
+    &lt;div class=&quot;Doc-LegalInfo&quot;&gt;
+            &lt;small&gt;&#169; 2001 SA Le Monde. Tous droits r&#233;serv&#233;s.&lt;/small&gt;
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;small&gt;Le pr&#233;sent document est prot&#233;g&#233; par les lois et conventions internationales sur le droit d&#39;auteur et son utilisation est r&#233;gie par ces lois et conventions.&lt;/small&gt;
+    &lt;/div&gt;
+&lt;div id=&quot;divPubliC&quot; class=&quot;rdp__certificat&quot;&gt;
+    &lt;div class=&quot;rdp__public-cert publiC-certificate&quot;&gt;
+        &lt;div&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;img width=&quot;60&quot; src=&#39;https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png&#39; class=&quot;logo&quot; border=&quot;0&quot;/&gt;&lt;br class=&quot;rdp__br&quot; /&gt;&lt;/div&gt;
+        &lt;div class=&quot;publiC_lblCertificatIssuedTo&quot;&gt;Certificat &#233;mis le &lt;b&gt;6 mars 2025&lt;/b&gt; &#224; &lt;b&gt;Universit&#233;-Laval &lt;/b&gt; &#224; des fins de visualisation personnelle et temporaire.&lt;/div&gt;&lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;publiC-lblNodoc&quot;&gt;news&amp;#183;20010131&amp;#183;LM&amp;#183;750657&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;`;
+        var testHTML = $.parseHTML(documentText);
+        documentText = testHTML[0].data;
+
+      // isUnderAge = 'true';  // this is for local testing remove before commit
+    //isGARUser = 'true';
+    if (isGARUser.toString().toLowerCase() == 'true') {
+            if (isUnderAge === 'true') {
+                documentText = disableExternalLink();
+                $("#docText").html(documentText);
+            } else {
+                $("#btnUnderstand").click(function () {
+                    sessionStorage.setItem('acceptRisk', true);
+                    window.open(url, '_blank');
+                    $("#documentAlert").dialog("close");
+                });
+
+                $("#btnCancel").click(function () {
+                    $("#documentAlert").dialog("close");
+                    documentText = disableExternalLink();
+                    $("#docText").html(documentText);
+                });
+
+                $("#closeIcon").click(function () {
+                    $("#documentAlert").hide();
+                    $("#documentAlert").dialog("close");
+                });
+
+                $(".docContainer a").click(function (event) {
+                    acceptRisk = sessionStorage.getItem("acceptRisk");
+                    event.preventDefault();
+                    url = event.target.href;
+                    if (url && url.lastIndexOf('./') === (url.length - 2)) {
+                        url = url.replace('./', "");
+                    }
+                    if (!url) {
+                        if (event.target.nodeName.toLowerCase() !== "a") {
+                            if (event.target.innerHTML.trim().indexOf("http") > -1) {
+                                url = event.target.innerHTML.trim();
+                            }
+                        }
+                    }
+					window.open(url, '_blank');
+                });
+            }
+
+        }
+
+    function disableExternalLink() {
+
+            var disableMail = 'True';
+            var allhrefs = documentText.toString().match(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g);
+            //disableMail = 'true';
+            if (allhrefs) {
+                allhrefs.forEach(item => {
+                    if (item.indexOf("mailto:") === -1) {
+                        let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                        let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                        documentText = documentText.replace(item, disabledLink);
+                    } else {
+                        if (disableMail.toString().toLowerCase() === 'true' || isUnderAge === 'true') {
+                            let text = item.match(/(?<=<a.*>).+(?=<\/a>)/g)[0];
+                            let disabledLink = `<a href="javascript:void(0)"> ${text} </a>`;
+                            documentText = documentText.replace(item, disabledLink);
+                        }
+                    }
+                });
+            }
+            return documentText;
+        }
+
+</script>
+
+</head><body><div class="docContainer">
+        <div id="docHeader">
+            <div class="divSourceTypeToolbar">
+
+<div id="sourceType">
+    <span class="ico ico_Tile_PrintMedia"></span>
+    <div class="titreSection" title="Presse">
+        Presse
+        <div style="font-weight:normal">Journaux &nbsp;</div>
+    </div>
+</div>
+                    <button class="customBtn whiteBtn shadowBox" id="complements">
+                        Complément à ce document<span class="orangeIcons downArrowIcon"></span>
+                    </button>
+
+   
+
+<div id="complements-tab">
+<div id="ucComplementsTop_pGlobal">
+<table cellspacing="0" cellpadding="0" border="0" align="left">
+ <tbody><tr>
+    <td width="50%" valign="top">
+        <table width="100%" cellspacing="0" cellpadding="3" border="0">
+            <tbody><tr>
+                <td>
+                    
+                    
+
+                    
+
+
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+    <td valign="top">
+        <div class="complementHelpInformation"></div>
+        <div class="complementEmbededHelp">
+            Cette section présente les entités nommées et la tonalité du document. <br><br> Ces données sont apposées automatiquement par le biais d’outils d’analyse sémantique, lexicale et statistique. Il faut de ce fait les considérer avec précaution. <br><br>
+Ces informations permettent toutefois une lecture rapide et synthétique du document en mettant de l’avant ses faits saillants facilitant ainsi la recherche et le repérage de documents .
+        </div>
+    </td>
+ </tr>
+</tbody></table>
+</div>
+</div>                            </div>
+            <div style="height: 44px;">
+
+<div class="toolbarDocument">
+    <button id="buttonClose" title="Fermer" class="buttonClose docButton"></button>
+        <button id="buttonSave" title="Sauvegarder" class="butons floppy_normal docButton"></button>
+            <button id="buttonPrint" title="Imprimer" class="butons print_normal docButton"></button>
+                    <button id="btLink" data-clipboard-text="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010131%c2%b7LM%c2%b7750657" title="Copier le lien" class="butons link_normal docButton"></button>
+        <div id="divDeepLink" class="toolbarPopup">
+            <div><b>Copier le lien</b></div>
+            <input id="urlDeepLink" type="text" value="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Link/ulaval1/news%c2%b720010131%c2%b7LM%c2%b7750657">
+        </div>
+                <button id="buttonFullscreen" title="Plein écran" class="butons fullscreen_normal docButton"></button>
+            <button id="buttonTranslate" title="Traduire" class="butons translate_normal docButton"></button>
+    </div>
+
+            </div>
+        </div>
+
+    <div id="docBody">
+        <span id="lblMsgLogin"></span>
+        <div id="docText" class="">
+
+            <article>
+    <header>
+        
+
+
+
+            <div class="icon-logo-container">
+
+
+            </div>
+
+
+
+
+
+
+
+    <img class="sm-margin-bottom" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=lm_small.gif"><span class="icon-Information" sourcecode="LM"></span>
+
+        <img id="scrollToImg" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/interface/result/ico_IMAGE_jointe.gif" align="right">
+        &nbsp;
+
+<div class="rdp__DocPublicationName">
+    <span class="DocPublicationName">
+        Le Monde                    </span>
+</div>
+<div class="rdp__DocHeader">
+    <span class="DocHeader">
+        mercredi 31 janvier 2001 420 mots, p. 3</span>
+</div>
+
+    <div>
+        <p>
+LE MONDE INTERACTIF LES NOUVELLES TECHNOLOGIES         </p>
+    </div>
+
+
+
+
+
+<div class="titreArticle">
+        <p class="sm-margin-bottomNews">ENQUETE Quand les <mark> logiciels</mark> <mark> libres</mark> s'institionnalisent.</p>
+
+        <p class="sm-margin-TopNews titreArticleVisu rdp__articletitle">
+Un marché en pleine mutation            
+        </p>
+
+</div>
+
+        <p class="sm-margin-bottomNews">BOUVIER PIERRE</p>
+
+
+
+
+
+
+    </header>
+
+    <section>
+        
+<div class="DocText clearfix">
+
+<div class="docOcurrContainer" style="">
+    <p><em style="font-weight:bold;">L'année 1999 a été celle de la percée et 2000 celle de la normalisation</em></p><p>La place du <mark>logiciel</mark> <mark>libre</mark> <a target="_blank" href="20010131LM750657_01.html">Tableau 1</a> </p> <table.csni><tdef alignx="L,C,C,C,C,C" marginy="0.4,0.4,0.4,0.4,0.4,0.4" cborder="TDL,TD,TD,TD,TD,TDR" width=",10,10,10,10,10"></tdef><cdef colspan="6" alignx="C" border="R"></cdef><p><em style="font-weight:bold;"> LA PLACE DU <mark>LOGICIEL</mark> <mark>LIBRE</mark> </em></p><cdef colspan="6" border="R"></cdef><p>Perspectives de la pénétration des ventes mondiales de licences </p>   <p><em style="font-weight:bold;">2000</em></p><p><em style="font-weight:bold;">2001</em></p><p><em style="font-weight:bold;">2002</em></p><p><em style="font-weight:bold;">2003</em></p><p><em style="font-weight:bold;">2004</em></p><p>Sur le PC </p>  <p>1 % </p>  <p>2 % </p>  <p>3 % </p>  <p>4 % </p>  <p>5 % </p>   <p>Sur les serveurs </p>  <p>1 % </p>  <p>2 % </p>  <p>5 % </p>  <p>10 % </p>  <p>18 % </p>   <p>Serveur Web </p>  <p>3 % </p>  <p>12 % </p>  <p>31 % </p>  <p>50 % </p>  <p>59 % </p>   <p>Outils de développement </p>  <p>0 % </p>  <p>1 % </p>  <p>1 % </p>  <p>3 % </p>  <p>5% </p>   <p>Serveur de bases de données </p>  <p>0 % </p>  <p>1 % </p>  <p>1 % </p>  <p>1 % </p>  <p>2 % </p>   <p>Logiciels de messagerie </p>  <p>0 % </p>  <p>0 % </p>  <p>0 % </p>  <p>1 % </p>  <p>1 % </p>   <cdef colspan="6" border="R" alignx="R"></cdef><p>Source: Forrester Research</p></table.csni>
+
+
+<p>En moins de deux ans, le <mark>logiciel</mark> <mark>libre</mark> est devenu un phénomène de société. L'année 1999 a été celle de la percée et 2000 celle de la normalisation. En 1999, Red Hat et VA Linux ont fait des entrées fracassantes au Nasdaq. Le premier a vu son titre augmenter de plus de 270 % lors de sa première journée de cotation, le 11 août 1999, le second de 698 % le 9 décembre 1999. Mais, en 2000, la bulle spéculative autour de Linux s'est dégonflée, les cours en Bourse de ces deux sociétés se sont effondrés. Dès lors, Linuxcare et Turbo Linux, deux éditeurs Linux, en tirent les leçons et repoussent sine die leur entrée en Bourse. </p> <p> Ce qui n'empêche pas les grands fournisseurs d'infrastructures pour les entreprises de se rallier à Linux. Dell a notamment pris une participation dans Red Hat, Sun a racheté Cobalt, un fournisseur de serveurs Linux, mais c'est IBM qui a fait le plus gros effort. Le constructeur a mis Linux au coeur de toutes ses gammes, des grands systèmes aux serveurs à base Intel, en passant par les logiciels. </p> <p> Pour Steve Solazzo, vice-président en charge des ventes et du marketing de Linux chez IBM, le marché est en phase de maturation. " On peut faire tourner quasiment toutes les applications de l'entreprise avec Linux ", explique-t-il. Le géant mondial de l'informatique s'est engagé à investir 1 milliard de dollars pour soutenir Linux en 2001. </p> <p> Ce ralliement signifie-t-il pour autant que les entreprises adoptent massivement Linux ? Rien n'est moins sûr. Quelques-unes font cependant figure de pionnières. Shell utilise un ensemble de 1024 serveurs sous Linux pour ses recherches pétrolières, l'opérateur scandinave Telia remplace ses serveurs par un mainframe sous Linux et la chaîne de distribution japonaise Lawson équipe 7 600 de ses magasins de 15 000 machines sous Linux. " De là à considérer que Linux va déloger les autres systèmes d'exploitation, il n'y a qu'un pas, explique Carl Howe, analyste chez Forrester Research. Mais le franchir serait encore prématuré. " </p> <p> Une étude sur le <mark>logiciel</mark> <mark>libre</mark> menée par les analystes américains de Forrester Research indique en tout cas qu'un peu plus de la moitié (56%) des grands groupes mondiaux utilisent des <mark>logiciels</mark> <mark>libres</mark>. Et, en 2004, la plate-forme Linux devrait représenter 20 % des ventes de logiciels. Comme le rappellent les analystes de Forrester Research, " les logiciels ouverts intéressent la plupart des entreprises, surtout pour leurs infrastructures Internet, parce qu'ils permettent de réduire les coûts, sont plus fiables en termes de sécurité, mais aucune n'est prête à faire reposer toute son activité sur ces seuls <mark>logiciels</mark> <mark>libres</mark> ". Il n'empêche que cette forte mutation, le développement des services associés et la pérennité qui en résulte ont de quoi rassurer non seulement les entreprises, mais aussi les institutions qui pourraient se montrer encore hésitantes.</p>
+
+    
+
+</div>
+</div>
+    </section>
+
+    <aside>
+        
+
+
+
+    <div>
+        <b>Note(s) : </b><p>Doc/ avec un tableau</p>
+    </div>
+
+    <div class="tableLinks">
+        <b>Tableaux joints  : </b>
+            <div><a target="_blank" href="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Docviewer.aspx?DocName=20010131LM750657_01.html">Tableau1</a></div>
+    </div>
+
+    </aside>
+
+    <footer>
+        
+
+
+<div>
+
+</div>
+<a name="complement"></a>
+
+
+
+
+
+
+    <div class="correction">
+        
+    </div>
+
+
+    <div class="Doc-ComplementsBasPage" id="divMoreLikeThis">
+        <div class="complementTitle">À lire aussi : </div>
+        <div id="moreLikeThisLinks"></div>
+    </div>
+
+<div id="entityList"></div>
+
+
+    <div class="Doc-LegalInfo">
+            <small>© 2001 SA Le Monde. Tous droits réservés.</small>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>Le présent document est protégé par les lois et conventions internationales sur le droit d'auteur et son utilisation est régie par ces lois et conventions.</small>
+    </div>
+<div id="divPubliC" class="rdp__certificat">
+    <div class="rdp__public-cert publiC-certificate">
+        <div><br class="rdp__br"><img width="60" src="https://nouveau-eureka-cc.acces.bibl.ulaval.ca/Images/Interface/PDF/logos/Public_vert.png" class="logo" border="0"><br class="rdp__br"></div>
+        <div class="publiC_lblCertificatIssuedTo">Certificat émis le <b>6 mars 2025</b> à <b>Université-Laval </b> à des fins de visualisation personnelle et temporaire.</div><br>
+    </div>
+    <div class="publiC-lblNodoc">news·20010131·LM·750657</div>
+</div>
+    </footer>
+</article>
+        </div>
+    </div>
+
+
+
+<script>
+    
+    var _docName = "news·20010131·LM·750657";
+    var _docIndex = 509;
+    var _viewEvent = 1;
+    var _sourceTypeId = "8001";
+    var _docSubType = "11";
+    var _hasComplements = true;
+    var _hasPDF = true;
+    var _pdfKiosque = true;
+    var lbl_closePopup =  'Fermer';
+    var _vidLink = null; // WebTV
+    var _mediatype = null;
+	var _hasMedia = false;
+	var selectLangDefautOption = 'S&#233;lectionner la langue';
+    var _consoleType;
+    var _tvEyesConsolePreviewLink = '';
+
+    var languageCode = 1 === 1 ? "fr" : "en";
+	var translateEnable = true;
+    var _hasStubs = false;
+
+    if (typeof _docRefId === 'undefined') {
+        var _docRefId = 0;
+    } else {
+        _docRefId = 0;
+    }
+    var _docType = 1;
+    
+        
+        var lbl_StubTitle = 'Profil';
+        var lbl_StubBirthDate = '';
+        var lbl_StubBirthPlace =  '';
+        var lbl_StubLearnMore = 'En savoir plus';
+        var lbl_StubDateFounded = '';
+		var txt_title_send = 'Envoi de références';
+		var btn_Cancel = 'Annuler';
+		var lbl_Send = 'Envoyer';
+        var _personDic = null;
+		var _orgDic = null;
+		var _docName = 'news·20010131·LM·750657';
+        
+                var _docPrintUrl = "/WebPages/Document/DocPrintSave.aspx?Event=2&TypeDoc=NEWS&DocName=news%C2%B720010131%C2%B7LM%C2%B7750657&DocRef_Id=0";
+            
+            var _docSaveUrl = "/WebPages/Document/DocSave.aspx?Event=1&TypeDoc=NEWS&DocName=news%C2%B720010131%C2%B7LM%C2%B7750657&DocRef_Id=0";
+            var _txtPopupSave = "Exporter";
+            
+            var _docTransUrl = "/WebPages/TranslateDoc.aspx?Event=1&DocName=news%C2%B720010131%C2%B7LM%C2%B7750657&DocRef_Id=0";
+            var _urlFullscreen = "/Document/View?viewEvent=1&docRefId=0&docName=news%C2%B720010131%C2%B7LM%C2%B7750657&docIndex=509&FullScreen=1";
+                
+	var _keyDoc = 'news·20010131·LM·750657';
+</script>
+</div></body></html>
