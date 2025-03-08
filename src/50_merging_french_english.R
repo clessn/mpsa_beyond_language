@@ -18,7 +18,6 @@ df_translated <- readRDS("data/tmp/news_df_translated.rds") %>%
   rename(en_text_body = translated_text) %>%
   mutate(en_text_body = as.character(en_text_body))
 
-# merge
 df_tone_index <- df %>%
   left_join(df_frlsd, by = "doc_id") %>%
   left_join(df_lsd, by = "doc_id") %>%
