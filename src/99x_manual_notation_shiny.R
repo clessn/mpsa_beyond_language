@@ -1,15 +1,8 @@
 library(shiny)
 library(shinyjs)
-library(dplyr)
 
 # Load your data
-df_lsd <- readRDS("path/to/your/data.rds")  # Uncomment and replace with your data path
-# For demo purposes, if you don't have the data loaded yet
-# df_lsd <- data.frame(
-#   doc_id = 1:10,
-#   sentences = paste("Example sentence", 1:10),
-#   stringsAsFactors = FALSE
-# )
+df_lsd <- readRDS("data/tmp/data_manual_ranking.rds")
 
 ui <- fluidPage(
   useShinyjs(),  # Initialize shinyjs
@@ -29,35 +22,115 @@ ui <- fluidPage(
         border-radius: 5px;
         margin-bottom: 20px;
       }
-      .slider-container {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
       .navigation-buttons {
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
       }
+      .progress-text {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .keyboard-help {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        font-family: monospace;
+      }
+      .current-value {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+      }
     ")),
-    # Add keyboard event handling
     tags$script(HTML("
-      $(document).on('keydown', function(e) {
-        // 'h' key - decrease slider value
-        if(e.key === 'h') {
-          var value = $('#sentiment_score').val();
-          var newValue = Math.max(-1, parseFloat(value) - 0.05);
-          $('#sentiment_score').val(newValue).trigger('change');
-        }
-        // 'l' key - increase slider value
-        else if(e.key === 'l') {
-          var value = $('#sentiment_score').val();
-          var newValue = Math.min(1, parseFloat(value) + 0.05);
-          $('#sentiment_score').val(newValue).trigger('change');
-        }
-        // Enter key - save and next
-        else if(e.key === 'Enter') {
-          $('#save_button').click();
-        }
+      $(document).ready(function() {
+        // Global variables to track slider state
+        window.currentValue = 0;
+        
+        // Function to update the slider value
+        window.updateSliderValue = function(newValue) {
+          // Ensure value is within range and round to 2 decimal places
+          newValue = Math.max(-1, Math.min(1, newValue));
+          newValue = Math.round(newValue * 100) / 100;
+          
+          // Update our tracking variable
+          window.currentValue = newValue;
+          
+          // Update the displayed value
+          $('#current-value-display').text(newValue.toFixed(2));
+          
+          // Send the value to Shiny
+          Shiny.setInputValue('sentiment_score', newValue);
+        };
+        
+        // Set up key event handler - directly on document to ensure it works
+        document.addEventListener('keydown', function(e) {
+          console.log('Key pressed:', e.key); // Debug logging
+          
+          // Get current value
+          var value = window.currentValue;
+          
+          if (e.key === 'h') {
+            e.preventDefault();
+            window.updateSliderValue(value - 0.1);
+            return false;
+          } 
+          else if (e.key === 'l') {
+            e.preventDefault();
+            window.updateSliderValue(value + 0.1);
+            return false;
+          }
+          else if (e.key === 'j') {
+            e.preventDefault();
+            window.updateSliderValue(value - 0.25);
+            return false;
+          }
+          else if (e.key === 'k') {
+            e.preventDefault();
+            window.updateSliderValue(value + 0.25);
+            return false;
+          }
+          else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.updateSliderValue(value - 0.1);
+            return false;
+          } 
+          else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            window.updateSliderValue(value + 0.1);
+            return false;
+          }
+          else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            window.updateSliderValue(value - 0.25);
+            return false;
+          }
+          else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            window.updateSliderValue(value + 0.25);
+            return false;
+          }
+          // Enter or 'n' for next
+          else if (e.key === 'Enter' || e.key === 'n') {
+            e.preventDefault();
+            $('#save_button').click();
+            return false;
+          }
+          // 'p' for previous
+          else if (e.key === 'p') {
+            e.preventDefault();
+            $('#prev_button').click();
+            return false;
+          }
+        }, true);
+        
+        // Initialize with zero
+        window.updateSliderValue(0);
       });
     "))
   ),
@@ -65,10 +138,7 @@ ui <- fluidPage(
   
   # Progress information
   div(class = "controls-container",
-    fluidRow(
-      column(4, textOutput("progress_text")),
-      column(8, progressBar("progress", value = 0, display_pct = TRUE))
-    )
+    div(class = "progress-text", textOutput("progress_text"))
   ),
   
   # Current sentence display
@@ -76,16 +146,31 @@ ui <- fluidPage(
     htmlOutput("current_sentence")
   ),
   
-  # Annotation controls
+  # Sentiment score display with custom controls
   div(class = "controls-container",
-    div(class = "slider-container",
-      sliderInput("sentiment_score", "Sentiment Score",
-                min = -1, max = 1, value = 0, step = 0.05,
-                width = "100%")
-    ),
+    h3("Sentiment Score"),
+    div(class = "current-value", id = "current-value-display", "0.00"),
+    
+    # Hidden input that receives values from JavaScript
+    numericInput("sentiment_score", label = NULL, value = 0, min = -1, max = 1, step = 0.05),
+    tags$style(HTML("#sentiment_score { display: none; }")),
+    
     div(class = "navigation-buttons",
-      actionButton("prev_button", "< Previous"),
-      actionButton("save_button", "Save & Next", class = "btn-primary")
+      actionButton("prev_button", "< Previous (p)", icon = icon("arrow-left")),
+      actionButton("save_button", "Save & Next (Enter/n)", icon = icon("arrow-right"), class = "btn-primary")
+    )
+  ),
+  
+  # Keyboard shortcuts help
+  div(class = "keyboard-help",
+    h4("Keyboard Shortcuts:"),
+    tags$ul(
+      tags$li(tags$b("h / ←:"), "Decrease score by 0.1"),
+      tags$li(tags$b("l / →:"), "Increase score by 0.1"),
+      tags$li(tags$b("j / ↓:"), "Decrease score by 0.25"),
+      tags$li(tags$b("k / ↑:"), "Increase score by 0.25"),
+      tags$li(tags$b("Enter / n:"), "Save and go to next sentence"),
+      tags$li(tags$b("p:"), "Go to previous sentence")
     )
   ),
   
@@ -107,15 +192,6 @@ server <- function(input, output, session) {
     )
   )
   
-  # Initialize with data once loaded
-  observe({
-    # This will be called once when the app starts
-    # Use the actual doc_ids from your dataset
-    if(exists("df_lsd")) {
-      rv$doc_ids <- df_lsd$doc_id
-    }
-  })
-  
   # Display current sentence
   output$current_sentence <- renderUI({
     if(!exists("df_lsd") || rv$current_index > nrow(df_lsd)) {
@@ -131,18 +207,8 @@ server <- function(input, output, session) {
   output$progress_text <- renderText({
     if(!exists("df_lsd")) return("No data loaded")
     
-    paste0("Sentence ", rv$current_index, " of ", nrow(df_lsd))
-  })
-  
-  # Update progress bar
-  observe({
-    if(exists("df_lsd")) {
-      updateProgressBar(
-        session = session,
-        id = "progress",
-        value = 100 * rv$current_index / nrow(df_lsd)
-      )
-    }
+    paste0("Sentence ", rv$current_index, " of ", nrow(df_lsd), 
+           " (", round(100 * rv$current_index / nrow(df_lsd), 1), "%)")
   })
   
   # Handle save and next
@@ -163,8 +229,9 @@ server <- function(input, output, session) {
     # Move to next sentence
     if(rv$current_index < nrow(df_lsd)) {
       rv$current_index <- rv$current_index + 1
-      # Reset slider to 0 for next sentence
-      updateSliderInput(session, "sentiment_score", value = 0)
+      
+      # Reset score to 0
+      runjs("window.updateSliderValue(0);")
     } else {
       showNotification("All sentences have been annotated!", type = "message")
     }
@@ -181,13 +248,15 @@ server <- function(input, output, session) {
       if(nrow(prev_annotation) > 0) {
         # Use the most recent annotation if multiple exist
         latest_annotation <- prev_annotation[nrow(prev_annotation), ]
-        updateSliderInput(session, "sentiment_score", value = latest_annotation$manual_score)
+        
+        # Set the value using our JavaScript function
+        runjs(sprintf("window.updateSliderValue(%f);", latest_annotation$manual_score))
         
         # Remove the annotation from the dataframe
         rv$annotations <- rv$annotations[!(rv$annotations$doc_id == df_lsd$doc_id[rv$current_index]), ]
       } else {
         # Reset to 0 if no previous annotation
-        updateSliderInput(session, "sentiment_score", value = 0)
+        runjs("window.updateSliderValue(0);")
       }
     }
   })
