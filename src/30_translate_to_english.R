@@ -178,10 +178,3 @@ translated_df <- process_all_text_files()
 
 # Save the modified dataframe
 saveRDS(news_df, "data/tmp/news_df_translated_modified.rds")
-
-df <- readRDS("data/tmp/news_df_translated.rds")
-df <- readRDS("data/tmp/news_df.rds")
-# Replace newlines with a placeholder
-df$translated_text <- gsub("\n", "", df$translated_text)
-
-
