@@ -4,62 +4,74 @@ library(tidyr)
 library(tidytext)
 library(purrr)
 library(dplyr)
+library(polyglotr)
 
 source(file = "src/91_LSDprep_dec2017.R")
 
-df <- readRDS("data/tmp/news_df_tone_index.rds")
+df <- readRDS("data/tmp/news_df_tone_index.rds") 
 
 set.seed(42069)
 
 sample_size <- 200
 
+search_pattern <- paste0(
+  # Free/Libre Software terms
+  "logiciel[s]?\\s+libres?|",
+  "software\\s+libres?|",
+  "free\\s+software|",
+  "code\\s+source\\s+(libre|ouvert)|",
+  
+  # Open Source terms
+  "open[\\s-]source|",
+  "logiciel[s]?\\s+open[\\s-]source|",
+  
+  # Organizations and people
+  "free\\s+software\\s+foundation|",
+  "fsf|gnu|",
+  "richard\\s+stallman|rms|",
+  "linus\\s+torvalds|",
+  
+  # Related concepts
+  "\\bfoss\\b|\\bfloss\\b|",
+  "source\\s+ouverte?|",
+  "licence[s]?\\s+(gpl|mit|apache|bsd)|",
+  "copyleft|",
+  "linux|gnu\\/linux|ubuntu|debian|",
+  "\\bgit\\b|github|gitlab|",
+  
+  # French variations with optional spaces and hyphens
+  "libres?\\s+de\\s+droit[s]?|",
+  "communauté[s]?\\s+open[\\s-]source"
+)
+
 sample_ids <- sample(df$doc_id, sample_size) 
 
-sample_df <- df %>%
-  filter(doc_id %in% sample_ids)
-
-df_fr <- sample_df %>%
+df <- df %>%
   select(doc_id, text_body, date, source_media)
 
-df_en <- sample_df %>%
-  select(doc_id, en_text_body, date, source_media)
-
-df_sample_fr <- df_fr %>%
-  # Split text into sentences
+df_sample <- df %>%
   mutate(sentences = str_split(text_body, "(?<=\\.|\\?|\\!)\\s+")) %>%
-  # Unnest to get one row per sentence
   unnest(sentences) %>%
-  # Group by document ID to number sentences within each document
   group_by(doc_id) %>%
   mutate(sentence_number = row_number()) %>%
-  # Create sentence_id that combines doc_id and sentence position
   mutate(sentence_id = paste(doc_id, sentence_number, sep = "_")) %>%
   ungroup() %>%
-  # filter for sentence_id that ends with _1
-  filter(str_detect(sentence_id, "_1$"))
+  filter(str_detect(sentences, search_pattern))
 
-df_sample_en <- df_en %>%
-  # Split text into sentences
-  mutate(sentences = str_split(en_text_body, "(?<=\\.|\\?|\\!)\\s+")) %>%
-  # Unnest to get one row per sentence
-  unnest(sentences) %>%
-  # Group by document ID to number sentences within each document
-  group_by(doc_id) %>%
-  mutate(sentence_number = row_number()) %>%
-  # Create sentence_id that combines doc_id and sentence position
-  mutate(sentence_id = paste(doc_id, sentence_number, sep = "_")) %>%
-  ungroup() %>%
-  # filter for sentence_id that ends with _1
-  filter(str_detect(sentence_id, "_1$"))
+sample_sentences <- sample(df_sample$sentence_id, sample_size) 
 
-# Merge the two dataframes
-df_merged <- df_sample_fr %>%
-  left_join(
-    df_sample_en %>% rename(en_sentences = sentences),
-    by = c("doc_id", "sentence_id", "sentence_number","date", "source_media")
-  )
+df_sentences <- df_sample %>%
+  filter(sentence_id %in% sample_sentences) %>%
+  mutate(sentences_en = NA)
 
-df_clean_sentences <- df_merged %>%
+for (i in 1:nrow(df_sentences)) {
+  cat(i, "/", nrow(df_sentences), "\n")
+  print(paste0("Original: ", df_sentences$sentences[i]))
+  df_sentences$sentences_en[i] <- google_translate(df_sentences$sentences[i], "en", "fr")
+  print(paste0("Translated: ", df_sentences$sentences_en[i]))
+}
+
+df_clean_sentences <- df_sentences %>%
   mutate(
     sentences_clean = sentences %>%
       str_to_lower() %>%
@@ -68,7 +80,7 @@ df_clean_sentences <- df_merged %>%
       str_remove_all("\\.") %>%
       str_remove_all(","),    
 
-    sentences_clean_en = en_sentences %>%
+    sentences_clean_en = sentences_en %>%
       pbapply::pbsapply(LSDprep_contr) %>%
       pbapply::pbsapply(LSDprep_dict_punct) %>%
       pbapply::pbsapply(remove_punctuation_from_acronyms) %>%
@@ -81,9 +93,9 @@ df_clean_sentences <- df_merged %>%
 
 # Create named corpus objects
 corpus_fr <- corpus(df_clean_sentences$sentences_clean, 
-                   docnames = df_clean_sentences$doc_id)
+                   docnames = df_clean_sentences$sentence_id)
 corpus_en <- corpus(df_clean_sentences$sentences_clean_en, 
-                    docnames = df_clean_sentences$doc_id)
+                    docnames = df_clean_sentences$sentence_id)
 
 # Now tokenize from the corpus objects to maintain the original doc_ids
 tokens_fr_with_stopwords <- tokens(corpus_fr)
@@ -106,16 +118,15 @@ matrice_sentiment_en <- quanteda::dfm(
 )
 
 # Conversion de la matrice de fréquence des termes en dataframe
-resultats_sentiment <- quanteda::convert(matrice_sentiment, to = "data.frame", docid_field = "doc_id") %>%
-  mutate(doc_id = as.numeric(doc_id))
-resultats_sentiment_en <- quanteda::convert(matrice_sentiment_en, to = "data.frame", docid_field = "doc_id") %>%
-  rename(en_negative = negative, en_positive = positive, en_neg_positive = neg_positive, en_neg_negative = neg_negative) %>%
-  mutate(doc_id = as.numeric(doc_id))
+resultats_sentiment <- quanteda::convert(matrice_sentiment, to = "data.frame", docid_field = "sentence_id")
+
+resultats_sentiment_en <- quanteda::convert(matrice_sentiment_en, to = "data.frame", docid_field = "sentence_id") %>%
+  rename(en_negative = negative, en_positive = positive, en_neg_positive = neg_positive, en_neg_negative = neg_negative)
 
 # Merge all three dataframes
 df_combined <- df_clean_sentences %>%
-  left_join(resultats_sentiment, by = "doc_id") %>%
-  left_join(resultats_sentiment_en, by = "doc_id")
+  left_join(resultats_sentiment, by = "sentence_id") %>%
+  left_join(resultats_sentiment_en, by = "sentence_id")
 
 # SECTION 5: CALCUL DES MÉTRIQUES DE SENTIMENT
 ###############################################################################
@@ -130,6 +141,6 @@ df_lsd <- df_combined %>%
     tone_index = proportion_positive - proportion_negative,  
     tone_index_en = proportion_positive_en - proportion_negative_en
   ) %>%
-  select(-c(sentence_number, sentence_id, text_body, en_text_body, sentences_clean, sentences_clean_en, positive, negative, en_positive, en_negative, en_neg_positive, en_neg_negative, total_words, total_words_en, proportion_positive, proportion_negative, proportion_positive_en, proportion_negative_en))
+  select(-c(sentence_number, sentence_id, text_body, sentences_clean, sentences_clean_en, positive, negative, en_positive, en_negative, en_neg_positive, en_neg_negative, total_words, total_words_en, proportion_positive, proportion_negative, proportion_positive_en, proportion_negative_en))
 
 saveRDS(df_lsd, "data/tmp/data_manual_ranking.rds" )

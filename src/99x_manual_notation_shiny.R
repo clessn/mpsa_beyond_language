@@ -46,6 +46,25 @@ ui <- fluidPage(
         text-align: center;
         margin-top: 10px;
       }
+      .sentiment-reminder {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f0f8ff;
+        border-left: 5px solid #4682b4;
+        border-radius: 5px;
+      }
+      .sentiment-reminder h4 {
+        color: #4682b4;
+        margin-top: 0;
+      }
+      .sentiment-scale-item {
+        display: flex;
+        margin-bottom: 8px;
+      }
+      .sentiment-scale-value {
+        font-weight: bold;
+        width: 50px;
+      }
     ")),
     tags$script(HTML("
       $(document).ready(function() {
@@ -154,6 +173,32 @@ ui <- fluidPage(
     # Hidden input that receives values from JavaScript
     numericInput("sentiment_score", label = NULL, value = 0, min = -1, max = 1, step = 0.05),
     tags$style(HTML("#sentiment_score { display: none; }")),
+    
+    # Add sentiment scale reminder
+    div(class = "sentiment-reminder",
+      h4("Sentiment Scale Reference"),
+      div(class = "sentiment-scale-item",
+        span(class = "sentiment-scale-value", "-1.0:"),
+        span("Strong negative sentiment - highly critical, hostile, or pessimistic content")
+      ),
+      div(class = "sentiment-scale-item",
+        span(class = "sentiment-scale-value", "-0.5:"),
+        span("Moderate negative sentiment - somewhat negative, disapproving, or concerned content")
+      ),
+      div(class = "sentiment-scale-item",
+        span(class = "sentiment-scale-value", "0.0:"),
+        span("Neutral sentiment - factual, balanced, or neither positive nor negative content")
+      ),
+      div(class = "sentiment-scale-item",
+        span(class = "sentiment-scale-value", "0.5:"),
+        span("Moderate positive sentiment - somewhat positive, approving, or optimistic content")
+      ),
+      div(class = "sentiment-scale-item",
+        span(class = "sentiment-scale-value", "1.0:"),
+        span("Strong positive sentiment - highly supportive, enthusiastic, or optimistic content")
+      ),
+      p("Note: Values between these points represent intermediate sentiment levels.")
+    ),
     
     div(class = "navigation-buttons",
       actionButton("prev_button", "< Previous (p)", icon = icon("arrow-left")),
