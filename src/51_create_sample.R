@@ -14,36 +14,6 @@ set.seed(42069)
 
 sample_size <- 200
 
-search_pattern <- paste0(
-  # Free/Libre Software terms
-  "logiciel[s]?\\s+libres?|",
-  "software\\s+libres?|",
-  "free\\s+software|",
-  "code\\s+source\\s+(libre|ouvert)|",
-  
-  # Open Source terms
-  "open[\\s-]source|",
-  "logiciel[s]?\\s+open[\\s-]source|",
-  
-  # Organizations and people
-  "free\\s+software\\s+foundation|",
-  "fsf|gnu|",
-  "richard\\s+stallman|rms|",
-  "linus\\s+torvalds|",
-  
-  # Related concepts
-  "\\bfoss\\b|\\bfloss\\b|",
-  "source\\s+ouverte?|",
-  "licence[s]?\\s+(gpl|mit|apache|bsd)|",
-  "copyleft|",
-  "linux|gnu\\/linux|ubuntu|debian|",
-  "\\bgit\\b|github|gitlab|",
-  
-  # French variations with optional spaces and hyphens
-  "libres?\\s+de\\s+droit[s]?|",
-  "communauté[s]?\\s+open[\\s-]source"
-)
-
 sample_ids <- sample(df$doc_id, sample_size) 
 
 df <- df %>%
@@ -55,8 +25,7 @@ df_sample <- df %>%
   group_by(doc_id) %>%
   mutate(sentence_number = row_number()) %>%
   mutate(sentence_id = paste(doc_id, sentence_number, sep = "_")) %>%
-  ungroup() %>%
-  filter(str_detect(sentences, search_pattern))
+  ungroup()
 
 sample_sentences <- sample(df_sample$sentence_id, sample_size) 
 
@@ -67,7 +36,19 @@ df_sentences <- df_sample %>%
 for (i in 1:nrow(df_sentences)) {
   cat(i, "/", nrow(df_sentences), "\n")
   print(paste0("Original: ", df_sentences$sentences[i]))
-  df_sentences$sentences_en[i] <- google_translate(df_sentences$sentences[i], "en", "fr")
+  
+  # Improved URL pattern to catch URLs with spaces
+  url_pattern <- "https?:\\s*//\\s*[^\\s]+|www\\.[^\\s]+"
+  
+  # Also catch URLs inside parentheses
+  parentheses_url_pattern <- "\\([^)]*(?:https?:|www\\.)[^)]*\\)"
+  
+  # Replace URLs with [WEBSITE URL]
+  text <- paste0(df_sentences$sentences[i])
+  text <- str_replace_all(text, parentheses_url_pattern, "[WEBSITE URL]")
+  text <- str_replace_all(text, url_pattern, "[WEBSITE URL]")
+  
+  df_sentences$sentences_en[i] <- google_translate(text, "en", "fr")
   print(paste0("Translated: ", df_sentences$sentences_en[i]))
 }
 
