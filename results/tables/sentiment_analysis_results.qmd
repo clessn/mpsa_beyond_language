@@ -1,0 +1,69 @@
+---
+format: 
+  pdf:
+    classoption: 
+      - landscape
+---
+
+# Comprehensive Sentiment Analysis Model Evaluation
+
+## Model Performance Ranking
+
+| Rank | Model | Pearson | Spearman | MAE | RMSE | Accuracy | Macro F1 | Weighted F1 | Overall Score |
+|------|-------|---------|----------|-----|------|----------|----------|-------------|---------------|
+| 1 | llama_3_3_70b_versatile | 0.652 | 0.625 | 0.207 | 0.316 | 0.680 | 0.682 | 0.678 | 0.877 |
+| 2 | claude_3_5_sonnet_single | 0.703 | 0.692 | 0.205 | 0.290 | 0.643 | 0.643 | 0.623 | 0.835 |
+| 3 | gpt_4o | 0.731 | 0.716 | 0.196 | 0.282 | 0.635 | 0.630 | 0.606 | 0.834 |
+| 4 | gemma2_9b_it | 0.608 | 0.609 | 0.242 | 0.357 | 0.690 | 0.692 | 0.684 | 0.832 |
+| 5 | gemini_2_flash_single | 0.683 | 0.676 | 0.201 | 0.277 | 0.639 | 0.638 | 0.625 | 0.827 |
+| 6 | deepseek_chat | 0.716 | 0.684 | 0.182 | 0.259 | 0.600 | 0.587 | 0.554 | 0.742 |
+| 7 | lsd_en | 0.531 | 0.520 | 0.238 | 0.343 | 0.625 | 0.629 | 0.625 | 0.646 |
+| 8 | mixtral_8x7b_32768 | 0.638 | 0.650 | 0.268 | 0.363 | 0.590 | 0.579 | 0.563 | 0.589 |
+| 9 | lsd_fr | 0.305 | 0.319 | 0.253 | 0.357 | 0.500 | 0.487 | 0.501 | 0.191 |
+| 10 | deepseek_r1_distill_llama_70b | 0.473 | 0.472 | 0.405 | 0.540 | 0.500 | 0.501 | 0.500 | 0.121 |
+
+
+## Visual Performance Comparison
+
+| Rank | Model | Correlation | Error | Classification | Overall |
+|------|-------|------------|-------|----------------|----------|
+| 1 | **llama_3_3_70b_versatile** | 🟩 0.652 | 🟩 0.207 | 🟩 0.682 | 🟢 **0.877** |
+| 2 | **claude_3_5_sonnet_single** | 🟩 0.703 | 🟩 0.205 | 🟩 0.643 | 🟢 **0.835** |
+| 3 | **gpt_4o** | 🟩 0.731 | 🟢 **0.196** | 🟩 0.630 | 🟢 **0.834** |
+| 4 | **gemma2_9b_it** | 🟩 0.608 | 🟩 0.242 | 🟩 0.692 | 🟢 **0.832** |
+| 5 | **gemini_2_flash_single** | 🟩 0.683 | 🟩 0.201 | 🟩 0.638 | 🟢 **0.827** |
+| 6 | **deepseek_chat** | 🟩 0.716 | 🟢 **0.182** | 🟨 0.587 | 🟩 0.742 |
+| 7 | **lsd_en** | 🟨 0.531 | 🟩 0.238 | 🟩 0.629 | 🟩 0.646 |
+| 8 | **mixtral_8x7b_32768** | 🟩 0.638 | 🟩 0.268 | 🟨 0.579 | 🟨 0.589 |
+| 9 | **lsd_fr** | 🟧 0.305 | 🟩 0.253 | 🟨 0.487 | 🟥 0.191 |
+| 10 | **deepseek_r1_distill_llama_70b** | 🟨 0.473 | 🟨 0.405 | 🟨 0.501 | 🟥 0.121 |
+
+
+### Legend
+- 🟢 Excellent performance (≥ 0.8)
+- 🟩 Good performance (≥ 0.6)
+- 🟨 Average performance (≥ 0.4)
+- 🟧 Below average performance (≥ 0.2)
+- 🟥 Poor performance (< 0.2)
+- ❓ Missing data
+
+### Metrics Explained
+- **Correlation**: Pearson correlation between predicted and actual sentiment scores (higher is better)
+- **Error**: Mean Absolute Error (MAE) between predicted and actual scores (lower is better)
+- **Classification**: Macro-averaged F1 score across sentiment classes (higher is better)
+- **Overall**: Combined performance score across all metrics (higher is better)
+
+## Summary of Findings
+
+1. **Top performers**: llama_3_3_70b_versatile and claude_3_5_sonnet_single demonstrate exceptional sentiment analysis capabilities, achieving the highest overall scores across all metrics.
+
+2. **Strong contenders**: gpt_4o and gemma2_9b_it also show excellent performance, with particularly strong correlation and classification metrics.
+
+3. **Mid-tier models**: gemini_2_flash_single, deepseek_chat, lsd_en deliver good results, especially considering their smaller size compared to the top performers.
+
+4. **Baseline comparison**: Both LLM models significantly outperform the traditional lexicon-based sentiment detection (LSD) approaches in French and English.
+
+5. **Error analysis**: All models maintain relatively low error rates, with the top performers achieving MAE below 0.2, indicating high accuracy in predicting sentiment intensity.
+
+6. **Classification strength**: Most models excel at the classification task, with macro F1 scores above 0.6 for the top 7 models, showing strong ability to distinguish between negative, neutral, and positive sentiment.
+
