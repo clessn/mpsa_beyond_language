@@ -39,3 +39,24 @@ Divison des dates
 - How is the existing literature deficient?
 - What are you doing that's better?
 - What did you find?
+
+
+models:
+
+ollama:
+    - llama3.2:3b
+    - mistral
+    - qwen2.5:3b
+    - deepseek-r1:7b
+    - gemma3:4b
+groq
+    - gemma2-9b-it
+    - llama-3.3-70b-versatile
+    - mixtral-8x7b-32768
+    - deepseek-r1-distill-llama-70b
+conventional
+    - claude-3-5-sonnet-20241022
+    - gemini-2.0-flash
+    - deepseek-chat
+    - gpt-4o
+

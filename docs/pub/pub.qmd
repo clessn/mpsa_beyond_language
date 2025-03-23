@@ -64,6 +64,31 @@ Can open source general purpose foundational LLMs accurately evaluate sentiment 
 
 # Results
 
+<<<<<<< HEAD
+# Bibliography styles
+
+Here are two sample references:  @Feynman1963118 @Dirac1953888.
+
+With this template using elsevier class, natbib will be used. Three bibliographic style ﬁles (*.bst) are provided and their use controled by `cite-style` option: 
+
+- `citestyle: number` (default)  will use `elsarticle-num.bst` - can be used for the numbered scheme
+- `citestyle: numbername` will use `elsarticle-num-names.bst` - can be used for numbered with new options of natbib.sty
+- `citestyle: authoryear` will use `elsarticle-harv.bst` — can be used for author year scheme
+
+This `citestyle` will insert the right `.bst` and set the correct `classoption` for `elsarticle` document class.
+
+Using `natbiboptions` variable in YAML header, you can set more options for `natbib` itself . Example 
+
+```yaml
+natbiboptions: longnamesfirst,angle,semicolon
+```
+
+## Using CSL 
+
+If `cite-method` is set to `citeproc` in `elsevier_article()`, then pandoc is used for citations instead of `natbib`. In this case, the `csl` option is used to format the references. By default, this template will provide an appropriate style, but alternative `csl` files are available from <https://www.zotero.org/styles?q=elsevier>. These can be downloaded
+and stored locally, or the url can be used as in the example header.
+=======
 # Discussion
+>>>>>>> 601e9c7cd74a2cadc59d4dcce2c87d5c1784b83a
 
 # References {-}
