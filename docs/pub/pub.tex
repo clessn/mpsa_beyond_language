@@ -194,27 +194,197 @@ tempus elit.
     keyword2
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, boxrule=0pt, frame hidden, breakable, interior hidden]}{\end{tcolorbox}}\fi
+    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt, sharp corners, enhanced]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Prompting in English yields improved performance across many
-cross‐lingual tasks. For example, Jiang et al.~(2019) report increased
-accuracy in knowledge extraction when using English prompts versus
-diversified manual prompts. Lin et al.~(2021) observe that, for natural
-language understanding and machine translation across 30 languages,
-English prompts outperform multilingual configurations and even surpass
-baselines such as GPT‐3. Similarly, Muennighoff et al.~(2023), Nie et
-al.~(2024), Tu et al.~(2022), and Zhang et al.~(2023) report notable
-gains measured by accuracy, F1 scores, and BLEU when models are prompted
-in English.
+The rise of large language models (LLMs) has transformed natural
+language processing across domains and applications. While these models
+demonstrate impressive capabilities in English, their cross-linguistic
+effectiveness seems to remain a critical area of investigation. This
+paper addresses a fundamental question in this domain: Can open source
+general purpose foundational LLMs accurately evaluate sentiment in
+non-English texts?
+
+Recent research has uncovered a compelling phenomenon: prompting in
+English often improves performance in cross-linguistic tasks, even when
+the target language is non-English. Jiang et al.~(2019) documented
+increased accuracy in knowledge extraction when using English prompts
+compared to diversified manual prompts in other languages. This finding
+was corroborated by Lin et al.~(2021), who observed that English prompts
+outperform multilingual configurations across natural language
+understanding and machine translation tasks in 30 languages, even
+surpassing established baselines like GPT-3.
+
+This pattern extends beyond isolated studies. Muennighoff et al.~(2023),
+Nie et al.~(2024), have all reported significant performance
+gains---measured by accuracy, F1 scores, and BLEU metrics---when models
+are guided with English instructions, regardless of the target language.
+These findings suggest a fundamental characteristic of current LLM
+architectures that merits deeper investigation.
+
+The primary purpose of this research is to determine whether untrained
+foundational models are adequate for analyzing textual sentiment in
+non-English contexts. While specialized models like BERT and its
+variants have been fine-tuned specifically for sentiment analysis tasks
+and perform effectively, they often require technical expertise to
+implement and adapt. By contrast, using non-fine-tuned foundational
+models could provide a more accessible solution for non-technical social
+science researchers who may lack the computational resources or
+programming knowledge necessary for model customization. This
+accessibility consideration is particularly relevant as AI tools become
+increasingly integrated into research methodologies across disciplines.
+
+Sentiment analysis offers an interesting test case for examining this
+phenomenon, as it requires nuanced language understanding beyond simple
+translation. While proprietary models have received substantial
+attention in multilingual contexts, open source LLMs present both unique
+challenges and opportunities. They offer greater transparency,
+adaptability, and accessibility for global researchers and
+practitioners, yet their cross-linguistic capabilities remain less
+comprehensively documented. This study seeks to evaluate the performance
+of leading open source foundational LLMs in sentiment analysis with
+french texts. We examine how prompt language affects performance,
+identify cross-linguistic patterns, and analyze model behavior across
+french and english. Our findings seeks to contribute to a deeper
+understanding of LLMs capabilities and limitations in multilingual
+contexts and offer practical guidelines for optimizing their deployment
+in diverse language settings.
+
+\hypertarget{literature-review}{%
+\section{Literature Review}\label{literature-review}}
+
+\hypertarget{specialized-models-for-multilingual-sentiment-analysis}{%
+\subsection{Specialized Models for Multilingual Sentiment
+Analysis}\label{specialized-models-for-multilingual-sentiment-analysis}}
+
+Previous research consistently demonstrates the effectiveness of
+specialized models for sentiment analysis in non-English languages.
+These models, based on various transformer architectures, have achieved
+impressive performance across diverse linguistic contexts.
+Transformer-based architectures have shown particularly strong results,
+with accuracy rates often exceeding 85\% across various Indo-European
+and Semitic languages (Bhowmick \& Jana, 2021; Michailidis, 2024).
+Researchers have reported up to 95\% accuracy for Bengali sentiment
+analysis (Bhowmick \& Jana, 2021), while others achieved 96\% accuracy
+for Greek sentiment analysis (Michailidis, 2024). For Arabic, Hameed et
+al.~(2023) documented 96.442\% accuracy using specialized models,
+demonstrating the effectiveness of language-specific fine-tuning.
+
+These language-specific adaptations consistently outperform general
+multilingual approaches. ElJundi et al.~(2019) and Ahmadian et
+al.~(2024) developed specialized models for Arabic and Indonesian
+respectively, both reporting significant improvements over generic
+multilingual models. This pattern holds across diverse language
+families, with specialized models for South Asian, East Asian, and
+Semitic languages demonstrating strong performance within their target
+domains (Gaikwad et al., 2023; Saeed et al., 2024). Even for
+lower-resource languages, fine-tuned models have shown promise. Tela et
+al.~(2020) demonstrated competitive performance for Tigrinya, while
+Eusha et al.~(2024) reported encouraging results for Tamil and Tulu
+using specialized transformer-based architectures. Salahudeen et
+al.~(2023) documented F1-scores between 62\% and 83\% for various
+African languages, noting that performance improved with increased
+training data availability.
+
+The literature also shows progress in handling code-mixed and
+transliterated text, particularly relevant for many South Asian language
+contexts. Nazir et al.~(2025) reported significant improvements in
+analyzing code-mixed Roman Urdu and Roman Punjabi, while Ipa et
+al.~(2024) introduced specialized models for Bangla-English code-mixed
+content. For multilingual applications, cross-lingual models demonstrate
+strong transfer capabilities. Kumar and Albuquerque (2021) successfully
+employed advanced techniques for zero-shot transfer from English to
+Hindi, while Pan et al.~(2023) highlighted the effectiveness of
+cross-lingual transfer learning for financial sentiment analysis in
+Spanish.
+
+\hypertarget{the-resource-performance-tradeoff}{%
+\subsection{The Resource-Performance
+Tradeoff}\label{the-resource-performance-tradeoff}}
+
+Despite their impressive results, specialized sentiment analysis models
+present implementation challenges. As Přibáň et al.~(2024) discuss,
+there exists a clear tradeoff between performance and efficiency, with
+advanced models requiring computational resources. Language-specific
+models typically contain millions of parameters (Hameed et al., 2023),
+while larger multilingual models can expand to hundreds of millions or
+even billions of parameters (Barbieri et al., 2021; Vileikytė et al.,
+2024).
+
+The implementation of these specialized models requires not only
+significant computational infrastructure but also technical expertise in
+model selection, fine-tuning, and deployment. Kotelnikova et al.~(2023)
+demonstrated meaningful improvements after fine-tuning on
+domain-specific Russian data, but such fine-tuning processes demand
+substantial ML engineering knowledge. For many social science
+researchers and practitioners without technical backgrounds, these
+requirements present barriers to adoption.
+
+Additionally, the literature emphasizes the importance of high-quality,
+domain-specific training data. Salahudeen et al.~(2023) noted better
+performance for Nigerian languages with larger available datasets, while
+Krasitskii et al.~(2024) highlighted the challenges of limited data
+availability for linguistically diverse languages like Finnish,
+Hungarian, and Bulgarian. These data requirements further complicate
+implementation for researchers working with low-resource languages or
+specialized domains.
+
+\hypertarget{the-potential-of-general-purpose-foundational-llms}{%
+\subsection{The Potential of General-Purpose Foundational
+LLMs}\label{the-potential-of-general-purpose-foundational-llms}}
+
+While specialized models dominate the literature on multilingual
+sentiment analysis, relatively little attention has been given to the
+capabilities of general-purpose foundational LLMs without task-specific
+fine-tuning. This represents a gap in the research, particularly given
+the findings of Jiang et al.~(2019), Lin et al.~(2021), and others
+regarding the unexpected effectiveness of English-prompted models on
+cross-linguistic tasks.
+
+Recent studies by Venerito and Iannone (2024) and Buscemi and Proverbio
+(2024) have begun to explore the potential of general-purpose LLMs like
+Mistral-7B and LLaMA2 for sentiment analysis in Italian and across
+multiple languages, respectively. However, these studies remain
+preliminary, and comprehensive evaluations of open-source foundational
+LLMs across diverse language remain limited. This gap is particularly
+notable given the practical advantages general-purpose LLMs might offer.
+As highlighted by Plagwitz et al.~(2024) in their work on German
+clinical texts, leveraging foundational models without extensive
+fine-tuning could reduce implementation barriers. Similarly, Rusnachenko
+et al.~(2024) observed promising results using general instruction-tuned
+models for sentiment analysis in Russian and English, suggesting the
+potential of generalist models for cross-linguistic applications.
+
+The limited existing research on general-purpose LLMs for multilingual
+sentiment analysis reveals several patterns worth investigating.
+Vileikytė et al.~(2024) found that language-specific prompting
+strategies significantly impact performance for Lithuanian sentiment
+analysis, while Hämäläinen et al.~(2022) documented varying
+effectiveness across Germanic and Romance languages depending on prompt
+design and model architecture.
 
 \hypertarget{research-question}{%
 \section{Research Question}\label{research-question}}
 
-Can open source general purpose foundational LLMs accurately evaluate
-sentiment in non-English texts?
+Despite the extensive literature on specialized sentiment analysis
+models, a critical question remains largely unexplored: Can open-source
+general-purpose foundational LLMs accurately evaluate sentiment in
+non-English texts without task-specific fine-tuning? This question has
+significant implications for research accessibility, as it could
+potentially democratize sophisticated NLP capabilities for non-technical
+researchers across disciplines.
+
+The phenomenon documented by Muennighoff et al.~(2023), Nie et
+al.~(2024), and others---that English prompting often improves
+cross-linguistic performance---suggests that foundational LLMs may
+possess unexpectedly robust multilingual capabilities even without
+specialized training. This aligns with observations from Rusnachenko et
+al.~(2024) and Venerito and Iannone (2024), who found promising results
+with general-purpose models in Russian and Italian contexts,
+respectively. Our study addresses this research gap by evaluating
+leading open-source foundational LLMs with french texts.
 
 \hypertarget{data-methods}{%
 \section{Data \& Methods}\label{data-methods}}
