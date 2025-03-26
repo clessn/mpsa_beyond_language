@@ -154,15 +154,53 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
       
       # Try multiple times to get a valid sentiment value
       while (!valid_value_obtained && attempt <= max_retries) {
-        # Make API call with retry and backoff for connection issues
-        response <- retry_with_backoff({
-          model_client$chat(prompt)
+        # Wrap in tryCatch to provide more detailed error handling and logging
+        tryCatch({
+          # Reset chat history to ensure each prompt is treated as new
+          model_client$set_turns(list())
+          
+          # Make API call with retry and backoff for connection issues
+          response <- retry_with_backoff({
+            model_client$chat(prompt)
+          })
+        }, error = function(e) {
+          cat(sprintf("ERROR with %s on attempt %d: %s\n", model_identifier, attempt, e$message))
+          # Add a longer timeout after errors to let rate limits recover
+          Sys.sleep(10)
+          return(NULL)
         })
         
-        # Apply appropriate rate limiting based on model type
+        # Skip rest of loop if response is NULL (error occurred)
+        if (is.null(response)) {
+          attempt <- attempt + 1
+          next
+        }
+        
+        # Apply appropriate rate limiting based on model type and token usage
         if (grepl("groq", model_name_prefix, ignore.case = TRUE)) {
-          # 2 second delay for Groq models (higher rate limits but still need throttling)
-          Sys.sleep(2)
+          # Check token usage for Groq models
+          last_usage <- tail(model_client$tokens(), 1)
+          token_count <- ifelse(is.null(last_usage) || nrow(last_usage) == 0, 0, 
+                               sum(last_usage$prompt_tokens, last_usage$completion_tokens))
+          
+          # Adaptive sleep based on specific model token limits
+          if (grepl("gemma29b", model_name_prefix, ignore.case = TRUE)) {
+            # Gemma 2 9B: 15000 tokens per minute (250 per second)
+            sleep_time <- ifelse(token_count > 500, max(2, token_count / 250), 2)
+          } else if (grepl("llama321b", model_name_prefix, ignore.case = TRUE)) {
+            # Llama 3.2 1B: 7000 tokens per minute (117 per second)
+            sleep_time <- ifelse(token_count > 300, max(2, token_count / 117), 2)
+          } else {
+            # Mistral and DeepSeek: 6000 tokens per minute (100 per second)
+            sleep_time <- ifelse(token_count > 300, max(3, token_count / 100), 2)
+          }
+          
+          # Log and apply the sleep
+          if (token_count > 300) {
+            cat(sprintf("Model %s: High token usage (%d tokens), sleeping for %.1f seconds\n", 
+                        model_name_prefix, token_count, sleep_time))
+          }
+          Sys.sleep(sleep_time)
         } else if (grepl("llama323b|qwq32b|deepseekr1|llama3370b", model_name_prefix, ignore.case = TRUE)) {
           # 1.5 second delay for Fireworks.ai hosted models
           Sys.sleep(1.5)
@@ -386,6 +424,12 @@ save_progress_checkpoint <- function() {
   saveRDS(df, checkpoint_file)
   cat("Progress checkpoint saved to:", checkpoint_file, "\n")
   
+  # Also save a consolidated checkpoint file that always has the same name
+  # This makes it easier to reference in other scripts
+  consolidated_file <- "data/tmp/sentiment_analysis_latest_checkpoint.rds"
+  saveRDS(df, consolidated_file)
+  cat("Also saved to consolidated checkpoint:", consolidated_file, "\n")
+  
   # Cleanup old checkpoint files - keep only 10 most recent files
   checkpoint_files <- list.files("data/tmp", pattern = "sentiment_analysis_progress_.*\\.rds", full.names = TRUE)
   
@@ -405,9 +449,9 @@ save_progress_checkpoint <- function() {
   }
 }
 
-# Set up checkpoint timer to save every 5 minutes
+# Set up checkpoint timer to save every 10 minutes (more time between saves to reduce IO overhead)
 last_checkpoint_time <- Sys.time()
-checkpoint_interval <- 300  # 5 minutes in seconds
+checkpoint_interval <- 600  # 10 minutes in seconds
 
 #------------------------------------------------------------------------------
 # 4.1 FIREWORKS.AI MODELS
