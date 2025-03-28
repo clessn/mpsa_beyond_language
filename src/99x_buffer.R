@@ -16,6 +16,16 @@ groq <- ellmer::chat_groq(
   model = "llama-3.3-70b-versatile",
 )
 
+deepseekchat <- ellmer::chat_deepseek(
+  system_prompt = system_prompt,
+  model = "deepseek-chat",
+  api_args = list(max_tokens = 20),  # Set maximum output tokens to 20
+  echo = "none"
+)
+
+response <- deepseekchat$chat("How is the capital of France?")
+print(response)
+
 response <- groq$chat("What is the capital of France?")
 response <- groq$chat("Which country I asked you about the capital?")
 print(groq$tokens())
@@ -32,9 +42,16 @@ tokens <- groq$tokens()
 
 print(response)
 
-The script 40_prompt.R will handle prompting models for a long period of time.
-│   estimate the time it takes to make all of the prompt about 8 hours. I want it to run as  │
+gemini20 <- ellmer::chat_gemini(
+  system_prompt = "You are a helpful assistant",
+  model = "gemini-2.0-flash",
+  echo = "none"
+)
 
-│   smoothly as possible during this time. All the groq prompts have a 2 sec system sleep    │
-│   to account for a max 30 prompts per minute cap. However, groq also has a limit of 6000   │
-│   tokens per minutes which is low.
+response <- gemini20$chat("What is the capital of France?")
+print(response)
+response <- gemini20$chat("Which country I asked you about the capital?")
+print(response)
+gemini20$set_turns(list())
+response <- gemini20$chat("Which country I asked you about the capital?")
+print(response)

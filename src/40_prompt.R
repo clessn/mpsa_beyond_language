@@ -294,6 +294,7 @@ llama323b <- ellmer::chat_openai(
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
   model = "accounts/fireworks/models/llama-v3p2-3b-instruct",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -303,6 +304,7 @@ qwq32b <- ellmer::chat_openai(
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
   model = "accounts/fireworks/models/qwq-32b",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -312,6 +314,7 @@ deepseekr1 <- ellmer::chat_openai(
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
   model = "accounts/fireworks/models/deepseek-r1-basic",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -321,6 +324,7 @@ llama3370b <- ellmer::chat_openai(
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
   model = "accounts/fireworks/models/llama-v3p3-70b-instruct",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -332,6 +336,7 @@ llama3370b <- ellmer::chat_openai(
 gemma29b <- ellmer::chat_groq(
   system_prompt = system_prompt,
   model = "gemma2-9b-it",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -339,6 +344,7 @@ gemma29b <- ellmer::chat_groq(
 llama321b <- ellmer::chat_groq(
   system_prompt = system_prompt,
   model = "llama-3.2-1b-preview",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -346,6 +352,7 @@ llama321b <- ellmer::chat_groq(
 mistral <- ellmer::chat_groq(
   system_prompt = system_prompt,
   model = "mistral-saba-24b",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -353,6 +360,7 @@ mistral <- ellmer::chat_groq(
 deepseekr1distillllama <- ellmer::chat_groq(
   system_prompt = system_prompt,
   model = "deepseek-r1-distill-llama-70b",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -364,6 +372,7 @@ deepseekr1distillllama <- ellmer::chat_groq(
 claude35 <- ellmer::chat_claude(
   system_prompt = system_prompt,
   model = "claude-3-5-haiku-20241022",
+  max_tokens = 100,  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -378,6 +387,7 @@ gemini20 <- ellmer::chat_gemini(
 deepseekchat <- ellmer::chat_deepseek(
   system_prompt = system_prompt,
   model = "deepseek-chat",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
@@ -385,11 +395,11 @@ deepseekchat <- ellmer::chat_deepseek(
 gpt4o <- ellmer::chat_openai(
   system_prompt = system_prompt,
   model = "gpt-4o",
+  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
 cat("All clients initialized. Starting sentiment analysis...\n")
-
 #==============================================================================
 # 4. RUN SENTIMENT ANALYSIS FOR ALL MODELS
 #==============================================================================
@@ -545,19 +555,19 @@ df <- run_sentiment_analysis(mistral, "mistral", "en", "sentences")      # Engli
 df <- run_sentiment_analysis(mistral, "mistral", "fr", "sentences")      # French prompt, French text
 df <- run_sentiment_analysis(mistral, "mistral", "en", "sentences_en")   # English prompt, English text
 
-# DeepSeek R1 Distill Llama
-cat("Processing DeepSeek R1 Distill Llama model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("deepseekr1distillllama_en_fr")
-initialize_model_columns("deepseekr1distillllama_fr_fr")
-initialize_model_columns("deepseekr1distillllama_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "en", "sentences")     # English prompt, French text
-df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "fr", "sentences")     # French prompt, French text
-df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "en", "sentences_en")  # English prompt, English text
-
-#------------------------------------------------------------------------------
+# # DeepSeek R1 Distill Llama
+# cat("Processing DeepSeek R1 Distill Llama model...\n")
+# # Initialize columns for all combinations
+# initialize_model_columns("deepseekr1distillllama_en_fr")
+# initialize_model_columns("deepseekr1distillllama_fr_fr")
+# initialize_model_columns("deepseekr1distillllama_en_en")
+#
+# # Run sentiment analysis - results stored directly in df
+# df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "en", "sentences")     # English prompt, French text
+# df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "fr", "sentences")     # French prompt, French text
+# df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "en", "sentences_en")  # English prompt, English text
+#
+# #------------------------------------------------------------------------------
 # 4.3 OTHER CLOUD API MODELS
 #------------------------------------------------------------------------------
 
