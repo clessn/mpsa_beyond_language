@@ -32,16 +32,17 @@ openai_models <- c(
 
 open_models <- c(
   meta_models,
-  deepseek_models,
   alibaba_models,
   mistral_models,
-  "gemma2-9b-it"
+  "gemma2-9b-it",
+  "accounts/fireworks/models/deepseek-r1-basic"
 )
 
 closed_models <- c(
   anthropic_models,
   openai_models,
-  "gemini-2.0-flash"
+  "gemini-2.0-flash",
+  "deepseek-chat"
 )
 
 # Simple mapping from model prefix to actual model name
