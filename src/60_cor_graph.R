@@ -1,6 +1,8 @@
 library(dplyr)
 library(ggplot2)
+
 source("src/94_models_map.R")
+
 df_raw <- readRDS("data/clean/cor_results.rds")
 
 # Function to get model display name from the model_mapping
@@ -176,15 +178,13 @@ plot_correlation <- ggplot() +
     y = model_label_ordered,
     color = model_type
   ), size = 3.5) +
-  # Add error bars with matching colors
+  # Add error bars with matching colors - FIXED: Removed redundant x = correlation
   geom_errorbarh(data = df, aes(
-    x = correlation,
     y = model_label_ordered,
     xmin = correlation - 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
     xmax = correlation + 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
     color = model_type
   ), height = 0.2) +
-  # REMOVED: The geom_text() block for model group labels
   
   # Theme with white background
   theme_minimal() +
@@ -237,5 +237,6 @@ plot_correlation <- ggplot() +
         legend.text = element_text(size = 9))
 
 print(plot_correlation)
+
 # Save the plot
 ggsave("results/graphs/model_correlation.png", plot_correlation, width = 14, height = 12, dpi = 300)

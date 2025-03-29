@@ -1,6 +1,5 @@
 # Load necessary libraries
 library(tidyverse)
-library(ggplot2)
 
 # Read your data
 df <- readRDS("data/clean/df.rds")
@@ -25,14 +24,16 @@ results <- data.frame(
   model = character(),
   correlation = numeric(),
   p_value = numeric(),
+  mae = numeric(),
+  rmse = numeric(),
   n_obs = numeric(),
   data_pct = numeric(),
   stringsAsFactors = FALSE
 )
 
-# Calculate correlation for each model
+# Calculate correlation and MAE for each model
 for (model in model_columns) {
-  # Create a temporary dataframe for this correlation, removing NA values
+  # Create a temporary dataframe for this model, removing NA values
   temp_df <- df[, c("ground_truth", model)]
   temp_df <- temp_df[complete.cases(temp_df), ]
   
@@ -43,21 +44,30 @@ for (model in model_columns) {
   if (nrow(temp_df) >= 5 && 
       is.numeric(temp_df$ground_truth) && 
       is.numeric(temp_df[[model]])) {
+    
     # Run correlation test with error handling
     tryCatch({
       cor_test <- cor.test(temp_df$ground_truth, temp_df[[model]], method = "pearson")
+      
+      # Calculate Mean Absolute Error (MAE)
+      mae_value <- mean(abs(temp_df$ground_truth - temp_df[[model]]))
+      
+      # Calculate Root Mean Squared Error (RMSE)
+      rmse_value <- sqrt(mean((temp_df$ground_truth - temp_df[[model]])^2))
       
       # Add row to results
       results <- rbind(results, data.frame(
         model = model,
         correlation = cor_test$estimate,
         p_value = cor_test$p.value,
+        mae = mae_value,
+        rmse = rmse_value,
         n_obs = nrow(temp_df),
         data_pct = data_pct,
         stringsAsFactors = FALSE
       ))
     }, error = function(e) {
-      cat("Error in correlation for model", model, ":", e$message, "\n")
+      cat("Error in analysis for model", model, ":", e$message, "\n")
     })
   }
 }
@@ -93,6 +103,5 @@ plot_results <- results %>%
 plot_results <- plot_results %>%
   arrange(desc(abs_correlation))
 
-
+# Save the complete results
 saveRDS(plot_results, "data/clean/cor_results.rds")
-
