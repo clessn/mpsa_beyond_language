@@ -1,4 +1,4 @@
-# F1 Score Results by Sentiment Category
+# F1 Score Results by Sentiment Category (7-category)
 
 | Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | weighted_f1 |
 |-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|------------|

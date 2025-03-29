@@ -55,3 +55,10 @@ print(response)
 gemini20$set_turns(list())
 response <- gemini20$chat("Which country I asked you about the capital?")
 print(response)
+
+
+t1 <- readRDS("data/tmp/news_df_tone_index.rds")
+
+t2 <- readRDS("data/clean/news_df_sentiment_gemini.rds")
+
+

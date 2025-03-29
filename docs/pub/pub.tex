@@ -51,6 +51,46 @@
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -77,10 +117,6 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\makeatletter
-\makeatother
-\makeatletter
-\makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -117,18 +153,10 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \journal{Journal Name}
 \ifLuaTeX
@@ -136,12 +164,13 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{elsarticle-harv}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={Beyond Language Barriers},
-  pdfauthor={Laurence-Olivier M. Foisy; Camille Pelletier},
+  pdfauthor={Laurence-Olivier M. Foisy; Camille Pelletier; Étienne Proulx; Sarah-Jane Vincent; Hubert Cadieux; Yannick Dufresne},
   pdfkeywords={keyword1, keyword2},
   colorlinks=true,
   linkcolor={blue},
@@ -164,6 +193,22 @@ Open-Source LLMs in Analyzing Sentiment in Non-English Textual Data} }
 %
 }
  \ead{camille.pelletier.12@ulaval.ca} 
+\author[1]{Étienne Proulx%
+%
+}
+ \ead{etienne.proulx.2@ulaval.ca} 
+\author[1]{Sarah-Jane Vincent%
+%
+}
+ \ead{sarahj.vincent.1@gmail.com} 
+\author[1]{Hubert Cadieux%
+%
+}
+ \ead{hubert.cadieux.1@ulaval.ca} 
+\author[1]{Yannick Dufresne%
+%
+}
+ \ead{yannick.dufresne@pol.ulaval.ca} 
 
 \affiliation[1]{organization={Université Laval, Département de science
 politique},addressline={2325, rue de
@@ -171,6 +216,10 @@ l'Université},city={Québec},postcode={G1V 0A6},postcodesep={}}
 
 \cortext[cor1]{Corresponding author}
 \fntext[fn1]{This is the first author footnote.}
+
+
+
+
 
         
 \begin{abstract}
@@ -194,10 +243,8 @@ tempus elit.
     keyword2
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt, sharp corners, enhanced]}{\end{tcolorbox}}\fi
-
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+    
+\section{Introduction}\label{introduction}
 
 The rise of large language models (LLMs) has transformed natural
 language processing across domains and applications. While these models
@@ -252,12 +299,10 @@ understanding of LLMs capabilities and limitations in multilingual
 contexts and offer practical guidelines for optimizing their deployment
 in diverse language settings.
 
-\hypertarget{literature-review}{%
-\section{Literature Review}\label{literature-review}}
+\section{Literature Review}\label{literature-review}
 
-\hypertarget{specialized-models-for-multilingual-sentiment-analysis}{%
 \subsection{Specialized Models for Multilingual Sentiment
-Analysis}\label{specialized-models-for-multilingual-sentiment-analysis}}
+Analysis}\label{specialized-models-for-multilingual-sentiment-analysis}
 
 Previous research consistently demonstrates the effectiveness of
 specialized models for sentiment analysis in non-English languages.
@@ -279,7 +324,7 @@ respectively, both reporting significant improvements over generic
 multilingual models. This pattern holds across diverse language
 families, with specialized models for South Asian, East Asian, and
 Semitic languages demonstrating strong performance within their target
-domains (Gaikwad et al., 2023; Saeed et al., 2024). Even for
+domains (Gaikwad et al.,2023; Saeed et al., 2024). Even for
 lower-resource languages, fine-tuned models have shown promise. Tela et
 al.~(2020) demonstrated competitive performance for Tigrinya, while
 Eusha et al.~(2024) reported encouraging results for Tamil and Tulu
@@ -300,9 +345,8 @@ Hindi, while Pan et al.~(2023) highlighted the effectiveness of
 cross-lingual transfer learning for financial sentiment analysis in
 Spanish.
 
-\hypertarget{the-resource-performance-tradeoff}{%
 \subsection{The Resource-Performance
-Tradeoff}\label{the-resource-performance-tradeoff}}
+Tradeoff}\label{the-resource-performance-tradeoff}
 
 Despite their impressive results, specialized sentiment analysis models
 present implementation challenges. As Přibáň et al.~(2024) discuss,
@@ -331,9 +375,8 @@ Hungarian, and Bulgarian. These data requirements further complicate
 implementation for researchers working with low-resource languages or
 specialized domains.
 
-\hypertarget{the-potential-of-general-purpose-foundational-llms}{%
 \subsection{The Potential of General-Purpose Foundational
-LLMs}\label{the-potential-of-general-purpose-foundational-llms}}
+LLMs}\label{the-potential-of-general-purpose-foundational-llms}
 
 While specialized models dominate the literature on multilingual
 sentiment analysis, relatively little attention has been given to the
@@ -365,16 +408,28 @@ analysis, while Hämäläinen et al.~(2022) documented varying
 effectiveness across Germanic and Romance languages depending on prompt
 design and model architecture.
 
-\hypertarget{research-question}{%
-\section{Research Question}\label{research-question}}
+\section{Research Question}\label{research-question}
 
 Despite the extensive literature on specialized sentiment analysis
-models, a critical question remains largely unexplored: Can open-source
-general-purpose foundational LLMs accurately evaluate sentiment in
-non-English texts without task-specific fine-tuning? This question has
-significant implications for research accessibility, as it could
-potentially democratize sophisticated NLP capabilities for non-technical
-researchers across disciplines.
+models, critical questions remains largely unexplored:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Can general-purpose LLMs accurately evaluate sentiment in non-English
+  texts without task-specific fine-tuning?
+\item
+  Can open-source general-purpose foundational LLMs accurately evaluate
+  sentiment in non-English texts without task-specific fine-tuning?
+\item
+  How does the language of the prompt affect performance across
+  different languages?
+\end{enumerate}
+
+These questions have significant implications for research
+accessibility, as it could potentially democratize sophisticated NLP
+capabilities for non-technical researchers across disciplines.
 
 The phenomenon documented by Muennighoff et al.~(2023), Nie et
 al.~(2024), and others---that English prompting often improves
@@ -384,16 +439,503 @@ specialized training. This aligns with observations from Rusnachenko et
 al.~(2024) and Venerito and Iannone (2024), who found promising results
 with general-purpose models in Russian and Italian contexts,
 respectively. Our study addresses this research gap by evaluating
-leading open-source foundational LLMs with french texts.
+leading open and closed weights foundational LLMs with french texts and
+their translation.
 
-\hypertarget{data-methods}{%
-\section{Data \& Methods}\label{data-methods}}
+\section{Data \& Methods}\label{data-methods}
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+This study assesses the efficacy of general-purpose large language
+models in non-English sentiment analysis through a comprehensive
+evaluation of open and closed-source models on French text. We evaluate
+whether foundational models demonstrate sufficient cross-linguistic
+capabilities for sentiment analysis without task-specific fine-tuning,
+comparing their performance to traditional dictionary-based methods and
+examining the impact of prompt language on analytical outcomes.
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\subsection{Data Collection and
+Preparation}\label{data-collection-and-preparation}
+
+Our corpus consists of 2683 French-language news articles from 13 media
+sources collected from the Eureka database spanning 1991-2025. It's an
+exhaustive collection of every articles published about open-source in
+what Eureka calls its ``Major daily newspapers (FR)'' category. The
+articles were selected based on the following search querry:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{TEXT= ("logiciel libre" | "logiciels libres" | "open source" | }
+\NormalTok{       "open{-}source" | "logiciel open source" | }
+\NormalTok{       "logiciels open source" | "code source ouvert" | }
+\NormalTok{       "software libre" | "free software" | "code source libre" | }
+\NormalTok{       "Free Software Foundation" | "Richard Stallman")}
+\end{Highlighting}
+\end{Shaded}
+
+The earliest date of january 1st, 1991 was selected to ensure a
+comprehensive representation of the evolution of open-source discourse
+over time. 1991 is the year of the first release of the Linux kernel, a
+pivotal moment in the history of open-source software. January 1st, 2025
+was selected as the end date to ensure that the articles were all
+published before the start of the study. This covers a period of 34
+years, allowing us to analyze the evolution of open-source discourse
+over time. However, the first article collected was published on June
+23rd, 1995 as no articles fitting the querry were published before that
+date. Table~\ref{tbl-source-summary} shows the distribution of articles
+by source media, with a total of 2683 articles collected from 13
+different sources.
+
+\begin{longtable}[]{@{}llll@{}}
+\caption{Summary of news articles by source
+media}\label{tbl-source-summary}\tabularnewline
+\toprule\noalign{}
+source\_media & article\_count & earliest\_date & latest\_date \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+source\_media & article\_count & earliest\_date & latest\_date \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Libération & 769 & 1995-06-23 & 2024-11-04 \\
+Monde, Le & 666 & 2001-01-09 & 2024-12-26 \\
+Figaro, Le & 402 & 1998-10-21 & 2024-12-04 \\
+Devoir, Le & 318 & 1998-07-20 & 2024-10-26 \\
+Soleil, Le (Québec, QC) & 179 & 1998-11-08 & 2023-11-18 \\
+Presse, La & 152 & 1998-03-26 & 2017-10-14 \\
+Journal de Montréal, Le & 65 & 2006-12-20 & 2023-04-24 \\
+Journal de Québec, Le & 45 & 2007-03-24 & 2024-10-19 \\
+Tribune, La (Sherbrooke, QC) & 43 & 2000-03-29 & 2022-12-03 \\
+Droit, Le (Ottawa, ON) & 17 & 1998-11-10 & 2014-07-17 \\
+Nouvelliste, Le (Trois-Rivières, QC) & 13 & 2000-01-13 & 2022-03-05 \\
+Quotidien, Le (Saguenay, QC) & 10 & 2008-11-01 & 2019-04-10 \\
+Voix de l'Est, La (Granby, QC) & 4 & 2010-09-17 & 2015-02-14 \\
+\end{longtable}
+
+We developed a Python-based web scraper using Selenium WebDriver to
+extract article content more conveniently from the database. Eureka
+provides a way to download articles in PDF format by batches of 50
+articles. Downloading 2683 articles this way is very time consuming and
+the PDF format is not very convenient for text analysis. The scraper
+allowed the easy download of all articles in HTML format, which is more
+convenient for text analysis. All HTML documents underwent preprocessing
+with custom R functions to extract publication metadata (date, source,
+title) and full text content. This resulted in a temporally diverse
+exhaustive corpus suitable for sentiment analysis across multiple
+methods. The extraction process preserved document structure while
+standardizing format, enabling consistent comparison across analytical
+approaches.
+
+\subsection{Translation}\label{translation}
+
+To facilitate cross-linguistic analysis, we translated the original
+French text into English using Google Translate. To manage the
+translation of our large corpus (2683 articles), we developed a
+systematic approach using R. We batched the French articles into Word
+documents (.docx) using the \texttt{officer} package, with each batch
+containing approximately 900 articles. Each article was marked with a
+unique delimiter (\#\#\#ARTICLE\_START\#\#\#) and its original document
+ID to maintain traceability. These Word documents were then translated
+using Google Translate's document translation service. After
+translation, we processed the translated documents to extract the
+English text while preserving the document IDs. The extracted
+translations were then merged back into our original dataframe, creating
+parallel French-English text columns for each article
+
+This approach allowed us to efficiently translate large volumes of text
+for free while maintaining document integrity and preserving the
+connection between original French content and its English translation.
+The process was automated using R scripts, ensuring consistent handling
+across all documents and enabling systematic comparison of sentiment
+analysis results across languages.
+
+\subsection{Manual Annotation}\label{manual-annotation}
+
+To establish a reliable benchmark for evaluating model performance, we
+created a validation dataset consisting of 200 randomly selected
+sentences from our corpus.
+
+We first selected 200 random sentences from across all articles in the
+corpus. Each sentence was then translated into English using Google
+Translate and the \texttt{polyglotR} package to facilitate
+cross-linguistic analysis. The 200 sentences were manually annotated
+using a scale ranging from -1 to 1, where -1 represents very negative
+sentiment, 0 indicates neutral content, and 1 signifies very positive
+sentiment.
+
+To streamline the annotation process, we developed a custom Shiny
+application that provided an intuitive interface for human coders. The
+application featured keyboard shortcuts for rapid scoring and included
+visual reminders of the sentiment scale definitions. This approach
+ensured consistent annotation practices and significantly improved the
+efficiency of the manual coding process. The resulting annotated dataset
+served as our ground truth for evaluating the performance of both
+dictionary-based methods and LLM approaches in sentiment analysis tasks.
+
+A major limit of this project is that the manual annotation was done by
+a single coder. This limits the reliability of the ground truth dataset,
+as inter-annotator agreement was not measured. This should be considered
+when interpreting the results of the study.
+
+\subsection{Dictionary-Based Sentiment
+Analysis}\label{dictionary-based-sentiment-analysis}
+
+To establish baseline sentiment measures, we employed lexicon-based
+methods on both the original French text and its English translation. We
+used a two-phase approach to ensure comprehensive analysis across
+languages.
+
+For the French corpus, we implemented a customized version of the
+Lexicoder Sentiment Dictionary (LSD) methodology. First, we segmented
+all articles into individual sentences, maintaining document structure
+through unique sentence identifiers. Each sentence underwent
+preprocessing: conversion to lowercase, removal of punctuation, and
+elimination of French stopwords using the \texttt{quanteda} package. We
+then applied the French Lexicoder Sentiment Dictionary (\texttt{frlsd}),
+a specialized lexicon adapted for French text analysis, to identify
+positive and negative sentiment terms in each sentence. Sentiment scores
+were calculated as a normalized tone index representing the ratio
+between positive and negative sentiment markers within each text
+segment, with the formula: (positive\_terms - negative\_terms) /
+total\_words.
+
+For the English translations, we implemented a more sophisticated
+preprocessing pipeline based on the standard Lexicoder Sentiment
+Dictionary methodology. Beyond basic cleanup, we applied specialized
+functions to handle contractions, preserve proper nouns, and process
+negation expressions (e.g., ``not good'' recognized as negative rather
+than positive). The English LSD includes dedicated dictionaries for
+negated terms, allowing us to account for the sentiment-flipping effect
+of negation (e.g., ``not happy'' properly categorized as negative
+sentiment). The tone index was calculated as: ((positive +
+negated\_negative) - (negative + negated\_positive)) / total\_words,
+providing a more nuanced assessment of sentiment.
+
+This dual-dictionary approach provided a methodologically sound baseline
+against which to evaluate LLM performance while enabling assessment of
+potential information shifts during translation.
+
+\subsection{LLM-Based Sentiment
+Analysis}\label{llm-based-sentiment-analysis}
+
+Our LLM evaluation framework incorporated an extensive assessment of
+multiple general-purpose foundational models, carefully selected to
+represent the current landscape of both open and closed-weight
+architectures. We conducted a total of 21,600 individual prompts across
+11 different models to thoroughly evaluate their sentiment analysis
+capabilities in cross-linguistic contexts. This unprecedented scale of
+evaluation allowed us to draw robust conclusions about model performance
+across language boundaries and prompt conditions.
+
+For our open-weight model selection, we incorporated a diverse range of
+architectures and parameter sizes to ensure comprehensive representation
+of current capabilities. The smallest model in our evaluation was Llama
+3.2 (1B), accessed through the Groq API service, which allowed us to
+establish a baseline for minimal parameter count performance . We also
+included Llama 3.2 (3B), accessed via Fireworks.ai, which represents a
+modest increase in parameter size while maintaining computational
+efficiency. Gemma 2 (9B), Google's mid-sized open model accessed via
+Groq, provided an intermediate step in model scale. Mistral Saba (24B),
+also accessed through Groq, represented a substantial increase in
+parameter count with Mistral AI's specialized architecture. QWQ (32B),
+developed by Alibaba Cloud and accessed via Fireworks.ai, introduced
+another architectural approach with a larger parameter count. The second
+largest open-weight model in our evaluation was Llama 3.3 (70B), Meta
+AI's advanced offering accessed through Fireworks.ai. We also included
+DeepSeek R1 Basic (671B) via Fireworks.ai, the largest open-weight model
+in our evaluation, which provided a unique opportunity to assess the
+performance of a model with an exceptionally high parameter count.
+
+The closed-weight models in our evaluation were selected to represent
+leading commercial offerings with established performance records. These
+included Claude 3.5 Haiku, Anthropic's efficient conversational model
+recognized for its instruction-following capabilities; Gemini 2.0 Flash,
+Google's streamlined but powerful model with enhanced multilingual
+support; DeepSeek Chat, a specialized conversational variant from
+DeepSeek AI; and GPT-4o, OpenAI's advanced multimodal model renowned for
+its cross-linguistic proficiency. This combination of open and
+closed-weight models created a comprehensive evaluation framework
+spanning different architectural approaches, training methodologies, and
+parameter scales.
+
+To systematically evaluate each model's performance across different
+language contexts, we implemented a rigorous experimental design
+consisting of three distinct analytical conditions. The first condition
+involved analyzing the original French text with French prompts, which
+assessed each model's native language understanding when both input text
+and instructions were in the same non-English language. The second
+condition evaluated French text with English prompts, directly examining
+the cross-linguistic prompting effect documented in previous research.
+The third condition used English translations of the original French
+sentences with English prompts, providing insight into how translation
+might impact sentiment analysis performance. This three-condition
+approach enabled us to isolate the effects of both prompt language and
+text language, allowing for detailed analysis of how each factor impacts
+model performance and measurement of potential information loss during
+translation.
+
+All prompts across both languages followed a meticulously standardized
+structure to ensure valid cross-linguistic comparison. Each prompt began
+with a clear task definition explicitly requesting sentiment analysis of
+the provided text. We included a comprehensive sentiment scale
+documentation that defined five distinct anchor points: -1.0 (strong
+negative sentiment, described as highly critical, hostile, or
+pessimistic content), -0.5 (moderate negative sentiment, described as
+somewhat negative, disapproving, or concerned content), 0.0 (neutral
+sentiment, described as factual, balanced, or neither positive nor
+negative content), 0.5 (moderate positive sentiment, described as
+somewhat positive, approving, or optimistic content), and 1.0 (strong
+positive sentiment, described as highly supportive, enthusiastic, or
+optimistic content). The prompts explicitly permitted the use of
+intermediate values between these anchor points to allow for
+fine-grained sentiment assessment. We included cultural context guidance
+instructing models to consider linguistic and cultural nuances specific
+to the language being analyzed. Finally, all prompts contained strict
+response format constraints requiring only numerical values without any
+explanations or additional text, ensuring consistent and comparable
+outputs across all models. French prompts were professional translations
+of the English prompts, maintaining identical structure, meaning, and
+nuance to ensure valid cross-linguistic comparison.
+
+The technical implementation of our evaluation process utilized the
+\texttt{ellmer} R package, which provides a unified interface for
+interacting with various model provider APIs. For Fireworks.ai-hosted
+models (Llama 3.2 3B, QWen2 32B, DeepSeek R1 Basic, and Llama 3.3 70B),
+we utilized the chat\_openai function with appropriate base URL and
+model identifier parameters. For Groq-hosted models (Gemma 2 9B, Llama
+3.2 1B, and Mistral Saba), we employed the chat\_groq function with
+corresponding model identifiers. Provider-specific functions
+(chat\_claude, chat\_gemini, chat\_deepseek, and chat\_openai with
+standard OpenAI parameters) were used for Claude 3.5, Gemini 2.0,
+DeepSeek Chat, and GPT-4o respectively. For each API connection, we
+configured appropriate system prompts defining the assistant's role as a
+sentiment analyzer, established appropriate token limits (generally
+constraining responses to a maximum of 100 tokens), and implemented
+authentication using provider-specific API keys stored as environment
+variables for security.
+
+The core sentiment analysis function processed each sentence through
+multiple steps. First, it constructed the appropriate prompt based on
+the prompt language and text field configuration. For English prompts
+with French text, it utilized the en\_prompt\_fr\_text function; for
+English prompts with English text, the en\_prompt\_en\_text function;
+and for French prompts with French text, the fr\_prompt\_fr\_text
+function. Each function assembled the complete prompt with appropriate
+instructions and the target text. The execution phase employed
+sophisticated retry logic with exponential backoff for resilience
+against API failures. For each sentence, we performed three separate
+analytical runs, with each run allowing up to three retry attempts if
+needed. Between API calls, we implemented adaptive rate limiting based
+on the specific provider's requirements: Groq models received customized
+delays based on token usage (longer for higher token counts),
+Fireworks.ai models received consistent 1.5-second delays, and other
+API-based models received 1-second delays to prevent rate limiting
+issues.
+
+Response parsing presented a significant challenge due to the diversity
+of output formats despite our explicit instructions for numerical-only
+responses. We implemented a comprehensive clean\_sentiment\_value
+function that employed multiple regular expression patterns to extract
+valid numerical sentiment scores from various response formats,
+including bare numbers, numbers with prefixes like ``Sentiment:'' or
+``Rating:'', and numbers within explanatory text. The function validated
+extracted values, ensuring they fell within the expected -1.0 to 1.0
+range, and returned standardized numerical values for consistent
+analysis. For each sentence-model-prompt combination, we calculated the
+final sentiment score as the mean of the three individual runs, ensuring
+robustness against occasional model variability or outlier responses.
+
+To ensure data integrity throughout the lengthy processing period, we
+implemented a sophisticated checkpointing system. The system
+automatically saved progress at regular intervals (every 10 minutes) and
+after processing every 20 items. Each checkpoint included a timestamped
+file and a consolidated ``latest checkpoint'' file that could be used to
+resume processing if interrupted. The system also maintained a rotating
+set of checkpoint files, keeping the 10 most recent files while
+automatically removing older ones to prevent excessive disk usage. This
+approach ensured that no more than approximately 30 minutes of
+computation would be lost in case of system failure or process
+interruption.
+
+After completing all 21,600 individual prompting operations, we
+performed comprehensive data validation and analysis. We examined
+patterns of missing values, identifying cases where models consistently
+failed to provide valid sentiment scores for particular sentences or
+language conditions. We calculated distribution statistics for each
+model and language combination, including means, standard deviations,
+and various percentiles. We evaluated inter-model agreement through
+correlation analysis, identifying which models produced most similar or
+divergent results across different language configurations. This deep
+analytical approach provided insights not just into overall performance
+but also into specific strengths and weaknesses of different models
+across language boundaries and prompt configurations.
+
+The scale and comprehensiveness of our LLM evaluation framework,
+encompassing 11 diverse models across three linguistic configurations
+with triple redundancy, provided an unprecedented view into
+cross-linguistic sentiment analysis capabilities of general-purpose
+foundation models. This methodologically rigorous approach enabled us to
+make highly reliable assessments of model performance, free from the
+occasional variability inherent in large language model outputs, and to
+draw meaningful conclusions about the impact of prompt language and text
+language on sentiment analysis accuracy.
+
+\subsection{Validation and Performance
+Evaluation}\label{validation-and-performance-evaluation}
+
+Ground truth for model evaluation was established through creation of a
+validation dataset containing randomly selected sentences from our
+corpus. Multiple human annotators independently rated each sentence on a
+7-point Likert scale ranging from ``very negative'' (-1.0) to ``very
+positive'' (1.0). Inter-annotator agreement was measured to ensure
+reliability of the ground truth dataset. We employed multiple
+complementary metrics to evaluate model performance. Pearson correlation
+coefficients with 95\% confidence intervals assessed the linear
+relationship between model predictions and human annotations.
+Classification performance was measured using F1 scores under both
+fine-grained (7-category) and coarse-grained (3-category) classification
+schemes, capturing models' ability to distinguish sentiment at different
+levels of granularity. We further quantified prediction accuracy through
+Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE)
+calculations. This comprehensive evaluation framework enabled systematic
+comparison of performance variations across model types (open
+vs.~closed-weight), prompt languages, text languages (original
+vs.~translated), and methodological approaches (dictionary-based
+vs.~LLM-based).
+
+\section{Results}\label{results}
+
+\section{Discussion}\label{discussion}
+
+\section{Annex}\label{annex}
+
+\section{Combined F1 Score Results by Sentiment
+Category}\label{combined-f1-score-results-by-sentiment-category}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0366}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0733}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0524}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0995}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0471}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0995}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0524}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0785}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0890}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0838}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0890}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0995}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0995}}@{}}
+
+\caption{\label{tbl-fscore-combined}F1 scores for all models and
+methods}
+
+\tabularnewline
+
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+very\_negative
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+negative
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+somewhat\_negative
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+neutral
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+somewhat\_positive
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+positive
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+very\_positive
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+negative (3-cat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+neutral (3-cat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+positive (3-cat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+weighted\_f1 (7-cat)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+weighted\_f1 (3-cat)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+gemini20\_en\_fr & 0.267 & 0.275 & 0.286 & 0.731 & 0.25 & 0.447 & 0 &
+0.693 & 0.731 & 0.712 & 0.471 & 0.716 \\
+gpt4o\_en\_fr & 0.167 & 0.3 & 0 & 0.753 & 0.05 & 0.429 & 0 & 0.763 &
+0.753 & 0.624 & 0.413 & 0.709 \\
+gpt4o\_fr\_fr & 0.533 & 0.346 & 0.129 & 0.744 & 0.103 & 0.464 & 0 &
+0.755 & 0.744 & 0.623 & 0.46 & 0.703 \\
+gemini20\_fr\_fr & 0.333 & 0.25 & 0.171 & 0.706 & 0.143 & 0.457 & 0.235
+& 0.733 & 0.706 & 0.667 & 0.452 & 0.698 \\
+gpt4o\_en\_en & 0.267 & 0.333 & 0.133 & 0.739 & 0.136 & 0.255 & 0.111 &
+0.727 & 0.739 & 0.632 & 0.423 & 0.698 \\
+llama3370b\_en\_en & 0.4 & 0.263 & 0.138 & 0.69 & 0.054 & 0.325 & 0.3 &
+0.696 & 0.69 & 0.613 & 0.418 & 0.664 \\
+llama3370b\_fr\_fr & 0.48 & 0.244 & 0 & 0.663 & 0.056 & 0.414 & 0.267 &
+0.731 & 0.663 & 0.623 & 0.406 & 0.664 \\
+gemma29b\_en\_en & 0.364 & 0.25 & 0.125 & 0.648 & 0.233 & 0.355 & 0.385
+& 0.691 & 0.648 & 0.662 & 0.432 & 0.662 \\
+claude35\_en\_en & 0.6 & 0.381 & 0.453 & 0.662 & 0.107 & 0.4 & 0.444 &
+0.661 & 0.662 & 0.642 & 0.486 & 0.655 \\
+llama3370b\_en\_fr & 0.345 & 0.182 & 0.138 & 0.667 & 0.114 & 0.395 &
+0.316 & 0.703 & 0.667 & 0.607 & 0.42 & 0.653 \\
+gemma29b\_en\_fr & 0.3 & 0.255 & 0 & 0.597 & 0.281 & 0.406 & 0.375 &
+0.713 & 0.597 & 0.679 & 0.407 & 0.652 \\
+gemma29b\_fr\_fr & 0.286 & 0.275 & 0.129 & 0.525 & 0.303 & 0.405 & 0.4 &
+0.718 & 0.525 & 0.686 & 0.396 & 0.625 \\
+lsd\_en & 0 & 0 & 0.367 & 0.632 & 0.257 & 0 & 0 & 0.659 & 0.632 & 0.597
+& 0.343 & 0.625 \\
+claude35\_en\_fr & 0.462 & 0.273 & 0.429 & 0.448 & 0.262 & 0.45 & 0.25 &
+0.692 & 0.448 & 0.678 & 0.398 & 0.585 \\
+deepseekchat\_en\_fr & 0.5 & 0.368 & 0.391 & 0.432 & 0.274 & 0.423 &
+0.485 & 0.679 & 0.432 & 0.701 & 0.407 & 0.583 \\
+claude35\_fr\_fr & 0.476 & 0.273 & 0.328 & 0.424 & 0.259 & 0.494 & 0 &
+0.635 & 0.424 & 0.667 & 0.367 & 0.558 \\
+deepseekchat\_en\_en & 0.429 & 0.182 & 0.207 & 0.429 & 0.222 & 0.437 &
+0.455 & 0.615 & 0.429 & 0.658 & 0.364 & 0.552 \\
+gemini20\_en\_en & 0 & 0.235 & 0.25 & 0.612 & 0.14 & 0.377 & 0.133 &
+0.557 & 0.612 & 0.464 & 0.383 & 0.547 \\
+deepseekchat\_fr\_fr & 0.583 & 0.326 & 0.235 & 0.374 & 0.24 & 0.431 &
+0.514 & 0.661 & 0.374 & 0.674 & 0.366 & 0.545 \\
+lsd\_fr & 0 & 0 & 0.222 & 0.51 & 0.206 & 0 & 0 & 0.4 & 0.51 & 0.553 &
+0.268 & 0.501 \\
+llama323b\_en\_en & 0.348 & 0.2 & 0.187 & 0.39 & 0.174 & 0.43 & 0.286 &
+0.518 & 0.39 & 0.599 & 0.323 & 0.493 \\
+llama323b\_fr\_fr & 0.235 & 0.211 & 0.216 & 0.248 & 0.203 & 0.333 & 0 &
+0.609 & 0.248 & 0.562 & 0.232 & 0.44 \\
+mistral\_en\_en & 0.353 & 0.258 & 0.269 & 0.222 & 0.275 & 0.376 & 0.095
+& 0.591 & 0.222 & 0.591 & 0.259 & 0.436 \\
+mistral\_en\_fr & 0.267 & 0.121 & 0.25 & 0.152 & 0.152 & 0.472 & 0.105 &
+0.577 & 0.152 & 0.637 & 0.212 & 0.42 \\
+mistral\_fr\_fr & 0.625 & 0.182 & 0.233 & 0.194 & 0.131 & 0.379 & 0.19 &
+0.517 & 0.194 & 0.599 & 0.24 & 0.411 \\
+deepseekr1\_en\_fr & 0 & 0 & 0 & 0.448 & 0.056 & 0.301 & 0.144 & 0 &
+0.448 & 0.558 & 0.251 & 0.389 \\
+llama323b\_en\_fr & 0 & 0.111 & 0.063 & 0.208 & 0.101 & 0.329 & 0.111 &
+0.269 & 0.208 & 0.557 & 0.172 & 0.347 \\
+deepseekr1\_fr\_fr & 0 & 0 & 0 & 0.34 & 0 & 0.177 & 0.164 & 0 & 0.34 &
+0.544 & 0.18 & 0.338 \\
+llama321b\_en\_en & 0.133 & 0.065 & 0.187 & 0.206 & 0.21 & 0.151 & 0 &
+0.298 & 0.206 & 0.419 & 0.171 & 0.303 \\
+llama321b\_en\_fr & 0.118 & 0.103 & 0.138 & 0.067 & 0.222 & 0.231 & 0 &
+0.28 & 0.067 & 0.443 & 0.122 & 0.249 \\
+deepseekr1\_en\_en & 0 & 0 & 0 & 0.068 & 0 & 0.05 & 0.121 & 0 & 0.068 &
+0.537 & 0.044 & 0.222 \\
+qwq32b\_en\_fr & 0 & 0 & 0 & 0.047 & 0 & 0.154 & 0.128 & 0 & 0.047 &
+0.533 & 0.051 & 0.212 \\
+llama321b\_fr\_fr & 0 & 0.068 & 0.163 & 0.144 & 0.073 & 0.186 & 0.143 &
+0.244 & 0.144 & 0.259 & 0.13 & 0.208 \\
+qwq32b\_en\_en & 0 & 0 & 0 & 0.024 & 0 & 0.151 & 0.139 & 0 & 0.024 &
+0.531 & 0.042 & 0.201 \\
+qwq32b\_fr\_fr & 0 & 0 & 0 & 0 & 0 & 0.051 & 0.127 & 0 & 0 & 0.529 &
+0.016 & 0.191 \\
+
+\end{longtable}
 
 
 \renewcommand\refname{References}

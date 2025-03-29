@@ -6,14 +6,6 @@ library(caret)
 
 # Load the data
 df <- readRDS("data/clean/df_fscores.rds")
-print("Data loaded successfully")
-
-# Create output directories if they don't exist
-dir.create("results/graphs", recursive = TRUE, showWarnings = FALSE)
-dir.create("results/tables", recursive = TRUE, showWarnings = FALSE)
-
-# Print data dimensions
-print(paste("Data dimensions:", nrow(df), "rows,", ncol(df), "columns"))
 
 # Function to group sentiment categories
 group_sentiment <- function(sentiment) {
@@ -36,7 +28,6 @@ for(model in model_columns) {
 }
 
 # Print the distribution of grouped ground truth
-print("Grouped ground truth distribution:")
 print(table(df_grouped$ground_truth))
 
 # Define a function to calculate F1 scores for grouped categories
@@ -155,52 +146,8 @@ results <- results %>%
 detailed_results <- detailed_results %>%
   arrange(desc(weighted_f1))
 
-# Create the weighted F1 plot
-cat("\nCreating plot...\n")
-if(nrow(results) > 0) {
-  # Plot only if we have results
-  p <- ggplot(results, aes(x = reorder(model, weighted_f1), y = weighted_f1)) +
-    geom_col(fill = "steelblue") +
-    coord_flip() +
-    labs(title = "Grouped Sentiment: Weighted F1 Scores by Model",
-         subtitle = "Categories: Positive, Negative, Neutral",
-         x = "Model",
-         y = "Weighted F1 Score") +
-    theme_minimal() +
-    theme(
-      axis.text.y = element_text(size = 8),
-      panel.grid.major.y = element_blank(),
-      panel.background = element_rect(fill = "white", color = NA),
-      plot.background = element_rect(fill = "white", color = NA)
-    )
-  
-  # Save the plot 
-  ggsave("results/graphs/grouped_weighted_f1_scores.png", p, width = 10, height = 8, 
-         dpi = 300, bg = "white")
-  cat("Plot saved successfully to results/graphs/grouped_weighted_f1_scores.png\n")
-  
-  # Export the detailed results table as markdown
-  # Round numeric columns to 3 decimal places for readability
-  detailed_results_rounded <- detailed_results %>%
-    mutate(across(where(is.numeric), ~round(., 3)))
-  
-  # Create markdown table
-  markdown_table <- "# Grouped Sentiment F1 Score Results\n\n"
-  markdown_table <- paste0(markdown_table, "| Model | negative | neutral | positive | weighted_f1 |\n")
-  markdown_table <- paste0(markdown_table, "|-------|----------|---------|----------|------------|\n")
-  
-  for(i in 1:nrow(detailed_results_rounded)) {
-    row <- detailed_results_rounded[i,]
-    markdown_table <- paste0(markdown_table, "| ", row$model, " | ", 
-                            row$negative, " | ", 
-                            row$neutral, " | ", 
-                            row$positive, " | ", 
-                            row$weighted_f1, " |\n")
-  }
-  
-  # Write markdown table to file
-  writeLines(markdown_table, "results/tables/grouped_f1_scores_table.md")
-  cat("Markdown table saved to results/tables/grouped_f1_scores_table.md\n")
-} else {
-  cat("ERROR: No results to plot. Check the previous errors.\n")
-}
+saveRDS(results, "results/fscores/f1_scores_3.rds")
+saveRDS(detailed_results, "results/fscores/f1_scores_detailed_3.rds")
+
+ 
+

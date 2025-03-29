@@ -1,4 +1,4 @@
-# Grouped Sentiment F1 Score Results
+# Grouped Sentiment F1 Score Results (3-category)
 
 | Model | negative | neutral | positive | weighted_f1 |
 |-------|----------|---------|----------|------------|

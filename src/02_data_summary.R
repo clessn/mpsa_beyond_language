@@ -4,17 +4,14 @@ library(scales)
 library(gridExtra)
 library(RColorBrewer)
 library(lubridate)
-
 # Read data
 news_df <- read.csv("data/raw/combined_news_articles.csv") %>%
   filter(!is.na(source_media)) %>%
   filter(!is.na(publication_date)) %>%
   rename(date = publication_date) %>%
   mutate(date = ymd(date)) 
-
 # Display summary by source
 table(news_df$source_media, useNA = "ifany")
-
 # Create summary by source
 summary_by_source <- news_df %>%
   group_by(source_media) %>%
@@ -26,6 +23,29 @@ summary_by_source <- news_df %>%
   arrange(desc(article_count))
 print(summary_by_source)
 
+# Export summary_by_source to markdown table
+# First, ensure the directory exists
+dir.create("results/tables", recursive = TRUE, showWarnings = FALSE)
+
+# Create markdown table directly with proper formatting
+# Start with the header
+cols <- colnames(summary_by_source)
+header <- paste0("| ", paste(cols, collapse = " | "), " |")
+
+# Create the separator line
+separator <- paste0("| ", paste(rep("---", length(cols)), collapse = " | "), " |")
+
+# Format each row
+rows <- apply(summary_by_source, 1, function(row) {
+  paste0("| ", paste(row, collapse = " | "), " |")
+})
+
+# Combine all parts of the table
+md_table <- c(header, separator, rows)
+
+# Write the formatted markdown
+writeLines(md_table, "results/tables/summary_by_source.md")
+
 # Create the time_analysis data frame  
 time_analysis <- news_df %>%
   mutate(
@@ -35,11 +55,9 @@ time_analysis <- news_df %>%
   group_by(year, month) %>%
   summarize(count = n(), .groups = "drop") %>%
   arrange(year, month)
-
 # Add the proper date column for plotting
 time_analysis <- time_analysis %>%
   mutate(date = ymd(paste(year, month, "01", sep = "-")))
-
 # Create professional time series plot
 p <- ggplot(time_analysis, aes(x = date, y = count)) +
   # Add gridlines but make them light
@@ -97,7 +115,4 @@ p <- ggplot(time_analysis, aes(x = date, y = count)) +
   )
 # Display the plot
 print(p)
-
 ggsave("results/graphs/time_series.png", p, width = 16, height = 9, dpi = 300)
-
-
