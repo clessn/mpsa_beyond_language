@@ -1,35 +1,62 @@
+###############################################################################
+# MODEL MAPPING AND CATEGORIZATION 
+# 
+# This script defines the mapping between model identifiers used in this project
+# and their corresponding full names. It also categorizes models as open or closed
+# source for analysis purposes.
+#
+# Author: Ral Zarek
+# Date: March 2025
+###############################################################################
+
+#==============================================================================
+# 1. MODEL GROUPINGS BY PROVIDER
+#==============================================================================
+
+# Alibaba models
 alibaba_models <- c(
   "accounts/fireworks/models/qwq-32b"
 )
 
+# Meta models
 meta_models <- c(
   "accounts/fireworks/models/llama-v3p2-3b-instruct",
   "accounts/fireworks/models/llama-v3p3-70b-instruct",
   "llama-3.2-1b-preview"
 )
 
+# Mistral models
 mistral_models <- c(
   "mistral-saba-24b"
 )
 
+# Anthropic models
 anthropic_models <- c(
   "claude-3-5-haiku-20241022"
 )
 
+# Google models
 google_models <- c(
   "gemini-2.0-flash",
   "gemma2-9b-it"
 )
 
+# DeepSeek models
 deepseek_models <- c(
   "deepseek-chat",
   "accounts/fireworks/models/deepseek-r1-basic"
 )
 
+# OpenAI models
 openai_models <- c(
   "gpt-4o"
 )
 
+#==============================================================================
+# 2. MODEL CATEGORIZATION BY LICENSE
+#==============================================================================
+
+# Open source models
 open_models <- c(
   meta_models,
   alibaba_models,
@@ -38,12 +65,17 @@ open_models <- c(
   "accounts/fireworks/models/deepseek-r1-basic"
 )
 
+# Closed source models
 closed_models <- c(
   anthropic_models,
   openai_models,
   "gemini-2.0-flash",
   "deepseek-chat"
 )
+
+#==============================================================================
+# 3. MODEL MAPPING FOR CODE SIMPLIFICATION
+#==============================================================================
 
 # Simple mapping from model prefix to actual model name
 model_mapping <- c(
@@ -65,7 +97,11 @@ model_mapping <- c(
   "gpt4o" = "gpt-4o"
 )
 
-# Define how to determine if a model is open source
+#==============================================================================
+# 4. HELPER FUNCTIONS
+#==============================================================================
+
+# Function to determine if a model is open source
 is_open_source <- function(model_column) {
   # Extract model prefix from column name
   for (prefix in names(model_mapping)) {
@@ -79,5 +115,3 @@ is_open_source <- function(model_column) {
   # Default for models not in our mapping (like dictionary models)
   return(NA)
 }
-
-

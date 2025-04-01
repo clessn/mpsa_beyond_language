@@ -1,5 +1,5 @@
 ###############################################################################
-# Full Corpus Sentiment Analysis with Gemini (Part 2: English Prompts)
+# FULL CORPUS SENTIMENT ANALYSIS WITH GEMINI (PART 2: ENGLISH PROMPTS)
 # 
 # This script continues the sentiment analysis on the full corpus of French news 
 # articles, using English prompts on French text with the Gemini model.

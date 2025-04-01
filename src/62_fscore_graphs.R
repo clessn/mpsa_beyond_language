@@ -1,17 +1,31 @@
-library(dplyr)
-library(ggplot2)
-library(tidyr)
+#################################################################
+# F-SCORE VISUALIZATION AND COMPARISON
+#################################################################
+# This script creates publication-quality visualizations comparing F1 scores
+# for sentiment analysis models using both 7-category and 3-category schemes.
+# It organizes models by performance and groups them for easier comparison.
 
-# Source the model mapping file
+# Load required libraries
+library(dplyr)      # For data manipulation
+library(ggplot2)    # For visualization
+library(tidyr)      # For data reshaping
+
+#################################################################
+# LOAD SUPPORT FILES AND DATA
+#################################################################
+# Source the model mapping file with model information
 source("src/94_models_map.R")
 
-# Read in the data
+# Read in the F1 score data for both categorization schemes
 df_7 <- readRDS("results/fscores/f1_scores_7.rds")
 df_3 <- readRDS("results/fscores/f1_scores_3.rds")
 
-# Define the get_model_display_name function
+#################################################################
+# MODEL DISPLAY NAME PROCESSING
+#################################################################
+# Function to get human-friendly model display names from the technical model IDs
 get_model_display_name <- function(model_name) {
-  # Check if it's a dictionary model
+  # Special handling for dictionary-based models
   if (grepl("^lsd_", model_name)) {
     return(model_name)  # Return dictionary models as is
   }
@@ -59,17 +73,24 @@ get_model_display_name <- function(model_name) {
   return(model_name)
 }
 
-# Process dataframes and add necessary columns
+#################################################################
+# DATA PREPARATION FOR VISUALIZATION
+#################################################################
+# Process dataframes and add necessary columns for visualization
 process_dataframe <- function(df, category_label) {
   df %>%
     mutate(
+      # Determine if model has open-source weights
       is_open_source = sapply(model, is_open_source),
+      
+      # Classify models into categories
       model_type = case_when(
         grepl("^lsd_", model) ~ "Dictionary",
         is.na(is_open_source) ~ "Other",
         is_open_source ~ "Open weights",
         !is_open_source ~ "Closed weights"
       ),
+      
       # Extract base model name
       model_name = case_when(
         grepl("^lsd_", model) ~ "dict",  # Group all lsd_ models under "dict"
@@ -78,6 +99,7 @@ process_dataframe <- function(df, category_label) {
           sub("_[a-z]{2}_[a-z]{2}$", "", m)
         })
       ),
+      
       # Create a simple prompt technique code
       prompt_mechanism = case_when(
         grepl("_fr_fr$", model) ~ "FR→FR",
@@ -87,8 +109,8 @@ process_dataframe <- function(df, category_label) {
         grepl("^lsd_en", model) ~ "EN",
         TRUE ~ "Other"
       ),
-      # IMPORTANT: For ordering, create a sortable key that encodes both model and prompt
-      # We'll sort directly on this composite key
+      
+      # Create a sortable key that encodes both model and prompt
       sort_key = case_when(
         # For dictionary models, preserve original order
         grepl("^lsd_", model) ~ model,
@@ -102,13 +124,16 @@ process_dataframe <- function(df, category_label) {
         grepl("_en_en$", model) ~ paste0(sub("_[a-z]{2}_[a-z]{2}$", "", model), "_C"),
         TRUE ~ model # Fallback
       ),
+      
       # Get display name for the model using the mapping function
       display_name = sapply(model, get_model_display_name),
+      
       # Create labels that include both model name and prompting mechanism
       model_label = case_when(
         grepl("^lsd_", model) ~ model,  # Keep original lsd_ model names for labels
         TRUE ~ paste0(display_name, " [", prompt_mechanism, "]")
       ),
+      
       # Add category type
       category_type = category_label
     )
@@ -118,13 +143,15 @@ process_dataframe <- function(df, category_label) {
 df_7 <- process_dataframe(df_7, "Detailed (7-category)")
 df_3 <- process_dataframe(df_3, "Grouped (3-category)")
 
-# Extract model performance data for sorting
-# Find the maximum 3-category F1 score for each model
+#################################################################
+# MODEL PERFORMANCE GROUPING AND ORDERING
+#################################################################
+# Find the maximum 3-category F1 score for each model for sorting
 best_model_scores <- df_3 %>%
   group_by(model_name) %>%
   summarize(
     best_f1 = max(weighted_f1, na.rm = TRUE),
-    # Optional: Which variant had the best score
+    # Which variant had the best score
     best_variant = model[which.max(weighted_f1)]
   ) %>%
   # Sort by best F1 score in descending order (highest scores first)
@@ -139,7 +166,10 @@ model_groups <- best_model_scores %>%
 print("Models ordered by best 3-category F1 score (descending):")
 print(model_groups)
 
-# Combine and reshape data for visualization
+#################################################################
+# COMBINE AND FORMAT DATA FOR VISUALIZATION
+#################################################################
+# Combine both datasets and select only needed columns
 df_combined <- bind_rows(
   df_7 %>% select(model, model_name, model_label, weighted_f1, category_type, prompt_mechanism, sort_key),
   df_3 %>% select(model, model_name, model_label, weighted_f1, category_type, prompt_mechanism, sort_key)
@@ -149,12 +179,11 @@ df_combined <- bind_rows(
 df_combined <- df_combined %>%
   left_join(model_groups, by = "model_name")
 
-# COMPLETELY NEW APPROACH: Create a manual ordering for the factor levels
-# First, get all the unique model labels organized by their sort_key within model_groups
+# Create a manual ordering for the factor levels
 model_label_ordered <- df_combined %>%
   select(model_label, model_name, model_group, sort_key) %>%
   distinct() %>%
-  # Sort by: 1) model_group (performance), 2) sort_key (our custom order)
+  # Sort by: 1) model_group (performance), 2) sort_key (custom order)
   arrange(model_group, sort_key) %>%
   pull(model_label)
 
@@ -166,7 +195,7 @@ model_check <- df_combined %>%
   arrange(sort_key)
 print(head(model_check, 20))
 
-# Now reverse the order for the plot (since we want best at top)
+# Reverse the order for the plot (best performers at the top)
 model_labels_ordered <- rev(model_label_ordered)
 
 # Explicitly check the final order (after reversing)
@@ -179,16 +208,18 @@ label_check <- data.frame(
 print("\nFinal display order (top to bottom):")
 print(head(label_check, 20))
 
-# Get unique model labels for each model name, maintaining the model_group order and custom sort order
+# Get unique model labels for each model name, maintaining order
 model_label_mapping <- df_combined %>%
   select(model_label, model_name, model_group, sort_key, prompt_mechanism) %>%
   distinct()
 
-# Apply factor levels to model_label with our custom ordering
+# Apply factor levels to model_label with custom ordering
 df_combined$model_label <- factor(df_combined$model_label, levels = model_labels_ordered)
 
-# Create background rectangles for alternating groups
-# First get the positions of each model label in the final plot
+#################################################################
+# CREATE BACKGROUND RECTANGLES FOR VISUAL GROUPING
+#################################################################
+# Get the positions of each model label in the final plot
 total_labels <- length(levels(df_combined$model_label))
 label_positions <- data.frame(
   model_label = levels(df_combined$model_label),
@@ -217,6 +248,9 @@ bg_rects <- label_positions %>%
   # Add best score info
   left_join(best_model_scores %>% select(model_name, best_f1), by = "model_name")
 
+#################################################################
+# CREATE F1 SCORE COMPARISON PLOT
+#################################################################
 # Set expansion factor to minimize empty space
 y_expansion <- c(0.01, 0.01)
 
@@ -235,6 +269,7 @@ plot_f1 <- ggplot() +
     ymax = ymax,
     fill = shade
   ), alpha = 0.5) +
+  
   # Add bars with grouped categories
   geom_bar(data = df_combined, aes(
     x = weighted_f1,
@@ -246,6 +281,7 @@ plot_f1 <- ggplot() +
   width = 0.6,
   color = "#444444",
   linewidth = 0.2) +
+  
   # Professional minimal theme with more space between elements
   theme_minimal() +
   theme(
@@ -259,6 +295,8 @@ plot_f1 <- ggplot() +
     panel.spacing = unit(1.5, "lines"),     # Increase spacing between panel elements
     axis.ticks = element_line(color = "#555555", size = 0.4)  # Matching tick marks
   ) +
+  
+  # Labels and titles
   labs(
     x = "Weighted F1 Score",
     y = "",  # Remove y-axis label since we have direct labels
@@ -266,12 +304,14 @@ plot_f1 <- ggplot() +
     subtitle = "F1 scores for both detailed and grouped sentiment classification schemes (sorted by 3-category performance)",
     caption = "Figure 2. F1 scores for sentiment analysis across model architectures.\nModels grouped by F1 score performance and sorted by 3-category classification. Within each model group, prompting mechanisms are\nordered as EN→FR (English prompt on French text), FR→FR (French prompt on French text), and EN→EN (English prompt on translated text).\nDetailed classification includes 7 distinct sentiment categories, while grouped classification uses 3 categories (Positive, Negative, Neutral)."
   ) +
+  
   # Scale and reference lines
   scale_x_continuous(limits = c(0, 1)) +
+  
   # Control y-axis expansion to eliminate wasted space
   scale_y_discrete(expand = y_expansion) +
+  
   # Create a separate scale for fill that correctly handles both backgrounds and bars
-  # but only shows classification types in the legend
   scale_fill_manual(
     values = c(
       "even" = "gray95",    # Almost white (for background)
@@ -283,9 +323,11 @@ plot_f1 <- ggplot() +
     breaks = c("Detailed (7-category)", "Grouped (3-category)"),
     name = "Classification Type"
   ) +
+  
   # Hide the background shades from the legend, only show classification types
   guides(fill = guide_legend(title = "Classification Type")) +
-  # Add F1 score value labels with softer styling
+  
+  # Add F1 score value labels
   geom_text(data = df_combined, aes(
     label = sprintf("%.2f", weighted_f1),
     x = weighted_f1 + 0.01,
@@ -296,7 +338,8 @@ plot_f1 <- ggplot() +
   size = 2.8, 
   hjust = 0,
   color = "#444444") +
-  # Scientific journal style formatting with more relaxed styling
+  
+  # Scientific journal style formatting
   theme(
     plot.caption.position = "plot",
     axis.title.x = element_text(hjust = 0.5, size = 10, face = "plain", color = "#333333"),
@@ -318,7 +361,10 @@ plot_f1 <- ggplot() +
     aspect.ratio = NULL
   )
 
-# Print the plot
+#################################################################
+# DISPLAY AND SAVE VISUALIZATIONS
+#################################################################
+# Display the plot
 print(plot_f1)
 
 # Save the plot with publication quality settings
@@ -330,6 +376,9 @@ ggsave("results/graphs/model_f1_scores_comparison_grouped.png",
        units = "in",
        limitsize = FALSE) # Prevent R from warning about large dimensions
 
+#################################################################
+# CREATE PUBLICATION-OPTIMIZED VERSION
+#################################################################
 # Create a publication version optimized for letter-sized landscape paper
 plot_f1_pub <- ggplot() +
   # Add alternating background for visual grouping
@@ -339,6 +388,7 @@ plot_f1_pub <- ggplot() +
     ymax = ymax,
     fill = shade
   ), alpha = 0.5) +
+  
   # Add bars with grouped categories
   geom_bar(data = df_combined, aes(
     x = weighted_f1,
@@ -350,7 +400,8 @@ plot_f1_pub <- ggplot() +
   width = 0.6,
   color = "#444444",
   linewidth = 0.2) +
-  # Professional minimal theme with more space between elements
+  
+  # Professional minimal theme
   theme_minimal() +
   theme(
     panel.background = element_rect(fill = "white", color = NA),
@@ -363,6 +414,8 @@ plot_f1_pub <- ggplot() +
     panel.spacing = unit(1.2, "lines"),     # Slightly reduced spacing for letter size
     axis.ticks = element_line(color = "#555555", size = 0.4)  # Matching tick marks
   ) +
+  
+  # Condensed labels and titles
   labs(
     x = "Weighted F1 Score",
     y = "",  # Remove y-axis label since we have direct labels
@@ -370,12 +423,14 @@ plot_f1_pub <- ggplot() +
     subtitle = "F1 scores for both detailed and grouped sentiment classification schemes",
     caption = "Figure 2. F1 scores for sentiment analysis across model architectures. Models grouped by F1 score performance and sorted by\n3-category classification. Prompting mechanisms: EN→FR (English prompt on French text), FR→FR (French prompt on French text),\nand EN→EN (English prompt on translated text). Detailed classification includes 7 categories, grouped classification uses 3."
   ) +
+  
   # Scale and reference lines
   scale_x_continuous(limits = c(0, 1)) +
+  
   # Control y-axis expansion to eliminate wasted space
   scale_y_discrete(expand = y_expansion) +
-  # Create a separate scale for fill that correctly handles both backgrounds and bars
-  # but only shows classification types in the legend
+  
+  # Create a separate scale for fill
   scale_fill_manual(
     values = c(
       "even" = "gray95",    # Almost white (for background)
@@ -387,9 +442,11 @@ plot_f1_pub <- ggplot() +
     breaks = c("Detailed (7-category)", "Grouped (3-category)"),
     name = "Classification Type"
   ) +
-  # Hide the background shades from the legend, only show classification types
+  
+  # Hide the background shades from the legend
   guides(fill = guide_legend(title = "Classification Type")) +
-  # Add F1 score value labels with softer styling
+  
+  # Add F1 score value labels
   geom_text(data = df_combined, aes(
     label = sprintf("%.2f", weighted_f1),
     x = weighted_f1 + 0.01,
@@ -400,6 +457,7 @@ plot_f1_pub <- ggplot() +
   size = 2.3,  # Slightly smaller text for letter size
   hjust = 0,
   color = "#444444") +
+  
   # Publication-optimized styling for letter size
   theme(
     plot.caption.position = "plot",

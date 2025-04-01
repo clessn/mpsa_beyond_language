@@ -1,30 +1,39 @@
-# Batched script to translate French news articles using DeepL
-# =========================================================
+#################################################################
+# FRENCH TO ENGLISH TRANSLATION WORKFLOW
+#################################################################
+# This script facilitates the translation of French news articles to English
+# using DeepL. It works in two phases:
+# 1. Creating batch Word documents for upload to DeepL
+# 2. Processing the translated documents and integrating translations back into the dataset
 
 # Load necessary libraries
 library(tidyverse)  # For data manipulation
 library(officer)    # For Word document creation
 
-# ---- Step 1: Load your data ----
+#################################################################
+# LOAD DATASET
+#################################################################
 # Load the news dataframe from the RDS file
 news_df <- readRDS("data/tmp/news_df.rds")
 
-# Take a quick look at the data
+# Display basic information about the dataset
 print(paste("Number of articles:", nrow(news_df)))
 print(names(news_df))  # Check column names
 
-# ---- Step 2: Create Word documents in batches of 500 articles ----
-# Create output directory
+#################################################################
+# BATCH DOCUMENT CREATION FOR TRANSLATION
+#################################################################
+# Create output directory for translation files
 dir.create("translation_files", showWarnings = FALSE)
 
-# Set batch size
-BATCH_SIZE <- 900
+# Set parameters for batch processing
+BATCH_SIZE <- 900  # Number of articles per batch
 
 # Calculate number of batches needed
 num_batches <- ceiling(nrow(news_df) / BATCH_SIZE)
 print(paste("Creating", num_batches, "batch files with up to", BATCH_SIZE, "articles each"))
 
-# Create batches
+# Process and create batch Word documents
 batch_files <- c()
 for (batch_num in 1:num_batches) {
   # Determine start and end indices for this batch
@@ -36,12 +45,12 @@ for (batch_num in 1:num_batches) {
   # Create a new Word document
   doc <- read_docx()
   
-  # Add a title
+  # Add a title and instructions
   doc <- doc %>% 
     body_add_par(value = paste("News Articles Batch", batch_num), style = "heading 1") %>%
     body_add_par(value = "DO NOT REMOVE THE ###ARTICLE_START### MARKERS", style = "Normal")
   
-  # Add each article to the document
+  # Add each article to the document with markers
   for (i in start_idx:end_idx) {
     # Get the current article
     article <- news_df$text_body[i]
@@ -65,7 +74,10 @@ for (batch_num in 1:num_batches) {
   print(paste("Batch", batch_num, "saved to", file_name))
 }
 
-# ---- Step 3: Instructions for translation ----
+#################################################################
+# TRANSLATION INSTRUCTIONS
+#################################################################
+# Display instructions for the manual translation step
 cat("\n=== NEXT STEPS ===\n")
 cat("1. Upload each Word document from the 'translation_files' folder to DeepL\n")
 cat("2. Translate from French to English\n")
@@ -75,10 +87,10 @@ cat("   Example: 'articles_batch_1.docx' -> 'articles_batch_1_translated.docx'\n
 cat("5. Place all translated documents in the 'translation_files' folder\n")
 cat("6. Run the second part of this script\n")
 
-# Convert DOCX to text files and process translations
-# ==================================================
-
-# Process all text files directly
+#################################################################
+# TRANSLATION PROCESSING FUNCTION
+#################################################################
+# Define function to process translated text files
 process_all_text_files <- function() {
   # Ensure we have the original dataframe
   if(!exists("news_df")) {
@@ -91,14 +103,14 @@ process_all_text_files <- function() {
     news_df$translated_text <- NA_character_
   }
   
-  # Get all text files
+  # Get all text files from the directory
   text_files <- list.files("translation_files/text_files", 
                           pattern = "\\.txt$", 
                           full.names = TRUE)
   
   print(paste("Found", length(text_files), "text files to process"))
   
-  # Define delimiter pattern (adjust if needed based on your files)
+  # Define delimiter pattern to identify article boundaries
   delimiter_pattern <- "###ARTICLE_START###"
   
   # Process each text file
@@ -129,7 +141,7 @@ process_all_text_files <- function() {
       # Get the delimiter line with ID
       delimiter_line <- file_content[delimiter_lines[i]]
       
-      # Extract the ID
+      # Extract the article ID
       id_match <- regexpr("ID:\\s*\\d+", delimiter_line)
       if(id_match > 0) {
         id_text <- regmatches(delimiter_line, id_match)
@@ -146,7 +158,7 @@ process_all_text_files <- function() {
         article_lines <- file_content[start_line:end_line]
         article_text <- paste(article_lines, collapse = "\n")
         
-        # Store in the dataframe
+        # Store in the dataframe if ID is valid
         if(!is.na(id) && id > 0 && id <= nrow(news_df)) {
           news_df$translated_text[id] <- article_text
           file_updated_count <- file_updated_count + 1
@@ -163,18 +175,21 @@ process_all_text_files <- function() {
     total_updated <- total_updated + file_updated_count
   }
   
-  # Save the final dataframe
+  # Save the translations to a new dataframe
   saveRDS(news_df, "data/tmp/news_df_translated.rds")
   
   # Report completion
-  print(paste("Translation complete! Total of", total_updated, "articles translated"))
+  print(paste("Translation processing complete! Total of", total_updated, "articles translated"))
   print(paste("Saved to data/tmp/news_df_translated.rds"))
   
   return(news_df)
 }
 
-# Run the function directly
+#################################################################
+# EXECUTE TRANSLATION PROCESSING
+#################################################################
+# Process all translated text files and integrate into dataset
 translated_df <- process_all_text_files()
 
-# Save the modified dataframe
-saveRDS(news_df, "data/tmp/news_df_translated_modified.rds")
+# Save the final translated dataframe
+saveRDS(news_df, "data/tmp/news_df_translated.rds")

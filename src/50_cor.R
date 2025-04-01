@@ -1,10 +1,25 @@
-# Load necessary libraries
-library(tidyverse)
+#################################################################
+# CORRELATION ANALYSIS OF SENTIMENT MODELS
+#################################################################
+# This script analyzes the correlation between different sentiment analysis 
+# models (LLMs and dictionary-based) and ground truth human ratings.
+# It calculates Pearson correlations, MAE, and RMSE for each model.
 
-# Read your data
+# Load necessary libraries
+library(tidyverse)  # For data manipulation and visualization
+
+#################################################################
+# LOAD DATASET
+#################################################################
+# Read the cleaned dataset with all sentiment scores
 df <- readRDS("data/clean/df.rds")
 
-# Extract only the specified model columns (excluding _bin variables)
+#################################################################
+# SELECT MODEL COLUMNS
+#################################################################
+# Extract only the model output columns (excluding categorical versions)
+# We include French-French, English-French, and English-English variations
+# as well as dictionary-based scores (lsd_*)
 model_columns <- names(df)[
   (grepl("_fr_fr$", names(df)) | 
    grepl("_en_fr$", names(df)) | 
@@ -15,11 +30,14 @@ model_columns <- names(df)[
   names(df) != "ground_truth"
 ]
 
-# Print the selected model columns
+# Print the selected model columns for verification
 cat("Selected model columns:", length(model_columns), "\n")
 print(head(model_columns))
 
-# Initialize results dataframe
+#################################################################
+# INITIALIZE RESULTS DATAFRAME
+#################################################################
+# Create dataframe to store correlation and error metrics
 results <- data.frame(
   model = character(),
   correlation = numeric(),
@@ -31,7 +49,10 @@ results <- data.frame(
   stringsAsFactors = FALSE
 )
 
-# Calculate correlation and MAE for each model
+#################################################################
+# CALCULATE CORRELATION AND ERROR METRICS
+#################################################################
+# For each model, calculate correlation with ground truth and error metrics
 for (model in model_columns) {
   # Create a temporary dataframe for this model, removing NA values
   temp_df <- df[, c("ground_truth", model)]
@@ -47,6 +68,7 @@ for (model in model_columns) {
     
     # Run correlation test with error handling
     tryCatch({
+      # Calculate Pearson correlation
       cor_test <- cor.test(temp_df$ground_truth, temp_df[[model]], method = "pearson")
       
       # Calculate Mean Absolute Error (MAE)
@@ -72,10 +94,13 @@ for (model in model_columns) {
   }
 }
 
-# Add formatted column names and significance categories
+#################################################################
+# FORMAT RESULTS FOR VISUALIZATION
+#################################################################
+# Enhance results with additional information for plotting and analysis
 plot_results <- results %>%
   mutate(
-    # Add significance level
+    # Add significance level indicators
     sig_level = case_when(
       p_value < 0.001 ~ "p < 0.001",
       p_value < 0.01 ~ "p < 0.01",
@@ -83,7 +108,7 @@ plot_results <- results %>%
       TRUE ~ "Not significant"
     ),
     
-    # Create descriptive term with model type
+    # Create descriptive labels with model type for better readability
     term_with_n = case_when(
       grepl("_en_fr$", model) ~ paste0(gsub("_en_fr$", " (EN→FR)", model)),
       grepl("_fr_fr$", model) ~ paste0(gsub("_fr_fr$", " (FR→FR)", model)),
@@ -92,10 +117,10 @@ plot_results <- results %>%
       TRUE ~ model
     ),
     
-    # Flag for small sample variables (less than 70% of data)
+    # Flag models with small sample sizes (less than 70% of data)
     is_small_sample = data_pct < 70,
     
-    # Absolute correlation for sorting
+    # Calculate absolute correlation for sorting
     abs_correlation = abs(correlation)
   )
 
@@ -103,5 +128,8 @@ plot_results <- results %>%
 plot_results <- plot_results %>%
   arrange(desc(abs_correlation))
 
-# Save the complete results
+#################################################################
+# SAVE RESULTS
+#################################################################
+# Save the complete results for further analysis and visualization
 saveRDS(plot_results, "data/clean/cor_results.rds")

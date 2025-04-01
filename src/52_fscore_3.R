@@ -1,13 +1,25 @@
-# Grouped Sentiment F-Score Analysis
-# This script calculates F-scores after grouping sentiment categories into positive, negative, and neutral
+#################################################################
+# 3-CATEGORY SENTIMENT ANALYSIS F-SCORE CALCULATION
+#################################################################
+# This script calculates F1 scores after grouping the 7-category sentiment scale
+# into a simplified 3-category scale (positive, neutral, negative). This provides
+# a more coarse-grained evaluation for cases where fine-grained distinctions
+# are less important than the overall sentiment direction.
 
-library(tidyverse)
-library(caret)
+# Load required libraries
+library(tidyverse)  # For data manipulation and visualization
+library(caret)      # For confusion matrix utilities
 
-# Load the data
+#################################################################
+# LOAD DATASET
+#################################################################
+# Load the prepared dataset with 7-category sentiment values
 df <- readRDS("data/clean/df_fscores.rds")
 
-# Function to group sentiment categories
+#################################################################
+# SENTIMENT CATEGORY GROUPING
+#################################################################
+# Define function to convert 7-category sentiment to 3-category
 group_sentiment <- function(sentiment) {
   case_when(
     sentiment %in% c("very_positive", "positive", "somewhat_positive") ~ "positive",
@@ -17,11 +29,11 @@ group_sentiment <- function(sentiment) {
   )
 }
 
-# Apply grouping to ground truth and all model predictions
+# Apply the grouping function to ground truth and all model predictions
 # Start with ground truth
 df_grouped <- data.frame(ground_truth = group_sentiment(df$ground_truth))
 
-# Apply grouping to each model
+# Apply grouping to each model column
 model_columns <- setdiff(names(df), "ground_truth")
 for(model in model_columns) {
   df_grouped[[model]] <- group_sentiment(df[[model]])
@@ -30,11 +42,15 @@ for(model in model_columns) {
 # Print the distribution of grouped ground truth
 print(table(df_grouped$ground_truth))
 
-# Define a function to calculate F1 scores for grouped categories
+#################################################################
+# F1 SCORE CALCULATION FUNCTION
+#################################################################
+# Define a function to calculate F1 scores for the 3 grouped categories
 calculate_detailed_f1_scores <- function(predicted, actual) {
-  # Convert inputs to factors with the same levels
+  # Define the ordered sentiment levels
   sentiment_levels <- c("negative", "neutral", "positive")
   
+  # Convert inputs to factors with the same levels
   predicted <- factor(predicted, levels = sentiment_levels)
   actual <- factor(actual, levels = sentiment_levels)
   
@@ -80,7 +96,10 @@ calculate_detailed_f1_scores <- function(predicted, actual) {
   ))
 }
 
-# Initialize results data frames
+#################################################################
+# INITIALIZE RESULTS DATAFRAMES
+#################################################################
+# Prepare dataframes to store results
 model_names <- character()
 f1_scores <- numeric()
 
@@ -94,7 +113,10 @@ detailed_results <- data.frame(
   stringsAsFactors = FALSE
 )
 
-# Calculate F-scores for each model
+#################################################################
+# CALCULATE F-SCORES FOR EACH MODEL
+#################################################################
+# Process each model
 for(model in model_columns) {
   cat("\nProcessing model:", model, "\n")
   
@@ -132,7 +154,10 @@ for(model in model_columns) {
   })
 }
 
-# Create regular results dataframe
+#################################################################
+# CREATE AND SORT RESULTS DATAFRAMES
+#################################################################
+# Create a simple results dataframe with model names and weighted F1 scores
 results <- data.frame(
   model = model_names,
   weighted_f1 = f1_scores,
@@ -146,8 +171,9 @@ results <- results %>%
 detailed_results <- detailed_results %>%
   arrange(desc(weighted_f1))
 
+#################################################################
+# SAVE RESULTS
+#################################################################
+# Save the F1 score results for further analysis and visualization
 saveRDS(results, "results/analysis/f1_scores_3.rds")
 saveRDS(detailed_results, "results/analysis/f1_scores_detailed_3.rds")
-
- 
-

@@ -1,7 +1,19 @@
+###############################################################################
+# HTML FILE RENAMING UTILITY
+# 
+# This script renames HTML files with proper zero padding to ensure consistent
+# sorting. It converts filenames like "article_1.html" to "article_0001.html"
+# and includes backup and error handling functionality.
+#
+# Author: Ral Zarek
+# Date: March 2025
+###############################################################################
+
 #!/usr/bin/env Rscript
 
-# Script to rename HTML files with proper zero padding
-# Renames files like "article_1.html" to "article_0001.html"
+#==============================================================================
+# 1. FILE RENAMING FUNCTION
+#==============================================================================
 
 # Function to safely rename files with error handling
 rename_files <- function(directory = "eureka_articles") {
@@ -33,6 +45,10 @@ rename_files <- function(directory = "eureka_articles") {
   
   # Regular expression to match article_X.html pattern
   pattern <- "^(.*article_)(\\d+)(\\.html)$"
+  
+  #==============================================================================
+  # 2. ANALYZE FILES AND PREPARE RENAME OPERATIONS
+  #==============================================================================
   
   # Prepare rename operations and validate
   for (file_path in files) {
@@ -68,6 +84,10 @@ rename_files <- function(directory = "eureka_articles") {
     return(invisible(NULL))
   }
   
+  #==============================================================================
+  # 3. VALIDATION AND BACKUP
+  #==============================================================================
+  
   # Check for potential conflicts (where renaming would overwrite existing files)
   potential_conflicts <- operations$new_path[operations$new_path %in% files]
   if (length(potential_conflicts) > 0) {
@@ -89,6 +109,10 @@ rename_files <- function(directory = "eureka_articles") {
     stop("Failed to create complete backup. Aborting rename operation.")
   }
   
+  #==============================================================================
+  # 4. EXECUTE RENAME OPERATIONS
+  #==============================================================================
+  
   # Proceed with rename operations
   cat("Renaming files...\n")
   rename_results <- logical(nrow(operations))
@@ -101,6 +125,10 @@ rename_files <- function(directory = "eureka_articles") {
       warning(paste("Failed to rename", operations$original_path[i]))
     }
   }
+  
+  #==============================================================================
+  # 5. GENERATE SUMMARY REPORT
+  #==============================================================================
   
   # Summary
   success_count <- sum(rename_results)
@@ -115,6 +143,10 @@ rename_files <- function(directory = "eureka_articles") {
     cat("All rename operations completed successfully.\n")
   }
 }
+
+#==============================================================================
+# 6. SCRIPT EXECUTION
+#==============================================================================
 
 # Execute the rename function
 tryCatch({

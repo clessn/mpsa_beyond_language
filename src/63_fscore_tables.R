@@ -1,8 +1,19 @@
-library(dplyr)
+#################################################################
+# F-SCORE TABLE GENERATION
+#################################################################
+# This script creates formatted tables of F1 scores for sentiment analysis models
+# in both LaTeX and Markdown formats. It generates tables for 7-category and
+# 3-category sentiment classifications, as well as a combined comparison table.
 
-# Read in the data
-df_7 <- readRDS("results/fscores/f1_scores_detailed_7.rds")
-df_3 <- readRDS("results/fscores/f1_scores_detailed_3.rds")
+# Load required libraries
+library(dplyr)  # For data manipulation
+
+#################################################################
+# DATA LOADING
+#################################################################
+# Read in the detailed F1 score data
+df_7 <- readRDS("results/fscores/f1_scores_detailed_7.rds")  # 7-category results
+df_3 <- readRDS("results/fscores/f1_scores_detailed_3.rds")  # 3-category results
 
 # Round numeric columns to 3 decimal places for readability
 df_7_rounded <- df_7 %>%
@@ -11,13 +22,16 @@ df_7_rounded <- df_7 %>%
 df_3_rounded <- df_3 %>%
   mutate(across(where(is.numeric), ~round(., 3)))
 
-# 1. CREATE LATEX TABLE FOR 7-CATEGORY CLASSIFICATION
-# Create LaTeX table
+#################################################################
+# 7-CATEGORY LATEX TABLE GENERATION
+#################################################################
+# Create LaTeX table for 7-category classification results
 latex_table_7 <- "\\begin{tabular}{lcccccccc}\n"
 latex_table_7 <- paste0(latex_table_7, "\\hline\n")
 latex_table_7 <- paste0(latex_table_7, "\\textbf{Model} & \\textbf{very\\_neg} & \\textbf{negative} & \\textbf{somewhat\\_neg} & \\textbf{neutral} & \\textbf{somewhat\\_pos} & \\textbf{positive} & \\textbf{very\\_pos} & \\textbf{weighted} \\\\\n")
 latex_table_7 <- paste0(latex_table_7, "\\hline\n")
 
+# Add each model's results as a row in the table
 for(i in 1:nrow(df_7_rounded)) {
   row_7 <- df_7_rounded[i,]
   # Replace underscores with hyphens for LaTeX and escape special characters
@@ -27,6 +41,7 @@ for(i in 1:nrow(df_7_rounded)) {
   model_name <- gsub("%", "\\\\%", model_name)
   model_name <- gsub("#", "\\\\#", model_name)
   
+  # Build the table row with all F1 scores
   latex_table_7 <- paste0(latex_table_7, model_name, " & ", 
                         row_7$very_negative, " & ", 
                         row_7$negative, " & ", 
@@ -38,17 +53,22 @@ for(i in 1:nrow(df_7_rounded)) {
                         row_7$weighted_f1, " \\\\\n")
 }
 
+# Complete the LaTeX table
 latex_table_7 <- paste0(latex_table_7, "\\hline\n")
 latex_table_7 <- paste0(latex_table_7, "\\end{tabular}")
 
 # Write LaTeX table to file
 writeLines(latex_table_7, "results/tables/f1_scores_7cat_table.tex")
 
-# Also keep the original markdown table for other formats
+#################################################################
+# 7-CATEGORY MARKDOWN TABLE GENERATION
+#################################################################
+# Create a Markdown version of the 7-category table
 markdown_table_7 <- "# F1 Score Results by Sentiment Category (7-category)\n\n"
 markdown_table_7 <- paste0(markdown_table_7, "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | weighted_f1 |\n")
 markdown_table_7 <- paste0(markdown_table_7, "|-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|------------|\n")
 
+# Add each model's results as a row in the table
 for(i in 1:nrow(df_7_rounded)) {
   row_7 <- df_7_rounded[i,]
   markdown_table_7 <- paste0(markdown_table_7, "| ", row_7$model, " | ", 
@@ -65,12 +85,15 @@ for(i in 1:nrow(df_7_rounded)) {
 # Write markdown table to file
 writeLines(markdown_table_7, "results/tables/f1_scores_7cat_table.md")
 
-# 2. TABLE FOR 3-CATEGORY CLASSIFICATION
-# Create markdown table
+#################################################################
+# 3-CATEGORY MARKDOWN TABLE GENERATION
+#################################################################
+# Create a Markdown table for 3-category classification results
 markdown_table_3 <- "# Grouped Sentiment F1 Score Results (3-category)\n\n"
 markdown_table_3 <- paste0(markdown_table_3, "| Model | negative | neutral | positive | weighted_f1 |\n")
 markdown_table_3 <- paste0(markdown_table_3, "|-------|----------|---------|----------|------------|\n")
 
+# Add each model's results as a row in the table
 for(i in 1:nrow(df_3_rounded)) {
   row_3 <- df_3_rounded[i,]
   markdown_table_3 <- paste0(markdown_table_3, "| ", row_3$model, " | ", 
@@ -83,7 +106,9 @@ for(i in 1:nrow(df_3_rounded)) {
 # Write markdown table to file
 writeLines(markdown_table_3, "results/tables/f1_scores_3cat_table.md")
 
-# 3. COMBINED TABLE
+#################################################################
+# COMBINED COMPARISON TABLE GENERATION
+#################################################################
 # First, rename columns in df_3 to avoid column name conflicts
 df_3_renamed <- df_3_rounded %>%
   rename(
@@ -99,7 +124,7 @@ merged_df <- df_7_rounded %>%
   # Sort by the weighted_f1 of the 3-category model to match the graph
   arrange(desc(weighted_f1_3cat))
 
-# Create markdown table - CORRECTED FORMAT
+# Create combined markdown table with both 7-category and 3-category results
 markdown_table_combined <- "# Combined F1 Score Results by Sentiment Category\n\n"
 
 # Single row header with clear column labels
@@ -108,7 +133,7 @@ markdown_table_combined <- paste0(markdown_table_combined,
 markdown_table_combined <- paste0(markdown_table_combined, 
   "|-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|-----------------|----------------|-----------------|-------------------|-------------------|\n")
 
-# Add rows
+# Add rows with all metrics for each model
 for(i in 1:nrow(merged_df)) {
   row <- merged_df[i,]
   markdown_table_combined <- paste0(markdown_table_combined, "| ", row$model, " | ", 
@@ -129,7 +154,10 @@ for(i in 1:nrow(merged_df)) {
 # Write combined markdown table to file
 writeLines(markdown_table_combined, "results/tables/f1_scores_combined_table.md")
 
-# Print confirmation
+#################################################################
+# COMPLETION CONFIRMATION
+#################################################################
+# Print confirmation of created tables
 cat("Tables have been created:\n")
 cat("1. 7-category LaTeX table: results/tables/f1_scores_7cat_table.tex\n")
 cat("2. 7-category markdown table: results/tables/f1_scores_7cat_table.md\n")

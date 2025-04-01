@@ -1,5 +1,17 @@
-# Utility functions for sentiment analysis project
+###############################################################################
+# LLM HELPER FUNCTIONS
+# 
+# This script contains utility functions for working with language models,
+# processing their responses, and analyzing sentiment data. It provides
+# error handling, response parsing, and statistical analysis functions.
 #
+# Author: Ral Zarek
+# Date: March 2025
+###############################################################################
+
+#==============================================================================
+# 1. MODEL CONNECTION NOTES
+#==============================================================================
 # USING FIREWORKS.AI HOSTED MODELS
 # ================================
 # To use models from fireworks.ai:
@@ -23,6 +35,10 @@
 #    
 # 4. Use the model client with the chat() function:
 #    response <- fireworks$chat("Your prompt here")
+
+#==============================================================================
+# 2. API ERROR HANDLING
+#==============================================================================
 
 #' Retry function with exponential backoff
 #'
@@ -48,6 +64,10 @@ retry_with_backoff <- function(expr, max_attempts = 5, base_delay = 1, max_delay
     })
   }
 }
+
+#==============================================================================
+# 3. RESPONSE PROCESSING
+#==============================================================================
 
 #' Clean sentiment value from LLM response
 #'
@@ -84,6 +104,10 @@ clean_sentiment_value <- function(response) {
   # If no valid match found, return NA
   return(NA_real_)
 }
+
+#==============================================================================
+# 4. STATISTICS AND VISUALIZATION
+#==============================================================================
 
 #' Generate summary statistics for the sentiment analysis results
 #'
@@ -138,7 +162,7 @@ create_correlation_heatmap <- function(df, output_file = "data/tmp/correlation_h
   p <- ggplot(cor_df, aes(x = Model1, y = Model2, fill = Correlation)) +
     geom_tile() +
     scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
-                         midpoint = 0, limit = c(-1, 1), name = "Correlation") +
+                       midpoint = 0, limit = c(-1, 1), name = "Correlation") +
     theme_minimal() +
     theme(axis.text.x = element_text(angle = 90, hjust = 1),
           axis.title.x = element_blank(),
@@ -150,6 +174,10 @@ create_correlation_heatmap <- function(df, output_file = "data/tmp/correlation_h
   
   cat("Correlation heatmap saved to", output_file, "\n")
 }
+
+#==============================================================================
+# 5. BOOTSTRAP ANALYSIS
+#==============================================================================
 
 #' Estimate model performance using bootstrap resampling
 #'
@@ -196,6 +224,10 @@ estimate_model_performance <- function(df, n_bootstraps = 1000) {
   return(bootstrap_stats)
 }
 
+#==============================================================================
+# 6. LANGUAGE PERFORMANCE ANALYSIS
+#==============================================================================
+
 #' Analyze model performance by language
 #'
 #' @param df Dataframe with sentiment analysis results
@@ -208,8 +240,8 @@ analyze_language_performance <- function(df) {
   df_long <- df %>%
     select(all_of(model_columns)) %>%
     pivot_longer(cols = everything(), 
-                names_to = "model", 
-                values_to = "sentiment")
+              names_to = "model", 
+              values_to = "sentiment")
   
   # Extract model name, prompt language, and text language
   df_long <- df_long %>%

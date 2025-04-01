@@ -1,9 +1,28 @@
+###############################################################################
+# HTML PARSER FUNCTIONS
+# 
+# This script contains functions for parsing news article HTML files from the
+# Eureka database. It extracts metadata and content from the articles and 
+# provides multiple parsing methods for maximum compatibility.
+#
+# Author: Ral Zarek
+# Date: March 2025
+###############################################################################
+
+#==============================================================================
+# 1. SETUP AND DEPENDENCIES
+#==============================================================================
+
 # Load required libraries
-library(rvest)
-library(dplyr)
-library(stringr)
-library(purrr)
-library(readr)
+library(rvest)      # HTML parsing
+library(dplyr)      # Data manipulation
+library(stringr)    # String manipulation
+library(purrr)      # Functional programming tools
+library(readr)      # File reading and writing
+
+#==============================================================================
+# 2. PRIMARY HTML PARSING FUNCTION
+#==============================================================================
 
 # Function to parse a single HTML file
 parse_news_article <- function(file_path) {
@@ -73,6 +92,10 @@ parse_news_article <- function(file_path) {
   })
 }
 
+#==============================================================================
+# 3. SOURCE MEDIA NORMALIZATION
+#==============================================================================
+
 # Helper function to clean source media name
 clean_source_media <- function(source_media_raw) {
   # Define regex patterns for each media source
@@ -119,6 +142,10 @@ clean_source_media <- function(source_media_raw) {
   return(clean_text)
 }
 
+#==============================================================================
+# 4. DATE CONVERSION
+#==============================================================================
+
 # Helper function to convert French date to yyyy-mm-dd format
 convert_french_date <- function(date_match) {
   if (is.na(date_match)) return(NA)
@@ -148,6 +175,10 @@ convert_french_date <- function(date_match) {
     return(date_match)  # Keep original if conversion fails
   }
 }
+
+#==============================================================================
+# 5. JAVASCRIPT CONTENT PARSING
+#==============================================================================
 
 # Alternative parsing method using the JavaScript content
 # This can be used if the HTML parsing doesn't work well
@@ -213,6 +244,10 @@ parse_news_article_js <- function(file_path) {
   })
 }
 
+#==============================================================================
+# 6. SINGLE DIRECTORY PROCESSING
+#==============================================================================
+
 # Function to process a single folder
 process_news_files_advanced <- function(directory_path, output_csv = "news_articles_parsed.csv", method = "auto") {
   # Get all HTML files in the directory
@@ -252,6 +287,10 @@ process_news_files_advanced <- function(directory_path, output_csv = "news_artic
   
   return(news_df)
 }
+
+#==============================================================================
+# 7. MULTIPLE DIRECTORY PROCESSING
+#==============================================================================
 
 # Function to process multiple folders
 process_multiple_folders <- function(folder_paths, output_csv = "news_articles_parsed.csv", method = "auto") {
@@ -308,6 +347,10 @@ process_multiple_folders <- function(folder_paths, output_csv = "news_articles_p
   
   return(all_results)
 }
+
+#==============================================================================
+# 8. LEGACY SUPPORT
+#==============================================================================
 
 # Legacy function for backward compatibility
 process_news_files <- function(directory_path, output_csv = "news_articles_parsed.csv") {

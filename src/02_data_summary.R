@@ -1,18 +1,35 @@
-library(dplyr)
-library(ggplot2)
-library(scales)
-library(gridExtra)
-library(RColorBrewer)
-library(lubridate)
-# Read data
+#################################################################
+# DATA SUMMARY AND VISUALIZATION SCRIPT
+#################################################################
+# This script generates summary statistics and visualizations from the 
+# processed news article dataset. It produces descriptive statistics
+# by news source and creates time series visualizations.
+
+# Load required libraries
+library(dplyr)      # For data manipulation
+library(ggplot2)    # For visualization
+library(scales)     # For better axis scaling in plots
+library(gridExtra)  # For arranging multiple plots
+library(RColorBrewer) # For color palettes
+library(lubridate)  # For date manipulation
+
+#################################################################
+# DATA PREPARATION
+#################################################################
+# Read and clean the dataset
 news_df <- read.csv("data/raw/combined_news_articles.csv") %>%
   filter(!is.na(source_media)) %>%
   filter(!is.na(publication_date)) %>%
   rename(date = publication_date) %>%
   mutate(date = ymd(date)) 
-# Display summary by source
+
+#################################################################
+# SOURCE MEDIA DISTRIBUTION ANALYSIS
+#################################################################
+# Quick view of source distribution
 table(news_df$source_media, useNA = "ifany")
-# Create summary by source
+
+# Create detailed summary by source
 summary_by_source <- news_df %>%
   group_by(source_media) %>%
   summarize(
@@ -23,8 +40,10 @@ summary_by_source <- news_df %>%
   arrange(desc(article_count))
 print(summary_by_source)
 
-# Export summary_by_source to markdown table
-# First, ensure the directory exists
+#################################################################
+# EXPORT SUMMARY TO MARKDOWN TABLE
+#################################################################
+# Ensure the directory exists for saving outputs
 dir.create("results/tables", recursive = TRUE, showWarnings = FALSE)
 
 # Create markdown table directly with proper formatting
@@ -46,7 +65,10 @@ md_table <- c(header, separator, rows)
 # Write the formatted markdown
 writeLines(md_table, "results/tables/summary_by_source.md")
 
-# Create the time_analysis data frame  
+#################################################################
+# TIME SERIES ANALYSIS
+#################################################################
+# Create time series data by aggregating articles by month
 time_analysis <- news_df %>%
   mutate(
     year = year(date),
@@ -55,9 +77,14 @@ time_analysis <- news_df %>%
   group_by(year, month) %>%
   summarize(count = n(), .groups = "drop") %>%
   arrange(year, month)
-# Add the proper date column for plotting
+
+# Add proper date column for plotting (first day of each month)
 time_analysis <- time_analysis %>%
   mutate(date = ymd(paste(year, month, "01", sep = "-")))
+
+#################################################################
+# TIME SERIES VISUALIZATION
+#################################################################
 # Create professional time series plot
 p <- ggplot(time_analysis, aes(x = date, y = count)) +
   # Add gridlines but make them light
@@ -113,6 +140,12 @@ p <- ggplot(time_analysis, aes(x = date, y = count)) +
     y = "Number of Articles",
     caption = "Data collected from Eureka."
   )
+
+#################################################################
+# EXPORT VISUALIZATION
+#################################################################
 # Display the plot
 print(p)
+
+# Save high-resolution version to file
 ggsave("results/graphs/time_series.png", p, width = 16, height = 9, dpi = 300)

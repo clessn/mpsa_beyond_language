@@ -1,16 +1,26 @@
-# Results Summary Script
-# This script extracts and summarizes the performance metrics from all analysis methods
+#################################################################
+# RESULTS SUMMARY
+#################################################################
+# This script compiles and summarizes all performance metrics from the various
+# analysis methods. It calculates aggregate statistics, identifies top performing
+# models, and generates comprehensive summaries by model type and condition.
 
 library(tidyverse)
 
-# Load the result files
+#----------------------------------------------------------------
+# DATA LOADING
+#----------------------------------------------------------------
+# Load the result files from previous analyses
 cor_results <- readRDS("data/clean/cor_results.rds")
 f1_scores_7 <- readRDS("results/fscores/f1_scores_7.rds")
 f1_scores_detailed_7 <- readRDS("results/fscores/f1_scores_detailed_7.rds")
 f1_scores_3 <- readRDS("results/fscores/f1_scores_3.rds")
 f1_scores_detailed_3 <- readRDS("results/fscores/f1_scores_detailed_3.rds")
 
-# Clean up model names across datasets to ensure consistency
+#----------------------------------------------------------------
+# MODEL NAME STANDARDIZATION
+#----------------------------------------------------------------
+# Function to clean and standardize model names across datasets
 clean_model_name <- function(model_name) {
   model_name %>%
     # Remove any binary indicators
@@ -26,7 +36,10 @@ clean_model_name <- function(model_name) {
     {if(!str_detect(., "\\)$") && str_detect(., "Dictionary \\(")) paste0(., ")") else .}
 }
 
-# Process correlation results
+#----------------------------------------------------------------
+# CORRELATION RESULTS PROCESSING
+#----------------------------------------------------------------
+# Process and format correlation results
 correlation_summary <- cor_results %>%
   mutate(
     clean_model = clean_model_name(model),
@@ -53,7 +66,10 @@ correlation_summary <- cor_results %>%
   ) %>%
   arrange(desc(abs(correlation)))
 
-# Process F1 score results (7 categories)
+#----------------------------------------------------------------
+# F1 SCORE PROCESSING (7 CATEGORIES)
+#----------------------------------------------------------------
+# Process and format 7-category F1 score results
 f1_7_summary <- f1_scores_7 %>%
   mutate(
     clean_model = clean_model_name(model),
@@ -71,7 +87,10 @@ f1_7_summary <- f1_scores_7 %>%
   ) %>%
   arrange(desc(weighted_f1))
 
-# Process F1 score results (3 categories)
+#----------------------------------------------------------------
+# F1 SCORE PROCESSING (3 CATEGORIES)
+#----------------------------------------------------------------
+# Process and format 3-category F1 score results
 f1_3_summary <- f1_scores_3 %>%
   mutate(
     clean_model = clean_model_name(model),
@@ -89,7 +108,10 @@ f1_3_summary <- f1_scores_3 %>%
   ) %>%
   arrange(desc(weighted_f1))
 
-# Create a combined ranking summary
+#----------------------------------------------------------------
+# COMBINED PERFORMANCE METRICS
+#----------------------------------------------------------------
+# Create a unified dataframe with all performance metrics
 combined_ranking <- bind_rows(
   correlation_summary %>% 
     select(metric = "correlation", value = correlation, clean_model, condition, base_model) %>%
@@ -104,7 +126,10 @@ combined_ranking <- bind_rows(
     mutate(metric_type = "F1 Score (3-cat)")
 )
 
-# Group and summarize by model and condition
+#----------------------------------------------------------------
+# MODEL-CONDITION ANALYSIS
+#----------------------------------------------------------------
+# Analyze performance grouped by model and prompt condition
 model_condition_summary <- combined_ranking %>%
   group_by(base_model, condition, metric_type) %>%
   summarize(
@@ -114,7 +139,10 @@ model_condition_summary <- combined_ranking %>%
   ) %>%
   arrange(metric_type, desc(mean_value))
 
-# Identify top 3 performers by metric type
+#----------------------------------------------------------------
+# TOP PERFORMERS IDENTIFICATION
+#----------------------------------------------------------------
+# Find top performing models for each metric type
 top_performers <- combined_ranking %>%
   group_by(metric_type) %>%
   slice_max(order_by = abs(value), n = 5) %>%
@@ -122,7 +150,10 @@ top_performers <- combined_ranking %>%
   select(metric_type, clean_model, value, condition) %>%
   arrange(metric_type, desc(abs(value)))
 
-# Summarize performance by condition (prompt language and text language)
+#----------------------------------------------------------------
+# CONDITION SUMMARY ANALYSIS
+#----------------------------------------------------------------
+# Analyze performance by prompt and text language condition
 condition_summary <- combined_ranking %>%
   group_by(condition, metric_type) %>%
   summarize(
@@ -135,15 +166,22 @@ condition_summary <- combined_ranking %>%
   ) %>%
   arrange(metric_type, desc(mean_value))
 
-# Detailed F1 scores by sentiment category (7-cat)
+#----------------------------------------------------------------
+# DETAILED F1 SCORE ANALYSIS
+#----------------------------------------------------------------
+# Detailed analysis of F1 scores by sentiment category
 detailed_f1_7_summary <- f1_scores_detailed_7 %>%
   mutate(clean_model = clean_model_name(model)) %>%
   arrange(desc(weighted_f1))
 
-# Detailed F1 scores by sentiment category (3-cat)
 detailed_f1_3_summary <- f1_scores_detailed_3 %>%
   mutate(clean_model = clean_model_name(model)) %>%
   arrange(desc(weighted_f1))
+
+#----------------------------------------------------------------
+# RESULTS REPORTING
+#----------------------------------------------------------------
+# Print summary reports to console
 
 # Print top performers
 cat("\n=== TOP PERFORMERS BY METRIC ===\n")
@@ -177,7 +215,10 @@ f1_3_summary %>%
   select(clean_model, weighted_f1) %>%
   print()
 
-# Save the processed data for easy access
+#----------------------------------------------------------------
+# SAVE RESULTS
+#----------------------------------------------------------------
+# Save the processed summary data for later use in reports
 results_output <- list(
   correlation = correlation_summary,
   f1_7 = f1_7_summary,

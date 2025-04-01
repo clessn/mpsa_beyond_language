@@ -1,13 +1,30 @@
-library(dplyr)
-library(ggplot2)
+#################################################################
+# CORRELATION VISUALIZATION OF MODEL PERFORMANCE
+#################################################################
+# This script creates a publication-quality visualization of the correlation
+# between different sentiment analysis models and ground truth human ratings.
+# It groups models by type, orders them by performance, and provides visual
+# indications of statistical significance.
 
+# Load required libraries
+library(dplyr)      # For data manipulation
+library(ggplot2)    # For visualization
+
+#################################################################
+# LOAD SUPPORT FILES AND DATA
+#################################################################
+# Load model mapping information
 source("src/94_models_map.R")
 
+# Load correlation results data
 df_raw <- readRDS("data/clean/cor_results.rds")
 
-# Function to get model display name from the model_mapping
+#################################################################
+# MODEL DISPLAY NAME PROCESSING
+#################################################################
+# Function to get human-friendly model display names from the technical model IDs
 get_model_display_name <- function(model_name) {
-  # Check if it's a dictionary model
+  # Special handling for dictionary-based models
   if (grepl("^lsd_", model_name)) {
     return(model_name)  # Return dictionary models as is
   }
@@ -55,17 +72,24 @@ get_model_display_name <- function(model_name) {
   return(model_name)
 }
 
-# Add open source classification to the plot_results data frame
+#################################################################
+# DATA PREPARATION FOR VISUALIZATION
+#################################################################
+# Enhance the correlation data with additional information for plotting
 df <- df_raw %>%
   mutate(
+    # Determine if model has open-source weights
     is_open_source = sapply(model, is_open_source),
+    
+    # Classify models into categories
     model_type = case_when(
       grepl("^lsd_", model) ~ "Dictionary",
       is.na(is_open_source) ~ "Other",
       is_open_source ~ "Open weights",
       !is_open_source ~ "Closed weights"
     ),
-    # Extract base model name, ensuring lsd_ models are grouped together
+    
+    # Extract base model name, ensuring dictionary models are grouped together
     model_name = case_when(
       grepl("^lsd_", model) ~ "dict",  # Group all lsd_ models under "dict"
       TRUE ~ sapply(model, function(m) {
@@ -73,8 +97,10 @@ df <- df_raw %>%
         sub("_[a-z]{2}_[a-z]{2}$", "", m)
       })
     ),
+    
     # Get display name for the model using the mapping function
     display_name = sapply(model, get_model_display_name),
+    
     # Create a simple prompt technique code
     prompt_mechanism = case_when(
       grepl("_en_fr$", model) ~ "EN→FR",
@@ -84,6 +110,7 @@ df <- df_raw %>%
       grepl("^lsd_en", model) ~ "EN",
       TRUE ~ "Other"
     ),
+    
     # Create labels that include both model name and prompting mechanism
     model_label = case_when(
       grepl("^lsd_", model) ~ model,  # Keep original lsd_ model names for labels
@@ -91,20 +118,25 @@ df <- df_raw %>%
     )
   )
 
-# Calculate average correlation by model_name for ordering the groups
+#################################################################
+# MODEL GROUPING AND ORDERING
+#################################################################
+# Calculate average correlation by model type for ordering
 model_avg_cors <- df %>%
   group_by(model_name) %>%
   summarize(avg_correlation = mean(abs_correlation, na.rm = TRUE)) %>%
   arrange(desc(avg_correlation))
 
-# Create ordered factors for both model_name and model_label
+# Create ordered factors for proper plot ordering
 df <- df %>%
   mutate(
     # Order factor for model_name (for grouping)
     model_name_ordered = factor(model_name, levels = model_avg_cors$model_name),
+    
     # Assign group number to each unique model_name for alternating backgrounds
     model_group = as.numeric(factor(model_name, levels = model_avg_cors$model_name)),
-    # Create a composite ordering value for the y-axis that keeps models from the same family together
+    
+    # Create a composite ordering value that keeps models from the same family together
     y_ordering = paste0(
       sprintf("%03d", model_group),
       "_",
@@ -123,17 +155,19 @@ df <- df %>%
   arrange(y_ordering) %>%
   mutate(model_label_ordered = factor(model_label, levels = rev(unique(model_label))))
 
-# Create a data frame for the group background rectangles with alternating shades
+#################################################################
+# CREATE BACKGROUND RECTANGLES FOR VISUAL GROUPING
+#################################################################
 # Get unique model groups in the order they will appear
 model_groups <- df %>%
   select(model_name, model_group) %>%
   distinct() %>%
   arrange(model_group)
 
-# Get the total number of rows in the dataframe
+# Get the total number of rows in the dataframe for position calculation
 total_rows <- nrow(df)
 
-# Create background rectangles data
+# Create background rectangles data for alternating model group backgrounds
 bg_rects <- data.frame()
 current_min <- 0.5
 
@@ -156,14 +190,17 @@ for (i in 1:nrow(model_groups)) {
   current_min <- current_min + model_count
 }
 
-# Create display names for model groups (to handle the "dict" group)
+# Create display names for model groups (special handling for dictionary models)
 model_groups <- model_groups %>%
   mutate(display_name = case_when(
     model_name == "dict" ~ "Dictionary-based",
     TRUE ~ model_name
   ))
 
-# Create the correlation plot with simplified visual elements
+#################################################################
+# CREATE CORRELATION PLOT
+#################################################################
+# Create the correlation plot with professional styling
 plot_correlation <- ggplot() +
   # Add alternating background for visual grouping
   geom_rect(data = bg_rects, aes(
@@ -172,13 +209,15 @@ plot_correlation <- ggplot() +
     ymax = ymax,
     fill = shade
   ), alpha = 0.5) +
-  # Points colored by model type (no shape variation)
+  
+  # Points colored by model type
   geom_point(data = df, aes(
     x = correlation, 
     y = model_label_ordered,
     color = model_type
   ), size = 3.5) +
-  # Add error bars with matching colors - FIXED: Removed redundant x = correlation
+  
+  # Add error bars with matching colors
   geom_errorbarh(data = df, aes(
     y = model_label_ordered,
     xmin = correlation - 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
@@ -192,22 +231,28 @@ plot_correlation <- ggplot() +
         plot.background = element_rect(fill = "white"),
         panel.grid.major.y = element_blank(),  # Remove horizontal grid lines
         panel.grid.minor.y = element_blank()) +
+  
+  # Labels and titles
   labs(x = "\nCorrelation with Ground Truth\n",
        y = "",  # Remove y-axis label since we have direct labels
        title = "Sentiment Analysis Models Correlation with Ground Truth",
        subtitle = "Pearson correlation coefficients with 95% confidence intervals",
        caption = "Figure 1. Cross-lingual sentiment analysis performance across model architectures.\nModels grouped by type (color) and sorted by correlation strength. Prompting mechanisms within clusters ordered as\nFR→FR (French prompt on French text), EN→FR (English prompt on French text), and EN→EN (English prompt on translated text).\nError bars represent 95% confidence intervals; *p < 0.05, **p < 0.01, ***p < 0.001.") +
+  
   # Scale and reference lines
   scale_x_continuous(limits = c(-1, 1)) +
   geom_vline(xintercept = 0, linetype = "dotted") +
+  
   # Fill scale for alternating backgrounds
   scale_fill_manual(values = c(
     "even" = "gray95",  # Almost white
     "odd" = "gray90"    # Very light gray
   )) +
+  
   # Hide the fill legend (used only for background grouping)
   guides(fill = "none") +
-  # Correlation value labels with significance stars only
+  
+  # Correlation value labels with significance stars
   geom_text(data = df, aes(
     x = ifelse(correlation >= 0, correlation + 0.15, correlation - 0.15),
     y = model_label_ordered,
@@ -217,6 +262,7 @@ plot_correlation <- ggplot() +
                            ifelse(p_value < 0.01, "**",
                                   ifelse(p_value < 0.05, "*", ""))))
   ), hjust = ifelse(df$correlation >= 0, 0, 1), size = 3.5) +
+  
   # Color scale for model types
   scale_color_manual(values = c(
     "Open weights" = "#1F77B4",   # Blue 
@@ -224,6 +270,7 @@ plot_correlation <- ggplot() +
     "Dictionary" = "#2CA02C",    # Green
     "Other" = "#7F7F7F"          # Gray
   ), name = "Model Type") +
+  
   # Theme formatting
   theme(plot.caption.position = "plot",
         axis.title.x = element_text(hjust = 0.5, size = 12),
@@ -236,7 +283,11 @@ plot_correlation <- ggplot() +
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 9))
 
+#################################################################
+# DISPLAY AND SAVE VISUALIZATION
+#################################################################
+# Display the plot
 print(plot_correlation)
 
-# Save the plot
+# Save high-resolution version to file
 ggsave("results/graphs/model_correlation.png", plot_correlation, width = 14, height = 12, dpi = 300)

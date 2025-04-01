@@ -1,13 +1,27 @@
-library(dplyr)
-library(tidytext)
+#################################################################
+# LEXICODER SENTIMENT DICTIONARY (LSD) PREPARATION
+#################################################################
+# This script prepares English-translated news articles for sentiment analysis
+# using the Lexicoder Sentiment Dictionary (LSD). It splits text into sentences
+# and applies various text preparation functions to optimize for dictionary matching.
 
-# Source helper functions
+# Load required libraries
+library(dplyr)      # For data manipulation
+library(tidytext)   # For text tokenization and processing
+
+#################################################################
+# LOAD SUPPORTING CODE AND DATA
+#################################################################
+# Source helper functions for text preparation
 source(file = "src/91_LSDprep_dec2017.R")
 
-# Read data
+# Read the dataset with translated text
 df <- readRDS("data/tmp/news_df_translated.rds")
 
-# Split articles into sentences and create proper sentence IDs
+#################################################################
+# SENTENCE SEGMENTATION
+#################################################################
+# Split articles into sentences and create proper sentence identifiers
 df_lsd <- df %>%
   # Split into sentences while preserving document structure
   unnest_sentences(
@@ -23,22 +37,46 @@ df_lsd <- df %>%
   ) %>%
   ungroup()
 
-# Create body_prepped column with the original sentence text
+# Initialize body_prepped column with the original sentence text
 df_lsd$body_prepped <- df_lsd$sentence_text
 
-# Apply each prep function
+#################################################################
+# TEXT PREPROCESSING PIPELINE
+#################################################################
+# Apply each preparation function from the LSDprep helper file
+# These functions handle contractions, punctuation, negations, and other text features
+# to improve dictionary-based sentiment analysis accuracy
+
+# Process contractions (e.g., "don't" -> "do not")
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, LSDprep_contr)
+
+# Handle dictionary punctuation
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, LSDprep_dict_punct)
+
+# Remove punctuation from acronyms
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, remove_punctuation_from_acronyms)
+
+# Remove punctuation from abbreviations
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, remove_punctuation_from_abbreviations)
+
+# Standardize spacing around punctuation
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, LSDprep_punctspace)
+
+# Process negation terms
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, LSDprep_negation)
+
+# Apply dictionary-specific preparation
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, LSDprep_dict)
+
+# Mark proper nouns to handle them appropriately
 df_lsd$body_prepped <- pbapply::pbsapply(df_lsd$body_prepped, mark_proper_nouns)
 
-# Select relevant columns
+#################################################################
+# FINAL DATASET ORGANIZATION AND STORAGE
+#################################################################
+# Select and reorder relevant columns for the final dataset
 df_lsd <- df_lsd %>%
   select(doc_id, id_sentence, source_media, date, sentence_text, body_prepped, everything())
 
-# Save the df 
+# Save the prepared dataset for sentiment analysis
 saveRDS(df_lsd, "data/tmp/df_lsd_prepped.rds")

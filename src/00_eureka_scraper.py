@@ -1,3 +1,19 @@
+"""
+#################################################################
+# EUREKA WEB SCRAPER MODULE
+#################################################################
+# This module provides functionality for scraping news articles from the Eureka
+# database, which requires institutional login. The scraper handles authentication,
+# manual search interaction, and article extraction.
+#
+# Key features:
+# - Supports both undetected-chromedriver and regular ChromeDriver
+# - Handles manual login and search operations
+# - Extracts document keys in various ways to handle different page structures
+# - Downloads articles in batches with resumable capability
+# - Provides detailed progress tracking and error handling
+"""
+
 import json
 import os
 import platform
@@ -18,8 +34,25 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class EurekaScraper:
+    """
+    A class for scraping articles from the Eureka database.
+    
+    This scraper uses Selenium WebDriver to automate interaction with the
+    Eureka website, allowing extraction of news articles. It supports manual
+    login and search functionality, then automates the article download process.
+    
+    Attributes:
+        output_dir (str): Directory where downloaded articles will be stored
+        driver: WebDriver instance for browser automation
+    """
+    
     def __init__(self, output_dir="./downloaded_articles"):
-        """Initialize the Eureka scraper with configuration."""
+        """
+        Initialize the Eureka scraper with configuration.
+        
+        Args:
+            output_dir (str): Directory path where downloaded articles will be saved
+        """
         self.output_dir = output_dir
         self.driver = None
 
@@ -28,7 +61,13 @@ class EurekaScraper:
             os.makedirs(output_dir)
 
     def setup_driver(self):
-        """Set up the Selenium WebDriver using undetected-chromedriver."""
+        """
+        Set up the Selenium WebDriver using undetected-chromedriver.
+        
+        This method tries to use undetected-chromedriver to bypass detection
+        mechanisms. If that fails, it falls back to regular ChromeDriver.
+        Both options are configured with appropriate settings for stability.
+        """
         print("Setting up undetected Chrome WebDriver...")
         try:
             # Configure Chrome options
@@ -65,13 +104,23 @@ class EurekaScraper:
             print("Fallback Chrome browser set up successfully")
 
     def navigate_to_initial_url(self, url):
-        """Navigate to the initial URL."""
+        """
+        Navigate to the initial URL.
+        
+        Args:
+            url (str): The starting URL for the Eureka database
+        """
         print(f"Navigating to: {url}")
         self.driver.get(url)
         self.driver.save_screenshot(os.path.join(self.output_dir, "initial_page.png"))
 
     def manual_login(self):
-        """Allow the user to manually log in."""
+        """
+        Allow the user to manually log in.
+        
+        This method pauses the script execution and waits for the user to
+        manually complete the login process in the browser window.
+        """
         print("\n" + "=" * 50)
         print("MANUAL LOGIN REQUIRED")
         print("=" * 50)
@@ -88,7 +137,11 @@ class EurekaScraper:
         )
 
     def wait_for_search_results(self):
-        """Wait for the search results to be visible after user manually searches."""
+        """
+        Wait for the search results to be visible after user manually searches.
+        
+        Takes a screenshot of the search results page for documentation.
+        """
         print("Waiting for search results page...")
 
         # Take a screenshot to document the current state
@@ -99,7 +152,16 @@ class EurekaScraper:
         print("Search results page loaded")
 
     def extract_doc_keys(self):
-        """Extract the _docKeyList JavaScript variable and parse it."""
+        """
+        Extract the _docKeyList JavaScript variable and parse it.
+        
+        This method tries multiple approaches to extract document keys:
+        1. Using regex to find the JavaScript array of document keys
+        2. Extracting document IDs from links as a fallback
+        
+        Returns:
+            list: List of document keys, or empty list if none found
+        """
         try:
             # Take a screenshot of the results page
             self.driver.save_screenshot(
@@ -201,14 +263,32 @@ class EurekaScraper:
             return []
 
     def encode_doc_key(self, doc_key):
-        """Properly encode a document key for use in a URL."""
+        """
+        Properly encode a document key for use in a URL.
+        
+        Args:
+            doc_key (str): Raw document key
+            
+        Returns:
+            str: URL-encoded document key
+        """
         encoded = doc_key
         encoded = encoded.replace("·", "%C2%B7")
         encoded = encoded.replace("×", "%C3%97")
         return encoded
 
     def create_article_urls(self, doc_keys):
-        """Create URLs for all document keys."""
+        """
+        Create URLs for all document keys.
+        
+        Generates URLs for each document key and saves them to a CSV file.
+        
+        Args:
+            doc_keys (list): List of document keys
+            
+        Returns:
+            list: List of dictionaries with document key, index, and URL
+        """
         urls = []
 
         for index, key in enumerate(doc_keys):
@@ -225,7 +305,18 @@ class EurekaScraper:
         return urls
 
     def download_articles(self, urls, start_index=0, max_articles=None):
-        """Download articles from the generated URLs."""
+        """
+        Download articles from the generated URLs.
+        
+        This method visits each article URL and saves the HTML content to files.
+        It includes resumable functionality by checking for existing downloads,
+        and creates progress tracking information.
+        
+        Args:
+            urls (list): List of dictionaries with article URLs
+            start_index (int): Index to start downloading from
+            max_articles (int, optional): Maximum number of articles to download
+        """
         if not urls:
             print("No URLs to download. Exiting.")
             return
@@ -318,13 +409,32 @@ class EurekaScraper:
                 time.sleep(2)
 
     def close(self):
-        """Close the browser."""
+        """
+        Close the browser.
+        
+        Safely closes the WebDriver instance.
+        """
         if self.driver:
             self.driver.quit()
             print("Browser closed")
 
     def run(self, start_url, start_index=0, batch_size=1000):
-        """Run the complete scraping process with manual login and search."""
+        """
+        Run the complete scraping process with manual login and search.
+        
+        This method orchestrates the full workflow:
+        1. Setting up the browser
+        2. Navigating to start URL
+        3. Manual login and search
+        4. Extracting document keys
+        5. Creating article URLs
+        6. Downloading articles in batches
+        
+        Args:
+            start_url (str): The starting URL for the Eureka database
+            start_index (int): Index to start downloading from
+            batch_size (int): Number of articles to download in each batch
+        """
         try:
             # Setup the browser
             self.setup_driver()
@@ -426,7 +536,15 @@ class EurekaScraper:
 
 
 def validate_date_format(date_str):
-    """Validate that a string is in YYYY-MM-DD format."""
+    """
+    Validate that a string is in YYYY-MM-DD format.
+    
+    Args:
+        date_str (str): Date string to validate
+        
+    Returns:
+        bool: True if the date is in valid YYYY-MM-DD format, False otherwise
+    """
     try:
         time.strptime(date_str, "%Y-%m-%d")
         return True
@@ -441,7 +559,22 @@ def main(
     start_date=None,
     end_date=None,
 ):
-    """Main function to run the scraper with configurable parameters."""
+    """
+    Main function to run the scraper with configurable parameters.
+    
+    This function handles configuration and initialization of the scraper:
+    1. Gets start and end dates if not provided
+    2. Creates a timeframe-specific directory
+    3. Handles resuming from previous progress
+    4. Initializes and runs the scraper
+    
+    Args:
+        output_dir (str): Base directory for saved articles
+        start_index (int): Index to start downloading from
+        resume (bool): Whether to resume from previous progress
+        start_date (str, optional): Start date for the search period
+        end_date (str, optional): End date for the search period
+    """
     start_url = "https://acces.bibl.ulaval.ca/login?url=https://nouveau.eureka.cc/access/ip/default.aspx?un=ulaval1"
 
     # Ask for timeframe if not provided

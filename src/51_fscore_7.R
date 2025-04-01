@@ -1,18 +1,30 @@
-# Sentiment Analysis F-Score Calculation - Fixed Version
-# This script focuses solely on calculating and plotting the weighted F1 scores
+#################################################################
+# 7-CATEGORY SENTIMENT ANALYSIS F-SCORE CALCULATION
+#################################################################
+# This script calculates weighted F1 scores for sentiment analysis models
+# using the original 7-category sentiment scale (very negative to very positive).
+# It computes both overall weighted F1 scores and detailed per-class scores.
 
-library(tidyverse)
-library(caret)
+# Load required libraries
+library(tidyverse)  # For data manipulation and visualization
+library(caret)      # For confusion matrix utilities
 
-# Load the data
+#################################################################
+# LOAD DATASET
+#################################################################
+# Load the prepared dataset with categorical sentiment values
 df <- readRDS("data/clean/df_fscores.rds")
 
-# Define a function to manually calculate F1 scores for all classes
+#################################################################
+# F1 SCORE CALCULATION FUNCTION
+#################################################################
+# Define a function to manually calculate F1 scores for all sentiment classes
 calculate_detailed_f1_scores <- function(predicted, actual) {
-  # Convert inputs to factors with the same levels
+  # Define the ordered sentiment levels
   sentiment_levels <- c("very_negative", "negative", "somewhat_negative", 
                        "neutral", "somewhat_positive", "positive", "very_positive")
   
+  # Convert inputs to factors with the same levels
   predicted <- factor(predicted, levels = sentiment_levels)
   actual <- factor(actual, levels = sentiment_levels)
   
@@ -26,7 +38,7 @@ calculate_detailed_f1_scores <- function(predicted, actual) {
   support <- numeric(length(sentiment_levels))
   names(f1) <- sentiment_levels
   
-  # Calculate precision, recall, and F1 for each class
+  # Calculate precision, recall, and F1 for each sentiment class
   for(i in 1:length(sentiment_levels)) {
     # True positives
     tp <- cm[i, i]
@@ -58,7 +70,10 @@ calculate_detailed_f1_scores <- function(predicted, actual) {
   ))
 }
 
-# Initialize results data frames
+#################################################################
+# INITIALIZE RESULTS DATAFRAMES
+#################################################################
+# Prepare dataframes to store results
 model_names <- character()
 f1_scores <- numeric()
 
@@ -76,7 +91,13 @@ detailed_results <- data.frame(
   stringsAsFactors = FALSE
 )
 
-# Calculate F-scores for each model
+#################################################################
+# CALCULATE F-SCORES FOR EACH MODEL
+#################################################################
+# Get a list of model columns from the dataset
+model_columns <- setdiff(names(df), "ground_truth")
+
+# Process each model
 for(model in model_columns) {
   cat("\nProcessing model:", model, "\n")
   
@@ -118,7 +139,10 @@ for(model in model_columns) {
   })
 }
 
-# Create regular results dataframe
+#################################################################
+# CREATE AND SORT RESULTS DATAFRAMES
+#################################################################
+# Create a simple results dataframe with model names and weighted F1 scores
 results <- data.frame(
   model = model_names,
   weighted_f1 = f1_scores,
@@ -132,8 +156,9 @@ results <- results %>%
 detailed_results <- detailed_results %>%
   arrange(desc(weighted_f1))
 
+#################################################################
+# SAVE RESULTS
+#################################################################
+# Save the F1 score results for further analysis and visualization
 saveRDS(results, "results/analysis/f1_scores_7.rds")
 saveRDS(detailed_results, "results/analysis/f1_scores_detailed_7.rds")
-
- 
-

@@ -1,13 +1,29 @@
-library(dplyr)
-library(ggplot2)
+#################################################################
+# MEAN ABSOLUTE ERROR VISUALIZATION
+#################################################################
+# This script creates a publication-quality visualization of the Mean Absolute Error
+# (MAE) between different sentiment analysis models and ground truth human ratings.
+# Lower MAE values indicate better performance (closer to ground truth).
 
+# Load required libraries
+library(dplyr)      # For data manipulation
+library(ggplot2)    # For visualization
+
+#################################################################
+# LOAD SUPPORT FILES AND DATA
+#################################################################
+# Load model mapping information
 source("src/94_models_map.R")
 
+# Load correlation results data (also contains MAE values)
 df_raw <- readRDS("data/clean/cor_results.rds")
 
-# Function to get model display name from the model_mapping
+#################################################################
+# MODEL DISPLAY NAME PROCESSING
+#################################################################
+# Function to get human-friendly model display names from the technical model IDs
 get_model_display_name <- function(model_name) {
-  # Check if it's a dictionary model
+  # Special handling for dictionary-based models
   if (grepl("^lsd_", model_name)) {
     return(model_name)  # Return dictionary models as is
   }
@@ -55,17 +71,24 @@ get_model_display_name <- function(model_name) {
   return(model_name)
 }
 
-# Add open source classification to the plot_results data frame
+#################################################################
+# DATA PREPARATION FOR VISUALIZATION
+#################################################################
+# Enhance the correlation data with additional information for plotting
 df <- df_raw %>%
   mutate(
+    # Determine if model has open-source weights
     is_open_source = sapply(model, is_open_source),
+    
+    # Classify models into categories
     model_type = case_when(
       grepl("^lsd_", model) ~ "Dictionary",
       is.na(is_open_source) ~ "Other",
       is_open_source ~ "Open weights",
       !is_open_source ~ "Closed weights"
     ),
-    # Extract base model name, ensuring lsd_ models are grouped together
+    
+    # Extract base model name, ensuring dictionary models are grouped together
     model_name = case_when(
       grepl("^lsd_", model) ~ "dict",  # Group all lsd_ models under "dict"
       TRUE ~ sapply(model, function(m) {
@@ -73,8 +96,10 @@ df <- df_raw %>%
         sub("_[a-z]{2}_[a-z]{2}$", "", m)
       })
     ),
+    
     # Get display name for the model using the mapping function
     display_name = sapply(model, get_model_display_name),
+    
     # Create a simple prompt technique code
     prompt_mechanism = case_when(
       grepl("_en_fr$", model) ~ "EN→FR",
@@ -84,6 +109,7 @@ df <- df_raw %>%
       grepl("^lsd_en", model) ~ "EN",
       TRUE ~ "Other"
     ),
+    
     # Create labels that include both model name and prompting mechanism
     model_label = case_when(
       grepl("^lsd_", model) ~ model,  # Keep original lsd_ model names for labels
@@ -91,19 +117,24 @@ df <- df_raw %>%
     )
   )
 
+#################################################################
+# MODEL GROUPING AND ORDERING BY MAE
+#################################################################
 # For MAE, we want to group by average MAE (LOWER is better)
 model_avg_mae <- df %>%
   group_by(model_name) %>%
   summarize(avg_mae = mean(mae, na.rm = TRUE)) %>%
   arrange(avg_mae)  # Arrange from lowest (best) to highest MAE
 
-# Create ordered factors for both model_name and model_label based on MAE
+# Create ordered factors for proper plot ordering
 df <- df %>%
   mutate(
     # Order factor for model_name (for grouping) - lowest MAE first
     model_name_ordered = factor(model_name, levels = model_avg_mae$model_name),
+    
     # Assign group number to each unique model_name for alternating backgrounds
     model_group = as.numeric(factor(model_name, levels = model_avg_mae$model_name)),
+    
     # Create a composite ordering value for the y-axis that keeps models from the same family together
     y_ordering = paste0(
       sprintf("%03d", model_group),
@@ -123,17 +154,19 @@ df <- df %>%
   arrange(y_ordering) %>%
   mutate(model_label_ordered = factor(model_label, levels = rev(unique(model_label))))
 
-# Create a data frame for the group background rectangles with alternating shades
+#################################################################
+# CREATE BACKGROUND RECTANGLES FOR VISUAL GROUPING
+#################################################################
 # Get unique model groups in the order they will appear
 model_groups <- df %>%
   select(model_name, model_group) %>%
   distinct() %>%
   arrange(model_group)
 
-# Get the total number of rows in the dataframe
+# Get the total number of rows in the dataframe for position calculation
 total_rows <- nrow(df)
 
-# Create background rectangles data
+# Create background rectangles data for alternating model group backgrounds
 bg_rects <- data.frame()
 current_min <- 0.5
 
@@ -141,7 +174,7 @@ for (i in 1:nrow(model_groups)) {
   # Count how many rows this model takes up
   model_count <- sum(df$model_name == model_groups$model_name[i])
   
-  # Need to reverse the y-coordinates since we're placing highest at top
+  # Need to reverse the y-coordinates since we're placing lowest MAE at top
   rect_ymin <- total_rows - (current_min + model_count) + 1
   rect_ymax <- total_rows - current_min + 1
   
@@ -156,14 +189,17 @@ for (i in 1:nrow(model_groups)) {
   current_min <- current_min + model_count
 }
 
-# Create display names for model groups (to handle the "dict" group)
+# Create display names for model groups (special handling for dictionary models)
 model_groups <- model_groups %>%
   mutate(display_name = case_when(
     model_name == "dict" ~ "Dictionary-based",
     TRUE ~ model_name
   ))
 
-# Create the MAE plot with simplified visual elements (similar to correlation plot)
+#################################################################
+# CREATE MAE PLOT
+#################################################################
+# Create the MAE plot with professional styling
 plot_mae <- ggplot() +
   # Add alternating background for visual grouping
   geom_rect(data = bg_rects, aes(
@@ -172,13 +208,13 @@ plot_mae <- ggplot() +
     ymax = ymax,
     fill = shade
   ), alpha = 0.5) +
-  # Points colored by model type (no shape variation)
+  
+  # Points colored by model type
   geom_point(data = df, aes(
     x = mae, 
     y = model_label_ordered,
     color = model_type
   ), size = 3.5) +
-  # No error bars for MAE as it's a direct calculation, not a statistical inference
   
   # Theme with white background
   theme_minimal() +
@@ -186,26 +222,33 @@ plot_mae <- ggplot() +
         plot.background = element_rect(fill = "white"),
         panel.grid.major.y = element_blank(),  # Remove horizontal grid lines
         panel.grid.minor.y = element_blank()) +
+  
+  # Labels and titles
   labs(x = "\nMean Absolute Error (MAE)\n",
        y = "",  # Remove y-axis label since we have direct labels
        title = "Sentiment Analysis Models Mean Absolute Error",
        subtitle = "Lower values indicate better performance",
        caption = "Figure 2. Cross-lingual sentiment analysis performance by Mean Absolute Error.\nModels grouped by type (color) and sorted by MAE (lower is better). Prompting mechanisms within clusters ordered as\nFR→FR (French prompt on French text), EN→FR (English prompt on French text), and EN→EN (English prompt on translated text).") +
+  
   # Scale and reference lines - adaptive limits for MAE
   scale_x_continuous(limits = c(0, max(df$mae) * 1.2)) +
+  
   # Fill scale for alternating backgrounds
   scale_fill_manual(values = c(
     "even" = "gray95",  # Almost white
     "odd" = "gray90"    # Very light gray
   )) +
+  
   # Hide the fill legend (used only for background grouping)
   guides(fill = "none") +
+  
   # MAE value labels
   geom_text(data = df, aes(
     x = mae + max(df$mae) * 0.05,  # Add some padding to the right of points
     y = model_label_ordered,
     label = sprintf("MAE = %.3f", mae)
   ), hjust = 0, size = 3.5) +
+  
   # Color scale for model types
   scale_color_manual(values = c(
     "Open weights" = "#1F77B4",   # Blue 
@@ -213,6 +256,7 @@ plot_mae <- ggplot() +
     "Dictionary" = "#2CA02C",    # Green
     "Other" = "#7F7F7F"          # Gray
   ), name = "Model Type") +
+  
   # Theme formatting
   theme(plot.caption.position = "plot",
         axis.title.x = element_text(hjust = 0.5, size = 12),
@@ -225,7 +269,11 @@ plot_mae <- ggplot() +
         legend.title = element_text(size = 10),
         legend.text = element_text(size = 9))
 
+#################################################################
+# DISPLAY AND SAVE VISUALIZATION
+#################################################################
+# Display the plot
 print(plot_mae)
 
-# Save the plot
+# Save high-resolution version to file
 ggsave("results/graphs/model_mae.png", plot_mae, width = 14, height = 12, dpi = 300)
