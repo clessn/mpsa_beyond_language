@@ -1,325 +1,180 @@
-# mpsa_beyond_language
+# Beyond Language Barriers: Evaluating Open-Source LLMs in Non-English Sentiment Analysis
 
-Métho:
+This repository contains the code, data, and analysis for the research article "Beyond Language Barriers: Evaluating the Efficacy of Open-Source LLMs in Analyzing Sentiment in Non-English Textual Data."
 
-query:
+## Overview
 
-TEXT= ("logiciel libre" | "logiciels libres" | "open source" | "open-source" | "logiciel open source" | "logiciels open source" | "code source ouvert" | "software libre" | "free software" | "code source libre" | Free Software Foundation | Richard Stallman)
+This research evaluates the cross-linguistic capabilities of general-purpose large language models (LLMs) in sentiment analysis of French texts. We assess whether open-source foundational models can accurately analyze sentiment in non-English content without task-specific fine-tuning, comparing their performance to traditional dictionary-based methods and examining the impact of prompt language on analytical outcomes.
 
-Dates:
+### Research Questions
 
-1991-01-01 <- Année de création de Linux
-2025-01-01 <- Date de fin de la recherche
+1. Can general-purpose LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning?
+2. Can open-source general-purpose foundational LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning?
+3. How does the language of the prompt affect performance across different languages?
 
-Sources: Principaux quotidiens (FR)
+## Data
 
-Devoir, Le
-Droit, Le (Ottawa, ON)
-Figaro, Le
-Journal de Montréal, Le
-Journal de Québec, Le
-Libération
-Monde, Le
-Nouvelliste, Le (Trois-Rivières, QC)
-Presse, La
-Quotidien, Le (Saguenay, QC)
-Soleil, Le (Québec, QC)
-Tribune, La (Sherbrooke, QC)
-Voix de l'Est, La (Granby, QC)
+The corpus consists of 2,683 French-language news articles from 13 media sources collected from the Eureka database, spanning 1991-2025. These articles cover discourse about open-source software with the following search query:
 
-Divison des dates
+```
+TEXT= ("logiciel libre" | "logiciels libres" | "open source" | "open-source" | "logiciel open source" | "logiciels open source" | "code source ouvert" | "software libre" | "free software" | "code source libre" | "Free Software Foundation" | "Richard Stallman")
+```
 
-2013-09-05_2025_01_01 : 999 articles
-2005-05-14_2013-09-04 : 997 articles
-1991-01-01_2005-05-13 : 705 articles
+The sources include 9 newspapers from Québec, 1 from Ontario, and 3 from France, ensuring a diverse representation of the francophone media landscape.
 
+## Repository Structure
 
-- What are you doing?
-- Why is it important?
-- How is the existing literature deficient?
-- What are you doing that's better?
-- What did you find?
+- `/data/` - Contains all data files
+  - `/clean/` - Processed data ready for analysis
+  - `/dict/` - Dictionary files for lexicon-based sentiment analysis
+  - `/eureka_articles/` - Raw HTML files of collected news articles
+  - `/raw/` - Unprocessed data files
+  - `/tmp/` - Temporary files and checkpoints
+  - `/translation_files/` - Files for the translation process
+- `/docs/` - Documentation and manuscript files
+  - `/pub/` - Publication-ready files
+- `/results/` - Analysis results and outputs
+  - `/analysis/` - Statistical analysis results
+  - `/graphs/` - Visualizations
+  - `/tables/` - Result tables
+- `/src/` - Source code for data collection, processing, and analysis
 
+## Methods
 
-# Prompt
+### Data Collection
 
-I am evaluating the performance of a handful of large language models to evaluate the sentiment of texts. 
+Data was collected using a custom Python web scraper (`src/00_eureka_scraper.py`) that extracts article content from the Eureka database. The scraper uses Selenium WebDriver to navigate the database interface and download articles in HTML format.
 
-I have written a description of the tast. Your role is to write a R script that does the prompting of a whole dataset with all LLM detailed in the instruction. I work in R and use the ellmer() package to prompt various llms. 
+HTML documents were preprocessed with custom R functions to extract publication metadata (date, source, title) and full text content.
 
-Here is an example of how the package works: 
+### Translation
 
-library(ellmer)
+To facilitate cross-linguistic analysis, French texts were translated into English using Google Translate. The process involved:
+1. Batching the articles into Word documents using the `officer` R package
+2. Adding unique delimiters to maintain document structure
+3. Translating the documents using Google Translate
+4. Extracting and realigning the translated text with the original French content
 
-groq <- ellmer::chat_groq(
-  system_prompt = "Your role is to answer simple questions",
-  model = "llama-3.3-70b-versatile",
-  echo = "none"
-)
+### Sentiment Analysis Approaches
 
-response <- groq$chat("What is the capital of France?")
+#### Manual Annotation
+- 200 randomly selected sentences were manually annotated on a scale from -1 to 1
+- A custom Shiny application was developed to streamline the annotation process
+- This annotated dataset served as the ground truth for evaluation
 
-print(response)
+#### Dictionary-Based Analysis
+- French corpus: Analyzed using a French Lexicoder Sentiment Dictionary (frlsd)
+- English translations: Analyzed using the standard Lexicoder Sentiment Dictionary
 
-Here are the instructions you need to follow to elaborate the script.
+#### LLM-Based Analysis
+The research evaluates 11 different LLMs across three linguistic configurations:
+1. French text with French prompts (FR→FR)
+2. French text with English prompts (EN→FR)
+3. English translations with English prompts (EN→EN)
 
+**Models evaluated:**
+- Open-source models:
+  - Llama 3.2 (1B)
+  - Llama 3.2 (3B)
+  - Gemma 2 (9B)
+  - Mistral Saba (24B)
+  - QWQ (32B)
+  - Llama 3.3 (70B)
+  - DeepSeek R1 Basic (671B)
+- Closed-source models:
+  - Claude 3.5 Haiku
+  - Gemini 2.0 Flash
+  - DeepSeek Chat
+  - GPT-4o
 
-# Required prompts
+Each model was prompted three times per sentence to ensure robust results, for a total of 19,800 prompts.
 
-dataframe name: `df`
-dataframe path: "data/tmp/data_manual_ranking.rds"
+### Evaluation Metrics
 
-system prompt: You are a helpful assistant that analyzes the sentiment of text. You provide accurate and consistent sentiment ratings according to the specified scale.
+Three complementary methodologies were used to assess performance:
+1. Correlation analysis: Pearson correlation coefficients between model predictions and ground truth
+2. F1 score with 7-category classification: Very negative, negative, somewhat negative, neutral, somewhat positive, positive, very positive
+3. F1 score with 3-category classification: Negative, neutral, positive
 
-enfr_prompt <- paste0("Please analyze the sentiment of the following French text and provide a single numerical rating according to this scale:
-Sentiment Scale:
--1.0: Strong negative sentiment - highly critical, hostile, or pessimistic content
--0.5: Moderate negative sentiment - somewhat negative, disapproving, or concerned content
-0.0: Neutral sentiment - factual, balanced, or neither positive nor negative content
-0.5: Moderate positive sentiment - somewhat positive, approving, or optimistic content
-1.0: Strong positive sentiment - highly supportive, enthusiastic, or optimistic content
-You may also use values between these points for intermediate sentiment levels (e.g., -0.7, 0.3).
-Important instructions:
-1. First, carefully read and understand the text, considering cultural and linguistic nuances in French.
-2. Analyze the emotional tone, word choice, and overall message.
-3. Respond ONLY with a single numerical value between -1.0 and 1.0 that best represents the sentiment.
-4. Do not include ANY explanations, analysis, or additional text in your response.
-Here is the text to analyze: ", df$sentences[i])
+## Key Findings
 
-enen_prompt <- paste0("Please analyze the sentiment of the following english text and provide a single numerical rating according to this scale:
-Sentiment Scale:
--1.0: Strong negative sentiment - highly critical, hostile, or pessimistic content
--0.5: Moderate negative sentiment - somewhat negative, disapproving, or concerned content
-0.0: Neutral sentiment - factual, balanced, or neither positive nor negative content
-0.5: Moderate positive sentiment - somewhat positive, approving, or optimistic content
-1.0: Strong positive sentiment - highly supportive, enthusiastic, or optimistic content
-You may also use values between these points for intermediate sentiment levels (e.g., -0.7, 0.3).
-Important instructions:
-1. First, carefully read and understand the text, considering cultural and linguistic nuances in French.
-2. Analyze the emotional tone, word choice, and overall message.
-3. Respond ONLY with a single numerical value between -1.0 and 1.0 that best represents the sentiment.
-4. Do not include ANY explanations, analysis, or additional text in your response.
-Here is the text to analyze: ", df$sentences[i])
+1. General-purpose foundation models can effectively analyze sentiment in non-English texts, with the best-performing models achieving correlation coefficients above 0.70 and F1 scores exceeding 0.70 for 3-category classification.
 
+2. Proprietary closed-weight models consistently outperformed their open-weight counterparts, with DeepSeek Chat, GPT-4o, and Gemini 2.0 demonstrating the strongest performance.
 
-frfr_prompt <- paste0("Veuillez analyser le sentiment du texte français suivant et fournir une évaluation numérique unique selon cette échelle :
-Échelle de sentiment :
--1.0 : Sentiment négatif fort - contenu très critique, hostile ou pessimiste
--0.5 : Sentiment négatif modéré - contenu plutôt négatif, désapprobateur ou préoccupant
-0.0 : Sentiment neutre - contenu factuel, équilibré, ou ni positif ni négatif
-0.5 : Sentiment positif modéré - contenu plutôt positif, approbateur ou optimiste
-1.0 : Sentiment positif fort - contenu très favorable, enthousiaste ou optimiste
-Vous pouvez également utiliser des valeurs intermédiaires entre ces points pour des niveaux de sentiment intermédiaires (par exemple, -0.7, 0.3).
-Instructions importantes :
-1. D'abord, lisez attentivement et comprenez le texte, en tenant compte des nuances culturelles et linguistiques en français.
-2. Analysez le ton émotionnel, le choix des mots et le message global.
-3. Répondez UNIQUEMENT avec une valeur numérique unique entre -1.0 et 1.0 qui représente le mieux le sentiment.
-4. N'incluez AUCUNE explication, analyse ou texte supplémentaire dans votre réponse.
-Voici le texte à analyser : ", df$sentences[i])
+3. For correlation metrics, French prompts with French text yielded the strongest performance, closely followed by English prompts with French text. English prompts with English-translated text showed marginally lower performance.
 
-ellmer::chat_openai()
-    function structure: fireworks <- ellmer::chat_openai(system_prompt = "You are a helpful assistant", base_url = "https://api.fireworks.ai/inference/v1", api_key = Sys.getenv("FIREWORKS_API_KEY"), model = model)
-    models:
-        - "accounts/fireworks/models/llama-v3p2-3b-instruct"
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama323b_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama323b_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama323b_en_en`
-        - "accounts/fireworks/models/qwq-32b"
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$qwq32b_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$qwq32b_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$qwq32b_en_en`
-        - "accounts/fireworks/models/deepseek-r1-basic"
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekr1_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekr1_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekr1_en_en`
-        - "accounts/fireworks/models/llama-v3p3-70b-instruct"
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama3370b_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama3370b_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama3370b_en_en`
-ellmer::chat_groq()
-    models:
-        - gemma2-9b-it
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gemma29b_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gemma29b_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gemma29b_en_en`
-        - llama-3.2-1b-preview
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama321b_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama321b_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$llama321b_en_en`
-        - mixtral-8x7b-32768
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$mixtral_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$mixtral_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$mixtral_en_en`
-        - deepseek-r1-distill-llama-70b
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekr1distillllama_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekr1distillllama_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekr1distillllama_en_en`
-ellmer::chat_anthropic()
-    model:
-        - claude-3-5-haiku-20241022
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$claude35_en_fr` 
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$claude35_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$claude35_en_en`
-ellmer::chat_gemini()
-    model
-        - gemini-2.0-flash
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gemini20_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gemini20_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gemini20_en_en`
-ellmer::chat_deepseek()
-    model:
-        - deepseek-chat
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekchat_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekchat_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$deepseekchat_en_en`
-ellmer::chat_gpt4()
-    model:
-        - gpt-4o
-            - English prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gpt4o_en_fr`
-            - French prompt for french text in `df$sentences`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gpt4o_fr_fr`
-            - English prompt for english translation of french text in `df$sentences_en`
-                - Result is mean() of three runs of the same prompt 
-                - Results stored in `df$gpt4o_en_en`
+4. For classification metrics, English prompts with French text yielded the highest average performance, slightly outperforming both French-prompted French text and English-prompted English text.
 
-21600 prompts in total
+5. All models demonstrated substantially higher performance on the simplified 3-category task compared to the more granular 7-category classification, with models struggling most with "somewhat positive" and "somewhat negative" categories.
 
-I have made a lot of textual sentiment analysis performance tests for 11 AI models as well as a dictionary method. 
-I have 200 sentences in french which I classified manually and which I stored the score I put in the ground_truth column. 
-I have the scores of the 11 models and the dictionary method in their respective columns. 
-For the dictionary approach I have classified it in df$lsd_fr and lsd_en. 
-Each of the 11 models were tested in three different ways. 
-model_en_fr, model_fr_fr and model_en_en. 
-I want to make regression analysis of all the models and their variations on the ground truth and display the results in a nice regression graph. 
-I will provide an example code of a nice regression graph I like.
-I want a graph that shows each regression models, not a focused version and I want to see the coefficient and the t-value of each model.
+## Usage
 
+### Environment Setup
 
-# Creation of focused plot
-plot_regression <- ggplot(plot_results, aes(x = estimate, y = reorder(term_with_n, abs(estimate)))) +
-  # Points - with different shapes for small sample variables
-  geom_point(aes(color = sig_level, shape = is_small_sample), size = 3.5) +
-  # Confidence intervals - 99.9% (thinnest)
-  geom_linerange(aes(xmin = LowerCI999, xmax = UpperCI999, color = sig_level), linewidth = 0.5) +
-  # Confidence intervals - 99% (thin)
-  geom_linerange(aes(xmin = LowerCI99, xmax = UpperCI99, color = sig_level), linewidth = 1.2) +
-  # Confidence intervals - 95% (thick)
-  geom_linerange(aes(xmin = LowerCI95, xmax = UpperCI95, color = sig_level), linewidth = 2.5) +
-  # Theme and labels
-  clessnize::theme_clean_light() +
-  labs(x = "\nRegression Coefficient\n",
-       y = "\nVariable\n",
-       title = "Main Predictors of Abortion Support",
-       subtitle = "Linear regression results with multiple confidence levels",
-       caption = paste0(
-         "Line thickness indicates confidence level: thick (95%), medium (99%), thin (99.9%)\n",
-         "Triangle shape indicates small sample size variable (n<5% of dataset)"
-       )) +
-  # Scale and reference line
-  scale_x_continuous(limits = c(x_min, x_max)) +
-  geom_vline(xintercept = 0, linetype = "dotted") +
-  # T value labels
-  geom_text(aes(x = ifelse(estimate > 0, 
-                          UpperCI999 + 0.05, 
-                          LowerCI999 - 0.05), 
-                label = paste("t =", round(t_value, 2), significance)),
-            hjust = ifelse(plot_results$estimate > 0, 0, 1),
-            size = 4) +
-  # Colors for significance levels - different blue shades
-  scale_color_manual(values = c("p < 0.001" = "#08519C", # Dark blue
-                               "p < 0.01" = "#3182BD",  # Medium blue
-                               "p < 0.05" = "#6BAED6",  # Light blue
-                               "Not significant" = "grey60"), # Grey
-                    name = "Statistical Significance") +
-  # Shape for small sample variables
-  scale_shape_manual(values = c("TRUE" = 17, "FALSE" = 16),
-                    labels = c("TRUE" = "Small sample size", "FALSE" = "Adequate sample size"),
-                    name = "Sample Size") +
-  # Theme formatting
-  theme(plot.caption.position = "plot",
-        axis.title.x = element_text(hjust = 0.5, size = 20),
-        axis.title.y = element_text(hjust = 0.5, size = 20),
-        axis.text.x = element_text(size = 20),
-        axis.text.y = element_text(size = 16),
-        plot.title = element_text(size = 24, face = "bold", hjust = 0.5),
-        plot.subtitle = element_text(size = 18, hjust = 0.5),
-        plot.caption = element_text(size = 20, hjust = 0),
-        legend.position = "bottom",
-        legend.title = element_text(size = 16),
-        legend.text = element_text(size = 14))
+This project uses R for data analysis and Python for web scraping. Dependencies are managed with Poetry.
 
-# Saving the focused plot
-cat("Saving focused plot...\n")
-ggsave("graph/regression_predictors_focused.png", plot_regression, width = 12, height = 8, dpi = 300)
+```bash
+# Install Poetry (if not already installed)
+curl -sSL https://install.python-poetry.org | python3 -
 
+# Install Python dependencies
+poetry install
 
-Here is the names(df) output so you know which variables to deal with. _bin variables are for another analysis. Don't use them.
+# Required R packages
+# install.packages(c("tidyverse", "quanteda", "caret", "ellmer", "officer", "polyglotR"))
+```
+
+### Data Collection
+
+```bash
+# Run the Eureka scraper (requires login credentials)
+python src/00_eureka_scraper.py --start-date 1991-01-01 --end-date 2025-01-01 --output-dir ./data/eureka_articles
+```
+
+### Analysis Pipeline
+
+The analysis can be run step-by-step following the numbered scripts in the `/src/` directory:
+
+1. HTML parsing and data extraction: `src/01_html_parsing.R`
+2. Data summarization: `src/02_data_summary.R`
+3. Data cleaning: `src/10_dataframe_cleaning.R`
+4. Dictionary-based sentiment analysis: `src/20_frlsd.R`, `src/22_lsd_prep.R`, `src/23_lsd.R`
+5. Translation: `src/21_translate_to_english.R`
+6. Sample creation and manual annotation: `src/30_create_sample.R`, `src/31_validate_manual_anotation.R`
+7. LLM prompting: `src/40_prompt.R`, `src/41_prompt_cleaning.R`
+8. Performance evaluation: `src/50_cor.R`, `src/51_fscore_7.R`, `src/52_fscore_3.R`
+9. Visualization: `src/60_cor_graph.R`, `src/61_mae_graph.R`, `src/62_fscore_graphs.R`
+10. Result tables: `src/63_fscore_tables.R`, `src/64_results_summary.R`
+
+### Replicating the Study
+
+To replicate the study with your own API keys:
+
+1. Set up the required API keys as environment variables:
+   ```R
+   Sys.setenv(FIREWORKS_API_KEY="your_key_here")
+   Sys.setenv(OPENAI_API_KEY="your_key_here")
+   Sys.setenv(ANTHROPIC_API_KEY="your_key_here")
+   Sys.setenv(GOOGLE_API_KEY="your_key_here")
+   Sys.setenv(GROQ_API_KEY="your_key_here")
+   Sys.setenv(DEEPSEEK_API_KEY="your_key_here")
+   ```
+
+2. Run the `src/40_prompt.R` script to perform sentiment analysis with all models.
+
+3. Run the evaluation scripts to analyze the results.
+
+## Citation
+
+If you use this code or data in your research, please cite:
+
+```
+Foisy, L.-O. M., Pelletier, C., Proulx, É., Vincent, S.-J., & Dufresne, Y. (2025). 
+Beyond Language Barriers: Evaluating the Efficacy of Open-Source LLMs in Analyzing 
+Sentiment in Non-English Textual Data.
+```
+
+## License
+
+This repository is licensed under the terms included in the LICENSE file.
