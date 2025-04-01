@@ -146,8 +146,8 @@ results <- results %>%
 detailed_results <- detailed_results %>%
   arrange(desc(weighted_f1))
 
-saveRDS(results, "results/fscores/f1_scores_3.rds")
-saveRDS(detailed_results, "results/fscores/f1_scores_detailed_3.rds")
+saveRDS(results, "results/analysis/f1_scores_3.rds")
+saveRDS(detailed_results, "results/analysis/f1_scores_detailed_3.rds")
 
  
 

@@ -189,14 +189,4 @@ results_output <- list(
   model_condition_summary = model_condition_summary
 )
 
-saveRDS(results_output, "data/clean/results_summary.rds")
-
-# Print a message with recommendations for the Results section
-cat("\n\nRECOMMENDATIONS FOR RESULTS SECTION:\n")
-cat("1. Start with overall performance comparisons across all models and conditions\n")
-cat("2. Highlight the top-performing models and configurations\n")
-cat("3. Compare performance across different prompt conditions (FR→FR vs EN→FR vs EN→EN)\n")
-cat("4. Compare open-source vs closed-source model performance\n")
-cat("5. Analyze the performance of dictionary-based methods vs LLM approaches\n")
-cat("6. Discuss performance differences between 7-category and 3-category classifications\n")
-cat("7. Examine category-specific F1 scores to identify strengths/weaknesses in sentiment detection\n")
+saveRDS(results_output, "results/analysis/results_summary.rds")
