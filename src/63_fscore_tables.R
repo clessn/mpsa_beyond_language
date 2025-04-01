@@ -11,8 +11,40 @@ df_7_rounded <- df_7 %>%
 df_3_rounded <- df_3 %>%
   mutate(across(where(is.numeric), ~round(., 3)))
 
-# 1. TABLE FOR 7-CATEGORY CLASSIFICATION
-# Create markdown table
+# 1. CREATE LATEX TABLE FOR 7-CATEGORY CLASSIFICATION
+# Create LaTeX table
+latex_table_7 <- "\\begin{tabular}{lcccccccc}\n"
+latex_table_7 <- paste0(latex_table_7, "\\hline\n")
+latex_table_7 <- paste0(latex_table_7, "\\textbf{Model} & \\textbf{very\\_neg} & \\textbf{negative} & \\textbf{somewhat\\_neg} & \\textbf{neutral} & \\textbf{somewhat\\_pos} & \\textbf{positive} & \\textbf{very\\_pos} & \\textbf{weighted} \\\\\n")
+latex_table_7 <- paste0(latex_table_7, "\\hline\n")
+
+for(i in 1:nrow(df_7_rounded)) {
+  row_7 <- df_7_rounded[i,]
+  # Replace underscores with hyphens for LaTeX and escape special characters
+  model_name <- gsub("_", "-", row_7$model)
+  # Also escape any other potential special LaTeX characters
+  model_name <- gsub("&", "\\\\&", model_name)
+  model_name <- gsub("%", "\\\\%", model_name)
+  model_name <- gsub("#", "\\\\#", model_name)
+  
+  latex_table_7 <- paste0(latex_table_7, model_name, " & ", 
+                        row_7$very_negative, " & ", 
+                        row_7$negative, " & ", 
+                        row_7$somewhat_negative, " & ", 
+                        row_7$neutral, " & ", 
+                        row_7$somewhat_positive, " & ", 
+                        row_7$positive, " & ", 
+                        row_7$very_positive, " & ", 
+                        row_7$weighted_f1, " \\\\\n")
+}
+
+latex_table_7 <- paste0(latex_table_7, "\\hline\n")
+latex_table_7 <- paste0(latex_table_7, "\\end{tabular}")
+
+# Write LaTeX table to file
+writeLines(latex_table_7, "results/tables/f1_scores_7cat_table.tex")
+
+# Also keep the original markdown table for other formats
 markdown_table_7 <- "# F1 Score Results by Sentiment Category (7-category)\n\n"
 markdown_table_7 <- paste0(markdown_table_7, "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | weighted_f1 |\n")
 markdown_table_7 <- paste0(markdown_table_7, "|-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|------------|\n")
@@ -99,6 +131,7 @@ writeLines(markdown_table_combined, "results/tables/f1_scores_combined_table.md"
 
 # Print confirmation
 cat("Tables have been created:\n")
-cat("1. 7-category table: results/tables/f1_scores_7cat_table.md\n")
-cat("2. 3-category table: results/tables/f1_scores_3cat_table.md\n")
-cat("3. Combined table: results/tables/f1_scores_combined_table.md\n")
+cat("1. 7-category LaTeX table: results/tables/f1_scores_7cat_table.tex\n")
+cat("2. 7-category markdown table: results/tables/f1_scores_7cat_table.md\n")
+cat("3. 3-category table: results/tables/f1_scores_3cat_table.md\n")
+cat("4. Combined table: results/tables/f1_scores_combined_table.md\n")

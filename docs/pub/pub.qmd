@@ -45,16 +45,6 @@ author:
           city: Québec
           state: Québec
           postal-code: G1V 0A6
-  - name: Hubert Cadieux
-    email: hubert.cadieux.1@ulaval.ca
-    affiliations:
-        - id: ulaval
-          name: Université Laval
-          department: Département de science politique
-          address: 2325, rue de l'Université
-          city: Québec
-          state: Québec
-          postal-code: G1V 0A6
   - name: Yannick Dufresne  
     email: yannick.dufresne@pol.ulaval.ca
     affiliations:
@@ -79,6 +69,11 @@ format:
       name: Journal Name
       formatting: preprint
       cite-style: authoryear
+    include-in-header:
+      text: |
+        \usepackage{geometry}
+        \geometry{margin=1in}
+        \usepackage{pdflscape}
 ---
 
 # Introduction
@@ -178,21 +173,21 @@ We evaluate whether foundational models demonstrate sufficient cross-linguistic 
 
 Our corpus consists of 2683 French-language news articles from 13 media sources collected from the Eureka database spanning 1991-2025.
 It's an exhaustive collection of every articles published about open-source in what Eureka calls its "Major daily newspapers (FR)" category. 
+13 sources, 9 from Québec, 1 from Ontario, and 3 from France, ensuring a diverse representation of the francophone media landscape.  
 The articles were selected based on the following search querry:
 
 ```{.markdown .code-overflow-wrap}
-TEXT= ("logiciel libre" | "logiciels libres" | "open source" | 
-       "open-source" | "logiciel open source" | 
-       "logiciels open source" | "code source ouvert" | 
-       "software libre" | "free software" | "code source libre" | 
-       "Free Software Foundation" | "Richard Stallman")
+TEXT= ("logiciel libre" | "logiciels libres" | "open source" | "open-source" | "logiciel 
+       open source" | "logiciels open source" | "code source ouvert" | "software libre"|        
+       "free software" | "code source libre" | "Free Software Foundation" | "Richard 
+       Stallman")
 ```
 
 The earliest date of january 1st, 1991 was selected to ensure a comprehensive representation of the evolution of open-source discourse over time. 
 1991 is the year of the first release of the Linux kernel, a pivotal moment in the history of open-source software. 
 January 1st, 2025 was selected as the end date to ensure that the articles were all published before the start of the study. 
 This covers a period of 34 years, allowing us to analyze the evolution of open-source discourse over time. 
-However, the first article collected was published on June 23rd, 1995 as no articles fitting the querry were published before that date.
+However, the first article collected was published on June 23rd, 1995, as no articles fitting the querry were published before that date.
 @tbl-source-summary shows the distribution of articles by source media, with a total of 2683 articles collected from 13 different sources.
 
 ::: {#tbl-source-summary}
@@ -209,11 +204,20 @@ All HTML documents underwent preprocessing with custom R functions to extract pu
 This resulted in a temporally diverse exhaustive corpus suitable for sentiment analysis across multiple methods.
 The extraction process preserved document structure while standardizing format, enabling consistent comparison across analytical approaches.
 
+![Articles published by year](../../results/graphs/time_series.png)
+
 ## Translation
 
-To facilitate cross-linguistic analysis, we translated the original French text into English using Google Translate. To manage the translation of our large corpus (2683 articles), we developed a systematic approach using R. We batched the French articles into Word documents (.docx) using the `officer` package, with each batch containing approximately 900 articles. Each article was marked with a unique delimiter (###ARTICLE_START###) and its original document ID to maintain traceability. These Word documents were then translated using Google Translate's document translation service. After translation, we processed the translated documents to extract the English text while preserving the document IDs. The extracted translations were then merged back into our original dataframe, creating parallel French-English text columns for each article
+To facilitate cross-linguistic analysis, we translated the original French text into English using Google Translate. 
+To manage the translation of our large corpus (2683 articles), we developed a systematic approach using R. 
+We batched the French articles into Word documents (.docx) using the `officer` package, with each batch containing approximately 900 articles. 
+Each article was marked with a unique delimiter (###ARTICLE_START###) and its original document ID to maintain traceability. 
+These Word documents were then translated using Google Translate's document translation service. 
+After translation, we processed the translated documents to extract the English text while preserving the document IDs. 
+The extracted translations were then merged back into our original dataframe, creating parallel French-English text columns for each article
 
-This approach allowed us to efficiently translate large volumes of text for free while maintaining document integrity and preserving the connection between original French content and its English translation. The process was automated using R scripts, ensuring consistent handling across all documents and enabling systematic comparison of sentiment analysis results across languages.
+This approach allowed us to efficiently translate large volumes of text for free while maintaining document integrity and preserving the connection between original French content and its English translation. 
+The process was automated using R scripts, ensuring consistent handling across all documents and enabling systematic comparison of sentiment analysis results across languages.
 
 ## Manual Annotation
 
@@ -253,13 +257,14 @@ This dual-dictionary approach provided a methodologically sound baseline against
 ## LLM-Based Sentiment Analysis
 
 Our LLM evaluation framework incorporated an extensive assessment of multiple general-purpose foundational models, carefully selected to represent the current landscape of both open and closed-weight architectures. 
-We conducted a total of 21,600 individual prompts across 11 different models to thoroughly evaluate their sentiment analysis capabilities in cross-linguistic contexts. 
-This unprecedented scale of evaluation allowed us to draw robust conclusions about model performance across language boundaries and prompt conditions.
+We conducted a total of 19,800 individual prompts across 11 different models to thoroughly evaluate their sentiment analysis capabilities in cross-linguistic contexts. 
+This scale of evaluation allowed us to draw conclusions about model performance across language boundaries and prompt conditions.
 
 For our open-weight model selection, we incorporated a diverse range of architectures and parameter sizes to ensure comprehensive representation of current capabilities. 
 The smallest model in our evaluation was Llama 3.2 (1B), accessed through the Groq API service, which allowed us to establish a baseline for minimal parameter count performance
 . We also included Llama 3.2 (3B), accessed via Fireworks.ai, which represents a modest increase in parameter size while maintaining computational efficiency. 
 Gemma 2 (9B), Google's mid-sized open model accessed via Groq, provided an intermediate step in model scale. 
+Models of these sizes are able to be run on consumer-grade hardware, making them accessible for researchers without access to large computational resources.
 Mistral Saba (24B), also accessed through Groq, represented a substantial increase in parameter count with Mistral AI's specialized architecture. 
 QWQ (32B), developed by Alibaba Cloud and accessed via Fireworks.ai, introduced another architectural approach with a larger parameter count. The second largest open-weight model in our evaluation was Llama 3.3 (70B), Meta AI's advanced offering accessed through Fireworks.ai. 
 We also included DeepSeek R1 Basic (671B) via Fireworks.ai, the largest open-weight model in our evaluation, which provided a unique opportunity to assess the performance of a model with an exceptionally high parameter count.
@@ -267,13 +272,12 @@ We also included DeepSeek R1 Basic (671B) via Fireworks.ai, the largest open-wei
 The closed-weight models in our evaluation were selected to represent leading commercial offerings with established performance records. 
 These included Claude 3.5 Haiku, Anthropic's efficient conversational model recognized for its instruction-following capabilities; Gemini 2.0 Flash, Google's streamlined but powerful model with enhanced multilingual support; DeepSeek Chat, a specialized conversational variant from DeepSeek AI; and GPT-4o, OpenAI's advanced multimodal model renowned for its cross-linguistic proficiency. 
 This combination of open and closed-weight models created a comprehensive evaluation framework spanning different architectural approaches, training methodologies, and parameter scales.
-
-<!-- EXPLIQUER QU'ON UTILISE PAS LES MEILLEURS MODELES DU MARCHÉ PARCE QUE ÇA COUTE BCQ TROP CHERE ET C'EST OVERKILL -->
+We selected these models based on their prominence in the field and their affordability, as they are all available for free or at a low cost compared to some of the leading models on the market which are often prohibitively expensive.
 
 To systematically evaluate each model's performance across different language contexts, we implemented a rigorous experimental design consisting of three distinct analytical conditions.
-The first condition involved analyzing the original French text with French prompts, which assessed each model's native language understanding when both input text and instructions were in the same non-English language. 
-The second condition evaluated French text with English prompts, directly examining the cross-linguistic prompting effect documented in previous research. 
-The third condition used English translations of the original French sentences with English prompts, providing insight into how translation might impact sentiment analysis performance. 
+The first condition [Fr -> Fr] involved analyzing the original French text with French prompts, which assessed each model's native language understanding when both input text and instructions were in the same non-English language. 
+The second condition [En -> Fr] evaluated French text with English prompts, directly examining the cross-linguistic prompting effect documented in previous research. 
+The third condition [En -> En] used English translations of the original French sentences with English prompts, providing insight into how translation might impact sentiment analysis performance. 
 This three-condition approach enabled us to isolate the effects of both prompt language and text language, allowing for detailed analysis of how each factor impacts model performance and measurement of potential information loss during translation.
 
 All prompts across both languages followed a meticulously standardized structure to ensure valid cross-linguistic comparison. 
@@ -282,21 +286,47 @@ We included a comprehensive sentiment scale documentation that defined five dist
 The prompts explicitly permitted the use of intermediate values between these anchor points to allow for fine-grained sentiment assessment. 
 We included cultural context guidance instructing models to consider linguistic and cultural nuances specific to the language being analyzed. 
 Finally, all prompts contained strict response format constraints requiring only numerical values without any explanations or additional text, ensuring consistent and comparable outputs across all models. 
-French prompts were professional translations of the English prompts, maintaining identical structure, meaning, and nuance to ensure valid cross-linguistic comparison.
+French prompts were translations of the English prompts, maintaining identical structure, meaning, and nuance to ensure valid cross-linguistic comparison.
 
-The technical implementation of our evaluation process utilized the `ellmer` R package, which provides a unified interface for interacting with various model provider APIs. 
-For Fireworks.ai-hosted models (Llama 3.2 3B, QWen2 32B, DeepSeek R1 Basic, and Llama 3.3 70B), we utilized the chat_openai function with appropriate base URL and model identifier parameters. 
+Here is the prompt used for the [En -> Fr] condition:
+^[The prompt used for the [Fr -> Fr] condition is identical, except that the text is in French and the prompt is in French. See the GitHub repository in `src/93_prompts.R` for the exact prompt used.]
+
+```{.markdown .code-overflow-wrap}
+en_prompt_fr_text <- function(text) {
+  paste0("Please analyze the sentiment of the following French text and provide a single 
+  numerical rating according to this scale:
+Sentiment Scale:
+-1.0: Strong negative sentiment - highly critical, hostile, or pessimistic content
+-0.5: Moderate negative sentiment - somewhat negative, disapproving, or concerned 
+      content
+0.0: Neutral sentiment - factual, balanced, or neither positive nor negative content
+0.5: Moderate positive sentiment - somewhat positive, approving, or optimistic content
+1.0: Strong positive sentiment - highly supportive, enthusiastic, or optimistic content
+You may also use values between these points for intermediate sentiment levels 
+(e.g., -0.7, 0.3).
+Important instructions:
+1. First, carefully read and understand the text, considering cultural and linguistic 
+   nuances in French.
+2. Analyze the emotional tone, word choice, and overall message.
+3. Respond ONLY with a single numerical value between -1.0 and 1.0 that best 
+   represents the sentiment.
+4. Do not include ANY explanations, analysis, or additional text in your response.
+Here is the text to analyze: ", text)
+}
+```
+
+The technical implementation of our prompting process utilized the `ellmer` R package, which provides a unified interface for interacting with various model provider APIs. 
+For Fireworks.ai-hosted models (Llama 3.2 3B, QwQ 32B, DeepSeek R1 Basic, and Llama 3.3 70B), we utilized the chat_openai function with appropriate base URL and model identifier parameters. 
 For Groq-hosted models (Gemma 2 9B, Llama 3.2 1B, and Mistral Saba), we employed the chat_groq function with corresponding model identifiers. 
 Provider-specific functions (chat_claude, chat_gemini, chat_deepseek, and chat_openai with standard OpenAI parameters) were used for Claude 3.5, Gemini 2.0, DeepSeek Chat, and GPT-4o respectively. 
-For each API connection, we configured appropriate system prompts defining the assistant's role as a sentiment analyzer, established appropriate token limits (generally constraining responses to a maximum of 100 tokens), and implemented authentication using provider-specific API keys stored as environment variables for security.
+For each API connection, we configured appropriate system prompts defining the assistant's role as a sentiment analyzer, established an appropriate token limit constraining responses to a maximum of 100 tokens, and implemented authentication using provider-specific API keys.
 
 The core sentiment analysis function processed each sentence through multiple steps. 
 First, it constructed the appropriate prompt based on the prompt language and text field configuration. 
-For English prompts with French text, it utilized the en_prompt_fr_text function; for English prompts with English text, the en_prompt_en_text function; and for French prompts with French text, the fr_prompt_fr_text function. 
 Each function assembled the complete prompt with appropriate instructions and the target text. 
 The execution phase employed sophisticated retry logic with exponential backoff for resilience against API failures. 
 For each sentence, we performed three separate analytical runs, with each run allowing up to three retry attempts if needed. 
-Between API calls, we implemented adaptive rate limiting based on the specific provider's requirements: Groq models received customized delays based on token usage (longer for higher token counts), Fireworks.ai models received consistent 1.5-second delays, and other API-based models received 1-second delays to prevent rate limiting issues.
+Between API calls, we implemented adaptive rate limiting based on the specific provider's requirements.
 
 Response parsing presented a significant challenge due to the diversity of output formats despite our explicit instructions for numerical-only responses. 
 We implemented a comprehensive clean_sentiment_value function that employed multiple regular expression patterns to extract valid numerical sentiment scores from various response formats, including bare numbers, numbers with prefixes like "Sentiment:" or "Rating:", and numbers within explanatory text. 
@@ -309,35 +339,120 @@ Each checkpoint included a timestamped file and a consolidated "latest checkpoin
 The system also maintained a rotating set of checkpoint files, keeping the 10 most recent files while automatically removing older ones to prevent excessive disk usage. 
 This approach ensured that no more than approximately 30 minutes of computation would be lost in case of system failure or process interruption.
 
-After completing all 21,600 individual prompting operations, we performed comprehensive data validation and analysis. 
-We examined patterns of missing values, identifying cases where models consistently failed to provide valid sentiment scores for particular sentences or language conditions. 
-We calculated distribution statistics for each model and language combination, including means, standard deviations, and various percentiles. 
-We evaluated inter-model agreement through correlation analysis, identifying which models produced most similar or divergent results across different language configurations. 
-This deep analytical approach provided insights not just into overall performance but also into specific strengths and weaknesses of different models across language boundaries and prompt configurations.
-
-The scale and comprehensiveness of our LLM evaluation framework, encompassing 11 diverse models across three linguistic configurations with triple redundancy, provided an unprecedented view into cross-linguistic sentiment analysis capabilities of general-purpose foundation models. 
+The scale and comprehensiveness of our LLM evaluation framework, encompassing 11 diverse models across three linguistic configurations with triple redundancy, provided a clear view into cross-linguistic sentiment analysis capabilities of general-purpose foundation models. 
 This methodologically rigorous approach enabled us to make highly reliable assessments of model performance, free from the occasional variability inherent in large language model outputs, and to draw meaningful conclusions about the impact of prompt language and text language on sentiment analysis accuracy.
 
 ## Validation and Performance Evaluation
 
-Ground truth for model evaluation was established through creation of a validation dataset containing randomly selected sentences from our corpus.
-Multiple human annotators independently rated each sentence on a 7-point Likert scale ranging from "very negative" (-1.0) to "very positive" (1.0).
-Inter-annotator agreement was measured to ensure reliability of the ground truth dataset.
-We employed multiple complementary metrics to evaluate model performance.
-Pearson correlation coefficients with 95% confidence intervals assessed the linear relationship between model predictions and human annotations.
-Classification performance was measured using F1 scores under both fine-grained (7-category) and coarse-grained (3-category) classification schemes, capturing models' ability to distinguish sentiment at different levels of granularity.
-We further quantified prediction accuracy through Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) calculations.
-This comprehensive evaluation framework enabled systematic comparison of performance variations across model types (open vs. closed-weight), prompt languages, text languages (original vs. translated), and methodological approaches (dictionary-based vs. LLM-based).
+Our evaluation framework employed three complementary methodologies to thoroughly assess the performance of LLMs and dictionary-based approaches in sentiment analysis: correlation analysis, F1 score calculation with 7-category classification, and F1 score calculation with a simplified 3-category classification scheme.
+
+For the correlation analysis, we calculated Pearson correlation coefficients between each model's continuous sentiment predictions (ranging from -1.0 to 1.0) and the manually annotated ground truth values. 
+
+![Correlations](../../results/graphs/model_correlation.png)
+
+This approach evaluated the models' ability to accurately reflect sentiment intensity and direction. 
+Additionally, we calculated Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) metrics to quantify prediction accuracy in absolute terms. 
+To ensure statistical validity, we verified that each model had sufficient non-missing data points (at least 5 observations) and calculated the percentage of available data for transparency. 
+Statistical significance was assessed through p-values, with significance thresholds established at p < 0.05, p < 0.01, and p < 0.001.
+
+![Mean Absolute Error](../../results/graphs/model_mae.png)
+
+We supplemented correlation analysis with F1 score calculations to evaluate classification performance. 
+For the 7-category classification evaluation, we converted both predicted and ground truth sentiment values into discrete categories: "very_negative," "negative," "somewhat_negative," "neutral," "somewhat_positive," "positive," and "very_positive."
+We implemented a custom function to calculate precision, recall, and F1 scores for each sentiment category. 
+This approach provided detailed insights into model performance across the full sentiment spectrum. 
+The weighted average F1 score was calculated to account for class imbalance by weighting each category's F1 score by its support (number of instances).
+
+```{=latex}
+\clearpage
+\begin{landscape}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{../../results/graphs/model_f1_scores_comparison_grouped_pub.png}
+\caption{F1 Scores Comparison Across Models and Categories}
+\label{fig:f1-scores}
+\end{figure}
+\end{landscape}
+\clearpage
+```
+Recognizing that nuanced sentiment gradations can be challenging to distinguish, we also conducted a simplified 3-category evaluation by grouping sentiment labels into "negative" (encompassing very_negative, negative, and somewhat_negative), "neutral," and "positive" (encompassing somewhat_positive, positive, and very_positive). 
+This grouping strategy allowed us to assess model performance on fundamental sentiment polarity distinctions. 
+The same F1 score calculation methodology was applied to these grouped categories, providing a complementary perspective on model capabilities.
+
+All metrics were calculated using complete cases only, with appropriate error handling to ensure robust evaluation across all models and conditions. 
+Results were systematically organized and saved, with models ranked by performance according to each metric to facilitate comprehensive comparison. 
+This multi-faceted evaluation approach allowed us to assess both the continuous prediction accuracy and classification performance of all models across different linguistic configurations.
+
+::: {#tbl-source-summary}
+
+{{< include ../../results/tables/f1_scores_3cat_table.md >}}
+
+Table: F1 scores for 7-category classification and 3-category classification
+
+:::
+
+```{=latex}
+\clearpage
+\begin{landscape}
+\begin{table}[h]
+\caption{F1 scores for 7-category classification}
+\begin{center}
+\input{../../results/tables/f1_scores_7cat_table.tex}
+\end{center}
+\end{table}
+\end{landscape}
+\clearpage
+```
 
 # Results
 
+Our analysis revealed significant patterns in the performance of large language models for sentiment analysis of French text. 
+We evaluated the models using three complementary metrics: Pearson correlation coefficients, F1 scores for a 7-category classification, and F1 scores for a simplified 3-category classification. 
+These metrics provide different perspectives on model performance, allowing us to assess both continuous rating accuracy and classification precision across sentiment categories.
+
+## Overall Model Performance
+
+The results demonstrate that general-purpose foundation models can effectively analyze sentiment in non-English texts, with the best-performing models achieving correlation coefficients above 0.70 and F1 scores exceeding 0.70 for 3-category classification. 
+This performance exceeds traditional dictionary-based approaches, particularly for models with larger parameter counts and more sophisticated architectures.
+
+Across all evaluation metrics, proprietary closed-weight models consistently outperformed their open-weight counterparts. 
+DeepSeek Chat demonstrated the strongest correlation performance (r = 0.7
+07 in FR→FR condition), while GPT-4o and Gemini 2.0 exhibited the most robust classification capabilities (F1 scores of 0.703 and 0.716 respectively for 3-category classification). 
+Claude 3.5 Haiku excelled particularly in fine-grained 7-category classification (F1 = 0.486), indicating its strength in detecting subtle sentiment nuances.
+
+Among open-source models, parameter count emerged as a significant predictor of performance, with larger models generally demonstrating superior results. 
+However, even smaller models like Llama 3.2 (3B) achieved respectable performance (correlation coefficient > 0.35), suggesting that moderately-sized open models remain viable for basic sentiment analysis tasks.
+
+## Impact of Prompt Language
+
+Our experimental design comparing French prompts with French text (FR→FR), English prompts with French text (EN→FR), and English prompts with English text (EN→EN) revealed intriguing cross-linguistic patterns. 
+Contrary to our initial hypothesis based on prior research suggesting English prompt superiority, we observed more nuanced results.
+
+For correlation metrics, French prompts with French text yielded the strongest performance (mean correlation = 0.430 across all models), closely followed by English prompts with French text (mean correlation = 0.436). 
+This suggests that native-language prompting can be effective when models possess sufficient cross-linguistic capabilities. 
+English prompts with English-translated text showed marginally lower performance (mean correlation = 0.418), indicating that translation may introduce subtle information loss.
+
+For classification metrics, particularly the 3-category F1 scores, English prompts with French text yielded the highest average performance (mean F1 = 0.501), slightly outperforming both French-prompted French text (mean F1 = 0.489) and English-prompted English text (mean F1 = 0.494). This pattern suggests that cross-linguistic prompting may indeed offer advantages, but that these advantages are model-dependent and relatively modest.
+
+## Dictionary vs. LLM Approaches
+
+Traditional dictionary-based approaches provided reasonable baseline performance, particularly for simplified 3-category classification, where the English Lexicoder Sentiment Dictionary achieved an F1 score of 0.625. 
+This exceeded the average performance of LLM approaches (mean F1 = 0.495 across all conditions), though the best-performing LLMs (Gemini 2.0, GPT-4o) still outperformed dictionary methods.
+
+For correlation metrics, the English dictionary (r = 0.531) outperformed the average LLM performance (mean r = 0.428), but again, top-performing models like DeepSeek Chat (r = 0.707) substantially exceeded dictionary effectiveness. 
+This suggests that while dictionary approaches remain viable for basic sentiment classification, advanced LLMs provide superior performance when nuanced sentiment analysis is required.
+
+## Classification Granularity
+
+Comparing the 7-category and 3-category classification results reveals an important pattern: all models demonstrated substantially higher performance on the simplified 3-category task (positive, neutral, negative) compared to the more granular 7-category classification. 
+The average F1 score across all models improved from 0.302 to 0.495 when moving from 7 to 3 categories, representing a 63.9% performance increase.
+
+This substantial difference highlights the challenge of detecting fine-grained sentiment distinctions, even for advanced LLMs. 
+While models like Claude 3.5 Haiku achieved respectable performance on the 7-category task (F1 = 0.486), the significant drop-off suggests that applications requiring highly granular sentiment classification may require specialized approaches beyond general-purpose foundation models.
+
+An examination of category-specific F1 scores within the 7-category framework revealed that models performed best at identifying neutral sentiment (average F1 = 0.38) and struggled most with the somewhat_positive and somewhat_negative categories (average F1 scores of 0.21 and 0.19 respectively). 
+This indicates particular difficulty in identifying subtle sentiment expressions, a challenge that practitioners should consider when selecting sentiment analysis approaches for nuanced applications.
+
 # Discussion
-
-# Annex
-
-::: {#tbl-fscore-combined}
-{{< include ../../results/tables/f1_scores_combined_table.md >}}
-Table: F1 scores for all models and methods
-:::
 
 # References {-}

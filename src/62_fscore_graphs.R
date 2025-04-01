@@ -329,3 +329,105 @@ ggsave("results/graphs/model_f1_scores_comparison_grouped.png",
        dpi = 300,       # High DPI for publication quality
        units = "in",
        limitsize = FALSE) # Prevent R from warning about large dimensions
+
+# Create a publication version optimized for letter-sized landscape paper
+plot_f1_pub <- ggplot() +
+  # Add alternating background for visual grouping
+  geom_rect(data = bg_rects, aes(
+    xmin = -Inf, xmax = Inf,
+    ymin = ymin,
+    ymax = ymax,
+    fill = shade
+  ), alpha = 0.5) +
+  # Add bars with grouped categories
+  geom_bar(data = df_combined, aes(
+    x = weighted_f1,
+    y = model_label,
+    fill = category_type
+  ), 
+  stat = "identity", 
+  position = position_dodge(width = 0.9), 
+  width = 0.6,
+  color = "#444444",
+  linewidth = 0.2) +
+  # Professional minimal theme with more space between elements
+  theme_minimal() +
+  theme(
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.grid.major.y = element_blank(),    # Remove horizontal grid lines
+    panel.grid.minor = element_blank(),      # Remove all minor grid lines
+    panel.grid.major.x = element_line(color = "gray95"),  # Even more subtle vertical grid lines
+    axis.line.x = element_line(color = "#555555", size = 0.4),  # Softer axis lines
+    axis.line.y = element_line(color = "#555555", size = 0.4),
+    panel.spacing = unit(1.2, "lines"),     # Slightly reduced spacing for letter size
+    axis.ticks = element_line(color = "#555555", size = 0.4)  # Matching tick marks
+  ) +
+  labs(
+    x = "Weighted F1 Score",
+    y = "",  # Remove y-axis label since we have direct labels
+    title = "Performance Comparison of Sentiment Analysis Models",
+    subtitle = "F1 scores for both detailed and grouped sentiment classification schemes",
+    caption = "Figure 2. F1 scores for sentiment analysis across model architectures. Models grouped by F1 score performance and sorted by\n3-category classification. Prompting mechanisms: EN→FR (English prompt on French text), FR→FR (French prompt on French text),\nand EN→EN (English prompt on translated text). Detailed classification includes 7 categories, grouped classification uses 3."
+  ) +
+  # Scale and reference lines
+  scale_x_continuous(limits = c(0, 1)) +
+  # Control y-axis expansion to eliminate wasted space
+  scale_y_discrete(expand = y_expansion) +
+  # Create a separate scale for fill that correctly handles both backgrounds and bars
+  # but only shows classification types in the legend
+  scale_fill_manual(
+    values = c(
+      "even" = "gray95",    # Almost white (for background)
+      "odd" = "gray90",     # Very light gray (for background)
+      "Detailed (7-category)" = "#777777",  # Medium gray (for bars)
+      "Grouped (3-category)" = "#BBBBBB"    # Light gray (for bars)
+    ),
+    # Only include classification types in the legend
+    breaks = c("Detailed (7-category)", "Grouped (3-category)"),
+    name = "Classification Type"
+  ) +
+  # Hide the background shades from the legend, only show classification types
+  guides(fill = guide_legend(title = "Classification Type")) +
+  # Add F1 score value labels with softer styling
+  geom_text(data = df_combined, aes(
+    label = sprintf("%.2f", weighted_f1),
+    x = weighted_f1 + 0.01,
+    y = model_label,
+    group = category_type
+  ), 
+  position = position_dodge(width = 0.9), 
+  size = 2.3,  # Slightly smaller text for letter size
+  hjust = 0,
+  color = "#444444") +
+  # Publication-optimized styling for letter size
+  theme(
+    plot.caption.position = "plot",
+    axis.title.x = element_text(hjust = 0.5, size = 9, face = "plain", color = "#333333"),
+    axis.text.x = element_text(size = 8, color = "#333333"),
+    axis.text.y = element_text(size = 7.5, face = "plain", color = "#333333", margin = margin(r = 5)),
+    plot.title = element_text(size = 11, face = "bold", hjust = 0, color = "#333333"),
+    plot.subtitle = element_text(size = 9, hjust = 0, face = "plain", color = "#333333"),
+    plot.caption = element_text(size = 7, hjust = 0, face = "italic", color = "#555555"),
+    legend.position = "bottom",
+    legend.title = element_text(size = 8, face = "plain", color = "#333333"),
+    legend.text = element_text(size = 7, face = "plain", color = "#333333"),
+    legend.spacing.x = unit(0.4, "cm"),  # Slightly reduced spacing for letter size
+    legend.margin = margin(t = 5),      # Reduced top margin for letter size
+    legend.background = element_rect(fill = "white", color = NA),
+    legend.key = element_rect(fill = "white", color = NA),
+    legend.key.size = unit(0.6, "cm"),   # Smaller legend keys for letter size
+    plot.margin = unit(c(0.7, 0.9, 0.7, 0.7), "cm"),  # Adjusted margins for letter size
+    # Ensure the plot uses all available space
+    aspect.ratio = NULL
+  )
+
+# Save a landscape letter-sized version for publication
+# US Letter landscape: 11×8.5 inches
+ggsave("results/graphs/model_f1_scores_comparison_grouped_pub.png", 
+       plot_f1_pub,  # Use the publication-optimized version
+       width = 11,      # Width in inches - landscape letter
+       height = 8.5,    # Height in inches - landscape letter
+       dpi = 300,       # High DPI for publication quality
+       units = "in",
+       limitsize = FALSE)
