@@ -6,7 +6,7 @@
 # 3-category sentiment classifications, as well as a combined comparison table.
 
 # Load required libraries
-library(dplyr)  # For data manipulation
+library(dplyr)
 
 #################################################################
 # DATA LOADING
@@ -64,8 +64,7 @@ writeLines(latex_table_7, "results/tables/f1_scores_7cat_table.tex")
 # 7-CATEGORY MARKDOWN TABLE GENERATION
 #################################################################
 # Create a Markdown version of the 7-category table
-markdown_table_7 <- "# F1 Score Results by Sentiment Category (7-category)\n\n"
-markdown_table_7 <- paste0(markdown_table_7, "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | weighted_f1 |\n")
+markdown_table_7 <- "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | weighted_f1 |\n"
 markdown_table_7 <- paste0(markdown_table_7, "|-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|------------|\n")
 
 # Add each model's results as a row in the table
@@ -88,9 +87,8 @@ writeLines(markdown_table_7, "results/tables/f1_scores_7cat_table.md")
 #################################################################
 # 3-CATEGORY MARKDOWN TABLE GENERATION
 #################################################################
-# Create a Markdown table for 3-category classification results
-markdown_table_3 <- "# Grouped Sentiment F1 Score Results (3-category)\n\n"
-markdown_table_3 <- paste0(markdown_table_3, "| Model | negative | neutral | positive | weighted_f1 |\n")
+# Create a Markdown table for 3-category classification results without the title
+markdown_table_3 <- "| Model | negative | neutral | positive | weighted_f1 |\n"
 markdown_table_3 <- paste0(markdown_table_3, "|-------|----------|---------|----------|------------|\n")
 
 # Add each model's results as a row in the table
@@ -125,11 +123,7 @@ merged_df <- df_7_rounded %>%
   arrange(desc(weighted_f1_3cat))
 
 # Create combined markdown table with both 7-category and 3-category results
-markdown_table_combined <- "# Combined F1 Score Results by Sentiment Category\n\n"
-
-# Single row header with clear column labels
-markdown_table_combined <- paste0(markdown_table_combined, 
-  "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | negative (3-cat) | neutral (3-cat) | positive (3-cat) | weighted_f1 (7-cat) | weighted_f1 (3-cat) |\n")
+markdown_table_combined <- "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | negative (3-cat) | neutral (3-cat) | positive (3-cat) | weighted_f1 (7-cat) | weighted_f1 (3-cat) |\n"
 markdown_table_combined <- paste0(markdown_table_combined, 
   "|-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|-----------------|----------------|-----------------|-------------------|-------------------|\n")
 

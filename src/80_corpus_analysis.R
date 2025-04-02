@@ -194,7 +194,7 @@ print(diff_summary)
 large_diff_articles <- df %>%
   filter(!is.na(sentiment_diff)) %>%
   arrange(desc(sentiment_diff)) %>%
-  select(id, title, date, gemini_fr_fr, gemini_en_fr, sentiment_diff) %>%
+  select(doc_id, title, date, gemini_fr_fr, gemini_en_fr, sentiment_diff) %>%
   head(10)
 
 print("Top 10 articles with largest differences between prompt conditions:")

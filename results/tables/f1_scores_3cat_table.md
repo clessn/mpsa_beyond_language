@@ -1,5 +1,3 @@
-# Grouped Sentiment F1 Score Results (3-category)
-
 | Model | negative | neutral | positive | weighted_f1 |
 |-------|----------|---------|----------|------------|
 | gemini20_en_fr | 0.693 | 0.731 | 0.712 | 0.716 |
