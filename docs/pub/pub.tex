@@ -242,69 +242,82 @@ tempus elit.
 \end{keyword}
 \end{frontmatter}
     
-\section*{Introduction}\label{introduction}
-\addcontentsline{toc}{section}{Introduction}
+\section{Introduction}\label{introduction}
 
 The rise of large language models (LLMs) has transformed natural
 language processing across domains and applications. While these models
 demonstrate impressive capabilities in English, their cross-linguistic
 effectiveness seems to remain a critical area of investigation. This
-paper addresses a fundamental question in this domain: Can open source
-general purpose foundational LLMs accurately evaluate sentiment in
-non-English texts?
+paper addresses a fundamental question in this domain: Can open and
+closed weights general purpose foundational LLMs accurately evaluate
+sentiment in non-English texts?
 
 Recent research has uncovered a compelling phenomenon: prompting in
 English often improves performance in cross-linguistic tasks, even when
-the target language is non-English. Jiang et al.~(2019) documented
+the target language is non-English. \citet{Jiang2020How} documented
 increased accuracy in knowledge extraction when using English prompts
 compared to diversified manual prompts in other languages. This finding
-was corroborated by Lin et al.~(2021), who observed that English prompts
-outperform multilingual configurations across natural language
-understanding and machine translation tasks in 30 languages, even
-surpassing established baselines like GPT-3.
+was corroborated by \citet{Lin2022Few}, who observed that English
+prompts outperform multilingual configurations across natural language
+understanding and machine translation tasks in 30 languages.
 
-This pattern extends beyond isolated studies. Muennighoff et al.~(2023),
-Nie et al.~(2024), have all reported significant performance
-gains---measured by accuracy, F1 scores, and BLEU metrics---when models
-are guided with English instructions, regardless of the target language.
-These findings suggest a fundamental characteristic of current LLM
-architectures that merits deeper investigation.
+This pattern extends beyond isolated studies.
+\citet{Muennighoff2023Crosslingual}, \citet{Nie2024Decomposed}, have all
+reported significant performance gains---measured by accuracy, F1
+scores, and other metrics when models are guided with English
+instructions, regardless of the target language. These findings suggest
+a fundamental characteristic of current LLM architectures that merits
+deeper investigation.
 
-The primary purpose of this research is to determine whether untrained
-foundational models are adequate for analyzing textual sentiment in
-non-English contexts. While specialized models like BERT and its
-variants have been fine-tuned specifically for sentiment analysis tasks
-and perform effectively, they often require technical expertise to
-implement and adapt. By contrast, using non-fine-tuned foundational
-models could provide a more accessible solution for non-technical social
-science researchers who may lack the computational resources or
-programming knowledge necessary for model customization. This
-accessibility consideration is particularly relevant as AI tools become
-increasingly integrated into research methodologies across disciplines.
+While specialized models like BERT and its variants have been fine-tuned
+specifically for sentiment analysis tasks and perform effectively, they
+often require technical expertise to implement and adapt. By contrast,
+using non-fine-tuned foundational models could provide a more accessible
+solution for non-technical social science researchers who may lack the
+computational resources or programming knowledge necessary for model
+customization. This accessibility consideration is particularly relevant
+as AI tools become increasingly integrated into research methodologies
+across disciplines.
+
+\section{Research Question}\label{research-question}
+
+Thus, the main goal of this paper is to answer the following questions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Can general-purpose LLMs accurately evaluate sentiment in non-English
+  texts without task-specific fine-tuning?
+\item
+  Can open-source general-purpose foundational LLMs accurately evaluate
+  sentiment in non-English texts without task-specific fine-tuning?
+\item
+  How does the language of the prompt affect performance across
+  different languages?
+\end{enumerate}
 
 Sentiment analysis offers an interesting test case for examining this
 phenomenon, as it requires nuanced language understanding beyond simple
-translation. While proprietary models have received substantial
-attention in multilingual contexts, open source LLMs present both unique
-challenges and opportunities. They offer greater transparency,
-adaptability, and accessibility for global researchers and
-practitioners, yet their cross-linguistic capabilities remain less
-comprehensively documented. This study seeks to evaluate the performance
-of leading open source foundational LLMs in sentiment analysis with
-french texts. We examine how prompt language affects performance,
-identify cross-linguistic patterns, and analyze model behavior across
-french and english. Our findings seeks to contribute to a deeper
-understanding of LLMs capabilities and limitations in multilingual
-contexts and offer practical guidelines for optimizing their deployment
-in diverse language settings.
+translation. While close weights models such as those offered by Google
+or Anthropic have received substantial attention in multilingual
+contexts, open weights LLMs present both unique challenges and
+opportunities. They offer greater transparency, adaptability, and
+accessibility for global researchers and practitioners, yet their
+cross-linguistic capabilities remain less comprehensively documented.
+This study first evaluate the performance of leading open and closed
+weights foundational LLMs in sentiment analysis with french texts. It
+then examine how prompt language affects performance, identify
+cross-linguistic patterns, and analyze model behavior across french and
+english. Our findings seeks to contribute to a deeper understanding of
+LLMs capabilities and limitations in multilingual contexts and offer
+practical guidelines for optimizing their deployment in diverse language
+settings.
 
-\section*{Literature Review}\label{literature-review}
-\addcontentsline{toc}{section}{Literature Review}
+\section{Literature Review}\label{literature-review}
 
-\subsection*{Specialized Models for Multilingual Sentiment
+\subsection{Specialized Models for Multilingual Sentiment
 Analysis}\label{specialized-models-for-multilingual-sentiment-analysis}
-\addcontentsline{toc}{subsection}{Specialized Models for Multilingual
-Sentiment Analysis}
 
 Previous research consistently demonstrates the effectiveness of
 specialized models for sentiment analysis in non-English languages.
@@ -328,7 +341,7 @@ Indonesian respectively, both reporting significant improvements over
 generic multilingual models. This pattern holds across diverse language
 families, with specialized models for South Asian, East Asian, and
 Semitic languages demonstrating strong performance within their target
-domains (\citet{Gaikwad2024Adopting}; \citet{Saeed2024In}). Even for
+domains \citep{Gaikwad2024Adopting, Saeed2024In}. Even for
 lower-resource languages, fine-tuned models have shown promise.
 \citet{Tela2024Transferring} demonstrated competitive performance for
 Tigrinya, while \citet{Asrarul2024CUET_Binary_Hackers} reported
@@ -358,9 +371,9 @@ present implementation challenges. As \citet{Priban2024comparative}
 discuss, there exists a clear tradeoff between performance and
 efficiency, with advanced models requiring computational resources.
 Language-specific models typically contain millions of parameters
-(\citet{Rafeef2023Evaluation}), while larger multilingual models can
+\citep{Rafeef2023Evaluation}, while larger multilingual models can
 expand to hundreds of millions or even billions of parameters
-(\citet{Francesco2021XLM}; \citet{Vileikyte2024Sentiment}).
+\citep{Francesco2021XLM, Vileikyte2024Sentiment}.
 
 The implementation of these specialized models requires not only
 significant computational infrastructure but also technical expertise in
@@ -387,7 +400,7 @@ While specialized models dominate the literature on multilingual
 sentiment analysis, relatively little attention has been given to the
 capabilities of general-purpose foundational LLMs without task-specific
 fine-tuning. This represents a gap in the research, particularly given
-the findings of Jiang et al.~(2019), Lin et al.~(2021), and others
+the findings of \citet{Jiang2020How}; \citet{Lin2022Few}, and others
 regarding the unexpected effectiveness of English-prompted models on
 cross-linguistic tasks.
 
@@ -414,33 +427,10 @@ analysis, while \citet{Hamalainen2022Video} documented varying
 effectiveness across Germanic and Romance languages depending on prompt
 design and model architecture.
 
-\section{Research Question}\label{research-question}
-
-Despite the extensive literature on specialized sentiment analysis
-models, critical questions remains largely unexplored:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Can general-purpose LLMs accurately evaluate sentiment in non-English
-  texts without task-specific fine-tuning?
-\item
-  Can open-source general-purpose foundational LLMs accurately evaluate
-  sentiment in non-English texts without task-specific fine-tuning?
-\item
-  How does the language of the prompt affect performance across
-  different languages?
-\end{enumerate}
-
-These questions have significant implications for research
-accessibility, as it could potentially democratize sophisticated NLP
-capabilities for non-technical researchers across disciplines.
-
-The phenomenon documented by Muennighoff et al.~(2023), Nie et
-al.~(2024), and others---that English prompting often improves
-cross-linguistic performance---suggests that foundational LLMs may
-possess unexpectedly robust multilingual capabilities even without
+The phenomenon documented by \citet{Muennighoff2023Crosslingual};
+\citet{Nie2024Decomposed}, and others---that English prompting often
+improves cross-linguistic performance---suggests that foundational LLMs
+may possess unexpectedly robust multilingual capabilities even without
 specialized training. This aligns with observations from
 \citet{Rusnachenko2024Large} and \citet{Venerito2024Large}, who found
 promising results with general-purpose models in Russian and Italian
@@ -455,8 +445,9 @@ models in non-English sentiment analysis through a comprehensive
 evaluation of open and closed-source models on French text. We evaluate
 whether foundational models demonstrate sufficient cross-linguistic
 capabilities for sentiment analysis without task-specific fine-tuning,
-comparing their performance to traditional dictionary-based methods and
-examining the impact of prompt language on analytical outcomes.
+comparing their performance to traditional easy-to-use dictionary-based
+methods and examining the impact of prompt language on analytical
+outcomes.
 
 \subsection{Data Collection and
 Preparation}\label{data-collection-and-preparation}
@@ -519,7 +510,7 @@ Quotidien, Le (Saguenay, QC) & 10 & 2008-11-01 & 2019-04-10 \\
 Voix de l'Est, La (Granby, QC) & 4 & 2010-09-17 & 2015-02-14 \\
 \end{longtable}
 
-We developed a Python-based web scraper using Selenium WebDriver to
+We vibe-coded a Python-based web scraper using Selenium WebDriver to
 extract article content more conveniently from the database. Eureka
 provides a way to download articles in PDF format by batches of 50
 articles. Downloading 2683 articles this way is very time consuming and
@@ -590,17 +581,18 @@ served as our ground truth for evaluating the performance of both
 dictionary-based methods and LLM approaches in sentiment analysis tasks.
 
 A major limit of this project is that the manual annotation was done by
-a single coder. This limits the reliability of the ground truth dataset,
-as inter-annotator agreement was not measured. This should be considered
-when interpreting the results of the study.
+a single coder with a small sample of sentences. This limits the
+reliability of the ground truth dataset, as inter-annotator agreement
+was not measured. This should be considered when interpreting the
+results of the study.
 
 \subsection{Dictionary-Based Sentiment
 Analysis}\label{dictionary-based-sentiment-analysis}
 
-To establish baseline sentiment measures, we employed lexicon-based
-methods on both the original French text and its English translation. We
-used a two-phase approach to ensure comprehensive analysis across
-languages.
+To establish a classical baseline sentiment measures, we employed
+lexicon-based methods on both the original French text and its English
+translation. We used a two-phase approach to ensure comprehensive
+analysis across languages.
 
 For the French corpus, we implemented a customized version of the
 Lexicoder Sentiment Dictionary (LSD) methodology. First, we segmented
@@ -794,16 +786,15 @@ final sentiment score as the mean of the three individual runs, ensuring
 robustness against occasional model variability or outlier responses.
 
 To ensure data integrity throughout the lengthy processing period, we
-implemented a sophisticated checkpointing system. The system
-automatically saved progress at regular intervals (every 10 minutes) and
-after processing every 20 items. Each checkpoint included a timestamped
-file and a consolidated ``latest checkpoint'' file that could be used to
-resume processing if interrupted. The system also maintained a rotating
-set of checkpoint files, keeping the 10 most recent files while
-automatically removing older ones to prevent excessive disk usage. This
-approach ensured that no more than approximately 30 minutes of
-computation would be lost in case of system failure or process
-interruption.
+implemented a checkpointing system. The system automatically saved
+progress at regular intervals (every 10 minutes) and after processing
+every 20 items. Each checkpoint included a timestamped file and a
+consolidated ``latest checkpoint'' file that could be used to resume
+processing if interrupted. The system also maintained a rotating set of
+checkpoint files, keeping the 10 most recent files while automatically
+removing older ones to prevent excessive disk usage. This approach
+ensured that no more than approximately 30 minutes of computation would
+be lost in case of system failure or process interruption.
 
 The scale and comprehensiveness of our LLM evaluation framework,
 encompassing 11 diverse models across three linguistic configurations
@@ -841,25 +832,18 @@ values.
 
 This approach evaluated the models' ability to accurately reflect
 sentiment intensity and direction. Additionally, we calculated Mean
-Absolute Error (MAE) and Root Mean Squared Error (RMSE) metrics to
-quantify prediction accuracy in absolute terms. To ensure statistical
-validity, we verified that each model had sufficient non-missing data
-points (at least 5 observations) and calculated the percentage of
-available data for transparency. Statistical significance was assessed
-through p-values, with significance thresholds established at p
-\textless{} 0.05, p \textless{} 0.01, and p \textless{} 0.001.
+Absolute Error (MAE) to quantify prediction accuracy in absolute terms.
 
 We supplemented correlation analysis with F1 score calculations to
 evaluate classification performance. For the 7-category classification
 evaluation, we converted both predicted and ground truth sentiment
 values into discrete categories: ``very\_negative,'' ``negative,''
 ``somewhat\_negative,'' ``neutral,'' ``somewhat\_positive,''
-``positive,'' and ``very\_positive.'' We implemented a custom function
-to calculate precision, recall, and F1 scores for each sentiment
-category. This approach provided detailed insights into model
-performance across the full sentiment spectrum. The weighted average F1
-score was calculated to account for class imbalance by weighting each
-category's F1 score by its support (number of instances).
+``positive,'' and ``very\_positive.'' This approach provided detailed
+insights into model performance across the full sentiment spectrum. The
+weighted average F1 score was calculated to account for class imbalance
+by weighting each category's F1 score by its support (number of
+instances).
 
 \clearpage
 \begin{landscape}
@@ -884,11 +868,9 @@ providing a complementary perspective on model capabilities.
 
 All metrics were calculated using complete cases only, with appropriate
 error handling to ensure robust evaluation across all models and
-conditions. Results were systematically organized and saved, with models
-ranked by performance according to each metric to facilitate
-comprehensive comparison. This multi-faceted evaluation approach allowed
-us to assess both the continuous prediction accuracy and classification
-performance of all models across different linguistic configurations.
+conditions. This multi-faceted evaluation approach allowed us to assess
+both the continuous prediction accuracy and classification performance
+of all models across different linguistic configurations.
 
 \section{Results}\label{results}
 
@@ -987,4 +969,98 @@ applications requiring highly granular sentiment classification may
 require specialized approaches beyond general-purpose foundation models.
 
 An examination of category-specific F1 scores within the 7-category
-framework revealed that models performed best at iden
+framework revealed that models performed best at identifying neutral
+sentiment (average F1 = 0.38) and struggled most with the
+somewhat\_positive and somewhat\_negative categories (average F1 scores
+of 0.21 and 0.19 respectively). This indicates particular difficulty in
+identifying subtle sentiment expressions, a challenge that practitioners
+should consider when selecting sentiment analysis approaches for nuanced
+applications.
+
+\section{Discussion}\label{discussion}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\renewcommand{\bibsection}{}
+\bibliography{references.bib}
+
+\section{Appendix}\label{appendix}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{../../results/graphs/model_mae.png}
+
+}
+
+\caption{Mean Absolute Error}
+
+\end{figure}%
+
+\newpage
+
+\begin{longtable}[]{@{}lllll@{}}
+\caption{F1 scores for 3-category
+classification}\label{tbl-source-summary}\tabularnewline
+\toprule\noalign{}
+Model & negative & neutral & positive & weighted\_f1 \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Model & negative & neutral & positive & weighted\_f1 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+gemini20\_en\_fr & 0.693 & 0.731 & 0.712 & 0.716 \\
+gpt4o\_en\_fr & 0.763 & 0.753 & 0.624 & 0.709 \\
+gpt4o\_fr\_fr & 0.755 & 0.744 & 0.623 & 0.703 \\
+gpt4o\_en\_en & 0.727 & 0.739 & 0.632 & 0.698 \\
+gemini20\_fr\_fr & 0.733 & 0.706 & 0.667 & 0.698 \\
+llama3370b\_en\_en & 0.696 & 0.69 & 0.613 & 0.664 \\
+llama3370b\_fr\_fr & 0.731 & 0.663 & 0.623 & 0.664 \\
+gemma29b\_en\_en & 0.691 & 0.648 & 0.662 & 0.662 \\
+claude35\_en\_en & 0.661 & 0.662 & 0.642 & 0.655 \\
+llama3370b\_en\_fr & 0.703 & 0.667 & 0.607 & 0.653 \\
+gemma29b\_en\_fr & 0.713 & 0.597 & 0.679 & 0.652 \\
+lsd\_en & 0.659 & 0.632 & 0.597 & 0.625 \\
+gemma29b\_fr\_fr & 0.718 & 0.525 & 0.686 & 0.625 \\
+claude35\_en\_fr & 0.692 & 0.448 & 0.678 & 0.585 \\
+deepseekchat\_en\_fr & 0.679 & 0.432 & 0.701 & 0.583 \\
+claude35\_fr\_fr & 0.635 & 0.424 & 0.667 & 0.558 \\
+deepseekchat\_en\_en & 0.615 & 0.429 & 0.658 & 0.552 \\
+gemini20\_en\_en & 0.557 & 0.612 & 0.464 & 0.547 \\
+deepseekchat\_fr\_fr & 0.661 & 0.374 & 0.674 & 0.545 \\
+lsd\_fr & 0.4 & 0.51 & 0.553 & 0.501 \\
+llama323b\_en\_en & 0.518 & 0.39 & 0.599 & 0.493 \\
+llama323b\_fr\_fr & 0.609 & 0.248 & 0.562 & 0.44 \\
+mistral\_en\_en & 0.591 & 0.222 & 0.591 & 0.436 \\
+mistral\_en\_fr & 0.577 & 0.152 & 0.637 & 0.42 \\
+mistral\_fr\_fr & 0.517 & 0.194 & 0.599 & 0.411 \\
+deepseekr1\_en\_fr & 0 & 0.448 & 0.558 & 0.389 \\
+llama323b\_en\_fr & 0.269 & 0.208 & 0.557 & 0.347 \\
+deepseekr1\_fr\_fr & 0 & 0.34 & 0.544 & 0.338 \\
+llama321b\_en\_en & 0.298 & 0.206 & 0.419 & 0.303 \\
+llama321b\_en\_fr & 0.28 & 0.067 & 0.443 & 0.249 \\
+deepseekr1\_en\_en & 0 & 0.068 & 0.537 & 0.222 \\
+qwq32b\_en\_fr & 0 & 0.047 & 0.533 & 0.212 \\
+llama321b\_fr\_fr & 0.244 & 0.144 & 0.259 & 0.208 \\
+qwq32b\_en\_en & 0 & 0.024 & 0.531 & 0.201 \\
+qwq32b\_fr\_fr & 0 & 0 & 0.529 & 0.191 \\
+\end{longtable}
+
+\clearpage
+\begin{landscape}
+\begin{table}[h]
+\caption{F1 scores for 7-category classification}
+\begin{center}
+\input{../../results/tables/f1_scores_7cat_table.tex}
+\end{center}
+\end{table}
+\end{landscape}
+\clearpage
+
+
+
+
+\end{document}
