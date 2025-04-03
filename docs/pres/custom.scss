@@ -1,0 +1,38 @@
+/*-- scss:defaults --*/
+// Define base variables - try changing these colors!
+$body-bg: #ffffff;          // White background
+$body-color: #333333;       // Dark grey text
+$link-color: #0056b3;       // A shade of blue for links
+$presentation-heading-color: #003f7e; // A darker blue for headings
+$font-family-sans-serif: "Lato", sans-serif; // Example: Use Lato font (if installed/imported)
+
+/*-- scss:rules --*/
+// Add specific CSS rules
+.reveal .slide-logo {
+  max-height: 55px !important; // Adjust logo height
+  width: auto !important;     // Maintain aspect ratio
+  top: 20px !important;       // Position from top
+  right: 20px !important;      // Position from right
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  text-align: left;           // Left-align headings
+  // font-family: 'Your Custom Font', sans-serif; // Uncomment to set a specific heading font
+}
+
+.reveal .slide-background-content {
+  // Example: subtle background pattern
+  // background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><path fill="%23cccccc" fill-opacity="0.1" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path></svg>') !important;
+}
+
+// Make mermaid diagrams stand out a bit
+.mermaid svg {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+// Style incremental items for better visibility
+.reveal .slides section .fragment.visible:not(.current-fragment) {
+    opacity: 0.85; // Slightly fade out previous fragments
+}

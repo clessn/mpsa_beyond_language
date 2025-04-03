@@ -1,246 +1,461 @@
 ---
 title: "Beyond Language Barriers"
-subtitle: Evaluating the Efficacy of Large Language Models in Analyzing Sentiment in Non-English Textual Data
-author: Laurence-Olivier M. Foisy
-institute: Université Laval
+subtitle: "Can LLMs Analyze Sentiment in French Text?"
+author: "Laurence-Olivier M. Foisy"
+institute: "Université Laval"
+date: today 
 lang: en
-from: markdown+emoji
 format:
   revealjs:
-    mermaid: 
-      theme: default
-    theme: simple
+    theme: [simple, custom.scss] 
     slide-number: true
-    logo: https://upload.wikimedia.org/wikipedia/en/9/90/Ulaval_Shield.svg
-    footer: "[https://mfoisy.com](https://mfoisy.com)"
-    transition: slide
+    logo: img/ul_logo.png 
+    footer: "LLMs for French Sentiment Analysis | [https://mfoisy.com](https://mfoisy.com)"
+    transition: slide 
     transition-speed: fast
     code-fold: false
     code-overflow: wrap
     highlight-style: github
-    embed-resources: true
+    embed-resources: true 
+    auto-stretch: true 
+    include-after-body: footer_includes.html
 ---
 
-## "Can we use LLMs for sentiment analysis in non-English languages?"
+## My Research Journey <i class="fas fa-route"></i> {background-image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" background-opacity="0.1"}
 
-## Research Context
+::: incremental
+-   <i class="fas fa-newspaper"></i> Studying media discourse on **Open Source Software** in French.
+-   <i class="fas fa-database"></i> Corpus: **2,683** news articles (1995-2025).
+-   <i class="fas fa-chart-line"></i> Needed: **Sentiment Analysis** over time.
+-   <i class="fas fa-book"></i> Traditional tool: Lexicoder Sentiment Dictionary (LSD).
+-   <i class="fas fa-lightbulb"></i> *The thought:* What if we used **Large Language Models (LLMs)** instead?
+:::
 
-**My broader research: Analyzing media discourse on open-source software**
+::: {.notes}
+Start with the personal context - makes it relatable.
+Briefly explain the open source research.
+Mention the large French corpus.
+Introduce the need for sentiment analysis.
+State the standard approach (LSD) and the "what if" moment with LLMs.
+Keep this intro quick - 1 minute max.
+:::
 
-- Corpus: 2,683 French news articles (1995-2025)
-- Need to analyze sentiment over time
-- Traditional approach: Lexicoder Sentiment Dictionary
-- New possibility: Large Language Models
+## The Challenge: LLMs & Language <i class="fas fa-language"></i> {background-image="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" background-opacity="0.1"}
 
-## The Challenge
+::: {.columns}
+::: {.column width="60%"}
+**Most Foundational LLMs:**
 
-**Most LLMs are primarily trained on English data**
+-   <i class="fab fa-python"></i> Predominantly trained on **English** data.
+-   <i class="fas fa-question-circle"></i> Performance in other languages? Less certain.
+:::
+::: {.column width="40%"}
+**The Big Question:**
 
-|                     |                   |                     |
-|---------------------|-------------------|---------------------|
-| **95%**             | **6,500+**        | **300M**            |
-| of AI research focuses on English | languages worldwide | French speakers globally |
+Can general-purpose LLMs *accurately* evaluate sentiment in **non-English (French)** text without special training? <i class="fas fa-flag"></i><i class="fas fa-comment-dots"></i>
+:::
+:::
 
-**Can general-purpose LLMs effectively analyze sentiment in non-English texts?**
+::: {.notes}
+Highlight the English dominance in LLM training data.
+Pose the core research question clearly and concisely.
+Mention French specifically.
+Under 30 seconds.
+:::
 
-## Why This Matters
+## Why Does This Matter? <i class="fas fa-users"></i> {.smaller background-image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" background-opacity="0.1"}
 
-**For researchers:**
-- Accessible alternatives to specialized sentiment models
-- No need for technical ML expertise
-- Reduced computational requirements
-- Potential for cross-linguistic analysis
+::: {.columns}
+::: {.column width="50%"}
+**For Social Scientists:**
 
-**Broader implications:**
-- Democratizing NLP technologies
-- Supporting multilingual research
-- Reducing English-centric bias in computational social science
+-   <i class="fas fa-toolbox"></i> **Accessible Tools:** Alternative to complex models.
+-   <i class="fas fa-laptop-code"></i> **Lower Barrier:** Less need for ML expertise/compute.
+-   <i class="fas fa-globe-europe"></i> **Cross-Lingual Potential:** Multilingual research.
+:::
 
-## Current Literature Gaps
+::: {.column width="50%"}
+**Broader Impact:**
 
-**What we know:**
-- Specialized sentiment models work well for non-English text
-- English prompting often improves cross-linguistic performance
-- Fine-tuned models outperform general approaches
+-   <i class="fas fa-share-alt"></i> **Democratizing NLP:** Wider AI access.
+-   <i class="fas fa-language"></i> **Supporting Multilingualism:** Reducing English bias.
+-   <i class="fas fa-microscope"></i> **New Methodologies:** Integrating AI.
+:::
+:::
 
-**What we don't know:**
-- Can foundation models handle non-English sentiment without fine-tuning?
-- How do open-source LLMs compare to closed-source options?
-- Does prompt language affect French sentiment analysis performance?
-- How do LLMs compare to dictionary methods?
+::: {.notes}
+Explain the practical benefits for researchers like yourself.
+Mention the broader implications for the field and technology access.
+Focus on accessibility and reducing bias.
+~1 minute.
+:::
 
-## Research Questions
+## The Literature Gap <i class="fas fa-puzzle-piece"></i> {background-image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" background-opacity="0.1"}
 
-1. Can general-purpose LLMs accurately evaluate sentiment in French texts **without task-specific fine-tuning?**
+::: {.columns}
+::: {.column width="50%"}
+**What We Knew:** <i class="fas fa-check"></i>
 
-2. Can **open-source** general-purpose LLMs accurately evaluate sentiment in French texts?
+-   Specialized models work.
+-   Fine-tuning helps.
+-   English prompts *might* aid cross-lingual tasks.
+:::
 
-3. How does the **language of the prompt** affect performance?
+::: {.column width="50%"}
+**What We Didn't Know:** <i class="fas fa-question"></i>
 
-## Our Approach
+-   **General** LLMs w/o fine-tuning?
+-   **Open-source** vs. closed?
+-   Impact of **prompt language** for French?
+-   LLMs vs. **dictionaries**?
+:::
+:::
 
-**Data:**
-- 2,683 French news articles on open-source software
-- 200 randomly sampled sentences for evaluation
-- Manual sentiment annotation (-1.0 to 1.0 scale)
-- English translations via Google Translate
+::: {.notes}
+Quickly contrast known facts with the specific questions your research addresses.
+Highlight the focus on general-purpose models without fine-tuning, open-source, and the dictionary comparison.
+~45 seconds.
+:::
 
-**Methods:**
-- 11 LLMs (open and closed source)
-- 3 linguistic conditions
-- 19,800 total prompts
-- Compared with dictionary methods
-- Multiple evaluation metrics
+## Our Research Questions <i class="fas fa-crosshairs"></i>
 
-## Models Evaluated
+1.  Can **general-purpose LLMs** accurately evaluate sentiment in French texts **without fine-tuning**?
+2.  How do **open-source** LLMs perform compared to closed-source?
+3.  Does the **language of the prompt** (French vs. English) affect performance?
 
-**Closed Source:**
-- Claude 3.5 Haiku (Anthropic)
-- Gemini 2.0 Flash (Google)
-- DeepSeek Chat
-- GPT-4o (OpenAI)
+::: {.notes}
+State the three core questions very clearly. These guide the rest of the presentation.
+~30 seconds.
+:::
 
-**Open Source:**
-- Llama 3.2 (1B)
-- Llama 3.2 (3B)
-- Gemma 2 (9B)
-- Mistral Saba (24B)
-- QWQ (32B)
-- Llama 3.3 (70B)
-- DeepSeek R1 Basic (671B)
+## Our Approach: Systematic Evaluation <i class="fas fa-cogs"></i> {background-image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" background-opacity="0.1"}
 
-## Experimental Design
+::: {.columns}
+::: {.column width="40%"}
+**Data:** <i class="fas fa-database"></i>
 
-```mermaid
+-   French News Corpus
+-   200 annotated sentences
+-   Manual Annotation (-1 to 1)
+-   Google Translate
+:::
+
+::: {.column width="60%"}
+**Methods:** <i class="fas fa-vials"></i>
+
+-   **11 LLMs** (Open/Closed)
+-   **3 Linguistic Conditions**
+-   **19,800** Prompts
+-   Compared: Lexicoder Dictionaries
+-   Metrics: Corr, MAE, F1 (3/7 cat)
+:::
+:::
+
+::: {.notes}
+Briefly cover the data source, annotation, and translation process.
+Highlight the key methodological aspects: number of models, conditions, prompts, comparison points, and evaluation metrics. Emphasize the scale (19.8k prompts).
+~1 minute.
+:::
+
+## The Contenders: 11 LLMs <i class="fas fa-robot"></i>
+
+::: {.columns}
+::: {.column width="50%"}
+**Closed Source:** <i class="fas fa-lock"></i>
+
+-   Claude 3.5 Haiku
+-   Gemini 2.0 Flash
+-   DeepSeek Chat
+-   GPT-4o
+:::
+
+::: {.column width="50%"}
+**Open Source (Weights):** <i class="fas fa-lock-open"></i>
+
+-   Llama 3.2 (1B, 3B)
+-   Gemma 2 (9B)
+-   Mistral Saba (24B)
+-   QWQ (32B)
+-   Llama 3.3 (70B)
+-   DeepSeek R1 Basic (671B)
+:::
+:::
+
+*(Covering a range of sizes and providers)*
+
+::: {.notes}
+Quickly list the models evaluated. Grouping them helps. Mention the range of parameter sizes included.
+~30 seconds.
+:::
+
+## The Experiment: 3 Conditions <i class="fas fa-flask"></i>
+
+```{.mermaid}
 graph TD
-    A1[French Prompts] --> B1[French Text]
-    B1 --> C1[FR → FR<br/>Native Language Analysis]
-    
-    A2[English Prompts] --> B2[French Text]
-    B2 --> C2[EN → FR<br/>Cross-linguistic Prompting]
-    
-    A3[English Prompts] --> B3[English Text]
-    B3 --> C3[EN → EN<br/>Translation-based Analysis]
-```
+    subgraph "Condition 1: Native"
+      A1[French Prompt] --> B1(French Text);
+      B1 --> C1[<i class='fa-solid fa-flag'></i> → <i class='fa-solid fa-flag'></i>];
+    end
 
-## Prompt Structure
+    subgraph "Condition 2: Cross-Lingual Prompt"
+      A2[English Prompt] --> B2(French Text);
+      B2 --> C2[<i class='fa-solid fa-flag-usa'></i> → <i class='fa-solid fa-flag'></i>];
+    end
 
-```
-Please analyze the sentiment of the following French text and provide a single 
+    subgraph "Condition 3: Translation-Based"
+      A3[English Prompt] --> B3(English Translation);
+      B3 --> C3[<i class='fa-solid fa-flag-usa'></i> → <i class='fa-solid fa-flag-usa'></i>];
+    end
+````
+
+*Testing native understanding, cross-lingual ability, and impact of translation.*
+
+::: {.notes}
+Explain the purpose of each condition using the diagram. FR-FR tests native ability. EN-FR tests the cross-lingual prompt hypothesis. EN-EN checks performance on translated text.
+\~45 seconds.
+:::
+
+## Guiding the LLMs: The Prompt Structure <i class="fas fa-scroll"></i>
+
+```{.markdown .code-overflow-wrap .smaller}
+Please analyze the sentiment of the following French text and provide a single
 numerical rating according to this scale:
 
 Sentiment Scale:
--1.0: Strong negative sentiment - highly critical, hostile, or pessimistic content
--0.5: Moderate negative sentiment - somewhat negative, disapproving, or concerned
-0.0: Neutral sentiment - factual, balanced, or neither positive nor negative
-0.5: Moderate positive sentiment - somewhat positive, approving, or optimistic
-1.0: Strong positive sentiment - highly supportive, enthusiastic, or optimistic
+-1.0: Strong negative sentiment...
+// ... (Scale definitions) ... //
+ 1.0: Strong positive sentiment...
 
-[Additional instructions about numerical response format and cultural considerations...]
+Important instructions:
+1. ...consider cultural and linguistic nuances...
+2. ...analyze emotional tone, word choice...
+3. Respond ONLY with a single numerical value...
+4. Do not include ANY explanations...
 
 Here is the text to analyze: [TEXT]
 ```
 
-## Key Findings: Overall Performance
+*(Consistent instructions, clear scale, strict output format)*
 
-<!-- ADD FIGURE: Correlation results chart -->
+::: {.notes}
+Show the structure, don't read the whole prompt. Emphasize key parts: clear task, defined scale, instruction for numerical output only, mention of cultural nuance. Highlight consistency across 19k prompts.
+\~30 seconds.
+:::
 
-*Key points:*
-- DeepSeek Chat achieved highest correlation (r = 0.707)
-- Claude 3.5 Haiku, GPT-4o, Gemini 2.0 all showed strong performance (r > 0.65)
-- Larger open-source models (DeepSeek R1, Llama 3.3) performed reasonably well
-- English Dictionary outperformed many smaller open-source models
+## Finding 1: Yes, They Can\! <i class="fa-solid fa-check-circle"></i> {auto-animate="true"}
 
-## Performance by Linguistic Condition
+**Correlation with Human Annotation (Higher is better)**
 
-<!-- ADD FIGURE: Linguistic conditions comparison -->
+![Sentiment Analysis Models Correlation with Ground Truth](about:sanitized){fig-align="center" height="450"}
 
-**Key Insights:**
-- English prompts with French text (EN→FR) performed slightly better
-- The advantage was marginal and not statistically significant
-- All conditions showed comparable effectiveness
-- Direct analysis of French text slightly outperformed translation
+::: footer
+Finding 1: LLMs can analyze French sentiment. Closed models lead, larger open models follow. Dictionaries provide a baseline.
+:::
 
-## Classification Accuracy
+::: {.notes}
+Transition to findings. This is the answer to RQ1.
+Show the correlation chart first without callouts.
+State the main finding clearly: Yes, they work.
+:::
 
-<!-- ADD FIGURE: F1 scores for 7-category vs 3-category -->
+## Finding 1: Yes, They Can\! <i class="fa-solid fa-check-circle"></i> {auto-animate="true"}
 
-*Key findings:*
-- All models performed substantially better on 3-category than 7-category classification
-- Average F1 score improved from 0.302 to 0.495 (63.9% increase)
-- Claude 3.5 Haiku showed strongest fine-grained distinction capabilities
-- Models struggled most with "somewhat positive" and "somewhat negative" categories
+**Correlation with Human Annotation (Higher is better)**
 
-## LLMs vs. Dictionary Methods
+![Sentiment Analysis Models Correlation with Ground Truth](about:sanitized){fig-align="center" height="450"}
 
-**For Correlation:**
-- Top LLMs outperform dictionaries
-- DeepSeek Chat: r = 0.707
-- English Dictionary: r = 0.531
-- French Dictionary: r = 0.426
+**Key Points:** <i class="fas fa-star"></i>
 
-**For Classification:**
-- English Dictionary: F1 = 0.625
-- Top LLMs (3-category): F1 ≈ 0.71
-- Average LLM (3-category): F1 = 0.495
-- Dictionary methods remain competitive
+  - Top Closed Models (DeepSeek Chat, GPT-4o, Gemini, Claude): **r \> 0.65**
+  - Best Open Models (Llama 70B, DeepSeek R1): Competitive
+  - English Dictionary (LSD): Solid baseline (r ≈ 0.53)
 
-## Parameter Count Matters
+::: footer
+Finding 1: LLMs can analyze French sentiment. Closed models lead, larger open models follow. Dictionaries provide a baseline.
+:::
 
-<!-- ADD FIGURE: Parameter count vs performance -->
+::: {.notes}
+Now highlight specific parts using the key points.
+Emphasize the high correlation for top closed models.
+Mention strong open models.
+Point out the LSD baseline performance for context.
+\~1 minute for both parts of Finding 1.
+:::
 
-*For open-source models, parameter count strongly predicts performance*
+## Finding 2: Prompt Language? Minimal Impact <i class="fas fa-arrows-left-right"></i>
 
-## Temporal Analysis Comparison
+**Performance Across Linguistic Conditions (Average Correlation)**
 
-<!-- ADD FIGURE: Time series chart -->
+| Condition          | Avg. Correlation | Avg. F1 (3-cat) | Avg. MAE (Lower is better) |
+|--------------------|-----------------|-----------------|--------------------------|
+| **🇫🇷 → 🇫🇷** (Fr/Fr) | 0.430           | 0.489           | 0.346                    |
+| **🇬🇧 → 🇫🇷** (En/Fr) | **0.436** | **0.501** | **0.332** |
+| **🇬🇧 → 🇬🇧** (En/En) | 0.418           | 0.494           | 0.357                    |
 
-*LLM and dictionary methods capture similar temporal patterns in sentiment over time*
+**Insight:** <i class="fas fa-lightbulb"></i>
 
-## Practical Implications
+  - English prompts on French text (EN→FR) slightly edged out others.
+  - **BUT:** Differences were marginal, not statistically significant.
+  - **Takeaway:** For French, prompt language choice seems less critical. Direct analysis (FR→FR or EN→FR) slightly better than translation (EN→EN).
+
+::: {.notes}
+Address RQ3. Show the table comparing conditions.
+Highlight that EN-\>FR was technically best but the difference wasn't significant.
+Contrast this with literature suggesting strong English prompt advantage elsewhere.
+Conclude that for this task/language, it matters less than expected. Direct analysis is slightly preferable to translation.
+\~1 minute.
+:::
+
+## Finding 3: Broad Strokes <i class="fas fa-thumbs-up"></i>, Fine Details <i class="fas fa-magnifying-glass"></i><i class="fas fa-thumbs-down"></i>
+
+**Classification Accuracy (F1 Score - Higher is better)**
+
+![F1 Scores Comparison Across Models and Categories](about:sanitized){fig-align="center" height="450"}
+
+**Key Points:** <i class="fas fa-chart-simple"></i>
+
+  - **Huge jump** from 7-category (nuance) to 3-category (polarity) F1 scores.
+  - Avg. F1: **0.302** (7-cat) ↗ **0.495** (3-cat) - **\~64% increase\!**
+  - Models excel at **Positive / Neutral / Negative**.
+  - Struggle with "somewhat positive/negative".
+
+::: {.notes}
+Show the F1 comparison chart (ideally side-by-side bars for 3 vs 7 cat per model/condition).
+Emphasize the large performance difference.
+State clearly that models are good at basic polarity but bad at fine-grained distinctions.
+Mention the specific difficulty with intermediate categories.
+\~1 minute.
+:::
+
+## Finding 4: LLMs vs. Dictionary <i class="fas fa-balance-scale"></i>
+
+::: {.columns}
+::: {.column width="50%"}
+**Correlation (Nuance):** <i class="fas fa-filter"></i>
+
+  - 🏆 **Top LLMs Win:** Better intensity capture (r=0.71).
+  - 🥈 LSD Baseline: Less nuanced (EN r=0.53).
+    :::
+
+::: {.column width="50%"}
+**F1 Score (3-Cat Polarity):** <i class="fas fa-check-double"></i>
+
+  - 🥇 **Top LLMs Win (narrowly):** F1 ≈ 0.71.
+  - 🥈 **EN LSD Very Competitive:** F1 = 0.625\!
+    :::
+    :::
+
+**Insight:** LLMs better for *intensity*, but LSD holds its own for basic *polarity* and offers **transparency**. <i class="fas fa-eye"></i>
+
+::: {.notes}
+Directly compare LLMs and the dictionary method.
+Use the columns to show LLMs win on correlation (nuance) but LSD is surprisingly strong on basic classification (F1 3-cat).
+Introduce the key trade-off: Nuance (LLM) vs. Transparency (LSD).
+\~1 minute.
+:::
+
+## Finding 5: For Open Source, Size Matters <i class="fas fa-microchip"></i><i class="fas fa-arrow-trend-up"></i>
+
+**Performance vs. Parameter Count (Open Source Models)**
+
+![Placeholder: Scatter plot showing positive trend between parameter size (log scale?) and correlation/F1 for open models.](about:sanitized){fig-align="center" height="400"}
+
+*(Conceptual graph - replace with actual data if available/plotted)*
+
+**Observation:** Generally, larger open-source models performed better. (e.g., Llama 70B \> Llama 3B).
+
+::: {.notes}
+Address RQ2 regarding open-source models.
+Show the relationship between size and performance visually if possible (even a simplified bar chart).
+State the clear trend: bigger is generally better for open models in this task.
+\~45 seconds.
+:::
+
+## Temporal Trends: LLMs ≈ Dictionary <i class="fas fa-chart-area"></i>
+
+**Sentiment Over Time (Example: Gemini vs. LSD)**
+
+![Sentiment Analysis Comparison Over Time](about:sanitized){fig-align="center" height="450"}
+
+**Insight:** Despite differences in nuance, top LLMs and dictionary methods capture similar overall sentiment shifts across the corpus.
+
+::: {.notes}
+Show the time series comparison graph.
+Highlight the similarity in the overall trends identified by different methods.
+This reinforces the idea that LSD captures the macro-picture well, even if LLMs get more micro-nuance.
+\~45 seconds.
+:::
+
+## So What? Practical Implications <i class="fas fa-wrench"></i>
 
 **For Social Scientists:**
-- Leading closed-source LLMs offer strong performance
-- Larger open-source models are viable alternatives
-- Choose prompt language based on convenience
-- Consider task requirements (basic polarity vs. nuance)
-- Dictionary methods remain valuable for transparency
 
-**Key Recommendations:**
-- Use LLMs when nuanced sentiment intensity matters
-- Rely on basic 3-category distinctions, not fine-grained
-- Consider dictionary methods for high transparency needs
-- Parameter size predicts performance for open models
-- Both French and English prompts work effectively
+  - <i class="fas fa-check"></i> **Use LLMs:** Top closed & larger open models work *without fine-tuning*.
+  - <i class="fas fa-comments"></i> **Prompt Flexibility:** French or English likely fine; direct analysis slightly better.
+  - <i class="fas fa-bullseye"></i> **Focus on Polarity:** Rely on Pos/Neut/Neg (3-cat); cautious w/ nuance (7-cat).
+  - <i class="fas fa-code-compare"></i> **Consider Trade-offs:**
+      - **LLMs:** Nuance <i class="fas fa-arrow-right"></i> Transparency <i class="fas fa-arrow-down"></i>
+      - **LSD:** Transparency <i class="fas fa-arrow-up"></i> Nuance <i class="fas fa-arrow-right"></i> Polarity <i class="fas fa-check"></i>
 
-## Limitations
+::: {.notes}
+Summarize the key takeaways for the audience.
+Provide actionable advice: Which models to use, how to prompt, what level of analysis to trust.
+Reiterate the LLM vs. LSD trade-off clearly.
+\~1.5 minutes.
+:::
 
-- **Ground truth reliability**: Single annotator, small sample size
-- **Generalizability**: French language only, specific domain (news articles on open-source)
-- **Method constraints**: Google Translate quality, single prompt structure
-- **Computational considerations**: No cost or time efficiency analysis
-- **Temporal relevance**: Models evolve rapidly, findings represent a point in time
+## Keep In Mind: Limitations <i class="fas fa-triangle-exclamation"></i>
 
-## Conclusions
+::: {.columns}
+::: {.column width="50%"}
 
-**General-purpose LLMs can effectively analyze sentiment in French text without fine-tuning**
+  - **Ground Truth:** Single coder, small sample.
+  - **Scope:** French only; News/Open Source domain.
+  - **Tools:** Google Translate quality?; Single prompt.
+    :::
+    ::: {.column width="50%"}
+  - **Practicalities:** No cost/time analysis.
+  - **Snapshot:** LLMs evolve *fast*.
+    :::
+    :::
+
+::: {.notes}
+Briefly acknowledge the study's limitations. This builds credibility.
+Mention the key ones: annotation reliability, generalizability, methodological choices, and the fast pace of AI development.
+Keep it concise.
+\~45 seconds.
+:::
+
+## Conclusion: Bridging the Language Gap <i class="fas fa-flag-checkered"></i>
+
+**Can general-purpose LLMs analyze sentiment in French without fine-tuning?** **Yes.** <i class="fas fa-thumbs-up"></i>
 
 **Key Takeaways:**
-- Closed-source models show strongest performance
-- Larger open-source models are viable alternatives
-- Prompt language has minimal impact for French
-- All models struggle with fine-grained sentiment distinctions
-- Dictionary methods remain competitive for basic polarity
 
-**The Bottom Line:**
-LLMs offer accessible, effective sentiment analysis for non-English text, particularly when basic polarity detection is sufficient
+  - Leading LLMs offer powerful, *accessible* analysis.
+  - Open-source models viable (bigger = better).
+  - Prompt language less critical here.
+  - Basic polarity = <i class="fas fa-check-circle"></i>; Fine nuance = <i class="fas fa-question-circle"></i>.
+  - **LSD remains strong & transparent** for polarity & macro-trends.
 
-## Thank You
+**The Bottom Line:** Choose based on **nuance vs. transparency**. LLMs are valuable tools for non-English text.
 
-### Questions?
+::: {.notes}
+Reiterate the main answer and key findings concisely.
+Emphasize the final trade-off point between LLMs and LSD.
+End on a positive note about the utility of LLMs for social scientists working with non-English data.
+\~1 minute.
+:::
 
-Laurence-Olivier M. Foisy  
-mail@mfoisy.com  
-Université Laval
+## Thank You\! <i class="fas fa-handshake"></i>
 
-*With: Camille Pelletier, Étienne Proulx, Sarah-Jane Vincent, Mickael Temporão, Yannick Dufresne*
+**Questions?** <i class="fas fa-comments"></i>
+
+Laurence-Olivier M. Foisy
+`mail@mfoisy.com`
+[mfoisy.com](https://mfoisy.com)
+
+*Co-authors: Camille Pelletier, Étienne Proulx, Sarah-Jane Vincent, Mickael Temporão, Yannick Dufresne*
+
+*Full paper/details available in [GitHub](https://github.com/clessn/mpsa_beyond_language)*
+
