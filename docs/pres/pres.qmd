@@ -23,13 +23,11 @@ format:
 
 ## My Research Journey <i class="fas fa-route"></i> {background-image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" background-opacity="0.1"}
 
-::: incremental
 -   <i class="fas fa-newspaper"></i> Studying media discourse on **Open Source Software** in French.
 -   <i class="fas fa-database"></i> Corpus: **2,683** news articles (1995-2025).
 -   <i class="fas fa-chart-line"></i> Needed: **Sentiment Analysis** over time.
 -   <i class="fas fa-book"></i> Traditional tool: Lexicoder Sentiment Dictionary (LSD).
 -   <i class="fas fa-lightbulb"></i> *The thought:* What if we used **Large Language Models (LLMs)** instead?
-:::
 
 ::: {.notes}
 Start with the personal context - makes it relatable.
@@ -42,19 +40,25 @@ Keep this intro quick - 1 minute max.
 
 ## The Challenge: LLMs & Language <i class="fas fa-language"></i> {background-image="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" background-opacity="0.1"}
 
-::: {.columns}
+:::: {.columns}
+
 ::: {.column width="60%"}
+
 **Most Foundational LLMs:**
 
 -   <i class="fab fa-python"></i> Predominantly trained on **English** data.
 -   <i class="fas fa-question-circle"></i> Performance in other languages? Less certain.
 :::
+
 ::: {.column width="40%"}
+
 **The Big Question:**
 
 Can general-purpose LLMs *accurately* evaluate sentiment in **non-English (French)** text without special training? <i class="fas fa-flag"></i><i class="fas fa-comment-dots"></i>
+
 :::
-:::
+
+::::
 
 ::: {.notes}
 Highlight the English dominance in LLM training data.
@@ -65,23 +69,29 @@ Under 30 seconds.
 
 ## Why Does This Matter? <i class="fas fa-users"></i> {.smaller background-image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" background-opacity="0.1"}
 
-::: {.columns}
+:::: {.columns}
+
 ::: {.column width="50%"}
+
 **For Social Scientists:**
 
 -   <i class="fas fa-toolbox"></i> **Accessible Tools:** Alternative to complex models.
 -   <i class="fas fa-laptop-code"></i> **Lower Barrier:** Less need for ML expertise/compute.
 -   <i class="fas fa-globe-europe"></i> **Cross-Lingual Potential:** Multilingual research.
+
 :::
 
 ::: {.column width="50%"}
+
 **Broader Impact:**
 
 -   <i class="fas fa-share-alt"></i> **Democratizing NLP:** Wider AI access.
 -   <i class="fas fa-language"></i> **Supporting Multilingualism:** Reducing English bias.
 -   <i class="fas fa-microscope"></i> **New Methodologies:** Integrating AI.
+
 :::
-:::
+
+::::
 
 ::: {.notes}
 Explain the practical benefits for researchers like yourself.
@@ -92,24 +102,30 @@ Focus on accessibility and reducing bias.
 
 ## The Literature Gap <i class="fas fa-puzzle-piece"></i> {background-image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" background-opacity="0.1"}
 
-::: {.columns}
+:::: {.columns}
+
 ::: {.column width="50%"}
+
 **What We Knew:** <i class="fas fa-check"></i>
 
 -   Specialized models work.
 -   Fine-tuning helps.
 -   English prompts *might* aid cross-lingual tasks.
+
 :::
 
 ::: {.column width="50%"}
+
 **What We Didn't Know:** <i class="fas fa-question"></i>
 
 -   **General** LLMs w/o fine-tuning?
 -   **Open-source** vs. closed?
 -   Impact of **prompt language** for French?
 -   LLMs vs. **dictionaries**?
+
 :::
-:::
+
+::::
 
 ::: {.notes}
 Quickly contrast known facts with the specific questions your research addresses.
@@ -130,8 +146,10 @@ State the three core questions very clearly. These guide the rest of the present
 
 ## Our Approach: Systematic Evaluation <i class="fas fa-cogs"></i> {background-image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" background-opacity="0.1"}
 
-::: {.columns}
+:::: {.columns}
+
 ::: {.column width="40%"}
+
 **Data:** <i class="fas fa-database"></i>
 
 -   French News Corpus
@@ -141,6 +159,7 @@ State the three core questions very clearly. These guide the rest of the present
 :::
 
 ::: {.column width="60%"}
+
 **Methods:** <i class="fas fa-vials"></i>
 
 -   **11 LLMs** (Open/Closed)
@@ -148,8 +167,10 @@ State the three core questions very clearly. These guide the rest of the present
 -   **19,800** Prompts
 -   Compared: Lexicoder Dictionaries
 -   Metrics: Corr, MAE, F1 (3/7 cat)
+
 :::
-:::
+
+::::
 
 ::: {.notes}
 Briefly cover the data source, annotation, and translation process.
@@ -160,16 +181,20 @@ Highlight the key methodological aspects: number of models, conditions, prompts,
 ## The Contenders: 11 LLMs <i class="fas fa-robot"></i>
 
 ::: {.columns}
-::: {.column width="50%"}
+
+:::: {.column width="50%"}
+
 **Closed Source:** <i class="fas fa-lock"></i>
 
 -   Claude 3.5 Haiku
 -   Gemini 2.0 Flash
 -   DeepSeek Chat
 -   GPT-4o
+
 :::
 
 ::: {.column width="50%"}
+
 **Open Source (Weights):** <i class="fas fa-lock-open"></i>
 
 -   Llama 3.2 (1B, 3B)
@@ -178,8 +203,10 @@ Highlight the key methodological aspects: number of models, conditions, prompts,
 -   QWQ (32B)
 -   Llama 3.3 (70B)
 -   DeepSeek R1 Basic (671B)
+
 :::
-:::
+
+::::
 
 *(Covering a range of sizes and providers)*
 
@@ -190,7 +217,8 @@ Quickly list the models evaluated. Grouping them helps. Mention the range of par
 
 ## The Experiment: 3 Conditions <i class="fas fa-flask"></i>
 
-```{.mermaid}
+```{mermaid}
+
 graph TD
     subgraph "Condition 1: Native"
       A1[French Prompt] --> B1(French Text);
@@ -206,6 +234,7 @@ graph TD
       A3[English Prompt] --> B3(English Translation);
       B3 --> C3[<i class='fa-solid fa-flag-usa'></i> → <i class='fa-solid fa-flag-usa'></i>];
     end
+
 ````
 
 *Testing native understanding, cross-lingual ability, and impact of translation.*
@@ -329,21 +358,27 @@ Mention the specific difficulty with intermediate categories.
 
 ## Finding 4: LLMs vs. Dictionary <i class="fas fa-balance-scale"></i>
 
-::: {.columns}
+:::: {.columns}
+
 ::: {.column width="50%"}
+
 **Correlation (Nuance):** <i class="fas fa-filter"></i>
 
   - 🏆 **Top LLMs Win:** Better intensity capture (r=0.71).
   - 🥈 LSD Baseline: Less nuanced (EN r=0.53).
-    :::
+
+:::
 
 ::: {.column width="50%"}
+
 **F1 Score (3-Cat Polarity):** <i class="fas fa-check-double"></i>
 
   - 🥇 **Top LLMs Win (narrowly):** F1 ≈ 0.71.
   - 🥈 **EN LSD Very Competitive:** F1 = 0.625\!
-    :::
-    :::
+
+:::
+
+::::
 
 **Insight:** LLMs better for *intensity*, but LSD holds its own for basic *polarity* and offers **transparency**. <i class="fas fa-eye"></i>
 
@@ -406,18 +441,24 @@ Reiterate the LLM vs. LSD trade-off clearly.
 
 ## Keep In Mind: Limitations <i class="fas fa-triangle-exclamation"></i>
 
-::: {.columns}
+:::: {.columns}
+
 ::: {.column width="50%"}
 
-  - **Ground Truth:** Single coder, small sample.
-  - **Scope:** French only; News/Open Source domain.
-  - **Tools:** Google Translate quality?; Single prompt.
-    :::
-    ::: {.column width="50%"}
-  - **Practicalities:** No cost/time analysis.
-  - **Snapshot:** LLMs evolve *fast*.
-    :::
-    :::
+- **Ground Truth:** Single coder, small sample.
+- **Scope:** French only; News/Open Source domain.
+- **Tools:** Google Translate quality?; Single prompt.
+    
+:::
+
+::: {.column width="50%"}
+
+- **Practicalities:** No cost/time analysis.
+- **Snapshot:** LLMs evolve *fast*.
+
+:::
+
+::::
 
 ::: {.notes}
 Briefly acknowledge the study's limitations. This builds credibility.
@@ -453,6 +494,7 @@ End on a positive note about the utility of LLMs for social scientists working w
 
 Laurence-Olivier M. Foisy
 `mail@mfoisy.com`
+
 [mfoisy.com](https://mfoisy.com)
 
 *Co-authors: Camille Pelletier, Étienne Proulx, Sarah-Jane Vincent, Mickael Temporão, Yannick Dufresne*
