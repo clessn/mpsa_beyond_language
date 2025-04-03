@@ -56,10 +56,17 @@ author:
           state: Québec
           postal-code: G1V 0A6
 abstract: |
-  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+  This study examines whether general-purpose large language models (LLMs) can effectively analyze sentiment in non-English texts without task-specific fine-tuning. We evaluate 11 open and closed source models on 200 sentences randomly drawn from a corpus of 2,683 French news articles discussing open-source software, comparing their performance to traditional dictionary methods. Through 19,800 systematically designed prompts across three language conditions (French prompts with French text, English prompts with French text, and English prompts with English translations), we find that leading closed source models achieve strong sentiment analysis performance (r > 0.70). Open source models demonstrate viable capabilities correlating with parameter size. We observe only marginal benefits from cross-linguistic prompting. All models perform substantially better on three-category classification (positive/neutral/negative) than on more granular sentiment distinctions. These findings suggest that general-purpose LLMs offer accessible alternatives to specialized sentiment models for social science researchers, particularly when basic sentiment polarity detection is sufficient.
 keywords: 
   - keyword1
   - keyword2
+  - Sentiment Analysis 
+  - Large Language models
+  - Cross-lingual NLP
+  - French Language
+  - Open-Source models
+  - Computational Social Science
+  - Prompt Engineering
 date: last-modified
 bibliography: references.bib
 format:
@@ -80,9 +87,11 @@ format:
 # Introduction
 
 The rise of large language models (LLMs) has transformed natural language processing across domains and applications. 
-<!-- NOTE: Ajouter source et dire que la majorité des données d'entrainement de LLAMA c'est English -->
-While these models demonstrate impressive capabilities in English, their cross-linguistic effectiveness seems to remain a critical area of investigation. 
-This paper addresses a fundamental question in this domain: Can open and closed weights general purpose foundational LLMs accurately evaluate sentiment in non-English texts?
+<!-- NOTE: Ajouter source et dire que la majorité des données d'entrainement de LLAMA c'est English Touvron ? Et ajouter le tableau?-->
+While these models demonstrate impressive capabilities in non-English languages, their cross-linguistic effectiveness remains a critical area of investigation. 
+Indeed, the majority of LLMs are trained primarily on English data, raising questions about their performance in other languages.
+
+This paper addresses a fundamental question in this domain: Can open and closed source general purpose foundational LLMs accurately evaluate sentiment in non-English texts?^[While the term 'open weights' technically distinguishes models releasing only parameters from fully 'open-source' models (which often include training code and potentially data), this study uses 'open-source' as a broader category for simplicity and common understanding. It refers to models offering greater accessibility and transparency via publicly available weights compared to closed-source alternatives. The reader should note this distinction, as many models evaluated in our 'open-source' group technically meet the 'open weights' definition.]
 
 Recent research has uncovered a compelling phenomenon: prompting in English often improves performance in cross-linguistic tasks, even when the target language is non-English. 
 @Jiang2020How documented increased accuracy in knowledge extraction when using English prompts compared to diversified manual prompts in other languages. 
@@ -98,6 +107,12 @@ This accessibility consideration is particularly relevant as AI tools become inc
 
 # Research Question
 
+Sentiment analysis serves as an ideal test case for examining cross-linguistic capabilities of LLMs for several reasons. 
+First, it requires nuanced language understanding beyond simple translation, demanding models grasp cultural contexts and linguistic subtleties. 
+Second, it represents a common analytical task with practical applications across multiple disciplines. 
+Third, sentiment analysis offers both continuous (intensity) and categorical (polarity) evaluation metrics, enabling multifaceted performance assessment. 
+Finally, the availability of established dictionary-based methods provides meaningful benchmarks against which to evaluate LLM performance, creating a comprehensive evaluation framework for our research questions.
+
 Thus, the main goal of this paper is to answer the following questions.
 
 1. Can general-purpose LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning? 
@@ -105,8 +120,7 @@ Thus, the main goal of this paper is to answer the following questions.
 3. How does the language of the prompt affect performance across different languages?
 
 Sentiment analysis offers an interesting test case for examining this phenomenon, as it requires nuanced language understanding beyond simple translation. 
-While close weights models such as those offered by Google or Anthropic have received substantial attention in multilingual contexts, open weights LLMs present both unique challenges and opportunities. 
-<!-- NOTE: Peut être une note de bas de page qui explique pk sont pas open source mais open weights -->
+While closed source models such as those offered by Google or Anthropic have received substantial attention in multilingual contexts, open source LLMs present both unique challenges and opportunities. 
 They offer greater transparency, adaptability, and accessibility for global researchers and practitioners, yet their cross-linguistic capabilities remain less comprehensively documented. 
 This study first evaluate the performance of leading open and closed weights foundational LLMs in sentiment analysis with french texts. 
 It then examine how prompt language affects performance, identify cross-linguistic patterns, and analyze model behavior across french and english. 
@@ -192,11 +206,10 @@ However, the first article collected was published on June 23rd, 1995, as no art
 ::: {#tbl-source-summary}
 {{< include ../../results/tables/summary_by_source.md >}}
 
-Table: Summary of news articles by source media
+Table: Summary of Collected News Articles Discussing Open Source Software by Source Media
 :::
 
-<!--NOTE: citation de vibe coding -->
-We vibe-coded a Python-based web scraper using Selenium WebDriver to extract article content more conveniently from the database. 
+We developed a Python-based web scraper using Selenium WebDriver to extract article content more conveniently from the database. 
 Eureka provides a way to download articles in PDF format by batches of 50 articles.
 Downloading 2683 articles this way is very time consuming and the PDF format is not very convenient for text analysis.
 The scraper allowed the easy download of all articles in HTML format, which is more convenient for text analysis.
@@ -204,7 +217,7 @@ All HTML documents underwent preprocessing with custom R functions to extract pu
 This resulted in a temporally diverse exhaustive corpus suitable for sentiment analysis across multiple methods.
 The extraction process preserved document structure while standardizing format, enabling consistent comparison across analytical approaches.
 
-![Articles published by year](../../results/graphs/time_series.png)
+![Temporal Distribution of News Articles Discussing Open Source Software](../../results/graphs/time_series.png)
 
 ## Translation
 
@@ -241,15 +254,13 @@ This should be considered when interpreting the results of the study.
 To establish a classical baseline sentiment measures, we employed lexicon-based methods on both the original French text and its English translation. 
 We used a two-phase approach to ensure comprehensive analysis across languages.
 
-For the French corpus, we implemented a customized version of the Lexicoder Sentiment Dictionary (LSD) methodology. 
-<!-- NOTE: ajouter citation Duval et Petry  -->
+For the French corpus, we implemented a customized version of the Lexicoder Sentiment Dictionary (LSD) methodology [@duval_petry16a]. 
 First, we segmented all articles into individual sentences, maintaining document structure through unique sentence identifiers. 
 Each sentence underwent preprocessing: conversion to lowercase, removal of punctuation, and elimination of French stopwords using the `quanteda` package. 
 We then applied the French Lexicoder Sentiment Dictionary (`frlsd`), a specialized lexicon adapted for French text analysis, to identify positive and negative sentiment terms in each sentence. 
 Sentiment scores were calculated as a normalized tone index representing the ratio between positive and negative sentiment markers within each text segment, with the formula: (positive_terms - negative_terms) / total_words.
 
-For the English translations, we implemented a more sophisticated preprocessing pipeline based on the standard Lexicoder Sentiment Dictionary methodology. 
-<!-- NOTE: Ajouter Young Soroka -->
+For the English translations, we implemented a more sophisticated preprocessing pipeline based on the standard Lexicoder Sentiment Dictionary methodology [@young_andsoroka12].
 Beyond basic cleanup, we applied specialized functions to handle contractions, preserve proper nouns, and process negation expressions (e.g., "not good" recognized as negative rather than positive). 
 The English LSD includes dedicated dictionaries for negated terms, allowing us to account for the sentiment-flipping effect of negation (e.g., "not happy" properly categorized as negative sentiment). 
 The tone index was calculated as: ((positive + negated_negative) - (negative + negated_positive)) / total_words, providing a more nuanced assessment of sentiment.
@@ -262,6 +273,7 @@ Our LLM evaluation framework incorporated an extensive assessment of multiple ge
 We conducted a total of 19,800 individual prompts across 11 different models to thoroughly evaluate their sentiment analysis capabilities in cross-linguistic contexts. 
 This scale of evaluation allowed us to draw conclusions about model performance across language boundaries and prompt conditions.
 
+Our model selection reflects a deliberate effort to represent the current landscape of LLMs across different architectures, parameter scales, and accessibility levels. 
 For our open-weight model selection, we incorporated a diverse range of architectures and parameter sizes to ensure comprehensive representation of current capabilities. 
 The smallest model in our evaluation was Llama 3.2 (1B), accessed through the Groq API service, which allowed us to establish a baseline for minimal parameter count performance
 . We also included Llama 3.2 (3B), accessed via Fireworks.ai, which represents a modest increase in parameter size while maintaining computational efficiency. 
@@ -350,7 +362,7 @@ Our evaluation framework employed three complementary methodologies to thoroughl
 
 For the correlation analysis, we calculated Pearson correlation coefficients between each model's continuous sentiment predictions (ranging from -1.0 to 1.0) and the manually annotated ground truth values. 
 
-![Correlations](../../results/graphs/model_correlation.png)
+![Sentiment Analysis Models Correlation with Ground Truth](../../results/graphs/model_correlation.png)
 
 This approach evaluated the models' ability to accurately reflect sentiment intensity and direction. 
 Additionally, we calculated Mean Absolute Error (MAE) to quantify prediction accuracy in absolute terms. 
@@ -359,6 +371,13 @@ We supplemented correlation analysis with F1 score calculations to evaluate clas
 For the 7-category classification evaluation, we converted both predicted and ground truth sentiment values into discrete categories: "very_negative," "negative," "somewhat_negative," "neutral," "somewhat_positive," "positive," and "very_positive."
 This approach provided detailed insights into model performance across the full sentiment spectrum. 
 The weighted average F1 score was calculated to account for class imbalance by weighting each category's F1 score by its support (number of instances).
+
+Recognizing that nuanced sentiment gradations can be challenging to distinguish, we also conducted a simplified 3-category evaluation by grouping sentiment labels into "negative" (encompassing very_negative, negative, and somewhat_negative), "neutral," and "positive" (encompassing somewhat_positive, positive, and very_positive). 
+This grouping strategy allowed us to assess model performance on fundamental sentiment polarity distinctions. 
+The same F1 score calculation methodology was applied to these grouped categories, providing a complementary perspective on model capabilities.
+
+All metrics were calculated using complete cases only, with appropriate error handling to ensure robust evaluation across all models and conditions.
+This multi-faceted evaluation approach allowed us to assess both the continuous prediction accuracy and classification performance of all models across different linguistic configurations.
 
 ```{=latex}
 \clearpage
@@ -372,12 +391,6 @@ The weighted average F1 score was calculated to account for class imbalance by w
 \end{landscape}
 \clearpage
 ```
-Recognizing that nuanced sentiment gradations can be challenging to distinguish, we also conducted a simplified 3-category evaluation by grouping sentiment labels into "negative" (encompassing very_negative, negative, and somewhat_negative), "neutral," and "positive" (encompassing somewhat_positive, positive, and very_positive). 
-This grouping strategy allowed us to assess model performance on fundamental sentiment polarity distinctions. 
-The same F1 score calculation methodology was applied to these grouped categories, providing a complementary perspective on model capabilities.
-
-All metrics were calculated using complete cases only, with appropriate error handling to ensure robust evaluation across all models and conditions.
-This multi-faceted evaluation approach allowed us to assess both the continuous prediction accuracy and classification performance of all models across different linguistic configurations.
 
 # Results
 
@@ -390,24 +403,26 @@ These metrics provide different perspectives on model performance, allowing us t
 The results demonstrate that general-purpose foundation models can effectively analyze sentiment in non-English texts, with the best-performing models achieving correlation coefficients above 0.70 and F1 scores exceeding 0.70 for 3-category classification. 
 This performance exceeds traditional dictionary-based approaches, particularly for models with larger parameter counts and more sophisticated architectures.
 
-Across all evaluation metrics, proprietary closed-weight models consistently outperformed their open-weight counterparts. 
-DeepSeek Chat demonstrated the strongest correlation performance (r = 0.7
-07 in FR→FR condition), while GPT-4o and Gemini 2.0 exhibited the most robust classification capabilities (F1 scores of 0.703 and 0.716 respectively for 3-category classification). 
+Across all evaluation metrics, proprietary closed source models consistently outperformed their open source counterparts. 
+DeepSeek Chat demonstrated the strongest correlation performance (r = 0.707 in FR→FR condition), while Gemini 2.0 and GPT-4o exhibited the most robust classification capabilities (F1 scores of 0.703 and 0.716 respectively for 3-category classification). 
 Claude 3.5 Haiku excelled particularly in fine-grained 7-category classification (F1 = 0.486), indicating its strength in detecting subtle sentiment nuances.
 
 Among open-source models, parameter count emerged as a significant predictor of performance, with larger models generally demonstrating superior results. 
-However, even smaller models like Llama 3.2 (3B) achieved respectable performance (correlation coefficient > 0.35), suggesting that moderately-sized open models remain viable for basic sentiment analysis tasks.
+However, even smaller models like Llama 3.2 (3B) achieved respectable performance (r = 0.53 in FR→FR condition), suggesting that moderately-sized open models remain viable for basic sentiment analysis tasks.
 
 ## Impact of Prompt Language
 
 Our experimental design comparing French prompts with French text (FR→FR), English prompts with French text (EN→FR), and English prompts with English text (EN→EN) revealed intriguing cross-linguistic patterns. 
 Contrary to our initial hypothesis based on prior research suggesting English prompt superiority, we observed more nuanced results.
 
-For correlation metrics, French prompts with French text yielded the strongest performance (mean correlation = 0.430 across all models), closely followed by English prompts with French text (mean correlation = 0.436). 
-This suggests that native-language prompting can be effective when models possess sufficient cross-linguistic capabilities. 
-English prompts with English-translated text showed marginally lower performance (mean correlation = 0.418), indicating that translation may introduce subtle information loss.
+For correlation metrics, English prompts with French text yielded the strongest performance (mean correlation = 0.436 across all models), closely followed by French prompts with French text (mean correlation = 0.430). 
+English prompts with English-translated text showed marginally lower performance (mean correlation = 0.418), indicating that translation may introduce subtle information loss. However, the differences between these conditions were not statistically significant (p > 0.05 for all pairwise comparisons).
 
-For classification metrics, particularly the 3-category F1 scores, English prompts with French text yielded the highest average performance (mean F1 = 0.501), slightly outperforming both French-prompted French text (mean F1 = 0.489) and English-prompted English text (mean F1 = 0.494). This pattern suggests that cross-linguistic prompting may indeed offer advantages, but that these advantages are model-dependent and relatively modest.
+For classification metrics, particularly the 3-category F1 scores, English prompts with French text yielded the highest average performance (mean F1 = 0.501), slightly outperforming both English-prompted English text (mean F1 = 0.494) and French-prompted French text (mean F1 = 0.489). The ranking analysis revealed that EN→FR and EN→EN conditions were tied in performance (weighted ranking score = 2.27 each), both substantially outperforming the FR→FR condition (weighted ranking score = 1.45).
+
+For Mean Absolute Error (MAE), where lower values indicate better performance, English prompts with French text achieved the lowest average error (mean MAE = 0.332), followed by French prompts with French text (mean MAE = 0.346) and English prompts with English text (mean MAE = 0.357). Again, these differences were not statistically significant (p > 0.05).
+
+Across all three evaluation metrics, the EN→FR condition (English prompts with French text) most frequently achieved the highest weighted ranking score (2.18 for both correlation and MAE, 2.27 for F1 Score), suggesting that cross-linguistic prompting may indeed offer advantages, though these advantages are relatively modest and not statistically significant.
 
 ## Dictionary vs. LLM Approaches
 
@@ -430,6 +445,78 @@ This indicates particular difficulty in identifying subtle sentiment expressions
 
 # Discussion
 
+This study evaluated the efficacy of general-purpose large language models (LLMs) for sentiment analysis of non-English (French) text without task-specific fine-tuning, comparing open and closed source models, and examining the impact of prompt language. 
+Our results provide several key insights into the capabilities and limitations of current foundational models for cross-linguistic sentiment tasks relevant to social science research.
+
+First, addressing our primary research questions, the findings demonstrate that general-purpose LLMs, including both open and closed source architectures, can indeed perform sentiment analysis on French text with considerable accuracy, often surpassing traditional dictionary-based methods. 
+The leading closed source models (DeepSeek Chat, Gemini 2.0, GPT-4o, Claude 3.5 Haiku) achieved strong correlations (r > 0.70) and robust 3-category classification F1 scores (> 0.70), indicating their suitability for this task even without fine-tuning. 
+While open source models generally lagged behind their proprietary counterparts, larger models like Llama 3.3 (70B) showed competitive performance, and even smaller models such as Llama 3.2 (3B) provided respectable results (r ~ 0.53). 
+This suggests that foundational LLMs offer a viable, accessible alternative to resource-intensive specialized models, particularly valuable for researchers lacking extensive computational resources or technical expertise, as discussed in the literature review [@Priban2024comparative].
+
+Second, regarding the influence of prompt language, our findings present a more nuanced picture than suggested by some prior research [@Jiang2020How; @Lin2022Few; @Muennighoff2023Crosslingual]. 
+While the condition using English prompts on French text (EN→FR) frequently ranked highest across correlation, MAE, and F1 metrics, its performance advantage over using French prompts on French text (FR→FR) was marginal and not statistically significant. 
+This suggests that, at least for French sentiment analysis with the current generation of models, a strong universal benefit from English prompting may not hold. 
+Both native-language (FR→FR) and cross-language (EN→FR) prompting strategies yielded comparable results. 
+Notably, analyzing English translations with English prompts (EN→EN) tended to perform slightly worse than direct analysis of the French text (FR→FR or EN→FR), potentially indicating minor information loss or distortion introduced during the translation process itself, despite using a high-quality translation service.
+
+Third, the comparison between LLMs and dictionary-based methods reveals that while top-tier LLMs significantly outperform lexicon approaches, especially in capturing sentiment nuance (as reflected in correlation scores), standard dictionary methods (particularly the English LSD applied to translated text for 3-category classification) remain surprisingly robust baselines. 
+The English LSD achieved a higher 3-category F1 score (0.625) than the average LLM performance across all conditions (0.495), underscoring the continued utility of simpler, transparent methods for basic polarity detection, aligning with their historical importance [@young_andsoroka12; @duval_petry16a]. 
+However, the superior correlation achieved by models like DeepSeek Chat highlights the LLMs' advantage in assessing sentiment intensity more accurately.
+
+Fourth, the marked difference in performance between 7-category and 3-category classification across all models is significant. 
+The substantial drop in F1 scores (average decrease of ~64%) when moving to a finer granularity underscores the inherent difficulty in distinguishing subtle sentiment shades (e.g., 'somewhat negative' vs. 'negative').
+Models struggled most with these intermediate categories, performing best on 'neutral' classifications. 
+This finding has practical implications: researchers requiring highly nuanced sentiment analysis might find general-purpose LLMs insufficient without further adaptation or should primarily rely on the broader positive/neutral/negative distinction, which these models handle more reliably. 
+Claude 3.5 Haiku's relatively strong performance in the 7-category task suggests some models are better suited for nuance, but the overall challenge remains.
+
+Implications: Practically, these results suggest social scientists can confidently employ leading closed source LLMs, and cautiously use larger open source LLMs, for French sentiment analysis without needing fine-tuning expertise or extensive computational resources. 
+The choice between French or English prompts appears less critical than previously thought for this specific task and language, slightly favoring direct analysis of the original French text. 
+Theoretically, our findings contribute to the understanding of LLM cross-lingual capabilities, suggesting the "English prompt advantage" may be task-dependent or language-pair specific, and warrants further investigation.
+
+# Limitations
+
+Several specific limitations warrant careful consideration when interpreting the findings of this study. 
+The foundation of the evaluation, the ground truth dataset, is constrained primarily by the use of a single annotator for the manual coding process.
+This prevents the calculation of inter-annotator agreement, making it impossible to quantify the reliability of the annotations and leaving the benchmark potentially susceptible to individual subjectivity and bias. 
+Furthermore, the limited validation sample size of 200 sentences, though randomly drawn, constitutes only a small fraction of the extensive corpus and may not adequately capture the full spectrum of linguistic variations and sentiment nuances present across thousands of articles. 
+
+The generalizability of the results is significantly constrained by the corpus specificity, particularly its language focus exclusively on French. 
+Findings regarding model performance hierarchies, cross-lingual prompting effects, and overall accuracy cannot be reliably extrapolated to other languages, especially those less represented in LLM training data or possessing different linguistic structures. 
+Similarly, the genre limitation to news articles concerning a specific technical and political domain (open-source software) means the results may not apply to other text types, such as informal social media posts, creative writing, or political debates, which exhibit distinct linguistic styles, vocabulary, and sentiment expression patterns.
+
+Methodological choices concerning the tools and procedures also introduce limitations. 
+The study relied on Google Translate for generating English versions of the text; the inherent imperfection of machine translation quality means that subtle (or significant) inaccuracies, loss of nuance, or stylistic alterations could have impacted the performance measured in the English-language condition (EN->EN), yet no formal evaluation of translation fidelity was undertaken. 
+The selection of LLMs, while aiming for diversity across open/closed and parameter counts, was influenced by accessibility and cost, and may not include the absolute highest-performing models available globally at the time of research. 
+While prompt standardization was crucial for comparison, the use of a single, potentially suboptimal, prompt structure across all models limits the conclusions regarding peak performance; prompt engineering tailored to each model or employing more advanced techniques might yield different results. 
+The necessity for a robust response parsing function further indicates that models did not consistently adhere to output constraints, introducing a potential, though mitigated, avenue for processing errors.
+
+Finally, No data was collected on the computational time or monetary cost associated with using the different LLM APIs or running the analyses, information vital for researchers assessing the feasibility of adopting these methods. 
+Moreover, the entire evaluation represents a static evaluation—a snapshot of model capabilities at a specific point in time. 
+Given the rapid development and frequent updates to large language models, the performance benchmarks and relative rankings reported here may quickly become outdated, underscoring the transient nature of such comparative studies in the current AI landscape.
+
+# Conclusion
+
+This study assessed the efficacy of general-purpose large language models, encompassing both open and closed-source architectures, for performing sentiment analysis on non-English (French) text without task-specific fine-tuning. 
+Our findings address the core research questions affirmatively: foundational LLMs can evaluate sentiment accurately in French. 
+Leading closed-source models consistently demonstrated superior performance, achieving high correlations with manual annotations that suggest an ability to capture nuanced sentiment intensity better than traditional dictionary methods. 
+Open-source models, especially larger ones, also proved capable, presenting viable options.
+
+However, the comparison with traditional methods warrants careful consideration. 
+The English Lexicoder Sentiment Dictionary, when applied to translated text, achieved a strong F1 score for 3-category classification, proving highly competitive with even the top-performing LLMs and surpassing the average LLM in this specific metric. 
+Furthermore, analysis across the entire corpus reveals that the overall sentiment variations captured by LSD closely mirror the temporal trends identified by leading LLMs like Gemini, as illustrated graphically in Figure 
+
+![Sentiment Analysis Comparison Over Time](../../results/graphs/gemini_time_series.png)
+
+This parallel performance, combined with LSD's complete methodological transparency—a stark contrast to the inherent 'black box' nature of complex LLMs—positions it strongly. 
+For researchers prioritizing interpretability, replicability, and a method whose decision-making process is fully understandable, LSD may remain the most appropriate or even superior approach, despite potentially sacrificing some nuance in intensity scaling compared to top LLMs.
+
+Regarding LLM-specific findings, the anticipated significant advantage of English prompting was not observed for French sentiment analysis in this study; native-language prompting was comparably effective. 
+While LLMs handled broad polarity classification well, they struggled universally with finer-grained sentiment distinctions.
+
+In sum, while foundational LLMs offer powerful and accessible capabilities for non-English sentiment analysis, their advantages must be weighed against the proven robustness, transparency, and comparable macro-level performance of established dictionary methods like LSD. 
+The choice of method should depend on the specific research goals, particularly the relative importance placed on interpretability versus capturing subtle intensity variations. 
+Researchers must also consider model variability, the challenges of granular analysis, and the specific limitations outlined herein.
+
 # References {-}
 
 ::: {#refs}
@@ -437,7 +524,7 @@ This indicates particular difficulty in identifying subtle sentiment expressions
 
 # Appendix {.appendix}
 
-![Mean Absolute Error](../../results/graphs/model_mae.png)
+![Sentiment Analysis Models Mean Absolute Error](../../results/graphs/model_mae.png)
 
 \newpage
 
@@ -445,7 +532,7 @@ This indicates particular difficulty in identifying subtle sentiment expressions
 
 {{< include ../../results/tables/f1_scores_3cat_table.md >}}
 
-Table: F1 scores for 3-category classification
+Table: F1 Scores for 3-Category Classification
 
 :::
 
@@ -453,7 +540,7 @@ Table: F1 scores for 3-category classification
 \clearpage
 \begin{landscape}
 \begin{table}[h]
-\caption{F1 scores for 7-category classification}
+\caption{F1 Scores for 7-Category Classification}
 \begin{center}
 \input{../../results/tables/f1_scores_7cat_table.tex}
 \end{center}
