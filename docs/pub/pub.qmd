@@ -1,6 +1,6 @@
 ---
 title: Beyond Language Barriers
-subtitle: Evaluating the Efficacy of Open-Source LLMs in Analyzing Sentiment in Non-English Textual Data
+subtitle: Evaluating the Efficacy of Large Language Models in Analyzing Sentiment in Non-English Textual Data
 author:
   - name: Laurence-Olivier M. Foisy 
     email: mail@mfoisy.com  
@@ -14,7 +14,7 @@ author:
           postal-code: G1V 0A6
     attributes:
         corresponding: true
-    note: This is the first author footnote.
+    note: Laurence-Olivier M. Foisy is a PhD student in Political Science at Université Laval. His research agenda centers on the application of advanced digital methods to social science research, with particular emphasis on the integration and assessment of artificial intelligence tools in research methodology.
   - name: Camille Pelletier
     email: camille.pelletier.12@ulaval.ca
     affiliations:
@@ -47,7 +47,7 @@ author:
           postal-code: G1V 0A6
   - name: Mickael Temporão
     email: mickael.temporao@gmail.com
-    affilitations:
+    affiliations:
         - id: sciencepo
           name: Sciences Po Bordeaux  
           department: Département de science politique
@@ -385,19 +385,6 @@ The same F1 score calculation methodology was applied to these grouped categorie
 All metrics were calculated using complete cases only, with appropriate error handling to ensure robust evaluation across all models and conditions.
 This multi-faceted evaluation approach allowed us to assess both the continuous prediction accuracy and classification performance of all models across different linguistic configurations.
 
-```{=latex}
-\clearpage
-\begin{landscape}
-\begin{figure}
-\centering
-\includegraphics[width=0.9\linewidth]{../../results/graphs/model_f1_scores_comparison_grouped_pub.png}
-\caption{F1 Scores Comparison Across Models and Categories}
-\label{fig:f1-scores}
-\end{figure}
-\end{landscape}
-\clearpage
-```
-
 # Results
 
 Our analysis revealed significant patterns in the performance of large language models for sentiment analysis of French text. 
@@ -448,6 +435,21 @@ While models like Claude 3.5 Haiku achieved respectable performance on the 7-cat
 
 An examination of category-specific F1 scores within the 7-category framework revealed that models performed best at identifying neutral sentiment (average F1 = 0.38) and struggled most with the somewhat_positive and somewhat_negative categories (average F1 scores of 0.21 and 0.19 respectively). 
 This indicates particular difficulty in identifying subtle sentiment expressions, a challenge that practitioners should consider when selecting sentiment analysis approaches for nuanced applications.
+
+```{=latex}
+\clearpage
+\begin{landscape}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{../../results/graphs/model_f1_scores_comparison_grouped_pub.png}
+\caption{F1 Scores Comparison Across Models and Categories}
+\label{fig:f1-scores}
+\end{figure}
+\end{landscape}
+\clearpage
+```
+
+
 
 # Discussion
 
