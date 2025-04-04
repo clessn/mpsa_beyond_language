@@ -233,19 +233,18 @@ Here is the text to analyze: [TEXT]
 
 ## Finding 2
 
-### Prompt Language? Minimal Impact 
+### minimal practical impact of prompt language choice.
 
-| Condition     | Avg. Corr | Avg. F1 (3-cat) | Avg. MAE  |
-|---------------|------------------|-----------------|----------------------------|
-| **FR → FR** | 0.430            | 0.489           | 0.346                      |
-| **EN → FR** | **0.436** | **0.501** | **0.332** |
-| **EN → EN** | 0.418            | 0.494           | 0.357                      |
+| Condition   | Avg. Corr | Avg. F1 (3-cat) | Avg. MAE (Lower is Better) |
+|-------------|-----------|-----------------|--------------------------|
+| **FR → FR** | 0.537     | 0.539           | 0.260                    |
+| **EN → FR** | **0.543** | 0.546           | 0.259                    |
+| **EN → EN** | 0.520     | **0.557** | **0.252** |
 
-**Insight:** 
-
-  - English prompts on French text slightly edged out others.
-  - **BUT:** Differences were marginal, not statistically significant.
-  - **Takeaway:** For French, prompt language choice seems less critical. Direct analysis (FR → FR or US → FR) slightly better than translation (EN → EN).
+* Differences between prompt/text language conditions are consistently small across all metrics.
+* No single condition consistently outperforms others:
+    * EN→FR leads slightly in Correlation.
+    * EN→EN leads slightly in F1 scores and has the lowest avg. error (MAE).
 
 ## Finding 3
 
@@ -275,9 +274,17 @@ Here is the text to analyze: [TEXT]
 
 **Insight:** LLMs better for *intensity*, but LSD holds its own for basic *polarity* and offers **transparency**. 
 
-##
+## Finding 4
 
-![Sentiment Analysis Comparison Over Time](../../results/graphs/gemini_time_series.png){"center" height="400"}
+### Bigger parameters size is better
+
+![](../../results/graphs/model_parameter_vs_mae_16x9.png)
+
+## Finding 5
+
+### Dictionaries are still strong
+
+![](../../results/graphs/gemini_time_series.png)
 
 ## So What? Practical Implications
 

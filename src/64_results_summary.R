@@ -12,10 +12,10 @@ library(tidyverse)
 #----------------------------------------------------------------
 # Load the result files from previous analyses
 cor_results <- readRDS("data/clean/cor_results.rds")
-f1_scores_7 <- readRDS("results/fscores/f1_scores_7.rds")
-f1_scores_detailed_7 <- readRDS("results/fscores/f1_scores_detailed_7.rds")
-f1_scores_3 <- readRDS("results/fscores/f1_scores_3.rds")
-f1_scores_detailed_3 <- readRDS("results/fscores/f1_scores_detailed_3.rds")
+f1_scores_7 <- readRDS("results/analysis/f1_scores_7.rds")
+f1_scores_detailed_7 <- readRDS("results/analysis/f1_scores_detailed_7.rds")
+f1_scores_3 <- readRDS("results/analysis/f1_scores_3.rds")
+f1_scores_detailed_3 <- readRDS("results/analysis/f1_scores_detailed_3.rds")
 
 #----------------------------------------------------------------
 # MODEL NAME STANDARDIZATION
@@ -32,8 +32,14 @@ clean_model_name <- function(model_name) {
     str_replace("^lsd_", "Dictionary (") %>%
     str_replace("^Dictionary \\(fr", "Dictionary (FR") %>%
     str_replace("^Dictionary \\(en", "Dictionary (EN") %>%
-    # If it ends with a closing paren, leave it, otherwise add it
-    {if(!str_detect(., "\\)$") && str_detect(., "Dictionary \\(")) paste0(., ")") else .}
+    # Fix dictionary parentheses if needed
+    sapply(function(x) {
+      if(str_detect(x, "^Dictionary \\(") && !str_detect(x, "\\)$")) {
+        paste0(x, ")")
+      } else {
+        x
+      }
+    })
 }
 
 #----------------------------------------------------------------
@@ -130,7 +136,10 @@ combined_ranking <- bind_rows(
 # MODEL-CONDITION ANALYSIS
 #----------------------------------------------------------------
 # Analyze performance grouped by model and prompt condition
+# Include all models except QwQ and Deepseek R1 Basic
 model_condition_summary <- combined_ranking %>%
+  # Filter out QwQ and Deepseek R1 Basic models
+  filter(!str_detect(base_model, "QwQ|Deepseek R1 Basic")) %>%
   group_by(base_model, condition, metric_type) %>%
   summarize(
     mean_value = mean(value, na.rm = TRUE),
@@ -143,7 +152,9 @@ model_condition_summary <- combined_ranking %>%
 # TOP PERFORMERS IDENTIFICATION
 #----------------------------------------------------------------
 # Find top performing models for each metric type
+# Filter out QwQ and Deepseek R1 Basic models
 top_performers <- combined_ranking %>%
+  filter(!str_detect(base_model, "QwQ|Deepseek R1 Basic")) %>%
   group_by(metric_type) %>%
   slice_max(order_by = abs(value), n = 5) %>%
   ungroup() %>%
@@ -154,7 +165,10 @@ top_performers <- combined_ranking %>%
 # CONDITION SUMMARY ANALYSIS
 #----------------------------------------------------------------
 # Analyze performance by prompt and text language condition
+# Include all models except QwQ and Deepseek R1 Basic
 condition_summary <- combined_ranking %>%
+  # Filter out QwQ and Deepseek R1 Basic models
+  filter(!str_detect(base_model, "QwQ|Deepseek R1 Basic")) %>%
   group_by(condition, metric_type) %>%
   summarize(
     mean_value = mean(value, na.rm = TRUE),

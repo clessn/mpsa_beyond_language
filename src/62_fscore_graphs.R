@@ -17,8 +17,8 @@ library(tidyr)      # For data reshaping
 source("src/94_models_map.R")
 
 # Read in the F1 score data for both categorization schemes
-df_7 <- readRDS("results/fscores/f1_scores_7.rds")
-df_3 <- readRDS("results/fscores/f1_scores_3.rds")
+df_7 <- readRDS("results/analysis/f1_scores_7.rds")
+df_3 <- readRDS("results/analysis/f1_scores_3.rds")
 
 #################################################################
 # MODEL DISPLAY NAME PROCESSING
@@ -52,7 +52,7 @@ get_model_display_name <- function(model_name) {
     # Get display name based on the full model name
     display_name <- case_when(
       full_name == "accounts/fireworks/models/llama-v3p2-3b-instruct" ~ "Llama 3.2 3B",
-      full_name == "accounts/fireworks/models/qwq-32b" ~ "QWen2 32B",
+      full_name == "accounts/fireworks/models/qwq-32b" ~ "QwQ 32B",
       full_name == "accounts/fireworks/models/deepseek-r1-basic" ~ "DeepSeek R1 Basic",
       full_name == "accounts/fireworks/models/llama-v3p3-70b-instruct" ~ "Llama 3.3 70B",
       full_name == "gemma2-9b-it" ~ "Gemma 2 9B",
