@@ -291,3 +291,113 @@ print(plot_correlation)
 
 # Save high-resolution version to file
 ggsave("results/graphs/model_correlation.png", plot_correlation, width = 14, height = 12, dpi = 300)
+
+#################################################################
+# CREATE PRESENTATION-READY CORRELATION PLOT (16:9 FORMAT)
+#################################################################
+# Create the correlation plot with professional styling optimized for 16:9 presentations
+plot_correlation <- ggplot() +
+  # Add alternating background for visual grouping
+  geom_rect(data = bg_rects, aes(
+    xmin = -Inf, xmax = Inf,
+    ymin = ymin,
+    ymax = ymax,
+    fill = shade
+  ), alpha = 0.4) +
+  
+  # Points colored by model type
+  geom_point(data = df, aes(
+    x = correlation, 
+    y = model_label_ordered,
+    color = model_type
+  ), size = 4) +
+  
+  # Add error bars with matching colors
+  geom_errorbarh(data = df, aes(
+    y = model_label_ordered,
+    xmin = correlation - 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
+    xmax = correlation + 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
+    color = model_type
+  ), height = 0.25) +
+  
+  # Theme with white background optimized for presentations
+  theme_minimal() +
+  theme(
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.grid.major.y = element_blank(),  # Remove horizontal grid lines
+    panel.grid.minor = element_blank(),    # Remove all minor grid lines
+    panel.grid.major.x = element_line(color = "gray90"),  # Lighter vertical grid lines
+    plot.margin = margin(20, 40, 20, 20)   # Add more margin space for presentation
+  ) +
+  
+  # Labels and titles - larger for presentations
+  labs(
+    x = "Correlation with Ground Truth",
+    y = "",  # Remove y-axis label since we have direct labels
+    title = "Sentiment Analysis Models: Correlation with Ground Truth",
+    subtitle = "Pearson correlation coefficients with 95% confidence intervals",
+    caption = "Models grouped by type (color) and sorted by correlation strength. Prompting mechanisms within clusters ordered as\nFR→FR (French prompt on French text), EN→FR (English prompt on French text), and EN→EN (English prompt on translated text).\nError bars represent 95% confidence intervals; *p < 0.05, **p < 0.01, ***p < 0.001."
+  ) +
+  
+  # Scale and reference lines
+  scale_x_continuous(
+    limits = c(-1, 1),
+    breaks = seq(-1, 1, 0.25),
+    expand = c(0.02, 0.02)
+  ) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  
+  # Fill scale for alternating backgrounds
+  scale_fill_manual(values = c(
+    "even" = "gray95",  # Almost white
+    "odd" = "gray90"    # Very light gray
+  )) +
+  
+  # Hide the fill legend (used only for background grouping)
+  guides(fill = "none") +
+  
+  # Correlation value labels with significance stars - increase space for widescreen
+  geom_text(data = df, aes(
+    x = ifelse(correlation >= 0, correlation + 0.12, correlation - 0.12), 
+    y = model_label_ordered,
+    label = sprintf("r = %.2f%s", 
+                    correlation,
+                    ifelse(p_value < 0.001, "***", 
+                           ifelse(p_value < 0.01, "**",
+                                  ifelse(p_value < 0.05, "*", ""))))
+  ), hjust = ifelse(df$correlation >= 0, 0, 1), size = 3.8) +
+  
+  # Color scale for model types - brighter colors for presentation visibility
+  scale_color_manual(values = c(
+    "Open weights" = "#2077B4",   # Brighter blue 
+    "Closed weights" = "#E63946", # Brighter red
+    "Dictionary" = "#2DC653",     # Brighter green
+    "Other" = "#6C757D"           # Slightly brighter gray
+  ), name = "Model Type") +
+  
+  # Theme formatting - optimized for presentation
+  theme(
+    axis.title.x = element_text(hjust = 0.5, size = 14, margin = margin(t = 10, b = 5)),
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 11),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5, margin = margin(b = 10)),
+    plot.subtitle = element_text(size = 14, hjust = 0.5, margin = margin(b = 15)),
+    plot.caption = element_text(size = 11, hjust = 0, margin = margin(t = 15)),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 11),
+    legend.margin = margin(t = 10),
+    legend.key.size = unit(1.2, "cm")
+  )
+
+#################################################################
+# SAVE VISUALIZATION IN 16:9 FORMAT
+#################################################################
+# Save high-resolution version in 16:9 format
+# 16:9 aspect ratio = 1920x1080 pixels for standard HD presentations
+ggsave("results/graphs/model_correlation_16x9.png", 
+       plot_correlation, 
+       width = 16, 
+       height = 9, 
+       dpi = 300)

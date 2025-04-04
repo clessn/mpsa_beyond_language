@@ -315,7 +315,7 @@ if ("date" %in% names(df)) {
     
     # Professional styling with descriptive labels
     labs(title = "Sentiment Analysis Comparison Over Time",
-         subtitle = "Monthly averages with smoothed trend lines (1991-2019)",
+         subtitle = "Monthly averages with smoothed trend lines (1991-2025)",
          x = "", y = "Sentiment Score",
          color = "Analysis Method",
          shape = "Analysis Method",
