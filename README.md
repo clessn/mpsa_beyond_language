@@ -17,6 +17,8 @@ This research evaluates the cross-linguistic capabilities of general-purpose lar
 The corpus consists of 2,683 French-language news articles from 13 media sources collected from the Eureka database, spanning 1991-2025. These articles cover discourse about open-source software with the following search query:
 
 ```
+:q
+a
 TEXT= ("logiciel libre" | "logiciels libres" | "open source" | "open-source" | "logiciel open source" | "logiciels open source" | "code source ouvert" | "software libre" | "free software" | "code source libre" | "Free Software Foundation" | "Richard Stallman")
 ```
 
