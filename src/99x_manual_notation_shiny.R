@@ -15,9 +15,9 @@
 
 library(shiny)      # For web application framework
 library(shinyjs)    # For enhanced JavaScript functionality
-
-# Load the dataset containing sentences to annotate
-df_lsd <- readRDS("data/tmp/data_manual_ranking.rds")
+library(DT)         # For interactive data tables
+library(readr)      # For reading CSV files
+library(tools)      # For file extension function
 
 #==============================================================================
 # 2. USER INTERFACE DEFINITION
@@ -84,161 +84,228 @@ ui <- fluidPage(
         font-weight: bold;
         width: 50px;
       }
+      .setup-panel {
+        padding: 15px;
+        background-color: #f0f8ff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      /* Panel classes handled via shinyjs */
     ")),
     tags$script(HTML("
+      // Global variables to track slider state and keyboard state
+      var currentValue = 0;
+      window.keyboardShortcutsEnabled = true;
+      
+      // Function to update the slider value
+      function updateSliderValue(newValue) {
+        // Ensure value is within range and round to 2 decimal places
+        newValue = Math.max(-1, Math.min(1, newValue));
+        newValue = Math.round(newValue * 100) / 100;
+        
+        // Update our tracking variable
+        currentValue = newValue;
+        
+        // Update the displayed value
+        $('#current-value-display').text(newValue.toFixed(2));
+        
+        // Send the value to Shiny
+        Shiny.setInputValue('sentiment_score', newValue);
+      }
+      
+      // Make the function globally accessible
+      window.updateSliderValue = updateSliderValue;
+      
+      // Function to show annotation panel and hide setup panel
+      function startAnnotation() {
+        $('.setup-panel').hide();
+        $('.annotation-panel').show();
+      }
+      
+      // Make this function globally accessible
+      window.startAnnotation = startAnnotation;
+      
       $(document).ready(function() {
-        // Global variables to track slider state
-        window.currentValue = 0;
-        
-        // Function to update the slider value
-        window.updateSliderValue = function(newValue) {
-          // Ensure value is within range and round to 2 decimal places
-          newValue = Math.max(-1, Math.min(1, newValue));
-          newValue = Math.round(newValue * 100) / 100;
+        // Set up keyboard shortcuts
+        $(document).on('keydown', function(e) {
+          // Only process keyboard shortcuts if we're in annotation mode and shortcuts are enabled
+          if (!$('.annotation-panel').is(':visible') || window.keyboardShortcutsEnabled === false) {
+            return true;
+          }
           
-          // Update our tracking variable
-          window.currentValue = newValue;
+          // Log key presses for debugging
+          console.log('Key pressed:', e.key);
           
-          // Update the displayed value
-          $('#current-value-display').text(newValue.toFixed(2));
-          
-          // Send the value to Shiny
-          Shiny.setInputValue('sentiment_score', newValue);
-        };
-        
-        // Set up key event handler - directly on document to ensure it works
-        document.addEventListener('keydown', function(e) {
-          console.log('Key pressed:', e.key); // Debug logging
-          
-          // Get current value
-          var value = window.currentValue;
-          
-          if (e.key === 'h') {
-            e.preventDefault();
-            window.updateSliderValue(value - 0.1);
-            return false;
-          }
-          else if (e.key === 'l') {
-            e.preventDefault();
-            window.updateSliderValue(value + 0.1);
-            return false;
-          }
-          else if (e.key === 'j') {
-            e.preventDefault();
-            window.updateSliderValue(value - 0.01);
-            return false;
-          }
-          else if (e.key === 'k') {
-            e.preventDefault();
-            window.updateSliderValue(value + 0.01);
-            return false;
-          }
-          else if (e.key === 'n') {
-            e.preventDefault();
-            $('#next-button').click();
-            return false;
-          }
-          else if (e.key === 'p') {
-            e.preventDefault();
-            $('#prev-button').click();
-            return false;
-          }
-          else if (e.key === '0') {
-            e.preventDefault();
-            window.updateSliderValue(0);
-            return false;
-          }
-          else if (e.key === '-') {
-            e.preventDefault();
-            window.updateSliderValue(-1);
-            return false;
-          }
-          else if (e.key === '=') {
-            e.preventDefault();
-            window.updateSliderValue(1);
-            return false;
-          }
-          else if (e.key === 's') {
-            e.preventDefault();
-            $('#save-button').click();
-            return false;
+          switch(e.key) {
+            // Vim-style and arrow controls for adjusting values
+            case 'h':
+            case 'ArrowLeft':
+              e.preventDefault();
+              updateSliderValue(currentValue - 0.1);
+              return false;
+            case 'l':
+            case 'ArrowRight':
+              e.preventDefault();
+              updateSliderValue(currentValue + 0.1);
+              return false;
+            case 'j':
+            case 'ArrowDown':
+              e.preventDefault();
+              updateSliderValue(currentValue - 0.01);
+              return false;
+            case 'k':
+            case 'ArrowUp':
+              e.preventDefault();
+              updateSliderValue(currentValue + 0.01);
+              return false;
+              
+            // Navigation keys
+            case 'n':
+            case 'PageDown':
+              e.preventDefault();
+              document.getElementById('next_button').click();
+              return false;
+            case 'p':
+            case 'PageUp':
+              e.preventDefault();
+              document.getElementById('prev_button').click();
+              return false;
+              
+            // Quick value setting
+            case '0':
+              e.preventDefault();
+              updateSliderValue(0);
+              return false;
+            case '-':
+              e.preventDefault();
+              updateSliderValue(-1);
+              return false;
+            case '=':
+            case '+':
+              e.preventDefault();
+              updateSliderValue(1);
+              return false;
+              
+            // Save shortcut
+            case 's':
+              e.preventDefault();
+              document.getElementById('save_button').click();
+              return false;
           }
         });
+      });
+      
+      // Set up a handler for Shiny custom messages to update the slider value
+      Shiny.addCustomMessageHandler('updateSliderValue', function(message) {
+        updateSliderValue(message.value);
       });
     "))
   ),
   
   titlePanel("Sentiment Annotation Tool"),
   
-  div(class = "progress-text", textOutput("progress_text")),
-  
-  div(class = "sentence-container",
-      textOutput("sentence_text"),
-      conditionalPanel(
-        "input.show_translation",
-        hr(),
-        h4("English Translation:"),
-        textOutput("sentence_translation")
-      )
-  ),
-  
-  div(class = "controls-container",
-      div(
-        style = "display: flex; justify-content: space-between; align-items: center;",
-        div(
-          style = "flex: 1;",
-          h4("Sentiment Score:"),
-          div(class = "current-value", tags$span(id = "current-value-display", "0.00"))
+  # Setup Panel - for file upload and configuration
+  div(class = "setup-panel", id = "setup-panel",
+      fluidRow(
+        column(6,
+               fileInput("file_upload", "Upload CSV or RDS file", 
+                         accept = c(".csv", ".rds"),
+                         buttonLabel = "Browse...",
+                         placeholder = "No file selected"),
+               uiOutput("column_selector"),
+               textInput("annotation_column", "Name for annotation column:", 
+                         value = "manual_sentiment"),
+               checkboxInput("has_translation", 
+                            "Dataset contains English translations?", 
+                            value = FALSE),
+               uiOutput("translation_column_selector")
         ),
-        div(
-          style = "flex: 1; text-align: right;",
-          checkboxInput("show_translation", "Show English Translation", FALSE)
+        column(6,
+               h4("File Preview:"),
+               DTOutput("file_preview")
         )
       ),
+      actionButton("start_annotation", "Start Annotation", class = "btn-primary")
+  ),
+  
+  # Annotation Panel - hidden initially
+  div(class = "annotation-panel", id = "annotation-panel", style = "display: none;",
+      div(class = "progress-text", textOutput("progress_text")),
       
-      div(class = "navigation-buttons",
-          actionButton("prev_button", "Previous", id = "prev-button"),
-          actionButton("save_button", "Save Progress", id = "save-button"),
-          actionButton("next_button", "Next", id = "next-button")
+      div(class = "sentence-container",
+          textOutput("sentence_text"),
+          conditionalPanel(
+            "input.show_translation",
+            hr(),
+            h4("English Translation:"),
+            textOutput("sentence_translation")
+          )
+      ),
+      
+      div(class = "controls-container",
+          div(
+            style = "display: flex; justify-content: space-between; align-items: center;",
+            div(
+              style = "flex: 1;",
+              h4("Sentiment Score:"),
+              div(class = "current-value", tags$span(id = "current-value-display", "0.00"))
+            ),
+            div(
+              style = "flex: 1; text-align: right;",
+              conditionalPanel(
+                "input.has_translation == true",
+                checkboxInput("show_translation", "Show English Translation", FALSE)
+              )
+            )
+          ),
+          
+          div(class = "navigation-buttons",
+              actionButton("prev_button", "Previous"),
+              actionButton("save_button", "Save Progress"),
+              actionButton("export_button", "Export Data"),
+              actionButton("next_button", "Next")
+          )
+      ),
+      
+      div(class = "sentiment-reminder",
+          h4("Sentiment Scale Reference:"),
+          div(class = "sentiment-scale-item",
+              span(class = "sentiment-scale-value", "-1.00:"),
+              span("Strong negative sentiment - very critical, hostile, or pessimistic")
+          ),
+          div(class = "sentiment-scale-item",
+              span(class = "sentiment-scale-value", "-0.50:"),
+              span("Moderate negative sentiment - somewhat negative, disapproving")
+          ),
+          div(class = "sentiment-scale-item",
+              span(class = "sentiment-scale-value", "0.00:"),
+              span("Neutral sentiment - factual, balanced, or neither positive nor negative")
+          ),
+          div(class = "sentiment-scale-item",
+              span(class = "sentiment-scale-value", "0.50:"),
+              span("Moderate positive sentiment - somewhat positive, approving")
+          ),
+          div(class = "sentiment-scale-item",
+              span(class = "sentiment-scale-value", "1.00:"),
+              span("Strong positive sentiment - very supportive, enthusiastic, or optimistic")
+          )
+      ),
+      
+      div(class = "keyboard-help",
+          h4("Keyboard Shortcuts:"),
+          tags$ul(
+            tags$li("H / L or Left / Right arrows: Decrease/Increase score by 0.1"),
+            tags$li("J / K or Down / Up arrows: Fine-tune score by 0.01"),
+            tags$li("0: Set score to 0 (neutral)"),
+            tags$li("-: Set score to -1 (very negative)"),
+            tags$li("= or +: Set score to 1 (very positive)"),
+            tags$li("N / P or Page Down / Page Up: Next/Previous sentence"),
+            tags$li("S: Save progress")
+          )
       )
   ),
   
-  div(class = "sentiment-reminder",
-      h4("Sentiment Scale Reference:"),
-      div(class = "sentiment-scale-item",
-          span(class = "sentiment-scale-value", "-1.00:"),
-          span("Strong negative sentiment - very critical, hostile, or pessimistic")
-      ),
-      div(class = "sentiment-scale-item",
-          span(class = "sentiment-scale-value", "-0.50:"),
-          span("Moderate negative sentiment - somewhat negative, disapproving")
-      ),
-      div(class = "sentiment-scale-item",
-          span(class = "sentiment-scale-value", "0.00:"),
-          span("Neutral sentiment - factual, balanced, or neither positive nor negative")
-      ),
-      div(class = "sentiment-scale-item",
-          span(class = "sentiment-scale-value", "0.50:"),
-          span("Moderate positive sentiment - somewhat positive, approving")
-      ),
-      div(class = "sentiment-scale-item",
-          span(class = "sentiment-scale-value", "1.00:"),
-          span("Strong positive sentiment - very supportive, enthusiastic, or optimistic")
-      )
-  ),
-  
-  div(class = "keyboard-help",
-      h4("Keyboard Shortcuts:"),
-      tags$ul(
-        tags$li("H / L: Decrease/Increase score by 0.1"),
-        tags$li("J / K: Fine-tune score by 0.01"),
-        tags$li("0: Set score to 0 (neutral)"),
-        tags$li("-: Set score to -1 (very negative)"),
-        tags$li("=: Set score to 1 (very positive)"),
-        tags$li("N / P: Next/Previous sentence"),
-        tags$li("S: Save progress")
-      )
-  )
+  # Export Modal is created dynamically in server logic
 )
 
 #==============================================================================
@@ -249,72 +316,141 @@ server <- function(input, output, session) {
   # Reactive values to track state
   rv <- reactiveValues(
     current_index = 1,
-    data = df_lsd,
-    unsaved_changes = FALSE
+    data = NULL,
+    text_column = NULL,
+    trans_column = NULL,
+    annotation_column = NULL,
+    unsaved_changes = FALSE,
+    has_translation = FALSE
   )
   
-  # Initialize with first sentence
-  output$sentence_text <- renderText({
-    rv$data$sentence[rv$current_index]
-  })
-  
-  output$sentence_translation <- renderText({
-    rv$data$sentence_en[rv$current_index]
-  })
-  
-  # Update progress text
-  output$progress_text <- renderText({
-    completed <- sum(!is.na(rv$data$manual_sentiment))
-    total <- nrow(rv$data)
-    current <- rv$current_index
-    paste0("Annotating sentence ", current, " of ", total, " (", 
-           round(completed/total*100), "% complete)")
-  })
-  
-  # Initialize the sentiment value for the current sentence
-  observe({
-    # If we have a saved value, use it
-    if (!is.na(rv$data$manual_sentiment[rv$current_index])) {
-      session$sendCustomMessage(
-        type = "updateSliderValue",
-        message = list(value = rv$data$manual_sentiment[rv$current_index])
-      )
-      # Use JavaScript to update the display value
-      js$updateSliderValue(rv$data$manual_sentiment[rv$current_index])
+  # Reactive function to read the uploaded file
+  dataset <- reactive({
+    req(input$file_upload)
+    file_ext <- tools::file_ext(input$file_upload$datapath)
+    
+    if (file_ext == "csv") {
+      read.csv(input$file_upload$datapath, stringsAsFactors = FALSE)
+    } else if (file_ext == "rds") {
+      readRDS(input$file_upload$datapath)
     } else {
-      # Otherwise reset to 0
-      js$updateSliderValue(0)
+      stop("Unsupported file format. Please upload a CSV or RDS file.")
     }
   })
+  
+  # File preview in the setup panel
+  output$file_preview <- renderDT({
+    req(dataset())
+    datatable(head(dataset(), 5), options = list(scrollX = TRUE, dom = 't'))
+  })
+  
+  # Generate UI for selecting the text column
+  output$column_selector <- renderUI({
+    req(dataset())
+    cols <- colnames(dataset())
+    selectInput("text_column", "Select column to annotate:", choices = cols)
+  })
+  
+  # Generate UI for selecting the translation column if needed
+  output$translation_column_selector <- renderUI({
+    req(input$has_translation == TRUE, dataset())
+    cols <- colnames(dataset())
+    selectInput("translation_column", "Select English translation column:", choices = cols)
+  })
+  
+  # Start annotation
+  observeEvent(input$start_annotation, {
+    req(dataset(), input$text_column, input$annotation_column)
+    
+    # Store the dataset in reactive values
+    rv$data <- dataset()
+    
+    # Store column names
+    rv$text_column <- input$text_column
+    rv$annotation_column <- input$annotation_column
+    rv$has_translation <- input$has_translation
+    
+    if (input$has_translation) {
+      req(input$translation_column)
+      rv$trans_column <- input$translation_column
+    }
+    
+    # Create annotation column if it doesn't exist
+    if (!rv$annotation_column %in% colnames(rv$data)) {
+      rv$data[[rv$annotation_column]] <- NA_real_
+    }
+    
+    # Show annotation panel and hide setup panel
+    shinyjs::hide("setup-panel")
+    shinyjs::show("annotation-panel")
+    
+    # Initialize with first sentence
+    updateTextDisplay()
+    updateProgressDisplay()
+    updateSentimentDisplay()
+  })
+  
+  # Helper functions to update different parts of the UI display
+  updateTextDisplay <- function() {
+    # Update sentence text
+    output$sentence_text <- renderText({
+      rv$data[[rv$text_column]][rv$current_index]
+    })
+    
+    # Update translation if available
+    if (rv$has_translation) {
+      output$sentence_translation <- renderText({
+        rv$data[[rv$trans_column]][rv$current_index]
+      })
+    }
+  }
+  
+  updateProgressDisplay <- function() {
+    # Update progress text
+    output$progress_text <- renderText({
+      completed <- sum(!is.na(rv$data[[rv$annotation_column]]))
+      total <- nrow(rv$data)
+      current <- rv$current_index
+      paste0("Annotating item ", current, " of ", total, " (", 
+             round(completed/total*100), "% complete)")
+    })
+  }
+  
+  updateSentimentDisplay <- function() {
+    # Update the sentiment display
+    current_score <- rv$data[[rv$annotation_column]][rv$current_index]
+    if (!is.na(current_score)) {
+      runjs(paste0("updateSliderValue(", current_score, ");"))
+    } else {
+      runjs("updateSliderValue(0);")
+    }
+  }
+  
+  # Combined update function
+  updateUI <- function() {
+    updateTextDisplay()
+    updateProgressDisplay()
+    updateSentimentDisplay()
+  }
   
   # Handle next button
   observeEvent(input$next_button, {
     # Save current annotation if changed
     if (!is.null(input$sentiment_score)) {
-      rv$data$manual_sentiment[rv$current_index] <- input$sentiment_score
+      rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
+      # Mark changes but don't autosave
       rv$unsaved_changes <- TRUE
     }
     
     # Move to next sentence if not at the end
     if (rv$current_index < nrow(rv$data)) {
       rv$current_index <- rv$current_index + 1
-      
-      # Update display
-      output$sentence_text <- renderText({
-        rv$data$sentence[rv$current_index]
-      })
-      
-      output$sentence_translation <- renderText({
-        rv$data$sentence_en[rv$current_index]
-      })
-      
-      # If we have a saved value for this sentence, use it
-      if (!is.na(rv$data$manual_sentiment[rv$current_index])) {
-        js$updateSliderValue(rv$data$manual_sentiment[rv$current_index])
-      } else {
-        # Otherwise reset to 0
-        js$updateSliderValue(0)
-      }
+      # Update displays separately to avoid issues
+      updateTextDisplay()
+      updateProgressDisplay()
+      updateSentimentDisplay()
+    } else {
+      showNotification("You've reached the last item", type = "warning", duration = 2)
     }
   })
   
@@ -322,37 +458,27 @@ server <- function(input, output, session) {
   observeEvent(input$prev_button, {
     # Save current annotation if changed
     if (!is.null(input$sentiment_score)) {
-      rv$data$manual_sentiment[rv$current_index] <- input$sentiment_score
+      rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
+      # Mark changes but don't autosave
       rv$unsaved_changes <- TRUE
     }
     
     # Move to previous sentence if not at the beginning
     if (rv$current_index > 1) {
       rv$current_index <- rv$current_index - 1
-      
-      # Update display
-      output$sentence_text <- renderText({
-        rv$data$sentence[rv$current_index]
-      })
-      
-      output$sentence_translation <- renderText({
-        rv$data$sentence_en[rv$current_index]
-      })
-      
-      # If we have a saved value for this sentence, use it
-      if (!is.na(rv$data$manual_sentiment[rv$current_index])) {
-        js$updateSliderValue(rv$data$manual_sentiment[rv$current_index])
-      } else {
-        # Otherwise reset to 0
-        js$updateSliderValue(0)
-      }
+      # Update displays separately to avoid issues
+      updateTextDisplay()
+      updateProgressDisplay()
+      updateSentimentDisplay()
+    } else {
+      showNotification("You're at the first item", type = "warning", duration = 2)
     }
   })
   
-  # Automatically save the current sentiment value when it changes
+  # Store the current sentiment value when it changes
+  # but don't mark as unsaved to avoid auto-saving
   observeEvent(input$sentiment_score, {
-    rv$data$manual_sentiment[rv$current_index] <- input$sentiment_score
-    rv$unsaved_changes <- TRUE
+    rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
   })
   
   # Handle save button
@@ -360,13 +486,10 @@ server <- function(input, output, session) {
     if (rv$unsaved_changes) {
       # Generate timestamp for the filename
       timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-      filename <- paste0("data/tmp/sentence_annotations_", timestamp, ".csv")
+      filename <- paste0("data/tmp/annotations_progress_", timestamp, ".rds")
       
       # Save the data
-      write.csv(rv$data, filename, row.names = FALSE)
-      
-      # Also save to a standard RDS file
-      saveRDS(rv$data, "data/tmp/data_manual_ranking.rds")
+      saveRDS(rv$data, filename)
       
       # Update state and show message
       rv$unsaved_changes <- FALSE
@@ -380,44 +503,87 @@ server <- function(input, output, session) {
     }
   })
   
-  # Automatically save every 5 minutes
-  autoSaveTimer <- reactiveTimer(300000)  # 5 minutes in milliseconds
-  
-  observe({
-    autoSaveTimer()
-    if (rv$unsaved_changes) {
-      # Generate timestamp for the filename
-      timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-      filename <- paste0("data/tmp/sentence_annotations_auto_", timestamp, ".csv")
-      
-      # Save the data
-      write.csv(rv$data, filename, row.names = FALSE)
-      
-      # Also save to a standard RDS file
-      saveRDS(rv$data, "data/tmp/data_manual_ranking.rds")
-      
-      # Update state and show message
-      rv$unsaved_changes <- FALSE
-      showNotification(
-        paste("Auto-saved to", filename), 
-        type = "message",
-        duration = 3
-      )
+  # Show export modal
+  observeEvent(input$export_button, {
+    # Temporarily disable keyboard shortcuts while modal is open
+    runjs("window.keyboardShortcutsEnabled = false;")
+    
+    # Default download folder path 
+    home_dir <- Sys.getenv("HOME")
+    download_dir <- file.path(home_dir, "Downloads")
+    
+    # Create download directory if it doesn't exist
+    if (!dir.exists(download_dir)) {
+      dir.create(download_dir, showWarnings = FALSE, recursive = TRUE)
     }
+    
+    # Show modal with download options
+    showModal(modalDialog(
+      title = "Export Annotated Data",
+      textInput("export_filename", "Filename (without extension):", 
+               value = paste0("annotated_data_", format(Sys.time(), "%Y%m%d"))),
+      textInput("export_directory", "Save to directory:", 
+               value = download_dir),
+      radioButtons("export_format", "Export Format:",
+                  choices = c("CSV" = "csv", "RDS" = "rds"),
+                  selected = "csv"),
+      easyClose = TRUE,
+      footer = tagList(
+        modalButton("Cancel"),
+        actionButton("do_export", "Export", class = "btn-primary")
+      )
+    ))
   })
+  
+  # Handle export action
+  observeEvent(input$do_export, {
+    # Save current annotation if changed
+    if (!is.null(input$sentiment_score)) {
+      rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
+    }
+    
+    # Get export directory
+    export_dir <- input$export_directory
+    
+    # Create directory if it doesn't exist
+    if (!dir.exists(export_dir)) {
+      dir.create(export_dir, showWarnings = FALSE, recursive = TRUE)
+    }
+    
+    # Generate filename with path
+    base_filename <- input$export_filename
+    if (input$export_format == "csv") {
+      filename <- file.path(export_dir, paste0(base_filename, ".csv"))
+      write.csv(rv$data, filename, row.names = FALSE)
+    } else {
+      filename <- file.path(export_dir, paste0(base_filename, ".rds"))
+      saveRDS(rv$data, filename)
+    }
+    
+    # Show confirmation and close modal
+    showNotification(paste("Data exported to", filename), type = "message", duration = 5)
+    removeModal()
+    
+    # Re-enable keyboard shortcuts
+    runjs("window.keyboardShortcutsEnabled = true;")
+  })
+  
+  # Re-enable keyboard shortcuts when modal is dismissed
+  observeEvent(input$cancel, {
+    runjs("window.keyboardShortcutsEnabled = true;")
+  })
+  
+  # Auto-save disabled per user request
   
   # Handle session ending (save data on close)
   session$onSessionEnded(function() {
-    if (rv$unsaved_changes) {
+    if (!is.null(rv$data) && rv$unsaved_changes) {
       # Generate timestamp for the filename
       timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-      filename <- paste0("data/tmp/sentence_annotations_final_", timestamp, ".csv")
+      filename <- paste0("data/tmp/annotations_final_", timestamp, ".rds")
       
       # Save the data
-      write.csv(rv$data, filename, row.names = FALSE)
-      
-      # Also save to a standard RDS file
-      saveRDS(rv$data, "data/tmp/data_manual_ranking.rds")
+      saveRDS(rv$data, filename)
     }
   })
 }
