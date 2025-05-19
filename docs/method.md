@@ -33,7 +33,6 @@ Divison des dates
 2005-05-14_2013-09-04 : 997 articles
 1991-01-01_2005-05-13 : 705 articles
 
-
 - What are you doing?
 - Why is it important?
 - How is the existing literature deficient?
