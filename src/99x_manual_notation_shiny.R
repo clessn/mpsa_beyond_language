@@ -31,7 +31,7 @@ ui <- fluidPage(
         background-color: #f8f9fa;
         padding: 20px;
         border-radius: 5px;
-        margin-bottom: 20px;
+
         min-height: 100px;
         font-size: 18px;
       }
@@ -438,9 +438,12 @@ server <- function(input, output, session) {
     # Save current annotation if changed
     if (!is.null(input$sentiment_score)) {
       rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
-      # Mark changes but don't autosave
+      # Mark changes for checkpoint
       rv$unsaved_changes <- TRUE
     }
+    
+    # Always save checkpoint when moving to next item
+    saveCheckpoint()
     
     # Move to next sentence if not at the end
     if (rv$current_index < nrow(rv$data)) {
@@ -459,9 +462,12 @@ server <- function(input, output, session) {
     # Save current annotation if changed
     if (!is.null(input$sentiment_score)) {
       rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
-      # Mark changes but don't autosave
+      # Mark changes for checkpoint
       rv$unsaved_changes <- TRUE
     }
+    
+    # Always save checkpoint when moving to previous item
+    saveCheckpoint()
     
     # Move to previous sentence if not at the beginning
     if (rv$current_index > 1) {
@@ -481,23 +487,37 @@ server <- function(input, output, session) {
     rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
   })
   
+  # Helper function to save current progress
+  saveCheckpoint <- function(notification = TRUE) {
+    # Create the tmp directory if it doesn't exist
+    if (!dir.exists("data/tmp")) {
+      dir.create("data/tmp", recursive = TRUE, showWarnings = FALSE)
+    }
+    
+    # Generate timestamp for the filename
+    timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
+    filename <- paste0("data/tmp/annotations_progress_", timestamp, ".rds")
+    
+    # Save the data
+    saveRDS(rv$data, filename)
+    
+    # Update state
+    rv$unsaved_changes <- FALSE
+    
+    # Always show a small notification about the checkpoint
+    showNotification(
+      paste("Checkpoint saved:", filename), 
+      type = "message",
+      duration = 3
+    )
+    
+    return(filename)
+  }
+  
   # Handle save button
   observeEvent(input$save_button, {
     if (rv$unsaved_changes) {
-      # Generate timestamp for the filename
-      timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-      filename <- paste0("data/tmp/annotations_progress_", timestamp, ".rds")
-      
-      # Save the data
-      saveRDS(rv$data, filename)
-      
-      # Update state and show message
-      rv$unsaved_changes <- FALSE
-      showNotification(
-        paste("Annotations saved to", filename), 
-        type = "message",
-        duration = 3
-      )
+      saveCheckpoint()
     } else {
       showNotification("No changes to save", type = "message", duration = 2)
     }
@@ -578,6 +598,11 @@ server <- function(input, output, session) {
   # Handle session ending (save data on close)
   session$onSessionEnded(function() {
     if (!is.null(rv$data) && rv$unsaved_changes) {
+      # Create the tmp directory if it doesn't exist
+      if (!dir.exists("data/tmp")) {
+        dir.create("data/tmp", recursive = TRUE, showWarnings = FALSE)
+      }
+      
       # Generate timestamp for the filename
       timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
       filename <- paste0("data/tmp/annotations_final_", timestamp, ".rds")
