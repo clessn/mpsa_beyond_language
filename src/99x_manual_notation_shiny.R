@@ -600,16 +600,49 @@ server <- function(input, output, session) {
     rv$data[[rv$annotation_column]][rv$current_index] <- input$sentiment_score
   })
   
+  # Get the app's data directory
+  app_data_dir <- reactiveVal()
+  
+  # Initialize the data directory path based on environment
+  observe({
+    # Current working directory
+    cwd <- getwd()
+    
+    # First check if data/tmp exists in working directory
+    if (dir.exists(file.path(cwd, "data", "tmp"))) {
+      app_data_dir(file.path(cwd, "data", "tmp"))
+    } else if (dir.exists(file.path(cwd, "..", "data", "tmp"))) {
+      # Check one level up (if running from src directory)
+      app_data_dir(file.path(cwd, "..", "data", "tmp"))
+    } else {
+      # Create a tmp directory right next to the app file
+      app_file_path <- dirname(system.file("", package = shiny))
+      app_tmp_dir <- file.path(cwd, "tmp")
+      dir.create(app_tmp_dir, recursive = TRUE, showWarnings = FALSE)
+      app_data_dir(app_tmp_dir)
+      
+      # Show notification about the tmp directory location
+      showNotification(
+        paste("Data will be saved in:", app_tmp_dir),
+        type = "message",
+        duration = 5
+      )
+    }
+  })
+  
   # Helper function to save current progress
   saveCheckpoint <- function(notification = TRUE) {
-    # Create the tmp directory if it doesn't exist
-    if (!dir.exists("data/tmp")) {
-      dir.create("data/tmp", recursive = TRUE, showWarnings = FALSE)
+    # Get the checkpoint directory path
+    tmp_dir <- app_data_dir()
+    
+    # Ensure the directory exists
+    if (!dir.exists(tmp_dir)) {
+      dir.create(tmp_dir, recursive = TRUE, showWarnings = FALSE)
     }
     
     # Generate timestamp for the filename
     timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-    filename <- paste0("data/tmp/annotations_progress_", timestamp, ".rds")
+    filename <- file.path(tmp_dir, paste0("annotations_progress_", timestamp, ".rds"))
     
     # Save the data
     saveRDS(rv$data, filename)
@@ -617,7 +650,7 @@ server <- function(input, output, session) {
     # Update state
     rv$unsaved_changes <- FALSE
     
-    # Always show a small notification about the checkpoint
+    # Show notification with full path so user knows where the file is saved
     if (notification) {
       showNotification(
         paste("Checkpoint saved:", filename), 
@@ -629,22 +662,37 @@ server <- function(input, output, session) {
     return(filename)
   }
   
-  # Create the tmp directory at startup if it doesn't exist
-  observe({
-    if (!dir.exists("data/tmp")) {
-      dir.create("data/tmp", recursive = TRUE, showWarnings = FALSE)
-    }
-  })
-  
   # Helper function to list available checkpoint files
   getCheckpointFiles <- function() {
-    if (!dir.exists("data/tmp")) {
-      return(character(0))
+    tmp_dir <- app_data_dir()
+    
+    if (is.null(tmp_dir) || !dir.exists(tmp_dir)) {
+      # Try other common locations
+      cwd <- getwd()
+      possible_dirs <- c(
+        file.path(cwd, "data", "tmp"),
+        file.path(cwd, "..", "data", "tmp"),
+        file.path(cwd, "tmp"),
+        "data/tmp"  # Legacy support for original path
+      )
+      
+      # Find the first existing directory
+      for (dir in possible_dirs) {
+        if (dir.exists(dir)) {
+          tmp_dir <- dir
+          break
+        }
+      }
+      
+      # If we still don't have a valid dir, return empty
+      if (is.null(tmp_dir) || !dir.exists(tmp_dir)) {
+        return(character(0))
+      }
     }
     
     # Get all RDS files in tmp directory
     checkpoint_files <- list.files(
-      path = "data/tmp", 
+      path = tmp_dir, 
       pattern = "^annotations_.*\\.rds$", 
       full.names = TRUE
     )
@@ -854,14 +902,17 @@ server <- function(input, output, session) {
   # Handle session ending (save data on close)
   session$onSessionEnded(function() {
     if (!is.null(rv$data) && rv$unsaved_changes) {
+      # Get the checkpoint directory path
+      tmp_dir <- app_data_dir()
+      
       # Create the tmp directory if it doesn't exist
-      if (!dir.exists("data/tmp")) {
-        dir.create("data/tmp", recursive = TRUE, showWarnings = FALSE)
+      if (!dir.exists(tmp_dir)) {
+        dir.create(tmp_dir, recursive = TRUE, showWarnings = FALSE)
       }
       
       # Generate timestamp for the filename
       timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
-      filename <- paste0("data/tmp/annotations_final_", timestamp, ".rds")
+      filename <- file.path(tmp_dir, paste0("annotations_final_", timestamp, ".rds"))
       
       # Save the data
       saveRDS(rv$data, filename)

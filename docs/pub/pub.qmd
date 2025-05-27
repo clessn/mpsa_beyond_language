@@ -1,5 +1,5 @@
 ---
-title: Beyond Language Barriers
+title: Language Doesn't Matter
 subtitle: Evaluating the Efficacy of Large Language Models in Analyzing Sentiment in Non-English Textual Data
 author:
   - name: Laurence-Olivier M. Foisy 
@@ -35,25 +35,6 @@ author:
           city: Québec
           state: Québec
           postal-code: G1V 0A6
-  - name: Sarah-Jane Vincent  
-    email: sarahj.vincent.1@gmail.com    
-    affiliations:
-        - id: ulaval
-          name: Université Laval
-          department: Département de science politique
-          address: 2325, rue de l'Université
-          city: Québec
-          state: Québec
-          postal-code: G1V 0A6
-  - name: Mickael Temporão
-    email: mickael.temporao@gmail.com
-    affiliations:
-        - id: sciencepo
-          name: Sciences Po Bordeaux  
-          department: Département de science politique
-          address: 11 All. Ausone
-          city: Bordeaux
-          postal-code: 33600
   - name: Yannick Dufresne  
     email: yannick.dufresne@pol.ulaval.ca
     affiliations:
@@ -244,16 +225,13 @@ To establish a reliable benchmark for evaluating model performance, we created a
 
 We first selected 200 random sentences from across all articles in the corpus. 
 Each sentence was then translated into English using Google Translate and the `polyglotR` package to facilitate cross-linguistic analysis. 
-The 200 sentences were manually annotated using a scale ranging from -1 to 1, where -1 represents very negative sentiment, 0 indicates neutral content, and 1 signifies very positive sentiment. 
+The 200 sentences were manually annotated by three independent coders using a scale ranging from -1 to 1, where -1 represents very negative sentiment, 0 indicates neutral content, and 1 signifies very positive sentiment.
+we calculated the mean of the three coders' ratings for each sentence, providing a measure that accounts for inter-coder variability.
 
 To streamline the annotation process, we developed a custom Shiny application that provided an intuitive interface for human coders. 
 The application featured keyboard shortcuts for rapid scoring and included visual reminders of the sentiment scale definitions. 
 This approach ensured consistent annotation practices and significantly improved the efficiency of the manual coding process. 
 The resulting annotated dataset served as our ground truth for evaluating the performance of both dictionary-based methods and LLM approaches in sentiment analysis tasks.
-
-A major limitation of this project is that the manual annotation was done by a single coder with a small sample of sentences.
-This limits the reliability of the ground truth dataset, as the inter-annotator agreement was not measured.
-This should be considered when interpreting the results of the study.
 
 ## Dictionary-Based Sentiment Analysis
 
@@ -281,8 +259,7 @@ This scale of evaluation allowed us to draw conclusions about model performance 
 
 Our model selection reflects a deliberate effort to represent the current landscape of LLMs across different architectures, parameter scales, and accessibility levels. 
 For our open-weight model selection, we incorporated a diverse range of architectures and parameter sizes to ensure a comprehensive representation of current capabilities. 
-The smallest model in our evaluation was Llama 3.2 (1B), accessed through the Groq API service, which allowed us to establish a baseline for minimal parameter count performance
-. We also included Llama 3.2 (3B), accessed via Fireworks.ai, which represents a modest increase in parameter size while maintaining computational efficiency. 
+The smallest model in our evaluation was Llama 3.2 (1B), accessed through the Groq API service, which allowed us to establish a baseline for minimal parameter count performance. We also included Llama 3.2 (3B), accessed via Fireworks.ai, which represents a modest increase in parameter size while maintaining computational efficiency. 
 Gemma 2 (9B), Google's mid-sized open model accessed via Groq, provided an intermediate step in model scale. 
 Models of these sizes are able to be run on consumer-grade hardware, making them accessible for researchers without access to large computational resources.
 Mistral Saba (24B), also accessed through Groq, represented a substantial increase in parameter count with Mistral AI's specialized architecture. 
@@ -484,11 +461,9 @@ Theoretically, our findings contribute to the understanding of LLM cross-lingual
 # Limitations
 
 Several specific limitations warrant careful consideration when interpreting the findings of this study. 
-The foundation of the evaluation, the ground truth dataset, is constrained primarily by the use of a single annotator for the manual coding process.
-This prevents the calculation of inter-annotator agreement, making it impossible to quantify the reliability of the annotations and leaving the benchmark potentially susceptible to individual subjectivity and bias. 
-Furthermore, the limited validation sample size of 200 sentences, though randomly drawn, constitutes only a small fraction of the extensive corpus and may not adequately capture the full spectrum of linguistic variations and sentiment nuances present across thousands of articles. 
+The limited validation sample size of 200 sentences, though randomly drawn, constitutes only a small fraction of the extensive corpus and may not adequately capture the full spectrum of linguistic variations and sentiment nuances present across thousands of articles. 
 
-The generalizability of the results is significantly constrained by the corpus specificity, particularly its language focus exclusively on French. 
+Furthermore, the generalizability of the results is significantly constrained by the corpus specificity, particularly its language focus exclusively on French. 
 Findings regarding model performance hierarchies, cross-lingual prompting effects, and overall accuracy cannot be reliably extrapolated to other languages, especially those less represented in LLM training data or possessing different linguistic structures. 
 Similarly, the genre limitation to news articles concerning a specific technical and political domain (open-source software) means the results may not apply to other text types, such as informal social media posts, creative writing, or political debates, which exhibit distinct linguistic styles, vocabulary, and sentiment expression patterns.
 

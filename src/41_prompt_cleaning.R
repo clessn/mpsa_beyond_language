@@ -23,7 +23,35 @@ df_raw <- readRDS("data/tmp/data_manual_ranking_with_llm_scores.rds")
 # 2. Renaming columns for clarity
 # 3. Converting sentiment scores to categorical values
 # 4. Setting proper factor levels for categorical values
-df <- df_raw %>% 
+
+#################################################################
+#### INCLUDE THE TRIPLE CODER RESULTS
+#################################################################
+
+df_manual_1 <- readRDS("data/clean/annotator_1.rds") %>%
+  rename(manual_1 = "manual_sentiment_cam") %>%
+  select(doc_id, manual_1)
+
+df_manual_2 <- readRDS("data/clean/annotator_2.rds") %>%
+  rename(manual_2 = "manual_sentiment_etienne") %>%
+  select(doc_id, manual_2)
+
+df_raw_tmp <- merge(df_raw, df_manual_1, by = "doc_id") %>%
+  merge(df_manual_2, by = "doc_id") %>%
+  mutate(
+    manual = rowMeans(
+      cbind(manual, manual_1, manual_2), 
+      na.rm = TRUE
+    ),
+    manual_bin = case_when(
+      manual > 0 ~ "positive",
+      manual < 0 ~ "negative",
+      TRUE ~ "neutral"
+    )
+  ) %>% 
+  select(-manual_1, -manual_2)
+
+df <- df_raw_tmp %>% 
   # Remove intermediate run columns and unnecessary models/columns
   select(-contains("_run"), -contains("distill"), -manual_bin) %>%
   
@@ -66,6 +94,7 @@ df <- df_raw %>%
   
   # Reorder columns logically
   select(doc_id, date, source_media, sentences, sentences_en, starts_with("ground"), starts_with("lsd"), everything())
+
 
 #################################################################
 # SAVE CLEANED DATASET
