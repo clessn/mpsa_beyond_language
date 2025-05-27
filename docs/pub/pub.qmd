@@ -343,16 +343,17 @@ This methodologically rigorous approach enabled us to make highly reliable asses
 
 ## Validation and Performance Evaluation
 
-Our evaluation framework employed three complementary methodologies to thoroughly assess the performance of LLMs and dictionary-based approaches in sentiment analysis: correlation analysis, F1 score calculation with 7-category classification, and F1 score calculation with a simplified 3-category classification scheme.
+Our evaluation framework employed three complementary methodologies to thoroughly assess the performance of LLMs and dictionary-based approaches in sentiment analysis: correlation analysis, F1 score calculation with 7-category classification, and F1 score calculation with a simplified 3-category classification scheme. The use of multiple metrics offers distinct insights into models capabilities and helps to address potential limitations of any single measure.
 
 For the correlation analysis, we calculated Pearson correlation coefficients between each model's continuous sentiment predictions (ranging from -1.0 to 1.0) and the manually annotated ground truth values. 
 
 ![Sentiment Analysis Models Correlation with Ground Truth](../../results/graphs/model_correlation.png)
 
-This approach evaluated the models' ability to accurately reflect sentiment intensity and direction. 
-Additionally, we calculated Mean Absolute Error (MAE) to quantify prediction accuracy in absolute terms. 
+This approach was chosen to evaluate the models' ability to accurately reflect overall sentiment intensity and direction in a continuous manner. 
+We acknowledge that a single correlation coefficient can mask non-linear relationships or differential performance across various parts of the sentiment scale, our examination of Mean Absolute Error (MAE) and category-specific F1 scores (discussed below) provides complementary perspectives on prediction accuracy and how models perform on specific sentiment categories, offering some insight into areas where models might excel or falter. 
 
 We supplemented correlation analysis with F1 score calculations to evaluate classification performance. 
+The F1 Score, which harmonizes precision and recall, is particularly useful in contexts with imbalanced class distributions.
 For the 7-category classification evaluation, we converted both predicted and ground truth sentiment values into discrete categories: "very_negative," "negative," "somewhat_negative," "neutral," "somewhat_positive," "positive," and "very_positive."
 According to our manual coding, the 'somewhat_positive' class is the most prevalent, accounting for 44% of the annotated sentences. 
 The 'somewhat_negative' (≈21%) and 'positive' (≈17%) classes are also substantially represented. 
@@ -360,9 +361,11 @@ In contrast, the 'negative' class makes up about 11%, while the 'neutral' (≈6%
 This observed imbalance highlights a key challenge in our evaluation: models must perform well not only on dominant classes but also on these less frequent sentiment categories. 
 It justifies our decision to use the weighted average F1 score in our performance evaluation, as this metric accounts for class support, providing a more balanced assessment of a model's overall classification capability across these unevenly distributed sentiment classes and provides a detailed insights into model performance across the full sentiment spectrum. 
 
-Recognizing that nuanced sentiment gradations can be challenging to distinguish, we also conducted a simplified 3-category evaluation by grouping sentiment labels into "negative" (encompassing very_negative, negative, and somewhat_negative), "neutral," and "positive" (encompassing somewhat_positive, positive, and very_positive). 
+Recognizing that nuanced sentiment gradations can be challenging to distinguish, and acknowledging that F1 scores are generally expected to be lower for classification tasks with a higher number of categories due to increased complexity and the higher probability of misclassification by chance, we also conducted a simplified 3-category evaluation by grouping sentiment labels into "negative" (encompassing very_negative, negative, and somewhat_negative), "neutral," and "positive" (encompassing somewhat_positive, positive, and very_positive). 
 This grouping strategy allowed us to assess model performance on fundamental sentiment polarity distinctions. 
-The same F1 score calculation methodology was applied to these grouped categories, providing a complementary perspective on model capabilities.
+The same F1 score calculation methodology was applied to these grouped categories.
+The comparison between 7-category and 3-category F1 scores is not intended as a direct equivalence but rather to assess two different aspects of performance: the ability to make fine-grained distinctions (7-category) versus robust broad polarity classification (3-category). 
+The observed difference in F1 scores between these two schemes is itself an important indicator of the models' capabilities and limitations in handling sentiment granularity.
 
 All metrics were calculated using complete cases only, with appropriate error handling to ensure robust evaluation across all models and conditions.
 This multi-faceted evaluation approach allowed us to assess both the continuous prediction accuracy and classification performance of all models across different linguistic configurations.
