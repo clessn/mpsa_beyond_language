@@ -233,6 +233,8 @@ The application featured keyboard shortcuts for rapid scoring and included visua
 This approach ensured consistent annotation practices and significantly improved the efficiency of the manual coding process. 
 The resulting annotated dataset served as our ground truth for evaluating the performance of both dictionary-based methods and LLM approaches in sentiment analysis tasks.
 
+![Sentiment Analysis Models Correlation with Ground Truth](../../results/graphs/model_correlation.png)
+
 ## Dictionary-Based Sentiment Analysis
 
 To establish classical baseline sentiment measures, we employed lexicon-based methods on both the original French text and its English translation. 
@@ -352,8 +354,11 @@ Additionally, we calculated Mean Absolute Error (MAE) to quantify prediction acc
 
 We supplemented correlation analysis with F1 score calculations to evaluate classification performance. 
 For the 7-category classification evaluation, we converted both predicted and ground truth sentiment values into discrete categories: "very_negative," "negative," "somewhat_negative," "neutral," "somewhat_positive," "positive," and "very_positive."
-This approach provided detailed insights into model performance across the full sentiment spectrum. 
-The weighted average F1 score was calculated to account for class imbalance by weighting each category's F1 score by its support (number of instances).
+According to our manual coding, the 'somewhat_positive' class is the most prevalent, accounting for 44% of the annotated sentences. 
+The 'somewhat_negative' (≈21%) and 'positive' (≈17%) classes are also substantially represented. 
+In contrast, the 'negative' class makes up about 11%, while the 'neutral' (≈6%), 'very_negative' (<1%), and 'very_positive' (<1%) classes are markedly underrepresented.
+This observed imbalance highlights a key challenge in our evaluation: models must perform well not only on dominant classes but also on these less frequent sentiment categories. 
+It justifies our decision to use the weighted average F1 score in our performance evaluation, as this metric accounts for class support, providing a more balanced assessment of a model's overall classification capability across these unevenly distributed sentiment classes and provides a detailed insights into model performance across the full sentiment spectrum. 
 
 Recognizing that nuanced sentiment gradations can be challenging to distinguish, we also conducted a simplified 3-category evaluation by grouping sentiment labels into "negative" (encompassing very_negative, negative, and somewhat_negative), "neutral," and "positive" (encompassing somewhat_positive, positive, and very_positive). 
 This grouping strategy allowed us to assess model performance on fundamental sentiment polarity distinctions. 

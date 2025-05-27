@@ -73,6 +73,12 @@ plot_distribution <- ggplot(df, aes(x = ground_truth)) +
 # Display the plot
 print(plot_distribution)
 
+# Output a table of counts and proportion for reference
+distribution_table <- df %>%
+  group_by(ground_truth) %>%
+  summarise(count = n(), proportion = n() / nrow(df)) %>%
+  arrange(desc(count))
+
 # Save high-resolution version to file
 ggsave("results/graphs/ground_truth_distribution.png", 
        plot_distribution, 
