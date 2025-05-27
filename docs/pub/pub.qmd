@@ -65,7 +65,7 @@ author:
           state: Québec
           postal-code: G1V 0A6
 abstract: |
-  This study examines whether general-purpose large language models (LLMs) can effectively analyze sentiment in non-English texts without task-specific fine-tuning. We evaluate 11 open and closed source models on 200 sentences randomly drawn from a corpus of 2,683 French news articles discussing open-source software, comparing their performance to traditional dictionary methods. Through 19,800 systematically designed prompts across three language conditions (French prompts with French text, English prompts with French text, and English prompts with English translations), we find that leading closed source models achieve strong sentiment analysis performance (r > 0.70). Open source models demonstrate viable capabilities correlating with parameter size. We observe only marginal benefits from cross-linguistic prompting. All models perform substantially better on three-category classification (positive/neutral/negative) than on more granular sentiment distinctions. These findings suggest that general-purpose LLMs offer accessible alternatives to specialized sentiment models for social science researchers, particularly when basic sentiment polarity detection is sufficient.
+  This study examines whether general-purpose large language models (LLMs) can effectively analyze sentiment in non-English texts without task-specific fine-tuning. We evaluate 11 open and closed source models on 200 sentences randomly drawn from a corpus of 2,683 French news articles discussing open-source software, comparing their performance to traditional dictionary methods. Through 19,800 systematically designed prompts across three language conditions (French prompts with French text, English prompts with French text, and English prompts with English translations), we find that leading closed source models achieve strong sentiment analysis performance (r > 0.70). Open source models demonstrate viable capabilities correlating with parameter size. We observe minimal to no meaningful benefits from cross-linguistic prompting, with performance differences between language conditions proving statistically insignificant. All models perform substantially better on three-category classification (positive/neutral/negative) than on more granular sentiment distinctions. These findings suggest that general-purpose LLMs offer accessible alternatives to specialized sentiment models for social science researchers, with the choice of prompt language having negligible impact on performance.
 keywords: 
   - Sentiment Analysis 
   - Large Language models
@@ -123,13 +123,13 @@ Thus, the main goal of this paper is to answer the following questions.
 
 1. Can general-purpose LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning? 
 2. Can open-source general-purpose foundational LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning?
-3. How does the language of the prompt affect performance across different languages?
+3. Does the language of the prompt meaningfully affect performance across different languages?
 
 Sentiment analysis offers an interesting test case for examining this phenomenon, as it requires nuanced language understanding beyond simple translation. 
 While closed-source models such as those offered by Google or Anthropic have received substantial attention in multilingual contexts, open-source LLMs present both unique challenges and opportunities. 
 They offer greater transparency, adaptability, and accessibility for global researchers and practitioners, yet their cross-linguistic capabilities remain less comprehensively documented. 
 This study first evaluates the performance of leading open and closed-source foundational LLMs in sentiment analysis with French texts. 
-It then examines how prompt language affects performance, identifies cross-linguistic patterns, and analyzes model behavior across French and English. 
+It then examines how prompt language affects performance, revealing that prompt language has minimal impact on performance. 
 Our findings seek to contribute to a deeper understanding of LLM's capabilities and limitations in multilingual contexts and offer practical guidelines for optimizing their deployment in diverse language settings.
 
 # Literature Review
@@ -186,13 +186,13 @@ Our study addresses this research gap by evaluating leading open and closed weig
 # Data & Methods
 
 This study assesses the efficacy of general-purpose large language models in non-English sentiment analysis through a comprehensive evaluation of open and closed-source models on French text.
-We evaluate whether foundational models demonstrate sufficient cross-linguistic capabilities for sentiment analysis without task-specific fine-tuning, comparing their performance to traditional easy-to-use dictionary-based methods and examining the impact of prompt language on analytical outcomes.
+We evaluate whether foundational models demonstrate sufficient cross-linguistic capabilities for sentiment analysis without task-specific fine-tuning, comparing their performance to traditional easy-to-use dictionary-based methods and examining whether prompt language truly impacts analytical outcomes.
 
 ## Data Collection and Preparation
 
 Our corpus consists of 2683 French-language news articles from 13 media sources collected from the Eureka database spanning 1991-2025.
 It's an exhaustive collection of every article published about open-source in what Eureka calls its "Major daily newspapers (FR)" category. 
-13 sources, 9 from Québec, 1 from Ontario, and 3 from France, ensuring a diverse representation of the francophone media landscape.  
+13 sources, 9 from Québec, 1 from Ontario, and 3 from France, ensuring a good representation of the francophone media landscape.  
 The articles were selected based on the following search query:
 
 ```{.markdown .code-overflow-wrap}
