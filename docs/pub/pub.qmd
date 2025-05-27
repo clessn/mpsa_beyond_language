@@ -476,9 +476,9 @@ Given the rapid development and frequent updates to large language models, the p
 # Conclusion
 
 This study assessed the efficacy of general-purpose large language models, encompassing both open and closed-source architectures, for performing sentiment analysis on non-English (French) text without task-specific fine-tuning. 
-Our findings address the core research questions affirmatively: foundational LLMs can evaluate sentiment accurately in French. 
+Our findings address the core research questions affirmatively: foundational LLMs can evaluate sentiment accurately in French with performance that is essentially independent of prompt language choice. 
 Leading closed-source models consistently demonstrated superior performance, achieving high correlations with manual annotations that suggest an ability to capture nuanced sentiment intensity better than traditional dictionary methods. 
-Open-source models, especially larger ones, also proved capable, presenting viable options.
+Open-source models, especially larger ones, also proved capable, presenting viable options with consistent performance regardless of prompting language.
 
 However, the comparison with traditional methods warrants careful consideration. 
 The English Lexicoder Sentiment Dictionary, when applied to translated text, achieved a strong F1 score for 3-category classification, proving highly competitive with even the top-performing LLMs and surpassing the average LLM in this specific metric. 
@@ -489,7 +489,7 @@ Furthermore, analysis across the entire corpus reveals that the overall sentimen
 This parallel performance, combined with LSD's complete methodological transparency—a stark contrast to the inherent 'black box' nature of complex LLMs—positions it strongly. 
 For researchers prioritizing interpretability, replicability, and a method whose decision-making process is fully understandable, LSD may remain the most appropriate or even superior approach, despite potentially sacrificing some nuance in intensity scaling compared to top LLMs.
 
-Regarding LLM-specific findings, the anticipated significant advantage of English prompting was not observed for French sentiment analysis in this study; native-language prompting was comparably effective. 
+Regarding LLM-specific findings, the most significant discovery is that prompt language choice might be irrelevant for non-English sentiment analysis, contradicting previous assumptions about cross-lingual performance advantages. 
 While LLMs handled broad polarity classification well, they struggled universally with finer-grained sentiment distinctions.
 
 In sum, while foundational LLMs offer powerful and accessible capabilities for non-English sentiment analysis, their advantages must be weighed against the proven robustness, transparency, and comparable macro-level performance of established dictionary methods like LSD. 
