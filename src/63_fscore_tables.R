@@ -12,8 +12,8 @@ library(dplyr)
 # DATA LOADING
 #################################################################
 # Read in the detailed F1 score data
-df_7 <- readRDS("results/fscores/f1_scores_detailed_7.rds")  # 7-category results
-df_3 <- readRDS("results/fscores/f1_scores_detailed_3.rds")  # 3-category results
+df_7 <- readRDS("results/analysis/f1_scores_detailed_7.rds")  # 7-category results
+df_3 <- readRDS("results/analysis/f1_scores_detailed_3.rds")  # 3-category results
 
 # Round numeric columns to 3 decimal places for readability
 df_7_rounded <- df_7 %>%
