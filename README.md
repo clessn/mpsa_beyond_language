@@ -114,14 +114,14 @@ Three complementary methodologies were used to assess performance:
 
 ### Environment Setup
 
-This project uses R for data analysis and Python for web scraping. Dependencies are managed with Poetry.
+This project uses R for data analysis and Python for web scraping. Python dependencies are managed with uv.
 
 ```bash
-# Install Poetry (if not already installed)
-curl -sSL https://install.python-poetry.org | python3 -
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install Python dependencies
-poetry install
+uv sync
 
 # Required R packages
 # install.packages(c("tidyverse", "quanteda", "caret", "ellmer", "officer", "polyglotR"))
@@ -131,7 +131,7 @@ poetry install
 
 ```bash
 # Run the Eureka scraper (requires login credentials)
-python src/00_eureka_scraper.py --start-date 1991-01-01 --end-date 2025-01-01 --output-dir ./data/eureka_articles
+uv run python src/00_eureka_scraper.py --start-date 1991-01-01 --end-date 2025-01-01 --output-dir ./data/eureka_articles
 ```
 
 ### Analysis Pipeline
