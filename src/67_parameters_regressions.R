@@ -21,15 +21,17 @@ df <- readRDS("data/clean/df.rds") %>%
   select(-ends_with("_en_en")) %>%
   # Keep only cross-lingual (EN→FR) models and ground truth
   select(ends_with("_en_fr") | ends_with("truth")) %>%
-  # Exclude some models from the parameter size analysis
-  select(-deepseekr1_en_fr, -qwq32b_en_fr, -claude35_en_fr, -gemini20_en_fr, -deepseekchat_en_fr, -gpt4o_en_fr) %>%
-  # Rename models to more readable format with parameter size
+  # Exclude closed-weight models, and DeepSeek V3.2 (dual reasoning/non-reasoning
+  # mode, direct successor to DeepSeek R1 Basic, excluded from this batch for the
+  # same reason: inconsistent output formatting when the model reasons before answering)
+  select(-deepseekv32_en_fr, -claudehaiku45_en_fr, -gemini35_en_fr, -deepseekv4flash_en_fr, -gpt56luna_en_fr) %>%
+  # Rename models to more readable format with parameter size (total parameters
+  # for MoE architectures, consistent with the previous batch's convention)
   rename(
-    llama32_3b = llama323b_en_fr,
-    llama33_70b = llama3370b_en_fr,
-    gemma2_9b = gemma29b_en_fr,
-    llama32_1b = llama321b_en_fr,
-    mistral_24b = mistral_en_fr,
+    qwen3_32b = qwen332b_en_fr,
+    qwen3_235b = qwen3235b_en_fr,
+    llama4_109b = llama4scout_en_fr,
+    gptoss_20b = gptoss20b_en_fr,
   ) %>%
   # Reshape data to long format for regression analysis
   pivot_longer(
@@ -77,7 +79,7 @@ params_plot <- ggplot(model_params_summary, aes(x = param_numeric, y = mean_mae)
   
   # Add subtle grid lines
   geom_hline(yintercept = seq(0.2, 0.4, by = 0.05), color = "gray90", linewidth = 0.4) +
-  geom_vline(xintercept = seq(0, 70, by = 10), color = "gray90", linewidth = 0.4) +
+  geom_vline(xintercept = seq(0, 250, by = 50), color = "gray90", linewidth = 0.4) +
   
   # Add regression line with confidence interval
   geom_smooth(method = "lm", se = TRUE, 
@@ -90,10 +92,9 @@ params_plot <- ggplot(model_params_summary, aes(x = param_numeric, y = mean_mae)
   
   # Use different shapes for models
   scale_shape_manual(values = c(
-    "llama32" = 21,  # Circle for Llama 3.2
-    "llama33" = 22,  # Square for Llama 3.3
-    "gemma2" = 23,   # Diamond for Gemma 2
-    "mistral" = 24   # Triangle for Mistral
+    "qwen3" = 21,   # Circle for Qwen3 (32B and 235B-A22B)
+    "llama4" = 22,  # Square for Llama 4 Scout
+    "gptoss" = 23   # Diamond for GPT-OSS
   )) +
   
   # Add small parameter size labels below points
@@ -105,28 +106,28 @@ params_plot <- ggplot(model_params_summary, aes(x = param_numeric, y = mean_mae)
     data = model_params_summary,
     aes(
       x = case_when(
-        param_numeric < 10 ~ param_numeric + 2,
-        TRUE ~ param_numeric - 2
+        param_numeric < 30 ~ param_numeric + 6,
+        TRUE ~ param_numeric - 6
       ),
       y = case_when(
-        param_numeric < 10 ~ mean_mae - 0.02,
-        param_numeric > 60 ~ mean_mae - 0.02,
+        param_numeric < 30 ~ mean_mae - 0.02,
+        param_numeric > 200 ~ mean_mae - 0.02,
         TRUE ~ mean_mae + 0.03
       ),
       label = model_name
     ),
     fontface = "italic", size = 3.5,
     hjust = case_when(
-      model_params_summary$param_numeric < 10 ~ 0,
-      model_params_summary$param_numeric > 60 ~ 1,
+      model_params_summary$param_numeric < 30 ~ 0,
+      model_params_summary$param_numeric > 200 ~ 1,
       TRUE ~ 0.5
     )
   ) +
   
   # Add equation annotation with academic styling
   annotate(
-    "text", 
-    x = 40, y = 0.36,
+    "text",
+    x = 125, y = 0.36,
     label = sprintf(
       "MAE = %.3f - %.4f × Parameters\nR² = %.3f, p < 0.001",
       coef(model)[1], 
@@ -148,8 +149,8 @@ params_plot <- ggplot(model_params_summary, aes(x = param_numeric, y = mean_mae)
   ) +
   
   scale_x_continuous(
-    limits = c(0, 75),
-    breaks = c(1, 3, 9, 24, 70),
+    limits = c(0, 250),
+    breaks = c(20, 32, 109, 235),
     minor_breaks = NULL,
     expand = c(0.01, 0.01)
   ) +

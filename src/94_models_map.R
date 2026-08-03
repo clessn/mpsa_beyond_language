@@ -1,76 +1,74 @@
 ###############################################################################
-# MODEL MAPPING AND CATEGORIZATION 
-# 
+# MODEL MAPPING AND CATEGORIZATION
+#
 # This script defines the mapping between model identifiers used in this project
 # and their corresponding full names. It also categorizes models as open or closed
 # source for analysis purposes.
 #
 # Author: Ral Zarek
 # Date: March 2025
+# Updated: July 2026 (model refresh - see docs/pub for rationale)
 ###############################################################################
 
 #==============================================================================
 # 1. MODEL GROUPINGS BY PROVIDER
 #==============================================================================
 
-# Alibaba models
+# Alibaba models (Qwen)
 alibaba_models <- c(
-  "accounts/fireworks/models/qwq-32b"
+  "qwen/qwen3-32b",
+  "accounts/fireworks/models/qwen3-235b-a22b"
 )
 
 # Meta models
 meta_models <- c(
-  "accounts/fireworks/models/llama-v3p2-3b-instruct",
-  "accounts/fireworks/models/llama-v3p3-70b-instruct",
-  "llama-3.2-1b-preview"
+  "meta-llama/llama-4-scout-17b-16e-instruct"
 )
 
-# Mistral models
-mistral_models <- c(
-  "mistral-saba-24b"
+# OpenAI open-weight models
+openai_oss_models <- c(
+  "openai/gpt-oss-20b"
 )
 
 # Anthropic models
 anthropic_models <- c(
-  "claude-3-5-haiku-20241022"
+  "claude-haiku-4-5-20251001"
 )
 
 # Google models
 google_models <- c(
-  "gemini-2.0-flash",
-  "gemma2-9b-it"
+  "gemini-3.5-flash"
 )
 
 # DeepSeek models
 deepseek_models <- c(
-  "deepseek-chat",
-  "accounts/fireworks/models/deepseek-r1-basic"
+  "accounts/fireworks/models/deepseek-v4-flash",
+  "accounts/fireworks/models/deepseek-v3p2"
 )
 
-# OpenAI models
+# OpenAI models (closed)
 openai_models <- c(
-  "gpt-4o"
+  "gpt-5.6-luna"
 )
 
 #==============================================================================
 # 2. MODEL CATEGORIZATION BY LICENSE
 #==============================================================================
 
-# Open source models
+# Open source (open-weight) models
 open_models <- c(
   meta_models,
   alibaba_models,
-  mistral_models,
-  "gemma2-9b-it",
-  "accounts/fireworks/models/deepseek-r1-basic"
+  openai_oss_models,
+  "accounts/fireworks/models/deepseek-v3p2"
 )
 
 # Closed source models
 closed_models <- c(
   anthropic_models,
   openai_models,
-  "gemini-2.0-flash",
-  "deepseek-chat"
+  "gemini-3.5-flash",
+  "accounts/fireworks/models/deepseek-v4-flash"
 )
 
 #==============================================================================
@@ -80,21 +78,19 @@ closed_models <- c(
 # Simple mapping from model prefix to actual model name
 model_mapping <- c(
   # Fireworks models
-  "llama323b" = "accounts/fireworks/models/llama-v3p2-3b-instruct",
-  "qwq32b" = "accounts/fireworks/models/qwq-32b",
-  "deepseekr1" = "accounts/fireworks/models/deepseek-r1-basic",
-  "llama3370b" = "accounts/fireworks/models/llama-v3p3-70b-instruct",
-  
+  "qwen3235b" = "accounts/fireworks/models/qwen3-235b-a22b",
+  "deepseekv32" = "accounts/fireworks/models/deepseek-v3p2",
+  "deepseekv4flash" = "accounts/fireworks/models/deepseek-v4-flash",
+
   # Groq models
-  "gemma29b" = "gemma2-9b-it",
-  "llama321b" = "llama-3.2-1b-preview",
-  "mistral" = "mistral-saba-24b",
-  
+  "llama4scout" = "meta-llama/llama-4-scout-17b-16e-instruct",
+  "qwen332b" = "qwen/qwen3-32b",
+  "gptoss20b" = "openai/gpt-oss-20b",
+
   # Other API models
-  "claude35" = "claude-3-5-haiku-20241022",
-  "gemini20" = "gemini-2.0-flash",
-  "deepseekchat" = "deepseek-chat",
-  "gpt4o" = "gpt-4o"
+  "claudehaiku45" = "claude-haiku-4-5-20251001",
+  "gemini35" = "gemini-3.5-flash",
+  "gpt56luna" = "gpt-5.6-luna"
 )
 
 #==============================================================================

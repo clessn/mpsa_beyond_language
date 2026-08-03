@@ -28,11 +28,10 @@
 #    )
 #
 # 3. Available models include:
-#    - accounts/fireworks/models/llama-v3p2-3b-instruct
-#    - accounts/fireworks/models/qwq-32b
-#    - accounts/fireworks/models/deepseek-r1-basic
-#    - accounts/fireworks/models/llama-v3p3-70b-instruct
-#    
+#    - accounts/fireworks/models/qwen3-235b-a22b
+#    - accounts/fireworks/models/deepseek-v3p2
+#    - accounts/fireworks/models/deepseek-v4-flash
+#
 # 4. Use the model client with the chat() function:
 #    response <- fireworks$chat("Your prompt here")
 

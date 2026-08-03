@@ -39,27 +39,25 @@ get_model_display_name <- function(model_name) {
     manufacturer <- case_when(
       full_name %in% meta_models ~ "Meta",
       full_name %in% alibaba_models ~ "Alibaba",
-      full_name %in% mistral_models ~ "Mistral",
+      full_name %in% openai_oss_models ~ "OpenAI",
       full_name %in% anthropic_models ~ "Anthropic",
       full_name %in% google_models ~ "Google",
       full_name %in% deepseek_models ~ "DeepSeek",
       full_name %in% openai_models ~ "OpenAI",
       TRUE ~ "Other"
     )
-    
+
     # Get display name based on the full model name
     display_name <- case_when(
-      full_name == "accounts/fireworks/models/llama-v3p2-3b-instruct" ~ "Llama 3.2 3B",
-      full_name == "accounts/fireworks/models/qwq-32b" ~ "QWen2 32B",
-      full_name == "accounts/fireworks/models/deepseek-r1-basic" ~ "DeepSeek R1 Basic",
-      full_name == "accounts/fireworks/models/llama-v3p3-70b-instruct" ~ "Llama 3.3 70B",
-      full_name == "gemma2-9b-it" ~ "Gemma 2 9B",
-      full_name == "llama-3.2-1b-preview" ~ "Llama 3.2 1B",
-      full_name == "mistral-saba-24b" ~ "Mistral Saba 24B",
-      full_name == "claude-3-5-haiku-20241022" ~ "Claude 3.5 Haiku",
-      full_name == "gemini-2.0-flash" ~ "Gemini 2.0 Flash",
-      full_name == "deepseek-chat" ~ "DeepSeek Chat",
-      full_name == "gpt-4o" ~ "GPT-4o",
+      full_name == "accounts/fireworks/models/qwen3-235b-a22b" ~ "Qwen3 235B-A22B",
+      full_name == "accounts/fireworks/models/deepseek-v3p2" ~ "DeepSeek V3.2",
+      full_name == "accounts/fireworks/models/deepseek-v4-flash" ~ "DeepSeek V4 Flash",
+      full_name == "meta-llama/llama-4-scout-17b-16e-instruct" ~ "Llama 4 Scout",
+      full_name == "qwen/qwen3-32b" ~ "Qwen3 32B",
+      full_name == "openai/gpt-oss-20b" ~ "GPT-OSS 20B",
+      full_name == "claude-haiku-4-5-20251001" ~ "Claude Haiku 4.5",
+      full_name == "gemini-3.5-flash" ~ "Gemini 3.5 Flash",
+      full_name == "gpt-5.6-luna" ~ "GPT-5.6 Luna",
       TRUE ~ full_name
     )
     

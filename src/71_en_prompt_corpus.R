@@ -139,10 +139,10 @@ save_progress_checkpoint <- function(force = FALSE) {
 # Initialize Gemini client
 cat("Initializing Gemini client...\n")
 
-# Google Gemini 2.0 Flash
-gemini <- ellmer::chat_gemini(
+# Google Gemini 3.5 Flash
+gemini <- ellmer::chat_google_gemini(
   system_prompt = system_prompt,
-  model = "gemini-2.0-flash",
+  model = "gemini-3.5-flash",
   echo = "none"
 )
 

@@ -180,28 +180,28 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
         if (grepl("groq", model_name_prefix, ignore.case = TRUE)) {
           # Check token usage for Groq models
           last_usage <- tail(model_client$tokens(), 1)
-          token_count <- ifelse(is.null(last_usage) || nrow(last_usage) == 0, 0, 
+          token_count <- ifelse(is.null(last_usage) || nrow(last_usage) == 0, 0,
                                sum(last_usage$prompt_tokens, last_usage$completion_tokens))
-          
+
           # Adaptive sleep based on specific model token limits
-          if (grepl("gemma29b", model_name_prefix, ignore.case = TRUE)) {
-            # Gemma 2 9B: 15000 tokens per minute (250 per second)
+          if (grepl("gptoss20b", model_name_prefix, ignore.case = TRUE)) {
+            # GPT-OSS 20B: 15000 tokens per minute (250 per second)
             sleep_time <- ifelse(token_count > 500, max(2, token_count / 250), 2)
-          } else if (grepl("llama321b", model_name_prefix, ignore.case = TRUE)) {
-            # Llama 3.2 1B: 7000 tokens per minute (117 per second)
+          } else if (grepl("qwen332b", model_name_prefix, ignore.case = TRUE)) {
+            # Qwen3 32B: 7000 tokens per minute (117 per second)
             sleep_time <- ifelse(token_count > 300, max(2, token_count / 117), 2)
           } else {
-            # Mistral and DeepSeek: 6000 tokens per minute (100 per second)
+            # Llama 4 Scout: 6000 tokens per minute (100 per second)
             sleep_time <- ifelse(token_count > 300, max(3, token_count / 100), 2)
           }
-          
+
           # Log and apply the sleep
           if (token_count > 300) {
-            cat(sprintf("Model %s: High token usage (%d tokens), sleeping for %.1f seconds\n", 
+            cat(sprintf("Model %s: High token usage (%d tokens), sleeping for %.1f seconds\n",
                         model_name_prefix, token_count, sleep_time))
           }
           Sys.sleep(sleep_time)
-        } else if (grepl("llama323b|qwq32b|deepseekr1|llama3370b", model_name_prefix, ignore.case = TRUE)) {
+        } else if (grepl("qwen3235b|deepseekv32|deepseekv4flash", model_name_prefix, ignore.case = TRUE)) {
           # 1.5 second delay for Fireworks.ai hosted models
           Sys.sleep(1.5)
         } else {
@@ -288,42 +288,32 @@ cat("Initializing all LLM clients...\n")
 # 3.1 FIREWORKS.AI HOSTED MODELS
 #------------------------------------------------------------------------------
 
-# Llama 3.2 3B parameters (instruct version)
-llama323b <- ellmer::chat_openai(
+# Qwen3 235B-A22B (MoE, largest open-weight model in this batch)
+qwen3235b <- ellmer::chat_openai(
   system_prompt = system_prompt,
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/llama-v3p2-3b-instruct",
+  model = "accounts/fireworks/models/qwen3-235b-a22b",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
-# QWQ 32B parameters
-qwq32b <- ellmer::chat_openai(
+# DeepSeek V3.2 (675B total, MoE, open-weight)
+deepseekv32 <- ellmer::chat_openai(
   system_prompt = system_prompt,
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/qwq-32b",
+  model = "accounts/fireworks/models/deepseek-v3p2",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
-# DeepSeek R1 Basic
-deepseekr1 <- ellmer::chat_openai(
+# DeepSeek V4 Flash (closed-weight; native deepseek-chat API alias deprecated July 2026)
+deepseekv4flash <- ellmer::chat_openai(
   system_prompt = system_prompt,
   base_url = "https://api.fireworks.ai/inference/v1",
   api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/deepseek-r1-basic",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# Llama 3.3 70B (instruct version)
-llama3370b <- ellmer::chat_openai(
-  system_prompt = system_prompt,
-  base_url = "https://api.fireworks.ai/inference/v1",
-  api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/llama-v3p3-70b-instruct",
+  model = "accounts/fireworks/models/deepseek-v4-flash",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
@@ -332,34 +322,26 @@ llama3370b <- ellmer::chat_openai(
 # 3.2 GROQ-HOSTED MODELS
 #------------------------------------------------------------------------------
 
-# Gemma 2 (9B parameters)
-gemma29b <- ellmer::chat_groq(
+# Llama 4 Scout (17B active / 109B total, MoE, preview)
+llama4scout <- ellmer::chat_groq(
   system_prompt = system_prompt,
-  model = "gemma2-9b-it",
+  model = "meta-llama/llama-4-scout-17b-16e-instruct",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
-# Llama 3.2 (1B parameters)
-llama321b <- ellmer::chat_groq(
+# Qwen3 32B
+qwen332b <- ellmer::chat_groq(
   system_prompt = system_prompt,
-  model = "llama-3.2-1b-preview",
+  model = "qwen/qwen3-32b",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
 
-# Mistral (8x7B parameters, 32K context window)
-mistral <- ellmer::chat_groq(
+# GPT-OSS 20B (OpenAI open-weight model)
+gptoss20b <- ellmer::chat_groq(
   system_prompt = system_prompt,
-  model = "mistral-saba-24b",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# DeepSeek R1 Distill Llama (70B parameters)
-deepseekr1distillllama <- ellmer::chat_groq(
-  system_prompt = system_prompt,
-  model = "deepseek-r1-distill-llama-70b",
+  model = "openai/gpt-oss-20b",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
@@ -368,33 +350,25 @@ deepseekr1distillllama <- ellmer::chat_groq(
 # 3.3 OTHER CLOUD API MODELS
 #------------------------------------------------------------------------------
 
-# Anthropic Claude 3.5 Haiku
-claude35 <- ellmer::chat_claude(
+# Anthropic Claude Haiku 4.5
+claudehaiku45 <- ellmer::chat_anthropic(
   system_prompt = system_prompt,
-  model = "claude-3-5-haiku-20241022",
+  model = "claude-haiku-4-5-20251001",
   max_tokens = 100,  # Limit to 10 tokens maximum
   echo = "none"
 )
 
-# Google Gemini 2.0 Flash
-gemini20 <- ellmer::chat_gemini(
+# Google Gemini 3.5 Flash
+gemini35 <- ellmer::chat_google_gemini(
   system_prompt = system_prompt,
-  model = "gemini-2.0-flash",
+  model = "gemini-3.5-flash",
   echo = "none"
 )
 
-# DeepSeek Chat 
-deepseekchat <- ellmer::chat_deepseek(
+# OpenAI GPT-5.6 Luna (cost-efficient tier)
+gpt56luna <- ellmer::chat_openai(
   system_prompt = system_prompt,
-  model = "deepseek-chat",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# OpenAI GPT-4o
-gpt4o <- ellmer::chat_openai(
-  system_prompt = system_prompt,
-  model = "gpt-4o",
+  model = "gpt-5.6-luna",
   api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
   echo = "none"
 )
@@ -467,157 +441,121 @@ checkpoint_interval <- 600  # 10 minutes in seconds
 # 4.1 FIREWORKS.AI MODELS
 #------------------------------------------------------------------------------
 
-# Llama 3.2 3B
-cat("Processing Llama 3.2 3B model...\n")
+# Qwen3 235B-A22B
+cat("Processing Qwen3 235B-A22B model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("llama323b_en_fr")
-initialize_model_columns("llama323b_fr_fr")
-initialize_model_columns("llama323b_en_en")
+initialize_model_columns("qwen3235b_en_fr")
+initialize_model_columns("qwen3235b_fr_fr")
+initialize_model_columns("qwen3235b_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(llama323b, "llama323b", "en", "sentences")      # English prompt, French text
-df <- run_sentiment_analysis(llama323b, "llama323b", "fr", "sentences")      # French prompt, French text  
-df <- run_sentiment_analysis(llama323b, "llama323b", "en", "sentences_en")   # English prompt, English text
+df <- run_sentiment_analysis(qwen3235b, "qwen3235b", "en", "sentences")      # English prompt, French text
+df <- run_sentiment_analysis(qwen3235b, "qwen3235b", "fr", "sentences")      # French prompt, French text
+df <- run_sentiment_analysis(qwen3235b, "qwen3235b", "en", "sentences_en")   # English prompt, English text
 
-# QWQ 32B
-cat("Processing QWQ 32B model...\n")
+# DeepSeek V3.2
+cat("Processing DeepSeek V3.2 model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("qwq32b_en_fr")
-initialize_model_columns("qwq32b_fr_fr")
-initialize_model_columns("qwq32b_en_en")
+initialize_model_columns("deepseekv32_en_fr")
+initialize_model_columns("deepseekv32_fr_fr")
+initialize_model_columns("deepseekv32_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(qwq32b, "qwq32b", "en", "sentences")         # English prompt, French text
-df <- run_sentiment_analysis(qwq32b, "qwq32b", "fr", "sentences")         # French prompt, French text
-df <- run_sentiment_analysis(qwq32b, "qwq32b", "en", "sentences_en")      # English prompt, English text
+df <- run_sentiment_analysis(deepseekv32, "deepseekv32", "en", "sentences")     # English prompt, French text
+df <- run_sentiment_analysis(deepseekv32, "deepseekv32", "fr", "sentences")     # French prompt, French text
+df <- run_sentiment_analysis(deepseekv32, "deepseekv32", "en", "sentences_en")  # English prompt, English text
 
-# DeepSeek R1
-cat("Processing DeepSeek R1 model...\n")
+# DeepSeek V4 Flash
+cat("Processing DeepSeek V4 Flash model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("deepseekr1_en_fr")
-initialize_model_columns("deepseekr1_fr_fr")
-initialize_model_columns("deepseekr1_en_en")
+initialize_model_columns("deepseekv4flash_en_fr")
+initialize_model_columns("deepseekv4flash_fr_fr")
+initialize_model_columns("deepseekv4flash_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(deepseekr1, "deepseekr1", "en", "sentences")     # English prompt, French text
-df <- run_sentiment_analysis(deepseekr1, "deepseekr1", "fr", "sentences")     # French prompt, French text
-df <- run_sentiment_analysis(deepseekr1, "deepseekr1", "en", "sentences_en")  # English prompt, English text
-
-# Llama 3.3 70B
-cat("Processing Llama 3.3 70B model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("llama3370b_en_fr")
-initialize_model_columns("llama3370b_fr_fr")
-initialize_model_columns("llama3370b_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(llama3370b, "llama3370b", "en", "sentences")   # English prompt, French text
-df <- run_sentiment_analysis(llama3370b, "llama3370b", "fr", "sentences")   # French prompt, French text
-df <- run_sentiment_analysis(llama3370b, "llama3370b", "en", "sentences_en") # English prompt, English text
+df <- run_sentiment_analysis(deepseekv4flash, "deepseekv4flash", "en", "sentences")     # English prompt, French text
+df <- run_sentiment_analysis(deepseekv4flash, "deepseekv4flash", "fr", "sentences")     # French prompt, French text
+df <- run_sentiment_analysis(deepseekv4flash, "deepseekv4flash", "en", "sentences_en")  # English prompt, English text
 
 #------------------------------------------------------------------------------
 # 4.2 GROQ MODELS
 #------------------------------------------------------------------------------
 
-# Gemma 2 9B
-cat("Processing Gemma 2 9B model...\n")
+# Llama 4 Scout
+cat("Processing Llama 4 Scout model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("gemma29b_en_fr")
-initialize_model_columns("gemma29b_fr_fr")
-initialize_model_columns("gemma29b_en_en")
+initialize_model_columns("llama4scout_en_fr")
+initialize_model_columns("llama4scout_fr_fr")
+initialize_model_columns("llama4scout_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(gemma29b, "gemma29b", "en", "sentences")    # English prompt, French text
-df <- run_sentiment_analysis(gemma29b, "gemma29b", "fr", "sentences")    # French prompt, French text
-df <- run_sentiment_analysis(gemma29b, "gemma29b", "en", "sentences_en") # English prompt, English text
+df <- run_sentiment_analysis(llama4scout, "llama4scout", "en", "sentences")    # English prompt, French text
+df <- run_sentiment_analysis(llama4scout, "llama4scout", "fr", "sentences")    # French prompt, French text
+df <- run_sentiment_analysis(llama4scout, "llama4scout", "en", "sentences_en") # English prompt, English text
 
-# Llama 3.2 1B
-cat("Processing Llama 3.2 1B model...\n")
+# Qwen3 32B
+cat("Processing Qwen3 32B model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("llama321b_en_fr")
-initialize_model_columns("llama321b_fr_fr")
-initialize_model_columns("llama321b_en_en")
+initialize_model_columns("qwen332b_en_fr")
+initialize_model_columns("qwen332b_fr_fr")
+initialize_model_columns("qwen332b_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(llama321b, "llama321b", "en", "sentences")  # English prompt, French text
-df <- run_sentiment_analysis(llama321b, "llama321b", "fr", "sentences")  # French prompt, French text
-df <- run_sentiment_analysis(llama321b, "llama321b", "en", "sentences_en") # English prompt, English text
+df <- run_sentiment_analysis(qwen332b, "qwen332b", "en", "sentences")  # English prompt, French text
+df <- run_sentiment_analysis(qwen332b, "qwen332b", "fr", "sentences")  # French prompt, French text
+df <- run_sentiment_analysis(qwen332b, "qwen332b", "en", "sentences_en") # English prompt, English text
 
-# Mistral
-cat("Processing Mistral model...\n")
+# GPT-OSS 20B
+cat("Processing GPT-OSS 20B model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("mistral_en_fr")
-initialize_model_columns("mistral_fr_fr")
-initialize_model_columns("mistral_en_en")
+initialize_model_columns("gptoss20b_en_fr")
+initialize_model_columns("gptoss20b_fr_fr")
+initialize_model_columns("gptoss20b_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(mistral, "mistral", "en", "sentences")      # English prompt, French text
-df <- run_sentiment_analysis(mistral, "mistral", "fr", "sentences")      # French prompt, French text
-df <- run_sentiment_analysis(mistral, "mistral", "en", "sentences_en")   # English prompt, English text
+df <- run_sentiment_analysis(gptoss20b, "gptoss20b", "en", "sentences")      # English prompt, French text
+df <- run_sentiment_analysis(gptoss20b, "gptoss20b", "fr", "sentences")      # French prompt, French text
+df <- run_sentiment_analysis(gptoss20b, "gptoss20b", "en", "sentences_en")   # English prompt, English text
 
-# # DeepSeek R1 Distill Llama
-# cat("Processing DeepSeek R1 Distill Llama model...\n")
-# # Initialize columns for all combinations
-# initialize_model_columns("deepseekr1distillllama_en_fr")
-# initialize_model_columns("deepseekr1distillllama_fr_fr")
-# initialize_model_columns("deepseekr1distillllama_en_en")
-#
-# # Run sentiment analysis - results stored directly in df
-# df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "en", "sentences")     # English prompt, French text
-# df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "fr", "sentences")     # French prompt, French text
-# df <- run_sentiment_analysis(deepseekr1distillllama, "deepseekr1distillllama", "en", "sentences_en")  # English prompt, English text
-#
-# #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # 4.3 OTHER CLOUD API MODELS
 #------------------------------------------------------------------------------
 
-# Claude 3.5
-cat("Processing Claude 3.5 model...\n")
+# Claude Haiku 4.5
+cat("Processing Claude Haiku 4.5 model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("claude35_en_fr")
-initialize_model_columns("claude35_fr_fr")
-initialize_model_columns("claude35_en_en")
+initialize_model_columns("claudehaiku45_en_fr")
+initialize_model_columns("claudehaiku45_fr_fr")
+initialize_model_columns("claudehaiku45_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(claude35, "claude35", "en", "sentences")   # English prompt, French text
-df <- run_sentiment_analysis(claude35, "claude35", "fr", "sentences")   # French prompt, French text
-df <- run_sentiment_analysis(claude35, "claude35", "en", "sentences_en") # English prompt, English text
+df <- run_sentiment_analysis(claudehaiku45, "claudehaiku45", "en", "sentences")   # English prompt, French text
+df <- run_sentiment_analysis(claudehaiku45, "claudehaiku45", "fr", "sentences")   # French prompt, French text
+df <- run_sentiment_analysis(claudehaiku45, "claudehaiku45", "en", "sentences_en") # English prompt, English text
 
-# Gemini 2.0
-cat("Processing Gemini 2.0 model...\n")
+# Gemini 3.5 Flash
+cat("Processing Gemini 3.5 Flash model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("gemini20_en_fr")
-initialize_model_columns("gemini20_fr_fr")
-initialize_model_columns("gemini20_en_en")
+initialize_model_columns("gemini35_en_fr")
+initialize_model_columns("gemini35_fr_fr")
+initialize_model_columns("gemini35_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(gemini20, "gemini20", "en", "sentences")   # English prompt, French text
-df <- run_sentiment_analysis(gemini20, "gemini20", "fr", "sentences")   # French prompt, French text
-df <- run_sentiment_analysis(gemini20, "gemini20", "en", "sentences_en") # English prompt, English text
+df <- run_sentiment_analysis(gemini35, "gemini35", "en", "sentences")   # English prompt, French text
+df <- run_sentiment_analysis(gemini35, "gemini35", "fr", "sentences")   # French prompt, French text
+df <- run_sentiment_analysis(gemini35, "gemini35", "en", "sentences_en") # English prompt, English text
 
-# DeepSeek Chat
-cat("Processing DeepSeek Chat model...\n")
+# GPT-5.6 Luna
+cat("Processing GPT-5.6 Luna model...\n")
 # Initialize columns for all combinations
-initialize_model_columns("deepseekchat_en_fr")
-initialize_model_columns("deepseekchat_fr_fr")
-initialize_model_columns("deepseekchat_en_en")
+initialize_model_columns("gpt56luna_en_fr")
+initialize_model_columns("gpt56luna_fr_fr")
+initialize_model_columns("gpt56luna_en_en")
 
 # Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(deepseekchat, "deepseekchat", "en", "sentences")  # English prompt, French text
-df <- run_sentiment_analysis(deepseekchat, "deepseekchat", "fr", "sentences")  # French prompt, French text
-df <- run_sentiment_analysis(deepseekchat, "deepseekchat", "en", "sentences_en") # English prompt, English text
-
-# GPT-4o
-cat("Processing GPT-4o model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("gpt4o_en_fr")
-initialize_model_columns("gpt4o_fr_fr")
-initialize_model_columns("gpt4o_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(gpt4o, "gpt4o", "en", "sentences")           # English prompt, French text
-df <- run_sentiment_analysis(gpt4o, "gpt4o", "fr", "sentences")           # French prompt, French text
-df <- run_sentiment_analysis(gpt4o, "gpt4o", "en", "sentences_en")        # English prompt, English text
+df <- run_sentiment_analysis(gpt56luna, "gpt56luna", "en", "sentences")           # English prompt, French text
+df <- run_sentiment_analysis(gpt56luna, "gpt56luna", "fr", "sentences")           # French prompt, French text
+df <- run_sentiment_analysis(gpt56luna, "gpt56luna", "en", "sentences_en")        # English prompt, English text
 
 #==============================================================================
 # 5. SAVE RESULTS

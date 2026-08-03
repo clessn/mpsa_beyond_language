@@ -2,7 +2,7 @@
 # F1 SCORES CATEGORY AVERAGES ANALYSIS
 #################################################################
 # This script calculates average F1 scores by sentiment category for the 7-category
-# classification, excluding QwQ, DeepSeek R1, and LSD models to focus on 
+# classification, excluding DeepSeek V3.2 and LSD models to focus on
 # production-ready general-purpose LLMs.
 
 library(tidyverse)
@@ -22,17 +22,17 @@ print(unique(detailed_f1_7$model))
 # Filter out excluded models based on model names
 detailed_f1_7_filtered <- detailed_f1_7 %>%
   filter(
-    # Exclude QwQ and DeepSeek R1 models
-    !str_detect(model, "qwq32b|deepseekr1"),
-    # Exclude LSD dictionaries  
+    # Exclude DeepSeek V3.2 (reasoning-mode model)
+    !str_detect(model, "deepseekv32"),
+    # Exclude LSD dictionaries
     !str_detect(model, "^lsd_")
   )
 
 detailed_f1_3_filtered <- detailed_f1_3 %>%
   filter(
-    # Exclude QwQ and DeepSeek R1 models
-    !str_detect(model, "qwq32b|deepseekr1"),
-    # Exclude LSD dictionaries  
+    # Exclude DeepSeek V3.2 (reasoning-mode model)
+    !str_detect(model, "deepseekv32"),
+    # Exclude LSD dictionaries
     !str_detect(model, "^lsd_")
   )
 

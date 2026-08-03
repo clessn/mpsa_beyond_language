@@ -92,8 +92,10 @@ f1_3_summary <- f1_scores_3 %>%
 filter_excluded_models <- function(df) {
   df %>%
     filter(
-      # Exclude specific models
-      !str_detect(clean_model, "qwq32b|deepseekr1"),
+      # Exclude DeepSeek V3.2 (dual reasoning/non-reasoning mode, prone to
+      # inconsistent output formatting, same rationale as the previous
+      # batch's exclusion of QwQ-32B and DeepSeek R1 Basic)
+      !str_detect(clean_model, "deepseekv32"),
       # Exclude LSD dictionaries
       !str_detect(clean_model, "Dictionary")
     )
@@ -141,7 +143,7 @@ f1_3_by_condition <- f1_3_filtered %>%
 #----------------------------------------------------------------
 # PRINT RESULTS
 #----------------------------------------------------------------
-cat("\n=== AVERAGE METRICS BY CONDITION (EXCLUDING qwq32b, deepseekr1, AND DICTIONARIES) ===\n\n")
+cat("\n=== AVERAGE METRICS BY CONDITION (EXCLUDING deepseekv32 AND DICTIONARIES) ===\n\n")
 
 cat("CORRELATION AND MAE BY CONDITION:\n")
 print(cor_by_condition)
