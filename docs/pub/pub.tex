@@ -119,7 +119,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{longtable,booktabs,array}
-\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -225,7 +224,7 @@ Proulx,Yannick Dufresne}
 
 \leftheader{Foisy, Pelletier, Proulx and Dufresne}
 
-\date{2026-07-29}
+\date{2026-09-10}
 
 
 \abstract{This study examines whether general-purpose large language
@@ -508,7 +507,6 @@ source media.
 Software by Source Media}{\label{tbl-source-summary}}}
 \vspace{-20pt}}
 
-{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
 source\_media & article\_count & earliest\_date & latest\_date \\
@@ -530,7 +528,6 @@ Nouvelliste, Le (Trois-Rivières, QC) & 13 & 2000-01-13 & 2022-03-05 \\
 Quotidien, Le (Saguenay, QC) & 10 & 2008-11-01 & 2019-04-10 \\
 Voix de l'Est, La (Granby, QC) & 4 & 2010-09-17 & 2015-02-14 \\
 \end{longtable}
-}
 
 \end{table}
 
@@ -593,15 +590,12 @@ Analysis}\label{llm-based-sentiment-analysis}
 
 We evaluated nine general-purpose foundational LLMs, selected for
 prominence and affordability --- realistic choices for researchers who
-need to analyze large corpora rather than a single sample. Fine-tuned
-specialized models can outperform general-purpose LLMs on narrow tasks,
-but require infrastructure, expertise, and labeled data most social
-science researchers lack (\citeproc{ref-Chalkidis2020LEGAL}{Chalkidis et
-al., 2020}; \citeproc{ref-Egger2022Topic}{Egger \& Yu, 2022};
-\citeproc{ref-Laurer2023Less}{Laurer et al., 2023};
-\citeproc{ref-Strubell2019Energy}{Strubell et al., 2019});
-general-purpose LLMs accessed via API trade some of that performance for
-accessibility (\citeproc{ref-Ghosh2023Navigating}{Ghosh et al., 2023};
+need to analyze large corpora rather than a single sample. Specialized
+fine-tuned models can outperform them on narrow tasks, at the cost in
+expertise and infrastructure set out above; a further practical barrier
+is that no R package exposes this workflow, so a researcher must write
+and maintain the training code themselves
+(\citeproc{ref-Ghosh2023Navigating}{Ghosh et al., 2023};
 \citeproc{ref-Perron2024Demystifying}{Perron et al., 2024}).
 
 The evaluation spans five open-weight models --- GPT-OSS 20B and Qwen3
@@ -712,13 +706,9 @@ marginally best on this metric). For 3-category F1, EN→FR led narrowly
 almost no variation across conditions (0.309--0.312). Across all three
 metrics, statistical analysis confirmed these differences are not
 significant: prompt language choice does not meaningfully affect
-performance, contradicting the cross-linguistic prompting advantage
-reported elsewhere in the literature (\citeproc{ref-Jiang2020How}{Jiang
-et al., 2020}; \citeproc{ref-Lin2022Few}{Lin et al., 2022};
-\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023}).
-Analyzing English translations (EN→EN) performed slightly worse than
-analyzing the French original under either prompt language, consistent
-with some information loss during translation.
+performance. Analyzing English translations (EN→EN) performed slightly
+worse than analyzing the French original under either prompt language,
+consistent with some information loss during translation.
 
 \subsection{LLMs Are a Viable Alternative to Dictionary
 Methods}\label{llms-are-a-viable-alternative-to-dictionary-methods}
@@ -859,30 +849,34 @@ across model generations.
 
 \section{Conclusion}\label{conclusion}
 
-General-purpose LLMs, used without task-specific fine-tuning, can
-accurately analyze sentiment in French text, and do so with performance
-that is essentially independent of prompt language --- researchers can
-prompt in French or English with no meaningful analytical penalty,
-removing a real barrier for non-anglophone research teams and enabling
-multilingual comparative work without standardizing on English. Leading
-closed-source models achieved the strongest results, and larger
-open-source models offered a credible, more accessible alternative.
+Prompt language does not constrain how social scientists work with
+non-English text. The practical consequence runs further than
+francophone teams being free to prompt in French: prompt language ceases
+to be a design decision that needs defending at all, and the translation
+step that has often preceded computational analysis of non-English
+corpora loses its rationale.
 
-This viability is not unconditional. The English Lexicoder Sentiment
-Dictionary remained competitive with the average LLM on 3-category
-classification, and its full methodological transparency is a genuine
-advantage over LLMs' comparative opacity --- for researchers who
-prioritize interpretability over capturing sentiment intensity nuance,
-LSD remains a defensible choice. LLMs also handled broad
-positive/neutral/negative classification far more reliably than
-fine-grained sentiment distinctions. The right method depends on the
-research goal: LLMs for accessible, intensity-sensitive analysis in any
-prompt language; dictionary methods where transparency matters most.
+That opens work this study could not do. Comparative projects spanning
+several languages can let each team prompt in its own and pool the
+results, without a translation pass that would itself require
+validation. Whether this holds beyond French --- particularly for
+languages less represented in training data, where the English-prompting
+advantage was first reported --- is the natural next test, and this
+design ports to it directly: the same three conditions, the same
+manually annotated benchmark, a different target language.
+
+Method choice remains a judgment about research goals rather than a
+ranking. Dictionary methods retain an advantage these results do not
+overturn --- every score they produce can be traced to the words that
+generated it --- and that transparency is worth more than accuracy in
+some research designs. What the evidence here settles is narrower and,
+for non-anglophone researchers, more useful: the language of the prompt
+is not among the things that need to be traded off.
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\protect\phantomsection\label{refs}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
 \bibitem[\citeproctext]{ref-Ahmadian2024Hybrid}
 Ahmadian, H., Abidin, T. F., Riza, H., \& Muchtar, K. (2024). Hybrid
@@ -912,12 +906,6 @@ m{é}diatique : Construction et utilisation de la version fran{ç}aise du
 {Lexicoder Sentiment Dictionary}. \emph{Canadian Journal of Political
 Science/Revue Canadienne de Science Politique}, \emph{49}(2), 197--220.
 \url{https://doi.org/10.1017/S000842391600055X}
-
-\bibitem[\citeproctext]{ref-Egger2022Topic}
-Egger, R., \& Yu, J. (2022). A {Topic Modeling Comparison Between LDA},
-{NMF}, {Top2Vec}, and {BERTopic} to {Demystify Twitter Posts}.
-\emph{Frontiers in Sociology}, \emph{7}.
-\url{https://doi.org/10.3389/fsoc.2022.886498}
 
 \bibitem[\citeproctext]{ref-ElJundi2019hULMonA}
 ElJundi, O., Antoun, W., El Droubi, N., Hajj, H., El-Hajj, W., \&
@@ -1079,8 +1067,8 @@ Computing and Intelligence}, \emph{4}(2), 184--194.
 Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M.-A.,
 Lacroix, T., Rozière, B., Goyal, N., Hambro, E., Azhar, F., Rodriguez,
 A., Joulin, A., Grave, E., \& Lample, G. (2023). \emph{{LLaMA}: {Open}
-and {Efficient Foundation Language Models}} (No. arXiv:2302.13971).
-arXiv. \url{https://arxiv.org/abs/2302.13971}
+and {Efficient Foundation Language Models}} (arXiv:2302.13971). arXiv.
+\url{https://arxiv.org/abs/2302.13971}
 
 \bibitem[\citeproctext]{ref-Venerito2024Large}
 Venerito, V., \& Iannone, F. (2024). Large language model-driven
@@ -1145,7 +1133,6 @@ correlation with sentence-level manual annotations.
 Classification}{\label{tbl-f1-3cat}}}
 \vspace{-20pt}}
 
-{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lllll@{}}
 \toprule\noalign{}
 Model & negative & neutral & positive & weighted\_f1 \\
@@ -1189,7 +1176,6 @@ gemini20\_en\_en & 0.508 & 0.147 & 0.43 & 0.439 \\
 llama321b\_en\_fr & 0.358 & 0 & 0.478 & 0.41 \\
 llama321b\_fr\_fr & 0.352 & 0.067 & 0.381 & 0.352 \\
 \end{longtable}
-}
 
 \end{table}
 
