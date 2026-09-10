@@ -1,113 +1,189 @@
 ###############################################################################
 # MODEL MAPPING AND CATEGORIZATION
 #
-# This script defines the mapping between model identifiers used in this project
-# and their corresponding full names. It also categorizes models as open or closed
-# source for analysis purposes.
+# Single source of truth for the model lineup: API identifiers, provider pins,
+# parameter counts, and the open/closed split used throughout the analysis.
 #
 # Author: Ral Zarek
 # Date: March 2025
-# Updated: July 2026 (model refresh - see docs/pub for rationale)
+# Updated: September 2026 — migrated the open-weight lineup to OpenRouter.
+#
+# WHY OPENROUTER: the previous lineup was split across Groq and Fireworks. A
+# September 2026 check of Groq's catalogue found only 14 models served, two of
+# which the study depended on (qwen/qwen3-32b, meta-llama/llama-4-scout) had
+# been withdrawn, and no small general-purpose model remained. OpenRouter
+# serves 431 models including every model here plus the 1B-8B range that
+# restores continuity with the original 2024-2025 batch.
+#
+# THE COST OF ROUTING: OpenRouter dispatches to underlying providers, and the
+# same model can be served at different quantizations (llama-3.2-3b is offered
+# at bf16 by one provider and at an undeclared quantization by another). For a
+# benchmark that is a reproducibility hazard, so every open-weight model below
+# is PINNED to a named provider endpoint via `model_provider_pin`, preferring
+# the highest available precision. Report these pins in the paper's Methods.
 ###############################################################################
 
 #==============================================================================
-# 1. MODEL GROUPINGS BY PROVIDER
+# 1. MODEL IDENTIFIERS
 #==============================================================================
 
-# Alibaba models (Qwen)
-alibaba_models <- c(
+# Prefixes must not contain underscores: result columns are built as
+# "<prefix>_<prompt_lang>_<text_lang>" and downstream scripts split on "_".
+model_mapping <- c(
+  # --- Open-weight, served through OpenRouter -------------------------------
+  "llama321b"     = "meta-llama/llama-3.2-1b-instruct",
+  "llama323b"     = "meta-llama/llama-3.2-3b-instruct",
+  "llama318b"     = "meta-llama/llama-3.1-8b-instruct",
+  "gptoss20b"     = "openai/gpt-oss-20b",
+  "qwen332b"      = "qwen/qwen3-32b",
+  "llama4scout"   = "meta-llama/llama-4-scout",
+  "gptoss120b"    = "openai/gpt-oss-120b",
+  "qwen3235b"     = "qwen/qwen3-235b-a22b-2507",
+  "deepseekv32"   = "deepseek/deepseek-v3.2",
+
+  # --- Closed-weight, served through each vendor's own API ------------------
+  "claudehaiku45" = "claude-haiku-4-5",
+  "gemini35"      = "gemini-3.5-flash",
+  "gpt56luna"     = "gpt-5.6-luna"
+)
+
+#==============================================================================
+# 2. PROVIDER PINNING (OPEN-WEIGHT MODELS ONLY)
+#==============================================================================
+
+# OpenRouter endpoint tags, of the form "<provider>" or "<provider>/<quant>".
+# Passed as provider$order with allow_fallbacks = FALSE, so a request either
+# runs on this exact endpoint or fails loudly rather than silently rerouting.
+# Verified against /api/v1/models/{id}/endpoints on 2026-09-09.
+model_provider_pin <- c(
+  "llama321b"   = "cloudflare",      # NOTE: only provider; quantization undeclared
+  "llama323b"   = "parasail/bf16",
+  "llama318b"   = "coreweave/bf16",
+  "gptoss20b"   = "deepinfra/bf16",
+  # SiliconFlow rather than DeepInfra, both fp8: DeepInfra silently ignores
+  # reasoning = list(effort = "none") and always reasons before answering,
+  # spending 284-392 output tokens and overrunning the cap on 37% of calls.
+  # SiliconFlow honours it and returns a bare number in 3 tokens. Verified
+  # head-to-head 2026-09-10; the switch cost 140 lost scores to recover.
+  "qwen332b"    = "siliconflow/fp8",
+  "llama4scout" = "novita/bf16",
+  "gptoss120b"  = "akashml/bf16",
+  "qwen3235b"   = "gmicloud/fp8",    # no bf16 endpoint offered
+  "deepseekv32" = "gmicloud/fp8"     # no bf16 endpoint offered
+)
+
+#==============================================================================
+# 3. REASONING SUPPRESSION
+#==============================================================================
+
+# Models that reason before answering. Left unchecked they spend the output
+# budget on chain-of-thought and return either an empty string or raw <think>
+# text, which the sentiment parser cannot read.
+#
+# The setting is NOT uniform, and the difference was found by testing each
+# endpoint on 2026-09-09:
+#
+#   effort = "none"  Qwen and DeepSeek endpoints accept full suppression.
+#   effort = "low"   The pinned gpt-oss endpoints reject "none" outright
+#                    ("Reasoning is mandatory for this endpoint and cannot be
+#                    disabled", HTTP 400). "low" is the least they allow and
+#                    returns a clean number in ~28 output tokens.
+#
+# Models absent from this list declare no reasoning parameters in the
+# OpenRouter catalogue and need no suppression.
+model_reasoning_config <- list(
+  gptoss20b   = list(effort = "low"),
+  gptoss120b  = list(effort = "low"),
+  qwen332b    = list(effort = "none"),
+  deepseekv32 = list(effort = "none")
+)
+
+#==============================================================================
+# 4. PARAMETER COUNTS
+#==============================================================================
+
+# Total and active parameters in billions. The two differ for mixture-of-experts
+# models, where only a fraction of weights activate per token — active count is
+# what drives inference cost, so it is the more meaningful regressor. Report
+# both in the paper and state which the regression uses.
+#
+# NA = not reliably documented; fill from the model card before publishing.
+model_params_total <- c(
+  "llama321b" = 1, "llama323b" = 3, "llama318b" = 8,
+  "gptoss20b" = 20, "qwen332b" = 32, "llama4scout" = 109,
+  "gptoss120b" = 120, "qwen3235b" = 235, "deepseekv32" = 671
+)
+
+model_params_active <- c(
+  "llama321b" = 1,          # dense
+  "llama323b" = 3,          # dense
+  "llama318b" = 8,          # dense
+  "gptoss20b" = NA_real_,   # MoE — active count not verified
+  "qwen332b" = 32,          # dense
+  "llama4scout" = 17,       # 17B active / 109B total
+  "gptoss120b" = NA_real_,  # MoE — active count not verified
+  "qwen3235b" = 22,         # "a22b" in the model name = 22B active
+  "deepseekv32" = NA_real_  # MoE — active count not verified
+)
+
+#==============================================================================
+# 5. LICENCE CATEGORIZATION
+#==============================================================================
+
+open_models <- c(
+  "meta-llama/llama-3.2-1b-instruct",
+  "meta-llama/llama-3.2-3b-instruct",
+  "meta-llama/llama-3.1-8b-instruct",
+  "openai/gpt-oss-20b",
   "qwen/qwen3-32b",
-  "accounts/fireworks/models/qwen3-235b-a22b"
+  "meta-llama/llama-4-scout",
+  "openai/gpt-oss-120b",
+  "qwen/qwen3-235b-a22b-2507",
+  "deepseek/deepseek-v3.2"
 )
 
-# Meta models
-meta_models <- c(
-  "meta-llama/llama-4-scout-17b-16e-instruct"
-)
-
-# OpenAI open-weight models
-openai_oss_models <- c(
-  "openai/gpt-oss-20b"
-)
-
-# Anthropic models
-anthropic_models <- c(
-  "claude-haiku-4-5-20251001"
-)
-
-# Google models
-google_models <- c(
-  "gemini-3.5-flash"
-)
-
-# DeepSeek models
-deepseek_models <- c(
-  "accounts/fireworks/models/deepseek-v4-flash",
-  "accounts/fireworks/models/deepseek-v3p2"
-)
-
-# OpenAI models (closed)
-openai_models <- c(
+closed_models <- c(
+  "claude-haiku-4-5",
+  "gemini-3.5-flash",
   "gpt-5.6-luna"
 )
 
 #==============================================================================
-# 2. MODEL CATEGORIZATION BY LICENSE
+# 6. HELPER FUNCTIONS
 #==============================================================================
 
-# Open source (open-weight) models
-open_models <- c(
-  meta_models,
-  alibaba_models,
-  openai_oss_models,
-  "accounts/fireworks/models/deepseek-v3p2"
-)
-
-# Closed source models
-closed_models <- c(
-  anthropic_models,
-  openai_models,
-  "gemini-3.5-flash",
-  "accounts/fireworks/models/deepseek-v4-flash"
-)
-
-#==============================================================================
-# 3. MODEL MAPPING FOR CODE SIMPLIFICATION
-#==============================================================================
-
-# Simple mapping from model prefix to actual model name
-model_mapping <- c(
-  # Fireworks models
-  "qwen3235b" = "accounts/fireworks/models/qwen3-235b-a22b",
-  "deepseekv32" = "accounts/fireworks/models/deepseek-v3p2",
-  "deepseekv4flash" = "accounts/fireworks/models/deepseek-v4-flash",
-
-  # Groq models
-  "llama4scout" = "meta-llama/llama-4-scout-17b-16e-instruct",
-  "qwen332b" = "qwen/qwen3-32b",
-  "gptoss20b" = "openai/gpt-oss-20b",
-
-  # Other API models
-  "claudehaiku45" = "claude-haiku-4-5-20251001",
-  "gemini35" = "gemini-3.5-flash",
-  "gpt56luna" = "gpt-5.6-luna"
-)
-
-#==============================================================================
-# 4. HELPER FUNCTIONS
-#==============================================================================
-
-# Function to determine if a model is open source
+#' Determine whether a result column belongs to an open-weight model
+#'
+#' @param model_column A column name or bare model prefix
+#' @return TRUE, FALSE, or NA for columns outside the mapping (e.g. dictionaries)
 is_open_source <- function(model_column) {
-  # Extract model prefix from column name
   for (prefix in names(model_mapping)) {
     if (grepl(prefix, model_column, fixed = TRUE)) {
-      # Look up the full model name
-      full_name <- model_mapping[prefix]
-      # Check if it's in the open_models list
-      return(full_name %in% open_models)
+      return(unname(model_mapping[prefix]) %in% open_models)
     }
   }
-  # Default for models not in our mapping (like dictionary models)
-  return(NA)
+  NA
+}
+
+#' Extra request arguments for one open-weight model on OpenRouter
+#'
+#' Combines the provider pin with reasoning suppression where required.
+#'
+#' The output cap is NOT set here: pass it via ellmer's portable
+#' `params(max_tokens = ...)`, which translates to each provider's native
+#' parameter name (OpenAI now rejects a raw `max_tokens` in the request body).
+#'
+#' @param prefix Model prefix, e.g. "gptoss20b"
+#' @return A list suitable for ellmer's `api_args`
+openrouter_args <- function(prefix) {
+  args <- list(
+    provider = list(
+      order = list(unname(model_provider_pin[prefix])),
+      allow_fallbacks = FALSE
+    )
+  )
+  if (!is.null(model_reasoning_config[[prefix]])) {
+    args$reasoning <- model_reasoning_config[[prefix]]
+  }
+  args
 }

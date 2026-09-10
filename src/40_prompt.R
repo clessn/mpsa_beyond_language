@@ -18,6 +18,38 @@
 # Set up error handling for script interruptions
 options(warn = 1)  # Print warnings as they occur
 
+#------------------------------------------------------------------------------
+# SINGLE-INSTANCE LOCK
+#------------------------------------------------------------------------------
+# Two copies of this script running at once corrupt each other's work: they
+# hold separate in-memory copies of `df` and overwrite each other's checkpoints,
+# they append interleaved (and sometimes spliced) lines to the token log, and
+# they pay twice for the same API calls. This happened on 2026-09-09 — three
+# instances ran concurrently and 54% of the logged calls were duplicates.
+#
+# The lock stores this process's PID. A stale lock from a killed run is
+# detected by checking whether that PID is still alive, so a crash does not
+# require manual cleanup.
+LOCK_PATH <- "data/tmp/.rerun.lock"
+
+if (file.exists(LOCK_PATH)) {
+  old_pid <- suppressWarnings(as.integer(readLines(LOCK_PATH, warn = FALSE)[1]))
+  alive <- !is.na(old_pid) &&
+    length(system(sprintf("ps -p %d -o pid=", old_pid), intern = TRUE,
+                  ignore.stderr = TRUE)) > 0
+  if (alive) {
+    stop(sprintf(paste0(
+      "Another run of 40_prompt.R is already active (PID %d).\n",
+      "  Stop it first:  pkill -f 40_prompt.R\n",
+      "  Or, if you are sure it is dead:  rm %s"), old_pid, LOCK_PATH))
+  }
+  cat("Removing stale lock from PID", old_pid, "(no longer running).\n")
+  file.remove(LOCK_PATH)
+}
+dir.create(dirname(LOCK_PATH), showWarnings = FALSE, recursive = TRUE)
+writeLines(as.character(Sys.getpid()), LOCK_PATH)
+cat("Lock acquired, PID", Sys.getpid(), "\n")
+
 # Set up tryCatch to save progress on interrupt
 tryCatch({
 
@@ -30,6 +62,14 @@ library(stringr)  # String manipulation
 
 # Source helper functions file containing utility functions for sentiment analysis
 source("src/92_llm_helper_funcs.R")
+
+# Cost instrumentation: model_mapping supplies full API model ids, and
+# 95_token_logging.R supplies the price table and per-call logging used to
+# report cost per 1,000 sentences in the paper.
+source("src/94_models_map.R")
+source("src/95_token_logging.R")
+init_token_log()
+check_price_coverage()
 
 # Load the original dataset containing sentences for sentiment analysis
 # This dataset contains French sentences and their English translations
@@ -137,7 +177,7 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
     
     # Set up for multiple runs with retry logic for each run
     max_retries <- 3  # Maximum number of retry attempts per run
-    run_results <- numeric(n_runs)  # Store results from each run
+    run_results <- rep(NA_real_, n_runs)  # NA, not 0: an unset slot must not read as a neutral score
     
     # Perform n_runs for each sentence
     for (run in 1:n_runs) {
@@ -155,19 +195,25 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
       # Try multiple times to get a valid sentiment value
       while (!valid_value_obtained && attempt <= max_retries) {
         # Wrap in tryCatch to provide more detailed error handling and logging
-        tryCatch({
+        # `response` is assigned FROM tryCatch, so the error handler's NULL
+        # actually reaches it. In the original form the assignment sat inside
+        # the block and `return(NULL)` only exited the handler function — so on
+        # any API failure `response` still held the PREVIOUS call's text, and
+        # the previous sentence's score was silently attributed to this one.
+        # Verified with a reproduction and fixed 2026-09-09.
+        response <- tryCatch({
           # Reset chat history to ensure each prompt is treated as new
           model_client$set_turns(list())
-          
+
           # Make API call with retry and backoff for connection issues
-          response <- retry_with_backoff({
+          retry_with_backoff({
             model_client$chat(prompt)
           })
         }, error = function(e) {
           cat(sprintf("ERROR with %s on attempt %d: %s\n", model_identifier, attempt, e$message))
           # Add a longer timeout after errors to let rate limits recover
           Sys.sleep(10)
-          return(NULL)
+          NULL
         })
         
         # Skip rest of loop if response is NULL (error occurred)
@@ -176,39 +222,15 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
           next
         }
         
-        # Apply appropriate rate limiting based on model type and token usage
-        if (grepl("groq", model_name_prefix, ignore.case = TRUE)) {
-          # Check token usage for Groq models
-          last_usage <- tail(model_client$tokens(), 1)
-          token_count <- ifelse(is.null(last_usage) || nrow(last_usage) == 0, 0,
-                               sum(last_usage$prompt_tokens, last_usage$completion_tokens))
-
-          # Adaptive sleep based on specific model token limits
-          if (grepl("gptoss20b", model_name_prefix, ignore.case = TRUE)) {
-            # GPT-OSS 20B: 15000 tokens per minute (250 per second)
-            sleep_time <- ifelse(token_count > 500, max(2, token_count / 250), 2)
-          } else if (grepl("qwen332b", model_name_prefix, ignore.case = TRUE)) {
-            # Qwen3 32B: 7000 tokens per minute (117 per second)
-            sleep_time <- ifelse(token_count > 300, max(2, token_count / 117), 2)
-          } else {
-            # Llama 4 Scout: 6000 tokens per minute (100 per second)
-            sleep_time <- ifelse(token_count > 300, max(3, token_count / 100), 2)
-          }
-
-          # Log and apply the sleep
-          if (token_count > 300) {
-            cat(sprintf("Model %s: High token usage (%d tokens), sleeping for %.1f seconds\n",
-                        model_name_prefix, token_count, sleep_time))
-          }
-          Sys.sleep(sleep_time)
-        } else if (grepl("qwen3235b|deepseekv32|deepseekv4flash", model_name_prefix, ignore.case = TRUE)) {
-          # 1.5 second delay for Fireworks.ai hosted models
-          Sys.sleep(1.5)
-        } else {
-          # 1 second delay for all other API-based models
-          Sys.sleep(1)
-        }
+        # Snapshot token usage for the call we just made, before anything else
+        # can touch the client. Fails soft: returns NA rather than erroring.
+        call_usage <- capture_usage(model_client)
         
+        # Pace requests. OpenRouter's limits scale with account credit rather
+        # than being fixed per model, so a uniform pause replaces the old
+        # per-provider token accounting; the retry/backoff path handles 429s.
+        Sys.sleep(ifelse(model_name_prefix %in% names(model_provider_pin), 1.2, 1))
+
         #----------------------------------------------------------------------
         # 2.3 RESPONSE PARSING
         #----------------------------------------------------------------------
@@ -216,8 +238,23 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
         # Extract numerical sentiment value from the model's response
         extracted_value <- clean_sentiment_value(response)
         
+        # Record this call. Every attempt gets its own row, including failed
+        # ones: providers bill retries, so excluding them would understate cost.
+        response_is_valid <- !is.na(extracted_value) &&
+          extracted_value >= -1 && extracted_value <= 1
+        log_api_call(
+          model_prefix   = model_name_prefix,
+          condition      = paste0(prompt_type, "_",
+                                  ifelse(text_field == "sentences", "fr", "en")),
+          item           = i,
+          run            = run,
+          attempt        = attempt,
+          usage          = call_usage,
+          valid_response = response_is_valid
+        )
+        
         # Validate that we got a value in the acceptable range (-1 to 1)
-        if (!is.na(extracted_value) && extracted_value >= -1 && extracted_value <= 1) {
+        if (response_is_valid) {
           # Valid value obtained - store it and break the retry loop
           run_results[run] <- extracted_value
           # Store the result in the dataframe
@@ -281,99 +318,63 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
 source("src/93_prompts.R")
 system_prompt <- get_system_prompt()
 
-# Initialize all LLM clients
+# Output cap, shared by every model. Raised from 100 to 400 on 2026-09-09:
+# qwen3-32b returned an empty string at 100 even with reasoning suppressed, and
+# the cap costs nothing when unused — providers bill tokens generated, not the
+# ceiling, and compliant models answer in 3-4 tokens.
+OUTPUT_MAX_TOKENS <- 400
+
 cat("Initializing all LLM clients...\n")
 
-#------------------------------------------------------------------------------
-# 3.1 FIREWORKS.AI HOSTED MODELS
-#------------------------------------------------------------------------------
-
-# Qwen3 235B-A22B (MoE, largest open-weight model in this batch)
-qwen3235b <- ellmer::chat_openai(
-  system_prompt = system_prompt,
-  base_url = "https://api.fireworks.ai/inference/v1",
-  api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/qwen3-235b-a22b",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# DeepSeek V3.2 (675B total, MoE, open-weight)
-deepseekv32 <- ellmer::chat_openai(
-  system_prompt = system_prompt,
-  base_url = "https://api.fireworks.ai/inference/v1",
-  api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/deepseek-v3p2",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# DeepSeek V4 Flash (closed-weight; native deepseek-chat API alias deprecated July 2026)
-deepseekv4flash <- ellmer::chat_openai(
-  system_prompt = system_prompt,
-  base_url = "https://api.fireworks.ai/inference/v1",
-  api_key = Sys.getenv("FIREWORKS_API_KEY"),
-  model = "accounts/fireworks/models/deepseek-v4-flash",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
+# Clients are built from the mapping in src/94_models_map.R instead of being
+# declared one by one, so the lineup lives in exactly one place.
+model_clients <- list()
 
 #------------------------------------------------------------------------------
-# 3.2 GROQ-HOSTED MODELS
+# 3.1 OPEN-WEIGHT MODELS (OpenRouter, provider-pinned)
 #------------------------------------------------------------------------------
 
-# Llama 4 Scout (17B active / 109B total, MoE, preview)
-llama4scout <- ellmer::chat_groq(
-  system_prompt = system_prompt,
-  model = "meta-llama/llama-4-scout-17b-16e-instruct",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# Qwen3 32B
-qwen332b <- ellmer::chat_groq(
-  system_prompt = system_prompt,
-  model = "qwen/qwen3-32b",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
-
-# GPT-OSS 20B (OpenAI open-weight model)
-gptoss20b <- ellmer::chat_groq(
-  system_prompt = system_prompt,
-  model = "openai/gpt-oss-20b",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
-  echo = "none"
-)
+# openrouter_args() supplies the provider pin (so the request cannot silently
+# reroute to a different backend or quantization) and, for reasoning models,
+# reasoning = list(effort = "none"). See src/94_models_map.R for why both matter.
+for (prefix in names(model_provider_pin)) {
+  model_clients[[prefix]] <- ellmer::chat_openrouter(
+    system_prompt = system_prompt,
+    model = unname(model_mapping[prefix]),
+    params = ellmer::params(max_tokens = OUTPUT_MAX_TOKENS),
+    api_args = openrouter_args(prefix),
+    echo = "none"
+  )
+  cat(sprintf("  %-14s %-34s [pin: %s]\n", prefix,
+              model_mapping[prefix], model_provider_pin[prefix]))
+}
 
 #------------------------------------------------------------------------------
-# 3.3 OTHER CLOUD API MODELS
+# 3.2 CLOSED-WEIGHT MODELS (each vendor's own API)
 #------------------------------------------------------------------------------
 
-# Anthropic Claude Haiku 4.5
-claudehaiku45 <- ellmer::chat_anthropic(
+model_clients$claudehaiku45 <- ellmer::chat_anthropic(
   system_prompt = system_prompt,
-  model = "claude-haiku-4-5-20251001",
-  max_tokens = 100,  # Limit to 10 tokens maximum
+  model = unname(model_mapping["claudehaiku45"]),
+  params = ellmer::params(max_tokens = OUTPUT_MAX_TOKENS),
   echo = "none"
 )
 
-# Google Gemini 3.5 Flash
-gemini35 <- ellmer::chat_google_gemini(
+model_clients$gemini35 <- ellmer::chat_google_gemini(
   system_prompt = system_prompt,
-  model = "gemini-3.5-flash",
+  model = unname(model_mapping["gemini35"]),
+  params = ellmer::params(max_tokens = OUTPUT_MAX_TOKENS),
   echo = "none"
 )
 
-# OpenAI GPT-5.6 Luna (cost-efficient tier)
-gpt56luna <- ellmer::chat_openai(
+model_clients$gpt56luna <- ellmer::chat_openai(
   system_prompt = system_prompt,
-  model = "gpt-5.6-luna",
-  api_args = list(max_tokens = 100),  # Limit to 10 tokens maximum
+  model = unname(model_mapping["gpt56luna"]),
+  params = ellmer::params(max_tokens = OUTPUT_MAX_TOKENS),
   echo = "none"
 )
 
-cat("All clients initialized. Starting sentiment analysis...\n")
+cat("All clients initialized:", length(model_clients), "models.\n")
 #==============================================================================
 # 4. RUN SENTIMENT ANALYSIS FOR ALL MODELS
 #==============================================================================
@@ -438,124 +439,41 @@ last_checkpoint_time <- Sys.time()
 checkpoint_interval <- 600  # 10 minutes in seconds
 
 #------------------------------------------------------------------------------
-# 4.1 FIREWORKS.AI MODELS
+# 4.1 RUN EVERY MODEL ACROSS ALL THREE LANGUAGE CONDITIONS
 #------------------------------------------------------------------------------
 
-# Qwen3 235B-A22B
-cat("Processing Qwen3 235B-A22B model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("qwen3235b_en_fr")
-initialize_model_columns("qwen3235b_fr_fr")
-initialize_model_columns("qwen3235b_en_en")
+# The three conditions the study compares: prompt language crossed with text
+# language. Driven by a loop over model_clients rather than one block per model,
+# so adding or dropping a model means editing src/94_models_map.R only.
+conditions <- list(
+  list(prompt = "en", text = "sentences"),     # English prompt, French text
+  list(prompt = "fr", text = "sentences"),     # French prompt, French text
+  list(prompt = "en", text = "sentences_en")   # English prompt, English translation
+)
 
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(qwen3235b, "qwen3235b", "en", "sentences")      # English prompt, French text
-df <- run_sentiment_analysis(qwen3235b, "qwen3235b", "fr", "sentences")      # French prompt, French text
-df <- run_sentiment_analysis(qwen3235b, "qwen3235b", "en", "sentences_en")   # English prompt, English text
+# Models named in SKIP_MODELS are passed over without being contacted. Set it
+# when a provider is unavailable — a quota that resets tomorrow, an account
+# awaiting billing — so the remaining models are not blocked behind it. Their
+# columns stay NA and a later run picks them up from the checkpoint.
+#   SKIP_MODELS=gemini35 Rscript src/40_prompt.R
+skip_models <- trimws(strsplit(Sys.getenv("SKIP_MODELS", ""), ",")[[1]])
+skip_models <- skip_models[nzchar(skip_models)]
+if (length(skip_models)) {
+  cat("Skipping on request:", paste(skip_models, collapse = ", "), "\n")
+}
 
-# DeepSeek V3.2
-cat("Processing DeepSeek V3.2 model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("deepseekv32_en_fr")
-initialize_model_columns("deepseekv32_fr_fr")
-initialize_model_columns("deepseekv32_en_en")
+for (prefix in names(model_clients)) {
+  if (prefix %in% skip_models) {
+    cat(sprintf("\n=== Skipping %s (SKIP_MODELS) ===\n", prefix))
+    next
+  }
+  cat(sprintf("\n=== Processing %s (%s) ===\n", prefix, model_mapping[prefix]))
 
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(deepseekv32, "deepseekv32", "en", "sentences")     # English prompt, French text
-df <- run_sentiment_analysis(deepseekv32, "deepseekv32", "fr", "sentences")     # French prompt, French text
-df <- run_sentiment_analysis(deepseekv32, "deepseekv32", "en", "sentences_en")  # English prompt, English text
-
-# DeepSeek V4 Flash
-cat("Processing DeepSeek V4 Flash model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("deepseekv4flash_en_fr")
-initialize_model_columns("deepseekv4flash_fr_fr")
-initialize_model_columns("deepseekv4flash_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(deepseekv4flash, "deepseekv4flash", "en", "sentences")     # English prompt, French text
-df <- run_sentiment_analysis(deepseekv4flash, "deepseekv4flash", "fr", "sentences")     # French prompt, French text
-df <- run_sentiment_analysis(deepseekv4flash, "deepseekv4flash", "en", "sentences_en")  # English prompt, English text
-
-#------------------------------------------------------------------------------
-# 4.2 GROQ MODELS
-#------------------------------------------------------------------------------
-
-# Llama 4 Scout
-cat("Processing Llama 4 Scout model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("llama4scout_en_fr")
-initialize_model_columns("llama4scout_fr_fr")
-initialize_model_columns("llama4scout_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(llama4scout, "llama4scout", "en", "sentences")    # English prompt, French text
-df <- run_sentiment_analysis(llama4scout, "llama4scout", "fr", "sentences")    # French prompt, French text
-df <- run_sentiment_analysis(llama4scout, "llama4scout", "en", "sentences_en") # English prompt, English text
-
-# Qwen3 32B
-cat("Processing Qwen3 32B model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("qwen332b_en_fr")
-initialize_model_columns("qwen332b_fr_fr")
-initialize_model_columns("qwen332b_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(qwen332b, "qwen332b", "en", "sentences")  # English prompt, French text
-df <- run_sentiment_analysis(qwen332b, "qwen332b", "fr", "sentences")  # French prompt, French text
-df <- run_sentiment_analysis(qwen332b, "qwen332b", "en", "sentences_en") # English prompt, English text
-
-# GPT-OSS 20B
-cat("Processing GPT-OSS 20B model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("gptoss20b_en_fr")
-initialize_model_columns("gptoss20b_fr_fr")
-initialize_model_columns("gptoss20b_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(gptoss20b, "gptoss20b", "en", "sentences")      # English prompt, French text
-df <- run_sentiment_analysis(gptoss20b, "gptoss20b", "fr", "sentences")      # French prompt, French text
-df <- run_sentiment_analysis(gptoss20b, "gptoss20b", "en", "sentences_en")   # English prompt, English text
-
-#------------------------------------------------------------------------------
-# 4.3 OTHER CLOUD API MODELS
-#------------------------------------------------------------------------------
-
-# Claude Haiku 4.5
-cat("Processing Claude Haiku 4.5 model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("claudehaiku45_en_fr")
-initialize_model_columns("claudehaiku45_fr_fr")
-initialize_model_columns("claudehaiku45_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(claudehaiku45, "claudehaiku45", "en", "sentences")   # English prompt, French text
-df <- run_sentiment_analysis(claudehaiku45, "claudehaiku45", "fr", "sentences")   # French prompt, French text
-df <- run_sentiment_analysis(claudehaiku45, "claudehaiku45", "en", "sentences_en") # English prompt, English text
-
-# Gemini 3.5 Flash
-cat("Processing Gemini 3.5 Flash model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("gemini35_en_fr")
-initialize_model_columns("gemini35_fr_fr")
-initialize_model_columns("gemini35_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(gemini35, "gemini35", "en", "sentences")   # English prompt, French text
-df <- run_sentiment_analysis(gemini35, "gemini35", "fr", "sentences")   # French prompt, French text
-df <- run_sentiment_analysis(gemini35, "gemini35", "en", "sentences_en") # English prompt, English text
-
-# GPT-5.6 Luna
-cat("Processing GPT-5.6 Luna model...\n")
-# Initialize columns for all combinations
-initialize_model_columns("gpt56luna_en_fr")
-initialize_model_columns("gpt56luna_fr_fr")
-initialize_model_columns("gpt56luna_en_en")
-
-# Run sentiment analysis - results stored directly in df
-df <- run_sentiment_analysis(gpt56luna, "gpt56luna", "en", "sentences")           # English prompt, French text
-df <- run_sentiment_analysis(gpt56luna, "gpt56luna", "fr", "sentences")           # French prompt, French text
-df <- run_sentiment_analysis(gpt56luna, "gpt56luna", "en", "sentences_en")        # English prompt, English text
+  for (cond in conditions) {
+    df <- run_sentiment_analysis(model_clients[[prefix]], prefix,
+                                 cond$prompt, cond$text)
+  }
+}
 
 #==============================================================================
 # 5. SAVE RESULTS
@@ -729,6 +647,11 @@ cat("\nAnalysis complete!\n")
   # Re-throw the error
   stop(e)
 }, finally = {
-  # This will execute regardless of whether there was an error or not
+  # Release the lock so the next run can start. Guarded so a crash midway
+  # through still frees it.
+  if (exists("LOCK_PATH") && file.exists(LOCK_PATH)) {
+    held <- suppressWarnings(as.integer(readLines(LOCK_PATH, warn = FALSE)[1]))
+    if (!is.na(held) && held == Sys.getpid()) file.remove(LOCK_PATH)
+  }
   cat("Script execution completed or interrupted. Check for saved checkpoints if needed.\n")
 })

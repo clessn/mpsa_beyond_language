@@ -237,19 +237,25 @@ run_corpus_sentiment_analysis <- function(data, model_client) {
     # Try multiple times to get a valid sentiment value
     while (!valid_value_obtained && attempt <= max_retries) {
       # Wrap in tryCatch to provide more detailed error handling and logging
-      tryCatch({
+      # `response` is assigned FROM tryCatch, so the error handler's NULL
+      # actually reaches it. In the original form the assignment sat inside
+      # the block and `return(NULL)` only exited the handler function — so on
+      # any API failure `response` still held the PREVIOUS call's text, and
+      # the previous sentence's score was silently attributed to this one.
+      # Verified with a reproduction and fixed 2026-09-09.
+      response <- tryCatch({
         # Reset chat history to ensure each prompt is treated as new
         model_client$set_turns(list())
-        
+
         # Make API call with retry and backoff for connection issues
-        response <- retry_with_backoff({
+        retry_with_backoff({
           model_client$chat(prompt)
         })
       }, error = function(e) {
         cat(sprintf("ERROR with %s on attempt %d: %s\n", model_identifier, attempt, e$message))
         # Add a longer timeout after errors to let rate limits recover
         Sys.sleep(10)
-        return(NULL)
+        NULL
       })
       
       # Skip rest of loop if response is NULL (error occurred)
