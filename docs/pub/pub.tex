@@ -224,26 +224,28 @@ Proulx,Yannick Dufresne}
 
 \leftheader{Foisy, Pelletier, Proulx and Dufresne}
 
-\date{2026-09-10}
+\date{2026-09-16}
 
 
 \abstract{This study examines whether general-purpose large language
 models (LLMs) can analyze sentiment in non-English text without
 task-specific fine-tuning, and whether prompt language affects their
-performance. We evaluate nine open- and closed-weight LLMs on 200 French
-sentences drawn from a corpus of 2,683 French news articles on
+performance. We evaluate twelve open- and closed-weight LLMs on 200
+French sentences drawn from a corpus of 2,683 French news articles on
 open-source software, comparing performance to dictionary-based methods
 across three conditions: French prompts on French text, English prompts
 on French text, and English prompts on English translations. Prompt
-language has no statistically meaningful effect on performance across
-correlation, mean absolute error, and F1 metrics, contradicting prior
-evidence of a cross-linguistic English-prompting advantage. Leading
-closed-weight models achieve strong performance (r \textgreater{} 0.80),
-and larger open-weight models offer a viable, more accessible
-alternative. LLMs outperform a standard sentiment dictionary on
-correlation with human judgments, though the dictionary remains
-competitive on coarse classification and offers greater transparency.
-All models perform substantially better on three-category
+language has no statistically meaningful effect on performance, and
+equivalence tests rule out any substantial English-prompting advantage,
+contradicting prior evidence of a cross-linguistic English-prompting
+advantage; translating the text into English, by contrast, lowers
+performance. Leading closed-weight models achieve strong performance (r
+\textgreater{} 0.80), larger open-weight models offer a viable, more
+accessible alternative, and the smallest model tested (1B parameters)
+fails to follow the task instructions. LLMs outperform a standard
+sentiment dictionary on correlation with human judgments and on coarse
+classification, though the dictionary offers greater transparency. All
+models perform substantially better on three-category
 (positive/neutral/negative) than on seven-category classification. These
 findings suggest social science researchers can use general-purpose LLMs
 for non-English sentiment analysis in whichever prompt language is most
@@ -588,26 +590,38 @@ negated\_negative) − (negative + negated\_positive)) / total words.
 \subsection{LLM-Based Sentiment
 Analysis}\label{llm-based-sentiment-analysis}
 
-We evaluated nine general-purpose foundational LLMs, selected for
+We evaluated twelve general-purpose foundational LLMs, selected for
 prominence and affordability --- realistic choices for researchers who
 need to analyze large corpora rather than a single sample. Specialized
 fine-tuned models can outperform them on narrow tasks, at the cost in
-expertise and infrastructure set out above; a further practical barrier
-is that no R package exposes this workflow, so a researcher must write
-and maintain the training code themselves
+expertise and infrastructure set out above. Tooling adds a further
+barrier that is rarely acknowledged: to our knowledge no R package
+exposes a fine-tuning workflow, so a researcher working in the language
+most common in quantitative social science must write and maintain
+training code themselves, whereas general-purpose models are reachable
+through an API with no comparable setup
 (\citeproc{ref-Ghosh2023Navigating}{Ghosh et al., 2023};
 \citeproc{ref-Perron2024Demystifying}{Perron et al., 2024}).
 
-The evaluation spans five open-weight models --- GPT-OSS 20B and Qwen3
-32B (via Groq), and Llama 4 Scout, Qwen3 235B-A22B, and DeepSeek V3.2
-(via Fireworks.ai), ranging from 20B to 675B parameters --- and four
-closed-weight models: Claude Haiku 4.5 (Anthropic), Gemini 3.5 Flash
-(Google), GPT-5.6 Luna (OpenAI), and DeepSeek V4 Flash. This lineup
-updates an initial 2024-2025 evaluation of 11 comparable models using an
-identical experimental design; several models from that original
-evaluation (e.g., GPT-4o, Gemini 2.0 Flash) had already been deprecated
-by their providers within eighteen months, underscoring how quickly this
-landscape moves.
+The evaluation spans nine open-weight models --- Llama 3.2 1B, Llama 3.2
+3B, Llama 3.1 8B, GPT-OSS 20B, Qwen3 32B, Llama 4 Scout, GPT-OSS 120B,
+Qwen3 235B-A22B, and DeepSeek V3.2, ranging from 1B to 671B total
+parameters --- and three closed-weight models: Claude Haiku 4.5
+(Anthropic), Gemini 3.5 Flash (Google), and GPT-5.6 Luna (OpenAI). This
+lineup updates an initial 2024-2025 evaluation of 11 comparable models
+using an identical experimental design; several models from that
+original evaluation (e.g., GPT-4o, Gemini 2.0 Flash) had already been
+deprecated by their providers within eighteen months, underscoring how
+quickly this landscape moves. The smallest model, Llama 3.2 1B, rarely
+followed the instruction to answer with a number: about one call in 23
+returned a parseable score, and even after retries it produced a usable
+score for only 58 to 74 of the 200 sentences, depending on the
+condition. We retain it deliberately: while models of a few billion
+parameters can handle the task, a 1B-parameter model appears too small
+to follow the instructions reliably at all, which marks a practical
+lower bound on model size. Its metrics rest on a reduced and non-random
+subset of sentences and are not directly comparable to those of the
+other models.
 
 For each model, we tested three conditions to isolate the effects of
 prompt language and text language: French prompts on French text
@@ -652,15 +666,21 @@ The English-prompt/French-text version is shown below.\footnote{The
 \end{Highlighting}
 \end{Shaded}
 
-We queried each model via the \texttt{ellmer} R package, using
-provider-specific chat functions for Anthropic, Google, DeepSeek, and
-OpenAI, and OpenAI-compatible endpoints for Groq- and Fireworks-hosted
-open-weight models, with responses capped at 100 tokens. Each sentence
-was scored three times per model-condition combination, and we took the
-mean of the three runs as the final score. Despite explicit instructions
-to respond with a bare number, models frequently returned formatted text
-(e.g., ``Sentiment: 0.5''); we parsed these with a pattern-matching
-function validated against the expected -1.0 to 1.0 range.
+We queried each model via the \texttt{ellmer} R package, using the
+vendors' own APIs for the three closed-weight models and OpenRouter for
+the nine open-weight models, with responses capped at 400 tokens.
+Because OpenRouter can serve the same model through several providers at
+different numerical precisions, each open-weight model was pinned to a
+single named provider endpoint, at the highest precision offered, with
+fallback to other providers disabled.\footnote{Endpoint pins, and the
+  reasoning settings used to suppress chain-of-thought in models that
+  reason by default, are listed in \texttt{src/94\_models\_map.R}.} Each
+sentence was scored three times per model-condition combination (21,600
+scores in total), and we took the mean of the three runs as the final
+score. Despite explicit instructions to respond with a bare number,
+models frequently returned formatted text (e.g., ``Sentiment: 0.5''); we
+parsed these with a pattern-matching function validated against the
+expected -1.0 to 1.0 range.
 
 \subsection{Validation and Performance
 Evaluation}\label{validation-and-performance-evaluation}
@@ -674,54 +694,68 @@ that groups the 7 categories into broad polarity bands. We use weighted
 (rather than macro) F1 because the manually coded categories are
 unevenly distributed --- ``somewhat\_positive'' alone accounts for 44\%
 of annotated sentences, while ``very\_negative'' and ``very\_positive''
-each account for under 1\% --- so a weighted average better reflects
+each account for 1\% or less --- so a weighted average better reflects
 overall classification quality given this class imbalance. Comparing the
 two classification schemes lets us separately assess fine-grained
 sentiment discrimination (7-category) and broad polarity classification
-(3-category). All metrics were calculated on complete cases only.
+(3-category). We additionally report mean absolute error (MAE) between
+continuous predictions and the ground truth. All metrics were calculated
+on complete cases only.
 
 \section{Results}\label{results}
 
-We evaluated models using three complementary metrics: Pearson
-correlation with manually annotated ground truth, F1 score for
-7-category classification, and F1 score for a simplified 3-category
-classification. To isolate production-ready general-purpose LLMs from
-experimental or baseline methods, the language-condition and granularity
-analyses below exclude reasoning-mode models prone to inconsistent
-output formatting (QwQ-32B and DeepSeek R1 Basic) and dictionary
-baselines, leaving 9 models across three language conditions (27
-model-condition combinations).
+We evaluated models using the three metrics described above,
+complemented by mean absolute error (MAE). The condition analysis and
+the averages reported below cover the eleven models that scored all 200
+sentences (33 model-condition combinations) and exclude the dictionary
+baselines, which have no prompt. Llama 3.2 1B is reported separately: it
+scored a different, partial subset of sentences in each condition, so
+its differences across conditions would compare unlike samples.
 
-\subsection{Prompt Language Has No Meaningful Effect on
-Performance}\label{prompt-language-has-no-meaningful-effect-on-performance}
+\subsection{Prompt Language Has No Meaningful Effect; Translating the
+Text
+Does}\label{prompt-language-has-no-meaningful-effect-translating-the-text-does}
 
-Comparing French prompts on French text (FR→FR), English prompts on
-French text (EN→FR), and English prompts on English text (EN→EN) shows
-only marginal differences across conditions. Mean correlation was
-highest for FR→FR (0.615), followed closely by EN→FR (0.612) and EN→EN
-(0.589); mean absolute error followed a similar pattern (0.235, 0.237,
-and 0.228 respectively --- lower is better, so EN→EN was in fact
-marginally best on this metric). For 3-category F1, EN→FR led narrowly
-(0.640) over FR→FR (0.633) and EN→EN (0.606); 7-category F1 showed
-almost no variation across conditions (0.309--0.312). Across all three
-metrics, statistical analysis confirmed these differences are not
-significant: prompt language choice does not meaningfully affect
-performance. Analyzing English translations (EN→EN) performed slightly
-worse than analyzing the French original under either prompt language,
-consistent with some information loss during translation.
+Holding the text constant, prompt language made no detectable
+difference. French prompts on French text (FR→FR) edged out English
+prompts on the same text (EN→FR) on every metric --- mean correlation
+0.700 vs.~0.673, MAE 0.209 vs.~0.217, 3-category F1 0.669 vs.~0.646,
+7-category F1 0.364 vs.~0.347 --- but none of these paired differences
+was statistically significant (all \emph{p} \textgreater{} 0.12).
+Because a non-significant test cannot on its own establish the absence
+of an effect, we also ran two one-sided tests (TOST) against an
+equivalence bound of ±0.05 on each metric's scale. FR→FR and EN→FR were
+statistically equivalent on MAE (\emph{p} = 0.002), 7-category F1
+(\emph{p} = 0.034), and 3-category F1 (\emph{p} = 0.034). Correlation
+was the one metric where equivalence could not be established: the 90\%
+confidence interval of the difference, {[}−0.032, 0.085{]}, leaves room
+for a French-prompt advantage of up to 0.085, but not for an
+English-prompt advantage larger than 0.032.
+
+Translating the text into English, by contrast, had a measurable cost.
+Relative to FR→FR, scoring the English translation (EN→EN) lowered mean
+correlation by 0.053 (0.700 vs.~0.647, \emph{p} = 0.007) and 3-category
+F1 by 0.063 (0.669 vs.~0.606, \emph{p} \textless{} 0.001); the
+3-category loss also held against EN→FR (0.041, \emph{p} = 0.005).
+Differences in MAE and 7-category F1 across all three conditions
+remained within the ±0.05 equivalence bound. The translation penalty is
+therefore concentrated in how well models rank sentences by sentiment
+and identify their polarity, consistent with information lost in machine
+translation.
 
 \subsection{LLMs Are a Viable Alternative to Dictionary
 Methods}\label{llms-are-a-viable-alternative-to-dictionary-methods}
 
-General-purpose LLMs, used without fine-tuning, performed competitively
-with or better than dictionary-based methods. The best-performing models
-reached correlations above 0.80 and 3-category F1 scores up to 0.78:
-DeepSeek Chat led on correlation (r = 0.806 in FR→FR) and 3-category F1
-(0.780), while Claude 3.5 Haiku led on 7-category F1 (0.451 in EN→FR).
-Closed-weight models consistently outperformed open-weight ones, but
-parameter size predicted performance within the open-weight group, and
-even a smaller model (Llama 3.2 3B) reached a respectable correlation (r
-= 0.57).
+General-purpose LLMs, used without fine-tuning, correlated with human
+judgments well above the dictionary baselines. The best configurations
+exceeded r = 0.80: GPT-5.6 Luna led on correlation (r = 0.810 in FR→FR),
+Claude Haiku 4.5 on both 3-category F1 (0.778) and 7-category F1 (0.537,
+both FR→FR), and Gemini 3.5 Flash on MAE (0.156 in EN→FR). Nine of the
+33 model-condition combinations correlated with the ground truth more
+strongly than individual human coders agreed with the mean of the other
+two (mean leave-one-out r = 0.748, range 0.724--0.779).\footnote{This
+  comparison favors the models slightly, since the ground truth they are
+  compared against averages three coders rather than two.}
 
 \begin{figure}[H]
 
@@ -733,25 +767,42 @@ even a smaller model (Llama 3.2 3B) reached a respectable correlation (r
 
 \end{figure}%
 
-By comparison, the English Lexicoder Sentiment Dictionary reached a
-3-category F1 of 0.625 and a correlation of 0.531 --- competitive on
-classification but clearly behind the focused LLM average on correlation
-(mean r = 0.599), suggesting LLMs better capture sentiment intensity
-while dictionary methods remain a transparent, lower-cost baseline for
-basic polarity detection.
+Closed-weight models outperformed open-weight ones on average (mean r =
+0.768 vs.~0.638; 3-category F1 0.689 vs.~0.622), but the gap closed at
+the top of the open-weight range: Qwen3 235B-A22B reached r = 0.774 in
+FR→FR, above Gemini 3.5 Flash in the same condition, and GPT-OSS 120B
+and GPT-OSS 20B averaged r = 0.733 and 0.716 across conditions.
+Performance degraded steadily below that. Llama 3.1 8B remained usable
+(r = 0.575--0.612), Llama 3.2 3B was erratic (r = 0.476 in FR→FR but
+0.132 in EN→FR), and Llama 3.2 1B failed outright: it returned a usable
+score for only 58 to 74 sentences per condition, and on those its
+correlation with the ground truth ranged from −0.199 to 0.100.
+
+The English Lexicoder Sentiment Dictionary reached a correlation of
+0.548 and the French version 0.357, against a mean of 0.673 for the
+eleven LLMs; on 3-category F1 the dictionaries (0.588 and 0.557) also
+trailed the LLM mean (0.640), though the English dictionary outperformed
+Llama 3.2 3B and Qwen3 32B. On MAE, however, both dictionaries (0.203
+and 0.210) did slightly better than the LLM average (0.213). This
+reflects the dictionaries' compressed output rather than accuracy: their
+scores cluster near zero (SD = 0.065 for the English dictionary,
+vs.~0.286 for the ground truth and 0.38--0.47 for the LLMs), which keeps
+absolute errors small on a sample dominated by mildly positive sentences
+while discriminating poorly between them.
 
 \subsection{Classification
 Granularity}\label{classification-granularity}
 
 All models performed substantially better on 3-category than 7-category
-classification (best F1 of 0.780 vs.~0.451; see Figure 4, below). Models
-most reliably identified clear positive and negative sentiment
-(7-category F1 = 0.440 and 0.425, rising to 0.660 and 0.635 in the
-3-category scheme) and struggled most with extreme categories
-(very\_positive F1 = 0.087, very\_negative F1 = 0.230; neutral remained
-the hardest 3-category label at F1 = 0.232). Researchers needing
-fine-grained sentiment distinctions may find general-purpose LLMs
-insufficient without further adaptation; the broader
+classification (best F1 of 0.778 vs.~0.537; mean 0.640 vs.~0.349; see
+Figure 3, below). Models most reliably identified positive and negative
+sentiment (7-category F1 = 0.482 and 0.441, rising to 0.690 and 0.627 in
+the 3-category scheme) and struggled most with the extreme categories
+(very\_negative F1 = 0.256, very\_positive F1 = 0.124), which are nearly
+absent from the sample (two sentences and one sentence respectively).
+Neutral remained the hardest 3-category label (F1 = 0.258). Researchers
+needing fine-grained sentiment distinctions may find general-purpose
+LLMs insufficient without further adaptation; the broader
 positive/neutral/negative distinction is handled far more reliably.
 
 \clearpage
@@ -767,54 +818,60 @@ positive/neutral/negative distinction is handled far more reliably.
 
 \section{Discussion}\label{discussion}
 
-Our central finding is that prompt language choice does not meaningfully
-affect LLM sentiment analysis performance on French text --- a more
-nuanced picture than the English-prompting advantage reported elsewhere
+Our central finding is that prompt language does not meaningfully affect
+LLM sentiment analysis performance on French text --- a more nuanced
+picture than the English-prompting advantage reported elsewhere
 (\citeproc{ref-Jiang2020How}{Jiang et al., 2020};
 \citeproc{ref-Lin2022Few}{Lin et al., 2022};
 \citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023}).
-While English prompts on French text (EN→FR) frequently ranked
-marginally highest, its edge over French prompts on French text (FR→FR)
-was not statistically meaningful, and analyzing English translations
-(EN→EN) tended to perform slightly worse than working directly with the
-French original. This challenges the assumption that researchers must
-work in English to get good results: francophone researchers can use
-their native language with no analytical penalty, teams can choose
-prompt language by convenience rather than performance, and
-multi-national collaborations can let each team prompt in its preferred
-language while keeping results comparable --- without needing to
-standardize on English or budget for systematic prompt translation.
+If anything, the point estimates favored French prompts, and equivalence
+tests ruled out any English-prompt advantage larger than a few
+hundredths on every metric. What did cost performance was translating
+the text itself: scoring English translations lowered correlation and
+3-category F1 relative to working with the French original. This
+challenges the assumption that researchers must work in English to get
+good results: francophone researchers can use their native language with
+no analytical penalty, teams can choose prompt language by convenience
+rather than performance, and multi-national collaborations can let each
+team prompt in its preferred language while keeping results comparable
+--- without needing to standardize on English. The practical warning
+runs the other way: translating a corpus into English before analysis, a
+common step in computational work on non-English text, is not neutral.
 Theoretically, this suggests the ``English prompt advantage'' documented
 in prior work may be task-dependent, language-pair specific, or
 diminishing as models improve.
 
 This finding is only practically useful if LLMs are themselves viable
 for the task, and our results support that they are. Leading
-closed-source models achieved strong correlations (DeepSeek Chat, r =
-0.806) and 3-category F1 scores (0.78) without any task-specific
-fine-tuning, and open-source models --- particularly larger ones ---
-offered a credible, more accessible alternative, with even a smaller
-model like Llama 3.2 (3B) reaching respectable performance (r ≈ 0.53).
-Together, these two results mean social scientists can confidently
-deploy leading closed-source LLMs, and cautiously deploy larger
-open-source ones, for French sentiment analysis in whichever prompt
-language suits their workflow, without fine-tuning expertise or heavy
-computational resources (\citeproc{ref-Priban2024comparative}{Přibáň et
-al., 2024}).
+closed-weight models achieved strong correlations (GPT-5.6 Luna, r =
+0.810) and 3-category F1 scores (Claude Haiku 4.5, 0.778) without any
+task-specific fine-tuning, several configurations agreed with the ground
+truth more closely than our individual human coders did, and the largest
+open-weight models came close to them (Qwen3 235B-A22B, r = 0.774).
+Model size sets a floor, however. Models from roughly 8B parameters
+upward produced usable scores, a 3B model was unreliable across
+conditions, and a 1B model could not follow the instruction to return a
+number at all. Together, these results mean social scientists can
+confidently deploy leading closed-weight LLMs, and larger open-weight
+ones, for French sentiment analysis in whichever prompt language suits
+their workflow, without fine-tuning expertise or heavy computational
+resources (\citeproc{ref-Priban2024comparative}{Přibáň et al., 2024})
+--- provided they avoid the smallest models.
 
-Two secondary results qualify this picture. First, top-tier LLMs
-outperformed the English Lexicoder Sentiment Dictionary on correlation
-(mean LLM r = 0.599 vs.~LSD r = 0.531), but the dictionary's 3-category
-F1 (0.625) remained competitive with the LLM average (0.626) --- LLMs
-better capture sentiment intensity, while a transparent, fully
-interpretable dictionary method remains a reasonable choice for basic
-polarity detection. Second, all models performed markedly worse on
-fine-grained 7-category classification than on 3-category polarity (F1
-dropped by roughly 84\% on average), struggling most with extreme
-sentiment categories; researchers needing granular sentiment
+Two secondary results qualify this picture. First, LLMs clearly
+outperformed the Lexicoder Sentiment Dictionary on correlation (mean LLM
+r = 0.673 vs.~0.548 for the English dictionary) and, more modestly, on
+3-category F1 (0.640 vs.~0.588), but the dictionaries' near-zero output
+gave them a slightly lower MAE --- a reminder that MAE alone can reward
+a method that barely discriminates. A transparent, fully interpretable
+dictionary remains a defensible baseline for basic polarity detection,
+but not for measuring sentiment intensity. Second, all models performed
+markedly worse on fine-grained 7-category classification than on
+3-category polarity (mean F1 of 0.349 vs.~0.640), struggling most with
+extreme sentiment categories; researchers needing granular sentiment
 distinctions should not expect general-purpose LLMs to deliver this out
-of the box, though Claude 3.5 Haiku's relatively stronger 7-category
-performance suggests some models handle nuance better than others.
+of the box, though Claude Haiku 4.5's stronger 7-category performance
+(0.537) suggests some models handle nuance better than others.
 
 \section{Limitations}\label{limitations}
 
@@ -1140,41 +1197,44 @@ Model & negative & neutral & positive & weighted\_f1 \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-deepseekchat\_fr\_fr & 0.768 & 0.35 & 0.828 & 0.78 \\
-deepseekchat\_en\_fr & 0.772 & 0.364 & 0.822 & 0.778 \\
-claude35\_en\_fr & 0.748 & 0.408 & 0.804 & 0.762 \\
-mistral\_en\_en & 0.659 & 0.414 & 0.789 & 0.723 \\
-claude35\_fr\_fr & 0.742 & 0.353 & 0.749 & 0.723 \\
-deepseekchat\_en\_en & 0.714 & 0.444 & 0.735 & 0.711 \\
-mistral\_en\_fr & 0.612 & 0.273 & 0.805 & 0.71 \\
-gemma29b\_fr\_fr & 0.685 & 0.262 & 0.756 & 0.703 \\
-gemma29b\_en\_fr & 0.707 & 0.301 & 0.738 & 0.702 \\
-llama323b\_fr\_fr & 0.637 & 0.105 & 0.756 & 0.678 \\
-llama323b\_en\_en & 0.578 & 0.235 & 0.758 & 0.667 \\
-mistral\_fr\_fr & 0.615 & 0.111 & 0.742 & 0.662 \\
-claude35\_en\_en & 0.707 & 0.222 & 0.642 & 0.639 \\
-gemma29b\_en\_en & 0.667 & 0.247 & 0.655 & 0.635 \\
-gemini20\_en\_fr & 0.733 & 0.226 & 0.62 & 0.634 \\
-llama3370b\_fr\_fr & 0.691 & 0.211 & 0.613 & 0.615 \\
-gemini20\_fr\_fr & 0.707 & 0.214 & 0.601 & 0.613 \\
-llama3370b\_en\_en & 0.637 & 0.195 & 0.607 & 0.593 \\
-llama323b\_en\_fr & 0.308 & 0.308 & 0.766 & 0.587 \\
-gpt4o\_en\_fr & 0.713 & 0.211 & 0.553 & 0.586 \\
-llama3370b\_en\_fr & 0.657 & 0.202 & 0.584 & 0.586 \\
-lsd\_en & 0.641 & 0.192 & 0.594 & 0.585 \\
-gpt4o\_fr\_fr & 0.709 & 0.203 & 0.532 & 0.571 \\
-gpt4o\_en\_en & 0.703 & 0.19 & 0.507 & 0.553 \\
-lsd\_fr & 0.444 & 0.245 & 0.594 & 0.524 \\
-llama321b\_en\_en & 0.459 & 0 & 0.561 & 0.494 \\
-deepseekr1\_en\_en & 0 & 0.111 & 0.755 & 0.467 \\
-qwq32b\_en\_en & 0 & 0 & 0.76 & 0.464 \\
-qwq32b\_fr\_fr & 0 & 0 & 0.758 & 0.462 \\
-qwq32b\_en\_fr & 0 & 0 & 0.757 & 0.462 \\
-deepseekr1\_en\_fr & 0 & 0.261 & 0.73 & 0.461 \\
-deepseekr1\_fr\_fr & 0 & 0.111 & 0.726 & 0.45 \\
-gemini20\_en\_en & 0.508 & 0.147 & 0.43 & 0.439 \\
-llama321b\_en\_fr & 0.358 & 0 & 0.478 & 0.41 \\
-llama321b\_fr\_fr & 0.352 & 0.067 & 0.381 & 0.352 \\
+claudehaiku45\_fr\_fr & 0.762 & 0.375 & 0.832 & 0.778 \\
+gpt56luna\_fr\_fr & 0.748 & 0.385 & 0.8 & 0.755 \\
+gpt56luna\_en\_fr & 0.73 & 0.364 & 0.776 & 0.733 \\
+claudehaiku45\_en\_fr & 0.69 & 0.273 & 0.778 & 0.715 \\
+deepseekv32\_fr\_fr & 0.672 & 0.216 & 0.765 & 0.697 \\
+gpt56luna\_en\_en & 0.688 & 0.367 & 0.736 & 0.695 \\
+qwen3235b\_fr\_fr & 0.752 & 0.243 & 0.716 & 0.695 \\
+deepseekv32\_en\_fr & 0.696 & 0.226 & 0.737 & 0.688 \\
+gptoss120b\_fr\_fr & 0.721 & 0.314 & 0.712 & 0.687 \\
+llama4scout\_fr\_fr & 0.643 & 0.291 & 0.747 & 0.682 \\
+qwen3235b\_en\_fr & 0.719 & 0.254 & 0.706 & 0.679 \\
+llama4scout\_en\_fr & 0.667 & 0.258 & 0.732 & 0.678 \\
+gptoss120b\_en\_fr & 0.717 & 0.324 & 0.689 & 0.672 \\
+claudehaiku45\_en\_en & 0.678 & 0.256 & 0.715 & 0.671 \\
+gptoss20b\_en\_fr & 0.7 & 0.268 & 0.677 & 0.655 \\
+gptoss20b\_fr\_fr & 0.691 & 0.258 & 0.68 & 0.654 \\
+llama4scout\_en\_en & 0.647 & 0.246 & 0.686 & 0.643 \\
+gemini35\_fr\_fr & 0.655 & 0.264 & 0.673 & 0.639 \\
+deepseekv32\_en\_en & 0.672 & 0.258 & 0.657 & 0.633 \\
+llama318b\_en\_fr & 0.652 & 0.281 & 0.646 & 0.623 \\
+llama323b\_fr\_fr & 0.465 & 0.195 & 0.747 & 0.62 \\
+llama318b\_en\_en & 0.627 & 0.265 & 0.653 & 0.618 \\
+gemini35\_en\_fr & 0.642 & 0.242 & 0.646 & 0.616 \\
+llama318b\_fr\_fr & 0.615 & 0.174 & 0.643 & 0.604 \\
+gemini35\_en\_en & 0.667 & 0.233 & 0.613 & 0.603 \\
+gptoss20b\_en\_en & 0.614 & 0.234 & 0.635 & 0.601 \\
+qwen3235b\_en\_en & 0.698 & 0.227 & 0.591 & 0.6 \\
+lsd\_en & 0.574 & 0.231 & 0.636 & 0.588 \\
+gptoss120b\_en\_en & 0.678 & 0.218 & 0.552 & 0.569 \\
+qwen332b\_en\_fr & 0.554 & 0.165 & 0.621 & 0.568 \\
+lsd\_fr & 0.474 & 0.289 & 0.631 & 0.557 \\
+qwen332b\_fr\_fr & 0.515 & 0.177 & 0.611 & 0.55 \\
+llama323b\_en\_en & 0.167 & 0.261 & 0.73 & 0.52 \\
+qwen332b\_en\_en & 0.559 & 0.19 & 0.52 & 0.509 \\
+llama323b\_en\_fr & 0 & 0.222 & 0.757 & 0.481 \\
+llama321b\_fr\_fr & 0 & 0.138 & 0.648 & 0.443 \\
+llama321b\_en\_fr & 0 & 0 & 0.568 & 0.338 \\
+llama321b\_en\_en & 0 & 0.15 & 0.457 & 0.286 \\
 \end{longtable}
 
 \end{table}
