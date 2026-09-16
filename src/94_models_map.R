@@ -21,6 +21,19 @@
 # benchmark that is a reproducibility hazard, so every open-weight model below
 # is PINNED to a named provider endpoint via `model_provider_pin`, preferring
 # the highest available precision. Report these pins in the paper's Methods.
+#
+# FINAL LINEUP (fixed 2026-09-16): the twelve models below, all scored in the
+# September 2026 rerun. Two decisions to carry into the manuscript:
+#   - llama321b is KEPT with a reduced n, on purpose: small models (3B, 8B) can
+#     do the task, but at 1B the model is too small to follow the instruction
+#     at all, and the paper uses it to show that lower bound. It returns a
+#     usable number on ~4% of calls and ends up scored on only 58-74 of 200
+#     sentences per condition;
+#     its only OpenRouter provider leaves no alternative endpoint. Its metrics
+#     are reported with their n and are not comparable to the full-n models,
+#     since the sentences it did score are not a random subset.
+#   - DeepSeek V4 Flash, in the August lineup, is DROPPED. It was never scored
+#     after the OpenRouter migration; DeepSeek remains represented by V3.2.
 ###############################################################################
 
 #==============================================================================
@@ -149,7 +162,76 @@ closed_models <- c(
 )
 
 #==============================================================================
-# 6. HELPER FUNCTIONS
+# 6. DISPLAY NAMES AND PROVIDERS
+#==============================================================================
+
+# Kept here rather than in each plotting script. Four scripts previously carried
+# their own copy of this lookup, hard-coded against the Fireworks and Groq model
+# ids; the move to OpenRouter silently broke all four at once, since every
+# lookup fell through to "Other". One definition, one place to update.
+
+model_display_name <- c(
+  "llama321b"     = "Llama 3.2 1B",
+  "llama323b"     = "Llama 3.2 3B",
+  "llama318b"     = "Llama 3.1 8B",
+  "gptoss20b"     = "GPT-OSS 20B",
+  "qwen332b"      = "Qwen3 32B",
+  "llama4scout"   = "Llama 4 Scout",
+  "gptoss120b"    = "GPT-OSS 120B",
+  "qwen3235b"     = "Qwen3 235B-A22B",
+  "deepseekv32"   = "DeepSeek V3.2",
+  "claudehaiku45" = "Claude Haiku 4.5",
+  "gemini35"      = "Gemini 3.5 Flash",
+  "gpt56luna"     = "GPT-5.6 Luna"
+)
+
+model_provider <- c(
+  "llama321b" = "Meta", "llama323b" = "Meta", "llama318b" = "Meta",
+  "llama4scout" = "Meta",
+  "gptoss20b" = "OpenAI", "gptoss120b" = "OpenAI", "gpt56luna" = "OpenAI",
+  "qwen332b" = "Alibaba", "qwen3235b" = "Alibaba",
+  "deepseekv32" = "DeepSeek",
+  "claudehaiku45" = "Anthropic",
+  "gemini35" = "Google"
+)
+
+#' Readable label for a result column such as "qwen3235b_en_fr"
+#'
+#' Dictionary columns are returned unchanged. Unknown prefixes fall back to the
+#' column name rather than to a silent "Other", so a broken lookup is visible
+#' on the plot instead of collapsing several models into one label.
+#'
+#' @param model_name A result column name or bare model prefix
+#' @param with_condition Append the language condition, e.g. "(FR->FR)"
+#' @return A character label
+get_model_display_name <- function(model_name, with_condition = TRUE) {
+  if (grepl("^lsd_", model_name)) return(model_name)
+
+  prefix <- sub("_[a-z]{2}_[a-z]{2}$", "", model_name)
+  label <- if (prefix %in% names(model_display_name)) {
+    unname(model_display_name[prefix])
+  } else {
+    prefix
+  }
+
+  if (!with_condition) return(label)
+
+  cond <- regmatches(model_name, regexpr("_[a-z]{2}_[a-z]{2}$", model_name))
+  if (length(cond) == 0) return(label)
+  cond <- switch(sub("^_", "", cond),
+                 "fr_fr" = "FR\u2192FR", "en_fr" = "EN\u2192FR",
+                 "en_en" = "EN\u2192EN", cond)
+  paste0(label, " (", cond, ")")
+}
+
+#' Manufacturer for a result column
+get_model_provider <- function(model_name) {
+  prefix <- sub("_[a-z]{2}_[a-z]{2}$", "", model_name)
+  if (prefix %in% names(model_provider)) unname(model_provider[prefix]) else "Other"
+}
+
+#==============================================================================
+# 7. HELPER FUNCTIONS
 #==============================================================================
 
 #' Determine whether a result column belongs to an open-weight model

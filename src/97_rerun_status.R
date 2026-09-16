@@ -61,11 +61,51 @@ n_instances <- length(pids)
 alive <- n_instances > 0
 idle_s <- as.numeric(difftime(Sys.time(), last, units = "secs"))
 
-# Duplicate work is the observable symptom, and it survives in the log even
-# after the extra processes are gone.
+# Duplicate keys in the log have two very different causes, and conflating them
+# makes the alarm useless:
+#
+#   - CONCURRENT RUNS: two processes scoring the same sentence at the same
+#     moment. This is the 9 September failure and it corrupts data.
+#   - DELIBERATE RE-SCORING: a model cleared and scored again after its
+#     configuration changed (qwen332b moved from DeepInfra to SiliconFlow on
+#     10 September). The old calls are superseded, not corrupted.
+#
+# They are told apart by the gap between occurrences: concurrent processes
+# produce duplicates seconds apart, a re-score minutes or hours apart.
+CONCURRENT_GAP_S <- 120
+
 dup_keys <- paste(log_df$model_prefix, log_df$condition,
                   log_df$item, log_df$run, log_df$attempt)
-n_dupes <- nrow(log_df) - length(unique(dup_keys))
+dup_names <- names(which(table(dup_keys) > 1))
+
+n_concurrent <- 0L
+rescored <- character(0)
+if (length(dup_names) > 0) {
+  for (k in dup_names) {
+    times <- sort(ts[dup_keys == k])
+    gaps <- as.numeric(diff(times), units = "secs")
+    if (any(gaps < CONCURRENT_GAP_S)) {
+      n_concurrent <- n_concurrent + sum(gaps < CONCURRENT_GAP_S)
+    } else {
+      rescored <- c(rescored, sub(" .*", "", k))
+    }
+  }
+}
+rescored <- sort(unique(rescored))
+
+# Success rates are reported over RETAINED calls only. Deduplicating on the
+# exact key is not enough: two scoring waves of the same sentence use different
+# numbers of retries, so the extra failed attempts of a superseded wave have no
+# counterpart in the new one and would survive deduplication, dragging the rate
+# down. Instead, group by (model, condition, item, run) and keep the attempts
+# belonging to the most recent burst — everything within a few minutes of that
+# triple's last call.
+WAVE_WINDOW_S <- 300
+
+triple <- paste(log_df$model_prefix, log_df$condition, log_df$item, log_df$run)
+last_of_triple <- tapply(ts, triple, max)
+retained <- log_df[
+  as.numeric(difftime(last_of_triple[triple], ts, units = "secs")) <= WAVE_WINDOW_S, ]
 
 cat("===============================================================\n")
 cat(" RERUN STATUS  —", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "\n")
@@ -81,9 +121,13 @@ if (n_instances > 1) {
 } else if (alive) {
   cat(sprintf("  instances      1  (PID %s)\n", pids[1]))
 }
-if (n_dupes > 0) {
-  cat(sprintf("  !! %s duplicate calls in the log (%.0f%%) — concurrent runs happened.\n",
-              format(n_dupes, big.mark = ","), 100 * n_dupes / nrow(log_df)))
+if (n_concurrent > 0) {
+  cat(sprintf("  !! %s calls made concurrently on the same sentence — data may be corrupt.\n",
+              format(n_concurrent, big.mark = ",")))
+}
+if (length(rescored) > 0) {
+  cat(sprintf("  re-scored     %s  (earlier wave superseded, not an error)\n",
+              paste(rescored, collapse = ", ")))
 }
 cat(sprintf("  started        %s  (%.1f h ago)\n",
     format(began, "%H:%M:%S"), mins / 60))
@@ -113,7 +157,7 @@ for (m in ordered) {
     cat(sprintf("  %-14s %-26s %6s %7s %8s\n", m, bar(0), "-", "-", "-"))
     next
   }
-  sub   <- log_df[log_df$model_prefix == m, ]
+  sub   <- retained[retained$model_prefix == m, ]
   done  <- done_by_model[[m]]
   okn   <- sum(sub$valid_response == "TRUE", na.rm = TRUE)
   ratio <- if (okn > 0) sprintf("%.2f", nrow(sub) / okn) else "none ok"

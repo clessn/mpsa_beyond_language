@@ -13,56 +13,51 @@ library(dplyr)      # For data manipulation
 #################################################################
 # LOAD DATA AND PREPARE FOR ANALYSIS
 #################################################################
-# Load the cleaned dataframe
-df <- readRDS("data/clean/df.rds") %>% 
-  # Remove categorical columns and language-specific columns we won't use
-  select(-ends_with("cat")) %>%
-  select(-ends_with("_fr_fr")) %>%
-  select(-ends_with("_en_en")) %>%
-  # Keep only cross-lingual (EN→FR) models and ground truth
-  select(ends_with("_en_fr") | ends_with("truth")) %>%
-  # Exclude closed-weight models, and DeepSeek V3.2 (dual reasoning/non-reasoning
-  # mode, direct successor to DeepSeek R1 Basic, excluded from this batch for the
-  # same reason: inconsistent output formatting when the model reasons before answering)
-  select(-deepseekv32_en_fr, -claudehaiku45_en_fr, -gemini35_en_fr, -deepseekv4flash_en_fr, -gpt56luna_en_fr) %>%
-  # Rename models to more readable format with parameter size (total parameters
-  # for MoE architectures, consistent with the previous batch's convention)
-  rename(
-    qwen3_32b = qwen332b_en_fr,
-    qwen3_235b = qwen3235b_en_fr,
-    llama4_109b = llama4scout_en_fr,
-    gptoss_20b = gptoss20b_en_fr,
-  ) %>%
-  # Reshape data to long format for regression analysis
+source("src/94_models_map.R")  # model_params_total, get_model_display_name()
+
+# All open-weight models in the final lineup, in the cross-lingual (EN->FR)
+# condition. The lineup comes from the model map rather than a hand-kept list:
+# this script used to name four models explicitly and broke when the lineup
+# changed. Closed-weight models are excluded because their sizes are undisclosed.
+#
+# Size is TOTAL parameters, the convention of the previous batch. For the
+# mixture-of-experts models active parameters would be the better regressor,
+# but three active counts are still unverified (see 94_models_map.R).
+open_prefixes <- names(model_params_total)
+
+df <- readRDS("data/clean/df.rds") %>%
+  select(ground_truth, all_of(paste0(open_prefixes, "_en_fr"))) %>%
   pivot_longer(
     cols = -ground_truth,
-    names_to = c("model_name", "parameters"),
-    names_pattern = "(.+)_([^_]+)$",
+    names_to = "model_prefix",
+    names_pattern = "(.+)_en_fr$",
     values_to = "result"
   ) %>%
-  # Calculate absolute error for each prediction
+  # llama321b scored only part of the sample; its unscored sentences drop out
+  # here, so its mean MAE rests on a smaller, non-random n.
+  filter(!is.na(result)) %>%
   mutate(
-    mae = abs(result - ground_truth)
-  ) %>%
-  # Extract numeric parameter size in billions
-  mutate(
-    param_numeric = as.numeric(str_extract(parameters, "[0-9\\.]+"))
+    mae = abs(result - ground_truth),
+    param_numeric = unname(model_params_total[model_prefix]),
+    model_name = sapply(model_prefix, get_model_display_name, with_condition = FALSE)
   )
 
 #################################################################
 # REGRESSION ANALYSIS
 #################################################################
-# Run linear regression model to test relationship between parameter size and MAE
-model <- lm(mae ~ param_numeric, data = df)
+# Sentence-level regression of absolute error on log10 model size. Sizes span
+# 1B to 671B, so a linear term would be driven almost entirely by DeepSeek V3.2.
+model <- lm(mae ~ log10(param_numeric), data = df)
 
 # Create summary for display and reporting
 regression_summary <- summary(model)
 
 # Calculate average MAE by model and parameter size for visualization
 model_params_summary <- df %>%
-  group_by(model_name, parameters, param_numeric) %>%
+  group_by(model_name, param_numeric) %>%
   summarise(
     mean_mae = mean(mae, na.rm = TRUE),
+    n_obs = n(),
     .groups = "drop"
   )
 
@@ -77,89 +72,54 @@ params_plot <- ggplot(model_params_summary, aes(x = param_numeric, y = mean_mae)
            ymin = -Inf, ymax = Inf, 
            fill = "white", alpha = 1.0) +
   
-  # Add subtle grid lines
-  geom_hline(yintercept = seq(0.2, 0.4, by = 0.05), color = "gray90", linewidth = 0.4) +
-  geom_vline(xintercept = seq(0, 250, by = 50), color = "gray90", linewidth = 0.4) +
-  
   # Add regression line with confidence interval
   geom_smooth(method = "lm", se = TRUE, 
               color = "black", fill = "gray80", 
               linewidth = 0.8, alpha = 0.2) +
   
-  # Add scatter points with professional appearance
-  geom_point(aes(shape = model_name), size = 5, 
-             color = "black", fill = "black", stroke = 0.8) +
+  geom_point(size = 3.5, color = "black") +
   
-  # Use different shapes for models
-  scale_shape_manual(values = c(
-    "qwen3" = 21,   # Circle for Qwen3 (32B and 235B-A22B)
-    "llama4" = 22,  # Square for Llama 4 Scout
-    "gptoss" = 23   # Diamond for GPT-OSS
-  )) +
-  
-  # Add small parameter size labels below points
-  geom_text(aes(label = paste0(parameters), y = mean_mae + 0.01), 
-            color = "black", size = 3, vjust = -0.5) +
-  
-  # Add model names with professional styling
+  # Model name, with n where the model did not score the full sample
   geom_text(
-    data = model_params_summary,
-    aes(
-      x = case_when(
-        param_numeric < 30 ~ param_numeric + 6,
-        TRUE ~ param_numeric - 6
-      ),
-      y = case_when(
-        param_numeric < 30 ~ mean_mae - 0.02,
-        param_numeric > 200 ~ mean_mae - 0.02,
-        TRUE ~ mean_mae + 0.03
-      ),
-      label = model_name
-    ),
-    fontface = "italic", size = 3.5,
-    hjust = case_when(
-      model_params_summary$param_numeric < 30 ~ 0,
-      model_params_summary$param_numeric > 200 ~ 1,
-      TRUE ~ 0.5
-    )
+    aes(label = ifelse(n_obs < max(n_obs),
+                       paste0(model_name, " (n = ", n_obs, ")"),
+                       model_name)),
+    vjust = -1.1, fontface = "italic", size = 3.2
   ) +
   
-  # Add equation annotation with academic styling
   annotate(
     "text",
-    x = 125, y = 0.36,
+    x = 30, y = max(model_params_summary$mean_mae) * 1.08,
     label = sprintf(
-      "MAE = %.3f - %.4f × Parameters\nR² = %.3f, p < 0.001",
-      coef(model)[1], 
+      "MAE = %.3f %s %.3f \u00d7 log10(Parameters)\nR\u00b2 = %.3f, p %s (sentence level)",
+      coef(model)[1],
+      ifelse(coef(model)[2] < 0, "-", "+"),
       abs(coef(model)[2]),
-      regression_summary$r.squared
+      regression_summary$r.squared,
+      ifelse(coef(regression_summary)[2, 4] < 0.001, "< 0.001",
+             sprintf("= %.3f", coef(regression_summary)[2, 4]))
     ),
     hjust = 0.5,
     size = 3.5,
-    color = "black",
-    fontface = "plain"
+    color = "black"
   ) +
   
-  # Professional axis scales
   scale_y_continuous(
-    limits = c(0.2, 0.4),
-    breaks = seq(0.2, 0.4, by = 0.05),
     labels = function(x) sprintf("%.2f", x),
-    expand = c(0.01, 0.01)
+    expand = expansion(mult = c(0.05, 0.15))
   ) +
   
-  scale_x_continuous(
-    limits = c(0, 250),
-    breaks = c(20, 32, 109, 235),
+  scale_x_log10(
+    breaks = c(1, 3, 10, 30, 100, 300, 1000),
     minor_breaks = NULL,
-    expand = c(0.01, 0.01)
+    expand = expansion(mult = 0.08)
   ) +
   
   # Academic labels and titles 
   labs(
     title = "Parameter Size and Performance",
     subtitle = "Relationship between model size and mean absolute error",
-    x = "Model Size (billions of parameters)",
+    x = "Model Size (billions of parameters, log scale)",
     y = "Mean Absolute Error",
     caption = "Note: Analysis based on cross-lingual (EN->FR) sentiment analysis task."
   ) +

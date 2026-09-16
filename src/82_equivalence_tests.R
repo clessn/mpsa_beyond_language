@@ -48,10 +48,10 @@ model_cols <- names(df)[
   grepl("_(fr_fr|en_fr|en_en)$", names(df)) & !grepl("_cat$|_bin$", names(df))
 ]
 
-# Dictionaries have no prompt language, and reasoning-mode models with unstable
-# output formatting are excluded from the condition analysis, consistent with
-# src/65_averages_summary.R. Adjust this pattern if the exclusion list changes.
-EXCLUDE <- "lsd|qwq|deepseekr1"
+# Dictionaries have no prompt language. Llama 3.2 1B scored a different, partial
+# subset of sentences in each condition, so its paired differences compare unlike
+# samples; it is excluded, consistent with src/81_performance_by_condition.R.
+EXCLUDE <- "lsd|llama321b"
 model_cols <- model_cols[!grepl(EXCLUDE, model_cols)]
 
 perf <- data.frame(
@@ -68,6 +68,13 @@ perf$mae <- sapply(perf$col, function(m) {
   ok <- !is.na(df[[m]]) & !is.na(df$ground_truth)
   if (sum(ok) < 5) NA_real_ else mean(abs(df[[m]][ok] - df$ground_truth[ok]))
 })
+
+# Weighted F1 comes from the classification scripts (51, 52), which already
+# drop unscored sentences.
+f1_7 <- readRDS("results/analysis/f1_scores_7.rds")
+f1_3 <- readRDS("results/analysis/f1_scores_3.rds")
+perf$f1_7 <- f1_7$weighted_f1[match(perf$col, f1_7$model)]
+perf$f1_3 <- f1_3$weighted_f1[match(perf$col, f1_3$model)]
 
 cat(sprintf("Models in the condition analysis: %d, across %d conditions\n\n",
             length(unique(perf$base_model)), length(unique(perf$condition))))
@@ -112,7 +119,7 @@ COMPARISONS <- list(
 )
 
 results <- data.frame()
-for (metric in c("correlation", "mae")) {
+for (metric in c("correlation", "mae", "f1_7", "f1_3")) {
   wide <- perf %>%
     select(base_model, condition, all_of(metric)) %>%
     pivot_wider(names_from = condition, values_from = all_of(metric))

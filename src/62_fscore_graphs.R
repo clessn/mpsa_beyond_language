@@ -24,52 +24,10 @@ df_3 <- readRDS("results/analysis/f1_scores_3.rds")
 # MODEL DISPLAY NAME PROCESSING
 #################################################################
 # Function to get human-friendly model display names from the technical model IDs
-get_model_display_name <- function(model_name) {
-  # Special handling for dictionary-based models
-  if (grepl("^lsd_", model_name)) {
-    return(model_name)  # Return dictionary models as is
-  }
-  
-  # Extract the base prefix from the model name
-  prefix <- sub("_[a-z]{2}_[a-z]{2}$", "", model_name)
-  
-  # Look up the full model name from the mapping
-  if (prefix %in% names(model_mapping)) {
-    full_name <- model_mapping[prefix]
-    
-    # Get manufacturer based on the full model name
-    manufacturer <- case_when(
-      full_name %in% meta_models ~ "Meta",
-      full_name %in% alibaba_models ~ "Alibaba",
-      full_name %in% openai_oss_models ~ "OpenAI",
-      full_name %in% anthropic_models ~ "Anthropic",
-      full_name %in% google_models ~ "Google",
-      full_name %in% deepseek_models ~ "DeepSeek",
-      full_name %in% openai_models ~ "OpenAI",
-      TRUE ~ "Other"
-    )
-
-    # Get display name based on the full model name
-    display_name <- case_when(
-      full_name == "accounts/fireworks/models/qwen3-235b-a22b" ~ "Qwen3 235B-A22B",
-      full_name == "accounts/fireworks/models/deepseek-v3p2" ~ "DeepSeek V3.2",
-      full_name == "accounts/fireworks/models/deepseek-v4-flash" ~ "DeepSeek V4 Flash",
-      full_name == "meta-llama/llama-4-scout-17b-16e-instruct" ~ "Llama 4 Scout",
-      full_name == "qwen/qwen3-32b" ~ "Qwen3 32B",
-      full_name == "openai/gpt-oss-20b" ~ "GPT-OSS 20B",
-      full_name == "claude-haiku-4-5-20251001" ~ "Claude Haiku 4.5",
-      full_name == "gemini-3.5-flash" ~ "Gemini 3.5 Flash",
-      full_name == "gpt-5.6-luna" ~ "GPT-5.6 Luna",
-      TRUE ~ full_name
-    )
-    
-    # Create a display name that includes the manufacturer
-    return(paste0(manufacturer, ": ", display_name))
-  }
-  
-  # Return original name if no mapping found
-  return(model_name)
-}
+# Display names come from src/94_models_map.R, sourced above. This script used
+# to carry its own copy of the lookup, hard-coded against the Fireworks and Groq
+# model ids; four scripts held four copies and the move to OpenRouter broke them
+# all silently. Removed 2026-09-11.
 
 #################################################################
 # DATA PREPARATION FOR VISUALIZATION
@@ -124,7 +82,7 @@ process_dataframe <- function(df, category_label) {
       ),
       
       # Get display name for the model using the mapping function
-      display_name = sapply(model, get_model_display_name),
+      display_name = sapply(model, get_model_display_name, with_condition = FALSE),
       
       # Create labels that include both model name and prompting mechanism
       model_label = case_when(

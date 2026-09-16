@@ -83,6 +83,9 @@ df <- df_raw_tmp %>%
   mutate(across(
     ends_with(c("_en", "_fr", "_mean", "_truth")) & !matches("sentences_en"),
     ~ case_when(
+      # Must come first: the catch-all below would otherwise file every
+      # unscored sentence as "very_positive" and inflate that class.
+      is.na(.) ~ NA_character_,
       . < -0.66 ~ "very_negative",
       . < -0.33 ~ "negative",
       . < 0 ~ "somewhat_negative",
