@@ -7,6 +7,7 @@
 
 # Load required libraries
 library(dplyr)
+source("src/94_models_map.R")  # get_model_display_name()
 
 #################################################################
 # DATA LOADING
@@ -22,6 +23,11 @@ df_7_rounded <- df_7 %>%
 df_3_rounded <- df_3 %>%
   mutate(across(where(is.numeric), ~round(., 3)))
 
+# Readable row labels, e.g. "GPT-5.6 Luna (FR→FR)" and "Lexicoder (EN)",
+# instead of the raw result column names
+df_7_rounded$label <- sapply(df_7_rounded$model, get_model_display_name)
+df_3_rounded$label <- sapply(df_3_rounded$model, get_model_display_name)
+
 #################################################################
 # 7-CATEGORY LATEX TABLE GENERATION
 #################################################################
@@ -34,8 +40,8 @@ latex_table_7 <- paste0(latex_table_7, "\\hline\n")
 # Add each model's results as a row in the table
 for(i in 1:nrow(df_7_rounded)) {
   row_7 <- df_7_rounded[i,]
-  # Replace underscores with hyphens for LaTeX and escape special characters
-  model_name <- gsub("_", "-", row_7$model)
+  # Escape special LaTeX characters
+  model_name <- gsub("_", "\\\\_", row_7$label)
   # Also escape any other potential special LaTeX characters
   model_name <- gsub("&", "\\\\&", model_name)
   model_name <- gsub("%", "\\\\%", model_name)
@@ -70,7 +76,7 @@ markdown_table_7 <- paste0(markdown_table_7, "|-------|--------------|----------
 # Add each model's results as a row in the table
 for(i in 1:nrow(df_7_rounded)) {
   row_7 <- df_7_rounded[i,]
-  markdown_table_7 <- paste0(markdown_table_7, "| ", row_7$model, " | ", 
+  markdown_table_7 <- paste0(markdown_table_7, "| ", row_7$label, " | ", 
                         row_7$very_negative, " | ", 
                         row_7$negative, " | ", 
                         row_7$somewhat_negative, " | ", 
@@ -94,7 +100,7 @@ markdown_table_3 <- paste0(markdown_table_3, "|-------|----------|---------|----
 # Add each model's results as a row in the table
 for(i in 1:nrow(df_3_rounded)) {
   row_3 <- df_3_rounded[i,]
-  markdown_table_3 <- paste0(markdown_table_3, "| ", row_3$model, " | ", 
+  markdown_table_3 <- paste0(markdown_table_3, "| ", row_3$label, " | ", 
                         row_3$negative, " | ", 
                         row_3$neutral, " | ", 
                         row_3$positive, " | ", 
@@ -114,7 +120,8 @@ df_3_renamed <- df_3_rounded %>%
     neutral_3cat = neutral,
     positive_3cat = positive,
     weighted_f1_3cat = weighted_f1
-  )
+  ) %>%
+  select(-label)
 
 # Now, join the datasets by model
 merged_df <- df_7_rounded %>%
@@ -130,7 +137,7 @@ markdown_table_combined <- paste0(markdown_table_combined,
 # Add rows with all metrics for each model
 for(i in 1:nrow(merged_df)) {
   row <- merged_df[i,]
-  markdown_table_combined <- paste0(markdown_table_combined, "| ", row$model, " | ", 
+  markdown_table_combined <- paste0(markdown_table_combined, "| ", row$label, " | ", 
                         row$very_negative, " | ", 
                         row$negative, " | ", 
                         row$somewhat_negative, " | ", 

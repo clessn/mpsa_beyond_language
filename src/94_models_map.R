@@ -197,7 +197,7 @@ model_provider <- c(
 
 #' Readable label for a result column such as "qwen3235b_en_fr"
 #'
-#' Dictionary columns are returned unchanged. Unknown prefixes fall back to the
+#' Dictionary columns become "Lexicoder (EN)" / "(FR)". Unknown prefixes fall back to the
 #' column name rather than to a silent "Other", so a broken lookup is visible
 #' on the plot instead of collapsing several models into one label.
 #'
@@ -205,7 +205,10 @@ model_provider <- c(
 #' @param with_condition Append the language condition, e.g. "(FR->FR)"
 #' @return A character label
 get_model_display_name <- function(model_name, with_condition = TRUE) {
-  if (grepl("^lsd_", model_name)) return(model_name)
+  # Lexicoder Sentiment Dictionary baselines: "lsd_en" -> "Lexicoder (EN)"
+  if (grepl("^lsd_", model_name)) {
+    return(paste0("Lexicoder (", toupper(sub("^lsd_", "", model_name)), ")"))
+  }
 
   prefix <- sub("_[a-z]{2}_[a-z]{2}$", "", model_name)
   label <- if (prefix %in% names(model_display_name)) {

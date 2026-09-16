@@ -68,7 +68,7 @@ df <- df_raw %>%
     
     # Create labels that include both model name and prompting mechanism
     model_label = case_when(
-      grepl("^lsd_", model) ~ model,  # Keep original lsd_ model names for labels
+      grepl("^lsd_", model) ~ display_name,  # "Lexicoder (EN)", from 94_models_map.R
       TRUE ~ paste0(display_name, " [", prompt_mechanism, "]",
                     ifelse(n_obs < max(n_obs), paste0(" (n = ", n_obs, ")"), ""))
     )
