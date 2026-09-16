@@ -68,7 +68,9 @@ for (i in 1:nrow(cost_summary)) {
     ifelse(is.na(row$provider), "--", row$provider), " | ",
     row$weights, " | ",
     fmt_rat(row$calls_per_valid), " | ",
-    fmt_num(row$input_tokens), " | ",
+    # Uncached + cached: some providers report cached prompt tokens separately,
+    # so input_tokens alone understates the prompt for those models
+    fmt_num(row$input_tokens + row$cached_input_tokens), " | ",
     fmt_num(row$output_tokens), " | ",
     fmt_usd(row$cost_per_1k_sentences), " |\n"
   )

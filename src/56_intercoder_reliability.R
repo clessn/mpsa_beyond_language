@@ -94,6 +94,41 @@ cat(sprintf("  mean range (max - min)          %.3f   on a -1 to 1 scale\n",
 cat(sprintf("  all three agree on the SIGN     %.0f%% of sentences\n\n", 100 * sign_agreement))
 
 #################################################################
+# 3b. KRIPPENDORFF'S ALPHA AND RELIABILITY OF THE AVERAGED GROUND TRUTH
+#################################################################
+# Interval-level alpha, computed directly (no extra package) from the
+# coincidence formulation: 1 - observed / expected disagreement, where
+# disagreement is the squared difference between pairable values.
+krippendorff_alpha_interval <- function(M) {
+  M <- M[rowSums(!is.na(M)) >= 2, , drop = FALSE]
+  vals <- unlist(apply(M, 1, function(r) r[!is.na(r)]))
+  n <- length(vals)
+  d_obs <- sum(apply(M, 1, function(r) {
+    r <- r[!is.na(r)]
+    sum(outer(r, r, "-")^2) / (length(r) - 1)
+  })) / n
+  d_exp <- sum(outer(vals, vals, "-")^2) / (n * (n - 1))
+  1 - d_obs / d_exp
+}
+
+alpha <- krippendorff_alpha_interval(M)
+set.seed(20260916)
+alpha_boot <- replicate(2000, krippendorff_alpha_interval(M[sample(nrow(M), replace = TRUE), ]))
+alpha_ci <- unname(quantile(alpha_boot, c(0.025, 0.975)))
+
+# The ground truth is the MEAN of the three coders, which is more reliable than
+# any single coder. Spearman-Brown projects the reliability of a k-coder mean
+# from the average single-pair correlation.
+k <- ncol(M)
+reliability_of_mean <- k * mean(pairwise) / (1 + (k - 1) * mean(pairwise))
+
+cat("=== KRIPPENDORFF'S ALPHA (interval) ===\n")
+cat(sprintf("  alpha                           %.3f  [95%% bootstrap CI %.3f, %.3f]\n",
+            alpha, alpha_ci[1], alpha_ci[2]))
+cat(sprintf("  reliability of the %d-coder mean  %.3f  (Spearman-Brown)\n\n",
+            k, reliability_of_mean))
+
+#################################################################
 # 4. MODELS AGAINST THE CEILING
 #################################################################
 # Read whichever df.rds is current: the 2024-2025 batch before the rerun
@@ -143,6 +178,9 @@ results <- list(
   mean_sd          = mean(sd_per_sentence, na.rm = TRUE),
   mean_range       = mean(range_per_sentence, na.rm = TRUE),
   sign_agreement   = sign_agreement,
+  krippendorff_alpha = alpha,
+  krippendorff_alpha_ci = alpha_ci,
+  reliability_of_mean = reliability_of_mean,
   models_vs_ceiling = vs_ceiling
 )
 

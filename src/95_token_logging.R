@@ -26,8 +26,10 @@
 # carries a different price, so these belong together. Fetched 2026-09-09 from
 # /api/v1/models/{id}/endpoints.
 #
-# Anthropic's row is the vendor's own list price. Google and OpenAI rows are
-# still NA: fill them from each console before producing the published table.
+# Closed-weight rows are each vendor's own list price: Anthropic's pricing
+# page, the Gemini API pricing page (paid tier), and OpenAI's API pricing page
+# (standard tier, short context). GPT-5.6 Luna's price was cut on 2026-07-30,
+# before the September run, so the post-cut price applies.
 # Do not guess — a wrong price silently produces a wrong published figure.
 #
 # `prefix` matches the keys of `model_mapping` in src/94_models_map.R.
@@ -49,15 +51,15 @@ MODEL_PRICES <- data.frame(
   price_in_per_mtok = c(
     0.027, 0.050, 0.220, 0.030, 0.080,
     0.180, 0.030, 0.087, 0.209,
-    1.00, NA_real_, NA_real_
+    1.00, 1.50, 0.20
   ),
   price_out_per_mtok = c(
     0.201, 0.330, 0.220, 0.140, 0.280,
     0.590, 0.170, 0.350, 0.310,
-    5.00, NA_real_, NA_real_
+    5.00, 9.00, 1.20
   ),
   price_verified_on = c(
-    rep("2026-09-09", 10), NA_character_, NA_character_
+    rep("2026-09-09", 10), "2026-09-16", "2026-09-16"
   ),
   stringsAsFactors = FALSE
 )
@@ -246,6 +248,19 @@ summarize_costs <- function(path = TOKEN_LOG_PATH, n_sentences = 200,
   if (nrow(log_df) == 0) {
     stop("Token log at ", path, " is empty.")
   }
+
+  # Keep only the calls of the configuration that produced the published
+  # scores. When a model was cleared and scored again (qwen332b moved from
+  # DeepInfra to SiliconFlow on 2026-09-10), the superseded wave is still in
+  # the log and would inflate its cost. Same rule as src/97_rerun_status.R:
+  # per (model, condition, item, run), keep the calls within a few minutes of
+  # that triple's last call, which also keeps its retries.
+  wave_window_s <- 300
+  ts <- as.POSIXct(log_df$timestamp)
+  triple <- paste(log_df$model_prefix, log_df$condition, log_df$item, log_df$run)
+  last_of_triple <- tapply(ts, triple, max)
+  log_df <- log_df[
+    as.numeric(difftime(last_of_triple[triple], ts, units = "secs")) <= wave_window_s, ]
 
   by_model <- stats::aggregate(
     cbind(input_tokens, cached_input_tokens, output_tokens) ~ model_prefix,
