@@ -28,16 +28,27 @@ df_raw <- readRDS("data/tmp/data_manual_ranking_with_llm_scores.rds")
 #### INCLUDE THE TRIPLE CODER RESULTS
 #################################################################
 
+# JOIN KEY: (doc_id, sentences), not doc_id alone.
+#
+# doc_id identifies an ARTICLE; the unit of analysis is a SENTENCE. Six articles
+# contributed two sentences each to the 200-sentence sample, so joining on
+# doc_id alone produced a Cartesian product: after two successive merges the
+# dataset held sum(n^3) = 236 rows instead of 200, those twelve sentences were
+# weighted four times over in every metric, and — worse — their ground truth
+# averaged coder ratings of DIFFERENT sentences. Corrected 2026-09-09.
+#
+# `sentences` must survive the select() below for the join key to exist.
+
 df_manual_1 <- readRDS("data/clean/annotator_1.rds") %>%
   rename(manual_1 = "manual_sentiment_cam") %>%
-  select(doc_id, manual_1)
+  select(doc_id, sentences, manual_1)
 
 df_manual_2 <- readRDS("data/clean/annotator_2.rds") %>%
   rename(manual_2 = "manual_sentiment_etienne") %>%
-  select(doc_id, manual_2)
+  select(doc_id, sentences, manual_2)
 
-df_raw_tmp <- merge(df_raw, df_manual_1, by = "doc_id") %>%
-  merge(df_manual_2, by = "doc_id") %>%
+df_raw_tmp <- merge(df_raw, df_manual_1, by = c("doc_id", "sentences")) %>%
+  merge(df_manual_2, by = c("doc_id", "sentences")) %>%
   mutate(
     manual = rowMeans(
       cbind(manual, manual_1, manual_2), 
@@ -50,6 +61,14 @@ df_raw_tmp <- merge(df_raw, df_manual_1, by = "doc_id") %>%
     )
   ) %>% 
   select(-manual_1, -manual_2)
+
+# A join that changes the row count has silently duplicated or dropped data.
+# This is the check whose absence let the doc_id bug run undetected for a year.
+if (nrow(df_raw_tmp) != nrow(df_raw)) {
+  stop(sprintf(
+    "Coder join changed the row count: %d rows in, %d rows out. Expected them to match.",
+    nrow(df_raw), nrow(df_raw_tmp)))
+}
 
 df <- df_raw_tmp %>% 
   # Remove intermediate run columns and unnecessary models/columns
@@ -64,6 +83,9 @@ df <- df_raw_tmp %>%
   mutate(across(
     ends_with(c("_en", "_fr", "_mean", "_truth")) & !matches("sentences_en"),
     ~ case_when(
+      # Must come first: the catch-all below would otherwise file every
+      # unscored sentence as "very_positive" and inflate that class.
+      is.na(.) ~ NA_character_,
       . < -0.66 ~ "very_negative",
       . < -0.33 ~ "negative",
       . < 0 ~ "somewhat_negative",

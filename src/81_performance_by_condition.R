@@ -63,8 +63,10 @@ all_metrics <- bind_rows(corr_data, mae_data, f1_7_data, f1_3_data)
 
 # Filter out dictionary models and other non-standard conditions for focus on the three main conditions
 main_conditions <- c("FR→FR", "EN→FR", "EN→EN")
+# Llama 3.2 1B is left out: it scored a different, partial subset of sentences
+# in each condition, so its condition differences would compare unlike samples.
 filtered_metrics <- all_metrics %>%
-  filter(condition %in% main_conditions)
+  filter(condition %in% main_conditions, !grepl("^llama321b_", model))
 
 # Extract model identifier without condition suffix
 filtered_metrics <- filtered_metrics %>%

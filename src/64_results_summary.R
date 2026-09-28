@@ -136,10 +136,10 @@ combined_ranking <- bind_rows(
 # MODEL-CONDITION ANALYSIS
 #----------------------------------------------------------------
 # Analyze performance grouped by model and prompt condition
-# Include all models except QwQ and Deepseek R1 Basic
+# Llama 3.2 1B is excluded: it scored a different, partial subset of
+# sentences in each condition (see src/94_models_map.R)
 model_condition_summary <- combined_ranking %>%
-  # Filter out QwQ and Deepseek R1 Basic models
-  filter(!str_detect(base_model, "QwQ|Deepseek R1 Basic")) %>%
+  filter(base_model != "llama321b") %>%
   group_by(base_model, condition, metric_type) %>%
   summarize(
     mean_value = mean(value, na.rm = TRUE),
@@ -152,9 +152,8 @@ model_condition_summary <- combined_ranking %>%
 # TOP PERFORMERS IDENTIFICATION
 #----------------------------------------------------------------
 # Find top performing models for each metric type
-# Filter out QwQ and Deepseek R1 Basic models
 top_performers <- combined_ranking %>%
-  filter(!str_detect(base_model, "QwQ|Deepseek R1 Basic")) %>%
+  filter(base_model != "llama321b") %>%
   group_by(metric_type) %>%
   slice_max(order_by = abs(value), n = 5) %>%
   ungroup() %>%
@@ -165,10 +164,10 @@ top_performers <- combined_ranking %>%
 # CONDITION SUMMARY ANALYSIS
 #----------------------------------------------------------------
 # Analyze performance by prompt and text language condition
-# Include all models except QwQ and Deepseek R1 Basic
+# Llama 3.2 1B is excluded: it scored a different, partial subset of
+# sentences in each condition (see src/94_models_map.R)
 condition_summary <- combined_ranking %>%
-  # Filter out QwQ and Deepseek R1 Basic models
-  filter(!str_detect(base_model, "QwQ|Deepseek R1 Basic")) %>%
+  filter(base_model != "llama321b") %>%
   group_by(condition, metric_type) %>%
   summarize(
     mean_value = mean(value, na.rm = TRUE),

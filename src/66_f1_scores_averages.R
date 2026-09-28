@@ -22,16 +22,16 @@ print(unique(detailed_f1_7$model))
 # Filter out excluded models based on model names
 detailed_f1_7_filtered <- detailed_f1_7 %>%
   filter(
-    # Exclude DeepSeek V3.2 (reasoning-mode model)
-    !str_detect(model, "deepseekv32"),
+    # Exclude Llama 3.2 1B (partial, condition-specific coverage)
+    !str_detect(model, "llama321b"),
     # Exclude LSD dictionaries
     !str_detect(model, "^lsd_")
   )
 
 detailed_f1_3_filtered <- detailed_f1_3 %>%
   filter(
-    # Exclude DeepSeek V3.2 (reasoning-mode model)
-    !str_detect(model, "deepseekv32"),
+    # Exclude Llama 3.2 1B (partial, condition-specific coverage)
+    !str_detect(model, "llama321b"),
     # Exclude LSD dictionaries
     !str_detect(model, "^lsd_")
   )

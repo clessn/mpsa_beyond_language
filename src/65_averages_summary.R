@@ -92,10 +92,11 @@ f1_3_summary <- f1_scores_3 %>%
 filter_excluded_models <- function(df) {
   df %>%
     filter(
-      # Exclude DeepSeek V3.2 (dual reasoning/non-reasoning mode, prone to
-      # inconsistent output formatting, same rationale as the previous
-      # batch's exclusion of QwQ-32B and DeepSeek R1 Basic)
-      !str_detect(clean_model, "deepseekv32"),
+      # Exclude Llama 3.2 1B: it scored a different, partial subset of
+      # sentences in each condition (see src/94_models_map.R). DeepSeek V3.2
+      # was excluded here in August; it now runs with reasoning disabled and
+      # answers on 100% of calls, so it stays.
+      !str_detect(clean_model, "llama321b"),
       # Exclude LSD dictionaries
       !str_detect(clean_model, "Dictionary")
     )
