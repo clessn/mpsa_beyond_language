@@ -227,34 +227,28 @@ Proulx,Yannick Dufresne}
 \date{2026-09-16}
 
 
-\abstract{This study examines whether general-purpose large language
-models (LLMs) can analyze sentiment in French text without task-specific
-fine-tuning, and whether prompt language affects their performance.
-Twelve open- and closed-weight LLMs are evaluated on 200 French
-sentences drawn from a corpus of 2,683 French news articles on
-open-source software, and compared with dictionary-based methods across
-three conditions: French prompts on French text, English prompts on
-French text, and English prompts on machine-translated English text.
-Prompt language has no statistically meaningful effect on performance,
-and equivalence tests rule out any substantial advantage of English
-prompts, contrary to the English-prompting advantage reported in prior
-work; machine-translating the text into English, by contrast, lowers
-performance. Leading closed-weight models achieve strong performance (r
-\textgreater{} 0.80), larger open-weight models offer a viable,
-lower-cost alternative, and the smallest model tested (1B parameters)
-fails to follow the task instructions. LLMs outperform a standard
-sentiment dictionary on correlation with human judgments and on coarse
-classification, though the dictionary offers greater transparency. All
-models perform substantially better on three-category
-(positive/neutral/negative) than on seven-category classification. These
-findings suggest social science researchers can use general-purpose LLMs
-for sentiment analysis of French text with either French or English
-prompts, without sacrificing accuracy, but should analyze the original
-text rather than an English translation. }
+\abstract{Researchers who analyze non-English text with large language
+models (LLMs) inherit two rules of thumb: prompt in English, because
+these models learned mostly from English, and translate the text into
+English, as dictionary-based methods long required. The evidence behind
+both rules is contested. This article tests them on French. Twelve open-
+and closed-weight LLMs scored 200 manually annotated French news
+sentences under three conditions: French prompts on French text, English
+prompts on French text, and English prompts on machine-translated text,
+with the English and French Lexicoder dictionaries as benchmarks. Prompt
+language made no meaningful difference, and equivalence tests rule out
+any substantial English-prompt advantage. Translation cut both ways: it
+improved the dictionary but lowered the LLMs' polarity classification
+and, relative to the fully French workflow, their correlation with human
+judgments. The best models reached r = 0.81 and outperformed both
+dictionaries; open-weight models from about 8B parameters were viable,
+whereas a 1B model could not follow the task. For LLM-based sentiment
+analysis of French text, prompt language is a matter of convenience, and
+the text is best analyzed in the original. }
 
-\keywords{Sentiment Analysis, Large Language models, Cross-lingual
-NLP, French Language, Open-Source models, Computational Social
-Science, Prompt Engineering}
+\keywords{Sentiment Analysis, Large Language Models, Machine
+Translation, Prompt Language, French Language, Open-Weight
+Models, Computational Social Science}
 
 \authornote{ 
 
@@ -372,119 +366,272 @@ l'Université, Québec, Québec G1V
 
 \section{Introduction}\label{introduction}
 
-Most foundational large language models (LLMs) are trained predominantly
-on English data (\citeproc{ref-touvron_etal23a}{Touvron et al., 2023}),
-and a growing body of research reports that prompting in English
-improves performance on non-English tasks, even when the target text
-itself is non-English (\citeproc{ref-Jiang2020How}{Jiang et al., 2020};
-\citeproc{ref-Lin2022Few}{Lin et al., 2022};
-\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023};
-\citeproc{ref-Nie2024Decomposed}{Nie et al., 2024}). If this ``English
-prompt advantage'' holds generally, it imposes a real cost on
-non-anglophone researchers, who would need to translate their prompts to
-get the best results from otherwise capable models.
+Computational text analysis in the social sciences grew up around
+English. Its tools, from sentiment dictionaries to topic models, were
+built for English text, a dominance that has been criticized for
+depressing comparative research and excluding scholarly communities that
+work in other languages
+(\citeproc{ref-badenThreeGapsComputational2022}{Baden et al., 2022}).
+Comparativists coped by translating: machine translation made it
+possible to convert multilingual corpora into English and apply
+English-language tools (\citeproc{ref-devriesNoLongerLost2018}{De Vries
+et al., 2018};
+\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et al.,
+2015}). Large language models (LLMs) promise to loosen this constraint.
+Used without task-specific training, they match or exceed crowd workers
+and expert coders on common annotation tasks
+(\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
+2023}; \citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}),
+and they do so, with some loss, in languages other than English
+(\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \& Clemm Von
+Hohenberg, 2024}; \citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et
+al., 2024}).
 
-This paper puts that premise to the test in the case of French.
-Sentiment analysis of French-language text offers a demanding case:
-sentiment carries cultural and linguistic nuance that machine
-translation can alter (\citeproc{ref-Mohammad2016translation}{Mohammad
-et al., 2016}); it is a common measurement task in political
-communication and the social sciences more broadly
+Yet the way researchers use LLMs on non-English text often carries over
+two reflexes from the English-centered era. The first is to prompt in
+English, on the grounds that these models are trained mostly on English
+(\citeproc{ref-touvron_etal23a}{Touvron et al., 2023}) and that English
+instructions have been found to work better even for non-English inputs
+(\citeproc{ref-laiChatGPTEnglishComprehensive2023}{Lai et al., 2023};
+\citeproc{ref-Lin2022Few}{X. V. Lin et al., 2022}). The second is to
+translate the text into English before analysis, a practice inherited
+from dictionary-based and bag-of-words methods that now reappears as
+``translate-test'' with LLMs
+(\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}). Whether
+either reflex helps, harms, or makes no difference is unsettled. The
+evidence comes mostly from reasoning and classification benchmarks in
+natural language processing, often with older models and lower-resourced
+languages, and the social science evidence is thin.
+
+This article tests both reflexes on a measurement task central to
+political communication research: sentiment analysis
 (\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021};
-\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}); it admits both
-continuous (intensity) and categorical (polarity) evaluation
-(\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}); and
-established dictionary-based methods, including a French adaptation of
-the Lexicoder Sentiment Dictionary, offer a meaningful performance
-benchmark (\citeproc{ref-duval_petry16}{Duval \& Pétry, 2016};
-\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021};
-\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}). Although
-limited to a single language, the case bears on the broader premise that
-prompting in English is the safer choice whatever the language of the
-text.
+\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}). Sentiment is a
+demanding test for translation, because affective meaning is precisely
+what translation can alter
+(\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}). Using
+200 manually annotated sentences from French news coverage, the study
+compares twelve open- and closed-weight LLMs under three conditions ---
+French prompts on French text, English prompts on French text, and
+English prompts on machine-translated text --- and benchmark them
+against the English and French versions of the Lexicoder Sentiment
+Dictionary. Equivalence tests allow the absence of a prompt-language
+effect to be assessed directly rather than inferred from
+non-significance.
 
-Testing this premise presupposes that general-purpose LLMs --- used off
-the shelf, without task-specific fine-tuning --- can analyze sentiment
-in a French-language corpus competently in the first place, whether
-prompted in French or in English. Specialized models such as BERT
-variants achieve strong performance through fine-tuning
-(\citeproc{ref-Anirban2021Sentiment}{Anirban \& Abhik, 2021};
-\citeproc{ref-Michailidis2024Comparative}{Michailidis, 2024};
-\citeproc{ref-Rafeef2023Evaluation}{Rafeef A. Hameed et al., 2023}), but
-require machine learning expertise, computational resources, and labeled
-data that many social science researchers lack
-(\citeproc{ref-Chalkidis2020LEGAL}{Chalkidis et al., 2020};
-\citeproc{ref-Laurer2023Less}{Laurer et al., 2023};
-\citeproc{ref-Strubell2019Energy}{Strubell et al., 2019}).
-General-purpose LLMs accessed through APIs offer a more accessible
-alternative, requiring primarily prompting skills
-(\citeproc{ref-Ghosh2023Navigating}{Ghosh et al., 2023};
-\citeproc{ref-Perron2024Demystifying}{Perron et al., 2024}) --- but only
-if they perform adequately without fine-tuning in the first place.
-
-This study therefore asks two questions: (1) does prompt language
-(French vs.~English) meaningfully affect sentiment analysis performance
-on French text, and (2) can general-purpose LLMs --- open and
-closed-weight\footnote{While ``open source'' traditionally implies
-  access aligned with FOSS principles, its usage within the LLM context
-  often refers more specifically to the public release of model weights,
-  a condition more accurately described as ``open weights.'' This paper
-  adopts this common LLM terminology while acknowledging that most
-  models in the ``open source'' category are technically ``open
-  weights.''} --- perform this task well enough, without fine-tuning, to
-be a viable alternative to dictionary-based methods for social science
-research? For the first question, the literature above implies a
-directional expectation, derived from prior work rather than
-preregistered: \emph{H1: English prompts outperform French prompts on
-French text.} The second question is descriptive and carries no
-hypothesis. The results do not support H1, and several models ---
-including open-weight ones --- outperform a traditional dictionary
-method.
+The results speak to both reflexes. Prompt language made no meaningful
+difference. Translation, by contrast, cut both ways: it improved the
+dictionary but hurt the LLMs. The translation strategy that served
+English-bound tools does not carry over to models that can read the
+source language. The article also documents which models are viable for
+this task, including a practical lower bound on the size of open-weight
+models, and what they cost.
 
 \section{Literature Review}\label{literature-review}
 
-Specialized, fine-tuned models achieve strong multilingual sentiment
-analysis performance --- often above 85-95\% accuracy across
-Indo-European, Semitic, and Asian languages
-(\citeproc{ref-Ahmadian2024Hybrid}{Ahmadian et al., 2024};
-\citeproc{ref-Anirban2021Sentiment}{Anirban \& Abhik, 2021};
-\citeproc{ref-ElJundi2019hULMonA}{ElJundi et al., 2019};
-\citeproc{ref-Michailidis2024Comparative}{Michailidis, 2024};
-\citeproc{ref-Rafeef2023Evaluation}{Rafeef A. Hameed et al., 2023}),
-including for lower-resource languages
-(\citeproc{ref-Nazir2025Leveraging}{Nazir et al., 2025};
-\citeproc{ref-Salahudeen2023HausaNLP}{Salahudeen et al., 2023};
-\citeproc{ref-Tela2024Transferring}{Tela et al., 2024}) and via
-cross-lingual transfer (\citeproc{ref-Kumar2021Sentiment}{Kumar \&
-Albuquerque, 2021}; \citeproc{ref-Pan2023Evaluation}{Pan et al., 2023}).
-This performance is costly: such models require large parameter counts
-(\citeproc{ref-Francesco2021XLM}{Francesco et al., 2021};
-\citeproc{ref-Rafeef2023Evaluation}{Rafeef A. Hameed et al., 2023}),
-fine-tuning expertise (\citeproc{ref-Kotelnikova2023Cross}{Kotelnikova
-et al., 2023}; \citeproc{ref-Priban2024comparative}{Přibáň et al.,
-2024}), and substantial labeled training data
-(\citeproc{ref-Mikhail2024Multilingual}{Mikhail et al., 2024};
-\citeproc{ref-Salahudeen2023HausaNLP}{Salahudeen et al., 2023}) ---
-barriers that put them out of reach for many social science researchers.
+\subsection{LLMs as Measurement Instruments in the Social
+Sciences}\label{llms-as-measurement-instruments-in-the-social-sciences}
 
-By contrast, general-purpose foundational LLMs used without fine-tuning
-remain understudied for multilingual sentiment analysis. Preliminary
-work with Mistral-7B, LLaMA2, and instruction-tuned models suggests
-promise in Italian, Russian, and cross-lingual settings
-(\citeproc{ref-Buscemi2024ChatGPT}{Buscemi \& Proverbio, 2024};
-\citeproc{ref-Plagwitz2024Zero}{Plagwitz et al., 2024};
-\citeproc{ref-Rusnachenko2024Large}{Rusnachenko et al., 2024};
-\citeproc{ref-Venerito2024Large}{Venerito \& Iannone, 2024}). Evidence
-on prompt language effects is mixed: some studies find language-specific
-prompting advantages (\citeproc{ref-Hamalainen2022Video}{Hämäläinen et
-al., 2022}; \citeproc{ref-Vileikyte2024Sentiment}{Vileikytė et al.,
-2024}), while others report that English prompting broadly improves
-cross-linguistic performance (\citeproc{ref-Jiang2020How}{Jiang et al.,
-2020}; \citeproc{ref-Lin2022Few}{Lin et al., 2022};
-\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023};
-\citeproc{ref-Nie2024Decomposed}{Nie et al., 2024}). This study
-addresses this gap by evaluating leading open- and closed-weight
-foundational LLMs on French text.
+Zero-shot LLM annotation has moved quickly from curiosity to candidate
+standard. ChatGPT outperformed crowd workers on relevance, stance,
+topic, and frame detection
+(\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
+2023}); GPT-4 outperformed expert coders and supervised classifiers at
+identifying the party of politicians from their social media posts
+across eleven countries
+(\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}); and
+GPT-4 closely approximated expert coding of negativity and sentiment in
+tweets from the United States, Chile, Germany, and Italy
+(\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \& Clemm Von
+Hohenberg, 2024}). Such results have fed broad claims that generative AI
+could transform computational social science
+(\citeproc{ref-bailCanGenerativeAI2024}{Bail, 2024};
+\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}), chiefly
+by removing the need for the thousands of annotated examples that
+supervised learning requires
+(\citeproc{ref-chaeLargeLanguageModels2026}{Chae \& Davidson, 2026};
+\citeproc{ref-laurerLessAnnotatingMore2024}{Laurer et al., 2024}).
+
+A more cautious literature qualifies these claims on three fronts.
+First, performance is uneven. Across 25 English benchmarks, zero-shot
+LLMs did not outperform the best fine-tuned models on classification
+tasks (\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}),
+and across 27 annotation tasks their performance was ``highly contingent
+on both the dataset and the type of annotation task''
+(\citeproc{ref-pangakisAutomatedAnnotationGenerative2023}{Pangakis et
+al., 2023}). Validation against human coding therefore remains
+indispensable (\citeproc{ref-grimmer_stewart13}{Grimmer \& Stewart,
+2013}; \citeproc{ref-linNavigatingRisksUsing2026}{H. Lin \& Zhang,
+2026}), and it is itself only as informative as the human gold standard
+is reliable (\citeproc{ref-songValidationsWeTrust2020}{Song et al.,
+2020}). Second, established tools retain advantages. Dictionaries
+generalize across domains and preserve gradations of sentiment
+(\citeproc{ref-vanderveenAdvantagesLexiconbasedSentiment2025}{Van Der
+Veen \& Bleich, 2025}), even though off-the-shelf dictionaries validate
+poorly against human judgment
+(\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021})
+and are outperformed by transformer-based models in German political and
+cultural texts (\citeproc{ref-klahnDictionariesLLMsEvaluation2025}{Klähn
+et al., 2025};
+\citeproc{ref-widmannCreatingComparingDictionary2023}{Widmann \& Wich,
+2023}); a domain-specific multilingual classifier can also match GPT-4o
+at a fraction of the cost
+(\citeproc{ref-mochtakParlasentMappingSentiment2025}{Mochtak et al.,
+2025}). Third, reliance on proprietary models threatens reproducibility
+(\citeproc{ref-ollionDangersUsingProprietary2024}{Ollion et al., 2024};
+\citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}),
+which has prompted calls to justify their use
+(\citeproc{ref-palmerUsingProprietaryLanguage2023}{Palmer et al., 2023})
+and evidence that open-weight models can be competitive alternatives
+(\citeproc{ref-alizadehOpensourceLLMsText2025}{Alizadeh et al., 2025};
+\citeproc{ref-klahnDictionariesLLMsEvaluation2025}{Klähn et al., 2025}).
+
+These debates leave the question of language largely implicit. The
+broadest evaluations rely on English benchmarks
+(\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}); studies
+that extend to other languages report somewhat lower performance outside
+English (\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \&
+Clemm Von Hohenberg, 2024};
+\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}) but do
+not examine how researchers should interact with models in those
+languages. Even the most extensive multilingual evaluation in the social
+sciences, covering 12 languages, compared GPT with dictionary methods on
+English headlines only (\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje
+et al., 2024}). Two choices that researchers working in other languages
+must make --- the language of the prompt and the language of the text
+--- have been debated elsewhere.
+
+\subsection{Prompting in English: Pivot Language or Multilingual
+Competence?}\label{prompting-in-english-pivot-language-or-multilingual-competence}
+
+The case for prompting in English starts from the observation that LLMs
+are trained predominantly on English
+(\citeproc{ref-touvron_etal23a}{Touvron et al., 2023}) and perform less
+well in other languages, especially lower-resourced ones
+(\citeproc{ref-ahujaMEGAMultilingualEvaluation2023}{Ahuja et al., 2023};
+\citeproc{ref-laiChatGPTEnglishComprehensive2023}{Lai et al., 2023}). A
+mechanistic account suggests why: in Llama-2 models, intermediate
+representations pass through an abstract ``concept space'' that lies
+closer to English than to other languages
+(\citeproc{ref-wendler_etal24}{Wendler et al., 2024}). If models
+effectively reason through English, instructions written in English
+should be understood best. Several findings support this pivot-language
+view. ChatGPT performed better with English prompts even when the task
+and input were in other languages
+(\citeproc{ref-laiChatGPTEnglishComprehensive2023}{Lai et al., 2023});
+English templates remedied the unexpectedly low accuracy of prompts
+handcrafted by native speakers (\citeproc{ref-Lin2022Few}{X. V. Lin et
+al., 2022}); models fine-tuned on English prompts performed best with
+English prompts even on non-English samples
+(\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023});
+asking models to restate a non-English request in English improved their
+multilingual performance (\citeproc{ref-huangNotAllLanguages2023}{Huang
+et al., 2023}); and English instructions outperformed Arabic ones on
+average across eleven Arabic classification tasks
+(\citeproc{ref-Kmainasi2025Native}{Kmainasi et al., 2025}).
+
+A competing view emphasizes multilingual competence. Large models show
+strong multilingual reasoning abilities even in underrepresented
+languages (\citeproc{ref-shiLanguageModelsAre2022}{Shi et al., 2022}),
+and for capable models the language of the prompt appears to matter
+little. In the Arabic study just cited, differences across prompt
+languages were minimal for the strongest model, GPT-4o
+(\citeproc{ref-Kmainasi2025Native}{Kmainasi et al., 2025}); GPT-4
+Turbo's labels for Indonesian tweets under English and Indonesian
+prompts agreed almost perfectly
+(\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}); and
+changing the prompt language alters the length and wording of generated
+responses while their meaning remains largely stable
+(\citeproc{ref-nguyen_etal26}{Nguyen et al., 2026}). The evidence on
+both sides comes mostly from reasoning and classification benchmarks,
+older models, and lower-resourced languages, and none of it tests
+whether prompt language affects the accuracy of a graded sentiment
+judgment in a well-resourced language. The two views imply competing
+expectations:
+
+\begin{quote}
+\textbf{H1a (pivot language).} English prompts yield more accurate
+sentiment measurement of French text than French prompts.
+
+\textbf{H1b (multilingual competence).} English and French prompts yield
+equivalent performance on French text.
+\end{quote}
+
+\subsection{Translating the Text: Bridge or
+Loss?}\label{translating-the-text-bridge-or-loss}
+
+The second reflex predates LLMs. Faced with multilingual corpora,
+comparative researchers translated texts into English so that
+English-language tools could be applied
+(\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et al.,
+2015}), and this bridge strategy has been validated repeatedly.
+Machine-translated and human-translated texts yield highly similar
+term-document matrices and topic models
+(\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018}), results
+are robust across translation services
+(\citeproc{ref-reberOvercomingLanguageBarriers2019}{Reber, 2019}), and a
+machine translation of the Lexicoder dictionary captured legislative
+conflict across European parliaments
+(\citeproc{ref-prokschMultilingualSentimentAnalysis2019}{Proksch et al.,
+2019}). For sentiment specifically, translating non-English sentences
+into English and applying English methods performed as well as
+language-specific methods
+(\citeproc{ref-araujoComparativeStudyMachine2020}{Araújo et al., 2020}),
+and sentiment analysis of English translations of Arabic posts was
+competitive with sentiment analysis of the originals
+(\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}). The
+logic has carried into the LLM era: translating inputs into English
+before inference improves the performance of multilingual models
+(\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}), is often
+hard to beat for lower-resourced languages written in non-Latin scripts
+(\citeproc{ref-ahujaMEGAMultilingualEvaluation2023}{Ahuja et al.,
+2023}), and appears in applied research
+(\citeproc{ref-Venerito2024Large}{Venerito \& Iannone, 2024}).
+
+The opposing view treats translation as a source of loss. Translation
+alters sentiment: affective words disappear or are replaced by words of
+opposite valence, ambiguous words are mistranslated, and culturally
+specific expressions lose their meaning
+(\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}).
+Approaches that avoid translation altogether, such as multilingual
+dictionaries (\citeproc{ref-maierMachineTranslationVs2022}{Maier et al.,
+2022}) and multilingual sentence embeddings
+(\citeproc{ref-lichtCrossLingualClassificationPolitical2023}{Licht,
+2023}), yield comparable or more reliable results in some settings.
+Crucially, the case for translation was built largely on tools that
+cannot read the source language, such as English dictionaries and
+bag-of-words models. For LLMs, which can, the supporting evidence comes
+from benchmarks whose non-English versions were themselves created by
+translation --- a setting that, as the authors note, may favor
+translation-based methods --- rather than from text written natively in
+the source language (\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et
+al., 2024}). Again, the two views imply competing expectations:
+
+\begin{quote}
+\textbf{H2a (translation as bridge).} Analyzing English machine
+translations yields sentiment measurement at least as accurate as
+analyzing the French original.
+
+\textbf{H2b (translation as loss).} Analyzing English machine
+translations yields less accurate sentiment measurement than analyzing
+the French original.
+\end{quote}
+
+\subsection{Research Questions}\label{research-questions}
+
+These debates motivate two research questions. \textbf{RQ1:} Does the
+language used to interact with the model --- that of the prompt, or that
+of the text through machine translation --- affect LLM sentiment
+measurement of French text? H1a--b and H2a--b offer competing answers.
+\textbf{RQ2:} Can general-purpose LLMs, open and
+closed-weight,\footnote{While ``open source'' traditionally implies
+  access aligned with FOSS principles, its usage within the LLM context
+  often refers more specifically to the public release of model weights,
+  a condition more accurately described as ``open weights.'' This paper
+  uses ``open-weight'' throughout.} measure sentiment in French text
+well enough, without fine-tuning, to be a viable alternative to
+dictionary-based methods? RQ2 is descriptive. The hypotheses were
+derived from the literature and were not preregistered.
 
 \section{Data \& Methods}\label{data-methods}
 
@@ -564,11 +711,14 @@ open-source developments.
 
 \subsection{Translation}\label{translation}
 
-To enable the EN→EN condition described below, the French corpus was
-machine-translated into English using Google Translate's document
-translation service, processed in batches via an automated R workflow
-that preserved document IDs to keep French and English versions aligned
-in the final dataset.\footnote{See
+To enable the EN→EN condition described below, which reproduces the
+translate-then-analyze strategy of comparative text analysis
+(\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
+\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et al.,
+2015}), the French corpus was machine-translated into English using
+Google Translate's document translation service, processed in batches
+via an automated R workflow that preserved document IDs to keep French
+and English versions aligned in the final dataset.\footnote{See
   \texttt{src/21\_translate\_to\_english.R} in the project repository
   for the full translation pipeline.}
 
@@ -597,7 +747,11 @@ sentences carry mild sentiment, so small differences often cross zero.
 Because the ground truth averages three coders, it is considerably more
 reliable than any single coder: the Spearman-Brown projection from the
 mean pairwise correlation puts the reliability of the three-coder mean
-at 0.868.
+at 0.868. These levels nonetheless call for caution: simulations show
+that low intercoder reliability and small validation sets increase the
+risk of misjudging the performance of automated methods
+(\citeproc{ref-songValidationsWeTrust2020}{Song et al., 2020}), a point
+taken up in the Limitations.
 
 \subsection{Dictionary-Based Sentiment
 Analysis}\label{dictionary-based-sentiment-analysis}
@@ -613,16 +767,26 @@ Dictionary (\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}) was
 used with additional handling for contractions, proper nouns, and
 negation (e.g., ``not good'' scored as negative), scoring each sentence
 as ((positive + negated\_negative) − (negative + negated\_positive)) /
-total words.
+total words. The two dictionaries therefore differ in construction as
+well as in language, which matters when they are compared.
 
 \subsection{LLM-Based Sentiment
 Analysis}\label{llm-based-sentiment-analysis}
 
 Twelve general-purpose foundational LLMs were evaluated, selected for
 prominence and affordability --- realistic choices for researchers who
-need to analyze large corpora rather than a single sample. Specialized
-fine-tuned models can outperform them on narrow tasks, but at the cost
-in expertise and infrastructure set out above.
+need to analyze large corpora rather than a single sample. Given the
+reproducibility concerns raised by proprietary models, their inclusion
+requires justification
+(\citeproc{ref-palmerUsingProprietaryLanguage2023}{Palmer et al.,
+2023}): the three closed-weight models serve as a reference point,
+because the studies that established LLM annotation in the social
+sciences relied on proprietary GPT models
+(\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
+2023}; \citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \&
+Clemm Von Hohenberg, 2024};
+\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024};
+\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}).
 
 The evaluation spans nine open-weight models --- Llama 3.2 1B, Llama 3.2
 3B, Llama 3.1 8B, GPT-OSS 20B, Qwen3 32B, Llama 4 Scout, GPT-OSS 120B,
@@ -728,22 +892,27 @@ two classification schemes separates fine-grained sentiment
 discrimination (7-category) from broad polarity classification
 (3-category). All metrics were calculated on complete cases only.
 
-Condition comparisons are paired by model. Alongside paired t-tests, two
-one-sided tests (TOST) against an equivalence bound of ±0.05 on each
-metric's scale assess whether a difference is small enough to be treated
-as negligible, since a non-significant t-test cannot on its own
-establish the absence of an effect. These comparisons and the averages
-reported in the Results cover the eleven models that scored all 200
-sentences (33 model-condition combinations) and exclude the dictionary
-baselines, which have no prompt. Llama 3.2 1B is reported separately: it
-scored a different, partial subset of sentences in each condition, so
-its differences across conditions would compare unlike samples.
+Condition comparisons are paired by model and map onto the hypotheses.
+The prompt-language hypotheses compare FR→FR with EN→FR, which hold the
+French text constant. The translation hypotheses compare EN→FR with
+EN→EN, which hold the English prompt constant and isolate the effect of
+analyzing the translation; the comparison of FR→FR with EN→EN contrasts
+the two complete workflows a researcher might adopt. Alongside paired
+t-tests, two one-sided tests (TOST) against an equivalence bound of
+±0.05 on each metric's scale assess whether a difference is small enough
+to be treated as negligible, since a non-significant t-test cannot on
+its own establish the absence of an effect. These comparisons and the
+averages reported in the Results cover the eleven models that scored all
+200 sentences (33 model-condition combinations) and exclude the
+dictionary baselines, which have no prompt. Llama 3.2 1B is reported
+separately: it scored a different, partial subset of sentences in each
+condition, so its differences across conditions would compare unlike
+samples.
 
 \section{Results}\label{results}
 
-\subsection{Prompt Language Has No Meaningful Effect;
-Machine-Translating the Text
-Does}\label{prompt-language-has-no-meaningful-effect-machine-translating-the-text-does}
+\subsection{Prompt Language (H1a
+vs.~H1b)}\label{prompt-language-h1a-vs.-h1b}
 
 Holding the text constant, prompt language made no detectable
 difference. French prompts on French text (FR→FR) edged out English
@@ -757,35 +926,49 @@ equivalent within ±0.05 on MAE (\emph{p} = 0.002), 7-category F1
 was the one metric where equivalence could not be established: the 90\%
 confidence interval of the difference, {[}−0.032, 0.085{]}, leaves room
 for a French-prompt advantage of up to 0.085, but not for an
-English-prompt advantage larger than 0.032. H1 is therefore not
-supported.
+English-prompt advantage larger than 0.032. The results thus contradict
+H1a and support H1b on three of four metrics.
 
-Machine-translating the text into English, by contrast, had a measurable
-cost. Relative to FR→FR, scoring the English translation (EN→EN) lowered
-mean correlation by 0.053 (0.700 vs.~0.647, \emph{p} = 0.007) and
-3-category F1 by 0.063 (0.669 vs.~0.606, \emph{p} \textless{} 0.001);
-the 3-category loss also held against EN→FR (0.041, \emph{p} = 0.005).
-Differences in MAE and 7-category F1 across all three conditions
-remained within the ±0.05 equivalence bound. The translation penalty is
-therefore concentrated in how well models rank sentences by sentiment
-and identify their polarity, consistent with sentiment altered in
-machine translation (\citeproc{ref-Mohammad2016translation}{Mohammad et
-al., 2016}).
+\subsection{Machine Translation (H2a
+vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
 
-\subsection{LLMs Are a Viable Alternative to Dictionary
-Methods}\label{llms-are-a-viable-alternative-to-dictionary-methods}
+For the LLMs, translation carried a cost. Holding the English prompt
+constant, analyzing the translation instead of the original (EN→EN
+vs.~EN→FR) lowered 3-category F1 by 0.04 (0.646 vs.~0.606, \emph{p} =
+0.005); the accompanying drop in correlation (0.673 vs.~0.647) was not
+statistically significant (\emph{p} = 0.24), and differences in MAE and
+7-category F1 remained within the ±0.05 equivalence bound. Compared with
+the fully French workflow (FR→FR), the fully English workflow (EN→EN)
+lowered both correlation, by 0.053 (\emph{p} = 0.007), and 3-category
+F1, by 0.063 (\emph{p} \textless{} 0.001).
+
+The dictionaries showed the opposite pattern. The English Lexicoder
+applied to the translation correlated with human judgments at r = 0.548,
+against 0.357 for the French Lexicoder applied to the original --- a
+difference of 0.191 (95\% bootstrap CI {[}0.059, 0.326{]}) --- and also
+reached a higher 3-category F1 (0.588 vs.~0.557). Because the two
+dictionaries also differ in construction, this contrast does not isolate
+language, but its direction matches the bridge view. For the LLMs, the
+results contradict H2a and support H2b for polarity classification and,
+in the comparison of complete workflows, for correlation.
+
+\subsection{Viability Against Dictionary Methods
+(RQ2)}\label{viability-against-dictionary-methods-rq2}
 
 General-purpose LLMs, used without fine-tuning, correlated with human
-judgments well above the dictionary baselines. The best configurations
-exceeded r = 0.80: GPT-5.6 Luna led on correlation (r = 0.810 in FR→FR)
-and concordance (CCC = 0.779), Claude Haiku 4.5 on both 3-category F1
+judgments well above both dictionaries. The best configurations exceeded
+r = 0.80: GPT-5.6 Luna led on correlation (r = 0.810 in FR→FR) and
+concordance (CCC = 0.779), Claude Haiku 4.5 on both 3-category F1
 (0.778) and 7-category F1 (0.537, both FR→FR), and Gemini 3.5 Flash on
 MAE (0.156 in EN→FR). Nine of the 33 model-condition combinations
 correlated with the ground truth more strongly than individual human
 coders agreed with the mean of the other two (mean leave-one-out r =
 0.748, range 0.724--0.779).\footnote{This comparison favors the models
   slightly, since the ground truth they are compared against averages
-  three coders rather than two.}
+  three coders rather than two. Agreement between annotators is not a
+  strict ceiling on machine performance
+  (\citeproc{ref-richieInterannotatorAgreementNot2022}{Richie et al.,
+  2022}).}
 
 \begin{figure}[H]
 
@@ -802,17 +985,20 @@ Closed-weight models outperformed open-weight ones on average (mean r =
 the top of the open-weight range: Qwen3 235B-A22B reached r = 0.774 in
 FR→FR, above Gemini 3.5 Flash in the same condition, and GPT-OSS 120B
 and GPT-OSS 20B averaged r = 0.733 and 0.716 across conditions.
-Performance degraded steadily below that. Llama 3.1 8B remained usable
-(r = 0.575--0.612), Llama 3.2 3B was erratic (r = 0.476 in FR→FR but
-0.132 in EN→FR), and Llama 3.2 1B failed outright: it returned a usable
-score for only 58 to 74 sentences per condition, and on those its
-correlation with the ground truth ranged from −0.199 to 0.100.
+Performance degraded below that. Llama 3.1 8B remained usable (r =
+0.575--0.612), Llama 3.2 3B was erratic (r = 0.476 in FR→FR but 0.132 in
+EN→FR), and Llama 3.2 1B failed outright: it returned a usable score for
+only 58 to 74 sentences per condition, and on those its correlation with
+the ground truth ranged from −0.199 to 0.100. Cost was not a barrier: at
+list prices, scoring 1,000 sentences cost between USD 0.02 and 0.40 for
+every model but one (Table~\ref{tbl-cost}); the exception, Gemini 3.5
+Flash (USD 3.77), reflects the reasoning tokens it generates by default
+rather than its per-token price.
 
-The English Lexicoder Sentiment Dictionary reached a correlation of
-0.548 and the French version 0.357, against a mean of 0.673 for the
-eleven LLMs; on 3-category F1 the dictionaries (0.588 and 0.557) also
-trailed the LLM mean (0.640), though the English dictionary outperformed
-Llama 3.2 3B and Qwen3 32B. The gap is widest on concordance: the LLMs
+Against the LLM mean of r = 0.673, the dictionaries trailed on
+correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557
+vs.~0.640), though the English dictionary outperformed Llama 3.2 3B and
+Qwen3 32B on the latter. The gap was widest on concordance: the LLMs
 averaged a CCC of 0.631, against 0.233 and 0.181 for the English and
 French dictionaries. On MAE, however, both dictionaries (0.203 and
 0.210) did slightly better than the LLM average (0.213). This reflects
@@ -832,10 +1018,7 @@ sentiment (7-category F1 = 0.482 and 0.441, rising to 0.690 and 0.627 in
 the 3-category scheme) and struggled most with the extreme categories
 (very\_negative F1 = 0.256, very\_positive F1 = 0.124), which are nearly
 absent from the sample (two sentences and one sentence respectively).
-Neutral remained the hardest 3-category label (F1 = 0.258). Researchers
-needing fine-grained sentiment distinctions may find general-purpose
-LLMs insufficient without further adaptation; the broader
-positive/neutral/negative distinction is handled far more reliably.
+Neutral remained the hardest 3-category label (F1 = 0.258).
 
 \clearpage
 \begin{landscape}
@@ -850,173 +1033,221 @@ positive/neutral/negative distinction is handled far more reliably.
 
 \section{Discussion}\label{discussion}
 
-The central finding is that prompt language does not meaningfully affect
-LLM sentiment analysis performance on French text --- a more nuanced
-picture than the English-prompting advantage reported elsewhere
-(\citeproc{ref-Jiang2020How}{Jiang et al., 2020};
-\citeproc{ref-Lin2022Few}{Lin et al., 2022};
-\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023}).
-If anything, the point estimates favored French prompts, and equivalence
-tests ruled out any English-prompt advantage larger than a few
-hundredths on every metric. What did cost performance was
-machine-translating the text itself: scoring English translations
-lowered correlation and 3-category F1 relative to working with the
-French original. This challenges the assumption that researchers must
-work in English to get good results on French text: francophone
-researchers can prompt in French with no analytical penalty, and teams
-can choose between French and English prompts by convenience rather than
-performance. The practical warning runs the other way:
-machine-translating a French corpus into English before analysis is not
-neutral. Theoretically, the case of French suggests that the ``English
-prompt advantage'' documented in prior work may be task-dependent,
-language-pair specific, or diminishing as models improve; whether it
-holds for other languages remains open.
+\subsection{Prompt Language: Multilingual Competence, Within Scope
+Conditions}\label{prompt-language-multilingual-competence-within-scope-conditions}
 
-This finding is only practically useful if LLMs are themselves viable
-for the task, and the results support that they are. Leading
-closed-weight models achieved strong correlations (GPT-5.6 Luna, r =
-0.810) and 3-category F1 scores (Claude Haiku 4.5, 0.778) without any
-task-specific fine-tuning, several configurations agreed with the ground
-truth more closely than individual human coders did, and the largest
-open-weight models came close to them (Qwen3 235B-A22B, r = 0.774).
-Model size sets a floor, however. Models from roughly 8B parameters
-upward produced usable scores, a 3B model was unreliable across
-conditions, and a 1B model could not follow the instruction to return a
-number at all. Cost does not stand in the way: at list prices, scoring
-1,000 sentences cost between USD 0.02 and 0.40 for every model but one
-(Table~\ref{tbl-cost}). The exception, Gemini 3.5 Flash (USD 3.77),
-reflects the reasoning tokens it generates by default rather than its
-per-token price. Together, these results mean social scientists can
-confidently deploy leading closed-weight LLMs, and larger open-weight
-ones, for sentiment analysis of French text with French or English
-prompts, whichever suits their workflow, without fine-tuning expertise
-or heavy computational resources
-(\citeproc{ref-Priban2024comparative}{Přibáň et al., 2024}) --- provided
-they avoid the smallest models.
+For French and current models, the results side with the
+multilingual-competence view. English prompts brought no advantage, and
+equivalence tests ruled out any English-prompt gain larger than a few
+hundredths on every metric. This extends earlier social science
+evidence, which showed that labels agree across prompt languages
+(\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}), to the
+accuracy of those labels against human judgment, and it is consistent
+with the minimal differences observed for the strongest model in Arabic
+(\citeproc{ref-Kmainasi2025Native}{Kmainasi et al., 2025}). It does not
+refute the pivot-language evidence so much as delimit it. That evidence
+comes largely from reasoning and inference benchmarks, older or smaller
+models, and lower-resourced languages
+(\citeproc{ref-laiChatGPTEnglishComprehensive2023}{Lai et al., 2023};
+\citeproc{ref-Lin2022Few}{X. V. Lin et al., 2022};
+\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023}),
+and the representational bias toward English it points to
+(\citeproc{ref-wendler_etal24}{Wendler et al., 2024}) need not translate
+into worse instruction-following for a simple judgment in a language as
+well represented as French. The erratic behavior of the smaller
+open-weight models in this study --- Llama 3.2 3B correlated with human
+judgments at r = 0.48 with French prompts but 0.13 with English ones ---
+hints that sensitivity to prompt language may reappear below a certain
+model size, though a single model cannot establish this.
 
-Two secondary results qualify this picture. First, LLMs clearly
-outperformed the Lexicoder Sentiment Dictionary on correlation (mean LLM
-r = 0.673 vs.~0.548 for the English dictionary) and, more modestly, on
-3-category F1 (0.640 vs.~0.588), but the dictionaries' near-zero output
-gave them a slightly lower MAE --- a reminder that MAE alone can reward
-a method that barely discriminates. Second, all models performed
-markedly worse on fine-grained 7-category classification than on
-3-category polarity (mean F1 of 0.349 vs.~0.640), struggling most with
-extreme sentiment categories.
+\subsection{Translation: A Bridge for Dictionaries, a Loss for
+LLMs}\label{translation-a-bridge-for-dictionaries-a-loss-for-llms}
 
+The translation results are the article's main contribution to the
+debate. The same machine translation that improved the dictionary
+lowered the LLMs' performance. This divergence reconciles the bridge and
+loss views rather than choosing between them: translation helps tools
+that cannot read the source language, and costs information for tools
+that can. The dictionary result is consistent with a long line of
+evidence that translating into English lets researchers use
+better-validated English resources
+(\citeproc{ref-araujoComparativeStudyMachine2020}{Araújo et al., 2020};
+\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
+\citeproc{ref-prokschMultilingualSentimentAnalysis2019}{Proksch et al.,
+2019}). For LLMs, which already read French, translation offers no such
+gain and exposes the analysis to the alterations of affective meaning
+that translation introduces
+(\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}). The
+finding runs against evidence that translating inputs into English
+improves multilingual models
+(\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}), but that
+evidence rests on reasoning and inference benchmarks whose non-English
+versions were produced by translation, whereas the sentences analyzed
+here were written in French. The practical implication is direct: the
+translation step that dictionary-era workflows made necessary should not
+be carried into LLM-based sentiment analysis of French text.
+
+\subsection{Viability: Optimism, With
+Validation}\label{viability-optimism-with-validation}
+
+On RQ2, the results side with the optimistic literature
+(\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
+2023}; \citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024};
+\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}) and
+extend it in two directions. First, the advantage of LLMs over
+dictionaries holds against a native-language dictionary as well as a
+translated one, a comparison the multilingual evidence had so far made
+only in English. Second, open-weight models were viable from about 8B
+parameters, and the largest approached the best closed-weight models,
+consistent with evidence from German
+(\citeproc{ref-klahnDictionariesLLMsEvaluation2025}{Klähn et al.,
+2025}); below that size, performance became erratic, and a 1B-parameter
+model could not follow the task. For researchers weighing the
+reproducibility concerns raised by proprietary models
+(\citeproc{ref-ollionDangersUsingProprietary2024}{Ollion et al., 2024};
+\citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}),
+this makes a credible open-weight option available at low cost.
+
+The cautious literature is not thereby dismissed. Performance varied
+widely across models, which reinforces the need to validate each model
+on each task
+(\citeproc{ref-pangakisAutomatedAnnotationGenerative2023}{Pangakis et
+al., 2023}). Two further results qualify the picture. First, the
+dictionaries' near-zero output gave them a slightly lower MAE than the
+LLMs --- a reminder that MAE alone can reward a method that barely
+discriminates. Second, all models performed markedly worse on
+fine-grained 7-category classification than on 3-category polarity.
 These two results are compatible once ordering and calibration are
 distinguished. LLMs capture sentiment intensity in the sense of ordering
-sentences from least to most positive and reproducing the spread of
-human ratings: their concordance with the ground truth (mean CCC =
-0.631, up to 0.779) far exceeds that of the dictionaries (0.233 and
-0.181), whose scores barely depart from zero. What LLMs do poorly is
-place scores on the right side of fixed category thresholds. They
-overstate extremes --- 10.8\% of LLM scores exceed ±0.66, against 1.5\%
-of ground-truth values --- so a sentence rated 0.5 by humans and 0.8 by
-a model is correctly ordered but misclassified. The ground truth
+sentences and reproducing the spread of human ratings: their concordance
+with the ground truth (mean CCC = 0.631, up to 0.779) far exceeds that
+of the dictionaries (0.233 and 0.181). What they do poorly is place
+scores on the right side of fixed category thresholds. They overstate
+extremes --- 10.8\% of LLM scores exceed ±0.66, against 1.5\% of
+ground-truth values --- so a sentence rated 0.5 by humans and 0.8 by a
+model is correctly ordered but misclassified. The ground truth
 contributes to the mismatch: as an average of three coders, it is pulled
 toward the center, leaving only three sentences in the two extreme
-categories. A transparent, fully interpretable dictionary therefore
-remains a defensible baseline for basic polarity detection but not for
-measuring intensity, and researchers needing fixed fine-grained
-categories should not expect general-purpose LLMs to deliver them out of
-the box, though Claude Haiku 4.5's stronger 7-category performance
-(0.537) suggests that calibration varies across models.
+categories. Gradations in sentiment are one of the main arguments made
+for dictionaries
+(\citeproc{ref-vanderveenAdvantagesLexiconbasedSentiment2025}{Van Der
+Veen \& Bleich, 2025}); in this corpus, a single off-the-shelf
+dictionary captured them less well than the LLMs, though its
+transparency remains an advantage no model offers.
 
 \section{Limitations}\label{limitations}
 
-Several limitations qualify these findings. The 200-sentence benchmark
-is adequate for comparing models but thin at the extremes of the scale:
-only two sentences fall in the very negative category and one in the
-very positive, so class-level F1 scores for these categories are
-unstable. The benchmark is also demanding for humans: agreement between
-individual coders was moderate (Krippendorff's alpha = 0.597), and
-averaging three coders, while it yields a more reliable ground truth,
-also pulls ratings toward the center and makes the extreme categories
-scarcer still. Finally, the findings concern French only. The corpus is
-French-language news on a single technical/political domain (open-source
-software), so neither the performance hierarchy nor the absence of a
-prompt-language effect can be assumed to extend to other languages,
-especially those less represented in LLM training data, or to other
-genres such as social media or political debate.
+Several limitations qualify these findings. The benchmark is modest in
+size and reliability. Its 200 sentences fall within common
+recommendations for validating sentiment measures
+(\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021}),
+but agreement between individual coders was moderate (Krippendorff's
+alpha = 0.597), and simulations show that such conditions raise the risk
+of misjudging automated methods
+(\citeproc{ref-songValidationsWeTrust2020}{Song et al., 2020}).
+Averaging three coders yields a more reliable ground truth, but it also
+pulls ratings toward the center, and only two sentences fall in the very
+negative category and one in the very positive, so class-level F1 scores
+for these categories are unstable. The findings concern French only: the
+corpus is French-language news on a single technical and political
+domain (open-source software), so neither the absence of a
+prompt-language effect nor the cost of translation can be assumed to
+extend to other languages, especially those less represented in training
+data, where the pivot-language evidence is strongest, or to other
+genres.
 
 Methodologically, the EN→EN condition relies on Google Translate, and
 translation quality was deliberately not validated: the condition
 reproduces what a researcher who does not read English can do, namely
 translate automatically and analyze the result. Its lower performance
 should accordingly be read as the cost of that workflow rather than of
-translation as such. Model selection prioritized affordability and
-prominence over including every top-performing model globally,
-reflecting the perspective of researchers who need to analyze corpora of
-millions of sentences rather than a few hundred. A single standardized
-prompt was used across all models for comparability, which may
-understate peak performance achievable through model-specific prompt
-engineering; the need for a response-parsing function also indicates
-models did not always follow the requested output format exactly.
-
-Costs are reported at list prices and count cached prompt tokens at the
-full input rate, so they are upper bounds; actual invoices depend on
-provider-specific caching discounts. More fundamentally, this evaluation
-is a snapshot: given how quickly LLM capabilities and provider offerings
-change --- several models evaluated in an earlier version of this study
-were deprecated within eighteen months --- the specific rankings
-reported here should be expected to age quickly, even as the
-higher-level finding regarding prompt language in French is likely to
-hold across model generations.
+translation as such. The dictionary comparison confounds language with
+dictionary construction. A single standardized prompt was used across
+models for comparability, which may understate the performance
+achievable with model-specific prompting, and the models tested do not
+include fine-tuned or domain-specific classifiers, which can rival
+general-purpose LLMs
+(\citeproc{ref-mochtakParlasentMappingSentiment2025}{Mochtak et al.,
+2025}). Costs are reported at list prices and count cached prompt tokens
+at the full input rate, so they are upper bounds. Finally, this
+evaluation is a snapshot: several models from an earlier version of this
+study were deprecated within eighteen months, and the specific rankings
+should be expected to age quickly.
 
 \section{Conclusion}\label{conclusion}
 
-For French text, prompt language does not constrain how social
-scientists work with LLMs. Francophone teams are free to prompt in
-French, and the choice between French and English prompts ceases to be a
-design decision that needs defending. Machine translation is another
-matter: translating the corpus into English before analysis, a step that
-has often preceded computational work on non-English text, lowered
-performance here and loses its rationale.
+Researchers analyzing French text with LLMs can set aside both inherited
+reflexes. The language of the prompt is a matter of convenience: English
+instructions brought no advantage, and equivalence tests rule out any
+substantial one. The language of the text is not: translating into
+English, the step that English-bound tools made necessary, improved the
+dictionary but lowered the LLMs' performance. The comparative strategy
+that served the dictionary era does not transfer to models that read the
+source language.
 
-That opens work this study could not do. Whether the absence of a
-prompt-language effect holds beyond French --- particularly for
-languages less represented in training data, where the English-prompting
-advantage was first reported --- is the natural next test, and this
-design ports to it directly: the same three conditions, the same
-manually annotated benchmark, a different target language. If it does,
-comparative projects spanning several languages could let each team
-prompt in its own language and pool the results.
-
-Method choice remains a judgment about research goals rather than a
-ranking. Dictionary methods retain an advantage these results do not
-overturn --- every score they produce can be traced to the words that
-generated it --- and that transparency is worth more than accuracy in
-some research designs. What the evidence here settles is narrower and,
-for researchers working with French text, more useful: the language of
-the prompt is not among the things that need to be traded off.
+Two questions follow. The first is whether these results hold beyond
+French, particularly for languages less represented in training data,
+where the case for English prompts and translation is strongest; the
+design ports directly to such tests --- the same three conditions, a
+manually annotated benchmark, a different target language. The second is
+whether the size threshold observed here, below which open-weight models
+become erratic and prompt-sensitive, is a stable feature of current
+models. Method choice remains a judgment about research goals rather
+than a ranking: dictionaries retain a transparency no model offers, and
+every model still needs to be validated on the task at hand. What the
+evidence here settles is narrower and, for researchers working with
+French text, useful: prompt in whichever language is convenient, and
+analyze the text in the language in which it was written.
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-Ahmadian2024Hybrid}
-Ahmadian, H., Abidin, T. F., Riza, H., \& Muchtar, K. (2024). Hybrid
-{Models} for {Emotion Classification} and {Sentiment Analysis} in
-{Indonesian Language}. \emph{Applied Computational Intelligence and Soft
-Computing}, \emph{2024}(1). \url{https://doi.org/10.1155/2024/2826773}
+\bibitem[\citeproctext]{ref-ahujaMEGAMultilingualEvaluation2023}
+Ahuja, K., Diddee, H., Hada, R., Ochieng, M., Ramesh, K., Jain, P.,
+Nambi, A., Ganu, T., Segal, S., Ahmed, M., Bali, K., \& Sitaram, S.
+(2023). {MEGA}: {Multilingual Evaluation} of {Generative AI}.
+\emph{Proceedings of the 2023 {Conference} on {Empirical Methods} in
+{Natural Language Processing}}, 4232--4267.
+\url{https://doi.org/10.18653/v1/2023.emnlp-main.258}
 
-\bibitem[\citeproctext]{ref-Anirban2021Sentiment}
-Anirban, B., \& Abhik, J. (2021). Sentiment {Analysis For Bengali Using
-Transformer Based Models}. \emph{ICON}.
+\bibitem[\citeproctext]{ref-alizadehOpensourceLLMsText2025}
+Alizadeh, M., Kubli, M., Samei, Z., Dehghani, S., Zahedivafa, M.,
+Bermeo, J. D., Korobeynikova, M., \& Gilardi, F. (2025). Open-source
+{LLMs} for text annotation: A practical guide for model setting and
+fine-tuning. \emph{Journal of Computational Social Science},
+\emph{8}(1), 17. \url{https://doi.org/10.1007/s42001-024-00345-9}
 
-\bibitem[\citeproctext]{ref-Buscemi2024ChatGPT}
-Buscemi, A., \& Proverbio, D. (2024). {ChatGPT} vs {Gemini} vs {LLaMA}
-on {Multilingual Sentiment Analysis}. \emph{arXiv.org}.
-\url{https://doi.org/10.48550/ARXIV.2402.01715}
+\bibitem[\citeproctext]{ref-araujoComparativeStudyMachine2020}
+Araújo, M., Pereira, A., \& Benevenuto, F. (2020). A comparative study
+of machine translation for multilingual sentence-level sentiment
+analysis. \emph{Information Sciences}, \emph{512}, 1078--1102.
+\url{https://doi.org/10.1016/j.ins.2019.10.031}
 
-\bibitem[\citeproctext]{ref-Chalkidis2020LEGAL}
-Chalkidis, I., Fergadiotis, M., Malakasiotis, P., Aletras, N., \&
-Androutsopoulos, I. (2020). {LEGAL-BERT}: {The Muppets} straight out of
-{Law School}. \emph{Findings of the {Association} for {Computational
-Linguistics}: {EMNLP} 2020}.
-\url{https://doi.org/10.18653/v1/2020.findings-emnlp.261}
+\bibitem[\citeproctext]{ref-badenThreeGapsComputational2022}
+Baden, C., Pipal, C., Schoonvelde, M., \& Van Der Velden, M. A. C. G.
+(2022). Three {Gaps} in {Computational Text Analysis Methods} for
+{Social Sciences}: {A Research Agenda}. \emph{Communication Methods and
+Measures}, \emph{16}(1), 1--18.
+\url{https://doi.org/10.1080/19312458.2021.2015574}
+
+\bibitem[\citeproctext]{ref-bailCanGenerativeAI2024}
+Bail, C. A. (2024). Can {Generative AI} improve social science?
+\emph{Proceedings of the National Academy of Sciences}, \emph{121}(21),
+e2314021121. \url{https://doi.org/10.1073/pnas.2314021121}
+
+\bibitem[\citeproctext]{ref-chaeLargeLanguageModels2026}
+Chae, Y., \& Davidson, T. (2026). Large {Language Models} for {Text
+Classification}: {From Zero-Shot Learning} to {Instruction-Tuning}.
+\emph{Sociological Methods \& Research}, \emph{55}(2), 501--567.
+\url{https://doi.org/10.1177/00491241251325243}
+
+\bibitem[\citeproctext]{ref-devriesNoLongerLost2018}
+De Vries, E., Schoonvelde, M., \& Schumacher, G. (2018). No {Longer
+Lost} in {Translation}: {Evidence} that {Google Translate Works} for
+{Comparative Bag-of-Words Text Applications}. \emph{Political Analysis},
+\emph{26}(4), 417--430. \url{https://doi.org/10.1017/pan.2018.26}
 
 \bibitem[\citeproctext]{ref-duval_petry16}
 Duval, D., \& Pétry, F. (2016). L'analyse automatis{é}e du ton
@@ -1025,59 +1256,77 @@ m{é}diatique : Construction et utilisation de la version fran{ç}aise du
 Science/Revue Canadienne de Science Politique}, \emph{49}(2), 197--220.
 \url{https://doi.org/10.1017/S000842391600055X}
 
-\bibitem[\citeproctext]{ref-ElJundi2019hULMonA}
-ElJundi, O., Antoun, W., El Droubi, N., Hajj, H., El-Hajj, W., \&
-Shaban, K. (2019). {hULMonA}: {The Universal Language Model} in
-{Arabic}. \emph{Proceedings of the {Fourth Arabic Natural Language
-Processing Workshop}}, 68--77.
-\url{https://doi.org/10.18653/v1/w19-4608}
+\bibitem[\citeproctext]{ref-Etxaniz2024Multilingual}
+Etxaniz, J., Azkune, G., Soroa, A., Lopez de Lacalle, O., \& Artetxe, M.
+(2024). Do multilingual language models think better in {E}nglish?
+\emph{Proceedings of the 2024 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language
+Technologies (Volume 2: Short Papers)}, 550--564.
+\url{https://doi.org/10.18653/v1/2024.naacl-short.46}
 
-\bibitem[\citeproctext]{ref-Francesco2021XLM}
-Francesco, B., Luis, E. A., \& José, C.-C. (2021). {XLM-T}:
-{Multilingual Language Models} in {Twitter} for {Sentiment Analysis} and
-{Beyond}. \emph{International Conference on Language Resources and
-Evaluation}.
+\bibitem[\citeproctext]{ref-gilardiChatGPTOutperformsCrowd2023}
+Gilardi, F., Alizadeh, M., \& Kubli, M. (2023). {ChatGPT} outperforms
+crowd workers for text-annotation tasks. \emph{Proceedings of the
+National Academy of Sciences}, \emph{120}(30), e2305016120.
+\url{https://doi.org/10.1073/pnas.2305016120}
 
-\bibitem[\citeproctext]{ref-Ghosh2023Navigating}
-Ghosh, A., Biswas, D., Sarkar, R., Pillai, A., \& Chopra, J. (2023).
-Navigating {GPT-4} and {BERT}: A {Dual Perspective} on {Financial} and
-{Political Sentiment Analysis}. \emph{International Journal for Research
-in Applied Science and Engineering Technology}, \emph{11}(12),
-1577--1583. \url{https://doi.org/10.22214/ijraset.2023.57687}
+\bibitem[\citeproctext]{ref-grimmer_stewart13}
+Grimmer, J., \& Stewart, B. M. (2013). Text as {Data}: {The Promise} and
+{Pitfalls} of {Automatic Content Analysis Methods} for {Political
+Texts}. \emph{Political Analysis}, \emph{21}(3), 267--297.
+\url{https://doi.org/10.1093/pan/mps028}
 
-\bibitem[\citeproctext]{ref-Hamalainen2022Video}
-Hämäläinen, M., Alnajjar, K., \& Poibeau, T. (2022). Video {Games} as a
-{Corpus}: {Sentiment Analysis} using {Fallout New Vegas Dialog}.
-\emph{Proceedings of the 17th {International Conference} on the
-{Foundations} of {Digital Games}}, 1--4.
-\url{https://doi.org/10.1145/3555858.3555930}
+\bibitem[\citeproctext]{ref-heseltineLargeLanguageModels2024}
+Heseltine, M., \& Clemm Von Hohenberg, B. (2024). Large language models
+as a substitute for human experts in annotating political text.
+\emph{Research \& Politics}, \emph{11}(1), 20531680241236239.
+\url{https://doi.org/10.1177/20531680241236239}
 
-\bibitem[\citeproctext]{ref-Jiang2020How}
-Jiang, Z., Xu, F. F., Araki, J., \& Neubig, G. (2020). How {Can We Know
-What Language Models Know}? \emph{Transactions of the Association for
-Computational Linguistics}, \emph{8}, 423--438.
-\url{https://doi.org/10.1162/tacl_a_00324}
+\bibitem[\citeproctext]{ref-huangNotAllLanguages2023}
+Huang, H., Tang, T., Zhang, D., Zhao, X., Song, T., Xia, Y., \& Wei, F.
+(2023). Not {All Languages Are Created Equal} in {LLMs}: {Improving
+Multilingual Capability} by {Cross-Lingual-Thought Prompting}.
+\emph{Findings of the {Association} for {Computational Linguistics}:
+{EMNLP} 2023}, 12365--12394.
+\url{https://doi.org/10.18653/v1/2023.findings-emnlp.826}
 
-\bibitem[\citeproctext]{ref-Kotelnikova2023Cross}
-Kotelnikova, A. V., Vychegzhanin, S. V., \& Kotelnikov, E. V. (2023).
-Cross-{Domain Sentiment Analysis Based} on {Small} in-{Domain
-Fine-Tuning}. \emph{IEEE Access : Practical Innovations, Open
-Solutions}, \emph{11}, 41061--41074.
-\url{https://doi.org/10.1109/access.2023.3269720}
+\bibitem[\citeproctext]{ref-klahnDictionariesLLMsEvaluation2025}
+Klähn, J., Borst-Graetz, J., \& Burghardt, M. (2025). From dictionaries
+to {LLMs} -- an evaluation of sentiment analysis techniques for {German}
+language data. \emph{Computational Humanities Research}, \emph{1}, e4.
+\url{https://doi.org/10.1017/chr.2025.10005}
 
-\bibitem[\citeproctext]{ref-Kumar2021Sentiment}
-Kumar, A., \& Albuquerque, V. H. C. (2021). Sentiment {Analysis Using
-XLM-R Transformer} and {Zero-shot Transfer Learning} on {Resource-poor
-Indian Language}. \emph{ACM Transactions on Asian and Low-Resource
-Language Information Processing}, \emph{20}(5), 1--13.
-\url{https://doi.org/10.1145/3461764}
+\bibitem[\citeproctext]{ref-Kmainasi2025Native}
+Kmainasi, M. B., Khan, R., Shahroor, A. E., Bendou, B., Hasanain, M., \&
+Alam, F. (2025). Native vs non-native language prompting: A comparative
+analysis. \emph{Web Information Systems Engineering -- WISE 2024}.
+\url{https://doi.org/10.1007/978-981-96-0576-7_30}
 
-\bibitem[\citeproctext]{ref-Laurer2023Less}
-Laurer, M., van Atteveldt, W., Casas, A., \& Welbers, K. (2023). Less
+\bibitem[\citeproctext]{ref-laiChatGPTEnglishComprehensive2023}
+Lai, V., Ngo, N., Pouran Ben Veyseh, A., Man, H., Dernoncourt, F., Bui,
+T., \& Nguyen, T. (2023). {ChatGPT Beyond English}: {Towards} a
+{Comprehensive Evaluation} of {Large Language Models} in {Multilingual
+Learning}. \emph{Findings of the {Association} for {Computational
+Linguistics}: {EMNLP} 2023}, 13171--13189.
+\url{https://doi.org/10.18653/v1/2023.findings-emnlp.878}
+
+\bibitem[\citeproctext]{ref-laurerLessAnnotatingMore2024}
+Laurer, M., Van Atteveldt, W., Casas, A., \& Welbers, K. (2024). Less
 {Annotating}, {More Classifying}: {Addressing} the {Data Scarcity Issue}
 of {Supervised Machine Learning} with {Deep Transfer Learning} and
 {BERT-NLI}. \emph{Political Analysis}, \emph{32}(1), 84--100.
 \url{https://doi.org/10.1017/pan.2023.20}
+
+\bibitem[\citeproctext]{ref-lichtCrossLingualClassificationPolitical2023}
+Licht, H. (2023). Cross-{Lingual Classification} of {Political Texts
+Using Multilingual Sentence Embeddings}. \emph{Political Analysis},
+\emph{31}(3), 366--379. \url{https://doi.org/10.1017/pan.2022.29}
+
+\bibitem[\citeproctext]{ref-linNavigatingRisksUsing2026}
+Lin, H., \& Zhang, Y. (2026). Navigating the {Risks} of {Using Large
+Language Models} for {Text Annotation} in {Social Science Research}.
+\emph{Social Science Computer Review}, \emph{44}(3), 403--427.
+\url{https://doi.org/10.1177/08944393251366243}
 
 \bibitem[\citeproctext]{ref-Lin2022Few}
 Lin, X. V., Mihaylov, T., Artetxe, M., Wang, T., Chen, S., Simig, D.,
@@ -1088,16 +1337,24 @@ Kozareva, Z., Diab, M., \ldots{} Li, X. (2022). Few-shot {Learning} with
 {Conference} on {Empirical Methods} in {Natural Language Processing}}.
 \url{https://doi.org/10.18653/v1/2022.emnlp-main.616}
 
-\bibitem[\citeproctext]{ref-Michailidis2024Comparative}
-Michailidis, P. D. (2024). A {Comparative Study} of {Sentiment
-Classification Models} for {Greek Reviews}. \emph{Big Data and Cognitive
-Computing}, \emph{8}(9), 107. \url{https://doi.org/10.3390/bdcc8090107}
+\bibitem[\citeproctext]{ref-lucasComputerAssistedTextAnalysis2015}
+Lucas, C., Nielsen, R. A., Roberts, M. E., Stewart, B. M., Storer, A.,
+\& Tingley, D. (2015). Computer-{Assisted Text Analysis} for
+{Comparative Politics}. \emph{Political Analysis}, \emph{23}(2),
+254--277. \url{https://doi.org/10.1093/pan/mpu019}
 
-\bibitem[\citeproctext]{ref-Mikhail2024Multilingual}
-Mikhail, K., O., K., Liliana, C. H., Grigori, S., \& A., G. (2024).
-Multilingual {Approaches} to {Sentiment Analysis} of {Texts} in
-{Linguistically Diverse Languages}: A {Case Study} of {Finnish},
-{Hungarian}, and {Bulgarian}. \emph{IWCLUL}.
+\bibitem[\citeproctext]{ref-maierMachineTranslationVs2022}
+Maier, D., Baden, C., Stoltenberg, D., De Vries-Kedem, M., \& Waldherr,
+A. (2022). Machine {Translation Vs}. {Multilingual Dictionaries
+Assessing Two Strategies} for the {Topic Modeling} of {Multilingual Text
+Collections}. \emph{Communication Methods and Measures}, \emph{16}(1),
+19--38. \url{https://doi.org/10.1080/19312458.2021.1955845}
+
+\bibitem[\citeproctext]{ref-mochtakParlasentMappingSentiment2025}
+Mochtak, M., Rupnik, P., Kuzman, T., \& Ljubešić, N. (2025). Parlasent:
+Mapping sentiment in political discourse with large language models.
+\emph{Political Research Exchange}, \emph{7}(1), 2508377.
+\url{https://doi.org/10.1080/2474736X.2025.2508377}
 
 \bibitem[\citeproctext]{ref-Mohammad2016translation}
 Mohammad, S. M., Salameh, M., \& Kiritchenko, S. (2016). How translation
@@ -1113,78 +1370,83 @@ through {Multitask Finetuning}. \emph{Proceedings of the 61st {Annual
 Meeting} of the {Association} for {Computational Linguistics} ({Volume}
 1: {Long Papers})}. \url{https://doi.org/10.18653/v1/2023.acl-long.891}
 
-\bibitem[\citeproctext]{ref-Nazir2025Leveraging}
-Nazir, M. K., Faisal, C. N., Habib, M. A., \& Ahmad, H. (2025).
-Leveraging {Multilingual Transformer} for {Multiclass Sentiment
-Analysis} in {Code-Mixed Data} of {Low-Resource Languages}. \emph{IEEE
-Access : Practical Innovations, Open Solutions}, \emph{13}, 7538--7554.
-\url{https://doi.org/10.1109/access.2025.3527710}
+\bibitem[\citeproctext]{ref-nguyen_etal26}
+Nguyen, T. T. N., Tieu, M. K., Riegler, M. A., Halvorsen, P., \& Nguyen,
+T. (2026). \emph{Investigating the {Influence} of {Prompt} and {Response
+Languages} on {LLM Content Generation}}. arXiv.
+\url{https://doi.org/10.48550/arXiv.2608.26186}
 
-\bibitem[\citeproctext]{ref-Nie2024Decomposed}
-Nie, E., Yuan, S., Ma, B., Schmid, H., Färber, M., Kreuter, F., \&
-Schütze, H. (2024). Decomposed {Prompting}: {Unveiling Multilingual
-Linguistic Structure Knowledge} in {English-Centric Large Language
-Models}. \emph{arXiv.org}.
-\url{https://doi.org/10.48550/ARXIV.2402.18397}
+\bibitem[\citeproctext]{ref-ollionDangersUsingProprietary2024}
+Ollion, É., Shen, R., Macanovic, A., \& Chatelain, A. (2024). The
+dangers of using proprietary {LLMs} for research. \emph{Nature Machine
+Intelligence}, \emph{6}(1), 4--5.
+\url{https://doi.org/10.1038/s42256-023-00783-6}
 
-\bibitem[\citeproctext]{ref-Pan2023Evaluation}
-Pan, R., García-Díaz, J. A., Garcia-Sanchez, F., \& Valencia-García, R.
-(2023). Evaluation of transformer models for financial targeted
-sentiment analysis in {Spanish}. \emph{PeerJ Computer Science},
-\emph{9}, e1377. \url{https://doi.org/10.7717/peerj-cs.1377}
+\bibitem[\citeproctext]{ref-palmerUsingProprietaryLanguage2023}
+Palmer, A., Smith, N. A., \& Spirling, A. (2023). Using proprietary
+language models in academic research requires explicit justification.
+\emph{Nature Computational Science}, \emph{4}(1), 2--3.
+\url{https://doi.org/10.1038/s43588-023-00585-1}
 
-\bibitem[\citeproctext]{ref-Perron2024Demystifying}
-Perron, B. E., Luan, H., Qi, Z., Victor, B. G., \& Goyal, K. (2024).
-Demystifying {Application Programming Interfaces} ({APIs}): {Unlocking}
-the {Power} of {Large Language Models} and {Other Web-based AI Services}
-in {Social Work Research}. \emph{arXiv.org}.
-\url{https://doi.org/10.48550/ARXIV.2410.20211}
+\bibitem[\citeproctext]{ref-pangakisAutomatedAnnotationGenerative2023}
+Pangakis, N., Wolken, S., \& Fasching, N. (2023). \emph{Automated
+{Annotation} with {Generative AI Requires Validation}}
+(arXiv:2306.00176). arXiv.
+\url{https://doi.org/10.48550/arXiv.2306.00176}
 
-\bibitem[\citeproctext]{ref-Plagwitz2024Zero}
-Plagwitz, L., Neuhaus, P., Yildirim, K., Losch, N., Varghese, J., \&
-Büscher, A. (2024). Zero-{Shot LLMs} for {Named Entity Recognition}:
-{Targeting Cardiac Function Indicators} in {German Clinical Texts}. In
-\emph{Studies in {Health Technology} and {Informatics}}. IOS Press.
-\url{https://doi.org/10.3233/shti240861}
+\bibitem[\citeproctext]{ref-prokschMultilingualSentimentAnalysis2019}
+Proksch, S.-O., Lowe, W., Wäckerle, J., \& Soroka, S. (2019).
+Multilingual {Sentiment Analysis}: {A New Approach} to {Measuring
+Conflict} in {Legislative Speeches}. \emph{Legislative Studies
+Quarterly}, \emph{44}(1), 97--131.
+\url{https://doi.org/10.1111/lsq.12218}
 
-\bibitem[\citeproctext]{ref-Priban2024comparative}
-Přibáň, P., Šmíd, J., Steinberger, J., \& Mištera, A. (2024). A
-comparative study of cross-lingual sentiment analysis. \emph{Expert
-Systems with Applications}, \emph{247}, 123247.
-\url{https://doi.org/10.1016/j.eswa.2024.123247}
+\bibitem[\citeproctext]{ref-rathjeGPTEffectiveTool2024}
+Rathje, S., Mirea, D.-M., Sucholutsky, I., Marjieh, R., Robertson, C.
+E., \& Van Bavel, J. J. (2024). {GPT} is an effective tool for
+multilingual psychological text analysis. \emph{Proceedings of the
+National Academy of Sciences}, \emph{121}(34), e2308950121.
+\url{https://doi.org/10.1073/pnas.2308950121}
 
-\bibitem[\citeproctext]{ref-Rafeef2023Evaluation}
-Rafeef A. Hameed, Wael J. Abed, \& Ahmed T. Sadiq. (2023). Evaluation of
-{Hotel Performance} with {Sentiment Analysis} by {Deep Learning
-Techniques}. \emph{International Journal of Interactive Mobile
-Technologies (iJIM)}, \emph{17}(09), 70--87.
-\url{https://doi.org/10.3991/ijim.v17i09.38755}
+\bibitem[\citeproctext]{ref-reberOvercomingLanguageBarriers2019}
+Reber, U. (2019). Overcoming {Language Barriers}: {Assessing} the
+{Potential} of {Machine Translation} and {Topic Modeling} for the
+{Comparative Analysis} of {Multilingual Text Corpora}.
+\emph{Communication Methods and Measures}, \emph{13}(2), 102--125.
+\url{https://doi.org/10.1080/19312458.2018.1555798}
 
-\bibitem[\citeproctext]{ref-Rusnachenko2024Large}
-Rusnachenko, N., Golubev, A., \& Loukachevitch, N. (2024). Large
-{Language Models} in {Targeted Sentiment Analysis}. \emph{arXiv.org}.
-\url{https://doi.org/10.48550/ARXIV.2404.12342}
+\bibitem[\citeproctext]{ref-richieInterannotatorAgreementNot2022}
+Richie, R., Grover, S., \& Tsui, F. (2022). Inter-annotator agreement is
+not the ceiling of machine learning performance: {Evidence} from a
+comprehensive set of simulations. \emph{Proceedings of the 21st
+{Workshop} on {Biomedical Language Processing}}, 275--284.
+\url{https://doi.org/10.18653/v1/2022.bionlp-1.26}
 
-\bibitem[\citeproctext]{ref-Salahudeen2023HausaNLP}
-Salahudeen, S. A., Lawan, F. I., Wali, A. M., Imam, A. A., Shuaibu, A.
-R., Yusuf, A., Rabiu, N. B., Bello, M., Adamu, S. U., Aliyu, S. M.,
-Gadanya, M. S., Muaz, S. A., Ahmad, M. S., Abdullahi, A., \& Jamoh, A.
-Y. (2023). {HausaNLP} at {SemEval-2023 Task} 12: {Leveraging African Low
-Resource TweetData} for {Sentiment Analysis}. \emph{International
-Workshop on Semantic Evaluation}.
-\url{https://doi.org/10.48550/ARXIV.2304.13634}
+\bibitem[\citeproctext]{ref-shiLanguageModelsAre2022}
+Shi, F., Suzgun, M., Freitag, M., Wang, X., Srivats, S., Vosoughi, S.,
+Chung, H. W., Tay, Y., Ruder, S., Zhou, D., Das, D., \& Wei, J. (2022).
+\emph{Language {Models} are {Multilingual Chain-of-Thought Reasoners}}
+(arXiv:2210.03057). arXiv.
+\url{https://doi.org/10.48550/arXiv.2210.03057}
 
-\bibitem[\citeproctext]{ref-Strubell2019Energy}
-Strubell, E., Ganesh, A., \& McCallum, A. (2019). Energy and {Policy
-Considerations} for {Deep Learning} in {NLP}. \emph{Proceedings of the
-57th {Annual Meeting} of the {Association} for {Computational
-Linguistics}}. \url{https://doi.org/10.18653/v1/p19-1355}
+\bibitem[\citeproctext]{ref-songValidationsWeTrust2020}
+Song, H., Tolochko, P., Eberl, J.-M., Eisele, O., Greussing, E.,
+Heidenreich, T., Lind, F., Galyga, S., \& Boomgaarden, H. G. (2020). In
+{Validations We Trust}? {The Impact} of {Imperfect Human Annotations} as
+a {Gold Standard} on the {Quality} of {Validation} of {Automated Content
+Analysis}. \emph{Political Communication}, \emph{37}(4), 550--572.
+\url{https://doi.org/10.1080/10584609.2020.1723752}
 
-\bibitem[\citeproctext]{ref-Tela2024Transferring}
-Tela, A., Woubie, A., \& Hautamäki, V. (2024). Transferring monolingual
-model to low-resource language: The case of {Tigrinya}. \emph{Applied
-Computing and Intelligence}, \emph{4}(2), 184--194.
-\url{https://doi.org/10.3934/aci.2024011}
+\bibitem[\citeproctext]{ref-spirlingWhyOpensourceGenerative2023}
+Spirling, A. (2023). Why open-source generative {AI} models are an
+ethical way forward for science. \emph{Nature}, \emph{616}, 413.
+\url{https://doi.org/10.1038/d41586-023-01295-4}
+
+\bibitem[\citeproctext]{ref-tornbergLargeLanguageModels2025}
+T"ornberg, P. (2025). Large language models outperform expert coders and
+supervised classifiers at annotating political social media messages.
+\emph{Social Science Computer Review}, \emph{43}(6), 1181--1195.
+\url{https://doi.org/10.1177/08944393241286471}
 
 \bibitem[\citeproctext]{ref-touvron_etal23a}
 Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M.-A.,
@@ -1200,23 +1462,43 @@ crowd-coding, dictionary approaches, and machine learning algorithms.
 \emph{Communication Methods and Measures}, \emph{15}(2), 121--140.
 \url{https://doi.org/10.1080/19312458.2020.1869198}
 
+\bibitem[\citeproctext]{ref-vanderveenAdvantagesLexiconbasedSentiment2025}
+Van Der Veen, A. M., \& Bleich, E. (2025). The advantages of
+lexicon-based sentiment analysis in an age of machine learning.
+\emph{PLOS ONE}, \emph{20}(1), e0313092.
+\url{https://doi.org/10.1371/journal.pone.0313092}
+
 \bibitem[\citeproctext]{ref-Venerito2024Large}
 Venerito, V., \& Iannone, F. (2024). Large language model-driven
 sentiment analysis for facilitating fibromyalgia diagnosis. \emph{RMD
 Open}, \emph{10}(2), e004367.
 \url{https://doi.org/10.1136/rmdopen-2024-004367}
 
-\bibitem[\citeproctext]{ref-Vileikyte2024Sentiment}
-Vileikytė, B., Lukoševičius, M., \& Stankevičius, L. (2024). Sentiment
-{Analysis} of {Lithuanian Online Reviews Using Large Language Models}.
-\emph{International Conference on Information Technology}.
-\url{https://doi.org/10.48550/ARXIV.2407.19914}
+\bibitem[\citeproctext]{ref-wendler_etal24}
+Wendler, C., Veselovsky, V., Monea, G., \& West, R. (2024). Do {Llamas
+Work} in {English}? {On} the {Latent Language} of {Multilingual
+Transformers}. \emph{Proceedings of the 62nd {Annual Meeting} of the
+{Association} for {Computational Linguistics} ({Volume} 1: {Long
+Papers})}, 15366--15394.
+\url{https://doi.org/10.18653/v1/2024.acl-long.820}
+
+\bibitem[\citeproctext]{ref-widmannCreatingComparingDictionary2023}
+Widmann, T., \& Wich, M. (2023). Creating and {Comparing Dictionary},
+{Word Embedding}, and {Transformer-Based Models} to {Measure Discrete
+Emotions} in {German Political Text}. \emph{Political Analysis},
+\emph{31}(4), 626--641. \url{https://doi.org/10.1017/pan.2022.15}
 
 \bibitem[\citeproctext]{ref-young_andsoroka12}
 Young, L., \& Soroka, S. (2012). Affective {News}: {The Automated
 Coding} of {Sentiment} in {Political Texts}. \emph{Political
 Communication}, \emph{29}(2), 205--231.
 \url{https://doi.org/10.1080/10584609.2012.671234}
+
+\bibitem[\citeproctext]{ref-ziemsCanLargeLanguage2024}
+Ziems, C., Held, W., Shaikh, O., Chen, J., Zhang, Z., \& Yang, D.
+(2024). Can {Large Language Models Transform Computational Social
+Science}? \emph{Computational Linguistics}, \emph{50}(1), 237--291.
+\url{https://doi.org/10.1162/coli_a_00502}
 
 \end{CSLReferences}
 
