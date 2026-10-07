@@ -238,6 +238,8 @@ All models performed substantially better on 3-category than 7-category classifi
 
 For French and current models, the results side with the multilingual-competence view. English prompts brought no advantage, and equivalence tests ruled out any English-prompt gain larger than a few hundredths on every metric. This extends earlier social science evidence, which showed that labels agree across prompt languages [@rathjeGPTEffectiveTool2024], to the accuracy of those labels against human judgment, and it is consistent with the minimal differences observed for the strongest model in Arabic [@Kmainasi2025Native]. It does not refute the pivot-language evidence so much as delimit it. That evidence comes largely from reasoning and inference benchmarks, older or smaller models, and lower-resourced languages [@Lin2022Few; @Muennighoff2023Crosslingual; @laiChatGPTEnglishComprehensive2023], and the representational bias toward English it points to [@wendler_etal24] need not translate into worse instruction-following for a simple judgment in a language as well represented as French. The erratic behavior of the smaller open-weight models in this study — Llama 3.2 3B correlated with human judgments at r = 0.48 with French prompts but 0.13 with English ones — hints that sensitivity to prompt language may reappear below a certain model size, though a single model cannot establish this.
 
+Prompt language does, however, carry a cost that the accuracy results do not show. The French prompt is 6% longer than the English one in characters, yet it cost 13% to 34% more input tokens depending on the model (@tbl-tokens). The difference is a property of each model's tokenizer rather than of its size or licence: vocabularies that favor English encode English text with similar efficiency everywhere (1.17 to 1.25 tokens per word) but split French words into more pieces, at rates ranging from 1.41 tokens per word (Llama 4 Scout, GPT-5.6 Luna, GPT-OSS) to 1.87 (Claude Haiku 4.5), a disparity documented across many languages by @ahiaAllLanguagesCost2023. The French sentences themselves cost 1.6% to 4.6% more tokens than their English translations, and output length did not differ by prompt language. Since accuracy was equivalent, the English prompt is the cheaper of two equally good options, though the saving depends on where a model's cost lies: 14% to 31% per 1,000 sentences for models billed mostly on input (Claude Haiku 4.5, Llama 3.x, Qwen3, DeepSeek V3.2, Llama 4 Scout), but under 6% for GPT-5.6 Luna, the GPT-OSS models and Gemini 3.5 Flash, whose output tokens weigh more. Translating the text first would save a few percent more, at the accuracy cost reported above.
+
 ## Translation: A Bridge for Dictionaries, a Loss for LLMs
 
 The translation results are the article's main contribution to the debate. The same machine translation that improved the dictionary lowered the LLMs' performance. This divergence reconciles the bridge and loss views rather than choosing between them: translation helps tools that cannot read the source language, and costs information for tools that can. The dictionary result is consistent with a long line of evidence that translating into English lets researchers use better-validated English resources [@araujoComparativeStudyMachine2020; @devriesNoLongerLost2018; @prokschMultilingualSentimentAnalysis2019]. For LLMs, which already read French, translation offers no such gain and exposes the analysis to the alterations of affective meaning that translation introduces [@Mohammad2016translation]. The finding runs against evidence that translating inputs into English improves multilingual models [@Etxaniz2024Multilingual], but that evidence rests on reasoning and inference benchmarks whose non-English versions were produced by translation, whereas the sentences analyzed here were written in French. The practical implication is direct: the translation step that dictionary-era workflows made necessary should not be carried into LLM-based sentiment analysis of French text.
@@ -276,6 +278,14 @@ Figure 4 shows the Mean Absolute Error (MAE) results across models and condition
 {{< include ../../results/tables/cost_table.md >}}
 
 Table: Cost of Scoring 1,000 Sentences at List Prices (Upper Bound; Cached Prompt Tokens Counted at the Full Input Rate)
+
+:::
+
+::: {#tbl-tokens}
+
+{{< include ../../results/tables/tokens_by_language.md >}}
+
+Table: Mean Input Tokens per API Call by Language Condition, and Tokens per Word by Text Language (Valid Calls Only; Llama 3.2 1B Excluded Because Its Endpoint Reported a Constant Token Count on Every Call)
 
 :::
 
