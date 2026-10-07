@@ -25,7 +25,7 @@ library(dplyr)     # For data manipulation
 library(tidyr)     # For reshaping
 
 source("src/94_models_map.R")      # model_display_name
-source("src/95_token_logging.R")   # TOKEN_LOG_PATH, MODEL_PRICES
+source("src/95_token_logging.R")   # TOKEN_LOG_PATH, MODEL_PRICES, UNRELIABLE_INPUT_COUNTS
 
 #################################################################
 # LOAD THE TOKEN LOG
@@ -42,13 +42,10 @@ last_of_triple <- tapply(ts, triple, max)
 log_df <- log_df[
   as.numeric(difftime(last_of_triple[triple], ts, units = "secs")) <= wave_window_s, ]
 
-# Llama 3.2 1B's endpoint reports a constant 45 input tokens on every call,
-# whatever the prompt — a broken counter, not a measurement. Excluded here
-# (and flagged in the table caption) rather than silently reported.
-EXCLUDED <- c("llama321b")
-
+# Models with unmeasured input counts (see src/95_token_logging.R) are
+# excluded here and flagged in the table caption.
 calls <- log_df %>%
-  filter(valid_response, !model_prefix %in% EXCLUDED) %>%
+  filter(valid_response, !model_prefix %in% UNRELIABLE_INPUT_COUNTS) %>%
   mutate(input_total = coalesce(input_tokens, 0L) + coalesce(cached_input_tokens, 0L))
 
 #################################################################
