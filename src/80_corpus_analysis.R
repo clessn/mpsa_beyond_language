@@ -1,12 +1,16 @@
 ###############################################################################
-# CORPUS ANALYSIS - GEMINI SENTIMENT RESULTS
+# CORPUS ANALYSIS - LLM SENTIMENT RESULTS
 # 
-# This script analyzes the results of the Gemini sentiment analysis run on the
-# full corpus of French news articles. It generates summary statistics, visualizations,
-# and comparative analysis between different prompt language conditions.
+# This script analyzes the results of the LLM sentiment analysis run on the
+# full corpus of French news articles (src/70_prompt_corpus.R). It generates
+# summary statistics, visualizations, and comparative analysis between the two
+# prompt language conditions and the Lexicoder dictionaries.
+#
+# The model is chosen by its prefix in src/94_models_map.R, as in script 70:
+#   CORPUS_MODEL=gpt56luna Rscript src/80_corpus_analysis.R   # (default)
 #
 # Author: Ral Zarek
-# Date: March 2025
+# Date: March 2025; generalized from Gemini-only in October 2026
 ###############################################################################
 
 #==============================================================================
@@ -27,15 +31,30 @@ theme_set(theme_minimal())
 # 2. DATA LOADING
 #==============================================================================
 
-# Load the sentiment results from both French and English prompts
-df <- readRDS("data/clean/news_df_sentiment_gemini.rds")
+source("src/94_models_map.R")  # model_mapping, model_display_name
 
-# Check if the necessary sentiment columns exist
-if (!all(c("gemini_fr_fr", "gemini_en_fr") %in% names(df))) {
-  missing_cols <- setdiff(c("gemini_fr_fr", "gemini_en_fr"), names(df))
-  stop("Missing required sentiment columns: ", paste(missing_cols, collapse=", "), 
-       ". Please run both sentiment analysis scripts first.")
+MODEL_PREFIX <- Sys.getenv("CORPUS_MODEL", "gpt56luna")
+if (!MODEL_PREFIX %in% names(model_mapping)) {
+  stop("Unknown CORPUS_MODEL '", MODEL_PREFIX, "'")
 }
+MODEL_NAME <- unname(model_display_name[MODEL_PREFIX])
+
+# Legend labels, shared by every plot below
+LAB_FR     <- paste0(MODEL_NAME, ": French Prompt")
+LAB_EN     <- paste0(MODEL_NAME, ": English Prompt")
+LAB_LSD_EN <- "Dictionary (LSD, English translation)"
+LAB_LSD_FR <- "Dictionary (FrLSD, French original)"
+
+# Load the corpus scores and bring this model's two columns under generic
+# names so the rest of the script does not depend on the prefix
+df <- readRDS("data/clean/news_df_sentiment_corpus.rds")
+needed <- paste0(MODEL_PREFIX, c("_fr_fr", "_en_fr"))
+if (!all(needed %in% names(df))) {
+  stop("Missing columns ", paste(setdiff(needed, names(df)), collapse = ", "),
+       " in data/clean/news_df_sentiment_corpus.rds. Run src/70_prompt_corpus.R first.")
+}
+df <- df %>%
+  rename(llm_fr_fr = all_of(needed[1]), llm_en_fr = all_of(needed[2]))
 
 #==============================================================================
 # 3. SUMMARY STATISTICS
@@ -44,25 +63,25 @@ if (!all(c("gemini_fr_fr", "gemini_en_fr") %in% names(df))) {
 # Overall statistics for French prompt
 fr_stats <- df %>%
   summarize(
-    Mean = mean(gemini_fr_fr, na.rm = TRUE),
-    Median = median(gemini_fr_fr, na.rm = TRUE),
-    SD = sd(gemini_fr_fr, na.rm = TRUE),
-    Min = min(gemini_fr_fr, na.rm = TRUE),
-    Max = max(gemini_fr_fr, na.rm = TRUE),
-    NA_Count = sum(is.na(gemini_fr_fr)),
-    NA_Pct = sum(is.na(gemini_fr_fr)) / n() * 100
+    Mean = mean(llm_fr_fr, na.rm = TRUE),
+    Median = median(llm_fr_fr, na.rm = TRUE),
+    SD = sd(llm_fr_fr, na.rm = TRUE),
+    Min = min(llm_fr_fr, na.rm = TRUE),
+    Max = max(llm_fr_fr, na.rm = TRUE),
+    NA_Count = sum(is.na(llm_fr_fr)),
+    NA_Pct = sum(is.na(llm_fr_fr)) / n() * 100
   )
 
 # Overall statistics for English prompt
 en_stats <- df %>%
   summarize(
-    Mean = mean(gemini_en_fr, na.rm = TRUE),
-    Median = median(gemini_en_fr, na.rm = TRUE),
-    SD = sd(gemini_en_fr, na.rm = TRUE),
-    Min = min(gemini_en_fr, na.rm = TRUE),
-    Max = max(gemini_en_fr, na.rm = TRUE),
-    NA_Count = sum(is.na(gemini_en_fr)),
-    NA_Pct = sum(is.na(gemini_en_fr)) / n() * 100
+    Mean = mean(llm_en_fr, na.rm = TRUE),
+    Median = median(llm_en_fr, na.rm = TRUE),
+    SD = sd(llm_en_fr, na.rm = TRUE),
+    Min = min(llm_en_fr, na.rm = TRUE),
+    Max = max(llm_en_fr, na.rm = TRUE),
+    NA_Count = sum(is.na(llm_en_fr)),
+    NA_Pct = sum(is.na(llm_en_fr)) / n() * 100
   )
 
 # Create a table for easy comparison
@@ -80,7 +99,7 @@ print(summary_stats)
 #==============================================================================
 
 # Calculate correlation between French and English prompt results
-correlation <- cor(df$gemini_fr_fr, df$gemini_en_fr, use = "pairwise.complete.obs")
+correlation <- cor(df$llm_fr_fr, df$llm_en_fr, use = "pairwise.complete.obs")
 cat("Correlation between French and English prompt results:", correlation, "\n")
 
 #==============================================================================
@@ -109,7 +128,7 @@ create_pub_theme <- function() {
 }
 
 # Create histogram for French prompt
-p1 <- ggplot(df, aes(x = gemini_fr_fr)) +
+p1 <- ggplot(df, aes(x = llm_fr_fr)) +
   # Add reference line at 0
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray70") +
   # Create histogram with better aesthetics
@@ -125,7 +144,7 @@ p1 <- ggplot(df, aes(x = gemini_fr_fr)) +
                alpha = 0) +
   # Professional labeling
   labs(title = "Distribution of Sentiment Scores",
-       subtitle = "Gemini 2.0 Flash with French Prompt",
+       subtitle = paste(MODEL_NAME, "with French Prompt"),
        x = "Sentiment Score", 
        y = "Number of Articles",
        caption = "Negative scores indicate negative sentiment; positive scores indicate positive sentiment") +
@@ -135,7 +154,7 @@ p1 <- ggplot(df, aes(x = gemini_fr_fr)) +
   create_pub_theme()
 
 # Create histogram for English prompt with matching design
-p2 <- ggplot(df, aes(x = gemini_en_fr)) +
+p2 <- ggplot(df, aes(x = llm_en_fr)) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray70") +
   geom_histogram(bins = 30, 
                  fill = "#D62728", 
@@ -147,7 +166,7 @@ p2 <- ggplot(df, aes(x = gemini_en_fr)) +
                linewidth = 1, 
                alpha = 0) +
   labs(title = "Distribution of Sentiment Scores",
-       subtitle = "Gemini 2.0 Flash with English Prompt",
+       subtitle = paste(MODEL_NAME, "with English Prompt"),
        x = "Sentiment Score", 
        y = "Number of Articles",
        caption = "Negative scores indicate negative sentiment; positive scores indicate positive sentiment") +
@@ -168,32 +187,32 @@ df_lsd_en <- tryCatch({
   data.frame(doc_id = character(0), lsd_en = numeric(0))
 })
 
-# Join LSD English data with Gemini data if available
+# Join LSD English data with LLM data if available
 if (nrow(df_lsd_en) > 0) {
   df <- df %>% left_join(df_lsd_en, by = "doc_id")
   
   # Prepare data for comparing distributions with all three methods
   df_long <- df %>%
-    select(gemini_fr_fr, gemini_en_fr, lsd_en) %>%
-    pivot_longer(cols = c(gemini_fr_fr, gemini_en_fr, lsd_en),
+    select(llm_fr_fr, llm_en_fr, lsd_en) %>%
+    pivot_longer(cols = c(llm_fr_fr, llm_en_fr, lsd_en),
                  names_to = "prompt",
                  values_to = "sentiment") %>%
     mutate(prompt = case_when(
-      prompt == "gemini_fr_fr" ~ "Gemini: French Prompt",
-      prompt == "gemini_en_fr" ~ "Gemini: English Prompt",
-      prompt == "lsd_en" ~ "Dictionary (LSDEN)",
+      prompt == "llm_fr_fr" ~ LAB_FR,
+      prompt == "llm_en_fr" ~ LAB_EN,
+      prompt == "lsd_en" ~ LAB_LSD_EN,
       TRUE ~ prompt
     ))
 } else {
-  # If LSD data not available, just use Gemini data
+  # If LSD data not available, just use LLM data
   df_long <- df %>%
-    select(gemini_fr_fr, gemini_en_fr) %>%
-    pivot_longer(cols = c(gemini_fr_fr, gemini_en_fr),
+    select(llm_fr_fr, llm_en_fr) %>%
+    pivot_longer(cols = c(llm_fr_fr, llm_en_fr),
                  names_to = "prompt",
                  values_to = "sentiment") %>%
     mutate(prompt = case_when(
-      prompt == "gemini_fr_fr" ~ "Gemini: French Prompt",
-      prompt == "gemini_en_fr" ~ "Gemini: English Prompt",
+      prompt == "llm_fr_fr" ~ LAB_FR,
+      prompt == "llm_en_fr" ~ LAB_EN,
       TRUE ~ prompt
     ))
 }
@@ -214,20 +233,14 @@ p3 <- ggplot(df_long, aes(x = sentiment, fill = prompt, color = prompt)) +
        y = "Density", 
        fill = "Analysis Method",
        color = "Analysis Method",
-       caption = "Comparing Gemini 2.0 Flash with different prompting approaches and dictionary-based (LSDEN) methods") +
+       caption = paste("Comparing", MODEL_NAME, "under two prompt languages with the English Lexicoder dictionary on the translated text")) +
   # Consistent scale
   scale_x_continuous(limits = c(-1, 1), breaks = seq(-1, 1, by = 0.25)) +
   # Professional color palette - adding green for dictionary
-  scale_fill_manual(values = c(
-    "Gemini: French Prompt" = "#1F78B4", 
-    "Gemini: English Prompt" = "#D62728",
-    "Dictionary (LSDEN)" = "#2CA02C"
-  )) +
-  scale_color_manual(values = c(
-    "Gemini: French Prompt" = "#08519C", 
-    "Gemini: English Prompt" = "#A50F15",
-    "Dictionary (LSDEN)" = "#006D2C"
-  )) +
+  scale_fill_manual(values = setNames(c("#1F78B4", "#D62728", "#2CA02C"),
+                                      c(LAB_FR, LAB_EN, LAB_LSD_EN))) +
+  scale_color_manual(values = setNames(c("#08519C", "#A50F15", "#006D2C"),
+                                       c(LAB_FR, LAB_EN, LAB_LSD_EN))) +
   # Apply publication theme
   theme_minimal() +
   theme(
@@ -271,7 +284,7 @@ if ("date" %in% names(df)) {
     data.frame(doc_id = character(0), lsden = numeric(0))
   })
   
-  # Join LSD data with Gemini data
+  # Join LSD data with LLM data
   df <- df %>%
     left_join(df_lsd, by = "doc_id")
   
@@ -280,8 +293,8 @@ if ("date" %in% names(df)) {
     mutate(month = floor_date(date, "month")) %>%
     group_by(month) %>%
     summarize(
-      fr_sentiment = mean(gemini_fr_fr, na.rm = TRUE),
-      en_sentiment = mean(gemini_en_fr, na.rm = TRUE),
+      fr_sentiment = mean(llm_fr_fr, na.rm = TRUE),
+      en_sentiment = mean(llm_en_fr, na.rm = TRUE),
       lsden_sentiment = mean(lsden, na.rm = TRUE),
       n_articles = n()
     ) %>%
@@ -293,9 +306,9 @@ if ("date" %in% names(df)) {
                  names_to = "prompt",
                  values_to = "sentiment") %>%
     mutate(prompt = case_when(
-      prompt == "fr_sentiment" ~ "Gemini: French Prompt",
-      prompt == "en_sentiment" ~ "Gemini: English Prompt",
-      prompt == "lsden_sentiment" ~ "Dictionary (LSDEN)",
+      prompt == "fr_sentiment" ~ LAB_FR,
+      prompt == "en_sentiment" ~ LAB_EN,
+      prompt == "lsden_sentiment" ~ LAB_LSD_FR,
       TRUE ~ prompt
     ))
   
@@ -362,18 +375,12 @@ if ("date" %in% names(df)) {
     ) +
     
     # Define a professional color palette with deeper, more distinct colors
-    scale_color_manual(values = c(
-      "Gemini: French Prompt" = "#0072B2",    # Blue
-      "Gemini: English Prompt" = "#D55E00",   # Orange-red
-      "Dictionary (LSDEN)" = "#009E73"        # Green
-    )) +
+    scale_color_manual(values = setNames(c("#0072B2", "#D55E00", "#009E73"),   # blue, orange-red, green
+                                         c(LAB_FR, LAB_EN, LAB_LSD_FR))) +
     
     # Add distinct point shapes for better distinguishability
-    scale_shape_manual(values = c(
-      "Gemini: French Prompt" = 16,           # Circle
-      "Gemini: English Prompt" = 17,          # Triangle
-      "Dictionary (LSDEN)" = 15               # Square
-    ))
+    scale_shape_manual(values = setNames(c(16, 17, 15),                         # circle, triangle, square
+                                         c(LAB_FR, LAB_EN, LAB_LSD_FR)))
   
   # Display the time series plot
   print(p4)
@@ -385,7 +392,7 @@ if ("date" %in% names(df)) {
 
 # Calculate the absolute difference between prompt conditions
 df <- df %>%
-  mutate(sentiment_diff = abs(gemini_fr_fr - gemini_en_fr))
+  mutate(sentiment_diff = abs(llm_fr_fr - llm_en_fr))
 
 # Summary of differences
 diff_summary <- df %>%
@@ -403,7 +410,7 @@ print(diff_summary)
 large_diff_articles <- df %>%
   filter(!is.na(sentiment_diff)) %>%
   arrange(desc(sentiment_diff)) %>%
-  select(doc_id, title, date, gemini_fr_fr, gemini_en_fr, sentiment_diff) %>%
+  select(doc_id, title, date, llm_fr_fr, llm_en_fr, sentiment_diff) %>%
   head(10)
 
 print("Top 10 articles with largest differences between prompt conditions:")
@@ -412,10 +419,10 @@ print(large_diff_articles)
 # Create categories for directional differences
 df <- df %>%
   mutate(diff_category = case_when(
-    is.na(gemini_fr_fr) | is.na(gemini_en_fr) ~ "Missing Data",
-    gemini_fr_fr > gemini_en_fr + 0.2 ~ "French More Positive",
-    gemini_en_fr > gemini_fr_fr + 0.2 ~ "English More Positive",
-    abs(gemini_fr_fr - gemini_en_fr) <= 0.2 ~ "Similar",
+    is.na(llm_fr_fr) | is.na(llm_en_fr) ~ "Missing Data",
+    llm_fr_fr > llm_en_fr + 0.2 ~ "French More Positive",
+    llm_en_fr > llm_fr_fr + 0.2 ~ "English More Positive",
+    abs(llm_fr_fr - llm_en_fr) <= 0.2 ~ "Similar",
     TRUE ~ "Other"
   ))
 
@@ -485,16 +492,16 @@ analysis_results <- list(
 )
 
 # Save the analysis results
-saveRDS(analysis_results, "data/clean/gemini_corpus_analysis.rds")
+saveRDS(analysis_results, "data/clean/corpus_analysis.rds")
 
 # Save plots
-ggsave("results/graphs/gemini_fr_distribution.png", p1, width = 8, height = 6)
-ggsave("results/graphs/gemini_en_distribution.png", p2, width = 8, height = 6)
-ggsave("results/graphs/gemini_distribution_comparison.png", p3, width = 8, height = 6)
+ggsave("results/graphs/corpus_fr_distribution.png", p1, width = 8, height = 6)
+ggsave("results/graphs/corpus_en_distribution.png", p2, width = 8, height = 6)
+ggsave("results/graphs/corpus_distribution_comparison.png", p3, width = 8, height = 6)
 if (exists("p4")) {
-  ggsave("results/graphs/gemini_time_series.png", p4, width = 12, height = 8, dpi = 300)
+  ggsave("results/graphs/corpus_time_series.png", p4, width = 12, height = 8, dpi = 300)
 }
-ggsave("results/graphs/gemini_diff_categories.png", p5, width = 8, height = 6)
+ggsave("results/graphs/corpus_diff_categories.png", p5, width = 8, height = 6)
 
-cat("Analysis complete. Results saved to data/clean/gemini_corpus_analysis.rds\n")
+cat("Analysis complete. Results saved to data/clean/corpus_analysis.rds\n")
 cat("Plots saved to results/graphs/\n")

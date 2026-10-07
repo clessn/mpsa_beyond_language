@@ -1,385 +1,300 @@
 ###############################################################################
-# FULL CORPUS SENTIMENT ANALYSIS WITH GEMINI
-# 
-# This script runs sentiment analysis on the full corpus of French news articles
-# using only the Gemini model with French prompts on French text.
+# FULL CORPUS SENTIMENT ANALYSIS WITH ONE LLM
+#
+# Scores every article of the French news corpus with a single model, under
+# the two prompt-language conditions the validation study compares on French
+# text: French prompt (fr_fr) and English prompt (en_fr). The result feeds the
+# corpus-level comparison with the Lexicoder dictionary (src/80_corpus_analysis.R
+# and Figure 5 of the manuscript).
+#
+# The model is chosen by its prefix in src/94_models_map.R, so the script
+# follows the lineup rather than hard-coding a vendor:
+#   Rscript src/70_prompt_corpus.R                       # default: gpt56luna
+#   CORPUS_MODEL=claudehaiku45 Rscript src/70_prompt_corpus.R
+#
+# The default is GPT-5.6 Luna because it is the best-performing model of the
+# 2026 validation run (r = 0.81 in FR->FR, 0.80 in EN->FR) and the cheapest of
+# the closed-weight ones on this corpus. The 2025 version of this script was
+# Gemini-only (then the best model); its English-prompt twin,
+# src/71_en_prompt_corpus.R, is folded into this one.
+#
+# Client settings are identical to src/40_prompt.R (same model id, 400-token
+# output cap, same system prompt), so corpus scores are comparable with the
+# validation scores. Every API call is logged to a separate token log.
 #
 # Author: Ral Zarek
-# Date: March 2025
+# Date: March 2025; rewritten October 2026
 ###############################################################################
 
 #==============================================================================
 # 1. SETUP AND DEPENDENCIES
 #==============================================================================
 
-# Set up error handling for script interruptions
 options(warn = 1)  # Print warnings as they occur
 
-# Set up tryCatch to save progress on interrupt
+library(ellmer)   # LLM API interactions
+library(dplyr)    # Data manipulation
+library(stringr)  # Used by clean_sentiment_value()
+
+source("src/92_llm_helper_funcs.R")  # retry_with_backoff(), clean_sentiment_value()
+source("src/93_prompts.R")           # fr_prompt_fr_text(), en_prompt_fr_text(), get_system_prompt()
+source("src/94_models_map.R")        # model_mapping, model_provider_pin, openrouter_args()
+source("src/95_token_logging.R")     # capture_usage(), log_api_call(), init_token_log()
+
+#------------------------------------------------------------------------------
+# 1.1 MODEL SELECTION
+#------------------------------------------------------------------------------
+
+MODEL_PREFIX <- Sys.getenv("CORPUS_MODEL", "gpt56luna")
+if (!MODEL_PREFIX %in% names(model_mapping)) {
+  stop(sprintf("Unknown CORPUS_MODEL '%s'. Known prefixes: %s",
+               MODEL_PREFIX, paste(names(model_mapping), collapse = ", ")))
+}
+MODEL_ID <- unname(model_mapping[MODEL_PREFIX])
+cat(sprintf("Corpus model: %s (%s)\n", MODEL_PREFIX, MODEL_ID))
+
+# Same cap as src/40_prompt.R. Providers bill tokens generated, not the
+# ceiling, so this costs nothing for models that answer in 3-4 tokens.
+OUTPUT_MAX_TOKENS <- 400
+
+#------------------------------------------------------------------------------
+# 1.2 FILE LAYOUT
+#------------------------------------------------------------------------------
+
+# Checkpoints carry the model prefix so a run for one model can never resume
+# from another model's scores. The 2025 Gemini checkpoints had generic names,
+# and a rerun would have silently skipped every article already scored by the
+# old model (see data/tmp/archive_2025/README.md).
+CHECKPOINT_PREFIX <- sprintf("data/tmp/corpus_sentiment_%s_", MODEL_PREFIX)
+LATEST_CHECKPOINT <- paste0(CHECKPOINT_PREFIX, "latest_checkpoint.rds")
+
+# One output file for the corpus, with one column per model and condition
+# (e.g. gpt56luna_fr_fr, gpt56luna_en_fr). Running a second model adds its
+# columns alongside the first's.
+OUTPUT_PATH <- "data/clean/news_df_sentiment_corpus.rds"
+
+# Separate log from the validation run's: summarize_costs() aggregates the
+# default log by model, and these article-length calls would otherwise be
+# folded into the per-sentence cost table.
+CORPUS_TOKEN_LOG_PATH <- "results/analysis/token_usage_log_corpus.csv"
+init_token_log(CORPUS_TOKEN_LOG_PATH)
+
+#------------------------------------------------------------------------------
+# 1.3 SINGLE-INSTANCE LOCK
+#------------------------------------------------------------------------------
+# Two concurrent runs overwrite each other's checkpoints and interleave token
+# log lines (this happened to src/40_prompt.R on 2026-09-09). The lock stores
+# this process's PID; a stale lock from a killed run is detected and replaced.
+LOCK_PATH <- "data/tmp/.corpus.lock"
+
+if (file.exists(LOCK_PATH)) {
+  old_pid <- suppressWarnings(as.integer(readLines(LOCK_PATH, warn = FALSE)[1]))
+  alive <- !is.na(old_pid) &&
+    length(system(sprintf("ps -p %d -o pid=", old_pid), intern = TRUE,
+                  ignore.stderr = TRUE)) > 0
+  if (alive) {
+    stop(sprintf("Another instance of this script is running (PID %d). Refusing to start.",
+                 old_pid))
+  }
+  cat("Removing stale lock from PID", old_pid, "\n")
+}
+writeLines(as.character(Sys.getpid()), LOCK_PATH)
+
 tryCatch({
 
-# Load required libraries for data manipulation, API calls, and file operations
-library(ellmer)   # Package for LLM API interactions
-library(dplyr)    # Data manipulation
-library(purrr)    # Functional programming tools
-library(readr)    # Reading/writing data
-library(stringr)  # String manipulation
-
-# Source helper functions and prompt functions (only once at the beginning)
-source("src/92_llm_helper_funcs.R")
-source("src/93_prompts.R")
-
-# Get system prompt for model initialization (defined in prompts.R)
-system_prompt <- get_system_prompt()
-
 #==============================================================================
-# 2. DATA LOADING & CHECKPOINT HANDLING
+# 2. DATA LOADING AND CHECKPOINT RESUME
 #==============================================================================
 
-# Check for existing checkpoint files
-checkpoint_files <- list.files("data/tmp", pattern = "corpus_sentiment_(progress|latest_checkpoint|INTERRUPTED).*\\.rds", full.names = TRUE)
-
-if (length(checkpoint_files) > 0) {
-  # First try latest_checkpoint.rds if it exists (it's always the most current)
-  consolidated_checkpoint <- grep("corpus_sentiment_latest_checkpoint\\.rds$", checkpoint_files, value = TRUE)
-  
-  # If consolidated checkpoint exists, use it
-  if (length(consolidated_checkpoint) > 0) {
-    latest_checkpoint <- consolidated_checkpoint[1]
-    cat("Found consolidated checkpoint file:", latest_checkpoint, "\n")
-  } else {
-    # Otherwise, find the most recent progress or interrupted checkpoint
-    # Sort by modification time to get the most recent
-    latest_checkpoint <- checkpoint_files[order(file.info(checkpoint_files)$mtime, decreasing = TRUE)][1]
-    cat("Found checkpoint file:", latest_checkpoint, "\n")
-  }
-  
-  # Load the checkpoint data
-  checkpoint_df <- tryCatch({
-    readRDS(latest_checkpoint)
-  }, error = function(e) {
-    cat("Error reading checkpoint file:", e$message, "\n")
-    NULL
-  })
-  
-  # If checkpoint loaded successfully, use it
-  if (!is.null(checkpoint_df)) {
-    # We'll verify the structure once we load the raw data
-    df <- checkpoint_df
-    resuming_from_checkpoint <- TRUE
-    cat("Loaded checkpoint data. Will verify structure before proceeding.\n")
-  } else {
-    resuming_from_checkpoint <- FALSE
-    cat("Failed to load checkpoint data. Starting with fresh data.\n")
-  }
-} else {
-  resuming_from_checkpoint <- FALSE
-  cat("No checkpoint files found. Starting with fresh data.\n")
-}
-
-# Load the original dataset (only if needed or for verification)
 df_raw <- readRDS("data/tmp/news_df_tone_index.rds")
 
-# If resuming from checkpoint, verify it has the expected structure
-if (resuming_from_checkpoint) {
-  if (all(names(df_raw) %in% names(df))) {
-    cat("Checkpoint data structure verified. Resuming from checkpoint...\n")
-  } else {
-    cat("Checkpoint file has unexpected structure. Starting fresh with original data.\n")
-    df <- df_raw
-  }
+# Start from the shared output file when it exists, so columns from earlier
+# models are preserved; otherwise from the raw corpus.
+df <- if (file.exists(OUTPUT_PATH)) {
+  cat("Loading existing corpus scores from", OUTPUT_PATH, "\n")
+  readRDS(OUTPUT_PATH)
 } else {
-  df <- df_raw
-  cat("Starting fresh with original data.\n")
+  df_raw
 }
 
-#==============================================================================
-# 3. CHECKPOINT MANAGEMENT FUNCTIONS
-#==============================================================================
-
-# Setup checkpoint function to save interim progress and manage checkpoint files
-save_progress_checkpoint <- function(force = FALSE) {
-  # Check if it's time for a checkpoint or if forced
-  current_time <- Sys.time()
-  time_to_save <- force || difftime(current_time, last_checkpoint_time, units = "secs") > checkpoint_interval
-  
-  if (time_to_save) {
-    # Calculate progress percentage
-    total_rows <- nrow(df)
-    processed_rows <- sum(!is.na(df[["gemini_fr_fr"]]))
-    progress_pct <- round((processed_rows / total_rows) * 100, 2)
-    
-    # Create timestamp for the new checkpoint file
-    timestamp <- format(current_time, "%Y%m%d_%H%M%S")
-    checkpoint_file <- paste0("data/tmp/corpus_sentiment_progress_", timestamp, ".rds")
-    
-    # Save the current progress
-    tryCatch({
-      saveRDS(df, checkpoint_file)
-      cat(sprintf("Progress checkpoint saved to: %s (%.2f%% complete, %d of %d rows)\n", 
-                 checkpoint_file, progress_pct, processed_rows, total_rows))
-    
-      # Also save a consolidated checkpoint file that always has the same name
-      consolidated_file <- "data/tmp/corpus_sentiment_latest_checkpoint.rds"
-      saveRDS(df, consolidated_file)
-      cat("Also saved to consolidated checkpoint:", consolidated_file, "\n")
-      
-      # Update the last checkpoint time
-      last_checkpoint_time <<- current_time
-      
-      # Cleanup old checkpoint files - keep only 10 most recent files
-      checkpoint_files <- list.files("data/tmp", pattern = "corpus_sentiment_progress_.*\\.rds", full.names = TRUE)
-      
-      # If we have more than 10 checkpoint files, remove the oldest ones
-      if (length(checkpoint_files) > 10) {
-        # Sort files by modification time (oldest first)
-        checkpoint_files <- checkpoint_files[order(file.info(checkpoint_files)$mtime)]
-        
-        # Determine how many files to remove
-        files_to_remove <- checkpoint_files[1:(length(checkpoint_files) - 10)]
-        
-        # Remove the oldest files
-        for (file in files_to_remove) {
-          file.remove(file)
-          cat("Removed old checkpoint file:", file, "\n")
-        }
-      }
-      
-      return(TRUE)  # Checkpoint was saved
-    }, error = function(e) {
-      cat("ERROR: Failed to save checkpoint:", conditionMessage(e), "\n")
-      return(FALSE)
-    })
+# Resume this model's run from its latest checkpoint if there is one
+if (file.exists(LATEST_CHECKPOINT)) {
+  checkpoint_df <- tryCatch(readRDS(LATEST_CHECKPOINT), error = function(e) NULL)
+  if (!is.null(checkpoint_df) && all(names(df_raw) %in% names(checkpoint_df)) &&
+      nrow(checkpoint_df) == nrow(df_raw)) {
+    cat("Resuming from checkpoint:", LATEST_CHECKPOINT, "\n")
+    df <- checkpoint_df
+  } else {
+    cat("Checkpoint unreadable or inconsistent; starting this model from scratch.\n")
   }
-  
-  return(FALSE)  # No checkpoint saved
 }
 
-# Set up checkpoint timer (10 minutes between automatic saves)
+stopifnot(nrow(df) == nrow(df_raw), all(df$doc_id == df_raw$doc_id))
+
+#==============================================================================
+# 3. CHECKPOINTING
+#==============================================================================
+
 last_checkpoint_time <- Sys.time()
-checkpoint_interval <- 600  # 10 minutes in seconds
+CHECKPOINT_INTERVAL_S <- 600  # also forced every 10 articles
 
-#==============================================================================
-# 4. MODEL INITIALIZATION
-#==============================================================================
-
-# Initialize Gemini client
-cat("Initializing Gemini client...\n")
-
-# Google Gemini 3.5 Flash
-gemini <- ellmer::chat_google_gemini(
-  system_prompt = system_prompt,
-  model = "gemini-3.5-flash",
-  echo = "none"
-)
-
-cat("Gemini client initialized. Ready for sentiment analysis.\n")
-
-#==============================================================================
-# 5. CORE SENTIMENT ANALYSIS FUNCTION
-#==============================================================================
-
-#' Run sentiment analysis for Gemini model on the whole corpus
-#'
-#' This function processes each article in the dataset with the Gemini model,
-#' using French prompts on the French article text.
-#'
-#' @param data The dataframe containing articles to analyze
-#' @param model_client The initialized LLM client object
-#' @return Updated dataframe with filled sentiment scores
-run_corpus_sentiment_analysis <- function(data, model_client) {
-  # Create a working copy of the input data
-  result_df <- data
-  
-  # Create model identifier for column names
-  model_identifier <- "gemini_fr_fr"
-  
-  # Initialize column for this model if it doesn't exist
-  if (!paste0(model_identifier) %in% names(result_df)) {
-    result_df[[paste0(model_identifier)]] <- NA_real_
-    cat("Initialized column:", paste0(model_identifier), "\n")
+save_progress_checkpoint <- function(data, column, force = FALSE) {
+  now <- Sys.time()
+  if (!force && difftime(now, last_checkpoint_time, units = "secs") < CHECKPOINT_INTERVAL_S) {
+    return(invisible(FALSE))
   }
-  
-  # Process each article in the dataset
-  for (i in seq_along(result_df[["text_body"]])) {
-    # Skip if we already have a valid result for this item
-    if (!is.na(result_df[[model_identifier]][i])) {
-      if (i %% 50 == 0) {  # Log less frequently to reduce output
-        cat(sprintf("Skipping %s item %d (already processed)\n", model_identifier, i))
-      }
-      next
-    }
-    
-    # Log progress information (only every 10 items to reduce console output)
-    if (i %% 10 == 0) {
-      cat(sprintf("Processing %s: Item %d of %d\n", 
-                model_identifier, i, length(result_df[["text_body"]])))
-    }
-    
-    # Check if it's time for a checkpoint save (based on time elapsed)
-    current_time <- Sys.time()
-    if (difftime(current_time, last_checkpoint_time, units = "secs") > checkpoint_interval) {
-      # Update global df with current results first
-      df <<- result_df
-      # Then save checkpoint
-      save_progress_checkpoint()
-      last_checkpoint_time <<- current_time  # Update the global variable
-    }
-    
-    # Create French prompt for French text
-    prompt <- fr_prompt_fr_text(result_df$text_body[i])
-    
-    # Set up for multiple runs with retry logic for each run
-    max_retries <- 3  # Maximum number of retry attempts per run
-    valid_value_obtained <- FALSE
-    attempt <- 1
-    
-    # Try multiple times to get a valid sentiment value
-    while (!valid_value_obtained && attempt <= max_retries) {
-      # Wrap in tryCatch to provide more detailed error handling and logging
-      # `response` is assigned FROM tryCatch, so the error handler's NULL
-      # actually reaches it. In the original form the assignment sat inside
-      # the block and `return(NULL)` only exited the handler function — so on
-      # any API failure `response` still held the PREVIOUS call's text, and
-      # the previous sentence's score was silently attributed to this one.
-      # Verified with a reproduction and fixed 2026-09-09.
-      response <- tryCatch({
-        # Reset chat history to ensure each prompt is treated as new
-        model_client$set_turns(list())
+  tryCatch({
+    stamped <- paste0(CHECKPOINT_PREFIX, "progress_", format(now, "%Y%m%d_%H%M%S"), ".rds")
+    saveRDS(data, stamped)
+    saveRDS(data, LATEST_CHECKPOINT)
+    done <- sum(!is.na(data[[column]]))
+    cat(sprintf("Checkpoint saved (%s: %d of %d articles, %.1f%%)\n",
+                column, done, nrow(data), 100 * done / nrow(data)))
+    last_checkpoint_time <<- now
 
-        # Make API call with retry and backoff for connection issues
-        retry_with_backoff({
-          model_client$chat(prompt)
-        })
+    # Keep only the 10 most recent stamped checkpoints for this model
+    stamped_files <- list.files("data/tmp",
+                                pattern = sprintf("^corpus_sentiment_%s_progress_.*\\.rds$", MODEL_PREFIX),
+                                full.names = TRUE)
+    if (length(stamped_files) > 10) {
+      stamped_files <- stamped_files[order(file.info(stamped_files)$mtime)]
+      file.remove(stamped_files[seq_len(length(stamped_files) - 10)])
+    }
+    invisible(TRUE)
+  }, error = function(e) {
+    cat("ERROR: failed to save checkpoint:", conditionMessage(e), "\n")
+    invisible(FALSE)
+  })
+}
+
+#==============================================================================
+# 4. MODEL CLIENT
+#==============================================================================
+
+# Mirrors the client construction in src/40_prompt.R, section 3.
+build_client <- function(prefix) {
+  system_prompt <- get_system_prompt()
+  params <- ellmer::params(max_tokens = OUTPUT_MAX_TOKENS)
+  model <- unname(model_mapping[prefix])
+
+  if (prefix %in% names(model_provider_pin)) {
+    return(ellmer::chat_openrouter(system_prompt = system_prompt, model = model,
+                                   params = params, api_args = openrouter_args(prefix),
+                                   echo = "none"))
+  }
+  switch(prefix,
+    claudehaiku45 = ellmer::chat_anthropic(system_prompt = system_prompt, model = model,
+                                           params = params, echo = "none"),
+    gemini35      = ellmer::chat_google_gemini(system_prompt = system_prompt, model = model,
+                                               params = params, echo = "none"),
+    gpt56luna     = ellmer::chat_openai(system_prompt = system_prompt, model = model,
+                                        params = params, echo = "none"),
+    stop("No client constructor for prefix '", prefix, "'; add one in build_client().")
+  )
+}
+
+client <- build_client(MODEL_PREFIX)
+cat("Client initialized.\n")
+
+#==============================================================================
+# 5. SCORING LOOP
+#==============================================================================
+
+#' Score every article under one prompt-language condition
+#'
+#' @param data Corpus data frame
+#' @param prompt_lang "fr" or "en": language of the instructions (text is
+#'   always the French original)
+#' @return `data` with the column `<prefix>_<prompt_lang>_fr` filled in
+score_corpus <- function(data, prompt_lang) {
+  condition <- paste0(prompt_lang, "_fr")
+  column <- paste0(MODEL_PREFIX, "_", condition)
+  make_prompt <- if (prompt_lang == "fr") fr_prompt_fr_text else en_prompt_fr_text
+
+  if (!column %in% names(data)) data[[column]] <- NA_real_
+  todo <- which(is.na(data[[column]]))
+  cat(sprintf("\n=== %s: %d of %d articles to score ===\n", column, length(todo), nrow(data)))
+
+  max_retries <- 3
+  for (i in todo) {
+    if (i %% 10 == 0) cat(sprintf("%s: article %d of %d\n", column, i, nrow(data)))
+
+    prompt <- make_prompt(data$text_body[i])
+    value <- NA_real_
+
+    for (attempt in seq_len(max_retries)) {
+      # `response` is assigned FROM tryCatch so an API failure yields NULL
+      # here rather than leaving the previous article's text in place.
+      response <- tryCatch({
+        client$set_turns(list())  # each article is a fresh conversation
+        retry_with_backoff({ client$chat(prompt) })
       }, error = function(e) {
-        cat(sprintf("ERROR with %s on attempt %d: %s\n", model_identifier, attempt, e$message))
-        # Add a longer timeout after errors to let rate limits recover
+        cat(sprintf("ERROR on article %d, attempt %d: %s\n", i, attempt, conditionMessage(e)))
         Sys.sleep(10)
         NULL
       })
-      
-      # Skip rest of loop if response is NULL (error occurred)
-      if (is.null(response)) {
-        attempt <- attempt + 1
-        next
-      }
-      
-      # Apply rate limiting - 1 second delay for all API-based models
-      Sys.sleep(1)
-      
-      # Extract numerical sentiment value from the model's response
-      extracted_value <- clean_sentiment_value(response)
-      
-      # Validate that we got a value in the acceptable range (-1 to 1)
-      if (!is.na(extracted_value) && extracted_value >= -1 && extracted_value <= 1) {
-        # Valid value obtained - store it and break the retry loop
-        result_df[[model_identifier]][i] <- extracted_value
-        valid_value_obtained <- TRUE
-        # Print for every item
-        cat(sprintf("Valid value %.2f obtained for item %d on attempt %d\n", 
-                  extracted_value, i, attempt))
+      if (is.null(response)) next
+
+      # Snapshot usage before anything else touches the client; fails soft
+      call_usage <- capture_usage(client)
+      Sys.sleep(1)  # pacing
+
+      extracted <- clean_sentiment_value(response)
+      is_valid <- !is.na(extracted) && extracted >= -1 && extracted <= 1
+
+      # Every attempt is logged, including failed ones: providers bill them
+      log_api_call(path = CORPUS_TOKEN_LOG_PATH, model_prefix = MODEL_PREFIX,
+                   condition = condition, item = i, run = 1, attempt = attempt,
+                   usage = call_usage, valid_response = is_valid)
+
+      if (is_valid) {
+        value <- extracted
         break
-      } else {
-        # Invalid response - log it and try again (up to max_retries)
-        cat(sprintf("Attempt %d/%d: Invalid value for item %d\n", 
-                  attempt, max_retries, i))
-        cat("Response:", response, "\n")
-        attempt <- attempt + 1
       }
+      cat(sprintf("Attempt %d/%d: no usable value for article %d. Response: %s\n",
+                  attempt, max_retries, i, substr(response, 1, 120)))
     }
-    
-    # If all retry attempts failed, store NA
-    if (!valid_value_obtained) {
-      cat(sprintf("Warning: Failed to extract numerical value from responses for item %d after %d attempts\n", 
-                i, max_retries))
-      result_df[[model_identifier]][i] <- NA_real_
+
+    if (is.na(value)) {
+      cat(sprintf("Warning: article %d left NA after %d attempts\n", i, max_retries))
     }
-    
-    # Save checkpoint every 10 items for additional safety
-    if (i %% 10 == 0) {
-      # Update global df with current results first
-      df <<- result_df
-      # Force a checkpoint save regardless of time elapsed
-      save_progress_checkpoint(force = TRUE)
-    }
+    data[[column]][i] <- value
+
+    if (i %% 10 == 0) save_progress_checkpoint(data, column, force = TRUE)
+    else save_progress_checkpoint(data, column)
   }
-  
-  # Return the updated dataframe
-  return(result_df)
+
+  save_progress_checkpoint(data, column, force = TRUE)
+  data
 }
 
-#==============================================================================
-# 6. RUN SENTIMENT ANALYSIS
-#==============================================================================
-
-# Process the entire corpus with Gemini using French prompts
-cat("Processing full corpus with Gemini model...\n")
-
-# Run sentiment analysis with properly isolated scope
-df <- run_corpus_sentiment_analysis(df, gemini)
+# Both conditions on French text, in the same order as src/40_prompt.R
+df <- score_corpus(df, "fr")
+df <- score_corpus(df, "en")
 
 #==============================================================================
-# 7. SAVE RESULTS
+# 6. SAVE AND SUMMARIZE
 #==============================================================================
 
-# Save the updated dataframe with all sentiment scores
-cat("Saving the results...\n")
-saveRDS(df, "data/clean/news_df_sentiment_gemini.rds")
+saveRDS(df, OUTPUT_PATH)
+cat("\nSaved corpus scores to", OUTPUT_PATH, "\n")
 
-# Log the difference in columns between the original and processed data
-new_columns <- setdiff(names(df), names(df_raw))
-cat("Added", length(new_columns), "columns to the original dataset:\n")
-cat(paste(new_columns, collapse=", "), "\n")
-
-# Save one final checkpoint with completion timestamp
-save_progress_checkpoint(force = TRUE)
-
-cat("Done! Results saved.\n")
-
-#==============================================================================
-# 8. BASIC ANALYSIS
-#==============================================================================
-
-# Basic summary of processed data
-cat("\nSummary of results:\n")
-cat("Number of articles processed:", nrow(df), "\n")
-
-# Count NA values (failed sentiment evaluations)
-na_count <- sum(is.na(df[["gemini_fr_fr"]]))
-cat("NA count:", na_count, " (", round(na_count/nrow(df)*100, 2), "%)", "\n")
-
-# Calculate mean sentiment value
-mean_sentiment <- mean(df[["gemini_fr_fr"]], na.rm = TRUE)
-cat("Mean sentiment value:", mean_sentiment, "\n")
+for (condition in c("fr_fr", "en_fr")) {
+  column <- paste0(MODEL_PREFIX, "_", condition)
+  x <- df[[column]]
+  cat(sprintf("%s: %d scored, %d NA (%.1f%%), mean %.3f, sd %.3f\n",
+              column, sum(!is.na(x)), sum(is.na(x)), 100 * mean(is.na(x)),
+              mean(x, na.rm = TRUE), sd(x, na.rm = TRUE)))
+}
+cat("Done.\n")
 
 }, error = function(e) {
-  # Handle any errors/interruptions by saving current state of df
   cat("\nScript interrupted or error occurred:", conditionMessage(e), "\n")
-  
-  # Create a more descriptive emergency file name
-  emergency_file <- paste0("data/tmp/corpus_sentiment_INTERRUPTED_", format(Sys.time(), "%Y%m%d_%H%M%S"), ".rds")
-  
-  # Try to save the emergency file
-  tryCatch({
-    saveRDS(df, emergency_file)
-    cat("Emergency backup saved to:", emergency_file, "\n")
-    cat("You can load this file with: df <- readRDS('", emergency_file, "')\n")
-  }, error = function(save_error) {
-    cat("ERROR: Failed to save emergency backup:", conditionMessage(save_error), "\n")
-  })
-  
-  # Save to the consolidated checkpoint file as well if possible
-  tryCatch({
-    consolidated_file <- "data/tmp/corpus_sentiment_latest_checkpoint.rds"
-    saveRDS(df, consolidated_file)
-    cat("Also saved to consolidated checkpoint:", consolidated_file, "\n")
-  }, error = function(save_error) {
-    cat("ERROR: Failed to save to consolidated checkpoint:", conditionMessage(save_error), "\n")
-  })
-  
-  # Re-throw the original error
+  cat("Progress is in the latest checkpoint:", LATEST_CHECKPOINT, "\n")
   stop(e)
 }, finally = {
-  # This will execute regardless of whether there was an error or not
-  cat("Script execution completed or interrupted. Check for saved checkpoints if needed.\n")
+  if (file.exists(LOCK_PATH) &&
+      identical(readLines(LOCK_PATH, warn = FALSE)[1], as.character(Sys.getpid()))) {
+    file.remove(LOCK_PATH)
+  }
 })
