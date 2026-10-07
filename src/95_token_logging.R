@@ -64,6 +64,14 @@ MODEL_PRICES <- data.frame(
   stringsAsFactors = FALSE
 )
 
+# Models whose endpoint does not report real token counts. Llama 3.2 1B's
+# OpenRouter endpoint returned exactly 45 input tokens on every one of its
+# 5,171 calls, whatever the prompt (~300 tokens) — a placeholder, not a
+# measurement. Its input tokens and dollar cost are reported as missing rather
+# than as a figure known to be wrong by a factor of ~7. Output counts vary
+# call to call and are kept.
+UNRELIABLE_INPUT_COUNTS <- c("llama321b")
+
 #' Report which models still lack pricing
 #'
 #' Call this before a run so missing prices are discovered early rather than
@@ -276,6 +284,12 @@ summarize_costs <- function(path = TOKEN_LOG_PATH, n_sentences = 200,
 
   out <- merge(by_model, MODEL_PRICES, by.x = "model_prefix", by.y = "prefix",
                all.x = TRUE)
+
+  # Blank the input counts the endpoint did not really measure; NA then
+  # propagates to every dollar figure for that model.
+  bad <- out$model_prefix %in% UNRELIABLE_INPUT_COUNTS
+  out$input_tokens[bad] <- NA_integer_
+  out$cached_input_tokens[bad] <- NA_integer_
 
   # Cost of this run, in USD. NA propagates for models with no price.
   # Cached prompt tokens are charged at the FULL input rate here, which makes
