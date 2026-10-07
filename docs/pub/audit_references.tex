@@ -1,0 +1,587 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{crit}{HTML}{A13D3D}
+\definecolor{warn}{HTML}{B45309}
+\definecolor{ok}{HTML}{2F6F4F}
+\definecolor{grey}{HTML}{5A6472}
+
+\newcommand{\ko}{\textcolor{crit}{\textbf{$\times$}}}
+\newcommand{\att}{\textcolor{warn}{\textbf{!}}}
+\newcommand{\oui}{\textcolor{ok}{\textbf{$\checkmark$}}}
+\newcommand{\cle}[1]{\texttt{\small #1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textsc{Audit des références} — \textit{Language Doesn't Matter}}
+\rhead{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setlist{itemsep=2pt,topsep=4pt}
+
+\title{\vspace{-1.5cm}\textbf{Audit des références}\\[2mm]
+\large \textit{Language Doesn't Matter} --- commit \texttt{361b2c4}}
+\author{}
+\date{10 septembre 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\vspace{-1cm}
+
+%======================================================================
+\section*{Ce qu'il faut savoir en une page}
+\addcontentsline{toc}{section}{Résumé}
+
+Les 32 références citées par le manuscrit ont été vérifiées auprès des
+registraires (Crossref, DataCite, PubMed, ACL Anthology). \textbf{Aucune n'est
+inventée} : toutes existent et les métadonnées du fichier \cle{references.bib}
+sont exactes.
+
+Le problème est ailleurs. \textbf{Trois références réelles sont citées pour des
+affirmations qu'elles ne soutiennent pas}, et une quatrième porte une
+affirmation factuellement inexacte. Une cinquième erreur a été introduite le
+9~septembre lors du dégraissage du manuscrit et a déjà été corrigée.
+
+\begin{center}
+\begin{tabular}{@{}p{3.6cm}p{11.5cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Problème} \\
+\midrule
+\cle{Jiang2020How} &
+Article LPAQA sur le sondage de connaissances factuelles \emph{en anglais}
+(« Obama is a \_\_ by profession »). Cité \textbf{trois fois} pour fonder
+l'avantage du prompt anglais en contexte translinguistique. \\[2mm]
+\cle{Plagwitz2024Zero} &
+Reconnaissance d'entités nommées sur des textes cliniques \emph{allemands}.
+Cité pour étayer l'analyse de sentiment en italien et en russe. \\[2mm]
+\cle{Vileikyte2024Sentiment} &
+Fine-tuning de BERT et T5 sur des avis lituaniens. Cité pour un « avantage de
+la langue locale dans le prompt », question que l'article ne pose pas. \\[2mm]
+\cle{Venerito2024Large} &
+Les entretiens italiens sont \emph{traduits en anglais} avant analyse. Cité
+comme démonstration de performance « en italien ». \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{3mm}
+Par ailleurs, l'affirmation chiffrée la plus vérifiable du manuscrit --- «~often
+above 85-95\% accuracy across Indo-European, Semitic, and Asian languages~» ---
+\textbf{n'a pas pu être confirmée} : les éditeurs bloquent le téléchargement
+automatisé et les résumés ne contiennent pas ces chiffres. La taxonomie qui
+l'accompagne est en outre incohérente (voir §\ref{sec:taxo}).
+
+%======================================================================
+\section{Méthode et niveaux de preuve}
+
+Trois niveaux de preuve ont été employés. \textbf{Ils ne sont pas
+équivalents}, et la distinction gouverne tout ce document.
+
+\begin{center}
+\begin{tabular}{@{}llp{9.4cm}@{}}
+\toprule
+\textbf{Niveau} & \textbf{Couverture} & \textbf{Ce qu'il permet d'affirmer} \\
+\midrule
+Métadonnées & 32 / 32 &
+L'article existe ; auteurs, titre, année et DOI sont exacts. Source :
+API du registraire. \\[1.5mm]
+Résumé & 21 / 32 &
+Le sujet de l'article, tel que ses auteurs le décrivent. Suffit à détecter
+un contresens sur l'objet, pas sur un résultat chiffré. \\[1.5mm]
+Texte intégral & 0 / 32 &
+Rien n'a été lu en entier. Aucune affirmation numérique n'est vérifiée. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+\noindent\textbf{Limite à retenir.} Un audit fondé sur les résumés attrape les
+erreurs d'objet --- citer un article de reconnaissance d'entités pour de
+l'analyse de sentiment --- mais pas les erreurs de degré. Si un article rapporte
+78\,\% d'exactitude et que le manuscrit écrit 85\,\%, cet audit ne le voit pas.
+C'est pourquoi la liste~A existe.
+
+\medskip
+\noindent\textbf{Un indice de provenance.} Sur les 101 entrées du fichier
+\cle{references.bib}, 62 portent un champ \cle{file} pointant vers une
+bibliothèque Zotero (\cle{/home/ral/Zotero/storage/...}) absente de ce dépôt.
+Parmi les 32~références citées, \textbf{23 ont un PDF attaché et 9 n'en ont
+pas}. Ces neuf ont vraisemblablement été ajoutées par import de métadonnées,
+sans que le texte intégral soit consulté. Elles figurent toutes en liste~A ou~B.
+
+%======================================================================
+\section{Liste A --- à lire intégralement}
+\label{sec:A}
+
+Dix références. Soit un problème y est avéré, soit elles portent une affirmation
+chiffrée que seul le texte intégral permet de vérifier. \textbf{Aucune ne devrait
+rester dans le manuscrit sans lecture.}
+
+\subsection*{A.1 --- Erreurs avérées (à corriger, pas seulement à lire)}
+
+\begin{description}[leftmargin=0pt,style=unboxed]
+
+\item[\ko~\cle{Jiang2020How}] --- Jiang, Xu, Araki \& Neubig (2020),
+\emph{How Can We Know What Language Models Know?}, TACL.\\
+\textit{Le manuscrit affirme} : «~a growing body of research reports that
+prompting in English improves performance on non-English tasks~».\\
+\textit{L'article traite de} : la génération automatique de prompts pour
+extraire des connaissances factuelles d'un modèle, en anglais. Le résumé ne
+mentionne ni multilinguisme ni langue de prompt.\\
+\textit{Action} : retirer des trois emplacements (Introduction, Revue,
+Discussion). \textbf{Hypothèse à vérifier} : les mêmes auteurs ont publié en
+2020 \emph{X-FACTR: Multilingual Factual Knowledge Retrieval from Pretrained
+Language Models}, qui est multilingue. Une confusion d'entrée Zotero est
+plausible ; si X-FACTR soutient l'affirmation, la correction se réduit à un
+changement de clé.
+
+\item[\ko~\cle{Plagwitz2024Zero}] --- Plagwitz et al. (2024), \emph{Zero-Shot
+LLMs for Named Entity Recognition: Targeting Cardiac Function Indicators}.\\
+\textit{Le manuscrit affirme} : «~Preliminary work with Mistral-7B, LLaMA2, and
+instruction-tuned models suggests promise in Italian, Russian, and cross-lingual
+settings~».\\
+\textit{L'article traite de} : extraction de paramètres médicaux depuis des
+textes cliniques \emph{allemands}, par reconnaissance d'entités nommées. Ni
+analyse de sentiment, ni italien, ni russe.\\
+\textit{Action} : retirer de cette grappe. C'est aussi la seule des quatre
+références à mentionner Mistral --- retirer la référence oblige donc à retirer
+« Mistral-7B » de l'affirmation, ou à trouver une autre source.
+
+\item[\ko~\cle{Vileikyte2024Sentiment}] --- Vileikytė et al. (2024),
+\emph{Sentiment Analysis of Lithuanian Online Reviews Using Large Language
+Models}.\\
+\textit{Le manuscrit affirme} : «~some studies find language-specific prompting
+advantages~».\\
+\textit{L'article traite de} : le fine-tuning de BERT et T5 sur des avis
+lituaniens, avec la conclusion que les modèles affinés battent GPT-4 (80,7\,\%
+et 89,6\,\% d'exactitude). C'est une comparaison \emph{fine-tuning contre
+généraliste}, pas une comparaison de langues de prompt.\\
+\textit{Action} : retirer de cette grappe. La phrase « evidence is mixed »
+repose alors sur \cle{Hamalainen2022Video} seul --- à vérifier d'urgence
+(liste~B), faute de quoi l'affirmation d'un débat n'a plus de support.
+
+\item[\att~\cle{Venerito2024Large}] --- Venerito et al. (2024), \emph{Large
+Language Model-Driven Sentiment Analysis for Facilitating Fibromyalgia
+Diagnosis}, RMD Open.\\
+\textit{Le manuscrit affirme} : « promise in Italian ».\\
+\textit{L'article précise} : «~Transcribed responses to questions on pain and
+sleep were \emph{machine translated to English} and analysed by the LLM
+Mistral-7B-Instruct-v0.2~». L'analyse ne porte donc pas sur de l'italien.\\
+\textit{Action} : corriger l'affirmation. \textbf{À noter} : ce cas est en
+réalité \emph{intéressant} pour votre article --- c'est une condition
+EN$\rightarrow$EN appliquée en clinique. Bien reformulé, il devient un appui
+plutôt qu'une erreur.
+
+\end{description}
+
+\subsection*{A.2 --- L'affirmation chiffrée non vérifiée}
+
+Cinq références étayent «~often above 85-95\% accuracy across Indo-European,
+Semitic, and Asian languages~». Aucun chiffre n'a pu être confirmé.
+
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Référence} & \textbf{Langue} & \textbf{Famille} & \textbf{PDF} \\
+\midrule
+\cle{Anirban2021Sentiment}      & bengali    & indo-européenne & \textbf{sans DOI} \\
+\cle{Michailidis2024Comparative} & grec       & indo-européenne & MDPI, 403 \\
+\cle{Rafeef2023Evaluation}       & arabe      & sémitique       & accessible \\
+\cle{ElJundi2019hULMonA}         & arabe      & sémitique       & ACL, lien mort \\
+\cle{Ahmadian2024Hybrid}         & indonésien & austronésienne  & Wiley, 403 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent\textbf{Deux problèmes distincts.}
+
+\begin{enumerate}
+\item \textbf{Le chiffre.} Il faut ouvrir les cinq articles et relever
+l'exactitude rapportée. Si l'un d'eux se situe à 70\,\%, l'intervalle « 85-95 »
+est faux. C'est la vérification la plus facile à faire pour un réviseur, donc
+la plus risquée à négliger.
+
+\item \textbf{Une référence détonne.} \cle{Rafeef2023Evaluation} porte sur
+l'évaluation d'hôtels à partir d'avis en arabe, publiée dans une revue de
+technologies mobiles interactives. C'est une application sectorielle, appui
+faible pour une affirmation générale sur la performance translinguistique.
+Envisager de la retirer.
+\end{enumerate}
+
+\subsection*{A.3 --- Un soutien réel, mais sur un autre mécanisme}
+
+\begin{description}[leftmargin=0pt,style=unboxed]
+\item[\att~\cle{Muennighoff2023Crosslingual}] --- Muennighoff et al. (2023),
+\emph{Crosslingual Generalization through Multitask Finetuning}, ACL.\\
+Le résumé dit : «~finetuning large multilingual language models on English tasks
+with English prompts allows for task generalization to non-English languages~»
+et «~Finetuning on multilingual tasks with English prompts further improves
+performance~».\\
+\textit{Nuance} : il s'agit d'un effet du \textbf{fine-tuning} avec prompts
+anglais, non du prompting à l'inférence --- ce que votre étude mesure. Les deux
+mécanismes sont distincts.\\
+\textit{Action} : conserver, mais préciser la distinction dans le texte. C'est à
+votre avantage : cela montre que la question posée à l'inférence reste ouverte,
+ce qui renforce la justification de l'étude.
+\end{description}
+
+%======================================================================
+\section{Liste B --- à vérifier sur un point précis}
+
+Quatorze références. Le résumé est cohérent avec l'usage qu'en fait le
+manuscrit, ou n'a pas pu être récupéré. Une lecture ciblée suffit : résumé,
+tableau de résultats, conclusion.
+
+\begin{center}
+\small
+\begin{longtable}{@{}p{3.4cm}p{7.6cm}p{3.4cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Point à vérifier} & \textbf{État} \\
+\midrule
+\endhead
+\cle{Hamalainen2022Video} &
+Trouve-t-il vraiment un avantage de la langue locale ? Devient le \emph{seul}
+support de « evidence is mixed » si \cle{Vileikyte} est retirée. &
+\textbf{prioritaire} \\
+\cle{Lin2022Few} &
+Contient-il des expériences sur la \emph{langue du prompt} ? Le résumé porte sur
+la capacité multilingue, pas sur le prompting. & résumé lu \\
+\cle{Nie2024Decomposed} &
+Porte sur l'étiquetage de séquences et le maintien de gabarits de sortie.
+Soutient-il l'avantage du prompt anglais ? & résumé lu \\
+\cle{Pan2023Evaluation} &
+Cité pour le transfert translinguistique ; le résumé porte sur la prédiction
+boursière à partir de données financières. & résumé lu \\
+\cle{Kumar2021Sentiment} &
+Cité pour le transfert translinguistique ; résumé centré sur les médias
+sociaux. & résumé lu \\
+\cle{Rusnachenko2024Large} &
+Russe et LLM affinés par instruction : concordance apparente. Vérification
+légère. & résumé lu \\
+\cle{Buscemi2024ChatGPT} &
+LLaMA2 et 10 langues : concordance apparente. Vérification légère. &
+résumé lu \\
+\cle{Tela2024Transferring} &
+Langues peu dotées : concordance apparente. & résumé lu \\
+\cle{Salahudeen2023HausaNLP} &
+SemEval-2023 tâche 12, langues africaines : concordance apparente. &
+résumé lu \\
+\cle{Nazir2025Leveraging} & Aucun résumé récupéré. & \textbf{non vérifié} \\
+\cle{Kotelnikova2023Cross} & Aucun résumé récupéré. & \textbf{non vérifié} \\
+\cle{Francesco2021XLM} & Aucun DOI, aucun résumé. & \textbf{non vérifié} \\
+\cle{Mikhail2024Multilingual} & Aucun DOI, aucun résumé. & \textbf{non vérifié} \\
+\cle{Priban2024comparative} & Aucun DOI, aucun résumé. Citée deux fois. &
+\textbf{non vérifié} \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\noindent Les cinq marquées « non vérifié » n'ont \emph{aucune} preuve au-delà
+de leur présence dans le fichier \cle{.bib}. Quatre d'entre elles n'ont pas de
+DOI, ce qui empêche même la vérification d'existence. \textbf{Ce sont les
+premières à traiter dans cette liste.}
+
+%======================================================================
+\section{Liste C --- utilisables sans relecture}
+
+Huit références. Le résumé confirme la concordance avec l'usage qu'en fait le
+manuscrit, et l'affirmation portée est consensuelle. Le risque est faible et le
+coût d'une erreur le serait aussi.
+
+\begin{center}
+\begin{tabular}{@{}p{3.6cm}p{11.2cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Affirmation portée} \\
+\midrule
+\cle{touvron\_etal23a} & Les modèles sont entraînés majoritairement sur des
+données anglaises. Article Llama, non contesté. \\
+\cle{Laurer2023Less} & L'apprentissage supervisé exige des milliers
+d'annotations. Résumé : concordance exacte. \\
+\cle{Chalkidis2020LEGAL} & L'adaptation de BERT à un domaine exige de
+l'expertise. Résumé : concordance. \\
+\cle{Strubell2019Energy} & Coût computationnel de l'entraînement. Référence
+standard. \\
+\cle{Perron2024Demystifying} & Les API rendent les LLM accessibles aux
+chercheurs en sciences sociales. Résumé : concordance exacte. \\
+\cle{Ghosh2023Navigating} & Même affirmation. Concordance plus lâche
+(l'article porte sur GPT-4 en finance et en politique) mais l'enjeu est
+faible. \\
+\cle{duval\_petry16} & Source du dictionnaire français \cle{frlsd}.
+Référence méthodologique standard. \\
+\cle{young\_andsoroka12} & Source du \emph{Lexicoder Sentiment Dictionary}.
+Référence méthodologique standard. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent\textbf{Une correction matérielle} : \cle{duval\_petry16} et
+\cle{young\_andsoroka12} portent tous deux un champ \cle{date = 2025-04-02},
+qui est une date d'import Zotero et non de publication. À corriger dans le
+fichier \cle{.bib} : les deux articles datent respectivement de 2016 et 2012.
+
+%======================================================================
+\section{Liste D --- les sept références ajoutées le 10 septembre}
+\label{sec:D}
+
+Ces sept références ont été ajoutées au fichier \cle{references.bib} pour
+combler l'absence de travaux 2025--2026, mais \textbf{ne sont encore citées
+nulle part dans le manuscrit}. Elles ne peuvent donc pas encore être mal
+citées --- mais elles le seront dès leur intégration si elles ne sont pas lues
+d'abord.
+
+\medskip
+\noindent\textbf{Leur niveau de preuve est plus faible que celui des 32 autres.}
+Pour cinq d'entre elles, la seule information de contenu dont on dispose est un
+extrait de moteur de recherche --- une synthèse automatique qui agrège plusieurs
+sources sans les distinguer. C'est précisément le mode de défaillance qui
+produit une citation mal fondée.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{3.3cm}p{5.4cm}p{3.1cm}p{2.6cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Ce qu'elle doit étayer} & \textbf{Preuve
+disponible} & \textbf{Priorité} \\
+\midrule
+\cle{richie\_etal22} &
+L'accord intercodeurs n'est pas une borne supérieure stricte de la performance
+machine. &
+Résumé du PDF, lu par un outil automatique &
+\textbf{critique} \\[1.5mm]
+\cle{nguyen\_etal26} &
+La langue du prompt n'est pas neutre : elle modifie la forme de la sortie sans
+altérer le sens. &
+Résumé de la page arXiv &
+\textbf{critique} \\[1.5mm]
+\cle{gupta\_etal25} &
+Traduire \emph{une partie} du prompt bat le tout-anglais comme le
+tout-langue-source. &
+Extrait de recherche seulement &
+haute \\[1.5mm]
+\cle{beauchemin\_etal25} &
+Banc d'essai français ; écarts entre modèles à poids ouverts et fermés. &
+Extrait de recherche seulement &
+haute \\[1.5mm]
+\cle{kastrati\_etal26} &
+Analyse de sentiment translinguistique par familles de langues. &
+Extrait de recherche seulement &
+moyenne \\[1.5mm]
+\cle{langlais\_etal26} &
+Sentiment en français ; modèles spécialisés contre gros LLM. &
+Extrait de recherche seulement &
+moyenne \\[1.5mm]
+\cle{boguslav\_cohen17} &
+Antécédent de \cle{richie\_etal22}. &
+Métadonnées seulement &
+basse \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Les deux critiques, et pourquoi}
+
+\begin{description}[leftmargin=0pt,style=unboxed]
+
+\item[\att~\cle{richie\_etal22}] --- Richie, Grover \& Tsui (2022), \emph{Inter-annotator
+agreement is not the ceiling of machine learning performance}, BioNLP.\\
+Cette référence est destinée à étayer une \textbf{reformulation de votre
+résultat le plus fort}. Le calcul du plafond humain ($r = 0{,}748$, sept
+combinaisons modèle-condition au-dessus) est exact, mais la littérature conteste
+que l'accord intercodeurs constitue une borne supérieure. La formulation
+« les modèles dépassent la performance humaine » devient donc indéfendable, au
+profit de « les modèles atteignent le niveau d'accord que les codeurs humains
+obtiennent entre eux ».\\
+\textbf{Si cet article ne dit pas ce qui lui est attribué ici, cette
+reformulation perd son appui.} C'est la lecture la plus rentable de toute la
+liste.
+
+\item[\att~\cle{nguyen\_etal26}] --- Nguyen et al. (2026), \emph{Investigating the
+Influence of Prompt and Response Languages on LLM Content Generation}.\\
+C'est le travail le plus directement concurrent du vôtre : il conclut que « la
+langue du prompt n'est pas neutre », ce qui contredit votre résultat en
+apparence. La distinction qui réconcilie les deux --- ils mesurent la
+\emph{forme} de la sortie (longueur, réalisation lexicale), vous mesurez une
+note numérique, donc le \emph{sens} --- repose sur un résumé, pas sur une
+lecture. Si elle ne tient pas, votre positionnement par rapport à ce travail
+doit être repensé.
+
+\end{description}
+
+\subsection*{PDF --- six sur sept librement accessibles}
+
+\begin{center}
+\begin{tabular}{@{}p{3.6cm}p{11.2cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Adresse} \\
+\midrule
+\cle{richie\_etal22} & \url{https://aclanthology.org/2022.bionlp-1.26.pdf} \\
+\cle{nguyen\_etal26} & \url{https://arxiv.org/pdf/2608.26186} \\
+\cle{gupta\_etal25} & \url{https://arxiv.org/pdf/2507.22923} \\
+\cle{beauchemin\_etal25} & \url{https://arxiv.org/pdf/2510.05046} \\
+\cle{langlais\_etal26} & \url{https://arxiv.org/pdf/2604.18226} \\
+\cle{kastrati\_etal26} & \url{https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1854873/pdf} \\
+\midrule
+\cle{boguslav\_cohen17} & IOS Press --- erreur 403. Accès institutionnel requis,
+ou à abandonner : \cle{richie\_etal22} couvre le même argument plus récemment. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Une remarque sur \cle{beauchemin\_etal25}}
+
+Le banc d'essai COLE est signé par David Beauchemin et Richard Khoury, du
+département d'informatique et de génie logiciel de l'\textbf{Université Laval}.
+Il porte sur l'évaluation du français et documente les écarts entre modèles à
+poids ouverts et fermés --- c'est-à-dire votre question de recherche n\textsuperscript{o}~2,
+traitée sur le même campus. Ne pas le citer serait remarqué. Une conversation
+avec ces collègues avant soumission pourrait par ailleurs être utile.
+
+%======================================================================
+\section{La taxonomie des familles linguistiques}
+\label{sec:taxo}
+
+Le manuscrit écrit «~across Indo-European, Semitic, and \emph{Asian}
+languages~». L'énumération mêle deux familles linguistiques et une catégorie
+géographique, ce qui la rend incohérente :
+
+\begin{itemize}
+\item le \textbf{bengali} (\cle{Anirban2021}) est indo-européen \emph{et}
+asiatique ;
+\item l'\textbf{indonésien} (\cle{Ahmadian2024}) est austronésien, pas
+« asiatique » au sens familial ;
+\item aucune langue \textbf{sino-tibétaine, japonique ou coréenne} n'est
+représentée --- celles qu'un lecteur associe spontanément au mot « asiatiques ».
+\end{itemize}
+
+\noindent\textbf{Correction proposée} : «~across Indo-European, Semitic, and
+Austronesian languages~», ou plus simplement une énumération par langue
+(« en grec, bengali, arabe et indonésien »), qui est à la fois exacte et plus
+informative.
+
+%======================================================================
+\section{PDF à récupérer}
+
+\subsection*{Librement accessibles --- à télécharger}
+
+\begin{center}
+\begin{tabular}{@{}p{4.4cm}p{9.6cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Adresse} \\
+\midrule
+\cle{Vileikyte2024Sentiment} & \url{https://arxiv.org/pdf/2407.19914} \\
+\cle{Muennighoff2023Cross...} & \url{https://aclanthology.org/2023.acl-long.891.pdf} \\
+\cle{Lin2022Few} & \url{https://aclanthology.org/2022.emnlp-main.616.pdf} \\
+\cle{Nie2024Decomposed} & \url{https://arxiv.org/pdf/2402.18397} \\
+\cle{Rafeef2023Evaluation} & \url{https://doi.org/10.3991/ijim.v17i09.38755} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Bloqués pour un accès automatisé --- accès institutionnel requis}
+
+Ces éditeurs renvoient une erreur 403 aux requêtes automatisées. \textbf{Ils
+sont normalement accessibles depuis le réseau de l'Université Laval}, ou via
+le proxy de la bibliothèque.
+
+\begin{center}
+\begin{tabular}{@{}p{4.4cm}p{4.6cm}p{4.8cm}@{}}
+\toprule
+\textbf{Référence} & \textbf{Éditeur} & \textbf{Priorité} \\
+\midrule
+\cle{Jiang2020How} & MIT Press (TACL) & \textbf{critique} \\
+\cle{Plagwitz2024Zero} & IOS Press & \textbf{critique} \\
+\cle{Venerito2024Large} & BMJ (RMD Open) & \textbf{critique} \\
+\cle{Michailidis2024Comparative} & MDPI & haute (chiffre) \\
+\cle{Ahmadian2024Hybrid} & Wiley & haute (chiffre) \\
+\cle{Hamalainen2022Video} & ACM & haute \\
+\cle{Pan2023Evaluation} & PeerJ & moyenne \\
+\cle{Kumar2021Sentiment} & ACM & moyenne \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Problèmes d'accès particuliers}
+
+\begin{itemize}
+\item \cle{ElJundi2019hULMonA} --- le DOI ACL (\cle{10.18653/v1/w19-4608})
+renvoie une erreur 404 sur l'anthologie. À rechercher manuellement dans les
+actes du \emph{Fourth Arabic Natural Language Processing Workshop} (2019).
+\item \cle{Anirban2021Sentiment} --- \textbf{aucun DOI dans le fichier
+\cle{.bib}}. Impossible de vérifier même son existence. À retrouver et
+compléter, ou à retirer.
+\item \cle{Francesco2021XLM}, \cle{Mikhail2024Multilingual},
+\cle{Priban2024comparative}, \cle{touvron\_etal23a} --- également sans DOI.
+Les trois premières sont non vérifiées ; la quatrième est identifiable
+(article Llama).
+\end{itemize}
+
+\subsection*{La solution durable}
+
+Vingt-trois des trente-deux références citées ont déjà un PDF dans la
+bibliothèque Zotero de \cle{ral}. \textbf{Un export Zotero avec pièces jointes,
+ou un groupe Zotero partagé}, réglerait la majeure partie du problème d'accès
+d'un coup --- et mettrait tous les coauteurs sur la même base pour la suite.
+C'est la démarche à privilégier avant d'aller chercher les PDF un par un.
+
+%======================================================================
+\section{Les 69 entrées non citées}
+
+Le fichier \cle{references.bib} contient 101 entrées dont 32 seulement sont
+citées. Les 69 restantes ne posent aucun problème en l'état --- elles
+n'apparaissent pas dans le document rendu.
+
+Elles méritent toutefois un examen avant soumission, pour deux raisons :
+certaines couvrent peut-être déjà les lacunes de la revue de littérature
+identifiées par ailleurs (absence de travaux 2025--2026), et leur présence
+suggère qu'une recherche plus large a été amorcée sans être intégrée au texte.
+
+%======================================================================
+\section{Ce que cet audit ne couvre pas}
+
+Par honnêteté sur sa portée :
+
+\begin{itemize}
+\item \textbf{Aucun article n'a été lu en entier.} Les verdicts reposent sur les
+résumés rédigés par les auteurs, récupérés auprès des registraires.
+\item \textbf{Aucune affirmation numérique n'est vérifiée.} L'intervalle
+« 85-95\,\% » reste ouvert, ainsi que toute autre valeur chiffrée attribuée à
+une source.
+\item \textbf{Onze résumés sur trente-deux n'ont pas pu être récupérés.} Pour
+ces références, la vérification s'arrête aux métadonnées.
+\item \textbf{Les sept références ajoutées le 10 septembre}
+(liste~D) reposent sur une preuve encore plus mince : cinq d'entre elles ne sont
+étayées que par un extrait de moteur de recherche, et les deux autres par un
+résumé produit automatiquement. Leurs métadonnées sont vérifiées ; leur contenu
+ne l'est pas.
+\item \textbf{L'adéquation entre l'affirmation et la source} a été évaluée sur
+l'objet de l'article, non sur la finesse de ses résultats. Un article peut
+porter sur le bon sujet et ne pas soutenir la nuance exacte qu'on lui fait
+porter.
+\end{itemize}
+
+\vspace{4mm}
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{1mm}
+
+\noindent\small\textcolor{grey}{Audit produit le 10 septembre 2026. Métadonnées
+vérifiées auprès de Crossref, DataCite, PubMed et ACL Anthology. Les citations
+du manuscrit ont été extraites de \cle{docs/pub/pub.qmd} au commit
+\cle{361b2c4}. Une cinquième erreur --- des citations laissées attachées à une
+phrase réécrite le 9 septembre --- a été corrigée avant la production de ce
+document.}
+
+\end{document}
