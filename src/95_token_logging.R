@@ -30,6 +30,9 @@
 # page, the Gemini API pricing page (paid tier), and OpenAI's API pricing page
 # (standard tier, short context). GPT-5.6 Luna's price was cut on 2026-07-30,
 # before the September run, so the post-cut price applies.
+#
+# Jev is priced per input token only; output tokens are free
+# (docs.typesafe.ai/models, fetched 2026-09-28).
 # Do not guess — a wrong price silently produces a wrong published figure.
 #
 # `prefix` matches the keys of `model_mapping` in src/94_models_map.R.
@@ -37,29 +40,29 @@ MODEL_PRICES <- data.frame(
   prefix = c(
     "llama321b", "llama323b", "llama318b", "gptoss20b", "qwen332b",
     "llama4scout", "gptoss120b", "qwen3235b", "deepseekv32",
-    "claudehaiku45", "gemini35", "gpt56luna"
+    "claudehaiku45", "gemini35", "gpt56luna", "jev"
   ),
   display_name = c(
     "Llama 3.2 1B", "Llama 3.2 3B", "Llama 3.1 8B", "GPT-OSS 20B", "Qwen3 32B",
     "Llama 4 Scout", "GPT-OSS 120B", "Qwen3 235B-A22B", "DeepSeek V3.2",
-    "Claude Haiku 4.5", "Gemini 3.5 Flash", "GPT-5.6 Luna"
+    "Claude Haiku 4.5", "Gemini 3.5 Flash", "GPT-5.6 Luna", "Jev 1.13"
   ),
   provider = c(
     rep("OpenRouter", 9),
-    "Anthropic", "Google", "OpenAI"
+    "Anthropic", "Google", "OpenAI", "TypeSafe"
   ),
   price_in_per_mtok = c(
     0.027, 0.050, 0.220, 0.030, 0.080,
     0.180, 0.030, 0.087, 0.209,
-    1.00, 1.50, 0.20
+    1.00, 1.50, 0.20, 0.042
   ),
   price_out_per_mtok = c(
     0.201, 0.330, 0.220, 0.140, 0.280,
     0.590, 0.170, 0.350, 0.310,
-    5.00, 9.00, 1.20
+    5.00, 9.00, 1.20, 0
   ),
   price_verified_on = c(
-    rep("2026-09-09", 10), "2026-09-16", "2026-09-16"
+    rep("2026-09-09", 10), "2026-09-16", "2026-09-16", "2026-09-28"
   ),
   stringsAsFactors = FALSE
 )

@@ -57,7 +57,11 @@ model_mapping <- c(
   # --- Closed-weight, served through each vendor's own API ------------------
   "claudehaiku45" = "claude-haiku-4-5",
   "gemini35"      = "gemini-3.5-flash",
-  "gpt56luna"     = "gpt-5.6-luna"
+  "gpt56luna"     = "gpt-5.6-luna",
+  # --- System One model, served through TypeSafe's own API ------------------
+  # Scored by src/42_jev_prompt.R, not src/40_prompt.R: Jev answers a typed
+  # Score question rather than a chat prompt. See src/98_jev_helpers.R.
+  "jev"           = "jev-1.13.0"
 )
 
 #==============================================================================
@@ -158,7 +162,8 @@ open_models <- c(
 closed_models <- c(
   "claude-haiku-4-5",
   "gemini-3.5-flash",
-  "gpt-5.6-luna"
+  "gpt-5.6-luna",
+  "jev-1.13.0"
 )
 
 #==============================================================================
@@ -182,7 +187,8 @@ model_display_name <- c(
   "deepseekv32"   = "DeepSeek V3.2",
   "claudehaiku45" = "Claude Haiku 4.5",
   "gemini35"      = "Gemini 3.5 Flash",
-  "gpt56luna"     = "GPT-5.6 Luna"
+  "gpt56luna"     = "GPT-5.6 Luna",
+  "jev"           = "Jev 1.13"
 )
 
 model_provider <- c(
@@ -192,7 +198,8 @@ model_provider <- c(
   "qwen332b" = "Alibaba", "qwen3235b" = "Alibaba",
   "deepseekv32" = "DeepSeek",
   "claudehaiku45" = "Anthropic",
-  "gemini35" = "Google"
+  "gemini35" = "Google",
+  "jev" = "TypeSafe"
 )
 
 #' Readable label for a result column such as "qwen3235b_en_fr"
