@@ -33,6 +33,10 @@
 #
 # Jev is priced per input token only; output tokens are free
 # (docs.typesafe.ai/models, fetched 2026-09-28).
+#
+# The two Mistral rows are read from their pinned OpenRouter endpoints, as for
+# the open-weight rows. Fetched 2026-10-09 and checked against the cost
+# OpenRouter itself reported for test calls.
 # Do not guess — a wrong price silently produces a wrong published figure.
 #
 # `prefix` matches the keys of `model_mapping` in src/94_models_map.R.
@@ -40,29 +44,35 @@ MODEL_PRICES <- data.frame(
   prefix = c(
     "llama321b", "llama323b", "llama318b", "gptoss20b", "qwen332b",
     "llama4scout", "gptoss120b", "qwen3235b", "deepseekv32",
-    "claudehaiku45", "gemini35", "gpt56luna", "jev"
+    "claudehaiku45", "gemini35", "gpt56luna", "jev",
+    "mistralsmall32", "mistrallarge4"
   ),
   display_name = c(
     "Llama 3.2 1B", "Llama 3.2 3B", "Llama 3.1 8B", "GPT-OSS 20B", "Qwen3 32B",
     "Llama 4 Scout", "GPT-OSS 120B", "Qwen3 235B-A22B", "DeepSeek V3.2",
-    "Claude Haiku 4.5", "Gemini 3.5 Flash", "GPT-5.6 Luna", "Jev 1.13"
+    "Claude Haiku 4.5", "Gemini 3.5 Flash", "GPT-5.6 Luna", "Jev 1.13",
+    "Mistral Small 3.2", "Mistral Large 4"
   ),
   provider = c(
     rep("OpenRouter", 9),
-    "Anthropic", "Google", "OpenAI", "TypeSafe"
+    "Anthropic", "Google", "OpenAI", "TypeSafe",
+    "OpenRouter", "OpenRouter"
   ),
   price_in_per_mtok = c(
     0.027, 0.050, 0.220, 0.030, 0.080,
     0.180, 0.030, 0.087, 0.209,
-    1.00, 1.50, 0.20, 0.042
+    1.00, 1.50, 0.20, 0.042,
+    0.090, 0.680
   ),
   price_out_per_mtok = c(
     0.201, 0.330, 0.220, 0.140, 0.280,
     0.590, 0.170, 0.350, 0.310,
-    5.00, 9.00, 1.20, 0
+    5.00, 9.00, 1.20, 0,
+    0.300, 2.090
   ),
   price_verified_on = c(
-    rep("2026-09-09", 10), "2026-09-16", "2026-09-16", "2026-09-28"
+    rep("2026-09-09", 10), "2026-09-16", "2026-09-16", "2026-09-28",
+    "2026-10-09", "2026-10-09"
   ),
   stringsAsFactors = FALSE
 )

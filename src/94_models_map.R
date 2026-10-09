@@ -34,6 +34,14 @@
 #     since the sentences it did score are not a random subset.
 #   - DeepSeek V4 Flash, in the August lineup, is DROPPED. It was never scored
 #     after the OpenRouter migration; DeepSeek remains represented by V3.2.
+#
+# ADDED 2026-10-09: two Mistral models. Mistral claims stronger non-English
+# performance and a tokenizer that is cheaper on French, which is what
+# src/69_tokens_by_language.R measures.
+#   - Mistral Large 4: Mistral's newest flagship, in preview since 2026-10-06.
+#   - Mistral Small 3.2 24B: latest release of the Mistral Small 24B line, the
+#     Mistral model social scientists run for text classification (e.g.
+#     arXiv 2605.19275, which runs Small 24B 2501 locally through Ollama).
 ###############################################################################
 
 #==============================================================================
@@ -53,6 +61,14 @@ model_mapping <- c(
   "gptoss120b"    = "openai/gpt-oss-120b",
   "qwen3235b"     = "qwen/qwen3-235b-a22b-2507",
   "deepseekv32"   = "deepseek/deepseek-v3.2",
+  "mistralsmall32" = "mistralai/mistral-small-3.2-24b-instruct",
+
+  # --- Closed-weight for now, served through OpenRouter ---------------------
+  # Mistral Large 4 has no downloadable weights or published licence yet
+  # (promised for late October 2026), so it fails the paper's open-weight
+  # test. Once the weights ship, move it to open_models and give it a
+  # parameter count. The endpoint is a preview and may change before GA.
+  "mistrallarge4" = "mistralai/mistral-large-4-0",
 
   # --- Closed-weight, served through each vendor's own API ------------------
   "claudehaiku45" = "claude-haiku-4-5",
@@ -65,7 +81,7 @@ model_mapping <- c(
 )
 
 #==============================================================================
-# 2. PROVIDER PINNING (OPEN-WEIGHT MODELS ONLY)
+# 2. PROVIDER PINNING (MODELS SERVED THROUGH OPENROUTER)
 #==============================================================================
 
 # OpenRouter endpoint tags, of the form "<provider>" or "<provider>/<quant>".
@@ -86,7 +102,12 @@ model_provider_pin <- c(
   "llama4scout" = "novita/bf16",
   "gptoss120b"  = "akashml/bf16",
   "qwen3235b"   = "gmicloud/fp8",    # no bf16 endpoint offered
-  "deepseekv32" = "gmicloud/fp8"     # no bf16 endpoint offered
+  "deepseekv32" = "gmicloud/fp8",    # no bf16 endpoint offered
+  "mistralsmall32" = "parasail/bf16", # verified 2026-10-09
+  # Mistral's own endpoints are the only ones; quantization undeclared. The
+  # untagged "mistral" endpoint, not mistral/eu (priced higher) or
+  # mistral/zdr. Verified 2026-10-09.
+  "mistrallarge4" = "mistral"
 )
 
 #==============================================================================
@@ -106,13 +127,18 @@ model_provider_pin <- c(
 #                    disabled", HTTP 400). "low" is the least they allow and
 #                    returns a clean number in ~28 output tokens.
 #
+#   Mistral Large 4 (tested 2026-10-09) reasons by default: 366-384 reasoning
+#   tokens, an overrun 400-token cap, and an empty answer. With "none" it
+#   answers in 4 tokens.
+#
 # Models absent from this list declare no reasoning parameters in the
 # OpenRouter catalogue and need no suppression.
 model_reasoning_config <- list(
   gptoss20b   = list(effort = "low"),
   gptoss120b  = list(effort = "low"),
   qwen332b    = list(effort = "none"),
-  deepseekv32 = list(effort = "none")
+  deepseekv32 = list(effort = "none"),
+  mistrallarge4 = list(effort = "none")
 )
 
 #==============================================================================
@@ -128,7 +154,8 @@ model_reasoning_config <- list(
 model_params_total <- c(
   "llama321b" = 1, "llama323b" = 3, "llama318b" = 8,
   "gptoss20b" = 20, "qwen332b" = 32, "llama4scout" = 109,
-  "gptoss120b" = 120, "qwen3235b" = 235, "deepseekv32" = 671
+  "gptoss120b" = 120, "qwen3235b" = 235, "deepseekv32" = 671,
+  "mistralsmall32" = 24
 )
 
 model_params_active <- c(
@@ -140,7 +167,8 @@ model_params_active <- c(
   "llama4scout" = 17,       # 17B active / 109B total
   "gptoss120b" = NA_real_,  # MoE — active count not verified
   "qwen3235b" = 22,         # "a22b" in the model name = 22B active
-  "deepseekv32" = NA_real_  # MoE — active count not verified
+  "deepseekv32" = NA_real_, # MoE — active count not verified
+  "mistralsmall32" = 24     # dense
 )
 
 #==============================================================================
@@ -156,14 +184,16 @@ open_models <- c(
   "meta-llama/llama-4-scout",
   "openai/gpt-oss-120b",
   "qwen/qwen3-235b-a22b-2507",
-  "deepseek/deepseek-v3.2"
+  "deepseek/deepseek-v3.2",
+  "mistralai/mistral-small-3.2-24b-instruct"
 )
 
 closed_models <- c(
   "claude-haiku-4-5",
   "gemini-3.5-flash",
   "gpt-5.6-luna",
-  "jev-1.13.0"
+  "jev-1.13.0",
+  "mistralai/mistral-large-4-0"  # until its weights ship, see section 1
 )
 
 #==============================================================================
@@ -188,7 +218,9 @@ model_display_name <- c(
   "claudehaiku45" = "Claude Haiku 4.5",
   "gemini35"      = "Gemini 3.5 Flash",
   "gpt56luna"     = "GPT-5.6 Luna",
-  "jev"           = "Jev 1.13"
+  "jev"           = "Jev 1.13",
+  "mistralsmall32" = "Mistral Small 3.2",
+  "mistrallarge4" = "Mistral Large 4"
 )
 
 model_provider <- c(
@@ -199,7 +231,8 @@ model_provider <- c(
   "deepseekv32" = "DeepSeek",
   "claudehaiku45" = "Anthropic",
   "gemini35" = "Google",
-  "jev" = "TypeSafe"
+  "jev" = "TypeSafe",
+  "mistralsmall32" = "Mistral AI", "mistrallarge4" = "Mistral AI"
 )
 
 #' Readable label for a result column such as "qwen3235b_en_fr"
