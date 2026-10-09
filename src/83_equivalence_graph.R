@@ -16,16 +16,23 @@ res <- eq$results
 bound <- eq$declared_bound
 
 metric_labels <- c(
-  correlation = "Correlation (r)",
-  mae         = "Mean absolute error",
-  f1_3        = "F1, 3 categories",
-  f1_7        = "F1, 7 categories"
+  correlation = "Correlation (r), higher is better",
+  mae         = "Mean absolute error, lower is better",
+  f1_3        = "F1, 3 categories, higher is better",
+  f1_7        = "F1, 7 categories, higher is better"
 )
 
+# In every contrast the first condition is the more French option, so a
+# positive difference means that option scored higher
 contrast_labels <- c(
-  "fr_fr vs en_fr" = "Prompt language\nFR→FR minus EN→FR",
-  "en_fr vs en_en" = "Text language\nEN→FR minus EN→EN",
-  "fr_fr vs en_en" = "Full workflow\nFR→FR minus EN→EN"
+  "fr_fr vs en_fr" = "Prompt language
+French vs. English prompt,
+same French text",
+  "en_fr vs en_en" = "Text language
+French original vs. English
+translation, same English prompt",
+  "fr_fr vs en_en" = "Full workflow
+all-French vs. all-English"
 )
 
 df <- res %>%
@@ -34,6 +41,13 @@ df <- res %>%
     contrast_label = factor(contrast_labels[comparison], levels = rev(contrast_labels)),
     verdict        = ifelse(equivalent, "Equivalent within ±0.05", "Not established")
   )
+
+# Reading direction, written under the rows of each panel
+arrows <- data.frame(
+  metric_label = factor(metric_labels, levels = metric_labels),
+  left  = ifelse(names(metric_labels) == "mae", "\u2190 French better", "\u2190 English better"),
+  right = ifelse(names(metric_labels) == "mae", "English better \u2192", "French better \u2192")
+)
 
 p <- ggplot(df, aes(x = mean_diff, y = contrast_label)) +
   annotate("rect", xmin = -bound, xmax = bound, ymin = -Inf, ymax = Inf,
@@ -45,11 +59,16 @@ p <- ggplot(df, aes(x = mean_diff, y = contrast_label)) +
   geom_text(aes(x = ci_high + 0.004,
                 label = sprintf("%+.3f", mean_diff)),
             hjust = 0, size = 3, colour = "grey20") +
+  geom_text(data = arrows, aes(x = -0.004, y = 0.35, label = left),
+            hjust = 1, size = 2.6, colour = "grey35", fontface = "italic") +
+  geom_text(data = arrows, aes(x = 0.004, y = 0.35, label = right),
+            hjust = 0, size = 2.6, colour = "grey35", fontface = "italic") +
   scale_shape_manual(values = c("Equivalent within ±0.05" = 16, "Not established" = 21),
                      name = NULL) +
   scale_x_continuous(limits = c(-0.06, 0.13), breaks = seq(-0.05, 0.10, by = 0.05)) +
   facet_wrap(~ metric_label, ncol = 2) +
-  labs(x = sprintf("Mean paired difference across %d models (90%% CI)", unique(res$n)[1]), y = NULL) +
+  scale_y_discrete(expand = expansion(add = c(0.9, 0.6))) +
+  labs(x = sprintf("Mean paired difference, French option minus English option, across %d models (90%% CI)", unique(res$n)[1]), y = NULL) +
   theme_minimal(base_size = 12) +
   theme(
     panel.grid.minor = element_blank(),
@@ -61,4 +80,4 @@ p <- ggplot(df, aes(x = mean_diff, y = contrast_label)) +
     panel.spacing.x = unit(1.2, "lines")
   )
 
-ggsave("results/graphs/equivalence_tests.png", p, width = 8, height = 5, dpi = 300)
+ggsave("results/graphs/equivalence_tests.png", p, width = 8.5, height = 5.6, dpi = 300)

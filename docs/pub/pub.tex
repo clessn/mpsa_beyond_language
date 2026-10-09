@@ -948,10 +948,11 @@ Bound, by Metric}{\label{fig-equivalence}}}}
 \vspace{-12pt}
 \noindent \emph{Note.} Each~point is the mean paired difference across
 the 14 models that scored all 200 sentences, with its 90\% confidence
-interval. The shaded band is the declared equivalence bound of ±0.05. A
-contrast is equivalent (filled point) when its whole interval lies
-inside the band. For MAE, a positive difference means the first
-condition had the larger error.
+interval. In every contrast the difference is the more French option
+minus the more English option, so a positive value means the French
+option scored higher (for MAE, had the larger error). The shaded band is
+the declared equivalence bound of ±0.05. A contrast is equivalent
+(filled point) when its whole interval lies inside the band.
 
 \end{figure}
 
@@ -972,12 +973,13 @@ Article}{\label{fig-corpus}}}}
 \pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/corpus_agreement.png}}
 
 \vspace{-12pt}
-\noindent \emph{Note.} Each~point is one article (n = 2,671), jittered
-slightly because scores fall on a coarse grid. The horizontal axis is
-the GPT-5.6 Luna score under the French prompt. Panel A plots the same
-model's score under the English prompt, with the identity line dashed.
-Panel B plots the French Lexicoder score on the original text. All
-scores run from −1 (very negative) to 1 (very positive).
+\noindent \emph{Note.} Each~cell covers a 0.1 by 0.1 range of scores and
+is shaded by the number of articles it contains (n = 2,671). The
+horizontal axis is the GPT-5.6 Luna score under the French prompt. Panel
+A plots the same model's score under the English prompt, with the
+identity line dashed. Panel B plots the French Lexicoder score on the
+original text. All scores run from −1 (very negative) to 1 (very
+positive).
 
 \end{figure}
 
