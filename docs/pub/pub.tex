@@ -75,46 +75,6 @@
 \usepackage{hyperref}
 \usepackage[protrusion=true]{microtype}
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -193,11 +153,11 @@
 
 
 
-\title{Language Doesn't Matter: Evaluating the Efficacy of Large
-Language Models in Analyzing Sentiment in French Textual Data}
+\title{Prompt Language Doesn't Matter, but Keep the Original Text: Large
+Language Models and Sentiment Analysis in French News}
 
 
-\shorttitle{Language Doesn't Matter}
+\shorttitle{Prompt Language Doesn't Matter}
 
 
 \usepackage{etoolbox}
@@ -209,8 +169,8 @@ Language Models in Analyzing Sentiment in French Textual Data}
 
 
 
-\authorsnames{Laurence-Olivier M. Foisy,Camille Pelletier,Étienne
-Proulx,Yannick Dufresne}
+\authorsnames{Laurence-Olivier M. Foisy,Jules Piral,Camille
+Pelletier,Étienne Proulx,Adam Ménard,Yannick Dufresne}
 
 
 
@@ -222,32 +182,27 @@ Proulx,Yannick Dufresne}
 
 
 
-\leftheader{Foisy, Pelletier, Proulx and Dufresne}
+\leftheader{Foisy, Piral, Pelletier, Proulx, Ménard and Dufresne}
 
-\date{2026-10-07}
+\date{2026-10-09}
 
 
 \abstract{Researchers who analyze non-English text with large language
-models (LLMs) inherit two rules of thumb. The first is to prompt in
-English, because these models learned mostly from English. The second is
-to translate the text into English, as dictionary methods long required.
-The evidence for both rules is contested. This article tests them on
-French. Twelve open- and closed-weight LLMs scored 200 manually
-annotated French news sentences under three conditions: French prompts
-on French text, English prompts on French text, and English prompts on
-machine-translated text. The English and French Lexicoder dictionaries
-served as benchmarks. Prompt language made no meaningful difference, and
-equivalence tests rule out any substantial advantage for English
-prompts. Translation cut both ways. It improved the dictionary, but it
-lowered the LLMs' polarity classification and, relative to the fully
-French workflow, their correlation with human judgments. The best models
-reached r = 0.81. Every model from about 8B parameters upward correlated
-with human judgments more strongly than either dictionary, at a cost of
-a few cents per thousand sentences. A 1B model could not follow the
-task. For sentiment analysis of French text, a validated general-purpose
-LLM now measures better than the Lexicoder dictionary, which remains
-useful as a transparent baseline. Prompt language is a matter of
-convenience, and the text is best analyzed in the original. }
+models (LLMs) inherit two rules of thumb: prompt in English, and
+translate the text into English first. Both rest on contested evidence.
+This article tests them on French. Twelve open- and closed-weight LLMs
+scored 200 hand-annotated French news sentences under three workflows:
+French prompts on French text, English prompts on French text, and
+English prompts on machine-translated text. The French and English
+Lexicoder dictionaries served as benchmarks. Prompt language made no
+difference, and equivalence tests rule out any substantial advantage for
+English. Translation did matter, in the wrong direction: it helped the
+dictionary but lowered the LLMs' agreement with human judgments. Every
+model from about 8B parameters upward beat both dictionaries, at a cost
+of a few cents per thousand sentences. The best reached r = 0.81 against
+0.36 for the French dictionary. The language of the prompt is a matter
+of convenience. The language of the text is not: analyze it in the
+original. }
 
 \keywords{Sentiment Analysis, Large Language Models, Machine
 Translation, Prompt Language, French Language, Open-Weight
@@ -276,6 +231,9 @@ l'Université, Québec, Québec G1V
 
 
 \usepackage{pdflscape}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -396,15 +354,16 @@ justification is that these models are trained mostly on English
 (\citeproc{ref-touvron_etal23a}{Touvron et al., 2023}) and that English
 instructions have been found to work better even for non-English inputs
 (\citeproc{ref-laiChatGPTEnglishComprehensive2023}{Lai et al., 2023};
-\citeproc{ref-Lin2022Few}{X. V. Lin et al., 2022}). The second is to
-translate the text into English before analysis. This practice comes
-from dictionary and bag-of-words methods, and it reappears as
+\citeproc{ref-Lin2022Few}{X. V. Lin et al., 2022}). English prompts are
+also cheaper, because tokenizers trained on English-heavy data split
+French into more pieces (\citeproc{ref-ahiaAllLanguagesCost2023}{Ahia et
+al., 2023}). The second is to translate the text into English before
+analysis. This practice comes from dictionaries and other bag-of-words
+methods, whose lexicons were English, and it reappears as
 ``translate-test'' with LLMs
 (\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}). Whether
-either reflex helps, harms, or makes no difference is unsettled. The
-evidence comes mostly from reasoning and classification benchmarks in
-natural language processing, often with older models and lower-resourced
-languages. The social science evidence is thin.
+either reflex helps, harms, or makes no difference is unsettled, and the
+social science evidence is thin.
 
 This article tests both reflexes on sentiment analysis, a measurement
 task central to political communication research
@@ -413,25 +372,26 @@ task central to political communication research
 demanding test for translation, because affective meaning is precisely
 what translation can alter
 (\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}). The
-study uses 200 manually annotated sentences from French news coverage.
-It compares twelve open- and closed-weight LLMs under three conditions:
-French prompts on French text, English prompts on French text, and
-English prompts on machine-translated text. The English and French
-versions of the Lexicoder Sentiment Dictionary serve as benchmarks.
-Equivalence tests assess the absence of a prompt-language effect
-directly, rather than inferring it from non-significance.
+benchmark is a set of 200 sentences drawn from 2,683 articles on
+open-source software published by 13 French-language dailies in Québec
+and France, each sentence scored by three human coders. Twelve open- and
+closed-weight LLMs scored them with a French prompt, with an English
+prompt, and with an English prompt on a machine translation. The French
+and English Lexicoder dictionaries provide the comparison that most
+applied researchers face. Equivalence tests assess the absence of a
+prompt-language effect directly, rather than inferring it from
+non-significance, and the best model then rescored the full corpus to
+check that the sentence-level result holds at scale.
 
 The results speak to both reflexes. Prompt language made no meaningful
-difference. Translation cut both ways: it improved the dictionary but
-hurt the LLMs. The translation strategy that served English-bound tools
-does not carry over to models that can read the source language. The
-article also answers a practical question: is a researcher working on
-French text still better served by a dictionary? On this evidence, no.
-Every model from about 8B parameters upward outperformed both the native
-French dictionary and the translated English one on correlation with
-human judgments, open-weight models included, for a few cents per
-thousand sentences. The dictionary retains transparency and stability.
-These make it a baseline rather than a primary measure.
+difference, though the English prompt is cheaper. Translation cut both
+ways: it improved the dictionary but hurt the LLMs. The article also
+answers a practical question: is a researcher working on French text
+still better served by a dictionary? On this evidence, no. Every model
+from about 8B parameters upward outperformed both the native French
+dictionary and the translated English one on correlation with human
+judgments, open-weight models included, for a few cents per thousand
+sentences.
 
 \section{Literature Review}\label{literature-review}
 
@@ -439,8 +399,12 @@ These make it a baseline rather than a primary measure.
 Sciences}\label{llms-as-measurement-instruments-in-the-social-sciences}
 
 Zero-shot LLM annotation has moved quickly from curiosity to candidate
-standard. ChatGPT outperformed crowd workers on relevance, stance,
-topic, and frame detection
+standard. The paper that set the agenda had ChatGPT annotate 6,183
+English tweets and news articles without any example. Its accuracy
+exceeded that of crowd workers by about 25 percentage points on average,
+its intercoder agreement exceeded that of both crowd workers and trained
+annotators on every task, and each annotation cost about thirty times
+less than paying a crowd worker
 (\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
 2023}). GPT-4 outperformed expert coders and supervised classifiers at
 identifying the party of politicians from their social media posts in
@@ -462,8 +426,10 @@ A more cautious literature qualifies these claims on three fronts.
 First, performance is uneven. Across 25 English benchmarks, zero-shot
 LLMs did not outperform the best fine-tuned models on classification
 tasks (\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}).
-Across 27 annotation tasks, their performance was ``highly contingent on
-both the dataset and the type of annotation task''
+When GPT-4 replicated 27 annotation tasks from 11 datasets in published
+social science articles, its performance varied with the dataset and
+with the kind of task, and on a third of the tasks the model missed or
+mislabeled at least half of the relevant cases
 (\citeproc{ref-pangakisAutomatedAnnotationGenerative2023}{Pangakis et
 al., 2023}). Validation against human coding therefore remains
 indispensable (\citeproc{ref-grimmer_stewart13}{Grimmer \& Stewart,
@@ -495,21 +461,22 @@ and evidence that open-weight models can be competitive alternatives
 These debates leave the question of language largely implicit. The
 broadest evaluations rely on English benchmarks
 (\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}). Studies
-that extend to other languages report somewhat lower performance outside
-English (\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \&
-Clemm Von Hohenberg, 2024};
-\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}), but
-they do not examine how researchers should interact with models in those
+that extend to other languages report slightly lower performance on
+non-English text
+(\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \& Clemm Von
+Hohenberg, 2024}), or lower accuracy outside the United States that the
+authors attribute to party systems rather than to language
+(\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}).
+Neither examines how researchers should interact with models in those
 languages. The most extensive multilingual evaluation in the social
 sciences covers 12 languages, yet it compared GPT with dictionary
 methods on English headlines only
 (\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}).
 Researchers working in other languages must make two choices: the
-language of the prompt and the language of the text. Both have been
-debated elsewhere.
+language of the prompt and the language of the text.
 
-\subsection{Prompting in English: Pivot Language or Multilingual
-Competence?}\label{prompting-in-english-pivot-language-or-multilingual-competence}
+\subsection{The Language of the
+Prompt}\label{the-language-of-the-prompt}
 
 The case for prompting in English starts from two observations. LLMs are
 trained predominantly on English (\citeproc{ref-touvron_etal23a}{Touvron
@@ -517,9 +484,11 @@ et al., 2023}), and they perform less well in other languages,
 especially lower-resourced ones
 (\citeproc{ref-ahujaMEGAMultilingualEvaluation2023}{Ahuja et al., 2023};
 \citeproc{ref-laiChatGPTEnglishComprehensive2023}{Lai et al., 2023}). A
-mechanistic account suggests why. In Llama-2 models, intermediate
-representations pass through an abstract ``concept space'' that lies
-closer to English than to other languages
+mechanistic account suggests why. Llama-2 models seem to think in
+English before answering in another language. Given a French prompt, the
+model works out the meaning in its middle layers, and at that stage its
+internal state already points to the English word for the answer. Only
+in the last layers does it switch to the target language
 (\citeproc{ref-wendler_etal24}{Wendler et al., 2024}). If models
 effectively reason through English, instructions written in English
 should be understood best. Several findings support this pivot-language
@@ -563,18 +532,15 @@ sentiment measurement of French text than French prompts.
 equivalent performance on French text.
 \end{quote}
 
-\subsection{Translating the Text: Bridge or
-Loss?}\label{translating-the-text-bridge-or-loss}
+\subsection{The Language of the Text}\label{the-language-of-the-text}
 
-The second reflex predates LLMs. Faced with multilingual corpora,
-comparative researchers translated texts into English so that
-English-language tools could be applied
-(\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et al.,
-2015}). This bridge strategy has been validated repeatedly.
-Machine-translated and human-translated texts yield highly similar
-term-document matrices and topic models
-(\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018}). Results
-are robust across translation services
+The second reflex predates LLMs. The bridge strategy of translating
+multilingual corpora into English so that English-language tools can be
+applied (\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et
+al., 2015}) has been validated repeatedly. Machine-translated and
+human-translated texts yield highly similar term-document matrices and
+topic models (\citeproc{ref-devriesNoLongerLost2018}{De Vries et al.,
+2018}). Results are robust across translation services
 (\citeproc{ref-reberOvercomingLanguageBarriers2019}{Reber, 2019}). A
 machine translation of the Lexicoder dictionary captured legislative
 conflict across European parliaments
@@ -591,8 +557,7 @@ before inference improves the performance of multilingual models
 (\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}). It is
 often hard to beat for lower-resourced languages written in non-Latin
 scripts (\citeproc{ref-ahujaMEGAMultilingualEvaluation2023}{Ahuja et
-al., 2023}), and it appears in applied research
-(\citeproc{ref-Venerito2024Large}{Venerito \& Iannone, 2024}).
+al., 2023}).
 
 The opposing view treats translation as a source of loss. Translation
 alters sentiment: affective words disappear or are replaced by words of
@@ -648,32 +613,57 @@ The corpus consists of 2,683 French-language news articles from 13 media
 sources (9 from Québec, 1 from Ontario, 3 from France). It is an
 exhaustive collection of the articles discussing open-source software in
 the Eureka database's ``Major daily newspapers (FR)'' category. Articles
-were selected with the search query below, over the period from January
-1, 1991, the release year of the Linux kernel, to January 1, 2025. The
-start date excludes nothing in practice: the earliest matching article
-was published on June 23, 1995.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{TEXT= ("logiciel libre" | "logiciels libres" | "open source" | "open{-}source" | "logiciel}
-\NormalTok{       open source" | "logiciels open source" | "code source ouvert" | "software libre"|}
-\NormalTok{       "free software" | "code source libre" | "Free Software Foundation" | "Richard}
-\NormalTok{       Stallman")}
-\end{Highlighting}
-\end{Shaded}
-
-Table~\ref{tbl-source-summary} shows the distribution of articles by
-source media.
+were selected with the search terms in Table~\ref{tbl-query}, joined by
+OR, between January 1, 1991 and January 1, 2025. The start date is the
+release year of the Linux kernel, the project that made open-source
+software a public topic, so the window covers the entire history of the
+subject in the press. In practice it excludes nothing: the earliest
+match dates from June 1995.
 
 \begin{table}
 
-{\caption{{Summary of Collected News Articles Discussing Open Source
-Software by Source Media}{\label{tbl-source-summary}}}
+{\caption{{Search Terms Used to Select Articles in the Eureka
+Database}{\label{tbl-query}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1818}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8182}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Group
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search terms
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+French terms & \emph{logiciel libre}, \emph{logiciels libres},
+\emph{logiciel open source}, \emph{logiciels open source}, \emph{code
+source ouvert}, \emph{code source libre} \\
+English and borrowed terms & \emph{open source}, \emph{open-source},
+\emph{free software}, \emph{software libre} \\
+Proper names & \emph{Free Software Foundation}, \emph{Richard
+Stallman} \\
+\end{longtable}
+
+\end{table}
+
+Table~\ref{tbl-source-summary} shows the distribution of articles by
+source media. Articles were downloaded in HTML format with a
+Python/Selenium scraper, and publication metadata and full text were
+extracted with custom R functions.
+
+\begin{table}
+
+{\caption{{Collected Articles by Source
+Media}{\label{tbl-source-summary}}}
 \vspace{-20pt}}
 
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
-source\_media & article\_count & earliest\_date & latest\_date \\
+Source & Articles & First article & Last article \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -695,36 +685,15 @@ Voix de l'Est, La (Granby, QC) & 4 & 2010-09-17 & 2015-02-14 \\
 
 \end{table}
 
-Articles were downloaded in HTML format with a Python/Selenium scraper.
-Publication metadata and full text were extracted with custom R
-functions.
-
-\begin{figure}[H]
-
-\caption{Temporal Distribution of News Articles Discussing Open Source
-Software}
-
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/time_series.png}}
-
-}
-
-\end{figure}%
-
-Figure 1 shows the temporal distribution of articles. Coverage rose
-markedly in the early 2000s.
-
 \subsection{Translation}\label{translation}
 
 The EN→EN condition described below reproduces the
-translate-then-analyze strategy of comparative text analysis
-(\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
-\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et al.,
-2015}). For this condition, the French corpus was machine-translated
-into English with Google Translate's document translation service. An
-automated R workflow processed the documents in batches and preserved
-document IDs, so that the French and English versions remain
-aligned.\footnote{See \texttt{src/21\_translate\_to\_english.R} in the
-  project repository.}
+translate-then-analyze strategy reviewed above. For this condition, the
+French corpus was machine-translated into English with Google
+Translate's document translation service. An automated R workflow
+processed the documents in batches and preserved document IDs, so that
+the French and English versions remain aligned.\footnote{See
+  \texttt{src/21\_translate\_to\_english.R} in the project repository.}
 
 \subsection{Manual Annotation}\label{manual-annotation}
 
@@ -751,11 +720,7 @@ sentences carry mild sentiment, so small differences often cross zero.
 The ground truth averages three coders and is therefore more reliable
 than any single coder: the Spearman-Brown projection from the mean
 pairwise correlation puts the reliability of the three-coder mean at
-0.868. These levels still call for caution. Simulations show that low
-intercoder reliability and small validation sets increase the risk of
-misjudging automated methods
-(\citeproc{ref-songValidationsWeTrust2020}{Song et al., 2020}). The
-Limitations section returns to this point.
+0.868.
 
 \subsection{Dictionary-Based Sentiment
 Analysis}\label{dictionary-based-sentiment-analysis}
@@ -772,18 +737,16 @@ used, with additional handling of contractions, proper nouns, and
 negation (for example, ``not good'' scored as negative). Each sentence
 was scored as ((positive + negated negative) − (negative + negated
 positive)) / total words. The two dictionaries therefore differ in
-construction as well as in language. This matters when they are
-compared.
+construction as well as in language.
 
 \subsection{LLM-Based Sentiment
 Analysis}\label{llm-based-sentiment-analysis}
 
 Twelve general-purpose LLMs were evaluated. They were selected for
 prominence and affordability, as realistic choices for researchers who
-need to analyze large corpora. Proprietary models raise reproducibility
-concerns, so their inclusion requires justification
-(\citeproc{ref-palmerUsingProprietaryLanguage2023}{Palmer et al.,
-2023}). The three closed-weight models serve as a reference point: the
+need to analyze large corpora. The three closed-weight models are
+included as a reference point, the justification that Palmer et al.
+(\citeproc{ref-palmerUsingProprietaryLanguage2023}{2023}) ask for: the
 studies that established LLM annotation in the social sciences relied on
 proprietary GPT models
 (\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
@@ -798,61 +761,74 @@ The nine open-weight models are Llama 3.2 1B, Llama 3.2 3B, Llama 3.1
 parameters. The three closed-weight models are Claude Haiku 4.5
 (Anthropic), Gemini 3.5 Flash (Google), and GPT-5.6 Luna (OpenAI). This
 lineup updates an initial 2024-2025 evaluation of 11 comparable models
-with an identical design. Several models from that evaluation, including
-GPT-4o and Gemini 2.0 Flash, were deprecated by their providers within
-eighteen months. The smallest model, Llama 3.2 1B, rarely followed the
-instruction to answer with a number. About one call in 23 returned a
-parseable score. Even after retries, it produced a usable score for only
-58 to 74 of the 200 sentences, depending on the condition. It was
-retained deliberately. Models of around 8B parameters can handle the
-task, whereas a 1B model appears too small to follow the instructions
-reliably. This marks a practical lower bound on model size. Its metrics
-rest on a reduced and non-random subset of sentences and are not
-directly comparable to those of the other models.
+with an identical design. The smallest model, Llama 3.2 1B, rarely
+followed the instruction to answer with a number: about one call in 23
+returned a parseable score, and even after retries it scored only 58 to
+74 of the 200 sentences, depending on the condition. It was retained to
+mark the lower end of the size range, but its metrics rest on a reduced
+and non-random subset of sentences and are reported separately.
 
 Each model was tested under three conditions: French prompts on French
 text (FR→FR), English prompts on French text (EN→FR), and English
-prompts on the machine-translated English text (EN→EN). The first two
-conditions isolate the effect of prompt language. The last two isolate
-the effect of text language.
+prompts on the machine-translated English text (EN→EN).
 
 All prompts followed the same structure: a task definition, a five-point
 sentiment scale from -1.0 to 1.0 with anchor descriptions and
 intermediate values allowed, an instruction to consider cultural and
 linguistic nuance, and a constraint to respond with a numerical value
 only. French prompts were direct translations of the English prompts.
-The English-prompt/French-text version is shown below.\footnote{The
-  French-prompt/French-text version is identical except for language.
-  See \texttt{src/93\_prompts.R} in the project repository for the exact
-  prompts, and \texttt{src/40\_prompt.R} for the full evaluation
-  pipeline, including model initialization, retry logic, rate limiting,
-  and checkpointing.}
+Table~\ref{tbl-prompt} shows the English-prompt/French-text
+version.\footnote{The French-prompt/French-text version is identical
+  except for language. See \texttt{src/93\_prompts.R} in the project
+  repository for the exact prompts, and \texttt{src/40\_prompt.R} for
+  the full evaluation pipeline, including model initialization, retry
+  logic, rate limiting, and checkpointing.}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{en\_prompt\_fr\_text \textless{}{-} function(text) \{}
-\NormalTok{  paste0("Please analyze the sentiment of the following French text and provide a single }
-\NormalTok{  numerical rating according to this scale:}
-\NormalTok{Sentiment Scale:}
-\NormalTok{{-}1.0: Strong negative sentiment {-} highly critical, hostile, or pessimistic content}
-\NormalTok{{-}0.5: Moderate negative sentiment {-} somewhat negative, disapproving, or concerned }
-\NormalTok{      content}
-\NormalTok{0.0: Neutral sentiment {-} factual, balanced, or neither positive nor negative content}
-\NormalTok{0.5: Moderate positive sentiment {-} somewhat positive, approving, or optimistic content}
-\NormalTok{1.0: Strong positive sentiment {-} highly supportive, enthusiastic, or optimistic content}
-\NormalTok{You may also use values between these points for intermediate sentiment levels }
-\NormalTok{(e.g., {-}0.7, 0.3).}
-\NormalTok{Important instructions:}
-\SpecialStringTok{1. }\NormalTok{First, carefully read and understand the text, considering cultural and linguistic }
-\NormalTok{   nuances in French.}
-\SpecialStringTok{2. }\NormalTok{Analyze the emotional tone, word choice, and overall message.}
-\SpecialStringTok{3. }\NormalTok{Respond ONLY with a single numerical value between {-}1.0 and 1.0 that best }
-\NormalTok{   represents the sentiment.}
-\SpecialStringTok{4. }\NormalTok{Do not include ANY explanations, analysis, or additional text in your response.}
-\NormalTok{Here is the text to analyze: ", text)}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
+\begin{table}
+
+{\caption{{Wording of the English Prompt on French Text, by
+Component}{\label{tbl-prompt}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2121}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7879}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Wording
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Task & Please analyze the sentiment of the following French text and
+provide a single numerical rating according to this scale: \\
+Scale, -1.0 & Strong negative sentiment - highly critical, hostile, or
+pessimistic content \\
+Scale, -0.5 & Moderate negative sentiment - somewhat negative,
+disapproving, or concerned content \\
+Scale, 0.0 & Neutral sentiment - factual, balanced, or neither positive
+nor negative content \\
+Scale, 0.5 & Moderate positive sentiment - somewhat positive, approving,
+or optimistic content \\
+Scale, 1.0 & Strong positive sentiment - highly supportive,
+enthusiastic, or optimistic content \\
+Intermediate values & You may also use values between these points for
+intermediate sentiment levels (e.g., -0.7, 0.3). \\
+Instruction 1 & First, carefully read and understand the text,
+considering cultural and linguistic nuances in French. \\
+Instruction 2 & Analyze the emotional tone, word choice, and overall
+message. \\
+Instruction 3 & Respond ONLY with a single numerical value between -1.0
+and 1.0 that best represents the sentiment. \\
+Instruction 4 & Do not include ANY explanations, analysis, or additional
+text in your response. \\
+Input & Here is the text to analyze: {[}sentence{]} \\
+\end{longtable}
+
+\end{table}
 
 Each model was queried through the \texttt{ellmer} R package. The three
 closed-weight models were accessed through their vendors' APIs, and the
@@ -880,7 +856,7 @@ with the same prompts and settings.\footnote{See
   \texttt{src/70\_prompt\_corpus.R}. The two passes required 5,366 API
   calls, 7.1 million input tokens and 187,000 output tokens, for USD
   1.64 at list prices.} These scores are compared with the French
-Lexicoder dictionary in the Appendix (Figure 5).
+Lexicoder dictionary in the Results (Figure~\ref{fig-corpus}).
 
 \subsection{Validation and Performance
 Evaluation}\label{validation-and-performance-evaluation}
@@ -907,13 +883,13 @@ the two complete workflows a researcher might adopt. A non-significant
 t-test cannot by itself establish the absence of an effect. Alongside
 paired t-tests, two one-sided tests (TOST) therefore assess whether a
 difference is small enough to be treated as negligible, with an
-equivalence bound of ±0.05 on each metric's scale. These comparisons and
-the averages reported in the Results cover the eleven models that scored
-all 200 sentences (33 model-condition combinations). They exclude the
-dictionary baselines, which have no prompt. Llama 3.2 1B is reported
-separately: it scored a different, partial subset of sentences in each
-condition, so comparisons across conditions would compare unlike
-samples.
+equivalence bound of ±0.05 on each metric's scale
+(\citeproc{ref-lakensEquivalenceTestsPractical2017}{Lakens, 2017}).
+These comparisons and the averages reported in the Results cover the
+eleven models that scored all 200 sentences (33 model-condition
+combinations). They exclude the dictionary baselines, which have no
+prompt, and Llama 3.2 1B, which scored a different partial subset of
+sentences in each condition.
 
 \section{Results}\label{results}
 
@@ -926,14 +902,58 @@ than English prompts on the same text (EN→FR) on every metric: mean
 correlation 0.700 vs.~0.673, MAE 0.209 vs.~0.217, 3-category F1 0.669
 vs.~0.646, and 7-category F1 0.364 vs.~0.347. None of these paired
 differences was statistically significant (all \emph{p} \textgreater{}
-0.12). Equivalence tests go further. FR→FR and EN→FR were statistically
-equivalent within ±0.05 on MAE (\emph{p} = 0.002), 7-category F1
-(\emph{p} = 0.034), and 3-category F1 (\emph{p} = 0.034). Correlation
-was the one metric on which equivalence could not be established. The
-90\% confidence interval of the difference, {[}−0.032, 0.085{]}, leaves
-room for a French-prompt advantage of up to 0.085, but not for an
-English-prompt advantage larger than 0.032. The results contradict H1a
-and support H1b on three of four metrics.
+0.12). Equivalence tests go further (Figure~\ref{fig-equivalence}).
+FR→FR and EN→FR were statistically equivalent within ±0.05 on MAE
+(\emph{p} = 0.002), 7-category F1 (\emph{p} = 0.034), and 3-category F1
+(\emph{p} = 0.034). Correlation was the one metric on which equivalence
+could not be established. The 90\% confidence interval of the
+difference, {[}−0.032, 0.085{]}, leaves room for a French-prompt
+advantage of up to 0.085, but not for an English-prompt advantage larger
+than 0.032. The results contradict H1a and support H1b on three of four
+metrics.
+
+\begin{figure}[!htbp]
+
+{\caption{{Paired Differences Between Conditions Against the Equivalence
+Bound, by Metric}{\label{fig-equivalence}}}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/equivalence_tests.png}}
+
+\vspace{-12pt}
+\noindent \emph{Note.} Each~point is the mean paired difference across
+the 11 models that scored all 200 sentences, with its 90\% confidence
+interval. The shaded band is the declared equivalence bound of ±0.05. A
+contrast is equivalent (filled point) when its whole interval lies
+inside the band. For MAE, a positive difference means the first
+condition had the larger error.
+
+\end{figure}
+
+The result holds at the scale of the corpus. Figure~\ref{fig-corpus}
+plots, for each of the 2,671 full articles with all three scores, the
+score GPT-5.6 Luna gave under the English prompt against the score it
+gave under the French prompt (panel A), and the French Lexicoder score
+against the French-prompt score (panel B). The two prompt languages
+agree almost perfectly (r = 0.97; 94\% of articles received the same
+sign). The dictionary agrees with the model only weakly (r = 0.36 across
+articles, 0.42 across monthly means).
+
+\begin{figure}[!htbp]
+
+{\caption{{Agreement Between Scoring Methods on the Full Corpus, by
+Article}{\label{fig-corpus}}}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/corpus_agreement.png}}
+
+\vspace{-12pt}
+\noindent \emph{Note.} Each~point is one article (n = 2,671), jittered
+slightly because scores fall on a coarse grid. The horizontal axis is
+the GPT-5.6 Luna score under the French prompt. Panel A plots the same
+model's score under the English prompt, with the identity line dashed.
+Panel B plots the French Lexicoder score on the original text. All
+scores run from −1 (very negative) to 1 (very positive).
+
+\end{figure}
 
 \subsection{Machine Translation (H2a
 vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
@@ -963,28 +983,34 @@ correlation.
 (RQ2)}\label{viability-against-dictionary-methods-rq2}
 
 General-purpose LLMs, used without fine-tuning, correlated with human
-judgments well above both dictionaries. The best configurations exceeded
-r = 0.80. GPT-5.6 Luna led on correlation (r = 0.810 in FR→FR). Claude
-Haiku 4.5 led on 3-category F1 (0.778) and 7-category F1 (0.537), both
-in FR→FR. Gemini 3.5 Flash led on MAE (0.156 in EN→FR). Nine of the 33
-model-condition combinations correlated with the ground truth more
-strongly than individual human coders agreed with the mean of the other
-two (mean leave-one-out r = 0.748, range 0.724--0.779).\footnote{This
-  comparison slightly favors the models, because the ground truth they
-  are compared against averages three coders rather than two. Agreement
-  between annotators is not a strict ceiling on machine performance
+judgments well above both dictionaries (Figure~\ref{fig-correlation}).
+The best configuration, GPT-5.6 Luna with French prompts, reached r =
+0.810. Nine of the 33 model-condition combinations correlated with the
+ground truth more strongly than individual human coders agreed with the
+mean of the other two (mean leave-one-out r = 0.748, range
+0.724--0.779).\footnote{This comparison slightly favors the models,
+  because the ground truth they are compared against averages three
+  coders rather than two. Agreement between annotators is not a strict
+  ceiling on machine performance
   (\citeproc{ref-richieInterannotatorAgreementNot2022}{Richie et al.,
   2022}).}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 
-\caption{Sentiment Analysis Models Correlation with Ground Truth}
+{\caption{{Correlation Between Model Scores and Human Judgments, by
+Model and Condition}{\label{fig-correlation}}}}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_correlation.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_correlation.png}}
 
-}
+\vspace{-12pt}
+\noindent \emph{Note.} Pearson~correlations with the mean of three human
+coders, with 95\% confidence intervals. Models are sorted by correlation
+and colored by type. Within each model, the conditions are FR→FR (French
+prompt on French text), EN→FR (English prompt on French text), and EN→EN
+(English prompt on translated text). \(^{*}p\) \textless{} .05,
+\(^{**}p\) \textless{} .01, \(^{***}p\) \textless{} .001.
 
-\end{figure}%
+\end{figure}
 
 Closed-weight models outperformed open-weight ones on average (mean r =
 0.768 vs.~0.638; 3-category F1 0.689 vs.~0.622). The gap closed at the
@@ -993,18 +1019,17 @@ FR→FR, above Gemini 3.5 Flash in the same condition. GPT-OSS 120B and
 GPT-OSS 20B averaged r = 0.733 and 0.716 across conditions. Performance
 degraded below that size. Llama 3.1 8B remained usable (r =
 0.575--0.612). Llama 3.2 3B was erratic (r = 0.476 in FR→FR but 0.132 in
-EN→FR). Llama 3.2 1B failed: it returned a usable score for only 58 to
-74 sentences per condition, and on those its correlation with the ground
-truth ranged from −0.199 to 0.100. Cost was not a barrier. At list
-prices, scoring 1,000 sentences cost between USD 0.02 and 0.40 for every
-model but one (Table~\ref{tbl-cost}). The exception, Gemini 3.5 Flash
-(USD 3.77), reflects the reasoning tokens it generates by default rather
-than its per-token price.\footnote{No cost is reported for Llama 3.2 1B.
-  Its endpoint returned the same input token count on every call
-  regardless of the prompt, so its usage was not measured. It needed
-  22.7 API calls per usable score, against 1.0 to 1.03 for every other
-  model, and would in any case have been the most expensive open-weight
-  model to run.}
+EN→FR). Llama 3.2 1B failed: on the 58 to 74 sentences it managed to
+score per condition, its correlation with the ground truth ranged from
+−0.199 to 0.100. Cost was not a barrier. At list prices, scoring 1,000
+sentences cost between USD 0.02 and 0.40 for every model but one
+(Table~\ref{tbl-cost}). The exception, Gemini 3.5 Flash (USD 3.77),
+reflects the reasoning tokens it generates by default rather than its
+per-token price.\footnote{No cost is reported for Llama 3.2 1B. Its
+  endpoint returned the same input token count on every call regardless
+  of the prompt, so its usage was not measured. It needed 22.7 API calls
+  per usable score, against 1.0 to 1.03 for every other model, and would
+  in any case have been the most expensive open-weight model to run.}
 
 Against the LLM mean of r = 0.673, the dictionaries trailed on
 correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557
@@ -1014,32 +1039,28 @@ and only Llama 3.2 3B and 1B fell below them. On 3-category F1, the
 translated English dictionary outperformed Qwen3 32B in every condition,
 GPT-OSS 120B in EN→EN, and the two smallest Llama models. On MAE, both
 dictionaries (0.203 and 0.210) did slightly better than the LLM average
-(0.213). This reflects the dictionaries' compressed output rather than
-their accuracy. Their scores cluster near zero (SD = 0.065 for the
-English dictionary, against 0.286 for the ground truth and 0.38--0.47
-for the LLMs). On a sample dominated by mildly positive sentences, this
-keeps absolute errors small while discriminating poorly between
-sentences.
+(0.213; Figure~\ref{fig-mae}), because their scores cluster near zero on
+a sample dominated by mildly positive sentences.
 
 \subsection{Classification
 Granularity}\label{classification-granularity}
 
 All models performed substantially better on 3-category than on
 7-category classification (best F1 0.778 vs.~0.537; mean 0.640
-vs.~0.349; Figure 3). Models identified positive and negative sentiment
-most reliably (7-category F1 = 0.482 and 0.441, rising to 0.690 and
-0.627 in the 3-category scheme). They struggled most with the extreme
-categories (very negative F1 = 0.256, very positive F1 = 0.124), which
-are nearly absent from the sample (two sentences and one sentence).
-Neutral remained the hardest 3-category label (F1 = 0.258).
+vs.~0.349; Figure \ref{fig:f1-scores}). Models identified positive and
+negative sentiment most reliably (7-category F1 = 0.482 and 0.441,
+rising to 0.690 and 0.627 in the 3-category scheme). They struggled most
+with the extreme categories (very negative F1 = 0.256, very positive F1
+= 0.124), which are nearly absent from the sample (two sentences and one
+sentence). Neutral remained the hardest 3-category label (F1 = 0.258).
 
 \clearpage
 \begin{landscape}
 \begin{figure}
-\centering
-\includegraphics[width=0.9\linewidth]{../../results/graphs/model_f1_scores_comparison_grouped_pub.png}
-\caption{F1 Scores Comparison Across Models and Categories}
+\caption{Weighted F1 Scores by Model, Condition, and Classification Scheme}
 \label{fig:f1-scores}
+\centering
+\includegraphics[width=0.95\linewidth]{../../results/graphs/model_f1_scores_comparison_grouped_pub.png}
 \end{figure}
 \end{landscape}
 \clearpage
@@ -1052,7 +1073,9 @@ Conditions}\label{prompt-language-multilingual-competence-within-scope-condition
 For French and current models, the results side with the
 multilingual-competence view. English prompts brought no advantage, and
 equivalence tests ruled out any English-prompt gain larger than a few
-hundredths on every metric. Earlier social science evidence showed that
+hundredths, even on correlation, where strict equivalence could not be
+established. The equivalence held at the scale of the full corpus
+(Figure~\ref{fig-corpus}). Earlier social science evidence showed that
 labels agree across prompt languages
 (\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}). This
 study extends that finding to the accuracy of the labels against human
@@ -1072,11 +1095,7 @@ represented as French. The smaller open-weight models behaved
 differently. Llama 3.2 3B correlated with human judgments at r = 0.48
 with French prompts but 0.13 with English ones. This suggests that
 sensitivity to prompt language may reappear below a certain model size,
-although a single model cannot establish this. At the scale of the full
-corpus, the equivalence of prompt languages is even clearer. GPT-5.6
-Luna's scores for the 2,683 articles under French and English prompts
-correlated at r = 0.97, and 94\% of articles received the same sign
-(Figure 5).
+although a single model cannot establish this.
 
 Prompt language does carry a cost that the accuracy results do not show.
 The French prompt is 6\% longer than the English one in characters, yet
@@ -1084,20 +1103,16 @@ it cost 13\% to 34\% more input tokens, depending on the model
 (Table~\ref{tbl-tokens}). The difference is a property of each model's
 tokenizer, not of its size or licence. Vocabularies that favor English
 encode English text with similar efficiency across models (1.17 to 1.25
-tokens per word). They split French words into more pieces, at rates
-from 1.41 tokens per word (Llama 4 Scout, GPT-5.6 Luna, GPT-OSS) to 1.87
-(Claude Haiku 4.5). Ahia et al.
+tokens per word) but split French words into more pieces (1.41 to 1.87
+tokens per word). Ahia et al.
 (\citeproc{ref-ahiaAllLanguagesCost2023}{2023}) document the same
-disparity across many languages. The French sentences themselves cost
-1.6\% to 4.6\% more tokens than their English translations. Output
-length did not differ by prompt language. Since accuracy was equivalent,
-the English prompt is the cheaper of two equally good options. The
-saving depends on where a model's cost lies. It is 14\% to 31\% per
-1,000 sentences for models billed mostly on input (Claude Haiku 4.5,
-Llama 3.x, Qwen3, DeepSeek V3.2, Llama 4 Scout). It is under 6\% for
-GPT-5.6 Luna, the GPT-OSS models, and Gemini 3.5 Flash, whose output
-tokens weigh more. Translating the text first would save a few percent
-more, at the accuracy cost reported above.
+disparity across many languages. Output length did not differ by prompt
+language. Since accuracy was equivalent, the English prompt is the
+cheaper of two equally good options. The saving per 1,000 sentences
+ranges from under 6\% for models whose output tokens weigh most in the
+bill to 14\% to 31\% for models billed mostly on input. Translating the
+text first would save a few percent more, at the accuracy cost reported
+above.
 
 \subsection{Translation: A Bridge for Dictionaries, a Loss for
 LLMs}\label{translation-a-bridge-for-dictionaries-a-loss-for-llms}
@@ -1120,11 +1135,11 @@ meaning that translation introduces
 finding runs against evidence that translating inputs into English
 improves multilingual models
 (\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}). That
-evidence rests on reasoning and inference benchmarks whose non-English
-versions were produced by translation. The sentences analyzed here were
-written in French. The practical implication is direct: the translation
-step that dictionary-era workflows made necessary should not be carried
-into LLM-based sentiment analysis of French text.
+evidence comes from benchmarks translated out of English, whereas the
+sentences analyzed here were written in French. The practical
+implication is direct: the translation step that dictionary-era
+workflows made necessary should not be carried into LLM-based sentiment
+analysis of French text.
 
 \subsection{Viability: Optimism, With
 Validation}\label{viability-optimism-with-validation}
@@ -1163,38 +1178,34 @@ Second, all models performed markedly worse on 7-category classification
 than on 3-category polarity. These two results are compatible once
 ordering and calibration are distinguished. LLMs order sentences and
 reproduce the spread of human ratings. Their correlation with the ground
-truth (mean r = 0.673, up to 0.810) far exceeds that of the dictionaries
-(0.548 and 0.357), and their scores spread at least as widely as the
-human ratings (SD 0.38--0.47 vs.~0.286), whereas the dictionaries'
-scores cluster near zero (SD = 0.065 for the English dictionary). What
-LLMs do poorly is place scores on the right side of fixed category
-thresholds. They overstate extremes: 10.8\% of LLM scores exceed ±0.66,
-against 1.5\% of ground-truth values. A sentence rated 0.5 by humans and
-0.8 by a model is correctly ordered but misclassified. The ground truth
-contributes to the mismatch. As an average of three coders, it is pulled
-toward the center, and only three sentences fall in the two extreme
-categories. Gradations in sentiment are one of the main arguments for
-dictionaries
+truth far exceeds that of the dictionaries, and their scores spread at
+least as widely as the human ratings (SD 0.38--0.47 vs.~0.286), whereas
+the dictionaries' scores cluster near zero (SD = 0.065 for the English
+dictionary). What LLMs do poorly is place scores on the right side of
+fixed category thresholds. They overstate extremes: 10.8\% of LLM scores
+exceed ±0.66, against 1.5\% of ground-truth values. A sentence rated 0.5
+by humans and 0.8 by a model is correctly ordered but misclassified. The
+ground truth contributes to the mismatch, since averaging three coders
+pulls it toward the center. Gradations in sentiment are one of the main
+arguments for dictionaries
 (\citeproc{ref-vanderveenAdvantagesLexiconbasedSentiment2025}{Van Der
 Veen \& Bleich, 2025}). In this corpus, a single off-the-shelf
 dictionary captured them less well than the LLMs. The gap does not close
-with aggregation. On the full corpus, the French dictionary's article
-scores correlated with GPT-5.6 Luna's at r = 0.36, and their monthly
-averages at r = 0.42 (Figure 5). What the dictionary retains is
-transparency, since every score can be traced to the words that produced
-it, and stability over time, since a dictionary is not deprecated. These
-make it a useful baseline and robustness check alongside an LLM. They
-are not a reason to prefer it as the primary measure.
+with aggregation: on the full corpus, the dictionary agreed only weakly
+with the model, by article and by month (Figure~\ref{fig-corpus}). What
+the dictionary retains is transparency, since every score can be traced
+to the words that produced it, and stability over time, since a
+dictionary is not deprecated. These make it a useful baseline and
+robustness check alongside an LLM. They are not a reason to prefer it as
+the primary measure.
 
 \section{Limitations}\label{limitations}
 
 Several limitations qualify these findings. The benchmark is modest in
-size and reliability. Its 200 sentences fall within common
-recommendations for validating sentiment measures
-(\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021}),
-but agreement between individual coders was moderate (Krippendorff's
-alpha = 0.597). Simulations show that such conditions raise the risk of
-misjudging automated methods
+size and reliability. Its 200 sentences meet common size
+recommendations, but agreement between individual coders was moderate
+(Krippendorff's alpha = 0.597). Simulations show that such conditions
+raise the risk of misjudging automated methods
 (\citeproc{ref-songValidationsWeTrust2020}{Song et al., 2020}).
 Averaging three coders yields a more reliable ground truth, but it also
 pulls ratings toward the center. Only two sentences fall in the very
@@ -1202,9 +1213,7 @@ negative category and one in the very positive, so class-level F1 scores
 for these categories are unstable. The findings concern French only. The
 corpus is French-language news on a single domain, open-source software.
 Neither the absence of a prompt-language effect nor the cost of
-translation can be assumed to extend to other languages or genres. This
-applies especially to languages less represented in training data, where
-the pivot-language evidence is strongest.
+translation can be assumed to extend to other languages or genres.
 
 Methodologically, the EN→EN condition relies on Google Translate, and
 translation quality was deliberately not validated. The condition
@@ -1220,9 +1229,10 @@ general-purpose LLMs
 (\citeproc{ref-mochtakParlasentMappingSentiment2025}{Mochtak et al.,
 2025}). Costs are reported at list prices and count cached prompt tokens
 at the full input rate, so they are upper bounds. Finally, this
-evaluation is a snapshot. Several models from an earlier version of this
-study were deprecated within eighteen months, and the specific rankings
-should be expected to age quickly.
+evaluation is a snapshot. Several models from the earlier version of
+this study, including GPT-4o and Gemini 2.0 Flash, were deprecated by
+their providers within eighteen months, and the specific rankings should
+be expected to age quickly.
 
 \section{Conclusion}\label{conclusion}
 
@@ -1230,10 +1240,10 @@ Researchers analyzing French text with LLMs can set aside both inherited
 reflexes. The language of the prompt is a matter of convenience. English
 instructions brought no advantage, and equivalence tests rule out any
 substantial one. The language of the text is not a matter of
-convenience. Translating into English, the step that English-bound tools
-made necessary, improved the dictionary but lowered the LLMs'
-performance. The comparative strategy that served the dictionary era
-does not transfer to models that read the source language.
+convenience. Translating into English improved the dictionary but
+lowered the LLMs' performance. The comparative strategy that served the
+dictionary era does not transfer to models that read the source
+language.
 
 Two questions follow. The first is whether these results hold beyond
 French, particularly for languages less represented in training data,
@@ -1244,18 +1254,71 @@ second is whether the size threshold observed here, below which
 open-weight models become erratic and prompt-sensitive, is a stable
 feature of current models.
 
-On the practical question of whether a researcher working on French text
-is still better served by a dictionary, the answer here is no. A
-general-purpose LLM validated on a manually annotated sample measures
-sentiment better than the Lexicoder dictionary on every criterion but
-transparency. Open-weight models from about 8B parameters do so for a
-few cents per thousand sentences. The dictionary keeps two advantages,
-transparency and stability over time. These make it a baseline and a
-robustness check rather than the primary measure. Every model still
-needs to be validated on the task at hand. For researchers working with
-French text, the evidence settles three points: use a validated LLM,
-prompt in whichever language is convenient, and analyze the text in the
-language in which it was written.
+The practical answer is equally clear: a researcher working on French
+text is no longer better served by a dictionary. A general-purpose LLM,
+validated on a manually annotated sample, measures sentiment better than
+the Lexicoder dictionary on every criterion but transparency, and
+open-weight models from about 8B parameters do so for a few cents per
+thousand sentences. The dictionary remains a baseline and a robustness
+check. For researchers working with French text, the evidence settles
+three points: use a validated LLM, prompt in whichever language is
+convenient, and analyze the text in the language in which it was
+written.
+
+\section*{Acknowledgements}\label{acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+
+Not applicable.
+
+\section*{Author Contributions}\label{author-contributions}
+\addcontentsline{toc}{section}{Author Contributions}
+
+{[}To be completed at submission: contribution of each author, following
+the CRediT taxonomy.{]}
+
+\section*{Statements and
+Declarations}\label{statements-and-declarations}
+\addcontentsline{toc}{section}{Statements and Declarations}
+
+\subsection*{Ethical Considerations}\label{ethical-considerations}
+\addcontentsline{toc}{subsection}{Ethical Considerations}
+
+This study involved no human participants and collected no personal
+data. The 200 benchmark sentences were coded by members of the research
+team. Ethics approval was therefore not required.
+
+\subsection*{Consent to Participate}\label{consent-to-participate}
+\addcontentsline{toc}{subsection}{Consent to Participate}
+
+Not applicable.
+
+\subsection*{Consent for Publication}\label{consent-for-publication}
+\addcontentsline{toc}{subsection}{Consent for Publication}
+
+Not applicable.
+
+\subsection*{Declaration of Conflicting
+Interests}\label{declaration-of-conflicting-interests}
+\addcontentsline{toc}{subsection}{Declaration of Conflicting Interests}
+
+The authors declared no potential conflicts of interest with respect to
+the research, authorship, and/or publication of this article.
+
+\subsection*{Funding}\label{funding}
+\addcontentsline{toc}{subsection}{Funding}
+
+The authors received no financial support for the research, authorship,
+and/or publication of this article.
+
+\subsection*{Data Availability}\label{data-availability}
+\addcontentsline{toc}{subsection}{Data Availability}
+
+The code, the model scores, the manually annotated benchmark, and the
+prompts are available at
+\url{https://github.com/clessn/mpsa_beyond_language}. The full texts of
+the news articles were obtained from the Eureka database under licence
+and cannot be redistributed; the article identifiers needed to retrieve
+them are provided in the repository.
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
@@ -1375,6 +1438,12 @@ T., \& Nguyen, T. (2023). {ChatGPT Beyond English}: {Towards} a
 Learning}. \emph{Findings of the {Association} for {Computational
 Linguistics}: {EMNLP} 2023}, 13171--13189.
 \url{https://doi.org/10.18653/v1/2023.findings-emnlp.878}
+
+\bibitem[\citeproctext]{ref-lakensEquivalenceTestsPractical2017}
+Lakens, D. (2017). Equivalence {Tests}: {A Practical Primer} for t
+{Tests}, {Correlations}, and {Meta-Analyses}. \emph{Social Psychological
+and Personality Science}, \emph{8}(4), 355--362.
+\url{https://doi.org/10.1177/1948550617697177}
 
 \bibitem[\citeproctext]{ref-laurerLessAnnotatingMore2024}
 Laurer, M., Van Atteveldt, W., Casas, A., \& Welbers, K. (2024). Less
@@ -1534,12 +1603,6 @@ lexicon-based sentiment analysis in an age of machine learning.
 \emph{PLOS ONE}, \emph{20}(1), e0313092.
 \url{https://doi.org/10.1371/journal.pone.0313092}
 
-\bibitem[\citeproctext]{ref-Venerito2024Large}
-Venerito, V., \& Iannone, F. (2024). Large language model-driven
-sentiment analysis for facilitating fibromyalgia diagnosis. \emph{RMD
-Open}, \emph{10}(2), e004367.
-\url{https://doi.org/10.1136/rmdopen-2024-004367}
-
 \bibitem[\citeproctext]{ref-wendler_etal24}
 Wendler, C., Veselovsky, V., Monea, G., \& West, R. (2024). Do {Llamas
 Work} in {English}? {On} the {Latent Language} of {Multilingual
@@ -1570,22 +1633,25 @@ Science}? \emph{Computational Linguistics}, \emph{50}(1), 237--291.
 
 \appendix
 
-\section{}\label{}
+\section{Additional Results}\label{apx-results}
 
-\section{}\label{apx-appendix}
+\begin{figure}
 
-\begin{figure}[H]
+{\caption{{Mean Absolute Error Between Model Scores and Human Judgments,
+by Model and Condition}{\label{fig-mae}}}}
 
-\caption{Sentiment Analysis Models Mean Absolute Error}
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_mae.png}}
 
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_mae.png}}
+\vspace{-12pt}
+\noindent \emph{Note.} Models~are sorted by MAE (lower is better) and
+colored by type. Within each model, the conditions are FR→FR (French
+prompt on French text), EN→FR (English prompt on French text), and EN→EN
+(English prompt on translated text).
 
-}
+\end{figure}
 
-\end{figure}%
-
-Figure 4 shows the mean absolute error (MAE) across models and
-conditions.
+Figure~\ref{fig-mae} shows the mean absolute error (MAE) across models
+and conditions.
 
 \begin{table}
 
@@ -1596,13 +1662,13 @@ Token Count)}{\label{tbl-cost}}}
 \vspace{-20pt}}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0660}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0943}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0849}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2547}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1321}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1415}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2264}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2405}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1392}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0886}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1266}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1266}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1266}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1519}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Model
@@ -1610,13 +1676,13 @@ Model
 Provider
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Weights
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-API calls per usable score
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+API calls per score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Input tokens
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Output tokens
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 USD per 1,000 sentences
 \end{minipage} \\
 \midrule\noalign{}
@@ -1649,13 +1715,13 @@ Call)}{\label{tbl-tokens}}}
 \vspace{-20pt}}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0693}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0693}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0693}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0693}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2376}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2376}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2475}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2785}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0886}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0886}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0886}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2025}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1266}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1266}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Model
@@ -1693,26 +1759,6 @@ Claude Haiku 4.5 & 313.8 & 328.2 & 439.2 & +111 (+33.8\%) & 1.87 &
 
 \end{table}
 
-\begin{figure}[H]
-
-\caption{Sentiment Analysis Comparison Over Time}
-
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/corpus_time_series.png}}
-
-}
-
-\end{figure}%
-
-Figure 5 shows monthly mean sentiment for the 2,683 articles, scored by
-GPT-5.6 Luna with French prompts and with English prompts, and by the
-French Lexicoder dictionary on the original text. Points are monthly
-means and curves are LOESS smooths. The two prompt languages produce
-nearly identical series (r = 0.97 across 322 months). The dictionary
-agrees with the model only weakly (r = 0.42 across months, 0.36 across
-articles). The smoothed curves look alike because none of the three
-series shows a strong trend, not because the dictionary and the model
-agree on individual months.
-
 \newpage
 
 \begin{table}
@@ -1723,15 +1769,15 @@ Classification}{\label{tbl-f1-3cat}}}
 
 \begin{longtable}[]{@{}lllll@{}}
 \toprule\noalign{}
-Model & negative & neutral & positive & weighted\_f1 \\
+Model & Negative & Neutral & Positive & Weighted F1 \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
 Claude Haiku 4.5 (FR→FR) & 0.762 & 0.375 & 0.832 & 0.778 \\
-GPT-5.6 Luna (FR→FR) & 0.748 & 0.385 & 0.8 & 0.755 \\
-GPT-5.6 Luna (EN→FR) & 0.73 & 0.364 & 0.776 & 0.733 \\
-Claude Haiku 4.5 (EN→FR) & 0.69 & 0.273 & 0.778 & 0.715 \\
+GPT-5.6 Luna (FR→FR) & 0.748 & 0.385 & 0.800 & 0.755 \\
+GPT-5.6 Luna (EN→FR) & 0.730 & 0.364 & 0.776 & 0.733 \\
+Claude Haiku 4.5 (EN→FR) & 0.690 & 0.273 & 0.778 & 0.715 \\
 DeepSeek V3.2 (FR→FR) & 0.672 & 0.216 & 0.765 & 0.697 \\
 GPT-5.6 Luna (EN→EN) & 0.688 & 0.367 & 0.736 & 0.695 \\
 Qwen3 235B-A22B (FR→FR) & 0.752 & 0.243 & 0.716 & 0.695 \\
@@ -1742,30 +1788,30 @@ Qwen3 235B-A22B (EN→FR) & 0.719 & 0.254 & 0.706 & 0.679 \\
 Llama 4 Scout (EN→FR) & 0.667 & 0.258 & 0.732 & 0.678 \\
 GPT-OSS 120B (EN→FR) & 0.717 & 0.324 & 0.689 & 0.672 \\
 Claude Haiku 4.5 (EN→EN) & 0.678 & 0.256 & 0.715 & 0.671 \\
-GPT-OSS 20B (EN→FR) & 0.7 & 0.268 & 0.677 & 0.655 \\
-GPT-OSS 20B (FR→FR) & 0.691 & 0.258 & 0.68 & 0.654 \\
+GPT-OSS 20B (EN→FR) & 0.700 & 0.268 & 0.677 & 0.655 \\
+GPT-OSS 20B (FR→FR) & 0.691 & 0.258 & 0.680 & 0.654 \\
 Llama 4 Scout (EN→EN) & 0.647 & 0.246 & 0.686 & 0.643 \\
 Gemini 3.5 Flash (FR→FR) & 0.655 & 0.264 & 0.673 & 0.639 \\
 DeepSeek V3.2 (EN→EN) & 0.672 & 0.258 & 0.657 & 0.633 \\
 Llama 3.1 8B (EN→FR) & 0.652 & 0.281 & 0.646 & 0.623 \\
-Llama 3.2 3B (FR→FR) & 0.465 & 0.195 & 0.747 & 0.62 \\
+Llama 3.2 3B (FR→FR) & 0.465 & 0.195 & 0.747 & 0.620 \\
 Llama 3.1 8B (EN→EN) & 0.627 & 0.265 & 0.653 & 0.618 \\
 Gemini 3.5 Flash (EN→FR) & 0.642 & 0.242 & 0.646 & 0.616 \\
 Llama 3.1 8B (FR→FR) & 0.615 & 0.174 & 0.643 & 0.604 \\
 Gemini 3.5 Flash (EN→EN) & 0.667 & 0.233 & 0.613 & 0.603 \\
 GPT-OSS 20B (EN→EN) & 0.614 & 0.234 & 0.635 & 0.601 \\
-Qwen3 235B-A22B (EN→EN) & 0.698 & 0.227 & 0.591 & 0.6 \\
+Qwen3 235B-A22B (EN→EN) & 0.698 & 0.227 & 0.591 & 0.600 \\
 Lexicoder (EN) & 0.574 & 0.231 & 0.636 & 0.588 \\
 GPT-OSS 120B (EN→EN) & 0.678 & 0.218 & 0.552 & 0.569 \\
 Qwen3 32B (EN→FR) & 0.554 & 0.165 & 0.621 & 0.568 \\
 Lexicoder (FR) & 0.474 & 0.289 & 0.631 & 0.557 \\
-Qwen3 32B (FR→FR) & 0.515 & 0.177 & 0.611 & 0.55 \\
-Llama 3.2 3B (EN→EN) & 0.167 & 0.261 & 0.73 & 0.52 \\
-Qwen3 32B (EN→EN) & 0.559 & 0.19 & 0.52 & 0.509 \\
-Llama 3.2 3B (EN→FR) & 0 & 0.222 & 0.757 & 0.481 \\
-Llama 3.2 1B (FR→FR) & 0 & 0.138 & 0.648 & 0.443 \\
-Llama 3.2 1B (EN→FR) & 0 & 0 & 0.568 & 0.338 \\
-Llama 3.2 1B (EN→EN) & 0 & 0.15 & 0.457 & 0.286 \\
+Qwen3 32B (FR→FR) & 0.515 & 0.177 & 0.611 & 0.550 \\
+Llama 3.2 3B (EN→EN) & 0.167 & 0.261 & 0.730 & 0.520 \\
+Qwen3 32B (EN→EN) & 0.559 & 0.190 & 0.520 & 0.509 \\
+Llama 3.2 3B (EN→FR) & 0.000 & 0.222 & 0.757 & 0.481 \\
+Llama 3.2 1B (FR→FR) & 0.000 & 0.138 & 0.648 & 0.443 \\
+Llama 3.2 1B (EN→FR) & 0.000 & 0.000 & 0.568 & 0.338 \\
+Llama 3.2 1B (EN→EN) & 0.000 & 0.150 & 0.457 & 0.286 \\
 \end{longtable}
 
 \end{table}
@@ -1775,6 +1821,8 @@ Llama 3.2 1B (EN→EN) & 0 & 0.15 & 0.457 & 0.286 \\
 \begin{table}[h]
 \caption{F1 Scores for 7-Category Classification}
 \begin{center}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
 \input{../../results/tables/f1_scores_7cat_table.tex}
 \end{center}
 \end{table}

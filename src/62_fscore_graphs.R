@@ -371,13 +371,10 @@ plot_f1_pub <- ggplot() +
     axis.ticks = element_line(color = "#555555", size = 0.4)  # Matching tick marks
   ) +
   
-  # Condensed labels and titles
+  # Title and note are set in the manuscript (APA figure caption and note)
   labs(
     x = "Weighted F1 Score",
-    y = "",  # Remove y-axis label since we have direct labels
-    title = "Performance Comparison of Sentiment Analysis Models",
-    subtitle = "F1 scores for both detailed and grouped sentiment classification schemes",
-    caption = "Figure 2. F1 scores for sentiment analysis across model architectures. Models grouped by F1 score performance and sorted by\n3-category classification. Prompting mechanisms: EN→FR (English prompt on French text), FR→FR (French prompt on French text),\nand EN→EN (English prompt on translated text). Detailed classification includes 7 categories, grouped classification uses 3."
+    y = ""
   ) +
   
   # Scale and reference lines

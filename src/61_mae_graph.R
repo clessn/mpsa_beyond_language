@@ -181,11 +181,9 @@ plot_mae <- ggplot() +
         panel.grid.minor.y = element_blank()) +
   
   # Labels and titles
+  # Title and note are set in the manuscript (APA figure caption and note)
   labs(x = "\nMean Absolute Error (MAE)\n",
-       y = "",  # Remove y-axis label since we have direct labels
-       title = "Sentiment Analysis Models Mean Absolute Error",
-       subtitle = "Lower values indicate better performance",
-       caption = "Figure 2. Cross-lingual sentiment analysis performance by Mean Absolute Error.\nModels grouped by type (color) and sorted by MAE (lower is better). Prompting mechanisms within clusters ordered as\nFR→FR (French prompt on French text), EN→FR (English prompt on French text), and EN→EN (English prompt on translated text).") +
+       y = "") +
   
   # Scale and reference lines - adaptive limits for MAE
   scale_x_continuous(limits = c(0, max(df$mae) * 1.2)) +
@@ -233,4 +231,4 @@ plot_mae <- ggplot() +
 print(plot_mae)
 
 # Save high-resolution version to file
-ggsave("results/graphs/model_mae.png", plot_mae, width = 14, height = 12, dpi = 300)
+ggsave("results/graphs/model_mae.png", plot_mae, width = 8.5, height = 8, dpi = 300)

@@ -190,14 +190,12 @@ plot_correlation <- ggplot() +
         panel.grid.minor.y = element_blank()) +
   
   # Labels and titles
+  # Title and note are set in the manuscript (APA figure caption and note)
   labs(x = "\nCorrelation with Ground Truth\n",
-       y = "",  # Remove y-axis label since we have direct labels
-       title = "Sentiment Analysis Models Correlation with Ground Truth",
-       subtitle = "Pearson correlation coefficients with 95% confidence intervals",
-       caption = "Figure 1. Cross-lingual sentiment analysis performance across model architectures.\nModels grouped by type (color) and sorted by correlation strength. Prompting mechanisms within clusters ordered as\nFR→FR (French prompt on French text), EN→FR (English prompt on French text), and EN→EN (English prompt on translated text).\nError bars represent 95% confidence intervals; *p < 0.05, **p < 0.01, ***p < 0.001.") +
+       y = "") +
   
   # Scale and reference lines
-  scale_x_continuous(limits = c(-1, 1)) +
+  scale_x_continuous(limits = c(-1, 1.3), breaks = seq(-1, 1, by = 0.5)) +
   geom_vline(xintercept = 0, linetype = "dotted") +
   
   # Fill scale for alternating backgrounds
@@ -210,15 +208,16 @@ plot_correlation <- ggplot() +
   guides(fill = "none") +
   
   # Correlation value labels with significance stars
+  # Labels sit just past the upper confidence bound so they never cross the error bar
   geom_text(data = df, aes(
-    x = ifelse(correlation >= 0, correlation + 0.15, correlation - 0.15),
+    x = correlation + 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)) + 0.03,
     y = model_label_ordered,
     label = sprintf("r = %.2f%s", 
                     correlation,
                     ifelse(p_value < 0.001, "***", 
                            ifelse(p_value < 0.01, "**",
                                   ifelse(p_value < 0.05, "*", ""))))
-  ), hjust = ifelse(df$correlation >= 0, 0, 1), size = 3.5) +
+  ), hjust = 0, size = 3.5) +
   
   # Color scale for model types
   scale_color_manual(values = c(
@@ -247,7 +246,7 @@ plot_correlation <- ggplot() +
 print(plot_correlation)
 
 # Save high-resolution version to file
-ggsave("results/graphs/model_correlation.png", plot_correlation, width = 14, height = 12, dpi = 300)
+ggsave("results/graphs/model_correlation.png", plot_correlation, width = 8.5, height = 8, dpi = 300)
 
 #################################################################
 # CREATE PRESENTATION-READY CORRELATION PLOT (16:9 FORMAT)

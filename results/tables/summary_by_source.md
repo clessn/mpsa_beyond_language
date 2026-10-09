@@ -1,4 +1,4 @@
-| source_media | article_count | earliest_date | latest_date |
+| Source | Articles | First article | Last article |
 | --- | --- | --- | --- |
 | Libération | 769 | 1995-06-23 | 2024-11-04 |
 | Monde, Le | 666 | 2001-01-09 | 2024-12-26 |

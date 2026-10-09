@@ -1,5 +1,5 @@
-| Model | Provider | Weights | API calls per usable score | Input tokens | Output tokens | USD per 1,000 sentences |
-|-------|----------|---------|---------------------------|--------------|---------------|------------------------|
+| Model | Provider | Weights | API calls per score | Input tokens | Output tokens | USD per 1,000 sentences |
+|:------------------|:----------|:------|---------:|---------:|---------:|-----------:|
 | GPT-OSS 20B | OpenRouter | Open | 1.02 | 657,496 | 87,892 | 0.018 |
 | Llama 3.2 3B | OpenRouter | Open | 1.00 | 595,142 | 7,320 | 0.018 |
 | GPT-OSS 120B | OpenRouter | Open | 1.00 | 667,425 | 95,660 | 0.020 |

@@ -17,11 +17,12 @@ df_7 <- readRDS("results/analysis/f1_scores_detailed_7.rds")  # 7-category resul
 df_3 <- readRDS("results/analysis/f1_scores_detailed_3.rds")  # 3-category results
 
 # Round numeric columns to 3 decimal places for readability
+# Three decimals everywhere, including trailing zeros (0.800, not 0.8)
 df_7_rounded <- df_7 %>%
-  mutate(across(where(is.numeric), ~round(., 3)))
+  mutate(across(where(is.numeric), ~formatC(., format = "f", digits = 3)))
 
 df_3_rounded <- df_3 %>%
-  mutate(across(where(is.numeric), ~round(., 3)))
+  mutate(across(where(is.numeric), ~formatC(., format = "f", digits = 3)))
 
 # Readable row labels, e.g. "GPT-5.6 Luna (FR→FR)" and "Lexicoder (EN)",
 # instead of the raw result column names
@@ -34,7 +35,7 @@ df_3_rounded$label <- sapply(df_3_rounded$model, get_model_display_name)
 # Create LaTeX table for 7-category classification results
 latex_table_7 <- "\\begin{tabular}{lcccccccc}\n"
 latex_table_7 <- paste0(latex_table_7, "\\hline\n")
-latex_table_7 <- paste0(latex_table_7, "\\textbf{Model} & \\textbf{very\\_neg} & \\textbf{negative} & \\textbf{somewhat\\_neg} & \\textbf{neutral} & \\textbf{somewhat\\_pos} & \\textbf{positive} & \\textbf{very\\_pos} & \\textbf{weighted} \\\\\n")
+latex_table_7 <- paste0(latex_table_7, "\\textbf{Model} & \\textbf{Very neg.} & \\textbf{Negative} & \\textbf{Somewhat neg.} & \\textbf{Neutral} & \\textbf{Somewhat pos.} & \\textbf{Positive} & \\textbf{Very pos.} & \\textbf{Weighted F1} \\\\\n")
 latex_table_7 <- paste0(latex_table_7, "\\hline\n")
 
 # Add each model's results as a row in the table
@@ -70,7 +71,7 @@ writeLines(latex_table_7, "results/tables/f1_scores_7cat_table.tex")
 # 7-CATEGORY MARKDOWN TABLE GENERATION
 #################################################################
 # Create a Markdown version of the 7-category table
-markdown_table_7 <- "| Model | very_negative | negative | somewhat_negative | neutral | somewhat_positive | positive | very_positive | weighted_f1 |\n"
+markdown_table_7 <- "| Model | Very negative | Negative | Somewhat negative | Neutral | Somewhat positive | Positive | Very positive | Weighted F1 |\n"
 markdown_table_7 <- paste0(markdown_table_7, "|-------|--------------|----------|-------------------|---------|-------------------|----------|---------------|------------|\n")
 
 # Add each model's results as a row in the table
@@ -94,7 +95,7 @@ writeLines(markdown_table_7, "results/tables/f1_scores_7cat_table.md")
 # 3-CATEGORY MARKDOWN TABLE GENERATION
 #################################################################
 # Create a Markdown table for 3-category classification results without the title
-markdown_table_3 <- "| Model | negative | neutral | positive | weighted_f1 |\n"
+markdown_table_3 <- "| Model | Negative | Neutral | Positive | Weighted F1 |\n"
 markdown_table_3 <- paste0(markdown_table_3, "|-------|----------|---------|----------|------------|\n")
 
 # Add each model's results as a row in the table

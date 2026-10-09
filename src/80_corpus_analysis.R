@@ -40,10 +40,10 @@ if (!MODEL_PREFIX %in% names(model_mapping)) {
 MODEL_NAME <- unname(model_display_name[MODEL_PREFIX])
 
 # Legend labels, shared by every plot below
-LAB_FR     <- paste0(MODEL_NAME, ": French Prompt")
-LAB_EN     <- paste0(MODEL_NAME, ": English Prompt")
+LAB_FR     <- paste0(MODEL_NAME, ", French prompt")
+LAB_EN     <- paste0(MODEL_NAME, ", English prompt")
 LAB_LSD_EN <- "Dictionary (LSD, English translation)"
-LAB_LSD_FR <- "Dictionary (FrLSD, French original)"
+LAB_LSD_FR <- "French Lexicoder, original text"
 
 # Load the corpus scores and bring this model's two columns under generic
 # names so the rest of the script does not depend on the prefix
@@ -327,12 +327,10 @@ if ("date" %in% names(df)) {
     geom_hline(yintercept = 0, linetype = "dashed", color = "gray70", linewidth = 0.7) +
     
     # Professional styling with descriptive labels
-    labs(title = "Sentiment Analysis Comparison Over Time",
-         subtitle = "Monthly averages with smoothed trend lines (1991-2025)",
-         x = "", y = "Sentiment Score",
-         color = "Analysis Method",
-         shape = "Analysis Method",
-         caption = "Data source: French news corpus on open source software (N=2,683 articles)\nNegative values indicate negative sentiment; positive values indicate positive sentiment\nSmoothing: LOESS method with span=0.35") +
+    # Title and note are set in the manuscript (APA figure caption and note)
+    labs(x = "", y = "Sentiment Score",
+         color = NULL,
+         shape = NULL) +
     
     # Apply publication theme with white background
     theme_minimal() +
@@ -355,8 +353,8 @@ if ("date" %in% names(df)) {
       
       # Legend elements
       legend.position = "bottom",
-      legend.background = element_rect(fill = "white"),
-      legend.key = element_rect(fill = "white"),
+      legend.background = element_rect(fill = "white", colour = NA),
+      legend.key = element_rect(fill = "white", colour = NA),
       legend.title = element_text(size = 12, face = "bold"),
       legend.text = element_text(size = 11),
       legend.margin = margin(t = 10),
@@ -366,7 +364,9 @@ if ("date" %in% names(df)) {
     ) +
     
     # Date breaks
-    scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y",
+                 limits = as.Date(c("1995-01-01", "2025-01-01")),
+                 expand = expansion(mult = c(0.01, 0.01))) +
     
     # Y-axis formatting with consistent limits
     scale_y_continuous(
@@ -499,7 +499,7 @@ ggsave("results/graphs/corpus_fr_distribution.png", p1, width = 8, height = 6)
 ggsave("results/graphs/corpus_en_distribution.png", p2, width = 8, height = 6)
 ggsave("results/graphs/corpus_distribution_comparison.png", p3, width = 8, height = 6)
 if (exists("p4")) {
-  ggsave("results/graphs/corpus_time_series.png", p4, width = 12, height = 8, dpi = 300)
+  ggsave("results/graphs/corpus_time_series.png", p4, width = 11, height = 7, dpi = 300)
 }
 ggsave("results/graphs/corpus_diff_categories.png", p5, width = 8, height = 6)
 

@@ -54,10 +54,10 @@ fmt_usd <- function(x) ifelse(is.na(x), "--", sprintf("%.3f", x))
 fmt_rat <- function(x) ifelse(is.na(x), "--", sprintf("%.2f", x))
 
 markdown_table <- paste0(
-  "| Model | Provider | Weights | API calls per usable score | ",
+  "| Model | Provider | Weights | API calls per score | ",
   "Input tokens | Output tokens | USD per 1,000 sentences |\n",
-  "|-------|----------|---------|---------------------------|",
-  "--------------|---------------|------------------------|\n"
+  "|:------------------|:----------|:------|---------:|",
+  "---------:|---------:|-----------:|\n"
 )
 
 for (i in 1:nrow(cost_summary)) {

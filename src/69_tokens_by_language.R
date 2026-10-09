@@ -122,8 +122,8 @@ fmt2 <- function(x) sprintf("%.2f", x)
 markdown_table <- paste0(
   "| Model | EN→EN | EN→FR | FR→FR | French-prompt overhead | ",
   "Tokens per French word | Tokens per English word |\n",
-  "|-------|------:|------:|------:|-----------------------:|",
-  "-----------------------:|------------------------:|\n"
+  "|:---------------------|------:|------:|------:|---------------:|",
+  "---------:|---------:|\n"
 )
 for (i in seq_len(nrow(tokens_by_language))) {
   row <- tokens_by_language[i, ]

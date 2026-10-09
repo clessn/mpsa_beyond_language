@@ -9,8 +9,6 @@
 library(dplyr)      # For data manipulation
 library(ggplot2)    # For visualization
 library(scales)     # For better axis scaling in plots
-library(gridExtra)  # For arranging multiple plots
-library(RColorBrewer) # For color palettes
 library(lubridate)  # For date manipulation
 
 #################################################################
@@ -48,7 +46,7 @@ dir.create("results/tables", recursive = TRUE, showWarnings = FALSE)
 
 # Create markdown table directly with proper formatting
 # Start with the header
-cols <- colnames(summary_by_source)
+cols <- c("Source", "Articles", "First article", "Last article")
 header <- paste0("| ", paste(cols, collapse = " | "), " |")
 
 # Create the separator line
@@ -103,7 +101,7 @@ p <- ggplot(time_analysis, aes(x = date, y = count)) +
   # Add points with a white fill for a cleaner look
   geom_point(color = "#252525", fill = "white", shape = 21, size = 2.5, stroke = 0.8) +
   # Set elegant theme
-  clessnize::theme_clean_light() +
+  theme_minimal(base_size = 12) +
   # Custom theme elements
   theme(
     plot.title = element_text(size = 16, face = "bold", hjust = 0, margin = margin(b = 15)),
@@ -133,12 +131,10 @@ p <- ggplot(time_analysis, aes(x = date, y = count)) +
     labels = comma
   ) +
   # Descriptive labels
+  # Title and note are set in the manuscript (APA figure caption and note)
   labs(
-    title = "Temporal Distribution of News Articles Discussing Open Source Software",
-    subtitle = "Monthly article about open-source count with trend line (LOESS smoothing)",
     x = "",
-    y = "Number of Articles",
-    caption = "Data collected from Eureka."
+    y = "Number of Articles"
   )
 
 #################################################################
@@ -148,4 +144,4 @@ p <- ggplot(time_analysis, aes(x = date, y = count)) +
 print(p)
 
 # Save high-resolution version to file
-ggsave("results/graphs/time_series.png", p, width = 16, height = 9, dpi = 300)
+ggsave("results/graphs/time_series.png", p, width = 10, height = 5.6, dpi = 300)
