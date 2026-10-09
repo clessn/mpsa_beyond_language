@@ -49,7 +49,7 @@ p <- ggplot(df, aes(x = mean_diff, y = contrast_label)) +
                      name = NULL) +
   scale_x_continuous(limits = c(-0.06, 0.13), breaks = seq(-0.05, 0.10, by = 0.05)) +
   facet_wrap(~ metric_label, ncol = 2) +
-  labs(x = "Mean paired difference across 11 models (90% CI)", y = NULL) +
+  labs(x = sprintf("Mean paired difference across %d models (90%% CI)", unique(res$n)[1]), y = NULL) +
   theme_minimal(base_size = 12) +
   theme(
     panel.grid.minor = element_blank(),
