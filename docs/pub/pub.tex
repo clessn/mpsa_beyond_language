@@ -119,6 +119,7 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -224,7 +225,7 @@ Proulx,Yannick Dufresne}
 
 \leftheader{Foisy, Pelletier, Proulx and Dufresne}
 
-\date{2026-10-07}
+\date{2026-10-09}
 
 
 \abstract{Researchers who analyze non-English text with large language
@@ -232,22 +233,22 @@ models (LLMs) inherit two rules of thumb. The first is to prompt in
 English, because these models learned mostly from English. The second is
 to translate the text into English, as dictionary methods long required.
 The evidence for both rules is contested. This article tests them on
-French. Twelve open- and closed-weight LLMs scored 200 manually
-annotated French news sentences under three conditions: French prompts
-on French text, English prompts on French text, and English prompts on
-machine-translated text. The English and French Lexicoder dictionaries
-served as benchmarks. Prompt language made no meaningful difference, and
-equivalence tests rule out any substantial advantage for English
-prompts. Translation cut both ways. It improved the dictionary, but it
-lowered the LLMs' polarity classification and, relative to the fully
-French workflow, their correlation with human judgments. The best models
-reached r = 0.81. Every model from about 8B parameters upward correlated
-with human judgments more strongly than either dictionary, at a cost of
-a few cents per thousand sentences. A 1B model could not follow the
-task. For sentiment analysis of French text, a validated general-purpose
-LLM now measures better than the Lexicoder dictionary, which remains
-useful as a transparent baseline. Prompt language is a matter of
-convenience, and the text is best analyzed in the original. }
+French. Fifteen open- and closed-weight language models scored 200
+manually annotated French news sentences under three conditions: French
+prompts on French text, English prompts on French text, and English
+prompts on machine-translated text. The English and French Lexicoder
+dictionaries served as benchmarks. Prompt language made no meaningful
+difference, and equivalence tests rule out any substantial advantage for
+English prompts. Translation cut both ways. It improved the dictionary,
+but it lowered the LLMs' polarity classification and, relative to the
+fully French workflow, their correlation with human judgments. The best
+models reached r = 0.81. Every model from about 8B parameters upward
+correlated with human judgments more strongly than either dictionary, at
+a cost of a few cents per thousand sentences. A 1B model could not
+follow the task. For sentiment analysis of French text, a validated
+general-purpose LLM now measures better than the Lexicoder dictionary,
+which remains useful as a transparent baseline. Prompt language is a
+matter of convenience, and the text is best analyzed in the original. }
 
 \keywords{Sentiment Analysis, Large Language Models, Machine
 Translation, Prompt Language, French Language, Open-Weight
@@ -414,12 +415,12 @@ demanding test for translation, because affective meaning is precisely
 what translation can alter
 (\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}). The
 study uses 200 manually annotated sentences from French news coverage.
-It compares twelve open- and closed-weight LLMs under three conditions:
-French prompts on French text, English prompts on French text, and
-English prompts on machine-translated text. The English and French
-versions of the Lexicoder Sentiment Dictionary serve as benchmarks.
-Equivalence tests assess the absence of a prompt-language effect
-directly, rather than inferring it from non-significance.
+It compares fifteen open- and closed-weight language models under three
+conditions: French prompts on French text, English prompts on French
+text, and English prompts on machine-translated text. The English and
+French versions of the Lexicoder Sentiment Dictionary serve as
+benchmarks. Equivalence tests assess the absence of a prompt-language
+effect directly, rather than inferring it from non-significance.
 
 The results speak to both reflexes. Prompt language made no meaningful
 difference. Translation cut both ways: it improved the dictionary but
@@ -671,6 +672,7 @@ source media.
 Software by Source Media}{\label{tbl-source-summary}}}
 \vspace{-20pt}}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
 source\_media & article\_count & earliest\_date & latest\_date \\
@@ -692,6 +694,7 @@ Nouvelliste, Le (Trois-Rivières, QC) & 13 & 2000-01-13 & 2022-03-05 \\
 Quotidien, Le (Saguenay, QC) & 10 & 2008-11-01 & 2019-04-10 \\
 Voix de l'Est, La (Granby, QC) & 4 & 2010-09-17 & 2015-02-14 \\
 \end{longtable}
+}
 
 \end{table}
 
@@ -778,37 +781,54 @@ compared.
 \subsection{LLM-Based Sentiment
 Analysis}\label{llm-based-sentiment-analysis}
 
-Twelve general-purpose LLMs were evaluated. They were selected for
-prominence and affordability, as realistic choices for researchers who
-need to analyze large corpora. Proprietary models raise reproducibility
-concerns, so their inclusion requires justification
+Fifteen general-purpose language models were evaluated. They were
+selected for prominence and affordability, as realistic choices for
+researchers who need to analyze large corpora. Proprietary models raise
+reproducibility concerns, so their inclusion requires justification
 (\citeproc{ref-palmerUsingProprietaryLanguage2023}{Palmer et al.,
-2023}). The three closed-weight models serve as a reference point: the
-studies that established LLM annotation in the social sciences relied on
-proprietary GPT models
+2023}). Three closed-weight models from the major vendors serve as a
+reference point: the studies that established LLM annotation in the
+social sciences relied on proprietary GPT models
 (\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
 2023}; \citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \&
 Clemm Von Hohenberg, 2024};
 \citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024};
-\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}).
+\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}). Three
+further models test specific claims. Mistral AI, a French developer,
+describes its models as particularly strong in French. It also reports
+that its Tekken tokenizer compresses French text about 30\% more
+efficiently than its earlier tokenizer
+(\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI, 2024}). Two Mistral
+models test both claims. Jev tests a different kind of model, one that
+returns a probability for each answer rather than generated text.
 
-The nine open-weight models are Llama 3.2 1B, Llama 3.2 3B, Llama 3.1
-8B, GPT-OSS 20B, Qwen3 32B, Llama 4 Scout, GPT-OSS 120B, Qwen3
-235B-A22B, and DeepSeek V3.2. They range from 1B to 671B total
-parameters. The three closed-weight models are Claude Haiku 4.5
-(Anthropic), Gemini 3.5 Flash (Google), and GPT-5.6 Luna (OpenAI). This
-lineup updates an initial 2024-2025 evaluation of 11 comparable models
-with an identical design. Several models from that evaluation, including
-GPT-4o and Gemini 2.0 Flash, were deprecated by their providers within
-eighteen months. The smallest model, Llama 3.2 1B, rarely followed the
-instruction to answer with a number. About one call in 23 returned a
-parseable score. Even after retries, it produced a usable score for only
-58 to 74 of the 200 sentences, depending on the condition. It was
-retained deliberately. Models of around 8B parameters can handle the
-task, whereas a 1B model appears too small to follow the instructions
-reliably. This marks a practical lower bound on model size. Its metrics
-rest on a reduced and non-random subset of sentences and are not
-directly comparable to those of the other models.
+The ten open-weight models are Llama 3.2 1B, Llama 3.2 3B, Llama 3.1 8B,
+GPT-OSS 20B, Mistral Small 3.2 24B, Qwen3 32B, Llama 4 Scout, GPT-OSS
+120B, Qwen3 235B-A22B, and DeepSeek V3.2. They range from 1B to 671B
+total parameters. The five closed-weight models are Claude Haiku 4.5
+(Anthropic), Gemini 3.5 Flash (Google), GPT-5.6 Luna (OpenAI), Mistral
+Large 4 (Mistral AI), and Jev 1.13 (TypeSafe). Mistral Large 4 was
+evaluated in the preview release of October 2026. Mistral has announced
+that its weights will be published, but they were not available at the
+time of writing, so it is classified as closed-weight here. Jev is not a
+text generator. It answers a typed question with a probability for each
+possible answer. It received the same task as the other models, posed as
+a question whose five answer levels are the five anchors of the
+sentiment scale, worded as in the prompts below and in the language of
+each condition. Its score is the probability-weighted average of the
+five levels, mapped onto the -1 to 1 scale. This lineup updates an
+initial 2024-2025 evaluation of 11 comparable models with an identical
+design. Several models from that evaluation, including GPT-4o and Gemini
+2.0 Flash, were deprecated by their providers within eighteen months.
+The smallest model, Llama 3.2 1B, rarely followed the instruction to
+answer with a number. About one call in 23 returned a parseable score.
+Even after retries, it produced a usable score for only 58 to 74 of the
+200 sentences, depending on the condition. It was retained deliberately.
+Models of around 8B parameters can handle the task, whereas a 1B model
+appears too small to follow the instructions reliably. This marks a
+practical lower bound on model size. Its metrics rest on a reduced and
+non-random subset of sentences and are not directly comparable to those
+of the other models.
 
 Each model was tested under three conditions: French prompts on French
 text (FR→FR), English prompts on French text (EN→FR), and English
@@ -854,24 +874,32 @@ The English-prompt/French-text version is shown below.\footnote{The
 \end{Highlighting}
 \end{Shaded}
 
-Each model was queried through the \texttt{ellmer} R package. The three
-closed-weight models were accessed through their vendors' APIs, and the
-nine open-weight models through OpenRouter. Responses were capped at 400
-tokens. OpenRouter can serve the same model through several providers at
-different numerical precisions. Each open-weight model was therefore
-pinned to a single named provider endpoint, at the highest precision
-offered, with fallback to other providers disabled.\footnote{Endpoint
+The generative models were queried through the \texttt{ellmer} R
+package. Claude Haiku 4.5, Gemini 3.5 Flash, and GPT-5.6 Luna were
+accessed through their vendors' APIs. The ten open-weight models and
+Mistral Large 4 were accessed through OpenRouter. Responses were capped
+at 400 tokens. OpenRouter can serve the same model through several
+providers at different numerical precisions. Each model accessed through
+OpenRouter was therefore pinned to a single named provider endpoint, at
+the highest precision offered, with fallback to other providers
+disabled. Mistral Large 4 is served only by Mistral itself.\footnote{Endpoint
   pins, and the reasoning settings used to suppress chain-of-thought in
   models that reason by default, are listed in
-  \texttt{src/94\_models\_map.R}.} Gemini 3.5 Flash was queried with its
-default settings. Under these settings it generates reasoning tokens
-before answering: 354 output tokens per call on average, against 7 for
-Claude Haiku 4.5. Each sentence was scored three times per model and
-condition (21,600 scores in total), and the mean of the three runs was
-taken as the final score. Despite explicit instructions to respond with
-a bare number, models frequently returned formatted text, such as
+  \texttt{src/94\_models\_map.R}. Mistral Large 4 reasons by default,
+  exhausts the 400-token cap, and returns no answer. Its reasoning was
+  disabled, as for Qwen3 32B and DeepSeek V3.2.} Gemini 3.5 Flash was
+queried with its default settings. Under these settings it generates
+reasoning tokens before answering: 354 output tokens per call on
+average, against 7 for Claude Haiku 4.5. Jev was queried through
+TypeSafe's API, with the model version pinned.\footnote{See
+  \texttt{src/42\_jev\_prompt.R} and \texttt{src/98\_jev\_helpers.R}.}
+Each sentence was scored three times per model and condition (27,000
+scores in total), and the mean of the three runs was taken as the final
+score. Despite explicit instructions to respond with a bare number, the
+generative models frequently returned formatted text, such as
 ``Sentiment: 0.5''. These responses were parsed with a pattern-matching
 function, and only values within the -1.0 to 1.0 range were retained.
+Jev's answers needed no parsing.
 
 To check whether the sentence-level findings hold at the scale of a real
 corpus, the best-performing model on the benchmark, GPT-5.6 Luna, also
@@ -908,9 +936,9 @@ t-test cannot by itself establish the absence of an effect. Alongside
 paired t-tests, two one-sided tests (TOST) therefore assess whether a
 difference is small enough to be treated as negligible, with an
 equivalence bound of ±0.05 on each metric's scale. These comparisons and
-the averages reported in the Results cover the eleven models that scored
-all 200 sentences (33 model-condition combinations). They exclude the
-dictionary baselines, which have no prompt. Llama 3.2 1B is reported
+the averages reported in the Results cover the fourteen models that
+scored all 200 sentences (42 model-condition combinations). They exclude
+the dictionary baselines, which have no prompt. Llama 3.2 1B is reported
 separately: it scored a different, partial subset of sentences in each
 condition, so comparisons across conditions would compare unlike
 samples.
@@ -923,16 +951,16 @@ vs.~H1b)}\label{prompt-language-h1a-vs.-h1b}
 Holding the text constant, prompt language made no detectable
 difference. French prompts on French text (FR→FR) scored slightly higher
 than English prompts on the same text (EN→FR) on every metric: mean
-correlation 0.700 vs.~0.673, MAE 0.209 vs.~0.217, 3-category F1 0.669
-vs.~0.646, and 7-category F1 0.364 vs.~0.347. None of these paired
+correlation 0.708 vs.~0.687, MAE 0.208 vs.~0.216, 3-category F1 0.674
+vs.~0.656, and 7-category F1 0.381 vs.~0.363. None of these paired
 differences was statistically significant (all \emph{p} \textgreater{}
-0.12). Equivalence tests go further. FR→FR and EN→FR were statistically
-equivalent within ±0.05 on MAE (\emph{p} = 0.002), 7-category F1
-(\emph{p} = 0.034), and 3-category F1 (\emph{p} = 0.034). Correlation
+0.10). Equivalence tests go further. FR→FR and EN→FR were statistically
+equivalent within ±0.05 on MAE (\emph{p} \textless{} 0.001), 7-category
+F1 (\emph{p} = 0.015), and 3-category F1 (\emph{p} = 0.006). Correlation
 was the one metric on which equivalence could not be established. The
-90\% confidence interval of the difference, {[}−0.032, 0.085{]}, leaves
-room for a French-prompt advantage of up to 0.085, but not for an
-English-prompt advantage larger than 0.032. The results contradict H1a
+90\% confidence interval of the difference, {[}−0.024, 0.066{]}, leaves
+room for a French-prompt advantage of up to 0.066, but not for an
+English-prompt advantage larger than 0.024. The results contradict H1a
 and support H1b on three of four metrics.
 
 \subsection{Machine Translation (H2a
@@ -940,13 +968,13 @@ vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
 
 For the LLMs, translation carried a cost. Holding the English prompt
 constant, analyzing the translation instead of the original (EN→EN
-vs.~EN→FR) lowered 3-category F1 by 0.04 (0.606 vs.~0.646, \emph{p} =
-0.005). The accompanying drop in correlation (0.647 vs.~0.673) was not
-statistically significant (\emph{p} = 0.24). Differences in MAE and
+vs.~EN→FR) lowered 3-category F1 by 0.035 (0.621 vs.~0.656, \emph{p} =
+0.004). The accompanying drop in correlation (0.659 vs.~0.687) was not
+statistically significant (\emph{p} = 0.12). Differences in MAE and
 7-category F1 remained within the ±0.05 equivalence bound. Compared with
 the fully French workflow (FR→FR), the fully English workflow (EN→EN)
-lowered correlation by 0.053 (\emph{p} = 0.007) and 3-category F1 by
-0.063 (\emph{p} \textless{} 0.001).
+lowered correlation by 0.048 (\emph{p} = 0.002) and 3-category F1 by
+0.053 (\emph{p} \textless{} 0.001).
 
 The dictionaries showed the opposite pattern. The English Lexicoder
 applied to the translation correlated with human judgments at r = 0.548,
@@ -966,10 +994,12 @@ General-purpose LLMs, used without fine-tuning, correlated with human
 judgments well above both dictionaries. The best configurations exceeded
 r = 0.80. GPT-5.6 Luna led on correlation (r = 0.810 in FR→FR). Claude
 Haiku 4.5 led on 3-category F1 (0.778) and 7-category F1 (0.537), both
-in FR→FR. Gemini 3.5 Flash led on MAE (0.156 in EN→FR). Nine of the 33
-model-condition combinations correlated with the ground truth more
-strongly than individual human coders agreed with the mean of the other
-two (mean leave-one-out r = 0.748, range 0.724--0.779).\footnote{This
+in FR→FR. Gemini 3.5 Flash led on MAE (0.156 in EN→FR). Jev came close
+behind the leaders. It reached r = 0.772 in both conditions on French
+text and the second-highest 7-category F1 (0.528 in EN→FR). Twelve of
+the 42 model-condition combinations correlated with the ground truth
+more strongly than individual human coders agreed with the mean of the
+other two (mean leave-one-out r = 0.748, range 0.724--0.779).\footnote{This
   comparison slightly favors the models, because the ground truth they
   are compared against averages three coders rather than two. Agreement
   between annotators is not a strict ceiling on machine performance
@@ -987,51 +1017,56 @@ two (mean leave-one-out r = 0.748, range 0.724--0.779).\footnote{This
 \end{figure}%
 
 Closed-weight models outperformed open-weight ones on average (mean r =
-0.768 vs.~0.638; 3-category F1 0.689 vs.~0.622). The gap closed at the
+0.754 vs.~0.646; 3-category F1 0.685 vs.~0.632). The gap closed at the
 top of the open-weight range. Qwen3 235B-A22B reached r = 0.774 in
 FR→FR, above Gemini 3.5 Flash in the same condition. GPT-OSS 120B and
-GPT-OSS 20B averaged r = 0.733 and 0.716 across conditions. Performance
-degraded below that size. Llama 3.1 8B remained usable (r =
-0.575--0.612). Llama 3.2 3B was erratic (r = 0.476 in FR→FR but 0.132 in
-EN→FR). Llama 3.2 1B failed: it returned a usable score for only 58 to
-74 sentences per condition, and on those its correlation with the ground
-truth ranged from −0.199 to 0.100. Cost was not a barrier. At list
-prices, scoring 1,000 sentences cost between USD 0.02 and 0.40 for every
-model but one (Table~\ref{tbl-cost}). The exception, Gemini 3.5 Flash
-(USD 3.77), reflects the reasoning tokens it generates by default rather
-than its per-token price.\footnote{No cost is reported for Llama 3.2 1B.
-  Its endpoint returned the same input token count on every call
+GPT-OSS 20B averaged r = 0.733 and 0.716 across conditions. Mistral
+Small 3.2 reached the highest 3-category F1 of any open-weight model
+(0.721 in FR→FR), although its scores sat further from the human ratings
+(MAE 0.263 to 0.294). Mistral's newest flagship did not lead its own
+family. Mistral Large 4 scored below Mistral Small 3.2 on correlation (r
+= 0.692 to 0.713) and 3-category F1 (0.609 to 0.624), though with a
+lower MAE. Performance degraded at smaller sizes. Llama 3.1 8B remained
+usable (r = 0.575--0.612). Llama 3.2 3B was erratic (r = 0.476 in FR→FR
+but 0.132 in EN→FR). Llama 3.2 1B failed: it returned a usable score for
+only 58 to 74 sentences per condition, and on those its correlation with
+the ground truth ranged from −0.199 to 0.100. Cost was not a barrier. At
+list prices, scoring 1,000 sentences cost between USD 0.02 and 0.40 for
+every model but one (Table~\ref{tbl-cost}). The exception, Gemini 3.5
+Flash (USD 3.77), reflects the reasoning tokens it generates by default
+rather than its per-token price.\footnote{No cost is reported for Llama
+  3.2 1B. Its endpoint returned the same input token count on every call
   regardless of the prompt, so its usage was not measured. It needed
   22.7 API calls per usable score, against 1.0 to 1.03 for every other
   model, and would in any case have been the most expensive open-weight
   model to run.}
 
-Against the LLM mean of r = 0.673, the dictionaries trailed on
+Against the LLM mean of r = 0.685, the dictionaries trailed on
 correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557
-vs.~0.640). On correlation, the comparison is one-sided: every model
+vs.~0.651). On correlation, the comparison is one-sided: every model
 from 8B parameters upward exceeded both dictionaries in every condition,
 and only Llama 3.2 3B and 1B fell below them. On 3-category F1, the
 translated English dictionary outperformed Qwen3 32B in every condition,
 GPT-OSS 120B in EN→EN, and the two smallest Llama models. On MAE, both
 dictionaries (0.203 and 0.210) did slightly better than the LLM average
-(0.213). This reflects the dictionaries' compressed output rather than
+(0.211). This reflects the dictionaries' compressed output rather than
 their accuracy. Their scores cluster near zero (SD = 0.065 for the
-English dictionary, against 0.286 for the ground truth and 0.38--0.47
-for the LLMs). On a sample dominated by mildly positive sentences, this
-keeps absolute errors small while discriminating poorly between
-sentences.
+English dictionary, against 0.286 for the ground truth and 0.30 to 0.49
+for the models from 8B parameters upward). On a sample dominated by
+mildly positive sentences, this keeps absolute errors small while
+discriminating poorly between sentences.
 
 \subsection{Classification
 Granularity}\label{classification-granularity}
 
 All models performed substantially better on 3-category than on
-7-category classification (best F1 0.778 vs.~0.537; mean 0.640
-vs.~0.349; Figure 3). Models identified positive and negative sentiment
-most reliably (7-category F1 = 0.482 and 0.441, rising to 0.690 and
-0.627 in the 3-category scheme). They struggled most with the extreme
-categories (very negative F1 = 0.256, very positive F1 = 0.124), which
+7-category classification (best F1 0.778 vs.~0.537; mean 0.651
+vs.~0.369; Figure 3). Models identified positive and negative sentiment
+most reliably (7-category F1 = 0.480 and 0.454, rising to 0.706 and
+0.626 in the 3-category scheme). They struggled most with the extreme
+categories (very negative F1 = 0.260, very positive F1 = 0.135), which
 are nearly absent from the sample (two sentences and one sentence).
-Neutral remained the hardest 3-category label (F1 = 0.258).
+Neutral remained the hardest 3-category label (F1 = 0.272).
 
 \clearpage
 \begin{landscape}
@@ -1080,24 +1115,33 @@ correlated at r = 0.97, and 94\% of articles received the same sign
 
 Prompt language does carry a cost that the accuracy results do not show.
 The French prompt is 6\% longer than the English one in characters, yet
-it cost 13\% to 34\% more input tokens, depending on the model
-(Table~\ref{tbl-tokens}). The difference is a property of each model's
+it cost 10\% to 34\% more input tokens, depending on the model
+(Table~\ref{tbl-tokens}).\footnote{Jev's input is TypeSafe's structured
+  question rather than the prompt shown above, so its token counts do
+  not measure the same text. It is left out of the tokenizer comparisons
+  in this paragraph.} The difference is a property of each model's
 tokenizer, not of its size or licence. Vocabularies that favor English
 encode English text with similar efficiency across models (1.17 to 1.25
 tokens per word). They split French words into more pieces, at rates
-from 1.41 tokens per word (Llama 4 Scout, GPT-5.6 Luna, GPT-OSS) to 1.87
-(Claude Haiku 4.5). Ahia et al.
-(\citeproc{ref-ahiaAllLanguagesCost2023}{2023}) document the same
-disparity across many languages. The French sentences themselves cost
-1.6\% to 4.6\% more tokens than their English translations. Output
-length did not differ by prompt language. Since accuracy was equivalent,
-the English prompt is the cheaper of two equally good options. The
-saving depends on where a model's cost lies. It is 14\% to 31\% per
-1,000 sentences for models billed mostly on input (Claude Haiku 4.5,
-Llama 3.x, Qwen3, DeepSeek V3.2, Llama 4 Scout). It is under 6\% for
-GPT-5.6 Luna, the GPT-OSS models, and Gemini 3.5 Flash, whose output
-tokens weigh more. Translating the text first would save a few percent
-more, at the accuracy cost reported above.
+from 1.38 tokens per word (Mistral Large 4) to 1.87 (Claude Haiku 4.5).
+Ahia et al. (\citeproc{ref-ahiaAllLanguagesCost2023}{2023}) document the
+same disparity across many languages. Mistral's claim of a tokenizer
+that is cheaper on French
+(\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI, 2024}) held for one
+of its two models. Mistral Large 4 encoded French more compactly than
+any other model and had the smallest French-prompt overhead (10\%).
+Mistral Small 3.2 did not stand out (1.45 tokens per French word, a 15\%
+overhead). The French sentences themselves cost 1.6\% to 4.6\% more
+tokens than their English translations. Output length did not differ by
+prompt language. Since accuracy was equivalent, the English prompt is
+the cheaper of two equally good options. The saving depends on where a
+model's cost lies. It is 14\% to 31\% per 1,000 sentences for most
+models billed mostly on input (Claude Haiku 4.5, Llama 3.x, Qwen3,
+DeepSeek V3.2, Llama 4 Scout, Mistral Small 3.2). It is 10\% for Mistral
+Large 4, whose French overhead is smallest. It is under 6\% for GPT-5.6
+Luna, the GPT-OSS models, and Gemini 3.5 Flash, whose output tokens
+weigh more. Translating the text first would save a few percent more, at
+the accuracy cost reported above.
 
 \subsection{Translation: A Bridge for Dictionaries, a Loss for
 LLMs}\label{translation-a-bridge-for-dictionaries-a-loss-for-llms}
@@ -1147,7 +1191,14 @@ reproducibility concerns raised by proprietary models
 \citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}),
 this makes a credible open-weight option available at low cost. Qwen3
 235B-A22B and GPT-OSS 120B reached 90--95\% of the best closed-weight
-correlation for USD 0.02--0.03 per thousand sentences. For French text,
+correlation for USD 0.02--0.03 per thousand sentences. Models from a
+French developer showed no French advantage. Neither Mistral model did
+notably better with French prompts (r = 0.702 vs.~0.713 for Mistral
+Large 4 and 0.735 vs.~0.728 for Mistral Small 3.2, FR→FR vs.~EN→FR), and
+both trailed the leading closed-weight models. A different kind of model
+also proved viable. Jev, which returns a probability for each point of
+the scale rather than generated text, came within 0.04 of the best
+correlation for about USD 0.02 per thousand sentences. For French text,
 the answer to RQ2 is therefore yes. A general-purpose LLM measures
 sentiment better than the Lexicoder dictionary on every criterion that
 rewards discrimination, and the cost of running one is no longer a
@@ -1163,18 +1214,18 @@ Second, all models performed markedly worse on 7-category classification
 than on 3-category polarity. These two results are compatible once
 ordering and calibration are distinguished. LLMs order sentences and
 reproduce the spread of human ratings. Their correlation with the ground
-truth (mean r = 0.673, up to 0.810) far exceeds that of the dictionaries
-(0.548 and 0.357), and their scores spread at least as widely as the
-human ratings (SD 0.38--0.47 vs.~0.286), whereas the dictionaries'
-scores cluster near zero (SD = 0.065 for the English dictionary). What
-LLMs do poorly is place scores on the right side of fixed category
-thresholds. They overstate extremes: 10.8\% of LLM scores exceed ±0.66,
-against 1.5\% of ground-truth values. A sentence rated 0.5 by humans and
-0.8 by a model is correctly ordered but misclassified. The ground truth
-contributes to the mismatch. As an average of three coders, it is pulled
-toward the center, and only three sentences fall in the two extreme
-categories. Gradations in sentiment are one of the main arguments for
-dictionaries
+truth (mean r = 0.685, up to 0.810) far exceeds that of the dictionaries
+(0.548 and 0.357). From 8B parameters upward, their scores spread at
+least as widely as the human ratings (SD 0.30 to 0.49 vs.~0.286),
+whereas the dictionaries' scores cluster near zero (SD = 0.065 for the
+English dictionary). What LLMs do poorly is place scores on the right
+side of fixed category thresholds. They overstate extremes: 10.6\% of
+LLM scores exceed ±0.66, against 1.5\% of ground-truth values. A
+sentence rated 0.5 by humans and 0.8 by a model is correctly ordered but
+misclassified. The ground truth contributes to the mismatch. As an
+average of three coders, it is pulled toward the center, and only three
+sentences fall in the two extreme categories. Gradations in sentiment
+are one of the main arguments for dictionaries
 (\citeproc{ref-vanderveenAdvantagesLexiconbasedSentiment2025}{Van Der
 Veen \& Bleich, 2025}). In this corpus, a single off-the-shelf
 dictionary captured them less well than the LLMs. The gap does not close
@@ -1213,10 +1264,15 @@ do: translate automatically and analyze the result. Its lower
 performance should be read as the cost of that workflow rather than of
 translation as such. The dictionary comparison confounds language with
 dictionary construction. A single standardized prompt was used across
-models for comparability. This may understate the performance achievable
-with model-specific prompting. The models tested do not include
-fine-tuned or domain-specific classifiers, which can rival
-general-purpose LLMs
+the generative models for comparability. This may understate the
+performance achievable with model-specific prompting. Jev received the
+same scale in a different format, and its score is a
+probability-weighted average. Such averages are pulled toward the middle
+of the scale, which can lower MAE without improving discrimination, so
+Jev's MAE should be read with care. Mistral Large 4 was evaluated as a
+preview release, which may change before its general availability. The
+models tested do not include fine-tuned or domain-specific classifiers,
+which can rival general-purpose LLMs
 (\citeproc{ref-mochtakParlasentMappingSentiment2025}{Mochtak et al.,
 2025}). Costs are reported at list prices and count cached prompt tokens
 at the full input rate, so they are upper bounds. Finally, this
@@ -1260,7 +1316,7 @@ language in which it was written.
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\phantomsection\label{refs}
+\protect\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
 \bibitem[\citeproctext]{ref-ahiaAllLanguagesCost2023}
 Ahia, O., Kumar, S., Gonen, H., Kasai, J., Mortensen, D., Smith, N., \&
@@ -1416,6 +1472,10 @@ Assessing Two Strategies} for the {Topic Modeling} of {Multilingual Text
 Collections}. \emph{Communication Methods and Measures}, \emph{16}(1),
 19--38. \url{https://doi.org/10.1080/19312458.2021.1955845}
 
+\bibitem[\citeproctext]{ref-mistralaiMistralNeMo2024}
+Mistral AI. (2024). \emph{Mistral {NeMo}}.
+\url{https://mistral.ai/news/mistral-nemo}
+
 \bibitem[\citeproctext]{ref-mochtakParlasentMappingSentiment2025}
 Mochtak, M., Rupnik, P., Kuzman, T., \& Ljubešić, N. (2025). Parlasent:
 Mapping sentiment in political discourse with large language models.
@@ -1456,8 +1516,8 @@ language models in academic research requires explicit justification.
 
 \bibitem[\citeproctext]{ref-pangakisAutomatedAnnotationGenerative2023}
 Pangakis, N., Wolken, S., \& Fasching, N. (2023). \emph{Automated
-{Annotation} with {Generative AI Requires Validation}}
-(arXiv:2306.00176). arXiv.
+{Annotation} with {Generative AI Requires Validation}} (No.
+arXiv:2306.00176). arXiv.
 \url{https://doi.org/10.48550/arXiv.2306.00176}
 
 \bibitem[\citeproctext]{ref-prokschMultilingualSentimentAnalysis2019}
@@ -1492,7 +1552,7 @@ comprehensive set of simulations. \emph{Proceedings of the 21st
 Shi, F., Suzgun, M., Freitag, M., Wang, X., Srivats, S., Vosoughi, S.,
 Chung, H. W., Tay, Y., Ruder, S., Zhou, D., Das, D., \& Wei, J. (2022).
 \emph{Language {Models} are {Multilingual Chain-of-Thought Reasoners}}
-(arXiv:2210.03057). arXiv.
+(No. arXiv:2210.03057). arXiv.
 \url{https://doi.org/10.48550/arXiv.2210.03057}
 
 \bibitem[\citeproctext]{ref-songValidationsWeTrust2020}
@@ -1518,8 +1578,8 @@ supervised classifiers at annotating political social media messages.
 Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M.-A.,
 Lacroix, T., Rozière, B., Goyal, N., Hambro, E., Azhar, F., Rodriguez,
 A., Joulin, A., Grave, E., \& Lample, G. (2023). \emph{{LLaMA}: {Open}
-and {Efficient Foundation Language Models}} (arXiv:2302.13971). arXiv.
-\url{https://arxiv.org/abs/2302.13971}
+and {Efficient Foundation Language Models}} (No. arXiv:2302.13971).
+arXiv. \url{https://arxiv.org/abs/2302.13971}
 
 \bibitem[\citeproctext]{ref-vanAtteveldt2021validity}
 van Atteveldt, W., van der Velden, M. A. C. G., \& Boukes, M. (2021).
@@ -1595,6 +1655,7 @@ Cost Not Reported for Llama 3.2 1B, Whose Endpoint Returned a Constant
 Token Count)}{\label{tbl-cost}}}
 \vspace{-20pt}}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0660}}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0943}}
@@ -1625,18 +1686,24 @@ USD per 1,000 sentences
 \endlastfoot
 GPT-OSS 20B & OpenRouter & Open & 1.02 & 657,496 & 87,892 & 0.018 \\
 Llama 3.2 3B & OpenRouter & Open & 1.00 & 595,142 & 7,320 & 0.018 \\
+Jev 1.13 & TypeSafe & Closed & 1.00 & 815,199 & 32,400 & 0.019 \\
 GPT-OSS 120B & OpenRouter & Open & 1.00 & 667,425 & 95,660 & 0.020 \\
 Qwen3 32B & OpenRouter & Open & 1.00 & 592,086 & 5,696 & 0.027 \\
+Mistral Small 3.2 & OpenRouter & Open & 1.00 & 553,761 & 7,405 &
+0.029 \\
 Qwen3 235B-A22B & OpenRouter & Open & 1.00 & 584,886 & 7,752 & 0.030 \\
 Llama 4 Scout & OpenRouter & Open & 1.00 & 564,947 & 8,467 & 0.059 \\
 DeepSeek V3.2 & OpenRouter & Open & 1.00 & 559,594 & 9,340 & 0.067 \\
 Llama 3.1 8B & OpenRouter & Open & 1.01 & 593,398 & 8,062 & 0.074 \\
 GPT-5.6 Luna & OpenAI & Closed & 1.00 & 552,225 & 51,819 & 0.096 \\
+Mistral Large 4 & OpenRouter & Closed & 1.00 & 534,990 & 7,603 &
+0.211 \\
 Claude Haiku 4.5 & Anthropic & Closed & 1.00 & 648,705 & 12,600 &
 0.395 \\
 Gemini 3.5 Flash & Google & Closed & 1.03 & 568,160 & 658,571 & 3.766 \\
 Llama 3.2 1B & OpenRouter & Open & 22.68 & -- & 168,789 & -- \\
 \end{longtable}
+}
 
 \end{table}
 
@@ -1645,9 +1712,11 @@ Llama 3.2 1B & OpenRouter & Open & 22.68 & -- & 168,789 & -- \\
 {\caption{{Mean Input Tokens per API Call by Language Condition, and
 Tokens per Word by Text Language (Valid Calls Only; Llama 3.2 1B
 Excluded Because Its Endpoint Reported a Constant Token Count on Every
-Call)}{\label{tbl-tokens}}}
+Call; Jev's Input Is a Structured Question Rather Than the Text Prompt,
+So Its Counts Are Not Comparable)}{\label{tbl-tokens}}}
 \vspace{-20pt}}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0693}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0693}}
@@ -1676,9 +1745,13 @@ Tokens per English word
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
+Mistral Large 4 & 284.5 & 289.1 & 318.1 & +29 (+10.0\%) & 1.38 & 1.22 \\
+Jev 1.13 & 431.0 & 440.3 & 487.3 & +47 (+10.7\%) & 1.62 & 1.22 \\
 GPT-OSS 120B & 352.0 & 357.7 & 402.7 & +45 (+12.6\%) & 1.42 & 1.19 \\
 GPT-OSS 20B & 339.0 & 344.7 & 389.7 & +45 (+13.1\%) & 1.42 & 1.19 \\
 Llama 4 Scout & 294.1 & 299.9 & 343.9 & +44 (+14.7\%) & 1.41 & 1.19 \\
+Mistral Small 3.2 & 288.6 & 294.6 & 339.6 & +45 (+15.3\%) & 1.45 &
+1.22 \\
 GPT-5.6 Luna & 288.0 & 293.7 & 338.7 & +45 (+15.3\%) & 1.42 & 1.19 \\
 Gemini 3.5 Flash & 285.0 & 292.1 & 337.1 & +45 (+15.4\%) & 1.46 &
 1.17 \\
@@ -1690,6 +1763,7 @@ Llama 3.1 8B & 295.2 & 306.8 & 389.0 & +82 (+26.8\%) & 1.69 & 1.20 \\
 Claude Haiku 4.5 & 313.8 & 328.2 & 439.2 & +111 (+33.8\%) & 1.87 &
 1.25 \\
 \end{longtable}
+}
 
 \end{table}
 
@@ -1721,6 +1795,7 @@ agree on individual months.
 Classification}{\label{tbl-f1-3cat}}}
 \vspace{-20pt}}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lllll@{}}
 \toprule\noalign{}
 Model & negative & neutral & positive & weighted\_f1 \\
@@ -1730,11 +1805,17 @@ Model & negative & neutral & positive & weighted\_f1 \\
 \endlastfoot
 Claude Haiku 4.5 (FR→FR) & 0.762 & 0.375 & 0.832 & 0.778 \\
 GPT-5.6 Luna (FR→FR) & 0.748 & 0.385 & 0.8 & 0.755 \\
+Jev 1.13 (EN→FR) & 0.691 & 0.5 & 0.81 & 0.751 \\
+Jev 1.13 (FR→FR) & 0.695 & 0.4 & 0.803 & 0.741 \\
 GPT-5.6 Luna (EN→FR) & 0.73 & 0.364 & 0.776 & 0.733 \\
+Mistral Small 3.2 (FR→FR) & 0.578 & 0.286 & 0.844 & 0.721 \\
+Jev 1.13 (EN→EN) & 0.711 & 0.222 & 0.777 & 0.717 \\
 Claude Haiku 4.5 (EN→FR) & 0.69 & 0.273 & 0.778 & 0.715 \\
+Mistral Small 3.2 (EN→FR) & 0.545 & 0.364 & 0.841 & 0.715 \\
 DeepSeek V3.2 (FR→FR) & 0.672 & 0.216 & 0.765 & 0.697 \\
 GPT-5.6 Luna (EN→EN) & 0.688 & 0.367 & 0.736 & 0.695 \\
 Qwen3 235B-A22B (FR→FR) & 0.752 & 0.243 & 0.716 & 0.695 \\
+Mistral Small 3.2 (EN→EN) & 0.488 & 0.364 & 0.836 & 0.693 \\
 DeepSeek V3.2 (EN→FR) & 0.696 & 0.226 & 0.737 & 0.688 \\
 GPT-OSS 120B (FR→FR) & 0.721 & 0.314 & 0.712 & 0.687 \\
 Llama 4 Scout (FR→FR) & 0.643 & 0.291 & 0.747 & 0.682 \\
@@ -1747,10 +1828,13 @@ GPT-OSS 20B (FR→FR) & 0.691 & 0.258 & 0.68 & 0.654 \\
 Llama 4 Scout (EN→EN) & 0.647 & 0.246 & 0.686 & 0.643 \\
 Gemini 3.5 Flash (FR→FR) & 0.655 & 0.264 & 0.673 & 0.639 \\
 DeepSeek V3.2 (EN→EN) & 0.672 & 0.258 & 0.657 & 0.633 \\
+Mistral Large 4 (EN→EN) & 0.604 & 0.25 & 0.677 & 0.624 \\
 Llama 3.1 8B (EN→FR) & 0.652 & 0.281 & 0.646 & 0.623 \\
+Mistral Large 4 (FR→FR) & 0.644 & 0.259 & 0.65 & 0.621 \\
 Llama 3.2 3B (FR→FR) & 0.465 & 0.195 & 0.747 & 0.62 \\
 Llama 3.1 8B (EN→EN) & 0.627 & 0.265 & 0.653 & 0.618 \\
 Gemini 3.5 Flash (EN→FR) & 0.642 & 0.242 & 0.646 & 0.616 \\
+Mistral Large 4 (EN→FR) & 0.648 & 0.235 & 0.632 & 0.609 \\
 Llama 3.1 8B (FR→FR) & 0.615 & 0.174 & 0.643 & 0.604 \\
 Gemini 3.5 Flash (EN→EN) & 0.667 & 0.233 & 0.613 & 0.603 \\
 GPT-OSS 20B (EN→EN) & 0.614 & 0.234 & 0.635 & 0.601 \\
@@ -1767,6 +1851,7 @@ Llama 3.2 1B (FR→FR) & 0 & 0.138 & 0.648 & 0.443 \\
 Llama 3.2 1B (EN→FR) & 0 & 0 & 0.568 & 0.338 \\
 Llama 3.2 1B (EN→EN) & 0 & 0.15 & 0.457 & 0.286 \\
 \end{longtable}
+}
 
 \end{table}
 
@@ -1775,7 +1860,8 @@ Llama 3.2 1B (EN→EN) & 0 & 0.15 & 0.457 & 0.286 \\
 \begin{table}[h]
 \caption{F1 Scores for 7-Category Classification}
 \begin{center}
-\input{../../results/tables/f1_scores_7cat_table.tex}
+{\scriptsize\renewcommand{\arraystretch}{0.95}
+\input{../../results/tables/f1_scores_7cat_table.tex}}
 \end{center}
 \end{table}
 \end{landscape}

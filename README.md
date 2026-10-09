@@ -144,10 +144,11 @@ The analysis can be run step-by-step following the numbered scripts in the `/src
 4. Dictionary-based sentiment analysis: `src/20_frlsd.R`, `src/22_lsd_prep.R`, `src/23_lsd.R`
 5. Translation: `src/21_translate_to_english.R`
 6. Sample creation and manual annotation: `src/30_create_sample.R`, `src/31_validate_manual_anotation.R`
-7. LLM prompting: `src/40_prompt.R`, `src/41_prompt_cleaning.R`
+7. LLM prompting: `src/40_prompt.R`, then `src/42_jev_prompt.R` (adds Jev, TypeSafe's System One model; rerun it after any rerun of 40), then `src/41_prompt_cleaning.R`
 8. Performance evaluation: `src/50_cor.R`, `src/51_fscore_7.R`, `src/52_fscore_3.R`
 9. Visualization: `src/60_cor_graph.R`, `src/61_mae_graph.R`, `src/62_fscore_graphs.R`
 10. Result tables: `src/63_fscore_tables.R`, `src/64_results_summary.R`
+11. Exploratory full-corpus comparison of Jev with GPT-5.6 Luna and Lexicoder: `src/72_jev_corpus.R` (requires `TYPESAFE_API_KEY`)
 
 ### Replicating the Study
 

@@ -458,6 +458,24 @@ conditions <- list(
 #   SKIP_MODELS=gemini35 Rscript src/40_prompt.R
 skip_models <- trimws(strsplit(Sys.getenv("SKIP_MODELS", ""), ",")[[1]])
 skip_models <- skip_models[nzchar(skip_models)]
+
+# ONLY_MODELS does the reverse: every other model is passed over. Use it to add
+# a model to a finished run. Otherwise every model's NA cells are retried, and
+# Llama 3.2 1B alone has ~400 of them by design (see src/94_models_map.R).
+#   ONLY_MODELS=mistralsmall32,mistrallarge4 Rscript src/40_prompt.R
+only_models <- trimws(strsplit(Sys.getenv("ONLY_MODELS", ""), ",")[[1]])
+only_models <- only_models[nzchar(only_models)]
+
+# A misspelt name would silently skip nothing, or run everything: refuse it.
+unknown <- setdiff(c(skip_models, only_models), names(model_clients))
+if (length(unknown)) {
+  stop("Unknown model prefix(es) in SKIP_MODELS/ONLY_MODELS: ",
+       paste(unknown, collapse = ", "), ". Known: ",
+       paste(names(model_clients), collapse = ", "))
+}
+if (length(only_models)) {
+  skip_models <- union(skip_models, setdiff(names(model_clients), only_models))
+}
 if (length(skip_models)) {
   cat("Skipping on request:", paste(skip_models, collapse = ", "), "\n")
 }
