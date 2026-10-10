@@ -354,8 +354,7 @@ plot_f1_pub <- ggplot() +
   stat = "identity", 
   position = position_dodge(width = 0.9), 
   width = 0.6,
-  color = "#444444",
-  linewidth = 0.2) +
+  color = NA) +
   
   # Professional minimal theme
   theme_minimal() +
@@ -386,11 +385,13 @@ plot_f1_pub <- ggplot() +
   # Create a separate scale for fill
   scale_fill_manual(
     values = c(
-      "even" = "gray95",    # Almost white (for background)
-      "odd" = "gray90",     # Very light gray (for background)
-      "Detailed (7-category)" = "#777777",  # Medium gray (for bars)
-      "Grouped (3-category)" = "#BBBBBB"    # Light gray (for bars)
+      "even" = "white",
+      "odd" = "#EEF3F8",                       # pale blue band, one model per band
+      "Detailed (7-category)" = "#F5B041",     # amber: fine-grained scheme
+      "Grouped (3-category)" = "#1B4F72"       # dark blue: polarity scheme
     ),
+    labels = c("Detailed (7-category)" = "Fine-grained, 7 categories",
+               "Grouped (3-category)" = "Polarity, 3 categories"),
     # Only include classification types in the legend
     breaks = c("Detailed (7-category)", "Grouped (3-category)"),
     name = "Classification Type"
