@@ -187,22 +187,24 @@ Pelletier,Étienne Proulx,Adam Ménard,Yannick Dufresne}
 \date{2026-10-10}
 
 
-\abstract{Researchers who analyze non-English text with large language
-models (LLMs) inherit two rules of thumb: prompt in English, and
-translate the text into English first. Both rest on contested evidence.
-This article tests them on French. Fifteen open- and closed-weight
-language models scored 200 hand-annotated French news sentences under
-three workflows: French prompts on French text, English prompts on
-French text, and English prompts on machine-translated text. The French
-and English Lexicoder dictionaries served as benchmarks. Prompt language
-made no difference, and equivalence tests rule out any substantial
-advantage for English. Translation did matter, in the wrong direction:
-it helped the dictionary but lowered the LLMs' agreement with human
-judgments. Every model from about 8B parameters upward beat both
-dictionaries, at a cost of a few cents per thousand sentences. The best
-reached r = 0.81 against 0.36 for the French dictionary. The language of
-the prompt is a matter of convenience. The language of the text is not:
-analyze it in the original. }
+\abstract{For a decade, comparative text analysis had one answer to
+non-English text: translate it into English and apply English tools.
+Large language models (LLMs) inherit that reflex, and a second one, to
+prompt in English. This article tests both on French news. Fifteen open-
+and closed-weight models scored 200 hand-coded sentences under three
+workflows: French prompt on the original, English prompt on the
+original, and English prompt on a machine translation. Prompt language
+made no difference: equivalence tests rule out any substantial advantage
+for English, and the result holds on the full corpus of 2,683 articles.
+Translation did: the same machine translation that improved the
+Lexicoder dictionary lowered the LLMs' agreement with human coders. The
+strategy that served English-bound tools becomes a cost for models that
+read the source language. Every model from about 8B parameters upward
+beat both the native French dictionary and the translated English one,
+reaching r = 0.81 against 0.36, for a few cents per thousand sentences
+and without any training data or fine-tuning. The language of the prompt
+is a matter of convenience. The language of the text is not: analyze it
+in the original. }
 
 \keywords{Sentiment Analysis, Large Language Models, Machine
 Translation, Prompt Language, French Language, Open-Weight
@@ -327,26 +329,29 @@ l'Université, Québec, Québec G1V
 
 \section{Introduction}\label{introduction}
 
-Computational text analysis in the social sciences grew up around
-English. Its tools, from sentiment dictionaries to topic models, were
-built for English text. This dominance has been criticized for
-depressing comparative research and for excluding scholarly communities
-that work in other languages
-(\citeproc{ref-badenThreeGapsComputational2022}{Baden et al., 2022}).
-Comparativists coped by translating. Machine translation made it
-possible to convert multilingual corpora into English and to apply
-English-language tools (\citeproc{ref-devriesNoLongerLost2018}{De Vries
-et al., 2018};
+For ten years, the advice to a researcher facing a corpus in French,
+German, or Arabic was simple: translate it into English and use the
+English tools. Computational text analysis grew up around English, and
+its tools, from sentiment dictionaries to topic models, were built for
+English text. This dominance has been criticized for depressing
+comparative research and for excluding scholarly communities that work
+in other languages (\citeproc{ref-badenThreeGapsComputational2022}{Baden
+et al., 2022}). Machine translation was the workaround, and it was
+validated repeatedly for dictionaries and topic models
+(\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
 \citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et al.,
-2015}). Large language models (LLMs) promise to loosen this constraint.
+2015}). Large language models (LLMs) change the terms of the problem.
 Used without task-specific training, they match or exceed crowd workers
 and expert coders on common annotation tasks
 (\citeproc{ref-gilardiChatGPTOutperformsCrowd2023}{Gilardi et al.,
-2023}; \citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}).
-They also do so, with some loss, in languages other than English
+2023}; \citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}),
+and they do so, with some loss, in languages other than English
 (\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \& Clemm Von
 Hohenberg, 2024}; \citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et
-al., 2024}).
+al., 2024}). For the many researchers who work in a language other than
+English and have neither the labeled data nor the skills to train or
+fine-tune a model, this is the first tool that reads their texts as they
+are. This article shows that the old advice now points the wrong way.
 
 Yet researchers who use LLMs on non-English text often keep two reflexes
 from the English-centered era. The first is to prompt in English. The
@@ -384,14 +389,18 @@ non-significance, and the best model then rescored the full corpus to
 check that the sentence-level result holds at scale.
 
 The results speak to both reflexes. Prompt language made no meaningful
-difference, though the English prompt is cheaper. Translation cut both
-ways: it improved the dictionary but hurt the LLMs. The article also
-answers a practical question: is a researcher working on French text
-still better served by a dictionary? On this evidence, no. Every model
-from about 8B parameters upward outperformed both the native French
-dictionary and the translated English one on correlation with human
-judgments, open-weight models included, for a few cents per thousand
-sentences.
+difference, though the English prompt is cheaper. Translation did: the
+same machine translation that lifted the dictionary workflow from r =
+0.36 to 0.55 lowered every model of at least 8B parameters, and the
+models beat both dictionaries without it. The article also answers the
+practical question that follows: is a researcher working on French text,
+with no training data and no fine-tuning, still better served by a
+dictionary? On this evidence, no. Every model from about 8B parameters
+upward outperformed both the native French dictionary and the translated
+English one on correlation with human judgments, open-weight models
+included, for a few cents per thousand sentences. A comparativist can
+now analyze French text in French, with a model that needs no training,
+and expect better measurement than the dictionary workflow ever offered.
 
 \section{Literature Review}\label{literature-review}
 
@@ -586,7 +595,11 @@ and closed-weight,\footnote{``Open source'' traditionally implies access
   weights. ``Open-weight'' describes this condition more accurately and
   is used throughout.} measure sentiment in French text well enough,
 without fine-tuning, to be a viable alternative to dictionary-based
-methods? RQ2 is descriptive. The hypotheses were derived from the
+methods? RQ2 matters for the researcher this article has in mind: one
+who works in a language other than English, has no annotated training
+set, and cannot train or fine-tune a model. For that researcher the real
+choice is between an off-the-shelf dictionary and an off-the-shelf
+model. RQ2 is descriptive. The hypotheses were derived from the
 literature and were not preregistered.
 
 \section{Data \& Methods}\label{data-methods}
@@ -1208,7 +1221,10 @@ correlation for about USD 0.02 per thousand sentences. For French text,
 the answer to RQ2 is therefore yes. A general-purpose LLM measures
 sentiment better than the Lexicoder dictionary on every criterion that
 rewards discrimination, and the cost of running one is no longer a
-reason to prefer the dictionary.
+reason to prefer the dictionary. This is the condition under which
+comparative research in a non-English language becomes cheap: no
+translation step, no training data, no fine-tuning, a validated model,
+and a prompt in whichever language the researcher writes most easily.
 
 The cautious literature is not dismissed. Performance varied widely
 across models, which reinforces the need to validate each model on each
@@ -1301,16 +1317,19 @@ second is whether the size threshold observed here, below which
 open-weight models become erratic and prompt-sensitive, is a stable
 feature of current models.
 
-The practical answer is equally clear: a researcher working on French
-text is no longer better served by a dictionary. A general-purpose LLM,
-validated on a manually annotated sample, measures sentiment better than
-the Lexicoder dictionary on every criterion but transparency, and
-open-weight models from about 8B parameters do so for a few cents per
-thousand sentences. The dictionary remains a baseline and a robustness
-check. For researchers working with French text, the evidence settles
-three points: use a validated LLM, prompt in whichever language is
-convenient, and analyze the text in the language in which it was
-written.
+The practical answer is equally clear, and it matters most to the
+researchers the English-centered era left aside: those who work in
+another language, have no annotated training set, and cannot train or
+fine-tune a model. For them the choice is between an off-the-shelf
+dictionary and an off-the-shelf model, and the model wins. A
+general-purpose LLM, validated on a manually annotated sample, measures
+sentiment better than the Lexicoder dictionary on every criterion but
+transparency, and open-weight models from about 8B parameters do so for
+a few cents per thousand sentences. The dictionary remains a baseline
+and a robustness check. For researchers working with French text, the
+evidence settles three points: use a validated LLM, prompt in whichever
+language is convenient, and analyze the text in the language in which it
+was written.
 
 \section*{Acknowledgements}\label{acknowledgements}
 \addcontentsline{toc}{section}{Acknowledgements}
