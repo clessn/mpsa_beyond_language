@@ -1035,15 +1035,16 @@ Human Judgments, by Model and Condition}{\label{fig-performance}}}}
 
 \vspace{-12pt}
 \noindent \emph{Note.} One~row per model, sorted by mean correlation
-within each group. The three markers on a row are the three conditions:
-FR→FR (French prompt on French text), EN→FR (English prompt on French
-text), and EN→EN (English prompt on translated text). The grey segment
-joins them, so a short segment means the conditions made little
-difference. Left panel: Pearson correlation with the mean of three human
-coders. Right panel: mean absolute error on the same scores. Llama 3.2
-1B is omitted because it scored a different partial subset of sentences
-in each condition. Exact values, 95\% confidence intervals and the
-number of sentences scored are reported in the Appendix.
+within each group, and one column per condition. Each cell gives the
+exact value; darker shading means a better rank on that metric (higher
+correlation, lower error). Reading across a row shows whether the
+condition mattered for that model; reading down a column ranks the
+models. The dictionaries have no prompt: the French Lexicoder reads the
+original text and the English Lexicoder the translation, so they appear
+under those text columns. Llama 3.2 1B is omitted because it scored a
+different partial subset of sentences in each condition. Confidence
+intervals and the number of sentences scored are reported in the
+Appendix.
 
 \end{figure}
 
