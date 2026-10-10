@@ -26,6 +26,10 @@ df <- readRDS("data/clean/news_df_sentiment_corpus.rds") %>%
 r_prompt <- cor(df$llm_fr_fr, df$llm_en_fr)
 r_dict   <- cor(df$llm_fr_fr, df$fr_tone_index)
 same_sign <- mean(sign(df$llm_fr_fr) == sign(df$llm_en_fr))
+same_sign_dict <- mean(sign(df$llm_fr_fr) == sign(df$fr_tone_index))
+opposite_dict  <- mean(sign(df$llm_fr_fr) * sign(df$fr_tone_index) == -1)
+cat(sprintf("dictionary vs model: same sign = %.1f%%, opposite sign = %.1f%%\n",
+            100 * same_sign_dict, 100 * opposite_dict))
 cat(sprintf("n = %d | r prompt = %.3f | same sign = %.1f%% | r dictionary = %.3f\n",
             nrow(df), r_prompt, 100 * same_sign, r_dict))
 cat(sprintf("SD model FR = %.3f | SD dictionary = %.3f | dictionary range = [%.2f, %.2f]\n",
@@ -43,7 +47,7 @@ long <- df %>%
 labels <- data.frame(
   panel = factor(c(PANEL_A, PANEL_B), levels = c(PANEL_A, PANEL_B)),
   label = c(sprintf("r = %.2f\n%.0f%% same sign", r_prompt, 100 * same_sign),
-            sprintf("r = %.2f", r_dict))
+            sprintf("r = %.2f\n%.0f%% same sign, %.0f%% opposite", r_dict, 100 * same_sign_dict, 100 * opposite_dict))
 )
 identity_line <- data.frame(panel = factor(PANEL_A, levels = c(PANEL_A, PANEL_B)))
 
