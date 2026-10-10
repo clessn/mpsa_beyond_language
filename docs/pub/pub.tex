@@ -415,12 +415,10 @@ tweets from the United States, Chile, Germany, and Italy
 (\citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \& Clemm Von
 Hohenberg, 2024}). These results have fed broad claims that generative
 AI could transform computational social science
-(\citeproc{ref-bailCanGenerativeAI2024}{Bail, 2024};
-\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}), chiefly
+(\citeproc{ref-ziemsCanLargeLanguage2024}{Ziems et al., 2024}), chiefly
 by removing the need for the thousands of annotated examples that
 supervised learning requires
-(\citeproc{ref-chaeLargeLanguageModels2026}{Chae \& Davidson, 2026};
-\citeproc{ref-laurerLessAnnotatingMore2024}{Laurer et al., 2024}).
+(\citeproc{ref-laurerLessAnnotatingMore2024}{Laurer et al., 2024}).
 
 A more cautious literature qualifies these claims on three fronts.
 First, performance is uneven. Across 25 English benchmarks, zero-shot
@@ -450,13 +448,12 @@ et al., 2025};
 at a fraction of the cost
 (\citeproc{ref-mochtakParlasentMappingSentiment2025}{Mochtak et al.,
 2025}). Third, reliance on proprietary models threatens reproducibility
-(\citeproc{ref-ollionDangersUsingProprietary2024}{Ollion et al., 2024};
-\citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}).
+(\citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}).
 This has prompted calls to justify their use
 (\citeproc{ref-palmerUsingProprietaryLanguage2023}{Palmer et al., 2023})
 and evidence that open-weight models can be competitive alternatives
-(\citeproc{ref-alizadehOpensourceLLMsText2025}{Alizadeh et al., 2025};
-\citeproc{ref-klahnDictionariesLLMsEvaluation2025}{Klähn et al., 2025}).
+(\citeproc{ref-klahnDictionariesLLMsEvaluation2025}{Klähn et al.,
+2025}).
 
 These debates leave the question of language largely implicit. The
 broadest evaluations rely on English benchmarks
@@ -500,11 +497,9 @@ handcrafted by native speakers (\citeproc{ref-Lin2022Few}{X. V. Lin et
 al., 2022}). Models fine-tuned on English prompts performed best with
 English prompts even on non-English samples
 (\citeproc{ref-Muennighoff2023Crosslingual}{Muennighoff et al., 2023}).
-Asking models to restate a non-English request in English improved their
-multilingual performance (\citeproc{ref-huangNotAllLanguages2023}{Huang
-et al., 2023}). English instructions outperformed Arabic ones on average
-across eleven Arabic classification tasks
-(\citeproc{ref-Kmainasi2025Native}{Kmainasi et al., 2025}).
+English instructions outperformed Arabic ones on average across eleven
+Arabic classification tasks (\citeproc{ref-Kmainasi2025Native}{Kmainasi
+et al., 2025}).
 
 A competing view emphasizes multilingual competence. Large models show
 strong multilingual reasoning abilities even in underrepresented
@@ -515,14 +510,12 @@ minimal for the strongest model, GPT-4o
 (\citeproc{ref-Kmainasi2025Native}{Kmainasi et al., 2025}). GPT-4
 Turbo's labels for Indonesian tweets under English and Indonesian
 prompts agreed almost perfectly
-(\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}).
-Changing the prompt language alters the length and wording of generated
-responses, while their meaning remains largely stable
-(\citeproc{ref-nguyen_etal26}{Nguyen et al., 2026}). The evidence on
-both sides comes mostly from reasoning and classification benchmarks,
-older models, and lower-resourced languages. None of it tests whether
-prompt language affects the accuracy of a graded sentiment judgment in a
-well-resourced language. The two views imply competing expectations:
+(\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}). The
+evidence on both sides comes mostly from reasoning and classification
+benchmarks, older models, and lower-resourced languages. None of it
+tests whether prompt language affects the accuracy of a graded sentiment
+judgment in a well-resourced language. The two views imply competing
+expectations:
 
 \begin{quote}
 \textbf{H1a (pivot language).} English prompts yield more accurate
@@ -540,17 +533,11 @@ applied (\citeproc{ref-lucasComputerAssistedTextAnalysis2015}{Lucas et
 al., 2015}) has been validated repeatedly. Machine-translated and
 human-translated texts yield highly similar term-document matrices and
 topic models (\citeproc{ref-devriesNoLongerLost2018}{De Vries et al.,
-2018}). Results are robust across translation services
-(\citeproc{ref-reberOvercomingLanguageBarriers2019}{Reber, 2019}). A
-machine translation of the Lexicoder dictionary captured legislative
-conflict across European parliaments
+2018}). A machine translation of the Lexicoder dictionary captured
+legislative conflict across European parliaments
 (\citeproc{ref-prokschMultilingualSentimentAnalysis2019}{Proksch et al.,
-2019}). For sentiment specifically, translating non-English sentences
-into English and applying English methods performed as well as
-language-specific methods
-(\citeproc{ref-araujoComparativeStudyMachine2020}{Araújo et al., 2020}),
-and sentiment analysis of English translations of Arabic posts was
-competitive with analysis of the originals
+2019}). For sentiment specifically, analysis of English translations of
+Arabic posts was competitive with analysis of the originals
 (\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}). The
 logic has carried into the LLM era. Translating inputs into English
 before inference improves the performance of multilingual models
@@ -564,13 +551,11 @@ alters sentiment: affective words disappear or are replaced by words of
 opposite valence, ambiguous words are mistranslated, and culturally
 specific expressions lose their meaning
 (\citeproc{ref-Mohammad2016translation}{Mohammad et al., 2016}).
-Approaches that avoid translation, such as multilingual dictionaries
-(\citeproc{ref-maierMachineTranslationVs2022}{Maier et al., 2022}) and
-multilingual sentence embeddings
+Approaches that avoid translation, such as multilingual sentence
+embeddings, yield comparable or more reliable results in some settings
 (\citeproc{ref-lichtCrossLingualClassificationPolitical2023}{Licht,
-2023}), yield comparable or more reliable results in some settings.
-Crucially, the case for translation was built largely on tools that
-cannot read the source language, such as English dictionaries and
+2023}). Crucially, the case for translation was built largely on tools
+that cannot read the source language, such as English dictionaries and
 bag-of-words models. LLMs can. For them, the supporting evidence comes
 from benchmarks whose non-English versions were themselves created by
 translation, a setting that may favor translation-based methods, as the
@@ -1171,8 +1156,7 @@ that cannot read the source language, and it costs information for tools
 that can. The dictionary result is consistent with a long line of
 evidence that translating into English lets researchers use
 better-validated English resources
-(\citeproc{ref-araujoComparativeStudyMachine2020}{Araújo et al., 2020};
-\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
+(\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
 \citeproc{ref-prokschMultilingualSentimentAnalysis2019}{Proksch et al.,
 2019}). LLMs already read French. For them, translation offers no such
 gain, and it exposes the analysis to the alterations of affective
@@ -1210,8 +1194,7 @@ models. This is consistent with evidence from German
 2025}). Below that size, performance became erratic, and a 1B-parameter
 model could not follow the task. For researchers weighing the
 reproducibility concerns raised by proprietary models
-(\citeproc{ref-ollionDangersUsingProprietary2024}{Ollion et al., 2024};
-\citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}),
+(\citeproc{ref-spirlingWhyOpensourceGenerative2023}{Spirling, 2023}),
 this makes a credible open-weight option available at low cost. Qwen3
 235B-A22B and GPT-OSS 120B reached 90--95\% of the best closed-weight
 correlation for USD 0.02--0.03 per thousand sentences. Models from a
@@ -1405,19 +1388,6 @@ Nambi, A., Ganu, T., Segal, S., Ahmed, M., Bali, K., \& Sitaram, S.
 {Natural Language Processing}}, 4232--4267.
 \url{https://doi.org/10.18653/v1/2023.emnlp-main.258}
 
-\bibitem[\citeproctext]{ref-alizadehOpensourceLLMsText2025}
-Alizadeh, M., Kubli, M., Samei, Z., Dehghani, S., Zahedivafa, M.,
-Bermeo, J. D., Korobeynikova, M., \& Gilardi, F. (2025). Open-source
-{LLMs} for text annotation: A practical guide for model setting and
-fine-tuning. \emph{Journal of Computational Social Science},
-\emph{8}(1), 17. \url{https://doi.org/10.1007/s42001-024-00345-9}
-
-\bibitem[\citeproctext]{ref-araujoComparativeStudyMachine2020}
-Araújo, M., Pereira, A., \& Benevenuto, F. (2020). A comparative study
-of machine translation for multilingual sentence-level sentiment
-analysis. \emph{Information Sciences}, \emph{512}, 1078--1102.
-\url{https://doi.org/10.1016/j.ins.2019.10.031}
-
 \bibitem[\citeproctext]{ref-badenThreeGapsComputational2022}
 Baden, C., Pipal, C., Schoonvelde, M., \& Van Der Velden, M. A. C. G.
 (2022). Three {Gaps} in {Computational Text Analysis Methods} for
@@ -1425,22 +1395,11 @@ Baden, C., Pipal, C., Schoonvelde, M., \& Van Der Velden, M. A. C. G.
 Measures}, \emph{16}(1), 1--18.
 \url{https://doi.org/10.1080/19312458.2021.2015574}
 
-\bibitem[\citeproctext]{ref-bailCanGenerativeAI2024}
-Bail, C. A. (2024). Can {Generative AI} improve social science?
-\emph{Proceedings of the National Academy of Sciences}, \emph{121}(21),
-e2314021121. \url{https://doi.org/10.1073/pnas.2314021121}
-
 \bibitem[\citeproctext]{ref-benoitUsingLargeLanguage2026}
 Benoit, K., De Marchi, S., Laver, C., Laver, M., \& Ma, J. (2026). Using
 large language models to analyze political texts through natural
 language understanding. \emph{American Journal of Political Science}.
 \url{https://doi.org/10.1111/ajps.70050}
-
-\bibitem[\citeproctext]{ref-chaeLargeLanguageModels2026}
-Chae, Y., \& Davidson, T. (2026). Large {Language Models} for {Text
-Classification}: {From Zero-Shot Learning} to {Instruction-Tuning}.
-\emph{Sociological Methods \& Research}, \emph{55}(2), 501--567.
-\url{https://doi.org/10.1177/00491241251325243}
 
 \bibitem[\citeproctext]{ref-devriesNoLongerLost2018}
 De Vries, E., Schoonvelde, M., \& Schumacher, G. (2018). No {Longer
@@ -1480,14 +1439,6 @@ Heseltine, M., \& Clemm Von Hohenberg, B. (2024). Large language models
 as a substitute for human experts in annotating political text.
 \emph{Research \& Politics}, \emph{11}(1), 20531680241236239.
 \url{https://doi.org/10.1177/20531680241236239}
-
-\bibitem[\citeproctext]{ref-huangNotAllLanguages2023}
-Huang, H., Tang, T., Zhang, D., Zhao, X., Song, T., Xia, Y., \& Wei, F.
-(2023). Not {All Languages Are Created Equal} in {LLMs}: {Improving
-Multilingual Capability} by {Cross-Lingual-Thought Prompting}.
-\emph{Findings of the {Association} for {Computational Linguistics}:
-{EMNLP} 2023}, 12365--12394.
-\url{https://doi.org/10.18653/v1/2023.findings-emnlp.826}
 
 \bibitem[\citeproctext]{ref-klahnDictionariesLLMsEvaluation2025}
 Klähn, J., Borst-Graetz, J., \& Burghardt, M. (2025). From dictionaries
@@ -1548,13 +1499,6 @@ Lucas, C., Nielsen, R. A., Roberts, M. E., Stewart, B. M., Storer, A.,
 {Comparative Politics}. \emph{Political Analysis}, \emph{23}(2),
 254--277. \url{https://doi.org/10.1093/pan/mpu019}
 
-\bibitem[\citeproctext]{ref-maierMachineTranslationVs2022}
-Maier, D., Baden, C., Stoltenberg, D., De Vries-Kedem, M., \& Waldherr,
-A. (2022). Machine {Translation Vs}. {Multilingual Dictionaries
-Assessing Two Strategies} for the {Topic Modeling} of {Multilingual Text
-Collections}. \emph{Communication Methods and Measures}, \emph{16}(1),
-19--38. \url{https://doi.org/10.1080/19312458.2021.1955845}
-
 \bibitem[\citeproctext]{ref-mistralaiMistralNeMo2024}
 Mistral AI. (2024). \emph{Mistral {NeMo}}.
 \url{https://mistral.ai/news/mistral-nemo}
@@ -1578,18 +1522,6 @@ A., Raff, E., \& Raffel, C. (2023). Crosslingual {Generalization}
 through {Multitask Finetuning}. \emph{Proceedings of the 61st {Annual
 Meeting} of the {Association} for {Computational Linguistics} ({Volume}
 1: {Long Papers})}. \url{https://doi.org/10.18653/v1/2023.acl-long.891}
-
-\bibitem[\citeproctext]{ref-nguyen_etal26}
-Nguyen, T. T. N., Tieu, M. K., Riegler, M. A., Halvorsen, P., \& Nguyen,
-T. (2026). \emph{Investigating the {Influence} of {Prompt} and {Response
-Languages} on {LLM Content Generation}}. arXiv.
-\url{https://doi.org/10.48550/arXiv.2608.26186}
-
-\bibitem[\citeproctext]{ref-ollionDangersUsingProprietary2024}
-Ollion, É., Shen, R., Macanovic, A., \& Chatelain, A. (2024). The
-dangers of using proprietary {LLMs} for research. \emph{Nature Machine
-Intelligence}, \emph{6}(1), 4--5.
-\url{https://doi.org/10.1038/s42256-023-00783-6}
 
 \bibitem[\citeproctext]{ref-palmerUsingProprietaryLanguage2023}
 Palmer, A., Smith, N. A., \& Spirling, A. (2023). Using proprietary
@@ -1616,13 +1548,6 @@ E., \& Van Bavel, J. J. (2024). {GPT} is an effective tool for
 multilingual psychological text analysis. \emph{Proceedings of the
 National Academy of Sciences}, \emph{121}(34), e2308950121.
 \url{https://doi.org/10.1073/pnas.2308950121}
-
-\bibitem[\citeproctext]{ref-reberOvercomingLanguageBarriers2019}
-Reber, U. (2019). Overcoming {Language Barriers}: {Assessing} the
-{Potential} of {Machine Translation} and {Topic Modeling} for the
-{Comparative Analysis} of {Multilingual Text Corpora}.
-\emph{Communication Methods and Measures}, \emph{13}(2), 102--125.
-\url{https://doi.org/10.1080/19312458.2018.1555798}
 
 \bibitem[\citeproctext]{ref-richieInterannotatorAgreementNot2022}
 Richie, R., Grover, S., \& Tsui, F. (2022). Inter-annotator agreement is
