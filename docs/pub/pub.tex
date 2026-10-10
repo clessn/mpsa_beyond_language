@@ -966,9 +966,10 @@ sign). The dictionary and the model rank the articles very differently
 (r = 0.36 across articles, 0.42 across monthly means), and on 27\% of
 articles they disagree even on the sign. Because correlation ignores
 differences of scale, this is a disagreement about which articles are
-more positive than others, not about units. Which instrument is closer
-to human judgment is settled by the benchmark above, not by this
-comparison.
+more positive than others, not about units. The comparison cannot say
+which of the two is right, since neither is the ground truth. The
+benchmark can: against the human coders, the model reached r = 0.81 and
+the French dictionary 0.36.
 
 \begin{figure}[!htbp]
 
@@ -1039,17 +1040,17 @@ Human Judgments, by Model and Condition}{\label{fig-performance}}}}
 \pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_performance.png}}
 
 \vspace{-12pt}
-\noindent \emph{Note.} One~row per model, sorted by mean correlation
-within each group, and one bar per condition with its exact value.
-Reading the three bars of a row shows whether the condition mattered for
-that model; comparing rows ranks the models. Left panel: Pearson
-correlation with the mean of three human coders. Right panel: mean
-absolute error on the same scores. The dictionaries have no prompt: the
-French Lexicoder reads the original text and the English Lexicoder the
-translation, so each is shown under the matching condition. Llama 3.2 1B
-is omitted because it scored a different partial subset of sentences in
-each condition. Confidence intervals and the number of sentences scored
-are reported in the Appendix.
+\noindent \emph{Note.} One~row per model and condition, sorted by each
+model's mean correlation and colored by model type. Left panel: Pearson
+correlation between the model's scores and the mean of three human
+coders, with 95\% confidence intervals. Right panel: mean absolute
+error, the average distance between the model's score and the human
+score on the −1 to 1 scale, so that 0.17 means the model is typically
+0.17 points away from the human rating. Within each model, the
+conditions are FR→FR (French prompt on French text), EN→FR (English
+prompt on French text), and EN→EN (English prompt on translated text).
+\(^{*}p\) \textless{} .05, \(^{**}p\) \textless{} .01, \(^{***}p\)
+\textless{} .001.
 
 \end{figure}
 

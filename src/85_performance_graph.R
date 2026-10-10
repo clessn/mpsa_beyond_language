@@ -1,10 +1,9 @@
 #################################################################
-# PERFORMANCE GRAPH: BARS WITH EXACT VALUES
+# PERFORMANCE GRAPH: CORRELATION AND MAE SIDE BY SIDE
 #################################################################
-# One row per model, three bars per row (one per condition), the
-# exact value at the end of each bar. Left panel correlation, right
-# panel MAE. Bar length is the most direct encoding there is, and the
-# number removes any need to read the axis.
+# Replaces the separate correlation (src/60) and MAE (src/61) figures.
+# One row per model-condition combination, sorted once by mean
+# correlation; left panel Pearson r with 95% CI, right panel MAE.
 #
 # Title and note are set in the manuscript (APA figure caption and note).
 
@@ -15,82 +14,124 @@ source("src/94_models_map.R")
 
 df_raw <- readRDS("data/clean/cor_results.rds")
 
-# Llama 3.2 1B scored a different partial subset in each condition; it
-# stays in the appendix table only
 df <- df_raw %>%
-  filter(!grepl("^llama321b_", model)) %>%
   mutate(
     is_open_source = sapply(model, is_open_source),
     model_type = case_when(
       grepl("^lsd_", model) ~ "Dictionary",
+      is.na(is_open_source) ~ "Other",
       is_open_source ~ "Open weights",
-      TRUE ~ "Closed weights"
+      !is_open_source ~ "Closed weights"
     ),
+    model_name = ifelse(grepl("^lsd_", model), "dict",
+                        sub("_[a-z]{2}_[a-z]{2}$", "", model)),
     display_name = sapply(model, get_model_display_name, with_condition = FALSE),
-    row_label = case_when(
-      grepl("^lsd_fr", model) ~ "French Lexicoder",
-      grepl("^lsd_en", model) ~ "English Lexicoder",
-      TRUE ~ display_name
+    prompt_mechanism = case_when(
+      grepl("_en_fr$", model) ~ "EN→FR",
+      grepl("_fr_fr$", model) ~ "FR→FR",
+      grepl("_en_en$", model) ~ "EN→EN",
+      grepl("^lsd_fr", model) ~ "FR",
+      grepl("^lsd_en", model) ~ "EN",
+      TRUE ~ "Other"
     ),
-    condition = case_when(
-      grepl("_fr_fr$", model) | grepl("^lsd_fr", model) ~ "French text, French prompt",
-      grepl("_en_fr$", model) ~ "French text, English prompt",
-      grepl("_en_en$", model) | grepl("^lsd_en", model) ~ "Translated text, English prompt"
-    )
+    model_label = ifelse(
+      grepl("^lsd_", model), display_name,
+      paste0(display_name, " [", prompt_mechanism, "]",
+             ifelse(n_obs < max(n_obs), paste0(" (n = ", n_obs, ")"), ""))
+    ),
+    ci_half = 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
+    stars = ifelse(p_value < 0.001, "***",
+                   ifelse(p_value < 0.01, "**", ifelse(p_value < 0.05, "*", "")))
   )
 
-row_order <- df %>%
-  group_by(row_label) %>%
-  summarize(avg = mean(correlation), .groups = "drop") %>%
-  arrange(avg) %>%
-  pull(row_label)
+# Sort models by mean correlation across conditions, conditions in a fixed order
+model_order <- df %>%
+  group_by(model_name) %>%
+  summarize(avg = mean(abs_correlation, na.rm = TRUE)) %>%
+  arrange(desc(avg)) %>%
+  pull(model_name)
 
-cond_levels <- c("French text, French prompt", "French text, English prompt", "Translated text, English prompt")
-cond_colours <- c("French text, French prompt" = "#1B4F72",
-                  "French text, English prompt" = "#5DADE2",
-                  "Translated text, English prompt" = "#AEB6BF")
-
-PANEL_R   <- "Correlation (r), higher is better"
-PANEL_MAE <- "MAE, lower is better"
-
-long <- df %>%
-  select(row_label, model_type, condition, correlation, mae) %>%
-  pivot_longer(c(correlation, mae), names_to = "metric", values_to = "value") %>%
+df <- df %>%
   mutate(
-    metric = factor(ifelse(metric == "correlation", PANEL_R, PANEL_MAE), levels = c(PANEL_R, PANEL_MAE)),
-    label = ifelse(metric == PANEL_R, sprintf("%.2f", value), sprintf("%.3f", value)),
-    row_label = factor(row_label, levels = row_order),
-    model_type = factor(model_type, levels = c("Closed weights", "Open weights", "Dictionary")),
-    # reversed so that the first condition is drawn on top within each row
-    condition = factor(condition, levels = rev(cond_levels))
-  )
+    model_group = match(model_name, model_order),
+    cond_rank = match(prompt_mechanism, c("FR→FR", "EN→FR", "EN→EN", "FR", "EN"))
+  ) %>%
+  arrange(model_group, cond_rank) %>%
+  mutate(model_label_ordered = factor(model_label, levels = rev(unique(model_label))))
 
-p <- ggplot(long, aes(x = value, y = row_label, fill = condition)) +
-  geom_col(position = position_dodge2(width = 0.85, preserve = "single", reverse = FALSE),
-           width = 0.8) +
-  geom_text(aes(label = label),
-            position = position_dodge2(width = 0.85, preserve = "single", reverse = FALSE),
-            hjust = -0.15, size = 2.5, colour = "grey15") +
-  facet_grid(model_type ~ metric, scales = "free", space = "free_y", switch = "y") +
-  scale_fill_manual(values = cond_colours, breaks = cond_levels, name = NULL) +
-  scale_x_continuous(expand = expansion(mult = c(0, 0.18))) +
+# Alternating background bands, one per model
+bands <- df %>%
+  mutate(row = rev(seq_len(n()))) %>%
+  group_by(model_group) %>%
+  summarize(ymin = min(row) - 0.5, ymax = max(row) + 0.5) %>%
+  mutate(shade = ifelse(model_group %% 2 == 1, "a", "b"))
+
+PANEL_R   <- "Correlation with humans (r), higher is better"
+PANEL_MAE <- "Distance from humans (MAE), lower is better"
+
+long <- bind_rows(
+  df %>% transmute(model_label_ordered, model_type,
+                   panel = PANEL_R, value = correlation,
+                   lo = correlation - ci_half, hi = correlation + ci_half,
+                   label_x = hi + 0.03,
+                   label = sprintf("%.2f%s", correlation, stars)),
+  df %>% transmute(model_label_ordered, model_type,
+                   panel = PANEL_MAE, value = mae,
+                   lo = NA_real_, hi = NA_real_,
+                   label_x = mae + 0.02,
+                   label = sprintf("%.3f", mae))
+) %>%
+  mutate(panel = factor(panel, levels = c(PANEL_R, PANEL_MAE)))
+
+bands_long <- bind_rows(mutate(bands, panel = PANEL_R), mutate(bands, panel = PANEL_MAE)) %>%
+  mutate(panel = factor(panel, levels = c(PANEL_R, PANEL_MAE)))
+
+zero_line <- data.frame(panel = factor(PANEL_R, levels = c(PANEL_R, PANEL_MAE)), x = 0)
+arrows <- data.frame(
+  panel = factor(c(PANEL_R, PANEL_MAE), levels = c(PANEL_R, PANEL_MAE)),
+  x = c(1.0, 0.02), label = c("closer to humans \u2192", "\u2190 closer to humans")
+)
+
+p <- ggplot() +
+  geom_rect(data = bands_long,
+            aes(xmin = -Inf, xmax = Inf, ymin = ymin, ymax = ymax, fill = shade),
+            alpha = 0.5) +
+  geom_vline(data = zero_line, aes(xintercept = x),
+             linetype = "dotted", colour = "grey40", linewidth = 0.4) +
+  geom_errorbarh(data = filter(long, !is.na(lo)),
+                 aes(y = model_label_ordered, xmin = lo, xmax = hi, colour = model_type),
+                 height = 0.25) +
+  geom_point(data = long,
+             aes(x = value, y = model_label_ordered, colour = model_type), size = 2.6) +
+  geom_text(data = long,
+            aes(x = label_x, y = model_label_ordered, label = label),
+            hjust = 0, size = 2.6) +
+  geom_text(data = arrows, aes(x = x, y = 0.4, label = label),
+            hjust = c(1, 0), size = 2.7, colour = "grey35", fontface = "italic") +
+  scale_y_discrete(expand = expansion(add = c(1.1, 0.6))) +
+  facet_wrap(~ panel, scales = "free_x") +
+  scale_fill_manual(values = c(a = "grey95", b = "grey88"), guide = "none") +
+  scale_colour_manual(values = c("Open weights" = "#1F77B4",
+                                 "Closed weights" = "#D62728",
+                                 "Dictionary" = "#2CA02C",
+                                 "Other" = "#7F7F7F"),
+                      name = "Model type") +
   labs(x = NULL, y = NULL) +
-  guides(fill = guide_legend(nrow = 1)) +
   theme_minimal(base_size = 11) +
   theme(
     panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank(),
-    strip.text.x = element_text(face = "bold", hjust = 0, size = 9.5),
-    strip.text.y.left = element_text(face = "bold", angle = 0, hjust = 1, size = 9),
-    strip.placement = "outside",
-    axis.text.y = element_text(size = 9),
-    axis.text.x = element_text(size = 8.5),
+    strip.text = element_text(face = "bold", hjust = 0, size = 8.5),
+    axis.text.y = element_text(size = 7.5),
+    axis.text.x = element_text(size = 8),
     legend.position = "bottom",
-    legend.text = element_text(size = 8.5),
-    legend.key.size = unit(0.4, "cm"),
-    panel.spacing.x = unit(1.4, "lines"),
-    panel.spacing.y = unit(0.6, "lines"),
+    legend.title = element_text(size = 9),
+    legend.text = element_text(size = 8),
+    panel.spacing.x = unit(1.2, "lines"),
     plot.background = element_rect(fill = "white", colour = NA)
   )
 
-ggsave("results/graphs/model_performance.png", p, width = 8.3, height = 9.4, dpi = 300)
+# Room for the labels: extend each panel's x range past the last value
+p <- p + scale_x_continuous(expand = expansion(mult = c(0.05, 0.35)), breaks = seq(-0.5, 1, by = 0.25))
+
+ggsave("results/graphs/model_performance.png", p, width = 7.5, height = 8.8, dpi = 300)
