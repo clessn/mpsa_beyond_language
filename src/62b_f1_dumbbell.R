@@ -55,10 +55,11 @@ p <- ggplot(d, aes(y = name)) +
   theme_minimal(base_size = 12) +
   theme(panel.grid.minor = element_blank(),
         panel.grid.major.y = element_line(colour = "grey92"),
-        legend.position = "top",
+        legend.position = "bottom",
         legend.box = "vertical",
         legend.spacing.y = unit(0, "cm"),
-        legend.margin = margin(0, 0, 0, 0),
+        legend.margin = margin(4, 0, 0, 0),
+        legend.text = element_text(size = 9),
         axis.title.x = element_text(margin = margin(t = 8)),
         plot.margin = margin(5, 8, 14, 5),
         plot.background = element_rect(fill = "white", colour = NA))
