@@ -1,10 +1,10 @@
 #################################################################
-# PERFORMANCE GRAPH: SHADED TABLE OF r AND MAE
+# PERFORMANCE GRAPH: BARS WITH EXACT VALUES
 #################################################################
-# One row per model, one column per condition, the exact number in
-# every cell. Cells are shaded so that darker means better, for both
-# metrics (higher r, lower MAE). Read a row to see whether the
-# condition matters, a column to rank the models.
+# One row per model, three bars per row (one per condition), the
+# exact value at the end of each bar. Left panel correlation, right
+# panel MAE. Bar length is the most direct encoding there is, and the
+# number removes any need to read the axis.
 #
 # Title and note are set in the manuscript (APA figure caption and note).
 
@@ -32,12 +32,10 @@ df <- df_raw %>%
       grepl("^lsd_en", model) ~ "English Lexicoder",
       TRUE ~ display_name
     ),
-    # Dictionaries have no prompt: the French one reads the original text,
-    # the English one the translation, so they sit under those text columns
     condition = case_when(
-      grepl("_fr_fr$", model) | grepl("^lsd_fr", model) ~ "French text,\nFrench prompt",
-      grepl("_en_fr$", model) ~ "French text,\nEnglish prompt",
-      grepl("_en_en$", model) | grepl("^lsd_en", model) ~ "Translated text,\nEnglish prompt"
+      grepl("_fr_fr$", model) | grepl("^lsd_fr", model) ~ "French text, French prompt",
+      grepl("_en_fr$", model) ~ "French text, English prompt",
+      grepl("_en_en$", model) | grepl("^lsd_en", model) ~ "Translated text, English prompt"
     )
   )
 
@@ -47,47 +45,52 @@ row_order <- df %>%
   arrange(avg) %>%
   pull(row_label)
 
-cond_levels <- c("French text,\nFrench prompt", "French text,\nEnglish prompt", "Translated text,\nEnglish prompt")
+cond_levels <- c("French text, French prompt", "French text, English prompt", "Translated text, English prompt")
+cond_colours <- c("French text, French prompt" = "#1B4F72",
+                  "French text, English prompt" = "#5DADE2",
+                  "Translated text, English prompt" = "#AEB6BF")
+
+PANEL_R   <- "Correlation (r), higher is better"
+PANEL_MAE <- "MAE, lower is better"
 
 long <- df %>%
   select(row_label, model_type, condition, correlation, mae) %>%
   pivot_longer(c(correlation, mae), names_to = "metric", values_to = "value") %>%
-  group_by(metric) %>%
-  # Rank within each metric, 0 = worst, 1 = best, so one fill scale serves
-  # both metrics and a single outlier does not flatten the shading
-  mutate(goodness = if (first(metric) == "correlation") percent_rank(value)
-         else percent_rank(-value)) %>%
-  ungroup() %>%
   mutate(
-    metric = factor(ifelse(metric == "correlation",
-                           "Correlation with human judgments (r)",
-                           "Mean absolute error (MAE)"),
-                    levels = c("Correlation with human judgments (r)", "Mean absolute error (MAE)")),
-    label = ifelse(grepl("Correlation", metric), sprintf("%.2f", value), sprintf("%.3f", value)),
+    metric = factor(ifelse(metric == "correlation", PANEL_R, PANEL_MAE), levels = c(PANEL_R, PANEL_MAE)),
+    label = ifelse(metric == PANEL_R, sprintf("%.2f", value), sprintf("%.3f", value)),
     row_label = factor(row_label, levels = row_order),
     model_type = factor(model_type, levels = c("Closed weights", "Open weights", "Dictionary")),
-    condition = factor(condition, levels = cond_levels)
+    # reversed so that the first condition is drawn on top within each row
+    condition = factor(condition, levels = rev(cond_levels))
   )
 
-p <- ggplot(long, aes(x = condition, y = row_label, fill = goodness)) +
-  geom_tile(colour = "white", linewidth = 0.8) +
-  geom_text(aes(label = label, colour = goodness > 0.55), size = 3.1) +
+p <- ggplot(long, aes(x = value, y = row_label, fill = condition)) +
+  geom_col(position = position_dodge2(width = 0.85, preserve = "single", reverse = FALSE),
+           width = 0.8) +
+  geom_text(aes(label = label),
+            position = position_dodge2(width = 0.85, preserve = "single", reverse = FALSE),
+            hjust = -0.15, size = 2.5, colour = "grey15") +
   facet_grid(model_type ~ metric, scales = "free", space = "free_y", switch = "y") +
-  scale_fill_gradient(low = "#F1F6FB", high = "#1B4F72", guide = "none") +
-  scale_colour_manual(values = c(`TRUE` = "white", `FALSE` = "grey15"), guide = "none") +
-  scale_x_discrete(position = "top") +
+  scale_fill_manual(values = cond_colours, breaks = cond_levels, name = NULL) +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.18))) +
   labs(x = NULL, y = NULL) +
+  guides(fill = guide_legend(nrow = 1)) +
   theme_minimal(base_size = 11) +
   theme(
-    panel.grid = element_blank(),
-    strip.text.x = element_text(face = "bold", hjust = 0, size = 10),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    strip.text.x = element_text(face = "bold", hjust = 0, size = 9.5),
     strip.text.y.left = element_text(face = "bold", angle = 0, hjust = 1, size = 9),
     strip.placement = "outside",
     axis.text.y = element_text(size = 9),
-    axis.text.x.top = element_text(size = 8.5, lineheight = 0.9),
-    panel.spacing.x = unit(1.2, "lines"),
+    axis.text.x = element_text(size = 8.5),
+    legend.position = "bottom",
+    legend.text = element_text(size = 8.5),
+    legend.key.size = unit(0.4, "cm"),
+    panel.spacing.x = unit(1.4, "lines"),
     panel.spacing.y = unit(0.6, "lines"),
     plot.background = element_rect(fill = "white", colour = NA)
   )
 
-ggsave("results/graphs/model_performance.png", p, width = 8, height = 6.6, dpi = 300)
+ggsave("results/graphs/model_performance.png", p, width = 8.3, height = 9.4, dpi = 300)
