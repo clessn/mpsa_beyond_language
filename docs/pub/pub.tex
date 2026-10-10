@@ -960,11 +960,11 @@ Equivalence tests on all four metrics are reported in the text.
 The result holds at the scale of the corpus. Figure~\ref{fig-corpus}
 plots, for each of the 2,671 full articles with all three scores, the
 score GPT-5.6 Luna gave under the English prompt against the score it
-gave under the French prompt (panel A), and the French Lexicoder score
-against the French-prompt score (panel B). The two prompt languages
-agree almost perfectly (r = 0.97; 94\% of articles received the same
-sign). The dictionary and the model rank the articles very differently
-(r = 0.36 across articles, 0.42 across monthly means), and on 27\% of
+gave under the French prompt (left), and the French Lexicoder score
+against the French-prompt score (right). The two prompt languages agree
+almost perfectly (r = 0.97; 94\% of articles received the same sign).
+The dictionary and the model rank the articles very differently (r =
+0.36 across articles, 0.42 across monthly means), and on 27\% of
 articles they disagree even on the sign. Because correlation ignores
 differences of scale, this is a disagreement about which articles are
 more positive than others, not about units. The comparison cannot say
@@ -982,11 +982,14 @@ Article}{\label{fig-corpus}}}}
 \vspace{-12pt}
 \noindent \emph{Note.} Each~cell covers a 0.1 by 0.1 range of scores and
 is shaded by the number of articles it contains (n = 2,671). The
-horizontal axis is the GPT-5.6 Luna score under the French prompt. Panel
-A plots the same model's score under the English prompt, with the
-identity line dashed. Panel B plots the French Lexicoder score on the
-original text. All scores run from −1 (very negative) to 1 (very
-positive).
+horizontal axis is the GPT-5.6 Luna score under the French prompt. Left:
+the same model's score under the English prompt, with the identity line
+dashed (r = 0.97; the two prompts give the same sign on 94\% of
+articles). Right: the French Lexicoder score on the original text (r =
+0.36; the dictionary and the model give the same sign on 66\% of
+articles and opposite signs on 28\%, the remainder being articles that
+one of the two scores exactly zero). All scores run from −1 (very
+negative) to 1 (very positive).
 
 \end{figure}
 

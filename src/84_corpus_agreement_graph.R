@@ -35,8 +35,8 @@ cat(sprintf("n = %d | r prompt = %.3f | same sign = %.1f%% | r dictionary = %.3f
 cat(sprintf("SD model FR = %.3f | SD dictionary = %.3f | dictionary range = [%.2f, %.2f]\n",
             sd(df$llm_fr_fr), sd(df$fr_tone_index), min(df$fr_tone_index), max(df$fr_tone_index)))
 
-PANEL_A <- paste0("A. ", MODEL_NAME, ", English prompt")
-PANEL_B <- "B. French Lexicoder dictionary"
+PANEL_A <- paste0(MODEL_NAME, ", English prompt")
+PANEL_B <- "French Lexicoder dictionary"
 
 long <- df %>%
   select(llm_fr_fr, llm_en_fr, fr_tone_index) %>%
@@ -62,15 +62,14 @@ p <- ggplot(long, aes(x = llm_fr_fr, y = y)) +
                       breaks = c(1, 10, 50, 150)) +
   geom_abline(data = identity_line, aes(slope = 1, intercept = 0),
               linetype = "dashed", colour = "grey30", linewidth = 0.4) +
-  geom_text(data = labels, aes(x = -0.95, y = Inf, label = label),
-            hjust = 0, vjust = 1.4, size = 3.4, colour = "grey20", lineheight = 0.95) +
-  facet_wrap(~ panel, scales = "free_y") +
+  facet_wrap(~ panel, scales = "free_y", strip.position = "left") +
   scale_x_continuous(limits = c(-1, 1), breaks = seq(-1, 1, by = 0.5)) +
   labs(x = paste0(MODEL_NAME, ", French prompt"), y = NULL) +
   theme_minimal(base_size = 12) +
   theme(
     panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold", hjust = 0),
+    strip.text.y.left = element_text(angle = 90, size = 11, face = "plain"),
+    strip.placement = "outside",
     plot.background = element_rect(fill = "white", colour = NA),
     panel.spacing.x = unit(1.5, "lines"),
     legend.position = "bottom",
