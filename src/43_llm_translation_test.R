@@ -19,6 +19,9 @@ source("src/92_llm_helper_funcs.R")
 
 OUT_DIR <- "data/tmp/llm_translation"; dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 N_RUNS <- 3; MAX_RETRIES <- 3; OUTPUT_MAX_TOKENS <- 400
+# OpenRouter throttles heavily: one run for the models it serves (a robustness
+# check; run-to-run reliability is r = 0.91 in the main pipeline), three for the rest
+N_RUNS_OPENROUTER <- as.integer(Sys.getenv("N_RUNS_OPENROUTER", "1"))
 df <- readRDS("data/clean/df.rds") %>% select(doc_id, sentences, sentences_en, ground_truth)
 
 # ---- 1. Translate with GPT-5.6 Luna --------------------------------------
@@ -53,12 +56,20 @@ if (nzchar(Sys.getenv("ANTHROPIC_API_KEY")))
 if (nzchar(Sys.getenv("GEMINI_API_KEY")) || nzchar(Sys.getenv("GOOGLE_API_KEY")))
   clients$gemini35 <- chat_google_gemini(system_prompt = system_prompt, model = unname(model_mapping["gemini35"]),
                                          params = params(max_tokens = OUTPUT_MAX_TOKENS), echo = "none")
+# SKIP_MODELS: comma-separated prefixes to leave for a later run (e.g. a
+# provider whose shared pool is saturated). FALLBACK_MODELS: prefixes for which
+# the provider pin is relaxed (allow_fallbacks = TRUE), to be stated in the
+# manuscript if used.
+skip_models <- strsplit(Sys.getenv("SKIP_MODELS", ""), ",")[[1]]
+fallback_models <- strsplit(Sys.getenv("FALLBACK_MODELS", ""), ",")[[1]]
 if (nzchar(Sys.getenv("OPENROUTER_API_KEY"))) {
   for (prefix in names(model_provider_pin)) {
-    if (prefix == "llama321b") next
+    if (prefix == "llama321b" || prefix %in% skip_models) next
+    args <- openrouter_args(prefix)
+    if (prefix %in% fallback_models) { args$provider$allow_fallbacks <- TRUE; cat("provider pin relaxed for", prefix, "\n") }
     clients[[prefix]] <- chat_openrouter(system_prompt = system_prompt, model = unname(model_mapping[prefix]),
                                          params = params(max_tokens = OUTPUT_MAX_TOKENS),
-                                         api_args = openrouter_args(prefix), echo = "none")
+                                         api_args = args, echo = "none")
   }
 }
 cat("Models to score:", paste(names(clients), collapse = ", "), "\n")
@@ -67,7 +78,8 @@ cat("Models to score:", paste(names(clients), collapse = ", "), "\n")
 score_file <- file.path(OUT_DIR, "scores_en_llm.rds")
 scores <- if (file.exists(score_file)) readRDS(score_file) else data.frame(doc_id = df$doc_id)
 for (m in names(clients)) {
-  for (run in seq_len(N_RUNS)) {
+  n_runs_m <- if (m %in% names(model_provider_pin)) N_RUNS_OPENROUTER else N_RUNS
+  for (run in seq_len(n_runs_m)) {
     col <- sprintf("%s_en_llm_run%d", m, run)
     if (col %in% names(scores) && all(!is.na(scores[[col]]))) next
     if (!col %in% names(scores)) scores[[col]] <- NA_real_
@@ -83,7 +95,7 @@ for (m in names(clients)) {
         attempt <- attempt + 1
       }
       scores[[col]][i] <- value
-      Sys.sleep(1)
+      Sys.sleep(ifelse(m %in% names(model_provider_pin), 1.5, 1))
     }
     saveRDS(scores, score_file)
   }
@@ -99,7 +111,8 @@ f1_3 <- function(pred, truth) {
 }
 full <- readRDS("data/clean/df.rds")
 res <- lapply(names(clients), function(m) {
-  runs <- scores[, sprintf("%s_en_llm_run%d", m, 1:N_RUNS), drop = FALSE]
+  runs <- scores[, intersect(sprintf("%s_en_llm_run%d", m, 1:N_RUNS), names(scores)), drop = FALSE]
+  runs <- runs[, colSums(!is.na(runs)) > 0, drop = FALSE]
   llm <- rowMeans(runs, na.rm = TRUE); llm[is.nan(llm)] <- NA
   conds <- list(`EN prompt, French original` = full[[paste0(m, "_en_fr")]],
                 `EN prompt, Google translation` = full[[paste0(m, "_en_en")]],

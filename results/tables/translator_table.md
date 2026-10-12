@@ -1,11 +1,15 @@
-| Model | Text analyzed | r | MAE | F1 (3 categories) |
-|:------------------|:------------------------|-----:|------:|------:|
-| GPT-5.6 Luna | French original | 0.80 | 0.165 | 0.733 |
-| GPT-5.6 Luna | Google Translate | 0.73 | 0.176 | 0.695 |
-| GPT-5.6 Luna | GPT-5.6 Luna translation | 0.80 | 0.167 | 0.729 |
-| Claude Haiku 4.5 | French original | 0.78 | 0.185 | 0.715 |
-| Claude Haiku 4.5 | Google Translate | 0.71 | 0.182 | 0.671 |
-| Claude Haiku 4.5 | GPT-5.6 Luna translation | 0.75 | 0.183 | 0.692 |
-| Gemini 3.5 Flash | French original | 0.77 | 0.156 | 0.616 |
-| Gemini 3.5 Flash | Google Translate | 0.76 | 0.168 | 0.603 |
-| Gemini 3.5 Flash | GPT-5.6 Luna translation | 0.79 | 0.166 | 0.595 |
+| Model | r, original | r, Google | r, LLM | F1, original | F1, Google | F1, LLM |
+|:------------------|------:|------:|------:|------:|------:|------:|
+| GPT-5.6 Luna | 0.80 | 0.73 | 0.80 | 0.73 | 0.69 | 0.73 |
+| Claude Haiku 4.5 | 0.78 | 0.71 | 0.75 | 0.72 | 0.67 | 0.69 |
+| Gemini 3.5 Flash | 0.77 | 0.76 | 0.79 | 0.62 | 0.60 | 0.59 |
+| Qwen3 235B-A22B | 0.75 | 0.68 | 0.74 | 0.68 | 0.60 | 0.63 |
+| GPT-OSS 120B | 0.74 | 0.73 | 0.72 | 0.67 | 0.57 | 0.55 |
+| GPT-OSS 20B | 0.72 | 0.70 | 0.65 | 0.66 | 0.60 | 0.51 |
+| Mistral Small 3.2 | 0.73 | 0.67 | 0.65 | 0.71 | 0.69 | 0.66 |
+| DeepSeek V3.2 | 0.74 | 0.68 | 0.76 | 0.69 | 0.63 | 0.61 |
+| Mistral Large 4 | 0.71 | 0.69 | 0.70 | 0.61 | 0.62 | 0.61 |
+| Qwen3 32B | 0.69 | 0.64 | 0.64 | 0.57 | 0.51 | 0.48 |
+| Llama 4 Scout | 0.66 | 0.62 | 0.67 | 0.68 | 0.64 | 0.66 |
+| Llama 3.1 8B | 0.60 | 0.57 | 0.56 | 0.62 | 0.62 | 0.59 |
+| Llama 3.2 3B | 0.13 | 0.30 | 0.43 | 0.48 | 0.52 | 0.57 |
