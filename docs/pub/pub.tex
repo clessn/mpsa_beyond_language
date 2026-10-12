@@ -1294,12 +1294,19 @@ words in 34\% of cases (45\% for the English dictionary on the
 translations), against 5\% of the full articles. The sentence-level
 comparison therefore favors the LLMs over the dictionaries, and the
 corpus-level comparison cannot settle the matter because it has no human
-ground truth at the article level. Only two sentences fall in the very
-negative category and one in the very positive, so class-level F1 scores
-for these categories are unstable. The findings concern French only. The
-corpus is French-language news on a single domain, open-source software.
-Neither the absence of a prompt-language effect nor the cost of
-translation can be assumed to extend to other languages or genres.
+ground truth at the article level. Even on their own ground, the
+article, the dictionaries' agreement with human coding is modest: the
+manual coding explained 14\% of the variance of the English Lexicoder's
+tone in its validation (\citeproc{ref-young_andsoroka12}{Young \&
+Soroka, 2012}) and 6\% of the French Lexicoder's in its own
+(\citeproc{ref-duval_petry16}{Duval \& Pétry, 2016}), which corresponds
+to correlations of about 0.4 and 0.25, in the range observed here at the
+sentence level. Only two sentences fall in the very negative category
+and one in the very positive, so class-level F1 scores for these
+categories are unstable. The findings concern French only. The corpus is
+French-language news on a single domain, open-source software. Neither
+the absence of a prompt-language effect nor the cost of translation can
+be assumed to extend to other languages or genres.
 
 Methodologically, the EN→EN condition relies on Google Translate, and
 translation quality was deliberately not validated. The condition
