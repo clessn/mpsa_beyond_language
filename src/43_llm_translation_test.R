@@ -12,7 +12,7 @@
 # Output: data/tmp/llm_translation/ (translations, scores, checkpoints)
 #         results/analysis/llm_translation_test.rds
 
-suppressMessages({library(dplyr); library(stringr); library(ellmer)})
+suppressMessages({library(dplyr); library(tidyr); library(stringr); library(ellmer)})
 source("src/93_prompts.R")
 source("src/94_models_map.R")
 source("src/92_llm_helper_funcs.R")
@@ -128,14 +128,20 @@ print(res, digits = 3, row.names = FALSE)
 saveRDS(list(results = res, translations = df$sentences_en_llm), "results/analysis/llm_translation_test.rds")
 cat("Saved: results/analysis/llm_translation_test.rds\n")
 
-# ---- 5. Table for the manuscript -----------------------------------------
-tbl <- res %>%
-  mutate(condition = recode(condition,
-                            `EN prompt, French original` = "French original",
-                            `EN prompt, Google translation` = "Google Translate",
-                            `EN prompt, GPT-5.6 Luna translation` = "GPT-5.6 Luna translation"))
-lines <- c("| Model | Text analyzed | r | MAE | F1 (3 categories) |",
-           "|:------------------|:------------------------|-----:|------:|------:|",
-           sprintf("| %s | %s | %.2f | %.3f | %.3f |", tbl$model, tbl$condition, tbl$r, tbl$mae, tbl$f1_3))
+# ---- 5. Table for the manuscript: one row per model, wide ----------------
+order <- c("GPT-5.6 Luna", "Claude Haiku 4.5", "Gemini 3.5 Flash", "Qwen3 235B-A22B", "GPT-OSS 120B",
+           "GPT-OSS 20B", "Mistral Small 3.2", "DeepSeek V3.2", "Mistral Large 4", "Qwen3 32B",
+           "Llama 4 Scout", "Llama 3.1 8B", "Llama 3.2 3B")
+wt <- res %>%
+  mutate(cond = recode(condition, `EN prompt, French original` = "orig",
+                       `EN prompt, Google translation` = "google",
+                       `EN prompt, GPT-5.6 Luna translation` = "llm")) %>%
+  select(model, cond, r, f1_3) %>%
+  pivot_wider(names_from = cond, values_from = c(r, f1_3)) %>%
+  mutate(model = factor(model, levels = order)) %>% arrange(model)
+lines <- c("| Model | r, original | r, Google | r, LLM | F1, original | F1, Google | F1, LLM |",
+           "|:------------------|------:|------:|------:|------:|------:|------:|",
+           sprintf("| %s | %.2f | %.2f | %.2f | %.2f | %.2f | %.2f |",
+                   wt$model, wt$r_orig, wt$r_google, wt$r_llm, wt$f1_3_orig, wt$f1_3_google, wt$f1_3_llm))
 writeLines(lines, "results/tables/translator_table.md")
 cat("Wrote results/tables/translator_table.md\n")
