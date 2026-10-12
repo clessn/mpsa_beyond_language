@@ -752,12 +752,12 @@ proprietary GPT models
 2023}; \citeproc{ref-heseltineLargeLanguageModels2024}{Heseltine \&
 Clemm Von Hohenberg, 2024};
 \citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024};
-\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}). Three
-further models test specific claims. Mistral AI, a French developer,
-describes its models as particularly strong in French. It also reports
-that its Tekken tokenizer compresses French text about 30\% more
-efficiently than its earlier tokenizer
-(\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI, 2024}). Two Mistral
+\citeproc{ref-tornbergLargeLanguageModels2025}{T"ornberg, 2025}). Two
+further models test a specific claim. Mistral AI, a French developer,
+describes its models as particularly strong in French and reports that
+its Tekken tokenizer compresses French text about 30\% more efficiently
+than its earlier tokenizer
+(\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI, 2024}); two Mistral
 models test both claims.
 
 The ten open-weight models are Llama 3.2 1B, Llama 3.2 3B, Llama 3.1 8B,
@@ -954,20 +954,20 @@ room for a French-prompt advantage of up to 0.066, but not for an
 English-prompt advantage larger than 0.024. The results contradict H1a
 and support H1b on three of four metrics.
 
-The result holds at the scale of the corpus. Figure~\ref{fig-corpus}
-plots, for each of the 2,671 full articles with all three scores, the
-score GPT-5.6 Luna gave under the English prompt against the score it
-gave under the French prompt (left), and the French Lexicoder score
-against the French-prompt score (right). The two prompt languages agree
-almost perfectly (r = 0.97; 94\% of articles received the same sign),
-and Jev shows the same on the same articles (r = 0.997; 98\% the same
-sign). The dictionary and the model rank the articles very differently
-(r = 0.36 across articles, 0.42 across monthly means), and on 27\% of
-articles they disagree even on the sign.\footnote{Correlation ignores
-  differences of scale, so this is a disagreement about which articles
-  are more positive than others, not about units.} The comparison cannot
-say which of the two is right, since neither is the ground truth; the
-benchmark results below can.
+The equivalence holds at the scale of the corpus.
+Figure~\ref{fig-corpus} plots, for each of the 2,671 full articles with
+all three scores, the score GPT-5.6 Luna gave under the English prompt
+against the score it gave under the French prompt (left), and the French
+Lexicoder score against the French-prompt score (right). The two prompt
+languages agree almost perfectly (r = 0.97; 94\% of articles received
+the same sign), and Jev shows the same on the same articles (r = 0.997;
+98\% the same sign). The dictionary and the model rank the articles very
+differently (r = 0.36 across articles, 0.42 across monthly means), and
+on 27\% of articles they disagree even on the sign.\footnote{Correlation
+  ignores differences of scale, so this is a disagreement about which
+  articles are more positive than others, not about units.} The
+comparison cannot say which of the two is right, since neither is the
+ground truth; the benchmark results below can.
 
 \begin{figure}[!htbp]
 
@@ -1281,12 +1281,16 @@ recommendations, but agreement between individual coders was moderate
 raise the risk of misjudging automated methods
 (\citeproc{ref-songValidationsWeTrust2020}{Song et al., 2020}). The
 coders were members of the research team rather than external
-annotators. The benchmark is also made of sentences. The sentence was
-chosen as the unit because it carries a single sentiment that coders can
-judge precisely, whereas an article mixes several and a human rating of
-its overall tone is coarser. But both Lexicoder dictionaries were
-validated against human coding of the tone of whole articles, read in
-full (\citeproc{ref-duval_petry16}{Duval \& Pétry, 2016};
+annotators. Only two sentences fall in the very negative category and
+one in the very positive, so class-level F1 scores for these categories
+are unstable.
+
+The benchmark is also made of sentences. The sentence was chosen as the
+unit because it carries a single sentiment that coders can judge
+precisely, whereas an article mixes several and a human rating of its
+overall tone is coarser. But both Lexicoder dictionaries were validated
+against human coding of the tone of whole articles, read in full
+(\citeproc{ref-duval_petry16}{Duval \& Pétry, 2016};
 \citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}), and a
 dictionary counts words, so the fewer the words, the less it has to
 count: on the 200 sentences, the French dictionary found none of its
@@ -1301,12 +1305,12 @@ tone in its validation (\citeproc{ref-young_andsoroka12}{Young \&
 Soroka, 2012}) and 6\% of the French Lexicoder's in its own
 (\citeproc{ref-duval_petry16}{Duval \& Pétry, 2016}), which corresponds
 to correlations of about 0.4 and 0.25, in the range observed here at the
-sentence level. Only two sentences fall in the very negative category
-and one in the very positive, so class-level F1 scores for these
-categories are unstable. The findings concern French only. The corpus is
-French-language news on a single domain, open-source software. Neither
-the absence of a prompt-language effect nor the cost of translation can
-be assumed to extend to other languages or genres.
+sentence level.
+
+The findings concern French only. The corpus is French-language news on
+a single domain, open-source software. Neither the absence of a
+prompt-language effect nor the cost of translation can be assumed to
+extend to other languages or genres.
 
 Methodologically, the EN→EN condition relies on Google Translate, and
 translation quality was deliberately not validated. The condition
