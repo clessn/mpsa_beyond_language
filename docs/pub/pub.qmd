@@ -181,7 +181,7 @@ The ten open-weight models are Llama 3.2 1B, Llama 3.2 3B, Llama 3.1 8B, GPT-OSS
 
 Each model was tested under three conditions: French prompts on French text (FR→FR), English prompts on French text (EN→FR), and English prompts on the machine-translated English text (EN→EN).
 
-All prompts followed the same structure: a task definition, a five-point sentiment scale from -1.0 to 1.0 with anchor descriptions and intermediate values allowed, an instruction to consider cultural and linguistic nuance, and a constraint to respond with a numerical value only. French prompts were direct translations of the English prompts. @tbl-prompt shows the English-prompt/French-text version.^[The French-prompt/French-text version is identical except for language. See `src/93_prompts.R` in the project repository for the exact prompts, and `src/40_prompt.R` for the full evaluation pipeline, including model initialization, retry logic, rate limiting, and checkpointing.]
+All prompts followed the same structure: a task definition, a five-point sentiment scale from -1.0 to 1.0 with anchor descriptions and intermediate values allowed, an instruction to consider cultural and linguistic nuance, and a constraint to respond with a numerical value only. The French prompts were translated from the English prompts by an LLM (Claude) and checked by the three coders, all native French speakers. @tbl-prompt shows the English-prompt/French-text version.^[The French-prompt/French-text version is identical except for language. See `src/93_prompts.R` in the project repository for the exact prompts, and `src/40_prompt.R` for the full evaluation pipeline, including model initialization, retry logic, rate limiting, and checkpointing.]
 
 ::: {#tbl-prompt}
 
