@@ -114,3 +114,15 @@ res <- lapply(names(clients), function(m) {
 print(res, digits = 3, row.names = FALSE)
 saveRDS(list(results = res, translations = df$sentences_en_llm), "results/analysis/llm_translation_test.rds")
 cat("Saved: results/analysis/llm_translation_test.rds\n")
+
+# ---- 5. Table for the manuscript -----------------------------------------
+tbl <- res %>%
+  mutate(condition = recode(condition,
+                            `EN prompt, French original` = "French original",
+                            `EN prompt, Google translation` = "Google Translate",
+                            `EN prompt, GPT-5.6 Luna translation` = "GPT-5.6 Luna translation"))
+lines <- c("| Model | Text analyzed | r | MAE | F1 (3 categories) |",
+           "|:------------------|:------------------------|-----:|------:|------:|",
+           sprintf("| %s | %s | %.2f | %.3f | %.3f |", tbl$model, tbl$condition, tbl$r, tbl$mae, tbl$f1_3))
+writeLines(lines, "results/tables/translator_table.md")
+cat("Wrote results/tables/translator_table.md\n")
