@@ -18,6 +18,7 @@ source("src/94_models_map.R")
 source("src/92_llm_helper_funcs.R")
 
 OUT_DIR <- "data/tmp/llm_translation"; dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
+RAW_RESPONSE_LOG_PATH <- "results/analysis/raw_responses_llm_translation.jsonl"
 N_RUNS <- 3; MAX_RETRIES <- 3; OUTPUT_MAX_TOKENS <- 400
 # OpenRouter throttles heavily: one run for the models it serves (a robustness
 # check; run-to-run reliability is r = 0.91 in the main pipeline), three for the rest
@@ -91,7 +92,12 @@ for (m in names(clients)) {
         clients[[m]]$set_turns(list())
         response <- tryCatch(clients[[m]]$chat(en_prompt_en_text(df$sentences_en_llm[i])),
                              error = function(e) { Sys.sleep(10); NULL })
-        if (!is.null(response)) value <- clean_sentiment_value(response)
+        if (!is.null(response)) {
+          value <- clean_sentiment_value(response)
+          log_raw_response(RAW_RESPONSE_LOG_PATH, model_prefix = m, condition = "en_llm",
+                           item = i, run = run, attempt = attempt,
+                           doc_id = df$doc_id[i], response = response, parsed = value)
+        }
         attempt <- attempt + 1
       }
       scores[[col]][i] <- value

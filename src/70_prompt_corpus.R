@@ -77,6 +77,7 @@ OUTPUT_PATH <- "data/clean/news_df_sentiment_corpus.rds"
 # default log by model, and these article-length calls would otherwise be
 # folded into the per-sentence cost table.
 CORPUS_TOKEN_LOG_PATH <- "results/analysis/token_usage_log_corpus.csv"
+CORPUS_RAW_RESPONSE_LOG_PATH <- "results/analysis/raw_responses_corpus.jsonl"
 init_token_log(CORPUS_TOKEN_LOG_PATH)
 
 #------------------------------------------------------------------------------
@@ -240,6 +241,9 @@ score_corpus <- function(data, prompt_lang) {
       Sys.sleep(1)  # pacing
 
       extracted <- clean_sentiment_value(response)
+      log_raw_response(path = CORPUS_RAW_RESPONSE_LOG_PATH, model_prefix = MODEL_PREFIX,
+                       condition = condition, item = i, run = 1, attempt = attempt,
+                       doc_id = data$doc_id[i], response = response, parsed = extracted)
       is_valid <- !is.na(extracted) && extracted >= -1 && extracted <= 1
 
       # Every attempt is logged, including failed ones: providers bill them

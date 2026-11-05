@@ -71,6 +71,10 @@ source("src/95_token_logging.R")
 init_token_log()
 check_price_coverage()
 
+# Raw text of every model answer, with the value parsed from it (one JSON
+# object per line), so parsing can be audited and redone without new calls.
+RAW_RESPONSE_LOG_PATH <- "results/analysis/raw_responses.jsonl"
+
 # Load the original dataset containing sentences for sentiment analysis
 # This dataset contains French sentences and their English translations
 df_raw <- readRDS("data/tmp/data_manual_ranking.rds")
@@ -237,6 +241,14 @@ run_sentiment_analysis <- function(model_client, model_name_prefix, prompt_type,
         
         # Extract numerical sentiment value from the model's response
         extracted_value <- clean_sentiment_value(response)
+        log_raw_response(
+          path         = RAW_RESPONSE_LOG_PATH,
+          model_prefix = model_name_prefix,
+          condition    = paste0(prompt_type, "_",
+                                ifelse(text_field == "sentences", "fr", "en")),
+          item = i, run = run, attempt = attempt,
+          doc_id = df$doc_id[i], response = response, parsed = extracted_value
+        )
         
         # Record this call. Every attempt gets its own row, including failed
         # ones: providers bill retries, so excluding them would understate cost.

@@ -68,40 +68,89 @@ retry_with_backoff <- function(expr, max_attempts = 5, base_delay = 1, max_delay
 # 3. RESPONSE PROCESSING
 #==============================================================================
 
-#' Clean sentiment value from LLM response
+#' Read the sentiment score out of an LLM's text answer
+#'
+#' The rule, in one sentence: an answer is accepted only if it contains exactly
+#' one number, or exactly one number right after a label such as "Score:";
+#' that number must lie in [-1, 1]. Anything else (no number, several
+#' unlabelled numbers, out of range) returns NA, and the caller asks the
+#' model again.
+#'
+#' Before looking for numbers, the text is normalized so that common
+#' formatting does not change the value:
+#'   - the minus sign is kept, including the Unicode minus (U+2212) and dashes
+#'     used as minus signs (U+2013, U+2014);
+#'   - a French decimal comma ("-0,5") is read as a decimal point;
+#'   - Markdown emphasis and code marks (*, _, `) are removed.
+#'
+#' This replaces the parser used until November 2026, which dropped the minus
+#' sign whenever a number was preceded by a space, colon or asterisk
+#' ("Sentiment: -0.5" was read as 0.5) and read "-0,5" as 0. See
+#' tests/test_clean_sentiment_value.R for the cases checked.
 #'
 #' @param response Text response from LLM
-#' @return Cleaned numeric sentiment value
+#' @return Numeric score in [-1, 1], or NA if the answer is not usable
 clean_sentiment_value <- function(response) {
-  # Try to extract value with common patterns
-  patterns <- c(
-    "^\\s*(-?\\d+\\.?\\d*)\\s*$",                        # Just a number
-    "\\b(-?\\d+\\.?\\d*)\\b",                            # Number with word boundaries
-    "(-?\\d+\\.?\\d*)/\\d+",                             # Fractions
-    "^\\s*Sentiment:\\s*(-?\\d+\\.?\\d*)",               # With "Sentiment:" prefix
-    "^\\s*Rating:\\s*(-?\\d+\\.?\\d*)",                  # With "Rating:" prefix
-    "^\\s*Score:\\s*(-?\\d+\\.?\\d*)",                   # With "Score:" prefix
-    "^\\s*Value:\\s*(-?\\d+\\.?\\d*)",                   # With "Value:" prefix
-    "^\\s*sentiment score\\s*[=:]\\s*(-?\\d+\\.?\\d*)",  # With "sentiment score" prefix
-    "^\\s*sentiment\\s*[=:]\\s*(-?\\d+\\.?\\d*)"         # With "sentiment" prefix
-  )
-  
-  for (pattern in patterns) {
-    match <- str_extract(response, pattern)
-    if (!is.na(match)) {
-      # Extract the first capturing group which should be the numeric value
-      numeric_match <- str_extract(match, "-?\\d+\\.?\\d*")
-      value <- as.numeric(numeric_match)
-      
-      # Validate the value is within the expected range
-      if (!is.na(value) && value >= -1 && value <= 1) {
-        return(value)
-      }
-    }
+  if (is.null(response) || length(response) != 1 || is.na(response)) return(NA_real_)
+  text <- as.character(response)
+
+  # 1. Normalize: minus signs, Markdown marks, decimal commas
+  text <- gsub("[−–—]", "-", text)
+  text <- gsub("[*_`]", "", text)
+  text <- gsub("(\\d),(\\d)", "\\1.\\2", text)
+
+  # 2. Every number in the answer, with its sign. A sign counts only when it
+  #    is not glued to a preceding letter or digit (so "GPT-5" gives 5, not -5).
+  number <- "(?<![\\w.])[-+]?(?:\\d+(?:\\.\\d+)?|\\.\\d+)"
+  numbers <- regmatches(text, gregexpr(number, text, perl = TRUE))[[1]]
+
+  # 3. One number: take it. Several: accept only a single labelled one.
+  if (length(numbers) == 1) {
+    candidate <- numbers
+  } else if (length(numbers) > 1) {
+    label <- paste0("(?i)(?:sentiment(?:\\s+score)?|score|rating|value|note|",
+                    "valeur|[ée]valuation|r[ée]ponse)\\s*[:=]\\s*(", number, ")")
+    labelled <- regmatches(text, gregexpr(label, text, perl = TRUE))[[1]]
+    if (length(labelled) != 1) return(NA_real_)
+    candidate <- regmatches(labelled, regexpr(number, labelled, perl = TRUE))
+  } else {
+    return(NA_real_)
   }
-  
-  # If no valid match found, return NA
-  return(NA_real_)
+
+  # 4. Range check
+  value <- suppressWarnings(as.numeric(candidate))
+  if (is.na(value) || value < -1 || value > 1) return(NA_real_)
+  value
+}
+
+#' Append one model answer, as returned, to a JSON-lines archive
+#'
+#' Every API call is archived with the raw text and the value the parser read
+#' from it, so that parsing can be audited and redone without new API calls.
+#' Fails soft: an archiving error never stops a scoring run.
+#'
+#' @param path File to append to (one JSON object per line)
+#' @param model_prefix,condition,item,run,attempt Identify the call
+#' @param doc_id Identifier of the sentence or article scored
+#' @param response Raw text returned by the model
+#' @param parsed Value returned by clean_sentiment_value() (NA if rejected)
+log_raw_response <- function(path, model_prefix, condition, item, run, attempt,
+                             doc_id, response, parsed) {
+  tryCatch({
+    record <- list(
+      timestamp = format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
+      model_prefix = model_prefix,
+      model_id = if (exists("model_mapping") && model_prefix %in% names(model_mapping))
+        unname(model_mapping[model_prefix]) else NA_character_,
+      condition = condition, item = item, run = run, attempt = attempt,
+      doc_id = as.character(doc_id),
+      response = as.character(response),
+      parsed = parsed
+    )
+    line <- jsonlite::toJSON(record, auto_unbox = TRUE, na = "null")
+    cat(line, "\n", file = path, sep = "", append = TRUE)
+    invisible(TRUE)
+  }, error = function(e) invisible(FALSE))
 }
 
 #==============================================================================
