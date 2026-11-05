@@ -2,8 +2,10 @@
 # FRENCH TO ENGLISH TRANSLATION WORKFLOW
 #################################################################
 # This script facilitates the translation of French news articles to English
-# using DeepL. It works in two phases:
-# 1. Creating batch Word documents for upload to DeepL
+# using Google Translate's document translation (the corpus was translated
+# with Google, as reported in the manuscript; earlier versions of these
+# comments said DeepL). It works in two phases:
+# 1. Creating batch Word documents for upload to Google Translate
 # 2. Processing the translated documents and integrating translations back into the dataset
 
 # Load necessary libraries
@@ -79,7 +81,7 @@ for (batch_num in 1:num_batches) {
 #################################################################
 # Display instructions for the manual translation step
 cat("\n=== NEXT STEPS ===\n")
-cat("1. Upload each Word document from the 'translation_files' folder to DeepL\n")
+cat("1. Upload each Word document from the 'translation_files' folder to Google Translate (document translation)\n")
 cat("2. Translate from French to English\n")
 cat("3. Download each translated document\n")
 cat("4. Save them with '_translated' added to the filename\n")

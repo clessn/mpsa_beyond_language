@@ -665,11 +665,7 @@ sentences carry mild sentiment, so small differences often cross zero.
 The ground truth averages three coders and is therefore more reliable
 than any single coder: the Spearman-Brown projection from the mean
 pairwise correlation puts the reliability of the three-coder mean at
-0.868. The disagreement also bounds what any method can achieve against
-a single coder: the scores of the best model, GPT-5.6 Luna with French
-prompts, correlated with each coder at 0.70 to 0.77 (mean 0.73),
-slightly above the correlations between coders (0.64 to 0.72, mean
-0.69).
+0.868.
 
 \subsection{Dictionary-Based Sentiment
 Analysis}\label{dictionary-based-sentiment-analysis}
@@ -679,13 +675,9 @@ English translation as a classical baseline. For French text, the French
 Lexicoder Sentiment Dictionary (\citeproc{ref-duval_petry16}{Duval \&
 Pétry, 2016}) was loaded as a quanteda dictionary without any change to
 its word lists and applied to lowercased, stopword-removed,
-sentence-segmented text, without negation handling.\footnote{Removing
-  stopwords prevents some multiword entries of the dictionary from
-  matching. Scoring the same sentences without that step changes the
-  score of 3 sentences out of 200 and the correlation with human
-  judgments from 0.357 to 0.356.} Each sentence was scored as (positive
-terms − negative terms) / total words. For the English translation, the
-standard Lexicoder Sentiment Dictionary
+sentence-segmented text, without negation handling. Each sentence was
+scored as (positive terms − negative terms) / total words. For the
+English translation, the standard Lexicoder Sentiment Dictionary
 (\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}) was used, with
 additional handling of contractions, proper nouns, and negation (for
 example, ``not good'' scored as negative). Each sentence was scored as
