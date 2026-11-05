@@ -14,13 +14,7 @@ library(tidyr)
 source("src/94_models_map.R")
 source("src/95_token_logging.R")
 
-# Keep only the last scoring wave of each (model, condition, item, run), as
-# in summarize_costs()
-log_df <- read.csv(TOKEN_LOG_PATH, stringsAsFactors = FALSE)
-time <- as.POSIXct(log_df$timestamp)
-call_id <- paste(log_df$model_prefix, log_df$condition, log_df$item, log_df$run)
-last_call <- tapply(time, call_id, max)
-log_df <- log_df[as.numeric(difftime(last_call[call_id], time, units = "secs")) <= 300, ]
+log_df <- keep_last_wave(read.csv(TOKEN_LOG_PATH, stringsAsFactors = FALSE))
 
 calls <- log_df %>%
   filter(valid_response, !model_prefix %in% UNRELIABLE_INPUT_COUNTS) %>%

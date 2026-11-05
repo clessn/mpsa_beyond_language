@@ -1,30 +1,14 @@
-###############################################################################
-# JEV (TYPESAFE) HELPER FUNCTIONS
-#
-# Jev is TypeSafe's System One model. It does not generate text: it answers a
-# typed question with a probability for each answer. Sentiment is asked as a
-# Score question whose five levels are the five anchors of the paper's prompt
-# (src/93_prompts.R), in the same wording and language, so the only thing that
-# differs from the other models is how the answer comes back.
-#
-# The answer's `score` is the probability-weighted level, 0 (strong negative)
-# to 4 (strong positive), rounded by the API to two decimals. jev_to_scale()
-# maps it onto the paper's -1..1 scale. A confident neutral lands on exactly 0,
-# which is what src/41_prompt_cleaning.R bins as "neutral".
-#
+# Requests to Jev (TypeSafe's System One model). Jev answers a typed Score
+# question with a probability for each of five levels; the levels are the five
+# anchors of the text prompt, in the same wording and language. The returned
+# score (0 to 4, probability-weighted) is mapped onto -1..1 by jev_to_scale().
 # API reference: https://docs.typesafe.ai/api.md
-#
-# Added: September 2026
-###############################################################################
 
 library(httr2)
 
-JEV_MODEL <- "jev-1.13.0"  # pinned, not jev-latest: the alias moves with releases
+JEV_MODEL <- "jev-1.13.0"  # pinned: the jev-latest alias moves with releases
 JEV_URL <- "https://api.typesafe.ai/v1/systemone"
 
-#==============================================================================
-# 1. QUESTIONS
-#==============================================================================
 
 JEV_LEVELS_EN <- list(
   "Strong negative sentiment: highly critical, hostile, or pessimistic content",
@@ -42,10 +26,7 @@ JEV_LEVELS_FR <- list(
   "Sentiment positif fort : contenu très favorable, enthousiaste ou optimiste"
 )
 
-#' Score questions for the three language conditions
-#'
-#' @param field Name of the state field holding the text ("sentence", "article")
-#' @return A named list of Score questions: en_fr, fr_fr, en_en
+# One Score question per condition; `field` names the text in the request state
 jev_questions <- function(field = "sentence") {
   list(
     en_fr = list(
@@ -75,22 +56,11 @@ jev_questions <- function(field = "sentence") {
   )
 }
 
-#' Map a Score level (0..4) onto the paper's -1..1 scale
 jev_to_scale <- function(level) (level - 2) / 2
 
-#==============================================================================
-# 2. REQUESTS
-#==============================================================================
 
-#' Build one Jev request
-#'
-#' Transient failures (rate limits, overload, 5xx) are retried with backoff.
-#' The throttle keeps all Jev requests in this session under 900 per minute,
-#' below the documented limit of 1,200.
-#'
-#' @param text The text to evaluate
-#' @param qids Which conditions to ask, e.g. "fr_fr" or c("en_fr", "fr_fr")
-#' @param field State field name, referenced by the questions
+# Transient failures are retried; the throttle stays under the documented
+# limit of 1,200 requests per minute.
 jev_request <- function(text, qids, field = "sentence") {
   state <- setNames(list(text), field)
   request(JEV_URL) |>
@@ -104,13 +74,7 @@ jev_request <- function(text, qids, field = "sentence") {
     req_error(is_error = \(r) FALSE)
 }
 
-#' Parse one response into one row per question
-#'
-#' A failed call yields NA answers, never a stale or default value.
-#'
-#' @param resp An httr2 response, or an error object from a parallel run
-#' @param qids The conditions that were asked
-#' @return A data frame: condition, level, confidence, probs, model, tokens
+# One row per question; a failed call gives NA answers
 parse_jev <- function(resp, qids) {
   failed <- inherits(resp, "error") || resp_status(resp) != 200
   if (failed) {
@@ -135,13 +99,7 @@ parse_jev <- function(resp, qids) {
   }))
 }
 
-#' Score many texts, one request per text, several requests in flight
-#'
-#' @param texts Character vector of texts
-#' @param qids Conditions asked in each request
-#' @param field State field name
-#' @param max_active Requests in flight at once
-#' @return parse_jev() rows with an `item` column indexing `texts`
+# One request per text, several in flight; `item` indexes `texts`
 run_jev <- function(texts, qids, field = "sentence", max_active = 10) {
   reqs <- lapply(texts, \(t) jev_request(t, qids, field))
   resps <- req_perform_parallel(reqs, on_error = "continue",
