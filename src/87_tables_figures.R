@@ -1,7 +1,7 @@
 # Tables and figures of the Results section.
 #
 # Table 1  description of the corpus, the benchmark and the models
-# Figure 1 H1: prompt language, per-model difference in correlation
+# Figure 1 H1: prompt language, correlation under each prompt
 # Figure 2 H2: correlation on the original and on two translations
 # Figure 3 RQ2: models against the two dictionaries
 # Table 2  paired tests between conditions (13 models of about 8B and more)
@@ -81,27 +81,21 @@ main <- filter(performance, !prefix %in% small_models)
 
 # Figure 1: H1 ---------------------------------------------------------------
 
-prompt_diff <- main %>%
-  select(name, condition, r) %>%
-  pivot_wider(names_from = condition, values_from = r) %>%
-  mutate(diff = fr_fr - en_fr)
-mean_test <- t.test(prompt_diff$diff)
-fig1_data <- bind_rows(
-  transmute(prompt_diff, name, diff, low = NA_real_, high = NA_real_, type = "Model"),
-  tibble(name = "Mean, 13 models", diff = mean(prompt_diff$diff),
-         low = mean_test$conf.int[1], high = mean_test$conf.int[2], type = "Mean")
-) %>%
-  mutate(name = factor(name, levels = c("Mean, 13 models", prompt_diff$name[order(prompt_diff$diff)])))
+prompt_levels <- c("French prompt", "English prompt")
+fig1_data <- main %>%
+  filter(condition %in% c("fr_fr", "en_fr")) %>%
+  mutate(prompt = factor(ifelse(condition == "fr_fr", prompt_levels[1], prompt_levels[2]),
+                         levels = prompt_levels))
+fr_order <- fig1_data %>% filter(prompt == "French prompt") %>% arrange(r) %>% pull(name)
+fig1_data$name <- factor(fig1_data$name, levels = fr_order)
 
-fig1 <- ggplot(fig1_data, aes(x = diff, y = name)) +
-  annotate("rect", xmin = -bound, xmax = bound, ymin = -Inf, ymax = Inf, fill = "grey92") +
-  geom_vline(xintercept = 0, linetype = "dashed", colour = "grey40") +
-  geom_errorbarh(aes(xmin = low, xmax = high), height = 0.25, na.rm = TRUE) +
-  geom_point(aes(shape = type), size = 2.4) +
-  scale_shape_manual(values = c(Model = 16, Mean = 15), guide = "none") +
-  scale_x_continuous(limits = c(-0.15, 0.15), breaks = seq(-0.15, 0.15, 0.05),
-                     labels = function(x) sprintf("%.2f", x)) +
-  labs(x = "Correlation with human coders: French prompt minus English prompt", y = NULL) +
+fig1 <- ggplot(fig1_data, aes(x = r, y = name)) +
+  geom_line(aes(group = name), colour = "grey70") +
+  geom_point(aes(shape = prompt, fill = prompt), size = 2.4) +
+  scale_shape_manual(values = c(21, 24)) +
+  scale_fill_manual(values = c("black", "white")) +
+  scale_x_continuous(limits = c(0.3, 0.85), breaks = seq(0.3, 0.8, 0.1)) +
+  labs(x = "Correlation with human coders (French text)", y = NULL) +
   theme_paper
 save_figure(fig1, "fig1_prompt_language.png", 4.2)
 
