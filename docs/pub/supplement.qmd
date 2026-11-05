@@ -42,22 +42,22 @@ Table: Collected Articles by Source Media
 
 ::: {#tbl-prompt}
 
-| Component | Wording |
-|:-------------|:---------------------------------------------------|
-| Task | Please analyze the sentiment of the following French text and provide a single numerical rating according to this scale: |
-| Scale, -1.0 | Strong negative sentiment - highly critical, hostile, or pessimistic content |
-| Scale, -0.5 | Moderate negative sentiment - somewhat negative, disapproving, or concerned content |
-| Scale, 0.0 | Neutral sentiment - factual, balanced, or neither positive nor negative content |
-| Scale, 0.5 | Moderate positive sentiment - somewhat positive, approving, or optimistic content |
-| Scale, 1.0 | Strong positive sentiment - highly supportive, enthusiastic, or optimistic content |
-| Intermediate values | You may also use values between these points for intermediate sentiment levels (e.g., -0.7, 0.3). |
-| Instruction 1 | First, carefully read and understand the text, considering cultural and linguistic nuances in French. |
-| Instruction 2 | Analyze the emotional tone, word choice, and overall message. |
-| Instruction 3 | Respond ONLY with a single numerical value between -1.0 and 1.0 that best represents the sentiment. |
-| Instruction 4 | Do not include ANY explanations, analysis, or additional text in your response. |
-| Input | Here is the text to analyze: [sentence] |
+| Component | English prompt | French prompt |
+|:-----------|:------------------------------------|:------------------------------------|
+| Task | Please analyze the sentiment of the following French text and provide a single numerical rating according to this scale: | Veuillez analyser le sentiment du texte français suivant et fournir une évaluation numérique unique selon cette échelle : |
+| Scale, -1.0 | Strong negative sentiment - highly critical, hostile, or pessimistic content | Sentiment négatif fort - contenu très critique, hostile ou pessimiste |
+| Scale, -0.5 | Moderate negative sentiment - somewhat negative, disapproving, or concerned content | Sentiment négatif modéré - contenu plutôt négatif, désapprobateur ou préoccupant |
+| Scale, 0.0 | Neutral sentiment - factual, balanced, or neither positive nor negative content | Sentiment neutre - contenu factuel, équilibré, ou ni positif ni négatif |
+| Scale, 0.5 | Moderate positive sentiment - somewhat positive, approving, or optimistic content | Sentiment positif modéré - contenu plutôt positif, approbateur ou optimiste |
+| Scale, 1.0 | Strong positive sentiment - highly supportive, enthusiastic, or optimistic content | Sentiment positif fort - contenu très favorable, enthousiaste ou optimiste |
+| Intermediate values | You may also use values between these points for intermediate sentiment levels (e.g., -0.7, 0.3). | Vous pouvez également utiliser des valeurs intermédiaires entre ces points pour des niveaux de sentiment intermédiaires (par exemple, -0.7, 0.3). |
+| Instruction 1 | First, carefully read and understand the text, considering cultural and linguistic nuances in French. | D'abord, lisez attentivement et comprenez le texte, en tenant compte des nuances culturelles et linguistiques en français. |
+| Instruction 2 | Analyze the emotional tone, word choice, and overall message. | Analysez le ton émotionnel, le choix des mots et le message global. |
+| Instruction 3 | Respond ONLY with a single numerical value between -1.0 and 1.0 that best represents the sentiment. | Répondez UNIQUEMENT avec une valeur numérique unique entre -1.0 et 1.0 qui représente le mieux le sentiment. |
+| Instruction 4 | Do not include ANY explanations, analysis, or additional text in your response. | N'incluez AUCUNE explication, analyse ou texte supplémentaire dans votre réponse. |
+| Input | Here is the text to analyze: [sentence] | Voici le texte à analyser : [sentence] |
 
-Table: Wording of the English Prompt on French Text, by Component
+Table: Wording of the English and French Prompts on French Text, by Component. Both Were Preceded by the Same English System Prompt: "You are a helpful assistant that analyzes the sentiment of text. You provide accurate and consistent sentiment ratings according to the specified scale." The English Prompt on the English Translation Differs Only in Referring to English Instead of French (Task and Instruction 1).
 
 :::
 
