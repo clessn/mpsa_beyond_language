@@ -187,25 +187,25 @@ Pelletier,Étienne Proulx,Adam Ménard,Yannick Dufresne}
 \date{2026-11-05}
 
 
-\abstract{For a decade, comparative text analysis had one answer to
-non-English text, which was to translate it into English. Large language
-models (LLMs) inherit that reflex, and a second one, to prompt in
-English. This article tests both on French news. Fifteen open- and
-closed-weight models scored 200 hand-coded sentences under three
+\abstract{For a decade, comparative text analysis had one dominant
+answer to non-English text, which was to translate it into English.
+Large language models (LLMs) inherit that reflex, and a second one, to
+prompt in English. This article tests both on French news. Fifteen open-
+and closed-weight models scored 200 hand-coded sentences under three
 workflows, a French prompt on the original, an English prompt on the
 original, and an English prompt on a machine translation. Prompt
 language made no difference. Equivalence tests rule out any substantial
 advantage for English, and the result holds on the full corpus of 2,683
 articles. Translation mattered only through the translator. Google
 Translate improved the Lexicoder dictionary but lowered every model of
-at least 8B parameters; a frontier-LLM translation halved that loss on
-average, erased it for the strongest models, and never beat the
-original. Language is no longer the obstacle; the workflow is, and the
-original text is its cheapest and safest input. Every model from about
-8B parameters upward beat both dictionaries on correlation with human
-coders, reaching r = 0.81 against 0.36, for a few cents per thousand
-sentences. Prompt in whichever language is convenient, and analyze the
-text in the original. }
+at least 8B parameters; a frontier-LLM translation recovered most of
+that loss but, on average, did no better than the original. Language is
+no longer the obstacle; the workflow is, and the original text is its
+cheapest and safest input. Every model from about 8B parameters upward
+beat both dictionaries on correlation with human coders, reaching r =
+0.81 against 0.36, for a few cents per thousand sentences. Prompt in
+whichever language is convenient, and analyze the text in the
+original. }
 
 \keywords{Sentiment Analysis, Large Language Models, Machine
 Translation, Prompt Language, French Language, Open-Weight
@@ -330,11 +330,11 @@ l'Université, Québec, Québec G1V
 
 \section{Introduction}\label{introduction}
 
-For ten years, the advice to a researcher facing a corpus in French,
-German, or Arabic was simple: translate it into English and use the
-English tools. Computational text analysis grew up around English, and
-its tools, from sentiment dictionaries to topic models, were built for
-English text. This dominance has been criticized for depressing
+For ten years, the most common advice to a researcher facing a corpus in
+French, German, or Arabic was simple: translate it into English and use
+the English tools. Computational text analysis grew up around English,
+and its tools, from sentiment dictionaries to topic models, were built
+for English text. This dominance has been criticized for depressing
 comparative research and for excluding scholarly communities that work
 in other languages (\citeproc{ref-badenThreeGapsComputational2022}{Baden
 et al., 2022}). Machine translation was the workaround, and it was
@@ -394,17 +394,16 @@ difference, though the English prompt is cheaper. The language of the
 text mattered only through the translator: Google Translate lifted the
 dictionary workflow from r = 0.36 to 0.55 but lowered every model of at
 least 8B parameters when the English prompt was held constant, whereas a
-translation by a frontier LLM halved that loss on average, erased it for
-the strongest models, and never beat the original. Language is no longer
-the obstacle; the workflow is, and the original text is its cheapest
-input, since a model that translates must write every sentence out,
-whereas a model that scores returns a single number. The article also
-answers the practical question that follows: is a researcher working on
-French text still better served by a dictionary? On this evidence, no.
-Every model from about 8B parameters upward outperformed both the native
-French dictionary and the translated English one on correlation with
-human judgments, open-weight models included, for a few cents per
-thousand sentences.
+translation by a frontier LLM recovered most of that loss but, on
+average, did no better than the original. The original text is also the
+cheapest input, since a model that translates must write every sentence
+out, whereas a model that scores returns a single number. The article
+also answers the practical question that follows: is a researcher
+working on French text still better served by a dictionary? On this
+evidence, no. Every model from about 8B parameters upward outperformed
+both the native French dictionary and the translated English one on
+correlation with human judgments, open-weight models included, for a few
+cents per thousand sentences.
 
 \section{Literature Review}\label{literature-review}
 
@@ -569,12 +568,16 @@ embeddings, yield comparable or more reliable results in some settings
 (\citeproc{ref-lichtCrossLingualClassificationPolitical2023}{Licht,
 2023}). Crucially, the case for translation was built largely on tools
 that cannot read the source language, such as English dictionaries and
-bag-of-words models. LLMs can. For them, the supporting evidence comes
-from benchmarks whose non-English versions were themselves created by
-translation, a setting that may favor translation-based methods, as the
-authors note (\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al.,
-2024}). It does not come from text written natively in the source
-language. Again, the two views imply competing expectations:
+bag-of-words models. LLMs can. In NLP, a large multilingual model
+already performed better on the original than on an English
+pre-translation in 94 of 108 languages
+(\citeproc{ref-intratorBreakingLanguageBarrier2024}{Intrator et al.,
+2024}). For LLMs, the supporting evidence comes from benchmarks whose
+non-English versions were themselves created by translation, a setting
+that may favor translation-based methods, as the authors note
+(\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}). It does
+not come from text written natively in the source language. Again, the
+two views imply competing expectations:
 
 \begin{quote}
 \textbf{H2a (translation as bridge).} Analyzing English machine
@@ -701,8 +704,8 @@ sentence was machine-translated into English with Google Translate
 through the \texttt{polyglotR} package. This sample size falls within
 the 100 to 300 units generally recommended for validating automated
 sentiment measures against a manually coded gold standard
-(\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021}).
-It yields 95\% confidence intervals of roughly ±0.05 around a
+(\citeproc{ref-vanAtteveldt2021validity}{van Atteveldt et al., 2021, p.
+135}). It yields 95\% confidence intervals of roughly ±0.05 around a
 correlation of 0.80. Three members of the research team, all native
 French speakers, rated the sentiment of each sentence independently, on
 a scale from -1 (very negative) to 1 (very positive), in a custom Shiny
@@ -721,7 +724,11 @@ sentences carry mild sentiment, so small differences often cross zero.
 The ground truth averages three coders and is therefore more reliable
 than any single coder: the Spearman-Brown projection from the mean
 pairwise correlation puts the reliability of the three-coder mean at
-0.868.
+0.868. The disagreement also bounds what any method can achieve against
+a single coder: the scores of the best model, GPT-5.6 Luna with French
+prompts, correlated with each coder at 0.70 to 0.77 (mean 0.73),
+slightly above the correlations between coders (0.64 to 0.72, mean
+0.69).
 
 \subsection{Dictionary-Based Sentiment
 Analysis}\label{dictionary-based-sentiment-analysis}
@@ -731,9 +738,13 @@ English translation as a classical baseline. For French text, the French
 Lexicoder Sentiment Dictionary (\citeproc{ref-duval_petry16}{Duval \&
 Pétry, 2016}) was loaded as a quanteda dictionary without any change to
 its word lists and applied to lowercased, stopword-removed,
-sentence-segmented text, without negation handling. Each sentence was
-scored as (positive terms − negative terms) / total words. For the
-English translation, the standard Lexicoder Sentiment Dictionary
+sentence-segmented text, without negation handling.\footnote{Removing
+  stopwords prevents some multiword entries of the dictionary from
+  matching. Scoring the same sentences without that step changes the
+  score of 3 sentences out of 200 and the correlation with human
+  judgments from 0.357 to 0.356.} Each sentence was scored as (positive
+terms − negative terms) / total words. For the English translation, the
+standard Lexicoder Sentiment Dictionary
 (\citeproc{ref-young_andsoroka12}{Young \& Soroka, 2012}) was used, with
 additional handling of contractions, proper nouns, and negation (for
 example, ``not good'' scored as negative). Each sentence was scored as
@@ -786,8 +797,10 @@ design. The smallest model, Llama 3.2 1B, rarely followed the
 instruction to answer with a number: about one call in 23 returned a
 parseable score, and even after retries it scored only 58 to 74 of the
 200 sentences, depending on the condition. It was retained to mark the
-lower end of the size range, but its metrics rest on a reduced and
-non-random subset of sentences and are reported separately.
+lower end of the size range. Its answers were mostly sentences rather
+than numbers, so the parsing problem described below also affected it;
+its scores are reported only to show that a 1B model could not perform
+the task, and are not interpreted.
 
 Each model was tested under three conditions: French prompts on French
 text (FR→FR), English prompts on French text (EN→FR), and English
@@ -801,10 +814,14 @@ only. The French prompts were translated from the English prompts by an
 LLM (Claude) and checked by the three coders, all native French
 speakers. Table~\ref{tbl-prompt} shows the English-prompt/French-text
 version.\footnote{The French-prompt/French-text version is identical
-  except for language. See \texttt{src/93\_prompts.R} in the project
-  repository for the exact prompts, and \texttt{src/40\_prompt.R} for
-  the full evaluation pipeline, including model initialization, retry
-  logic, rate limiting, and checkpointing.}
+  except for language. In every condition, the prompt was preceded by
+  the same one-sentence system prompt in English: ``You are a helpful
+  assistant that analyzes the sentiment of text. You provide accurate
+  and consistent sentiment ratings according to the specified scale.''
+  See \texttt{src/93\_prompts.R} in the project repository for the exact
+  prompts, and \texttt{src/40\_prompt.R} for the full evaluation
+  pipeline, including model initialization, retry logic, rate limiting,
+  and checkpointing.}
 
 \begin{table}
 
@@ -879,10 +896,22 @@ combinations, the correlation between two runs of the same model had a
 median of 0.91, from 0.41 for Llama 3.2 3B to 0.97 for GPT-5.6 Luna and
 Qwen3 235B-A22B, and Jev, whose output is a probability distribution,
 was fully deterministic. Despite explicit instructions to respond with a
-bare number, the generative models frequently returned formatted text,
-such as ``Sentiment: 0.5''. These responses were parsed with a
-pattern-matching function, and only values within the -1.0 to 1.0 range
-were retained. Jev's answers needed no parsing.
+bare number, some answers contained other text. A number was read from
+each answer with a pattern-matching function, and only values within the
+-1.0 to 1.0 range were retained. After data collection, this function
+was found to drop the minus sign when a number followed a label or
+formatting (for example, ``Sentiment: -0.5'' was read as 0.5). A
+diagnostic on 60 answers from each of the five models whose answer
+format could not be inferred from the token logs showed that four of
+them answered with a bare number or an empty answer, both handled
+correctly. Gemini 3.5 Flash occasionally hedged between two values, so
+its scores were collected again with a corrected function, which accepts
+an answer only if it contains a single number and keeps its
+sign.\footnote{See \texttt{src/99x\_parser\_diagnostic.R}. The answers
+  of the other generative models were 3 to 7 tokens long on nearly every
+  call, the length of a bare number. The corrected function and an
+  archive of every raw answer collected with it are in the repository.}
+Jev's answers needed no parsing.
 
 To check whether the sentence-level findings hold at the scale of a real
 corpus, the best-performing model on the benchmark, GPT-5.6 Luna, also
@@ -945,10 +974,12 @@ on.\footnote{The verdicts are sensitive to the bound in the expected
   translation contrasts that the paired t-tests find significant. The
   twelve tests are reported without correction for multiple comparisons,
   since each answers a distinct question.} These comparisons and the
-averages reported in the Results cover the fourteen models that scored
-all 200 sentences (42 model-condition combinations). They exclude the
-dictionary baselines, which have no prompt, and Llama 3.2 1B, which
-scored a different partial subset of sentences in each condition.
+averages reported in the Results cover the thirteen models of about 8B
+parameters and more (39 model-condition combinations), the population
+the article's conclusions concern. They exclude the dictionary
+baselines, which have no prompt, Llama 3.2 1B, which could not perform
+the task, and Llama 3.2 3B, which is below that size and erratic; the
+tests with Llama 3.2 3B included are reported in notes.
 
 \section{Results}\label{results}
 
@@ -957,19 +988,21 @@ vs.~H1b)}\label{prompt-language-h1a-vs.-h1b}
 
 Holding the text constant, prompt language made no detectable difference
 (Figure~\ref{fig-performance} shows the three conditions for each
-model). French prompts on French text (FR→FR) scored slightly higher
-than English prompts on the same text (EN→FR) on every metric: mean
-correlation 0.708 vs.~0.687, MAE 0.208 vs.~0.216, 3-category F1 0.674
-vs.~0.656, and 7-category F1 0.381 vs.~0.363. None of these paired
-differences was statistically significant (all \emph{p} \textgreater{}
-0.10). Equivalence tests go further. FR→FR and EN→FR were statistically
-equivalent within ±0.05 on MAE (\emph{p} \textless{} 0.001), 7-category
-F1 (\emph{p} = 0.015), and 3-category F1 (\emph{p} = 0.006). Correlation
-was the one metric on which equivalence could not be established. The
-90\% confidence interval of the difference, {[}−0.024, 0.066{]}, leaves
-room for a French-prompt advantage of up to 0.066, but not for an
-English-prompt advantage larger than 0.024. The results contradict H1a
-and support H1b on three of four metrics.
+model). Across the thirteen models of at least 8B parameters, French
+prompts on French text (FR→FR) and English prompts on the same text
+(EN→FR) gave nearly the same results: mean correlation 0.725 vs.~0.729,
+MAE 0.204 vs.~0.204, 3-category F1 0.679 vs.~0.669, and 7-category F1
+0.390 vs.~0.378. None of these paired differences was statistically
+significant (all \emph{p} \textgreater{} 0.10). Equivalence tests go
+further. FR→FR and EN→FR were statistically equivalent within ±0.05 on
+all four metrics (all \emph{p} \textless{} 0.01). On correlation, the
+90\% confidence interval of the difference, {[}−0.014, 0.006{]}, rules
+out an advantage larger than 0.014 for either prompt
+language.\footnote{With Llama 3.2 3B included, equivalence could not be
+  established on correlation: the 90\% confidence interval of the
+  difference was {[}−0.024, 0.066{]}, driven by that model's erratic
+  scores under the English prompt.} The results contradict H1a and
+support H1b.
 
 The equivalence holds at the scale of the corpus.
 Figure~\ref{fig-corpus} plots, for each of the 2,671 full articles with
@@ -980,7 +1013,7 @@ languages agree almost perfectly (r = 0.97; 94\% of articles received
 the same sign), and Jev shows the same on the same articles (r = 0.997;
 98\% the same sign). The dictionary and the model rank the articles very
 differently (r = 0.36 across articles, 0.42 across monthly means), and
-on 27\% of articles they disagree even on the sign.\footnote{Correlation
+on 28\% of articles they disagree even on the sign.\footnote{Correlation
   ignores differences of scale, so this is a disagreement about which
   articles are more positive than others, not about units.} The
 comparison cannot say which of the two is right, since neither is the
@@ -1012,30 +1045,32 @@ vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
 
 For the LLMs, translation carried a cost. Holding the English prompt
 constant, analyzing the translation instead of the original (EN→EN
-vs.~EN→FR) lowered 3-category F1 by 0.035 (0.621 vs.~0.656, \emph{p} =
-0.004). The accompanying drop in correlation (0.659 vs.~0.687) was not
-statistically significant (\emph{p} = 0.12). Differences in MAE and
-7-category F1 remained within the ±0.05 equivalence bound. Compared with
-the fully French workflow (FR→FR), the fully English workflow (EN→EN)
-lowered correlation by 0.048 (\emph{p} = 0.002) and 3-category F1 by
-0.053 (\emph{p} \textless{} 0.001).
+vs.~EN→FR) lowered mean correlation by 0.043 (0.687 vs.~0.729, \emph{p}
+\textless{} 0.001) and 3-category F1 by 0.041 (0.629 vs.~0.669, \emph{p}
+\textless{} 0.001).\footnote{With Llama 3.2 3B included, the drop in
+  correlation was smaller and not statistically significant (0.028,
+  \emph{p} = 0.12).} Differences in MAE and 7-category F1 remained
+within the ±0.05 equivalence bound. Compared with the fully French
+workflow (FR→FR), the fully English workflow (EN→EN) lowered correlation
+by 0.039 (\emph{p} \textless{} 0.001) and 3-category F1 by 0.050
+(\emph{p} \textless{} 0.001).
 
-Is this the cost of translation or of the translator? With the sentences
-translated by GPT-5.6 Luna instead of Google Translate, the twelve
-models of at least 8B parameters averaged r = 0.702, between the
-original (0.726) and the Google translation (0.681;
-Table~\ref{tbl-translator}). The frontier-quality translation thus
-halved the loss on average (0.024 against 0.045, paired \emph{p} = 0.03
-and \textless{} 0.001), and it erased it for the strongest models:
-GPT-5.6 Luna, Gemini 3.5 Flash, Qwen3 235B-A22B, DeepSeek V3.2 and Llama
-4 Scout scored within 0.01 of the original or above it. The mid-sized
-open-weight models did not recover, and five of the twelve scored lower
-with the LLM translation than with Google's. On polarity classification
-the better translation brought nothing: mean 3-category F1 was 0.663 on
-the original, 0.622 with Google Translate and 0.610 with the LLM
-translation. The loss observed in EN→EN is therefore partly the cost of
-a conventional translator, and partly the cost of translation itself. No
-model gained from either translation.
+Is this the cost of translation or of the translator? The sentences were
+translated again by GPT-5.6 Luna and scored under the English prompt by
+the twelve generative models of at least 8B parameters
+(Table~\ref{tbl-translator}). Because most of these models scored the
+new translation only once, the comparison uses the first run of every
+condition. On correlation, the frontier-quality translation recovered
+most of the loss: the models averaged r = 0.697 on it, against 0.668 on
+the Google translation and 0.705 on the original. The remaining gap of
+0.008 was not statistically significant (paired \emph{p} = 0.48), and
+five of the twelve models scored higher on the LLM translation than on
+the original. On polarity classification the recovery was smaller: mean
+3-category F1 was 0.627 on the original, 0.591 with Google Translate and
+0.602 with the LLM translation, still below the original (\emph{p} =
+0.01). The loss observed in EN→EN is therefore mostly the cost of a
+conventional translator. A better translator removes most of it but, on
+average, does not do better than the original.
 
 \begin{table}
 
@@ -1103,13 +1138,12 @@ dictionary gains, whereas the models at best recover the original. The
 two dictionaries also differ in construction, so this contrast does not
 isolate language. Its direction nonetheless matches the bridge view. For
 the LLMs, the results support H2b for a conventional machine
-translation: it lowered polarity classification whichever prompt was
-held constant, and it lowered correlation when the two complete
-workflows are compared. With a frontier-quality translation, the loss
-shrinks and disappears for the strongest models, but it does not
-reverse: H2a, which predicts a translation at least as accurate as the
-original, holds for no model on polarity and for five of twelve on
-correlation.
+translation: it lowered both correlation and polarity classification,
+whichever prompt was held constant. With a frontier-quality translation,
+the loss mostly disappears on correlation but does not reverse on
+average: H2a, which predicts a translation at least as accurate as the
+original, holds for five of twelve models on correlation and for one on
+polarity.
 
 \subsection{Viability Against Dictionary Methods
 (RQ2)}\label{viability-against-dictionary-methods-rq2}
@@ -1164,9 +1198,8 @@ Mistral Large 4 scored below Mistral Small 3.2 on correlation (r = 0.69
 to 0.71) and 3-category F1 (0.61 to 0.62), though with a lower MAE.
 Performance degraded at smaller sizes. Llama 3.1 8B remained usable (r =
 0.58 to 0.61). Llama 3.2 3B was erratic (r = 0.48 in FR→FR but 0.13 in
-EN→FR). Llama 3.2 1B failed: on the 58 to 74 sentences it managed to
-score per condition, its correlation with the ground truth ranged from
-−0.20 to 0.10.
+EN→FR). Llama 3.2 1B could not perform the task: it returned a usable
+number on about one call in 23, and its few scores are not interpreted.
 
 Cost was not a barrier. At list prices, scoring 1,000 sentences cost
 between USD 0.02 and 0.40 for every model but one
@@ -1181,9 +1214,9 @@ Against the LLM mean of r = 0.685, the dictionaries trailed on
 correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557
 vs.~0.651). On correlation, the comparison is one-sided: every model
 from 8B parameters upward exceeded both dictionaries in every condition,
-and only Llama 3.2 3B and 1B fell below them. On 3-category F1, the
-translated English dictionary outperformed Qwen3 32B in every condition,
-GPT-OSS 120B in EN→EN, and the two smallest Llama models. On MAE, both
+and only Llama 3.2 3B fell below them. On 3-category F1, the translated
+English dictionary outperformed Qwen3 32B in every condition, GPT-OSS
+120B in EN→EN, and the two smallest Llama models. On MAE, both
 dictionaries (0.203 and 0.210) did slightly better than the LLM average
 (0.211; Figure~\ref{fig-performance}, right panel), because their scores
 cluster near zero on a sample dominated by mildly positive sentences.
@@ -1280,17 +1313,16 @@ LLMs}\label{translation-a-bridge-for-dictionaries-a-cost-without-gain-for-llms}
 
 The translation results are the article's main contribution to the
 debate. The same machine translation that improved the dictionary
-lowered the LLMs' performance, and a better translation closed half of
-that gap on average, all of it for the strongest models, and never
-opened a lead. This reconciles the bridge and loss views rather than
-choosing between them. Translation helps tools that cannot read the
-source language, and the better the translation, the more it helps them;
-it is at best neutral for tools that can read the source, since a
-conventional machine translation costs them information and a
-frontier-quality translation returns, at most, what the original already
-offered. The dictionary result is consistent with a long line of
-evidence that translating into English lets researchers use
-better-validated English resources
+lowered the LLMs' performance, and a better translation closed most of
+that gap without, on average, opening a lead. This reconciles the bridge
+and loss views rather than choosing between them. Translation helps
+tools that cannot read the source language, and the better the
+translation, the more it helps them; it is at best neutral for tools
+that can read the source, since a conventional machine translation costs
+them information and a frontier-quality translation returns, on average,
+about what the original already offered. The dictionary result is
+consistent with a long line of evidence that translating into English
+lets researchers use better-validated English resources
 (\citeproc{ref-devriesNoLongerLost2018}{De Vries et al., 2018};
 \citeproc{ref-prokschMultilingualSentimentAnalysis2019}{Proksch et al.,
 2019}). LLMs already read French. For them, translation offers no such
@@ -1304,14 +1336,17 @@ study of party manifestos to date: inserting a machine-translation step
 before the analysis of 15 non-English manifestos lowered the correlation
 with expert surveys, and the authors dropped the step from their final
 design (\citeproc{ref-benoitUsingLargeLanguage2026}{Benoit et al.,
-2026}). The present study makes that incidental observation the object
-of a formal test. The finding qualifies evidence that translating inputs
-into English improves multilingual models
+2026}). The present study tests that observation directly, against human
+coding of text written in French, and sets it against the dictionary,
+for which translation helps. It agrees with NLP evidence that strong
+multilingual models do better on the original than on a pre-translation
+(\citeproc{ref-intratorBreakingLanguageBarrier2024}{Intrator et al.,
+2024}). The finding qualifies evidence that translating inputs into
+English improves multilingual models
 (\citeproc{ref-Etxaniz2024Multilingual}{Etxaniz et al., 2024}). That
 evidence comes from benchmarks translated out of English, whereas the
-sentences analyzed here were written in French. Language, in short, is
-no longer the obstacle; the workflow is, and the original text is its
-cheapest and safest input.
+sentences analyzed here were written in French. For an LLM, the original
+text is the cheapest and safest input.
 
 \subsection{Viability: Optimism, With
 Validation}\label{viability-optimism-with-validation}
@@ -1458,12 +1493,12 @@ reflexes. The language of the prompt is a matter of convenience. English
 instructions brought no advantage, and equivalence tests rule out any
 substantial one. The language of the text matters only through the
 translator. A conventional machine translation improved the dictionary
-but lowered the LLMs; a translation by a frontier LLM halved that loss
-on average, removed it for the strongest models, and added nothing, at
-the price of an extra step. Language is no longer the obstacle it was;
-the workflow is, and the original text is its cheapest and safest input.
-The comparative strategy that served the dictionary era does not
-transfer to models that read the source language.
+but lowered the LLMs; a translation by a frontier LLM removed most of
+that loss and added nothing on average, at the price of an extra step.
+Language is no longer the obstacle it was; the workflow is, and the
+original text is its cheapest and safest input. The comparative strategy
+that served the dictionary era does not transfer to models that read the
+source language.
 
 Two questions follow. The first is whether these results hold beyond
 French, particularly for languages less represented in training data,
@@ -1519,6 +1554,16 @@ Not applicable.
 \addcontentsline{toc}{subsection}{Consent for Publication}
 
 Not applicable.
+
+\subsection*{Use of Generative AI}\label{use-of-generative-ai}
+\addcontentsline{toc}{subsection}{Use of Generative AI}
+
+Claude (Anthropic) was used to translate the prompts from English into
+French, as described in the Methods, with the translation checked by the
+three coders. Claude was also used as a coding assistant to write and
+debug the analysis code and to edit the manuscript for clarity. The
+authors reviewed all code and text, verified the reported results
+against the data, and take full responsibility for the content.
 
 \subsection*{Declaration of Conflicting
 Interests}\label{declaration-of-conflicting-interests}
@@ -1617,6 +1662,15 @@ Heseltine, M., \& Clemm Von Hohenberg, B. (2024). Large language models
 as a substitute for human experts in annotating political text.
 \emph{Research \& Politics}, \emph{11}(1), 20531680241236239.
 \url{https://doi.org/10.1177/20531680241236239}
+
+\bibitem[\citeproctext]{ref-intratorBreakingLanguageBarrier2024}
+Intrator, Y., Halfon, M., Goldenberg, R., Tsarfaty, R., Eyal, M.,
+Rivlin, E., Matias, Y., \& Aizenberg, N. (2024). Breaking the language
+barrier: Can direct inference outperform pre-translation in multilingual
+{LLM} applications? \emph{Proceedings of the 2024 Conference of the
+North American Chapter of the Association for Computational Linguistics:
+Human Language Technologies (Volume 2: Short Papers)}, 829--844.
+\url{https://doi.org/10.18653/v1/2024.naacl-short.75}
 
 \bibitem[\citeproctext]{ref-klahnDictionariesLLMsEvaluation2025}
 Klähn, J., Borst-Graetz, J., \& Burghardt, M. (2025). From dictionaries
