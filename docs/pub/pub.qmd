@@ -243,13 +243,13 @@ The dictionaries showed the opposite pattern. The English Lexicoder applied to t
 
 ## Viability Against Dictionary Methods (RQ2)
 
-General-purpose LLMs, used without fine-tuning, correlated with human judgments well above both dictionaries (@fig-performance; exact values and confidence intervals in Table \ref{tbl:performance}). The best configuration, GPT-5.6 Luna with French prompts, reached r = 0.81. Jev came close behind the leaders, with r = 0.77 in both conditions on French text and the second-highest 7-category F1 (0.528 in EN→FR). Twelve of the 42 model-condition combinations correlated with the ground truth more strongly than individual human coders agreed with the mean of the other two (mean leave-one-out r = 0.748, range 0.724–0.779).^[This comparison slightly favors the models, because the ground truth they are compared against averages three coders rather than two. Agreement between annotators is not a strict ceiling on machine performance [@richieInterannotatorAgreementNot2022].]
+General-purpose LLMs, used without fine-tuning, correlated with human judgments well above both dictionaries (@fig-performance; exact values and confidence intervals in Table S1 of the Supplemental Material). The best configuration, GPT-5.6 Luna with French prompts, reached r = 0.81. Jev came close behind the leaders, with r = 0.77 in both conditions on French text and the second-highest 7-category F1 (0.528 in EN→FR). Twelve of the 42 model-condition combinations correlated with the ground truth more strongly than individual human coders agreed with the mean of the other two (mean leave-one-out r = 0.748, range 0.724–0.779).^[This comparison slightly favors the models, because the ground truth they are compared against averages three coders rather than two. Agreement between annotators is not a strict ceiling on machine performance [@richieInterannotatorAgreementNot2022].]
 
 ![Correlation and Mean Absolute Error Between Model Scores and Human Judgments, by Model and Condition](../../results/graphs/model_performance.png){#fig-performance apa-note="One row per model and condition, sorted by each model's mean correlation and colored by model type. Left panel: Pearson correlation between the model's scores and the mean of three human coders, with 95% confidence intervals. Right panel: mean absolute error, the average distance between the model's score and the human score on the −1 to 1 scale, so that 0.17 means the model is typically 0.17 points away from the human rating. Within each model, the conditions are FR→FR (French prompt on French text), EN→FR (English prompt on French text), and EN→EN (English prompt on translated text). $^{*}p$ < .05, $^{**}p$ < .01, $^{***}p$ < .001."}
 
 Closed-weight models outperformed open-weight ones on average (mean r = 0.754 vs. 0.646; 3-category F1 0.685 vs. 0.632). The gap closed at the top of the open-weight range. Qwen3 235B-A22B reached r = 0.77 in FR→FR, above Gemini 3.5 Flash in the same condition. GPT-OSS 120B and GPT-OSS 20B averaged r = 0.73 and 0.72 across conditions. Mistral Small 3.2 reached the highest 3-category F1 of any open-weight model (0.721 in FR→FR), although its scores sat further from the human ratings (MAE 0.263 to 0.294). Mistral's newest flagship did not lead its own family: Mistral Large 4 scored below Mistral Small 3.2 on correlation (r = 0.69 to 0.71) and 3-category F1 (0.61 to 0.62), though with a lower MAE. Performance degraded at smaller sizes. Llama 3.1 8B remained usable (r = 0.58 to 0.61). Llama 3.2 3B was erratic (r = 0.48 in FR→FR but 0.13 in EN→FR). Llama 3.2 1B could not perform the task: it returned a usable number on about one call in 23, and its few scores are not interpreted.
 
-Cost was not a barrier. At list prices, scoring 1,000 sentences cost between USD 0.02 and 0.40 for every model but one (@tbl-cost). The exception, Gemini 3.5 Flash (USD 3.77), reflects the reasoning tokens it generates by default rather than its per-token price.^[No cost is reported for Llama 3.2 1B, whose endpoint returned the same input token count on every call; it also needed 22.7 API calls per usable score, against 1.0 to 1.03 for every other model.]
+Cost was not a barrier. At list prices, scoring 1,000 sentences cost between USD 0.02 and 0.40 for every model but one (Table S2 in the Supplemental Material). The exception, Gemini 3.5 Flash (USD 3.77), reflects the reasoning tokens it generates by default rather than its per-token price.^[No cost is reported for Llama 3.2 1B, whose endpoint returned the same input token count on every call; it also needed 22.7 API calls per usable score, against 1.0 to 1.03 for every other model.]
 
 Against the LLM mean of r = 0.685, the dictionaries trailed on correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557 vs. 0.651). On correlation, the comparison is one-sided: every model from 8B parameters upward exceeded both dictionaries in every condition, and only Llama 3.2 3B fell below them. On 3-category F1, the translated English dictionary outperformed Qwen3 32B in every condition, GPT-OSS 120B in EN→EN, and the two smallest Llama models. On MAE, both dictionaries (0.203 and 0.210) did slightly better than the LLM average (0.211; @fig-performance, right panel), because their scores cluster near zero on a sample dominated by mildly positive sentences.
 
@@ -257,7 +257,7 @@ Against the LLM mean of r = 0.685, the dictionaries trailed on correlation (0.54
 
 All models performed substantially better on 3-category than on 7-category classification (best F1 0.778 vs. 0.537; mean 0.651 vs. 0.369; @fig-f1). Models identified positive and negative sentiment most reliably (7-category F1 = 0.480 and 0.454, rising to 0.706 and 0.626 in the 3-category scheme). They struggled most with the extreme categories (very negative F1 = 0.260, very positive F1 = 0.135), which are nearly absent from the sample (two sentences and one sentence). Neutral remained the hardest 3-category label (F1 = 0.272).
 
-![Weighted F1 on Polarity and on Fine-Grained Classification, by Model](../../results/graphs/f1_dumbbell.png){#fig-f1 apa-note="One row per model, from the highest polarity F1 to the lowest, colored by model type. Filled circles are the weighted F1 on three categories, hollow circles on seven, each averaged over the three conditions; the segment is the loss from grouping sentiment into seven categories instead of three. Llama 3.2 1B is omitted. Per-condition values are in the Appendix."}
+![Weighted F1 on Polarity and on Fine-Grained Classification, by Model](../../results/graphs/f1_dumbbell.png){#fig-f1 apa-note="One row per model, from the highest polarity F1 to the lowest, colored by model type. Filled circles are the weighted F1 on three categories, hollow circles on seven, each averaged over the three conditions; the segment is the loss from grouping sentiment into seven categories instead of three. Llama 3.2 1B is omitted. Per-condition values are in Tables S3 and S4 of the Supplemental Material."}
 
 # Discussion
 
@@ -265,7 +265,7 @@ All models performed substantially better on 3-category than on 7-category class
 
 For French and current models, the results side with the multilingual-competence view. English prompts brought no advantage, and equivalence tests ruled out any English-prompt gain larger than a few hundredths, even on correlation, where strict equivalence could not be established. The equivalence held at the scale of the full corpus (@fig-corpus). Earlier social science evidence showed that labels agree across prompt languages [@rathjeGPTEffectiveTool2024]. This study extends that finding to the accuracy of the labels against human judgment. It is also consistent with the minimal differences observed for the strongest model in Arabic [@Kmainasi2025Native]. The results do not refute the pivot-language evidence so much as delimit it. That evidence comes largely from reasoning and inference benchmarks, older or smaller models, and lower-resourced languages [@Lin2022Few; @Muennighoff2023Crosslingual; @laiChatGPTEnglishComprehensive2023]. The representational bias toward English that it points to [@wendler_etal24] need not produce worse instruction-following for a simple judgment in a language as well represented as French. The smaller open-weight models behaved differently. Llama 3.2 3B correlated with human judgments at r = 0.48 with French prompts but 0.13 with English ones. This suggests that sensitivity to prompt language may reappear below a certain model size, although a single model cannot establish this.
 
-Prompt language does carry a cost that the accuracy results do not show. The French prompt is 6% longer than the English one in characters, yet it cost 10% to 34% more input tokens, depending on the model (@tbl-tokens).^[Jev's input is TypeSafe's structured question rather than the prompt shown above, so its token counts do not measure the same text. It is left out of the tokenizer comparisons in this paragraph.] The difference is a property of each model's tokenizer, not of its size or license. Vocabularies that favor English encode English text with similar efficiency across models (1.17 to 1.25 tokens per word) but split French words into more pieces (1.38 to 1.87 tokens per word). @ahiaAllLanguagesCost2023 document the same disparity across many languages. Mistral's claim of a tokenizer that is cheaper on French [@mistralaiMistralNeMo2024] held for one of its two models. Mistral Large 4 encoded French more compactly than any other model and had the smallest French-prompt overhead (10%). Mistral Small 3.2 did not stand out (1.45 tokens per French word, a 15% overhead). Output length did not differ by prompt language. Since accuracy was equivalent, the English prompt is the cheaper of two equally good options. The saving per 1,000 sentences ranges from under 6% for models whose output tokens weigh most in the bill to 10% to 31% for models billed mostly on input. Translating the text first would save a few percent more, at the accuracy cost reported above.
+Prompt language does carry a cost that the accuracy results do not show. The French prompt is 6% longer than the English one in characters, yet it cost 10% to 34% more input tokens, depending on the model (Table S5 in the Supplemental Material).^[Jev's input is TypeSafe's structured question rather than the prompt shown above, so its token counts do not measure the same text. It is left out of the tokenizer comparisons in this paragraph.] The difference is a property of each model's tokenizer, not of its size or license. Vocabularies that favor English encode English text with similar efficiency across models (1.17 to 1.25 tokens per word) but split French words into more pieces (1.38 to 1.87 tokens per word). @ahiaAllLanguagesCost2023 document the same disparity across many languages. Mistral's claim of a tokenizer that is cheaper on French [@mistralaiMistralNeMo2024] held for one of its two models. Mistral Large 4 encoded French more compactly than any other model and had the smallest French-prompt overhead (10%). Mistral Small 3.2 did not stand out (1.45 tokens per French word, a 15% overhead). Output length did not differ by prompt language. Since accuracy was equivalent, the English prompt is the cheaper of two equally good options. The saving per 1,000 sentences ranges from under 6% for models whose output tokens weigh most in the bill to 10% to 31% for models billed mostly on input. Translating the text first would save a few percent more, at the accuracy cost reported above.
 
 ## Translation: A Bridge for Dictionaries, a Cost Without Gain for LLMs
 
@@ -355,60 +355,3 @@ The code, the model scores, the manually annotated benchmark, and the prompts ar
 
 ::: {#refs}
 :::
-
-# Additional Results {#apx-results}
-
-::: {#tbl-cost}
-
-{{< include ../../results/tables/cost_table.md >}}
-
-Table: Cost of Scoring 1,000 Sentences at List Prices (Upper Bound; Cached Prompt Tokens Counted at the Full Input Rate; Input Tokens and Cost Not Reported for Llama 3.2 1B, Whose Endpoint Returned a Constant Token Count)
-
-:::
-
-::: {#tbl-tokens}
-
-{{< include ../../results/tables/tokens_by_language.md >}}
-
-Table: Mean Input Tokens per API Call by Language Condition, and Tokens per Word by Text Language (Valid Calls Only; Llama 3.2 1B Excluded Because Its Endpoint Reported a Constant Token Count on Every Call; Jev's Input Is a Structured Question Rather Than the Text Prompt, So Its Counts Are Not Comparable)
-
-:::
-
-\newpage
-
-```{=latex}
-\begin{table}[p]
-\caption{Correlation With Human Judgments (With 95\% Confidence Interval), Mean Absolute Error, and Number of Sentences Scored, by Model and Condition}
-\label{tbl:performance}
-\begin{center}
-\footnotesize
-\setlength{\tabcolsep}{5pt}
-\input{../../results/tables/performance_table.tex}
-\end{center}
-\end{table}
-\clearpage
-```
-
-::: {#tbl-f1-3cat}
-
-{{< include ../../results/tables/f1_scores_3cat_table.md >}}
-
-Table: F1 Scores for 3-Category Classification
-
-:::
-
-```{=latex}
-\clearpage
-\begin{landscape}
-\begin{table}[h]
-\caption{F1 Scores for 7-Category Classification}
-\begin{center}
-\scriptsize
-\setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{0.95}
-\input{../../results/tables/f1_scores_7cat_table.tex}
-\end{center}
-\end{table}
-\end{landscape}
-\clearpage
-```

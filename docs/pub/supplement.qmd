@@ -1,0 +1,73 @@
+---
+title: "Supplemental Material"
+subtitle: "Prompt Language Doesn't Matter, but Keep the Original Text: Large Language Models and Sentiment Analysis in French News"
+shorttitle: "Supplemental Material"
+author:
+  - name: Anonymized for review
+    affiliations:
+      - name: Anonymized for review
+abstract: "Supplemental tables for the article. Tables S1 to S5 are referred to in the main text."
+keywords: [supplemental material]
+mask: true
+format:
+  apaquarto-pdf:
+    documentmode: man
+    floatsintext: true
+    keep-tex: true
+    include-in-header:
+      text: |
+        \usepackage{pdflscape}
+        \renewcommand{\thetable}{S\arabic{table}}
+---
+
+```{=latex}
+\begin{table}[p]
+\caption{Correlation With Human Judgments (With 95\% Confidence Interval), Mean Absolute Error, and Number of Sentences Scored, by Model and Condition}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\input{../../results/tables/performance_table.tex}
+\end{center}
+\end{table}
+\clearpage
+```
+
+::: {#tbl-cost}
+
+{{< include ../../results/tables/cost_table.md >}}
+
+Table: Cost of Scoring 1,000 Sentences at List Prices (Upper Bound; Cached Prompt Tokens Counted at the Full Input Rate; Input Tokens and Cost Not Reported for Llama 3.2 1B, Whose Endpoint Returned a Constant Token Count)
+
+:::
+
+::: {#tbl-f1-3cat}
+
+{{< include ../../results/tables/f1_scores_3cat_table.md >}}
+
+Table: F1 Scores for 3-Category Classification
+
+:::
+
+```{=latex}
+\clearpage
+\begin{landscape}
+\begin{table}[h]
+\caption{F1 Scores for 7-Category Classification}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{0.95}
+\input{../../results/tables/f1_scores_7cat_table.tex}
+\end{center}
+\end{table}
+\end{landscape}
+\clearpage
+```
+
+::: {#tbl-tokens}
+
+{{< include ../../results/tables/tokens_by_language.md >}}
+
+Table: Mean Input Tokens per API Call by Language Condition, and Tokens per Word by Text Language (Valid Calls Only; Llama 3.2 1B Excluded Because Its Endpoint Reported a Constant Token Count on Every Call; Jev's Input Is a Structured Question Rather Than the Text Prompt, So Its Counts Are Not Comparable)
+
+:::
