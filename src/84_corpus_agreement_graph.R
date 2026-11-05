@@ -1,14 +1,10 @@
-#################################################################
-# CORPUS AGREEMENT GRAPH
-#################################################################
-# Two article-level scatterplots for the 2,683 full articles:
-#   A. English-prompt score against French-prompt score (same model)
-#   B. French Lexicoder score against French-prompt score
-# Shows directly that prompt language barely matters at corpus scale,
-# and that the dictionary agrees weakly with the model and compresses
-# its scores near zero.
+# Figure 1: GPT-5.6 Luna's score on each of the 2,683 articles under the
+# English prompt (left) and the French Lexicoder score (right), against the
+# same model's score under the French prompt. Also prints the agreement
+# statistics reported with the figure.
 #
-# Title and note are set in the manuscript (APA figure caption and note).
+# In:  data/clean/news_df_sentiment_corpus.rds
+# Out: results/graphs/corpus_agreement.png
 
 library(dplyr)
 library(tidyr)
@@ -28,12 +24,8 @@ r_dict   <- cor(df$llm_fr_fr, df$fr_tone_index)
 same_sign <- mean(sign(df$llm_fr_fr) == sign(df$llm_en_fr))
 same_sign_dict <- mean(sign(df$llm_fr_fr) == sign(df$fr_tone_index))
 opposite_dict  <- mean(sign(df$llm_fr_fr) * sign(df$fr_tone_index) == -1)
-cat(sprintf("dictionary vs model: same sign = %.1f%%, opposite sign = %.1f%%\n",
-            100 * same_sign_dict, 100 * opposite_dict))
-cat(sprintf("n = %d | r prompt = %.3f | same sign = %.1f%% | r dictionary = %.3f\n",
-            nrow(df), r_prompt, 100 * same_sign, r_dict))
-cat(sprintf("SD model FR = %.3f | SD dictionary = %.3f | dictionary range = [%.2f, %.2f]\n",
-            sd(df$llm_fr_fr), sd(df$fr_tone_index), min(df$fr_tone_index), max(df$fr_tone_index)))
+cat(sprintf("n = %d; prompts: r = %.3f, same sign %.1f%%; dictionary: r = %.3f, same sign %.1f%%, opposite %.1f%%\n",
+            nrow(df), r_prompt, 100 * same_sign, r_dict, 100 * same_sign_dict, 100 * opposite_dict))
 
 PANEL_A <- paste0(MODEL_NAME, ", English prompt")
 PANEL_B <- "French Lexicoder dictionary"
@@ -54,8 +46,7 @@ identity_line <- data.frame(panel = factor(PANEL_A, levels = c(PANEL_A, PANEL_B)
 p <- ggplot(long, aes(x = llm_fr_fr, y = y)) +
   geom_hline(yintercept = 0, colour = "grey80", linewidth = 0.3) +
   geom_vline(xintercept = 0, colour = "grey80", linewidth = 0.3) +
-  # Scores fall on a coarse grid, so the number of articles in each cell is
-  # what matters: tiles shaded by count instead of overplotted points
+  # Scores fall on a coarse grid, so cells are shaded by count
   geom_bin2d(binwidth = c(0.1, 0.1), aes(fill = after_stat(count))) +
   scale_fill_gradient(low = "#DCE9F5", high = "#08306B", trans = "sqrt",
                       name = "Articles per cell",

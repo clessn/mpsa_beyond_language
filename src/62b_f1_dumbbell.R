@@ -1,12 +1,8 @@
-#################################################################
-# F1 GRAPH: POLARITY VERSUS FINE-GRAINED CLASSIFICATION
-#################################################################
-# One row per model, two points: weighted F1 on 3 categories and on
-# 7 categories, each averaged over the three conditions. The gap is
-# what fine-grained classification costs. Per-condition values are in
-# the appendix tables. Replaces the 94-bar version from src/62.
+# Figure 3: weighted F1 on polarity (3 categories) and on the seven
+# categories, averaged over the three conditions, one row per model.
 #
-# Title and note are set in the manuscript (APA figure caption and note).
+# In:  results/analysis/f1_scores_{3,7}.rds
+# Out: results/graphs/f1_dumbbell.png
 
 library(dplyr)
 library(tidyr)
@@ -26,7 +22,7 @@ d <- inner_join(f3 %>% select(model, f1_3 = weighted_f1),
                                 TRUE ~ "Closed weights")) %>%
   group_by(name, model_type) %>%
   summarize(f1_3 = mean(f1_3), f1_7 = mean(f1_7), .groups = "drop") %>%
-  arrange(f1_3) %>%                                  # highest polarity F1 at the top
+  arrange(f1_3) %>%
   mutate(name = factor(name, levels = name))
 
 SCHEME_3 <- "Polarity (3 categories)"
@@ -35,8 +31,6 @@ long <- d %>%
   pivot_longer(c(f1_3, f1_7), names_to = "scheme", values_to = "f1") %>%
   mutate(scheme = factor(ifelse(scheme == "f1_3", SCHEME_3, SCHEME_7), levels = c(SCHEME_3, SCHEME_7)))
 
-# Colour by model type as in the performance figure; filled circle for
-# polarity, hollow circle for fine-grained
 type_colours <- c("Closed weights" = "#D62728", "Open weights" = "#1F77B4", "Dictionary" = "#2CA02C")
 
 p <- ggplot(d, aes(y = name)) +

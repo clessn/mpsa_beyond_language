@@ -1,20 +1,16 @@
-#################################################################
-# PERFORMANCE GRAPH: CORRELATION AND MAE SIDE BY SIDE
-#################################################################
-# Replaces the separate correlation (src/60) and MAE (src/61) figures.
-# One row per model-condition combination, sorted once by mean
-# correlation; left panel Pearson r with 95% CI, right panel MAE.
+# Figure 2: correlation (with 95% confidence interval) and mean absolute error
+# against the ground truth, one row per model and condition, models sorted by
+# mean correlation.
 #
-# Title and note are set in the manuscript (APA figure caption and note).
+# In:  data/clean/cor_results.rds
+# Out: results/graphs/model_performance.png
 
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 source("src/94_models_map.R")
 
-df_raw <- readRDS("data/clean/cor_results.rds")
-
-df <- df_raw %>%
+df <- readRDS("data/clean/cor_results.rds") %>%
   mutate(
     is_open_source = sapply(model, is_open_source),
     model_type = case_when(
@@ -39,19 +35,16 @@ df <- df_raw %>%
       paste0(display_name, " [", prompt_mechanism, "]",
              ifelse(n_obs < max(n_obs), paste0(" (n = ", n_obs, ")"), ""))
     ),
-    # 95% CI of r by Fisher's z transformation, as returned by cor.test().
-    # (Until November 2026 this used r +/- 1.96*sqrt((1-r^2)/(n-2)), the
-    # standard error for testing rho = 0, which is too wide when r is high.)
+    # Same interval as cor.test()
     ci_lo = tanh(atanh(correlation) - qnorm(0.975) / sqrt(n_obs - 3)),
     ci_hi = tanh(atanh(correlation) + qnorm(0.975) / sqrt(n_obs - 3)),
     stars = ifelse(p_value < 0.001, "***",
                    ifelse(p_value < 0.01, "**", ifelse(p_value < 0.05, "*", "")))
   )
 
-# Sort models by mean correlation across conditions, conditions in a fixed order
 model_order <- df %>%
   group_by(model_name) %>%
-  summarize(avg = mean(abs_correlation, na.rm = TRUE)) %>%
+  summarize(avg = mean(abs(correlation))) %>%
   arrange(desc(avg)) %>%
   pull(model_name)
 
@@ -63,7 +56,6 @@ df <- df %>%
   arrange(model_group, cond_rank) %>%
   mutate(model_label_ordered = factor(model_label, levels = rev(unique(model_label))))
 
-# Alternating background bands, one per model
 bands <- df %>%
   mutate(row = rev(seq_len(n()))) %>%
   group_by(model_group) %>%
@@ -135,7 +127,6 @@ p <- ggplot() +
     plot.background = element_rect(fill = "white", colour = NA)
   )
 
-# Room for the labels: extend each panel's x range past the last value
 p <- p + scale_x_continuous(expand = expansion(mult = c(0.05, 0.35)), breaks = seq(-0.5, 1, by = 0.25))
 
 ggsave("results/graphs/model_performance.png", p, width = 7.5, height = 8.8, dpi = 300)
