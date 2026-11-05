@@ -150,7 +150,7 @@ French News}
 
 
 
-\abstract{Supplemental tables for the article. Tables S1 to S5 are
+\abstract{Supplemental tables for the article. Tables S1 to S8 are
 referred to in the main text. }
 
 \keywords{supplemental material}
@@ -265,6 +265,112 @@ referred to in the main text. }
 \ifdefined\csllabelwidth\else\newlength{\csllabelwidth}\fi
 \setlength{\cslhangindent}{0.5in}
 
+
+\begin{table}
+
+{\caption{{Search Terms Used to Select Articles in the Eureka
+Database}{\label{tbl-query}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1818}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8182}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Group
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search terms
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+French terms & \emph{logiciel libre}, \emph{logiciels libres},
+\emph{logiciel open source}, \emph{logiciels open source}, \emph{code
+source ouvert}, \emph{code source libre} \\
+English and borrowed terms & \emph{open source}, \emph{open-source},
+\emph{free software}, \emph{software libre} \\
+Proper names & \emph{Free Software Foundation}, \emph{Richard
+Stallman} \\
+\end{longtable}
+
+\end{table}
+
+\begin{table}
+
+{\caption{{Collected Articles by Source
+Media}{\label{tbl-source-summary}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Source & Articles & First article & Last article \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Libération & 769 & 1995-06-23 & 2024-11-04 \\
+Monde, Le & 666 & 2001-01-09 & 2024-12-26 \\
+Figaro, Le & 402 & 1998-10-21 & 2024-12-04 \\
+Devoir, Le & 318 & 1998-07-20 & 2024-10-26 \\
+Soleil, Le (Québec, QC) & 179 & 1998-11-08 & 2023-11-18 \\
+Presse, La & 152 & 1998-03-26 & 2017-10-14 \\
+Journal de Montréal, Le & 65 & 2006-12-20 & 2023-04-24 \\
+Journal de Québec, Le & 45 & 2007-03-24 & 2024-10-19 \\
+Tribune, La (Sherbrooke, QC) & 43 & 2000-03-29 & 2022-12-03 \\
+Droit, Le (Ottawa, ON) & 17 & 1998-11-10 & 2014-07-17 \\
+Nouvelliste, Le (Trois-Rivières, QC) & 13 & 2000-01-13 & 2022-03-05 \\
+Quotidien, Le (Saguenay, QC) & 10 & 2008-11-01 & 2019-04-10 \\
+Voix de l'Est, La (Granby, QC) & 4 & 2010-09-17 & 2015-02-14 \\
+\end{longtable}
+
+\end{table}
+
+\begin{table}
+
+{\caption{{Wording of the English Prompt on French Text, by
+Component}{\label{tbl-prompt}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2121}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7879}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Wording
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Task & Please analyze the sentiment of the following French text and
+provide a single numerical rating according to this scale: \\
+Scale, -1.0 & Strong negative sentiment - highly critical, hostile, or
+pessimistic content \\
+Scale, -0.5 & Moderate negative sentiment - somewhat negative,
+disapproving, or concerned content \\
+Scale, 0.0 & Neutral sentiment - factual, balanced, or neither positive
+nor negative content \\
+Scale, 0.5 & Moderate positive sentiment - somewhat positive, approving,
+or optimistic content \\
+Scale, 1.0 & Strong positive sentiment - highly supportive,
+enthusiastic, or optimistic content \\
+Intermediate values & You may also use values between these points for
+intermediate sentiment levels (e.g., -0.7, 0.3). \\
+Instruction 1 & First, carefully read and understand the text,
+considering cultural and linguistic nuances in French. \\
+Instruction 2 & Analyze the emotional tone, word choice, and overall
+message. \\
+Instruction 3 & Respond ONLY with a single numerical value between -1.0
+and 1.0 that best represents the sentiment. \\
+Instruction 4 & Do not include ANY explanations, analysis, or additional
+text in your response. \\
+Input & Here is the text to analyze: {[}sentence{]} \\
+\end{longtable}
+
+\end{table}
 
 \begin{table}[p]
 \caption{Correlation With Human Judgments (With 95\% Confidence Interval), Mean Absolute Error, and Number of Sentences Scored, by Model and Condition}

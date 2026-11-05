@@ -6,7 +6,7 @@ author:
   - name: Anonymized for review
     affiliations:
       - name: Anonymized for review
-abstract: "Supplemental tables for the article. Tables S1 to S5 are referred to in the main text."
+abstract: "Supplemental tables for the article. Tables S1 to S8 are referred to in the main text."
 keywords: [supplemental material]
 mask: true
 format:
@@ -19,6 +19,47 @@ format:
         \usepackage{pdflscape}
         \renewcommand{\thetable}{S\arabic{table}}
 ---
+
+::: {#tbl-query}
+
+| Group | Search terms |
+|:-----------|:-----------------------------------------------------|
+| French terms | *logiciel libre*, *logiciels libres*, *logiciel open source*, *logiciels open source*, *code source ouvert*, *code source libre* |
+| English and borrowed terms | *open source*, *open-source*, *free software*, *software libre* |
+| Proper names | *Free Software Foundation*, *Richard Stallman* |
+
+Table: Search Terms Used to Select Articles in the Eureka Database
+
+:::
+
+::: {#tbl-source-summary}
+
+{{< include ../../results/tables/summary_by_source.md >}}
+
+Table: Collected Articles by Source Media
+
+:::
+
+::: {#tbl-prompt}
+
+| Component | Wording |
+|:-------------|:---------------------------------------------------|
+| Task | Please analyze the sentiment of the following French text and provide a single numerical rating according to this scale: |
+| Scale, -1.0 | Strong negative sentiment - highly critical, hostile, or pessimistic content |
+| Scale, -0.5 | Moderate negative sentiment - somewhat negative, disapproving, or concerned content |
+| Scale, 0.0 | Neutral sentiment - factual, balanced, or neither positive nor negative content |
+| Scale, 0.5 | Moderate positive sentiment - somewhat positive, approving, or optimistic content |
+| Scale, 1.0 | Strong positive sentiment - highly supportive, enthusiastic, or optimistic content |
+| Intermediate values | You may also use values between these points for intermediate sentiment levels (e.g., -0.7, 0.3). |
+| Instruction 1 | First, carefully read and understand the text, considering cultural and linguistic nuances in French. |
+| Instruction 2 | Analyze the emotional tone, word choice, and overall message. |
+| Instruction 3 | Respond ONLY with a single numerical value between -1.0 and 1.0 that best represents the sentiment. |
+| Instruction 4 | Do not include ANY explanations, analysis, or additional text in your response. |
+| Input | Here is the text to analyze: [sentence] |
+
+Table: Wording of the English Prompt on French Text, by Component
+
+:::
 
 ```{=latex}
 \begin{table}[p]
