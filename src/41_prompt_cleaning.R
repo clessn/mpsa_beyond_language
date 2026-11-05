@@ -50,10 +50,13 @@ df_manual_2 <- readRDS("data/clean/annotator_2.rds") %>%
 df_raw_tmp <- merge(df_raw, df_manual_1, by = c("doc_id", "sentences")) %>%
   merge(df_manual_2, by = c("doc_id", "sentences")) %>%
   mutate(
-    manual = rowMeans(
-      cbind(manual, manual_1, manual_2), 
+    # Rounded to 10 decimals: three ratings that cancel out (e.g. 0.1, -0.2,
+    # 0.1) otherwise average to 9e-18 instead of 0, and a sentence the coders
+    # judged neutral on average would be classed as positive.
+    manual = round(rowMeans(
+      cbind(manual, manual_1, manual_2),
       na.rm = TRUE
-    ),
+    ), 10),
     manual_bin = case_when(
       manual > 0 ~ "positive",
       manual < 0 ~ "negative",
