@@ -39,7 +39,11 @@ df <- df_raw %>%
       paste0(display_name, " [", prompt_mechanism, "]",
              ifelse(n_obs < max(n_obs), paste0(" (n = ", n_obs, ")"), ""))
     ),
-    ci_half = 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
+    # 95% CI of r by Fisher's z transformation, as returned by cor.test().
+    # (Until November 2026 this used r +/- 1.96*sqrt((1-r^2)/(n-2)), the
+    # standard error for testing rho = 0, which is too wide when r is high.)
+    ci_lo = tanh(atanh(correlation) - qnorm(0.975) / sqrt(n_obs - 3)),
+    ci_hi = tanh(atanh(correlation) + qnorm(0.975) / sqrt(n_obs - 3)),
     stars = ifelse(p_value < 0.001, "***",
                    ifelse(p_value < 0.01, "**", ifelse(p_value < 0.05, "*", "")))
   )
@@ -72,7 +76,7 @@ PANEL_MAE <- "Distance from humans (MAE), lower is better"
 long <- bind_rows(
   df %>% transmute(model_label_ordered, model_type,
                    panel = PANEL_R, value = correlation,
-                   lo = correlation - ci_half, hi = correlation + ci_half,
+                   lo = ci_lo, hi = ci_hi,
                    label_x = hi + 0.03,
                    label = sprintf("%.2f%s", correlation, stars)),
   df %>% transmute(model_label_ordered, model_type,

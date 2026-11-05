@@ -23,8 +23,12 @@ df <- readRDS("data/clean/cor_results.rds") %>%
       grepl("^lsd_fr", model) ~ "FR",
       grepl("^lsd_en", model) ~ "EN"
     ),
-    ci_half = 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
-    ci = sprintf("[%.2f, %.2f]", correlation - ci_half, correlation + ci_half)
+    # 95% CI of r by Fisher's z transformation, as returned by cor.test().
+    # (Until November 2026 this used r +/- 1.96*sqrt((1-r^2)/(n-2)), the
+    # standard error for testing rho = 0, which is too wide when r is high.)
+    ci_lo = tanh(atanh(correlation) - qnorm(0.975) / sqrt(n_obs - 3)),
+    ci_hi = tanh(atanh(correlation) + qnorm(0.975) / sqrt(n_obs - 3)),
+    ci = sprintf("[%.2f, %.2f]", ci_lo, ci_hi)
   )
 
 order_tbl <- df %>%

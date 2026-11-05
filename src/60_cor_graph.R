@@ -177,8 +177,8 @@ plot_correlation <- ggplot() +
   # Add error bars with matching colors
   geom_errorbarh(data = df, aes(
     y = model_label_ordered,
-    xmin = correlation - 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
-    xmax = correlation + 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
+    xmin = tanh(atanh(correlation) - qnorm(0.975) / sqrt(n_obs - 3)),
+    xmax = tanh(atanh(correlation) + qnorm(0.975) / sqrt(n_obs - 3)),
     color = model_type
   ), height = 0.2) +
   
@@ -210,7 +210,7 @@ plot_correlation <- ggplot() +
   # Correlation value labels with significance stars
   # Labels sit just past the upper confidence bound so they never cross the error bar
   geom_text(data = df, aes(
-    x = correlation + 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)) + 0.03,
+    x = tanh(atanh(correlation) + qnorm(0.975) / sqrt(n_obs - 3)) + 0.03,
     y = model_label_ordered,
     label = sprintf("r = %.2f%s", 
                     correlation,
@@ -271,8 +271,8 @@ plot_correlation <- ggplot() +
   # Add error bars with matching colors
   geom_errorbarh(data = df, aes(
     y = model_label_ordered,
-    xmin = correlation - 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
-    xmax = correlation + 1.96 * sqrt((1 - correlation^2) / (n_obs - 2)),
+    xmin = tanh(atanh(correlation) - qnorm(0.975) / sqrt(n_obs - 3)),
+    xmax = tanh(atanh(correlation) + qnorm(0.975) / sqrt(n_obs - 3)),
     color = model_type
   ), height = 0.25) +
   
