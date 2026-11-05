@@ -13,18 +13,16 @@ retry_with_backoff <- function(expr, max_attempts = 5, base_delay = 1, max_delay
   }
 }
 
-#' Read the sentiment score out of a model's answer.
-#'
-#' An answer is accepted only if it contains exactly one number, or exactly
-#' one number right after a label such as "Score:", and that number lies in
-#' [-1, 1]. Anything else returns NA and the caller asks again. The minus sign
-#' is kept (including the Unicode minus and dashes), a decimal comma is read as
-#' a point, and Markdown marks are ignored. Cases are in
-#' tests/test_clean_sentiment_value.R.
-#'
-#' Until November 2026 the parser dropped the minus sign after a space, colon
-#' or asterisk ("Sentiment: -0.5" read as 0.5) and read "-0,5" as 0; see
-#' src/99x_parser_diagnostic.R.
+# Reads the score out of a model's answer. An answer is accepted only if it
+# contains exactly one number, or exactly one number right after a label such
+# as "Score:", and that number lies in [-1, 1]; anything else returns NA and
+# the caller asks again. The minus sign is kept (including the Unicode minus
+# and dashes), a decimal comma is read as a point, and Markdown marks are
+# ignored. Test cases: tests/test_clean_sentiment_value.R.
+#
+# Until November 2026 the parser dropped the minus sign after a space, colon
+# or asterisk ("Sentiment: -0.5" read as 0.5) and read "-0,5" as 0; see
+# src/99x_parser_diagnostic.R.
 clean_sentiment_value <- function(response) {
   if (is.null(response) || length(response) != 1 || is.na(response)) return(NA_real_)
   text <- as.character(response)

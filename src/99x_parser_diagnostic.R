@@ -1,21 +1,10 @@
-###############################################################################
-# PARSER DIAGNOSTIC (November 2026)
-#
-# The parser used for the September-October 2026 collection dropped the minus
-# sign of formatted answers ("Sentiment: -0.5" -> 0.5) and read a French
-# decimal comma as 0. Raw answers were not archived, so the affected scores
-# cannot be corrected after the fact. This script checks, on 20 sentences, in
-# what format the five models whose answer format is unknown actually reply,
-# with exactly the settings of src/40_prompt.R (same system prompt, prompts,
-# 400-token cap, provider pins and reasoning settings).
-#
-# For each answer it stores the raw text, the value the OLD parser would have
-# read, and the value the NEW parser reads. If the two agree everywhere, the
-# old scores for that model are unaffected.
+# Checks in which format five models answer, on 20 sentences in each
+# condition, with the settings of src/40, and compares the parser used until
+# November 2026 with the current one. Gemini 3.5 Flash was collected again
+# after this check.
 #
 # Usage: Rscript src/99x_parser_diagnostic.R <model_prefix>
-#   model_prefix in gpt56luna, gemini35, gptoss120b, gptoss20b, qwen332b
-###############################################################################
+# Out: results/analysis/parser_diagnostic/<model_prefix>.jsonl
 
 suppressMessages({ library(dplyr); library(stringr); library(ellmer) })
 source("src/92_llm_helper_funcs.R")

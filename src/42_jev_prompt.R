@@ -1,29 +1,9 @@
-#################################################################
-# JEV SENTIMENT SCORES FOR THE VALIDATION SAMPLE
-#################################################################
-# Adds Jev (TypeSafe's System One model) to the 200-sentence validation data,
-# in the same shape src/40_prompt.R gives the other models: three runs per
-# sentence and condition, stored as jev_<condition>_run1..3, and their mean as
-# jev_<condition>_mean.
+# Adds Jev to the benchmark scores, three runs per sentence and condition, in
+# the same shape as src/40. Answers are cached in data/tmp/jev_pipeline_calls.rds
+# and replayed, so the script must be run again after any rerun of src/40.
 #
-# RUN ORDER: src/40_prompt.R -> src/42_jev_prompt.R -> src/41_prompt_cleaning.R
-# 40 rebuilds data_manual_ranking_with_llm_scores.rds from its checkpoint, which
-# has no Jev columns, so run this again after any rerun of 40. It is cheap: API
-# answers are cached in data/tmp/jev_pipeline_calls.rds and replayed.
-#
-# Same design as the other models, so the comparison holds:
-#   - one condition per request (no batching), as in 40 and in the cost table
-#   - three runs; the mean is taken over valid runs, NA only if all three fail
-#   - every API call, including retries, is appended to the token log, once:
-#     replaying from the cache does not log again
-#
-# What differs, and belongs in the methods section: Jev is not asked to write a
-# number. It answers a Score question over the prompt's five anchors and
-# returns a probability per anchor; the score is their probability-weighted
-# position (see src/98_jev_helpers.R).
-#
-# Added: September 2026
-#################################################################
+# In:  data/tmp/data_manual_ranking_with_llm_scores.rds
+# Out: the same file, with the jev_* columns
 
 library(dplyr)
 library(tidyr)
@@ -42,10 +22,6 @@ stopifnot(nzchar(Sys.getenv("TYPESAFE_API_KEY")))
 
 df <- readRDS(SCORES_PATH) %>% select(-starts_with("jev_"))
 stopifnot(nrow(df) == 200)
-
-#################################################################
-# 1. QUERY JEV (OR REPLAY THE CACHE)
-#################################################################
 
 log_calls <- function(calls) {
   for (k in seq_len(nrow(calls))) {
@@ -92,10 +68,6 @@ if (!file.exists(CACHE_PATH)) {
 }
 calls <- readRDS(CACHE_PATH)
 
-#################################################################
-# 2. ONE VALUE PER RUN, THEN THE MEAN OVER VALID RUNS
-#################################################################
-
 runs <- calls %>%
   arrange(attempt) %>%
   group_by(item, condition, run) %>%
@@ -119,10 +91,6 @@ jev_cols <- left_join(run_cols, mean_cols, by = "item") %>% arrange(item)
 
 stopifnot(nrow(jev_cols) == nrow(df), identical(jev_cols$item, seq_len(nrow(df))))
 df <- bind_cols(df, select(jev_cols, -item))
-
-#################################################################
-# 3. SAVE AND REPORT
-#################################################################
 
 saveRDS(df, SCORES_PATH)
 readr::write_csv(df, sub("\\.rds$", ".csv", SCORES_PATH))

@@ -1,49 +1,21 @@
-###############################################################################
-# FULL CORPUS SENTIMENT ANALYSIS WITH ONE LLM
+# Scores the 2,683 full articles with one model (GPT-5.6 Luna by default)
+# under the French and the English prompt. Resumes from its checkpoint.
 #
-# Scores every article of the French news corpus with a single model, under
-# the two prompt-language conditions the validation study compares on French
-# text: French prompt (fr_fr) and English prompt (en_fr). The result feeds the
-# corpus-level comparison with the Lexicoder dictionary (src/80_corpus_analysis.R
-# and Figure 5 of the manuscript).
+# In:  data/tmp/news_df_tone_index.rds
+# Out: data/clean/news_df_sentiment_corpus.rds
 #
-# The model is chosen by its prefix in src/94_models_map.R, so the script
-# follows the lineup rather than hard-coding a vendor:
-#   Rscript src/70_prompt_corpus.R                       # default: gpt56luna
-#   CORPUS_MODEL=claudehaiku45 Rscript src/70_prompt_corpus.R
-#
-# The default is GPT-5.6 Luna because it is the best-performing model of the
-# 2026 validation run (r = 0.81 in FR->FR, 0.80 in EN->FR) and the cheapest of
-# the closed-weight ones on this corpus. The 2025 version of this script was
-# Gemini-only (then the best model); its English-prompt twin,
-# src/71_en_prompt_corpus.R, is folded into this one.
-#
-# Client settings are identical to src/40_prompt.R (same model id, 400-token
-# output cap, same system prompt), so corpus scores are comparable with the
-# validation scores. Every API call is logged to a separate token log.
-#
-# Author: Ral Zarek
-# Date: March 2025; rewritten October 2026
-###############################################################################
-
-#==============================================================================
-# 1. SETUP AND DEPENDENCIES
-#==============================================================================
+# Environment: CORPUS_MODEL (model prefix).
 
 options(warn = 1)  # Print warnings as they occur
 
-library(ellmer)   # LLM API interactions
-library(dplyr)    # Data manipulation
-library(stringr)  # Used by clean_sentiment_value()
+library(ellmer)
+library(dplyr)
+library(stringr)
 
-source("src/92_llm_helper_funcs.R")  # retry_with_backoff(), clean_sentiment_value()
-source("src/93_prompts.R")           # fr_prompt_fr_text(), en_prompt_fr_text(), get_system_prompt()
-source("src/94_models_map.R")        # model_mapping, model_provider_pin, openrouter_args()
-source("src/95_token_logging.R")     # capture_usage(), log_api_call(), init_token_log()
-
-#------------------------------------------------------------------------------
-# 1.1 MODEL SELECTION
-#------------------------------------------------------------------------------
+source("src/92_llm_helper_funcs.R")
+source("src/93_prompts.R")
+source("src/94_models_map.R")
+source("src/95_token_logging.R")
 
 MODEL_PREFIX <- Sys.getenv("CORPUS_MODEL", "gpt56luna")
 if (!MODEL_PREFIX %in% names(model_mapping)) {
@@ -53,39 +25,22 @@ if (!MODEL_PREFIX %in% names(model_mapping)) {
 MODEL_ID <- unname(model_mapping[MODEL_PREFIX])
 cat(sprintf("Corpus model: %s (%s)\n", MODEL_PREFIX, MODEL_ID))
 
-# Same cap as src/40_prompt.R. Providers bill tokens generated, not the
-# ceiling, so this costs nothing for models that answer in 3-4 tokens.
 OUTPUT_MAX_TOKENS <- 400
 
-#------------------------------------------------------------------------------
-# 1.2 FILE LAYOUT
-#------------------------------------------------------------------------------
-
-# Checkpoints carry the model prefix so a run for one model can never resume
-# from another model's scores. The 2025 Gemini checkpoints had generic names,
-# and a rerun would have silently skipped every article already scored by the
-# old model (see data/tmp/archive_2025/README.md).
+# Checkpoints are named by model so that a run never resumes from another
+# model's scores
 CHECKPOINT_PREFIX <- sprintf("data/tmp/corpus_sentiment_%s_", MODEL_PREFIX)
 LATEST_CHECKPOINT <- paste0(CHECKPOINT_PREFIX, "latest_checkpoint.rds")
 
-# One output file for the corpus, with one column per model and condition
-# (e.g. gpt56luna_fr_fr, gpt56luna_en_fr). Running a second model adds its
-# columns alongside the first's.
+# One output file, one column per model and condition (e.g. gpt56luna_fr_fr)
 OUTPUT_PATH <- "data/clean/news_df_sentiment_corpus.rds"
 
-# Separate log from the validation run's: summarize_costs() aggregates the
-# default log by model, and these article-length calls would otherwise be
-# folded into the per-sentence cost table.
+# Kept apart from the benchmark's token log, which feeds the cost table
 CORPUS_TOKEN_LOG_PATH <- "results/analysis/token_usage_log_corpus.csv"
 CORPUS_RAW_RESPONSE_LOG_PATH <- "results/analysis/raw_responses_corpus.jsonl"
 init_token_log(CORPUS_TOKEN_LOG_PATH)
 
-#------------------------------------------------------------------------------
-# 1.3 SINGLE-INSTANCE LOCK
-#------------------------------------------------------------------------------
-# Two concurrent runs overwrite each other's checkpoints and interleave token
-# log lines (this happened to src/40_prompt.R on 2026-09-09). The lock stores
-# this process's PID; a stale lock from a killed run is detected and replaced.
+# Same lock as in src/40_prompt.R
 LOCK_PATH <- "data/tmp/.corpus.lock"
 
 if (file.exists(LOCK_PATH)) {
@@ -102,10 +57,6 @@ if (file.exists(LOCK_PATH)) {
 writeLines(as.character(Sys.getpid()), LOCK_PATH)
 
 tryCatch({
-
-#==============================================================================
-# 2. DATA LOADING AND CHECKPOINT RESUME
-#==============================================================================
 
 df_raw <- readRDS("data/tmp/news_df_tone_index.rds")
 
@@ -132,10 +83,6 @@ if (file.exists(LATEST_CHECKPOINT)) {
 
 stopifnot(nrow(df) == nrow(df_raw), all(df$doc_id == df_raw$doc_id))
 
-#==============================================================================
-# 3. CHECKPOINTING
-#==============================================================================
-
 last_checkpoint_time <- Sys.time()
 CHECKPOINT_INTERVAL_S <- 600  # also forced every 10 articles
 
@@ -153,7 +100,6 @@ save_progress_checkpoint <- function(data, column, force = FALSE) {
                 column, done, nrow(data), 100 * done / nrow(data)))
     last_checkpoint_time <<- now
 
-    # Keep only the 10 most recent stamped checkpoints for this model
     stamped_files <- list.files("data/tmp",
                                 pattern = sprintf("^corpus_sentiment_%s_progress_.*\\.rds$", MODEL_PREFIX),
                                 full.names = TRUE)
@@ -168,11 +114,6 @@ save_progress_checkpoint <- function(data, column, force = FALSE) {
   })
 }
 
-#==============================================================================
-# 4. MODEL CLIENT
-#==============================================================================
-
-# Mirrors the client construction in src/40_prompt.R, section 3.
 build_client <- function(prefix) {
   system_prompt <- get_system_prompt()
   params <- ellmer::params(max_tokens = OUTPUT_MAX_TOKENS)
@@ -197,16 +138,7 @@ build_client <- function(prefix) {
 client <- build_client(MODEL_PREFIX)
 cat("Client initialized.\n")
 
-#==============================================================================
-# 5. SCORING LOOP
-#==============================================================================
-
-#' Score every article under one prompt-language condition
-#'
-#' @param data Corpus data frame
-#' @param prompt_lang "fr" or "en": language of the instructions (text is
-#'   always the French original)
-#' @return `data` with the column `<prefix>_<prompt_lang>_fr` filled in
+# Scores every article with the French or English prompt (text always in French)
 score_corpus <- function(data, prompt_lang) {
   condition <- paste0(prompt_lang, "_fr")
   column <- paste0(MODEL_PREFIX, "_", condition)
@@ -224,8 +156,7 @@ score_corpus <- function(data, prompt_lang) {
     value <- NA_real_
 
     for (attempt in seq_len(max_retries)) {
-      # `response` is assigned FROM tryCatch so an API failure yields NULL
-      # here rather than leaving the previous article's text in place.
+      # Assigned from tryCatch so that a failed call gives NULL
       response <- tryCatch({
         client$set_turns(list())  # each article is a fresh conversation
         retry_with_backoff({ client$chat(prompt) })
@@ -236,7 +167,6 @@ score_corpus <- function(data, prompt_lang) {
       })
       if (is.null(response)) next
 
-      # Snapshot usage before anything else touches the client; fails soft
       call_usage <- capture_usage(client)
       Sys.sleep(1)  # pacing
 
@@ -275,10 +205,6 @@ score_corpus <- function(data, prompt_lang) {
 # Both conditions on French text, in the same order as src/40_prompt.R
 df <- score_corpus(df, "fr")
 df <- score_corpus(df, "en")
-
-#==============================================================================
-# 6. SAVE AND SUMMARIZE
-#==============================================================================
 
 saveRDS(df, OUTPUT_PATH)
 cat("\nSaved corpus scores to", OUTPUT_PATH, "\n")

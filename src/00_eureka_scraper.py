@@ -1,17 +1,9 @@
-"""
-#################################################################
-# EUREKA WEB SCRAPER MODULE
-#################################################################
-# This module provides functionality for scraping news articles from the Eureka
-# database, which requires institutional login. The scraper handles authentication,
-# manual search interaction, and article extraction.
-#
-# Key features:
-# - Supports both undetected-chromedriver and regular ChromeDriver
-# - Handles manual login and search operations
-# - Extracts document keys in various ways to handle different page structures
-# - Downloads articles in batches with resumable capability
-# - Provides detailed progress tracking and error handling
+"""Downloads the articles of a Eureka search as HTML files.
+
+Eureka requires an institutional login, so the browser opens for the user to
+log in and run the search by hand; the script then collects the document keys
+of the results and downloads each article, resuming from a progress file if
+the run is interrupted.
 """
 
 import json
@@ -56,7 +48,6 @@ class EurekaScraper:
         self.output_dir = output_dir
         self.driver = None
 
-        # Create output directory if it doesn't exist
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
@@ -70,25 +61,20 @@ class EurekaScraper:
         """
         print("Setting up undetected Chrome WebDriver...")
         try:
-            # Configure Chrome options
             chrome_options = uc.ChromeOptions()
 
-            # Add options for stability
             chrome_options.add_argument("--no-sandbox")
             chrome_options.add_argument("--disable-dev-shm-usage")
             chrome_options.add_argument("--window-size=1920,1080")
 
-            # Create the undetected-chromedriver
             self.driver = uc.Chrome(options=chrome_options)
 
-            # Set implicit wait time
             self.driver.implicitly_wait(10)
             print("Undetected Chrome browser set up successfully")
         except Exception as e:
             print(f"Error setting up undetected Chrome: {e}")
             print("Falling back to regular Chrome WebDriver...")
 
-            # Fallback to regular Chrome WebDriver
             chrome_options = Options()
             chrome_options.add_argument("--no-sandbox")
             chrome_options.add_argument("--disable-dev-shm-usage")
@@ -128,10 +114,8 @@ class EurekaScraper:
         print("Once you are ready to proceed, press Enter in this console.")
         print("=" * 50 + "\n")
 
-        # Wait for user to press Enter
         input("Press Enter to continue after you've completed the search setup...")
 
-        # Save current page to help with debugging
         self.driver.save_screenshot(
             os.path.join(self.output_dir, "after_manual_login.png")
         )
@@ -144,7 +128,6 @@ class EurekaScraper:
         """
         print("Waiting for search results page...")
 
-        # Take a screenshot to document the current state
         self.driver.save_screenshot(os.path.join(self.output_dir, "search_results.png"))
 
         # No need to click search button or set up search parameters
@@ -163,12 +146,10 @@ class EurekaScraper:
             list: List of document keys, or empty list if none found
         """
         try:
-            # Take a screenshot of the results page
             self.driver.save_screenshot(
                 os.path.join(self.output_dir, "results_page.png")
             )
 
-            # Try to find the number of results first
             try:
                 results_count = self.driver.find_element(
                     By.XPATH, "//div[contains(@class, 'results-count')]"
@@ -177,10 +158,8 @@ class EurekaScraper:
             except Exception as e:
                 print(f"Could not find results count: {e}")
 
-            # Get page source
             page_source = self.driver.page_source
 
-            # Save page source for debugging
             with open(
                 os.path.join(self.output_dir, "results_page_source.html"),
                 "w",
@@ -188,7 +167,6 @@ class EurekaScraper:
             ) as f:
                 f.write(page_source)
 
-            # Try different regex patterns to find document keys
             patterns = [
                 r"_docKeyList\s*=\s*(\[.+?\]);",  # Original pattern
                 r"var\s+_docKeyList\s*=\s*(\[.+?\]);",  # With 'var' declaration
@@ -199,13 +177,11 @@ class EurekaScraper:
 
             doc_keys = []
 
-            # Try each pattern until we find a match
             for pattern in patterns:
                 match = re.search(pattern, page_source, re.DOTALL)
                 if match:
                     json_array = match.group(1)
 
-                    # Clean the JSON string (handle escaped quotes, newlines, etc.)
                     json_array = json_array.replace('\\"', '"').replace("\\n", "")
 
                     try:
@@ -230,7 +206,6 @@ class EurekaScraper:
                         match = re.search(r"docName=([^&]+)", href)
                         if match:
                             doc_key = match.group(1)
-                            # URL decode the key
                             doc_key = doc_key.replace("%C2%B7", "·").replace(
                                 "%C3%97", "×"
                             )
@@ -241,7 +216,6 @@ class EurekaScraper:
                 except Exception as e:
                     print(f"Error extracting keys from links: {e}")
 
-            # Save doc keys to file for backup (if any found)
             if doc_keys:
                 with open(
                     os.path.join(self.output_dir, "doc_keys.json"),
@@ -298,7 +272,6 @@ class EurekaScraper:
 
         print(f"Created {len(urls)} article URLs")
 
-        # Save URLs to CSV file
         urls_df = pd.DataFrame(urls)
         urls_df.to_csv(os.path.join(self.output_dir, "article_urls.csv"), index=False)
 
@@ -326,7 +299,6 @@ class EurekaScraper:
 
         end_index = min(start_index + max_articles, len(urls))
 
-        # Check for existing articles to enable resuming downloads
         existing_articles = []
         for i in range(start_index, end_index):
             article_index = urls[i]["index"]
@@ -346,7 +318,6 @@ class EurekaScraper:
             article_url = url_data["url"]
             article_index = url_data["index"]
 
-            # Skip existing articles
             filename = os.path.join(
                 self.output_dir, f"article_{article_index+1:04d}.html"
             )
@@ -361,22 +332,17 @@ class EurekaScraper:
                     f"Downloading article {i+1-start_index}/{end_index-start_index} (index {article_index})"
                 )
 
-                # Open article in the current window
                 self.driver.get(article_url)
 
-                # Reduced wait time for faster downloads
                 time.sleep(1.5)
 
-                # Get the HTML content
                 article_html = self.driver.page_source
 
-                # Save the HTML content to a file
                 with open(filename, "w", encoding="utf-8") as f:
                     f.write(article_html)
 
                 print(f"Saved article to {filename}")
 
-                # Only take screenshots of the first 3 articles for verification
                 if i < start_index + 3:
                     self.driver.save_screenshot(
                         os.path.join(
@@ -385,10 +351,8 @@ class EurekaScraper:
                         )
                     )
 
-                # Reduced delay between requests for faster processing
                 time.sleep(1)
 
-                # Save progress more frequently (every 10 articles)
                 if (i - start_index + 1) % 10 == 0:
                     with open(os.path.join(self.output_dir, "progress.txt"), "w") as f:
                         f.write(f"Current progress: {i+1}/{end_index}\n")
@@ -397,7 +361,6 @@ class EurekaScraper:
             except Exception as e:
                 print(f"Error downloading article {article_index+1:04d}: {e}")
 
-                # Save error details
                 error_file = os.path.join(
                     self.output_dir, f"article_{article_index+1:04d}_error.txt"
                 )
@@ -405,7 +368,6 @@ class EurekaScraper:
                     f.write(f"Error: {str(e)}\n")
                     f.write(f"URL: {article_url}\n")
 
-                # Give a short break after errors to prevent rapid failure
                 time.sleep(2)
 
     def close(self):
@@ -436,35 +398,27 @@ class EurekaScraper:
             batch_size (int): Number of articles to download in each batch
         """
         try:
-            # Setup the browser
             self.setup_driver()
 
-            # Navigate to the starting URL
             self.navigate_to_initial_url(start_url)
 
-            # Let the user manually login and perform search
             self.manual_login()
 
-            # User has manually done the search, now we wait for the results
             self.wait_for_search_results()
 
-            # Extract document keys
             doc_keys = self.extract_doc_keys()
             if not doc_keys:
                 print("No document keys found. Exiting.")
                 return
 
-            # Create URLs for articles
             urls = self.create_article_urls(doc_keys)
 
-            # Download articles in batches
             total_articles = len(urls)
             current_index = start_index
 
             print(f"Found {total_articles} articles to download")
             print("Will download ALL articles in the search results")
 
-            # Ask user if they want to continue
             if total_articles > 100:
                 response = input(
                     f"You are about to download {total_articles} articles. Continue? (y/n): "
@@ -483,7 +437,6 @@ class EurekaScraper:
 
                 current_index += batch_size
 
-                # Save progress
                 with open(os.path.join(self.output_dir, "progress.txt"), "w") as f:
                     f.write(f"Last processed index: {current_index}\n")
                     f.write(
@@ -495,7 +448,6 @@ class EurekaScraper:
                     f"Completed {min(current_index, total_articles)}/{total_articles} articles"
                 )
 
-                # If we have more batches to go, take a short break
                 if current_index < total_articles:
                     pause_time = 5  # Reduced pause time between batches
                     print(f"Pausing for {pause_time} seconds before the next batch...")
@@ -511,17 +463,14 @@ class EurekaScraper:
                 )
 
         finally:
-            # Handle script termination more gracefully
             try:
                 print("\nKeeping browser open for inspection.")
                 print(
                     "When you're done, close the browser manually and press Ctrl+C to exit the script."
                 )
 
-                # Give time for user to see the final state before closing
                 time.sleep(10)
 
-                # Close the browser if it's still open
                 if self.driver:
                     self.close()
 
@@ -577,7 +526,6 @@ def main(
     """
     start_url = "https://acces.bibl.ulaval.ca/login?url=https://nouveau.eureka.cc/access/ip/default.aspx?un=ulaval1"
 
-    # Ask for timeframe if not provided
     if not start_date:
         while True:
             start_date = input("Enter the start date (YYYY-MM-DD): ")
@@ -592,13 +540,11 @@ def main(
                 break
             print("Invalid date format. Please use YYYY-MM-DD format.")
 
-    # Create a timeframe-specific directory
     timeframe_dir = os.path.join(output_dir, f"{start_date}_{end_date}")
     if not os.path.exists(timeframe_dir):
         os.makedirs(timeframe_dir)
         print(f"Created directory: {timeframe_dir}")
 
-    # Check if we need to resume from a saved progress file
     if resume and os.path.exists(os.path.join(timeframe_dir, "progress.txt")):
         try:
             with open(os.path.join(timeframe_dir, "progress.txt"), "r") as f:
@@ -615,7 +561,6 @@ def main(
                 f"Error reading progress file, starting from index {start_index}: {e}"
             )
 
-    # Create and run the scraper
     print("Starting Eureka article scraper")
     print(f"Output directory: {timeframe_dir}")
     print(f"Starting index: {start_index}")
@@ -629,7 +574,6 @@ if __name__ == "__main__":
     import argparse
     import sys
 
-    # Check if we're running in IPython
     try:
         __IPYTHON__
         in_ipython = True
@@ -641,7 +585,6 @@ if __name__ == "__main__":
         print("Running in IPython environment with default settings")
         main()
     else:
-        # Create command line argument parser for normal Python execution
         parser = argparse.ArgumentParser(description="Eureka Article Scraper")
         parser.add_argument(
             "--output-dir",
@@ -671,7 +614,6 @@ if __name__ == "__main__":
 
         args = parser.parse_args()
 
-        # Run with command line arguments
         main(
             output_dir=args.output_dir,
             start_index=args.start_index,

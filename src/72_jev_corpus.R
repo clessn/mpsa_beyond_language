@@ -1,26 +1,8 @@
-#################################################################
-# FULL CORPUS SENTIMENT WITH JEV, COMPARED WITH GPT-5.6 LUNA AND LEXICODER
-#################################################################
-# Scores all 2,683 articles with Jev in the two conditions src/70_prompt_corpus.R
-# runs (FR->FR and EN->FR, whole article as input), then compares Jev with the
-# GPT-5.6 Luna corpus run behind Figure 5 and with Lexicoder, at the article,
-# month and year level.
+# Scores the full corpus with Jev and compares it with GPT-5.6 Luna and the
+# French Lexicoder, by article and by month (Figure 1 text).
 #
-# Exploratory: separate files only. The corpus file, src/80 and the
-# manuscript's Figure 5 are untouched.
-#
-# Differences from the GPT-5.6 Luna run, to keep in mind when comparing:
-#   - both conditions are asked in one request (same state, two questions);
-#     on the validation sample this moved scores by no more than repeat noise
-#   - one run per article, as for GPT-5.6 Luna's corpus pass
-#   - Jev was validated on single sentences; whole articles (~1,400 tokens on
-#     average) are outside that validation, and TypeSafe notes accuracy can drop
-#     as the state grows
-#   - Jev's articles were scored on 2026-09-28, GPT-5.6 Luna's in October 2026
-#
-# Usage: Rscript src/72_jev_corpus.R
-# Resumable: progress is saved every CHUNK articles.
-#################################################################
+# In:  data/clean/news_df_sentiment_corpus.rds, data/tmp/news_df_tone_index.rds
+# Out: data/clean/news_df_sentiment_jev.rds, results/analysis/jev_corpus_comparison.rds
 
 library(dplyr)
 library(tidyr)
@@ -38,10 +20,6 @@ stopifnot(nzchar(Sys.getenv("TYPESAFE_API_KEY")))
 
 news <- readRDS("data/tmp/news_df_tone_index.rds")
 stopifnot(nrow(news) == 2683, !anyDuplicated(news$doc_id))
-
-#################################################################
-# 1. SCORE (RESUMABLE)
-#################################################################
 
 done <- if (file.exists(PROGRESS_PATH)) readRDS(PROGRESS_PATH) else NULL
 todo <- which(!news$doc_id %in% done$doc_id &
@@ -84,10 +62,6 @@ corpus <- news %>%
 stopifnot(nrow(corpus) == nrow(news))
 saveRDS(corpus, OUTPUT_PATH)
 
-#################################################################
-# 2. ARTICLE LEVEL
-#################################################################
-
 methods <- c(jev_fr_fr = "Jev FR→FR", jev_en_fr = "Jev EN→FR",
              luna_fr_fr = "GPT-5.6 Luna FR→FR", luna_en_fr = "GPT-5.6 Luna EN→FR",
              lsd_fr = "Lexicoder FR", lsd_en = "Lexicoder EN")
@@ -118,10 +92,6 @@ cat(sprintf("\n  Jev confidence vs log article length (FR->FR): rho = %.3f, p = 
             conf_length$estimate, conf_length$p.value))
 cat(sprintf("  median Jev confidence: articles %.2f\n",
             median(corpus$jev_fr_fr_confidence, na.rm = TRUE)))
-
-#################################################################
-# 3. OVER TIME
-#################################################################
 
 series <- function(unit) {
   corpus %>%
@@ -175,10 +145,6 @@ p <- ggplot(plot_df, aes(period, sentiment, linetype = method, shape = method)) 
   theme(legend.position = "bottom", panel.grid.minor = element_blank())
 
 ggsave("results/graphs/jev_corpus_time_series.png", p, width = 11, height = 6.5, dpi = 300)
-
-#################################################################
-# 4. COST, SPEED, SAVE
-#################################################################
 
 tokens <- done %>% distinct(doc_id, input_tokens)
 cost <- sum(tokens$input_tokens, na.rm = TRUE) / 1e6 * JEV_PRICE_PER_MTOK
