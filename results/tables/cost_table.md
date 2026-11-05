@@ -13,6 +13,6 @@
 | GPT-5.6 Luna | OpenAI | Closed | 1.00 | 552,225 | 51,819 | 0.096 |
 | Mistral Large 4 | OpenRouter | Closed | 1.00 | 534,990 | 7,603 | 0.211 |
 | Claude Haiku 4.5 | Anthropic | Closed | 1.00 | 648,705 | 12,600 | 0.395 |
-| Gemini 3.5 Flash | Google | Closed | 1.03 | 568,160 | 658,571 | 3.766 |
+| Gemini 3.5 Flash | Google | Closed | 1.04 | 572,330 | 577,590 | 3.365 |
 | Llama 3.2 1B | OpenRouter | Open | 22.68 | -- | 168,789 | -- |
 
