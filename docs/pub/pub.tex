@@ -1097,11 +1097,11 @@ Granularity}\label{classification-granularity}
 All models performed substantially better on 3-category than on
 7-category classification (best F1 0.770 vs.~0.532; mean 0.656
 vs.~0.380; Figure~\ref{fig-f1}). Models identified positive and negative
-sentiment most reliably (7-category F1 = 0.480 and 0.453, rising to
-0.711 and 0.627 in the 3-category scheme). They struggled most with the
-extreme categories (very negative F1 = 0.265, very positive F1 = 0.142),
+sentiment most reliably (7-category F1 = 0.489 and 0.475, rising to
+0.710 and 0.659 in the 3-category scheme). They struggled most with the
+extreme categories (very negative F1 = 0.286, very positive F1 = 0.153),
 which are nearly absent from the sample (two sentences and one
-sentence). Neutral remained the hardest 3-category label (F1 = 0.267).
+sentence). Neutral remained the hardest 3-category label (F1 = 0.271).
 
 \begin{figure}[!htbp]
 
@@ -1163,13 +1163,15 @@ cheaper on French (\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI,
 2024}) held for one of its two models. Mistral Large 4 encoded French
 more compactly than any other model and had the smallest French-prompt
 overhead (10\%). Mistral Small 3.2 did not stand out (1.45 tokens per
-French word, a 15\% overhead). Output length did not differ by prompt
-language. Since accuracy was equivalent, the English prompt is the
-cheaper of two equally good options. The saving per 1,000 sentences
-ranges from under 6\% for models whose output tokens weigh most in the
-bill to 10\% to 31\% for models billed mostly on input. Translating the
-text first would save a few percent more, at the accuracy cost reported
-above.
+French word, a 15\% overhead). Output length changed with prompt
+language only for the models that reason before answering: Gemini 3.5
+Flash generated about 58 more tokens per call under the French prompt,
+GPT-5.6 Luna and the GPT-OSS models 3 to 6 fewer. Since accuracy was
+equivalent, the English prompt is the cheaper of two equally good
+options. The saving per 1,000 sentences ranges from under 6\% for
+GPT-5.6 Luna and the GPT-OSS models, whose bill is mostly output tokens,
+to 9\% to 23\% for the other models. Translating the text first would
+save a few percent more, at the accuracy cost reported above.
 
 \subsection{Translation: A Bridge for Dictionaries, a Cost Without Gain
 for
