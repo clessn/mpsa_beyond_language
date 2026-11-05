@@ -634,8 +634,7 @@ translate-then-analyze strategy reviewed above. For this condition, the
 French corpus was machine-translated into English with Google
 Translate's document translation service. An automated R workflow
 processed the documents in batches and preserved document IDs, so that
-the French and English versions remain aligned.\footnote{See
-  \texttt{src/21\_translate\_to\_english.R} in the project repository.}
+the French and English versions remain aligned.
 
 \subsection{Manual Annotation}\label{manual-annotation}
 
@@ -754,15 +753,10 @@ intermediate values allowed, an instruction to consider cultural and
 linguistic nuance, and a constraint to respond with a numerical value
 only. The French prompts were translated from the English prompts by an
 LLM (Claude) and checked by the three coders, all native French
-speakers.\footnote{The French-prompt/French-text version is identical
-  except for language. In every condition, the prompt was preceded by
-  the same one-sentence system prompt in English: ``You are a helpful
+speakers.\footnote{In every condition, the prompt was preceded by the
+  same one-sentence system prompt in English: ``You are a helpful
   assistant that analyzes the sentiment of text. You provide accurate
-  and consistent sentiment ratings according to the specified scale.''
-  See \texttt{src/93\_prompts.R} in the project repository for the exact
-  prompts, and \texttt{src/40\_prompt.R} for the full evaluation
-  pipeline, including model initialization, retry logic, rate limiting,
-  and checkpointing.}
+  and consistent sentiment ratings according to the specified scale.''}
 
 The generative models were queried through the \texttt{ellmer} R
 package. Claude Haiku 4.5, Gemini 3.5 Flash, and GPT-5.6 Luna were
@@ -782,54 +776,49 @@ providers disabled.\footnote{Endpoint pins (Mistral Large 4 is served
 queried with its default settings. Under these settings it generates
 reasoning tokens before answering: 354 output tokens per call on
 average, against 7 for Claude Haiku 4.5. Jev was queried through
-TypeSafe's API, with the model version pinned.\footnote{See
-  \texttt{src/42\_jev\_prompt.R} and \texttt{src/98\_jev\_helpers.R}.}
-Each sentence was scored three times per model and condition (27,000
-scores in total), and the mean of the three runs was taken as the final
-score. The runs agreed closely: across the 42 model-condition
-combinations, the correlation between two runs of the same model had a
-median of 0.91, from 0.41 for Llama 3.2 3B to 0.97 for GPT-5.6 Luna and
-Qwen3 235B-A22B, and Jev, whose output is a probability distribution,
-was fully deterministic. Despite explicit instructions to respond with a
-bare number, some answers contained other text. A number was read from
-each answer with a pattern-matching function, and only values within the
--1.0 to 1.0 range were retained. After data collection, this function
-was found to drop the minus sign when a number followed a label or
-formatting (for example, ``Sentiment: -0.5'' was read as 0.5). A
-diagnostic on 60 answers from each of the five models whose answer
-format could not be inferred from the token logs showed that four of
-them answered with a bare number or an empty answer, both handled
-correctly. Gemini 3.5 Flash occasionally hedged between two values, so
-its scores were collected again with a corrected function, which accepts
-an answer only if it contains a single number and keeps its
-sign.\footnote{See \texttt{src/99x\_parser\_diagnostic.R}. The answers
-  of the other generative models were 3 to 7 tokens long on nearly every
-  call, the length of a bare number. The corrected function and an
-  archive of every raw answer collected with it are in the repository.}
-Jev's answers needed no parsing.
+TypeSafe's API, with the model version pinned. Each sentence was scored
+three times per model and condition (27,000 scores in total), and the
+mean of the three runs was taken as the final score. The runs agreed
+closely: across the 42 model-condition combinations, the correlation
+between two runs of the same model had a median of 0.91, from 0.41 for
+Llama 3.2 3B to 0.97 for GPT-5.6 Luna and Qwen3 235B-A22B, and Jev,
+whose output is a probability distribution, was fully deterministic.
+Despite explicit instructions to respond with a bare number, some
+answers contained other text. A number was read from each answer with a
+pattern-matching function, and only values within the -1.0 to 1.0 range
+were retained. After data collection, this function was found to drop
+the minus sign when a number followed a label or formatting (for
+example, ``Sentiment: -0.5'' was read as 0.5). A diagnostic on 60
+answers from each of the five models whose answer format could not be
+inferred from the token logs showed that four of them answered with a
+bare number or an empty answer, both handled correctly. Gemini 3.5 Flash
+occasionally hedged between two values, so its scores were collected
+again with a corrected function, which accepts an answer only if it
+contains a single number and keeps its sign.\footnote{The answers of the
+  other generative models were 3 to 7 tokens long on nearly every call,
+  the length of a bare number. Every raw answer collected with the
+  corrected function is archived with the replication materials.} Jev's
+answers needed no parsing.
 
 To check whether the sentence-level findings hold at the scale of a real
 corpus, the best-performing model on the benchmark, GPT-5.6 Luna, also
 scored all 2,683 full articles under the FR→FR and EN→FR conditions,
 with the same prompts and settings, and Jev did the same, which gives
-the corpus check a second model of a different kind.\footnote{See
-  \texttt{src/70\_prompt\_corpus.R} and \texttt{src/72\_jev\_corpus.R}.
-  The two GPT-5.6 Luna passes required 5,366 API calls, 7.1 million
-  input tokens and 187,000 output tokens, for USD 1.64 at list prices.}
-These scores are compared with the French Lexicoder dictionary in the
-Results (Figure~\ref{fig-corpus}). A final check asks whether the
-translation condition measures the cost of translation or of the
-translator: the 200 sentences were translated again by GPT-5.6 Luna and
-rescored under the English prompt by the thirteen generative models,
-with the same parsing and averaging, in three runs for the three models
-accessed directly from their vendors and one run for the ten served
-through OpenRouter.\footnote{See
-  \texttt{src/43\_llm\_translation\_test.R}. OpenRouter's shared
-  provider pools throttled the check heavily, hence the single run;
-  Qwen3 235B-A22B could not be held to its pinned provider and was
-  served by another, and GPT-OSS 20B returned no parseable score for one
-  sentence. Jev, whose input is a typed question rather than a text
-  prompt, was not retested.}
+the corpus check a second model of a different kind.\footnote{The two
+  GPT-5.6 Luna passes required 5,366 API calls, 7.1 million input tokens
+  and 187,000 output tokens, for USD 1.64 at list prices.} These scores
+are compared with the French Lexicoder dictionary in the Results
+(Figure~\ref{fig-corpus}). A final check asks whether the translation
+condition measures the cost of translation or of the translator: the 200
+sentences were translated again by GPT-5.6 Luna and rescored under the
+English prompt by the thirteen generative models, with the same parsing
+and averaging, in three runs for the three models accessed directly from
+their vendors and one run for the ten served through
+OpenRouter.\footnote{OpenRouter's shared provider pools throttled the
+  check heavily, hence the single run; Qwen3 235B-A22B could not be held
+  to its pinned provider and was served by another, and GPT-OSS 20B
+  returned no parseable score for one sentence. Jev, whose input is a
+  typed question rather than a text prompt, was not retested.}
 
 \subsection{Validation and Performance
 Evaluation}\label{validation-and-performance-evaluation}
@@ -908,11 +897,9 @@ languages agree almost perfectly (r = 0.97; 94\% of articles received
 the same sign), and Jev shows the same on the same articles (r = 0.997;
 98\% the same sign). The dictionary and the model rank the articles very
 differently (r = 0.36 across articles, 0.42 across monthly means), and
-on 28\% of articles they disagree even on the sign.\footnote{Correlation
-  ignores differences of scale, so this is a disagreement about which
-  articles are more positive than others, not about units.} The
-comparison cannot say which of the two is right, since neither is the
-ground truth; the benchmark results below can.
+on 28\% of articles they disagree even on the sign. The comparison
+cannot say which of the two is right, since neither is the ground truth;
+the benchmark results below can.
 
 \begin{figure}[!htbp]
 
@@ -1097,10 +1084,7 @@ number on about one call in 23, and its few scores are not interpreted.
 Cost was not a barrier. At list prices, scoring 1,000 sentences cost
 between USD 0.02 and 0.40 for every model but one. The exception, Gemini
 3.5 Flash (USD 3.77), reflects the reasoning tokens it generates by
-default rather than its per-token price.\footnote{No cost is reported
-  for Llama 3.2 1B, whose endpoint returned the same input token count
-  on every call; it also needed 22.7 API calls per usable score, against
-  1.0 to 1.03 for every other model.}
+default rather than its per-token price.
 
 Against the LLM mean of r = 0.685, the dictionaries trailed on
 correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557
@@ -1175,27 +1159,24 @@ although a single model cannot establish this.
 
 Prompt language does carry a cost that the accuracy results do not show.
 The French prompt is 6\% longer than the English one in characters, yet
-it cost 10\% to 34\% more input tokens, depending on the
-model.\footnote{Jev's input is TypeSafe's structured question rather
-  than the prompt shown above, so its token counts do not measure the
-  same text. It is left out of the tokenizer comparisons in this
-  paragraph.} The difference is a property of each model's tokenizer,
-not of its size or license. Vocabularies that favor English encode
-English text with similar efficiency across models (1.17 to 1.25 tokens
-per word) but split French words into more pieces (1.38 to 1.87 tokens
-per word). Ahia et al. (\citeproc{ref-ahiaAllLanguagesCost2023}{2023})
-document the same disparity across many languages. Mistral's claim of a
-tokenizer that is cheaper on French
-(\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI, 2024}) held for one
-of its two models. Mistral Large 4 encoded French more compactly than
-any other model and had the smallest French-prompt overhead (10\%).
-Mistral Small 3.2 did not stand out (1.45 tokens per French word, a 15\%
-overhead). Output length did not differ by prompt language. Since
-accuracy was equivalent, the English prompt is the cheaper of two
-equally good options. The saving per 1,000 sentences ranges from under
-6\% for models whose output tokens weigh most in the bill to 10\% to
-31\% for models billed mostly on input. Translating the text first would
-save a few percent more, at the accuracy cost reported above.
+it cost 10\% to 34\% more input tokens, depending on the model. The
+difference is a property of each model's tokenizer, not of its size or
+license. Vocabularies that favor English encode English text with
+similar efficiency across models (1.17 to 1.25 tokens per word) but
+split French words into more pieces (1.38 to 1.87 tokens per word). Ahia
+et al. (\citeproc{ref-ahiaAllLanguagesCost2023}{2023}) document the same
+disparity across many languages. Mistral's claim of a tokenizer that is
+cheaper on French (\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI,
+2024}) held for one of its two models. Mistral Large 4 encoded French
+more compactly than any other model and had the smallest French-prompt
+overhead (10\%). Mistral Small 3.2 did not stand out (1.45 tokens per
+French word, a 15\% overhead). Output length did not differ by prompt
+language. Since accuracy was equivalent, the English prompt is the
+cheaper of two equally good options. The saving per 1,000 sentences
+ranges from under 6\% for models whose output tokens weigh most in the
+bill to 10\% to 31\% for models billed mostly on input. Translating the
+text first would save a few percent more, at the accuracy cost reported
+above.
 
 \subsection{Translation: A Bridge for Dictionaries, a Cost Without Gain
 for
