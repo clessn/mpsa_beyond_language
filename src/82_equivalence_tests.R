@@ -51,8 +51,11 @@ model_cols <- names(df)[
 # Dictionaries have no prompt language. Llama 3.2 1B scored a different, partial
 # subset of sentences in each condition, so its paired differences compare unlike
 # samples; it is excluded, consistent with src/81_performance_by_condition.R.
+# Llama 3.2 3B is also excluded: the comparisons concern models of about 8B
+# parameters and more, as in src/81. Its inclusion is a sensitivity check.
 EXCLUDE <- "lsd|llama321b"
 model_cols <- model_cols[!grepl(EXCLUDE, model_cols)]
+SMALL_MODELS <- "^llama323b_"
 
 perf <- data.frame(
   col = model_cols,
@@ -118,25 +121,29 @@ COMPARISONS <- list(
   c("en_fr", "en_en")
 )
 
-results <- data.frame()
-for (metric in c("correlation", "mae", "f1_7", "f1_3")) {
-  wide <- perf %>%
-    select(base_model, condition, all_of(metric)) %>%
-    pivot_wider(names_from = condition, values_from = all_of(metric))
+run_tests <- function(perf) {
+  results <- data.frame()
+  for (metric in c("correlation", "mae", "f1_7", "f1_3")) {
+    wide <- perf %>%
+      select(base_model, condition, all_of(metric)) %>%
+      pivot_wider(names_from = condition, values_from = all_of(metric))
 
-  for (cmp in COMPARISONS) {
-    if (!all(cmp %in% names(wide))) next
-    d <- wide[[cmp[1]]] - wide[[cmp[2]]]
-    row <- tost(d, DECLARED_BOUND)
-    row$metric <- metric
-    row$comparison <- paste(cmp[1], "vs", cmp[2])
-    results <- rbind(results, row)
+    for (cmp in COMPARISONS) {
+      if (!all(cmp %in% names(wide))) next
+      d <- wide[[cmp[1]]] - wide[[cmp[2]]]
+      row <- tost(d, DECLARED_BOUND)
+      row$metric <- metric
+      row$comparison <- paste(cmp[1], "vs", cmp[2])
+      results <- rbind(results, row)
+    }
   }
+  results[, c("metric", "comparison", "n", "mean_diff", "ci_low",
+              "ci_high", "p_nhst", "p_tost", "equivalent", "tightest_bound")]
 }
 
-results <- results[, c("metric", "comparison", "n", "mean_diff", "ci_low",
-                       "ci_high", "p_nhst", "p_tost", "equivalent",
-                       "tightest_bound")]
+results <- run_tests(filter(perf, !grepl(SMALL_MODELS, col)))
+results_with_3b <- run_tests(perf)
+
 
 #################################################################
 # REPORT
@@ -185,6 +192,7 @@ if (file.exists(rel_file)) {
   cat("  study's own coder disagreement.\n")
 }
 
-saveRDS(list(results = results, declared_bound = DECLARED_BOUND),
+saveRDS(list(results = results, results_with_3b = results_with_3b,
+             declared_bound = DECLARED_BOUND),
         "results/analysis/equivalence_tests.rds")
 cat("\nSaved: results/analysis/equivalence_tests.rds\n")

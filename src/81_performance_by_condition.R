@@ -63,10 +63,15 @@ all_metrics <- bind_rows(corr_data, mae_data, f1_7_data, f1_3_data)
 
 # Filter out dictionary models and other non-standard conditions for focus on the three main conditions
 main_conditions <- c("FR→FR", "EN→FR", "EN→EN")
-# Llama 3.2 1B is left out: it scored a different, partial subset of sentences
-# in each condition, so its condition differences would compare unlike samples.
-filtered_metrics <- all_metrics %>%
+# The condition comparisons are about models of about 8B parameters and more,
+# the population the paper's claims are stated for (abstract, Table 4).
+# Llama 3.2 1B is left out because it scored a different, partial subset of
+# sentences in each condition; Llama 3.2 3B because it is below that threshold
+# and erratic. Its inclusion is reported as a sensitivity check below.
+SMALL_MODELS <- "^llama32(1|3)b_"
+all_main <- all_metrics %>%
   filter(condition %in% main_conditions, !grepl("^llama321b_", model))
+filtered_metrics <- all_main %>% filter(!grepl(SMALL_MODELS, model))
 
 # Extract model identifier without condition suffix
 filtered_metrics <- filtered_metrics %>%
@@ -234,6 +239,16 @@ for(m in metrics_to_test) {
 print("Statistical Significance of Condition Differences:")
 print(t_test_results)
 
+# Sensitivity: the same tests with Llama 3.2 3B included (the 14 models used
+# before November 2026)
+with_3b <- all_main %>% mutate(base_model = str_replace(model, "_(fr|en)_(fr|en)$", ""))
+t_test_results_with_3b <- bind_rows(lapply(unique(with_3b$metric), function(m) bind_rows(
+  run_paired_ttest(with_3b, m, "FR→FR", "EN→FR"),
+  run_paired_ttest(with_3b, m, "FR→FR", "EN→EN"),
+  run_paired_ttest(with_3b, m, "EN→FR", "EN→EN"))))
+print("Sensitivity, with Llama 3.2 3B:")
+print(t_test_results_with_3b)
+
 #################################################################
 # SAVE ANALYSIS RESULTS
 #################################################################
@@ -242,7 +257,8 @@ condition_analysis_results <- list(
   summary = condition_summary,
   model_comparison = model_condition_comparison,
   ranking = condition_ranking,
-  significance_tests = t_test_results
+  significance_tests = t_test_results,
+  significance_tests_with_3b = t_test_results_with_3b
 )
 
 # Save the results
