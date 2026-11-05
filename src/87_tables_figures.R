@@ -1,9 +1,8 @@
 # Tables and figures of the Results section.
 #
 # Table 1  description of the corpus, the benchmark and the models
-# Figure 1 H1 and H2: correlation in each of the three conditions
-# Figure 2 translator check: original, Google and LLM translation
-# Figure 3 RQ2: models against the two dictionaries
+# Figure 1 RQ1: prompt and text language (A), translator check (B)
+# Figure 2 RQ2: models against the two dictionaries
 # Table 2  paired tests between conditions (13 models of about 8B and more)
 #
 # In:  data/clean/df.rds, data/clean/news_df_sentiment_corpus.rds,
@@ -11,7 +10,7 @@
 #      results/analysis/intercoder_reliability.rds, results/analysis/llm_translation_test.rds,
 #      results/analysis/lsd_on_llm_translation.rds
 # Out: results/tables/table1_data.md, results/tables/table2_tests.md,
-#      results/graphs/fig1_conditions.png, fig2_translation.png, fig3_dictionaries.png
+#      results/graphs/fig1_language.png, fig2_dictionaries.png
 
 library(dplyr)
 library(tidyr)
@@ -79,60 +78,57 @@ performance <- readRDS("data/clean/cor_results.rds") %>%
             f1_7 = f1_7$weighted_f1[match(model, f1_7$model)])
 main <- filter(performance, !prefix %in% small_models)
 
-# Figure 1: H1 and H2 -------------------------------------------------------
+# Figure 1: RQ1 --------------------------------------------------------------
+# Panel A: the three conditions (mean of three runs), as tested in Table 2.
+# Panel B: the translator check (first run; most models scored the LLM
+# translation once), with the Lexicoder. A symbol means the same condition in
+# both panels.
 
-condition_labels <- c(fr_fr = "French prompt, French text", en_fr = "English prompt, French text",
-                      en_en = "English prompt, English translation")
-fig1_data <- main %>%
-  mutate(condition = factor(condition_labels[condition], levels = condition_labels))
-fr_order <- fig1_data %>% filter(condition == condition_labels[["fr_fr"]]) %>% arrange(r) %>% pull(name)
-fig1_data$name <- factor(fig1_data$name, levels = fr_order)
+symbols <- c("French prompt, French text", "English prompt, French text",
+             "English prompt, Google translation", "English prompt, LLM translation")
+panels <- c("A. Prompt and text language", "B. Translator")
+
+panel_a <- main %>%
+  transmute(name, r, panel = panels[1],
+            condition = symbols[match(condition, c("fr_fr", "en_fr", "en_en"))])
+panel_b <- bind_rows(
+  readRDS("results/analysis/llm_translation_test.rds")$results %>%
+    filter(model != "Llama 3.2 3B") %>%
+    transmute(name = model, r, condition = symbols[match(condition, c(
+      "EN prompt, French original", "EN prompt, Google translation", "EN prompt, GPT-5.6 Luna translation")) + 1]),
+  readRDS("results/analysis/lsd_on_llm_translation.rds")$results %>%
+    transmute(name = "Lexicoder dictionary", r, condition = symbols[2:4])
+) %>%
+  mutate(panel = panels[2])
+
+model_order <- panel_a %>% filter(condition == symbols[1]) %>% arrange(r) %>% pull(name)
+fig1_data <- bind_rows(panel_a, panel_b) %>%
+  mutate(name = factor(name, levels = c("Lexicoder dictionary", model_order)),
+         condition = factor(condition, levels = symbols),
+         panel = factor(panel, levels = panels))
 
 fig1 <- ggplot(fig1_data, aes(x = r, y = name)) +
   geom_line(aes(group = name), colour = "grey70") +
-  geom_point(aes(shape = condition, fill = condition), size = 2.4) +
-  scale_shape_manual(values = c(21, 21, 24)) +
-  scale_fill_manual(values = c("black", "white", "white")) +
-  scale_x_continuous(limits = c(0.55, 0.85), breaks = seq(0.55, 0.85, 0.05),
-                     labels = function(x) sprintf("%.2f", x)) +
-  guides(shape = guide_legend(nrow = 3), fill = guide_legend(nrow = 3)) +
-  labs(x = "Correlation with human coders", y = NULL) +
-  theme_paper
-save_figure(fig1, "fig1_conditions.png", 4.8)
-
-# Figure 2: translation or translator ---------------------------------------------------------------
-
-text_levels <- c("French original", "Google translation", "LLM translation")
-translation <- readRDS("results/analysis/llm_translation_test.rds")$results %>%
-  filter(model != "Llama 3.2 3B") %>%
-  mutate(text = factor(text_levels[match(condition, c("EN prompt, French original",
-                                                       "EN prompt, Google translation",
-                                                       "EN prompt, GPT-5.6 Luna translation"))],
-                       levels = text_levels)) %>%
-  select(name = model, text, r)
-lexicoder <- readRDS("results/analysis/lsd_on_llm_translation.rds")$results %>%
-  transmute(name = "Lexicoder dictionary", text = factor(text_levels, levels = text_levels), r)
-fig2_data <- bind_rows(translation, lexicoder)
-model_order <- fig2_data %>% filter(text == "French original") %>% arrange(r) %>% pull(name)
-fig2_data$name <- factor(fig2_data$name, levels = c("Lexicoder dictionary", setdiff(model_order, "Lexicoder dictionary")))
-
-fig2 <- ggplot(fig2_data, aes(x = r, y = name)) +
-  geom_line(aes(group = name), colour = "grey70") +
-  geom_point(aes(shape = text, fill = text), size = 2.4) +
-  scale_shape_manual(values = c(21, 24, 22)) +
-  scale_fill_manual(values = c("black", "white", "grey60")) +
+  geom_point(aes(shape = condition, fill = condition), size = 2.2) +
+  facet_wrap(~ panel, nrow = 1) +
+  scale_shape_manual(values = c(21, 21, 24, 22), drop = FALSE) +
+  scale_fill_manual(values = c("black", "white", "white", "grey55"), drop = FALSE) +
   scale_x_continuous(limits = c(0.3, 0.85), breaks = seq(0.3, 0.8, 0.1)) +
-  labs(x = "Correlation with human coders, English prompt", y = NULL) +
-  theme_paper
-save_figure(fig2, "fig2_translation.png", 4.6)
+  guides(shape = guide_legend(nrow = 2), fill = guide_legend(nrow = 2)) +
+  labs(x = "Correlation with human coders", y = NULL) +
+  theme_paper +
+  theme(strip.background = element_blank(),
+        strip.text = element_text(hjust = 0, face = "bold", size = 10),
+        panel.spacing.x = unit(1.2, "lines"))
+save_figure(fig1, "fig1_language.png", 5)
 
-# Figure 3: RQ2 --------------------------------------------------------------
+# Figure 2: RQ2 --------------------------------------------------------------
 
 dictionaries <- readRDS("data/clean/cor_results.rds") %>%
   filter(model %in% c("lsd_fr", "lsd_en")) %>%
   transmute(label = ifelse(model == "lsd_fr", "French Lexicoder", "English Lexicoder (translation)"),
             r = correlation)
-fig3_data <- performance %>%
+fig2_data <- performance %>%
   filter(prefix != "llama321b") %>%
   group_by(name, prefix) %>%
   summarise(mean_r = mean(r), low = min(r), high = max(r), .groups = "drop") %>%
@@ -140,18 +136,18 @@ fig3_data <- performance %>%
          name = reorder(name, mean_r))
 
 dictionaries$label <- c("French\nLexicoder", "English Lexicoder\n(translation)")[match(dictionaries$label, c("French Lexicoder", "English Lexicoder (translation)"))]
-fig3 <- ggplot(fig3_data, aes(x = mean_r, y = name)) +
+fig2 <- ggplot(fig2_data, aes(x = mean_r, y = name)) +
   geom_vline(data = dictionaries, aes(xintercept = r), linetype = "dashed", colour = "grey40") +
-  geom_text(data = dictionaries, aes(x = r, y = nrow(fig3_data) + 1.1, label = label),
+  geom_text(data = dictionaries, aes(x = r, y = nrow(fig2_data) + 1.1, label = label),
             hjust = 1.05, size = 3, lineheight = 0.9, colour = "grey25") +
-  geom_errorbarh(aes(xmin = low, xmax = high), height = 0) +
+  geom_errorbar(aes(xmin = low, xmax = high), width = 0, orientation = "y") +
   geom_point(aes(shape = weights), size = 2.4, fill = "white") +
   scale_shape_manual(values = c(`Closed-weight` = 16, `Open-weight` = 21)) +
   scale_y_discrete(expand = expansion(add = c(0.6, 1.8))) +
   scale_x_continuous(limits = c(0, 0.85), breaks = seq(0, 0.8, 0.2)) +
   labs(x = "Correlation with human coders, mean and range of the three conditions", y = NULL) +
   theme_paper
-save_figure(fig3, "fig3_dictionaries.png", 4.6)
+save_figure(fig2, "fig2_dictionaries.png", 4.6)
 
 # Table 2 --------------------------------------------------------------------
 
