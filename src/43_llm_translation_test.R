@@ -116,22 +116,42 @@ f1_3 <- function(pred, truth) {
   sum(f1 * colSums(cm)) / sum(cm)
 }
 full <- readRDS("data/clean/df.rds")
-res <- lapply(names(clients), function(m) {
+# Per-run scores of the original and Google conditions, matched to df.rds by
+# document and sentence (doc_id alone repeats for six articles)
+per_run <- readRDS("data/tmp/data_manual_ranking_with_llm_scores.rds")
+key <- function(d) paste(d$doc_id, d$sentences)
+per_run <- per_run[match(key(full), key(per_run)), ]
+stopifnot(identical(key(full), key(per_run)))
+
+summ_cond <- function(m, conds) bind_rows(lapply(names(conds), function(k) {
+  x <- conds[[k]]; ok <- !is.na(x) & !is.na(full$ground_truth)
+  data.frame(model = model_display_name[[m]], condition = k, n = sum(ok),
+             r = cor(x[ok], full$ground_truth[ok]), mae = mean(abs(x[ok] - full$ground_truth[ok])),
+             f1_3 = f1_3(to3(x[ok]), to3(full$ground_truth[ok])))
+}))
+
+# Main comparison: the FIRST run of every condition. The OpenRouter models were
+# scored once on the LLM translation; comparing that single run with a
+# three-run mean would favor the original, since averaging runs raises the
+# correlation with the benchmark. One run against one run is like for like.
+res <- lapply(names(clients), function(m) summ_cond(m, list(
+  `EN prompt, French original` = per_run[[paste0(m, "_en_fr_run1")]],
+  `EN prompt, Google translation` = per_run[[paste0(m, "_en_en_run1")]],
+  `EN prompt, GPT-5.6 Luna translation` = scores[[paste0(m, "_en_llm_run1")]]))) %>% bind_rows()
+
+# For reference: the version used until November 2026 (three-run means for the
+# original and Google conditions, all available runs for the LLM translation)
+res_mean <- lapply(names(clients), function(m) {
   runs <- scores[, intersect(sprintf("%s_en_llm_run%d", m, 1:N_RUNS), names(scores)), drop = FALSE]
   runs <- runs[, colSums(!is.na(runs)) > 0, drop = FALSE]
   llm <- rowMeans(runs, na.rm = TRUE); llm[is.nan(llm)] <- NA
-  conds <- list(`EN prompt, French original` = full[[paste0(m, "_en_fr")]],
-                `EN prompt, Google translation` = full[[paste0(m, "_en_en")]],
-                `EN prompt, GPT-5.6 Luna translation` = llm)
-  bind_rows(lapply(names(conds), function(k) {
-    x <- conds[[k]]; ok <- !is.na(x) & !is.na(full$ground_truth)
-    data.frame(model = model_display_name[[m]], condition = k, n = sum(ok),
-               r = cor(x[ok], full$ground_truth[ok]), mae = mean(abs(x[ok] - full$ground_truth[ok])),
-               f1_3 = f1_3(to3(x[ok]), to3(full$ground_truth[ok])))
-  }))
+  summ_cond(m, list(`EN prompt, French original` = full[[paste0(m, "_en_fr")]],
+                    `EN prompt, Google translation` = full[[paste0(m, "_en_en")]],
+                    `EN prompt, GPT-5.6 Luna translation` = llm))
 }) %>% bind_rows()
 print(res, digits = 3, row.names = FALSE)
-saveRDS(list(results = res, translations = df$sentences_en_llm), "results/analysis/llm_translation_test.rds")
+saveRDS(list(results = res, results_mean = res_mean, translations = df$sentences_en_llm),
+        "results/analysis/llm_translation_test.rds")
 cat("Saved: results/analysis/llm_translation_test.rds\n")
 
 # ---- 5. Table for the manuscript: one row per model, wide ----------------
