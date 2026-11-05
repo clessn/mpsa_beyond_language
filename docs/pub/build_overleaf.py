@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
-"""Build the Overleaf version of the manuscript in the SAGE template.
+"""Build the Overleaf version of the manuscript for Social Science Computer Review.
 
-Converts docs/pub/pub.qmd (anonymized, mask: true) into LaTeX with Quarto,
-wraps the body in SAGE's journal class (sagej.cls) with APA 7 references
-(biblatex-apa), and writes the result to an output folder ready to be pushed
-to Overleaf: main.tex, references.bib, figures/, sagej.cls.
+SSCR asks for APA 7 manuscript formatting, so the manuscript uses the apa7
+class in manuscript mode (one column, double-spaced, running head, page
+numbers), anonymized with the class's `mask` option, with APA 7 references
+from biblatex-apa (Overleaf runs biber automatically). The source has one
+sentence per line, so co-authors can read and edit it sentence by sentence.
+
+Output: main.tex (anonymized manuscript), title_page.tex (identifying
+information), references.bib, figures/.
 
 Usage (from the project root):
-    python3 docs/pub/build_overleaf.py <output_dir> <path/to/sagej.cls>
+    python3 docs/pub/build_overleaf.py <output_dir>
 
-Quarto remains the source of truth until the text moves to Overleaf; after
-that, edits made on Overleaf would be overwritten by a rebuild.
+Quarto (docs/pub/pub.qmd) remains the source of truth until the text moves to
+Overleaf; after that, a rebuild would overwrite edits made on Overleaf.
 """
 import re
 import shutil
@@ -21,7 +25,7 @@ from pathlib import Path
 PUB = Path(__file__).resolve().parent
 ROOT = PUB.parent.parent
 OUT = Path(sys.argv[1]).resolve()
-SAGEJ = Path(sys.argv[2]).resolve()
+NOTE = "XXFIGNOTEXX"
 
 src = (PUB / "pub.qmd").read_text()
 yaml_end = src.index("\n---", 4)
@@ -33,23 +37,25 @@ def yaml_block(key):
 
 title = re.search(r'^title: "(.*)"', yaml, re.M).group(1)
 subtitle = re.search(r'^subtitle: "(.*)"', yaml, re.M).group(1)
+shorttitle = re.search(r'^shorttitle: "(.*)"', yaml, re.M).group(1)
 abstract = yaml_block("abstract")
 keywords = re.findall(r"^  - (.+)$", yaml[yaml.index("keywords:"):yaml.index("date:")], re.M)
 
 # apaquarto figure notes (apa-note="...") are not understood by plain LaTeX
-# output: append each note to its caption.
+# output: carry each note in the caption behind a marker, then move it to
+# \figurenote{} under the figure, as APA style places it.
 def fig(m):
     cap, path, attrs = m.group(1), m.group(2), m.group(3)
     note = re.search(r'apa-note="(.*)"[ \t]*$', attrs)
     ident = re.search(r"#(fig-[\w-]+)", attrs).group(1)
-    cap = cap + (". *Note.* " + note.group(1) if note else "")
+    cap = cap + (f" {NOTE} " + note.group(1) if note else "")
     return f"![{cap}]({path}){{#{ident}}}"
 body = re.sub(r"^!\[([^\]]*)\]\(([^)]*)\)\{(#fig-.*)\}[ \t]*$", fig, body, flags=re.M)
 
 tmp = PUB / "_overleaf_body.qmd"
 tmp.write_text(
     "---\ntitle: x\nbibliography: references.bib\ncite-method: biblatex\nmask: true\n"
-    "format:\n  latex:\n    keep-tex: true\n---\n" + body)
+    "format:\n  latex:\n    keep-tex: true\n    wrap: none\n---\n" + body)
 try:
     subprocess.run(["quarto", "render", tmp.name, "--to", "latex"], cwd=PUB, check=True,
                    stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=300)
@@ -61,11 +67,25 @@ finally:
 doc = tex[tex.index("\\begin{document}") + len("\\begin{document}"):tex.index("\\end{document}")]
 doc = re.sub(r"\\maketitle\s*", "", doc)
 doc = re.sub(r"\\printbibliography(\[[^\]]*\])?\s*", "", doc)
-# references section heading written by Quarto is replaced by \printbibliography
 doc = re.sub(r"\\section\*?\{References\}.*?(?=\\section|\Z)", "\\\\printbibliography\n\n", doc, flags=re.S)
 
-# sagej sets the text in two columns: longtable is single-column only, so each
-# Pandoc longtable becomes a full-width table* float; figures become figure*.
+# Figures: caption above (APA), note below as \figurenote
+def figure(m):
+    f = m.group(0)
+    cap = re.search(r"^\\caption\{(\\label\{[^}]*\})(.*)\}[ \t]*$", f, re.M)
+    if not cap:
+        return f
+    label, text = cap.group(1), cap.group(2)
+    note = ""
+    if NOTE in text:
+        text, note = [x.strip() for x in text.split(NOTE, 1)]
+    graphic = re.search(r"\\pandocbounded\{\\includegraphics\[[^\]]*\]\{([^}]*)\}\}", f).group(1)
+    return ("\\begin{figure}[htbp]\n\\caption{" + text + "}" + label + "\n"
+            "\\includegraphics[width=\\linewidth]{" + graphic + "}\n"
+            + ("\\figurenote{" + note + "}\n" if note else "") + "\\end{figure}")
+doc = re.sub(r"\\begin\{figure\}.*?\\end\{figure\}", figure, doc, flags=re.S)
+
+# Tables: Pandoc's longtable becomes a plain table float with booktabs rules
 def longtable_to_table(m):
     t = m.group(0)
     cap = re.search(r"\\caption\{(.*?)\}(\\label\{[^}]*\})\\tabularnewline", t, re.S)
@@ -73,98 +93,82 @@ def longtable_to_table(m):
     head = re.sub(r"\\begin\{minipage\}\[b\]\{\\linewidth\}\\raggedright|\\begin\{minipage\}\[b\]\{\\linewidth\}\\raggedleft|\\end\{minipage\}", "", head)
     head = " ".join(head.split())
     rows = t[t.index("\\endlastfoot") + len("\\endlastfoot"):t.index("\\end{longtable}")].strip()
-    ncol = head.count("&") + 1
-    align = "l" + "r" * (ncol - 1)
+    align = "l" + "r" * head.count("&")
     caption = (f"\\caption{{{' '.join(cap.group(1).split())}}}{cap.group(2)}\n" if cap else "")
-    return ("\\begin{table*}[t]\n" + caption + "\\centering\n\\begin{tabular}{" + align + "}\n\\toprule\n"
-            + head + "\n\\midrule\n" + rows + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}")
+    return ("\\begin{table}[htbp]\n" + caption + "\\centering\n\\begin{tabular}{" + align + "}\n\\toprule\n"
+            + head + "\n\\midrule\n" + rows + "\n\\bottomrule\n\\end{tabular}\n\\end{table}")
 doc = re.sub(r"\\begin\{longtable\}.*?\\end\{longtable\}", longtable_to_table, doc, flags=re.S)
-doc = doc.replace("\\begin{figure}", "\\begin{figure*}").replace("\\end{figure}", "\\end{figure*}")
 
-# figures: copy and point to figures/
+# One sentence per line, in running text only (not inside floats)
+ABBREV = r"(?<!\bvs)(?<!\be\.g)(?<!\bi\.e)(?<!\bal)(?<!\bp)(?<!\bpp)(?<!\bcf)(?<!\bNo)(?<!\bFig)(?<!\bU\.S)(?<!\betc)(?<!\bapprox)"
+SPLIT = re.compile(ABBREV + r"([.?!][)\"”’']*)[ ]+(?=[A-Z(\\\"“‘])")
+def one_sentence_per_line(text):
+    out, in_float = [], 0
+    for line in text.split("\n"):
+        if re.match(r"\\begin\{(figure|table|tabular)", line):
+            in_float += 1
+        if in_float == 0 and not line.startswith("\\"):
+            line = SPLIT.sub(r"\1\n", line)
+        if re.match(r"\\end\{(figure|table|tabular)", line):
+            in_float -= 1
+        out.append(line)
+    return "\n".join(out)
+doc = one_sentence_per_line(doc)
+abstract_lines = SPLIT.sub(r"\1\n", abstract)
+
 (OUT / "figures").mkdir(parents=True, exist_ok=True)
 for p in sorted(set(re.findall(r"\.\./\.\./results/graphs/([\w.-]+\.png)", doc))):
     shutil.copy(ROOT / "results" / "graphs" / p, OUT / "figures" / p)
 doc = doc.replace("../../results/graphs/", "figures/")
-# tables included as \input{../../results/tables/...}
-for p in sorted(set(re.findall(r"\\input\{\.\./\.\./results/tables/([\w.-]+)\}", doc))):
-    (OUT / "tables").mkdir(exist_ok=True)
-    shutil.copy(ROOT / "results" / "tables" / p, OUT / "tables" / p)
-doc = doc.replace("\\input{../../results/tables/", "\\input{tables/")
-
 shutil.copy(PUB / "references.bib", OUT / "references.bib")
-shutil.copy(SAGEJ, OUT / "sagej.cls")
+for stale in ("sagej.cls",):
+    (OUT / stale).unlink(missing_ok=True)
 
-def latex_escape(s):
+def esc(s):
     return s.replace("&", "\\&").replace("%", "\\%").replace("’", "'")
 
-main = r"""% Manuscript for Social Science Computer Review, SAGE journal class (sagej.cls).
-% References in APA 7 style with biblatex-apa (compile with biber; Overleaf does
-% this automatically). Anonymized for review: identifying information is in
-% title_page.tex.
-\documentclass[Afour,times]{sagej}
+main = r"""% Manuscript for Social Science Computer Review, in APA 7 manuscript format
+% (apa7 class: one column, double-spaced). Anonymized for review with the
+% `mask` option; identifying information is in title_page.tex.
+% References: APA 7 with biblatex-apa (Overleaf runs biber automatically).
+% One sentence per line.
+\documentclass[man,12pt,floatsintext,mask,donotrepeattitle]{apa7}
 
-\usepackage[utf8]{inputenc}
+\usepackage[american]{babel}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage{newtxtext,newtxmath}
 \usepackage{csquotes}
 \usepackage[style=apa,backend=biber]{biblatex}
 \addbibresource{references.bib}
-\usepackage{longtable,booktabs,array,calc}
+\usepackage{booktabs,array,calc}
 \usepackage{graphicx}
-\usepackage{float}
 \usepackage[section]{placeins}
-\usepackage{xcolor}
-\usepackage{url}
-\usepackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
 \usepackage{newunicodechar}
 \newunicodechar{→}{\ensuremath{\rightarrow}}
 \newunicodechar{−}{\ensuremath{-}}
 \newunicodechar{≈}{\ensuremath{\approx}}
 \newunicodechar{±}{\ensuremath{\pm}}
-
-% Macros emitted by Pandoc
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{%
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}\fi}
-\makeatother
-\providecommand{\passthrough}[1]{#1}
-\def\LTcaptype{none}
 
-\makeatletter\def\journalname{Social Science Computer Review}\makeatother
+\title{""" + esc(title) + r""": """ + esc(subtitle) + r"""}
+\shorttitle{""" + esc(shorttitle) + r"""}
+\authorsnames{Anonymized for review}
+\authorsaffiliations{Anonymized for review}
 
-\begin{document}
-
-\title{""" + latex_escape(title) + r""": """ + latex_escape(subtitle) + r"""}
-\runninghead{Anonymized for review}
-\author{Anonymized for review}
-\affiliation{Anonymized for review}
-\email{Anonymized for review}
-
-\begin{abstract}
-""" + latex_escape(abstract) + r"""
-\end{abstract}
-
+\abstract{
+""" + esc(abstract_lines) + r"""
+}
 \keywords{""" + ", ".join(keywords) + r"""}
 
+\begin{document}
 \maketitle
-% sagej numbers footnotes with symbols, which run out after nine
-\renewcommand{\thefootnote}{\arabic{footnote}}
-\setcounter{footnote}{0}
 """ + doc + r"""
 \end{document}
 """
 (OUT / "main.tex").write_text(main)
 
 # Separate title page with the identifying information (not sent to reviewers)
-subprocess.run(["quarto", "pandoc", "title_page.qmd", "-s", "-o", str(OUT / "title_page.tex"),
-                "-V", "documentclass=article", "-V", "papersize=letter", "-V", "fontsize=12pt",
-                "-V", "geometry=margin=1in"], cwd=PUB, check=True)
-print("Wrote", OUT / "main.tex")
+subprocess.run(["quarto", "pandoc", "title_page.qmd", "-f", "markdown", "-s", "-o", str(OUT / "title_page.tex"),
+                "--wrap=none", "-V", "documentclass=article", "-V", "papersize=letter",
+                "-V", "fontsize=12pt", "-V", "geometry=margin=1in"], cwd=PUB, check=True)
+print("Wrote", OUT / "main.tex", "and", OUT / "title_page.tex")
