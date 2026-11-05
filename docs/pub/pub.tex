@@ -616,17 +616,16 @@ exhaustive collection of the articles discussing open-source software in
 the Eureka database's ``Major daily newspapers (FR)'' category. Articles
 were selected with twelve French and English terms for free and
 open-source software, such as \emph{logiciel libre} and \emph{open
-source}, joined by OR (Table S1 in the Supplemental Material), between
-January 1, 1991 and January 1, 2025. The start date is the release year
-of the Linux kernel, the project that made open-source software a public
-topic, so the window covers the entire history of the subject in the
-press. In practice it excludes nothing: the earliest match dates from
-June 1995.
+source}, joined by OR, between January 1, 1991 and January 1, 2025. The
+start date is the release year of the Linux kernel, the project that
+made open-source software a public topic, so the window covers the
+entire history of the subject in the press. In practice it excludes
+nothing: the earliest match dates from June 1995.
 
-The three French national dailies account for 68\% of the articles
-(Table S2). Articles were downloaded in HTML format with a
-Python/Selenium scraper, and publication metadata and full text were
-extracted with custom R functions.
+The three French national dailies account for 68\% of the articles.
+Articles were downloaded in HTML format with a Python/Selenium scraper,
+and publication metadata and full text were extracted with custom R
+functions.
 
 \subsection{Translation}\label{translation}
 
@@ -755,14 +754,12 @@ intermediate values allowed, an instruction to consider cultural and
 linguistic nuance, and a constraint to respond with a numerical value
 only. The French prompts were translated from the English prompts by an
 LLM (Claude) and checked by the three coders, all native French
-speakers. Table S3 in the Supplemental Material shows the English and
-French prompts used on French text.\footnote{The
-  French-prompt/French-text version is identical except for language. In
-  every condition, the prompt was preceded by the same one-sentence
-  system prompt in English: ``You are a helpful assistant that analyzes
-  the sentiment of text. You provide accurate and consistent sentiment
-  ratings according to the specified scale.'' See
-  \texttt{src/93\_prompts.R} in the project repository for the exact
+speakers.\footnote{The French-prompt/French-text version is identical
+  except for language. In every condition, the prompt was preceded by
+  the same one-sentence system prompt in English: ``You are a helpful
+  assistant that analyzes the sentiment of text. You provide accurate
+  and consistent sentiment ratings according to the specified scale.''
+  See \texttt{src/93\_prompts.R} in the project repository for the exact
   prompts, and \texttt{src/40\_prompt.R} for the full evaluation
   pipeline, including model initialization, retry logic, rate limiting,
   and checkpointing.}
@@ -1046,18 +1043,17 @@ polarity.
 (RQ2)}\label{viability-against-dictionary-methods-rq2}
 
 General-purpose LLMs, used without fine-tuning, correlated with human
-judgments well above both dictionaries (Figure~\ref{fig-performance};
-exact values and confidence intervals in Table S4 of the Supplemental
-Material). The best configuration, GPT-5.6 Luna with French prompts,
-reached r = 0.81. Jev came close behind the leaders, with r = 0.77 in
-both conditions on French text and the second-highest 7-category F1
-(0.528 in EN→FR). Twelve of the 42 model-condition combinations
-correlated with the ground truth more strongly than individual human
-coders agreed with the mean of the other two (mean leave-one-out r =
-0.748, range 0.724--0.779).\footnote{This comparison slightly favors the
-  models, because the ground truth they are compared against averages
-  three coders rather than two. Agreement between annotators is not a
-  strict ceiling on machine performance
+judgments well above both dictionaries (Figure~\ref{fig-performance}).
+The best configuration, GPT-5.6 Luna with French prompts, reached r =
+0.81. Jev came close behind the leaders, with r = 0.77 in both
+conditions on French text and the second-highest 7-category F1 (0.528 in
+EN→FR). Twelve of the 42 model-condition combinations correlated with
+the ground truth more strongly than individual human coders agreed with
+the mean of the other two (mean leave-one-out r = 0.748, range
+0.724--0.779).\footnote{This comparison slightly favors the models,
+  because the ground truth they are compared against averages three
+  coders rather than two. Agreement between annotators is not a strict
+  ceiling on machine performance
   (\citeproc{ref-richieInterannotatorAgreementNot2022}{Richie et al.,
   2022}).}
 
@@ -1099,13 +1095,12 @@ EN→FR). Llama 3.2 1B could not perform the task: it returned a usable
 number on about one call in 23, and its few scores are not interpreted.
 
 Cost was not a barrier. At list prices, scoring 1,000 sentences cost
-between USD 0.02 and 0.40 for every model but one (Table S5 in the
-Supplemental Material). The exception, Gemini 3.5 Flash (USD 3.77),
-reflects the reasoning tokens it generates by default rather than its
-per-token price.\footnote{No cost is reported for Llama 3.2 1B, whose
-  endpoint returned the same input token count on every call; it also
-  needed 22.7 API calls per usable score, against 1.0 to 1.03 for every
-  other model.}
+between USD 0.02 and 0.40 for every model but one. The exception, Gemini
+3.5 Flash (USD 3.77), reflects the reasoning tokens it generates by
+default rather than its per-token price.\footnote{No cost is reported
+  for Llama 3.2 1B, whose endpoint returned the same input token count
+  on every call; it also needed 22.7 API calls per usable score, against
+  1.0 to 1.03 for every other model.}
 
 Against the LLM mean of r = 0.685, the dictionaries trailed on
 correlation (0.548 and 0.357) and on 3-category F1 (0.588 and 0.557
@@ -1143,8 +1138,6 @@ to the lowest, colored by model type. Filled circles are the weighted F1
 on three categories, hollow circles on seven, each averaged over the
 three conditions; the segment is the loss from grouping sentiment into
 seven categories instead of three. Llama 3.2 1B is omitted.
-Per-condition values are in Tables S6 and S7 of the Supplemental
-Material.
 
 \end{figure}
 
@@ -1182,28 +1175,27 @@ although a single model cannot establish this.
 
 Prompt language does carry a cost that the accuracy results do not show.
 The French prompt is 6\% longer than the English one in characters, yet
-it cost 10\% to 34\% more input tokens, depending on the model (Table S8
-in the Supplemental Material).\footnote{Jev's input is TypeSafe's
-  structured question rather than the prompt shown above, so its token
-  counts do not measure the same text. It is left out of the tokenizer
-  comparisons in this paragraph.} The difference is a property of each
-model's tokenizer, not of its size or license. Vocabularies that favor
-English encode English text with similar efficiency across models (1.17
-to 1.25 tokens per word) but split French words into more pieces (1.38
-to 1.87 tokens per word). Ahia et al.
-(\citeproc{ref-ahiaAllLanguagesCost2023}{2023}) document the same
-disparity across many languages. Mistral's claim of a tokenizer that is
-cheaper on French (\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI,
-2024}) held for one of its two models. Mistral Large 4 encoded French
-more compactly than any other model and had the smallest French-prompt
-overhead (10\%). Mistral Small 3.2 did not stand out (1.45 tokens per
-French word, a 15\% overhead). Output length did not differ by prompt
-language. Since accuracy was equivalent, the English prompt is the
-cheaper of two equally good options. The saving per 1,000 sentences
-ranges from under 6\% for models whose output tokens weigh most in the
-bill to 10\% to 31\% for models billed mostly on input. Translating the
-text first would save a few percent more, at the accuracy cost reported
-above.
+it cost 10\% to 34\% more input tokens, depending on the
+model.\footnote{Jev's input is TypeSafe's structured question rather
+  than the prompt shown above, so its token counts do not measure the
+  same text. It is left out of the tokenizer comparisons in this
+  paragraph.} The difference is a property of each model's tokenizer,
+not of its size or license. Vocabularies that favor English encode
+English text with similar efficiency across models (1.17 to 1.25 tokens
+per word) but split French words into more pieces (1.38 to 1.87 tokens
+per word). Ahia et al. (\citeproc{ref-ahiaAllLanguagesCost2023}{2023})
+document the same disparity across many languages. Mistral's claim of a
+tokenizer that is cheaper on French
+(\citeproc{ref-mistralaiMistralNeMo2024}{Mistral AI, 2024}) held for one
+of its two models. Mistral Large 4 encoded French more compactly than
+any other model and had the smallest French-prompt overhead (10\%).
+Mistral Small 3.2 did not stand out (1.45 tokens per French word, a 15\%
+overhead). Output length did not differ by prompt language. Since
+accuracy was equivalent, the English prompt is the cheaper of two
+equally good options. The saving per 1,000 sentences ranges from under
+6\% for models whose output tokens weigh most in the bill to 10\% to
+31\% for models billed mostly on input. Translating the text first would
+save a few percent more, at the accuracy cost reported above.
 
 \subsection{Translation: A Bridge for Dictionaries, a Cost Without Gain
 for
