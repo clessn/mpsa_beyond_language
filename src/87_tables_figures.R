@@ -1,8 +1,8 @@
 # Tables and figures of the Results section.
 #
 # Table 1  description of the corpus, the benchmark and the models
-# Figure 1 H1: prompt language, correlation under each prompt
-# Figure 2 H2: correlation on the original and on two translations
+# Figure 1 H1 and H2: correlation in each of the three conditions
+# Figure 2 translator check: original, Google and LLM translation
 # Figure 3 RQ2: models against the two dictionaries
 # Table 2  paired tests between conditions (13 models of about 8B and more)
 #
@@ -11,7 +11,7 @@
 #      results/analysis/intercoder_reliability.rds, results/analysis/llm_translation_test.rds,
 #      results/analysis/lsd_on_llm_translation.rds
 # Out: results/tables/table1_data.md, results/tables/table2_tests.md,
-#      results/graphs/fig1_prompt_language.png, fig2_translation.png, fig3_dictionaries.png
+#      results/graphs/fig1_conditions.png, fig2_translation.png, fig3_dictionaries.png
 
 library(dplyr)
 library(tidyr)
@@ -79,27 +79,28 @@ performance <- readRDS("data/clean/cor_results.rds") %>%
             f1_7 = f1_7$weighted_f1[match(model, f1_7$model)])
 main <- filter(performance, !prefix %in% small_models)
 
-# Figure 1: H1 ---------------------------------------------------------------
+# Figure 1: H1 and H2 -------------------------------------------------------
 
-prompt_levels <- c("French prompt", "English prompt")
+condition_labels <- c(fr_fr = "French prompt, French text", en_fr = "English prompt, French text",
+                      en_en = "English prompt, English translation")
 fig1_data <- main %>%
-  filter(condition %in% c("fr_fr", "en_fr")) %>%
-  mutate(prompt = factor(ifelse(condition == "fr_fr", prompt_levels[1], prompt_levels[2]),
-                         levels = prompt_levels))
-fr_order <- fig1_data %>% filter(prompt == "French prompt") %>% arrange(r) %>% pull(name)
+  mutate(condition = factor(condition_labels[condition], levels = condition_labels))
+fr_order <- fig1_data %>% filter(condition == condition_labels[["fr_fr"]]) %>% arrange(r) %>% pull(name)
 fig1_data$name <- factor(fig1_data$name, levels = fr_order)
 
 fig1 <- ggplot(fig1_data, aes(x = r, y = name)) +
   geom_line(aes(group = name), colour = "grey70") +
-  geom_point(aes(shape = prompt, fill = prompt), size = 2.4) +
-  scale_shape_manual(values = c(21, 24)) +
-  scale_fill_manual(values = c("black", "white")) +
-  scale_x_continuous(limits = c(0.3, 0.85), breaks = seq(0.3, 0.8, 0.1)) +
-  labs(x = "Correlation with human coders (French text)", y = NULL) +
+  geom_point(aes(shape = condition, fill = condition), size = 2.4) +
+  scale_shape_manual(values = c(21, 21, 24)) +
+  scale_fill_manual(values = c("black", "white", "white")) +
+  scale_x_continuous(limits = c(0.55, 0.85), breaks = seq(0.55, 0.85, 0.05),
+                     labels = function(x) sprintf("%.2f", x)) +
+  guides(shape = guide_legend(nrow = 3), fill = guide_legend(nrow = 3)) +
+  labs(x = "Correlation with human coders", y = NULL) +
   theme_paper
-save_figure(fig1, "fig1_prompt_language.png", 4.2)
+save_figure(fig1, "fig1_conditions.png", 4.8)
 
-# Figure 2: H2 ---------------------------------------------------------------
+# Figure 2: translation or translator ---------------------------------------------------------------
 
 text_levels <- c("French original", "Google translation", "LLM translation")
 translation <- readRDS("results/analysis/llm_translation_test.rds")$results %>%
@@ -121,7 +122,7 @@ fig2 <- ggplot(fig2_data, aes(x = r, y = name)) +
   scale_shape_manual(values = c(21, 24, 22)) +
   scale_fill_manual(values = c("black", "white", "grey60")) +
   scale_x_continuous(limits = c(0.3, 0.85), breaks = seq(0.3, 0.8, 0.1)) +
-  labs(x = "Correlation with human coders (English prompt, first run)", y = NULL) +
+  labs(x = "Correlation with human coders, English prompt", y = NULL) +
   theme_paper
 save_figure(fig2, "fig2_translation.png", 4.6)
 
@@ -148,7 +149,7 @@ fig3 <- ggplot(fig3_data, aes(x = mean_r, y = name)) +
   scale_shape_manual(values = c(`Closed-weight` = 16, `Open-weight` = 21)) +
   scale_y_discrete(expand = expansion(add = c(0.6, 1.8))) +
   scale_x_continuous(limits = c(0, 0.85), breaks = seq(0, 0.8, 0.2)) +
-  labs(x = "Correlation with human coders (mean and range of the three conditions)", y = NULL) +
+  labs(x = "Correlation with human coders, mean and range of the three conditions", y = NULL) +
   theme_paper
 save_figure(fig3, "fig3_dictionaries.png", 4.6)
 
@@ -156,9 +157,9 @@ save_figure(fig3, "fig3_dictionaries.png", 4.6)
 
 metrics <- c(r = "Correlation", mae = "MAE", f1_3 = "F1, 3 categories", f1_7 = "F1, 7 categories")
 comparisons <- list(
-  `Prompt language (FR→FR − EN→FR)` = c("fr_fr", "en_fr"),
-  `Translation (EN→FR − EN→EN)` = c("en_fr", "en_en"),
-  `Complete workflows (FR→FR − EN→EN)` = c("fr_fr", "en_en")
+  `Prompt language` = c("fr_fr", "en_fr"),
+  `Translation` = c("en_fr", "en_en"),
+  `Complete workflows` = c("fr_fr", "en_en")
 )
 
 table_2 <- bind_rows(lapply(names(comparisons), function(cmp) {
@@ -177,8 +178,8 @@ table_2 <- bind_rows(lapply(names(comparisons), function(cmp) {
 
 format_p <- function(p) ifelse(p < 0.001, "< .001", sub("^0", "", sprintf("%.3f", p)))
 writeLines(c(
-  "| Comparison | Metric | Difference | 95% CI | *p* | *p* equivalence |",
-  "|:--------------------------|:------------------|------:|:----------------|------:|------:|",
+  "| Comparison | Metric | Difference | 95% CI | *p* | *p* (equivalence) |",
+  "|:------------------|:-----------------|---------:|:----------------|------:|-------:|",
   with(table_2, sprintf("| %s | %s | %.3f | [%.3f, %.3f] | %s | %s |",
                         ifelse(duplicated(Comparison), "", Comparison), Metric, diff, low, high,
                         format_p(p), format_p(p_tost)))
