@@ -150,6 +150,8 @@ fig2 <- ggplot(fig2_data, aes(x = mean_r, y = name)) +
 save_figure(fig2, "fig2_dictionaries.png", 5.2)
 
 # Table 2 --------------------------------------------------------------------
+# Differences are first condition minus second; the MAE difference is negated
+# so that a positive value favours the first condition on every metric.
 
 metrics <- c(r = "Correlation", mae = "MAE", f1_3 = "F1, 3 categories", f1_7 = "F1, 7 categories")
 comparisons <- list(
@@ -171,7 +173,8 @@ table_2 <- bind_rows(lapply(names(comparisons), function(cmp) {
   bind_rows(lapply(names(metrics), function(m) {
     wide <- main %>% select(name, condition, value = all_of(m)) %>%
       pivot_wider(names_from = condition, values_from = value)
-    paired_row(cmp, metrics[[m]], wide[[comparisons[[cmp]][1]]] - wide[[comparisons[[cmp]][2]]])
+    d <- wide[[comparisons[[cmp]][1]]] - wide[[comparisons[[cmp]][2]]]
+    paired_row(cmp, metrics[[m]], if (m == "mae") -d else d)
   }))
 }))
 
@@ -183,14 +186,15 @@ translator <- translation %>%
 table_2 <- bind_rows(table_2, bind_rows(lapply(names(metrics), function(m) {
   wide <- translator %>% select(model, text, value = all_of(m)) %>%
     pivot_wider(names_from = text, values_from = value)
-  paired_row("LLM translation (EN→FR − EN→LLM)", metrics[[m]], wide$original - wide$llm)
+  d <- wide$original - wide$llm
+  paired_row("LLM translation (EN→FR − EN→LLM)", metrics[[m]], if (m == "mae") -d else d)
 })))
 
 format_p <- function(p) ifelse(p < 0.001, "< .001", sub("^0", "", sprintf("%.3f", p)))
 table_2_lines <- unlist(lapply(unique(table_2$Comparison), function(cmp) {
   rows <- filter(table_2, Comparison == cmp)
   c(sprintf("| **%s** |  |  |  |  |", cmp),
-    with(rows, sprintf("| %s | %.3f | [%.3f, %.3f] | %s | %s |", Metric, diff, low, high,
+    with(rows, sprintf("| %s | %.3f | [%.3f, %.3f] | %s | %s |", Metric, round(diff, 3) + 0, low, high,
                        format_p(p), format_p(p_tost))))
 }))
 writeLines(c("| Comparison and metric | Difference | 95% CI | *p* | *p* (equiv.) |",
