@@ -901,21 +901,17 @@ reported in notes.
 vs.~H1b)}\label{prompt-language-h1a-vs.-h1b}
 
 Holding the text constant, prompt language made no detectable difference
-(Figure~\ref{fig-language}; Table~\ref{tbl-tests}). Across the thirteen
-models of at least 8B parameters, French prompts on French text (FR→FR)
-and English prompts on the same text (EN→FR) gave nearly the same
-results: mean correlation 0.725 vs.~0.730, MAE 0.205 vs.~0.204,
-3-category F1 0.674 vs.~0.667, and 7-category F1 0.387 vs.~0.377. None
-of these paired differences was statistically significant (all \emph{p}
-\textgreater{} 0.10). Equivalence tests go further. FR→FR and EN→FR were
-statistically equivalent within ±0.05 on all four metrics (all \emph{p}
-\textless{} 0.01). On correlation, the 90\% confidence interval of the
-difference, {[}−0.015, 0.005{]}, rules out an advantage larger than
-0.015 for either prompt language.\footnote{With Llama 3.2 3B included,
-  equivalence could not be established on correlation: the 90\%
-  confidence interval of the difference was {[}−0.025, 0.065{]}, driven
-  by that model's erratic scores under the English prompt.} The results
-contradict H1a and support H1b.
+(Figure~\ref{fig-language}). For most models the two circles nearly
+overlap, and neither prompt language is consistently ahead. Across the
+thirteen models of at least 8B parameters, no paired difference between
+FR→FR and EN→FR was statistically significant, and all four metrics were
+equivalent within ±0.05 (Table~\ref{tbl-tests}). On correlation, the
+90\% confidence interval of the difference, {[}−0.015, 0.005{]}, rules
+out an advantage larger than 0.015 for either prompt
+language.\^{}{[}With Llama 3.2 3B included, equivalence could not be
+established on correlation: the 90\% confidence interval of the
+difference was {[}−0.025, 0.065{]} The results contradict H1a and
+support H1b.
 
 The equivalence holds at the scale of the corpus. For each of the 2,671
 full articles with all three scores, the score GPT-5.6 Luna gave under
@@ -933,34 +929,28 @@ ground truth; the benchmark results below can.
 vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
 
 For the LLMs, translation carried a cost. Holding the English prompt
-constant, analyzing the translation instead of the original (EN→EN
-vs.~EN→FR) lowered mean correlation by 0.043 (0.687 vs.~0.730, \emph{p}
-\textless{} 0.001; Table~\ref{tbl-tests}) and 3-category F1 by 0.038
-(0.628 vs.~0.667, \emph{p} = 0.002).\footnote{With Llama 3.2 3B
+constant, analyzing the Google translation instead of the original
+lowered the correlation of every model (triangles in
+Figure~\ref{fig-language}), by 0.043 on average, and lowered 3-category
+F1 by 0.038 (Table~\ref{tbl-tests}).\footnote{With Llama 3.2 3B
   included, the drop in correlation was smaller and not statistically
   significant (0.028, \emph{p} = 0.12).} Differences in MAE and
-7-category F1 remained within the ±0.05 equivalence bound. Compared with
-the fully French workflow (FR→FR), the fully English workflow (EN→EN)
-lowered correlation by 0.038 (\emph{p} = 0.001) and 3-category F1 by
-0.046 (\emph{p} = 0.002).
+7-category F1 remained within the equivalence bound. The fully English
+workflow (EN→EN) fell short of the fully French one (FR→FR) by about the
+same margin.
 
-Is this the cost of translation or of the translator? The sentences were
-translated again by GPT-5.6 Luna and scored three times under the
-English prompt by the eleven generative models of at least 8B parameters
-retested (squares in Figure~\ref{fig-language}). On correlation, the
-frontier-quality translation recovered most of the loss: the models
-averaged r = 0.722 on it, against 0.681 on the Google translation and
-0.727 on the original. The remaining gap of 0.005 was not statistically
-significant (paired \emph{p} = 0.58) and fell within the equivalence
-bound (\emph{p} \textless{} 0.001), and four of the eleven models scored
-higher on the LLM translation than on the original. The LLM translation
-also gave a slightly lower MAE than the original (by 0.008, \emph{p} =
-0.03). On polarity classification the recovery was smaller: mean
-3-category F1 was 0.664 on the original, 0.621 with Google Translate and
-0.635 with the LLM translation, still below the original (\emph{p} =
-0.005). The loss observed in EN→EN is therefore mostly the cost of a
-conventional translator. A better translator removes most of it but, on
-average, does not do better than the original.
+Is this the cost of translation or of the translator? Eleven of these
+models also scored a translation by GPT-5.6 Luna (squares in
+Figure~\ref{fig-language}). On correlation, it recovered most of the
+loss: the models averaged r = 0.722 on it, against 0.681 on the Google
+translation and 0.727 on the original, a remaining gap that was not
+statistically significant and fell within the equivalence bound
+(Table~\ref{tbl-tests}). Four of the eleven models scored higher on the
+LLM translation than on the original, and its MAE was slightly lower. On
+polarity classification the recovery was smaller: 3-category F1 remained
+0.029 below the original. The loss observed in EN→EN is therefore mostly
+the cost of a conventional translator. A better translator removes most
+of it but, on average, does not do better than the original.
 
 \begin{figure}[!htbp]
 
@@ -983,16 +973,16 @@ translation. The axis starts at 0.5.
 
 The dictionaries showed the opposite pattern. The English Lexicoder
 applied to the translation correlated with human judgments at r = 0.548,
-against 0.357 for the French Lexicoder applied to the original. The
-difference is 0.191 (95\% bootstrap CI {[}0.059, 0.326{]}). The English
-dictionary also reached a higher 3-category F1 (0.589 vs.~0.545). With
-the LLM translation it rose further, to r = 0.574 and F1 = 0.592: the
-better the translation, the more the dictionary gains, whereas the
-models at best recover the original. The two dictionaries also differ in
-construction, so this contrast does not isolate language. Its direction
-nonetheless matches the bridge view. For the LLMs, the results support
-H2b for a conventional machine translation: it lowered both correlation
-and polarity classification, whichever prompt was held constant. With a
+against 0.357 for the French Lexicoder applied to the original
+(difference 0.191, 95\% bootstrap CI {[}0.059, 0.326{]}), and reached a
+higher 3-category F1 (0.589 vs.~0.545). With the LLM translation it rose
+further, to r = 0.574 and F1 = 0.592: the better the translation, the
+more the dictionary gains, whereas the models at best recover the
+original. The two dictionaries also differ in construction, so this
+contrast does not isolate language. Its direction nonetheless matches
+the bridge view. For the LLMs, the results support H2b for a
+conventional machine translation: it lowered both correlation and
+polarity classification, whichever prompt was held constant. With a
 frontier-quality translation, the loss mostly disappears on correlation
 but does not reverse on average: H2a, which predicts a translation at
 least as accurate as the original, holds for four of eleven models on
