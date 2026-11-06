@@ -184,7 +184,7 @@ Pelletier,Étienne Proulx,Adam Ménard,Yannick Dufresne}
 
 \leftheader{Foisy, Piral, Pelletier, Proulx, Ménard and Dufresne}
 
-\date{2026-11-05}
+\date{2026-11-06}
 
 
 \abstract{For a decade, comparative text analysis had one dominant
@@ -625,7 +625,39 @@ nothing: the earliest match dates from June 1995.
 The three French national dailies account for 68\% of the articles.
 Articles were downloaded in HTML format with a Python/Selenium scraper,
 and publication metadata and full text were extracted with custom R
-functions.
+functions. Table~\ref{tbl-data} summarizes the corpus, the benchmark
+sentences and the models described below.
+
+\begin{table}
+
+{\caption{{Corpus, Benchmark Sentences and Models}{\label{tbl-data}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Characteristic & Value \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Corpus} & \\
+Articles & 2,683 \\
+Daily newspapers & 13 (9 Québec, 1 Ontario, 3 France) \\
+Period & June 1995 to December 2024 \\
+\textbf{Benchmark} & \\
+Sentences (articles) & 200 (194) \\
+Words per sentence, mean (range) & 23 (1 to 73) \\
+Coders & 3, native French speakers \\
+Krippendorff's alpha (interval) & 0.60 \\
+Ground truth, mean (SD) & 0.05 (0.29) \\
+Negative / neutral / positive sentences & 63 / 17 / 120 \\
+\textbf{Models} & \\
+Open-weight & 10 (1B to 671B parameters) \\
+Closed-weight & 5 \\
+Conditions x runs per sentence & 3 x 3 \\
+\end{longtable}
+
+\end{table}
 
 \subsection{Translation}\label{translation}
 
@@ -799,18 +831,22 @@ with the same prompts and settings, and Jev did the same, which gives
 the corpus check a second model of a different kind.\footnote{The two
   GPT-5.6 Luna passes required 5,366 API calls, 7.1 million input tokens
   and 187,000 output tokens, for USD 1.64 at list prices.} These scores
-are compared with the French Lexicoder dictionary in the Results
-(Figure~\ref{fig-corpus}). A final check asks whether the translation
-condition measures the cost of translation or of the translator: the 200
-sentences were translated again by GPT-5.6 Luna and rescored under the
-English prompt by the thirteen generative models, with the same parsing
-and averaging, in three runs for the three models accessed directly from
-their vendors and one run for the ten served through
-OpenRouter.\footnote{OpenRouter's shared provider pools throttled the
-  check heavily, hence the single run; Qwen3 235B-A22B could not be held
-  to its pinned provider and was served by another, and GPT-OSS 20B
-  returned no parseable score for one sentence. Jev, whose input is a
-  typed question rather than a text prompt, was not retested.}
+are compared with the French Lexicoder dictionary in the Results. A
+final check asks whether the translation condition measures the cost of
+translation or of the translator: the 200 sentences were translated
+again by GPT-5.6 Luna and scored three times under the English prompt by
+the generative models, with the same parsing and averaging.\footnote{Jev,
+  whose input is a typed question rather than a text prompt, was not
+  retested. Mistral Large 4 was scored once, in October 2026; by
+  November its preview endpoint no longer accepted the setting that
+  disables its reasoning, so it could not be rescored under the same
+  settings and is left out of this check. The second and third runs of
+  the models served through OpenRouter were collected in November 2026.
+  Four pinned endpoints no longer served their model or were
+  rate-limited and were replaced by another provider at the same
+  precision, except for Llama 4 Scout, which no provider still served in
+  bf16 and was scored in fp8; its three runs agree with each other (r =
+  0.67, 0.68 and 0.69 with the ground truth).}
 
 \subsection{Validation and Performance
 Evaluation}\label{validation-and-performance-evaluation}
@@ -865,55 +901,33 @@ reported in notes.
 vs.~H1b)}\label{prompt-language-h1a-vs.-h1b}
 
 Holding the text constant, prompt language made no detectable difference
-(Figure~\ref{fig-performance} shows the three conditions for each
-model). Across the thirteen models of at least 8B parameters, French
-prompts on French text (FR→FR) and English prompts on the same text
-(EN→FR) gave nearly the same results: mean correlation 0.725 vs.~0.730,
-MAE 0.205 vs.~0.204, 3-category F1 0.674 vs.~0.667, and 7-category F1
-0.387 vs.~0.377. None of these paired differences was statistically
-significant (all \emph{p} \textgreater{} 0.10). Equivalence tests go
-further. FR→FR and EN→FR were statistically equivalent within ±0.05 on
-all four metrics (all \emph{p} \textless{} 0.01). On correlation, the
-90\% confidence interval of the difference, {[}−0.015, 0.005{]}, rules
-out an advantage larger than 0.015 for either prompt
-language.\footnote{With Llama 3.2 3B included, equivalence could not be
-  established on correlation: the 90\% confidence interval of the
-  difference was {[}−0.025, 0.065{]}, driven by that model's erratic
-  scores under the English prompt.} The results contradict H1a and
-support H1b.
+(Figure~\ref{fig-language}; Table~\ref{tbl-tests}). Across the thirteen
+models of at least 8B parameters, French prompts on French text (FR→FR)
+and English prompts on the same text (EN→FR) gave nearly the same
+results: mean correlation 0.725 vs.~0.730, MAE 0.205 vs.~0.204,
+3-category F1 0.674 vs.~0.667, and 7-category F1 0.387 vs.~0.377. None
+of these paired differences was statistically significant (all \emph{p}
+\textgreater{} 0.10). Equivalence tests go further. FR→FR and EN→FR were
+statistically equivalent within ±0.05 on all four metrics (all \emph{p}
+\textless{} 0.01). On correlation, the 90\% confidence interval of the
+difference, {[}−0.015, 0.005{]}, rules out an advantage larger than
+0.015 for either prompt language.\footnote{With Llama 3.2 3B included,
+  equivalence could not be established on correlation: the 90\%
+  confidence interval of the difference was {[}−0.025, 0.065{]}, driven
+  by that model's erratic scores under the English prompt.} The results
+contradict H1a and support H1b.
 
-The equivalence holds at the scale of the corpus.
-Figure~\ref{fig-corpus} plots, for each of the 2,671 full articles with
-all three scores, the score GPT-5.6 Luna gave under the English prompt
-against the score it gave under the French prompt (left), and the French
-Lexicoder score against the French-prompt score (right). The two prompt
-languages agree almost perfectly (r = 0.97; 94\% of articles received
-the same sign), and Jev shows the same on the same articles (r = 0.997;
-98\% the same sign). The dictionary and the model rank the articles very
-differently (r = 0.36 across articles, 0.42 across monthly means), and
-on 28\% of articles they disagree even on the sign. The comparison
-cannot say which of the two is right, since neither is the ground truth;
-the benchmark results below can.
-
-\begin{figure}[!htbp]
-
-{\caption{{Agreement Between Scoring Methods on the Full Corpus, by
-Article}{\label{fig-corpus}}}}
-
-\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/corpus_agreement.png}}
-
-\noindent \emph{Note.} Each~cell covers a 0.1 by 0.1 range of scores and
-is shaded by the number of articles it contains (n = 2,671). The
-horizontal axis is the GPT-5.6 Luna score under the French prompt. Left:
-the same model's score under the English prompt, with the identity line
-dashed (r = 0.97; the two prompts give the same sign on 94\% of
-articles). Right: the French Lexicoder score on the original text (r =
-0.36; the dictionary and the model give the same sign on 66\% of
-articles and opposite signs on 28\%, the remainder being articles that
-one of the two scores exactly zero). All scores run from −1 (very
-negative) to 1 (very positive).
-
-\end{figure}
+The equivalence holds at the scale of the corpus. For each of the 2,671
+full articles with all three scores, the score GPT-5.6 Luna gave under
+the English prompt was compared with the score it gave under the French
+prompt, and the French Lexicoder score with the French-prompt score. The
+two prompt languages agree almost perfectly (r = 0.97; 94\% of articles
+received the same sign), and Jev shows the same on the same articles (r
+= 0.997; 98\% the same sign). The dictionary and the model rank the
+articles very differently (r = 0.36 across articles, 0.42 across monthly
+means), and on 28\% of articles they disagree even on the sign. The
+comparison cannot say which of the two is right, since neither is the
+ground truth; the benchmark results below can.
 
 \subsection{Machine Translation (H2a
 vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
@@ -921,109 +935,121 @@ vs.~H2b)}\label{machine-translation-h2a-vs.-h2b}
 For the LLMs, translation carried a cost. Holding the English prompt
 constant, analyzing the translation instead of the original (EN→EN
 vs.~EN→FR) lowered mean correlation by 0.043 (0.687 vs.~0.730, \emph{p}
-\textless{} 0.001) and 3-category F1 by 0.038 (0.628 vs.~0.667, \emph{p}
-= 0.002).\footnote{With Llama 3.2 3B included, the drop in correlation
-  was smaller and not statistically significant (0.028, \emph{p} =
-  0.12).} Differences in MAE and 7-category F1 remained within the ±0.05
-equivalence bound. Compared with the fully French workflow (FR→FR), the
-fully English workflow (EN→EN) lowered correlation by 0.038 (\emph{p} =
-0.001) and 3-category F1 by 0.046 (\emph{p} = 0.002).
+\textless{} 0.001; Table~\ref{tbl-tests}) and 3-category F1 by 0.038
+(0.628 vs.~0.667, \emph{p} = 0.002).\footnote{With Llama 3.2 3B
+  included, the drop in correlation was smaller and not statistically
+  significant (0.028, \emph{p} = 0.12).} Differences in MAE and
+7-category F1 remained within the ±0.05 equivalence bound. Compared with
+the fully French workflow (FR→FR), the fully English workflow (EN→EN)
+lowered correlation by 0.038 (\emph{p} = 0.001) and 3-category F1 by
+0.046 (\emph{p} = 0.002).
 
 Is this the cost of translation or of the translator? The sentences were
-translated again by GPT-5.6 Luna and scored under the English prompt by
-the twelve generative models of at least 8B parameters
-(Table~\ref{tbl-translator}). Because most of these models scored the
-new translation only once, the comparison uses the first run of every
-condition. On correlation, the frontier-quality translation recovered
-most of the loss: the models averaged r = 0.701 on it, against 0.667 on
-the Google translation and 0.709 on the original. The remaining gap of
-0.007 was not statistically significant (paired \emph{p} = 0.51), and
-five of the twelve models scored higher on the LLM translation than on
-the original. On polarity classification the recovery was smaller: mean
-3-category F1 was 0.628 on the original, 0.591 with Google Translate and
-0.604 with the LLM translation, still below the original (\emph{p} =
-0.02). The loss observed in EN→EN is therefore mostly the cost of a
+translated again by GPT-5.6 Luna and scored three times under the
+English prompt by the eleven generative models of at least 8B parameters
+retested (squares in Figure~\ref{fig-language}). On correlation, the
+frontier-quality translation recovered most of the loss: the models
+averaged r = 0.722 on it, against 0.681 on the Google translation and
+0.727 on the original. The remaining gap of 0.005 was not statistically
+significant (paired \emph{p} = 0.58) and fell within the equivalence
+bound (\emph{p} \textless{} 0.001), and four of the eleven models scored
+higher on the LLM translation than on the original. The LLM translation
+also gave a slightly lower MAE than the original (by 0.008, \emph{p} =
+0.03). On polarity classification the recovery was smaller: mean
+3-category F1 was 0.664 on the original, 0.621 with Google Translate and
+0.635 with the LLM translation, still below the original (\emph{p} =
+0.005). The loss observed in EN→EN is therefore mostly the cost of a
 conventional translator. A better translator removes most of it but, on
 average, does not do better than the original.
 
-\begin{table}
+\begin{figure}[!htbp]
 
-{\caption{{Correlation and 3-Category F1 With Human Judgments Under the
-English Prompt, by Text Analyzed (French Original, Google Translation,
-GPT-5.6 Luna Translation), First Run of Each Model; the Last Row Is the
-French Lexicoder on the Original and the English Lexicoder on Each
-Translation}{\label{tbl-translator}}}
-\vspace{-20pt}}
+{\caption{{Prompt Language Matters Little; a Machine Translation Lowers
+Accuracy}{\label{fig-language}}}}
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.3115}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1148}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1148}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1148}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1148}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1148}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1148}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Model
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-r, original
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-r, Google
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-r, LLM
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-F1, original
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-F1, Google
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-F1, LLM
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-GPT-5.6 Luna & 0.79 & 0.71 & 0.79 & 0.73 & 0.68 & 0.72 \\
-Claude Haiku 4.5 & 0.75 & 0.71 & 0.74 & 0.69 & 0.66 & 0.67 \\
-Gemini 3.5 Flash & 0.78 & 0.73 & 0.81 & 0.60 & 0.58 & 0.61 \\
-Qwen3 235B-A22B & 0.74 & 0.68 & 0.74 & 0.66 & 0.58 & 0.63 \\
-GPT-OSS 120B & 0.75 & 0.72 & 0.72 & 0.64 & 0.54 & 0.55 \\
-GPT-OSS 20B & 0.66 & 0.67 & 0.65 & 0.59 & 0.52 & 0.51 \\
-Mistral Small 3.2 & 0.69 & 0.66 & 0.65 & 0.68 & 0.66 & 0.65 \\
-DeepSeek V3.2 & 0.68 & 0.66 & 0.76 & 0.62 & 0.62 & 0.61 \\
-Mistral Large 4 & 0.71 & 0.68 & 0.70 & 0.60 & 0.59 & 0.61 \\
-Qwen3 32B & 0.70 & 0.61 & 0.64 & 0.51 & 0.43 & 0.49 \\
-Llama 4 Scout & 0.66 & 0.61 & 0.67 & 0.67 & 0.64 & 0.66 \\
-Llama 3.1 8B & 0.59 & 0.57 & 0.55 & 0.55 & 0.59 & 0.55 \\
-Llama 3.2 3B & 0.12 & 0.27 & 0.24 & 0.45 & 0.47 & 0.46 \\
-Lexicoder (dictionary) & 0.36 & 0.55 & 0.57 & 0.54 & 0.59 & 0.59 \\
-\end{longtable}
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/fig1_language.png}}
 
-\end{table}
+\vspace{-12pt}
+\noindent \emph{Note.} Pearson~correlation between each model's scores
+and the mean of the three human coders, averaged over three runs, for
+the thirteen models of at least 8B parameters, sorted by correlation in
+FR→FR. The two circles hold the French text constant and vary the prompt
+language (H1); the triangle and the square keep the English prompt and
+replace the text with a Google Translate or a GPT-5.6 Luna translation
+(H2). Jev and Mistral Large 4 were not scored on the GPT-5.6 Luna
+translation. The axis starts at 0.5.
+
+\end{figure}
 
 The dictionaries showed the opposite pattern. The English Lexicoder
 applied to the translation correlated with human judgments at r = 0.548,
 against 0.357 for the French Lexicoder applied to the original. The
 difference is 0.191 (95\% bootstrap CI {[}0.059, 0.326{]}). The English
 dictionary also reached a higher 3-category F1 (0.589 vs.~0.545). With
-the LLM translation it rose further, to r = 0.574 and F1 = 0.592
-(Table~\ref{tbl-translator}): the better the translation, the more the
-dictionary gains, whereas the models at best recover the original. The
-two dictionaries also differ in construction, so this contrast does not
-isolate language. Its direction nonetheless matches the bridge view. For
-the LLMs, the results support H2b for a conventional machine
-translation: it lowered both correlation and polarity classification,
-whichever prompt was held constant. With a frontier-quality translation,
-the loss mostly disappears on correlation but does not reverse on
-average: H2a, which predicts a translation at least as accurate as the
-original, holds for five of twelve models on correlation and for two on
-polarity.
+the LLM translation it rose further, to r = 0.574 and F1 = 0.592: the
+better the translation, the more the dictionary gains, whereas the
+models at best recover the original. The two dictionaries also differ in
+construction, so this contrast does not isolate language. Its direction
+nonetheless matches the bridge view. For the LLMs, the results support
+H2b for a conventional machine translation: it lowered both correlation
+and polarity classification, whichever prompt was held constant. With a
+frontier-quality translation, the loss mostly disappears on correlation
+but does not reverse on average: H2a, which predicts a translation at
+least as accurate as the original, holds for four of eleven models on
+correlation and for one on polarity.
+
+\begin{table}
+
+{\caption{{Paired Differences Between Conditions Across Models, With
+Equivalence Tests}{\label{tbl-tests}}}
+\vspace{-20pt}}
+
+\begin{longtable}[]{@{}lrlrr@{}}
+\toprule\noalign{}
+Comparison and metric & Difference & 95\% CI & \emph{p} & \emph{p}
+(equiv.) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Prompt language (FR→FR − EN→FR)} (13 models) & & & & \\
+Correlation & -0.005 & {[}-0.017, 0.007{]} & .387 & \textless{} .001 \\
+MAE & 0.000 & {[}-0.009, 0.010{]} & .973 & \textless{} .001 \\
+F1, 3 categories & 0.008 & {[}-0.004, 0.020{]} & .169 & \textless{}
+.001 \\
+F1, 7 categories & 0.010 & {[}-0.017, 0.037{]} & .427 & .004 \\
+\textbf{Translation (EN→FR − EN→EN)} (13 models) & & & & \\
+Correlation & 0.043 & {[}0.028, 0.057{]} & \textless{} .001 & .147 \\
+MAE & 0.002 & {[}-0.005, 0.009{]} & .624 & \textless{} .001 \\
+F1, 3 categories & 0.038 & {[}0.018, 0.059{]} & .002 & .125 \\
+F1, 7 categories & -0.001 & {[}-0.029, 0.026{]} & .913 & .001 \\
+\textbf{Complete workflows (FR→FR − EN→EN)} (13 models) & & & & \\
+Correlation & 0.038 & {[}0.018, 0.058{]} & .001 & .103 \\
+MAE & 0.002 & {[}-0.008, 0.012{]} & .705 & \textless{} .001 \\
+F1, 3 categories & 0.046 & {[}0.021, 0.072{]} & .002 & .378 \\
+F1, 7 categories & 0.009 & {[}-0.013, 0.030{]} & .392 & \textless{}
+.001 \\
+\textbf{LLM translation (EN→FR − EN→LLM)} (11 models) & & & & \\
+Correlation & 0.005 & {[}-0.015, 0.026{]} & .578 & \textless{} .001 \\
+MAE & 0.008 & {[}0.001, 0.015{]} & .030 & \textless{} .001 \\
+F1, 3 categories & 0.029 & {[}0.011, 0.047{]} & .005 & .014 \\
+F1, 7 categories & 0.022 & {[}-0.020, 0.063{]} & .271 & .078 \\
+\end{longtable}
+
+\vspace{-12pt}
+\noindent \emph{Note.} Each~difference is the mean across models of the
+first condition minus the second (EN→LLM: English prompt on the GPT-5.6
+Luna translation). Higher is better for correlation and F1, lower for
+MAE. Paired \emph{t}-tests across the models of at least 8B parameters;
+\emph{p} (equiv.): two one-sided tests against a bound of ±0.05.
+
+\end{table}
 
 \subsection{Viability Against Dictionary Methods
 (RQ2)}\label{viability-against-dictionary-methods-rq2}
 
 General-purpose LLMs, used without fine-tuning, correlated with human
-judgments well above both dictionaries (Figure~\ref{fig-performance}).
+judgments well above both dictionaries (Figure~\ref{fig-dictionaries}).
 The best configuration, GPT-5.6 Luna with French prompts, reached r =
 0.81. Jev came close behind the leaders, with r = 0.77 in both
 conditions on French text and the second-highest 7-category F1 (0.527 in
@@ -1039,23 +1065,18 @@ the mean of the other two (mean leave-one-out r = 0.748, range
 
 \begin{figure}[!htbp]
 
-{\caption{{Correlation and Mean Absolute Error Between Model Scores and
-Human Judgments, by Model and Condition}{\label{fig-performance}}}}
+{\caption{{Every Model From About 8B Parameters Outperforms Both
+Dictionaries}{\label{fig-dictionaries}}}}
 
-\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_performance.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/fig2_dictionaries.png}}
 
 \vspace{-12pt}
-\noindent \emph{Note.} One~row per model and condition, sorted by each
-model's mean correlation and colored by model type. Left panel: Pearson
-correlation between the model's scores and the mean of three human
-coders, with 95\% confidence intervals. Right panel: mean absolute
-error, the average distance between the model's score and the human
-score on the −1 to 1 scale, so that 0.17 means the model is typically
-0.17 points away from the human rating. Within each model, the
-conditions are FR→FR (French prompt on French text), EN→FR (English
-prompt on French text), and EN→EN (English prompt on translated text).
-\(^{*}p\) \textless{} .05, \(^{**}p\) \textless{} .01, \(^{***}p\)
-\textless{} .001.
+\noindent \emph{Note.} Point:~mean Pearson correlation with the mean of
+the three human coders over the three conditions (FR→FR, EN→FR, EN→EN);
+line: lowest to highest condition. Dashed lines: French Lexicoder on the
+original text (r = 0.36) and English Lexicoder on the Google translation
+(r = 0.55). Llama 3.2 1B, which returned a usable number on about one
+call in 23, is omitted.
 
 \end{figure}
 
@@ -1087,37 +1108,20 @@ from 8B parameters upward exceeded both dictionaries in every condition,
 and only Llama 3.2 3B fell below them. On 3-category F1, the translated
 English dictionary outperformed Qwen3 32B in every condition, GPT-OSS
 120B in EN→EN, and Llama 3.2 3B. On MAE, the dictionaries (0.203 and
-0.210) were close to the LLM average (0.204;
-Figure~\ref{fig-performance}, right panel), because their scores cluster
-near zero on a sample dominated by mildly positive sentences.
+0.210) were close to the LLM average (0.204), because their scores
+cluster near zero on a sample dominated by mildly positive sentences.
 
 \subsection{Classification
 Granularity}\label{classification-granularity}
 
 All models performed substantially better on 3-category than on
 7-category classification (best F1 0.770 vs.~0.532; mean 0.656
-vs.~0.380; Figure~\ref{fig-f1}). Models identified positive and negative
-sentiment most reliably (7-category F1 = 0.489 and 0.475, rising to
-0.710 and 0.659 in the 3-category scheme). They struggled most with the
-extreme categories (very negative F1 = 0.286, very positive F1 = 0.153),
-which are nearly absent from the sample (two sentences and one
-sentence). Neutral remained the hardest 3-category label (F1 = 0.271).
-
-\begin{figure}[!htbp]
-
-{\caption{{Weighted F1 on Polarity and on Fine-Grained Classification,
-by Model}{\label{fig-f1}}}}
-
-\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/f1_dumbbell.png}}
-
-\vspace{-12pt}
-\noindent \emph{Note.} One~row per model, from the highest polarity F1
-to the lowest, colored by model type. Filled circles are the weighted F1
-on three categories, hollow circles on seven, each averaged over the
-three conditions; the segment is the loss from grouping sentiment into
-seven categories instead of three. Llama 3.2 1B is omitted.
-
-\end{figure}
+vs.~0.380). Models identified positive and negative sentiment most
+reliably (7-category F1 = 0.489 and 0.475, rising to 0.710 and 0.659 in
+the 3-category scheme). They struggled most with the extreme categories
+(very negative F1 = 0.286, very positive F1 = 0.153), which are nearly
+absent from the sample (two sentences and one sentence). Neutral
+remained the hardest 3-category label (F1 = 0.271).
 
 \section{Discussion}\label{discussion}
 
@@ -1128,8 +1132,8 @@ For French and current models, the results side with the
 multilingual-competence view. English prompts brought no advantage, and
 equivalence tests ruled out a difference larger than 0.015 in
 correlation in either direction. The equivalence held at the scale of
-the full corpus (Figure~\ref{fig-corpus}). Earlier social science
-evidence showed that labels agree across prompt languages
+the full corpus. Earlier social science evidence showed that labels
+agree across prompt languages
 (\citeproc{ref-rathjeGPTEffectiveTool2024}{Rathje et al., 2024}). This
 study extends that finding to the accuracy of the labels against human
 judgment. It is also consistent with the minimal differences observed
@@ -1273,12 +1277,11 @@ for dictionaries
 Veen \& Bleich, 2025}). In this corpus, a single off-the-shelf
 dictionary captured them less well than the LLMs. The gap does not close
 with aggregation: on the full corpus, the dictionary agreed only weakly
-with the model, by article and by month (Figure~\ref{fig-corpus}). What
-the dictionary retains is transparency, since every score can be traced
-to the words that produced it, and stability over time, since a
-dictionary is not deprecated. These make it a useful baseline and
-robustness check alongside an LLM. They are not a reason to prefer it as
-the primary measure.
+with the model, by article and by month. What the dictionary retains is
+transparency, since every score can be traced to the words that produced
+it, and stability over time, since a dictionary is not deprecated. These
+make it a useful baseline and robustness check alongside an LLM. They
+are not a reason to prefer it as the primary measure.
 
 \section{Limitations}\label{limitations}
 
@@ -1326,24 +1329,23 @@ reproduces what a researcher who does not read the source language can
 do: translate automatically and analyze the result. Its lower
 performance is the cost of that workflow with this translation system
 rather than of translation as such, as the check with an LLM translation
-shows. That check rests on a single run for the ten models served
-through OpenRouter, and the translator was itself one of the models
-evaluated, GPT-5.6 Luna, which may favor it. The articles are public
-news texts from 1995 to 2024 and may have been part of the models'
-training data. This could inflate absolute performance, but it does not
-affect the comparisons between conditions, which rest on the same
-sentences. A single standardized prompt was used across the generative
-models for comparability. This may understate the performance achievable
-with model-specific prompting. Jev received the same scale in a
-different format, and its score is a probability-weighted average, which
-could in principle pull scores toward the middle of the scale and
-flatter its MAE. In practice its scores spread as widely as those of the
-best generative models (SD 0.36 against 0.37 for GPT-5.6 Luna; 7\% of
-scores beyond ±0.66 against 6\% to 11\%), so its MAE is not an artefact
-of a compressed scale. Mistral Large 4 was evaluated as a preview
-release, which may change before its general availability. The models
-tested do not include fine-tuned or domain-specific classifiers, which
-can rival general-purpose LLMs
+shows. That check leaves out Mistral Large 4, and the translator was
+itself one of the models evaluated, GPT-5.6 Luna, which may favor it.
+The articles are public news texts from 1995 to 2024 and may have been
+part of the models' training data. This could inflate absolute
+performance, but it does not affect the comparisons between conditions,
+which rest on the same sentences. A single standardized prompt was used
+across the generative models for comparability. This may understate the
+performance achievable with model-specific prompting. Jev received the
+same scale in a different format, and its score is a
+probability-weighted average, which could in principle pull scores
+toward the middle of the scale and flatter its MAE. In practice its
+scores spread as widely as those of the best generative models (SD 0.36
+against 0.37 for GPT-5.6 Luna; 7\% of scores beyond ±0.66 against 6\% to
+11\%), so its MAE is not an artefact of a compressed scale. Mistral
+Large 4 was evaluated as a preview release, which may change before its
+general availability. The models tested do not include fine-tuned or
+domain-specific classifiers, which can rival general-purpose LLMs
 (\citeproc{ref-mochtakParlasentMappingSentiment2025}{Mochtak et al.,
 2025}). Costs are reported at list prices and count cached prompt tokens
 at the full input rate, so they are upper bounds. Finally, this

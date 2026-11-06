@@ -150,7 +150,7 @@ French News}
 
 
 
-\abstract{Supplemental tables for the article. }
+\abstract{Supplemental tables and figures for the article. }
 
 \keywords{supplemental material}
 
@@ -174,6 +174,7 @@ French News}
 
 \usepackage{pdflscape}
 \renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -598,6 +599,65 @@ Claude Haiku 4.5 & 313.8 & 328.2 & 439.2 & +111 (+33.8\%) & 1.87 &
 \end{longtable}
 
 \end{table}
+
+\begin{figure}[!htbp]
+
+{\caption{{Correlation and Mean Absolute Error Between Model Scores and
+Human Judgments, by Model and Condition}{\label{fig-s-performance}}}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/model_performance.png}}
+
+\vspace{-12pt}
+\noindent \emph{Note.} One~row per model and condition, sorted by each
+model's mean correlation and colored by model type. Left panel: Pearson
+correlation between the model's scores and the mean of three human
+coders, with 95\% confidence intervals. Right panel: mean absolute
+error, the average distance between the model's score and the human
+score on the −1 to 1 scale, so that 0.17 means the model is typically
+0.17 points away from the human rating. Within each model, the
+conditions are FR→FR (French prompt on French text), EN→FR (English
+prompt on French text), and EN→EN (English prompt on translated text).
+\(^{*}p\) \textless{} .05, \(^{**}p\) \textless{} .01, \(^{***}p\)
+\textless{} .001.
+
+\end{figure}
+
+\begin{figure}[!htbp]
+
+{\caption{{Weighted F1 on Polarity and on Fine-Grained Classification,
+by Model}{\label{fig-s-f1}}}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/f1_dumbbell.png}}
+
+\vspace{-12pt}
+\noindent \emph{Note.} One~row per model, from the highest polarity F1
+to the lowest, colored by model type. Filled circles are the weighted F1
+on three categories, hollow circles on seven, each averaged over the
+three conditions; the segment is the loss from grouping sentiment into
+seven categories instead of three. Llama 3.2 1B is omitted.
+
+\end{figure}
+
+\begin{figure}[!htbp]
+
+{\caption{{Agreement Between Scoring Methods on the Full Corpus, by
+Article}{\label{fig-s-corpus}}}}
+
+\pandocbounded{\includegraphics[keepaspectratio]{../../results/graphs/corpus_agreement.png}}
+
+\vspace{-12pt}
+\noindent \emph{Note.} Each~cell covers a 0.1 by 0.1 range of scores and
+is shaded by the number of articles it contains (n = 2,671). The
+horizontal axis is the GPT-5.6 Luna score under the French prompt. Left:
+the same model's score under the English prompt, with the identity line
+dashed (r = 0.97; the two prompts give the same sign on 94\% of
+articles). Right: the French Lexicoder score on the original text (r =
+0.36; the dictionary and the model give the same sign on 66\% of
+articles and opposite signs on 28\%, the remainder being articles that
+one of the two scores exactly zero). All scores run from −1 (very
+negative) to 1 (very positive).
+
+\end{figure}
 
 
 
