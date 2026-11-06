@@ -3,7 +3,8 @@
 # Table 1  description of the corpus, the benchmark and the models
 # Figure 1 RQ1: the three conditions and the LLM translation, by model
 # Figure 2 RQ2: models against the two dictionaries
-# Table 2  paired tests between conditions (13 models of about 8B and more)
+# Tables and figures of the article: Table 1 (data), Figure 1 (RQ1), Figure 2
+# (RQ2) and Table 2 (paired tests between conditions, 13 models of 8B and more).
 #
 # In:  data/clean/df.rds, data/clean/news_df_sentiment_corpus.rds,
 #      data/clean/cor_results.rds, results/analysis/f1_scores_{3,7}.rds,
@@ -147,9 +148,9 @@ save_figure(fig2, "fig2_dictionaries.png", 5.2)
 
 metrics <- c(r = "Correlation", mae = "MAE", f1_3 = "F1, 3 categories", f1_7 = "F1, 7 categories")
 comparisons <- list(
-  `Prompt language` = c("fr_fr", "en_fr"),
-  `Translation` = c("en_fr", "en_en"),
-  `Complete workflows` = c("fr_fr", "en_en")
+  `Prompt language (FR→FR − EN→FR)` = c("fr_fr", "en_fr"),
+  `Translation (EN→FR − EN→EN)` = c("en_fr", "en_en"),
+  `Complete workflows (FR→FR − EN→EN)` = c("fr_fr", "en_en")
 )
 
 paired_row <- function(comparison, metric, d) {
@@ -177,17 +178,18 @@ translator <- translation %>%
 table_2 <- bind_rows(table_2, bind_rows(lapply(names(metrics), function(m) {
   wide <- translator %>% select(model, text, value = all_of(m)) %>%
     pivot_wider(names_from = text, values_from = value)
-  paired_row("LLM translation", metrics[[m]], wide$llm - wide$original)
+  paired_row("LLM translation (EN→FR − EN→LLM)", metrics[[m]], wide$original - wide$llm)
 })))
 
 format_p <- function(p) ifelse(p < 0.001, "< .001", sub("^0", "", sprintf("%.3f", p)))
-writeLines(c(
-  "| Comparison | Metric | Models | Difference | 95% CI | *p* | *p* (equivalence) |",
-  "|:------------------|:-----------------|---:|---------:|:----------------|------:|-------:|",
-  with(table_2, sprintf("| %s | %s | %s | %.3f | [%.3f, %.3f] | %s | %s |",
-                        ifelse(duplicated(Comparison), "", Comparison), Metric,
-                        ifelse(duplicated(Comparison), "", n), diff, low, high,
-                        format_p(p), format_p(p_tost)))
-), "results/tables/table2_tests.md")
+table_2_lines <- unlist(lapply(unique(table_2$Comparison), function(cmp) {
+  rows <- filter(table_2, Comparison == cmp)
+  c(sprintf("| **%s** (%d models) |  |  |  |  |", cmp, rows$n[1]),
+    with(rows, sprintf("| %s | %.3f | [%.3f, %.3f] | %s | %s |", Metric, diff, low, high,
+                       format_p(p), format_p(p_tost))))
+}))
+writeLines(c("| Comparison and metric | Difference | 95% CI | *p* | *p* (equiv.) |",
+             "|:----------------|----:|:-------|----:|----:|",
+             table_2_lines), "results/tables/table2_tests.md")
 
 print(table_2, n = Inf)

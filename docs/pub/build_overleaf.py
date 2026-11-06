@@ -52,6 +52,13 @@ def fig(m):
     return f"![{cap}]({path}){{#{ident}}}"
 body = re.sub(r"^!\[([^\]]*)\]\(([^)]*)\)\{(#fig-.*)\}[ \t]*$", fig, body, flags=re.M)
 
+# Same for table notes: ::: {#tbl-x apa-note="..."} moves the note behind the "Table:" caption
+def tbl(m):
+    ident, note, inner = m.group(1), m.group(2), m.group(3)
+    inner = re.sub(r"^(Table: .*)$", lambda c: c.group(1) + f" {NOTE} " + note, inner, count=1, flags=re.M)
+    return f"::: {{#{ident}}}\n{inner}:::"
+body = re.sub(r'^::: \{#(tbl-[\w-]+) apa-note="([^"]*)"\}[ \t]*\n(.*?)^:::', tbl, body, flags=re.M | re.S)
+
 tmp = PUB / "_overleaf_body.qmd"
 tmp.write_text(
     "---\ntitle: x\nbibliography: references.bib\ncite-method: biblatex\nmask: true\n"
@@ -94,9 +101,13 @@ def longtable_to_table(m):
     head = " ".join(head.split())
     rows = t[t.index("\\endlastfoot") + len("\\endlastfoot"):t.index("\\end{longtable}")].strip()
     align = "l" + "r" * head.count("&")
-    caption = (f"\\caption{{{' '.join(cap.group(1).split())}}}{cap.group(2)}\n" if cap else "")
+    text, note = (" ".join(cap.group(1).split()), "") if cap else ("", "")
+    if NOTE in text:
+        text, note = [x.strip() for x in text.split(NOTE, 1)]
+    caption = f"\\caption{{{text}}}{cap.group(2)}\n" if cap else ""
     return ("\\begin{table}[htbp]\n" + caption + "\\centering\n\\begin{tabular}{" + align + "}\n\\toprule\n"
-            + head + "\n\\midrule\n" + rows + "\n\\bottomrule\n\\end{tabular}\n\\end{table}")
+            + head + "\n\\midrule\n" + rows + "\n\\bottomrule\n\\end{tabular}\n"
+            + ("\\raggedright\n\\figurenote{" + note + "}\n" if note else "") + "\\end{table}")
 doc = re.sub(r"\\begin\{longtable\}.*?\\end\{longtable\}", longtable_to_table, doc, flags=re.S)
 
 # One sentence per line, in running text only (not inside floats)
