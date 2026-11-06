@@ -40,11 +40,12 @@ repository.
 | Dictionaries on the corpus | `20_frlsd.R`, `21_translate_to_english.R`, `22_lsd_prep.R`, `23_lsd.R`, `24_merging_french_english.R` |
 | Benchmark sentences | `30_create_sample.R`, `31_validate_manual_anotation.R` |
 | Model scores | `40_prompt.R`, `42_jev_prompt.R` (after any rerun of 40), `41_prompt_cleaning.R` |
-| Translator check (Table 1) | `43_llm_translation_test.R`, then `44_lsd_on_llm_translation.R` |
+| Translator check | `43_llm_translation_test.R` (`43b_run_parallel.sh` for the second and third runs), then `44_lsd_on_llm_translation.R` |
 | Metrics | `50_cor.R`, `51_f1_scores.R`, `56_intercoder_reliability.R`, `66_f1_scores_averages.R` |
 | Tests between conditions | `81_performance_by_condition.R`, `82_equivalence_tests.R` |
-| Full corpus | `70_prompt_corpus.R`, `72_jev_corpus.R`, `84_corpus_agreement_graph.R` (Figure 1) |
-| Figures and tables | `85_performance_graph.R` (Figure 2), `62b_f1_dumbbell.R` (Figure 3), `86_performance_table.R`, `63_fscore_tables.R`, `68_cost_table.R`, `69_tokens_by_language.R` |
+| Full corpus | `70_prompt_corpus.R`, `72_jev_corpus.R`, `84_corpus_agreement_graph.R` (supplemental figure) |
+| Article tables and figures | `87_tables_figures.R` (Tables 1 and 2, Figures 1 and 2) |
+| Supplemental tables and figures | `85_performance_graph.R`, `62b_f1_dumbbell.R`, `86_performance_table.R`, `63_fscore_tables.R`, `68_cost_table.R`, `69_tokens_by_language.R` |
 
 Shared code: `src/92_llm_helper_funcs.R` (answer parser, retries),
 `93_prompts.R`, `94_models_map.R` (model lineup and provider pins),
