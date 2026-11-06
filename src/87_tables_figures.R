@@ -103,11 +103,11 @@ fig1 <- ggplot(fig1_data, aes(x = r, y = name)) +
   geom_point(aes(shape = condition, fill = condition), size = 2.4) +
   scale_shape_manual(values = c(21, 21, 24, 22)) +
   scale_fill_manual(values = c("black", "white", "white", "grey55")) +
-  scale_x_continuous(limits = c(0, 1), breaks = seq(0, 1, 0.2), expand = expansion(mult = c(0, 0.02))) +
+  scale_x_continuous(limits = c(0.5, 0.9), breaks = seq(0.5, 0.9, 0.1), expand = expansion(mult = c(0, 0.02))) +
   guides(shape = guide_legend(nrow = 2, title.position = "top"),
          fill = guide_legend(nrow = 2, title.position = "top")) +
   labs(title = "Prompt language matters little; a machine translation lowers accuracy",
-       subtitle = "Correlation of each model's scores with the three human coders, by condition (mean of three runs)",
+       subtitle = "Correlation of each model's scores with the three human coders, by condition (mean of three runs);\nthe axis starts at 0.5",
        x = "Correlation with human coders", y = "Model",
        shape = "Condition", fill = "Condition") +
   theme_paper
