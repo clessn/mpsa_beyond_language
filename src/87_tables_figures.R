@@ -22,9 +22,11 @@ small_models <- c("llama321b", "llama323b")
 
 theme_paper <- theme_classic(base_size = 11) +
   theme(axis.text = element_text(colour = "black"),
-        panel.grid.major.x = element_line(colour = "grey90", linewidth = 0.3),
+        plot.title = element_text(face = "bold", size = 12),
+        plot.subtitle = element_text(size = 10, colour = "grey25", margin = margin(b = 8)),
+        plot.title.position = "plot",
         legend.position = "bottom",
-        legend.title = element_blank(),
+        legend.title = element_text(size = 10),
         plot.margin = margin(5, 10, 5, 5))
 
 save_figure <- function(plot, file, height) {
@@ -101,12 +103,15 @@ fig1 <- ggplot(fig1_data, aes(x = r, y = name)) +
   geom_point(aes(shape = condition, fill = condition), size = 2.4) +
   scale_shape_manual(values = c(21, 21, 24, 22)) +
   scale_fill_manual(values = c("black", "white", "white", "grey55")) +
-  scale_x_continuous(limits = c(0.55, 0.85), breaks = seq(0.55, 0.85, 0.05),
-                     labels = function(x) sprintf("%.2f", x)) +
-  guides(shape = guide_legend(nrow = 2), fill = guide_legend(nrow = 2)) +
-  labs(x = "Correlation with human coders", y = NULL) +
+  scale_x_continuous(limits = c(0, 1), breaks = seq(0, 1, 0.2), expand = expansion(mult = c(0, 0.02))) +
+  guides(shape = guide_legend(nrow = 2, title.position = "top"),
+         fill = guide_legend(nrow = 2, title.position = "top")) +
+  labs(title = "Prompt language matters little; a machine translation lowers accuracy",
+       subtitle = "Correlation of each model's scores with the three human coders, by condition (mean of three runs)",
+       x = "Correlation with human coders", y = "Model",
+       shape = "Condition", fill = "Condition") +
   theme_paper
-save_figure(fig1, "fig1_language.png", 4.8)
+save_figure(fig1, "fig1_language.png", 5.4)
 
 # Figure 2: RQ2 --------------------------------------------------------------
 
@@ -124,16 +129,19 @@ fig2_data <- performance %>%
 dictionaries$label <- c("French\nLexicoder", "English Lexicoder\n(translation)")[match(dictionaries$label, c("French Lexicoder", "English Lexicoder (translation)"))]
 fig2 <- ggplot(fig2_data, aes(x = mean_r, y = name)) +
   geom_vline(data = dictionaries, aes(xintercept = r), linetype = "dashed", colour = "grey40") +
-  geom_text(data = dictionaries, aes(x = r, y = nrow(fig2_data) + 1.1, label = label),
-            hjust = 1.05, size = 3, lineheight = 0.9, colour = "grey25") +
+  geom_text(data = dictionaries, aes(x = r, y = nrow(fig2_data) + 1.1, label = label,
+                                     hjust = ifelse(r < 0.45, 1.08, -0.08)),
+            size = 3, lineheight = 0.9, colour = "grey25") +
   geom_errorbar(aes(xmin = low, xmax = high), width = 0, orientation = "y") +
   geom_point(aes(shape = weights), size = 2.4, fill = "white") +
   scale_shape_manual(values = c(`Closed-weight` = 16, `Open-weight` = 21)) +
   scale_y_discrete(expand = expansion(add = c(0.6, 1.8))) +
-  scale_x_continuous(limits = c(0, 0.85), breaks = seq(0, 0.8, 0.2)) +
-  labs(x = "Correlation with human coders, mean and range of the three conditions", y = NULL) +
+  scale_x_continuous(limits = c(0, 1), breaks = seq(0, 1, 0.2), expand = expansion(mult = c(0, 0.02))) +
+  labs(title = "Every model from about 8B parameters outperforms both dictionaries",
+       subtitle = "Correlation with the three human coders: mean (point) and range (line) of the three conditions",
+       x = "Correlation with human coders", y = "Model", shape = "Model weights") +
   theme_paper
-save_figure(fig2, "fig2_dictionaries.png", 4.6)
+save_figure(fig2, "fig2_dictionaries.png", 5.2)
 
 # Table 2 --------------------------------------------------------------------
 
