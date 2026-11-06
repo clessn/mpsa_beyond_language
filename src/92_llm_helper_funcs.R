@@ -83,3 +83,21 @@ polarity_f1 <- function(pred, truth) {
   })
   sum(f1 * colSums(cm)) / sum(cm)
 }
+
+# Weighted F1 on the seven categories of src/41_prompt_cleaning.R
+category_f1 <- function(pred, truth) {
+  classes <- c("very_negative", "negative", "somewhat_negative", "neutral",
+               "somewhat_positive", "positive", "very_positive")
+  category <- function(x) {
+    out <- ifelse(x < -0.66, 1, ifelse(x < -0.33, 2, ifelse(x < 0, 3, ifelse(x == 0, 4,
+           ifelse(x <= 0.33, 5, ifelse(x <= 0.66, 6, 7))))))
+    factor(classes[out], levels = classes)
+  }
+  cm <- table(category(pred), category(truth))
+  f1 <- sapply(seq_along(classes), function(i) {
+    precision <- cm[i, i] / max(sum(cm[i, ]), 1)
+    recall <- cm[i, i] / max(sum(cm[, i]), 1)
+    if (precision + recall == 0) 0 else 2 * precision * recall / (precision + recall)
+  })
+  sum(f1 * colSums(cm)) / sum(cm)
+}

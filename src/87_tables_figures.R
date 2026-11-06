@@ -1,7 +1,7 @@
 # Tables and figures of the Results section.
 #
 # Table 1  description of the corpus, the benchmark and the models
-# Figure 1 RQ1: prompt and text language (A), translator check (B)
+# Figure 1 RQ1: the three conditions and the LLM translation, by model
 # Figure 2 RQ2: models against the two dictionaries
 # Table 2  paired tests between conditions (13 models of about 8B and more)
 #
@@ -79,48 +79,34 @@ performance <- readRDS("data/clean/cor_results.rds") %>%
 main <- filter(performance, !prefix %in% small_models)
 
 # Figure 1: RQ1 --------------------------------------------------------------
-# Panel A: the three conditions (mean of three runs), as tested in Table 2.
-# Panel B: the translator check (first run; most models scored the LLM
-# translation once), with the Lexicoder. A symbol means the same condition in
-# both panels.
+# Mean of three runs in every condition. The LLM translation is missing for
+# Jev (not retested) and Mistral Large 4 (one run only).
 
 symbols <- c("French prompt, French text", "English prompt, French text",
              "English prompt, Google translation", "English prompt, LLM translation")
-panels <- c("A. Prompt and text language", "B. Translator")
+translation <- readRDS("results/analysis/llm_translation_test.rds")$results
 
-panel_a <- main %>%
-  transmute(name, r, panel = panels[1],
-            condition = symbols[match(condition, c("fr_fr", "en_fr", "en_en"))])
-panel_b <- bind_rows(
-  readRDS("results/analysis/llm_translation_test.rds")$results %>%
-    filter(model != "Llama 3.2 3B") %>%
-    transmute(name = model, r, condition = symbols[match(condition, c(
-      "EN prompt, French original", "EN prompt, Google translation", "EN prompt, GPT-5.6 Luna translation")) + 1]),
-  readRDS("results/analysis/lsd_on_llm_translation.rds")$results %>%
-    transmute(name = "Lexicoder dictionary", r, condition = symbols[2:4])
-) %>%
-  mutate(panel = panels[2])
-
-model_order <- panel_a %>% filter(condition == symbols[1]) %>% arrange(r) %>% pull(name)
-fig1_data <- bind_rows(panel_a, panel_b) %>%
-  mutate(name = factor(name, levels = c("Lexicoder dictionary", model_order)),
-         condition = factor(condition, levels = symbols),
-         panel = factor(panel, levels = panels))
+fig1_data <- bind_rows(
+  main %>% transmute(name, r, condition = symbols[match(condition, c("fr_fr", "en_fr", "en_en"))]),
+  translation %>%
+    filter(condition == "EN prompt, GPT-5.6 Luna translation", model %in% main$name) %>%
+    transmute(name = model, r, condition = symbols[4])
+)
+model_order <- fig1_data %>% filter(condition == symbols[1]) %>% arrange(r) %>% pull(name)
+fig1_data <- mutate(fig1_data, name = factor(name, levels = model_order),
+                    condition = factor(condition, levels = symbols))
 
 fig1 <- ggplot(fig1_data, aes(x = r, y = name)) +
   geom_line(aes(group = name), colour = "grey70") +
-  geom_point(aes(shape = condition, fill = condition), size = 2.2) +
-  facet_wrap(~ panel, nrow = 1) +
-  scale_shape_manual(values = c(21, 21, 24, 22), drop = FALSE) +
-  scale_fill_manual(values = c("black", "white", "white", "grey55"), drop = FALSE) +
-  scale_x_continuous(limits = c(0.3, 0.85), breaks = seq(0.3, 0.8, 0.1)) +
+  geom_point(aes(shape = condition, fill = condition), size = 2.4) +
+  scale_shape_manual(values = c(21, 21, 24, 22)) +
+  scale_fill_manual(values = c("black", "white", "white", "grey55")) +
+  scale_x_continuous(limits = c(0.55, 0.85), breaks = seq(0.55, 0.85, 0.05),
+                     labels = function(x) sprintf("%.2f", x)) +
   guides(shape = guide_legend(nrow = 2), fill = guide_legend(nrow = 2)) +
   labs(x = "Correlation with human coders", y = NULL) +
-  theme_paper +
-  theme(strip.background = element_blank(),
-        strip.text = element_text(hjust = 0, face = "bold", size = 10),
-        panel.spacing.x = unit(1.2, "lines"))
-save_figure(fig1, "fig1_language.png", 5)
+  theme_paper
+save_figure(fig1, "fig1_language.png", 4.8)
 
 # Figure 2: RQ2 --------------------------------------------------------------
 
@@ -158,26 +144,41 @@ comparisons <- list(
   `Complete workflows` = c("fr_fr", "en_en")
 )
 
+paired_row <- function(comparison, metric, d) {
+  test <- t.test(d)
+  se <- sd(d) / sqrt(length(d))
+  p_tost <- max(pt((mean(d) + bound) / se, length(d) - 1, lower.tail = FALSE),
+                pt((mean(d) - bound) / se, length(d) - 1))
+  tibble(Comparison = comparison, Metric = metric, n = length(d), diff = mean(d),
+         low = test$conf.int[1], high = test$conf.int[2], p = test$p.value, p_tost = p_tost)
+}
+
 table_2 <- bind_rows(lapply(names(comparisons), function(cmp) {
   bind_rows(lapply(names(metrics), function(m) {
     wide <- main %>% select(name, condition, value = all_of(m)) %>%
       pivot_wider(names_from = condition, values_from = value)
-    d <- wide[[comparisons[[cmp]][1]]] - wide[[comparisons[[cmp]][2]]]
-    test <- t.test(d)
-    se <- sd(d) / sqrt(length(d))
-    p_tost <- max(pt((mean(d) + bound) / se, length(d) - 1, lower.tail = FALSE),
-                  pt((mean(d) - bound) / se, length(d) - 1))
-    tibble(Comparison = cmp, Metric = metrics[[m]], diff = mean(d),
-           low = test$conf.int[1], high = test$conf.int[2], p = test$p.value, p_tost = p_tost)
+    paired_row(cmp, metrics[[m]], wide[[comparisons[[cmp]][1]]] - wide[[comparisons[[cmp]][2]]])
   }))
 }))
 
+# LLM translation against the original, English prompt (models with three runs)
+translator <- translation %>%
+  filter(model %in% main$name) %>%
+  mutate(text = ifelse(condition == "EN prompt, French original", "original",
+                       ifelse(condition == "EN prompt, Google translation", "google", "llm")))
+table_2 <- bind_rows(table_2, bind_rows(lapply(names(metrics), function(m) {
+  wide <- translator %>% select(model, text, value = all_of(m)) %>%
+    pivot_wider(names_from = text, values_from = value)
+  paired_row("LLM translation", metrics[[m]], wide$llm - wide$original)
+})))
+
 format_p <- function(p) ifelse(p < 0.001, "< .001", sub("^0", "", sprintf("%.3f", p)))
 writeLines(c(
-  "| Comparison | Metric | Difference | 95% CI | *p* | *p* (equivalence) |",
-  "|:------------------|:-----------------|---------:|:----------------|------:|-------:|",
-  with(table_2, sprintf("| %s | %s | %.3f | [%.3f, %.3f] | %s | %s |",
-                        ifelse(duplicated(Comparison), "", Comparison), Metric, diff, low, high,
+  "| Comparison | Metric | Models | Difference | 95% CI | *p* | *p* (equivalence) |",
+  "|:------------------|:-----------------|---:|---------:|:----------------|------:|-------:|",
+  with(table_2, sprintf("| %s | %s | %s | %.3f | [%.3f, %.3f] | %s | %s |",
+                        ifelse(duplicated(Comparison), "", Comparison), Metric,
+                        ifelse(duplicated(Comparison), "", n), diff, low, high,
                         format_p(p), format_p(p_tost)))
 ), "results/tables/table2_tests.md")
 
