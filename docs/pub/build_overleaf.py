@@ -105,7 +105,7 @@ def longtable_to_table(m):
     if NOTE in text:
         text, note = [x.strip() for x in text.split(NOTE, 1)]
     caption = f"\\caption{{{text}}}{cap.group(2)}\n" if cap else ""
-    return ("\\begin{table}[htbp]\n" + caption + "\\centering\n\\begin{tabular}{" + align + "}\n\\toprule\n"
+    return ("\\begin{table}[htbp]\n" + caption + "\\centering\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{" + align + "}\n\\toprule\n"
             + head + "\n\\midrule\n" + rows + "\n\\bottomrule\n\\end{tabular}\n"
             + ("\\raggedright\n\\figurenote{" + note + "}\n" if note else "") + "\\end{table}")
 doc = re.sub(r"\\begin\{longtable\}.*?\\end\{longtable\}", longtable_to_table, doc, flags=re.S)

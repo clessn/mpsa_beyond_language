@@ -1,21 +1,21 @@
 | Comparison and metric | Difference | 95% CI | *p* | *p* (equiv.) |
 |:----------------|----:|:-------|----:|----:|
-| **Prompt language (FR→FR − EN→FR)** (13 models) |  |  |  |  |
+| **Prompt language (FR→FR − EN→FR)** |  |  |  |  |
 | Correlation | -0.005 | [-0.017, 0.007] | .387 | < .001 |
 | MAE | 0.000 | [-0.009, 0.010] | .973 | < .001 |
 | F1, 3 categories | 0.008 | [-0.004, 0.020] | .169 | < .001 |
 | F1, 7 categories | 0.010 | [-0.017, 0.037] | .427 | .004 |
-| **Translation (EN→FR − EN→EN)** (13 models) |  |  |  |  |
+| **Translation (EN→FR − EN→EN)** |  |  |  |  |
 | Correlation | 0.043 | [0.028, 0.057] | < .001 | .147 |
 | MAE | 0.002 | [-0.005, 0.009] | .624 | < .001 |
 | F1, 3 categories | 0.038 | [0.018, 0.059] | .002 | .125 |
 | F1, 7 categories | -0.001 | [-0.029, 0.026] | .913 | .001 |
-| **Complete workflows (FR→FR − EN→EN)** (13 models) |  |  |  |  |
+| **Complete workflows (FR→FR − EN→EN)** |  |  |  |  |
 | Correlation | 0.038 | [0.018, 0.058] | .001 | .103 |
 | MAE | 0.002 | [-0.008, 0.012] | .705 | < .001 |
 | F1, 3 categories | 0.046 | [0.021, 0.072] | .002 | .378 |
 | F1, 7 categories | 0.009 | [-0.013, 0.030] | .392 | < .001 |
-| **LLM translation (EN→FR − EN→LLM)** (11 models) |  |  |  |  |
+| **LLM translation (EN→FR − EN→LLM)** |  |  |  |  |
 | Correlation | 0.005 | [-0.015, 0.026] | .578 | < .001 |
 | MAE | 0.008 | [0.001, 0.015] | .030 | < .001 |
 | F1, 3 categories | 0.029 | [0.011, 0.047] | .005 | .014 |

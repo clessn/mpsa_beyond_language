@@ -30,8 +30,13 @@ theme_paper <- theme_classic(base_size = 11) +
         legend.title = element_text(size = 10),
         plot.margin = margin(5, 10, 5, 5))
 
+# The manuscript version has no title (APA puts it in the caption); the
+# "_titled" version keeps it for presentations.
 save_figure <- function(plot, file, height) {
-  ggsave(file.path("results/graphs", file), plot, width = 6.5, height = height, dpi = 300)
+  ggsave(file.path("results/graphs", sub("\\.png$", "_titled.png", file)), plot,
+         width = 6.5, height = height, dpi = 300)
+  ggsave(file.path("results/graphs", file), plot + labs(title = NULL, subtitle = NULL),
+         width = 6.5, height = height - 0.5, dpi = 300)
 }
 
 # Table 1 -------------------------------------------------------------------
@@ -184,7 +189,7 @@ table_2 <- bind_rows(table_2, bind_rows(lapply(names(metrics), function(m) {
 format_p <- function(p) ifelse(p < 0.001, "< .001", sub("^0", "", sprintf("%.3f", p)))
 table_2_lines <- unlist(lapply(unique(table_2$Comparison), function(cmp) {
   rows <- filter(table_2, Comparison == cmp)
-  c(sprintf("| **%s** (%d models) |  |  |  |  |", cmp, rows$n[1]),
+  c(sprintf("| **%s** |  |  |  |  |", cmp),
     with(rows, sprintf("| %s | %.3f | [%.3f, %.3f] | %s | %s |", Metric, diff, low, high,
                        format_p(p), format_p(p_tost))))
 }))

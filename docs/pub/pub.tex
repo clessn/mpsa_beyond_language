@@ -1012,24 +1012,24 @@ Comparison and metric & Difference & 95\% CI & \emph{p} & \emph{p}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{Prompt language (FR→FR − EN→FR)} (13 models) & & & & \\
+\textbf{Prompt language (FR→FR − EN→FR)} & & & & \\
 Correlation & -0.005 & {[}-0.017, 0.007{]} & .387 & \textless{} .001 \\
 MAE & 0.000 & {[}-0.009, 0.010{]} & .973 & \textless{} .001 \\
 F1, 3 categories & 0.008 & {[}-0.004, 0.020{]} & .169 & \textless{}
 .001 \\
 F1, 7 categories & 0.010 & {[}-0.017, 0.037{]} & .427 & .004 \\
-\textbf{Translation (EN→FR − EN→EN)} (13 models) & & & & \\
+\textbf{Translation (EN→FR − EN→EN)} & & & & \\
 Correlation & 0.043 & {[}0.028, 0.057{]} & \textless{} .001 & .147 \\
 MAE & 0.002 & {[}-0.005, 0.009{]} & .624 & \textless{} .001 \\
 F1, 3 categories & 0.038 & {[}0.018, 0.059{]} & .002 & .125 \\
 F1, 7 categories & -0.001 & {[}-0.029, 0.026{]} & .913 & .001 \\
-\textbf{Complete workflows (FR→FR − EN→EN)} (13 models) & & & & \\
+\textbf{Complete workflows (FR→FR − EN→EN)} & & & & \\
 Correlation & 0.038 & {[}0.018, 0.058{]} & .001 & .103 \\
 MAE & 0.002 & {[}-0.008, 0.012{]} & .705 & \textless{} .001 \\
 F1, 3 categories & 0.046 & {[}0.021, 0.072{]} & .002 & .378 \\
 F1, 7 categories & 0.009 & {[}-0.013, 0.030{]} & .392 & \textless{}
 .001 \\
-\textbf{LLM translation (EN→FR − EN→LLM)} (11 models) & & & & \\
+\textbf{LLM translation (EN→FR − EN→LLM)} & & & & \\
 Correlation & 0.005 & {[}-0.015, 0.026{]} & .578 & \textless{} .001 \\
 MAE & 0.008 & {[}0.001, 0.015{]} & .030 & \textless{} .001 \\
 F1, 3 categories & 0.029 & {[}0.011, 0.047{]} & .005 & .014 \\
@@ -1040,8 +1040,9 @@ F1, 7 categories & 0.022 & {[}-0.020, 0.063{]} & .271 & .078 \\
 \noindent \emph{Note.} Each~difference is the mean across models of the
 first condition minus the second (EN→LLM: English prompt on the GPT-5.6
 Luna translation). Higher is better for correlation and F1, lower for
-MAE. Paired \emph{t}-tests across the models of at least 8B parameters;
-\emph{p} (equiv.): two one-sided tests against a bound of ±0.05.
+MAE. Paired \emph{t}-tests across the thirteen models of at least 8B
+parameters (eleven for the LLM translation); \emph{p} (equiv.): two
+one-sided tests against a bound of ±0.05.
 
 \end{table}
 
