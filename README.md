@@ -1,182 +1,73 @@
-# Beyond Language Barriers: Evaluating Open-Source LLMs in Non-English Sentiment Analysis
+# Prompt Language Doesn't Matter, but Keep the Original Text
 
-This repository contains the code, data, and analysis for the research article "Beyond Language Barriers: Evaluating the Efficacy of Open-Source LLMs in Analyzing Sentiment in Non-English Textual Data."
+Code, model scores, annotated benchmark and prompts for the article "Prompt
+Language Doesn't Matter, but Keep the Original Text: Large Language Models and
+Sentiment Analysis in French News".
 
-## Overview
-
-This research evaluates the cross-linguistic capabilities of general-purpose large language models (LLMs) in sentiment analysis of French texts. We assess whether open-source foundational models can accurately analyze sentiment in non-English content without task-specific fine-tuning, comparing their performance to traditional dictionary-based methods and examining the impact of prompt language on analytical outcomes.
-
-### Research Questions
-
-1. Can general-purpose LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning?
-2. Can open-source general-purpose foundational LLMs accurately evaluate sentiment in non-English texts without task-specific fine-tuning?
-3. How does the language of the prompt affect performance across different languages?
+Fifteen language models scored 200 hand-coded sentences from French-language
+news under three conditions: a French prompt on the French text (FR→FR), an
+English prompt on the French text (EN→FR), and an English prompt on a machine
+translation (EN→EN). They are compared with the French and English Lexicoder
+dictionaries, and the best model also scored the full corpus of 2,683 articles.
 
 ## Data
 
-The corpus consists of 2,683 French-language news articles from 13 media sources collected from the Eureka database, spanning 1991-2025. These articles cover discourse about open-source software with the following search query:
+The corpus is every article on open-source software in the "Major daily
+newspapers (FR)" category of the Eureka database from 1991 to 2025 (13 dailies:
+9 from Québec, 1 from Ontario, 3 from France). The full texts are licensed
+from Eureka and cannot be redistributed; the article identifiers (`doc_id`,
+date, source) are in the data files.
 
-```
-:q
-a
-TEXT= ("logiciel libre" | "logiciels libres" | "open source" | "open-source" | "logiciel open source" | "logiciels open source" | "code source ouvert" | "software libre" | "free software" | "code source libre" | "Free Software Foundation" | "Richard Stallman")
-```
+- `data/clean/df.rds`: the 200 benchmark sentences, their Google translation,
+  the three coders' mean rating (`ground_truth`) and every model's score.
+- `data/clean/annotator_1.rds`, `annotator_2.rds`: the second and third coders.
+- `data/clean/news_df_sentiment_corpus.rds`, `news_df_sentiment_jev.rds`:
+  full-corpus scores.
+- `results/analysis/raw_responses*.jsonl`: raw model answers collected with
+  the current parser, one JSON object per call.
+- `results/analysis/token_usage_log*.csv`: tokens of every API call.
 
-The sources include 9 newspapers from Québec, 1 from Ontario, and 3 from France, ensuring a diverse representation of the francophone media landscape.
+## Pipeline
 
-## Repository Structure
+Run from the project root, in this order. Scripts 00 to 31 need the Eureka
+files; scripts 40, 42, 43, 70 and 72 call model APIs and resume from their
+checkpoints; everything from 41 onward can be rerun from the files in the
+repository.
 
-- `/data/` - Contains all data files
-  - `/clean/` - Processed data ready for analysis
-  - `/dict/` - Dictionary files for lexicon-based sentiment analysis
-  - `/eureka_articles/` - Raw HTML files of collected news articles
-  - `/raw/` - Unprocessed data files
-  - `/tmp/` - Temporary files and checkpoints
-  - `/translation_files/` - Files for the translation process
-- `/docs/` - Documentation and manuscript files
-  - `/pub/` - Publication-ready files
-- `/results/` - Analysis results and outputs
-  - `/analysis/` - Statistical analysis results
-  - `/graphs/` - Visualizations
-  - `/tables/` - Result tables
-- `/src/` - Source code for data collection, processing, and analysis
+| Step | Scripts |
+|---|---|
+| Collection and preparation | `00_eureka_scraper.py`, `01_html_parsing.R`, `02_data_summary.R`, `10_dataframe_cleaning.R` |
+| Dictionaries on the corpus | `20_frlsd.R`, `21_translate_to_english.R`, `22_lsd_prep.R`, `23_lsd.R`, `24_merging_french_english.R` |
+| Benchmark sentences | `30_create_sample.R`, `31_validate_manual_anotation.R` |
+| Model scores | `40_prompt.R`, `42_jev_prompt.R` (after any rerun of 40), `41_prompt_cleaning.R` |
+| Translator check (Table 1) | `43_llm_translation_test.R`, then `44_lsd_on_llm_translation.R` |
+| Metrics | `50_cor.R`, `51_f1_scores.R`, `56_intercoder_reliability.R`, `66_f1_scores_averages.R` |
+| Tests between conditions | `81_performance_by_condition.R`, `82_equivalence_tests.R` |
+| Full corpus | `70_prompt_corpus.R`, `72_jev_corpus.R`, `84_corpus_agreement_graph.R` (Figure 1) |
+| Figures and tables | `85_performance_graph.R` (Figure 2), `62b_f1_dumbbell.R` (Figure 3), `86_performance_table.R`, `63_fscore_tables.R`, `68_cost_table.R`, `69_tokens_by_language.R` |
 
-## Methods
+Shared code: `src/92_llm_helper_funcs.R` (answer parser, retries),
+`93_prompts.R`, `94_models_map.R` (model lineup and provider pins),
+`95_token_logging.R`, `98_jev_helpers.R`, and `91_LSDprep_dec2017.R`, the
+Lexicoder preparation functions distributed with the dictionary.
+`96_verify_models.R` checks every model before a run and `97_rerun_status.R`
+follows a run in progress. `tests/test_clean_sentiment_value.R` tests the
+answer parser. `src/archive/` holds scripts from earlier versions of the study.
 
-### Data Collection
+The manuscript is `docs/pub/pub.qmd`; `docs/pub/render_sage.sh` renders the
+full and anonymized manuscripts, the title page and the supplemental material.
 
-Data was collected using a custom Python web scraper (`src/00_eureka_scraper.py`) that extracts article content from the Eureka database. The scraper uses Selenium WebDriver to navigate the database interface and download articles in HTML format.
+## API keys
 
-HTML documents were preprocessed with custom R functions to extract publication metadata (date, source, title) and full text content.
+Set in `~/.Renviron`: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`
+(or `GOOGLE_API_KEY`), `OPENROUTER_API_KEY` and `TYPESAFE_API_KEY`.
 
-### Translation
+## Software
 
-To facilitate cross-linguistic analysis, French texts were translated into English using Google Translate. The process involved:
-1. Batching the articles into Word documents using the `officer` R package
-2. Adding unique delimiters to maintain document structure
-3. Translating the documents using Google Translate
-4. Extracting and realigning the translated text with the original French content
-
-### Sentiment Analysis Approaches
-
-#### Manual Annotation
-- 200 randomly selected sentences were manually annotated on a scale from -1 to 1
-- A custom Shiny application was developed to streamline the annotation process
-- This annotated dataset served as the ground truth for evaluation
-
-#### Dictionary-Based Analysis
-- French corpus: Analyzed using a French Lexicoder Sentiment Dictionary (frlsd)
-- English translations: Analyzed using the standard Lexicoder Sentiment Dictionary
-
-#### LLM-Based Analysis
-The research evaluates 11 different LLMs across three linguistic configurations:
-1. French text with French prompts (FR→FR)
-2. French text with English prompts (EN→FR)
-3. English translations with English prompts (EN→EN)
-
-**Models evaluated:**
-- Open-source models:
-  - Llama 3.2 (1B)
-  - Llama 3.2 (3B)
-  - Gemma 2 (9B)
-  - Mistral Saba (24B)
-  - QWQ (32B)
-  - Llama 3.3 (70B)
-  - DeepSeek R1 Basic (671B)
-- Closed-source models:
-  - Claude 3.5 Haiku
-  - Gemini 2.0 Flash
-  - DeepSeek Chat
-  - GPT-4o
-
-Each model was prompted three times per sentence to ensure robust results, for a total of 19,800 prompts.
-
-### Evaluation Metrics
-
-Three complementary methodologies were used to assess performance:
-1. Correlation analysis: Pearson correlation coefficients between model predictions and ground truth
-2. F1 score with 7-category classification: Very negative, negative, somewhat negative, neutral, somewhat positive, positive, very positive
-3. F1 score with 3-category classification: Negative, neutral, positive
-
-## Key Findings
-
-1. General-purpose foundation models can effectively analyze sentiment in non-English texts, with the best-performing models achieving correlation coefficients above 0.70 and F1 scores exceeding 0.70 for 3-category classification.
-
-2. Proprietary closed-weight models consistently outperformed their open-weight counterparts, with DeepSeek Chat, GPT-4o, and Gemini 2.0 demonstrating the strongest performance.
-
-3. For correlation metrics, French prompts with French text yielded the strongest performance, closely followed by English prompts with French text. English prompts with English-translated text showed marginally lower performance.
-
-4. For classification metrics, English prompts with French text yielded the highest average performance, slightly outperforming both French-prompted French text and English-prompted English text.
-
-5. All models demonstrated substantially higher performance on the simplified 3-category task compared to the more granular 7-category classification, with models struggling most with "somewhat positive" and "somewhat negative" categories.
-
-## Usage
-
-### Environment Setup
-
-This project uses R for data analysis and Python for web scraping. Python dependencies are managed with uv.
-
-```bash
-# Install uv (if not already installed)
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Install Python dependencies
-uv sync
-
-# Required R packages
-# install.packages(c("tidyverse", "quanteda", "caret", "ellmer", "officer", "polyglotR"))
-```
-
-### Data Collection
-
-```bash
-# Run the Eureka scraper (requires login credentials)
-uv run python src/00_eureka_scraper.py --start-date 1991-01-01 --end-date 2025-01-01 --output-dir ./data/eureka_articles
-```
-
-### Analysis Pipeline
-
-The analysis can be run step-by-step following the numbered scripts in the `/src/` directory:
-
-1. HTML parsing and data extraction: `src/01_html_parsing.R`
-2. Data summarization: `src/02_data_summary.R`
-3. Data cleaning: `src/10_dataframe_cleaning.R`
-4. Dictionary-based sentiment analysis: `src/20_frlsd.R`, `src/22_lsd_prep.R`, `src/23_lsd.R`
-5. Translation: `src/21_translate_to_english.R`
-6. Sample creation and manual annotation: `src/30_create_sample.R`, `src/31_validate_manual_anotation.R`
-7. LLM prompting: `src/40_prompt.R`, `src/41_prompt_cleaning.R`
-8. Performance evaluation: `src/50_cor.R`, `src/51_fscore_7.R`, `src/52_fscore_3.R`
-9. Visualization: `src/60_cor_graph.R`, `src/61_mae_graph.R`, `src/62_fscore_graphs.R`
-10. Result tables: `src/63_fscore_tables.R`, `src/64_results_summary.R`
-
-### Replicating the Study
-
-To replicate the study with your own API keys:
-
-1. Set up the required API keys as environment variables:
-   ```R
-   Sys.setenv(FIREWORKS_API_KEY="your_key_here")
-   Sys.setenv(OPENAI_API_KEY="your_key_here")
-   Sys.setenv(ANTHROPIC_API_KEY="your_key_here")
-   Sys.setenv(GOOGLE_API_KEY="your_key_here")
-   Sys.setenv(GROQ_API_KEY="your_key_here")
-   Sys.setenv(DEEPSEEK_API_KEY="your_key_here")
-   ```
-
-2. Run the `src/40_prompt.R` script to perform sentiment analysis with all models.
-
-3. Run the evaluation scripts to analyze the results.
-
-## Citation
-
-If you use this code or data in your research, please cite:
-
-```
-Foisy, L.-O. M., Pelletier, C., Proulx, É., Vincent, S.-J., & Dufresne, Y. (2025). 
-Beyond Language Barriers: Evaluating the Efficacy of Open-Source LLMs in Analyzing 
-Sentiment in Non-English Textual Data.
-```
+R with dplyr, tidyr, stringr, ggplot2, quanteda, ellmer, httr2, jsonlite and
+polyglotr; Python dependencies of the scraper are in `pyproject.toml`
+(`uv sync`).
 
 ## License
 
-This repository is licensed under the terms included in the LICENSE file.
+See `LICENSE`.

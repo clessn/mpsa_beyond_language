@@ -1,27 +1,11 @@
-###############################################################################
-# MANUAL SENTIMENT ANNOTATION SHINY APP
-# 
-# This script provides a Shiny application for manually annotating sentences
-# with sentiment scores. It allows for efficient keyboard-based annotation
-# and automatically saves progress as annotations are made.
-#
-# Author: Ral Zarek
-# Date: March 2025
-###############################################################################
+# Shiny app used by the three coders to rate the 200 sentences on the -1 to 1
+# scale, with keyboard shortcuts; ratings are saved as they are entered.
 
-#==============================================================================
-# 1. SETUP AND DEPENDENCIES
-#==============================================================================
-
-library(shiny)      # For web application framework
-library(shinyjs)    # For enhanced JavaScript functionality
-library(DT)         # For interactive data tables
-library(readr)      # For reading CSV files
-library(tools)      # For file extension function
-
-#==============================================================================
-# 2. USER INTERFACE DEFINITION
-#==============================================================================
+library(shiny)
+library(shinyjs)
+library(DT)
+library(readr)
+library(tools)
 
 ui <- fluidPage(
   useShinyjs(),  # Initialize shinyjs
@@ -329,10 +313,6 @@ ui <- fluidPage(
   
   # Export Modal is created dynamically in server logic
 )
-
-#==============================================================================
-# 3. SERVER LOGIC
-#==============================================================================
 
 server <- function(input, output, session) {
   # Reactive values to track state
@@ -919,10 +899,6 @@ server <- function(input, output, session) {
     }
   })
 }
-
-#==============================================================================
-# 4. APP EXECUTION
-#==============================================================================
 
 # Run the Shiny app
 shinyApp(ui = ui, server = server)

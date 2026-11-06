@@ -1,17 +1,5 @@
-###############################################################################
-# RERUN PROGRESS DASHBOARD
-#
-# Reads the live token log written by src/40_prompt.R and reports how far the
-# run has got, how each model is behaving, and what it has cost so far.
-#
-# Run it any time while a rerun is in progress:
-#     Rscript src/97_rerun_status.R
-#
-# Or refresh it continuously:
-#     while true; do clear; Rscript src/97_rerun_status.R; sleep 30; done
-#
-# Read-only: it never touches the run.
-###############################################################################
+# Progress, behaviour and cost of a scoring run so far, read from the token
+# log. Read-only; can be run while src/40 is running.
 
 suppressMessages({
   source("src/94_models_map.R")
@@ -45,9 +33,7 @@ last   <- max(ts, na.rm = TRUE)
 mins   <- as.numeric(difftime(last, began, units = "mins"))
 rate   <- if (mins > 0) nrow(log_df) / mins else NA_real_
 
-#------------------------------------------------------------------------------
 # Is the process still alive?
-#------------------------------------------------------------------------------
 # Count instances, don't just test for one. On 2026-09-09 three copies ran
 # concurrently, each holding its own in-memory df and overwriting the others'
 # checkpoints; 54% of logged calls were duplicates. A dashboard that only says
@@ -61,17 +47,9 @@ n_instances <- length(pids)
 alive <- n_instances > 0
 idle_s <- as.numeric(difftime(Sys.time(), last, units = "secs"))
 
-# Duplicate keys in the log have two very different causes, and conflating them
-# makes the alarm useless:
-#
-#   - CONCURRENT RUNS: two processes scoring the same sentence at the same
-#     moment. This is the 9 September failure and it corrupts data.
-#   - DELIBERATE RE-SCORING: a model cleared and scored again after its
-#     configuration changed (qwen332b moved from DeepInfra to SiliconFlow on
-#     10 September). The old calls are superseded, not corrupted.
-#
-# They are told apart by the gap between occurrences: concurrent processes
-# produce duplicates seconds apart, a re-score minutes or hours apart.
+# Duplicate calls come either from two processes running at once (seconds
+# apart, which corrupts data) or from a model scored again after a change of
+# configuration (minutes or hours apart, harmless). The gap tells them apart.
 CONCURRENT_GAP_S <- 120
 
 dup_keys <- paste(log_df$model_prefix, log_df$condition,
@@ -93,13 +71,7 @@ if (length(dup_names) > 0) {
 }
 rescored <- sort(unique(rescored))
 
-# Success rates are reported over RETAINED calls only. Deduplicating on the
-# exact key is not enough: two scoring waves of the same sentence use different
-# numbers of retries, so the extra failed attempts of a superseded wave have no
-# counterpart in the new one and would survive deduplication, dragging the rate
-# down. Instead, group by (model, condition, item, run) and keep the attempts
-# belonging to the most recent burst — everything within a few minutes of that
-# triple's last call.
+# Success rates use the last scoring wave only, as in keep_last_wave()
 WAVE_WINDOW_S <- 300
 
 triple <- paste(log_df$model_prefix, log_df$condition, log_df$item, log_df$run)
@@ -136,12 +108,8 @@ cat(sprintf("  last call      %s  (%.0f s ago)\n",
 cat(sprintf("  calls logged   %s\n", format(nrow(log_df), big.mark = ",")))
 cat(sprintf("  pace           %.1f calls/min\n\n", rate))
 
-#------------------------------------------------------------------------------
 # Per-model progress
-#------------------------------------------------------------------------------
-# Progress is measured in DISTINCT (condition, item, run) triples completed,
-# not raw calls: a model that retries three times per sentence would otherwise
-# look three times further along than it is.
+# Progress counts completed (condition, item, run) triples, not calls
 key <- paste(log_df$model_prefix, log_df$condition, log_df$item, log_df$run)
 done_by_model <- tapply(key, log_df$model_prefix, function(k) length(unique(k)))
 
@@ -167,9 +135,7 @@ for (m in ordered) {
               100 * okn / nrow(sub), ratio))
 }
 
-#------------------------------------------------------------------------------
 # Overall progress and ETA
-#------------------------------------------------------------------------------
 total_done <- sum(done_by_model)
 total_need <- CALLS_NOMINAL * length(model_mapping)
 frac <- total_done / total_need
@@ -187,9 +153,7 @@ if (alive && !is.na(eta_h)) {
 }
 cat("---------------------------------------------------------------\n")
 
-#------------------------------------------------------------------------------
 # Cost so far
-#------------------------------------------------------------------------------
 spent <- merge(
   stats::aggregate(cbind(total_in, output_tokens) ~ model_prefix,
                    data = log_df, FUN = sum, na.rm = TRUE),

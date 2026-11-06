@@ -1,255 +1,58 @@
-#################################################################
-# PERFORMANCE BY CONDITION ANALYSIS
-#################################################################
-# This script analyzes model performance metrics (correlation, MAE, F1-scores)
-# grouped by the three main prompt-text language conditions:
-# 1. French Prompts for French Text (FR→FR)
-# 2. English Prompts for French Text (EN→FR)
-# 3. English Prompts for English Text (EN→EN)
+# Mean performance by condition and paired t-tests between conditions, with
+# models as the units. The tests cover the thirteen models of about 8B
+# parameters and more; Llama 3.2 1B (which scored a different subset of
+# sentences in each condition) is always left out, and the tests with Llama
+# 3.2 3B included are kept as a sensitivity check.
+#
+# In:  data/clean/cor_results.rds, results/analysis/f1_scores_{7,3}.rds
+# Out: results/analysis/condition_analysis_results.rds
 
-# Load necessary libraries
-library(tidyverse)  # For data manipulation and visualization
+library(dplyr)
+library(tidyr)
 
-#################################################################
-# LOAD DATASETS WITH PERFORMANCE METRICS
-#################################################################
-# Load correlation and error metrics
+conditions <- c(fr_fr = "FR→FR", en_fr = "EN→FR", en_en = "EN→EN")
 cor_results <- readRDS("data/clean/cor_results.rds")
 
-# Load F1 scores for 7-category and 3-category sentiment analysis
-f1_scores_7 <- readRDS("results/analysis/f1_scores_7.rds")
-f1_scores_3 <- readRDS("results/analysis/f1_scores_3.rds")
+metrics <- bind_rows(
+  `Correlation` = select(cor_results, model, value = correlation),
+  `MAE` = select(cor_results, model, value = mae),
+  `F1 Score (7-cat)` = select(readRDS("results/analysis/f1_scores_7.rds"), model, value = weighted_f1),
+  `F1 Score (3-cat)` = select(readRDS("results/analysis/f1_scores_3.rds"), model, value = weighted_f1),
+  .id = "metric"
+) %>%
+  filter(grepl("_(fr_fr|en_fr|en_en)$", model), !grepl("^llama321b_", model)) %>%
+  mutate(base_model = sub("_(fr_fr|en_fr|en_en)$", "", model),
+         condition = unname(conditions[sub(".*_(fr_fr|en_fr|en_en)$", "\\1", model)]))
 
-#################################################################
-# DATA PREPARATION
-#################################################################
-# Function to classify models by condition
-classify_condition <- function(model_name) {
-  case_when(
-    grepl("_fr_fr$", model_name) ~ "FR→FR",  # French prompt for French text
-    grepl("_en_fr$", model_name) ~ "EN→FR",  # English prompt for French text
-    grepl("_en_en$", model_name) ~ "EN→EN",  # English prompt for English text
-    grepl("^lsd_fr", model_name) ~ "Dictionary (FR)",  # French dictionary
-    grepl("^lsd_en", model_name) ~ "Dictionary (EN)",  # English dictionary
-    TRUE ~ "Other"
-  )
-}
+main <- filter(metrics, base_model != "llama323b")
 
-# Function to prepare metrics dataframe
-prepare_metrics <- function(data, metric_name, metric_column) {
-  data %>%
-    mutate(
-      condition = classify_condition(model),
-      metric = metric_name,
-      value = .data[[metric_column]]
-    ) %>%
-    select(model, condition, metric, value)
-}
-
-# Prepare correlation data
-corr_data <- prepare_metrics(cor_results, "Correlation", "correlation")
-
-# Prepare MAE data
-mae_data <- prepare_metrics(cor_results, "MAE", "mae")
-
-# Prepare F1 scores data (7-category)
-f1_7_data <- prepare_metrics(f1_scores_7, "F1 Score (7-cat)", "weighted_f1")
-
-# Prepare F1 scores data (3-category)
-f1_3_data <- prepare_metrics(f1_scores_3, "F1 Score (3-cat)", "weighted_f1")
-
-# Combine all metrics into a single dataframe
-all_metrics <- bind_rows(corr_data, mae_data, f1_7_data, f1_3_data)
-
-# Filter out dictionary models and other non-standard conditions for focus on the three main conditions
-main_conditions <- c("FR→FR", "EN→FR", "EN→EN")
-# Llama 3.2 1B is left out: it scored a different, partial subset of sentences
-# in each condition, so its condition differences would compare unlike samples.
-filtered_metrics <- all_metrics %>%
-  filter(condition %in% main_conditions, !grepl("^llama321b_", model))
-
-# Extract model identifier without condition suffix
-filtered_metrics <- filtered_metrics %>%
-  mutate(
-    base_model = str_replace(model, "_(fr|en)_(fr|en)$", "")
-  )
-
-#################################################################
-# CALCULATE SUMMARY STATISTICS BY CONDITION
-#################################################################
-# Calculate average performance by condition for each metric
-condition_summary <- filtered_metrics %>%
+summary_by_condition <- main %>%
   group_by(metric, condition) %>%
-  summarize(
-    mean_value = mean(value, na.rm = TRUE),
-    median_value = median(value, na.rm = TRUE),
-    min_value = min(value, na.rm = TRUE),
-    max_value = max(value, na.rm = TRUE),
-    sd_value = sd(value, na.rm = TRUE),
-    count = n(),
-    .groups = "drop"
-  ) %>%
+  summarise(mean_value = mean(value), median_value = median(value),
+            min_value = min(value), max_value = max(value),
+            sd_value = sd(value), count = n(), .groups = "drop") %>%
   arrange(metric, desc(mean_value))
 
-# Display summary by condition
-print("Performance Summary by Condition:")
-print(condition_summary)
-
-#################################################################
-# MODEL-SPECIFIC CONDITION COMPARISON
-#################################################################
-# For each model, compare performance across conditions
-model_condition_comparison <- filtered_metrics %>%
-  # Pivot to wide format to compare conditions side by side
-  pivot_wider(
-    id_cols = c(base_model, metric),
-    names_from = condition,
-    values_from = value
-  ) %>%
-  # Calculate differences between conditions
-  mutate(
-    FR_FR_vs_EN_FR = `FR→FR` - `EN→FR`,
-    FR_FR_vs_EN_EN = `FR→FR` - `EN→EN`,
-    EN_FR_vs_EN_EN = `EN→FR` - `EN→EN`
-  ) %>%
-  # Sort by metric and then by model name
-  arrange(metric, base_model)
-
-# Display model-specific condition comparisons
-print("Model-Specific Condition Comparison:")
-print(model_condition_comparison)
-
-#################################################################
-# CONDITION PERFORMANCE RANKING
-#################################################################
-# Rank conditions by performance for each metric
-condition_ranking <- filtered_metrics %>%
-  group_by(metric, base_model) %>%
-  # Rank conditions for each model (handling MAE differently as lower is better)
-  mutate(
-    rank = if_else(
-      metric == "MAE",
-      rank(value, ties.method = "min"),  # For MAE, lower is better
-      rank(-value, ties.method = "min")  # For others, higher is better
-    )
-  ) %>%
-  # Count how often each condition achieves each rank
-  ungroup() %>%
-  count(metric, condition, rank) %>%
-  # Pivot to see rank distribution by condition
-  pivot_wider(
-    id_cols = c(metric, condition),
-    names_from = rank,
-    values_from = n,
-    names_prefix = "rank_",
-    values_fill = 0
-  ) %>%
-  # Calculate a weighted score (rank 1 is best)
-  mutate(
-    models_ranked = rank_1 + rank_2 + rank_3,
-    weighted_score = (3 * rank_1 + 2 * rank_2 + 1 * rank_3) / models_ranked
-  ) %>%
-  # Sort by metric and then by weighted score (descending)
-  arrange(metric, desc(weighted_score))
-
-# Display condition ranking
-print("Condition Performance Ranking:")
-print(condition_ranking)
-
-#################################################################
-# STATISTICAL SIGNIFICANCE TESTING
-#################################################################
-# Paired t-tests to assess if differences between conditions are statistically significant
-# Prepare a results dataframe for t-tests
-t_test_results <- data.frame(
-  metric = character(),
-  comparison = character(),
-  t_statistic = numeric(),
-  p_value = numeric(),
-  significant = logical(),
-  stringsAsFactors = FALSE
-)
-
-# Function to run paired t-test between two conditions
-run_paired_ttest <- function(data, metric_filter, cond1, cond2) {
-  # Filter data for the specific metric
-  test_data <- data %>%
-    filter(metric == metric_filter) %>%
-    select(base_model, condition, value) %>%
-    pivot_wider(
-      id_cols = base_model,
-      names_from = condition,
-      values_from = value
-    )
-  
-  # Only include models that have data for both conditions
-  test_data <- test_data %>%
-    filter(!is.na(.data[[cond1]]) & !is.na(.data[[cond2]]))
-  
-  # Skip if insufficient data
-  if(nrow(test_data) < 3) {
-    return(data.frame(
-      metric = metric_filter,
-      comparison = paste(cond1, "vs", cond2),
-      t_statistic = NA,
-      p_value = NA,
-      significant = NA,
-      stringsAsFactors = FALSE
-    ))
-  }
-  
-  # Run paired t-test
-  test_result <- t.test(test_data[[cond1]], test_data[[cond2]], paired = TRUE)
-  
-  # Return results
-  data.frame(
-    metric = metric_filter,
-    comparison = paste(cond1, "vs", cond2),
-    t_statistic = test_result$statistic,
-    p_value = test_result$p.value,
-    significant = test_result$p.value < 0.05,
-    stringsAsFactors = FALSE
-  )
+paired_tests <- function(data) {
+  comparisons <- list(c("FR→FR", "EN→FR"), c("FR→FR", "EN→EN"), c("EN→FR", "EN→EN"))
+  bind_rows(lapply(unique(data$metric), function(m) {
+    wide <- data %>%
+      filter(metric == m) %>%
+      select(base_model, condition, value) %>%
+      pivot_wider(names_from = condition, values_from = value)
+    bind_rows(lapply(comparisons, function(cmp) {
+      test <- t.test(wide[[cmp[1]]], wide[[cmp[2]]], paired = TRUE)
+      data.frame(metric = m, comparison = paste(cmp[1], "vs", cmp[2]),
+                 t_statistic = unname(test$statistic), p_value = test$p.value,
+                 significant = test$p.value < 0.05)
+    }))
+  }))
 }
 
-# Metrics to test
-metrics_to_test <- unique(filtered_metrics$metric)
-
-# Run t-tests for all metric and condition pairs
-for(m in metrics_to_test) {
-  # FR→FR vs EN→FR
-  test1 <- run_paired_ttest(filtered_metrics, m, "FR→FR", "EN→FR")
-  t_test_results <- rbind(t_test_results, test1)
-  
-  # FR→FR vs EN→EN
-  test2 <- run_paired_ttest(filtered_metrics, m, "FR→FR", "EN→EN")
-  t_test_results <- rbind(t_test_results, test2)
-  
-  # EN→FR vs EN→EN
-  test3 <- run_paired_ttest(filtered_metrics, m, "EN→FR", "EN→EN")
-  t_test_results <- rbind(t_test_results, test3)
-}
-
-# Display t-test results
-print("Statistical Significance of Condition Differences:")
-print(t_test_results)
-
-#################################################################
-# SAVE ANALYSIS RESULTS
-#################################################################
-# Combine all results into a list
-condition_analysis_results <- list(
-  summary = condition_summary,
-  model_comparison = model_condition_comparison,
-  ranking = condition_ranking,
-  significance_tests = t_test_results
+results <- list(
+  summary = summary_by_condition,
+  significance_tests = paired_tests(main),
+  significance_tests_with_3b = paired_tests(metrics)
 )
-
-# Save the results
-saveRDS(condition_analysis_results, "results/analysis/condition_analysis_results.rds")
-
-# Print final conclusion
-cat("\n=== CONCLUSION ===\n")
-cat("Analysis of model performance across different prompt-text language conditions is complete.\n")
-cat("Results indicate which approach (FR→FR, EN→FR, or EN→EN) yields the best performance\n")
-cat("for sentiment analysis tasks based on correlation, MAE, and F1 scores.\n")
+print(results, digits = 3)
+saveRDS(results, "results/analysis/condition_analysis_results.rds")

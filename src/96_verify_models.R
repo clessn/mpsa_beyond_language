@@ -1,33 +1,16 @@
-###############################################################################
-# API KEY AND MODEL ID VERIFICATION
+# Sends one short request to every model and checks that the key, the model
+# id and the pinned provider work and that the answer parses. Run before
+# src/40 whenever the lineup changes.
 #
-# Sends one minimal request to every model in the study and reports whether the
-# key works, the model id resolves, the pinned provider accepts the request, and
-# the model returns a parseable number.
-#
-# Run this BEFORE src/40_prompt.R, every time the lineup changes.
-#
-# Why: in September 2026 two model ids in this project had silently stopped
-# being served, and two more returned empty strings because they reasoned past
-# the output cap. Neither failure is visible until the pipeline reaches that
-# model — potentially hours into a run. This turns that into a ten-second check.
-#
-# Cost: twelve requests of ~400 tokens each. Fractions of a cent.
-###############################################################################
+# Out: results/analysis/model_verification.rds
 
 library(ellmer)
-library(stringr)   # clean_sentiment_value() uses str_extract()
+library(stringr)
 
-# Must match the cap used in src/40_prompt.R. Testing under a tighter cap
-# produces false failures: Gemini 3.5 Flash returns "" at 20 tokens but answers
-# correctly at 100, because the cap is consumed before the number is emitted.
+# Same cap as src/40_prompt.R: under a tighter one, reasoning models return nothing
 VERIFY_MAX_TOKENS <- 400
 source("src/93_prompts.R")
 source("src/94_models_map.R")
-
-#==============================================================================
-# 1. KEY PRESENCE
-#==============================================================================
 
 # Which credential each model needs. ellmer resolves Gemini from GOOGLE_API_KEY
 # first and falls back to GEMINI_API_KEY, hence the pair.
@@ -38,7 +21,6 @@ required_keys <- c(
 names(required_keys) <- c(names(model_provider_pin),
                           "claudehaiku45", "gemini35", "gpt56luna")
 
-#' Is at least one of the named environment variables set?
 key_present <- function(spec) {
   any(nzchar(Sys.getenv(strsplit(spec, "|", fixed = TRUE)[[1]])))
 }
@@ -48,10 +30,6 @@ for (k in unique(required_keys)) {
   cat(sprintf("  %-32s %s\n", k,
               ifelse(key_present(k), "present", "MISSING")))
 }
-
-#==============================================================================
-# 2. CLIENT CONSTRUCTION
-#==============================================================================
 
 # Built lazily so a missing key skips that model instead of aborting the script.
 build_client <- function(prefix) {
@@ -80,14 +58,7 @@ build_client <- function(prefix) {
   )
 }
 
-#==============================================================================
-# 3. LIVE CHECK
-#==============================================================================
-
-# A real sentiment prompt rather than a generic ping: the point is not only that
-# the request is accepted, but that the reply survives clean_sentiment_value().
-# A model that answers with prose or an empty string fails here, which is
-# exactly the failure mode that wasted a run in the previous batch.
+# A real sentiment prompt, so that the check covers parsing the answer
 source("src/92_llm_helper_funcs.R")
 TEST_SENTENCE <- "Le logiciel libre connait un succes remarquable."
 
@@ -127,10 +98,6 @@ for (prefix in names(required_keys)) {
     status = outcome$status, parsed = outcome$parsed,
     detail = outcome$detail, stringsAsFactors = FALSE))
 }
-
-#==============================================================================
-# 4. VERDICT
-#==============================================================================
 
 ok      <- sum(results$status == "OK")
 bad     <- sum(results$status %in% c("FAILED", "UNPARSEABLE"))

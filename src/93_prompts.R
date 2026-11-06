@@ -1,21 +1,7 @@
-###############################################################################
-# Prompts for LLM Sentiment Analysis
-# 
-# This file contains all prompts used for sentiment analysis with various LLMs
-# in English and French languages for different text inputs.
-#
-# Author: Claude & User
-# Date: March 2025
-###############################################################################
+# Prompts for the three conditions. The French prompt is a translation of the
+# English one; the English prompt on the translation differs only in naming
+# English instead of French. All three follow the same system prompt.
 
-#==============================================================================
-# 1. ENGLISH PROMPTS
-#==============================================================================
-
-#' English prompt for French text
-#' 
-#' @param text The French text to analyze
-#' @return A complete prompt ready to send to the LLM
 en_prompt_fr_text <- function(text) {
   paste0("Please analyze the sentiment of the following French text and provide a single numerical rating according to this scale:
 Sentiment Scale:
@@ -33,10 +19,6 @@ Important instructions:
 Here is the text to analyze: ", text)
 }
 
-#' English prompt for English text (translated from French)
-#' 
-#' @param text The English text to analyze
-#' @return A complete prompt ready to send to the LLM
 en_prompt_en_text <- function(text) {
   paste0("Please analyze the sentiment of the following english text and provide a single numerical rating according to this scale:
 Sentiment Scale:
@@ -54,14 +36,6 @@ Important instructions:
 Here is the text to analyze: ", text)
 }
 
-#==============================================================================
-# 2. FRENCH PROMPTS
-#==============================================================================
-
-#' French prompt for French text
-#' 
-#' @param text The French text to analyze
-#' @return A complete prompt ready to send to the LLM
 fr_prompt_fr_text <- function(text) {
   paste0("Veuillez analyser le sentiment du texte français suivant et fournir une évaluation numérique unique selon cette échelle :
 Échelle de sentiment :
@@ -79,13 +53,6 @@ Instructions importantes :
 Voici le texte à analyser : ", text)
 }
 
-#==============================================================================
-# 3. SYSTEM PROMPT
-#==============================================================================
-
-#' System prompt for LLM initialization
-#' 
-#' @return A string containing the system prompt
 get_system_prompt <- function() {
   "You are a helpful assistant that analyzes the sentiment of text. You provide accurate and consistent sentiment ratings according to the specified scale."
 }
