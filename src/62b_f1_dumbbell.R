@@ -25,8 +25,8 @@ d <- inner_join(f3 %>% select(model, f1_3 = weighted_f1),
   arrange(f1_3) %>%
   mutate(name = factor(name, levels = name))
 
-SCHEME_3 <- "Polarity (3 categories)"
-SCHEME_7 <- "Fine-grained (7 categories)"
+SCHEME_3 <- "Three-category F1 (polarity)"
+SCHEME_7 <- "Seven-category F1"
 long <- d %>%
   pivot_longer(c(f1_3, f1_7), names_to = "scheme", values_to = "f1") %>%
   mutate(scheme = factor(ifelse(scheme == "f1_3", SCHEME_3, SCHEME_7), levels = c(SCHEME_3, SCHEME_7)))

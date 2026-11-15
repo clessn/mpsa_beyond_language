@@ -153,7 +153,7 @@ save_figure(fig2, "fig2_dictionaries.png", 5.2)
 # Differences are first condition minus second; the MAE difference is negated
 # so that a positive value favours the first condition on every metric.
 
-metrics <- c(r = "Correlation", mae = "MAE", f1_3 = "F1, 3 categories", f1_7 = "F1, 7 categories")
+metrics <- c(r = "Correlation", mae = "MAE", f1_3 = "Three-category F1", f1_7 = "Seven-category F1")
 comparisons <- list(
   `Prompt language (FR→FR − EN→FR)` = c("fr_fr", "en_fr"),
   `Translation (EN→FR − EN→EN)` = c("en_fr", "en_en"),
